@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Agent Dependency resource in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -132,12 +131,6 @@ func (o LookupAgentDependencyResultOutput) ToLookupAgentDependencyResultOutput()
 
 func (o LookupAgentDependencyResultOutput) ToLookupAgentDependencyResultOutputWithContext(ctx context.Context) LookupAgentDependencyResultOutput {
 	return o
-}
-
-func (o LookupAgentDependencyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAgentDependencyResult] {
-	return pulumix.Output[LookupAgentDependencyResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupAgentDependencyResultOutput) AgentDependencyId() pulumi.StringOutput {

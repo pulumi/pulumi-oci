@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Baselineable Metric resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -266,12 +265,6 @@ func (i *BaselineableMetric) ToBaselineableMetricOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(BaselineableMetricOutput)
 }
 
-func (i *BaselineableMetric) ToOutput(ctx context.Context) pulumix.Output[*BaselineableMetric] {
-	return pulumix.Output[*BaselineableMetric]{
-		OutputState: i.ToBaselineableMetricOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BaselineableMetricArrayInput is an input type that accepts BaselineableMetricArray and BaselineableMetricArrayOutput values.
 // You can construct a concrete instance of `BaselineableMetricArrayInput` via:
 //
@@ -295,12 +288,6 @@ func (i BaselineableMetricArray) ToBaselineableMetricArrayOutput() BaselineableM
 
 func (i BaselineableMetricArray) ToBaselineableMetricArrayOutputWithContext(ctx context.Context) BaselineableMetricArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BaselineableMetricArrayOutput)
-}
-
-func (i BaselineableMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]*BaselineableMetric] {
-	return pulumix.Output[[]*BaselineableMetric]{
-		OutputState: i.ToBaselineableMetricArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BaselineableMetricMapInput is an input type that accepts BaselineableMetricMap and BaselineableMetricMapOutput values.
@@ -328,12 +315,6 @@ func (i BaselineableMetricMap) ToBaselineableMetricMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(BaselineableMetricMapOutput)
 }
 
-func (i BaselineableMetricMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BaselineableMetric] {
-	return pulumix.Output[map[string]*BaselineableMetric]{
-		OutputState: i.ToBaselineableMetricMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BaselineableMetricOutput struct{ *pulumi.OutputState }
 
 func (BaselineableMetricOutput) ElementType() reflect.Type {
@@ -346,12 +327,6 @@ func (o BaselineableMetricOutput) ToBaselineableMetricOutput() BaselineableMetri
 
 func (o BaselineableMetricOutput) ToBaselineableMetricOutputWithContext(ctx context.Context) BaselineableMetricOutput {
 	return o
-}
-
-func (o BaselineableMetricOutput) ToOutput(ctx context.Context) pulumix.Output[*BaselineableMetric] {
-	return pulumix.Output[*BaselineableMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) metric column name
@@ -446,12 +421,6 @@ func (o BaselineableMetricArrayOutput) ToBaselineableMetricArrayOutputWithContex
 	return o
 }
 
-func (o BaselineableMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BaselineableMetric] {
-	return pulumix.Output[[]*BaselineableMetric]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o BaselineableMetricArrayOutput) Index(i pulumi.IntInput) BaselineableMetricOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BaselineableMetric {
 		return vs[0].([]*BaselineableMetric)[vs[1].(int)]
@@ -470,12 +439,6 @@ func (o BaselineableMetricMapOutput) ToBaselineableMetricMapOutput() Baselineabl
 
 func (o BaselineableMetricMapOutput) ToBaselineableMetricMapOutputWithContext(ctx context.Context) BaselineableMetricMapOutput {
 	return o
-}
-
-func (o BaselineableMetricMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BaselineableMetric] {
-	return pulumix.Output[map[string]*BaselineableMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BaselineableMetricMapOutput) MapIndex(k pulumi.StringInput) BaselineableMetricOutput {

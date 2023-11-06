@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Cloud Autonomous Vm Cluster Acd Resource Usages in Oracle Cloud Infrastructure Database service.
@@ -112,12 +111,6 @@ func (o GetCloudAutonomousVmClusterAcdResourceUsagesResultOutput) ToGetCloudAuto
 
 func (o GetCloudAutonomousVmClusterAcdResourceUsagesResultOutput) ToGetCloudAutonomousVmClusterAcdResourceUsagesResultOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterAcdResourceUsagesResultOutput {
 	return o
-}
-
-func (o GetCloudAutonomousVmClusterAcdResourceUsagesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCloudAutonomousVmClusterAcdResourceUsagesResult] {
-	return pulumix.Output[GetCloudAutonomousVmClusterAcdResourceUsagesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of autonomous_container_database_resource_usages.

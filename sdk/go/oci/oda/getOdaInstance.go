@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Oda Instance resource in Oracle Cloud Infrastructure Digital Assistant service.
@@ -144,12 +143,6 @@ func (o LookupOdaInstanceResultOutput) ToLookupOdaInstanceResultOutput() LookupO
 
 func (o LookupOdaInstanceResultOutput) ToLookupOdaInstanceResultOutputWithContext(ctx context.Context) LookupOdaInstanceResultOutput {
 	return o
-}
-
-func (o LookupOdaInstanceResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupOdaInstanceResult] {
-	return pulumix.Output[LookupOdaInstanceResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.

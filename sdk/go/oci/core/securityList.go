@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Security List resource in Oracle Cloud Infrastructure Core service.
@@ -310,12 +309,6 @@ func (i *SecurityList) ToSecurityListOutputWithContext(ctx context.Context) Secu
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityListOutput)
 }
 
-func (i *SecurityList) ToOutput(ctx context.Context) pulumix.Output[*SecurityList] {
-	return pulumix.Output[*SecurityList]{
-		OutputState: i.ToSecurityListOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SecurityListArrayInput is an input type that accepts SecurityListArray and SecurityListArrayOutput values.
 // You can construct a concrete instance of `SecurityListArrayInput` via:
 //
@@ -339,12 +332,6 @@ func (i SecurityListArray) ToSecurityListArrayOutput() SecurityListArrayOutput {
 
 func (i SecurityListArray) ToSecurityListArrayOutputWithContext(ctx context.Context) SecurityListArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityListArrayOutput)
-}
-
-func (i SecurityListArray) ToOutput(ctx context.Context) pulumix.Output[[]*SecurityList] {
-	return pulumix.Output[[]*SecurityList]{
-		OutputState: i.ToSecurityListArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SecurityListMapInput is an input type that accepts SecurityListMap and SecurityListMapOutput values.
@@ -372,12 +359,6 @@ func (i SecurityListMap) ToSecurityListMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityListMapOutput)
 }
 
-func (i SecurityListMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SecurityList] {
-	return pulumix.Output[map[string]*SecurityList]{
-		OutputState: i.ToSecurityListMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SecurityListOutput struct{ *pulumi.OutputState }
 
 func (SecurityListOutput) ElementType() reflect.Type {
@@ -390,12 +371,6 @@ func (o SecurityListOutput) ToSecurityListOutput() SecurityListOutput {
 
 func (o SecurityListOutput) ToSecurityListOutputWithContext(ctx context.Context) SecurityListOutput {
 	return o
-}
-
-func (o SecurityListOutput) ToOutput(ctx context.Context) pulumix.Output[*SecurityList] {
-	return pulumix.Output[*SecurityList]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the security list.
@@ -460,12 +435,6 @@ func (o SecurityListArrayOutput) ToSecurityListArrayOutputWithContext(ctx contex
 	return o
 }
 
-func (o SecurityListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SecurityList] {
-	return pulumix.Output[[]*SecurityList]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o SecurityListArrayOutput) Index(i pulumi.IntInput) SecurityListOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *SecurityList {
 		return vs[0].([]*SecurityList)[vs[1].(int)]
@@ -484,12 +453,6 @@ func (o SecurityListMapOutput) ToSecurityListMapOutput() SecurityListMapOutput {
 
 func (o SecurityListMapOutput) ToSecurityListMapOutputWithContext(ctx context.Context) SecurityListMapOutput {
 	return o
-}
-
-func (o SecurityListMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SecurityList] {
-	return pulumix.Output[map[string]*SecurityList]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SecurityListMapOutput) MapIndex(k pulumi.StringInput) SecurityListOutput {

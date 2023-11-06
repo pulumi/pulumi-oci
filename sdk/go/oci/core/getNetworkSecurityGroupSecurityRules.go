@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Network Security Group Security Rules in Oracle Cloud Infrastructure Core service.
@@ -112,12 +111,6 @@ func (o GetNetworkSecurityGroupSecurityRulesResultOutput) ToGetNetworkSecurityGr
 
 func (o GetNetworkSecurityGroupSecurityRulesResultOutput) ToGetNetworkSecurityGroupSecurityRulesResultOutputWithContext(ctx context.Context) GetNetworkSecurityGroupSecurityRulesResultOutput {
 	return o
-}
-
-func (o GetNetworkSecurityGroupSecurityRulesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSecurityGroupSecurityRulesResult] {
-	return pulumix.Output[GetNetworkSecurityGroupSecurityRulesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets.

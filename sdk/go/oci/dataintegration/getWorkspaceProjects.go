@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Workspace Projects in Oracle Cloud Infrastructure Data Integration service.
@@ -131,12 +130,6 @@ func (o GetWorkspaceProjectsResultOutput) ToGetWorkspaceProjectsResultOutput() G
 
 func (o GetWorkspaceProjectsResultOutput) ToGetWorkspaceProjectsResultOutputWithContext(ctx context.Context) GetWorkspaceProjectsResultOutput {
 	return o
-}
-
-func (o GetWorkspaceProjectsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceProjectsResult] {
-	return pulumix.Output[GetWorkspaceProjectsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWorkspaceProjectsResultOutput) Fields() pulumi.StringArrayOutput {

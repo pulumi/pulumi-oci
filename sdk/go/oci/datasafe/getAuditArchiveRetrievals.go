@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Audit Archive Retrievals in Oracle Cloud Infrastructure Data Safe service.
@@ -152,12 +151,6 @@ func (o GetAuditArchiveRetrievalsResultOutput) ToGetAuditArchiveRetrievalsResult
 
 func (o GetAuditArchiveRetrievalsResultOutput) ToGetAuditArchiveRetrievalsResultOutputWithContext(ctx context.Context) GetAuditArchiveRetrievalsResultOutput {
 	return o
-}
-
-func (o GetAuditArchiveRetrievalsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditArchiveRetrievalsResult] {
-	return pulumix.Output[GetAuditArchiveRetrievalsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAuditArchiveRetrievalsResultOutput) AccessLevel() pulumi.StringPtrOutput {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Fusion Environment Service Attachment resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -240,12 +239,6 @@ func (i *FusionEnvironmentServiceAttachment) ToFusionEnvironmentServiceAttachmen
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentServiceAttachmentOutput)
 }
 
-func (i *FusionEnvironmentServiceAttachment) ToOutput(ctx context.Context) pulumix.Output[*FusionEnvironmentServiceAttachment] {
-	return pulumix.Output[*FusionEnvironmentServiceAttachment]{
-		OutputState: i.ToFusionEnvironmentServiceAttachmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // FusionEnvironmentServiceAttachmentArrayInput is an input type that accepts FusionEnvironmentServiceAttachmentArray and FusionEnvironmentServiceAttachmentArrayOutput values.
 // You can construct a concrete instance of `FusionEnvironmentServiceAttachmentArrayInput` via:
 //
@@ -269,12 +262,6 @@ func (i FusionEnvironmentServiceAttachmentArray) ToFusionEnvironmentServiceAttac
 
 func (i FusionEnvironmentServiceAttachmentArray) ToFusionEnvironmentServiceAttachmentArrayOutputWithContext(ctx context.Context) FusionEnvironmentServiceAttachmentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentServiceAttachmentArrayOutput)
-}
-
-func (i FusionEnvironmentServiceAttachmentArray) ToOutput(ctx context.Context) pulumix.Output[[]*FusionEnvironmentServiceAttachment] {
-	return pulumix.Output[[]*FusionEnvironmentServiceAttachment]{
-		OutputState: i.ToFusionEnvironmentServiceAttachmentArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // FusionEnvironmentServiceAttachmentMapInput is an input type that accepts FusionEnvironmentServiceAttachmentMap and FusionEnvironmentServiceAttachmentMapOutput values.
@@ -302,12 +289,6 @@ func (i FusionEnvironmentServiceAttachmentMap) ToFusionEnvironmentServiceAttachm
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentServiceAttachmentMapOutput)
 }
 
-func (i FusionEnvironmentServiceAttachmentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*FusionEnvironmentServiceAttachment] {
-	return pulumix.Output[map[string]*FusionEnvironmentServiceAttachment]{
-		OutputState: i.ToFusionEnvironmentServiceAttachmentMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FusionEnvironmentServiceAttachmentOutput struct{ *pulumi.OutputState }
 
 func (FusionEnvironmentServiceAttachmentOutput) ElementType() reflect.Type {
@@ -320,12 +301,6 @@ func (o FusionEnvironmentServiceAttachmentOutput) ToFusionEnvironmentServiceAtta
 
 func (o FusionEnvironmentServiceAttachmentOutput) ToFusionEnvironmentServiceAttachmentOutputWithContext(ctx context.Context) FusionEnvironmentServiceAttachmentOutput {
 	return o
-}
-
-func (o FusionEnvironmentServiceAttachmentOutput) ToOutput(ctx context.Context) pulumix.Output[*FusionEnvironmentServiceAttachment] {
-	return pulumix.Output[*FusionEnvironmentServiceAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier
@@ -405,12 +380,6 @@ func (o FusionEnvironmentServiceAttachmentArrayOutput) ToFusionEnvironmentServic
 	return o
 }
 
-func (o FusionEnvironmentServiceAttachmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*FusionEnvironmentServiceAttachment] {
-	return pulumix.Output[[]*FusionEnvironmentServiceAttachment]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o FusionEnvironmentServiceAttachmentArrayOutput) Index(i pulumi.IntInput) FusionEnvironmentServiceAttachmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *FusionEnvironmentServiceAttachment {
 		return vs[0].([]*FusionEnvironmentServiceAttachment)[vs[1].(int)]
@@ -429,12 +398,6 @@ func (o FusionEnvironmentServiceAttachmentMapOutput) ToFusionEnvironmentServiceA
 
 func (o FusionEnvironmentServiceAttachmentMapOutput) ToFusionEnvironmentServiceAttachmentMapOutputWithContext(ctx context.Context) FusionEnvironmentServiceAttachmentMapOutput {
 	return o
-}
-
-func (o FusionEnvironmentServiceAttachmentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*FusionEnvironmentServiceAttachment] {
-	return pulumix.Output[map[string]*FusionEnvironmentServiceAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FusionEnvironmentServiceAttachmentMapOutput) MapIndex(k pulumi.StringInput) FusionEnvironmentServiceAttachmentOutput {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Deploy Pipeline resource in Oracle Cloud Infrastructure Devops service.
@@ -269,12 +268,6 @@ func (i *DeployPipeline) ToDeployPipelineOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(DeployPipelineOutput)
 }
 
-func (i *DeployPipeline) ToOutput(ctx context.Context) pulumix.Output[*DeployPipeline] {
-	return pulumix.Output[*DeployPipeline]{
-		OutputState: i.ToDeployPipelineOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DeployPipelineArrayInput is an input type that accepts DeployPipelineArray and DeployPipelineArrayOutput values.
 // You can construct a concrete instance of `DeployPipelineArrayInput` via:
 //
@@ -298,12 +291,6 @@ func (i DeployPipelineArray) ToDeployPipelineArrayOutput() DeployPipelineArrayOu
 
 func (i DeployPipelineArray) ToDeployPipelineArrayOutputWithContext(ctx context.Context) DeployPipelineArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DeployPipelineArrayOutput)
-}
-
-func (i DeployPipelineArray) ToOutput(ctx context.Context) pulumix.Output[[]*DeployPipeline] {
-	return pulumix.Output[[]*DeployPipeline]{
-		OutputState: i.ToDeployPipelineArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DeployPipelineMapInput is an input type that accepts DeployPipelineMap and DeployPipelineMapOutput values.
@@ -331,12 +318,6 @@ func (i DeployPipelineMap) ToDeployPipelineMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(DeployPipelineMapOutput)
 }
 
-func (i DeployPipelineMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DeployPipeline] {
-	return pulumix.Output[map[string]*DeployPipeline]{
-		OutputState: i.ToDeployPipelineMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DeployPipelineOutput struct{ *pulumi.OutputState }
 
 func (DeployPipelineOutput) ElementType() reflect.Type {
@@ -349,12 +330,6 @@ func (o DeployPipelineOutput) ToDeployPipelineOutput() DeployPipelineOutput {
 
 func (o DeployPipelineOutput) ToDeployPipelineOutputWithContext(ctx context.Context) DeployPipelineOutput {
 	return o
-}
-
-func (o DeployPipelineOutput) ToOutput(ctx context.Context) pulumix.Output[*DeployPipeline] {
-	return pulumix.Output[*DeployPipeline]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment where the pipeline is created.
@@ -450,12 +425,6 @@ func (o DeployPipelineArrayOutput) ToDeployPipelineArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o DeployPipelineArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DeployPipeline] {
-	return pulumix.Output[[]*DeployPipeline]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DeployPipelineArrayOutput) Index(i pulumi.IntInput) DeployPipelineOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DeployPipeline {
 		return vs[0].([]*DeployPipeline)[vs[1].(int)]
@@ -474,12 +443,6 @@ func (o DeployPipelineMapOutput) ToDeployPipelineMapOutput() DeployPipelineMapOu
 
 func (o DeployPipelineMapOutput) ToDeployPipelineMapOutputWithContext(ctx context.Context) DeployPipelineMapOutput {
 	return o
-}
-
-func (o DeployPipelineMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DeployPipeline] {
-	return pulumix.Output[map[string]*DeployPipeline]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DeployPipelineMapOutput) MapIndex(k pulumi.StringInput) DeployPipelineOutput {

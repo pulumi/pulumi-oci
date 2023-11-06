@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Ekms Private Endpoint resource in Oracle Cloud Infrastructure Kms service.
@@ -277,12 +276,6 @@ func (i *EkmsPrivateEndpoint) ToEkmsPrivateEndpointOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(EkmsPrivateEndpointOutput)
 }
 
-func (i *EkmsPrivateEndpoint) ToOutput(ctx context.Context) pulumix.Output[*EkmsPrivateEndpoint] {
-	return pulumix.Output[*EkmsPrivateEndpoint]{
-		OutputState: i.ToEkmsPrivateEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // EkmsPrivateEndpointArrayInput is an input type that accepts EkmsPrivateEndpointArray and EkmsPrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `EkmsPrivateEndpointArrayInput` via:
 //
@@ -306,12 +299,6 @@ func (i EkmsPrivateEndpointArray) ToEkmsPrivateEndpointArrayOutput() EkmsPrivate
 
 func (i EkmsPrivateEndpointArray) ToEkmsPrivateEndpointArrayOutputWithContext(ctx context.Context) EkmsPrivateEndpointArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(EkmsPrivateEndpointArrayOutput)
-}
-
-func (i EkmsPrivateEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]*EkmsPrivateEndpoint] {
-	return pulumix.Output[[]*EkmsPrivateEndpoint]{
-		OutputState: i.ToEkmsPrivateEndpointArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // EkmsPrivateEndpointMapInput is an input type that accepts EkmsPrivateEndpointMap and EkmsPrivateEndpointMapOutput values.
@@ -339,12 +326,6 @@ func (i EkmsPrivateEndpointMap) ToEkmsPrivateEndpointMapOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(EkmsPrivateEndpointMapOutput)
 }
 
-func (i EkmsPrivateEndpointMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*EkmsPrivateEndpoint] {
-	return pulumix.Output[map[string]*EkmsPrivateEndpoint]{
-		OutputState: i.ToEkmsPrivateEndpointMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type EkmsPrivateEndpointOutput struct{ *pulumi.OutputState }
 
 func (EkmsPrivateEndpointOutput) ElementType() reflect.Type {
@@ -357,12 +338,6 @@ func (o EkmsPrivateEndpointOutput) ToEkmsPrivateEndpointOutput() EkmsPrivateEndp
 
 func (o EkmsPrivateEndpointOutput) ToEkmsPrivateEndpointOutputWithContext(ctx context.Context) EkmsPrivateEndpointOutput {
 	return o
-}
-
-func (o EkmsPrivateEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[*EkmsPrivateEndpoint] {
-	return pulumix.Output[*EkmsPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // CABundle to validate TLS certificate of the external key manager system in PEM format
@@ -447,12 +422,6 @@ func (o EkmsPrivateEndpointArrayOutput) ToEkmsPrivateEndpointArrayOutputWithCont
 	return o
 }
 
-func (o EkmsPrivateEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*EkmsPrivateEndpoint] {
-	return pulumix.Output[[]*EkmsPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o EkmsPrivateEndpointArrayOutput) Index(i pulumi.IntInput) EkmsPrivateEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *EkmsPrivateEndpoint {
 		return vs[0].([]*EkmsPrivateEndpoint)[vs[1].(int)]
@@ -471,12 +440,6 @@ func (o EkmsPrivateEndpointMapOutput) ToEkmsPrivateEndpointMapOutput() EkmsPriva
 
 func (o EkmsPrivateEndpointMapOutput) ToEkmsPrivateEndpointMapOutputWithContext(ctx context.Context) EkmsPrivateEndpointMapOutput {
 	return o
-}
-
-func (o EkmsPrivateEndpointMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*EkmsPrivateEndpoint] {
-	return pulumix.Output[map[string]*EkmsPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o EkmsPrivateEndpointMapOutput) MapIndex(k pulumi.StringInput) EkmsPrivateEndpointOutput {

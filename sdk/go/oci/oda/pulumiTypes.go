@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -51,12 +50,6 @@ func (i OdaInstanceRestrictedOperationArgs) ToOdaInstanceRestrictedOperationOutp
 	return pulumi.ToOutputWithContext(ctx, i).(OdaInstanceRestrictedOperationOutput)
 }
 
-func (i OdaInstanceRestrictedOperationArgs) ToOutput(ctx context.Context) pulumix.Output[OdaInstanceRestrictedOperation] {
-	return pulumix.Output[OdaInstanceRestrictedOperation]{
-		OutputState: i.ToOdaInstanceRestrictedOperationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // OdaInstanceRestrictedOperationArrayInput is an input type that accepts OdaInstanceRestrictedOperationArray and OdaInstanceRestrictedOperationArrayOutput values.
 // You can construct a concrete instance of `OdaInstanceRestrictedOperationArrayInput` via:
 //
@@ -82,12 +75,6 @@ func (i OdaInstanceRestrictedOperationArray) ToOdaInstanceRestrictedOperationArr
 	return pulumi.ToOutputWithContext(ctx, i).(OdaInstanceRestrictedOperationArrayOutput)
 }
 
-func (i OdaInstanceRestrictedOperationArray) ToOutput(ctx context.Context) pulumix.Output[[]OdaInstanceRestrictedOperation] {
-	return pulumix.Output[[]OdaInstanceRestrictedOperation]{
-		OutputState: i.ToOdaInstanceRestrictedOperationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type OdaInstanceRestrictedOperationOutput struct{ *pulumi.OutputState }
 
 func (OdaInstanceRestrictedOperationOutput) ElementType() reflect.Type {
@@ -100,12 +87,6 @@ func (o OdaInstanceRestrictedOperationOutput) ToOdaInstanceRestrictedOperationOu
 
 func (o OdaInstanceRestrictedOperationOutput) ToOdaInstanceRestrictedOperationOutputWithContext(ctx context.Context) OdaInstanceRestrictedOperationOutput {
 	return o
-}
-
-func (o OdaInstanceRestrictedOperationOutput) ToOutput(ctx context.Context) pulumix.Output[OdaInstanceRestrictedOperation] {
-	return pulumix.Output[OdaInstanceRestrictedOperation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Name of the restricted operation.
@@ -130,12 +111,6 @@ func (o OdaInstanceRestrictedOperationArrayOutput) ToOdaInstanceRestrictedOperat
 
 func (o OdaInstanceRestrictedOperationArrayOutput) ToOdaInstanceRestrictedOperationArrayOutputWithContext(ctx context.Context) OdaInstanceRestrictedOperationArrayOutput {
 	return o
-}
-
-func (o OdaInstanceRestrictedOperationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]OdaInstanceRestrictedOperation] {
-	return pulumix.Output[[]OdaInstanceRestrictedOperation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OdaInstanceRestrictedOperationArrayOutput) Index(i pulumi.IntInput) OdaInstanceRestrictedOperationOutput {
@@ -185,12 +160,6 @@ func (i OdaPrivateEndpointScanProxyScanListenerInfoArgs) ToOdaPrivateEndpointSca
 	return pulumi.ToOutputWithContext(ctx, i).(OdaPrivateEndpointScanProxyScanListenerInfoOutput)
 }
 
-func (i OdaPrivateEndpointScanProxyScanListenerInfoArgs) ToOutput(ctx context.Context) pulumix.Output[OdaPrivateEndpointScanProxyScanListenerInfo] {
-	return pulumix.Output[OdaPrivateEndpointScanProxyScanListenerInfo]{
-		OutputState: i.ToOdaPrivateEndpointScanProxyScanListenerInfoOutputWithContext(ctx).OutputState,
-	}
-}
-
 // OdaPrivateEndpointScanProxyScanListenerInfoArrayInput is an input type that accepts OdaPrivateEndpointScanProxyScanListenerInfoArray and OdaPrivateEndpointScanProxyScanListenerInfoArrayOutput values.
 // You can construct a concrete instance of `OdaPrivateEndpointScanProxyScanListenerInfoArrayInput` via:
 //
@@ -216,12 +185,6 @@ func (i OdaPrivateEndpointScanProxyScanListenerInfoArray) ToOdaPrivateEndpointSc
 	return pulumi.ToOutputWithContext(ctx, i).(OdaPrivateEndpointScanProxyScanListenerInfoArrayOutput)
 }
 
-func (i OdaPrivateEndpointScanProxyScanListenerInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]OdaPrivateEndpointScanProxyScanListenerInfo] {
-	return pulumix.Output[[]OdaPrivateEndpointScanProxyScanListenerInfo]{
-		OutputState: i.ToOdaPrivateEndpointScanProxyScanListenerInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type OdaPrivateEndpointScanProxyScanListenerInfoOutput struct{ *pulumi.OutputState }
 
 func (OdaPrivateEndpointScanProxyScanListenerInfoOutput) ElementType() reflect.Type {
@@ -234,12 +197,6 @@ func (o OdaPrivateEndpointScanProxyScanListenerInfoOutput) ToOdaPrivateEndpointS
 
 func (o OdaPrivateEndpointScanProxyScanListenerInfoOutput) ToOdaPrivateEndpointScanProxyScanListenerInfoOutputWithContext(ctx context.Context) OdaPrivateEndpointScanProxyScanListenerInfoOutput {
 	return o
-}
-
-func (o OdaPrivateEndpointScanProxyScanListenerInfoOutput) ToOutput(ctx context.Context) pulumix.Output[OdaPrivateEndpointScanProxyScanListenerInfo] {
-	return pulumix.Output[OdaPrivateEndpointScanProxyScanListenerInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 // FQDN of the customer's Real Application Cluster (RAC)'s SCAN listeners.
@@ -269,12 +226,6 @@ func (o OdaPrivateEndpointScanProxyScanListenerInfoArrayOutput) ToOdaPrivateEndp
 
 func (o OdaPrivateEndpointScanProxyScanListenerInfoArrayOutput) ToOdaPrivateEndpointScanProxyScanListenerInfoArrayOutputWithContext(ctx context.Context) OdaPrivateEndpointScanProxyScanListenerInfoArrayOutput {
 	return o
-}
-
-func (o OdaPrivateEndpointScanProxyScanListenerInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]OdaPrivateEndpointScanProxyScanListenerInfo] {
-	return pulumix.Output[[]OdaPrivateEndpointScanProxyScanListenerInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OdaPrivateEndpointScanProxyScanListenerInfoArrayOutput) Index(i pulumi.IntInput) OdaPrivateEndpointScanProxyScanListenerInfoOutput {
@@ -320,12 +271,6 @@ func (i GetOdaInstanceRestrictedOperationArgs) ToGetOdaInstanceRestrictedOperati
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaInstanceRestrictedOperationOutput)
 }
 
-func (i GetOdaInstanceRestrictedOperationArgs) ToOutput(ctx context.Context) pulumix.Output[GetOdaInstanceRestrictedOperation] {
-	return pulumix.Output[GetOdaInstanceRestrictedOperation]{
-		OutputState: i.ToGetOdaInstanceRestrictedOperationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOdaInstanceRestrictedOperationArrayInput is an input type that accepts GetOdaInstanceRestrictedOperationArray and GetOdaInstanceRestrictedOperationArrayOutput values.
 // You can construct a concrete instance of `GetOdaInstanceRestrictedOperationArrayInput` via:
 //
@@ -351,12 +296,6 @@ func (i GetOdaInstanceRestrictedOperationArray) ToGetOdaInstanceRestrictedOperat
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaInstanceRestrictedOperationArrayOutput)
 }
 
-func (i GetOdaInstanceRestrictedOperationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaInstanceRestrictedOperation] {
-	return pulumix.Output[[]GetOdaInstanceRestrictedOperation]{
-		OutputState: i.ToGetOdaInstanceRestrictedOperationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOdaInstanceRestrictedOperationOutput struct{ *pulumi.OutputState }
 
 func (GetOdaInstanceRestrictedOperationOutput) ElementType() reflect.Type {
@@ -369,12 +308,6 @@ func (o GetOdaInstanceRestrictedOperationOutput) ToGetOdaInstanceRestrictedOpera
 
 func (o GetOdaInstanceRestrictedOperationOutput) ToGetOdaInstanceRestrictedOperationOutputWithContext(ctx context.Context) GetOdaInstanceRestrictedOperationOutput {
 	return o
-}
-
-func (o GetOdaInstanceRestrictedOperationOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaInstanceRestrictedOperation] {
-	return pulumix.Output[GetOdaInstanceRestrictedOperation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Name of the restricted operation.
@@ -399,12 +332,6 @@ func (o GetOdaInstanceRestrictedOperationArrayOutput) ToGetOdaInstanceRestricted
 
 func (o GetOdaInstanceRestrictedOperationArrayOutput) ToGetOdaInstanceRestrictedOperationArrayOutputWithContext(ctx context.Context) GetOdaInstanceRestrictedOperationArrayOutput {
 	return o
-}
-
-func (o GetOdaInstanceRestrictedOperationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaInstanceRestrictedOperation] {
-	return pulumix.Output[[]GetOdaInstanceRestrictedOperation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaInstanceRestrictedOperationArrayOutput) Index(i pulumi.IntInput) GetOdaInstanceRestrictedOperationOutput {
@@ -448,12 +375,6 @@ func (i GetOdaInstancesFilterArgs) ToGetOdaInstancesFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaInstancesFilterOutput)
 }
 
-func (i GetOdaInstancesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetOdaInstancesFilter] {
-	return pulumix.Output[GetOdaInstancesFilter]{
-		OutputState: i.ToGetOdaInstancesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOdaInstancesFilterArrayInput is an input type that accepts GetOdaInstancesFilterArray and GetOdaInstancesFilterArrayOutput values.
 // You can construct a concrete instance of `GetOdaInstancesFilterArrayInput` via:
 //
@@ -479,12 +400,6 @@ func (i GetOdaInstancesFilterArray) ToGetOdaInstancesFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaInstancesFilterArrayOutput)
 }
 
-func (i GetOdaInstancesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaInstancesFilter] {
-	return pulumix.Output[[]GetOdaInstancesFilter]{
-		OutputState: i.ToGetOdaInstancesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOdaInstancesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetOdaInstancesFilterOutput) ElementType() reflect.Type {
@@ -497,12 +412,6 @@ func (o GetOdaInstancesFilterOutput) ToGetOdaInstancesFilterOutput() GetOdaInsta
 
 func (o GetOdaInstancesFilterOutput) ToGetOdaInstancesFilterOutputWithContext(ctx context.Context) GetOdaInstancesFilterOutput {
 	return o
-}
-
-func (o GetOdaInstancesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaInstancesFilter] {
-	return pulumix.Output[GetOdaInstancesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaInstancesFilterOutput) Name() pulumi.StringOutput {
@@ -529,12 +438,6 @@ func (o GetOdaInstancesFilterArrayOutput) ToGetOdaInstancesFilterArrayOutput() G
 
 func (o GetOdaInstancesFilterArrayOutput) ToGetOdaInstancesFilterArrayOutputWithContext(ctx context.Context) GetOdaInstancesFilterArrayOutput {
 	return o
-}
-
-func (o GetOdaInstancesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaInstancesFilter] {
-	return pulumix.Output[[]GetOdaInstancesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetOdaInstancesFilterOutput {
@@ -664,12 +567,6 @@ func (i GetOdaInstancesOdaInstanceArgs) ToGetOdaInstancesOdaInstanceOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaInstancesOdaInstanceOutput)
 }
 
-func (i GetOdaInstancesOdaInstanceArgs) ToOutput(ctx context.Context) pulumix.Output[GetOdaInstancesOdaInstance] {
-	return pulumix.Output[GetOdaInstancesOdaInstance]{
-		OutputState: i.ToGetOdaInstancesOdaInstanceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOdaInstancesOdaInstanceArrayInput is an input type that accepts GetOdaInstancesOdaInstanceArray and GetOdaInstancesOdaInstanceArrayOutput values.
 // You can construct a concrete instance of `GetOdaInstancesOdaInstanceArrayInput` via:
 //
@@ -695,12 +592,6 @@ func (i GetOdaInstancesOdaInstanceArray) ToGetOdaInstancesOdaInstanceArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaInstancesOdaInstanceArrayOutput)
 }
 
-func (i GetOdaInstancesOdaInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaInstancesOdaInstance] {
-	return pulumix.Output[[]GetOdaInstancesOdaInstance]{
-		OutputState: i.ToGetOdaInstancesOdaInstanceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOdaInstancesOdaInstanceOutput struct{ *pulumi.OutputState }
 
 func (GetOdaInstancesOdaInstanceOutput) ElementType() reflect.Type {
@@ -713,12 +604,6 @@ func (o GetOdaInstancesOdaInstanceOutput) ToGetOdaInstancesOdaInstanceOutput() G
 
 func (o GetOdaInstancesOdaInstanceOutput) ToGetOdaInstancesOdaInstanceOutputWithContext(ctx context.Context) GetOdaInstancesOdaInstanceOutput {
 	return o
-}
-
-func (o GetOdaInstancesOdaInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaInstancesOdaInstance] {
-	return pulumix.Output[GetOdaInstancesOdaInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
@@ -852,12 +737,6 @@ func (o GetOdaInstancesOdaInstanceArrayOutput) ToGetOdaInstancesOdaInstanceArray
 	return o
 }
 
-func (o GetOdaInstancesOdaInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaInstancesOdaInstance] {
-	return pulumix.Output[[]GetOdaInstancesOdaInstance]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOdaInstancesOdaInstanceArrayOutput) Index(i pulumi.IntInput) GetOdaInstancesOdaInstanceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOdaInstancesOdaInstance {
 		return vs[0].([]GetOdaInstancesOdaInstance)[vs[1].(int)]
@@ -901,12 +780,6 @@ func (i GetOdaInstancesOdaInstanceRestrictedOperationArgs) ToGetOdaInstancesOdaI
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaInstancesOdaInstanceRestrictedOperationOutput)
 }
 
-func (i GetOdaInstancesOdaInstanceRestrictedOperationArgs) ToOutput(ctx context.Context) pulumix.Output[GetOdaInstancesOdaInstanceRestrictedOperation] {
-	return pulumix.Output[GetOdaInstancesOdaInstanceRestrictedOperation]{
-		OutputState: i.ToGetOdaInstancesOdaInstanceRestrictedOperationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOdaInstancesOdaInstanceRestrictedOperationArrayInput is an input type that accepts GetOdaInstancesOdaInstanceRestrictedOperationArray and GetOdaInstancesOdaInstanceRestrictedOperationArrayOutput values.
 // You can construct a concrete instance of `GetOdaInstancesOdaInstanceRestrictedOperationArrayInput` via:
 //
@@ -932,12 +805,6 @@ func (i GetOdaInstancesOdaInstanceRestrictedOperationArray) ToGetOdaInstancesOda
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaInstancesOdaInstanceRestrictedOperationArrayOutput)
 }
 
-func (i GetOdaInstancesOdaInstanceRestrictedOperationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaInstancesOdaInstanceRestrictedOperation] {
-	return pulumix.Output[[]GetOdaInstancesOdaInstanceRestrictedOperation]{
-		OutputState: i.ToGetOdaInstancesOdaInstanceRestrictedOperationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOdaInstancesOdaInstanceRestrictedOperationOutput struct{ *pulumi.OutputState }
 
 func (GetOdaInstancesOdaInstanceRestrictedOperationOutput) ElementType() reflect.Type {
@@ -950,12 +817,6 @@ func (o GetOdaInstancesOdaInstanceRestrictedOperationOutput) ToGetOdaInstancesOd
 
 func (o GetOdaInstancesOdaInstanceRestrictedOperationOutput) ToGetOdaInstancesOdaInstanceRestrictedOperationOutputWithContext(ctx context.Context) GetOdaInstancesOdaInstanceRestrictedOperationOutput {
 	return o
-}
-
-func (o GetOdaInstancesOdaInstanceRestrictedOperationOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaInstancesOdaInstanceRestrictedOperation] {
-	return pulumix.Output[GetOdaInstancesOdaInstanceRestrictedOperation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Name of the restricted operation.
@@ -980,12 +841,6 @@ func (o GetOdaInstancesOdaInstanceRestrictedOperationArrayOutput) ToGetOdaInstan
 
 func (o GetOdaInstancesOdaInstanceRestrictedOperationArrayOutput) ToGetOdaInstancesOdaInstanceRestrictedOperationArrayOutputWithContext(ctx context.Context) GetOdaInstancesOdaInstanceRestrictedOperationArrayOutput {
 	return o
-}
-
-func (o GetOdaInstancesOdaInstanceRestrictedOperationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaInstancesOdaInstanceRestrictedOperation] {
-	return pulumix.Output[[]GetOdaInstancesOdaInstanceRestrictedOperation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaInstancesOdaInstanceRestrictedOperationArrayOutput) Index(i pulumi.IntInput) GetOdaInstancesOdaInstanceRestrictedOperationOutput {
@@ -1029,12 +884,6 @@ func (i GetOdaPrivateEndpointAttachmentsFilterArgs) ToGetOdaPrivateEndpointAttac
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointAttachmentsFilterOutput)
 }
 
-func (i GetOdaPrivateEndpointAttachmentsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointAttachmentsFilter] {
-	return pulumix.Output[GetOdaPrivateEndpointAttachmentsFilter]{
-		OutputState: i.ToGetOdaPrivateEndpointAttachmentsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOdaPrivateEndpointAttachmentsFilterArrayInput is an input type that accepts GetOdaPrivateEndpointAttachmentsFilterArray and GetOdaPrivateEndpointAttachmentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetOdaPrivateEndpointAttachmentsFilterArrayInput` via:
 //
@@ -1060,12 +909,6 @@ func (i GetOdaPrivateEndpointAttachmentsFilterArray) ToGetOdaPrivateEndpointAtta
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointAttachmentsFilterArrayOutput)
 }
 
-func (i GetOdaPrivateEndpointAttachmentsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointAttachmentsFilter] {
-	return pulumix.Output[[]GetOdaPrivateEndpointAttachmentsFilter]{
-		OutputState: i.ToGetOdaPrivateEndpointAttachmentsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOdaPrivateEndpointAttachmentsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetOdaPrivateEndpointAttachmentsFilterOutput) ElementType() reflect.Type {
@@ -1078,12 +921,6 @@ func (o GetOdaPrivateEndpointAttachmentsFilterOutput) ToGetOdaPrivateEndpointAtt
 
 func (o GetOdaPrivateEndpointAttachmentsFilterOutput) ToGetOdaPrivateEndpointAttachmentsFilterOutputWithContext(ctx context.Context) GetOdaPrivateEndpointAttachmentsFilterOutput {
 	return o
-}
-
-func (o GetOdaPrivateEndpointAttachmentsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointAttachmentsFilter] {
-	return pulumix.Output[GetOdaPrivateEndpointAttachmentsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaPrivateEndpointAttachmentsFilterOutput) Name() pulumi.StringOutput {
@@ -1110,12 +947,6 @@ func (o GetOdaPrivateEndpointAttachmentsFilterArrayOutput) ToGetOdaPrivateEndpoi
 
 func (o GetOdaPrivateEndpointAttachmentsFilterArrayOutput) ToGetOdaPrivateEndpointAttachmentsFilterArrayOutputWithContext(ctx context.Context) GetOdaPrivateEndpointAttachmentsFilterArrayOutput {
 	return o
-}
-
-func (o GetOdaPrivateEndpointAttachmentsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointAttachmentsFilter] {
-	return pulumix.Output[[]GetOdaPrivateEndpointAttachmentsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaPrivateEndpointAttachmentsFilterArrayOutput) Index(i pulumi.IntInput) GetOdaPrivateEndpointAttachmentsFilterOutput {
@@ -1155,12 +986,6 @@ func (i GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionOutput)
 }
 
-func (i GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection] {
-	return pulumix.Output[GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection]{
-		OutputState: i.ToGetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionArrayInput is an input type that accepts GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionArray and GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionArrayOutput values.
 // You can construct a concrete instance of `GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionArrayInput` via:
 //
@@ -1186,12 +1011,6 @@ func (i GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionArrayOutput)
 }
 
-func (i GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection] {
-	return pulumix.Output[[]GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection]{
-		OutputState: i.ToGetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionOutput) ElementType() reflect.Type {
@@ -1204,12 +1023,6 @@ func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionOu
 
 func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionOutput) ToGetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionOutputWithContext(ctx context.Context) GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionOutput {
 	return o
-}
-
-func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection] {
-	return pulumix.Output[GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionOutput) Items() GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemArrayOutput {
@@ -1230,12 +1043,6 @@ func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionAr
 
 func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionArrayOutput) ToGetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionArrayOutputWithContext(ctx context.Context) GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionArrayOutput {
 	return o
-}
-
-func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection] {
-	return pulumix.Output[[]GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionArrayOutput) Index(i pulumi.IntInput) GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionOutput {
@@ -1301,12 +1108,6 @@ func (i GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemOutput)
 }
 
-func (i GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem] {
-	return pulumix.Output[GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem]{
-		OutputState: i.ToGetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemArrayInput is an input type that accepts GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemArray and GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemArrayInput` via:
 //
@@ -1332,12 +1133,6 @@ func (i GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemArrayOutput)
 }
 
-func (i GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem] {
-	return pulumix.Output[[]GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem]{
-		OutputState: i.ToGetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemOutput) ElementType() reflect.Type {
@@ -1350,12 +1145,6 @@ func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionIt
 
 func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemOutput) ToGetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemOutputWithContext(ctx context.Context) GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemOutput {
 	return o
-}
-
-func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem] {
-	return pulumix.Output[GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List the ODA Private Endpoint Attachments that belong to this compartment.
@@ -1419,12 +1208,6 @@ func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionIt
 	return o
 }
 
-func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem] {
-	return pulumix.Output[[]GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem {
 		return vs[0].([]GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem)[vs[1].(int)]
@@ -1466,12 +1249,6 @@ func (i GetOdaPrivateEndpointScanProxiesFilterArgs) ToGetOdaPrivateEndpointScanP
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointScanProxiesFilterOutput)
 }
 
-func (i GetOdaPrivateEndpointScanProxiesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointScanProxiesFilter] {
-	return pulumix.Output[GetOdaPrivateEndpointScanProxiesFilter]{
-		OutputState: i.ToGetOdaPrivateEndpointScanProxiesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOdaPrivateEndpointScanProxiesFilterArrayInput is an input type that accepts GetOdaPrivateEndpointScanProxiesFilterArray and GetOdaPrivateEndpointScanProxiesFilterArrayOutput values.
 // You can construct a concrete instance of `GetOdaPrivateEndpointScanProxiesFilterArrayInput` via:
 //
@@ -1497,12 +1274,6 @@ func (i GetOdaPrivateEndpointScanProxiesFilterArray) ToGetOdaPrivateEndpointScan
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointScanProxiesFilterArrayOutput)
 }
 
-func (i GetOdaPrivateEndpointScanProxiesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointScanProxiesFilter] {
-	return pulumix.Output[[]GetOdaPrivateEndpointScanProxiesFilter]{
-		OutputState: i.ToGetOdaPrivateEndpointScanProxiesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOdaPrivateEndpointScanProxiesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetOdaPrivateEndpointScanProxiesFilterOutput) ElementType() reflect.Type {
@@ -1515,12 +1286,6 @@ func (o GetOdaPrivateEndpointScanProxiesFilterOutput) ToGetOdaPrivateEndpointSca
 
 func (o GetOdaPrivateEndpointScanProxiesFilterOutput) ToGetOdaPrivateEndpointScanProxiesFilterOutputWithContext(ctx context.Context) GetOdaPrivateEndpointScanProxiesFilterOutput {
 	return o
-}
-
-func (o GetOdaPrivateEndpointScanProxiesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointScanProxiesFilter] {
-	return pulumix.Output[GetOdaPrivateEndpointScanProxiesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaPrivateEndpointScanProxiesFilterOutput) Name() pulumi.StringOutput {
@@ -1547,12 +1312,6 @@ func (o GetOdaPrivateEndpointScanProxiesFilterArrayOutput) ToGetOdaPrivateEndpoi
 
 func (o GetOdaPrivateEndpointScanProxiesFilterArrayOutput) ToGetOdaPrivateEndpointScanProxiesFilterArrayOutputWithContext(ctx context.Context) GetOdaPrivateEndpointScanProxiesFilterArrayOutput {
 	return o
-}
-
-func (o GetOdaPrivateEndpointScanProxiesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointScanProxiesFilter] {
-	return pulumix.Output[[]GetOdaPrivateEndpointScanProxiesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaPrivateEndpointScanProxiesFilterArrayOutput) Index(i pulumi.IntInput) GetOdaPrivateEndpointScanProxiesFilterOutput {
@@ -1592,12 +1351,6 @@ func (i GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionArg
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionOutput)
 }
 
-func (i GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection] {
-	return pulumix.Output[GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection]{
-		OutputState: i.ToGetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionArrayInput is an input type that accepts GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionArray and GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionArrayOutput values.
 // You can construct a concrete instance of `GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionArrayInput` via:
 //
@@ -1623,12 +1376,6 @@ func (i GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionArrayOutput)
 }
 
-func (i GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection] {
-	return pulumix.Output[[]GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection]{
-		OutputState: i.ToGetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionOutput) ElementType() reflect.Type {
@@ -1641,12 +1388,6 @@ func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionOut
 
 func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionOutput) ToGetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionOutputWithContext(ctx context.Context) GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionOutput {
 	return o
-}
-
-func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection] {
-	return pulumix.Output[GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionOutput) Items() GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemArrayOutput {
@@ -1667,12 +1408,6 @@ func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionArr
 
 func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionArrayOutput) ToGetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionArrayOutputWithContext(ctx context.Context) GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionArrayOutput {
 	return o
-}
-
-func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection] {
-	return pulumix.Output[[]GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionArrayOutput) Index(i pulumi.IntInput) GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionOutput {
@@ -1738,12 +1473,6 @@ func (i GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionIte
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemOutput)
 }
 
-func (i GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem] {
-	return pulumix.Output[GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem]{
-		OutputState: i.ToGetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemArrayInput is an input type that accepts GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemArray and GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemArrayInput` via:
 //
@@ -1769,12 +1498,6 @@ func (i GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionIte
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemArrayOutput)
 }
 
-func (i GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem] {
-	return pulumix.Output[[]GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem]{
-		OutputState: i.ToGetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemOutput) ElementType() reflect.Type {
@@ -1787,12 +1510,6 @@ func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionIte
 
 func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemOutput) ToGetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemOutputWithContext(ctx context.Context) GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemOutput {
 	return o
-}
-
-func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem] {
-	return pulumix.Output[GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint Scan Proxy.
@@ -1856,12 +1573,6 @@ func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionIte
 	return o
 }
 
-func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem] {
-	return pulumix.Output[[]GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem {
 		return vs[0].([]GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem)[vs[1].(int)]
@@ -1909,12 +1620,6 @@ func (i GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionIte
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoOutput)
 }
 
-func (i GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo] {
-	return pulumix.Output[GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo]{
-		OutputState: i.ToGetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoArrayInput is an input type that accepts GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoArray and GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoArrayOutput values.
 // You can construct a concrete instance of `GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoArrayInput` via:
 //
@@ -1940,12 +1645,6 @@ func (i GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionIte
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoArrayOutput)
 }
 
-func (i GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo] {
-	return pulumix.Output[[]GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo]{
-		OutputState: i.ToGetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoOutput struct{ *pulumi.OutputState }
 
 func (GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoOutput) ElementType() reflect.Type {
@@ -1958,12 +1657,6 @@ func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionIte
 
 func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoOutput) ToGetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoOutputWithContext(ctx context.Context) GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoOutput {
 	return o
-}
-
-func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo] {
-	return pulumix.Output[GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 // FQDN of the customer's Real Application Cluster (RAC)'s SCAN listeners.
@@ -1999,12 +1692,6 @@ func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionIte
 
 func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoArrayOutput) ToGetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoArrayOutputWithContext(ctx context.Context) GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoArrayOutput {
 	return o
-}
-
-func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo] {
-	return pulumix.Output[[]GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoArrayOutput) Index(i pulumi.IntInput) GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoOutput {
@@ -2054,12 +1741,6 @@ func (i GetOdaPrivateEndpointScanProxyScanListenerInfoArgs) ToGetOdaPrivateEndpo
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointScanProxyScanListenerInfoOutput)
 }
 
-func (i GetOdaPrivateEndpointScanProxyScanListenerInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointScanProxyScanListenerInfo] {
-	return pulumix.Output[GetOdaPrivateEndpointScanProxyScanListenerInfo]{
-		OutputState: i.ToGetOdaPrivateEndpointScanProxyScanListenerInfoOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOdaPrivateEndpointScanProxyScanListenerInfoArrayInput is an input type that accepts GetOdaPrivateEndpointScanProxyScanListenerInfoArray and GetOdaPrivateEndpointScanProxyScanListenerInfoArrayOutput values.
 // You can construct a concrete instance of `GetOdaPrivateEndpointScanProxyScanListenerInfoArrayInput` via:
 //
@@ -2085,12 +1766,6 @@ func (i GetOdaPrivateEndpointScanProxyScanListenerInfoArray) ToGetOdaPrivateEndp
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointScanProxyScanListenerInfoArrayOutput)
 }
 
-func (i GetOdaPrivateEndpointScanProxyScanListenerInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointScanProxyScanListenerInfo] {
-	return pulumix.Output[[]GetOdaPrivateEndpointScanProxyScanListenerInfo]{
-		OutputState: i.ToGetOdaPrivateEndpointScanProxyScanListenerInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOdaPrivateEndpointScanProxyScanListenerInfoOutput struct{ *pulumi.OutputState }
 
 func (GetOdaPrivateEndpointScanProxyScanListenerInfoOutput) ElementType() reflect.Type {
@@ -2103,12 +1778,6 @@ func (o GetOdaPrivateEndpointScanProxyScanListenerInfoOutput) ToGetOdaPrivateEnd
 
 func (o GetOdaPrivateEndpointScanProxyScanListenerInfoOutput) ToGetOdaPrivateEndpointScanProxyScanListenerInfoOutputWithContext(ctx context.Context) GetOdaPrivateEndpointScanProxyScanListenerInfoOutput {
 	return o
-}
-
-func (o GetOdaPrivateEndpointScanProxyScanListenerInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointScanProxyScanListenerInfo] {
-	return pulumix.Output[GetOdaPrivateEndpointScanProxyScanListenerInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 // FQDN of the customer's Real Application Cluster (RAC)'s SCAN listeners.
@@ -2138,12 +1807,6 @@ func (o GetOdaPrivateEndpointScanProxyScanListenerInfoArrayOutput) ToGetOdaPriva
 
 func (o GetOdaPrivateEndpointScanProxyScanListenerInfoArrayOutput) ToGetOdaPrivateEndpointScanProxyScanListenerInfoArrayOutputWithContext(ctx context.Context) GetOdaPrivateEndpointScanProxyScanListenerInfoArrayOutput {
 	return o
-}
-
-func (o GetOdaPrivateEndpointScanProxyScanListenerInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointScanProxyScanListenerInfo] {
-	return pulumix.Output[[]GetOdaPrivateEndpointScanProxyScanListenerInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaPrivateEndpointScanProxyScanListenerInfoArrayOutput) Index(i pulumi.IntInput) GetOdaPrivateEndpointScanProxyScanListenerInfoOutput {
@@ -2187,12 +1850,6 @@ func (i GetOdaPrivateEndpointsFilterArgs) ToGetOdaPrivateEndpointsFilterOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointsFilterOutput)
 }
 
-func (i GetOdaPrivateEndpointsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointsFilter] {
-	return pulumix.Output[GetOdaPrivateEndpointsFilter]{
-		OutputState: i.ToGetOdaPrivateEndpointsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOdaPrivateEndpointsFilterArrayInput is an input type that accepts GetOdaPrivateEndpointsFilterArray and GetOdaPrivateEndpointsFilterArrayOutput values.
 // You can construct a concrete instance of `GetOdaPrivateEndpointsFilterArrayInput` via:
 //
@@ -2218,12 +1875,6 @@ func (i GetOdaPrivateEndpointsFilterArray) ToGetOdaPrivateEndpointsFilterArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointsFilterArrayOutput)
 }
 
-func (i GetOdaPrivateEndpointsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointsFilter] {
-	return pulumix.Output[[]GetOdaPrivateEndpointsFilter]{
-		OutputState: i.ToGetOdaPrivateEndpointsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOdaPrivateEndpointsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetOdaPrivateEndpointsFilterOutput) ElementType() reflect.Type {
@@ -2236,12 +1887,6 @@ func (o GetOdaPrivateEndpointsFilterOutput) ToGetOdaPrivateEndpointsFilterOutput
 
 func (o GetOdaPrivateEndpointsFilterOutput) ToGetOdaPrivateEndpointsFilterOutputWithContext(ctx context.Context) GetOdaPrivateEndpointsFilterOutput {
 	return o
-}
-
-func (o GetOdaPrivateEndpointsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointsFilter] {
-	return pulumix.Output[GetOdaPrivateEndpointsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaPrivateEndpointsFilterOutput) Name() pulumi.StringOutput {
@@ -2268,12 +1913,6 @@ func (o GetOdaPrivateEndpointsFilterArrayOutput) ToGetOdaPrivateEndpointsFilterA
 
 func (o GetOdaPrivateEndpointsFilterArrayOutput) ToGetOdaPrivateEndpointsFilterArrayOutputWithContext(ctx context.Context) GetOdaPrivateEndpointsFilterArrayOutput {
 	return o
-}
-
-func (o GetOdaPrivateEndpointsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointsFilter] {
-	return pulumix.Output[[]GetOdaPrivateEndpointsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaPrivateEndpointsFilterArrayOutput) Index(i pulumi.IntInput) GetOdaPrivateEndpointsFilterOutput {
@@ -2313,12 +1952,6 @@ func (i GetOdaPrivateEndpointsOdaPrivateEndpointCollectionArgs) ToGetOdaPrivateE
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointsOdaPrivateEndpointCollectionOutput)
 }
 
-func (i GetOdaPrivateEndpointsOdaPrivateEndpointCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointsOdaPrivateEndpointCollection] {
-	return pulumix.Output[GetOdaPrivateEndpointsOdaPrivateEndpointCollection]{
-		OutputState: i.ToGetOdaPrivateEndpointsOdaPrivateEndpointCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOdaPrivateEndpointsOdaPrivateEndpointCollectionArrayInput is an input type that accepts GetOdaPrivateEndpointsOdaPrivateEndpointCollectionArray and GetOdaPrivateEndpointsOdaPrivateEndpointCollectionArrayOutput values.
 // You can construct a concrete instance of `GetOdaPrivateEndpointsOdaPrivateEndpointCollectionArrayInput` via:
 //
@@ -2344,12 +1977,6 @@ func (i GetOdaPrivateEndpointsOdaPrivateEndpointCollectionArray) ToGetOdaPrivate
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointsOdaPrivateEndpointCollectionArrayOutput)
 }
 
-func (i GetOdaPrivateEndpointsOdaPrivateEndpointCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointsOdaPrivateEndpointCollection] {
-	return pulumix.Output[[]GetOdaPrivateEndpointsOdaPrivateEndpointCollection]{
-		OutputState: i.ToGetOdaPrivateEndpointsOdaPrivateEndpointCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOdaPrivateEndpointsOdaPrivateEndpointCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetOdaPrivateEndpointsOdaPrivateEndpointCollectionOutput) ElementType() reflect.Type {
@@ -2362,12 +1989,6 @@ func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionOutput) ToGetOdaPrivat
 
 func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionOutput) ToGetOdaPrivateEndpointsOdaPrivateEndpointCollectionOutputWithContext(ctx context.Context) GetOdaPrivateEndpointsOdaPrivateEndpointCollectionOutput {
 	return o
-}
-
-func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointsOdaPrivateEndpointCollection] {
-	return pulumix.Output[GetOdaPrivateEndpointsOdaPrivateEndpointCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionOutput) Items() GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArrayOutput {
@@ -2388,12 +2009,6 @@ func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionArrayOutput) ToGetOdaP
 
 func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionArrayOutput) ToGetOdaPrivateEndpointsOdaPrivateEndpointCollectionArrayOutputWithContext(ctx context.Context) GetOdaPrivateEndpointsOdaPrivateEndpointCollectionArrayOutput {
 	return o
-}
-
-func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointsOdaPrivateEndpointCollection] {
-	return pulumix.Output[[]GetOdaPrivateEndpointsOdaPrivateEndpointCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionArrayOutput) Index(i pulumi.IntInput) GetOdaPrivateEndpointsOdaPrivateEndpointCollectionOutput {
@@ -2475,12 +2090,6 @@ func (i GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArgs) ToGetOdaPriv
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput)
 }
 
-func (i GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem] {
-	return pulumix.Output[GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem]{
-		OutputState: i.ToGetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArrayInput is an input type that accepts GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArray and GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArrayInput` via:
 //
@@ -2506,12 +2115,6 @@ func (i GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArray) ToGetOdaPri
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArrayOutput)
 }
 
-func (i GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem] {
-	return pulumix.Output[[]GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem]{
-		OutputState: i.ToGetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) ElementType() reflect.Type {
@@ -2524,12 +2127,6 @@ func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) ToGetOdaPr
 
 func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) ToGetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutputWithContext(ctx context.Context) GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput {
 	return o
-}
-
-func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem] {
-	return pulumix.Output[GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List the ODA Private Endpoints that belong to this compartment.
@@ -2603,12 +2200,6 @@ func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArrayOutput) ToGet
 
 func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArrayOutput) ToGetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArrayOutputWithContext(ctx context.Context) GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem] {
-	return pulumix.Output[[]GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput {

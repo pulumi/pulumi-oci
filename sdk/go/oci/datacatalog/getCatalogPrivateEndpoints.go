@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Catalog Private Endpoints in Oracle Cloud Infrastructure Data Catalog service.
@@ -120,12 +119,6 @@ func (o GetCatalogPrivateEndpointsResultOutput) ToGetCatalogPrivateEndpointsResu
 
 func (o GetCatalogPrivateEndpointsResultOutput) ToGetCatalogPrivateEndpointsResultOutputWithContext(ctx context.Context) GetCatalogPrivateEndpointsResultOutput {
 	return o
-}
-
-func (o GetCatalogPrivateEndpointsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCatalogPrivateEndpointsResult] {
-	return pulumix.Output[GetCatalogPrivateEndpointsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of catalog_private_endpoints.

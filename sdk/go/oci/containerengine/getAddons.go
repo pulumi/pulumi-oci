@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Addons in Oracle Cloud Infrastructure Container Engine service.
@@ -105,12 +104,6 @@ func (o GetAddonsResultOutput) ToGetAddonsResultOutput() GetAddonsResultOutput {
 
 func (o GetAddonsResultOutput) ToGetAddonsResultOutputWithContext(ctx context.Context) GetAddonsResultOutput {
 	return o
-}
-
-func (o GetAddonsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddonsResult] {
-	return pulumix.Output[GetAddonsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of addons.

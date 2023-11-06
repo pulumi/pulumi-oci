@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Migration Plans in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -133,12 +132,6 @@ func (o GetMigrationPlansResultOutput) ToGetMigrationPlansResultOutput() GetMigr
 
 func (o GetMigrationPlansResultOutput) ToGetMigrationPlansResultOutputWithContext(ctx context.Context) GetMigrationPlansResultOutput {
 	return o
-}
-
-func (o GetMigrationPlansResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlansResult] {
-	return pulumix.Output[GetMigrationPlansResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment containing the migration plan.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type SecurityPolicyManagement struct {
@@ -131,12 +130,6 @@ func (i *SecurityPolicyManagement) ToSecurityPolicyManagementOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityPolicyManagementOutput)
 }
 
-func (i *SecurityPolicyManagement) ToOutput(ctx context.Context) pulumix.Output[*SecurityPolicyManagement] {
-	return pulumix.Output[*SecurityPolicyManagement]{
-		OutputState: i.ToSecurityPolicyManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SecurityPolicyManagementArrayInput is an input type that accepts SecurityPolicyManagementArray and SecurityPolicyManagementArrayOutput values.
 // You can construct a concrete instance of `SecurityPolicyManagementArrayInput` via:
 //
@@ -160,12 +153,6 @@ func (i SecurityPolicyManagementArray) ToSecurityPolicyManagementArrayOutput() S
 
 func (i SecurityPolicyManagementArray) ToSecurityPolicyManagementArrayOutputWithContext(ctx context.Context) SecurityPolicyManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityPolicyManagementArrayOutput)
-}
-
-func (i SecurityPolicyManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*SecurityPolicyManagement] {
-	return pulumix.Output[[]*SecurityPolicyManagement]{
-		OutputState: i.ToSecurityPolicyManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SecurityPolicyManagementMapInput is an input type that accepts SecurityPolicyManagementMap and SecurityPolicyManagementMapOutput values.
@@ -193,12 +180,6 @@ func (i SecurityPolicyManagementMap) ToSecurityPolicyManagementMapOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityPolicyManagementMapOutput)
 }
 
-func (i SecurityPolicyManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SecurityPolicyManagement] {
-	return pulumix.Output[map[string]*SecurityPolicyManagement]{
-		OutputState: i.ToSecurityPolicyManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SecurityPolicyManagementOutput struct{ *pulumi.OutputState }
 
 func (SecurityPolicyManagementOutput) ElementType() reflect.Type {
@@ -211,12 +192,6 @@ func (o SecurityPolicyManagementOutput) ToSecurityPolicyManagementOutput() Secur
 
 func (o SecurityPolicyManagementOutput) ToSecurityPolicyManagementOutputWithContext(ctx context.Context) SecurityPolicyManagementOutput {
 	return o
-}
-
-func (o SecurityPolicyManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*SecurityPolicyManagement] {
-	return pulumix.Output[*SecurityPolicyManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SecurityPolicyManagementOutput) CompartmentId() pulumi.StringOutput {
@@ -277,12 +252,6 @@ func (o SecurityPolicyManagementArrayOutput) ToSecurityPolicyManagementArrayOutp
 	return o
 }
 
-func (o SecurityPolicyManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SecurityPolicyManagement] {
-	return pulumix.Output[[]*SecurityPolicyManagement]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o SecurityPolicyManagementArrayOutput) Index(i pulumi.IntInput) SecurityPolicyManagementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *SecurityPolicyManagement {
 		return vs[0].([]*SecurityPolicyManagement)[vs[1].(int)]
@@ -301,12 +270,6 @@ func (o SecurityPolicyManagementMapOutput) ToSecurityPolicyManagementMapOutput()
 
 func (o SecurityPolicyManagementMapOutput) ToSecurityPolicyManagementMapOutputWithContext(ctx context.Context) SecurityPolicyManagementMapOutput {
 	return o
-}
-
-func (o SecurityPolicyManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SecurityPolicyManagement] {
-	return pulumix.Output[map[string]*SecurityPolicyManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SecurityPolicyManagementMapOutput) MapIndex(k pulumi.StringInput) SecurityPolicyManagementOutput {

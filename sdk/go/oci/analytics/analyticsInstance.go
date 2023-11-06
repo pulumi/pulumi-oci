@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.
@@ -342,12 +341,6 @@ func (i *AnalyticsInstance) ToAnalyticsInstanceOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(AnalyticsInstanceOutput)
 }
 
-func (i *AnalyticsInstance) ToOutput(ctx context.Context) pulumix.Output[*AnalyticsInstance] {
-	return pulumix.Output[*AnalyticsInstance]{
-		OutputState: i.ToAnalyticsInstanceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AnalyticsInstanceArrayInput is an input type that accepts AnalyticsInstanceArray and AnalyticsInstanceArrayOutput values.
 // You can construct a concrete instance of `AnalyticsInstanceArrayInput` via:
 //
@@ -371,12 +364,6 @@ func (i AnalyticsInstanceArray) ToAnalyticsInstanceArrayOutput() AnalyticsInstan
 
 func (i AnalyticsInstanceArray) ToAnalyticsInstanceArrayOutputWithContext(ctx context.Context) AnalyticsInstanceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AnalyticsInstanceArrayOutput)
-}
-
-func (i AnalyticsInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]*AnalyticsInstance] {
-	return pulumix.Output[[]*AnalyticsInstance]{
-		OutputState: i.ToAnalyticsInstanceArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AnalyticsInstanceMapInput is an input type that accepts AnalyticsInstanceMap and AnalyticsInstanceMapOutput values.
@@ -404,12 +391,6 @@ func (i AnalyticsInstanceMap) ToAnalyticsInstanceMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(AnalyticsInstanceMapOutput)
 }
 
-func (i AnalyticsInstanceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AnalyticsInstance] {
-	return pulumix.Output[map[string]*AnalyticsInstance]{
-		OutputState: i.ToAnalyticsInstanceMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AnalyticsInstanceOutput struct{ *pulumi.OutputState }
 
 func (AnalyticsInstanceOutput) ElementType() reflect.Type {
@@ -422,12 +403,6 @@ func (o AnalyticsInstanceOutput) ToAnalyticsInstanceOutput() AnalyticsInstanceOu
 
 func (o AnalyticsInstanceOutput) ToAnalyticsInstanceOutputWithContext(ctx context.Context) AnalyticsInstanceOutput {
 	return o
-}
-
-func (o AnalyticsInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[*AnalyticsInstance] {
-	return pulumix.Output[*AnalyticsInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
@@ -529,12 +504,6 @@ func (o AnalyticsInstanceArrayOutput) ToAnalyticsInstanceArrayOutputWithContext(
 	return o
 }
 
-func (o AnalyticsInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AnalyticsInstance] {
-	return pulumix.Output[[]*AnalyticsInstance]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AnalyticsInstanceArrayOutput) Index(i pulumi.IntInput) AnalyticsInstanceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AnalyticsInstance {
 		return vs[0].([]*AnalyticsInstance)[vs[1].(int)]
@@ -553,12 +522,6 @@ func (o AnalyticsInstanceMapOutput) ToAnalyticsInstanceMapOutput() AnalyticsInst
 
 func (o AnalyticsInstanceMapOutput) ToAnalyticsInstanceMapOutputWithContext(ctx context.Context) AnalyticsInstanceMapOutput {
 	return o
-}
-
-func (o AnalyticsInstanceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AnalyticsInstance] {
-	return pulumix.Output[map[string]*AnalyticsInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AnalyticsInstanceMapOutput) MapIndex(k pulumi.StringInput) AnalyticsInstanceOutput {

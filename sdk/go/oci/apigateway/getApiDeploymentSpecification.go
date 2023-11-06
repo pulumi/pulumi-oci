@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Api Deployment Specification resource in Oracle Cloud Infrastructure API Gateway service.
@@ -106,12 +105,6 @@ func (o GetApiDeploymentSpecificationResultOutput) ToGetApiDeploymentSpecificati
 
 func (o GetApiDeploymentSpecificationResultOutput) ToGetApiDeploymentSpecificationResultOutputWithContext(ctx context.Context) GetApiDeploymentSpecificationResultOutput {
 	return o
-}
-
-func (o GetApiDeploymentSpecificationResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetApiDeploymentSpecificationResult] {
-	return pulumix.Output[GetApiDeploymentSpecificationResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetApiDeploymentSpecificationResultOutput) ApiId() pulumi.StringOutput {

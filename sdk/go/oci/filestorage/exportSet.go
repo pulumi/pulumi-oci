@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## Example Usage
@@ -213,12 +212,6 @@ func (i *ExportSet) ToExportSetOutputWithContext(ctx context.Context) ExportSetO
 	return pulumi.ToOutputWithContext(ctx, i).(ExportSetOutput)
 }
 
-func (i *ExportSet) ToOutput(ctx context.Context) pulumix.Output[*ExportSet] {
-	return pulumix.Output[*ExportSet]{
-		OutputState: i.ToExportSetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExportSetArrayInput is an input type that accepts ExportSetArray and ExportSetArrayOutput values.
 // You can construct a concrete instance of `ExportSetArrayInput` via:
 //
@@ -242,12 +235,6 @@ func (i ExportSetArray) ToExportSetArrayOutput() ExportSetArrayOutput {
 
 func (i ExportSetArray) ToExportSetArrayOutputWithContext(ctx context.Context) ExportSetArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExportSetArrayOutput)
-}
-
-func (i ExportSetArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExportSet] {
-	return pulumix.Output[[]*ExportSet]{
-		OutputState: i.ToExportSetArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ExportSetMapInput is an input type that accepts ExportSetMap and ExportSetMapOutput values.
@@ -275,12 +262,6 @@ func (i ExportSetMap) ToExportSetMapOutputWithContext(ctx context.Context) Expor
 	return pulumi.ToOutputWithContext(ctx, i).(ExportSetMapOutput)
 }
 
-func (i ExportSetMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExportSet] {
-	return pulumix.Output[map[string]*ExportSet]{
-		OutputState: i.ToExportSetMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExportSetOutput struct{ *pulumi.OutputState }
 
 func (ExportSetOutput) ElementType() reflect.Type {
@@ -293,12 +274,6 @@ func (o ExportSetOutput) ToExportSetOutput() ExportSetOutput {
 
 func (o ExportSetOutput) ToExportSetOutputWithContext(ctx context.Context) ExportSetOutput {
 	return o
-}
-
-func (o ExportSetOutput) ToOutput(ctx context.Context) pulumix.Output[*ExportSet] {
-	return pulumix.Output[*ExportSet]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The availability domain the export set is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
@@ -363,12 +338,6 @@ func (o ExportSetArrayOutput) ToExportSetArrayOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o ExportSetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExportSet] {
-	return pulumix.Output[[]*ExportSet]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ExportSetArrayOutput) Index(i pulumi.IntInput) ExportSetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ExportSet {
 		return vs[0].([]*ExportSet)[vs[1].(int)]
@@ -387,12 +356,6 @@ func (o ExportSetMapOutput) ToExportSetMapOutput() ExportSetMapOutput {
 
 func (o ExportSetMapOutput) ToExportSetMapOutputWithContext(ctx context.Context) ExportSetMapOutput {
 	return o
-}
-
-func (o ExportSetMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExportSet] {
-	return pulumix.Output[map[string]*ExportSet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExportSetMapOutput) MapIndex(k pulumi.StringInput) ExportSetOutput {

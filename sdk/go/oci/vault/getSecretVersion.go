@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Secret Version resource in Oracle Cloud Infrastructure Vault service.
@@ -121,12 +120,6 @@ func (o GetSecretVersionResultOutput) ToGetSecretVersionResultOutput() GetSecret
 
 func (o GetSecretVersionResultOutput) ToGetSecretVersionResultOutputWithContext(ctx context.Context) GetSecretVersionResultOutput {
 	return o
-}
-
-func (o GetSecretVersionResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecretVersionResult] {
-	return pulumix.Output[GetSecretVersionResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The content type of the secret version's secret contents.

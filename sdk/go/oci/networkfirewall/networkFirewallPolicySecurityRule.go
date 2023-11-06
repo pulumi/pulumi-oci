@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Network Firewall Policy Security Rule resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -251,12 +250,6 @@ func (i *NetworkFirewallPolicySecurityRule) ToNetworkFirewallPolicySecurityRuleO
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicySecurityRuleOutput)
 }
 
-func (i *NetworkFirewallPolicySecurityRule) ToOutput(ctx context.Context) pulumix.Output[*NetworkFirewallPolicySecurityRule] {
-	return pulumix.Output[*NetworkFirewallPolicySecurityRule]{
-		OutputState: i.ToNetworkFirewallPolicySecurityRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NetworkFirewallPolicySecurityRuleArrayInput is an input type that accepts NetworkFirewallPolicySecurityRuleArray and NetworkFirewallPolicySecurityRuleArrayOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicySecurityRuleArrayInput` via:
 //
@@ -280,12 +273,6 @@ func (i NetworkFirewallPolicySecurityRuleArray) ToNetworkFirewallPolicySecurityR
 
 func (i NetworkFirewallPolicySecurityRuleArray) ToNetworkFirewallPolicySecurityRuleArrayOutputWithContext(ctx context.Context) NetworkFirewallPolicySecurityRuleArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicySecurityRuleArrayOutput)
-}
-
-func (i NetworkFirewallPolicySecurityRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkFirewallPolicySecurityRule] {
-	return pulumix.Output[[]*NetworkFirewallPolicySecurityRule]{
-		OutputState: i.ToNetworkFirewallPolicySecurityRuleArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // NetworkFirewallPolicySecurityRuleMapInput is an input type that accepts NetworkFirewallPolicySecurityRuleMap and NetworkFirewallPolicySecurityRuleMapOutput values.
@@ -313,12 +300,6 @@ func (i NetworkFirewallPolicySecurityRuleMap) ToNetworkFirewallPolicySecurityRul
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicySecurityRuleMapOutput)
 }
 
-func (i NetworkFirewallPolicySecurityRuleMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkFirewallPolicySecurityRule] {
-	return pulumix.Output[map[string]*NetworkFirewallPolicySecurityRule]{
-		OutputState: i.ToNetworkFirewallPolicySecurityRuleMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NetworkFirewallPolicySecurityRuleOutput struct{ *pulumi.OutputState }
 
 func (NetworkFirewallPolicySecurityRuleOutput) ElementType() reflect.Type {
@@ -331,12 +312,6 @@ func (o NetworkFirewallPolicySecurityRuleOutput) ToNetworkFirewallPolicySecurity
 
 func (o NetworkFirewallPolicySecurityRuleOutput) ToNetworkFirewallPolicySecurityRuleOutputWithContext(ctx context.Context) NetworkFirewallPolicySecurityRuleOutput {
 	return o
-}
-
-func (o NetworkFirewallPolicySecurityRuleOutput) ToOutput(ctx context.Context) pulumix.Output[*NetworkFirewallPolicySecurityRule] {
-	return pulumix.Output[*NetworkFirewallPolicySecurityRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Types of Action on the Traffic flow.
@@ -402,12 +377,6 @@ func (o NetworkFirewallPolicySecurityRuleArrayOutput) ToNetworkFirewallPolicySec
 	return o
 }
 
-func (o NetworkFirewallPolicySecurityRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkFirewallPolicySecurityRule] {
-	return pulumix.Output[[]*NetworkFirewallPolicySecurityRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o NetworkFirewallPolicySecurityRuleArrayOutput) Index(i pulumi.IntInput) NetworkFirewallPolicySecurityRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *NetworkFirewallPolicySecurityRule {
 		return vs[0].([]*NetworkFirewallPolicySecurityRule)[vs[1].(int)]
@@ -426,12 +395,6 @@ func (o NetworkFirewallPolicySecurityRuleMapOutput) ToNetworkFirewallPolicySecur
 
 func (o NetworkFirewallPolicySecurityRuleMapOutput) ToNetworkFirewallPolicySecurityRuleMapOutputWithContext(ctx context.Context) NetworkFirewallPolicySecurityRuleMapOutput {
 	return o
-}
-
-func (o NetworkFirewallPolicySecurityRuleMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkFirewallPolicySecurityRule] {
-	return pulumix.Output[map[string]*NetworkFirewallPolicySecurityRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NetworkFirewallPolicySecurityRuleMapOutput) MapIndex(k pulumi.StringInput) NetworkFirewallPolicySecurityRuleOutput {

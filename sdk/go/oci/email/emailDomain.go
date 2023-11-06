@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Email Domain resource in Oracle Cloud Infrastructure Email service.
@@ -231,12 +230,6 @@ func (i *EmailDomain) ToEmailDomainOutputWithContext(ctx context.Context) EmailD
 	return pulumi.ToOutputWithContext(ctx, i).(EmailDomainOutput)
 }
 
-func (i *EmailDomain) ToOutput(ctx context.Context) pulumix.Output[*EmailDomain] {
-	return pulumix.Output[*EmailDomain]{
-		OutputState: i.ToEmailDomainOutputWithContext(ctx).OutputState,
-	}
-}
-
 // EmailDomainArrayInput is an input type that accepts EmailDomainArray and EmailDomainArrayOutput values.
 // You can construct a concrete instance of `EmailDomainArrayInput` via:
 //
@@ -260,12 +253,6 @@ func (i EmailDomainArray) ToEmailDomainArrayOutput() EmailDomainArrayOutput {
 
 func (i EmailDomainArray) ToEmailDomainArrayOutputWithContext(ctx context.Context) EmailDomainArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(EmailDomainArrayOutput)
-}
-
-func (i EmailDomainArray) ToOutput(ctx context.Context) pulumix.Output[[]*EmailDomain] {
-	return pulumix.Output[[]*EmailDomain]{
-		OutputState: i.ToEmailDomainArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // EmailDomainMapInput is an input type that accepts EmailDomainMap and EmailDomainMapOutput values.
@@ -293,12 +280,6 @@ func (i EmailDomainMap) ToEmailDomainMapOutputWithContext(ctx context.Context) E
 	return pulumi.ToOutputWithContext(ctx, i).(EmailDomainMapOutput)
 }
 
-func (i EmailDomainMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*EmailDomain] {
-	return pulumix.Output[map[string]*EmailDomain]{
-		OutputState: i.ToEmailDomainMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type EmailDomainOutput struct{ *pulumi.OutputState }
 
 func (EmailDomainOutput) ElementType() reflect.Type {
@@ -311,12 +292,6 @@ func (o EmailDomainOutput) ToEmailDomainOutput() EmailDomainOutput {
 
 func (o EmailDomainOutput) ToEmailDomainOutputWithContext(ctx context.Context) EmailDomainOutput {
 	return o
-}
-
-func (o EmailDomainOutput) ToOutput(ctx context.Context) pulumix.Output[*EmailDomain] {
-	return pulumix.Output[*EmailDomain]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DKIM key that will be used to sign mail sent from this email domain.
@@ -386,12 +361,6 @@ func (o EmailDomainArrayOutput) ToEmailDomainArrayOutputWithContext(ctx context.
 	return o
 }
 
-func (o EmailDomainArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*EmailDomain] {
-	return pulumix.Output[[]*EmailDomain]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o EmailDomainArrayOutput) Index(i pulumi.IntInput) EmailDomainOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *EmailDomain {
 		return vs[0].([]*EmailDomain)[vs[1].(int)]
@@ -410,12 +379,6 @@ func (o EmailDomainMapOutput) ToEmailDomainMapOutput() EmailDomainMapOutput {
 
 func (o EmailDomainMapOutput) ToEmailDomainMapOutputWithContext(ctx context.Context) EmailDomainMapOutput {
 	return o
-}
-
-func (o EmailDomainMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*EmailDomain] {
-	return pulumix.Output[map[string]*EmailDomain]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o EmailDomainMapOutput) MapIndex(k pulumi.StringInput) EmailDomainOutput {

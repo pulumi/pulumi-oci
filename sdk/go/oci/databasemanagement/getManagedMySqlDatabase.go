@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
@@ -110,12 +109,6 @@ func (o GetManagedMySqlDatabaseResultOutput) ToGetManagedMySqlDatabaseResultOutp
 
 func (o GetManagedMySqlDatabaseResultOutput) ToGetManagedMySqlDatabaseResultOutputWithContext(ctx context.Context) GetManagedMySqlDatabaseResultOutput {
 	return o
-}
-
-func (o GetManagedMySqlDatabaseResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedMySqlDatabaseResult] {
-	return pulumix.Output[GetManagedMySqlDatabaseResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment.

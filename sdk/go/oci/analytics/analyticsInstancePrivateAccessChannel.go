@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Analytics Instance Private Access Channel resource in Oracle Cloud Infrastructure Analytics service.
@@ -262,12 +261,6 @@ func (i *AnalyticsInstancePrivateAccessChannel) ToAnalyticsInstancePrivateAccess
 	return pulumi.ToOutputWithContext(ctx, i).(AnalyticsInstancePrivateAccessChannelOutput)
 }
 
-func (i *AnalyticsInstancePrivateAccessChannel) ToOutput(ctx context.Context) pulumix.Output[*AnalyticsInstancePrivateAccessChannel] {
-	return pulumix.Output[*AnalyticsInstancePrivateAccessChannel]{
-		OutputState: i.ToAnalyticsInstancePrivateAccessChannelOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AnalyticsInstancePrivateAccessChannelArrayInput is an input type that accepts AnalyticsInstancePrivateAccessChannelArray and AnalyticsInstancePrivateAccessChannelArrayOutput values.
 // You can construct a concrete instance of `AnalyticsInstancePrivateAccessChannelArrayInput` via:
 //
@@ -291,12 +284,6 @@ func (i AnalyticsInstancePrivateAccessChannelArray) ToAnalyticsInstancePrivateAc
 
 func (i AnalyticsInstancePrivateAccessChannelArray) ToAnalyticsInstancePrivateAccessChannelArrayOutputWithContext(ctx context.Context) AnalyticsInstancePrivateAccessChannelArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AnalyticsInstancePrivateAccessChannelArrayOutput)
-}
-
-func (i AnalyticsInstancePrivateAccessChannelArray) ToOutput(ctx context.Context) pulumix.Output[[]*AnalyticsInstancePrivateAccessChannel] {
-	return pulumix.Output[[]*AnalyticsInstancePrivateAccessChannel]{
-		OutputState: i.ToAnalyticsInstancePrivateAccessChannelArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AnalyticsInstancePrivateAccessChannelMapInput is an input type that accepts AnalyticsInstancePrivateAccessChannelMap and AnalyticsInstancePrivateAccessChannelMapOutput values.
@@ -324,12 +311,6 @@ func (i AnalyticsInstancePrivateAccessChannelMap) ToAnalyticsInstancePrivateAcce
 	return pulumi.ToOutputWithContext(ctx, i).(AnalyticsInstancePrivateAccessChannelMapOutput)
 }
 
-func (i AnalyticsInstancePrivateAccessChannelMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AnalyticsInstancePrivateAccessChannel] {
-	return pulumix.Output[map[string]*AnalyticsInstancePrivateAccessChannel]{
-		OutputState: i.ToAnalyticsInstancePrivateAccessChannelMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AnalyticsInstancePrivateAccessChannelOutput struct{ *pulumi.OutputState }
 
 func (AnalyticsInstancePrivateAccessChannelOutput) ElementType() reflect.Type {
@@ -342,12 +323,6 @@ func (o AnalyticsInstancePrivateAccessChannelOutput) ToAnalyticsInstancePrivateA
 
 func (o AnalyticsInstancePrivateAccessChannelOutput) ToAnalyticsInstancePrivateAccessChannelOutputWithContext(ctx context.Context) AnalyticsInstancePrivateAccessChannelOutput {
 	return o
-}
-
-func (o AnalyticsInstancePrivateAccessChannelOutput) ToOutput(ctx context.Context) pulumix.Output[*AnalyticsInstancePrivateAccessChannel] {
-	return pulumix.Output[*AnalyticsInstancePrivateAccessChannel]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the AnalyticsInstance.
@@ -425,12 +400,6 @@ func (o AnalyticsInstancePrivateAccessChannelArrayOutput) ToAnalyticsInstancePri
 	return o
 }
 
-func (o AnalyticsInstancePrivateAccessChannelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AnalyticsInstancePrivateAccessChannel] {
-	return pulumix.Output[[]*AnalyticsInstancePrivateAccessChannel]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AnalyticsInstancePrivateAccessChannelArrayOutput) Index(i pulumi.IntInput) AnalyticsInstancePrivateAccessChannelOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AnalyticsInstancePrivateAccessChannel {
 		return vs[0].([]*AnalyticsInstancePrivateAccessChannel)[vs[1].(int)]
@@ -449,12 +418,6 @@ func (o AnalyticsInstancePrivateAccessChannelMapOutput) ToAnalyticsInstancePriva
 
 func (o AnalyticsInstancePrivateAccessChannelMapOutput) ToAnalyticsInstancePrivateAccessChannelMapOutputWithContext(ctx context.Context) AnalyticsInstancePrivateAccessChannelMapOutput {
 	return o
-}
-
-func (o AnalyticsInstancePrivateAccessChannelMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AnalyticsInstancePrivateAccessChannel] {
-	return pulumix.Output[map[string]*AnalyticsInstancePrivateAccessChannel]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AnalyticsInstancePrivateAccessChannelMapOutput) MapIndex(k pulumi.StringInput) AnalyticsInstancePrivateAccessChannelOutput {

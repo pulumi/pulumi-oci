@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type MaskingPoliciesApplyDifferenceToMaskingColumns struct {
@@ -103,12 +102,6 @@ func (i *MaskingPoliciesApplyDifferenceToMaskingColumns) ToMaskingPoliciesApplyD
 	return pulumi.ToOutputWithContext(ctx, i).(MaskingPoliciesApplyDifferenceToMaskingColumnsOutput)
 }
 
-func (i *MaskingPoliciesApplyDifferenceToMaskingColumns) ToOutput(ctx context.Context) pulumix.Output[*MaskingPoliciesApplyDifferenceToMaskingColumns] {
-	return pulumix.Output[*MaskingPoliciesApplyDifferenceToMaskingColumns]{
-		OutputState: i.ToMaskingPoliciesApplyDifferenceToMaskingColumnsOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MaskingPoliciesApplyDifferenceToMaskingColumnsArrayInput is an input type that accepts MaskingPoliciesApplyDifferenceToMaskingColumnsArray and MaskingPoliciesApplyDifferenceToMaskingColumnsArrayOutput values.
 // You can construct a concrete instance of `MaskingPoliciesApplyDifferenceToMaskingColumnsArrayInput` via:
 //
@@ -132,12 +125,6 @@ func (i MaskingPoliciesApplyDifferenceToMaskingColumnsArray) ToMaskingPoliciesAp
 
 func (i MaskingPoliciesApplyDifferenceToMaskingColumnsArray) ToMaskingPoliciesApplyDifferenceToMaskingColumnsArrayOutputWithContext(ctx context.Context) MaskingPoliciesApplyDifferenceToMaskingColumnsArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MaskingPoliciesApplyDifferenceToMaskingColumnsArrayOutput)
-}
-
-func (i MaskingPoliciesApplyDifferenceToMaskingColumnsArray) ToOutput(ctx context.Context) pulumix.Output[[]*MaskingPoliciesApplyDifferenceToMaskingColumns] {
-	return pulumix.Output[[]*MaskingPoliciesApplyDifferenceToMaskingColumns]{
-		OutputState: i.ToMaskingPoliciesApplyDifferenceToMaskingColumnsArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MaskingPoliciesApplyDifferenceToMaskingColumnsMapInput is an input type that accepts MaskingPoliciesApplyDifferenceToMaskingColumnsMap and MaskingPoliciesApplyDifferenceToMaskingColumnsMapOutput values.
@@ -165,12 +152,6 @@ func (i MaskingPoliciesApplyDifferenceToMaskingColumnsMap) ToMaskingPoliciesAppl
 	return pulumi.ToOutputWithContext(ctx, i).(MaskingPoliciesApplyDifferenceToMaskingColumnsMapOutput)
 }
 
-func (i MaskingPoliciesApplyDifferenceToMaskingColumnsMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MaskingPoliciesApplyDifferenceToMaskingColumns] {
-	return pulumix.Output[map[string]*MaskingPoliciesApplyDifferenceToMaskingColumns]{
-		OutputState: i.ToMaskingPoliciesApplyDifferenceToMaskingColumnsMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MaskingPoliciesApplyDifferenceToMaskingColumnsOutput struct{ *pulumi.OutputState }
 
 func (MaskingPoliciesApplyDifferenceToMaskingColumnsOutput) ElementType() reflect.Type {
@@ -183,12 +164,6 @@ func (o MaskingPoliciesApplyDifferenceToMaskingColumnsOutput) ToMaskingPoliciesA
 
 func (o MaskingPoliciesApplyDifferenceToMaskingColumnsOutput) ToMaskingPoliciesApplyDifferenceToMaskingColumnsOutputWithContext(ctx context.Context) MaskingPoliciesApplyDifferenceToMaskingColumnsOutput {
 	return o
-}
-
-func (o MaskingPoliciesApplyDifferenceToMaskingColumnsOutput) ToOutput(ctx context.Context) pulumix.Output[*MaskingPoliciesApplyDifferenceToMaskingColumns] {
-	return pulumix.Output[*MaskingPoliciesApplyDifferenceToMaskingColumns]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MaskingPoliciesApplyDifferenceToMaskingColumnsOutput) MaskingPolicyId() pulumi.StringOutput {
@@ -215,12 +190,6 @@ func (o MaskingPoliciesApplyDifferenceToMaskingColumnsArrayOutput) ToMaskingPoli
 	return o
 }
 
-func (o MaskingPoliciesApplyDifferenceToMaskingColumnsArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MaskingPoliciesApplyDifferenceToMaskingColumns] {
-	return pulumix.Output[[]*MaskingPoliciesApplyDifferenceToMaskingColumns]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o MaskingPoliciesApplyDifferenceToMaskingColumnsArrayOutput) Index(i pulumi.IntInput) MaskingPoliciesApplyDifferenceToMaskingColumnsOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *MaskingPoliciesApplyDifferenceToMaskingColumns {
 		return vs[0].([]*MaskingPoliciesApplyDifferenceToMaskingColumns)[vs[1].(int)]
@@ -239,12 +208,6 @@ func (o MaskingPoliciesApplyDifferenceToMaskingColumnsMapOutput) ToMaskingPolici
 
 func (o MaskingPoliciesApplyDifferenceToMaskingColumnsMapOutput) ToMaskingPoliciesApplyDifferenceToMaskingColumnsMapOutputWithContext(ctx context.Context) MaskingPoliciesApplyDifferenceToMaskingColumnsMapOutput {
 	return o
-}
-
-func (o MaskingPoliciesApplyDifferenceToMaskingColumnsMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MaskingPoliciesApplyDifferenceToMaskingColumns] {
-	return pulumix.Output[map[string]*MaskingPoliciesApplyDifferenceToMaskingColumns]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MaskingPoliciesApplyDifferenceToMaskingColumnsMapOutput) MapIndex(k pulumi.StringInput) MaskingPoliciesApplyDifferenceToMaskingColumnsOutput {

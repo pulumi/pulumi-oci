@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Management Agent Available Histories in Oracle Cloud Infrastructure Management Agent service.
@@ -118,12 +117,6 @@ func (o GetManagementAgentAvailableHistoriesResultOutput) ToGetManagementAgentAv
 
 func (o GetManagementAgentAvailableHistoriesResultOutput) ToGetManagementAgentAvailableHistoriesResultOutputWithContext(ctx context.Context) GetManagementAgentAvailableHistoriesResultOutput {
 	return o
-}
-
-func (o GetManagementAgentAvailableHistoriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentAvailableHistoriesResult] {
-	return pulumix.Output[GetManagementAgentAvailableHistoriesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of availability_histories.

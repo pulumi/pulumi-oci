@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Enterprise Manager Bridges in Oracle Cloud Infrastructure Opsi service.
@@ -132,12 +131,6 @@ func (o GetEnterpriseManagerBridgesResultOutput) ToGetEnterpriseManagerBridgesRe
 
 func (o GetEnterpriseManagerBridgesResultOutput) ToGetEnterpriseManagerBridgesResultOutputWithContext(ctx context.Context) GetEnterpriseManagerBridgesResultOutput {
 	return o
-}
-
-func (o GetEnterpriseManagerBridgesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetEnterpriseManagerBridgesResult] {
-	return pulumix.Output[GetEnterpriseManagerBridgesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment identifier of the Enterprise Manager bridge

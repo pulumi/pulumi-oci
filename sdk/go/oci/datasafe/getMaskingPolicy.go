@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Masking Policy resource in Oracle Cloud Infrastructure Data Safe service.
@@ -133,12 +132,6 @@ func (o LookupMaskingPolicyResultOutput) ToLookupMaskingPolicyResultOutput() Loo
 
 func (o LookupMaskingPolicyResultOutput) ToLookupMaskingPolicyResultOutputWithContext(ctx context.Context) LookupMaskingPolicyResultOutput {
 	return o
-}
-
-func (o LookupMaskingPolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupMaskingPolicyResult] {
-	return pulumix.Output[LookupMaskingPolicyResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupMaskingPolicyResultOutput) AddMaskingColumnsFromSdmTrigger() pulumi.IntOutput {

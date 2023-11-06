@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // The `Kms.getDecryptedData` data source provides details about a specific DecryptedData
@@ -122,12 +121,6 @@ func (o GetDecryptedDataResultOutput) ToGetDecryptedDataResultOutput() GetDecryp
 
 func (o GetDecryptedDataResultOutput) ToGetDecryptedDataResultOutputWithContext(ctx context.Context) GetDecryptedDataResultOutput {
 	return o
-}
-
-func (o GetDecryptedDataResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDecryptedDataResult] {
-	return pulumix.Output[GetDecryptedDataResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDecryptedDataResultOutput) AssociatedData() pulumi.MapOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Identity Provider resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -246,12 +245,6 @@ func (o LookupDomainsIdentityProviderResultOutput) ToLookupDomainsIdentityProvid
 
 func (o LookupDomainsIdentityProviderResultOutput) ToLookupDomainsIdentityProviderResultOutputWithContext(ctx context.Context) LookupDomainsIdentityProviderResultOutput {
 	return o
-}
-
-func (o LookupDomainsIdentityProviderResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainsIdentityProviderResult] {
-	return pulumix.Output[LookupDomainsIdentityProviderResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Assertion attribute name.

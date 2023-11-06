@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Virtual Service Route Table resource in Oracle Cloud Infrastructure Service Mesh service.
@@ -285,12 +284,6 @@ func (i *VirtualServiceRouteTable) ToVirtualServiceRouteTableOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualServiceRouteTableOutput)
 }
 
-func (i *VirtualServiceRouteTable) ToOutput(ctx context.Context) pulumix.Output[*VirtualServiceRouteTable] {
-	return pulumix.Output[*VirtualServiceRouteTable]{
-		OutputState: i.ToVirtualServiceRouteTableOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VirtualServiceRouteTableArrayInput is an input type that accepts VirtualServiceRouteTableArray and VirtualServiceRouteTableArrayOutput values.
 // You can construct a concrete instance of `VirtualServiceRouteTableArrayInput` via:
 //
@@ -314,12 +307,6 @@ func (i VirtualServiceRouteTableArray) ToVirtualServiceRouteTableArrayOutput() V
 
 func (i VirtualServiceRouteTableArray) ToVirtualServiceRouteTableArrayOutputWithContext(ctx context.Context) VirtualServiceRouteTableArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualServiceRouteTableArrayOutput)
-}
-
-func (i VirtualServiceRouteTableArray) ToOutput(ctx context.Context) pulumix.Output[[]*VirtualServiceRouteTable] {
-	return pulumix.Output[[]*VirtualServiceRouteTable]{
-		OutputState: i.ToVirtualServiceRouteTableArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // VirtualServiceRouteTableMapInput is an input type that accepts VirtualServiceRouteTableMap and VirtualServiceRouteTableMapOutput values.
@@ -347,12 +334,6 @@ func (i VirtualServiceRouteTableMap) ToVirtualServiceRouteTableMapOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualServiceRouteTableMapOutput)
 }
 
-func (i VirtualServiceRouteTableMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*VirtualServiceRouteTable] {
-	return pulumix.Output[map[string]*VirtualServiceRouteTable]{
-		OutputState: i.ToVirtualServiceRouteTableMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VirtualServiceRouteTableOutput struct{ *pulumi.OutputState }
 
 func (VirtualServiceRouteTableOutput) ElementType() reflect.Type {
@@ -365,12 +346,6 @@ func (o VirtualServiceRouteTableOutput) ToVirtualServiceRouteTableOutput() Virtu
 
 func (o VirtualServiceRouteTableOutput) ToVirtualServiceRouteTableOutputWithContext(ctx context.Context) VirtualServiceRouteTableOutput {
 	return o
-}
-
-func (o VirtualServiceRouteTableOutput) ToOutput(ctx context.Context) pulumix.Output[*VirtualServiceRouteTable] {
-	return pulumix.Output[*VirtualServiceRouteTable]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -455,12 +430,6 @@ func (o VirtualServiceRouteTableArrayOutput) ToVirtualServiceRouteTableArrayOutp
 	return o
 }
 
-func (o VirtualServiceRouteTableArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*VirtualServiceRouteTable] {
-	return pulumix.Output[[]*VirtualServiceRouteTable]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o VirtualServiceRouteTableArrayOutput) Index(i pulumi.IntInput) VirtualServiceRouteTableOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *VirtualServiceRouteTable {
 		return vs[0].([]*VirtualServiceRouteTable)[vs[1].(int)]
@@ -479,12 +448,6 @@ func (o VirtualServiceRouteTableMapOutput) ToVirtualServiceRouteTableMapOutput()
 
 func (o VirtualServiceRouteTableMapOutput) ToVirtualServiceRouteTableMapOutputWithContext(ctx context.Context) VirtualServiceRouteTableMapOutput {
 	return o
-}
-
-func (o VirtualServiceRouteTableMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*VirtualServiceRouteTable] {
-	return pulumix.Output[map[string]*VirtualServiceRouteTable]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VirtualServiceRouteTableMapOutput) MapIndex(k pulumi.StringInput) VirtualServiceRouteTableOutput {

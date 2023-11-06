@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Db Homes in Oracle Cloud Infrastructure Database service.
@@ -115,12 +114,6 @@ func (o GetDbHomesResultOutput) ToGetDbHomesResultOutput() GetDbHomesResultOutpu
 
 func (o GetDbHomesResultOutput) ToGetDbHomesResultOutputWithContext(ctx context.Context) GetDbHomesResultOutput {
 	return o
-}
-
-func (o GetDbHomesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDbHomesResult] {
-	return pulumix.Output[GetDbHomesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDbHomesResultOutput) BackupId() pulumi.StringPtrOutput {

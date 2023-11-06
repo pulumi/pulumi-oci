@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Account Mgmt Infos in Oracle Cloud Infrastructure Identity Domains service.
@@ -159,12 +158,6 @@ func (o GetDomainsAccountMgmtInfosResultOutput) ToGetDomainsAccountMgmtInfosResu
 
 func (o GetDomainsAccountMgmtInfosResultOutput) ToGetDomainsAccountMgmtInfosResultOutputWithContext(ctx context.Context) GetDomainsAccountMgmtInfosResultOutput {
 	return o
-}
-
-func (o GetDomainsAccountMgmtInfosResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsAccountMgmtInfosResult] {
-	return pulumix.Output[GetDomainsAccountMgmtInfosResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDomainsAccountMgmtInfosResultOutput) AccountMgmtInfoCount() pulumi.IntPtrOutput {

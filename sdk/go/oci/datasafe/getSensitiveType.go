@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Sensitive Type resource in Oracle Cloud Infrastructure Data Safe service.
@@ -136,12 +135,6 @@ func (o LookupSensitiveTypeResultOutput) ToLookupSensitiveTypeResultOutput() Loo
 
 func (o LookupSensitiveTypeResultOutput) ToLookupSensitiveTypeResultOutputWithContext(ctx context.Context) LookupSensitiveTypeResultOutput {
 	return o
-}
-
-func (o LookupSensitiveTypeResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSensitiveTypeResult] {
-	return pulumix.Output[LookupSensitiveTypeResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A regular expression to be used by data discovery for matching column comments.

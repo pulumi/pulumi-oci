@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Migration resource in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -246,12 +245,6 @@ func (i *Migration) ToMigrationOutputWithContext(ctx context.Context) MigrationO
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationOutput)
 }
 
-func (i *Migration) ToOutput(ctx context.Context) pulumix.Output[*Migration] {
-	return pulumix.Output[*Migration]{
-		OutputState: i.ToMigrationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MigrationArrayInput is an input type that accepts MigrationArray and MigrationArrayOutput values.
 // You can construct a concrete instance of `MigrationArrayInput` via:
 //
@@ -275,12 +268,6 @@ func (i MigrationArray) ToMigrationArrayOutput() MigrationArrayOutput {
 
 func (i MigrationArray) ToMigrationArrayOutputWithContext(ctx context.Context) MigrationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationArrayOutput)
-}
-
-func (i MigrationArray) ToOutput(ctx context.Context) pulumix.Output[[]*Migration] {
-	return pulumix.Output[[]*Migration]{
-		OutputState: i.ToMigrationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MigrationMapInput is an input type that accepts MigrationMap and MigrationMapOutput values.
@@ -308,12 +295,6 @@ func (i MigrationMap) ToMigrationMapOutputWithContext(ctx context.Context) Migra
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationMapOutput)
 }
 
-func (i MigrationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Migration] {
-	return pulumix.Output[map[string]*Migration]{
-		OutputState: i.ToMigrationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MigrationOutput struct{ *pulumi.OutputState }
 
 func (MigrationOutput) ElementType() reflect.Type {
@@ -326,12 +307,6 @@ func (o MigrationOutput) ToMigrationOutput() MigrationOutput {
 
 func (o MigrationOutput) ToMigrationOutputWithContext(ctx context.Context) MigrationOutput {
 	return o
-}
-
-func (o MigrationOutput) ToOutput(ctx context.Context) pulumix.Output[*Migration] {
-	return pulumix.Output[*Migration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Compartment identifier
@@ -406,12 +381,6 @@ func (o MigrationArrayOutput) ToMigrationArrayOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o MigrationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Migration] {
-	return pulumix.Output[[]*Migration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o MigrationArrayOutput) Index(i pulumi.IntInput) MigrationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Migration {
 		return vs[0].([]*Migration)[vs[1].(int)]
@@ -430,12 +399,6 @@ func (o MigrationMapOutput) ToMigrationMapOutput() MigrationMapOutput {
 
 func (o MigrationMapOutput) ToMigrationMapOutputWithContext(ctx context.Context) MigrationMapOutput {
 	return o
-}
-
-func (o MigrationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Migration] {
-	return pulumix.Output[map[string]*Migration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MigrationMapOutput) MapIndex(k pulumi.StringInput) MigrationOutput {

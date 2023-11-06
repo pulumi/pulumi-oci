@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Operations Insights Private Endpoint resource in Oracle Cloud Infrastructure Opsi service.
@@ -130,12 +129,6 @@ func (o LookupOperationsInsightsPrivateEndpointResultOutput) ToLookupOperationsI
 
 func (o LookupOperationsInsightsPrivateEndpointResultOutput) ToLookupOperationsInsightsPrivateEndpointResultOutputWithContext(ctx context.Context) LookupOperationsInsightsPrivateEndpointResultOutput {
 	return o
-}
-
-func (o LookupOperationsInsightsPrivateEndpointResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupOperationsInsightsPrivateEndpointResult] {
-	return pulumix.Output[LookupOperationsInsightsPrivateEndpointResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The compartment OCID of the Private service accessed database.

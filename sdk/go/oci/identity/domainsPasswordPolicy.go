@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Password Policy resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -2803,12 +2802,6 @@ func (i *DomainsPasswordPolicy) ToDomainsPasswordPolicyOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsPasswordPolicyOutput)
 }
 
-func (i *DomainsPasswordPolicy) ToOutput(ctx context.Context) pulumix.Output[*DomainsPasswordPolicy] {
-	return pulumix.Output[*DomainsPasswordPolicy]{
-		OutputState: i.ToDomainsPasswordPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsPasswordPolicyArrayInput is an input type that accepts DomainsPasswordPolicyArray and DomainsPasswordPolicyArrayOutput values.
 // You can construct a concrete instance of `DomainsPasswordPolicyArrayInput` via:
 //
@@ -2832,12 +2825,6 @@ func (i DomainsPasswordPolicyArray) ToDomainsPasswordPolicyArrayOutput() Domains
 
 func (i DomainsPasswordPolicyArray) ToDomainsPasswordPolicyArrayOutputWithContext(ctx context.Context) DomainsPasswordPolicyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsPasswordPolicyArrayOutput)
-}
-
-func (i DomainsPasswordPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsPasswordPolicy] {
-	return pulumix.Output[[]*DomainsPasswordPolicy]{
-		OutputState: i.ToDomainsPasswordPolicyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsPasswordPolicyMapInput is an input type that accepts DomainsPasswordPolicyMap and DomainsPasswordPolicyMapOutput values.
@@ -2865,12 +2852,6 @@ func (i DomainsPasswordPolicyMap) ToDomainsPasswordPolicyMapOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsPasswordPolicyMapOutput)
 }
 
-func (i DomainsPasswordPolicyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsPasswordPolicy] {
-	return pulumix.Output[map[string]*DomainsPasswordPolicy]{
-		OutputState: i.ToDomainsPasswordPolicyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsPasswordPolicyOutput struct{ *pulumi.OutputState }
 
 func (DomainsPasswordPolicyOutput) ElementType() reflect.Type {
@@ -2883,12 +2864,6 @@ func (o DomainsPasswordPolicyOutput) ToDomainsPasswordPolicyOutput() DomainsPass
 
 func (o DomainsPasswordPolicyOutput) ToDomainsPasswordPolicyOutputWithContext(ctx context.Context) DomainsPasswordPolicyOutput {
 	return o
-}
-
-func (o DomainsPasswordPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsPasswordPolicy] {
-	return pulumix.Output[*DomainsPasswordPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A String value whose contents indicate a set of characters that can appear, in any sequence, in a password value
@@ -3658,12 +3633,6 @@ func (o DomainsPasswordPolicyArrayOutput) ToDomainsPasswordPolicyArrayOutputWith
 	return o
 }
 
-func (o DomainsPasswordPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsPasswordPolicy] {
-	return pulumix.Output[[]*DomainsPasswordPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DomainsPasswordPolicyArrayOutput) Index(i pulumi.IntInput) DomainsPasswordPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DomainsPasswordPolicy {
 		return vs[0].([]*DomainsPasswordPolicy)[vs[1].(int)]
@@ -3682,12 +3651,6 @@ func (o DomainsPasswordPolicyMapOutput) ToDomainsPasswordPolicyMapOutput() Domai
 
 func (o DomainsPasswordPolicyMapOutput) ToDomainsPasswordPolicyMapOutputWithContext(ctx context.Context) DomainsPasswordPolicyMapOutput {
 	return o
-}
-
-func (o DomainsPasswordPolicyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsPasswordPolicy] {
-	return pulumix.Output[map[string]*DomainsPasswordPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsPasswordPolicyMapOutput) MapIndex(k pulumi.StringInput) DomainsPasswordPolicyOutput {

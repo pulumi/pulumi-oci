@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Database Tools Private Endpoints in Oracle Cloud Infrastructure Database Tools service.
@@ -134,12 +133,6 @@ func (o GetDatabaseToolsPrivateEndpointsResultOutput) ToGetDatabaseToolsPrivateE
 
 func (o GetDatabaseToolsPrivateEndpointsResultOutput) ToGetDatabaseToolsPrivateEndpointsResultOutputWithContext(ctx context.Context) GetDatabaseToolsPrivateEndpointsResultOutput {
 	return o
-}
-
-func (o GetDatabaseToolsPrivateEndpointsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsPrivateEndpointsResult] {
-	return pulumix.Output[GetDatabaseToolsPrivateEndpointsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.

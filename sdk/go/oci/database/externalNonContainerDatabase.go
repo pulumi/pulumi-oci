@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the External Non Container Database resource in Oracle Cloud Infrastructure Database service.
@@ -282,12 +281,6 @@ func (i *ExternalNonContainerDatabase) ToExternalNonContainerDatabaseOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalNonContainerDatabaseOutput)
 }
 
-func (i *ExternalNonContainerDatabase) ToOutput(ctx context.Context) pulumix.Output[*ExternalNonContainerDatabase] {
-	return pulumix.Output[*ExternalNonContainerDatabase]{
-		OutputState: i.ToExternalNonContainerDatabaseOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExternalNonContainerDatabaseArrayInput is an input type that accepts ExternalNonContainerDatabaseArray and ExternalNonContainerDatabaseArrayOutput values.
 // You can construct a concrete instance of `ExternalNonContainerDatabaseArrayInput` via:
 //
@@ -311,12 +304,6 @@ func (i ExternalNonContainerDatabaseArray) ToExternalNonContainerDatabaseArrayOu
 
 func (i ExternalNonContainerDatabaseArray) ToExternalNonContainerDatabaseArrayOutputWithContext(ctx context.Context) ExternalNonContainerDatabaseArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalNonContainerDatabaseArrayOutput)
-}
-
-func (i ExternalNonContainerDatabaseArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalNonContainerDatabase] {
-	return pulumix.Output[[]*ExternalNonContainerDatabase]{
-		OutputState: i.ToExternalNonContainerDatabaseArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ExternalNonContainerDatabaseMapInput is an input type that accepts ExternalNonContainerDatabaseMap and ExternalNonContainerDatabaseMapOutput values.
@@ -344,12 +331,6 @@ func (i ExternalNonContainerDatabaseMap) ToExternalNonContainerDatabaseMapOutput
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalNonContainerDatabaseMapOutput)
 }
 
-func (i ExternalNonContainerDatabaseMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalNonContainerDatabase] {
-	return pulumix.Output[map[string]*ExternalNonContainerDatabase]{
-		OutputState: i.ToExternalNonContainerDatabaseMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExternalNonContainerDatabaseOutput struct{ *pulumi.OutputState }
 
 func (ExternalNonContainerDatabaseOutput) ElementType() reflect.Type {
@@ -362,12 +343,6 @@ func (o ExternalNonContainerDatabaseOutput) ToExternalNonContainerDatabaseOutput
 
 func (o ExternalNonContainerDatabaseOutput) ToExternalNonContainerDatabaseOutputWithContext(ctx context.Context) ExternalNonContainerDatabaseOutput {
 	return o
-}
-
-func (o ExternalNonContainerDatabaseOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalNonContainerDatabase] {
-	return pulumix.Output[*ExternalNonContainerDatabase]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The character set of the external database.
@@ -488,12 +463,6 @@ func (o ExternalNonContainerDatabaseArrayOutput) ToExternalNonContainerDatabaseA
 	return o
 }
 
-func (o ExternalNonContainerDatabaseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalNonContainerDatabase] {
-	return pulumix.Output[[]*ExternalNonContainerDatabase]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ExternalNonContainerDatabaseArrayOutput) Index(i pulumi.IntInput) ExternalNonContainerDatabaseOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ExternalNonContainerDatabase {
 		return vs[0].([]*ExternalNonContainerDatabase)[vs[1].(int)]
@@ -512,12 +481,6 @@ func (o ExternalNonContainerDatabaseMapOutput) ToExternalNonContainerDatabaseMap
 
 func (o ExternalNonContainerDatabaseMapOutput) ToExternalNonContainerDatabaseMapOutputWithContext(ctx context.Context) ExternalNonContainerDatabaseMapOutput {
 	return o
-}
-
-func (o ExternalNonContainerDatabaseMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalNonContainerDatabase] {
-	return pulumix.Output[map[string]*ExternalNonContainerDatabase]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalNonContainerDatabaseMapOutput) MapIndex(k pulumi.StringInput) ExternalNonContainerDatabaseOutput {

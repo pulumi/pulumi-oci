@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Vault Usage resource in Oracle Cloud Infrastructure Kms service.
@@ -108,12 +107,6 @@ func (o GetVaultUsageResultOutput) ToGetVaultUsageResultOutput() GetVaultUsageRe
 
 func (o GetVaultUsageResultOutput) ToGetVaultUsageResultOutputWithContext(ctx context.Context) GetVaultUsageResultOutput {
 	return o
-}
-
-func (o GetVaultUsageResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultUsageResult] {
-	return pulumix.Output[GetVaultUsageResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The provider-assigned unique ID for this managed resource.

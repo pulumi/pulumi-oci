@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## Example Usage
@@ -99,12 +98,6 @@ func (o GetStackTfStateResultOutput) ToGetStackTfStateResultOutput() GetStackTfS
 
 func (o GetStackTfStateResultOutput) ToGetStackTfStateResultOutputWithContext(ctx context.Context) GetStackTfStateResultOutput {
 	return o
-}
-
-func (o GetStackTfStateResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetStackTfStateResult] {
-	return pulumix.Output[GetStackTfStateResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The provider-assigned unique ID for this managed resource.

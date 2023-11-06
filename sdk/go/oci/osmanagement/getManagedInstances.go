@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Instances in Oracle Cloud Infrastructure OS Management service.
@@ -120,12 +119,6 @@ func (o GetManagedInstancesResultOutput) ToGetManagedInstancesResultOutput() Get
 
 func (o GetManagedInstancesResultOutput) ToGetManagedInstancesResultOutputWithContext(ctx context.Context) GetManagedInstancesResultOutput {
 	return o
-}
-
-func (o GetManagedInstancesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstancesResult] {
-	return pulumix.Output[GetManagedInstancesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // OCID for the Compartment

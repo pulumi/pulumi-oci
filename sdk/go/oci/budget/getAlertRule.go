@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Alert Rule resource in Oracle Cloud Infrastructure Budget service.
@@ -133,12 +132,6 @@ func (o GetAlertRuleResultOutput) ToGetAlertRuleResultOutput() GetAlertRuleResul
 
 func (o GetAlertRuleResultOutput) ToGetAlertRuleResultOutputWithContext(ctx context.Context) GetAlertRuleResultOutput {
 	return o
-}
-
-func (o GetAlertRuleResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlertRuleResult] {
-	return pulumix.Output[GetAlertRuleResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAlertRuleResultOutput) AlertRuleId() pulumi.StringOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Dedicated Vm Host Instance Shapes in Oracle Cloud Infrastructure Core service.
@@ -119,12 +118,6 @@ func (o GetDedicatedVmHostInstanceShapesResultOutput) ToGetDedicatedVmHostInstan
 
 func (o GetDedicatedVmHostInstanceShapesResultOutput) ToGetDedicatedVmHostInstanceShapesResultOutputWithContext(ctx context.Context) GetDedicatedVmHostInstanceShapesResultOutput {
 	return o
-}
-
-func (o GetDedicatedVmHostInstanceShapesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDedicatedVmHostInstanceShapesResult] {
-	return pulumix.Output[GetDedicatedVmHostInstanceShapesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The shape's availability domain.

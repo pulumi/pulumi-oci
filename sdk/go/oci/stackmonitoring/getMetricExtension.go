@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Metric Extension resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -139,12 +138,6 @@ func (o LookupMetricExtensionResultOutput) ToLookupMetricExtensionResultOutput()
 
 func (o LookupMetricExtensionResultOutput) ToLookupMetricExtensionResultOutputWithContext(ctx context.Context) LookupMetricExtensionResultOutput {
 	return o
-}
-
-func (o LookupMetricExtensionResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupMetricExtensionResult] {
-	return pulumix.Output[LookupMetricExtensionResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Type of possible collection methods.

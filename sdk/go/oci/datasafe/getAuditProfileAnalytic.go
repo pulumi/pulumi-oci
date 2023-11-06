@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Audit Profile Analytic resource in Oracle Cloud Infrastructure Data Safe service.
@@ -132,12 +131,6 @@ func (o GetAuditProfileAnalyticResultOutput) ToGetAuditProfileAnalyticResultOutp
 
 func (o GetAuditProfileAnalyticResultOutput) ToGetAuditProfileAnalyticResultOutputWithContext(ctx context.Context) GetAuditProfileAnalyticResultOutput {
 	return o
-}
-
-func (o GetAuditProfileAnalyticResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfileAnalyticResult] {
-	return pulumix.Output[GetAuditProfileAnalyticResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAuditProfileAnalyticResultOutput) AccessLevel() pulumi.StringPtrOutput {

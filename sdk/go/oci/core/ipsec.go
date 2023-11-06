@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Ip Sec Connection resource in Oracle Cloud Infrastructure Core service.
@@ -360,12 +359,6 @@ func (i *Ipsec) ToIpsecOutputWithContext(ctx context.Context) IpsecOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(IpsecOutput)
 }
 
-func (i *Ipsec) ToOutput(ctx context.Context) pulumix.Output[*Ipsec] {
-	return pulumix.Output[*Ipsec]{
-		OutputState: i.ToIpsecOutputWithContext(ctx).OutputState,
-	}
-}
-
 // IpsecArrayInput is an input type that accepts IpsecArray and IpsecArrayOutput values.
 // You can construct a concrete instance of `IpsecArrayInput` via:
 //
@@ -389,12 +382,6 @@ func (i IpsecArray) ToIpsecArrayOutput() IpsecArrayOutput {
 
 func (i IpsecArray) ToIpsecArrayOutputWithContext(ctx context.Context) IpsecArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(IpsecArrayOutput)
-}
-
-func (i IpsecArray) ToOutput(ctx context.Context) pulumix.Output[[]*Ipsec] {
-	return pulumix.Output[[]*Ipsec]{
-		OutputState: i.ToIpsecArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // IpsecMapInput is an input type that accepts IpsecMap and IpsecMapOutput values.
@@ -422,12 +409,6 @@ func (i IpsecMap) ToIpsecMapOutputWithContext(ctx context.Context) IpsecMapOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(IpsecMapOutput)
 }
 
-func (i IpsecMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Ipsec] {
-	return pulumix.Output[map[string]*Ipsec]{
-		OutputState: i.ToIpsecMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IpsecOutput struct{ *pulumi.OutputState }
 
 func (IpsecOutput) ElementType() reflect.Type {
@@ -440,12 +421,6 @@ func (o IpsecOutput) ToIpsecOutput() IpsecOutput {
 
 func (o IpsecOutput) ToIpsecOutputWithContext(ctx context.Context) IpsecOutput {
 	return o
-}
-
-func (o IpsecOutput) ToOutput(ctx context.Context) pulumix.Output[*Ipsec] {
-	return pulumix.Output[*Ipsec]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the IPSec connection.
@@ -537,12 +512,6 @@ func (o IpsecArrayOutput) ToIpsecArrayOutputWithContext(ctx context.Context) Ips
 	return o
 }
 
-func (o IpsecArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Ipsec] {
-	return pulumix.Output[[]*Ipsec]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o IpsecArrayOutput) Index(i pulumi.IntInput) IpsecOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Ipsec {
 		return vs[0].([]*Ipsec)[vs[1].(int)]
@@ -561,12 +530,6 @@ func (o IpsecMapOutput) ToIpsecMapOutput() IpsecMapOutput {
 
 func (o IpsecMapOutput) ToIpsecMapOutputWithContext(ctx context.Context) IpsecMapOutput {
 	return o
-}
-
-func (o IpsecMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Ipsec] {
-	return pulumix.Output[map[string]*Ipsec]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IpsecMapOutput) MapIndex(k pulumi.StringInput) IpsecOutput {

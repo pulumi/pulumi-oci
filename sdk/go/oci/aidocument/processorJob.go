@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Processor Job resource in Oracle Cloud Infrastructure Ai Document service.
@@ -256,12 +255,6 @@ func (i *ProcessorJob) ToProcessorJobOutputWithContext(ctx context.Context) Proc
 	return pulumi.ToOutputWithContext(ctx, i).(ProcessorJobOutput)
 }
 
-func (i *ProcessorJob) ToOutput(ctx context.Context) pulumix.Output[*ProcessorJob] {
-	return pulumix.Output[*ProcessorJob]{
-		OutputState: i.ToProcessorJobOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ProcessorJobArrayInput is an input type that accepts ProcessorJobArray and ProcessorJobArrayOutput values.
 // You can construct a concrete instance of `ProcessorJobArrayInput` via:
 //
@@ -285,12 +278,6 @@ func (i ProcessorJobArray) ToProcessorJobArrayOutput() ProcessorJobArrayOutput {
 
 func (i ProcessorJobArray) ToProcessorJobArrayOutputWithContext(ctx context.Context) ProcessorJobArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ProcessorJobArrayOutput)
-}
-
-func (i ProcessorJobArray) ToOutput(ctx context.Context) pulumix.Output[[]*ProcessorJob] {
-	return pulumix.Output[[]*ProcessorJob]{
-		OutputState: i.ToProcessorJobArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ProcessorJobMapInput is an input type that accepts ProcessorJobMap and ProcessorJobMapOutput values.
@@ -318,12 +305,6 @@ func (i ProcessorJobMap) ToProcessorJobMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(ProcessorJobMapOutput)
 }
 
-func (i ProcessorJobMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ProcessorJob] {
-	return pulumix.Output[map[string]*ProcessorJob]{
-		OutputState: i.ToProcessorJobMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ProcessorJobOutput struct{ *pulumi.OutputState }
 
 func (ProcessorJobOutput) ElementType() reflect.Type {
@@ -336,12 +317,6 @@ func (o ProcessorJobOutput) ToProcessorJobOutput() ProcessorJobOutput {
 
 func (o ProcessorJobOutput) ToProcessorJobOutputWithContext(ctx context.Context) ProcessorJobOutput {
 	return o
-}
-
-func (o ProcessorJobOutput) ToOutput(ctx context.Context) pulumix.Output[*ProcessorJob] {
-	return pulumix.Output[*ProcessorJob]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The compartment identifier.
@@ -413,12 +388,6 @@ func (o ProcessorJobArrayOutput) ToProcessorJobArrayOutputWithContext(ctx contex
 	return o
 }
 
-func (o ProcessorJobArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ProcessorJob] {
-	return pulumix.Output[[]*ProcessorJob]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ProcessorJobArrayOutput) Index(i pulumi.IntInput) ProcessorJobOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ProcessorJob {
 		return vs[0].([]*ProcessorJob)[vs[1].(int)]
@@ -437,12 +406,6 @@ func (o ProcessorJobMapOutput) ToProcessorJobMapOutput() ProcessorJobMapOutput {
 
 func (o ProcessorJobMapOutput) ToProcessorJobMapOutputWithContext(ctx context.Context) ProcessorJobMapOutput {
 	return o
-}
-
-func (o ProcessorJobMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ProcessorJob] {
-	return pulumix.Output[map[string]*ProcessorJob]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProcessorJobMapOutput) MapIndex(k pulumi.StringInput) ProcessorJobOutput {

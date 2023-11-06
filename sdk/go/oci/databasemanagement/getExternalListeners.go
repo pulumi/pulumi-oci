@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of External Listeners in Oracle Cloud Infrastructure Database Management service.
@@ -120,12 +119,6 @@ func (o GetExternalListenersResultOutput) ToGetExternalListenersResultOutput() G
 
 func (o GetExternalListenersResultOutput) ToGetExternalListenersResultOutputWithContext(ctx context.Context) GetExternalListenersResultOutput {
 	return o
-}
-
-func (o GetExternalListenersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalListenersResult] {
-	return pulumix.Output[GetExternalListenersResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.

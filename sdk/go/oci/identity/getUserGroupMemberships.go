@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of User Group Memberships in Oracle Cloud Infrastructure Identity service.
@@ -129,12 +128,6 @@ func (o GetUserGroupMembershipsResultOutput) ToGetUserGroupMembershipsResultOutp
 
 func (o GetUserGroupMembershipsResultOutput) ToGetUserGroupMembershipsResultOutputWithContext(ctx context.Context) GetUserGroupMembershipsResultOutput {
 	return o
-}
-
-func (o GetUserGroupMembershipsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserGroupMembershipsResult] {
-	return pulumix.Output[GetUserGroupMembershipsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the tenancy containing the user, group, and membership object.

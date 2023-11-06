@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the App Catalog Subscription resource in Oracle Cloud Infrastructure Core service.
@@ -265,12 +264,6 @@ func (i *AppCatalogSubscription) ToAppCatalogSubscriptionOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(AppCatalogSubscriptionOutput)
 }
 
-func (i *AppCatalogSubscription) ToOutput(ctx context.Context) pulumix.Output[*AppCatalogSubscription] {
-	return pulumix.Output[*AppCatalogSubscription]{
-		OutputState: i.ToAppCatalogSubscriptionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AppCatalogSubscriptionArrayInput is an input type that accepts AppCatalogSubscriptionArray and AppCatalogSubscriptionArrayOutput values.
 // You can construct a concrete instance of `AppCatalogSubscriptionArrayInput` via:
 //
@@ -294,12 +287,6 @@ func (i AppCatalogSubscriptionArray) ToAppCatalogSubscriptionArrayOutput() AppCa
 
 func (i AppCatalogSubscriptionArray) ToAppCatalogSubscriptionArrayOutputWithContext(ctx context.Context) AppCatalogSubscriptionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppCatalogSubscriptionArrayOutput)
-}
-
-func (i AppCatalogSubscriptionArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppCatalogSubscription] {
-	return pulumix.Output[[]*AppCatalogSubscription]{
-		OutputState: i.ToAppCatalogSubscriptionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AppCatalogSubscriptionMapInput is an input type that accepts AppCatalogSubscriptionMap and AppCatalogSubscriptionMapOutput values.
@@ -327,12 +314,6 @@ func (i AppCatalogSubscriptionMap) ToAppCatalogSubscriptionMapOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(AppCatalogSubscriptionMapOutput)
 }
 
-func (i AppCatalogSubscriptionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppCatalogSubscription] {
-	return pulumix.Output[map[string]*AppCatalogSubscription]{
-		OutputState: i.ToAppCatalogSubscriptionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AppCatalogSubscriptionOutput struct{ *pulumi.OutputState }
 
 func (AppCatalogSubscriptionOutput) ElementType() reflect.Type {
@@ -345,12 +326,6 @@ func (o AppCatalogSubscriptionOutput) ToAppCatalogSubscriptionOutput() AppCatalo
 
 func (o AppCatalogSubscriptionOutput) ToAppCatalogSubscriptionOutputWithContext(ctx context.Context) AppCatalogSubscriptionOutput {
 	return o
-}
-
-func (o AppCatalogSubscriptionOutput) ToOutput(ctx context.Context) pulumix.Output[*AppCatalogSubscription] {
-	return pulumix.Output[*AppCatalogSubscription]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The compartmentID for the subscription.
@@ -430,12 +405,6 @@ func (o AppCatalogSubscriptionArrayOutput) ToAppCatalogSubscriptionArrayOutputWi
 	return o
 }
 
-func (o AppCatalogSubscriptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppCatalogSubscription] {
-	return pulumix.Output[[]*AppCatalogSubscription]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AppCatalogSubscriptionArrayOutput) Index(i pulumi.IntInput) AppCatalogSubscriptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppCatalogSubscription {
 		return vs[0].([]*AppCatalogSubscription)[vs[1].(int)]
@@ -454,12 +423,6 @@ func (o AppCatalogSubscriptionMapOutput) ToAppCatalogSubscriptionMapOutput() App
 
 func (o AppCatalogSubscriptionMapOutput) ToAppCatalogSubscriptionMapOutputWithContext(ctx context.Context) AppCatalogSubscriptionMapOutput {
 	return o
-}
-
-func (o AppCatalogSubscriptionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppCatalogSubscription] {
-	return pulumix.Output[map[string]*AppCatalogSubscription]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AppCatalogSubscriptionMapOutput) MapIndex(k pulumi.StringInput) AppCatalogSubscriptionOutput {

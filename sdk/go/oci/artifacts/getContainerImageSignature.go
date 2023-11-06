@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Container Image Signature resource in Oracle Cloud Infrastructure Artifacts service.
@@ -128,12 +127,6 @@ func (o LookupContainerImageSignatureResultOutput) ToLookupContainerImageSignatu
 
 func (o LookupContainerImageSignatureResultOutput) ToLookupContainerImageSignatureResultOutputWithContext(ctx context.Context) LookupContainerImageSignatureResultOutput {
 	return o
-}
-
-func (o LookupContainerImageSignatureResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupContainerImageSignatureResult] {
-	return pulumix.Output[LookupContainerImageSignatureResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the container repository exists.

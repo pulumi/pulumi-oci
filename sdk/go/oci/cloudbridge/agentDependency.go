@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Agent Dependency resource in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -313,12 +312,6 @@ func (i *AgentDependency) ToAgentDependencyOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(AgentDependencyOutput)
 }
 
-func (i *AgentDependency) ToOutput(ctx context.Context) pulumix.Output[*AgentDependency] {
-	return pulumix.Output[*AgentDependency]{
-		OutputState: i.ToAgentDependencyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AgentDependencyArrayInput is an input type that accepts AgentDependencyArray and AgentDependencyArrayOutput values.
 // You can construct a concrete instance of `AgentDependencyArrayInput` via:
 //
@@ -342,12 +335,6 @@ func (i AgentDependencyArray) ToAgentDependencyArrayOutput() AgentDependencyArra
 
 func (i AgentDependencyArray) ToAgentDependencyArrayOutputWithContext(ctx context.Context) AgentDependencyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AgentDependencyArrayOutput)
-}
-
-func (i AgentDependencyArray) ToOutput(ctx context.Context) pulumix.Output[[]*AgentDependency] {
-	return pulumix.Output[[]*AgentDependency]{
-		OutputState: i.ToAgentDependencyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AgentDependencyMapInput is an input type that accepts AgentDependencyMap and AgentDependencyMapOutput values.
@@ -375,12 +362,6 @@ func (i AgentDependencyMap) ToAgentDependencyMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(AgentDependencyMapOutput)
 }
 
-func (i AgentDependencyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AgentDependency] {
-	return pulumix.Output[map[string]*AgentDependency]{
-		OutputState: i.ToAgentDependencyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AgentDependencyOutput struct{ *pulumi.OutputState }
 
 func (AgentDependencyOutput) ElementType() reflect.Type {
@@ -393,12 +374,6 @@ func (o AgentDependencyOutput) ToAgentDependencyOutput() AgentDependencyOutput {
 
 func (o AgentDependencyOutput) ToAgentDependencyOutputWithContext(ctx context.Context) AgentDependencyOutput {
 	return o
-}
-
-func (o AgentDependencyOutput) ToOutput(ctx context.Context) pulumix.Output[*AgentDependency] {
-	return pulumix.Output[*AgentDependency]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Object storage bucket where the dependency is uploaded.
@@ -498,12 +473,6 @@ func (o AgentDependencyArrayOutput) ToAgentDependencyArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o AgentDependencyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AgentDependency] {
-	return pulumix.Output[[]*AgentDependency]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AgentDependencyArrayOutput) Index(i pulumi.IntInput) AgentDependencyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AgentDependency {
 		return vs[0].([]*AgentDependency)[vs[1].(int)]
@@ -522,12 +491,6 @@ func (o AgentDependencyMapOutput) ToAgentDependencyMapOutput() AgentDependencyMa
 
 func (o AgentDependencyMapOutput) ToAgentDependencyMapOutputWithContext(ctx context.Context) AgentDependencyMapOutput {
 	return o
-}
-
-func (o AgentDependencyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AgentDependency] {
-	return pulumix.Output[map[string]*AgentDependency]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AgentDependencyMapOutput) MapIndex(k pulumi.StringInput) AgentDependencyOutput {

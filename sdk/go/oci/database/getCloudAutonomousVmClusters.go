@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Cloud Autonomous Vm Clusters in Oracle Cloud Infrastructure Database service.
@@ -134,12 +133,6 @@ func (o GetCloudAutonomousVmClustersResultOutput) ToGetCloudAutonomousVmClusters
 
 func (o GetCloudAutonomousVmClustersResultOutput) ToGetCloudAutonomousVmClustersResultOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersResultOutput {
 	return o
-}
-
-func (o GetCloudAutonomousVmClustersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCloudAutonomousVmClustersResult] {
-	return pulumix.Output[GetCloudAutonomousVmClustersResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the availability domain that the cloud Autonomous VM cluster is located in.

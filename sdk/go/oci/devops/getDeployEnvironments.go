@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Deploy Environments in Oracle Cloud Infrastructure Devops service.
@@ -132,12 +131,6 @@ func (o GetDeployEnvironmentsResultOutput) ToGetDeployEnvironmentsResultOutput()
 
 func (o GetDeployEnvironmentsResultOutput) ToGetDeployEnvironmentsResultOutputWithContext(ctx context.Context) GetDeployEnvironmentsResultOutput {
 	return o
-}
-
-func (o GetDeployEnvironmentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDeployEnvironmentsResult] {
-	return pulumix.Output[GetDeployEnvironmentsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of a compartment.

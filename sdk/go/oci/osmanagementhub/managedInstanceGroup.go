@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Managed Instance Group resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -316,12 +315,6 @@ func (i *ManagedInstanceGroup) ToManagedInstanceGroupOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceGroupOutput)
 }
 
-func (i *ManagedInstanceGroup) ToOutput(ctx context.Context) pulumix.Output[*ManagedInstanceGroup] {
-	return pulumix.Output[*ManagedInstanceGroup]{
-		OutputState: i.ToManagedInstanceGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ManagedInstanceGroupArrayInput is an input type that accepts ManagedInstanceGroupArray and ManagedInstanceGroupArrayOutput values.
 // You can construct a concrete instance of `ManagedInstanceGroupArrayInput` via:
 //
@@ -345,12 +338,6 @@ func (i ManagedInstanceGroupArray) ToManagedInstanceGroupArrayOutput() ManagedIn
 
 func (i ManagedInstanceGroupArray) ToManagedInstanceGroupArrayOutputWithContext(ctx context.Context) ManagedInstanceGroupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceGroupArrayOutput)
-}
-
-func (i ManagedInstanceGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]*ManagedInstanceGroup] {
-	return pulumix.Output[[]*ManagedInstanceGroup]{
-		OutputState: i.ToManagedInstanceGroupArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ManagedInstanceGroupMapInput is an input type that accepts ManagedInstanceGroupMap and ManagedInstanceGroupMapOutput values.
@@ -378,12 +365,6 @@ func (i ManagedInstanceGroupMap) ToManagedInstanceGroupMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceGroupMapOutput)
 }
 
-func (i ManagedInstanceGroupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagedInstanceGroup] {
-	return pulumix.Output[map[string]*ManagedInstanceGroup]{
-		OutputState: i.ToManagedInstanceGroupMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ManagedInstanceGroupOutput struct{ *pulumi.OutputState }
 
 func (ManagedInstanceGroupOutput) ElementType() reflect.Type {
@@ -396,12 +377,6 @@ func (o ManagedInstanceGroupOutput) ToManagedInstanceGroupOutput() ManagedInstan
 
 func (o ManagedInstanceGroupOutput) ToManagedInstanceGroupOutputWithContext(ctx context.Context) ManagedInstanceGroupOutput {
 	return o
-}
-
-func (o ManagedInstanceGroupOutput) ToOutput(ctx context.Context) pulumix.Output[*ManagedInstanceGroup] {
-	return pulumix.Output[*ManagedInstanceGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The CPU architecture type of the managed instance(s) that this managed instance group will contain.
@@ -506,12 +481,6 @@ func (o ManagedInstanceGroupArrayOutput) ToManagedInstanceGroupArrayOutputWithCo
 	return o
 }
 
-func (o ManagedInstanceGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ManagedInstanceGroup] {
-	return pulumix.Output[[]*ManagedInstanceGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ManagedInstanceGroupArrayOutput) Index(i pulumi.IntInput) ManagedInstanceGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ManagedInstanceGroup {
 		return vs[0].([]*ManagedInstanceGroup)[vs[1].(int)]
@@ -530,12 +499,6 @@ func (o ManagedInstanceGroupMapOutput) ToManagedInstanceGroupMapOutput() Managed
 
 func (o ManagedInstanceGroupMapOutput) ToManagedInstanceGroupMapOutputWithContext(ctx context.Context) ManagedInstanceGroupMapOutput {
 	return o
-}
-
-func (o ManagedInstanceGroupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagedInstanceGroup] {
-	return pulumix.Output[map[string]*ManagedInstanceGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagedInstanceGroupMapOutput) MapIndex(k pulumi.StringInput) ManagedInstanceGroupOutput {

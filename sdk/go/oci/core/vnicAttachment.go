@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Vnic Attachment resource in Oracle Cloud Infrastructure Core service.
@@ -266,12 +265,6 @@ func (i *VnicAttachment) ToVnicAttachmentOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(VnicAttachmentOutput)
 }
 
-func (i *VnicAttachment) ToOutput(ctx context.Context) pulumix.Output[*VnicAttachment] {
-	return pulumix.Output[*VnicAttachment]{
-		OutputState: i.ToVnicAttachmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VnicAttachmentArrayInput is an input type that accepts VnicAttachmentArray and VnicAttachmentArrayOutput values.
 // You can construct a concrete instance of `VnicAttachmentArrayInput` via:
 //
@@ -295,12 +288,6 @@ func (i VnicAttachmentArray) ToVnicAttachmentArrayOutput() VnicAttachmentArrayOu
 
 func (i VnicAttachmentArray) ToVnicAttachmentArrayOutputWithContext(ctx context.Context) VnicAttachmentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VnicAttachmentArrayOutput)
-}
-
-func (i VnicAttachmentArray) ToOutput(ctx context.Context) pulumix.Output[[]*VnicAttachment] {
-	return pulumix.Output[[]*VnicAttachment]{
-		OutputState: i.ToVnicAttachmentArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // VnicAttachmentMapInput is an input type that accepts VnicAttachmentMap and VnicAttachmentMapOutput values.
@@ -328,12 +315,6 @@ func (i VnicAttachmentMap) ToVnicAttachmentMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(VnicAttachmentMapOutput)
 }
 
-func (i VnicAttachmentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*VnicAttachment] {
-	return pulumix.Output[map[string]*VnicAttachment]{
-		OutputState: i.ToVnicAttachmentMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VnicAttachmentOutput struct{ *pulumi.OutputState }
 
 func (VnicAttachmentOutput) ElementType() reflect.Type {
@@ -346,12 +327,6 @@ func (o VnicAttachmentOutput) ToVnicAttachmentOutput() VnicAttachmentOutput {
 
 func (o VnicAttachmentOutput) ToVnicAttachmentOutputWithContext(ctx context.Context) VnicAttachmentOutput {
 	return o
-}
-
-func (o VnicAttachmentOutput) ToOutput(ctx context.Context) pulumix.Output[*VnicAttachment] {
-	return pulumix.Output[*VnicAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
@@ -435,12 +410,6 @@ func (o VnicAttachmentArrayOutput) ToVnicAttachmentArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o VnicAttachmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*VnicAttachment] {
-	return pulumix.Output[[]*VnicAttachment]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o VnicAttachmentArrayOutput) Index(i pulumi.IntInput) VnicAttachmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *VnicAttachment {
 		return vs[0].([]*VnicAttachment)[vs[1].(int)]
@@ -459,12 +428,6 @@ func (o VnicAttachmentMapOutput) ToVnicAttachmentMapOutput() VnicAttachmentMapOu
 
 func (o VnicAttachmentMapOutput) ToVnicAttachmentMapOutputWithContext(ctx context.Context) VnicAttachmentMapOutput {
 	return o
-}
-
-func (o VnicAttachmentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*VnicAttachment] {
-	return pulumix.Output[map[string]*VnicAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VnicAttachmentMapOutput) MapIndex(k pulumi.StringInput) VnicAttachmentOutput {

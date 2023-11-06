@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Log Sets Count resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -102,12 +101,6 @@ func (o GetLogSetsCountResultOutput) ToGetLogSetsCountResultOutput() GetLogSetsC
 
 func (o GetLogSetsCountResultOutput) ToGetLogSetsCountResultOutputWithContext(ctx context.Context) GetLogSetsCountResultOutput {
 	return o
-}
-
-func (o GetLogSetsCountResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogSetsCountResult] {
-	return pulumix.Output[GetLogSetsCountResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The provider-assigned unique ID for this managed resource.

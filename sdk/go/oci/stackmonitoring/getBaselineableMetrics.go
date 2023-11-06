@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Baselineable Metrics in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -132,12 +131,6 @@ func (o GetBaselineableMetricsResultOutput) ToGetBaselineableMetricsResultOutput
 
 func (o GetBaselineableMetricsResultOutput) ToGetBaselineableMetricsResultOutputWithContext(ctx context.Context) GetBaselineableMetricsResultOutput {
 	return o
-}
-
-func (o GetBaselineableMetricsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsResult] {
-	return pulumix.Output[GetBaselineableMetricsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBaselineableMetricsResultOutput) BaselineableMetricId() pulumi.StringPtrOutput {

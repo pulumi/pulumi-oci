@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Organization Subscriptions in Oracle Cloud Infrastructure Onesubscription service.
@@ -105,12 +104,6 @@ func (o GetOrganizationSubscriptionsResultOutput) ToGetOrganizationSubscriptions
 
 func (o GetOrganizationSubscriptionsResultOutput) ToGetOrganizationSubscriptionsResultOutputWithContext(ctx context.Context) GetOrganizationSubscriptionsResultOutput {
 	return o
-}
-
-func (o GetOrganizationSubscriptionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetOrganizationSubscriptionsResult] {
-	return pulumix.Output[GetOrganizationSubscriptionsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOrganizationSubscriptionsResultOutput) CompartmentId() pulumi.StringOutput {

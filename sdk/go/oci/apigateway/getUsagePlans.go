@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Usage Plans in Oracle Cloud Infrastructure API Gateway service.
@@ -120,12 +119,6 @@ func (o GetUsagePlansResultOutput) ToGetUsagePlansResultOutput() GetUsagePlansRe
 
 func (o GetUsagePlansResultOutput) ToGetUsagePlansResultOutputWithContext(ctx context.Context) GetUsagePlansResultOutput {
 	return o
-}
-
-func (o GetUsagePlansResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetUsagePlansResult] {
-	return pulumix.Output[GetUsagePlansResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.

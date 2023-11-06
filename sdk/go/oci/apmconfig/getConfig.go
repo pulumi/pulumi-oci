@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Config resource in Oracle Cloud Infrastructure Apm Config service.
@@ -144,12 +143,6 @@ func (o LookupConfigResultOutput) ToLookupConfigResultOutput() LookupConfigResul
 
 func (o LookupConfigResultOutput) ToLookupConfigResultOutputWithContext(ctx context.Context) LookupConfigResultOutput {
 	return o
-}
-
-func (o LookupConfigResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupConfigResult] {
-	return pulumix.Output[LookupConfigResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupConfigResultOutput) ApmDomainId() pulumi.StringOutput {

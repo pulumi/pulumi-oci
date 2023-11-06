@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Account Recovery Setting resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -164,12 +163,6 @@ func (o LookupDomainsAccountRecoverySettingResultOutput) ToLookupDomainsAccountR
 
 func (o LookupDomainsAccountRecoverySettingResultOutput) ToLookupDomainsAccountRecoverySettingResultOutputWithContext(ctx context.Context) LookupDomainsAccountRecoverySettingResultOutput {
 	return o
-}
-
-func (o LookupDomainsAccountRecoverySettingResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainsAccountRecoverySettingResult] {
-	return pulumix.Output[LookupDomainsAccountRecoverySettingResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupDomainsAccountRecoverySettingResultOutput) AccountRecoverySettingId() pulumi.StringOutput {

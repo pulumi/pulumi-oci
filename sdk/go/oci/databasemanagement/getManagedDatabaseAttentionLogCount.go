@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Database Attention Log Count resource in Oracle Cloud Infrastructure Database Management service.
@@ -145,12 +144,6 @@ func (o GetManagedDatabaseAttentionLogCountResultOutput) ToGetManagedDatabaseAtt
 
 func (o GetManagedDatabaseAttentionLogCountResultOutput) ToGetManagedDatabaseAttentionLogCountResultOutputWithContext(ctx context.Context) GetManagedDatabaseAttentionLogCountResultOutput {
 	return o
-}
-
-func (o GetManagedDatabaseAttentionLogCountResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseAttentionLogCountResult] {
-	return pulumix.Output[GetManagedDatabaseAttentionLogCountResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagedDatabaseAttentionLogCountResultOutput) GroupBy() pulumi.StringPtrOutput {

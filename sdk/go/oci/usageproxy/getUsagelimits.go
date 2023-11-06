@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Usagelimits in Oracle Cloud Infrastructure Usage Proxy service.
@@ -130,12 +129,6 @@ func (o GetUsagelimitsResultOutput) ToGetUsagelimitsResultOutput() GetUsagelimit
 
 func (o GetUsagelimitsResultOutput) ToGetUsagelimitsResultOutputWithContext(ctx context.Context) GetUsagelimitsResultOutput {
 	return o
-}
-
-func (o GetUsagelimitsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetUsagelimitsResult] {
-	return pulumix.Output[GetUsagelimitsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetUsagelimitsResultOutput) CompartmentId() pulumi.StringOutput {

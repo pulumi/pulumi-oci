@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Job Executions Statuses in Oracle Cloud Infrastructure Database Management service.
@@ -139,12 +138,6 @@ func (o GetJobExecutionsStatusesResultOutput) ToGetJobExecutionsStatusesResultOu
 
 func (o GetJobExecutionsStatusesResultOutput) ToGetJobExecutionsStatusesResultOutputWithContext(ctx context.Context) GetJobExecutionsStatusesResultOutput {
 	return o
-}
-
-func (o GetJobExecutionsStatusesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetJobExecutionsStatusesResult] {
-	return pulumix.Output[GetJobExecutionsStatusesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetJobExecutionsStatusesResultOutput) CompartmentId() pulumi.StringOutput {

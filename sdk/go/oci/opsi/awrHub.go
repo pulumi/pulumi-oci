@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Awr Hub resource in Oracle Cloud Infrastructure Opsi service.
@@ -259,12 +258,6 @@ func (i *AwrHub) ToAwrHubOutputWithContext(ctx context.Context) AwrHubOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AwrHubOutput)
 }
 
-func (i *AwrHub) ToOutput(ctx context.Context) pulumix.Output[*AwrHub] {
-	return pulumix.Output[*AwrHub]{
-		OutputState: i.ToAwrHubOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AwrHubArrayInput is an input type that accepts AwrHubArray and AwrHubArrayOutput values.
 // You can construct a concrete instance of `AwrHubArrayInput` via:
 //
@@ -288,12 +281,6 @@ func (i AwrHubArray) ToAwrHubArrayOutput() AwrHubArrayOutput {
 
 func (i AwrHubArray) ToAwrHubArrayOutputWithContext(ctx context.Context) AwrHubArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AwrHubArrayOutput)
-}
-
-func (i AwrHubArray) ToOutput(ctx context.Context) pulumix.Output[[]*AwrHub] {
-	return pulumix.Output[[]*AwrHub]{
-		OutputState: i.ToAwrHubArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AwrHubMapInput is an input type that accepts AwrHubMap and AwrHubMapOutput values.
@@ -321,12 +308,6 @@ func (i AwrHubMap) ToAwrHubMapOutputWithContext(ctx context.Context) AwrHubMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(AwrHubMapOutput)
 }
 
-func (i AwrHubMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AwrHub] {
-	return pulumix.Output[map[string]*AwrHub]{
-		OutputState: i.ToAwrHubMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AwrHubOutput struct{ *pulumi.OutputState }
 
 func (AwrHubOutput) ElementType() reflect.Type {
@@ -339,12 +320,6 @@ func (o AwrHubOutput) ToAwrHubOutput() AwrHubOutput {
 
 func (o AwrHubOutput) ToAwrHubOutputWithContext(ctx context.Context) AwrHubOutput {
 	return o
-}
-
-func (o AwrHubOutput) ToOutput(ctx context.Context) pulumix.Output[*AwrHub] {
-	return pulumix.Output[*AwrHub]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Mailbox URL required for AWR hub and AWR source setup.
@@ -424,12 +399,6 @@ func (o AwrHubArrayOutput) ToAwrHubArrayOutputWithContext(ctx context.Context) A
 	return o
 }
 
-func (o AwrHubArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AwrHub] {
-	return pulumix.Output[[]*AwrHub]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AwrHubArrayOutput) Index(i pulumi.IntInput) AwrHubOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AwrHub {
 		return vs[0].([]*AwrHub)[vs[1].(int)]
@@ -448,12 +417,6 @@ func (o AwrHubMapOutput) ToAwrHubMapOutput() AwrHubMapOutput {
 
 func (o AwrHubMapOutput) ToAwrHubMapOutputWithContext(ctx context.Context) AwrHubMapOutput {
 	return o
-}
-
-func (o AwrHubMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AwrHub] {
-	return pulumix.Output[map[string]*AwrHub]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AwrHubMapOutput) MapIndex(k pulumi.StringInput) AwrHubOutput {

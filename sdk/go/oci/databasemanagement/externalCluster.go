@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the External Cluster resource in Oracle Cloud Infrastructure Database Management service.
@@ -234,12 +233,6 @@ func (i *ExternalCluster) ToExternalClusterOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalClusterOutput)
 }
 
-func (i *ExternalCluster) ToOutput(ctx context.Context) pulumix.Output[*ExternalCluster] {
-	return pulumix.Output[*ExternalCluster]{
-		OutputState: i.ToExternalClusterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExternalClusterArrayInput is an input type that accepts ExternalClusterArray and ExternalClusterArrayOutput values.
 // You can construct a concrete instance of `ExternalClusterArrayInput` via:
 //
@@ -263,12 +256,6 @@ func (i ExternalClusterArray) ToExternalClusterArrayOutput() ExternalClusterArra
 
 func (i ExternalClusterArray) ToExternalClusterArrayOutputWithContext(ctx context.Context) ExternalClusterArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalClusterArrayOutput)
-}
-
-func (i ExternalClusterArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalCluster] {
-	return pulumix.Output[[]*ExternalCluster]{
-		OutputState: i.ToExternalClusterArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ExternalClusterMapInput is an input type that accepts ExternalClusterMap and ExternalClusterMapOutput values.
@@ -296,12 +283,6 @@ func (i ExternalClusterMap) ToExternalClusterMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalClusterMapOutput)
 }
 
-func (i ExternalClusterMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalCluster] {
-	return pulumix.Output[map[string]*ExternalCluster]{
-		OutputState: i.ToExternalClusterMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExternalClusterOutput struct{ *pulumi.OutputState }
 
 func (ExternalClusterOutput) ElementType() reflect.Type {
@@ -314,12 +295,6 @@ func (o ExternalClusterOutput) ToExternalClusterOutput() ExternalClusterOutput {
 
 func (o ExternalClusterOutput) ToExternalClusterOutputWithContext(ctx context.Context) ExternalClusterOutput {
 	return o
-}
-
-func (o ExternalClusterOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalCluster] {
-	return pulumix.Output[*ExternalCluster]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The additional details of the external cluster defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
@@ -431,12 +406,6 @@ func (o ExternalClusterArrayOutput) ToExternalClusterArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o ExternalClusterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalCluster] {
-	return pulumix.Output[[]*ExternalCluster]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ExternalClusterArrayOutput) Index(i pulumi.IntInput) ExternalClusterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ExternalCluster {
 		return vs[0].([]*ExternalCluster)[vs[1].(int)]
@@ -455,12 +424,6 @@ func (o ExternalClusterMapOutput) ToExternalClusterMapOutput() ExternalClusterMa
 
 func (o ExternalClusterMapOutput) ToExternalClusterMapOutputWithContext(ctx context.Context) ExternalClusterMapOutput {
 	return o
-}
-
-func (o ExternalClusterMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalCluster] {
-	return pulumix.Output[map[string]*ExternalCluster]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalClusterMapOutput) MapIndex(k pulumi.StringInput) ExternalClusterOutput {

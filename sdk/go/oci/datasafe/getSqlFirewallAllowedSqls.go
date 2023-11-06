@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Sql Firewall Allowed Sqls in Oracle Cloud Infrastructure Data Safe service.
@@ -141,12 +140,6 @@ func (o GetSqlFirewallAllowedSqlsResultOutput) ToGetSqlFirewallAllowedSqlsResult
 
 func (o GetSqlFirewallAllowedSqlsResultOutput) ToGetSqlFirewallAllowedSqlsResultOutputWithContext(ctx context.Context) GetSqlFirewallAllowedSqlsResultOutput {
 	return o
-}
-
-func (o GetSqlFirewallAllowedSqlsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallAllowedSqlsResult] {
-	return pulumix.Output[GetSqlFirewallAllowedSqlsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSqlFirewallAllowedSqlsResultOutput) AccessLevel() pulumi.StringPtrOutput {

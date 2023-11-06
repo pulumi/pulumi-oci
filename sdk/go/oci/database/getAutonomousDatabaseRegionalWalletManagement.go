@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
@@ -84,12 +83,6 @@ func (o LookupAutonomousDatabaseRegionalWalletManagementResultOutput) ToLookupAu
 
 func (o LookupAutonomousDatabaseRegionalWalletManagementResultOutput) ToLookupAutonomousDatabaseRegionalWalletManagementResultOutputWithContext(ctx context.Context) LookupAutonomousDatabaseRegionalWalletManagementResultOutput {
 	return o
-}
-
-func (o LookupAutonomousDatabaseRegionalWalletManagementResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAutonomousDatabaseRegionalWalletManagementResult] {
-	return pulumix.Output[LookupAutonomousDatabaseRegionalWalletManagementResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupAutonomousDatabaseRegionalWalletManagementResultOutput) GracePeriod() pulumi.IntOutput {

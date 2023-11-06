@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Grant resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1153,12 +1152,6 @@ func (i *DomainsGrant) ToDomainsGrantOutputWithContext(ctx context.Context) Doma
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsGrantOutput)
 }
 
-func (i *DomainsGrant) ToOutput(ctx context.Context) pulumix.Output[*DomainsGrant] {
-	return pulumix.Output[*DomainsGrant]{
-		OutputState: i.ToDomainsGrantOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsGrantArrayInput is an input type that accepts DomainsGrantArray and DomainsGrantArrayOutput values.
 // You can construct a concrete instance of `DomainsGrantArrayInput` via:
 //
@@ -1182,12 +1175,6 @@ func (i DomainsGrantArray) ToDomainsGrantArrayOutput() DomainsGrantArrayOutput {
 
 func (i DomainsGrantArray) ToDomainsGrantArrayOutputWithContext(ctx context.Context) DomainsGrantArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsGrantArrayOutput)
-}
-
-func (i DomainsGrantArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsGrant] {
-	return pulumix.Output[[]*DomainsGrant]{
-		OutputState: i.ToDomainsGrantArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsGrantMapInput is an input type that accepts DomainsGrantMap and DomainsGrantMapOutput values.
@@ -1215,12 +1202,6 @@ func (i DomainsGrantMap) ToDomainsGrantMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsGrantMapOutput)
 }
 
-func (i DomainsGrantMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsGrant] {
-	return pulumix.Output[map[string]*DomainsGrant]{
-		OutputState: i.ToDomainsGrantMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsGrantOutput struct{ *pulumi.OutputState }
 
 func (DomainsGrantOutput) ElementType() reflect.Type {
@@ -1233,12 +1214,6 @@ func (o DomainsGrantOutput) ToDomainsGrantOutput() DomainsGrantOutput {
 
 func (o DomainsGrantOutput) ToDomainsGrantOutputWithContext(ctx context.Context) DomainsGrantOutput {
 	return o
-}
-
-func (o DomainsGrantOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsGrant] {
-	return pulumix.Output[*DomainsGrant]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Application that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
@@ -1598,12 +1573,6 @@ func (o DomainsGrantArrayOutput) ToDomainsGrantArrayOutputWithContext(ctx contex
 	return o
 }
 
-func (o DomainsGrantArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsGrant] {
-	return pulumix.Output[[]*DomainsGrant]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DomainsGrantArrayOutput) Index(i pulumi.IntInput) DomainsGrantOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DomainsGrant {
 		return vs[0].([]*DomainsGrant)[vs[1].(int)]
@@ -1622,12 +1591,6 @@ func (o DomainsGrantMapOutput) ToDomainsGrantMapOutput() DomainsGrantMapOutput {
 
 func (o DomainsGrantMapOutput) ToDomainsGrantMapOutputWithContext(ctx context.Context) DomainsGrantMapOutput {
 	return o
-}
-
-func (o DomainsGrantMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsGrant] {
-	return pulumix.Output[map[string]*DomainsGrant]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsGrantMapOutput) MapIndex(k pulumi.StringInput) DomainsGrantOutput {

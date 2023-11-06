@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Repo File Line resource in Oracle Cloud Infrastructure Devops service.
@@ -120,12 +119,6 @@ func (o GetRepoFileLineResultOutput) ToGetRepoFileLineResultOutput() GetRepoFile
 
 func (o GetRepoFileLineResultOutput) ToGetRepoFileLineResultOutputWithContext(ctx context.Context) GetRepoFileLineResultOutput {
 	return o
-}
-
-func (o GetRepoFileLineResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRepoFileLineResult] {
-	return pulumix.Output[GetRepoFileLineResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRepoFileLineResultOutput) FilePath() pulumi.StringOutput {

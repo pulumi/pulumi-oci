@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Fusion Environment Refresh Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -231,12 +230,6 @@ func (i *FusionEnvironmentRefreshActivity) ToFusionEnvironmentRefreshActivityOut
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentRefreshActivityOutput)
 }
 
-func (i *FusionEnvironmentRefreshActivity) ToOutput(ctx context.Context) pulumix.Output[*FusionEnvironmentRefreshActivity] {
-	return pulumix.Output[*FusionEnvironmentRefreshActivity]{
-		OutputState: i.ToFusionEnvironmentRefreshActivityOutputWithContext(ctx).OutputState,
-	}
-}
-
 // FusionEnvironmentRefreshActivityArrayInput is an input type that accepts FusionEnvironmentRefreshActivityArray and FusionEnvironmentRefreshActivityArrayOutput values.
 // You can construct a concrete instance of `FusionEnvironmentRefreshActivityArrayInput` via:
 //
@@ -260,12 +253,6 @@ func (i FusionEnvironmentRefreshActivityArray) ToFusionEnvironmentRefreshActivit
 
 func (i FusionEnvironmentRefreshActivityArray) ToFusionEnvironmentRefreshActivityArrayOutputWithContext(ctx context.Context) FusionEnvironmentRefreshActivityArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentRefreshActivityArrayOutput)
-}
-
-func (i FusionEnvironmentRefreshActivityArray) ToOutput(ctx context.Context) pulumix.Output[[]*FusionEnvironmentRefreshActivity] {
-	return pulumix.Output[[]*FusionEnvironmentRefreshActivity]{
-		OutputState: i.ToFusionEnvironmentRefreshActivityArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // FusionEnvironmentRefreshActivityMapInput is an input type that accepts FusionEnvironmentRefreshActivityMap and FusionEnvironmentRefreshActivityMapOutput values.
@@ -293,12 +280,6 @@ func (i FusionEnvironmentRefreshActivityMap) ToFusionEnvironmentRefreshActivityM
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentRefreshActivityMapOutput)
 }
 
-func (i FusionEnvironmentRefreshActivityMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*FusionEnvironmentRefreshActivity] {
-	return pulumix.Output[map[string]*FusionEnvironmentRefreshActivity]{
-		OutputState: i.ToFusionEnvironmentRefreshActivityMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FusionEnvironmentRefreshActivityOutput struct{ *pulumi.OutputState }
 
 func (FusionEnvironmentRefreshActivityOutput) ElementType() reflect.Type {
@@ -311,12 +292,6 @@ func (o FusionEnvironmentRefreshActivityOutput) ToFusionEnvironmentRefreshActivi
 
 func (o FusionEnvironmentRefreshActivityOutput) ToFusionEnvironmentRefreshActivityOutputWithContext(ctx context.Context) FusionEnvironmentRefreshActivityOutput {
 	return o
-}
-
-func (o FusionEnvironmentRefreshActivityOutput) ToOutput(ctx context.Context) pulumix.Output[*FusionEnvironmentRefreshActivity] {
-	return pulumix.Output[*FusionEnvironmentRefreshActivity]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A friendly name for the refresh activity. Can be changed later.
@@ -402,12 +377,6 @@ func (o FusionEnvironmentRefreshActivityArrayOutput) ToFusionEnvironmentRefreshA
 	return o
 }
 
-func (o FusionEnvironmentRefreshActivityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*FusionEnvironmentRefreshActivity] {
-	return pulumix.Output[[]*FusionEnvironmentRefreshActivity]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o FusionEnvironmentRefreshActivityArrayOutput) Index(i pulumi.IntInput) FusionEnvironmentRefreshActivityOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *FusionEnvironmentRefreshActivity {
 		return vs[0].([]*FusionEnvironmentRefreshActivity)[vs[1].(int)]
@@ -426,12 +395,6 @@ func (o FusionEnvironmentRefreshActivityMapOutput) ToFusionEnvironmentRefreshAct
 
 func (o FusionEnvironmentRefreshActivityMapOutput) ToFusionEnvironmentRefreshActivityMapOutputWithContext(ctx context.Context) FusionEnvironmentRefreshActivityMapOutput {
 	return o
-}
-
-func (o FusionEnvironmentRefreshActivityMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*FusionEnvironmentRefreshActivity] {
-	return pulumix.Output[map[string]*FusionEnvironmentRefreshActivity]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FusionEnvironmentRefreshActivityMapOutput) MapIndex(k pulumi.StringInput) FusionEnvironmentRefreshActivityOutput {

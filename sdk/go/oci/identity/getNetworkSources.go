@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Network Sources in Oracle Cloud Infrastructure Identity service.
@@ -122,12 +121,6 @@ func (o GetNetworkSourcesResultOutput) ToGetNetworkSourcesResultOutput() GetNetw
 
 func (o GetNetworkSourcesResultOutput) ToGetNetworkSourcesResultOutputWithContext(ctx context.Context) GetNetworkSourcesResultOutput {
 	return o
-}
-
-func (o GetNetworkSourcesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSourcesResult] {
-	return pulumix.Output[GetNetworkSourcesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the tenancy containing the network source. The tenancy is the root compartment.

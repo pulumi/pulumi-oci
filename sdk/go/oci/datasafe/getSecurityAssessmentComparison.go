@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Security Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
@@ -114,12 +113,6 @@ func (o GetSecurityAssessmentComparisonResultOutput) ToGetSecurityAssessmentComp
 
 func (o GetSecurityAssessmentComparisonResultOutput) ToGetSecurityAssessmentComparisonResultOutputWithContext(ctx context.Context) GetSecurityAssessmentComparisonResultOutput {
 	return o
-}
-
-func (o GetSecurityAssessmentComparisonResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentComparisonResult] {
-	return pulumix.Output[GetSecurityAssessmentComparisonResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the security assessment that is set as a baseline.

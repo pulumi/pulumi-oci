@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Awr Hub Awr Snapshot resource in Oracle Cloud Infrastructure Opsi service.
@@ -121,12 +120,6 @@ func (o GetAwrHubAwrSnapshotResultOutput) ToGetAwrHubAwrSnapshotResultOutput() G
 
 func (o GetAwrHubAwrSnapshotResultOutput) ToGetAwrHubAwrSnapshotResultOutputWithContext(ctx context.Context) GetAwrHubAwrSnapshotResultOutput {
 	return o
-}
-
-func (o GetAwrHubAwrSnapshotResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAwrHubAwrSnapshotResult] {
-	return pulumix.Output[GetAwrHubAwrSnapshotResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAwrHubAwrSnapshotResultOutput) AwrHubId() pulumi.StringOutput {

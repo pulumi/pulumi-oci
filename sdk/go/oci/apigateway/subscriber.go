@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Subscriber resource in Oracle Cloud Infrastructure API Gateway service.
@@ -248,12 +247,6 @@ func (i *Subscriber) ToSubscriberOutputWithContext(ctx context.Context) Subscrib
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriberOutput)
 }
 
-func (i *Subscriber) ToOutput(ctx context.Context) pulumix.Output[*Subscriber] {
-	return pulumix.Output[*Subscriber]{
-		OutputState: i.ToSubscriberOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SubscriberArrayInput is an input type that accepts SubscriberArray and SubscriberArrayOutput values.
 // You can construct a concrete instance of `SubscriberArrayInput` via:
 //
@@ -277,12 +270,6 @@ func (i SubscriberArray) ToSubscriberArrayOutput() SubscriberArrayOutput {
 
 func (i SubscriberArray) ToSubscriberArrayOutputWithContext(ctx context.Context) SubscriberArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriberArrayOutput)
-}
-
-func (i SubscriberArray) ToOutput(ctx context.Context) pulumix.Output[[]*Subscriber] {
-	return pulumix.Output[[]*Subscriber]{
-		OutputState: i.ToSubscriberArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SubscriberMapInput is an input type that accepts SubscriberMap and SubscriberMapOutput values.
@@ -310,12 +297,6 @@ func (i SubscriberMap) ToSubscriberMapOutputWithContext(ctx context.Context) Sub
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriberMapOutput)
 }
 
-func (i SubscriberMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Subscriber] {
-	return pulumix.Output[map[string]*Subscriber]{
-		OutputState: i.ToSubscriberMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SubscriberOutput struct{ *pulumi.OutputState }
 
 func (SubscriberOutput) ElementType() reflect.Type {
@@ -328,12 +309,6 @@ func (o SubscriberOutput) ToSubscriberOutput() SubscriberOutput {
 
 func (o SubscriberOutput) ToSubscriberOutputWithContext(ctx context.Context) SubscriberOutput {
 	return o
-}
-
-func (o SubscriberOutput) ToOutput(ctx context.Context) pulumix.Output[*Subscriber] {
-	return pulumix.Output[*Subscriber]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The clients belonging to this subscriber.
@@ -403,12 +378,6 @@ func (o SubscriberArrayOutput) ToSubscriberArrayOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o SubscriberArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Subscriber] {
-	return pulumix.Output[[]*Subscriber]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o SubscriberArrayOutput) Index(i pulumi.IntInput) SubscriberOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Subscriber {
 		return vs[0].([]*Subscriber)[vs[1].(int)]
@@ -427,12 +396,6 @@ func (o SubscriberMapOutput) ToSubscriberMapOutput() SubscriberMapOutput {
 
 func (o SubscriberMapOutput) ToSubscriberMapOutputWithContext(ctx context.Context) SubscriberMapOutput {
 	return o
-}
-
-func (o SubscriberMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Subscriber] {
-	return pulumix.Output[map[string]*Subscriber]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SubscriberMapOutput) MapIndex(k pulumi.StringInput) SubscriberOutput {

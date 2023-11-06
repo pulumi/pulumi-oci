@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -49,12 +48,6 @@ func (i GetMonitoredInstancesFilterArgs) ToGetMonitoredInstancesFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredInstancesFilterOutput)
 }
 
-func (i GetMonitoredInstancesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredInstancesFilter] {
-	return pulumix.Output[GetMonitoredInstancesFilter]{
-		OutputState: i.ToGetMonitoredInstancesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredInstancesFilterArrayInput is an input type that accepts GetMonitoredInstancesFilterArray and GetMonitoredInstancesFilterArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredInstancesFilterArrayInput` via:
 //
@@ -80,12 +73,6 @@ func (i GetMonitoredInstancesFilterArray) ToGetMonitoredInstancesFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredInstancesFilterArrayOutput)
 }
 
-func (i GetMonitoredInstancesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredInstancesFilter] {
-	return pulumix.Output[[]GetMonitoredInstancesFilter]{
-		OutputState: i.ToGetMonitoredInstancesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredInstancesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredInstancesFilterOutput) ElementType() reflect.Type {
@@ -98,12 +85,6 @@ func (o GetMonitoredInstancesFilterOutput) ToGetMonitoredInstancesFilterOutput()
 
 func (o GetMonitoredInstancesFilterOutput) ToGetMonitoredInstancesFilterOutputWithContext(ctx context.Context) GetMonitoredInstancesFilterOutput {
 	return o
-}
-
-func (o GetMonitoredInstancesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredInstancesFilter] {
-	return pulumix.Output[GetMonitoredInstancesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredInstancesFilterOutput) Name() pulumi.StringOutput {
@@ -130,12 +111,6 @@ func (o GetMonitoredInstancesFilterArrayOutput) ToGetMonitoredInstancesFilterArr
 
 func (o GetMonitoredInstancesFilterArrayOutput) ToGetMonitoredInstancesFilterArrayOutputWithContext(ctx context.Context) GetMonitoredInstancesFilterArrayOutput {
 	return o
-}
-
-func (o GetMonitoredInstancesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredInstancesFilter] {
-	return pulumix.Output[[]GetMonitoredInstancesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetMonitoredInstancesFilterOutput {
@@ -175,12 +150,6 @@ func (i GetMonitoredInstancesMonitoredInstanceCollectionArgs) ToGetMonitoredInst
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredInstancesMonitoredInstanceCollectionOutput)
 }
 
-func (i GetMonitoredInstancesMonitoredInstanceCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredInstancesMonitoredInstanceCollection] {
-	return pulumix.Output[GetMonitoredInstancesMonitoredInstanceCollection]{
-		OutputState: i.ToGetMonitoredInstancesMonitoredInstanceCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredInstancesMonitoredInstanceCollectionArrayInput is an input type that accepts GetMonitoredInstancesMonitoredInstanceCollectionArray and GetMonitoredInstancesMonitoredInstanceCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredInstancesMonitoredInstanceCollectionArrayInput` via:
 //
@@ -206,12 +175,6 @@ func (i GetMonitoredInstancesMonitoredInstanceCollectionArray) ToGetMonitoredIns
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredInstancesMonitoredInstanceCollectionArrayOutput)
 }
 
-func (i GetMonitoredInstancesMonitoredInstanceCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredInstancesMonitoredInstanceCollection] {
-	return pulumix.Output[[]GetMonitoredInstancesMonitoredInstanceCollection]{
-		OutputState: i.ToGetMonitoredInstancesMonitoredInstanceCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredInstancesMonitoredInstanceCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredInstancesMonitoredInstanceCollectionOutput) ElementType() reflect.Type {
@@ -224,12 +187,6 @@ func (o GetMonitoredInstancesMonitoredInstanceCollectionOutput) ToGetMonitoredIn
 
 func (o GetMonitoredInstancesMonitoredInstanceCollectionOutput) ToGetMonitoredInstancesMonitoredInstanceCollectionOutputWithContext(ctx context.Context) GetMonitoredInstancesMonitoredInstanceCollectionOutput {
 	return o
-}
-
-func (o GetMonitoredInstancesMonitoredInstanceCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredInstancesMonitoredInstanceCollection] {
-	return pulumix.Output[GetMonitoredInstancesMonitoredInstanceCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredInstancesMonitoredInstanceCollectionOutput) Items() GetMonitoredInstancesMonitoredInstanceCollectionItemArrayOutput {
@@ -250,12 +207,6 @@ func (o GetMonitoredInstancesMonitoredInstanceCollectionArrayOutput) ToGetMonito
 
 func (o GetMonitoredInstancesMonitoredInstanceCollectionArrayOutput) ToGetMonitoredInstancesMonitoredInstanceCollectionArrayOutputWithContext(ctx context.Context) GetMonitoredInstancesMonitoredInstanceCollectionArrayOutput {
 	return o
-}
-
-func (o GetMonitoredInstancesMonitoredInstanceCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredInstancesMonitoredInstanceCollection] {
-	return pulumix.Output[[]GetMonitoredInstancesMonitoredInstanceCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredInstancesMonitoredInstanceCollectionArrayOutput) Index(i pulumi.IntInput) GetMonitoredInstancesMonitoredInstanceCollectionOutput {
@@ -329,12 +280,6 @@ func (i GetMonitoredInstancesMonitoredInstanceCollectionItemArgs) ToGetMonitored
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredInstancesMonitoredInstanceCollectionItemOutput)
 }
 
-func (i GetMonitoredInstancesMonitoredInstanceCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredInstancesMonitoredInstanceCollectionItem] {
-	return pulumix.Output[GetMonitoredInstancesMonitoredInstanceCollectionItem]{
-		OutputState: i.ToGetMonitoredInstancesMonitoredInstanceCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredInstancesMonitoredInstanceCollectionItemArrayInput is an input type that accepts GetMonitoredInstancesMonitoredInstanceCollectionItemArray and GetMonitoredInstancesMonitoredInstanceCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredInstancesMonitoredInstanceCollectionItemArrayInput` via:
 //
@@ -360,12 +305,6 @@ func (i GetMonitoredInstancesMonitoredInstanceCollectionItemArray) ToGetMonitore
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredInstancesMonitoredInstanceCollectionItemArrayOutput)
 }
 
-func (i GetMonitoredInstancesMonitoredInstanceCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredInstancesMonitoredInstanceCollectionItem] {
-	return pulumix.Output[[]GetMonitoredInstancesMonitoredInstanceCollectionItem]{
-		OutputState: i.ToGetMonitoredInstancesMonitoredInstanceCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredInstancesMonitoredInstanceCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredInstancesMonitoredInstanceCollectionItemOutput) ElementType() reflect.Type {
@@ -378,12 +317,6 @@ func (o GetMonitoredInstancesMonitoredInstanceCollectionItemOutput) ToGetMonitor
 
 func (o GetMonitoredInstancesMonitoredInstanceCollectionItemOutput) ToGetMonitoredInstancesMonitoredInstanceCollectionItemOutputWithContext(ctx context.Context) GetMonitoredInstancesMonitoredInstanceCollectionItemOutput {
 	return o
-}
-
-func (o GetMonitoredInstancesMonitoredInstanceCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredInstancesMonitoredInstanceCollectionItem] {
-	return pulumix.Output[GetMonitoredInstancesMonitoredInstanceCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -443,12 +376,6 @@ func (o GetMonitoredInstancesMonitoredInstanceCollectionItemArrayOutput) ToGetMo
 
 func (o GetMonitoredInstancesMonitoredInstanceCollectionItemArrayOutput) ToGetMonitoredInstancesMonitoredInstanceCollectionItemArrayOutputWithContext(ctx context.Context) GetMonitoredInstancesMonitoredInstanceCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetMonitoredInstancesMonitoredInstanceCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredInstancesMonitoredInstanceCollectionItem] {
-	return pulumix.Output[[]GetMonitoredInstancesMonitoredInstanceCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredInstancesMonitoredInstanceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMonitoredInstancesMonitoredInstanceCollectionItemOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Pbf Listing resource in Oracle Cloud Infrastructure Functions service.
@@ -120,12 +119,6 @@ func (o GetPbfListingResultOutput) ToGetPbfListingResultOutput() GetPbfListingRe
 
 func (o GetPbfListingResultOutput) ToGetPbfListingResultOutputWithContext(ctx context.Context) GetPbfListingResultOutput {
 	return o
-}
-
-func (o GetPbfListingResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingResult] {
-	return pulumix.Output[GetPbfListingResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`

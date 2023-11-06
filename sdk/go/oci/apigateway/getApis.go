@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Apis in Oracle Cloud Infrastructure API Gateway service.
@@ -120,12 +119,6 @@ func (o GetApisResultOutput) ToGetApisResultOutput() GetApisResultOutput {
 
 func (o GetApisResultOutput) ToGetApisResultOutputWithContext(ctx context.Context) GetApisResultOutput {
 	return o
-}
-
-func (o GetApisResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetApisResult] {
-	return pulumix.Output[GetApisResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of api_collection.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Boot Volume Replica resource in Oracle Cloud Infrastructure Core service.
@@ -123,12 +122,6 @@ func (o GetBootVolumeReplicaResultOutput) ToGetBootVolumeReplicaResultOutput() G
 
 func (o GetBootVolumeReplicaResultOutput) ToGetBootVolumeReplicaResultOutputWithContext(ctx context.Context) GetBootVolumeReplicaResultOutput {
 	return o
-}
-
-func (o GetBootVolumeReplicaResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBootVolumeReplicaResult] {
-	return pulumix.Output[GetBootVolumeReplicaResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`

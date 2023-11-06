@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Identity Setting resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1222,12 +1221,6 @@ func (i *DomainsIdentitySetting) ToDomainsIdentitySettingOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsIdentitySettingOutput)
 }
 
-func (i *DomainsIdentitySetting) ToOutput(ctx context.Context) pulumix.Output[*DomainsIdentitySetting] {
-	return pulumix.Output[*DomainsIdentitySetting]{
-		OutputState: i.ToDomainsIdentitySettingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsIdentitySettingArrayInput is an input type that accepts DomainsIdentitySettingArray and DomainsIdentitySettingArrayOutput values.
 // You can construct a concrete instance of `DomainsIdentitySettingArrayInput` via:
 //
@@ -1251,12 +1244,6 @@ func (i DomainsIdentitySettingArray) ToDomainsIdentitySettingArrayOutput() Domai
 
 func (i DomainsIdentitySettingArray) ToDomainsIdentitySettingArrayOutputWithContext(ctx context.Context) DomainsIdentitySettingArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsIdentitySettingArrayOutput)
-}
-
-func (i DomainsIdentitySettingArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsIdentitySetting] {
-	return pulumix.Output[[]*DomainsIdentitySetting]{
-		OutputState: i.ToDomainsIdentitySettingArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsIdentitySettingMapInput is an input type that accepts DomainsIdentitySettingMap and DomainsIdentitySettingMapOutput values.
@@ -1284,12 +1271,6 @@ func (i DomainsIdentitySettingMap) ToDomainsIdentitySettingMapOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsIdentitySettingMapOutput)
 }
 
-func (i DomainsIdentitySettingMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsIdentitySetting] {
-	return pulumix.Output[map[string]*DomainsIdentitySetting]{
-		OutputState: i.ToDomainsIdentitySettingMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsIdentitySettingOutput struct{ *pulumi.OutputState }
 
 func (DomainsIdentitySettingOutput) ElementType() reflect.Type {
@@ -1302,12 +1283,6 @@ func (o DomainsIdentitySettingOutput) ToDomainsIdentitySettingOutput() DomainsId
 
 func (o DomainsIdentitySettingOutput) ToDomainsIdentitySettingOutputWithContext(ctx context.Context) DomainsIdentitySettingOutput {
 	return o
-}
-
-func (o DomainsIdentitySettingOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsIdentitySetting] {
-	return pulumix.Output[*DomainsIdentitySetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -1681,12 +1656,6 @@ func (o DomainsIdentitySettingArrayOutput) ToDomainsIdentitySettingArrayOutputWi
 	return o
 }
 
-func (o DomainsIdentitySettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsIdentitySetting] {
-	return pulumix.Output[[]*DomainsIdentitySetting]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DomainsIdentitySettingArrayOutput) Index(i pulumi.IntInput) DomainsIdentitySettingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DomainsIdentitySetting {
 		return vs[0].([]*DomainsIdentitySetting)[vs[1].(int)]
@@ -1705,12 +1674,6 @@ func (o DomainsIdentitySettingMapOutput) ToDomainsIdentitySettingMapOutput() Dom
 
 func (o DomainsIdentitySettingMapOutput) ToDomainsIdentitySettingMapOutputWithContext(ctx context.Context) DomainsIdentitySettingMapOutput {
 	return o
-}
-
-func (o DomainsIdentitySettingMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsIdentitySetting] {
-	return pulumix.Output[map[string]*DomainsIdentitySetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsIdentitySettingMapOutput) MapIndex(k pulumi.StringInput) DomainsIdentitySettingOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Vm Cluster Update History Entries in Oracle Cloud Infrastructure Database service.
@@ -119,12 +118,6 @@ func (o GetVmClusterUpdateHistoryEntriesResultOutput) ToGetVmClusterUpdateHistor
 
 func (o GetVmClusterUpdateHistoryEntriesResultOutput) ToGetVmClusterUpdateHistoryEntriesResultOutputWithContext(ctx context.Context) GetVmClusterUpdateHistoryEntriesResultOutput {
 	return o
-}
-
-func (o GetVmClusterUpdateHistoryEntriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterUpdateHistoryEntriesResult] {
-	return pulumix.Output[GetVmClusterUpdateHistoryEntriesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClusterUpdateHistoryEntriesResultOutput) Filters() GetVmClusterUpdateHistoryEntriesFilterArrayOutput {

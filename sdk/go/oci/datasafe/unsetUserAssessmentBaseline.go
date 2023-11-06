@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Unset User Assessment Baseline resource in Oracle Cloud Infrastructure Data Safe service.
@@ -155,12 +154,6 @@ func (i *UnsetUserAssessmentBaseline) ToUnsetUserAssessmentBaselineOutputWithCon
 	return pulumi.ToOutputWithContext(ctx, i).(UnsetUserAssessmentBaselineOutput)
 }
 
-func (i *UnsetUserAssessmentBaseline) ToOutput(ctx context.Context) pulumix.Output[*UnsetUserAssessmentBaseline] {
-	return pulumix.Output[*UnsetUserAssessmentBaseline]{
-		OutputState: i.ToUnsetUserAssessmentBaselineOutputWithContext(ctx).OutputState,
-	}
-}
-
 // UnsetUserAssessmentBaselineArrayInput is an input type that accepts UnsetUserAssessmentBaselineArray and UnsetUserAssessmentBaselineArrayOutput values.
 // You can construct a concrete instance of `UnsetUserAssessmentBaselineArrayInput` via:
 //
@@ -184,12 +177,6 @@ func (i UnsetUserAssessmentBaselineArray) ToUnsetUserAssessmentBaselineArrayOutp
 
 func (i UnsetUserAssessmentBaselineArray) ToUnsetUserAssessmentBaselineArrayOutputWithContext(ctx context.Context) UnsetUserAssessmentBaselineArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(UnsetUserAssessmentBaselineArrayOutput)
-}
-
-func (i UnsetUserAssessmentBaselineArray) ToOutput(ctx context.Context) pulumix.Output[[]*UnsetUserAssessmentBaseline] {
-	return pulumix.Output[[]*UnsetUserAssessmentBaseline]{
-		OutputState: i.ToUnsetUserAssessmentBaselineArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // UnsetUserAssessmentBaselineMapInput is an input type that accepts UnsetUserAssessmentBaselineMap and UnsetUserAssessmentBaselineMapOutput values.
@@ -217,12 +204,6 @@ func (i UnsetUserAssessmentBaselineMap) ToUnsetUserAssessmentBaselineMapOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(UnsetUserAssessmentBaselineMapOutput)
 }
 
-func (i UnsetUserAssessmentBaselineMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*UnsetUserAssessmentBaseline] {
-	return pulumix.Output[map[string]*UnsetUserAssessmentBaseline]{
-		OutputState: i.ToUnsetUserAssessmentBaselineMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type UnsetUserAssessmentBaselineOutput struct{ *pulumi.OutputState }
 
 func (UnsetUserAssessmentBaselineOutput) ElementType() reflect.Type {
@@ -235,12 +216,6 @@ func (o UnsetUserAssessmentBaselineOutput) ToUnsetUserAssessmentBaselineOutput()
 
 func (o UnsetUserAssessmentBaselineOutput) ToUnsetUserAssessmentBaselineOutputWithContext(ctx context.Context) UnsetUserAssessmentBaselineOutput {
 	return o
-}
-
-func (o UnsetUserAssessmentBaselineOutput) ToOutput(ctx context.Context) pulumix.Output[*UnsetUserAssessmentBaseline] {
-	return pulumix.Output[*UnsetUserAssessmentBaseline]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the user assessment.
@@ -265,12 +240,6 @@ func (o UnsetUserAssessmentBaselineArrayOutput) ToUnsetUserAssessmentBaselineArr
 	return o
 }
 
-func (o UnsetUserAssessmentBaselineArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*UnsetUserAssessmentBaseline] {
-	return pulumix.Output[[]*UnsetUserAssessmentBaseline]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o UnsetUserAssessmentBaselineArrayOutput) Index(i pulumi.IntInput) UnsetUserAssessmentBaselineOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *UnsetUserAssessmentBaseline {
 		return vs[0].([]*UnsetUserAssessmentBaseline)[vs[1].(int)]
@@ -289,12 +258,6 @@ func (o UnsetUserAssessmentBaselineMapOutput) ToUnsetUserAssessmentBaselineMapOu
 
 func (o UnsetUserAssessmentBaselineMapOutput) ToUnsetUserAssessmentBaselineMapOutputWithContext(ctx context.Context) UnsetUserAssessmentBaselineMapOutput {
 	return o
-}
-
-func (o UnsetUserAssessmentBaselineMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*UnsetUserAssessmentBaseline] {
-	return pulumix.Output[map[string]*UnsetUserAssessmentBaseline]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o UnsetUserAssessmentBaselineMapOutput) MapIndex(k pulumi.StringInput) UnsetUserAssessmentBaselineOutput {

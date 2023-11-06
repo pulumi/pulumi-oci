@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Opa Instances in Oracle Cloud Infrastructure Opa service.
@@ -125,12 +124,6 @@ func (o GetOpaInstancesResultOutput) ToGetOpaInstancesResultOutput() GetOpaInsta
 
 func (o GetOpaInstancesResultOutput) ToGetOpaInstancesResultOutputWithContext(ctx context.Context) GetOpaInstancesResultOutput {
 	return o
-}
-
-func (o GetOpaInstancesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpaInstancesResult] {
-	return pulumix.Output[GetOpaInstancesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier

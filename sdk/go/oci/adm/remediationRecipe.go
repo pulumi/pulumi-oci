@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Remediation Recipe resource in Oracle Cloud Infrastructure Adm service.
@@ -332,12 +331,6 @@ func (i *RemediationRecipe) ToRemediationRecipeOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(RemediationRecipeOutput)
 }
 
-func (i *RemediationRecipe) ToOutput(ctx context.Context) pulumix.Output[*RemediationRecipe] {
-	return pulumix.Output[*RemediationRecipe]{
-		OutputState: i.ToRemediationRecipeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RemediationRecipeArrayInput is an input type that accepts RemediationRecipeArray and RemediationRecipeArrayOutput values.
 // You can construct a concrete instance of `RemediationRecipeArrayInput` via:
 //
@@ -361,12 +354,6 @@ func (i RemediationRecipeArray) ToRemediationRecipeArrayOutput() RemediationReci
 
 func (i RemediationRecipeArray) ToRemediationRecipeArrayOutputWithContext(ctx context.Context) RemediationRecipeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RemediationRecipeArrayOutput)
-}
-
-func (i RemediationRecipeArray) ToOutput(ctx context.Context) pulumix.Output[[]*RemediationRecipe] {
-	return pulumix.Output[[]*RemediationRecipe]{
-		OutputState: i.ToRemediationRecipeArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // RemediationRecipeMapInput is an input type that accepts RemediationRecipeMap and RemediationRecipeMapOutput values.
@@ -394,12 +381,6 @@ func (i RemediationRecipeMap) ToRemediationRecipeMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(RemediationRecipeMapOutput)
 }
 
-func (i RemediationRecipeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*RemediationRecipe] {
-	return pulumix.Output[map[string]*RemediationRecipe]{
-		OutputState: i.ToRemediationRecipeMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RemediationRecipeOutput struct{ *pulumi.OutputState }
 
 func (RemediationRecipeOutput) ElementType() reflect.Type {
@@ -412,12 +393,6 @@ func (o RemediationRecipeOutput) ToRemediationRecipeOutput() RemediationRecipeOu
 
 func (o RemediationRecipeOutput) ToRemediationRecipeOutputWithContext(ctx context.Context) RemediationRecipeOutput {
 	return o
-}
-
-func (o RemediationRecipeOutput) ToOutput(ctx context.Context) pulumix.Output[*RemediationRecipe] {
-	return pulumix.Output[*RemediationRecipe]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
@@ -507,12 +482,6 @@ func (o RemediationRecipeArrayOutput) ToRemediationRecipeArrayOutputWithContext(
 	return o
 }
 
-func (o RemediationRecipeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*RemediationRecipe] {
-	return pulumix.Output[[]*RemediationRecipe]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o RemediationRecipeArrayOutput) Index(i pulumi.IntInput) RemediationRecipeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *RemediationRecipe {
 		return vs[0].([]*RemediationRecipe)[vs[1].(int)]
@@ -531,12 +500,6 @@ func (o RemediationRecipeMapOutput) ToRemediationRecipeMapOutput() RemediationRe
 
 func (o RemediationRecipeMapOutput) ToRemediationRecipeMapOutputWithContext(ctx context.Context) RemediationRecipeMapOutput {
 	return o
-}
-
-func (o RemediationRecipeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*RemediationRecipe] {
-	return pulumix.Output[map[string]*RemediationRecipe]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RemediationRecipeMapOutput) MapIndex(k pulumi.StringInput) RemediationRecipeOutput {

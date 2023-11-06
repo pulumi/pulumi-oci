@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -301,12 +300,6 @@ func (i *DataMaskRule) ToDataMaskRuleOutputWithContext(ctx context.Context) Data
 	return pulumi.ToOutputWithContext(ctx, i).(DataMaskRuleOutput)
 }
 
-func (i *DataMaskRule) ToOutput(ctx context.Context) pulumix.Output[*DataMaskRule] {
-	return pulumix.Output[*DataMaskRule]{
-		OutputState: i.ToDataMaskRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DataMaskRuleArrayInput is an input type that accepts DataMaskRuleArray and DataMaskRuleArrayOutput values.
 // You can construct a concrete instance of `DataMaskRuleArrayInput` via:
 //
@@ -330,12 +323,6 @@ func (i DataMaskRuleArray) ToDataMaskRuleArrayOutput() DataMaskRuleArrayOutput {
 
 func (i DataMaskRuleArray) ToDataMaskRuleArrayOutputWithContext(ctx context.Context) DataMaskRuleArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DataMaskRuleArrayOutput)
-}
-
-func (i DataMaskRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]*DataMaskRule] {
-	return pulumix.Output[[]*DataMaskRule]{
-		OutputState: i.ToDataMaskRuleArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DataMaskRuleMapInput is an input type that accepts DataMaskRuleMap and DataMaskRuleMapOutput values.
@@ -363,12 +350,6 @@ func (i DataMaskRuleMap) ToDataMaskRuleMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(DataMaskRuleMapOutput)
 }
 
-func (i DataMaskRuleMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DataMaskRule] {
-	return pulumix.Output[map[string]*DataMaskRule]{
-		OutputState: i.ToDataMaskRuleMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DataMaskRuleOutput struct{ *pulumi.OutputState }
 
 func (DataMaskRuleOutput) ElementType() reflect.Type {
@@ -381,12 +362,6 @@ func (o DataMaskRuleOutput) ToDataMaskRuleOutput() DataMaskRuleOutput {
 
 func (o DataMaskRuleOutput) ToDataMaskRuleOutputWithContext(ctx context.Context) DataMaskRuleOutput {
 	return o
-}
-
-func (o DataMaskRuleOutput) ToOutput(ctx context.Context) pulumix.Output[*DataMaskRule] {
-	return pulumix.Output[*DataMaskRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Compartment Identifier where the resource is created
@@ -477,12 +452,6 @@ func (o DataMaskRuleArrayOutput) ToDataMaskRuleArrayOutputWithContext(ctx contex
 	return o
 }
 
-func (o DataMaskRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DataMaskRule] {
-	return pulumix.Output[[]*DataMaskRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DataMaskRuleArrayOutput) Index(i pulumi.IntInput) DataMaskRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DataMaskRule {
 		return vs[0].([]*DataMaskRule)[vs[1].(int)]
@@ -501,12 +470,6 @@ func (o DataMaskRuleMapOutput) ToDataMaskRuleMapOutput() DataMaskRuleMapOutput {
 
 func (o DataMaskRuleMapOutput) ToDataMaskRuleMapOutputWithContext(ctx context.Context) DataMaskRuleMapOutput {
 	return o
-}
-
-func (o DataMaskRuleMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DataMaskRule] {
-	return pulumix.Output[map[string]*DataMaskRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DataMaskRuleMapOutput) MapIndex(k pulumi.StringInput) DataMaskRuleOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Db Credentials in Oracle Cloud Infrastructure Identity service.
@@ -119,12 +118,6 @@ func (o GetDbCredentialsResultOutput) ToGetDbCredentialsResultOutput() GetDbCred
 
 func (o GetDbCredentialsResultOutput) ToGetDbCredentialsResultOutputWithContext(ctx context.Context) GetDbCredentialsResultOutput {
 	return o
-}
-
-func (o GetDbCredentialsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDbCredentialsResult] {
-	return pulumix.Output[GetDbCredentialsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of db_credentials.

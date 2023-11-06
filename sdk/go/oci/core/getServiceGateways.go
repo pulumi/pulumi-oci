@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Service Gateways in Oracle Cloud Infrastructure Core service.
@@ -121,12 +120,6 @@ func (o GetServiceGatewaysResultOutput) ToGetServiceGatewaysResultOutput() GetSe
 
 func (o GetServiceGatewaysResultOutput) ToGetServiceGatewaysResultOutputWithContext(ctx context.Context) GetServiceGatewaysResultOutput {
 	return o
-}
-
-func (o GetServiceGatewaysResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceGatewaysResult] {
-	return pulumix.Output[GetServiceGatewaysResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the service gateway.

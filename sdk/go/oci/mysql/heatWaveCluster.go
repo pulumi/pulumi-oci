@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the HeatWave cluster resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -227,12 +226,6 @@ func (i *HeatWaveCluster) ToHeatWaveClusterOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(HeatWaveClusterOutput)
 }
 
-func (i *HeatWaveCluster) ToOutput(ctx context.Context) pulumix.Output[*HeatWaveCluster] {
-	return pulumix.Output[*HeatWaveCluster]{
-		OutputState: i.ToHeatWaveClusterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // HeatWaveClusterArrayInput is an input type that accepts HeatWaveClusterArray and HeatWaveClusterArrayOutput values.
 // You can construct a concrete instance of `HeatWaveClusterArrayInput` via:
 //
@@ -256,12 +249,6 @@ func (i HeatWaveClusterArray) ToHeatWaveClusterArrayOutput() HeatWaveClusterArra
 
 func (i HeatWaveClusterArray) ToHeatWaveClusterArrayOutputWithContext(ctx context.Context) HeatWaveClusterArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(HeatWaveClusterArrayOutput)
-}
-
-func (i HeatWaveClusterArray) ToOutput(ctx context.Context) pulumix.Output[[]*HeatWaveCluster] {
-	return pulumix.Output[[]*HeatWaveCluster]{
-		OutputState: i.ToHeatWaveClusterArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // HeatWaveClusterMapInput is an input type that accepts HeatWaveClusterMap and HeatWaveClusterMapOutput values.
@@ -289,12 +276,6 @@ func (i HeatWaveClusterMap) ToHeatWaveClusterMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(HeatWaveClusterMapOutput)
 }
 
-func (i HeatWaveClusterMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*HeatWaveCluster] {
-	return pulumix.Output[map[string]*HeatWaveCluster]{
-		OutputState: i.ToHeatWaveClusterMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type HeatWaveClusterOutput struct{ *pulumi.OutputState }
 
 func (HeatWaveClusterOutput) ElementType() reflect.Type {
@@ -307,12 +288,6 @@ func (o HeatWaveClusterOutput) ToHeatWaveClusterOutput() HeatWaveClusterOutput {
 
 func (o HeatWaveClusterOutput) ToHeatWaveClusterOutputWithContext(ctx context.Context) HeatWaveClusterOutput {
 	return o
-}
-
-func (o HeatWaveClusterOutput) ToOutput(ctx context.Context) pulumix.Output[*HeatWaveCluster] {
-	return pulumix.Output[*HeatWaveCluster]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A HeatWave node is a compute host that is part of a HeatWave cluster.
@@ -377,12 +352,6 @@ func (o HeatWaveClusterArrayOutput) ToHeatWaveClusterArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o HeatWaveClusterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*HeatWaveCluster] {
-	return pulumix.Output[[]*HeatWaveCluster]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o HeatWaveClusterArrayOutput) Index(i pulumi.IntInput) HeatWaveClusterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *HeatWaveCluster {
 		return vs[0].([]*HeatWaveCluster)[vs[1].(int)]
@@ -401,12 +370,6 @@ func (o HeatWaveClusterMapOutput) ToHeatWaveClusterMapOutput() HeatWaveClusterMa
 
 func (o HeatWaveClusterMapOutput) ToHeatWaveClusterMapOutputWithContext(ctx context.Context) HeatWaveClusterMapOutput {
 	return o
-}
-
-func (o HeatWaveClusterMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*HeatWaveCluster] {
-	return pulumix.Output[map[string]*HeatWaveCluster]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o HeatWaveClusterMapOutput) MapIndex(k pulumi.StringInput) HeatWaveClusterOutput {

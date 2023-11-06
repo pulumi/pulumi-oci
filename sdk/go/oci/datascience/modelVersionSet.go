@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Model Version Set resource in Oracle Cloud Infrastructure Data Science service.
@@ -239,12 +238,6 @@ func (i *ModelVersionSet) ToModelVersionSetOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(ModelVersionSetOutput)
 }
 
-func (i *ModelVersionSet) ToOutput(ctx context.Context) pulumix.Output[*ModelVersionSet] {
-	return pulumix.Output[*ModelVersionSet]{
-		OutputState: i.ToModelVersionSetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ModelVersionSetArrayInput is an input type that accepts ModelVersionSetArray and ModelVersionSetArrayOutput values.
 // You can construct a concrete instance of `ModelVersionSetArrayInput` via:
 //
@@ -268,12 +261,6 @@ func (i ModelVersionSetArray) ToModelVersionSetArrayOutput() ModelVersionSetArra
 
 func (i ModelVersionSetArray) ToModelVersionSetArrayOutputWithContext(ctx context.Context) ModelVersionSetArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ModelVersionSetArrayOutput)
-}
-
-func (i ModelVersionSetArray) ToOutput(ctx context.Context) pulumix.Output[[]*ModelVersionSet] {
-	return pulumix.Output[[]*ModelVersionSet]{
-		OutputState: i.ToModelVersionSetArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ModelVersionSetMapInput is an input type that accepts ModelVersionSetMap and ModelVersionSetMapOutput values.
@@ -301,12 +288,6 @@ func (i ModelVersionSetMap) ToModelVersionSetMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(ModelVersionSetMapOutput)
 }
 
-func (i ModelVersionSetMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ModelVersionSet] {
-	return pulumix.Output[map[string]*ModelVersionSet]{
-		OutputState: i.ToModelVersionSetMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ModelVersionSetOutput struct{ *pulumi.OutputState }
 
 func (ModelVersionSetOutput) ElementType() reflect.Type {
@@ -319,12 +300,6 @@ func (o ModelVersionSetOutput) ToModelVersionSetOutput() ModelVersionSetOutput {
 
 func (o ModelVersionSetOutput) ToModelVersionSetOutputWithContext(ctx context.Context) ModelVersionSetOutput {
 	return o
-}
-
-func (o ModelVersionSetOutput) ToOutput(ctx context.Context) pulumix.Output[*ModelVersionSet] {
-	return pulumix.Output[*ModelVersionSet]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model version set in.
@@ -394,12 +369,6 @@ func (o ModelVersionSetArrayOutput) ToModelVersionSetArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o ModelVersionSetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ModelVersionSet] {
-	return pulumix.Output[[]*ModelVersionSet]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ModelVersionSetArrayOutput) Index(i pulumi.IntInput) ModelVersionSetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ModelVersionSet {
 		return vs[0].([]*ModelVersionSet)[vs[1].(int)]
@@ -418,12 +387,6 @@ func (o ModelVersionSetMapOutput) ToModelVersionSetMapOutput() ModelVersionSetMa
 
 func (o ModelVersionSetMapOutput) ToModelVersionSetMapOutputWithContext(ctx context.Context) ModelVersionSetMapOutput {
 	return o
-}
-
-func (o ModelVersionSetMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ModelVersionSet] {
-	return pulumix.Output[map[string]*ModelVersionSet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ModelVersionSetMapOutput) MapIndex(k pulumi.StringInput) ModelVersionSetOutput {

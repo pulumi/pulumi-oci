@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Ingress Gateway Route Table resource in Oracle Cloud Infrastructure Service Mesh service.
@@ -276,12 +275,6 @@ func (i *IngressGatewayRouteTable) ToIngressGatewayRouteTableOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(IngressGatewayRouteTableOutput)
 }
 
-func (i *IngressGatewayRouteTable) ToOutput(ctx context.Context) pulumix.Output[*IngressGatewayRouteTable] {
-	return pulumix.Output[*IngressGatewayRouteTable]{
-		OutputState: i.ToIngressGatewayRouteTableOutputWithContext(ctx).OutputState,
-	}
-}
-
 // IngressGatewayRouteTableArrayInput is an input type that accepts IngressGatewayRouteTableArray and IngressGatewayRouteTableArrayOutput values.
 // You can construct a concrete instance of `IngressGatewayRouteTableArrayInput` via:
 //
@@ -305,12 +298,6 @@ func (i IngressGatewayRouteTableArray) ToIngressGatewayRouteTableArrayOutput() I
 
 func (i IngressGatewayRouteTableArray) ToIngressGatewayRouteTableArrayOutputWithContext(ctx context.Context) IngressGatewayRouteTableArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(IngressGatewayRouteTableArrayOutput)
-}
-
-func (i IngressGatewayRouteTableArray) ToOutput(ctx context.Context) pulumix.Output[[]*IngressGatewayRouteTable] {
-	return pulumix.Output[[]*IngressGatewayRouteTable]{
-		OutputState: i.ToIngressGatewayRouteTableArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // IngressGatewayRouteTableMapInput is an input type that accepts IngressGatewayRouteTableMap and IngressGatewayRouteTableMapOutput values.
@@ -338,12 +325,6 @@ func (i IngressGatewayRouteTableMap) ToIngressGatewayRouteTableMapOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(IngressGatewayRouteTableMapOutput)
 }
 
-func (i IngressGatewayRouteTableMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*IngressGatewayRouteTable] {
-	return pulumix.Output[map[string]*IngressGatewayRouteTable]{
-		OutputState: i.ToIngressGatewayRouteTableMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IngressGatewayRouteTableOutput struct{ *pulumi.OutputState }
 
 func (IngressGatewayRouteTableOutput) ElementType() reflect.Type {
@@ -356,12 +337,6 @@ func (o IngressGatewayRouteTableOutput) ToIngressGatewayRouteTableOutput() Ingre
 
 func (o IngressGatewayRouteTableOutput) ToIngressGatewayRouteTableOutputWithContext(ctx context.Context) IngressGatewayRouteTableOutput {
 	return o
-}
-
-func (o IngressGatewayRouteTableOutput) ToOutput(ctx context.Context) pulumix.Output[*IngressGatewayRouteTable] {
-	return pulumix.Output[*IngressGatewayRouteTable]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -443,12 +418,6 @@ func (o IngressGatewayRouteTableArrayOutput) ToIngressGatewayRouteTableArrayOutp
 	return o
 }
 
-func (o IngressGatewayRouteTableArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*IngressGatewayRouteTable] {
-	return pulumix.Output[[]*IngressGatewayRouteTable]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o IngressGatewayRouteTableArrayOutput) Index(i pulumi.IntInput) IngressGatewayRouteTableOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IngressGatewayRouteTable {
 		return vs[0].([]*IngressGatewayRouteTable)[vs[1].(int)]
@@ -467,12 +436,6 @@ func (o IngressGatewayRouteTableMapOutput) ToIngressGatewayRouteTableMapOutput()
 
 func (o IngressGatewayRouteTableMapOutput) ToIngressGatewayRouteTableMapOutputWithContext(ctx context.Context) IngressGatewayRouteTableMapOutput {
 	return o
-}
-
-func (o IngressGatewayRouteTableMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*IngressGatewayRouteTable] {
-	return pulumix.Output[map[string]*IngressGatewayRouteTable]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IngressGatewayRouteTableMapOutput) MapIndex(k pulumi.StringInput) IngressGatewayRouteTableOutput {

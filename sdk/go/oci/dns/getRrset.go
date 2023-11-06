@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Rrset resource in Oracle Cloud Infrastructure DNS service.
@@ -142,12 +141,6 @@ func (o LookupRrsetResultOutput) ToLookupRrsetResultOutput() LookupRrsetResultOu
 
 func (o LookupRrsetResultOutput) ToLookupRrsetResultOutputWithContext(ctx context.Context) LookupRrsetResultOutput {
 	return o
-}
-
-func (o LookupRrsetResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupRrsetResult] {
-	return pulumix.Output[LookupRrsetResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupRrsetResultOutput) CompartmentId() pulumi.StringPtrOutput {

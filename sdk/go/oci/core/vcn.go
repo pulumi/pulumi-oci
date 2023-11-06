@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Vcn resource in Oracle Cloud Infrastructure Core service.
@@ -430,12 +429,6 @@ func (i *Vcn) ToVcnOutputWithContext(ctx context.Context) VcnOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VcnOutput)
 }
 
-func (i *Vcn) ToOutput(ctx context.Context) pulumix.Output[*Vcn] {
-	return pulumix.Output[*Vcn]{
-		OutputState: i.ToVcnOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VcnArrayInput is an input type that accepts VcnArray and VcnArrayOutput values.
 // You can construct a concrete instance of `VcnArrayInput` via:
 //
@@ -459,12 +452,6 @@ func (i VcnArray) ToVcnArrayOutput() VcnArrayOutput {
 
 func (i VcnArray) ToVcnArrayOutputWithContext(ctx context.Context) VcnArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VcnArrayOutput)
-}
-
-func (i VcnArray) ToOutput(ctx context.Context) pulumix.Output[[]*Vcn] {
-	return pulumix.Output[[]*Vcn]{
-		OutputState: i.ToVcnArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // VcnMapInput is an input type that accepts VcnMap and VcnMapOutput values.
@@ -492,12 +479,6 @@ func (i VcnMap) ToVcnMapOutputWithContext(ctx context.Context) VcnMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VcnMapOutput)
 }
 
-func (i VcnMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Vcn] {
-	return pulumix.Output[map[string]*Vcn]{
-		OutputState: i.ToVcnMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VcnOutput struct{ *pulumi.OutputState }
 
 func (VcnOutput) ElementType() reflect.Type {
@@ -510,12 +491,6 @@ func (o VcnOutput) ToVcnOutput() VcnOutput {
 
 func (o VcnOutput) ToVcnOutputWithContext(ctx context.Context) VcnOutput {
 	return o
-}
-
-func (o VcnOutput) ToOutput(ctx context.Context) pulumix.Output[*Vcn] {
-	return pulumix.Output[*Vcn]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
@@ -644,12 +619,6 @@ func (o VcnArrayOutput) ToVcnArrayOutputWithContext(ctx context.Context) VcnArra
 	return o
 }
 
-func (o VcnArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Vcn] {
-	return pulumix.Output[[]*Vcn]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o VcnArrayOutput) Index(i pulumi.IntInput) VcnOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Vcn {
 		return vs[0].([]*Vcn)[vs[1].(int)]
@@ -668,12 +637,6 @@ func (o VcnMapOutput) ToVcnMapOutput() VcnMapOutput {
 
 func (o VcnMapOutput) ToVcnMapOutputWithContext(ctx context.Context) VcnMapOutput {
 	return o
-}
-
-func (o VcnMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Vcn] {
-	return pulumix.Output[map[string]*Vcn]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VcnMapOutput) MapIndex(k pulumi.StringInput) VcnOutput {

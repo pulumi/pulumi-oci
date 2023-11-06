@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Metering Computation service.
@@ -102,12 +101,6 @@ func (o GetConfigurationResultOutput) ToGetConfigurationResultOutput() GetConfig
 
 func (o GetConfigurationResultOutput) ToGetConfigurationResultOutputWithContext(ctx context.Context) GetConfigurationResultOutput {
 	return o
-}
-
-func (o GetConfigurationResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigurationResult] {
-	return pulumix.Output[GetConfigurationResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The provider-assigned unique ID for this managed resource.

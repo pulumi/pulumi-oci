@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -45,12 +44,6 @@ func (i SessionKeyDetailsArgs) ToSessionKeyDetailsOutput() SessionKeyDetailsOutp
 
 func (i SessionKeyDetailsArgs) ToSessionKeyDetailsOutputWithContext(ctx context.Context) SessionKeyDetailsOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SessionKeyDetailsOutput)
-}
-
-func (i SessionKeyDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[SessionKeyDetails] {
-	return pulumix.Output[SessionKeyDetails]{
-		OutputState: i.ToSessionKeyDetailsOutputWithContext(ctx).OutputState,
-	}
 }
 
 func (i SessionKeyDetailsArgs) ToSessionKeyDetailsPtrOutput() SessionKeyDetailsPtrOutput {
@@ -94,12 +87,6 @@ func (i *sessionKeyDetailsPtrType) ToSessionKeyDetailsPtrOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(SessionKeyDetailsPtrOutput)
 }
 
-func (i *sessionKeyDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*SessionKeyDetails] {
-	return pulumix.Output[*SessionKeyDetails]{
-		OutputState: i.ToSessionKeyDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SessionKeyDetailsOutput struct{ *pulumi.OutputState }
 
 func (SessionKeyDetailsOutput) ElementType() reflect.Type {
@@ -124,12 +111,6 @@ func (o SessionKeyDetailsOutput) ToSessionKeyDetailsPtrOutputWithContext(ctx con
 	}).(SessionKeyDetailsPtrOutput)
 }
 
-func (o SessionKeyDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[SessionKeyDetails] {
-	return pulumix.Output[SessionKeyDetails]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
 func (o SessionKeyDetailsOutput) PublicKeyContent() pulumi.StringOutput {
 	return o.ApplyT(func(v SessionKeyDetails) string { return v.PublicKeyContent }).(pulumi.StringOutput)
@@ -147,12 +128,6 @@ func (o SessionKeyDetailsPtrOutput) ToSessionKeyDetailsPtrOutput() SessionKeyDet
 
 func (o SessionKeyDetailsPtrOutput) ToSessionKeyDetailsPtrOutputWithContext(ctx context.Context) SessionKeyDetailsPtrOutput {
 	return o
-}
-
-func (o SessionKeyDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*SessionKeyDetails] {
-	return pulumix.Output[*SessionKeyDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SessionKeyDetailsPtrOutput) Elem() SessionKeyDetailsOutput {
@@ -238,12 +213,6 @@ func (i SessionTargetResourceDetailsArgs) ToSessionTargetResourceDetailsOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(SessionTargetResourceDetailsOutput)
 }
 
-func (i SessionTargetResourceDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[SessionTargetResourceDetails] {
-	return pulumix.Output[SessionTargetResourceDetails]{
-		OutputState: i.ToSessionTargetResourceDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i SessionTargetResourceDetailsArgs) ToSessionTargetResourceDetailsPtrOutput() SessionTargetResourceDetailsPtrOutput {
 	return i.ToSessionTargetResourceDetailsPtrOutputWithContext(context.Background())
 }
@@ -285,12 +254,6 @@ func (i *sessionTargetResourceDetailsPtrType) ToSessionTargetResourceDetailsPtrO
 	return pulumi.ToOutputWithContext(ctx, i).(SessionTargetResourceDetailsPtrOutput)
 }
 
-func (i *sessionTargetResourceDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*SessionTargetResourceDetails] {
-	return pulumix.Output[*SessionTargetResourceDetails]{
-		OutputState: i.ToSessionTargetResourceDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SessionTargetResourceDetailsOutput struct{ *pulumi.OutputState }
 
 func (SessionTargetResourceDetailsOutput) ElementType() reflect.Type {
@@ -313,12 +276,6 @@ func (o SessionTargetResourceDetailsOutput) ToSessionTargetResourceDetailsPtrOut
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v SessionTargetResourceDetails) *SessionTargetResourceDetails {
 		return &v
 	}).(SessionTargetResourceDetailsPtrOutput)
-}
-
-func (o SessionTargetResourceDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[SessionTargetResourceDetails] {
-	return pulumix.Output[SessionTargetResourceDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The session type.
@@ -371,12 +328,6 @@ func (o SessionTargetResourceDetailsPtrOutput) ToSessionTargetResourceDetailsPtr
 
 func (o SessionTargetResourceDetailsPtrOutput) ToSessionTargetResourceDetailsPtrOutputWithContext(ctx context.Context) SessionTargetResourceDetailsPtrOutput {
 	return o
-}
-
-func (o SessionTargetResourceDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*SessionTargetResourceDetails] {
-	return pulumix.Output[*SessionTargetResourceDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SessionTargetResourceDetailsPtrOutput) Elem() SessionTargetResourceDetailsOutput {
@@ -571,12 +522,6 @@ func (i GetBastionsBastionArgs) ToGetBastionsBastionOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetBastionsBastionOutput)
 }
 
-func (i GetBastionsBastionArgs) ToOutput(ctx context.Context) pulumix.Output[GetBastionsBastion] {
-	return pulumix.Output[GetBastionsBastion]{
-		OutputState: i.ToGetBastionsBastionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBastionsBastionArrayInput is an input type that accepts GetBastionsBastionArray and GetBastionsBastionArrayOutput values.
 // You can construct a concrete instance of `GetBastionsBastionArrayInput` via:
 //
@@ -602,12 +547,6 @@ func (i GetBastionsBastionArray) ToGetBastionsBastionArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetBastionsBastionArrayOutput)
 }
 
-func (i GetBastionsBastionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBastionsBastion] {
-	return pulumix.Output[[]GetBastionsBastion]{
-		OutputState: i.ToGetBastionsBastionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBastionsBastionOutput struct{ *pulumi.OutputState }
 
 func (GetBastionsBastionOutput) ElementType() reflect.Type {
@@ -620,12 +559,6 @@ func (o GetBastionsBastionOutput) ToGetBastionsBastionOutput() GetBastionsBastio
 
 func (o GetBastionsBastionOutput) ToGetBastionsBastionOutputWithContext(ctx context.Context) GetBastionsBastionOutput {
 	return o
-}
-
-func (o GetBastionsBastionOutput) ToOutput(ctx context.Context) pulumix.Output[GetBastionsBastion] {
-	return pulumix.Output[GetBastionsBastion]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The type of bastion.
@@ -742,12 +675,6 @@ func (o GetBastionsBastionArrayOutput) ToGetBastionsBastionArrayOutputWithContex
 	return o
 }
 
-func (o GetBastionsBastionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBastionsBastion] {
-	return pulumix.Output[[]GetBastionsBastion]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBastionsBastionArrayOutput) Index(i pulumi.IntInput) GetBastionsBastionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBastionsBastion {
 		return vs[0].([]GetBastionsBastion)[vs[1].(int)]
@@ -791,12 +718,6 @@ func (i GetBastionsFilterArgs) ToGetBastionsFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetBastionsFilterOutput)
 }
 
-func (i GetBastionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetBastionsFilter] {
-	return pulumix.Output[GetBastionsFilter]{
-		OutputState: i.ToGetBastionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBastionsFilterArrayInput is an input type that accepts GetBastionsFilterArray and GetBastionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetBastionsFilterArrayInput` via:
 //
@@ -822,12 +743,6 @@ func (i GetBastionsFilterArray) ToGetBastionsFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetBastionsFilterArrayOutput)
 }
 
-func (i GetBastionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBastionsFilter] {
-	return pulumix.Output[[]GetBastionsFilter]{
-		OutputState: i.ToGetBastionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBastionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetBastionsFilterOutput) ElementType() reflect.Type {
@@ -840,12 +755,6 @@ func (o GetBastionsFilterOutput) ToGetBastionsFilterOutput() GetBastionsFilterOu
 
 func (o GetBastionsFilterOutput) ToGetBastionsFilterOutputWithContext(ctx context.Context) GetBastionsFilterOutput {
 	return o
-}
-
-func (o GetBastionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetBastionsFilter] {
-	return pulumix.Output[GetBastionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the entire name given.
@@ -873,12 +782,6 @@ func (o GetBastionsFilterArrayOutput) ToGetBastionsFilterArrayOutput() GetBastio
 
 func (o GetBastionsFilterArrayOutput) ToGetBastionsFilterArrayOutputWithContext(ctx context.Context) GetBastionsFilterArrayOutput {
 	return o
-}
-
-func (o GetBastionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBastionsFilter] {
-	return pulumix.Output[[]GetBastionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBastionsFilterArrayOutput) Index(i pulumi.IntInput) GetBastionsFilterOutput {
@@ -920,12 +823,6 @@ func (i GetSessionKeyDetailArgs) ToGetSessionKeyDetailOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSessionKeyDetailOutput)
 }
 
-func (i GetSessionKeyDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetSessionKeyDetail] {
-	return pulumix.Output[GetSessionKeyDetail]{
-		OutputState: i.ToGetSessionKeyDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSessionKeyDetailArrayInput is an input type that accepts GetSessionKeyDetailArray and GetSessionKeyDetailArrayOutput values.
 // You can construct a concrete instance of `GetSessionKeyDetailArrayInput` via:
 //
@@ -951,12 +848,6 @@ func (i GetSessionKeyDetailArray) ToGetSessionKeyDetailArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetSessionKeyDetailArrayOutput)
 }
 
-func (i GetSessionKeyDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSessionKeyDetail] {
-	return pulumix.Output[[]GetSessionKeyDetail]{
-		OutputState: i.ToGetSessionKeyDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSessionKeyDetailOutput struct{ *pulumi.OutputState }
 
 func (GetSessionKeyDetailOutput) ElementType() reflect.Type {
@@ -969,12 +860,6 @@ func (o GetSessionKeyDetailOutput) ToGetSessionKeyDetailOutput() GetSessionKeyDe
 
 func (o GetSessionKeyDetailOutput) ToGetSessionKeyDetailOutputWithContext(ctx context.Context) GetSessionKeyDetailOutput {
 	return o
-}
-
-func (o GetSessionKeyDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetSessionKeyDetail] {
-	return pulumix.Output[GetSessionKeyDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
@@ -994,12 +879,6 @@ func (o GetSessionKeyDetailArrayOutput) ToGetSessionKeyDetailArrayOutput() GetSe
 
 func (o GetSessionKeyDetailArrayOutput) ToGetSessionKeyDetailArrayOutputWithContext(ctx context.Context) GetSessionKeyDetailArrayOutput {
 	return o
-}
-
-func (o GetSessionKeyDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSessionKeyDetail] {
-	return pulumix.Output[[]GetSessionKeyDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSessionKeyDetailArrayOutput) Index(i pulumi.IntInput) GetSessionKeyDetailOutput {
@@ -1065,12 +944,6 @@ func (i GetSessionTargetResourceDetailArgs) ToGetSessionTargetResourceDetailOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetSessionTargetResourceDetailOutput)
 }
 
-func (i GetSessionTargetResourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetSessionTargetResourceDetail] {
-	return pulumix.Output[GetSessionTargetResourceDetail]{
-		OutputState: i.ToGetSessionTargetResourceDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSessionTargetResourceDetailArrayInput is an input type that accepts GetSessionTargetResourceDetailArray and GetSessionTargetResourceDetailArrayOutput values.
 // You can construct a concrete instance of `GetSessionTargetResourceDetailArrayInput` via:
 //
@@ -1096,12 +969,6 @@ func (i GetSessionTargetResourceDetailArray) ToGetSessionTargetResourceDetailArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetSessionTargetResourceDetailArrayOutput)
 }
 
-func (i GetSessionTargetResourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSessionTargetResourceDetail] {
-	return pulumix.Output[[]GetSessionTargetResourceDetail]{
-		OutputState: i.ToGetSessionTargetResourceDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSessionTargetResourceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetSessionTargetResourceDetailOutput) ElementType() reflect.Type {
@@ -1114,12 +981,6 @@ func (o GetSessionTargetResourceDetailOutput) ToGetSessionTargetResourceDetailOu
 
 func (o GetSessionTargetResourceDetailOutput) ToGetSessionTargetResourceDetailOutputWithContext(ctx context.Context) GetSessionTargetResourceDetailOutput {
 	return o
-}
-
-func (o GetSessionTargetResourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetSessionTargetResourceDetail] {
-	return pulumix.Output[GetSessionTargetResourceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The Bastion service recognizes three types of sessions, managed SSH sessions, SSH port forwarding sessions, and Dynamic SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
@@ -1171,12 +1032,6 @@ func (o GetSessionTargetResourceDetailArrayOutput) ToGetSessionTargetResourceDet
 	return o
 }
 
-func (o GetSessionTargetResourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSessionTargetResourceDetail] {
-	return pulumix.Output[[]GetSessionTargetResourceDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSessionTargetResourceDetailArrayOutput) Index(i pulumi.IntInput) GetSessionTargetResourceDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSessionTargetResourceDetail {
 		return vs[0].([]GetSessionTargetResourceDetail)[vs[1].(int)]
@@ -1218,12 +1073,6 @@ func (i GetSessionsFilterArgs) ToGetSessionsFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetSessionsFilterOutput)
 }
 
-func (i GetSessionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSessionsFilter] {
-	return pulumix.Output[GetSessionsFilter]{
-		OutputState: i.ToGetSessionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSessionsFilterArrayInput is an input type that accepts GetSessionsFilterArray and GetSessionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSessionsFilterArrayInput` via:
 //
@@ -1249,12 +1098,6 @@ func (i GetSessionsFilterArray) ToGetSessionsFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetSessionsFilterArrayOutput)
 }
 
-func (i GetSessionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSessionsFilter] {
-	return pulumix.Output[[]GetSessionsFilter]{
-		OutputState: i.ToGetSessionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSessionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSessionsFilterOutput) ElementType() reflect.Type {
@@ -1267,12 +1110,6 @@ func (o GetSessionsFilterOutput) ToGetSessionsFilterOutput() GetSessionsFilterOu
 
 func (o GetSessionsFilterOutput) ToGetSessionsFilterOutputWithContext(ctx context.Context) GetSessionsFilterOutput {
 	return o
-}
-
-func (o GetSessionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSessionsFilter] {
-	return pulumix.Output[GetSessionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSessionsFilterOutput) Name() pulumi.StringOutput {
@@ -1299,12 +1136,6 @@ func (o GetSessionsFilterArrayOutput) ToGetSessionsFilterArrayOutput() GetSessio
 
 func (o GetSessionsFilterArrayOutput) ToGetSessionsFilterArrayOutputWithContext(ctx context.Context) GetSessionsFilterArrayOutput {
 	return o
-}
-
-func (o GetSessionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSessionsFilter] {
-	return pulumix.Output[[]GetSessionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSessionsFilterArrayOutput) Index(i pulumi.IntInput) GetSessionsFilterOutput {
@@ -1402,12 +1233,6 @@ func (i GetSessionsSessionArgs) ToGetSessionsSessionOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetSessionsSessionOutput)
 }
 
-func (i GetSessionsSessionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSessionsSession] {
-	return pulumix.Output[GetSessionsSession]{
-		OutputState: i.ToGetSessionsSessionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSessionsSessionArrayInput is an input type that accepts GetSessionsSessionArray and GetSessionsSessionArrayOutput values.
 // You can construct a concrete instance of `GetSessionsSessionArrayInput` via:
 //
@@ -1433,12 +1258,6 @@ func (i GetSessionsSessionArray) ToGetSessionsSessionArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetSessionsSessionArrayOutput)
 }
 
-func (i GetSessionsSessionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSessionsSession] {
-	return pulumix.Output[[]GetSessionsSession]{
-		OutputState: i.ToGetSessionsSessionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSessionsSessionOutput struct{ *pulumi.OutputState }
 
 func (GetSessionsSessionOutput) ElementType() reflect.Type {
@@ -1451,12 +1270,6 @@ func (o GetSessionsSessionOutput) ToGetSessionsSessionOutput() GetSessionsSessio
 
 func (o GetSessionsSessionOutput) ToGetSessionsSessionOutputWithContext(ctx context.Context) GetSessionsSessionOutput {
 	return o
-}
-
-func (o GetSessionsSessionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSessionsSession] {
-	return pulumix.Output[GetSessionsSession]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The unique identifier (OCID) of the bastion in which to list sessions.
@@ -1548,12 +1361,6 @@ func (o GetSessionsSessionArrayOutput) ToGetSessionsSessionArrayOutputWithContex
 	return o
 }
 
-func (o GetSessionsSessionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSessionsSession] {
-	return pulumix.Output[[]GetSessionsSession]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSessionsSessionArrayOutput) Index(i pulumi.IntInput) GetSessionsSessionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSessionsSession {
 		return vs[0].([]GetSessionsSession)[vs[1].(int)]
@@ -1593,12 +1400,6 @@ func (i GetSessionsSessionKeyDetailArgs) ToGetSessionsSessionKeyDetailOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetSessionsSessionKeyDetailOutput)
 }
 
-func (i GetSessionsSessionKeyDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetSessionsSessionKeyDetail] {
-	return pulumix.Output[GetSessionsSessionKeyDetail]{
-		OutputState: i.ToGetSessionsSessionKeyDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSessionsSessionKeyDetailArrayInput is an input type that accepts GetSessionsSessionKeyDetailArray and GetSessionsSessionKeyDetailArrayOutput values.
 // You can construct a concrete instance of `GetSessionsSessionKeyDetailArrayInput` via:
 //
@@ -1624,12 +1425,6 @@ func (i GetSessionsSessionKeyDetailArray) ToGetSessionsSessionKeyDetailArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetSessionsSessionKeyDetailArrayOutput)
 }
 
-func (i GetSessionsSessionKeyDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSessionsSessionKeyDetail] {
-	return pulumix.Output[[]GetSessionsSessionKeyDetail]{
-		OutputState: i.ToGetSessionsSessionKeyDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSessionsSessionKeyDetailOutput struct{ *pulumi.OutputState }
 
 func (GetSessionsSessionKeyDetailOutput) ElementType() reflect.Type {
@@ -1642,12 +1437,6 @@ func (o GetSessionsSessionKeyDetailOutput) ToGetSessionsSessionKeyDetailOutput()
 
 func (o GetSessionsSessionKeyDetailOutput) ToGetSessionsSessionKeyDetailOutputWithContext(ctx context.Context) GetSessionsSessionKeyDetailOutput {
 	return o
-}
-
-func (o GetSessionsSessionKeyDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetSessionsSessionKeyDetail] {
-	return pulumix.Output[GetSessionsSessionKeyDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
@@ -1667,12 +1456,6 @@ func (o GetSessionsSessionKeyDetailArrayOutput) ToGetSessionsSessionKeyDetailArr
 
 func (o GetSessionsSessionKeyDetailArrayOutput) ToGetSessionsSessionKeyDetailArrayOutputWithContext(ctx context.Context) GetSessionsSessionKeyDetailArrayOutput {
 	return o
-}
-
-func (o GetSessionsSessionKeyDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSessionsSessionKeyDetail] {
-	return pulumix.Output[[]GetSessionsSessionKeyDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSessionsSessionKeyDetailArrayOutput) Index(i pulumi.IntInput) GetSessionsSessionKeyDetailOutput {
@@ -1738,12 +1521,6 @@ func (i GetSessionsSessionTargetResourceDetailArgs) ToGetSessionsSessionTargetRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetSessionsSessionTargetResourceDetailOutput)
 }
 
-func (i GetSessionsSessionTargetResourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetSessionsSessionTargetResourceDetail] {
-	return pulumix.Output[GetSessionsSessionTargetResourceDetail]{
-		OutputState: i.ToGetSessionsSessionTargetResourceDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSessionsSessionTargetResourceDetailArrayInput is an input type that accepts GetSessionsSessionTargetResourceDetailArray and GetSessionsSessionTargetResourceDetailArrayOutput values.
 // You can construct a concrete instance of `GetSessionsSessionTargetResourceDetailArrayInput` via:
 //
@@ -1769,12 +1546,6 @@ func (i GetSessionsSessionTargetResourceDetailArray) ToGetSessionsSessionTargetR
 	return pulumi.ToOutputWithContext(ctx, i).(GetSessionsSessionTargetResourceDetailArrayOutput)
 }
 
-func (i GetSessionsSessionTargetResourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSessionsSessionTargetResourceDetail] {
-	return pulumix.Output[[]GetSessionsSessionTargetResourceDetail]{
-		OutputState: i.ToGetSessionsSessionTargetResourceDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSessionsSessionTargetResourceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetSessionsSessionTargetResourceDetailOutput) ElementType() reflect.Type {
@@ -1787,12 +1558,6 @@ func (o GetSessionsSessionTargetResourceDetailOutput) ToGetSessionsSessionTarget
 
 func (o GetSessionsSessionTargetResourceDetailOutput) ToGetSessionsSessionTargetResourceDetailOutputWithContext(ctx context.Context) GetSessionsSessionTargetResourceDetailOutput {
 	return o
-}
-
-func (o GetSessionsSessionTargetResourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetSessionsSessionTargetResourceDetail] {
-	return pulumix.Output[GetSessionsSessionTargetResourceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The Bastion service recognizes three types of sessions, managed SSH sessions, SSH port forwarding sessions, and Dynamic SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
@@ -1842,12 +1607,6 @@ func (o GetSessionsSessionTargetResourceDetailArrayOutput) ToGetSessionsSessionT
 
 func (o GetSessionsSessionTargetResourceDetailArrayOutput) ToGetSessionsSessionTargetResourceDetailArrayOutputWithContext(ctx context.Context) GetSessionsSessionTargetResourceDetailArrayOutput {
 	return o
-}
-
-func (o GetSessionsSessionTargetResourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSessionsSessionTargetResourceDetail] {
-	return pulumix.Output[[]GetSessionsSessionTargetResourceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSessionsSessionTargetResourceDetailArrayOutput) Index(i pulumi.IntInput) GetSessionsSessionTargetResourceDetailOutput {

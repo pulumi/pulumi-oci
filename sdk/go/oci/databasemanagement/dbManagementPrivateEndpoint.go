@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Db Management Private Endpoint resource in Oracle Cloud Infrastructure Database Management service.
@@ -235,12 +234,6 @@ func (i *DbManagementPrivateEndpoint) ToDbManagementPrivateEndpointOutputWithCon
 	return pulumi.ToOutputWithContext(ctx, i).(DbManagementPrivateEndpointOutput)
 }
 
-func (i *DbManagementPrivateEndpoint) ToOutput(ctx context.Context) pulumix.Output[*DbManagementPrivateEndpoint] {
-	return pulumix.Output[*DbManagementPrivateEndpoint]{
-		OutputState: i.ToDbManagementPrivateEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DbManagementPrivateEndpointArrayInput is an input type that accepts DbManagementPrivateEndpointArray and DbManagementPrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `DbManagementPrivateEndpointArrayInput` via:
 //
@@ -264,12 +257,6 @@ func (i DbManagementPrivateEndpointArray) ToDbManagementPrivateEndpointArrayOutp
 
 func (i DbManagementPrivateEndpointArray) ToDbManagementPrivateEndpointArrayOutputWithContext(ctx context.Context) DbManagementPrivateEndpointArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DbManagementPrivateEndpointArrayOutput)
-}
-
-func (i DbManagementPrivateEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]*DbManagementPrivateEndpoint] {
-	return pulumix.Output[[]*DbManagementPrivateEndpoint]{
-		OutputState: i.ToDbManagementPrivateEndpointArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DbManagementPrivateEndpointMapInput is an input type that accepts DbManagementPrivateEndpointMap and DbManagementPrivateEndpointMapOutput values.
@@ -297,12 +284,6 @@ func (i DbManagementPrivateEndpointMap) ToDbManagementPrivateEndpointMapOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(DbManagementPrivateEndpointMapOutput)
 }
 
-func (i DbManagementPrivateEndpointMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DbManagementPrivateEndpoint] {
-	return pulumix.Output[map[string]*DbManagementPrivateEndpoint]{
-		OutputState: i.ToDbManagementPrivateEndpointMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DbManagementPrivateEndpointOutput struct{ *pulumi.OutputState }
 
 func (DbManagementPrivateEndpointOutput) ElementType() reflect.Type {
@@ -315,12 +296,6 @@ func (o DbManagementPrivateEndpointOutput) ToDbManagementPrivateEndpointOutput()
 
 func (o DbManagementPrivateEndpointOutput) ToDbManagementPrivateEndpointOutputWithContext(ctx context.Context) DbManagementPrivateEndpointOutput {
 	return o
-}
-
-func (o DbManagementPrivateEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[*DbManagementPrivateEndpoint] {
-	return pulumix.Output[*DbManagementPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -390,12 +365,6 @@ func (o DbManagementPrivateEndpointArrayOutput) ToDbManagementPrivateEndpointArr
 	return o
 }
 
-func (o DbManagementPrivateEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DbManagementPrivateEndpoint] {
-	return pulumix.Output[[]*DbManagementPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DbManagementPrivateEndpointArrayOutput) Index(i pulumi.IntInput) DbManagementPrivateEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DbManagementPrivateEndpoint {
 		return vs[0].([]*DbManagementPrivateEndpoint)[vs[1].(int)]
@@ -414,12 +383,6 @@ func (o DbManagementPrivateEndpointMapOutput) ToDbManagementPrivateEndpointMapOu
 
 func (o DbManagementPrivateEndpointMapOutput) ToDbManagementPrivateEndpointMapOutputWithContext(ctx context.Context) DbManagementPrivateEndpointMapOutput {
 	return o
-}
-
-func (o DbManagementPrivateEndpointMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DbManagementPrivateEndpoint] {
-	return pulumix.Output[map[string]*DbManagementPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DbManagementPrivateEndpointMapOutput) MapIndex(k pulumi.StringInput) DbManagementPrivateEndpointOutput {

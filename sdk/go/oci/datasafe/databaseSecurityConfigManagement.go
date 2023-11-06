@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type DatabaseSecurityConfigManagement struct {
@@ -144,12 +143,6 @@ func (i *DatabaseSecurityConfigManagement) ToDatabaseSecurityConfigManagementOut
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseSecurityConfigManagementOutput)
 }
 
-func (i *DatabaseSecurityConfigManagement) ToOutput(ctx context.Context) pulumix.Output[*DatabaseSecurityConfigManagement] {
-	return pulumix.Output[*DatabaseSecurityConfigManagement]{
-		OutputState: i.ToDatabaseSecurityConfigManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DatabaseSecurityConfigManagementArrayInput is an input type that accepts DatabaseSecurityConfigManagementArray and DatabaseSecurityConfigManagementArrayOutput values.
 // You can construct a concrete instance of `DatabaseSecurityConfigManagementArrayInput` via:
 //
@@ -173,12 +166,6 @@ func (i DatabaseSecurityConfigManagementArray) ToDatabaseSecurityConfigManagemen
 
 func (i DatabaseSecurityConfigManagementArray) ToDatabaseSecurityConfigManagementArrayOutputWithContext(ctx context.Context) DatabaseSecurityConfigManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseSecurityConfigManagementArrayOutput)
-}
-
-func (i DatabaseSecurityConfigManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*DatabaseSecurityConfigManagement] {
-	return pulumix.Output[[]*DatabaseSecurityConfigManagement]{
-		OutputState: i.ToDatabaseSecurityConfigManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DatabaseSecurityConfigManagementMapInput is an input type that accepts DatabaseSecurityConfigManagementMap and DatabaseSecurityConfigManagementMapOutput values.
@@ -206,12 +193,6 @@ func (i DatabaseSecurityConfigManagementMap) ToDatabaseSecurityConfigManagementM
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseSecurityConfigManagementMapOutput)
 }
 
-func (i DatabaseSecurityConfigManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DatabaseSecurityConfigManagement] {
-	return pulumix.Output[map[string]*DatabaseSecurityConfigManagement]{
-		OutputState: i.ToDatabaseSecurityConfigManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DatabaseSecurityConfigManagementOutput struct{ *pulumi.OutputState }
 
 func (DatabaseSecurityConfigManagementOutput) ElementType() reflect.Type {
@@ -224,12 +205,6 @@ func (o DatabaseSecurityConfigManagementOutput) ToDatabaseSecurityConfigManageme
 
 func (o DatabaseSecurityConfigManagementOutput) ToDatabaseSecurityConfigManagementOutputWithContext(ctx context.Context) DatabaseSecurityConfigManagementOutput {
 	return o
-}
-
-func (o DatabaseSecurityConfigManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*DatabaseSecurityConfigManagement] {
-	return pulumix.Output[*DatabaseSecurityConfigManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatabaseSecurityConfigManagementOutput) CompartmentId() pulumi.StringOutput {
@@ -304,12 +279,6 @@ func (o DatabaseSecurityConfigManagementArrayOutput) ToDatabaseSecurityConfigMan
 	return o
 }
 
-func (o DatabaseSecurityConfigManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DatabaseSecurityConfigManagement] {
-	return pulumix.Output[[]*DatabaseSecurityConfigManagement]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DatabaseSecurityConfigManagementArrayOutput) Index(i pulumi.IntInput) DatabaseSecurityConfigManagementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DatabaseSecurityConfigManagement {
 		return vs[0].([]*DatabaseSecurityConfigManagement)[vs[1].(int)]
@@ -328,12 +297,6 @@ func (o DatabaseSecurityConfigManagementMapOutput) ToDatabaseSecurityConfigManag
 
 func (o DatabaseSecurityConfigManagementMapOutput) ToDatabaseSecurityConfigManagementMapOutputWithContext(ctx context.Context) DatabaseSecurityConfigManagementMapOutput {
 	return o
-}
-
-func (o DatabaseSecurityConfigManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DatabaseSecurityConfigManagement] {
-	return pulumix.Output[map[string]*DatabaseSecurityConfigManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatabaseSecurityConfigManagementMapOutput) MapIndex(k pulumi.StringInput) DatabaseSecurityConfigManagementOutput {

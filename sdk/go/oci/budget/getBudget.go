@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Budget resource in Oracle Cloud Infrastructure Budget service.
@@ -146,12 +145,6 @@ func (o LookupBudgetResultOutput) ToLookupBudgetResultOutput() LookupBudgetResul
 
 func (o LookupBudgetResultOutput) ToLookupBudgetResultOutputWithContext(ctx context.Context) LookupBudgetResultOutput {
 	return o
-}
-
-func (o LookupBudgetResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupBudgetResult] {
-	return pulumix.Output[LookupBudgetResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The actual spend in currency for the current budget cycle.

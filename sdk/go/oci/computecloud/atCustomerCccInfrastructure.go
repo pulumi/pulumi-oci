@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Ccc Infrastructure resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
@@ -319,12 +318,6 @@ func (i *AtCustomerCccInfrastructure) ToAtCustomerCccInfrastructureOutputWithCon
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureOutput)
 }
 
-func (i *AtCustomerCccInfrastructure) ToOutput(ctx context.Context) pulumix.Output[*AtCustomerCccInfrastructure] {
-	return pulumix.Output[*AtCustomerCccInfrastructure]{
-		OutputState: i.ToAtCustomerCccInfrastructureOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AtCustomerCccInfrastructureArrayInput is an input type that accepts AtCustomerCccInfrastructureArray and AtCustomerCccInfrastructureArrayOutput values.
 // You can construct a concrete instance of `AtCustomerCccInfrastructureArrayInput` via:
 //
@@ -348,12 +341,6 @@ func (i AtCustomerCccInfrastructureArray) ToAtCustomerCccInfrastructureArrayOutp
 
 func (i AtCustomerCccInfrastructureArray) ToAtCustomerCccInfrastructureArrayOutputWithContext(ctx context.Context) AtCustomerCccInfrastructureArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureArrayOutput)
-}
-
-func (i AtCustomerCccInfrastructureArray) ToOutput(ctx context.Context) pulumix.Output[[]*AtCustomerCccInfrastructure] {
-	return pulumix.Output[[]*AtCustomerCccInfrastructure]{
-		OutputState: i.ToAtCustomerCccInfrastructureArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AtCustomerCccInfrastructureMapInput is an input type that accepts AtCustomerCccInfrastructureMap and AtCustomerCccInfrastructureMapOutput values.
@@ -381,12 +368,6 @@ func (i AtCustomerCccInfrastructureMap) ToAtCustomerCccInfrastructureMapOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureMapOutput)
 }
 
-func (i AtCustomerCccInfrastructureMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AtCustomerCccInfrastructure] {
-	return pulumix.Output[map[string]*AtCustomerCccInfrastructure]{
-		OutputState: i.ToAtCustomerCccInfrastructureMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AtCustomerCccInfrastructureOutput struct{ *pulumi.OutputState }
 
 func (AtCustomerCccInfrastructureOutput) ElementType() reflect.Type {
@@ -399,12 +380,6 @@ func (o AtCustomerCccInfrastructureOutput) ToAtCustomerCccInfrastructureOutput()
 
 func (o AtCustomerCccInfrastructureOutput) ToAtCustomerCccInfrastructureOutputWithContext(ctx context.Context) AtCustomerCccInfrastructureOutput {
 	return o
-}
-
-func (o AtCustomerCccInfrastructureOutput) ToOutput(ctx context.Context) pulumix.Output[*AtCustomerCccInfrastructure] {
-	return pulumix.Output[*AtCustomerCccInfrastructure]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Schedule used for upgrades. If no schedule is associated with the infrastructure, it can be upgraded at any time.
@@ -530,12 +505,6 @@ func (o AtCustomerCccInfrastructureArrayOutput) ToAtCustomerCccInfrastructureArr
 	return o
 }
 
-func (o AtCustomerCccInfrastructureArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AtCustomerCccInfrastructure] {
-	return pulumix.Output[[]*AtCustomerCccInfrastructure]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AtCustomerCccInfrastructureArrayOutput) Index(i pulumi.IntInput) AtCustomerCccInfrastructureOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AtCustomerCccInfrastructure {
 		return vs[0].([]*AtCustomerCccInfrastructure)[vs[1].(int)]
@@ -554,12 +523,6 @@ func (o AtCustomerCccInfrastructureMapOutput) ToAtCustomerCccInfrastructureMapOu
 
 func (o AtCustomerCccInfrastructureMapOutput) ToAtCustomerCccInfrastructureMapOutputWithContext(ctx context.Context) AtCustomerCccInfrastructureMapOutput {
 	return o
-}
-
-func (o AtCustomerCccInfrastructureMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AtCustomerCccInfrastructure] {
-	return pulumix.Output[map[string]*AtCustomerCccInfrastructure]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AtCustomerCccInfrastructureMapOutput) MapIndex(k pulumi.StringInput) AtCustomerCccInfrastructureOutput {

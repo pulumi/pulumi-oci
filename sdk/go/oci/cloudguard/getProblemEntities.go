@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Problem Entities in Oracle Cloud Infrastructure Cloud Guard service.
@@ -106,12 +105,6 @@ func (o GetProblemEntitiesResultOutput) ToGetProblemEntitiesResultOutput() GetPr
 
 func (o GetProblemEntitiesResultOutput) ToGetProblemEntitiesResultOutputWithContext(ctx context.Context) GetProblemEntitiesResultOutput {
 	return o
-}
-
-func (o GetProblemEntitiesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetProblemEntitiesResult] {
-	return pulumix.Output[GetProblemEntitiesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProblemEntitiesResultOutput) Filters() GetProblemEntitiesFilterArrayOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Object Versions in Oracle Cloud Infrastructure Object Storage service.
@@ -156,12 +155,6 @@ func (o GetObjectVersionsResultOutput) ToGetObjectVersionsResultOutput() GetObje
 
 func (o GetObjectVersionsResultOutput) ToGetObjectVersionsResultOutputWithContext(ctx context.Context) GetObjectVersionsResultOutput {
 	return o
-}
-
-func (o GetObjectVersionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetObjectVersionsResult] {
-	return pulumix.Output[GetObjectVersionsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetObjectVersionsResultOutput) Bucket() pulumi.StringOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Profile Levels in Oracle Cloud Infrastructure Optimizer service.
@@ -129,12 +128,6 @@ func (o GetProfileLevelsResultOutput) ToGetProfileLevelsResultOutput() GetProfil
 
 func (o GetProfileLevelsResultOutput) ToGetProfileLevelsResultOutputWithContext(ctx context.Context) GetProfileLevelsResultOutput {
 	return o
-}
-
-func (o GetProfileLevelsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelsResult] {
-	return pulumix.Output[GetProfileLevelsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfileLevelsResultOutput) CompartmentId() pulumi.StringOutput {

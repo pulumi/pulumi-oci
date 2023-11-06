@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Instance Group resource in Oracle Cloud Infrastructure OS Management service.
@@ -117,12 +116,6 @@ func (o LookupManagedInstanceGroupResultOutput) ToLookupManagedInstanceGroupResu
 
 func (o LookupManagedInstanceGroupResultOutput) ToLookupManagedInstanceGroupResultOutputWithContext(ctx context.Context) LookupManagedInstanceGroupResultOutput {
 	return o
-}
-
-func (o LookupManagedInstanceGroupResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupManagedInstanceGroupResult] {
-	return pulumix.Output[LookupManagedInstanceGroupResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // OCID for the Compartment

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Compute Global Image Capability Schemas in Oracle Cloud Infrastructure Core service.
@@ -113,12 +112,6 @@ func (o GetComputeGlobalImageCapabilitySchemasResultOutput) ToGetComputeGlobalIm
 
 func (o GetComputeGlobalImageCapabilitySchemasResultOutput) ToGetComputeGlobalImageCapabilitySchemasResultOutputWithContext(ctx context.Context) GetComputeGlobalImageCapabilitySchemasResultOutput {
 	return o
-}
-
-func (o GetComputeGlobalImageCapabilitySchemasResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputeGlobalImageCapabilitySchemasResult] {
-	return pulumix.Output[GetComputeGlobalImageCapabilitySchemasResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment containing the compute global image capability schema

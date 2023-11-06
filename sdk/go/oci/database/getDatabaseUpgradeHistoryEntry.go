@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Database Upgrade History Entry resource in Oracle Cloud Infrastructure Database service.
@@ -130,12 +129,6 @@ func (o GetDatabaseUpgradeHistoryEntryResultOutput) ToGetDatabaseUpgradeHistoryE
 
 func (o GetDatabaseUpgradeHistoryEntryResultOutput) ToGetDatabaseUpgradeHistoryEntryResultOutputWithContext(ctx context.Context) GetDatabaseUpgradeHistoryEntryResultOutput {
 	return o
-}
-
-func (o GetDatabaseUpgradeHistoryEntryResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseUpgradeHistoryEntryResult] {
-	return pulumix.Output[GetDatabaseUpgradeHistoryEntryResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The database upgrade action.

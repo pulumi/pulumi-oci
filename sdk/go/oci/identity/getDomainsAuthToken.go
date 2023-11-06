@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Auth Token resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -164,12 +163,6 @@ func (o LookupDomainsAuthTokenResultOutput) ToLookupDomainsAuthTokenResultOutput
 
 func (o LookupDomainsAuthTokenResultOutput) ToLookupDomainsAuthTokenResultOutputWithContext(ctx context.Context) LookupDomainsAuthTokenResultOutput {
 	return o
-}
-
-func (o LookupDomainsAuthTokenResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainsAuthTokenResult] {
-	return pulumix.Output[LookupDomainsAuthTokenResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupDomainsAuthTokenResultOutput) AttributeSets() pulumi.StringArrayOutput {

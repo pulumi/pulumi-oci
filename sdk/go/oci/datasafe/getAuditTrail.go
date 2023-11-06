@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Audit Trail resource in Oracle Cloud Infrastructure Data Safe service.
@@ -137,12 +136,6 @@ func (o LookupAuditTrailResultOutput) ToLookupAuditTrailResultOutput() LookupAud
 
 func (o LookupAuditTrailResultOutput) ToLookupAuditTrailResultOutputWithContext(ctx context.Context) LookupAuditTrailResultOutput {
 	return o
-}
-
-func (o LookupAuditTrailResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAuditTrailResult] {
-	return pulumix.Output[LookupAuditTrailResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The date from which the audit trail must start collecting data, in the format defined by RFC3339.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Category resource in Oracle Cloud Infrastructure Optimizer service.
@@ -122,12 +121,6 @@ func (o GetCategoryResultOutput) ToGetCategoryResultOutput() GetCategoryResultOu
 
 func (o GetCategoryResultOutput) ToGetCategoryResultOutputWithContext(ctx context.Context) GetCategoryResultOutput {
 	return o
-}
-
-func (o GetCategoryResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCategoryResult] {
-	return pulumix.Output[GetCategoryResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCategoryResultOutput) CategoryId() pulumi.StringOutput {

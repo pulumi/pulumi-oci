@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Analytics Instance Private Access Channel resource in Oracle Cloud Infrastructure Analytics service.
@@ -123,12 +122,6 @@ func (o LookupAnalyticsInstancePrivateAccessChannelResultOutput) ToLookupAnalyti
 
 func (o LookupAnalyticsInstancePrivateAccessChannelResultOutput) ToLookupAnalyticsInstancePrivateAccessChannelResultOutputWithContext(ctx context.Context) LookupAnalyticsInstancePrivateAccessChannelResultOutput {
 	return o
-}
-
-func (o LookupAnalyticsInstancePrivateAccessChannelResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAnalyticsInstancePrivateAccessChannelResult] {
-	return pulumix.Output[LookupAnalyticsInstancePrivateAccessChannelResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupAnalyticsInstancePrivateAccessChannelResultOutput) AnalyticsInstanceId() pulumi.StringOutput {

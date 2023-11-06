@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the My Support Account resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -841,12 +840,6 @@ func (i *DomainsMySupportAccount) ToDomainsMySupportAccountOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsMySupportAccountOutput)
 }
 
-func (i *DomainsMySupportAccount) ToOutput(ctx context.Context) pulumix.Output[*DomainsMySupportAccount] {
-	return pulumix.Output[*DomainsMySupportAccount]{
-		OutputState: i.ToDomainsMySupportAccountOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsMySupportAccountArrayInput is an input type that accepts DomainsMySupportAccountArray and DomainsMySupportAccountArrayOutput values.
 // You can construct a concrete instance of `DomainsMySupportAccountArrayInput` via:
 //
@@ -870,12 +863,6 @@ func (i DomainsMySupportAccountArray) ToDomainsMySupportAccountArrayOutput() Dom
 
 func (i DomainsMySupportAccountArray) ToDomainsMySupportAccountArrayOutputWithContext(ctx context.Context) DomainsMySupportAccountArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsMySupportAccountArrayOutput)
-}
-
-func (i DomainsMySupportAccountArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsMySupportAccount] {
-	return pulumix.Output[[]*DomainsMySupportAccount]{
-		OutputState: i.ToDomainsMySupportAccountArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsMySupportAccountMapInput is an input type that accepts DomainsMySupportAccountMap and DomainsMySupportAccountMapOutput values.
@@ -903,12 +890,6 @@ func (i DomainsMySupportAccountMap) ToDomainsMySupportAccountMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsMySupportAccountMapOutput)
 }
 
-func (i DomainsMySupportAccountMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsMySupportAccount] {
-	return pulumix.Output[map[string]*DomainsMySupportAccount]{
-		OutputState: i.ToDomainsMySupportAccountMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsMySupportAccountOutput struct{ *pulumi.OutputState }
 
 func (DomainsMySupportAccountOutput) ElementType() reflect.Type {
@@ -921,12 +902,6 @@ func (o DomainsMySupportAccountOutput) ToDomainsMySupportAccountOutput() Domains
 
 func (o DomainsMySupportAccountOutput) ToDomainsMySupportAccountOutputWithContext(ctx context.Context) DomainsMySupportAccountOutput {
 	return o
-}
-
-func (o DomainsMySupportAccountOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsMySupportAccount] {
-	return pulumix.Output[*DomainsMySupportAccount]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
@@ -1204,12 +1179,6 @@ func (o DomainsMySupportAccountArrayOutput) ToDomainsMySupportAccountArrayOutput
 	return o
 }
 
-func (o DomainsMySupportAccountArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsMySupportAccount] {
-	return pulumix.Output[[]*DomainsMySupportAccount]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DomainsMySupportAccountArrayOutput) Index(i pulumi.IntInput) DomainsMySupportAccountOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DomainsMySupportAccount {
 		return vs[0].([]*DomainsMySupportAccount)[vs[1].(int)]
@@ -1228,12 +1197,6 @@ func (o DomainsMySupportAccountMapOutput) ToDomainsMySupportAccountMapOutput() D
 
 func (o DomainsMySupportAccountMapOutput) ToDomainsMySupportAccountMapOutputWithContext(ctx context.Context) DomainsMySupportAccountMapOutput {
 	return o
-}
-
-func (o DomainsMySupportAccountMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsMySupportAccount] {
-	return pulumix.Output[map[string]*DomainsMySupportAccount]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsMySupportAccountMapOutput) MapIndex(k pulumi.StringInput) DomainsMySupportAccountOutput {

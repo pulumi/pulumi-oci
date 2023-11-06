@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Integration Instances in Oracle Cloud Infrastructure Integration service.
@@ -120,12 +119,6 @@ func (o GetIntegrationInstancesResultOutput) ToGetIntegrationInstancesResultOutp
 
 func (o GetIntegrationInstancesResultOutput) ToGetIntegrationInstancesResultOutputWithContext(ctx context.Context) GetIntegrationInstancesResultOutput {
 	return o
-}
-
-func (o GetIntegrationInstancesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesResult] {
-	return pulumix.Output[GetIntegrationInstancesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier.

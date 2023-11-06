@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Fusion Environment Scheduled Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -131,12 +130,6 @@ func (o GetFusionEnvironmentScheduledActivityResultOutput) ToGetFusionEnvironmen
 
 func (o GetFusionEnvironmentScheduledActivityResultOutput) ToGetFusionEnvironmentScheduledActivityResultOutputWithContext(ctx context.Context) GetFusionEnvironmentScheduledActivityResultOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentScheduledActivityResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentScheduledActivityResult] {
-	return pulumix.Output[GetFusionEnvironmentScheduledActivityResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of actions

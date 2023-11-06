@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Image Shapes in Oracle Cloud Infrastructure Core service.
@@ -106,12 +105,6 @@ func (o GetImageShapesResultOutput) ToGetImageShapesResultOutput() GetImageShape
 
 func (o GetImageShapesResultOutput) ToGetImageShapesResultOutputWithContext(ctx context.Context) GetImageShapesResultOutput {
 	return o
-}
-
-func (o GetImageShapesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetImageShapesResult] {
-	return pulumix.Output[GetImageShapesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetImageShapesResultOutput) Filters() GetImageShapesFilterArrayOutput {

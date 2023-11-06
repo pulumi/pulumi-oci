@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.
@@ -143,12 +142,6 @@ func (o LookupAutonomousDatabaseBackupResultOutput) ToLookupAutonomousDatabaseBa
 
 func (o LookupAutonomousDatabaseBackupResultOutput) ToLookupAutonomousDatabaseBackupResultOutputWithContext(ctx context.Context) LookupAutonomousDatabaseBackupResultOutput {
 	return o
-}
-
-func (o LookupAutonomousDatabaseBackupResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAutonomousDatabaseBackupResult] {
-	return pulumix.Output[LookupAutonomousDatabaseBackupResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupAutonomousDatabaseBackupResultOutput) AutonomousDatabaseBackupId() pulumi.StringOutput {

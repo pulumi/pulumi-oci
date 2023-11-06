@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Top Utilized Product Licenses in Oracle Cloud Infrastructure License Manager service.
@@ -108,12 +107,6 @@ func (o GetTopUtilizedProductLicensesResultOutput) ToGetTopUtilizedProductLicens
 
 func (o GetTopUtilizedProductLicensesResultOutput) ToGetTopUtilizedProductLicensesResultOutputWithContext(ctx context.Context) GetTopUtilizedProductLicensesResultOutput {
 	return o
-}
-
-func (o GetTopUtilizedProductLicensesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTopUtilizedProductLicensesResult] {
-	return pulumix.Output[GetTopUtilizedProductLicensesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetTopUtilizedProductLicensesResultOutput) CompartmentId() pulumi.StringOutput {

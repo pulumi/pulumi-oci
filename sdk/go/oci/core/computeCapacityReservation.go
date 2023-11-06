@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Compute Capacity Reservation resource in Oracle Cloud Infrastructure Core service.
@@ -288,12 +287,6 @@ func (i *ComputeCapacityReservation) ToComputeCapacityReservationOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(ComputeCapacityReservationOutput)
 }
 
-func (i *ComputeCapacityReservation) ToOutput(ctx context.Context) pulumix.Output[*ComputeCapacityReservation] {
-	return pulumix.Output[*ComputeCapacityReservation]{
-		OutputState: i.ToComputeCapacityReservationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ComputeCapacityReservationArrayInput is an input type that accepts ComputeCapacityReservationArray and ComputeCapacityReservationArrayOutput values.
 // You can construct a concrete instance of `ComputeCapacityReservationArrayInput` via:
 //
@@ -317,12 +310,6 @@ func (i ComputeCapacityReservationArray) ToComputeCapacityReservationArrayOutput
 
 func (i ComputeCapacityReservationArray) ToComputeCapacityReservationArrayOutputWithContext(ctx context.Context) ComputeCapacityReservationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ComputeCapacityReservationArrayOutput)
-}
-
-func (i ComputeCapacityReservationArray) ToOutput(ctx context.Context) pulumix.Output[[]*ComputeCapacityReservation] {
-	return pulumix.Output[[]*ComputeCapacityReservation]{
-		OutputState: i.ToComputeCapacityReservationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ComputeCapacityReservationMapInput is an input type that accepts ComputeCapacityReservationMap and ComputeCapacityReservationMapOutput values.
@@ -350,12 +337,6 @@ func (i ComputeCapacityReservationMap) ToComputeCapacityReservationMapOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(ComputeCapacityReservationMapOutput)
 }
 
-func (i ComputeCapacityReservationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ComputeCapacityReservation] {
-	return pulumix.Output[map[string]*ComputeCapacityReservation]{
-		OutputState: i.ToComputeCapacityReservationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ComputeCapacityReservationOutput struct{ *pulumi.OutputState }
 
 func (ComputeCapacityReservationOutput) ElementType() reflect.Type {
@@ -368,12 +349,6 @@ func (o ComputeCapacityReservationOutput) ToComputeCapacityReservationOutput() C
 
 func (o ComputeCapacityReservationOutput) ToComputeCapacityReservationOutputWithContext(ctx context.Context) ComputeCapacityReservationOutput {
 	return o
-}
-
-func (o ComputeCapacityReservationOutput) ToOutput(ctx context.Context) pulumix.Output[*ComputeCapacityReservation] {
-	return pulumix.Output[*ComputeCapacityReservation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The availability domain of this compute capacity reservation.  Example: `Uocm:PHX-AD-1`
@@ -457,12 +432,6 @@ func (o ComputeCapacityReservationArrayOutput) ToComputeCapacityReservationArray
 	return o
 }
 
-func (o ComputeCapacityReservationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ComputeCapacityReservation] {
-	return pulumix.Output[[]*ComputeCapacityReservation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ComputeCapacityReservationArrayOutput) Index(i pulumi.IntInput) ComputeCapacityReservationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ComputeCapacityReservation {
 		return vs[0].([]*ComputeCapacityReservation)[vs[1].(int)]
@@ -481,12 +450,6 @@ func (o ComputeCapacityReservationMapOutput) ToComputeCapacityReservationMapOutp
 
 func (o ComputeCapacityReservationMapOutput) ToComputeCapacityReservationMapOutputWithContext(ctx context.Context) ComputeCapacityReservationMapOutput {
 	return o
-}
-
-func (o ComputeCapacityReservationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ComputeCapacityReservation] {
-	return pulumix.Output[map[string]*ComputeCapacityReservation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ComputeCapacityReservationMapOutput) MapIndex(k pulumi.StringInput) ComputeCapacityReservationOutput {

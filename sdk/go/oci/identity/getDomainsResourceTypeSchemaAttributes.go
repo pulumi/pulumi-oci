@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Resource Type Schema Attributes in Oracle Cloud Infrastructure Identity Domains service.
@@ -162,12 +161,6 @@ func (o GetDomainsResourceTypeSchemaAttributesResultOutput) ToGetDomainsResource
 
 func (o GetDomainsResourceTypeSchemaAttributesResultOutput) ToGetDomainsResourceTypeSchemaAttributesResultOutputWithContext(ctx context.Context) GetDomainsResourceTypeSchemaAttributesResultOutput {
 	return o
-}
-
-func (o GetDomainsResourceTypeSchemaAttributesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsResourceTypeSchemaAttributesResult] {
-	return pulumix.Output[GetDomainsResourceTypeSchemaAttributesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDomainsResourceTypeSchemaAttributesResultOutput) AttributeSets() pulumi.StringArrayOutput {

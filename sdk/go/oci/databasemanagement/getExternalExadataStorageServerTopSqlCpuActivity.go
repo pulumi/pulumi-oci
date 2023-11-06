@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific External Exadata Storage Server Top Sql Cpu Activity resource in Oracle Cloud Infrastructure Database Management service.
@@ -102,12 +101,6 @@ func (o GetExternalExadataStorageServerTopSqlCpuActivityResultOutput) ToGetExter
 
 func (o GetExternalExadataStorageServerTopSqlCpuActivityResultOutput) ToGetExternalExadataStorageServerTopSqlCpuActivityResultOutputWithContext(ctx context.Context) GetExternalExadataStorageServerTopSqlCpuActivityResultOutput {
 	return o
-}
-
-func (o GetExternalExadataStorageServerTopSqlCpuActivityResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalExadataStorageServerTopSqlCpuActivityResult] {
-	return pulumix.Output[GetExternalExadataStorageServerTopSqlCpuActivityResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of sql CPU activity.

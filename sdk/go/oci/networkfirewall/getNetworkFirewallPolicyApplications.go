@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Network Firewall Policy Applications in Oracle Cloud Infrastructure Network Firewall service.
@@ -111,12 +110,6 @@ func (o GetNetworkFirewallPolicyApplicationsResultOutput) ToGetNetworkFirewallPo
 
 func (o GetNetworkFirewallPolicyApplicationsResultOutput) ToGetNetworkFirewallPolicyApplicationsResultOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyApplicationsResultOutput {
 	return o
-}
-
-func (o GetNetworkFirewallPolicyApplicationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPolicyApplicationsResult] {
-	return pulumix.Output[GetNetworkFirewallPolicyApplicationsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of application_summary_collection.

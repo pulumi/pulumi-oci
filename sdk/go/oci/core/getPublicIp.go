@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Public Ip resource in Oracle Cloud Infrastructure Core service.
@@ -193,12 +192,6 @@ func (o LookupPublicIpResultOutput) ToLookupPublicIpResultOutput() LookupPublicI
 
 func (o LookupPublicIpResultOutput) ToLookupPublicIpResultOutputWithContext(ctx context.Context) LookupPublicIpResultOutput {
 	return o
-}
-
-func (o LookupPublicIpResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupPublicIpResult] {
-	return pulumix.Output[LookupPublicIpResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of being assigned to.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Namespace Storage Overlapping Recalls in Oracle Cloud Infrastructure Log Analytics service.
@@ -119,12 +118,6 @@ func (o GetNamespaceStorageOverlappingRecallsResultOutput) ToGetNamespaceStorage
 
 func (o GetNamespaceStorageOverlappingRecallsResultOutput) ToGetNamespaceStorageOverlappingRecallsResultOutputWithContext(ctx context.Context) GetNamespaceStorageOverlappingRecallsResultOutput {
 	return o
-}
-
-func (o GetNamespaceStorageOverlappingRecallsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceStorageOverlappingRecallsResult] {
-	return pulumix.Output[GetNamespaceStorageOverlappingRecallsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceStorageOverlappingRecallsResultOutput) Filters() GetNamespaceStorageOverlappingRecallsFilterArrayOutput {

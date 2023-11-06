@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Operations Insights Warehouse Users in Oracle Cloud Infrastructure Opsi service.
@@ -131,12 +130,6 @@ func (o GetOperationsInsightsWarehouseUsersResultOutput) ToGetOperationsInsights
 
 func (o GetOperationsInsightsWarehouseUsersResultOutput) ToGetOperationsInsightsWarehouseUsersResultOutputWithContext(ctx context.Context) GetOperationsInsightsWarehouseUsersResultOutput {
 	return o
-}
-
-func (o GetOperationsInsightsWarehouseUsersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetOperationsInsightsWarehouseUsersResult] {
-	return pulumix.Output[GetOperationsInsightsWarehouseUsersResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

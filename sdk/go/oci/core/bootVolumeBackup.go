@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Boot Volume Backup resource in Oracle Cloud Infrastructure Core service.
@@ -279,12 +278,6 @@ func (i *BootVolumeBackup) ToBootVolumeBackupOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(BootVolumeBackupOutput)
 }
 
-func (i *BootVolumeBackup) ToOutput(ctx context.Context) pulumix.Output[*BootVolumeBackup] {
-	return pulumix.Output[*BootVolumeBackup]{
-		OutputState: i.ToBootVolumeBackupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BootVolumeBackupArrayInput is an input type that accepts BootVolumeBackupArray and BootVolumeBackupArrayOutput values.
 // You can construct a concrete instance of `BootVolumeBackupArrayInput` via:
 //
@@ -308,12 +301,6 @@ func (i BootVolumeBackupArray) ToBootVolumeBackupArrayOutput() BootVolumeBackupA
 
 func (i BootVolumeBackupArray) ToBootVolumeBackupArrayOutputWithContext(ctx context.Context) BootVolumeBackupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BootVolumeBackupArrayOutput)
-}
-
-func (i BootVolumeBackupArray) ToOutput(ctx context.Context) pulumix.Output[[]*BootVolumeBackup] {
-	return pulumix.Output[[]*BootVolumeBackup]{
-		OutputState: i.ToBootVolumeBackupArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BootVolumeBackupMapInput is an input type that accepts BootVolumeBackupMap and BootVolumeBackupMapOutput values.
@@ -341,12 +328,6 @@ func (i BootVolumeBackupMap) ToBootVolumeBackupMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(BootVolumeBackupMapOutput)
 }
 
-func (i BootVolumeBackupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BootVolumeBackup] {
-	return pulumix.Output[map[string]*BootVolumeBackup]{
-		OutputState: i.ToBootVolumeBackupMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BootVolumeBackupOutput struct{ *pulumi.OutputState }
 
 func (BootVolumeBackupOutput) ElementType() reflect.Type {
@@ -359,12 +340,6 @@ func (o BootVolumeBackupOutput) ToBootVolumeBackupOutput() BootVolumeBackupOutpu
 
 func (o BootVolumeBackupOutput) ToBootVolumeBackupOutputWithContext(ctx context.Context) BootVolumeBackupOutput {
 	return o
-}
-
-func (o BootVolumeBackupOutput) ToOutput(ctx context.Context) pulumix.Output[*BootVolumeBackup] {
-	return pulumix.Output[*BootVolumeBackup]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the boot volume that needs to be backed up. Cannot be defined if `sourceDetails` is defined.
@@ -471,12 +446,6 @@ func (o BootVolumeBackupArrayOutput) ToBootVolumeBackupArrayOutputWithContext(ct
 	return o
 }
 
-func (o BootVolumeBackupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BootVolumeBackup] {
-	return pulumix.Output[[]*BootVolumeBackup]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o BootVolumeBackupArrayOutput) Index(i pulumi.IntInput) BootVolumeBackupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BootVolumeBackup {
 		return vs[0].([]*BootVolumeBackup)[vs[1].(int)]
@@ -495,12 +464,6 @@ func (o BootVolumeBackupMapOutput) ToBootVolumeBackupMapOutput() BootVolumeBacku
 
 func (o BootVolumeBackupMapOutput) ToBootVolumeBackupMapOutputWithContext(ctx context.Context) BootVolumeBackupMapOutput {
 	return o
-}
-
-func (o BootVolumeBackupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BootVolumeBackup] {
-	return pulumix.Output[map[string]*BootVolumeBackup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BootVolumeBackupMapOutput) MapIndex(k pulumi.StringInput) BootVolumeBackupOutput {

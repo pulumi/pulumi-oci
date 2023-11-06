@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Private Ip resource in Oracle Cloud Infrastructure Core service.
@@ -129,12 +128,6 @@ func (o LookupPrivateIpResultOutput) ToLookupPrivateIpResultOutput() LookupPriva
 
 func (o LookupPrivateIpResultOutput) ToLookupPrivateIpResultOutputWithContext(ctx context.Context) LookupPrivateIpResultOutput {
 	return o
-}
-
-func (o LookupPrivateIpResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupPrivateIpResult] {
-	return pulumix.Output[LookupPrivateIpResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The private IP's availability domain. This attribute will be null if this is a *secondary* private IP assigned to a VNIC that is in a *regional* subnet.  Example: `Uocm:PHX-AD-1`

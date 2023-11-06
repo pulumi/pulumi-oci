@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Application Vip resource in Oracle Cloud Infrastructure Database service.
@@ -121,12 +120,6 @@ func (o LookupApplicationVipResultOutput) ToLookupApplicationVipResultOutput() L
 
 func (o LookupApplicationVipResultOutput) ToLookupApplicationVipResultOutputWithContext(ctx context.Context) LookupApplicationVipResultOutput {
 	return o
-}
-
-func (o LookupApplicationVipResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupApplicationVipResult] {
-	return pulumix.Output[LookupApplicationVipResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupApplicationVipResultOutput) ApplicationVipId() pulumi.StringOutput {

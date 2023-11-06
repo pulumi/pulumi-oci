@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Publication resource in Oracle Cloud Infrastructure Marketplace service.
@@ -128,12 +127,6 @@ func (o LookupPublicationResultOutput) ToLookupPublicationResultOutput() LookupP
 
 func (o LookupPublicationResultOutput) ToLookupPublicationResultOutputWithContext(ctx context.Context) LookupPublicationResultOutput {
 	return o
-}
-
-func (o LookupPublicationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupPublicationResult] {
-	return pulumix.Output[LookupPublicationResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the publication exists.

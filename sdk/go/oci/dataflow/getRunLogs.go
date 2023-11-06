@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Run Logs in Oracle Cloud Infrastructure Data Flow service.
@@ -105,12 +104,6 @@ func (o GetRunLogsResultOutput) ToGetRunLogsResultOutput() GetRunLogsResultOutpu
 
 func (o GetRunLogsResultOutput) ToGetRunLogsResultOutputWithContext(ctx context.Context) GetRunLogsResultOutput {
 	return o
-}
-
-func (o GetRunLogsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRunLogsResult] {
-	return pulumix.Output[GetRunLogsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRunLogsResultOutput) Filters() GetRunLogsFilterArrayOutput {

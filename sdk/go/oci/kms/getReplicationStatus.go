@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Replication Status resource in Oracle Cloud Infrastructure Kms service.
@@ -111,12 +110,6 @@ func (o GetReplicationStatusResultOutput) ToGetReplicationStatusResultOutput() G
 
 func (o GetReplicationStatusResultOutput) ToGetReplicationStatusResultOutputWithContext(ctx context.Context) GetReplicationStatusResultOutput {
 	return o
-}
-
-func (o GetReplicationStatusResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetReplicationStatusResult] {
-	return pulumix.Output[GetReplicationStatusResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The provider-assigned unique ID for this managed resource.

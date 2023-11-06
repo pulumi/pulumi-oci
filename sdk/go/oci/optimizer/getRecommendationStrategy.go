@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Recommendation Strategy resource in Oracle Cloud Infrastructure Optimizer service.
@@ -125,12 +124,6 @@ func (o GetRecommendationStrategyResultOutput) ToGetRecommendationStrategyResult
 
 func (o GetRecommendationStrategyResultOutput) ToGetRecommendationStrategyResultOutputWithContext(ctx context.Context) GetRecommendationStrategyResultOutput {
 	return o
-}
-
-func (o GetRecommendationStrategyResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategyResult] {
-	return pulumix.Output[GetRecommendationStrategyResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRecommendationStrategyResultOutput) CompartmentId() pulumi.StringOutput {

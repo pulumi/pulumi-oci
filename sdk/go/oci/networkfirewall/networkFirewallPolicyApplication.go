@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Network Firewall Policy Application resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -209,12 +208,6 @@ func (i *NetworkFirewallPolicyApplication) ToNetworkFirewallPolicyApplicationOut
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyApplicationOutput)
 }
 
-func (i *NetworkFirewallPolicyApplication) ToOutput(ctx context.Context) pulumix.Output[*NetworkFirewallPolicyApplication] {
-	return pulumix.Output[*NetworkFirewallPolicyApplication]{
-		OutputState: i.ToNetworkFirewallPolicyApplicationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NetworkFirewallPolicyApplicationArrayInput is an input type that accepts NetworkFirewallPolicyApplicationArray and NetworkFirewallPolicyApplicationArrayOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicyApplicationArrayInput` via:
 //
@@ -238,12 +231,6 @@ func (i NetworkFirewallPolicyApplicationArray) ToNetworkFirewallPolicyApplicatio
 
 func (i NetworkFirewallPolicyApplicationArray) ToNetworkFirewallPolicyApplicationArrayOutputWithContext(ctx context.Context) NetworkFirewallPolicyApplicationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyApplicationArrayOutput)
-}
-
-func (i NetworkFirewallPolicyApplicationArray) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkFirewallPolicyApplication] {
-	return pulumix.Output[[]*NetworkFirewallPolicyApplication]{
-		OutputState: i.ToNetworkFirewallPolicyApplicationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // NetworkFirewallPolicyApplicationMapInput is an input type that accepts NetworkFirewallPolicyApplicationMap and NetworkFirewallPolicyApplicationMapOutput values.
@@ -271,12 +258,6 @@ func (i NetworkFirewallPolicyApplicationMap) ToNetworkFirewallPolicyApplicationM
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyApplicationMapOutput)
 }
 
-func (i NetworkFirewallPolicyApplicationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkFirewallPolicyApplication] {
-	return pulumix.Output[map[string]*NetworkFirewallPolicyApplication]{
-		OutputState: i.ToNetworkFirewallPolicyApplicationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NetworkFirewallPolicyApplicationOutput struct{ *pulumi.OutputState }
 
 func (NetworkFirewallPolicyApplicationOutput) ElementType() reflect.Type {
@@ -289,12 +270,6 @@ func (o NetworkFirewallPolicyApplicationOutput) ToNetworkFirewallPolicyApplicati
 
 func (o NetworkFirewallPolicyApplicationOutput) ToNetworkFirewallPolicyApplicationOutputWithContext(ctx context.Context) NetworkFirewallPolicyApplicationOutput {
 	return o
-}
-
-func (o NetworkFirewallPolicyApplicationOutput) ToOutput(ctx context.Context) pulumix.Output[*NetworkFirewallPolicyApplication] {
-	return pulumix.Output[*NetworkFirewallPolicyApplication]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
@@ -344,12 +319,6 @@ func (o NetworkFirewallPolicyApplicationArrayOutput) ToNetworkFirewallPolicyAppl
 	return o
 }
 
-func (o NetworkFirewallPolicyApplicationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkFirewallPolicyApplication] {
-	return pulumix.Output[[]*NetworkFirewallPolicyApplication]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o NetworkFirewallPolicyApplicationArrayOutput) Index(i pulumi.IntInput) NetworkFirewallPolicyApplicationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *NetworkFirewallPolicyApplication {
 		return vs[0].([]*NetworkFirewallPolicyApplication)[vs[1].(int)]
@@ -368,12 +337,6 @@ func (o NetworkFirewallPolicyApplicationMapOutput) ToNetworkFirewallPolicyApplic
 
 func (o NetworkFirewallPolicyApplicationMapOutput) ToNetworkFirewallPolicyApplicationMapOutputWithContext(ctx context.Context) NetworkFirewallPolicyApplicationMapOutput {
 	return o
-}
-
-func (o NetworkFirewallPolicyApplicationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkFirewallPolicyApplication] {
-	return pulumix.Output[map[string]*NetworkFirewallPolicyApplication]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NetworkFirewallPolicyApplicationMapOutput) MapIndex(k pulumi.StringInput) NetworkFirewallPolicyApplicationOutput {

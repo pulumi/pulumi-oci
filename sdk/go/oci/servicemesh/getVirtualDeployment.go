@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Virtual Deployment resource in Oracle Cloud Infrastructure Service Mesh service.
@@ -128,12 +127,6 @@ func (o LookupVirtualDeploymentResultOutput) ToLookupVirtualDeploymentResultOutp
 
 func (o LookupVirtualDeploymentResultOutput) ToLookupVirtualDeploymentResultOutputWithContext(ctx context.Context) LookupVirtualDeploymentResultOutput {
 	return o
-}
-
-func (o LookupVirtualDeploymentResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupVirtualDeploymentResult] {
-	return pulumix.Output[LookupVirtualDeploymentResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // This configuration determines if logging is enabled and where the logs will be output.

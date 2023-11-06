@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -61,12 +60,6 @@ func (i GeneratedKeyKeyShapeArgs) ToGeneratedKeyKeyShapeOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GeneratedKeyKeyShapeOutput)
 }
 
-func (i GeneratedKeyKeyShapeArgs) ToOutput(ctx context.Context) pulumix.Output[GeneratedKeyKeyShape] {
-	return pulumix.Output[GeneratedKeyKeyShape]{
-		OutputState: i.ToGeneratedKeyKeyShapeOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i GeneratedKeyKeyShapeArgs) ToGeneratedKeyKeyShapePtrOutput() GeneratedKeyKeyShapePtrOutput {
 	return i.ToGeneratedKeyKeyShapePtrOutputWithContext(context.Background())
 }
@@ -108,12 +101,6 @@ func (i *generatedKeyKeyShapePtrType) ToGeneratedKeyKeyShapePtrOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(GeneratedKeyKeyShapePtrOutput)
 }
 
-func (i *generatedKeyKeyShapePtrType) ToOutput(ctx context.Context) pulumix.Output[*GeneratedKeyKeyShape] {
-	return pulumix.Output[*GeneratedKeyKeyShape]{
-		OutputState: i.ToGeneratedKeyKeyShapePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GeneratedKeyKeyShapeOutput struct{ *pulumi.OutputState }
 
 func (GeneratedKeyKeyShapeOutput) ElementType() reflect.Type {
@@ -136,12 +123,6 @@ func (o GeneratedKeyKeyShapeOutput) ToGeneratedKeyKeyShapePtrOutputWithContext(c
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v GeneratedKeyKeyShape) *GeneratedKeyKeyShape {
 		return &v
 	}).(GeneratedKeyKeyShapePtrOutput)
-}
-
-func (o GeneratedKeyKeyShapeOutput) ToOutput(ctx context.Context) pulumix.Output[GeneratedKeyKeyShape] {
-	return pulumix.Output[GeneratedKeyKeyShape]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
@@ -174,12 +155,6 @@ func (o GeneratedKeyKeyShapePtrOutput) ToGeneratedKeyKeyShapePtrOutput() Generat
 
 func (o GeneratedKeyKeyShapePtrOutput) ToGeneratedKeyKeyShapePtrOutputWithContext(ctx context.Context) GeneratedKeyKeyShapePtrOutput {
 	return o
-}
-
-func (o GeneratedKeyKeyShapePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*GeneratedKeyKeyShape] {
-	return pulumix.Output[*GeneratedKeyKeyShape]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GeneratedKeyKeyShapePtrOutput) Elem() GeneratedKeyKeyShapeOutput {
@@ -258,12 +233,6 @@ func (i KeyExternalKeyReferenceArgs) ToKeyExternalKeyReferenceOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(KeyExternalKeyReferenceOutput)
 }
 
-func (i KeyExternalKeyReferenceArgs) ToOutput(ctx context.Context) pulumix.Output[KeyExternalKeyReference] {
-	return pulumix.Output[KeyExternalKeyReference]{
-		OutputState: i.ToKeyExternalKeyReferenceOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i KeyExternalKeyReferenceArgs) ToKeyExternalKeyReferencePtrOutput() KeyExternalKeyReferencePtrOutput {
 	return i.ToKeyExternalKeyReferencePtrOutputWithContext(context.Background())
 }
@@ -305,12 +274,6 @@ func (i *keyExternalKeyReferencePtrType) ToKeyExternalKeyReferencePtrOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(KeyExternalKeyReferencePtrOutput)
 }
 
-func (i *keyExternalKeyReferencePtrType) ToOutput(ctx context.Context) pulumix.Output[*KeyExternalKeyReference] {
-	return pulumix.Output[*KeyExternalKeyReference]{
-		OutputState: i.ToKeyExternalKeyReferencePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type KeyExternalKeyReferenceOutput struct{ *pulumi.OutputState }
 
 func (KeyExternalKeyReferenceOutput) ElementType() reflect.Type {
@@ -335,12 +298,6 @@ func (o KeyExternalKeyReferenceOutput) ToKeyExternalKeyReferencePtrOutputWithCon
 	}).(KeyExternalKeyReferencePtrOutput)
 }
 
-func (o KeyExternalKeyReferenceOutput) ToOutput(ctx context.Context) pulumix.Output[KeyExternalKeyReference] {
-	return pulumix.Output[KeyExternalKeyReference]{
-		OutputState: o.OutputState,
-	}
-}
-
 // ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
 func (o KeyExternalKeyReferenceOutput) ExternalKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v KeyExternalKeyReference) string { return v.ExternalKeyId }).(pulumi.StringOutput)
@@ -358,12 +315,6 @@ func (o KeyExternalKeyReferencePtrOutput) ToKeyExternalKeyReferencePtrOutput() K
 
 func (o KeyExternalKeyReferencePtrOutput) ToKeyExternalKeyReferencePtrOutputWithContext(ctx context.Context) KeyExternalKeyReferencePtrOutput {
 	return o
-}
-
-func (o KeyExternalKeyReferencePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*KeyExternalKeyReference] {
-	return pulumix.Output[*KeyExternalKeyReference]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o KeyExternalKeyReferencePtrOutput) Elem() KeyExternalKeyReferenceOutput {
@@ -423,12 +374,6 @@ func (i KeyExternalKeyReferenceDetailArgs) ToKeyExternalKeyReferenceDetailOutput
 	return pulumi.ToOutputWithContext(ctx, i).(KeyExternalKeyReferenceDetailOutput)
 }
 
-func (i KeyExternalKeyReferenceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[KeyExternalKeyReferenceDetail] {
-	return pulumix.Output[KeyExternalKeyReferenceDetail]{
-		OutputState: i.ToKeyExternalKeyReferenceDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // KeyExternalKeyReferenceDetailArrayInput is an input type that accepts KeyExternalKeyReferenceDetailArray and KeyExternalKeyReferenceDetailArrayOutput values.
 // You can construct a concrete instance of `KeyExternalKeyReferenceDetailArrayInput` via:
 //
@@ -454,12 +399,6 @@ func (i KeyExternalKeyReferenceDetailArray) ToKeyExternalKeyReferenceDetailArray
 	return pulumi.ToOutputWithContext(ctx, i).(KeyExternalKeyReferenceDetailArrayOutput)
 }
 
-func (i KeyExternalKeyReferenceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]KeyExternalKeyReferenceDetail] {
-	return pulumix.Output[[]KeyExternalKeyReferenceDetail]{
-		OutputState: i.ToKeyExternalKeyReferenceDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type KeyExternalKeyReferenceDetailOutput struct{ *pulumi.OutputState }
 
 func (KeyExternalKeyReferenceDetailOutput) ElementType() reflect.Type {
@@ -472,12 +411,6 @@ func (o KeyExternalKeyReferenceDetailOutput) ToKeyExternalKeyReferenceDetailOutp
 
 func (o KeyExternalKeyReferenceDetailOutput) ToKeyExternalKeyReferenceDetailOutputWithContext(ctx context.Context) KeyExternalKeyReferenceDetailOutput {
 	return o
-}
-
-func (o KeyExternalKeyReferenceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[KeyExternalKeyReferenceDetail] {
-	return pulumix.Output[KeyExternalKeyReferenceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
@@ -502,12 +435,6 @@ func (o KeyExternalKeyReferenceDetailArrayOutput) ToKeyExternalKeyReferenceDetai
 
 func (o KeyExternalKeyReferenceDetailArrayOutput) ToKeyExternalKeyReferenceDetailArrayOutputWithContext(ctx context.Context) KeyExternalKeyReferenceDetailArrayOutput {
 	return o
-}
-
-func (o KeyExternalKeyReferenceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]KeyExternalKeyReferenceDetail] {
-	return pulumix.Output[[]KeyExternalKeyReferenceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o KeyExternalKeyReferenceDetailArrayOutput) Index(i pulumi.IntInput) KeyExternalKeyReferenceDetailOutput {
@@ -563,12 +490,6 @@ func (i KeyKeyShapeArgs) ToKeyKeyShapeOutputWithContext(ctx context.Context) Key
 	return pulumi.ToOutputWithContext(ctx, i).(KeyKeyShapeOutput)
 }
 
-func (i KeyKeyShapeArgs) ToOutput(ctx context.Context) pulumix.Output[KeyKeyShape] {
-	return pulumix.Output[KeyKeyShape]{
-		OutputState: i.ToKeyKeyShapeOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i KeyKeyShapeArgs) ToKeyKeyShapePtrOutput() KeyKeyShapePtrOutput {
 	return i.ToKeyKeyShapePtrOutputWithContext(context.Background())
 }
@@ -610,12 +531,6 @@ func (i *keyKeyShapePtrType) ToKeyKeyShapePtrOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(KeyKeyShapePtrOutput)
 }
 
-func (i *keyKeyShapePtrType) ToOutput(ctx context.Context) pulumix.Output[*KeyKeyShape] {
-	return pulumix.Output[*KeyKeyShape]{
-		OutputState: i.ToKeyKeyShapePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type KeyKeyShapeOutput struct{ *pulumi.OutputState }
 
 func (KeyKeyShapeOutput) ElementType() reflect.Type {
@@ -638,12 +553,6 @@ func (o KeyKeyShapeOutput) ToKeyKeyShapePtrOutputWithContext(ctx context.Context
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v KeyKeyShape) *KeyKeyShape {
 		return &v
 	}).(KeyKeyShapePtrOutput)
-}
-
-func (o KeyKeyShapeOutput) ToOutput(ctx context.Context) pulumix.Output[KeyKeyShape] {
-	return pulumix.Output[KeyKeyShape]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
@@ -676,12 +585,6 @@ func (o KeyKeyShapePtrOutput) ToKeyKeyShapePtrOutput() KeyKeyShapePtrOutput {
 
 func (o KeyKeyShapePtrOutput) ToKeyKeyShapePtrOutputWithContext(ctx context.Context) KeyKeyShapePtrOutput {
 	return o
-}
-
-func (o KeyKeyShapePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*KeyKeyShape] {
-	return pulumix.Output[*KeyKeyShape]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o KeyKeyShapePtrOutput) Elem() KeyKeyShapeOutput {
@@ -760,12 +663,6 @@ func (i KeyReplicaDetailArgs) ToKeyReplicaDetailOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(KeyReplicaDetailOutput)
 }
 
-func (i KeyReplicaDetailArgs) ToOutput(ctx context.Context) pulumix.Output[KeyReplicaDetail] {
-	return pulumix.Output[KeyReplicaDetail]{
-		OutputState: i.ToKeyReplicaDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // KeyReplicaDetailArrayInput is an input type that accepts KeyReplicaDetailArray and KeyReplicaDetailArrayOutput values.
 // You can construct a concrete instance of `KeyReplicaDetailArrayInput` via:
 //
@@ -791,12 +688,6 @@ func (i KeyReplicaDetailArray) ToKeyReplicaDetailArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(KeyReplicaDetailArrayOutput)
 }
 
-func (i KeyReplicaDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]KeyReplicaDetail] {
-	return pulumix.Output[[]KeyReplicaDetail]{
-		OutputState: i.ToKeyReplicaDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type KeyReplicaDetailOutput struct{ *pulumi.OutputState }
 
 func (KeyReplicaDetailOutput) ElementType() reflect.Type {
@@ -809,12 +700,6 @@ func (o KeyReplicaDetailOutput) ToKeyReplicaDetailOutput() KeyReplicaDetailOutpu
 
 func (o KeyReplicaDetailOutput) ToKeyReplicaDetailOutputWithContext(ctx context.Context) KeyReplicaDetailOutput {
 	return o
-}
-
-func (o KeyReplicaDetailOutput) ToOutput(ctx context.Context) pulumix.Output[KeyReplicaDetail] {
-	return pulumix.Output[KeyReplicaDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // ReplicationId associated with a key operation
@@ -834,12 +719,6 @@ func (o KeyReplicaDetailArrayOutput) ToKeyReplicaDetailArrayOutput() KeyReplicaD
 
 func (o KeyReplicaDetailArrayOutput) ToKeyReplicaDetailArrayOutputWithContext(ctx context.Context) KeyReplicaDetailArrayOutput {
 	return o
-}
-
-func (o KeyReplicaDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]KeyReplicaDetail] {
-	return pulumix.Output[[]KeyReplicaDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o KeyReplicaDetailArrayOutput) Index(i pulumi.IntInput) KeyReplicaDetailOutput {
@@ -889,12 +768,6 @@ func (i KeyRestoreFromFileArgs) ToKeyRestoreFromFileOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(KeyRestoreFromFileOutput)
 }
 
-func (i KeyRestoreFromFileArgs) ToOutput(ctx context.Context) pulumix.Output[KeyRestoreFromFile] {
-	return pulumix.Output[KeyRestoreFromFile]{
-		OutputState: i.ToKeyRestoreFromFileOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i KeyRestoreFromFileArgs) ToKeyRestoreFromFilePtrOutput() KeyRestoreFromFilePtrOutput {
 	return i.ToKeyRestoreFromFilePtrOutputWithContext(context.Background())
 }
@@ -936,12 +809,6 @@ func (i *keyRestoreFromFilePtrType) ToKeyRestoreFromFilePtrOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(KeyRestoreFromFilePtrOutput)
 }
 
-func (i *keyRestoreFromFilePtrType) ToOutput(ctx context.Context) pulumix.Output[*KeyRestoreFromFile] {
-	return pulumix.Output[*KeyRestoreFromFile]{
-		OutputState: i.ToKeyRestoreFromFilePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type KeyRestoreFromFileOutput struct{ *pulumi.OutputState }
 
 func (KeyRestoreFromFileOutput) ElementType() reflect.Type {
@@ -964,12 +831,6 @@ func (o KeyRestoreFromFileOutput) ToKeyRestoreFromFilePtrOutputWithContext(ctx c
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v KeyRestoreFromFile) *KeyRestoreFromFile {
 		return &v
 	}).(KeyRestoreFromFilePtrOutput)
-}
-
-func (o KeyRestoreFromFileOutput) ToOutput(ctx context.Context) pulumix.Output[KeyRestoreFromFile] {
-	return pulumix.Output[KeyRestoreFromFile]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) content length of key's backup binary file
@@ -999,12 +860,6 @@ func (o KeyRestoreFromFilePtrOutput) ToKeyRestoreFromFilePtrOutput() KeyRestoreF
 
 func (o KeyRestoreFromFilePtrOutput) ToKeyRestoreFromFilePtrOutputWithContext(ctx context.Context) KeyRestoreFromFilePtrOutput {
 	return o
-}
-
-func (o KeyRestoreFromFilePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*KeyRestoreFromFile] {
-	return pulumix.Output[*KeyRestoreFromFile]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o KeyRestoreFromFilePtrOutput) Elem() KeyRestoreFromFileOutput {
@@ -1096,12 +951,6 @@ func (i KeyRestoreFromObjectStoreArgs) ToKeyRestoreFromObjectStoreOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(KeyRestoreFromObjectStoreOutput)
 }
 
-func (i KeyRestoreFromObjectStoreArgs) ToOutput(ctx context.Context) pulumix.Output[KeyRestoreFromObjectStore] {
-	return pulumix.Output[KeyRestoreFromObjectStore]{
-		OutputState: i.ToKeyRestoreFromObjectStoreOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i KeyRestoreFromObjectStoreArgs) ToKeyRestoreFromObjectStorePtrOutput() KeyRestoreFromObjectStorePtrOutput {
 	return i.ToKeyRestoreFromObjectStorePtrOutputWithContext(context.Background())
 }
@@ -1143,12 +992,6 @@ func (i *keyRestoreFromObjectStorePtrType) ToKeyRestoreFromObjectStorePtrOutputW
 	return pulumi.ToOutputWithContext(ctx, i).(KeyRestoreFromObjectStorePtrOutput)
 }
 
-func (i *keyRestoreFromObjectStorePtrType) ToOutput(ctx context.Context) pulumix.Output[*KeyRestoreFromObjectStore] {
-	return pulumix.Output[*KeyRestoreFromObjectStore]{
-		OutputState: i.ToKeyRestoreFromObjectStorePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type KeyRestoreFromObjectStoreOutput struct{ *pulumi.OutputState }
 
 func (KeyRestoreFromObjectStoreOutput) ElementType() reflect.Type {
@@ -1171,12 +1014,6 @@ func (o KeyRestoreFromObjectStoreOutput) ToKeyRestoreFromObjectStorePtrOutputWit
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v KeyRestoreFromObjectStore) *KeyRestoreFromObjectStore {
 		return &v
 	}).(KeyRestoreFromObjectStorePtrOutput)
-}
-
-func (o KeyRestoreFromObjectStoreOutput) ToOutput(ctx context.Context) pulumix.Output[KeyRestoreFromObjectStore] {
-	return pulumix.Output[KeyRestoreFromObjectStore]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Name of the bucket where key was backed up
@@ -1216,12 +1053,6 @@ func (o KeyRestoreFromObjectStorePtrOutput) ToKeyRestoreFromObjectStorePtrOutput
 
 func (o KeyRestoreFromObjectStorePtrOutput) ToKeyRestoreFromObjectStorePtrOutputWithContext(ctx context.Context) KeyRestoreFromObjectStorePtrOutput {
 	return o
-}
-
-func (o KeyRestoreFromObjectStorePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*KeyRestoreFromObjectStore] {
-	return pulumix.Output[*KeyRestoreFromObjectStore]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o KeyRestoreFromObjectStorePtrOutput) Elem() KeyRestoreFromObjectStoreOutput {
@@ -1321,12 +1152,6 @@ func (i KeyVersionExternalKeyReferenceDetailArgs) ToKeyVersionExternalKeyReferen
 	return pulumi.ToOutputWithContext(ctx, i).(KeyVersionExternalKeyReferenceDetailOutput)
 }
 
-func (i KeyVersionExternalKeyReferenceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[KeyVersionExternalKeyReferenceDetail] {
-	return pulumix.Output[KeyVersionExternalKeyReferenceDetail]{
-		OutputState: i.ToKeyVersionExternalKeyReferenceDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // KeyVersionExternalKeyReferenceDetailArrayInput is an input type that accepts KeyVersionExternalKeyReferenceDetailArray and KeyVersionExternalKeyReferenceDetailArrayOutput values.
 // You can construct a concrete instance of `KeyVersionExternalKeyReferenceDetailArrayInput` via:
 //
@@ -1352,12 +1177,6 @@ func (i KeyVersionExternalKeyReferenceDetailArray) ToKeyVersionExternalKeyRefere
 	return pulumi.ToOutputWithContext(ctx, i).(KeyVersionExternalKeyReferenceDetailArrayOutput)
 }
 
-func (i KeyVersionExternalKeyReferenceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]KeyVersionExternalKeyReferenceDetail] {
-	return pulumix.Output[[]KeyVersionExternalKeyReferenceDetail]{
-		OutputState: i.ToKeyVersionExternalKeyReferenceDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type KeyVersionExternalKeyReferenceDetailOutput struct{ *pulumi.OutputState }
 
 func (KeyVersionExternalKeyReferenceDetailOutput) ElementType() reflect.Type {
@@ -1370,12 +1189,6 @@ func (o KeyVersionExternalKeyReferenceDetailOutput) ToKeyVersionExternalKeyRefer
 
 func (o KeyVersionExternalKeyReferenceDetailOutput) ToKeyVersionExternalKeyReferenceDetailOutputWithContext(ctx context.Context) KeyVersionExternalKeyReferenceDetailOutput {
 	return o
-}
-
-func (o KeyVersionExternalKeyReferenceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[KeyVersionExternalKeyReferenceDetail] {
-	return pulumix.Output[KeyVersionExternalKeyReferenceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
@@ -1400,12 +1213,6 @@ func (o KeyVersionExternalKeyReferenceDetailArrayOutput) ToKeyVersionExternalKey
 
 func (o KeyVersionExternalKeyReferenceDetailArrayOutput) ToKeyVersionExternalKeyReferenceDetailArrayOutputWithContext(ctx context.Context) KeyVersionExternalKeyReferenceDetailArrayOutput {
 	return o
-}
-
-func (o KeyVersionExternalKeyReferenceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]KeyVersionExternalKeyReferenceDetail] {
-	return pulumix.Output[[]KeyVersionExternalKeyReferenceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o KeyVersionExternalKeyReferenceDetailArrayOutput) Index(i pulumi.IntInput) KeyVersionExternalKeyReferenceDetailOutput {
@@ -1447,12 +1254,6 @@ func (i KeyVersionReplicaDetailArgs) ToKeyVersionReplicaDetailOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(KeyVersionReplicaDetailOutput)
 }
 
-func (i KeyVersionReplicaDetailArgs) ToOutput(ctx context.Context) pulumix.Output[KeyVersionReplicaDetail] {
-	return pulumix.Output[KeyVersionReplicaDetail]{
-		OutputState: i.ToKeyVersionReplicaDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // KeyVersionReplicaDetailArrayInput is an input type that accepts KeyVersionReplicaDetailArray and KeyVersionReplicaDetailArrayOutput values.
 // You can construct a concrete instance of `KeyVersionReplicaDetailArrayInput` via:
 //
@@ -1478,12 +1279,6 @@ func (i KeyVersionReplicaDetailArray) ToKeyVersionReplicaDetailArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(KeyVersionReplicaDetailArrayOutput)
 }
 
-func (i KeyVersionReplicaDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]KeyVersionReplicaDetail] {
-	return pulumix.Output[[]KeyVersionReplicaDetail]{
-		OutputState: i.ToKeyVersionReplicaDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type KeyVersionReplicaDetailOutput struct{ *pulumi.OutputState }
 
 func (KeyVersionReplicaDetailOutput) ElementType() reflect.Type {
@@ -1496,12 +1291,6 @@ func (o KeyVersionReplicaDetailOutput) ToKeyVersionReplicaDetailOutput() KeyVers
 
 func (o KeyVersionReplicaDetailOutput) ToKeyVersionReplicaDetailOutputWithContext(ctx context.Context) KeyVersionReplicaDetailOutput {
 	return o
-}
-
-func (o KeyVersionReplicaDetailOutput) ToOutput(ctx context.Context) pulumix.Output[KeyVersionReplicaDetail] {
-	return pulumix.Output[KeyVersionReplicaDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // ReplicationId associated with a key version operation
@@ -1521,12 +1310,6 @@ func (o KeyVersionReplicaDetailArrayOutput) ToKeyVersionReplicaDetailArrayOutput
 
 func (o KeyVersionReplicaDetailArrayOutput) ToKeyVersionReplicaDetailArrayOutputWithContext(ctx context.Context) KeyVersionReplicaDetailArrayOutput {
 	return o
-}
-
-func (o KeyVersionReplicaDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]KeyVersionReplicaDetail] {
-	return pulumix.Output[[]KeyVersionReplicaDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o KeyVersionReplicaDetailArrayOutput) Index(i pulumi.IntInput) KeyVersionReplicaDetailOutput {
@@ -1576,12 +1359,6 @@ func (i VaultExternalKeyManagerMetadataArgs) ToVaultExternalKeyManagerMetadataOu
 	return pulumi.ToOutputWithContext(ctx, i).(VaultExternalKeyManagerMetadataOutput)
 }
 
-func (i VaultExternalKeyManagerMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[VaultExternalKeyManagerMetadata] {
-	return pulumix.Output[VaultExternalKeyManagerMetadata]{
-		OutputState: i.ToVaultExternalKeyManagerMetadataOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i VaultExternalKeyManagerMetadataArgs) ToVaultExternalKeyManagerMetadataPtrOutput() VaultExternalKeyManagerMetadataPtrOutput {
 	return i.ToVaultExternalKeyManagerMetadataPtrOutputWithContext(context.Background())
 }
@@ -1623,12 +1400,6 @@ func (i *vaultExternalKeyManagerMetadataPtrType) ToVaultExternalKeyManagerMetada
 	return pulumi.ToOutputWithContext(ctx, i).(VaultExternalKeyManagerMetadataPtrOutput)
 }
 
-func (i *vaultExternalKeyManagerMetadataPtrType) ToOutput(ctx context.Context) pulumix.Output[*VaultExternalKeyManagerMetadata] {
-	return pulumix.Output[*VaultExternalKeyManagerMetadata]{
-		OutputState: i.ToVaultExternalKeyManagerMetadataPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VaultExternalKeyManagerMetadataOutput struct{ *pulumi.OutputState }
 
 func (VaultExternalKeyManagerMetadataOutput) ElementType() reflect.Type {
@@ -1651,12 +1422,6 @@ func (o VaultExternalKeyManagerMetadataOutput) ToVaultExternalKeyManagerMetadata
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v VaultExternalKeyManagerMetadata) *VaultExternalKeyManagerMetadata {
 		return &v
 	}).(VaultExternalKeyManagerMetadataPtrOutput)
-}
-
-func (o VaultExternalKeyManagerMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[VaultExternalKeyManagerMetadata] {
-	return pulumix.Output[VaultExternalKeyManagerMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 // URI of the vault on external key manager.
@@ -1688,12 +1453,6 @@ func (o VaultExternalKeyManagerMetadataPtrOutput) ToVaultExternalKeyManagerMetad
 
 func (o VaultExternalKeyManagerMetadataPtrOutput) ToVaultExternalKeyManagerMetadataPtrOutputWithContext(ctx context.Context) VaultExternalKeyManagerMetadataPtrOutput {
 	return o
-}
-
-func (o VaultExternalKeyManagerMetadataPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*VaultExternalKeyManagerMetadata] {
-	return pulumix.Output[*VaultExternalKeyManagerMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VaultExternalKeyManagerMetadataPtrOutput) Elem() VaultExternalKeyManagerMetadataOutput {
@@ -1777,12 +1536,6 @@ func (i VaultExternalKeyManagerMetadataOauthMetadataArgs) ToVaultExternalKeyMana
 	return pulumi.ToOutputWithContext(ctx, i).(VaultExternalKeyManagerMetadataOauthMetadataOutput)
 }
 
-func (i VaultExternalKeyManagerMetadataOauthMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[VaultExternalKeyManagerMetadataOauthMetadata] {
-	return pulumix.Output[VaultExternalKeyManagerMetadataOauthMetadata]{
-		OutputState: i.ToVaultExternalKeyManagerMetadataOauthMetadataOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i VaultExternalKeyManagerMetadataOauthMetadataArgs) ToVaultExternalKeyManagerMetadataOauthMetadataPtrOutput() VaultExternalKeyManagerMetadataOauthMetadataPtrOutput {
 	return i.ToVaultExternalKeyManagerMetadataOauthMetadataPtrOutputWithContext(context.Background())
 }
@@ -1824,12 +1577,6 @@ func (i *vaultExternalKeyManagerMetadataOauthMetadataPtrType) ToVaultExternalKey
 	return pulumi.ToOutputWithContext(ctx, i).(VaultExternalKeyManagerMetadataOauthMetadataPtrOutput)
 }
 
-func (i *vaultExternalKeyManagerMetadataOauthMetadataPtrType) ToOutput(ctx context.Context) pulumix.Output[*VaultExternalKeyManagerMetadataOauthMetadata] {
-	return pulumix.Output[*VaultExternalKeyManagerMetadataOauthMetadata]{
-		OutputState: i.ToVaultExternalKeyManagerMetadataOauthMetadataPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VaultExternalKeyManagerMetadataOauthMetadataOutput struct{ *pulumi.OutputState }
 
 func (VaultExternalKeyManagerMetadataOauthMetadataOutput) ElementType() reflect.Type {
@@ -1852,12 +1599,6 @@ func (o VaultExternalKeyManagerMetadataOauthMetadataOutput) ToVaultExternalKeyMa
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v VaultExternalKeyManagerMetadataOauthMetadata) *VaultExternalKeyManagerMetadataOauthMetadata {
 		return &v
 	}).(VaultExternalKeyManagerMetadataOauthMetadataPtrOutput)
-}
-
-func (o VaultExternalKeyManagerMetadataOauthMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[VaultExternalKeyManagerMetadataOauthMetadata] {
-	return pulumix.Output[VaultExternalKeyManagerMetadataOauthMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 // ID of the client app created in IDP.
@@ -1887,12 +1628,6 @@ func (o VaultExternalKeyManagerMetadataOauthMetadataPtrOutput) ToVaultExternalKe
 
 func (o VaultExternalKeyManagerMetadataOauthMetadataPtrOutput) ToVaultExternalKeyManagerMetadataOauthMetadataPtrOutputWithContext(ctx context.Context) VaultExternalKeyManagerMetadataOauthMetadataPtrOutput {
 	return o
-}
-
-func (o VaultExternalKeyManagerMetadataOauthMetadataPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*VaultExternalKeyManagerMetadataOauthMetadata] {
-	return pulumix.Output[*VaultExternalKeyManagerMetadataOauthMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VaultExternalKeyManagerMetadataOauthMetadataPtrOutput) Elem() VaultExternalKeyManagerMetadataOauthMetadataOutput {
@@ -1980,12 +1715,6 @@ func (i VaultExternalKeyManagerMetadataSummaryArgs) ToVaultExternalKeyManagerMet
 	return pulumi.ToOutputWithContext(ctx, i).(VaultExternalKeyManagerMetadataSummaryOutput)
 }
 
-func (i VaultExternalKeyManagerMetadataSummaryArgs) ToOutput(ctx context.Context) pulumix.Output[VaultExternalKeyManagerMetadataSummary] {
-	return pulumix.Output[VaultExternalKeyManagerMetadataSummary]{
-		OutputState: i.ToVaultExternalKeyManagerMetadataSummaryOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VaultExternalKeyManagerMetadataSummaryArrayInput is an input type that accepts VaultExternalKeyManagerMetadataSummaryArray and VaultExternalKeyManagerMetadataSummaryArrayOutput values.
 // You can construct a concrete instance of `VaultExternalKeyManagerMetadataSummaryArrayInput` via:
 //
@@ -2011,12 +1740,6 @@ func (i VaultExternalKeyManagerMetadataSummaryArray) ToVaultExternalKeyManagerMe
 	return pulumi.ToOutputWithContext(ctx, i).(VaultExternalKeyManagerMetadataSummaryArrayOutput)
 }
 
-func (i VaultExternalKeyManagerMetadataSummaryArray) ToOutput(ctx context.Context) pulumix.Output[[]VaultExternalKeyManagerMetadataSummary] {
-	return pulumix.Output[[]VaultExternalKeyManagerMetadataSummary]{
-		OutputState: i.ToVaultExternalKeyManagerMetadataSummaryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VaultExternalKeyManagerMetadataSummaryOutput struct{ *pulumi.OutputState }
 
 func (VaultExternalKeyManagerMetadataSummaryOutput) ElementType() reflect.Type {
@@ -2029,12 +1752,6 @@ func (o VaultExternalKeyManagerMetadataSummaryOutput) ToVaultExternalKeyManagerM
 
 func (o VaultExternalKeyManagerMetadataSummaryOutput) ToVaultExternalKeyManagerMetadataSummaryOutputWithContext(ctx context.Context) VaultExternalKeyManagerMetadataSummaryOutput {
 	return o
-}
-
-func (o VaultExternalKeyManagerMetadataSummaryOutput) ToOutput(ctx context.Context) pulumix.Output[VaultExternalKeyManagerMetadataSummary] {
-	return pulumix.Output[VaultExternalKeyManagerMetadataSummary]{
-		OutputState: o.OutputState,
-	}
 }
 
 // URI of the vault on external key manager.
@@ -2071,12 +1788,6 @@ func (o VaultExternalKeyManagerMetadataSummaryArrayOutput) ToVaultExternalKeyMan
 
 func (o VaultExternalKeyManagerMetadataSummaryArrayOutput) ToVaultExternalKeyManagerMetadataSummaryArrayOutputWithContext(ctx context.Context) VaultExternalKeyManagerMetadataSummaryArrayOutput {
 	return o
-}
-
-func (o VaultExternalKeyManagerMetadataSummaryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]VaultExternalKeyManagerMetadataSummary] {
-	return pulumix.Output[[]VaultExternalKeyManagerMetadataSummary]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VaultExternalKeyManagerMetadataSummaryArrayOutput) Index(i pulumi.IntInput) VaultExternalKeyManagerMetadataSummaryOutput {
@@ -2122,12 +1833,6 @@ func (i VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs) ToVaultE
 	return pulumi.ToOutputWithContext(ctx, i).(VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput)
 }
 
-func (i VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs) ToOutput(ctx context.Context) pulumix.Output[VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary] {
-	return pulumix.Output[VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary]{
-		OutputState: i.ToVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayInput is an input type that accepts VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray and VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput values.
 // You can construct a concrete instance of `VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayInput` via:
 //
@@ -2153,12 +1858,6 @@ func (i VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray) ToVault
 	return pulumi.ToOutputWithContext(ctx, i).(VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput)
 }
 
-func (i VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray) ToOutput(ctx context.Context) pulumix.Output[[]VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary] {
-	return pulumix.Output[[]VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary]{
-		OutputState: i.ToVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput struct{ *pulumi.OutputState }
 
 func (VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput) ElementType() reflect.Type {
@@ -2171,12 +1870,6 @@ func (o VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput) ToVaul
 
 func (o VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput) ToVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutputWithContext(ctx context.Context) VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput {
 	return o
-}
-
-func (o VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput) ToOutput(ctx context.Context) pulumix.Output[VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary] {
-	return pulumix.Output[VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary]{
-		OutputState: o.OutputState,
-	}
 }
 
 // ID of the client app created in IDP.
@@ -2203,12 +1896,6 @@ func (o VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput) T
 
 func (o VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput) ToVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutputWithContext(ctx context.Context) VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput {
 	return o
-}
-
-func (o VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary] {
-	return pulumix.Output[[]VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput) Index(i pulumi.IntInput) VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput {
@@ -2250,12 +1937,6 @@ func (i VaultReplicaDetailArgs) ToVaultReplicaDetailOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(VaultReplicaDetailOutput)
 }
 
-func (i VaultReplicaDetailArgs) ToOutput(ctx context.Context) pulumix.Output[VaultReplicaDetail] {
-	return pulumix.Output[VaultReplicaDetail]{
-		OutputState: i.ToVaultReplicaDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VaultReplicaDetailArrayInput is an input type that accepts VaultReplicaDetailArray and VaultReplicaDetailArrayOutput values.
 // You can construct a concrete instance of `VaultReplicaDetailArrayInput` via:
 //
@@ -2281,12 +1962,6 @@ func (i VaultReplicaDetailArray) ToVaultReplicaDetailArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(VaultReplicaDetailArrayOutput)
 }
 
-func (i VaultReplicaDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]VaultReplicaDetail] {
-	return pulumix.Output[[]VaultReplicaDetail]{
-		OutputState: i.ToVaultReplicaDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VaultReplicaDetailOutput struct{ *pulumi.OutputState }
 
 func (VaultReplicaDetailOutput) ElementType() reflect.Type {
@@ -2299,12 +1974,6 @@ func (o VaultReplicaDetailOutput) ToVaultReplicaDetailOutput() VaultReplicaDetai
 
 func (o VaultReplicaDetailOutput) ToVaultReplicaDetailOutputWithContext(ctx context.Context) VaultReplicaDetailOutput {
 	return o
-}
-
-func (o VaultReplicaDetailOutput) ToOutput(ctx context.Context) pulumix.Output[VaultReplicaDetail] {
-	return pulumix.Output[VaultReplicaDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // ReplicationId associated with a vault operation
@@ -2324,12 +1993,6 @@ func (o VaultReplicaDetailArrayOutput) ToVaultReplicaDetailArrayOutput() VaultRe
 
 func (o VaultReplicaDetailArrayOutput) ToVaultReplicaDetailArrayOutputWithContext(ctx context.Context) VaultReplicaDetailArrayOutput {
 	return o
-}
-
-func (o VaultReplicaDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]VaultReplicaDetail] {
-	return pulumix.Output[[]VaultReplicaDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VaultReplicaDetailArrayOutput) Index(i pulumi.IntInput) VaultReplicaDetailOutput {
@@ -2379,12 +2042,6 @@ func (i VaultRestoreFromFileArgs) ToVaultRestoreFromFileOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(VaultRestoreFromFileOutput)
 }
 
-func (i VaultRestoreFromFileArgs) ToOutput(ctx context.Context) pulumix.Output[VaultRestoreFromFile] {
-	return pulumix.Output[VaultRestoreFromFile]{
-		OutputState: i.ToVaultRestoreFromFileOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i VaultRestoreFromFileArgs) ToVaultRestoreFromFilePtrOutput() VaultRestoreFromFilePtrOutput {
 	return i.ToVaultRestoreFromFilePtrOutputWithContext(context.Background())
 }
@@ -2426,12 +2083,6 @@ func (i *vaultRestoreFromFilePtrType) ToVaultRestoreFromFilePtrOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(VaultRestoreFromFilePtrOutput)
 }
 
-func (i *vaultRestoreFromFilePtrType) ToOutput(ctx context.Context) pulumix.Output[*VaultRestoreFromFile] {
-	return pulumix.Output[*VaultRestoreFromFile]{
-		OutputState: i.ToVaultRestoreFromFilePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VaultRestoreFromFileOutput struct{ *pulumi.OutputState }
 
 func (VaultRestoreFromFileOutput) ElementType() reflect.Type {
@@ -2454,12 +2105,6 @@ func (o VaultRestoreFromFileOutput) ToVaultRestoreFromFilePtrOutputWithContext(c
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v VaultRestoreFromFile) *VaultRestoreFromFile {
 		return &v
 	}).(VaultRestoreFromFilePtrOutput)
-}
-
-func (o VaultRestoreFromFileOutput) ToOutput(ctx context.Context) pulumix.Output[VaultRestoreFromFile] {
-	return pulumix.Output[VaultRestoreFromFile]{
-		OutputState: o.OutputState,
-	}
 }
 
 // content length of vault's backup binary file
@@ -2489,12 +2134,6 @@ func (o VaultRestoreFromFilePtrOutput) ToVaultRestoreFromFilePtrOutput() VaultRe
 
 func (o VaultRestoreFromFilePtrOutput) ToVaultRestoreFromFilePtrOutputWithContext(ctx context.Context) VaultRestoreFromFilePtrOutput {
 	return o
-}
-
-func (o VaultRestoreFromFilePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*VaultRestoreFromFile] {
-	return pulumix.Output[*VaultRestoreFromFile]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VaultRestoreFromFilePtrOutput) Elem() VaultRestoreFromFileOutput {
@@ -2586,12 +2225,6 @@ func (i VaultRestoreFromObjectStoreArgs) ToVaultRestoreFromObjectStoreOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(VaultRestoreFromObjectStoreOutput)
 }
 
-func (i VaultRestoreFromObjectStoreArgs) ToOutput(ctx context.Context) pulumix.Output[VaultRestoreFromObjectStore] {
-	return pulumix.Output[VaultRestoreFromObjectStore]{
-		OutputState: i.ToVaultRestoreFromObjectStoreOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i VaultRestoreFromObjectStoreArgs) ToVaultRestoreFromObjectStorePtrOutput() VaultRestoreFromObjectStorePtrOutput {
 	return i.ToVaultRestoreFromObjectStorePtrOutputWithContext(context.Background())
 }
@@ -2633,12 +2266,6 @@ func (i *vaultRestoreFromObjectStorePtrType) ToVaultRestoreFromObjectStorePtrOut
 	return pulumi.ToOutputWithContext(ctx, i).(VaultRestoreFromObjectStorePtrOutput)
 }
 
-func (i *vaultRestoreFromObjectStorePtrType) ToOutput(ctx context.Context) pulumix.Output[*VaultRestoreFromObjectStore] {
-	return pulumix.Output[*VaultRestoreFromObjectStore]{
-		OutputState: i.ToVaultRestoreFromObjectStorePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VaultRestoreFromObjectStoreOutput struct{ *pulumi.OutputState }
 
 func (VaultRestoreFromObjectStoreOutput) ElementType() reflect.Type {
@@ -2661,12 +2288,6 @@ func (o VaultRestoreFromObjectStoreOutput) ToVaultRestoreFromObjectStorePtrOutpu
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v VaultRestoreFromObjectStore) *VaultRestoreFromObjectStore {
 		return &v
 	}).(VaultRestoreFromObjectStorePtrOutput)
-}
-
-func (o VaultRestoreFromObjectStoreOutput) ToOutput(ctx context.Context) pulumix.Output[VaultRestoreFromObjectStore] {
-	return pulumix.Output[VaultRestoreFromObjectStore]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Name of the bucket where vault was backed up
@@ -2706,12 +2327,6 @@ func (o VaultRestoreFromObjectStorePtrOutput) ToVaultRestoreFromObjectStorePtrOu
 
 func (o VaultRestoreFromObjectStorePtrOutput) ToVaultRestoreFromObjectStorePtrOutputWithContext(ctx context.Context) VaultRestoreFromObjectStorePtrOutput {
 	return o
-}
-
-func (o VaultRestoreFromObjectStorePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*VaultRestoreFromObjectStore] {
-	return pulumix.Output[*VaultRestoreFromObjectStore]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VaultRestoreFromObjectStorePtrOutput) Elem() VaultRestoreFromObjectStoreOutput {
@@ -2859,12 +2474,6 @@ func (i GetEkmsPrivateEndpointsEkmsPrivateEndpointArgs) ToGetEkmsPrivateEndpoint
 	return pulumi.ToOutputWithContext(ctx, i).(GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput)
 }
 
-func (i GetEkmsPrivateEndpointsEkmsPrivateEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetEkmsPrivateEndpointsEkmsPrivateEndpoint] {
-	return pulumix.Output[GetEkmsPrivateEndpointsEkmsPrivateEndpoint]{
-		OutputState: i.ToGetEkmsPrivateEndpointsEkmsPrivateEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEkmsPrivateEndpointsEkmsPrivateEndpointArrayInput is an input type that accepts GetEkmsPrivateEndpointsEkmsPrivateEndpointArray and GetEkmsPrivateEndpointsEkmsPrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `GetEkmsPrivateEndpointsEkmsPrivateEndpointArrayInput` via:
 //
@@ -2890,12 +2499,6 @@ func (i GetEkmsPrivateEndpointsEkmsPrivateEndpointArray) ToGetEkmsPrivateEndpoin
 	return pulumi.ToOutputWithContext(ctx, i).(GetEkmsPrivateEndpointsEkmsPrivateEndpointArrayOutput)
 }
 
-func (i GetEkmsPrivateEndpointsEkmsPrivateEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEkmsPrivateEndpointsEkmsPrivateEndpoint] {
-	return pulumix.Output[[]GetEkmsPrivateEndpointsEkmsPrivateEndpoint]{
-		OutputState: i.ToGetEkmsPrivateEndpointsEkmsPrivateEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput) ElementType() reflect.Type {
@@ -2908,12 +2511,6 @@ func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput) ToGetEkmsPrivateEndpoi
 
 func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput) ToGetEkmsPrivateEndpointsEkmsPrivateEndpointOutputWithContext(ctx context.Context) GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput {
 	return o
-}
-
-func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetEkmsPrivateEndpointsEkmsPrivateEndpoint] {
-	return pulumix.Output[GetEkmsPrivateEndpointsEkmsPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // CABundle to validate TLS certificate of the external key manager system in PEM format
@@ -3000,12 +2597,6 @@ func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointArrayOutput) ToGetEkmsPrivateE
 	return o
 }
 
-func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEkmsPrivateEndpointsEkmsPrivateEndpoint] {
-	return pulumix.Output[[]GetEkmsPrivateEndpointsEkmsPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointArrayOutput) Index(i pulumi.IntInput) GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEkmsPrivateEndpointsEkmsPrivateEndpoint {
 		return vs[0].([]GetEkmsPrivateEndpointsEkmsPrivateEndpoint)[vs[1].(int)]
@@ -3047,12 +2638,6 @@ func (i GetEkmsPrivateEndpointsFilterArgs) ToGetEkmsPrivateEndpointsFilterOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetEkmsPrivateEndpointsFilterOutput)
 }
 
-func (i GetEkmsPrivateEndpointsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetEkmsPrivateEndpointsFilter] {
-	return pulumix.Output[GetEkmsPrivateEndpointsFilter]{
-		OutputState: i.ToGetEkmsPrivateEndpointsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEkmsPrivateEndpointsFilterArrayInput is an input type that accepts GetEkmsPrivateEndpointsFilterArray and GetEkmsPrivateEndpointsFilterArrayOutput values.
 // You can construct a concrete instance of `GetEkmsPrivateEndpointsFilterArrayInput` via:
 //
@@ -3078,12 +2663,6 @@ func (i GetEkmsPrivateEndpointsFilterArray) ToGetEkmsPrivateEndpointsFilterArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetEkmsPrivateEndpointsFilterArrayOutput)
 }
 
-func (i GetEkmsPrivateEndpointsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEkmsPrivateEndpointsFilter] {
-	return pulumix.Output[[]GetEkmsPrivateEndpointsFilter]{
-		OutputState: i.ToGetEkmsPrivateEndpointsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEkmsPrivateEndpointsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetEkmsPrivateEndpointsFilterOutput) ElementType() reflect.Type {
@@ -3096,12 +2675,6 @@ func (o GetEkmsPrivateEndpointsFilterOutput) ToGetEkmsPrivateEndpointsFilterOutp
 
 func (o GetEkmsPrivateEndpointsFilterOutput) ToGetEkmsPrivateEndpointsFilterOutputWithContext(ctx context.Context) GetEkmsPrivateEndpointsFilterOutput {
 	return o
-}
-
-func (o GetEkmsPrivateEndpointsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetEkmsPrivateEndpointsFilter] {
-	return pulumix.Output[GetEkmsPrivateEndpointsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEkmsPrivateEndpointsFilterOutput) Name() pulumi.StringOutput {
@@ -3128,12 +2701,6 @@ func (o GetEkmsPrivateEndpointsFilterArrayOutput) ToGetEkmsPrivateEndpointsFilte
 
 func (o GetEkmsPrivateEndpointsFilterArrayOutput) ToGetEkmsPrivateEndpointsFilterArrayOutputWithContext(ctx context.Context) GetEkmsPrivateEndpointsFilterArrayOutput {
 	return o
-}
-
-func (o GetEkmsPrivateEndpointsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEkmsPrivateEndpointsFilter] {
-	return pulumix.Output[[]GetEkmsPrivateEndpointsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEkmsPrivateEndpointsFilterArrayOutput) Index(i pulumi.IntInput) GetEkmsPrivateEndpointsFilterOutput {
@@ -3175,12 +2742,6 @@ func (i GetKeyExternalKeyReferenceArgs) ToGetKeyExternalKeyReferenceOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyExternalKeyReferenceOutput)
 }
 
-func (i GetKeyExternalKeyReferenceArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeyExternalKeyReference] {
-	return pulumix.Output[GetKeyExternalKeyReference]{
-		OutputState: i.ToGetKeyExternalKeyReferenceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetKeyExternalKeyReferenceArrayInput is an input type that accepts GetKeyExternalKeyReferenceArray and GetKeyExternalKeyReferenceArrayOutput values.
 // You can construct a concrete instance of `GetKeyExternalKeyReferenceArrayInput` via:
 //
@@ -3206,12 +2767,6 @@ func (i GetKeyExternalKeyReferenceArray) ToGetKeyExternalKeyReferenceArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyExternalKeyReferenceArrayOutput)
 }
 
-func (i GetKeyExternalKeyReferenceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyExternalKeyReference] {
-	return pulumix.Output[[]GetKeyExternalKeyReference]{
-		OutputState: i.ToGetKeyExternalKeyReferenceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetKeyExternalKeyReferenceOutput struct{ *pulumi.OutputState }
 
 func (GetKeyExternalKeyReferenceOutput) ElementType() reflect.Type {
@@ -3224,12 +2779,6 @@ func (o GetKeyExternalKeyReferenceOutput) ToGetKeyExternalKeyReferenceOutput() G
 
 func (o GetKeyExternalKeyReferenceOutput) ToGetKeyExternalKeyReferenceOutputWithContext(ctx context.Context) GetKeyExternalKeyReferenceOutput {
 	return o
-}
-
-func (o GetKeyExternalKeyReferenceOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeyExternalKeyReference] {
-	return pulumix.Output[GetKeyExternalKeyReference]{
-		OutputState: o.OutputState,
-	}
 }
 
 // ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
@@ -3249,12 +2798,6 @@ func (o GetKeyExternalKeyReferenceArrayOutput) ToGetKeyExternalKeyReferenceArray
 
 func (o GetKeyExternalKeyReferenceArrayOutput) ToGetKeyExternalKeyReferenceArrayOutputWithContext(ctx context.Context) GetKeyExternalKeyReferenceArrayOutput {
 	return o
-}
-
-func (o GetKeyExternalKeyReferenceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyExternalKeyReference] {
-	return pulumix.Output[[]GetKeyExternalKeyReference]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetKeyExternalKeyReferenceArrayOutput) Index(i pulumi.IntInput) GetKeyExternalKeyReferenceOutput {
@@ -3300,12 +2843,6 @@ func (i GetKeyExternalKeyReferenceDetailArgs) ToGetKeyExternalKeyReferenceDetail
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyExternalKeyReferenceDetailOutput)
 }
 
-func (i GetKeyExternalKeyReferenceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeyExternalKeyReferenceDetail] {
-	return pulumix.Output[GetKeyExternalKeyReferenceDetail]{
-		OutputState: i.ToGetKeyExternalKeyReferenceDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetKeyExternalKeyReferenceDetailArrayInput is an input type that accepts GetKeyExternalKeyReferenceDetailArray and GetKeyExternalKeyReferenceDetailArrayOutput values.
 // You can construct a concrete instance of `GetKeyExternalKeyReferenceDetailArrayInput` via:
 //
@@ -3331,12 +2868,6 @@ func (i GetKeyExternalKeyReferenceDetailArray) ToGetKeyExternalKeyReferenceDetai
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyExternalKeyReferenceDetailArrayOutput)
 }
 
-func (i GetKeyExternalKeyReferenceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyExternalKeyReferenceDetail] {
-	return pulumix.Output[[]GetKeyExternalKeyReferenceDetail]{
-		OutputState: i.ToGetKeyExternalKeyReferenceDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetKeyExternalKeyReferenceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetKeyExternalKeyReferenceDetailOutput) ElementType() reflect.Type {
@@ -3349,12 +2880,6 @@ func (o GetKeyExternalKeyReferenceDetailOutput) ToGetKeyExternalKeyReferenceDeta
 
 func (o GetKeyExternalKeyReferenceDetailOutput) ToGetKeyExternalKeyReferenceDetailOutputWithContext(ctx context.Context) GetKeyExternalKeyReferenceDetailOutput {
 	return o
-}
-
-func (o GetKeyExternalKeyReferenceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeyExternalKeyReferenceDetail] {
-	return pulumix.Output[GetKeyExternalKeyReferenceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
@@ -3379,12 +2904,6 @@ func (o GetKeyExternalKeyReferenceDetailArrayOutput) ToGetKeyExternalKeyReferenc
 
 func (o GetKeyExternalKeyReferenceDetailArrayOutput) ToGetKeyExternalKeyReferenceDetailArrayOutputWithContext(ctx context.Context) GetKeyExternalKeyReferenceDetailArrayOutput {
 	return o
-}
-
-func (o GetKeyExternalKeyReferenceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyExternalKeyReferenceDetail] {
-	return pulumix.Output[[]GetKeyExternalKeyReferenceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetKeyExternalKeyReferenceDetailArrayOutput) Index(i pulumi.IntInput) GetKeyExternalKeyReferenceDetailOutput {
@@ -3440,12 +2959,6 @@ func (i GetKeyKeyShapeArgs) ToGetKeyKeyShapeOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyKeyShapeOutput)
 }
 
-func (i GetKeyKeyShapeArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeyKeyShape] {
-	return pulumix.Output[GetKeyKeyShape]{
-		OutputState: i.ToGetKeyKeyShapeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetKeyKeyShapeArrayInput is an input type that accepts GetKeyKeyShapeArray and GetKeyKeyShapeArrayOutput values.
 // You can construct a concrete instance of `GetKeyKeyShapeArrayInput` via:
 //
@@ -3471,12 +2984,6 @@ func (i GetKeyKeyShapeArray) ToGetKeyKeyShapeArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyKeyShapeArrayOutput)
 }
 
-func (i GetKeyKeyShapeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyKeyShape] {
-	return pulumix.Output[[]GetKeyKeyShape]{
-		OutputState: i.ToGetKeyKeyShapeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetKeyKeyShapeOutput struct{ *pulumi.OutputState }
 
 func (GetKeyKeyShapeOutput) ElementType() reflect.Type {
@@ -3489,12 +2996,6 @@ func (o GetKeyKeyShapeOutput) ToGetKeyKeyShapeOutput() GetKeyKeyShapeOutput {
 
 func (o GetKeyKeyShapeOutput) ToGetKeyKeyShapeOutputWithContext(ctx context.Context) GetKeyKeyShapeOutput {
 	return o
-}
-
-func (o GetKeyKeyShapeOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeyKeyShape] {
-	return pulumix.Output[GetKeyKeyShape]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
@@ -3527,12 +3028,6 @@ func (o GetKeyKeyShapeArrayOutput) ToGetKeyKeyShapeArrayOutput() GetKeyKeyShapeA
 
 func (o GetKeyKeyShapeArrayOutput) ToGetKeyKeyShapeArrayOutputWithContext(ctx context.Context) GetKeyKeyShapeArrayOutput {
 	return o
-}
-
-func (o GetKeyKeyShapeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyKeyShape] {
-	return pulumix.Output[[]GetKeyKeyShape]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetKeyKeyShapeArrayOutput) Index(i pulumi.IntInput) GetKeyKeyShapeOutput {
@@ -3574,12 +3069,6 @@ func (i GetKeyReplicaDetailArgs) ToGetKeyReplicaDetailOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyReplicaDetailOutput)
 }
 
-func (i GetKeyReplicaDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeyReplicaDetail] {
-	return pulumix.Output[GetKeyReplicaDetail]{
-		OutputState: i.ToGetKeyReplicaDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetKeyReplicaDetailArrayInput is an input type that accepts GetKeyReplicaDetailArray and GetKeyReplicaDetailArrayOutput values.
 // You can construct a concrete instance of `GetKeyReplicaDetailArrayInput` via:
 //
@@ -3605,12 +3094,6 @@ func (i GetKeyReplicaDetailArray) ToGetKeyReplicaDetailArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyReplicaDetailArrayOutput)
 }
 
-func (i GetKeyReplicaDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyReplicaDetail] {
-	return pulumix.Output[[]GetKeyReplicaDetail]{
-		OutputState: i.ToGetKeyReplicaDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetKeyReplicaDetailOutput struct{ *pulumi.OutputState }
 
 func (GetKeyReplicaDetailOutput) ElementType() reflect.Type {
@@ -3623,12 +3106,6 @@ func (o GetKeyReplicaDetailOutput) ToGetKeyReplicaDetailOutput() GetKeyReplicaDe
 
 func (o GetKeyReplicaDetailOutput) ToGetKeyReplicaDetailOutputWithContext(ctx context.Context) GetKeyReplicaDetailOutput {
 	return o
-}
-
-func (o GetKeyReplicaDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeyReplicaDetail] {
-	return pulumix.Output[GetKeyReplicaDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // ReplicationId associated with a key operation
@@ -3648,12 +3125,6 @@ func (o GetKeyReplicaDetailArrayOutput) ToGetKeyReplicaDetailArrayOutput() GetKe
 
 func (o GetKeyReplicaDetailArrayOutput) ToGetKeyReplicaDetailArrayOutputWithContext(ctx context.Context) GetKeyReplicaDetailArrayOutput {
 	return o
-}
-
-func (o GetKeyReplicaDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyReplicaDetail] {
-	return pulumix.Output[[]GetKeyReplicaDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetKeyReplicaDetailArrayOutput) Index(i pulumi.IntInput) GetKeyReplicaDetailOutput {
@@ -3703,12 +3174,6 @@ func (i GetKeyRestoreFromFileArgs) ToGetKeyRestoreFromFileOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyRestoreFromFileOutput)
 }
 
-func (i GetKeyRestoreFromFileArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeyRestoreFromFile] {
-	return pulumix.Output[GetKeyRestoreFromFile]{
-		OutputState: i.ToGetKeyRestoreFromFileOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetKeyRestoreFromFileArrayInput is an input type that accepts GetKeyRestoreFromFileArray and GetKeyRestoreFromFileArrayOutput values.
 // You can construct a concrete instance of `GetKeyRestoreFromFileArrayInput` via:
 //
@@ -3734,12 +3199,6 @@ func (i GetKeyRestoreFromFileArray) ToGetKeyRestoreFromFileArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyRestoreFromFileArrayOutput)
 }
 
-func (i GetKeyRestoreFromFileArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyRestoreFromFile] {
-	return pulumix.Output[[]GetKeyRestoreFromFile]{
-		OutputState: i.ToGetKeyRestoreFromFileArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetKeyRestoreFromFileOutput struct{ *pulumi.OutputState }
 
 func (GetKeyRestoreFromFileOutput) ElementType() reflect.Type {
@@ -3752,12 +3211,6 @@ func (o GetKeyRestoreFromFileOutput) ToGetKeyRestoreFromFileOutput() GetKeyResto
 
 func (o GetKeyRestoreFromFileOutput) ToGetKeyRestoreFromFileOutputWithContext(ctx context.Context) GetKeyRestoreFromFileOutput {
 	return o
-}
-
-func (o GetKeyRestoreFromFileOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeyRestoreFromFile] {
-	return pulumix.Output[GetKeyRestoreFromFile]{
-		OutputState: o.OutputState,
-	}
 }
 
 // content length of key's backup binary file
@@ -3787,12 +3240,6 @@ func (o GetKeyRestoreFromFileArrayOutput) ToGetKeyRestoreFromFileArrayOutput() G
 
 func (o GetKeyRestoreFromFileArrayOutput) ToGetKeyRestoreFromFileArrayOutputWithContext(ctx context.Context) GetKeyRestoreFromFileArrayOutput {
 	return o
-}
-
-func (o GetKeyRestoreFromFileArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyRestoreFromFile] {
-	return pulumix.Output[[]GetKeyRestoreFromFile]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetKeyRestoreFromFileArrayOutput) Index(i pulumi.IntInput) GetKeyRestoreFromFileOutput {
@@ -3850,12 +3297,6 @@ func (i GetKeyRestoreFromObjectStoreArgs) ToGetKeyRestoreFromObjectStoreOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyRestoreFromObjectStoreOutput)
 }
 
-func (i GetKeyRestoreFromObjectStoreArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeyRestoreFromObjectStore] {
-	return pulumix.Output[GetKeyRestoreFromObjectStore]{
-		OutputState: i.ToGetKeyRestoreFromObjectStoreOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetKeyRestoreFromObjectStoreArrayInput is an input type that accepts GetKeyRestoreFromObjectStoreArray and GetKeyRestoreFromObjectStoreArrayOutput values.
 // You can construct a concrete instance of `GetKeyRestoreFromObjectStoreArrayInput` via:
 //
@@ -3881,12 +3322,6 @@ func (i GetKeyRestoreFromObjectStoreArray) ToGetKeyRestoreFromObjectStoreArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyRestoreFromObjectStoreArrayOutput)
 }
 
-func (i GetKeyRestoreFromObjectStoreArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyRestoreFromObjectStore] {
-	return pulumix.Output[[]GetKeyRestoreFromObjectStore]{
-		OutputState: i.ToGetKeyRestoreFromObjectStoreArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetKeyRestoreFromObjectStoreOutput struct{ *pulumi.OutputState }
 
 func (GetKeyRestoreFromObjectStoreOutput) ElementType() reflect.Type {
@@ -3899,12 +3334,6 @@ func (o GetKeyRestoreFromObjectStoreOutput) ToGetKeyRestoreFromObjectStoreOutput
 
 func (o GetKeyRestoreFromObjectStoreOutput) ToGetKeyRestoreFromObjectStoreOutputWithContext(ctx context.Context) GetKeyRestoreFromObjectStoreOutput {
 	return o
-}
-
-func (o GetKeyRestoreFromObjectStoreOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeyRestoreFromObjectStore] {
-	return pulumix.Output[GetKeyRestoreFromObjectStore]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Name of the bucket where key was backed up
@@ -3944,12 +3373,6 @@ func (o GetKeyRestoreFromObjectStoreArrayOutput) ToGetKeyRestoreFromObjectStoreA
 
 func (o GetKeyRestoreFromObjectStoreArrayOutput) ToGetKeyRestoreFromObjectStoreArrayOutputWithContext(ctx context.Context) GetKeyRestoreFromObjectStoreArrayOutput {
 	return o
-}
-
-func (o GetKeyRestoreFromObjectStoreArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyRestoreFromObjectStore] {
-	return pulumix.Output[[]GetKeyRestoreFromObjectStore]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetKeyRestoreFromObjectStoreArrayOutput) Index(i pulumi.IntInput) GetKeyRestoreFromObjectStoreOutput {
@@ -3995,12 +3418,6 @@ func (i GetKeyVersionExternalKeyReferenceDetailArgs) ToGetKeyVersionExternalKeyR
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyVersionExternalKeyReferenceDetailOutput)
 }
 
-func (i GetKeyVersionExternalKeyReferenceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeyVersionExternalKeyReferenceDetail] {
-	return pulumix.Output[GetKeyVersionExternalKeyReferenceDetail]{
-		OutputState: i.ToGetKeyVersionExternalKeyReferenceDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetKeyVersionExternalKeyReferenceDetailArrayInput is an input type that accepts GetKeyVersionExternalKeyReferenceDetailArray and GetKeyVersionExternalKeyReferenceDetailArrayOutput values.
 // You can construct a concrete instance of `GetKeyVersionExternalKeyReferenceDetailArrayInput` via:
 //
@@ -4026,12 +3443,6 @@ func (i GetKeyVersionExternalKeyReferenceDetailArray) ToGetKeyVersionExternalKey
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyVersionExternalKeyReferenceDetailArrayOutput)
 }
 
-func (i GetKeyVersionExternalKeyReferenceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyVersionExternalKeyReferenceDetail] {
-	return pulumix.Output[[]GetKeyVersionExternalKeyReferenceDetail]{
-		OutputState: i.ToGetKeyVersionExternalKeyReferenceDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetKeyVersionExternalKeyReferenceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetKeyVersionExternalKeyReferenceDetailOutput) ElementType() reflect.Type {
@@ -4044,12 +3455,6 @@ func (o GetKeyVersionExternalKeyReferenceDetailOutput) ToGetKeyVersionExternalKe
 
 func (o GetKeyVersionExternalKeyReferenceDetailOutput) ToGetKeyVersionExternalKeyReferenceDetailOutputWithContext(ctx context.Context) GetKeyVersionExternalKeyReferenceDetailOutput {
 	return o
-}
-
-func (o GetKeyVersionExternalKeyReferenceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeyVersionExternalKeyReferenceDetail] {
-	return pulumix.Output[GetKeyVersionExternalKeyReferenceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
@@ -4074,12 +3479,6 @@ func (o GetKeyVersionExternalKeyReferenceDetailArrayOutput) ToGetKeyVersionExter
 
 func (o GetKeyVersionExternalKeyReferenceDetailArrayOutput) ToGetKeyVersionExternalKeyReferenceDetailArrayOutputWithContext(ctx context.Context) GetKeyVersionExternalKeyReferenceDetailArrayOutput {
 	return o
-}
-
-func (o GetKeyVersionExternalKeyReferenceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyVersionExternalKeyReferenceDetail] {
-	return pulumix.Output[[]GetKeyVersionExternalKeyReferenceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetKeyVersionExternalKeyReferenceDetailArrayOutput) Index(i pulumi.IntInput) GetKeyVersionExternalKeyReferenceDetailOutput {
@@ -4121,12 +3520,6 @@ func (i GetKeyVersionReplicaDetailArgs) ToGetKeyVersionReplicaDetailOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyVersionReplicaDetailOutput)
 }
 
-func (i GetKeyVersionReplicaDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeyVersionReplicaDetail] {
-	return pulumix.Output[GetKeyVersionReplicaDetail]{
-		OutputState: i.ToGetKeyVersionReplicaDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetKeyVersionReplicaDetailArrayInput is an input type that accepts GetKeyVersionReplicaDetailArray and GetKeyVersionReplicaDetailArrayOutput values.
 // You can construct a concrete instance of `GetKeyVersionReplicaDetailArrayInput` via:
 //
@@ -4152,12 +3545,6 @@ func (i GetKeyVersionReplicaDetailArray) ToGetKeyVersionReplicaDetailArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyVersionReplicaDetailArrayOutput)
 }
 
-func (i GetKeyVersionReplicaDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyVersionReplicaDetail] {
-	return pulumix.Output[[]GetKeyVersionReplicaDetail]{
-		OutputState: i.ToGetKeyVersionReplicaDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetKeyVersionReplicaDetailOutput struct{ *pulumi.OutputState }
 
 func (GetKeyVersionReplicaDetailOutput) ElementType() reflect.Type {
@@ -4170,12 +3557,6 @@ func (o GetKeyVersionReplicaDetailOutput) ToGetKeyVersionReplicaDetailOutput() G
 
 func (o GetKeyVersionReplicaDetailOutput) ToGetKeyVersionReplicaDetailOutputWithContext(ctx context.Context) GetKeyVersionReplicaDetailOutput {
 	return o
-}
-
-func (o GetKeyVersionReplicaDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeyVersionReplicaDetail] {
-	return pulumix.Output[GetKeyVersionReplicaDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // ReplicationId associated with a key version operation
@@ -4195,12 +3576,6 @@ func (o GetKeyVersionReplicaDetailArrayOutput) ToGetKeyVersionReplicaDetailArray
 
 func (o GetKeyVersionReplicaDetailArrayOutput) ToGetKeyVersionReplicaDetailArrayOutputWithContext(ctx context.Context) GetKeyVersionReplicaDetailArrayOutput {
 	return o
-}
-
-func (o GetKeyVersionReplicaDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyVersionReplicaDetail] {
-	return pulumix.Output[[]GetKeyVersionReplicaDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetKeyVersionReplicaDetailArrayOutput) Index(i pulumi.IntInput) GetKeyVersionReplicaDetailOutput {
@@ -4244,12 +3619,6 @@ func (i GetKeyVersionsFilterArgs) ToGetKeyVersionsFilterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyVersionsFilterOutput)
 }
 
-func (i GetKeyVersionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeyVersionsFilter] {
-	return pulumix.Output[GetKeyVersionsFilter]{
-		OutputState: i.ToGetKeyVersionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetKeyVersionsFilterArrayInput is an input type that accepts GetKeyVersionsFilterArray and GetKeyVersionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetKeyVersionsFilterArrayInput` via:
 //
@@ -4275,12 +3644,6 @@ func (i GetKeyVersionsFilterArray) ToGetKeyVersionsFilterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyVersionsFilterArrayOutput)
 }
 
-func (i GetKeyVersionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyVersionsFilter] {
-	return pulumix.Output[[]GetKeyVersionsFilter]{
-		OutputState: i.ToGetKeyVersionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetKeyVersionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetKeyVersionsFilterOutput) ElementType() reflect.Type {
@@ -4293,12 +3656,6 @@ func (o GetKeyVersionsFilterOutput) ToGetKeyVersionsFilterOutput() GetKeyVersion
 
 func (o GetKeyVersionsFilterOutput) ToGetKeyVersionsFilterOutputWithContext(ctx context.Context) GetKeyVersionsFilterOutput {
 	return o
-}
-
-func (o GetKeyVersionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeyVersionsFilter] {
-	return pulumix.Output[GetKeyVersionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetKeyVersionsFilterOutput) Name() pulumi.StringOutput {
@@ -4325,12 +3682,6 @@ func (o GetKeyVersionsFilterArrayOutput) ToGetKeyVersionsFilterArrayOutput() Get
 
 func (o GetKeyVersionsFilterArrayOutput) ToGetKeyVersionsFilterArrayOutputWithContext(ctx context.Context) GetKeyVersionsFilterArrayOutput {
 	return o
-}
-
-func (o GetKeyVersionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyVersionsFilter] {
-	return pulumix.Output[[]GetKeyVersionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetKeyVersionsFilterArrayOutput) Index(i pulumi.IntInput) GetKeyVersionsFilterOutput {
@@ -4430,12 +3781,6 @@ func (i GetKeyVersionsKeyVersionArgs) ToGetKeyVersionsKeyVersionOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyVersionsKeyVersionOutput)
 }
 
-func (i GetKeyVersionsKeyVersionArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeyVersionsKeyVersion] {
-	return pulumix.Output[GetKeyVersionsKeyVersion]{
-		OutputState: i.ToGetKeyVersionsKeyVersionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetKeyVersionsKeyVersionArrayInput is an input type that accepts GetKeyVersionsKeyVersionArray and GetKeyVersionsKeyVersionArrayOutput values.
 // You can construct a concrete instance of `GetKeyVersionsKeyVersionArrayInput` via:
 //
@@ -4461,12 +3806,6 @@ func (i GetKeyVersionsKeyVersionArray) ToGetKeyVersionsKeyVersionArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyVersionsKeyVersionArrayOutput)
 }
 
-func (i GetKeyVersionsKeyVersionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyVersionsKeyVersion] {
-	return pulumix.Output[[]GetKeyVersionsKeyVersion]{
-		OutputState: i.ToGetKeyVersionsKeyVersionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetKeyVersionsKeyVersionOutput struct{ *pulumi.OutputState }
 
 func (GetKeyVersionsKeyVersionOutput) ElementType() reflect.Type {
@@ -4479,12 +3818,6 @@ func (o GetKeyVersionsKeyVersionOutput) ToGetKeyVersionsKeyVersionOutput() GetKe
 
 func (o GetKeyVersionsKeyVersionOutput) ToGetKeyVersionsKeyVersionOutputWithContext(ctx context.Context) GetKeyVersionsKeyVersionOutput {
 	return o
-}
-
-func (o GetKeyVersionsKeyVersionOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeyVersionsKeyVersion] {
-	return pulumix.Output[GetKeyVersionsKeyVersion]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment that contains this key version.
@@ -4582,12 +3915,6 @@ func (o GetKeyVersionsKeyVersionArrayOutput) ToGetKeyVersionsKeyVersionArrayOutp
 	return o
 }
 
-func (o GetKeyVersionsKeyVersionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyVersionsKeyVersion] {
-	return pulumix.Output[[]GetKeyVersionsKeyVersion]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetKeyVersionsKeyVersionArrayOutput) Index(i pulumi.IntInput) GetKeyVersionsKeyVersionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKeyVersionsKeyVersion {
 		return vs[0].([]GetKeyVersionsKeyVersion)[vs[1].(int)]
@@ -4631,12 +3958,6 @@ func (i GetKeyVersionsKeyVersionExternalKeyReferenceDetailArgs) ToGetKeyVersions
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyVersionsKeyVersionExternalKeyReferenceDetailOutput)
 }
 
-func (i GetKeyVersionsKeyVersionExternalKeyReferenceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeyVersionsKeyVersionExternalKeyReferenceDetail] {
-	return pulumix.Output[GetKeyVersionsKeyVersionExternalKeyReferenceDetail]{
-		OutputState: i.ToGetKeyVersionsKeyVersionExternalKeyReferenceDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayInput is an input type that accepts GetKeyVersionsKeyVersionExternalKeyReferenceDetailArray and GetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutput values.
 // You can construct a concrete instance of `GetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayInput` via:
 //
@@ -4662,12 +3983,6 @@ func (i GetKeyVersionsKeyVersionExternalKeyReferenceDetailArray) ToGetKeyVersion
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutput)
 }
 
-func (i GetKeyVersionsKeyVersionExternalKeyReferenceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyVersionsKeyVersionExternalKeyReferenceDetail] {
-	return pulumix.Output[[]GetKeyVersionsKeyVersionExternalKeyReferenceDetail]{
-		OutputState: i.ToGetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetKeyVersionsKeyVersionExternalKeyReferenceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetKeyVersionsKeyVersionExternalKeyReferenceDetailOutput) ElementType() reflect.Type {
@@ -4680,12 +3995,6 @@ func (o GetKeyVersionsKeyVersionExternalKeyReferenceDetailOutput) ToGetKeyVersio
 
 func (o GetKeyVersionsKeyVersionExternalKeyReferenceDetailOutput) ToGetKeyVersionsKeyVersionExternalKeyReferenceDetailOutputWithContext(ctx context.Context) GetKeyVersionsKeyVersionExternalKeyReferenceDetailOutput {
 	return o
-}
-
-func (o GetKeyVersionsKeyVersionExternalKeyReferenceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeyVersionsKeyVersionExternalKeyReferenceDetail] {
-	return pulumix.Output[GetKeyVersionsKeyVersionExternalKeyReferenceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
@@ -4710,12 +4019,6 @@ func (o GetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutput) ToGetKeyV
 
 func (o GetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutput) ToGetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutputWithContext(ctx context.Context) GetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutput {
 	return o
-}
-
-func (o GetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyVersionsKeyVersionExternalKeyReferenceDetail] {
-	return pulumix.Output[[]GetKeyVersionsKeyVersionExternalKeyReferenceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutput) Index(i pulumi.IntInput) GetKeyVersionsKeyVersionExternalKeyReferenceDetailOutput {
@@ -4757,12 +4060,6 @@ func (i GetKeyVersionsKeyVersionReplicaDetailArgs) ToGetKeyVersionsKeyVersionRep
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyVersionsKeyVersionReplicaDetailOutput)
 }
 
-func (i GetKeyVersionsKeyVersionReplicaDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeyVersionsKeyVersionReplicaDetail] {
-	return pulumix.Output[GetKeyVersionsKeyVersionReplicaDetail]{
-		OutputState: i.ToGetKeyVersionsKeyVersionReplicaDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetKeyVersionsKeyVersionReplicaDetailArrayInput is an input type that accepts GetKeyVersionsKeyVersionReplicaDetailArray and GetKeyVersionsKeyVersionReplicaDetailArrayOutput values.
 // You can construct a concrete instance of `GetKeyVersionsKeyVersionReplicaDetailArrayInput` via:
 //
@@ -4788,12 +4085,6 @@ func (i GetKeyVersionsKeyVersionReplicaDetailArray) ToGetKeyVersionsKeyVersionRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeyVersionsKeyVersionReplicaDetailArrayOutput)
 }
 
-func (i GetKeyVersionsKeyVersionReplicaDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyVersionsKeyVersionReplicaDetail] {
-	return pulumix.Output[[]GetKeyVersionsKeyVersionReplicaDetail]{
-		OutputState: i.ToGetKeyVersionsKeyVersionReplicaDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetKeyVersionsKeyVersionReplicaDetailOutput struct{ *pulumi.OutputState }
 
 func (GetKeyVersionsKeyVersionReplicaDetailOutput) ElementType() reflect.Type {
@@ -4806,12 +4097,6 @@ func (o GetKeyVersionsKeyVersionReplicaDetailOutput) ToGetKeyVersionsKeyVersionR
 
 func (o GetKeyVersionsKeyVersionReplicaDetailOutput) ToGetKeyVersionsKeyVersionReplicaDetailOutputWithContext(ctx context.Context) GetKeyVersionsKeyVersionReplicaDetailOutput {
 	return o
-}
-
-func (o GetKeyVersionsKeyVersionReplicaDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeyVersionsKeyVersionReplicaDetail] {
-	return pulumix.Output[GetKeyVersionsKeyVersionReplicaDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // ReplicationId associated with a key version operation
@@ -4831,12 +4116,6 @@ func (o GetKeyVersionsKeyVersionReplicaDetailArrayOutput) ToGetKeyVersionsKeyVer
 
 func (o GetKeyVersionsKeyVersionReplicaDetailArrayOutput) ToGetKeyVersionsKeyVersionReplicaDetailArrayOutputWithContext(ctx context.Context) GetKeyVersionsKeyVersionReplicaDetailArrayOutput {
 	return o
-}
-
-func (o GetKeyVersionsKeyVersionReplicaDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyVersionsKeyVersionReplicaDetail] {
-	return pulumix.Output[[]GetKeyVersionsKeyVersionReplicaDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetKeyVersionsKeyVersionReplicaDetailArrayOutput) Index(i pulumi.IntInput) GetKeyVersionsKeyVersionReplicaDetailOutput {
@@ -4880,12 +4159,6 @@ func (i GetKeysFilterArgs) ToGetKeysFilterOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeysFilterOutput)
 }
 
-func (i GetKeysFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeysFilter] {
-	return pulumix.Output[GetKeysFilter]{
-		OutputState: i.ToGetKeysFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetKeysFilterArrayInput is an input type that accepts GetKeysFilterArray and GetKeysFilterArrayOutput values.
 // You can construct a concrete instance of `GetKeysFilterArrayInput` via:
 //
@@ -4911,12 +4184,6 @@ func (i GetKeysFilterArray) ToGetKeysFilterArrayOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeysFilterArrayOutput)
 }
 
-func (i GetKeysFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeysFilter] {
-	return pulumix.Output[[]GetKeysFilter]{
-		OutputState: i.ToGetKeysFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetKeysFilterOutput struct{ *pulumi.OutputState }
 
 func (GetKeysFilterOutput) ElementType() reflect.Type {
@@ -4929,12 +4196,6 @@ func (o GetKeysFilterOutput) ToGetKeysFilterOutput() GetKeysFilterOutput {
 
 func (o GetKeysFilterOutput) ToGetKeysFilterOutputWithContext(ctx context.Context) GetKeysFilterOutput {
 	return o
-}
-
-func (o GetKeysFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeysFilter] {
-	return pulumix.Output[GetKeysFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetKeysFilterOutput) Name() pulumi.StringOutput {
@@ -4961,12 +4222,6 @@ func (o GetKeysFilterArrayOutput) ToGetKeysFilterArrayOutput() GetKeysFilterArra
 
 func (o GetKeysFilterArrayOutput) ToGetKeysFilterArrayOutputWithContext(ctx context.Context) GetKeysFilterArrayOutput {
 	return o
-}
-
-func (o GetKeysFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeysFilter] {
-	return pulumix.Output[[]GetKeysFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetKeysFilterArrayOutput) Index(i pulumi.IntInput) GetKeysFilterOutput {
@@ -5080,12 +4335,6 @@ func (i GetKeysKeyArgs) ToGetKeysKeyOutputWithContext(ctx context.Context) GetKe
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeysKeyOutput)
 }
 
-func (i GetKeysKeyArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeysKey] {
-	return pulumix.Output[GetKeysKey]{
-		OutputState: i.ToGetKeysKeyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetKeysKeyArrayInput is an input type that accepts GetKeysKeyArray and GetKeysKeyArrayOutput values.
 // You can construct a concrete instance of `GetKeysKeyArrayInput` via:
 //
@@ -5111,12 +4360,6 @@ func (i GetKeysKeyArray) ToGetKeysKeyArrayOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeysKeyArrayOutput)
 }
 
-func (i GetKeysKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeysKey] {
-	return pulumix.Output[[]GetKeysKey]{
-		OutputState: i.ToGetKeysKeyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetKeysKeyOutput struct{ *pulumi.OutputState }
 
 func (GetKeysKeyOutput) ElementType() reflect.Type {
@@ -5129,12 +4372,6 @@ func (o GetKeysKeyOutput) ToGetKeysKeyOutput() GetKeysKeyOutput {
 
 func (o GetKeysKeyOutput) ToGetKeysKeyOutputWithContext(ctx context.Context) GetKeysKeyOutput {
 	return o
-}
-
-func (o GetKeysKeyOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeysKey] {
-	return pulumix.Output[GetKeysKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment.
@@ -5255,12 +4492,6 @@ func (o GetKeysKeyArrayOutput) ToGetKeysKeyArrayOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o GetKeysKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeysKey] {
-	return pulumix.Output[[]GetKeysKey]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetKeysKeyArrayOutput) Index(i pulumi.IntInput) GetKeysKeyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKeysKey {
 		return vs[0].([]GetKeysKey)[vs[1].(int)]
@@ -5300,12 +4531,6 @@ func (i GetKeysKeyExternalKeyReferenceArgs) ToGetKeysKeyExternalKeyReferenceOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeysKeyExternalKeyReferenceOutput)
 }
 
-func (i GetKeysKeyExternalKeyReferenceArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeysKeyExternalKeyReference] {
-	return pulumix.Output[GetKeysKeyExternalKeyReference]{
-		OutputState: i.ToGetKeysKeyExternalKeyReferenceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetKeysKeyExternalKeyReferenceArrayInput is an input type that accepts GetKeysKeyExternalKeyReferenceArray and GetKeysKeyExternalKeyReferenceArrayOutput values.
 // You can construct a concrete instance of `GetKeysKeyExternalKeyReferenceArrayInput` via:
 //
@@ -5331,12 +4556,6 @@ func (i GetKeysKeyExternalKeyReferenceArray) ToGetKeysKeyExternalKeyReferenceArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeysKeyExternalKeyReferenceArrayOutput)
 }
 
-func (i GetKeysKeyExternalKeyReferenceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeysKeyExternalKeyReference] {
-	return pulumix.Output[[]GetKeysKeyExternalKeyReference]{
-		OutputState: i.ToGetKeysKeyExternalKeyReferenceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetKeysKeyExternalKeyReferenceOutput struct{ *pulumi.OutputState }
 
 func (GetKeysKeyExternalKeyReferenceOutput) ElementType() reflect.Type {
@@ -5349,12 +4568,6 @@ func (o GetKeysKeyExternalKeyReferenceOutput) ToGetKeysKeyExternalKeyReferenceOu
 
 func (o GetKeysKeyExternalKeyReferenceOutput) ToGetKeysKeyExternalKeyReferenceOutputWithContext(ctx context.Context) GetKeysKeyExternalKeyReferenceOutput {
 	return o
-}
-
-func (o GetKeysKeyExternalKeyReferenceOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeysKeyExternalKeyReference] {
-	return pulumix.Output[GetKeysKeyExternalKeyReference]{
-		OutputState: o.OutputState,
-	}
 }
 
 // ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
@@ -5374,12 +4587,6 @@ func (o GetKeysKeyExternalKeyReferenceArrayOutput) ToGetKeysKeyExternalKeyRefere
 
 func (o GetKeysKeyExternalKeyReferenceArrayOutput) ToGetKeysKeyExternalKeyReferenceArrayOutputWithContext(ctx context.Context) GetKeysKeyExternalKeyReferenceArrayOutput {
 	return o
-}
-
-func (o GetKeysKeyExternalKeyReferenceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeysKeyExternalKeyReference] {
-	return pulumix.Output[[]GetKeysKeyExternalKeyReference]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetKeysKeyExternalKeyReferenceArrayOutput) Index(i pulumi.IntInput) GetKeysKeyExternalKeyReferenceOutput {
@@ -5425,12 +4632,6 @@ func (i GetKeysKeyExternalKeyReferenceDetailArgs) ToGetKeysKeyExternalKeyReferen
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeysKeyExternalKeyReferenceDetailOutput)
 }
 
-func (i GetKeysKeyExternalKeyReferenceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeysKeyExternalKeyReferenceDetail] {
-	return pulumix.Output[GetKeysKeyExternalKeyReferenceDetail]{
-		OutputState: i.ToGetKeysKeyExternalKeyReferenceDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetKeysKeyExternalKeyReferenceDetailArrayInput is an input type that accepts GetKeysKeyExternalKeyReferenceDetailArray and GetKeysKeyExternalKeyReferenceDetailArrayOutput values.
 // You can construct a concrete instance of `GetKeysKeyExternalKeyReferenceDetailArrayInput` via:
 //
@@ -5456,12 +4657,6 @@ func (i GetKeysKeyExternalKeyReferenceDetailArray) ToGetKeysKeyExternalKeyRefere
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeysKeyExternalKeyReferenceDetailArrayOutput)
 }
 
-func (i GetKeysKeyExternalKeyReferenceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeysKeyExternalKeyReferenceDetail] {
-	return pulumix.Output[[]GetKeysKeyExternalKeyReferenceDetail]{
-		OutputState: i.ToGetKeysKeyExternalKeyReferenceDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetKeysKeyExternalKeyReferenceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetKeysKeyExternalKeyReferenceDetailOutput) ElementType() reflect.Type {
@@ -5474,12 +4669,6 @@ func (o GetKeysKeyExternalKeyReferenceDetailOutput) ToGetKeysKeyExternalKeyRefer
 
 func (o GetKeysKeyExternalKeyReferenceDetailOutput) ToGetKeysKeyExternalKeyReferenceDetailOutputWithContext(ctx context.Context) GetKeysKeyExternalKeyReferenceDetailOutput {
 	return o
-}
-
-func (o GetKeysKeyExternalKeyReferenceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeysKeyExternalKeyReferenceDetail] {
-	return pulumix.Output[GetKeysKeyExternalKeyReferenceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
@@ -5504,12 +4693,6 @@ func (o GetKeysKeyExternalKeyReferenceDetailArrayOutput) ToGetKeysKeyExternalKey
 
 func (o GetKeysKeyExternalKeyReferenceDetailArrayOutput) ToGetKeysKeyExternalKeyReferenceDetailArrayOutputWithContext(ctx context.Context) GetKeysKeyExternalKeyReferenceDetailArrayOutput {
 	return o
-}
-
-func (o GetKeysKeyExternalKeyReferenceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeysKeyExternalKeyReferenceDetail] {
-	return pulumix.Output[[]GetKeysKeyExternalKeyReferenceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetKeysKeyExternalKeyReferenceDetailArrayOutput) Index(i pulumi.IntInput) GetKeysKeyExternalKeyReferenceDetailOutput {
@@ -5559,12 +4742,6 @@ func (i GetKeysKeyKeyShapeArgs) ToGetKeysKeyKeyShapeOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeysKeyKeyShapeOutput)
 }
 
-func (i GetKeysKeyKeyShapeArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeysKeyKeyShape] {
-	return pulumix.Output[GetKeysKeyKeyShape]{
-		OutputState: i.ToGetKeysKeyKeyShapeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetKeysKeyKeyShapeArrayInput is an input type that accepts GetKeysKeyKeyShapeArray and GetKeysKeyKeyShapeArrayOutput values.
 // You can construct a concrete instance of `GetKeysKeyKeyShapeArrayInput` via:
 //
@@ -5590,12 +4767,6 @@ func (i GetKeysKeyKeyShapeArray) ToGetKeysKeyKeyShapeArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeysKeyKeyShapeArrayOutput)
 }
 
-func (i GetKeysKeyKeyShapeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeysKeyKeyShape] {
-	return pulumix.Output[[]GetKeysKeyKeyShape]{
-		OutputState: i.ToGetKeysKeyKeyShapeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetKeysKeyKeyShapeOutput struct{ *pulumi.OutputState }
 
 func (GetKeysKeyKeyShapeOutput) ElementType() reflect.Type {
@@ -5608,12 +4779,6 @@ func (o GetKeysKeyKeyShapeOutput) ToGetKeysKeyKeyShapeOutput() GetKeysKeyKeyShap
 
 func (o GetKeysKeyKeyShapeOutput) ToGetKeysKeyKeyShapeOutputWithContext(ctx context.Context) GetKeysKeyKeyShapeOutput {
 	return o
-}
-
-func (o GetKeysKeyKeyShapeOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeysKeyKeyShape] {
-	return pulumix.Output[GetKeysKeyKeyShape]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The algorithm used by a key's key versions to encrypt or decrypt data. Currently, support includes AES, RSA, and ECDSA algorithms.
@@ -5643,12 +4808,6 @@ func (o GetKeysKeyKeyShapeArrayOutput) ToGetKeysKeyKeyShapeArrayOutput() GetKeys
 
 func (o GetKeysKeyKeyShapeArrayOutput) ToGetKeysKeyKeyShapeArrayOutputWithContext(ctx context.Context) GetKeysKeyKeyShapeArrayOutput {
 	return o
-}
-
-func (o GetKeysKeyKeyShapeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeysKeyKeyShape] {
-	return pulumix.Output[[]GetKeysKeyKeyShape]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetKeysKeyKeyShapeArrayOutput) Index(i pulumi.IntInput) GetKeysKeyKeyShapeOutput {
@@ -5690,12 +4849,6 @@ func (i GetKeysKeyReplicaDetailArgs) ToGetKeysKeyReplicaDetailOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeysKeyReplicaDetailOutput)
 }
 
-func (i GetKeysKeyReplicaDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeysKeyReplicaDetail] {
-	return pulumix.Output[GetKeysKeyReplicaDetail]{
-		OutputState: i.ToGetKeysKeyReplicaDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetKeysKeyReplicaDetailArrayInput is an input type that accepts GetKeysKeyReplicaDetailArray and GetKeysKeyReplicaDetailArrayOutput values.
 // You can construct a concrete instance of `GetKeysKeyReplicaDetailArrayInput` via:
 //
@@ -5721,12 +4874,6 @@ func (i GetKeysKeyReplicaDetailArray) ToGetKeysKeyReplicaDetailArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeysKeyReplicaDetailArrayOutput)
 }
 
-func (i GetKeysKeyReplicaDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeysKeyReplicaDetail] {
-	return pulumix.Output[[]GetKeysKeyReplicaDetail]{
-		OutputState: i.ToGetKeysKeyReplicaDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetKeysKeyReplicaDetailOutput struct{ *pulumi.OutputState }
 
 func (GetKeysKeyReplicaDetailOutput) ElementType() reflect.Type {
@@ -5739,12 +4886,6 @@ func (o GetKeysKeyReplicaDetailOutput) ToGetKeysKeyReplicaDetailOutput() GetKeys
 
 func (o GetKeysKeyReplicaDetailOutput) ToGetKeysKeyReplicaDetailOutputWithContext(ctx context.Context) GetKeysKeyReplicaDetailOutput {
 	return o
-}
-
-func (o GetKeysKeyReplicaDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeysKeyReplicaDetail] {
-	return pulumix.Output[GetKeysKeyReplicaDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // ReplicationId associated with a key operation
@@ -5764,12 +4905,6 @@ func (o GetKeysKeyReplicaDetailArrayOutput) ToGetKeysKeyReplicaDetailArrayOutput
 
 func (o GetKeysKeyReplicaDetailArrayOutput) ToGetKeysKeyReplicaDetailArrayOutputWithContext(ctx context.Context) GetKeysKeyReplicaDetailArrayOutput {
 	return o
-}
-
-func (o GetKeysKeyReplicaDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeysKeyReplicaDetail] {
-	return pulumix.Output[[]GetKeysKeyReplicaDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetKeysKeyReplicaDetailArrayOutput) Index(i pulumi.IntInput) GetKeysKeyReplicaDetailOutput {
@@ -5813,12 +4948,6 @@ func (i GetKeysKeyRestoreFromFileArgs) ToGetKeysKeyRestoreFromFileOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeysKeyRestoreFromFileOutput)
 }
 
-func (i GetKeysKeyRestoreFromFileArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeysKeyRestoreFromFile] {
-	return pulumix.Output[GetKeysKeyRestoreFromFile]{
-		OutputState: i.ToGetKeysKeyRestoreFromFileOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetKeysKeyRestoreFromFileArrayInput is an input type that accepts GetKeysKeyRestoreFromFileArray and GetKeysKeyRestoreFromFileArrayOutput values.
 // You can construct a concrete instance of `GetKeysKeyRestoreFromFileArrayInput` via:
 //
@@ -5844,12 +4973,6 @@ func (i GetKeysKeyRestoreFromFileArray) ToGetKeysKeyRestoreFromFileArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeysKeyRestoreFromFileArrayOutput)
 }
 
-func (i GetKeysKeyRestoreFromFileArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeysKeyRestoreFromFile] {
-	return pulumix.Output[[]GetKeysKeyRestoreFromFile]{
-		OutputState: i.ToGetKeysKeyRestoreFromFileArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetKeysKeyRestoreFromFileOutput struct{ *pulumi.OutputState }
 
 func (GetKeysKeyRestoreFromFileOutput) ElementType() reflect.Type {
@@ -5862,12 +4985,6 @@ func (o GetKeysKeyRestoreFromFileOutput) ToGetKeysKeyRestoreFromFileOutput() Get
 
 func (o GetKeysKeyRestoreFromFileOutput) ToGetKeysKeyRestoreFromFileOutputWithContext(ctx context.Context) GetKeysKeyRestoreFromFileOutput {
 	return o
-}
-
-func (o GetKeysKeyRestoreFromFileOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeysKeyRestoreFromFile] {
-	return pulumix.Output[GetKeysKeyRestoreFromFile]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetKeysKeyRestoreFromFileOutput) ContentLength() pulumi.StringOutput {
@@ -5894,12 +5011,6 @@ func (o GetKeysKeyRestoreFromFileArrayOutput) ToGetKeysKeyRestoreFromFileArrayOu
 
 func (o GetKeysKeyRestoreFromFileArrayOutput) ToGetKeysKeyRestoreFromFileArrayOutputWithContext(ctx context.Context) GetKeysKeyRestoreFromFileArrayOutput {
 	return o
-}
-
-func (o GetKeysKeyRestoreFromFileArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeysKeyRestoreFromFile] {
-	return pulumix.Output[[]GetKeysKeyRestoreFromFile]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetKeysKeyRestoreFromFileArrayOutput) Index(i pulumi.IntInput) GetKeysKeyRestoreFromFileOutput {
@@ -5947,12 +5058,6 @@ func (i GetKeysKeyRestoreFromObjectStoreArgs) ToGetKeysKeyRestoreFromObjectStore
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeysKeyRestoreFromObjectStoreOutput)
 }
 
-func (i GetKeysKeyRestoreFromObjectStoreArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeysKeyRestoreFromObjectStore] {
-	return pulumix.Output[GetKeysKeyRestoreFromObjectStore]{
-		OutputState: i.ToGetKeysKeyRestoreFromObjectStoreOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetKeysKeyRestoreFromObjectStoreArrayInput is an input type that accepts GetKeysKeyRestoreFromObjectStoreArray and GetKeysKeyRestoreFromObjectStoreArrayOutput values.
 // You can construct a concrete instance of `GetKeysKeyRestoreFromObjectStoreArrayInput` via:
 //
@@ -5978,12 +5083,6 @@ func (i GetKeysKeyRestoreFromObjectStoreArray) ToGetKeysKeyRestoreFromObjectStor
 	return pulumi.ToOutputWithContext(ctx, i).(GetKeysKeyRestoreFromObjectStoreArrayOutput)
 }
 
-func (i GetKeysKeyRestoreFromObjectStoreArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeysKeyRestoreFromObjectStore] {
-	return pulumix.Output[[]GetKeysKeyRestoreFromObjectStore]{
-		OutputState: i.ToGetKeysKeyRestoreFromObjectStoreArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetKeysKeyRestoreFromObjectStoreOutput struct{ *pulumi.OutputState }
 
 func (GetKeysKeyRestoreFromObjectStoreOutput) ElementType() reflect.Type {
@@ -5996,12 +5095,6 @@ func (o GetKeysKeyRestoreFromObjectStoreOutput) ToGetKeysKeyRestoreFromObjectSto
 
 func (o GetKeysKeyRestoreFromObjectStoreOutput) ToGetKeysKeyRestoreFromObjectStoreOutputWithContext(ctx context.Context) GetKeysKeyRestoreFromObjectStoreOutput {
 	return o
-}
-
-func (o GetKeysKeyRestoreFromObjectStoreOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeysKeyRestoreFromObjectStore] {
-	return pulumix.Output[GetKeysKeyRestoreFromObjectStore]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetKeysKeyRestoreFromObjectStoreOutput) Bucket() pulumi.StringOutput {
@@ -6036,12 +5129,6 @@ func (o GetKeysKeyRestoreFromObjectStoreArrayOutput) ToGetKeysKeyRestoreFromObje
 
 func (o GetKeysKeyRestoreFromObjectStoreArrayOutput) ToGetKeysKeyRestoreFromObjectStoreArrayOutputWithContext(ctx context.Context) GetKeysKeyRestoreFromObjectStoreArrayOutput {
 	return o
-}
-
-func (o GetKeysKeyRestoreFromObjectStoreArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeysKeyRestoreFromObjectStore] {
-	return pulumix.Output[[]GetKeysKeyRestoreFromObjectStore]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetKeysKeyRestoreFromObjectStoreArrayOutput) Index(i pulumi.IntInput) GetKeysKeyRestoreFromObjectStoreOutput {
@@ -6087,12 +5174,6 @@ func (i GetReplicationStatusReplicaDetailArgs) ToGetReplicationStatusReplicaDeta
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationStatusReplicaDetailOutput)
 }
 
-func (i GetReplicationStatusReplicaDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetReplicationStatusReplicaDetail] {
-	return pulumix.Output[GetReplicationStatusReplicaDetail]{
-		OutputState: i.ToGetReplicationStatusReplicaDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetReplicationStatusReplicaDetailArrayInput is an input type that accepts GetReplicationStatusReplicaDetailArray and GetReplicationStatusReplicaDetailArrayOutput values.
 // You can construct a concrete instance of `GetReplicationStatusReplicaDetailArrayInput` via:
 //
@@ -6118,12 +5199,6 @@ func (i GetReplicationStatusReplicaDetailArray) ToGetReplicationStatusReplicaDet
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationStatusReplicaDetailArrayOutput)
 }
 
-func (i GetReplicationStatusReplicaDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationStatusReplicaDetail] {
-	return pulumix.Output[[]GetReplicationStatusReplicaDetail]{
-		OutputState: i.ToGetReplicationStatusReplicaDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetReplicationStatusReplicaDetailOutput struct{ *pulumi.OutputState }
 
 func (GetReplicationStatusReplicaDetailOutput) ElementType() reflect.Type {
@@ -6136,12 +5211,6 @@ func (o GetReplicationStatusReplicaDetailOutput) ToGetReplicationStatusReplicaDe
 
 func (o GetReplicationStatusReplicaDetailOutput) ToGetReplicationStatusReplicaDetailOutputWithContext(ctx context.Context) GetReplicationStatusReplicaDetailOutput {
 	return o
-}
-
-func (o GetReplicationStatusReplicaDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetReplicationStatusReplicaDetail] {
-	return pulumix.Output[GetReplicationStatusReplicaDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The replica region
@@ -6166,12 +5235,6 @@ func (o GetReplicationStatusReplicaDetailArrayOutput) ToGetReplicationStatusRepl
 
 func (o GetReplicationStatusReplicaDetailArrayOutput) ToGetReplicationStatusReplicaDetailArrayOutputWithContext(ctx context.Context) GetReplicationStatusReplicaDetailArrayOutput {
 	return o
-}
-
-func (o GetReplicationStatusReplicaDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationStatusReplicaDetail] {
-	return pulumix.Output[[]GetReplicationStatusReplicaDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetReplicationStatusReplicaDetailArrayOutput) Index(i pulumi.IntInput) GetReplicationStatusReplicaDetailOutput {
@@ -6219,12 +5282,6 @@ func (i GetVaultExternalKeyManagerMetadataArgs) ToGetVaultExternalKeyManagerMeta
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultExternalKeyManagerMetadataOutput)
 }
 
-func (i GetVaultExternalKeyManagerMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultExternalKeyManagerMetadata] {
-	return pulumix.Output[GetVaultExternalKeyManagerMetadata]{
-		OutputState: i.ToGetVaultExternalKeyManagerMetadataOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVaultExternalKeyManagerMetadataArrayInput is an input type that accepts GetVaultExternalKeyManagerMetadataArray and GetVaultExternalKeyManagerMetadataArrayOutput values.
 // You can construct a concrete instance of `GetVaultExternalKeyManagerMetadataArrayInput` via:
 //
@@ -6250,12 +5307,6 @@ func (i GetVaultExternalKeyManagerMetadataArray) ToGetVaultExternalKeyManagerMet
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultExternalKeyManagerMetadataArrayOutput)
 }
 
-func (i GetVaultExternalKeyManagerMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultExternalKeyManagerMetadata] {
-	return pulumix.Output[[]GetVaultExternalKeyManagerMetadata]{
-		OutputState: i.ToGetVaultExternalKeyManagerMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVaultExternalKeyManagerMetadataOutput struct{ *pulumi.OutputState }
 
 func (GetVaultExternalKeyManagerMetadataOutput) ElementType() reflect.Type {
@@ -6268,12 +5319,6 @@ func (o GetVaultExternalKeyManagerMetadataOutput) ToGetVaultExternalKeyManagerMe
 
 func (o GetVaultExternalKeyManagerMetadataOutput) ToGetVaultExternalKeyManagerMetadataOutputWithContext(ctx context.Context) GetVaultExternalKeyManagerMetadataOutput {
 	return o
-}
-
-func (o GetVaultExternalKeyManagerMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultExternalKeyManagerMetadata] {
-	return pulumix.Output[GetVaultExternalKeyManagerMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 // URL of the vault on external key manager.
@@ -6304,12 +5349,6 @@ func (o GetVaultExternalKeyManagerMetadataArrayOutput) ToGetVaultExternalKeyMana
 
 func (o GetVaultExternalKeyManagerMetadataArrayOutput) ToGetVaultExternalKeyManagerMetadataArrayOutputWithContext(ctx context.Context) GetVaultExternalKeyManagerMetadataArrayOutput {
 	return o
-}
-
-func (o GetVaultExternalKeyManagerMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultExternalKeyManagerMetadata] {
-	return pulumix.Output[[]GetVaultExternalKeyManagerMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVaultExternalKeyManagerMetadataArrayOutput) Index(i pulumi.IntInput) GetVaultExternalKeyManagerMetadataOutput {
@@ -6357,12 +5396,6 @@ func (i GetVaultExternalKeyManagerMetadataOauthMetadataArgs) ToGetVaultExternalK
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultExternalKeyManagerMetadataOauthMetadataOutput)
 }
 
-func (i GetVaultExternalKeyManagerMetadataOauthMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultExternalKeyManagerMetadataOauthMetadata] {
-	return pulumix.Output[GetVaultExternalKeyManagerMetadataOauthMetadata]{
-		OutputState: i.ToGetVaultExternalKeyManagerMetadataOauthMetadataOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVaultExternalKeyManagerMetadataOauthMetadataArrayInput is an input type that accepts GetVaultExternalKeyManagerMetadataOauthMetadataArray and GetVaultExternalKeyManagerMetadataOauthMetadataArrayOutput values.
 // You can construct a concrete instance of `GetVaultExternalKeyManagerMetadataOauthMetadataArrayInput` via:
 //
@@ -6388,12 +5421,6 @@ func (i GetVaultExternalKeyManagerMetadataOauthMetadataArray) ToGetVaultExternal
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultExternalKeyManagerMetadataOauthMetadataArrayOutput)
 }
 
-func (i GetVaultExternalKeyManagerMetadataOauthMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultExternalKeyManagerMetadataOauthMetadata] {
-	return pulumix.Output[[]GetVaultExternalKeyManagerMetadataOauthMetadata]{
-		OutputState: i.ToGetVaultExternalKeyManagerMetadataOauthMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVaultExternalKeyManagerMetadataOauthMetadataOutput struct{ *pulumi.OutputState }
 
 func (GetVaultExternalKeyManagerMetadataOauthMetadataOutput) ElementType() reflect.Type {
@@ -6406,12 +5433,6 @@ func (o GetVaultExternalKeyManagerMetadataOauthMetadataOutput) ToGetVaultExterna
 
 func (o GetVaultExternalKeyManagerMetadataOauthMetadataOutput) ToGetVaultExternalKeyManagerMetadataOauthMetadataOutputWithContext(ctx context.Context) GetVaultExternalKeyManagerMetadataOauthMetadataOutput {
 	return o
-}
-
-func (o GetVaultExternalKeyManagerMetadataOauthMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultExternalKeyManagerMetadataOauthMetadata] {
-	return pulumix.Output[GetVaultExternalKeyManagerMetadataOauthMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 // ID of the client app created in IDP.
@@ -6440,12 +5461,6 @@ func (o GetVaultExternalKeyManagerMetadataOauthMetadataArrayOutput) ToGetVaultEx
 
 func (o GetVaultExternalKeyManagerMetadataOauthMetadataArrayOutput) ToGetVaultExternalKeyManagerMetadataOauthMetadataArrayOutputWithContext(ctx context.Context) GetVaultExternalKeyManagerMetadataOauthMetadataArrayOutput {
 	return o
-}
-
-func (o GetVaultExternalKeyManagerMetadataOauthMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultExternalKeyManagerMetadataOauthMetadata] {
-	return pulumix.Output[[]GetVaultExternalKeyManagerMetadataOauthMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVaultExternalKeyManagerMetadataOauthMetadataArrayOutput) Index(i pulumi.IntInput) GetVaultExternalKeyManagerMetadataOauthMetadataOutput {
@@ -6499,12 +5514,6 @@ func (i GetVaultExternalKeyManagerMetadataSummaryArgs) ToGetVaultExternalKeyMana
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultExternalKeyManagerMetadataSummaryOutput)
 }
 
-func (i GetVaultExternalKeyManagerMetadataSummaryArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultExternalKeyManagerMetadataSummary] {
-	return pulumix.Output[GetVaultExternalKeyManagerMetadataSummary]{
-		OutputState: i.ToGetVaultExternalKeyManagerMetadataSummaryOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVaultExternalKeyManagerMetadataSummaryArrayInput is an input type that accepts GetVaultExternalKeyManagerMetadataSummaryArray and GetVaultExternalKeyManagerMetadataSummaryArrayOutput values.
 // You can construct a concrete instance of `GetVaultExternalKeyManagerMetadataSummaryArrayInput` via:
 //
@@ -6530,12 +5539,6 @@ func (i GetVaultExternalKeyManagerMetadataSummaryArray) ToGetVaultExternalKeyMan
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultExternalKeyManagerMetadataSummaryArrayOutput)
 }
 
-func (i GetVaultExternalKeyManagerMetadataSummaryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultExternalKeyManagerMetadataSummary] {
-	return pulumix.Output[[]GetVaultExternalKeyManagerMetadataSummary]{
-		OutputState: i.ToGetVaultExternalKeyManagerMetadataSummaryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVaultExternalKeyManagerMetadataSummaryOutput struct{ *pulumi.OutputState }
 
 func (GetVaultExternalKeyManagerMetadataSummaryOutput) ElementType() reflect.Type {
@@ -6548,12 +5551,6 @@ func (o GetVaultExternalKeyManagerMetadataSummaryOutput) ToGetVaultExternalKeyMa
 
 func (o GetVaultExternalKeyManagerMetadataSummaryOutput) ToGetVaultExternalKeyManagerMetadataSummaryOutputWithContext(ctx context.Context) GetVaultExternalKeyManagerMetadataSummaryOutput {
 	return o
-}
-
-func (o GetVaultExternalKeyManagerMetadataSummaryOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultExternalKeyManagerMetadataSummary] {
-	return pulumix.Output[GetVaultExternalKeyManagerMetadataSummary]{
-		OutputState: o.OutputState,
-	}
 }
 
 // URL of the vault on external key manager.
@@ -6590,12 +5587,6 @@ func (o GetVaultExternalKeyManagerMetadataSummaryArrayOutput) ToGetVaultExternal
 
 func (o GetVaultExternalKeyManagerMetadataSummaryArrayOutput) ToGetVaultExternalKeyManagerMetadataSummaryArrayOutputWithContext(ctx context.Context) GetVaultExternalKeyManagerMetadataSummaryArrayOutput {
 	return o
-}
-
-func (o GetVaultExternalKeyManagerMetadataSummaryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultExternalKeyManagerMetadataSummary] {
-	return pulumix.Output[[]GetVaultExternalKeyManagerMetadataSummary]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVaultExternalKeyManagerMetadataSummaryArrayOutput) Index(i pulumi.IntInput) GetVaultExternalKeyManagerMetadataSummaryOutput {
@@ -6641,12 +5632,6 @@ func (i GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput)
 }
 
-func (i GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary] {
-	return pulumix.Output[GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary]{
-		OutputState: i.ToGetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayInput is an input type that accepts GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray and GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput values.
 // You can construct a concrete instance of `GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayInput` via:
 //
@@ -6672,12 +5657,6 @@ func (i GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput)
 }
 
-func (i GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary] {
-	return pulumix.Output[[]GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary]{
-		OutputState: i.ToGetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput struct{ *pulumi.OutputState }
 
 func (GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput) ElementType() reflect.Type {
@@ -6690,12 +5669,6 @@ func (o GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput) ToG
 
 func (o GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput) ToGetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutputWithContext(ctx context.Context) GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput {
 	return o
-}
-
-func (o GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary] {
-	return pulumix.Output[GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary]{
-		OutputState: o.OutputState,
-	}
 }
 
 // ID of the client app created in IDP.
@@ -6722,12 +5695,6 @@ func (o GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput
 
 func (o GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput) ToGetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutputWithContext(ctx context.Context) GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput {
 	return o
-}
-
-func (o GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary] {
-	return pulumix.Output[[]GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput) Index(i pulumi.IntInput) GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput {
@@ -6769,12 +5736,6 @@ func (i GetVaultReplicaDetailArgs) ToGetVaultReplicaDetailOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultReplicaDetailOutput)
 }
 
-func (i GetVaultReplicaDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultReplicaDetail] {
-	return pulumix.Output[GetVaultReplicaDetail]{
-		OutputState: i.ToGetVaultReplicaDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVaultReplicaDetailArrayInput is an input type that accepts GetVaultReplicaDetailArray and GetVaultReplicaDetailArrayOutput values.
 // You can construct a concrete instance of `GetVaultReplicaDetailArrayInput` via:
 //
@@ -6800,12 +5761,6 @@ func (i GetVaultReplicaDetailArray) ToGetVaultReplicaDetailArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultReplicaDetailArrayOutput)
 }
 
-func (i GetVaultReplicaDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultReplicaDetail] {
-	return pulumix.Output[[]GetVaultReplicaDetail]{
-		OutputState: i.ToGetVaultReplicaDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVaultReplicaDetailOutput struct{ *pulumi.OutputState }
 
 func (GetVaultReplicaDetailOutput) ElementType() reflect.Type {
@@ -6818,12 +5773,6 @@ func (o GetVaultReplicaDetailOutput) ToGetVaultReplicaDetailOutput() GetVaultRep
 
 func (o GetVaultReplicaDetailOutput) ToGetVaultReplicaDetailOutputWithContext(ctx context.Context) GetVaultReplicaDetailOutput {
 	return o
-}
-
-func (o GetVaultReplicaDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultReplicaDetail] {
-	return pulumix.Output[GetVaultReplicaDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // ReplicationId associated with a vault operation
@@ -6843,12 +5792,6 @@ func (o GetVaultReplicaDetailArrayOutput) ToGetVaultReplicaDetailArrayOutput() G
 
 func (o GetVaultReplicaDetailArrayOutput) ToGetVaultReplicaDetailArrayOutputWithContext(ctx context.Context) GetVaultReplicaDetailArrayOutput {
 	return o
-}
-
-func (o GetVaultReplicaDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultReplicaDetail] {
-	return pulumix.Output[[]GetVaultReplicaDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVaultReplicaDetailArrayOutput) Index(i pulumi.IntInput) GetVaultReplicaDetailOutput {
@@ -6892,12 +5835,6 @@ func (i GetVaultReplicasFilterArgs) ToGetVaultReplicasFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultReplicasFilterOutput)
 }
 
-func (i GetVaultReplicasFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultReplicasFilter] {
-	return pulumix.Output[GetVaultReplicasFilter]{
-		OutputState: i.ToGetVaultReplicasFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVaultReplicasFilterArrayInput is an input type that accepts GetVaultReplicasFilterArray and GetVaultReplicasFilterArrayOutput values.
 // You can construct a concrete instance of `GetVaultReplicasFilterArrayInput` via:
 //
@@ -6923,12 +5860,6 @@ func (i GetVaultReplicasFilterArray) ToGetVaultReplicasFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultReplicasFilterArrayOutput)
 }
 
-func (i GetVaultReplicasFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultReplicasFilter] {
-	return pulumix.Output[[]GetVaultReplicasFilter]{
-		OutputState: i.ToGetVaultReplicasFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVaultReplicasFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVaultReplicasFilterOutput) ElementType() reflect.Type {
@@ -6941,12 +5872,6 @@ func (o GetVaultReplicasFilterOutput) ToGetVaultReplicasFilterOutput() GetVaultR
 
 func (o GetVaultReplicasFilterOutput) ToGetVaultReplicasFilterOutputWithContext(ctx context.Context) GetVaultReplicasFilterOutput {
 	return o
-}
-
-func (o GetVaultReplicasFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultReplicasFilter] {
-	return pulumix.Output[GetVaultReplicasFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVaultReplicasFilterOutput) Name() pulumi.StringOutput {
@@ -6973,12 +5898,6 @@ func (o GetVaultReplicasFilterArrayOutput) ToGetVaultReplicasFilterArrayOutput()
 
 func (o GetVaultReplicasFilterArrayOutput) ToGetVaultReplicasFilterArrayOutputWithContext(ctx context.Context) GetVaultReplicasFilterArrayOutput {
 	return o
-}
-
-func (o GetVaultReplicasFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultReplicasFilter] {
-	return pulumix.Output[[]GetVaultReplicasFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVaultReplicasFilterArrayOutput) Index(i pulumi.IntInput) GetVaultReplicasFilterOutput {
@@ -7032,12 +5951,6 @@ func (i GetVaultReplicasVaultReplicaArgs) ToGetVaultReplicasVaultReplicaOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultReplicasVaultReplicaOutput)
 }
 
-func (i GetVaultReplicasVaultReplicaArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultReplicasVaultReplica] {
-	return pulumix.Output[GetVaultReplicasVaultReplica]{
-		OutputState: i.ToGetVaultReplicasVaultReplicaOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVaultReplicasVaultReplicaArrayInput is an input type that accepts GetVaultReplicasVaultReplicaArray and GetVaultReplicasVaultReplicaArrayOutput values.
 // You can construct a concrete instance of `GetVaultReplicasVaultReplicaArrayInput` via:
 //
@@ -7063,12 +5976,6 @@ func (i GetVaultReplicasVaultReplicaArray) ToGetVaultReplicasVaultReplicaArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultReplicasVaultReplicaArrayOutput)
 }
 
-func (i GetVaultReplicasVaultReplicaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultReplicasVaultReplica] {
-	return pulumix.Output[[]GetVaultReplicasVaultReplica]{
-		OutputState: i.ToGetVaultReplicasVaultReplicaArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVaultReplicasVaultReplicaOutput struct{ *pulumi.OutputState }
 
 func (GetVaultReplicasVaultReplicaOutput) ElementType() reflect.Type {
@@ -7081,12 +5988,6 @@ func (o GetVaultReplicasVaultReplicaOutput) ToGetVaultReplicasVaultReplicaOutput
 
 func (o GetVaultReplicasVaultReplicaOutput) ToGetVaultReplicasVaultReplicaOutputWithContext(ctx context.Context) GetVaultReplicasVaultReplicaOutput {
 	return o
-}
-
-func (o GetVaultReplicasVaultReplicaOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultReplicasVaultReplica] {
-	return pulumix.Output[GetVaultReplicasVaultReplica]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The vault replica's crypto endpoint
@@ -7121,12 +6022,6 @@ func (o GetVaultReplicasVaultReplicaArrayOutput) ToGetVaultReplicasVaultReplicaA
 
 func (o GetVaultReplicasVaultReplicaArrayOutput) ToGetVaultReplicasVaultReplicaArrayOutputWithContext(ctx context.Context) GetVaultReplicasVaultReplicaArrayOutput {
 	return o
-}
-
-func (o GetVaultReplicasVaultReplicaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultReplicasVaultReplica] {
-	return pulumix.Output[[]GetVaultReplicasVaultReplica]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVaultReplicasVaultReplicaArrayOutput) Index(i pulumi.IntInput) GetVaultReplicasVaultReplicaOutput {
@@ -7176,12 +6071,6 @@ func (i GetVaultRestoreFromFileArgs) ToGetVaultRestoreFromFileOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultRestoreFromFileOutput)
 }
 
-func (i GetVaultRestoreFromFileArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultRestoreFromFile] {
-	return pulumix.Output[GetVaultRestoreFromFile]{
-		OutputState: i.ToGetVaultRestoreFromFileOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVaultRestoreFromFileArrayInput is an input type that accepts GetVaultRestoreFromFileArray and GetVaultRestoreFromFileArrayOutput values.
 // You can construct a concrete instance of `GetVaultRestoreFromFileArrayInput` via:
 //
@@ -7207,12 +6096,6 @@ func (i GetVaultRestoreFromFileArray) ToGetVaultRestoreFromFileArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultRestoreFromFileArrayOutput)
 }
 
-func (i GetVaultRestoreFromFileArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultRestoreFromFile] {
-	return pulumix.Output[[]GetVaultRestoreFromFile]{
-		OutputState: i.ToGetVaultRestoreFromFileArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVaultRestoreFromFileOutput struct{ *pulumi.OutputState }
 
 func (GetVaultRestoreFromFileOutput) ElementType() reflect.Type {
@@ -7225,12 +6108,6 @@ func (o GetVaultRestoreFromFileOutput) ToGetVaultRestoreFromFileOutput() GetVaul
 
 func (o GetVaultRestoreFromFileOutput) ToGetVaultRestoreFromFileOutputWithContext(ctx context.Context) GetVaultRestoreFromFileOutput {
 	return o
-}
-
-func (o GetVaultRestoreFromFileOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultRestoreFromFile] {
-	return pulumix.Output[GetVaultRestoreFromFile]{
-		OutputState: o.OutputState,
-	}
 }
 
 // content length of vault's backup binary file
@@ -7260,12 +6137,6 @@ func (o GetVaultRestoreFromFileArrayOutput) ToGetVaultRestoreFromFileArrayOutput
 
 func (o GetVaultRestoreFromFileArrayOutput) ToGetVaultRestoreFromFileArrayOutputWithContext(ctx context.Context) GetVaultRestoreFromFileArrayOutput {
 	return o
-}
-
-func (o GetVaultRestoreFromFileArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultRestoreFromFile] {
-	return pulumix.Output[[]GetVaultRestoreFromFile]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVaultRestoreFromFileArrayOutput) Index(i pulumi.IntInput) GetVaultRestoreFromFileOutput {
@@ -7323,12 +6194,6 @@ func (i GetVaultRestoreFromObjectStoreArgs) ToGetVaultRestoreFromObjectStoreOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultRestoreFromObjectStoreOutput)
 }
 
-func (i GetVaultRestoreFromObjectStoreArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultRestoreFromObjectStore] {
-	return pulumix.Output[GetVaultRestoreFromObjectStore]{
-		OutputState: i.ToGetVaultRestoreFromObjectStoreOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVaultRestoreFromObjectStoreArrayInput is an input type that accepts GetVaultRestoreFromObjectStoreArray and GetVaultRestoreFromObjectStoreArrayOutput values.
 // You can construct a concrete instance of `GetVaultRestoreFromObjectStoreArrayInput` via:
 //
@@ -7354,12 +6219,6 @@ func (i GetVaultRestoreFromObjectStoreArray) ToGetVaultRestoreFromObjectStoreArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultRestoreFromObjectStoreArrayOutput)
 }
 
-func (i GetVaultRestoreFromObjectStoreArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultRestoreFromObjectStore] {
-	return pulumix.Output[[]GetVaultRestoreFromObjectStore]{
-		OutputState: i.ToGetVaultRestoreFromObjectStoreArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVaultRestoreFromObjectStoreOutput struct{ *pulumi.OutputState }
 
 func (GetVaultRestoreFromObjectStoreOutput) ElementType() reflect.Type {
@@ -7372,12 +6231,6 @@ func (o GetVaultRestoreFromObjectStoreOutput) ToGetVaultRestoreFromObjectStoreOu
 
 func (o GetVaultRestoreFromObjectStoreOutput) ToGetVaultRestoreFromObjectStoreOutputWithContext(ctx context.Context) GetVaultRestoreFromObjectStoreOutput {
 	return o
-}
-
-func (o GetVaultRestoreFromObjectStoreOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultRestoreFromObjectStore] {
-	return pulumix.Output[GetVaultRestoreFromObjectStore]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Name of the bucket where vault was backed up
@@ -7417,12 +6270,6 @@ func (o GetVaultRestoreFromObjectStoreArrayOutput) ToGetVaultRestoreFromObjectSt
 
 func (o GetVaultRestoreFromObjectStoreArrayOutput) ToGetVaultRestoreFromObjectStoreArrayOutputWithContext(ctx context.Context) GetVaultRestoreFromObjectStoreArrayOutput {
 	return o
-}
-
-func (o GetVaultRestoreFromObjectStoreArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultRestoreFromObjectStore] {
-	return pulumix.Output[[]GetVaultRestoreFromObjectStore]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVaultRestoreFromObjectStoreArrayOutput) Index(i pulumi.IntInput) GetVaultRestoreFromObjectStoreOutput {
@@ -7466,12 +6313,6 @@ func (i GetVaultsFilterArgs) ToGetVaultsFilterOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsFilterOutput)
 }
 
-func (i GetVaultsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultsFilter] {
-	return pulumix.Output[GetVaultsFilter]{
-		OutputState: i.ToGetVaultsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVaultsFilterArrayInput is an input type that accepts GetVaultsFilterArray and GetVaultsFilterArrayOutput values.
 // You can construct a concrete instance of `GetVaultsFilterArrayInput` via:
 //
@@ -7497,12 +6338,6 @@ func (i GetVaultsFilterArray) ToGetVaultsFilterArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsFilterArrayOutput)
 }
 
-func (i GetVaultsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsFilter] {
-	return pulumix.Output[[]GetVaultsFilter]{
-		OutputState: i.ToGetVaultsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVaultsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVaultsFilterOutput) ElementType() reflect.Type {
@@ -7515,12 +6350,6 @@ func (o GetVaultsFilterOutput) ToGetVaultsFilterOutput() GetVaultsFilterOutput {
 
 func (o GetVaultsFilterOutput) ToGetVaultsFilterOutputWithContext(ctx context.Context) GetVaultsFilterOutput {
 	return o
-}
-
-func (o GetVaultsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultsFilter] {
-	return pulumix.Output[GetVaultsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVaultsFilterOutput) Name() pulumi.StringOutput {
@@ -7547,12 +6376,6 @@ func (o GetVaultsFilterArrayOutput) ToGetVaultsFilterArrayOutput() GetVaultsFilt
 
 func (o GetVaultsFilterArrayOutput) ToGetVaultsFilterArrayOutputWithContext(ctx context.Context) GetVaultsFilterArrayOutput {
 	return o
-}
-
-func (o GetVaultsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsFilter] {
-	return pulumix.Output[[]GetVaultsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVaultsFilterArrayOutput) Index(i pulumi.IntInput) GetVaultsFilterOutput {
@@ -7658,12 +6481,6 @@ func (i GetVaultsVaultArgs) ToGetVaultsVaultOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsVaultOutput)
 }
 
-func (i GetVaultsVaultArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultsVault] {
-	return pulumix.Output[GetVaultsVault]{
-		OutputState: i.ToGetVaultsVaultOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVaultsVaultArrayInput is an input type that accepts GetVaultsVaultArray and GetVaultsVaultArrayOutput values.
 // You can construct a concrete instance of `GetVaultsVaultArrayInput` via:
 //
@@ -7689,12 +6506,6 @@ func (i GetVaultsVaultArray) ToGetVaultsVaultArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsVaultArrayOutput)
 }
 
-func (i GetVaultsVaultArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsVault] {
-	return pulumix.Output[[]GetVaultsVault]{
-		OutputState: i.ToGetVaultsVaultArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVaultsVaultOutput struct{ *pulumi.OutputState }
 
 func (GetVaultsVaultOutput) ElementType() reflect.Type {
@@ -7707,12 +6518,6 @@ func (o GetVaultsVaultOutput) ToGetVaultsVaultOutput() GetVaultsVaultOutput {
 
 func (o GetVaultsVaultOutput) ToGetVaultsVaultOutputWithContext(ctx context.Context) GetVaultsVaultOutput {
 	return o
-}
-
-func (o GetVaultsVaultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultsVault] {
-	return pulumix.Output[GetVaultsVault]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment.
@@ -7824,12 +6629,6 @@ func (o GetVaultsVaultArrayOutput) ToGetVaultsVaultArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o GetVaultsVaultArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsVault] {
-	return pulumix.Output[[]GetVaultsVault]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVaultsVaultArrayOutput) Index(i pulumi.IntInput) GetVaultsVaultOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVaultsVault {
 		return vs[0].([]GetVaultsVault)[vs[1].(int)]
@@ -7875,12 +6674,6 @@ func (i GetVaultsVaultExternalKeyManagerMetadataArgs) ToGetVaultsVaultExternalKe
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsVaultExternalKeyManagerMetadataOutput)
 }
 
-func (i GetVaultsVaultExternalKeyManagerMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultsVaultExternalKeyManagerMetadata] {
-	return pulumix.Output[GetVaultsVaultExternalKeyManagerMetadata]{
-		OutputState: i.ToGetVaultsVaultExternalKeyManagerMetadataOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVaultsVaultExternalKeyManagerMetadataArrayInput is an input type that accepts GetVaultsVaultExternalKeyManagerMetadataArray and GetVaultsVaultExternalKeyManagerMetadataArrayOutput values.
 // You can construct a concrete instance of `GetVaultsVaultExternalKeyManagerMetadataArrayInput` via:
 //
@@ -7906,12 +6699,6 @@ func (i GetVaultsVaultExternalKeyManagerMetadataArray) ToGetVaultsVaultExternalK
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsVaultExternalKeyManagerMetadataArrayOutput)
 }
 
-func (i GetVaultsVaultExternalKeyManagerMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsVaultExternalKeyManagerMetadata] {
-	return pulumix.Output[[]GetVaultsVaultExternalKeyManagerMetadata]{
-		OutputState: i.ToGetVaultsVaultExternalKeyManagerMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVaultsVaultExternalKeyManagerMetadataOutput struct{ *pulumi.OutputState }
 
 func (GetVaultsVaultExternalKeyManagerMetadataOutput) ElementType() reflect.Type {
@@ -7924,12 +6711,6 @@ func (o GetVaultsVaultExternalKeyManagerMetadataOutput) ToGetVaultsVaultExternal
 
 func (o GetVaultsVaultExternalKeyManagerMetadataOutput) ToGetVaultsVaultExternalKeyManagerMetadataOutputWithContext(ctx context.Context) GetVaultsVaultExternalKeyManagerMetadataOutput {
 	return o
-}
-
-func (o GetVaultsVaultExternalKeyManagerMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultsVaultExternalKeyManagerMetadata] {
-	return pulumix.Output[GetVaultsVaultExternalKeyManagerMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 // URL of the vault on external key manager.
@@ -7960,12 +6741,6 @@ func (o GetVaultsVaultExternalKeyManagerMetadataArrayOutput) ToGetVaultsVaultExt
 
 func (o GetVaultsVaultExternalKeyManagerMetadataArrayOutput) ToGetVaultsVaultExternalKeyManagerMetadataArrayOutputWithContext(ctx context.Context) GetVaultsVaultExternalKeyManagerMetadataArrayOutput {
 	return o
-}
-
-func (o GetVaultsVaultExternalKeyManagerMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsVaultExternalKeyManagerMetadata] {
-	return pulumix.Output[[]GetVaultsVaultExternalKeyManagerMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVaultsVaultExternalKeyManagerMetadataArrayOutput) Index(i pulumi.IntInput) GetVaultsVaultExternalKeyManagerMetadataOutput {
@@ -8013,12 +6788,6 @@ func (i GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArgs) ToGetVaultsVa
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutput)
 }
 
-func (i GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultsVaultExternalKeyManagerMetadataOauthMetadata] {
-	return pulumix.Output[GetVaultsVaultExternalKeyManagerMetadataOauthMetadata]{
-		OutputState: i.ToGetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayInput is an input type that accepts GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArray and GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutput values.
 // You can construct a concrete instance of `GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayInput` via:
 //
@@ -8044,12 +6813,6 @@ func (i GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArray) ToGetVaultsV
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutput)
 }
 
-func (i GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsVaultExternalKeyManagerMetadataOauthMetadata] {
-	return pulumix.Output[[]GetVaultsVaultExternalKeyManagerMetadataOauthMetadata]{
-		OutputState: i.ToGetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutput struct{ *pulumi.OutputState }
 
 func (GetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutput) ElementType() reflect.Type {
@@ -8062,12 +6825,6 @@ func (o GetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutput) ToGetVaults
 
 func (o GetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutput) ToGetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutputWithContext(ctx context.Context) GetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutput {
 	return o
-}
-
-func (o GetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultsVaultExternalKeyManagerMetadataOauthMetadata] {
-	return pulumix.Output[GetVaultsVaultExternalKeyManagerMetadataOauthMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 // ID of the client app created in IDP.
@@ -8096,12 +6853,6 @@ func (o GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutput) ToGetV
 
 func (o GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutput) ToGetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutputWithContext(ctx context.Context) GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutput {
 	return o
-}
-
-func (o GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsVaultExternalKeyManagerMetadataOauthMetadata] {
-	return pulumix.Output[[]GetVaultsVaultExternalKeyManagerMetadataOauthMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutput) Index(i pulumi.IntInput) GetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutput {
@@ -8155,12 +6906,6 @@ func (i GetVaultsVaultExternalKeyManagerMetadataSummaryArgs) ToGetVaultsVaultExt
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsVaultExternalKeyManagerMetadataSummaryOutput)
 }
 
-func (i GetVaultsVaultExternalKeyManagerMetadataSummaryArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultsVaultExternalKeyManagerMetadataSummary] {
-	return pulumix.Output[GetVaultsVaultExternalKeyManagerMetadataSummary]{
-		OutputState: i.ToGetVaultsVaultExternalKeyManagerMetadataSummaryOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVaultsVaultExternalKeyManagerMetadataSummaryArrayInput is an input type that accepts GetVaultsVaultExternalKeyManagerMetadataSummaryArray and GetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutput values.
 // You can construct a concrete instance of `GetVaultsVaultExternalKeyManagerMetadataSummaryArrayInput` via:
 //
@@ -8186,12 +6931,6 @@ func (i GetVaultsVaultExternalKeyManagerMetadataSummaryArray) ToGetVaultsVaultEx
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutput)
 }
 
-func (i GetVaultsVaultExternalKeyManagerMetadataSummaryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsVaultExternalKeyManagerMetadataSummary] {
-	return pulumix.Output[[]GetVaultsVaultExternalKeyManagerMetadataSummary]{
-		OutputState: i.ToGetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVaultsVaultExternalKeyManagerMetadataSummaryOutput struct{ *pulumi.OutputState }
 
 func (GetVaultsVaultExternalKeyManagerMetadataSummaryOutput) ElementType() reflect.Type {
@@ -8204,12 +6943,6 @@ func (o GetVaultsVaultExternalKeyManagerMetadataSummaryOutput) ToGetVaultsVaultE
 
 func (o GetVaultsVaultExternalKeyManagerMetadataSummaryOutput) ToGetVaultsVaultExternalKeyManagerMetadataSummaryOutputWithContext(ctx context.Context) GetVaultsVaultExternalKeyManagerMetadataSummaryOutput {
 	return o
-}
-
-func (o GetVaultsVaultExternalKeyManagerMetadataSummaryOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultsVaultExternalKeyManagerMetadataSummary] {
-	return pulumix.Output[GetVaultsVaultExternalKeyManagerMetadataSummary]{
-		OutputState: o.OutputState,
-	}
 }
 
 // URL of the vault on external key manager.
@@ -8246,12 +6979,6 @@ func (o GetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutput) ToGetVaultsV
 
 func (o GetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutput) ToGetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutputWithContext(ctx context.Context) GetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutput {
 	return o
-}
-
-func (o GetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsVaultExternalKeyManagerMetadataSummary] {
-	return pulumix.Output[[]GetVaultsVaultExternalKeyManagerMetadataSummary]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutput) Index(i pulumi.IntInput) GetVaultsVaultExternalKeyManagerMetadataSummaryOutput {
@@ -8297,12 +7024,6 @@ func (i GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput)
 }
 
-func (i GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary] {
-	return pulumix.Output[GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary]{
-		OutputState: i.ToGetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayInput is an input type that accepts GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray and GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput values.
 // You can construct a concrete instance of `GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayInput` via:
 //
@@ -8328,12 +7049,6 @@ func (i GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput)
 }
 
-func (i GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary] {
-	return pulumix.Output[[]GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary]{
-		OutputState: i.ToGetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput struct{ *pulumi.OutputState }
 
 func (GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput) ElementType() reflect.Type {
@@ -8346,12 +7061,6 @@ func (o GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutpu
 
 func (o GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput) ToGetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutputWithContext(ctx context.Context) GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput {
 	return o
-}
-
-func (o GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary] {
-	return pulumix.Output[GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary]{
-		OutputState: o.OutputState,
-	}
 }
 
 // ID of the client app created in IDP.
@@ -8380,12 +7089,6 @@ func (o GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray
 
 func (o GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput) ToGetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutputWithContext(ctx context.Context) GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput {
 	return o
-}
-
-func (o GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary] {
-	return pulumix.Output[[]GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput) Index(i pulumi.IntInput) GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput {
@@ -8427,12 +7130,6 @@ func (i GetVaultsVaultReplicaDetailArgs) ToGetVaultsVaultReplicaDetailOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsVaultReplicaDetailOutput)
 }
 
-func (i GetVaultsVaultReplicaDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultsVaultReplicaDetail] {
-	return pulumix.Output[GetVaultsVaultReplicaDetail]{
-		OutputState: i.ToGetVaultsVaultReplicaDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVaultsVaultReplicaDetailArrayInput is an input type that accepts GetVaultsVaultReplicaDetailArray and GetVaultsVaultReplicaDetailArrayOutput values.
 // You can construct a concrete instance of `GetVaultsVaultReplicaDetailArrayInput` via:
 //
@@ -8458,12 +7155,6 @@ func (i GetVaultsVaultReplicaDetailArray) ToGetVaultsVaultReplicaDetailArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsVaultReplicaDetailArrayOutput)
 }
 
-func (i GetVaultsVaultReplicaDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsVaultReplicaDetail] {
-	return pulumix.Output[[]GetVaultsVaultReplicaDetail]{
-		OutputState: i.ToGetVaultsVaultReplicaDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVaultsVaultReplicaDetailOutput struct{ *pulumi.OutputState }
 
 func (GetVaultsVaultReplicaDetailOutput) ElementType() reflect.Type {
@@ -8476,12 +7167,6 @@ func (o GetVaultsVaultReplicaDetailOutput) ToGetVaultsVaultReplicaDetailOutput()
 
 func (o GetVaultsVaultReplicaDetailOutput) ToGetVaultsVaultReplicaDetailOutputWithContext(ctx context.Context) GetVaultsVaultReplicaDetailOutput {
 	return o
-}
-
-func (o GetVaultsVaultReplicaDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultsVaultReplicaDetail] {
-	return pulumix.Output[GetVaultsVaultReplicaDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // ReplicationId associated with a vault operation
@@ -8501,12 +7186,6 @@ func (o GetVaultsVaultReplicaDetailArrayOutput) ToGetVaultsVaultReplicaDetailArr
 
 func (o GetVaultsVaultReplicaDetailArrayOutput) ToGetVaultsVaultReplicaDetailArrayOutputWithContext(ctx context.Context) GetVaultsVaultReplicaDetailArrayOutput {
 	return o
-}
-
-func (o GetVaultsVaultReplicaDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsVaultReplicaDetail] {
-	return pulumix.Output[[]GetVaultsVaultReplicaDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVaultsVaultReplicaDetailArrayOutput) Index(i pulumi.IntInput) GetVaultsVaultReplicaDetailOutput {
@@ -8550,12 +7229,6 @@ func (i GetVaultsVaultRestoreFromFileArgs) ToGetVaultsVaultRestoreFromFileOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsVaultRestoreFromFileOutput)
 }
 
-func (i GetVaultsVaultRestoreFromFileArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultsVaultRestoreFromFile] {
-	return pulumix.Output[GetVaultsVaultRestoreFromFile]{
-		OutputState: i.ToGetVaultsVaultRestoreFromFileOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVaultsVaultRestoreFromFileArrayInput is an input type that accepts GetVaultsVaultRestoreFromFileArray and GetVaultsVaultRestoreFromFileArrayOutput values.
 // You can construct a concrete instance of `GetVaultsVaultRestoreFromFileArrayInput` via:
 //
@@ -8581,12 +7254,6 @@ func (i GetVaultsVaultRestoreFromFileArray) ToGetVaultsVaultRestoreFromFileArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsVaultRestoreFromFileArrayOutput)
 }
 
-func (i GetVaultsVaultRestoreFromFileArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsVaultRestoreFromFile] {
-	return pulumix.Output[[]GetVaultsVaultRestoreFromFile]{
-		OutputState: i.ToGetVaultsVaultRestoreFromFileArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVaultsVaultRestoreFromFileOutput struct{ *pulumi.OutputState }
 
 func (GetVaultsVaultRestoreFromFileOutput) ElementType() reflect.Type {
@@ -8599,12 +7266,6 @@ func (o GetVaultsVaultRestoreFromFileOutput) ToGetVaultsVaultRestoreFromFileOutp
 
 func (o GetVaultsVaultRestoreFromFileOutput) ToGetVaultsVaultRestoreFromFileOutputWithContext(ctx context.Context) GetVaultsVaultRestoreFromFileOutput {
 	return o
-}
-
-func (o GetVaultsVaultRestoreFromFileOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultsVaultRestoreFromFile] {
-	return pulumix.Output[GetVaultsVaultRestoreFromFile]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVaultsVaultRestoreFromFileOutput) ContentLength() pulumi.StringOutput {
@@ -8631,12 +7292,6 @@ func (o GetVaultsVaultRestoreFromFileArrayOutput) ToGetVaultsVaultRestoreFromFil
 
 func (o GetVaultsVaultRestoreFromFileArrayOutput) ToGetVaultsVaultRestoreFromFileArrayOutputWithContext(ctx context.Context) GetVaultsVaultRestoreFromFileArrayOutput {
 	return o
-}
-
-func (o GetVaultsVaultRestoreFromFileArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsVaultRestoreFromFile] {
-	return pulumix.Output[[]GetVaultsVaultRestoreFromFile]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVaultsVaultRestoreFromFileArrayOutput) Index(i pulumi.IntInput) GetVaultsVaultRestoreFromFileOutput {
@@ -8684,12 +7339,6 @@ func (i GetVaultsVaultRestoreFromObjectStoreArgs) ToGetVaultsVaultRestoreFromObj
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsVaultRestoreFromObjectStoreOutput)
 }
 
-func (i GetVaultsVaultRestoreFromObjectStoreArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultsVaultRestoreFromObjectStore] {
-	return pulumix.Output[GetVaultsVaultRestoreFromObjectStore]{
-		OutputState: i.ToGetVaultsVaultRestoreFromObjectStoreOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVaultsVaultRestoreFromObjectStoreArrayInput is an input type that accepts GetVaultsVaultRestoreFromObjectStoreArray and GetVaultsVaultRestoreFromObjectStoreArrayOutput values.
 // You can construct a concrete instance of `GetVaultsVaultRestoreFromObjectStoreArrayInput` via:
 //
@@ -8715,12 +7364,6 @@ func (i GetVaultsVaultRestoreFromObjectStoreArray) ToGetVaultsVaultRestoreFromOb
 	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsVaultRestoreFromObjectStoreArrayOutput)
 }
 
-func (i GetVaultsVaultRestoreFromObjectStoreArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsVaultRestoreFromObjectStore] {
-	return pulumix.Output[[]GetVaultsVaultRestoreFromObjectStore]{
-		OutputState: i.ToGetVaultsVaultRestoreFromObjectStoreArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVaultsVaultRestoreFromObjectStoreOutput struct{ *pulumi.OutputState }
 
 func (GetVaultsVaultRestoreFromObjectStoreOutput) ElementType() reflect.Type {
@@ -8733,12 +7376,6 @@ func (o GetVaultsVaultRestoreFromObjectStoreOutput) ToGetVaultsVaultRestoreFromO
 
 func (o GetVaultsVaultRestoreFromObjectStoreOutput) ToGetVaultsVaultRestoreFromObjectStoreOutputWithContext(ctx context.Context) GetVaultsVaultRestoreFromObjectStoreOutput {
 	return o
-}
-
-func (o GetVaultsVaultRestoreFromObjectStoreOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultsVaultRestoreFromObjectStore] {
-	return pulumix.Output[GetVaultsVaultRestoreFromObjectStore]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVaultsVaultRestoreFromObjectStoreOutput) Bucket() pulumi.StringOutput {
@@ -8773,12 +7410,6 @@ func (o GetVaultsVaultRestoreFromObjectStoreArrayOutput) ToGetVaultsVaultRestore
 
 func (o GetVaultsVaultRestoreFromObjectStoreArrayOutput) ToGetVaultsVaultRestoreFromObjectStoreArrayOutputWithContext(ctx context.Context) GetVaultsVaultRestoreFromObjectStoreArrayOutput {
 	return o
-}
-
-func (o GetVaultsVaultRestoreFromObjectStoreArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsVaultRestoreFromObjectStore] {
-	return pulumix.Output[[]GetVaultsVaultRestoreFromObjectStore]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVaultsVaultRestoreFromObjectStoreArrayOutput) Index(i pulumi.IntInput) GetVaultsVaultRestoreFromObjectStoreOutput {

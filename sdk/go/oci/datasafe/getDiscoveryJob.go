@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Discovery Job resource in Oracle Cloud Infrastructure Data Safe service.
@@ -146,12 +145,6 @@ func (o GetDiscoveryJobResultOutput) ToGetDiscoveryJobResultOutput() GetDiscover
 
 func (o GetDiscoveryJobResultOutput) ToGetDiscoveryJobResultOutputWithContext(ctx context.Context) GetDiscoveryJobResultOutput {
 	return o
-}
-
-func (o GetDiscoveryJobResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobResult] {
-	return pulumix.Output[GetDiscoveryJobResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment that contains the discovery job.

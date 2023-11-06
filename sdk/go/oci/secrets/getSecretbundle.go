@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Secretbundle resource in Oracle Cloud Infrastructure Secrets service.
@@ -135,12 +134,6 @@ func (o GetSecretbundleResultOutput) ToGetSecretbundleResultOutput() GetSecretbu
 
 func (o GetSecretbundleResultOutput) ToGetSecretbundleResultOutputWithContext(ctx context.Context) GetSecretbundleResultOutput {
 	return o
-}
-
-func (o GetSecretbundleResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecretbundleResult] {
-	return pulumix.Output[GetSecretbundleResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The provider-assigned unique ID for this managed resource.

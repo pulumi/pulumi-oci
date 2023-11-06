@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Enrollment Status resource in Oracle Cloud Infrastructure Optimizer service.
@@ -112,12 +111,6 @@ func (o LookupEnrollmentStatusResultOutput) ToLookupEnrollmentStatusResultOutput
 
 func (o LookupEnrollmentStatusResultOutput) ToLookupEnrollmentStatusResultOutputWithContext(ctx context.Context) LookupEnrollmentStatusResultOutput {
 	return o
-}
-
-func (o LookupEnrollmentStatusResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupEnrollmentStatusResult] {
-	return pulumix.Output[LookupEnrollmentStatusResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment.

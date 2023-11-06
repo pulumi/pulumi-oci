@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Operations Insights Warehouse Resource Usage Summary resource in Oracle Cloud Infrastructure Opsi service.
@@ -107,12 +106,6 @@ func (o GetOperationsInsightsWarehouseResourceUsageSummaryResultOutput) ToGetOpe
 
 func (o GetOperationsInsightsWarehouseResourceUsageSummaryResultOutput) ToGetOperationsInsightsWarehouseResourceUsageSummaryResultOutputWithContext(ctx context.Context) GetOperationsInsightsWarehouseResourceUsageSummaryResultOutput {
 	return o
-}
-
-func (o GetOperationsInsightsWarehouseResourceUsageSummaryResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetOperationsInsightsWarehouseResourceUsageSummaryResult] {
-	return pulumix.Output[GetOperationsInsightsWarehouseResourceUsageSummaryResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.

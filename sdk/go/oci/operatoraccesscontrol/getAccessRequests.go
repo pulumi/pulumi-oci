@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Access Requests in Oracle Cloud Infrastructure Operator Access Control service.
@@ -139,12 +138,6 @@ func (o GetAccessRequestsResultOutput) ToGetAccessRequestsResultOutput() GetAcce
 
 func (o GetAccessRequestsResultOutput) ToGetAccessRequestsResultOutputWithContext(ctx context.Context) GetAccessRequestsResultOutput {
 	return o
-}
-
-func (o GetAccessRequestsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAccessRequestsResult] {
-	return pulumix.Output[GetAccessRequestsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of access_request_collection.

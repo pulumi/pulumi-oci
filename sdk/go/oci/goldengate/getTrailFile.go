@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Trail File resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -118,12 +117,6 @@ func (o GetTrailFileResultOutput) ToGetTrailFileResultOutput() GetTrailFileResul
 
 func (o GetTrailFileResultOutput) ToGetTrailFileResultOutputWithContext(ctx context.Context) GetTrailFileResultOutput {
 	return o
-}
-
-func (o GetTrailFileResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTrailFileResult] {
-	return pulumix.Output[GetTrailFileResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetTrailFileResultOutput) DeploymentId() pulumi.StringOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Dynamic Groups in Oracle Cloud Infrastructure Identity service.
@@ -122,12 +121,6 @@ func (o GetDynamicGroupsResultOutput) ToGetDynamicGroupsResultOutput() GetDynami
 
 func (o GetDynamicGroupsResultOutput) ToGetDynamicGroupsResultOutputWithContext(ctx context.Context) GetDynamicGroupsResultOutput {
 	return o
-}
-
-func (o GetDynamicGroupsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDynamicGroupsResult] {
-	return pulumix.Output[GetDynamicGroupsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the tenancy containing the group.

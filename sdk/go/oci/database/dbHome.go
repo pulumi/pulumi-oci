@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## Import
@@ -304,12 +303,6 @@ func (i *DbHome) ToDbHomeOutputWithContext(ctx context.Context) DbHomeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DbHomeOutput)
 }
 
-func (i *DbHome) ToOutput(ctx context.Context) pulumix.Output[*DbHome] {
-	return pulumix.Output[*DbHome]{
-		OutputState: i.ToDbHomeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DbHomeArrayInput is an input type that accepts DbHomeArray and DbHomeArrayOutput values.
 // You can construct a concrete instance of `DbHomeArrayInput` via:
 //
@@ -333,12 +326,6 @@ func (i DbHomeArray) ToDbHomeArrayOutput() DbHomeArrayOutput {
 
 func (i DbHomeArray) ToDbHomeArrayOutputWithContext(ctx context.Context) DbHomeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DbHomeArrayOutput)
-}
-
-func (i DbHomeArray) ToOutput(ctx context.Context) pulumix.Output[[]*DbHome] {
-	return pulumix.Output[[]*DbHome]{
-		OutputState: i.ToDbHomeArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DbHomeMapInput is an input type that accepts DbHomeMap and DbHomeMapOutput values.
@@ -366,12 +353,6 @@ func (i DbHomeMap) ToDbHomeMapOutputWithContext(ctx context.Context) DbHomeMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(DbHomeMapOutput)
 }
 
-func (i DbHomeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DbHome] {
-	return pulumix.Output[map[string]*DbHome]{
-		OutputState: i.ToDbHomeMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DbHomeOutput struct{ *pulumi.OutputState }
 
 func (DbHomeOutput) ElementType() reflect.Type {
@@ -384,12 +365,6 @@ func (o DbHomeOutput) ToDbHomeOutput() DbHomeOutput {
 
 func (o DbHomeOutput) ToDbHomeOutputWithContext(ctx context.Context) DbHomeOutput {
 	return o
-}
-
-func (o DbHomeOutput) ToOutput(ctx context.Context) pulumix.Output[*DbHome] {
-	return pulumix.Output[*DbHome]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -508,12 +483,6 @@ func (o DbHomeArrayOutput) ToDbHomeArrayOutputWithContext(ctx context.Context) D
 	return o
 }
 
-func (o DbHomeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DbHome] {
-	return pulumix.Output[[]*DbHome]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DbHomeArrayOutput) Index(i pulumi.IntInput) DbHomeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DbHome {
 		return vs[0].([]*DbHome)[vs[1].(int)]
@@ -532,12 +501,6 @@ func (o DbHomeMapOutput) ToDbHomeMapOutput() DbHomeMapOutput {
 
 func (o DbHomeMapOutput) ToDbHomeMapOutputWithContext(ctx context.Context) DbHomeMapOutput {
 	return o
-}
-
-func (o DbHomeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DbHome] {
-	return pulumix.Output[map[string]*DbHome]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DbHomeMapOutput) MapIndex(k pulumi.StringInput) DbHomeOutput {

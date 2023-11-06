@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the External Database Connector resource in Oracle Cloud Infrastructure Database service.
@@ -293,12 +292,6 @@ func (i *ExternalDatabaseConnector) ToExternalDatabaseConnectorOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalDatabaseConnectorOutput)
 }
 
-func (i *ExternalDatabaseConnector) ToOutput(ctx context.Context) pulumix.Output[*ExternalDatabaseConnector] {
-	return pulumix.Output[*ExternalDatabaseConnector]{
-		OutputState: i.ToExternalDatabaseConnectorOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExternalDatabaseConnectorArrayInput is an input type that accepts ExternalDatabaseConnectorArray and ExternalDatabaseConnectorArrayOutput values.
 // You can construct a concrete instance of `ExternalDatabaseConnectorArrayInput` via:
 //
@@ -322,12 +315,6 @@ func (i ExternalDatabaseConnectorArray) ToExternalDatabaseConnectorArrayOutput()
 
 func (i ExternalDatabaseConnectorArray) ToExternalDatabaseConnectorArrayOutputWithContext(ctx context.Context) ExternalDatabaseConnectorArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalDatabaseConnectorArrayOutput)
-}
-
-func (i ExternalDatabaseConnectorArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalDatabaseConnector] {
-	return pulumix.Output[[]*ExternalDatabaseConnector]{
-		OutputState: i.ToExternalDatabaseConnectorArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ExternalDatabaseConnectorMapInput is an input type that accepts ExternalDatabaseConnectorMap and ExternalDatabaseConnectorMapOutput values.
@@ -355,12 +342,6 @@ func (i ExternalDatabaseConnectorMap) ToExternalDatabaseConnectorMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalDatabaseConnectorMapOutput)
 }
 
-func (i ExternalDatabaseConnectorMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalDatabaseConnector] {
-	return pulumix.Output[map[string]*ExternalDatabaseConnector]{
-		OutputState: i.ToExternalDatabaseConnectorMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExternalDatabaseConnectorOutput struct{ *pulumi.OutputState }
 
 func (ExternalDatabaseConnectorOutput) ElementType() reflect.Type {
@@ -373,12 +354,6 @@ func (o ExternalDatabaseConnectorOutput) ToExternalDatabaseConnectorOutput() Ext
 
 func (o ExternalDatabaseConnectorOutput) ToExternalDatabaseConnectorOutputWithContext(ctx context.Context) ExternalDatabaseConnectorOutput {
 	return o
-}
-
-func (o ExternalDatabaseConnectorOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalDatabaseConnector] {
-	return pulumix.Output[*ExternalDatabaseConnector]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -472,12 +447,6 @@ func (o ExternalDatabaseConnectorArrayOutput) ToExternalDatabaseConnectorArrayOu
 	return o
 }
 
-func (o ExternalDatabaseConnectorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalDatabaseConnector] {
-	return pulumix.Output[[]*ExternalDatabaseConnector]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ExternalDatabaseConnectorArrayOutput) Index(i pulumi.IntInput) ExternalDatabaseConnectorOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ExternalDatabaseConnector {
 		return vs[0].([]*ExternalDatabaseConnector)[vs[1].(int)]
@@ -496,12 +465,6 @@ func (o ExternalDatabaseConnectorMapOutput) ToExternalDatabaseConnectorMapOutput
 
 func (o ExternalDatabaseConnectorMapOutput) ToExternalDatabaseConnectorMapOutputWithContext(ctx context.Context) ExternalDatabaseConnectorMapOutput {
 	return o
-}
-
-func (o ExternalDatabaseConnectorMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalDatabaseConnector] {
-	return pulumix.Output[map[string]*ExternalDatabaseConnector]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalDatabaseConnectorMapOutput) MapIndex(k pulumi.StringInput) ExternalDatabaseConnectorOutput {

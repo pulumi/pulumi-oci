@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Vcn Dns Resolver Association resource in Oracle Cloud Infrastructure Core service.
@@ -105,12 +104,6 @@ func (o GetCnvDnsResolverAssociationResultOutput) ToGetCnvDnsResolverAssociation
 
 func (o GetCnvDnsResolverAssociationResultOutput) ToGetCnvDnsResolverAssociationResultOutputWithContext(ctx context.Context) GetCnvDnsResolverAssociationResultOutput {
 	return o
-}
-
-func (o GetCnvDnsResolverAssociationResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCnvDnsResolverAssociationResult] {
-	return pulumix.Output[GetCnvDnsResolverAssociationResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the DNS resolver in the association. We won't have the DNS resolver id as soon as vcn

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Instance Configuration resource in Oracle Cloud Infrastructure Core service.
@@ -115,12 +114,6 @@ func (o LookupInstanceConfigurationResultOutput) ToLookupInstanceConfigurationRe
 
 func (o LookupInstanceConfigurationResultOutput) ToLookupInstanceConfigurationResultOutputWithContext(ctx context.Context) LookupInstanceConfigurationResultOutput {
 	return o
-}
-
-func (o LookupInstanceConfigurationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupInstanceConfigurationResult] {
-	return pulumix.Output[LookupInstanceConfigurationResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment containing images to search

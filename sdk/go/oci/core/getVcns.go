@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Vcns in Oracle Cloud Infrastructure Core service.
@@ -124,12 +123,6 @@ func (o GetVcnsResultOutput) ToGetVcnsResultOutput() GetVcnsResultOutput {
 
 func (o GetVcnsResultOutput) ToGetVcnsResultOutputWithContext(ctx context.Context) GetVcnsResultOutput {
 	return o
-}
-
-func (o GetVcnsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVcnsResult] {
-	return pulumix.Output[GetVcnsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VCN.

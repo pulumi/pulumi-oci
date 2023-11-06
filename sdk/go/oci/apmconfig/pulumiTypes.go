@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -51,12 +50,6 @@ func (i ConfigDimensionArgs) ToConfigDimensionOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigDimensionOutput)
 }
 
-func (i ConfigDimensionArgs) ToOutput(ctx context.Context) pulumix.Output[ConfigDimension] {
-	return pulumix.Output[ConfigDimension]{
-		OutputState: i.ToConfigDimensionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConfigDimensionArrayInput is an input type that accepts ConfigDimensionArray and ConfigDimensionArrayOutput values.
 // You can construct a concrete instance of `ConfigDimensionArrayInput` via:
 //
@@ -82,12 +75,6 @@ func (i ConfigDimensionArray) ToConfigDimensionArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigDimensionArrayOutput)
 }
 
-func (i ConfigDimensionArray) ToOutput(ctx context.Context) pulumix.Output[[]ConfigDimension] {
-	return pulumix.Output[[]ConfigDimension]{
-		OutputState: i.ToConfigDimensionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConfigDimensionOutput struct{ *pulumi.OutputState }
 
 func (ConfigDimensionOutput) ElementType() reflect.Type {
@@ -100,12 +87,6 @@ func (o ConfigDimensionOutput) ToConfigDimensionOutput() ConfigDimensionOutput {
 
 func (o ConfigDimensionOutput) ToConfigDimensionOutputWithContext(ctx context.Context) ConfigDimensionOutput {
 	return o
-}
-
-func (o ConfigDimensionOutput) ToOutput(ctx context.Context) pulumix.Output[ConfigDimension] {
-	return pulumix.Output[ConfigDimension]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The name of the metric. This must be a known metric name.
@@ -130,12 +111,6 @@ func (o ConfigDimensionArrayOutput) ToConfigDimensionArrayOutput() ConfigDimensi
 
 func (o ConfigDimensionArrayOutput) ToConfigDimensionArrayOutputWithContext(ctx context.Context) ConfigDimensionArrayOutput {
 	return o
-}
-
-func (o ConfigDimensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ConfigDimension] {
-	return pulumix.Output[[]ConfigDimension]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConfigDimensionArrayOutput) Index(i pulumi.IntInput) ConfigDimensionOutput {
@@ -189,12 +164,6 @@ func (i ConfigInUseByArgs) ToConfigInUseByOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigInUseByOutput)
 }
 
-func (i ConfigInUseByArgs) ToOutput(ctx context.Context) pulumix.Output[ConfigInUseBy] {
-	return pulumix.Output[ConfigInUseBy]{
-		OutputState: i.ToConfigInUseByOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConfigInUseByArrayInput is an input type that accepts ConfigInUseByArray and ConfigInUseByArrayOutput values.
 // You can construct a concrete instance of `ConfigInUseByArrayInput` via:
 //
@@ -220,12 +189,6 @@ func (i ConfigInUseByArray) ToConfigInUseByArrayOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigInUseByArrayOutput)
 }
 
-func (i ConfigInUseByArray) ToOutput(ctx context.Context) pulumix.Output[[]ConfigInUseBy] {
-	return pulumix.Output[[]ConfigInUseBy]{
-		OutputState: i.ToConfigInUseByArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConfigInUseByOutput struct{ *pulumi.OutputState }
 
 func (ConfigInUseByOutput) ElementType() reflect.Type {
@@ -238,12 +201,6 @@ func (o ConfigInUseByOutput) ToConfigInUseByOutput() ConfigInUseByOutput {
 
 func (o ConfigInUseByOutput) ToConfigInUseByOutputWithContext(ctx context.Context) ConfigInUseByOutput {
 	return o
-}
-
-func (o ConfigInUseByOutput) ToOutput(ctx context.Context) pulumix.Output[ConfigInUseBy] {
-	return pulumix.Output[ConfigInUseBy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The type of configuration item.
@@ -278,12 +235,6 @@ func (o ConfigInUseByArrayOutput) ToConfigInUseByArrayOutput() ConfigInUseByArra
 
 func (o ConfigInUseByArrayOutput) ToConfigInUseByArrayOutputWithContext(ctx context.Context) ConfigInUseByArrayOutput {
 	return o
-}
-
-func (o ConfigInUseByArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ConfigInUseBy] {
-	return pulumix.Output[[]ConfigInUseBy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConfigInUseByArrayOutput) Index(i pulumi.IntInput) ConfigInUseByOutput {
@@ -337,12 +288,6 @@ func (i ConfigMetricArgs) ToConfigMetricOutputWithContext(ctx context.Context) C
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigMetricOutput)
 }
 
-func (i ConfigMetricArgs) ToOutput(ctx context.Context) pulumix.Output[ConfigMetric] {
-	return pulumix.Output[ConfigMetric]{
-		OutputState: i.ToConfigMetricOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConfigMetricArrayInput is an input type that accepts ConfigMetricArray and ConfigMetricArrayOutput values.
 // You can construct a concrete instance of `ConfigMetricArrayInput` via:
 //
@@ -368,12 +313,6 @@ func (i ConfigMetricArray) ToConfigMetricArrayOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigMetricArrayOutput)
 }
 
-func (i ConfigMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]ConfigMetric] {
-	return pulumix.Output[[]ConfigMetric]{
-		OutputState: i.ToConfigMetricArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConfigMetricOutput struct{ *pulumi.OutputState }
 
 func (ConfigMetricOutput) ElementType() reflect.Type {
@@ -386,12 +325,6 @@ func (o ConfigMetricOutput) ToConfigMetricOutput() ConfigMetricOutput {
 
 func (o ConfigMetricOutput) ToConfigMetricOutputWithContext(ctx context.Context) ConfigMetricOutput {
 	return o
-}
-
-func (o ConfigMetricOutput) ToOutput(ctx context.Context) pulumix.Output[ConfigMetric] {
-	return pulumix.Output[ConfigMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A description of the metric.
@@ -426,12 +359,6 @@ func (o ConfigMetricArrayOutput) ToConfigMetricArrayOutput() ConfigMetricArrayOu
 
 func (o ConfigMetricArrayOutput) ToConfigMetricArrayOutputWithContext(ctx context.Context) ConfigMetricArrayOutput {
 	return o
-}
-
-func (o ConfigMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ConfigMetric] {
-	return pulumix.Output[[]ConfigMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConfigMetricArrayOutput) Index(i pulumi.IntInput) ConfigMetricOutput {
@@ -503,12 +430,6 @@ func (i ConfigRuleArgs) ToConfigRuleOutputWithContext(ctx context.Context) Confi
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigRuleOutput)
 }
 
-func (i ConfigRuleArgs) ToOutput(ctx context.Context) pulumix.Output[ConfigRule] {
-	return pulumix.Output[ConfigRule]{
-		OutputState: i.ToConfigRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConfigRuleArrayInput is an input type that accepts ConfigRuleArray and ConfigRuleArrayOutput values.
 // You can construct a concrete instance of `ConfigRuleArrayInput` via:
 //
@@ -534,12 +455,6 @@ func (i ConfigRuleArray) ToConfigRuleArrayOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigRuleArrayOutput)
 }
 
-func (i ConfigRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]ConfigRule] {
-	return pulumix.Output[[]ConfigRule]{
-		OutputState: i.ToConfigRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConfigRuleOutput struct{ *pulumi.OutputState }
 
 func (ConfigRuleOutput) ElementType() reflect.Type {
@@ -552,12 +467,6 @@ func (o ConfigRuleOutput) ToConfigRuleOutput() ConfigRuleOutput {
 
 func (o ConfigRuleOutput) ToConfigRuleOutputWithContext(ctx context.Context) ConfigRuleOutput {
 	return o
-}
-
-func (o ConfigRuleOutput) ToOutput(ctx context.Context) pulumix.Output[ConfigRule] {
-	return pulumix.Output[ConfigRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The name by which a configuration entity is displayed to the end user.
@@ -612,12 +521,6 @@ func (o ConfigRuleArrayOutput) ToConfigRuleArrayOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o ConfigRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ConfigRule] {
-	return pulumix.Output[[]ConfigRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ConfigRuleArrayOutput) Index(i pulumi.IntInput) ConfigRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ConfigRule {
 		return vs[0].([]ConfigRule)[vs[1].(int)]
@@ -661,12 +564,6 @@ func (i GetConfigDimensionArgs) ToGetConfigDimensionOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigDimensionOutput)
 }
 
-func (i GetConfigDimensionArgs) ToOutput(ctx context.Context) pulumix.Output[GetConfigDimension] {
-	return pulumix.Output[GetConfigDimension]{
-		OutputState: i.ToGetConfigDimensionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetConfigDimensionArrayInput is an input type that accepts GetConfigDimensionArray and GetConfigDimensionArrayOutput values.
 // You can construct a concrete instance of `GetConfigDimensionArrayInput` via:
 //
@@ -692,12 +589,6 @@ func (i GetConfigDimensionArray) ToGetConfigDimensionArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigDimensionArrayOutput)
 }
 
-func (i GetConfigDimensionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigDimension] {
-	return pulumix.Output[[]GetConfigDimension]{
-		OutputState: i.ToGetConfigDimensionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConfigDimensionOutput struct{ *pulumi.OutputState }
 
 func (GetConfigDimensionOutput) ElementType() reflect.Type {
@@ -710,12 +601,6 @@ func (o GetConfigDimensionOutput) ToGetConfigDimensionOutput() GetConfigDimensio
 
 func (o GetConfigDimensionOutput) ToGetConfigDimensionOutputWithContext(ctx context.Context) GetConfigDimensionOutput {
 	return o
-}
-
-func (o GetConfigDimensionOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigDimension] {
-	return pulumix.Output[GetConfigDimension]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the metric. This must be a known metric name.
@@ -740,12 +625,6 @@ func (o GetConfigDimensionArrayOutput) ToGetConfigDimensionArrayOutput() GetConf
 
 func (o GetConfigDimensionArrayOutput) ToGetConfigDimensionArrayOutputWithContext(ctx context.Context) GetConfigDimensionArrayOutput {
 	return o
-}
-
-func (o GetConfigDimensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigDimension] {
-	return pulumix.Output[[]GetConfigDimension]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetConfigDimensionArrayOutput) Index(i pulumi.IntInput) GetConfigDimensionOutput {
@@ -799,12 +678,6 @@ func (i GetConfigInUseByArgs) ToGetConfigInUseByOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigInUseByOutput)
 }
 
-func (i GetConfigInUseByArgs) ToOutput(ctx context.Context) pulumix.Output[GetConfigInUseBy] {
-	return pulumix.Output[GetConfigInUseBy]{
-		OutputState: i.ToGetConfigInUseByOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetConfigInUseByArrayInput is an input type that accepts GetConfigInUseByArray and GetConfigInUseByArrayOutput values.
 // You can construct a concrete instance of `GetConfigInUseByArrayInput` via:
 //
@@ -830,12 +703,6 @@ func (i GetConfigInUseByArray) ToGetConfigInUseByArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigInUseByArrayOutput)
 }
 
-func (i GetConfigInUseByArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigInUseBy] {
-	return pulumix.Output[[]GetConfigInUseBy]{
-		OutputState: i.ToGetConfigInUseByArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConfigInUseByOutput struct{ *pulumi.OutputState }
 
 func (GetConfigInUseByOutput) ElementType() reflect.Type {
@@ -848,12 +715,6 @@ func (o GetConfigInUseByOutput) ToGetConfigInUseByOutput() GetConfigInUseByOutpu
 
 func (o GetConfigInUseByOutput) ToGetConfigInUseByOutputWithContext(ctx context.Context) GetConfigInUseByOutput {
 	return o
-}
-
-func (o GetConfigInUseByOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigInUseBy] {
-	return pulumix.Output[GetConfigInUseBy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The type of configuration item.
@@ -888,12 +749,6 @@ func (o GetConfigInUseByArrayOutput) ToGetConfigInUseByArrayOutput() GetConfigIn
 
 func (o GetConfigInUseByArrayOutput) ToGetConfigInUseByArrayOutputWithContext(ctx context.Context) GetConfigInUseByArrayOutput {
 	return o
-}
-
-func (o GetConfigInUseByArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigInUseBy] {
-	return pulumix.Output[[]GetConfigInUseBy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetConfigInUseByArrayOutput) Index(i pulumi.IntInput) GetConfigInUseByOutput {
@@ -947,12 +802,6 @@ func (i GetConfigMetricArgs) ToGetConfigMetricOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigMetricOutput)
 }
 
-func (i GetConfigMetricArgs) ToOutput(ctx context.Context) pulumix.Output[GetConfigMetric] {
-	return pulumix.Output[GetConfigMetric]{
-		OutputState: i.ToGetConfigMetricOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetConfigMetricArrayInput is an input type that accepts GetConfigMetricArray and GetConfigMetricArrayOutput values.
 // You can construct a concrete instance of `GetConfigMetricArrayInput` via:
 //
@@ -978,12 +827,6 @@ func (i GetConfigMetricArray) ToGetConfigMetricArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigMetricArrayOutput)
 }
 
-func (i GetConfigMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigMetric] {
-	return pulumix.Output[[]GetConfigMetric]{
-		OutputState: i.ToGetConfigMetricArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConfigMetricOutput struct{ *pulumi.OutputState }
 
 func (GetConfigMetricOutput) ElementType() reflect.Type {
@@ -996,12 +839,6 @@ func (o GetConfigMetricOutput) ToGetConfigMetricOutput() GetConfigMetricOutput {
 
 func (o GetConfigMetricOutput) ToGetConfigMetricOutputWithContext(ctx context.Context) GetConfigMetricOutput {
 	return o
-}
-
-func (o GetConfigMetricOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigMetric] {
-	return pulumix.Output[GetConfigMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A description of the metric.
@@ -1036,12 +873,6 @@ func (o GetConfigMetricArrayOutput) ToGetConfigMetricArrayOutput() GetConfigMetr
 
 func (o GetConfigMetricArrayOutput) ToGetConfigMetricArrayOutputWithContext(ctx context.Context) GetConfigMetricArrayOutput {
 	return o
-}
-
-func (o GetConfigMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigMetric] {
-	return pulumix.Output[[]GetConfigMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetConfigMetricArrayOutput) Index(i pulumi.IntInput) GetConfigMetricOutput {
@@ -1107,12 +938,6 @@ func (i GetConfigRuleArgs) ToGetConfigRuleOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigRuleOutput)
 }
 
-func (i GetConfigRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetConfigRule] {
-	return pulumix.Output[GetConfigRule]{
-		OutputState: i.ToGetConfigRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetConfigRuleArrayInput is an input type that accepts GetConfigRuleArray and GetConfigRuleArrayOutput values.
 // You can construct a concrete instance of `GetConfigRuleArrayInput` via:
 //
@@ -1138,12 +963,6 @@ func (i GetConfigRuleArray) ToGetConfigRuleArrayOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigRuleArrayOutput)
 }
 
-func (i GetConfigRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigRule] {
-	return pulumix.Output[[]GetConfigRule]{
-		OutputState: i.ToGetConfigRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConfigRuleOutput struct{ *pulumi.OutputState }
 
 func (GetConfigRuleOutput) ElementType() reflect.Type {
@@ -1156,12 +975,6 @@ func (o GetConfigRuleOutput) ToGetConfigRuleOutput() GetConfigRuleOutput {
 
 func (o GetConfigRuleOutput) ToGetConfigRuleOutputWithContext(ctx context.Context) GetConfigRuleOutput {
 	return o
-}
-
-func (o GetConfigRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigRule] {
-	return pulumix.Output[GetConfigRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name by which a configuration entity is displayed to the end user.
@@ -1213,12 +1026,6 @@ func (o GetConfigRuleArrayOutput) ToGetConfigRuleArrayOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetConfigRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigRule] {
-	return pulumix.Output[[]GetConfigRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetConfigRuleArrayOutput) Index(i pulumi.IntInput) GetConfigRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigRule {
 		return vs[0].([]GetConfigRule)[vs[1].(int)]
@@ -1256,12 +1063,6 @@ func (i GetConfigsConfigCollectionArgs) ToGetConfigsConfigCollectionOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionOutput)
 }
 
-func (i GetConfigsConfigCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetConfigsConfigCollection] {
-	return pulumix.Output[GetConfigsConfigCollection]{
-		OutputState: i.ToGetConfigsConfigCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetConfigsConfigCollectionArrayInput is an input type that accepts GetConfigsConfigCollectionArray and GetConfigsConfigCollectionArrayOutput values.
 // You can construct a concrete instance of `GetConfigsConfigCollectionArrayInput` via:
 //
@@ -1287,12 +1088,6 @@ func (i GetConfigsConfigCollectionArray) ToGetConfigsConfigCollectionArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionArrayOutput)
 }
 
-func (i GetConfigsConfigCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsConfigCollection] {
-	return pulumix.Output[[]GetConfigsConfigCollection]{
-		OutputState: i.ToGetConfigsConfigCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConfigsConfigCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetConfigsConfigCollectionOutput) ElementType() reflect.Type {
@@ -1305,12 +1100,6 @@ func (o GetConfigsConfigCollectionOutput) ToGetConfigsConfigCollectionOutput() G
 
 func (o GetConfigsConfigCollectionOutput) ToGetConfigsConfigCollectionOutputWithContext(ctx context.Context) GetConfigsConfigCollectionOutput {
 	return o
-}
-
-func (o GetConfigsConfigCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigsConfigCollection] {
-	return pulumix.Output[GetConfigsConfigCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetConfigsConfigCollectionOutput) Items() GetConfigsConfigCollectionItemArrayOutput {
@@ -1329,12 +1118,6 @@ func (o GetConfigsConfigCollectionArrayOutput) ToGetConfigsConfigCollectionArray
 
 func (o GetConfigsConfigCollectionArrayOutput) ToGetConfigsConfigCollectionArrayOutputWithContext(ctx context.Context) GetConfigsConfigCollectionArrayOutput {
 	return o
-}
-
-func (o GetConfigsConfigCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsConfigCollection] {
-	return pulumix.Output[[]GetConfigsConfigCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetConfigsConfigCollectionArrayOutput) Index(i pulumi.IntInput) GetConfigsConfigCollectionOutput {
@@ -1456,12 +1239,6 @@ func (i GetConfigsConfigCollectionItemArgs) ToGetConfigsConfigCollectionItemOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemOutput)
 }
 
-func (i GetConfigsConfigCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetConfigsConfigCollectionItem] {
-	return pulumix.Output[GetConfigsConfigCollectionItem]{
-		OutputState: i.ToGetConfigsConfigCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetConfigsConfigCollectionItemArrayInput is an input type that accepts GetConfigsConfigCollectionItemArray and GetConfigsConfigCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetConfigsConfigCollectionItemArrayInput` via:
 //
@@ -1487,12 +1264,6 @@ func (i GetConfigsConfigCollectionItemArray) ToGetConfigsConfigCollectionItemArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemArrayOutput)
 }
 
-func (i GetConfigsConfigCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsConfigCollectionItem] {
-	return pulumix.Output[[]GetConfigsConfigCollectionItem]{
-		OutputState: i.ToGetConfigsConfigCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConfigsConfigCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetConfigsConfigCollectionItemOutput) ElementType() reflect.Type {
@@ -1505,12 +1276,6 @@ func (o GetConfigsConfigCollectionItemOutput) ToGetConfigsConfigCollectionItemOu
 
 func (o GetConfigsConfigCollectionItemOutput) ToGetConfigsConfigCollectionItemOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemOutput {
 	return o
-}
-
-func (o GetConfigsConfigCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigsConfigCollectionItem] {
-	return pulumix.Output[GetConfigsConfigCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The APM Domain ID the request is intended for.
@@ -1635,12 +1400,6 @@ func (o GetConfigsConfigCollectionItemArrayOutput) ToGetConfigsConfigCollectionI
 	return o
 }
 
-func (o GetConfigsConfigCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsConfigCollectionItem] {
-	return pulumix.Output[[]GetConfigsConfigCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetConfigsConfigCollectionItemArrayOutput) Index(i pulumi.IntInput) GetConfigsConfigCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigsConfigCollectionItem {
 		return vs[0].([]GetConfigsConfigCollectionItem)[vs[1].(int)]
@@ -1684,12 +1443,6 @@ func (i GetConfigsConfigCollectionItemDimensionArgs) ToGetConfigsConfigCollectio
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemDimensionOutput)
 }
 
-func (i GetConfigsConfigCollectionItemDimensionArgs) ToOutput(ctx context.Context) pulumix.Output[GetConfigsConfigCollectionItemDimension] {
-	return pulumix.Output[GetConfigsConfigCollectionItemDimension]{
-		OutputState: i.ToGetConfigsConfigCollectionItemDimensionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetConfigsConfigCollectionItemDimensionArrayInput is an input type that accepts GetConfigsConfigCollectionItemDimensionArray and GetConfigsConfigCollectionItemDimensionArrayOutput values.
 // You can construct a concrete instance of `GetConfigsConfigCollectionItemDimensionArrayInput` via:
 //
@@ -1715,12 +1468,6 @@ func (i GetConfigsConfigCollectionItemDimensionArray) ToGetConfigsConfigCollecti
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemDimensionArrayOutput)
 }
 
-func (i GetConfigsConfigCollectionItemDimensionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsConfigCollectionItemDimension] {
-	return pulumix.Output[[]GetConfigsConfigCollectionItemDimension]{
-		OutputState: i.ToGetConfigsConfigCollectionItemDimensionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConfigsConfigCollectionItemDimensionOutput struct{ *pulumi.OutputState }
 
 func (GetConfigsConfigCollectionItemDimensionOutput) ElementType() reflect.Type {
@@ -1733,12 +1480,6 @@ func (o GetConfigsConfigCollectionItemDimensionOutput) ToGetConfigsConfigCollect
 
 func (o GetConfigsConfigCollectionItemDimensionOutput) ToGetConfigsConfigCollectionItemDimensionOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemDimensionOutput {
 	return o
-}
-
-func (o GetConfigsConfigCollectionItemDimensionOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigsConfigCollectionItemDimension] {
-	return pulumix.Output[GetConfigsConfigCollectionItemDimension]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the metric. This must be a known metric name.
@@ -1763,12 +1504,6 @@ func (o GetConfigsConfigCollectionItemDimensionArrayOutput) ToGetConfigsConfigCo
 
 func (o GetConfigsConfigCollectionItemDimensionArrayOutput) ToGetConfigsConfigCollectionItemDimensionArrayOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemDimensionArrayOutput {
 	return o
-}
-
-func (o GetConfigsConfigCollectionItemDimensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsConfigCollectionItemDimension] {
-	return pulumix.Output[[]GetConfigsConfigCollectionItemDimension]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetConfigsConfigCollectionItemDimensionArrayOutput) Index(i pulumi.IntInput) GetConfigsConfigCollectionItemDimensionOutput {
@@ -1822,12 +1557,6 @@ func (i GetConfigsConfigCollectionItemInUseByArgs) ToGetConfigsConfigCollectionI
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemInUseByOutput)
 }
 
-func (i GetConfigsConfigCollectionItemInUseByArgs) ToOutput(ctx context.Context) pulumix.Output[GetConfigsConfigCollectionItemInUseBy] {
-	return pulumix.Output[GetConfigsConfigCollectionItemInUseBy]{
-		OutputState: i.ToGetConfigsConfigCollectionItemInUseByOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetConfigsConfigCollectionItemInUseByArrayInput is an input type that accepts GetConfigsConfigCollectionItemInUseByArray and GetConfigsConfigCollectionItemInUseByArrayOutput values.
 // You can construct a concrete instance of `GetConfigsConfigCollectionItemInUseByArrayInput` via:
 //
@@ -1853,12 +1582,6 @@ func (i GetConfigsConfigCollectionItemInUseByArray) ToGetConfigsConfigCollection
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemInUseByArrayOutput)
 }
 
-func (i GetConfigsConfigCollectionItemInUseByArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsConfigCollectionItemInUseBy] {
-	return pulumix.Output[[]GetConfigsConfigCollectionItemInUseBy]{
-		OutputState: i.ToGetConfigsConfigCollectionItemInUseByArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConfigsConfigCollectionItemInUseByOutput struct{ *pulumi.OutputState }
 
 func (GetConfigsConfigCollectionItemInUseByOutput) ElementType() reflect.Type {
@@ -1871,12 +1594,6 @@ func (o GetConfigsConfigCollectionItemInUseByOutput) ToGetConfigsConfigCollectio
 
 func (o GetConfigsConfigCollectionItemInUseByOutput) ToGetConfigsConfigCollectionItemInUseByOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemInUseByOutput {
 	return o
-}
-
-func (o GetConfigsConfigCollectionItemInUseByOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigsConfigCollectionItemInUseBy] {
-	return pulumix.Output[GetConfigsConfigCollectionItemInUseBy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
@@ -1911,12 +1628,6 @@ func (o GetConfigsConfigCollectionItemInUseByArrayOutput) ToGetConfigsConfigColl
 
 func (o GetConfigsConfigCollectionItemInUseByArrayOutput) ToGetConfigsConfigCollectionItemInUseByArrayOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemInUseByArrayOutput {
 	return o
-}
-
-func (o GetConfigsConfigCollectionItemInUseByArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsConfigCollectionItemInUseBy] {
-	return pulumix.Output[[]GetConfigsConfigCollectionItemInUseBy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetConfigsConfigCollectionItemInUseByArrayOutput) Index(i pulumi.IntInput) GetConfigsConfigCollectionItemInUseByOutput {
@@ -1970,12 +1681,6 @@ func (i GetConfigsConfigCollectionItemMetricArgs) ToGetConfigsConfigCollectionIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemMetricOutput)
 }
 
-func (i GetConfigsConfigCollectionItemMetricArgs) ToOutput(ctx context.Context) pulumix.Output[GetConfigsConfigCollectionItemMetric] {
-	return pulumix.Output[GetConfigsConfigCollectionItemMetric]{
-		OutputState: i.ToGetConfigsConfigCollectionItemMetricOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetConfigsConfigCollectionItemMetricArrayInput is an input type that accepts GetConfigsConfigCollectionItemMetricArray and GetConfigsConfigCollectionItemMetricArrayOutput values.
 // You can construct a concrete instance of `GetConfigsConfigCollectionItemMetricArrayInput` via:
 //
@@ -2001,12 +1706,6 @@ func (i GetConfigsConfigCollectionItemMetricArray) ToGetConfigsConfigCollectionI
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemMetricArrayOutput)
 }
 
-func (i GetConfigsConfigCollectionItemMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsConfigCollectionItemMetric] {
-	return pulumix.Output[[]GetConfigsConfigCollectionItemMetric]{
-		OutputState: i.ToGetConfigsConfigCollectionItemMetricArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConfigsConfigCollectionItemMetricOutput struct{ *pulumi.OutputState }
 
 func (GetConfigsConfigCollectionItemMetricOutput) ElementType() reflect.Type {
@@ -2019,12 +1718,6 @@ func (o GetConfigsConfigCollectionItemMetricOutput) ToGetConfigsConfigCollection
 
 func (o GetConfigsConfigCollectionItemMetricOutput) ToGetConfigsConfigCollectionItemMetricOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemMetricOutput {
 	return o
-}
-
-func (o GetConfigsConfigCollectionItemMetricOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigsConfigCollectionItemMetric] {
-	return pulumix.Output[GetConfigsConfigCollectionItemMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A description of the metric.
@@ -2059,12 +1752,6 @@ func (o GetConfigsConfigCollectionItemMetricArrayOutput) ToGetConfigsConfigColle
 
 func (o GetConfigsConfigCollectionItemMetricArrayOutput) ToGetConfigsConfigCollectionItemMetricArrayOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemMetricArrayOutput {
 	return o
-}
-
-func (o GetConfigsConfigCollectionItemMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsConfigCollectionItemMetric] {
-	return pulumix.Output[[]GetConfigsConfigCollectionItemMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetConfigsConfigCollectionItemMetricArrayOutput) Index(i pulumi.IntInput) GetConfigsConfigCollectionItemMetricOutput {
@@ -2130,12 +1817,6 @@ func (i GetConfigsConfigCollectionItemRuleArgs) ToGetConfigsConfigCollectionItem
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemRuleOutput)
 }
 
-func (i GetConfigsConfigCollectionItemRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetConfigsConfigCollectionItemRule] {
-	return pulumix.Output[GetConfigsConfigCollectionItemRule]{
-		OutputState: i.ToGetConfigsConfigCollectionItemRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetConfigsConfigCollectionItemRuleArrayInput is an input type that accepts GetConfigsConfigCollectionItemRuleArray and GetConfigsConfigCollectionItemRuleArrayOutput values.
 // You can construct a concrete instance of `GetConfigsConfigCollectionItemRuleArrayInput` via:
 //
@@ -2161,12 +1842,6 @@ func (i GetConfigsConfigCollectionItemRuleArray) ToGetConfigsConfigCollectionIte
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemRuleArrayOutput)
 }
 
-func (i GetConfigsConfigCollectionItemRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsConfigCollectionItemRule] {
-	return pulumix.Output[[]GetConfigsConfigCollectionItemRule]{
-		OutputState: i.ToGetConfigsConfigCollectionItemRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConfigsConfigCollectionItemRuleOutput struct{ *pulumi.OutputState }
 
 func (GetConfigsConfigCollectionItemRuleOutput) ElementType() reflect.Type {
@@ -2179,12 +1854,6 @@ func (o GetConfigsConfigCollectionItemRuleOutput) ToGetConfigsConfigCollectionIt
 
 func (o GetConfigsConfigCollectionItemRuleOutput) ToGetConfigsConfigCollectionItemRuleOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemRuleOutput {
 	return o
-}
-
-func (o GetConfigsConfigCollectionItemRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigsConfigCollectionItemRule] {
-	return pulumix.Output[GetConfigsConfigCollectionItemRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return resources that match the given display name.
@@ -2236,12 +1905,6 @@ func (o GetConfigsConfigCollectionItemRuleArrayOutput) ToGetConfigsConfigCollect
 	return o
 }
 
-func (o GetConfigsConfigCollectionItemRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsConfigCollectionItemRule] {
-	return pulumix.Output[[]GetConfigsConfigCollectionItemRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetConfigsConfigCollectionItemRuleArrayOutput) Index(i pulumi.IntInput) GetConfigsConfigCollectionItemRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigsConfigCollectionItemRule {
 		return vs[0].([]GetConfigsConfigCollectionItemRule)[vs[1].(int)]
@@ -2285,12 +1948,6 @@ func (i GetConfigsFilterArgs) ToGetConfigsFilterOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsFilterOutput)
 }
 
-func (i GetConfigsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetConfigsFilter] {
-	return pulumix.Output[GetConfigsFilter]{
-		OutputState: i.ToGetConfigsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetConfigsFilterArrayInput is an input type that accepts GetConfigsFilterArray and GetConfigsFilterArrayOutput values.
 // You can construct a concrete instance of `GetConfigsFilterArrayInput` via:
 //
@@ -2316,12 +1973,6 @@ func (i GetConfigsFilterArray) ToGetConfigsFilterArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsFilterArrayOutput)
 }
 
-func (i GetConfigsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsFilter] {
-	return pulumix.Output[[]GetConfigsFilter]{
-		OutputState: i.ToGetConfigsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConfigsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetConfigsFilterOutput) ElementType() reflect.Type {
@@ -2334,12 +1985,6 @@ func (o GetConfigsFilterOutput) ToGetConfigsFilterOutput() GetConfigsFilterOutpu
 
 func (o GetConfigsFilterOutput) ToGetConfigsFilterOutputWithContext(ctx context.Context) GetConfigsFilterOutput {
 	return o
-}
-
-func (o GetConfigsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigsFilter] {
-	return pulumix.Output[GetConfigsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the metric. This must be a known metric name.
@@ -2367,12 +2012,6 @@ func (o GetConfigsFilterArrayOutput) ToGetConfigsFilterArrayOutput() GetConfigsF
 
 func (o GetConfigsFilterArrayOutput) ToGetConfigsFilterArrayOutputWithContext(ctx context.Context) GetConfigsFilterArrayOutput {
 	return o
-}
-
-func (o GetConfigsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsFilter] {
-	return pulumix.Output[[]GetConfigsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetConfigsFilterArrayOutput) Index(i pulumi.IntInput) GetConfigsFilterOutput {

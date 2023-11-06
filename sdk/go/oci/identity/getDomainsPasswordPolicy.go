@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Password Policy resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -230,12 +229,6 @@ func (o LookupDomainsPasswordPolicyResultOutput) ToLookupDomainsPasswordPolicyRe
 
 func (o LookupDomainsPasswordPolicyResultOutput) ToLookupDomainsPasswordPolicyResultOutputWithContext(ctx context.Context) LookupDomainsPasswordPolicyResultOutput {
 	return o
-}
-
-func (o LookupDomainsPasswordPolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainsPasswordPolicyResult] {
-	return pulumix.Output[LookupDomainsPasswordPolicyResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A String value whose contents indicate a set of characters that can appear, in any sequence, in a password value

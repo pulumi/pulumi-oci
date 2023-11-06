@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
@@ -318,12 +317,6 @@ func (i *DatabaseToolsConnection) ToDatabaseToolsConnectionOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsConnectionOutput)
 }
 
-func (i *DatabaseToolsConnection) ToOutput(ctx context.Context) pulumix.Output[*DatabaseToolsConnection] {
-	return pulumix.Output[*DatabaseToolsConnection]{
-		OutputState: i.ToDatabaseToolsConnectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DatabaseToolsConnectionArrayInput is an input type that accepts DatabaseToolsConnectionArray and DatabaseToolsConnectionArrayOutput values.
 // You can construct a concrete instance of `DatabaseToolsConnectionArrayInput` via:
 //
@@ -347,12 +340,6 @@ func (i DatabaseToolsConnectionArray) ToDatabaseToolsConnectionArrayOutput() Dat
 
 func (i DatabaseToolsConnectionArray) ToDatabaseToolsConnectionArrayOutputWithContext(ctx context.Context) DatabaseToolsConnectionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsConnectionArrayOutput)
-}
-
-func (i DatabaseToolsConnectionArray) ToOutput(ctx context.Context) pulumix.Output[[]*DatabaseToolsConnection] {
-	return pulumix.Output[[]*DatabaseToolsConnection]{
-		OutputState: i.ToDatabaseToolsConnectionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DatabaseToolsConnectionMapInput is an input type that accepts DatabaseToolsConnectionMap and DatabaseToolsConnectionMapOutput values.
@@ -380,12 +367,6 @@ func (i DatabaseToolsConnectionMap) ToDatabaseToolsConnectionMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsConnectionMapOutput)
 }
 
-func (i DatabaseToolsConnectionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DatabaseToolsConnection] {
-	return pulumix.Output[map[string]*DatabaseToolsConnection]{
-		OutputState: i.ToDatabaseToolsConnectionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DatabaseToolsConnectionOutput struct{ *pulumi.OutputState }
 
 func (DatabaseToolsConnectionOutput) ElementType() reflect.Type {
@@ -398,12 +379,6 @@ func (o DatabaseToolsConnectionOutput) ToDatabaseToolsConnectionOutput() Databas
 
 func (o DatabaseToolsConnectionOutput) ToDatabaseToolsConnectionOutputWithContext(ctx context.Context) DatabaseToolsConnectionOutput {
 	return o
-}
-
-func (o DatabaseToolsConnectionOutput) ToOutput(ctx context.Context) pulumix.Output[*DatabaseToolsConnection] {
-	return pulumix.Output[*DatabaseToolsConnection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
@@ -507,12 +482,6 @@ func (o DatabaseToolsConnectionArrayOutput) ToDatabaseToolsConnectionArrayOutput
 	return o
 }
 
-func (o DatabaseToolsConnectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DatabaseToolsConnection] {
-	return pulumix.Output[[]*DatabaseToolsConnection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DatabaseToolsConnectionArrayOutput) Index(i pulumi.IntInput) DatabaseToolsConnectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DatabaseToolsConnection {
 		return vs[0].([]*DatabaseToolsConnection)[vs[1].(int)]
@@ -531,12 +500,6 @@ func (o DatabaseToolsConnectionMapOutput) ToDatabaseToolsConnectionMapOutput() D
 
 func (o DatabaseToolsConnectionMapOutput) ToDatabaseToolsConnectionMapOutputWithContext(ctx context.Context) DatabaseToolsConnectionMapOutput {
 	return o
-}
-
-func (o DatabaseToolsConnectionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DatabaseToolsConnection] {
-	return pulumix.Output[map[string]*DatabaseToolsConnection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatabaseToolsConnectionMapOutput) MapIndex(k pulumi.StringInput) DatabaseToolsConnectionOutput {

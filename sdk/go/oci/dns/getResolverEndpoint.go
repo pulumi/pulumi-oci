@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Resolver Endpoint resource in Oracle Cloud Infrastructure DNS service.
@@ -139,12 +138,6 @@ func (o LookupResolverEndpointResultOutput) ToLookupResolverEndpointResultOutput
 
 func (o LookupResolverEndpointResultOutput) ToLookupResolverEndpointResultOutputWithContext(ctx context.Context) LookupResolverEndpointResultOutput {
 	return o
-}
-
-func (o LookupResolverEndpointResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupResolverEndpointResult] {
-	return pulumix.Output[LookupResolverEndpointResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.

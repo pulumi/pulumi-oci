@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Network Firewall Policy Decryption Profile resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -283,12 +282,6 @@ func (i *NetworkFirewallPolicyDecryptionProfile) ToNetworkFirewallPolicyDecrypti
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyDecryptionProfileOutput)
 }
 
-func (i *NetworkFirewallPolicyDecryptionProfile) ToOutput(ctx context.Context) pulumix.Output[*NetworkFirewallPolicyDecryptionProfile] {
-	return pulumix.Output[*NetworkFirewallPolicyDecryptionProfile]{
-		OutputState: i.ToNetworkFirewallPolicyDecryptionProfileOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NetworkFirewallPolicyDecryptionProfileArrayInput is an input type that accepts NetworkFirewallPolicyDecryptionProfileArray and NetworkFirewallPolicyDecryptionProfileArrayOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicyDecryptionProfileArrayInput` via:
 //
@@ -312,12 +305,6 @@ func (i NetworkFirewallPolicyDecryptionProfileArray) ToNetworkFirewallPolicyDecr
 
 func (i NetworkFirewallPolicyDecryptionProfileArray) ToNetworkFirewallPolicyDecryptionProfileArrayOutputWithContext(ctx context.Context) NetworkFirewallPolicyDecryptionProfileArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyDecryptionProfileArrayOutput)
-}
-
-func (i NetworkFirewallPolicyDecryptionProfileArray) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkFirewallPolicyDecryptionProfile] {
-	return pulumix.Output[[]*NetworkFirewallPolicyDecryptionProfile]{
-		OutputState: i.ToNetworkFirewallPolicyDecryptionProfileArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // NetworkFirewallPolicyDecryptionProfileMapInput is an input type that accepts NetworkFirewallPolicyDecryptionProfileMap and NetworkFirewallPolicyDecryptionProfileMapOutput values.
@@ -345,12 +332,6 @@ func (i NetworkFirewallPolicyDecryptionProfileMap) ToNetworkFirewallPolicyDecryp
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyDecryptionProfileMapOutput)
 }
 
-func (i NetworkFirewallPolicyDecryptionProfileMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkFirewallPolicyDecryptionProfile] {
-	return pulumix.Output[map[string]*NetworkFirewallPolicyDecryptionProfile]{
-		OutputState: i.ToNetworkFirewallPolicyDecryptionProfileMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NetworkFirewallPolicyDecryptionProfileOutput struct{ *pulumi.OutputState }
 
 func (NetworkFirewallPolicyDecryptionProfileOutput) ElementType() reflect.Type {
@@ -363,12 +344,6 @@ func (o NetworkFirewallPolicyDecryptionProfileOutput) ToNetworkFirewallPolicyDec
 
 func (o NetworkFirewallPolicyDecryptionProfileOutput) ToNetworkFirewallPolicyDecryptionProfileOutputWithContext(ctx context.Context) NetworkFirewallPolicyDecryptionProfileOutput {
 	return o
-}
-
-func (o NetworkFirewallPolicyDecryptionProfileOutput) ToOutput(ctx context.Context) pulumix.Output[*NetworkFirewallPolicyDecryptionProfile] {
-	return pulumix.Output[*NetworkFirewallPolicyDecryptionProfile]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
@@ -463,12 +438,6 @@ func (o NetworkFirewallPolicyDecryptionProfileArrayOutput) ToNetworkFirewallPoli
 	return o
 }
 
-func (o NetworkFirewallPolicyDecryptionProfileArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkFirewallPolicyDecryptionProfile] {
-	return pulumix.Output[[]*NetworkFirewallPolicyDecryptionProfile]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o NetworkFirewallPolicyDecryptionProfileArrayOutput) Index(i pulumi.IntInput) NetworkFirewallPolicyDecryptionProfileOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *NetworkFirewallPolicyDecryptionProfile {
 		return vs[0].([]*NetworkFirewallPolicyDecryptionProfile)[vs[1].(int)]
@@ -487,12 +456,6 @@ func (o NetworkFirewallPolicyDecryptionProfileMapOutput) ToNetworkFirewallPolicy
 
 func (o NetworkFirewallPolicyDecryptionProfileMapOutput) ToNetworkFirewallPolicyDecryptionProfileMapOutputWithContext(ctx context.Context) NetworkFirewallPolicyDecryptionProfileMapOutput {
 	return o
-}
-
-func (o NetworkFirewallPolicyDecryptionProfileMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkFirewallPolicyDecryptionProfile] {
-	return pulumix.Output[map[string]*NetworkFirewallPolicyDecryptionProfile]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NetworkFirewallPolicyDecryptionProfileMapOutput) MapIndex(k pulumi.StringInput) NetworkFirewallPolicyDecryptionProfileOutput {

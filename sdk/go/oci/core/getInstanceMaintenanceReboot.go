@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Instance Maintenance Reboot resource in Oracle Cloud Infrastructure Core service.
@@ -103,12 +102,6 @@ func (o GetInstanceMaintenanceRebootResultOutput) ToGetInstanceMaintenanceReboot
 
 func (o GetInstanceMaintenanceRebootResultOutput) ToGetInstanceMaintenanceRebootResultOutputWithContext(ctx context.Context) GetInstanceMaintenanceRebootResultOutput {
 	return o
-}
-
-func (o GetInstanceMaintenanceRebootResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstanceMaintenanceRebootResult] {
-	return pulumix.Output[GetInstanceMaintenanceRebootResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The provider-assigned unique ID for this managed resource.

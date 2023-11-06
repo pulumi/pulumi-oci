@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Replication Policy resource in Oracle Cloud Infrastructure Object Storage service.
@@ -240,12 +239,6 @@ func (i *ReplicationPolicy) ToReplicationPolicyOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(ReplicationPolicyOutput)
 }
 
-func (i *ReplicationPolicy) ToOutput(ctx context.Context) pulumix.Output[*ReplicationPolicy] {
-	return pulumix.Output[*ReplicationPolicy]{
-		OutputState: i.ToReplicationPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ReplicationPolicyArrayInput is an input type that accepts ReplicationPolicyArray and ReplicationPolicyArrayOutput values.
 // You can construct a concrete instance of `ReplicationPolicyArrayInput` via:
 //
@@ -269,12 +262,6 @@ func (i ReplicationPolicyArray) ToReplicationPolicyArrayOutput() ReplicationPoli
 
 func (i ReplicationPolicyArray) ToReplicationPolicyArrayOutputWithContext(ctx context.Context) ReplicationPolicyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ReplicationPolicyArrayOutput)
-}
-
-func (i ReplicationPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]*ReplicationPolicy] {
-	return pulumix.Output[[]*ReplicationPolicy]{
-		OutputState: i.ToReplicationPolicyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ReplicationPolicyMapInput is an input type that accepts ReplicationPolicyMap and ReplicationPolicyMapOutput values.
@@ -302,12 +289,6 @@ func (i ReplicationPolicyMap) ToReplicationPolicyMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(ReplicationPolicyMapOutput)
 }
 
-func (i ReplicationPolicyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ReplicationPolicy] {
-	return pulumix.Output[map[string]*ReplicationPolicy]{
-		OutputState: i.ToReplicationPolicyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ReplicationPolicyOutput struct{ *pulumi.OutputState }
 
 func (ReplicationPolicyOutput) ElementType() reflect.Type {
@@ -320,12 +301,6 @@ func (o ReplicationPolicyOutput) ToReplicationPolicyOutput() ReplicationPolicyOu
 
 func (o ReplicationPolicyOutput) ToReplicationPolicyOutputWithContext(ctx context.Context) ReplicationPolicyOutput {
 	return o
-}
-
-func (o ReplicationPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[*ReplicationPolicy] {
-	return pulumix.Output[*ReplicationPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -395,12 +370,6 @@ func (o ReplicationPolicyArrayOutput) ToReplicationPolicyArrayOutputWithContext(
 	return o
 }
 
-func (o ReplicationPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ReplicationPolicy] {
-	return pulumix.Output[[]*ReplicationPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ReplicationPolicyArrayOutput) Index(i pulumi.IntInput) ReplicationPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ReplicationPolicy {
 		return vs[0].([]*ReplicationPolicy)[vs[1].(int)]
@@ -419,12 +388,6 @@ func (o ReplicationPolicyMapOutput) ToReplicationPolicyMapOutput() ReplicationPo
 
 func (o ReplicationPolicyMapOutput) ToReplicationPolicyMapOutputWithContext(ctx context.Context) ReplicationPolicyMapOutput {
 	return o
-}
-
-func (o ReplicationPolicyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ReplicationPolicy] {
-	return pulumix.Output[map[string]*ReplicationPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ReplicationPolicyMapOutput) MapIndex(k pulumi.StringInput) ReplicationPolicyOutput {

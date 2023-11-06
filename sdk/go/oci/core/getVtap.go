@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Vtap resource in Oracle Cloud Infrastructure Core service.
@@ -142,12 +141,6 @@ func (o LookupVtapResultOutput) ToLookupVtapResultOutput() LookupVtapResultOutpu
 
 func (o LookupVtapResultOutput) ToLookupVtapResultOutputWithContext(ctx context.Context) LookupVtapResultOutput {
 	return o
-}
-
-func (o LookupVtapResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupVtapResult] {
-	return pulumix.Output[LookupVtapResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).

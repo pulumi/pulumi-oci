@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Cloud Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
@@ -413,12 +412,6 @@ func (i *CloudExadataInfrastructure) ToCloudExadataInfrastructureOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(CloudExadataInfrastructureOutput)
 }
 
-func (i *CloudExadataInfrastructure) ToOutput(ctx context.Context) pulumix.Output[*CloudExadataInfrastructure] {
-	return pulumix.Output[*CloudExadataInfrastructure]{
-		OutputState: i.ToCloudExadataInfrastructureOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CloudExadataInfrastructureArrayInput is an input type that accepts CloudExadataInfrastructureArray and CloudExadataInfrastructureArrayOutput values.
 // You can construct a concrete instance of `CloudExadataInfrastructureArrayInput` via:
 //
@@ -442,12 +435,6 @@ func (i CloudExadataInfrastructureArray) ToCloudExadataInfrastructureArrayOutput
 
 func (i CloudExadataInfrastructureArray) ToCloudExadataInfrastructureArrayOutputWithContext(ctx context.Context) CloudExadataInfrastructureArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudExadataInfrastructureArrayOutput)
-}
-
-func (i CloudExadataInfrastructureArray) ToOutput(ctx context.Context) pulumix.Output[[]*CloudExadataInfrastructure] {
-	return pulumix.Output[[]*CloudExadataInfrastructure]{
-		OutputState: i.ToCloudExadataInfrastructureArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CloudExadataInfrastructureMapInput is an input type that accepts CloudExadataInfrastructureMap and CloudExadataInfrastructureMapOutput values.
@@ -475,12 +462,6 @@ func (i CloudExadataInfrastructureMap) ToCloudExadataInfrastructureMapOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(CloudExadataInfrastructureMapOutput)
 }
 
-func (i CloudExadataInfrastructureMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudExadataInfrastructure] {
-	return pulumix.Output[map[string]*CloudExadataInfrastructure]{
-		OutputState: i.ToCloudExadataInfrastructureMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CloudExadataInfrastructureOutput struct{ *pulumi.OutputState }
 
 func (CloudExadataInfrastructureOutput) ElementType() reflect.Type {
@@ -493,12 +474,6 @@ func (o CloudExadataInfrastructureOutput) ToCloudExadataInfrastructureOutput() C
 
 func (o CloudExadataInfrastructureOutput) ToCloudExadataInfrastructureOutputWithContext(ctx context.Context) CloudExadataInfrastructureOutput {
 	return o
-}
-
-func (o CloudExadataInfrastructureOutput) ToOutput(ctx context.Context) pulumix.Output[*CloudExadataInfrastructure] {
-	return pulumix.Output[*CloudExadataInfrastructure]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The requested number of additional storage servers activated for the Exadata infrastructure.
@@ -677,12 +652,6 @@ func (o CloudExadataInfrastructureArrayOutput) ToCloudExadataInfrastructureArray
 	return o
 }
 
-func (o CloudExadataInfrastructureArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CloudExadataInfrastructure] {
-	return pulumix.Output[[]*CloudExadataInfrastructure]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o CloudExadataInfrastructureArrayOutput) Index(i pulumi.IntInput) CloudExadataInfrastructureOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CloudExadataInfrastructure {
 		return vs[0].([]*CloudExadataInfrastructure)[vs[1].(int)]
@@ -701,12 +670,6 @@ func (o CloudExadataInfrastructureMapOutput) ToCloudExadataInfrastructureMapOutp
 
 func (o CloudExadataInfrastructureMapOutput) ToCloudExadataInfrastructureMapOutputWithContext(ctx context.Context) CloudExadataInfrastructureMapOutput {
 	return o
-}
-
-func (o CloudExadataInfrastructureMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudExadataInfrastructure] {
-	return pulumix.Output[map[string]*CloudExadataInfrastructure]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CloudExadataInfrastructureMapOutput) MapIndex(k pulumi.StringInput) CloudExadataInfrastructureOutput {

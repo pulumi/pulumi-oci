@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Sql Collection resource in Oracle Cloud Infrastructure Data Safe service.
@@ -137,12 +136,6 @@ func (o LookupSqlCollectionResultOutput) ToLookupSqlCollectionResultOutput() Loo
 
 func (o LookupSqlCollectionResultOutput) ToLookupSqlCollectionResultOutputWithContext(ctx context.Context) LookupSqlCollectionResultOutput {
 	return o
-}
-
-func (o LookupSqlCollectionResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSqlCollectionResult] {
-	return pulumix.Output[LookupSqlCollectionResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment containing the SQL collection.

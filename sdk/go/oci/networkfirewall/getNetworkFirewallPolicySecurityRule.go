@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Network Firewall Policy Security Rule resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -96,12 +95,6 @@ func (o LookupNetworkFirewallPolicySecurityRuleResultOutput) ToLookupNetworkFire
 
 func (o LookupNetworkFirewallPolicySecurityRuleResultOutput) ToLookupNetworkFirewallPolicySecurityRuleResultOutputWithContext(ctx context.Context) LookupNetworkFirewallPolicySecurityRuleResultOutput {
 	return o
-}
-
-func (o LookupNetworkFirewallPolicySecurityRuleResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNetworkFirewallPolicySecurityRuleResult] {
-	return pulumix.Output[LookupNetworkFirewallPolicySecurityRuleResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Types of Action on the Traffic flow.

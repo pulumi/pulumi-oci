@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Workspace Project resource in Oracle Cloud Infrastructure Data Integration service.
@@ -128,12 +127,6 @@ func (o LookupWorkspaceProjectResultOutput) ToLookupWorkspaceProjectResultOutput
 
 func (o LookupWorkspaceProjectResultOutput) ToLookupWorkspaceProjectResultOutputWithContext(ctx context.Context) LookupWorkspaceProjectResultOutput {
 	return o
-}
-
-func (o LookupWorkspaceProjectResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupWorkspaceProjectResult] {
-	return pulumix.Output[LookupWorkspaceProjectResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The description of the aggregator.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Bds Instance Api Key resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -120,12 +119,6 @@ func (o GetBdsInstanceApiKeysResultOutput) ToGetBdsInstanceApiKeysResultOutput()
 
 func (o GetBdsInstanceApiKeysResultOutput) ToGetBdsInstanceApiKeysResultOutputWithContext(ctx context.Context) GetBdsInstanceApiKeysResultOutput {
 	return o
-}
-
-func (o GetBdsInstanceApiKeysResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceApiKeysResult] {
-	return pulumix.Output[GetBdsInstanceApiKeysResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstanceApiKeysResultOutput) BdsApiKeys() GetBdsInstanceApiKeysBdsApiKeyArrayOutput {

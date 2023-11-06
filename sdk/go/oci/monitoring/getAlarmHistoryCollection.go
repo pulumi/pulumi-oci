@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Alarm History Collection resource in Oracle Cloud Infrastructure Monitoring service.
@@ -131,12 +130,6 @@ func (o GetAlarmHistoryCollectionResultOutput) ToGetAlarmHistoryCollectionResult
 
 func (o GetAlarmHistoryCollectionResultOutput) ToGetAlarmHistoryCollectionResultOutputWithContext(ctx context.Context) GetAlarmHistoryCollectionResultOutput {
 	return o
-}
-
-func (o GetAlarmHistoryCollectionResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlarmHistoryCollectionResult] {
-	return pulumix.Output[GetAlarmHistoryCollectionResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAlarmHistoryCollectionResultOutput) AlarmHistorytype() pulumi.StringPtrOutput {

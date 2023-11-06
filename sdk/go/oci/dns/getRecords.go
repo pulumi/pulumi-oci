@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // **Deprecated. Use Dns.getRrsets instead.**
@@ -129,12 +128,6 @@ func (o GetRecordsResultOutput) ToGetRecordsResultOutput() GetRecordsResultOutpu
 
 func (o GetRecordsResultOutput) ToGetRecordsResultOutputWithContext(ctx context.Context) GetRecordsResultOutput {
 	return o
-}
-
-func (o GetRecordsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecordsResult] {
-	return pulumix.Output[GetRecordsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRecordsResultOutput) CompartmentId() pulumi.StringPtrOutput {

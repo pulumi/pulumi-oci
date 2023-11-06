@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of External Clusters in Oracle Cloud Infrastructure Database Management service.
@@ -120,12 +119,6 @@ func (o GetExternalClustersResultOutput) ToGetExternalClustersResultOutput() Get
 
 func (o GetExternalClustersResultOutput) ToGetExternalClustersResultOutputWithContext(ctx context.Context) GetExternalClustersResultOutput {
 	return o
-}
-
-func (o GetExternalClustersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalClustersResult] {
-	return pulumix.Output[GetExternalClustersResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

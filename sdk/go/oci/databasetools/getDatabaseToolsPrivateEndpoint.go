@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
@@ -138,12 +137,6 @@ func (o LookupDatabaseToolsPrivateEndpointResultOutput) ToLookupDatabaseToolsPri
 
 func (o LookupDatabaseToolsPrivateEndpointResultOutput) ToLookupDatabaseToolsPrivateEndpointResultOutputWithContext(ctx context.Context) LookupDatabaseToolsPrivateEndpointResultOutput {
 	return o
-}
-
-func (o LookupDatabaseToolsPrivateEndpointResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDatabaseToolsPrivateEndpointResult] {
-	return pulumix.Output[LookupDatabaseToolsPrivateEndpointResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of additional FQDNs that can be also be used for the private endpoint.

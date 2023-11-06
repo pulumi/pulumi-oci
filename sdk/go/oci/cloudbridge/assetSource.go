@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Asset Source resource in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -360,12 +359,6 @@ func (i *AssetSource) ToAssetSourceOutputWithContext(ctx context.Context) AssetS
 	return pulumi.ToOutputWithContext(ctx, i).(AssetSourceOutput)
 }
 
-func (i *AssetSource) ToOutput(ctx context.Context) pulumix.Output[*AssetSource] {
-	return pulumix.Output[*AssetSource]{
-		OutputState: i.ToAssetSourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AssetSourceArrayInput is an input type that accepts AssetSourceArray and AssetSourceArrayOutput values.
 // You can construct a concrete instance of `AssetSourceArrayInput` via:
 //
@@ -389,12 +382,6 @@ func (i AssetSourceArray) ToAssetSourceArrayOutput() AssetSourceArrayOutput {
 
 func (i AssetSourceArray) ToAssetSourceArrayOutputWithContext(ctx context.Context) AssetSourceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AssetSourceArrayOutput)
-}
-
-func (i AssetSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]*AssetSource] {
-	return pulumix.Output[[]*AssetSource]{
-		OutputState: i.ToAssetSourceArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AssetSourceMapInput is an input type that accepts AssetSourceMap and AssetSourceMapOutput values.
@@ -422,12 +409,6 @@ func (i AssetSourceMap) ToAssetSourceMapOutputWithContext(ctx context.Context) A
 	return pulumi.ToOutputWithContext(ctx, i).(AssetSourceMapOutput)
 }
 
-func (i AssetSourceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AssetSource] {
-	return pulumix.Output[map[string]*AssetSource]{
-		OutputState: i.ToAssetSourceMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AssetSourceOutput struct{ *pulumi.OutputState }
 
 func (AssetSourceOutput) ElementType() reflect.Type {
@@ -440,12 +421,6 @@ func (o AssetSourceOutput) ToAssetSourceOutput() AssetSourceOutput {
 
 func (o AssetSourceOutput) ToAssetSourceOutputWithContext(ctx context.Context) AssetSourceOutput {
 	return o
-}
-
-func (o AssetSourceOutput) ToOutput(ctx context.Context) pulumix.Output[*AssetSource] {
-	return pulumix.Output[*AssetSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Flag indicating whether historical metrics are collected for assets, originating from this asset source.
@@ -560,12 +535,6 @@ func (o AssetSourceArrayOutput) ToAssetSourceArrayOutputWithContext(ctx context.
 	return o
 }
 
-func (o AssetSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AssetSource] {
-	return pulumix.Output[[]*AssetSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AssetSourceArrayOutput) Index(i pulumi.IntInput) AssetSourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AssetSource {
 		return vs[0].([]*AssetSource)[vs[1].(int)]
@@ -584,12 +553,6 @@ func (o AssetSourceMapOutput) ToAssetSourceMapOutput() AssetSourceMapOutput {
 
 func (o AssetSourceMapOutput) ToAssetSourceMapOutputWithContext(ctx context.Context) AssetSourceMapOutput {
 	return o
-}
-
-func (o AssetSourceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AssetSource] {
-	return pulumix.Output[map[string]*AssetSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AssetSourceMapOutput) MapIndex(k pulumi.StringInput) AssetSourceOutput {

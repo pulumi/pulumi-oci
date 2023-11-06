@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Database Sql Plan Baseline resource in Oracle Cloud Infrastructure Database Management service.
@@ -137,12 +136,6 @@ func (o GetManagedDatabaseSqlPlanBaselineResultOutput) ToGetManagedDatabaseSqlPl
 
 func (o GetManagedDatabaseSqlPlanBaselineResultOutput) ToGetManagedDatabaseSqlPlanBaselineResultOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselineResultOutput {
 	return o
-}
-
-func (o GetManagedDatabaseSqlPlanBaselineResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseSqlPlanBaselineResult] {
-	return pulumix.Output[GetManagedDatabaseSqlPlanBaselineResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Indicates whether the plan baseline is accepted (`YES`) or not (`NO`).

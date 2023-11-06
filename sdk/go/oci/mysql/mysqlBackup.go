@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Mysql Backup resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -294,12 +293,6 @@ func (i *MysqlBackup) ToMysqlBackupOutputWithContext(ctx context.Context) MysqlB
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupOutput)
 }
 
-func (i *MysqlBackup) ToOutput(ctx context.Context) pulumix.Output[*MysqlBackup] {
-	return pulumix.Output[*MysqlBackup]{
-		OutputState: i.ToMysqlBackupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MysqlBackupArrayInput is an input type that accepts MysqlBackupArray and MysqlBackupArrayOutput values.
 // You can construct a concrete instance of `MysqlBackupArrayInput` via:
 //
@@ -323,12 +316,6 @@ func (i MysqlBackupArray) ToMysqlBackupArrayOutput() MysqlBackupArrayOutput {
 
 func (i MysqlBackupArray) ToMysqlBackupArrayOutputWithContext(ctx context.Context) MysqlBackupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupArrayOutput)
-}
-
-func (i MysqlBackupArray) ToOutput(ctx context.Context) pulumix.Output[[]*MysqlBackup] {
-	return pulumix.Output[[]*MysqlBackup]{
-		OutputState: i.ToMysqlBackupArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MysqlBackupMapInput is an input type that accepts MysqlBackupMap and MysqlBackupMapOutput values.
@@ -356,12 +343,6 @@ func (i MysqlBackupMap) ToMysqlBackupMapOutputWithContext(ctx context.Context) M
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupMapOutput)
 }
 
-func (i MysqlBackupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MysqlBackup] {
-	return pulumix.Output[map[string]*MysqlBackup]{
-		OutputState: i.ToMysqlBackupMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MysqlBackupOutput struct{ *pulumi.OutputState }
 
 func (MysqlBackupOutput) ElementType() reflect.Type {
@@ -374,12 +355,6 @@ func (o MysqlBackupOutput) ToMysqlBackupOutput() MysqlBackupOutput {
 
 func (o MysqlBackupOutput) ToMysqlBackupOutputWithContext(ctx context.Context) MysqlBackupOutput {
 	return o
-}
-
-func (o MysqlBackupOutput) ToOutput(ctx context.Context) pulumix.Output[*MysqlBackup] {
-	return pulumix.Output[*MysqlBackup]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The size of the backup in base-2 (IEC) gibibytes. (GiB).
@@ -489,12 +464,6 @@ func (o MysqlBackupArrayOutput) ToMysqlBackupArrayOutputWithContext(ctx context.
 	return o
 }
 
-func (o MysqlBackupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MysqlBackup] {
-	return pulumix.Output[[]*MysqlBackup]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o MysqlBackupArrayOutput) Index(i pulumi.IntInput) MysqlBackupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *MysqlBackup {
 		return vs[0].([]*MysqlBackup)[vs[1].(int)]
@@ -513,12 +482,6 @@ func (o MysqlBackupMapOutput) ToMysqlBackupMapOutput() MysqlBackupMapOutput {
 
 func (o MysqlBackupMapOutput) ToMysqlBackupMapOutputWithContext(ctx context.Context) MysqlBackupMapOutput {
 	return o
-}
-
-func (o MysqlBackupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MysqlBackup] {
-	return pulumix.Output[map[string]*MysqlBackup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MysqlBackupMapOutput) MapIndex(k pulumi.StringInput) MysqlBackupOutput {

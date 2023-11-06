@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Compartments in Oracle Cloud Infrastructure Identity service.
@@ -153,12 +152,6 @@ func (o GetCompartmentsResultOutput) ToGetCompartmentsResultOutput() GetCompartm
 
 func (o GetCompartmentsResultOutput) ToGetCompartmentsResultOutputWithContext(ctx context.Context) GetCompartmentsResultOutput {
 	return o
-}
-
-func (o GetCompartmentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCompartmentsResult] {
-	return pulumix.Output[GetCompartmentsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCompartmentsResultOutput) AccessLevel() pulumi.StringPtrOutput {

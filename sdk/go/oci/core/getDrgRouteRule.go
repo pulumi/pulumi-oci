@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Drg Route Table resource in Oracle Cloud Infrastructure Core service.
@@ -119,12 +118,6 @@ func (o GetDrgRouteRuleResultOutput) ToGetDrgRouteRuleResultOutput() GetDrgRoute
 
 func (o GetDrgRouteRuleResultOutput) ToGetDrgRouteRuleResultOutputWithContext(ctx context.Context) GetDrgRouteRuleResultOutput {
 	return o
-}
-
-func (o GetDrgRouteRuleResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrgRouteRuleResult] {
-	return pulumix.Output[GetDrgRouteRuleResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DRG is in. The DRG route table is always in the same compartment as the DRG.

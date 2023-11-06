@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -49,12 +48,6 @@ func (i DatasetDatasetFormatDetailsArgs) ToDatasetDatasetFormatDetailsOutput() D
 
 func (i DatasetDatasetFormatDetailsArgs) ToDatasetDatasetFormatDetailsOutputWithContext(ctx context.Context) DatasetDatasetFormatDetailsOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DatasetDatasetFormatDetailsOutput)
-}
-
-func (i DatasetDatasetFormatDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[DatasetDatasetFormatDetails] {
-	return pulumix.Output[DatasetDatasetFormatDetails]{
-		OutputState: i.ToDatasetDatasetFormatDetailsOutputWithContext(ctx).OutputState,
-	}
 }
 
 func (i DatasetDatasetFormatDetailsArgs) ToDatasetDatasetFormatDetailsPtrOutput() DatasetDatasetFormatDetailsPtrOutput {
@@ -98,12 +91,6 @@ func (i *datasetDatasetFormatDetailsPtrType) ToDatasetDatasetFormatDetailsPtrOut
 	return pulumi.ToOutputWithContext(ctx, i).(DatasetDatasetFormatDetailsPtrOutput)
 }
 
-func (i *datasetDatasetFormatDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DatasetDatasetFormatDetails] {
-	return pulumix.Output[*DatasetDatasetFormatDetails]{
-		OutputState: i.ToDatasetDatasetFormatDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DatasetDatasetFormatDetailsOutput struct{ *pulumi.OutputState }
 
 func (DatasetDatasetFormatDetailsOutput) ElementType() reflect.Type {
@@ -126,12 +113,6 @@ func (o DatasetDatasetFormatDetailsOutput) ToDatasetDatasetFormatDetailsPtrOutpu
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v DatasetDatasetFormatDetails) *DatasetDatasetFormatDetails {
 		return &v
 	}).(DatasetDatasetFormatDetailsPtrOutput)
-}
-
-func (o DatasetDatasetFormatDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[DatasetDatasetFormatDetails] {
-	return pulumix.Output[DatasetDatasetFormatDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // It defines the format type of text files.
@@ -158,12 +139,6 @@ func (o DatasetDatasetFormatDetailsPtrOutput) ToDatasetDatasetFormatDetailsPtrOu
 
 func (o DatasetDatasetFormatDetailsPtrOutput) ToDatasetDatasetFormatDetailsPtrOutputWithContext(ctx context.Context) DatasetDatasetFormatDetailsPtrOutput {
 	return o
-}
-
-func (o DatasetDatasetFormatDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DatasetDatasetFormatDetails] {
-	return pulumix.Output[*DatasetDatasetFormatDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatasetDatasetFormatDetailsPtrOutput) Elem() DatasetDatasetFormatDetailsOutput {
@@ -249,12 +224,6 @@ func (i DatasetDatasetFormatDetailsTextFileTypeMetadataArgs) ToDatasetDatasetFor
 	return pulumi.ToOutputWithContext(ctx, i).(DatasetDatasetFormatDetailsTextFileTypeMetadataOutput)
 }
 
-func (i DatasetDatasetFormatDetailsTextFileTypeMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[DatasetDatasetFormatDetailsTextFileTypeMetadata] {
-	return pulumix.Output[DatasetDatasetFormatDetailsTextFileTypeMetadata]{
-		OutputState: i.ToDatasetDatasetFormatDetailsTextFileTypeMetadataOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DatasetDatasetFormatDetailsTextFileTypeMetadataArgs) ToDatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput() DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput {
 	return i.ToDatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutputWithContext(context.Background())
 }
@@ -296,12 +265,6 @@ func (i *datasetDatasetFormatDetailsTextFileTypeMetadataPtrType) ToDatasetDatase
 	return pulumi.ToOutputWithContext(ctx, i).(DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput)
 }
 
-func (i *datasetDatasetFormatDetailsTextFileTypeMetadataPtrType) ToOutput(ctx context.Context) pulumix.Output[*DatasetDatasetFormatDetailsTextFileTypeMetadata] {
-	return pulumix.Output[*DatasetDatasetFormatDetailsTextFileTypeMetadata]{
-		OutputState: i.ToDatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DatasetDatasetFormatDetailsTextFileTypeMetadataOutput struct{ *pulumi.OutputState }
 
 func (DatasetDatasetFormatDetailsTextFileTypeMetadataOutput) ElementType() reflect.Type {
@@ -324,12 +287,6 @@ func (o DatasetDatasetFormatDetailsTextFileTypeMetadataOutput) ToDatasetDatasetF
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v DatasetDatasetFormatDetailsTextFileTypeMetadata) *DatasetDatasetFormatDetailsTextFileTypeMetadata {
 		return &v
 	}).(DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput)
-}
-
-func (o DatasetDatasetFormatDetailsTextFileTypeMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[DatasetDatasetFormatDetailsTextFileTypeMetadata] {
-	return pulumix.Output[DatasetDatasetFormatDetailsTextFileTypeMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A column delimiter
@@ -374,12 +331,6 @@ func (o DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput) ToDatasetDatas
 
 func (o DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput) ToDatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutputWithContext(ctx context.Context) DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput {
 	return o
-}
-
-func (o DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DatasetDatasetFormatDetailsTextFileTypeMetadata] {
-	return pulumix.Output[*DatasetDatasetFormatDetailsTextFileTypeMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput) Elem() DatasetDatasetFormatDetailsTextFileTypeMetadataOutput {
@@ -497,12 +448,6 @@ func (i DatasetDatasetSourceDetailsArgs) ToDatasetDatasetSourceDetailsOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(DatasetDatasetSourceDetailsOutput)
 }
 
-func (i DatasetDatasetSourceDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[DatasetDatasetSourceDetails] {
-	return pulumix.Output[DatasetDatasetSourceDetails]{
-		OutputState: i.ToDatasetDatasetSourceDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DatasetDatasetSourceDetailsArgs) ToDatasetDatasetSourceDetailsPtrOutput() DatasetDatasetSourceDetailsPtrOutput {
 	return i.ToDatasetDatasetSourceDetailsPtrOutputWithContext(context.Background())
 }
@@ -544,12 +489,6 @@ func (i *datasetDatasetSourceDetailsPtrType) ToDatasetDatasetSourceDetailsPtrOut
 	return pulumi.ToOutputWithContext(ctx, i).(DatasetDatasetSourceDetailsPtrOutput)
 }
 
-func (i *datasetDatasetSourceDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DatasetDatasetSourceDetails] {
-	return pulumix.Output[*DatasetDatasetSourceDetails]{
-		OutputState: i.ToDatasetDatasetSourceDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DatasetDatasetSourceDetailsOutput struct{ *pulumi.OutputState }
 
 func (DatasetDatasetSourceDetailsOutput) ElementType() reflect.Type {
@@ -572,12 +511,6 @@ func (o DatasetDatasetSourceDetailsOutput) ToDatasetDatasetSourceDetailsPtrOutpu
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v DatasetDatasetSourceDetails) *DatasetDatasetSourceDetails {
 		return &v
 	}).(DatasetDatasetSourceDetailsPtrOutput)
-}
-
-func (o DatasetDatasetSourceDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[DatasetDatasetSourceDetails] {
-	return pulumix.Output[DatasetDatasetSourceDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Bucket name
@@ -612,12 +545,6 @@ func (o DatasetDatasetSourceDetailsPtrOutput) ToDatasetDatasetSourceDetailsPtrOu
 
 func (o DatasetDatasetSourceDetailsPtrOutput) ToDatasetDatasetSourceDetailsPtrOutputWithContext(ctx context.Context) DatasetDatasetSourceDetailsPtrOutput {
 	return o
-}
-
-func (o DatasetDatasetSourceDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DatasetDatasetSourceDetails] {
-	return pulumix.Output[*DatasetDatasetSourceDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatasetDatasetSourceDetailsPtrOutput) Elem() DatasetDatasetSourceDetailsOutput {
@@ -707,12 +634,6 @@ func (i DatasetInitialImportDatasetConfigurationArgs) ToDatasetInitialImportData
 	return pulumi.ToOutputWithContext(ctx, i).(DatasetInitialImportDatasetConfigurationOutput)
 }
 
-func (i DatasetInitialImportDatasetConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[DatasetInitialImportDatasetConfiguration] {
-	return pulumix.Output[DatasetInitialImportDatasetConfiguration]{
-		OutputState: i.ToDatasetInitialImportDatasetConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DatasetInitialImportDatasetConfigurationArgs) ToDatasetInitialImportDatasetConfigurationPtrOutput() DatasetInitialImportDatasetConfigurationPtrOutput {
 	return i.ToDatasetInitialImportDatasetConfigurationPtrOutputWithContext(context.Background())
 }
@@ -754,12 +675,6 @@ func (i *datasetInitialImportDatasetConfigurationPtrType) ToDatasetInitialImport
 	return pulumi.ToOutputWithContext(ctx, i).(DatasetInitialImportDatasetConfigurationPtrOutput)
 }
 
-func (i *datasetInitialImportDatasetConfigurationPtrType) ToOutput(ctx context.Context) pulumix.Output[*DatasetInitialImportDatasetConfiguration] {
-	return pulumix.Output[*DatasetInitialImportDatasetConfiguration]{
-		OutputState: i.ToDatasetInitialImportDatasetConfigurationPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DatasetInitialImportDatasetConfigurationOutput struct{ *pulumi.OutputState }
 
 func (DatasetInitialImportDatasetConfigurationOutput) ElementType() reflect.Type {
@@ -782,12 +697,6 @@ func (o DatasetInitialImportDatasetConfigurationOutput) ToDatasetInitialImportDa
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v DatasetInitialImportDatasetConfiguration) *DatasetInitialImportDatasetConfiguration {
 		return &v
 	}).(DatasetInitialImportDatasetConfigurationPtrOutput)
-}
-
-func (o DatasetInitialImportDatasetConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[DatasetInitialImportDatasetConfiguration] {
-	return pulumix.Output[DatasetInitialImportDatasetConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // File format details used for importing dataset
@@ -816,12 +725,6 @@ func (o DatasetInitialImportDatasetConfigurationPtrOutput) ToDatasetInitialImpor
 
 func (o DatasetInitialImportDatasetConfigurationPtrOutput) ToDatasetInitialImportDatasetConfigurationPtrOutputWithContext(ctx context.Context) DatasetInitialImportDatasetConfigurationPtrOutput {
 	return o
-}
-
-func (o DatasetInitialImportDatasetConfigurationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DatasetInitialImportDatasetConfiguration] {
-	return pulumix.Output[*DatasetInitialImportDatasetConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatasetInitialImportDatasetConfigurationPtrOutput) Elem() DatasetInitialImportDatasetConfigurationOutput {
@@ -891,12 +794,6 @@ func (i DatasetInitialImportDatasetConfigurationImportFormatArgs) ToDatasetIniti
 	return pulumi.ToOutputWithContext(ctx, i).(DatasetInitialImportDatasetConfigurationImportFormatOutput)
 }
 
-func (i DatasetInitialImportDatasetConfigurationImportFormatArgs) ToOutput(ctx context.Context) pulumix.Output[DatasetInitialImportDatasetConfigurationImportFormat] {
-	return pulumix.Output[DatasetInitialImportDatasetConfigurationImportFormat]{
-		OutputState: i.ToDatasetInitialImportDatasetConfigurationImportFormatOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DatasetInitialImportDatasetConfigurationImportFormatArgs) ToDatasetInitialImportDatasetConfigurationImportFormatPtrOutput() DatasetInitialImportDatasetConfigurationImportFormatPtrOutput {
 	return i.ToDatasetInitialImportDatasetConfigurationImportFormatPtrOutputWithContext(context.Background())
 }
@@ -938,12 +835,6 @@ func (i *datasetInitialImportDatasetConfigurationImportFormatPtrType) ToDatasetI
 	return pulumi.ToOutputWithContext(ctx, i).(DatasetInitialImportDatasetConfigurationImportFormatPtrOutput)
 }
 
-func (i *datasetInitialImportDatasetConfigurationImportFormatPtrType) ToOutput(ctx context.Context) pulumix.Output[*DatasetInitialImportDatasetConfigurationImportFormat] {
-	return pulumix.Output[*DatasetInitialImportDatasetConfigurationImportFormat]{
-		OutputState: i.ToDatasetInitialImportDatasetConfigurationImportFormatPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DatasetInitialImportDatasetConfigurationImportFormatOutput struct{ *pulumi.OutputState }
 
 func (DatasetInitialImportDatasetConfigurationImportFormatOutput) ElementType() reflect.Type {
@@ -968,12 +859,6 @@ func (o DatasetInitialImportDatasetConfigurationImportFormatOutput) ToDatasetIni
 	}).(DatasetInitialImportDatasetConfigurationImportFormatPtrOutput)
 }
 
-func (o DatasetInitialImportDatasetConfigurationImportFormatOutput) ToOutput(ctx context.Context) pulumix.Output[DatasetInitialImportDatasetConfigurationImportFormat] {
-	return pulumix.Output[DatasetInitialImportDatasetConfigurationImportFormat]{
-		OutputState: o.OutputState,
-	}
-}
-
 // An unique name for a label within its dataset.
 func (o DatasetInitialImportDatasetConfigurationImportFormatOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v DatasetInitialImportDatasetConfigurationImportFormat) string { return v.Name }).(pulumi.StringOutput)
@@ -996,12 +881,6 @@ func (o DatasetInitialImportDatasetConfigurationImportFormatPtrOutput) ToDataset
 
 func (o DatasetInitialImportDatasetConfigurationImportFormatPtrOutput) ToDatasetInitialImportDatasetConfigurationImportFormatPtrOutputWithContext(ctx context.Context) DatasetInitialImportDatasetConfigurationImportFormatPtrOutput {
 	return o
-}
-
-func (o DatasetInitialImportDatasetConfigurationImportFormatPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DatasetInitialImportDatasetConfigurationImportFormat] {
-	return pulumix.Output[*DatasetInitialImportDatasetConfigurationImportFormat]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatasetInitialImportDatasetConfigurationImportFormatPtrOutput) Elem() DatasetInitialImportDatasetConfigurationImportFormatOutput {
@@ -1079,12 +958,6 @@ func (i DatasetInitialImportDatasetConfigurationImportMetadataPathArgs) ToDatase
 	return pulumi.ToOutputWithContext(ctx, i).(DatasetInitialImportDatasetConfigurationImportMetadataPathOutput)
 }
 
-func (i DatasetInitialImportDatasetConfigurationImportMetadataPathArgs) ToOutput(ctx context.Context) pulumix.Output[DatasetInitialImportDatasetConfigurationImportMetadataPath] {
-	return pulumix.Output[DatasetInitialImportDatasetConfigurationImportMetadataPath]{
-		OutputState: i.ToDatasetInitialImportDatasetConfigurationImportMetadataPathOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DatasetInitialImportDatasetConfigurationImportMetadataPathArgs) ToDatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput() DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput {
 	return i.ToDatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutputWithContext(context.Background())
 }
@@ -1126,12 +999,6 @@ func (i *datasetInitialImportDatasetConfigurationImportMetadataPathPtrType) ToDa
 	return pulumi.ToOutputWithContext(ctx, i).(DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput)
 }
 
-func (i *datasetInitialImportDatasetConfigurationImportMetadataPathPtrType) ToOutput(ctx context.Context) pulumix.Output[*DatasetInitialImportDatasetConfigurationImportMetadataPath] {
-	return pulumix.Output[*DatasetInitialImportDatasetConfigurationImportMetadataPath]{
-		OutputState: i.ToDatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DatasetInitialImportDatasetConfigurationImportMetadataPathOutput struct{ *pulumi.OutputState }
 
 func (DatasetInitialImportDatasetConfigurationImportMetadataPathOutput) ElementType() reflect.Type {
@@ -1154,12 +1021,6 @@ func (o DatasetInitialImportDatasetConfigurationImportMetadataPathOutput) ToData
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v DatasetInitialImportDatasetConfigurationImportMetadataPath) *DatasetInitialImportDatasetConfigurationImportMetadataPath {
 		return &v
 	}).(DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput)
-}
-
-func (o DatasetInitialImportDatasetConfigurationImportMetadataPathOutput) ToOutput(ctx context.Context) pulumix.Output[DatasetInitialImportDatasetConfigurationImportMetadataPath] {
-	return pulumix.Output[DatasetInitialImportDatasetConfigurationImportMetadataPath]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Bucket name
@@ -1194,12 +1055,6 @@ func (o DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput) ToD
 
 func (o DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput) ToDatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutputWithContext(ctx context.Context) DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput {
 	return o
-}
-
-func (o DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DatasetInitialImportDatasetConfigurationImportMetadataPath] {
-	return pulumix.Output[*DatasetInitialImportDatasetConfigurationImportMetadataPath]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatasetInitialImportDatasetConfigurationImportMetadataPathPtrOutput) Elem() DatasetInitialImportDatasetConfigurationImportMetadataPathOutput {
@@ -1281,12 +1136,6 @@ func (i DatasetInitialRecordGenerationConfigurationArgs) ToDatasetInitialRecordG
 	return pulumi.ToOutputWithContext(ctx, i).(DatasetInitialRecordGenerationConfigurationOutput)
 }
 
-func (i DatasetInitialRecordGenerationConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[DatasetInitialRecordGenerationConfiguration] {
-	return pulumix.Output[DatasetInitialRecordGenerationConfiguration]{
-		OutputState: i.ToDatasetInitialRecordGenerationConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DatasetInitialRecordGenerationConfigurationArgs) ToDatasetInitialRecordGenerationConfigurationPtrOutput() DatasetInitialRecordGenerationConfigurationPtrOutput {
 	return i.ToDatasetInitialRecordGenerationConfigurationPtrOutputWithContext(context.Background())
 }
@@ -1328,12 +1177,6 @@ func (i *datasetInitialRecordGenerationConfigurationPtrType) ToDatasetInitialRec
 	return pulumi.ToOutputWithContext(ctx, i).(DatasetInitialRecordGenerationConfigurationPtrOutput)
 }
 
-func (i *datasetInitialRecordGenerationConfigurationPtrType) ToOutput(ctx context.Context) pulumix.Output[*DatasetInitialRecordGenerationConfiguration] {
-	return pulumix.Output[*DatasetInitialRecordGenerationConfiguration]{
-		OutputState: i.ToDatasetInitialRecordGenerationConfigurationPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DatasetInitialRecordGenerationConfigurationOutput struct{ *pulumi.OutputState }
 
 func (DatasetInitialRecordGenerationConfigurationOutput) ElementType() reflect.Type {
@@ -1358,12 +1201,6 @@ func (o DatasetInitialRecordGenerationConfigurationOutput) ToDatasetInitialRecor
 	}).(DatasetInitialRecordGenerationConfigurationPtrOutput)
 }
 
-func (o DatasetInitialRecordGenerationConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[DatasetInitialRecordGenerationConfiguration] {
-	return pulumix.Output[DatasetInitialRecordGenerationConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 type DatasetInitialRecordGenerationConfigurationPtrOutput struct{ *pulumi.OutputState }
 
 func (DatasetInitialRecordGenerationConfigurationPtrOutput) ElementType() reflect.Type {
@@ -1376,12 +1213,6 @@ func (o DatasetInitialRecordGenerationConfigurationPtrOutput) ToDatasetInitialRe
 
 func (o DatasetInitialRecordGenerationConfigurationPtrOutput) ToDatasetInitialRecordGenerationConfigurationPtrOutputWithContext(ctx context.Context) DatasetInitialRecordGenerationConfigurationPtrOutput {
 	return o
-}
-
-func (o DatasetInitialRecordGenerationConfigurationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DatasetInitialRecordGenerationConfiguration] {
-	return pulumix.Output[*DatasetInitialRecordGenerationConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatasetInitialRecordGenerationConfigurationPtrOutput) Elem() DatasetInitialRecordGenerationConfigurationOutput {
@@ -1427,12 +1258,6 @@ func (i DatasetLabelSetArgs) ToDatasetLabelSetOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(DatasetLabelSetOutput)
 }
 
-func (i DatasetLabelSetArgs) ToOutput(ctx context.Context) pulumix.Output[DatasetLabelSet] {
-	return pulumix.Output[DatasetLabelSet]{
-		OutputState: i.ToDatasetLabelSetOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DatasetLabelSetArgs) ToDatasetLabelSetPtrOutput() DatasetLabelSetPtrOutput {
 	return i.ToDatasetLabelSetPtrOutputWithContext(context.Background())
 }
@@ -1474,12 +1299,6 @@ func (i *datasetLabelSetPtrType) ToDatasetLabelSetPtrOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(DatasetLabelSetPtrOutput)
 }
 
-func (i *datasetLabelSetPtrType) ToOutput(ctx context.Context) pulumix.Output[*DatasetLabelSet] {
-	return pulumix.Output[*DatasetLabelSet]{
-		OutputState: i.ToDatasetLabelSetPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DatasetLabelSetOutput struct{ *pulumi.OutputState }
 
 func (DatasetLabelSetOutput) ElementType() reflect.Type {
@@ -1504,12 +1323,6 @@ func (o DatasetLabelSetOutput) ToDatasetLabelSetPtrOutputWithContext(ctx context
 	}).(DatasetLabelSetPtrOutput)
 }
 
-func (o DatasetLabelSetOutput) ToOutput(ctx context.Context) pulumix.Output[DatasetLabelSet] {
-	return pulumix.Output[DatasetLabelSet]{
-		OutputState: o.OutputState,
-	}
-}
-
 // An ordered collection of labels that are unique by name.
 func (o DatasetLabelSetOutput) Items() DatasetLabelSetItemArrayOutput {
 	return o.ApplyT(func(v DatasetLabelSet) []DatasetLabelSetItem { return v.Items }).(DatasetLabelSetItemArrayOutput)
@@ -1527,12 +1340,6 @@ func (o DatasetLabelSetPtrOutput) ToDatasetLabelSetPtrOutput() DatasetLabelSetPt
 
 func (o DatasetLabelSetPtrOutput) ToDatasetLabelSetPtrOutputWithContext(ctx context.Context) DatasetLabelSetPtrOutput {
 	return o
-}
-
-func (o DatasetLabelSetPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DatasetLabelSet] {
-	return pulumix.Output[*DatasetLabelSet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatasetLabelSetPtrOutput) Elem() DatasetLabelSetOutput {
@@ -1588,12 +1395,6 @@ func (i DatasetLabelSetItemArgs) ToDatasetLabelSetItemOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(DatasetLabelSetItemOutput)
 }
 
-func (i DatasetLabelSetItemArgs) ToOutput(ctx context.Context) pulumix.Output[DatasetLabelSetItem] {
-	return pulumix.Output[DatasetLabelSetItem]{
-		OutputState: i.ToDatasetLabelSetItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DatasetLabelSetItemArrayInput is an input type that accepts DatasetLabelSetItemArray and DatasetLabelSetItemArrayOutput values.
 // You can construct a concrete instance of `DatasetLabelSetItemArrayInput` via:
 //
@@ -1619,12 +1420,6 @@ func (i DatasetLabelSetItemArray) ToDatasetLabelSetItemArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(DatasetLabelSetItemArrayOutput)
 }
 
-func (i DatasetLabelSetItemArray) ToOutput(ctx context.Context) pulumix.Output[[]DatasetLabelSetItem] {
-	return pulumix.Output[[]DatasetLabelSetItem]{
-		OutputState: i.ToDatasetLabelSetItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DatasetLabelSetItemOutput struct{ *pulumi.OutputState }
 
 func (DatasetLabelSetItemOutput) ElementType() reflect.Type {
@@ -1637,12 +1432,6 @@ func (o DatasetLabelSetItemOutput) ToDatasetLabelSetItemOutput() DatasetLabelSet
 
 func (o DatasetLabelSetItemOutput) ToDatasetLabelSetItemOutputWithContext(ctx context.Context) DatasetLabelSetItemOutput {
 	return o
-}
-
-func (o DatasetLabelSetItemOutput) ToOutput(ctx context.Context) pulumix.Output[DatasetLabelSetItem] {
-	return pulumix.Output[DatasetLabelSetItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An unique name for a label within its dataset.
@@ -1662,12 +1451,6 @@ func (o DatasetLabelSetItemArrayOutput) ToDatasetLabelSetItemArrayOutput() Datas
 
 func (o DatasetLabelSetItemArrayOutput) ToDatasetLabelSetItemArrayOutputWithContext(ctx context.Context) DatasetLabelSetItemArrayOutput {
 	return o
-}
-
-func (o DatasetLabelSetItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DatasetLabelSetItem] {
-	return pulumix.Output[[]DatasetLabelSetItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatasetLabelSetItemArrayOutput) Index(i pulumi.IntInput) DatasetLabelSetItemOutput {
@@ -1709,12 +1492,6 @@ func (i GetAnnotationFormatItemArgs) ToGetAnnotationFormatItemOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnotationFormatItemOutput)
 }
 
-func (i GetAnnotationFormatItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAnnotationFormatItem] {
-	return pulumix.Output[GetAnnotationFormatItem]{
-		OutputState: i.ToGetAnnotationFormatItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAnnotationFormatItemArrayInput is an input type that accepts GetAnnotationFormatItemArray and GetAnnotationFormatItemArrayOutput values.
 // You can construct a concrete instance of `GetAnnotationFormatItemArrayInput` via:
 //
@@ -1740,12 +1517,6 @@ func (i GetAnnotationFormatItemArray) ToGetAnnotationFormatItemArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnotationFormatItemArrayOutput)
 }
 
-func (i GetAnnotationFormatItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnotationFormatItem] {
-	return pulumix.Output[[]GetAnnotationFormatItem]{
-		OutputState: i.ToGetAnnotationFormatItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAnnotationFormatItemOutput struct{ *pulumi.OutputState }
 
 func (GetAnnotationFormatItemOutput) ElementType() reflect.Type {
@@ -1758,12 +1529,6 @@ func (o GetAnnotationFormatItemOutput) ToGetAnnotationFormatItemOutput() GetAnno
 
 func (o GetAnnotationFormatItemOutput) ToGetAnnotationFormatItemOutputWithContext(ctx context.Context) GetAnnotationFormatItemOutput {
 	return o
-}
-
-func (o GetAnnotationFormatItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnnotationFormatItem] {
-	return pulumix.Output[GetAnnotationFormatItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A unique name for the target AnnotationFormat for the Dataset.
@@ -1783,12 +1548,6 @@ func (o GetAnnotationFormatItemArrayOutput) ToGetAnnotationFormatItemArrayOutput
 
 func (o GetAnnotationFormatItemArrayOutput) ToGetAnnotationFormatItemArrayOutputWithContext(ctx context.Context) GetAnnotationFormatItemArrayOutput {
 	return o
-}
-
-func (o GetAnnotationFormatItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnotationFormatItem] {
-	return pulumix.Output[[]GetAnnotationFormatItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAnnotationFormatItemArrayOutput) Index(i pulumi.IntInput) GetAnnotationFormatItemOutput {
@@ -1830,12 +1589,6 @@ func (i GetAnnotationFormatsAnnotationFormatCollectionArgs) ToGetAnnotationForma
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnotationFormatsAnnotationFormatCollectionOutput)
 }
 
-func (i GetAnnotationFormatsAnnotationFormatCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAnnotationFormatsAnnotationFormatCollection] {
-	return pulumix.Output[GetAnnotationFormatsAnnotationFormatCollection]{
-		OutputState: i.ToGetAnnotationFormatsAnnotationFormatCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAnnotationFormatsAnnotationFormatCollectionArrayInput is an input type that accepts GetAnnotationFormatsAnnotationFormatCollectionArray and GetAnnotationFormatsAnnotationFormatCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAnnotationFormatsAnnotationFormatCollectionArrayInput` via:
 //
@@ -1861,12 +1614,6 @@ func (i GetAnnotationFormatsAnnotationFormatCollectionArray) ToGetAnnotationForm
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnotationFormatsAnnotationFormatCollectionArrayOutput)
 }
 
-func (i GetAnnotationFormatsAnnotationFormatCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnotationFormatsAnnotationFormatCollection] {
-	return pulumix.Output[[]GetAnnotationFormatsAnnotationFormatCollection]{
-		OutputState: i.ToGetAnnotationFormatsAnnotationFormatCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAnnotationFormatsAnnotationFormatCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAnnotationFormatsAnnotationFormatCollectionOutput) ElementType() reflect.Type {
@@ -1879,12 +1626,6 @@ func (o GetAnnotationFormatsAnnotationFormatCollectionOutput) ToGetAnnotationFor
 
 func (o GetAnnotationFormatsAnnotationFormatCollectionOutput) ToGetAnnotationFormatsAnnotationFormatCollectionOutputWithContext(ctx context.Context) GetAnnotationFormatsAnnotationFormatCollectionOutput {
 	return o
-}
-
-func (o GetAnnotationFormatsAnnotationFormatCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnnotationFormatsAnnotationFormatCollection] {
-	return pulumix.Output[GetAnnotationFormatsAnnotationFormatCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of annotation formats.
@@ -1906,12 +1647,6 @@ func (o GetAnnotationFormatsAnnotationFormatCollectionArrayOutput) ToGetAnnotati
 
 func (o GetAnnotationFormatsAnnotationFormatCollectionArrayOutput) ToGetAnnotationFormatsAnnotationFormatCollectionArrayOutputWithContext(ctx context.Context) GetAnnotationFormatsAnnotationFormatCollectionArrayOutput {
 	return o
-}
-
-func (o GetAnnotationFormatsAnnotationFormatCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnotationFormatsAnnotationFormatCollection] {
-	return pulumix.Output[[]GetAnnotationFormatsAnnotationFormatCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAnnotationFormatsAnnotationFormatCollectionArrayOutput) Index(i pulumi.IntInput) GetAnnotationFormatsAnnotationFormatCollectionOutput {
@@ -1953,12 +1688,6 @@ func (i GetAnnotationFormatsAnnotationFormatCollectionItemArgs) ToGetAnnotationF
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnotationFormatsAnnotationFormatCollectionItemOutput)
 }
 
-func (i GetAnnotationFormatsAnnotationFormatCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAnnotationFormatsAnnotationFormatCollectionItem] {
-	return pulumix.Output[GetAnnotationFormatsAnnotationFormatCollectionItem]{
-		OutputState: i.ToGetAnnotationFormatsAnnotationFormatCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAnnotationFormatsAnnotationFormatCollectionItemArrayInput is an input type that accepts GetAnnotationFormatsAnnotationFormatCollectionItemArray and GetAnnotationFormatsAnnotationFormatCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAnnotationFormatsAnnotationFormatCollectionItemArrayInput` via:
 //
@@ -1984,12 +1713,6 @@ func (i GetAnnotationFormatsAnnotationFormatCollectionItemArray) ToGetAnnotation
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnotationFormatsAnnotationFormatCollectionItemArrayOutput)
 }
 
-func (i GetAnnotationFormatsAnnotationFormatCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnotationFormatsAnnotationFormatCollectionItem] {
-	return pulumix.Output[[]GetAnnotationFormatsAnnotationFormatCollectionItem]{
-		OutputState: i.ToGetAnnotationFormatsAnnotationFormatCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAnnotationFormatsAnnotationFormatCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAnnotationFormatsAnnotationFormatCollectionItemOutput) ElementType() reflect.Type {
@@ -2002,12 +1725,6 @@ func (o GetAnnotationFormatsAnnotationFormatCollectionItemOutput) ToGetAnnotatio
 
 func (o GetAnnotationFormatsAnnotationFormatCollectionItemOutput) ToGetAnnotationFormatsAnnotationFormatCollectionItemOutputWithContext(ctx context.Context) GetAnnotationFormatsAnnotationFormatCollectionItemOutput {
 	return o
-}
-
-func (o GetAnnotationFormatsAnnotationFormatCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnnotationFormatsAnnotationFormatCollectionItem] {
-	return pulumix.Output[GetAnnotationFormatsAnnotationFormatCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A unique name for the target AnnotationFormat for the Dataset.
@@ -2027,12 +1744,6 @@ func (o GetAnnotationFormatsAnnotationFormatCollectionItemArrayOutput) ToGetAnno
 
 func (o GetAnnotationFormatsAnnotationFormatCollectionItemArrayOutput) ToGetAnnotationFormatsAnnotationFormatCollectionItemArrayOutputWithContext(ctx context.Context) GetAnnotationFormatsAnnotationFormatCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetAnnotationFormatsAnnotationFormatCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnotationFormatsAnnotationFormatCollectionItem] {
-	return pulumix.Output[[]GetAnnotationFormatsAnnotationFormatCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAnnotationFormatsAnnotationFormatCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAnnotationFormatsAnnotationFormatCollectionItemOutput {
@@ -2078,12 +1789,6 @@ func (i GetAnnotationFormatsFilterArgs) ToGetAnnotationFormatsFilterOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnotationFormatsFilterOutput)
 }
 
-func (i GetAnnotationFormatsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAnnotationFormatsFilter] {
-	return pulumix.Output[GetAnnotationFormatsFilter]{
-		OutputState: i.ToGetAnnotationFormatsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAnnotationFormatsFilterArrayInput is an input type that accepts GetAnnotationFormatsFilterArray and GetAnnotationFormatsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAnnotationFormatsFilterArrayInput` via:
 //
@@ -2109,12 +1814,6 @@ func (i GetAnnotationFormatsFilterArray) ToGetAnnotationFormatsFilterArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnotationFormatsFilterArrayOutput)
 }
 
-func (i GetAnnotationFormatsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnotationFormatsFilter] {
-	return pulumix.Output[[]GetAnnotationFormatsFilter]{
-		OutputState: i.ToGetAnnotationFormatsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAnnotationFormatsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAnnotationFormatsFilterOutput) ElementType() reflect.Type {
@@ -2127,12 +1826,6 @@ func (o GetAnnotationFormatsFilterOutput) ToGetAnnotationFormatsFilterOutput() G
 
 func (o GetAnnotationFormatsFilterOutput) ToGetAnnotationFormatsFilterOutputWithContext(ctx context.Context) GetAnnotationFormatsFilterOutput {
 	return o
-}
-
-func (o GetAnnotationFormatsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnnotationFormatsFilter] {
-	return pulumix.Output[GetAnnotationFormatsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A unique name for the target AnnotationFormat for the Dataset.
@@ -2160,12 +1853,6 @@ func (o GetAnnotationFormatsFilterArrayOutput) ToGetAnnotationFormatsFilterArray
 
 func (o GetAnnotationFormatsFilterArrayOutput) ToGetAnnotationFormatsFilterArrayOutputWithContext(ctx context.Context) GetAnnotationFormatsFilterArrayOutput {
 	return o
-}
-
-func (o GetAnnotationFormatsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnotationFormatsFilter] {
-	return pulumix.Output[[]GetAnnotationFormatsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAnnotationFormatsFilterArrayOutput) Index(i pulumi.IntInput) GetAnnotationFormatsFilterOutput {
@@ -2211,12 +1898,6 @@ func (i GetDatasetDatasetFormatDetailArgs) ToGetDatasetDatasetFormatDetailOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetDatasetFormatDetailOutput)
 }
 
-func (i GetDatasetDatasetFormatDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatasetDatasetFormatDetail] {
-	return pulumix.Output[GetDatasetDatasetFormatDetail]{
-		OutputState: i.ToGetDatasetDatasetFormatDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatasetDatasetFormatDetailArrayInput is an input type that accepts GetDatasetDatasetFormatDetailArray and GetDatasetDatasetFormatDetailArrayOutput values.
 // You can construct a concrete instance of `GetDatasetDatasetFormatDetailArrayInput` via:
 //
@@ -2242,12 +1923,6 @@ func (i GetDatasetDatasetFormatDetailArray) ToGetDatasetDatasetFormatDetailArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetDatasetFormatDetailArrayOutput)
 }
 
-func (i GetDatasetDatasetFormatDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetDatasetFormatDetail] {
-	return pulumix.Output[[]GetDatasetDatasetFormatDetail]{
-		OutputState: i.ToGetDatasetDatasetFormatDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatasetDatasetFormatDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDatasetDatasetFormatDetailOutput) ElementType() reflect.Type {
@@ -2260,12 +1935,6 @@ func (o GetDatasetDatasetFormatDetailOutput) ToGetDatasetDatasetFormatDetailOutp
 
 func (o GetDatasetDatasetFormatDetailOutput) ToGetDatasetDatasetFormatDetailOutputWithContext(ctx context.Context) GetDatasetDatasetFormatDetailOutput {
 	return o
-}
-
-func (o GetDatasetDatasetFormatDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatasetDatasetFormatDetail] {
-	return pulumix.Output[GetDatasetDatasetFormatDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // It defines the format type of text files.
@@ -2292,12 +1961,6 @@ func (o GetDatasetDatasetFormatDetailArrayOutput) ToGetDatasetDatasetFormatDetai
 
 func (o GetDatasetDatasetFormatDetailArrayOutput) ToGetDatasetDatasetFormatDetailArrayOutputWithContext(ctx context.Context) GetDatasetDatasetFormatDetailArrayOutput {
 	return o
-}
-
-func (o GetDatasetDatasetFormatDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetDatasetFormatDetail] {
-	return pulumix.Output[[]GetDatasetDatasetFormatDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatasetDatasetFormatDetailArrayOutput) Index(i pulumi.IntInput) GetDatasetDatasetFormatDetailOutput {
@@ -2359,12 +2022,6 @@ func (i GetDatasetDatasetFormatDetailTextFileTypeMetadataArgs) ToGetDatasetDatas
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetDatasetFormatDetailTextFileTypeMetadataOutput)
 }
 
-func (i GetDatasetDatasetFormatDetailTextFileTypeMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatasetDatasetFormatDetailTextFileTypeMetadata] {
-	return pulumix.Output[GetDatasetDatasetFormatDetailTextFileTypeMetadata]{
-		OutputState: i.ToGetDatasetDatasetFormatDetailTextFileTypeMetadataOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayInput is an input type that accepts GetDatasetDatasetFormatDetailTextFileTypeMetadataArray and GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutput values.
 // You can construct a concrete instance of `GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayInput` via:
 //
@@ -2390,12 +2047,6 @@ func (i GetDatasetDatasetFormatDetailTextFileTypeMetadataArray) ToGetDatasetData
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutput)
 }
 
-func (i GetDatasetDatasetFormatDetailTextFileTypeMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetDatasetFormatDetailTextFileTypeMetadata] {
-	return pulumix.Output[[]GetDatasetDatasetFormatDetailTextFileTypeMetadata]{
-		OutputState: i.ToGetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatasetDatasetFormatDetailTextFileTypeMetadataOutput struct{ *pulumi.OutputState }
 
 func (GetDatasetDatasetFormatDetailTextFileTypeMetadataOutput) ElementType() reflect.Type {
@@ -2408,12 +2059,6 @@ func (o GetDatasetDatasetFormatDetailTextFileTypeMetadataOutput) ToGetDatasetDat
 
 func (o GetDatasetDatasetFormatDetailTextFileTypeMetadataOutput) ToGetDatasetDatasetFormatDetailTextFileTypeMetadataOutputWithContext(ctx context.Context) GetDatasetDatasetFormatDetailTextFileTypeMetadataOutput {
 	return o
-}
-
-func (o GetDatasetDatasetFormatDetailTextFileTypeMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatasetDatasetFormatDetailTextFileTypeMetadata] {
-	return pulumix.Output[GetDatasetDatasetFormatDetailTextFileTypeMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A column delimiter
@@ -2458,12 +2103,6 @@ func (o GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutput) ToGetDatas
 
 func (o GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutput) ToGetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutputWithContext(ctx context.Context) GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutput {
 	return o
-}
-
-func (o GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetDatasetFormatDetailTextFileTypeMetadata] {
-	return pulumix.Output[[]GetDatasetDatasetFormatDetailTextFileTypeMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatasetDatasetFormatDetailTextFileTypeMetadataArrayOutput) Index(i pulumi.IntInput) GetDatasetDatasetFormatDetailTextFileTypeMetadataOutput {
@@ -2517,12 +2156,6 @@ func (i GetDatasetDatasetSourceDetailArgs) ToGetDatasetDatasetSourceDetailOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetDatasetSourceDetailOutput)
 }
 
-func (i GetDatasetDatasetSourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatasetDatasetSourceDetail] {
-	return pulumix.Output[GetDatasetDatasetSourceDetail]{
-		OutputState: i.ToGetDatasetDatasetSourceDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatasetDatasetSourceDetailArrayInput is an input type that accepts GetDatasetDatasetSourceDetailArray and GetDatasetDatasetSourceDetailArrayOutput values.
 // You can construct a concrete instance of `GetDatasetDatasetSourceDetailArrayInput` via:
 //
@@ -2548,12 +2181,6 @@ func (i GetDatasetDatasetSourceDetailArray) ToGetDatasetDatasetSourceDetailArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetDatasetSourceDetailArrayOutput)
 }
 
-func (i GetDatasetDatasetSourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetDatasetSourceDetail] {
-	return pulumix.Output[[]GetDatasetDatasetSourceDetail]{
-		OutputState: i.ToGetDatasetDatasetSourceDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatasetDatasetSourceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDatasetDatasetSourceDetailOutput) ElementType() reflect.Type {
@@ -2566,12 +2193,6 @@ func (o GetDatasetDatasetSourceDetailOutput) ToGetDatasetDatasetSourceDetailOutp
 
 func (o GetDatasetDatasetSourceDetailOutput) ToGetDatasetDatasetSourceDetailOutputWithContext(ctx context.Context) GetDatasetDatasetSourceDetailOutput {
 	return o
-}
-
-func (o GetDatasetDatasetSourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatasetDatasetSourceDetail] {
-	return pulumix.Output[GetDatasetDatasetSourceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Bucket name
@@ -2606,12 +2227,6 @@ func (o GetDatasetDatasetSourceDetailArrayOutput) ToGetDatasetDatasetSourceDetai
 
 func (o GetDatasetDatasetSourceDetailArrayOutput) ToGetDatasetDatasetSourceDetailArrayOutputWithContext(ctx context.Context) GetDatasetDatasetSourceDetailArrayOutput {
 	return o
-}
-
-func (o GetDatasetDatasetSourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetDatasetSourceDetail] {
-	return pulumix.Output[[]GetDatasetDatasetSourceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatasetDatasetSourceDetailArrayOutput) Index(i pulumi.IntInput) GetDatasetDatasetSourceDetailOutput {
@@ -2657,12 +2272,6 @@ func (i GetDatasetInitialImportDatasetConfigurationArgs) ToGetDatasetInitialImpo
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetInitialImportDatasetConfigurationOutput)
 }
 
-func (i GetDatasetInitialImportDatasetConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatasetInitialImportDatasetConfiguration] {
-	return pulumix.Output[GetDatasetInitialImportDatasetConfiguration]{
-		OutputState: i.ToGetDatasetInitialImportDatasetConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatasetInitialImportDatasetConfigurationArrayInput is an input type that accepts GetDatasetInitialImportDatasetConfigurationArray and GetDatasetInitialImportDatasetConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetDatasetInitialImportDatasetConfigurationArrayInput` via:
 //
@@ -2688,12 +2297,6 @@ func (i GetDatasetInitialImportDatasetConfigurationArray) ToGetDatasetInitialImp
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetInitialImportDatasetConfigurationArrayOutput)
 }
 
-func (i GetDatasetInitialImportDatasetConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetInitialImportDatasetConfiguration] {
-	return pulumix.Output[[]GetDatasetInitialImportDatasetConfiguration]{
-		OutputState: i.ToGetDatasetInitialImportDatasetConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatasetInitialImportDatasetConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetDatasetInitialImportDatasetConfigurationOutput) ElementType() reflect.Type {
@@ -2706,12 +2309,6 @@ func (o GetDatasetInitialImportDatasetConfigurationOutput) ToGetDatasetInitialIm
 
 func (o GetDatasetInitialImportDatasetConfigurationOutput) ToGetDatasetInitialImportDatasetConfigurationOutputWithContext(ctx context.Context) GetDatasetInitialImportDatasetConfigurationOutput {
 	return o
-}
-
-func (o GetDatasetInitialImportDatasetConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatasetInitialImportDatasetConfiguration] {
-	return pulumix.Output[GetDatasetInitialImportDatasetConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // File format details used for importing dataset
@@ -2740,12 +2337,6 @@ func (o GetDatasetInitialImportDatasetConfigurationArrayOutput) ToGetDatasetInit
 
 func (o GetDatasetInitialImportDatasetConfigurationArrayOutput) ToGetDatasetInitialImportDatasetConfigurationArrayOutputWithContext(ctx context.Context) GetDatasetInitialImportDatasetConfigurationArrayOutput {
 	return o
-}
-
-func (o GetDatasetInitialImportDatasetConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetInitialImportDatasetConfiguration] {
-	return pulumix.Output[[]GetDatasetInitialImportDatasetConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatasetInitialImportDatasetConfigurationArrayOutput) Index(i pulumi.IntInput) GetDatasetInitialImportDatasetConfigurationOutput {
@@ -2791,12 +2382,6 @@ func (i GetDatasetInitialImportDatasetConfigurationImportFormatArgs) ToGetDatase
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetInitialImportDatasetConfigurationImportFormatOutput)
 }
 
-func (i GetDatasetInitialImportDatasetConfigurationImportFormatArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatasetInitialImportDatasetConfigurationImportFormat] {
-	return pulumix.Output[GetDatasetInitialImportDatasetConfigurationImportFormat]{
-		OutputState: i.ToGetDatasetInitialImportDatasetConfigurationImportFormatOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatasetInitialImportDatasetConfigurationImportFormatArrayInput is an input type that accepts GetDatasetInitialImportDatasetConfigurationImportFormatArray and GetDatasetInitialImportDatasetConfigurationImportFormatArrayOutput values.
 // You can construct a concrete instance of `GetDatasetInitialImportDatasetConfigurationImportFormatArrayInput` via:
 //
@@ -2822,12 +2407,6 @@ func (i GetDatasetInitialImportDatasetConfigurationImportFormatArray) ToGetDatas
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetInitialImportDatasetConfigurationImportFormatArrayOutput)
 }
 
-func (i GetDatasetInitialImportDatasetConfigurationImportFormatArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetInitialImportDatasetConfigurationImportFormat] {
-	return pulumix.Output[[]GetDatasetInitialImportDatasetConfigurationImportFormat]{
-		OutputState: i.ToGetDatasetInitialImportDatasetConfigurationImportFormatArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatasetInitialImportDatasetConfigurationImportFormatOutput struct{ *pulumi.OutputState }
 
 func (GetDatasetInitialImportDatasetConfigurationImportFormatOutput) ElementType() reflect.Type {
@@ -2840,12 +2419,6 @@ func (o GetDatasetInitialImportDatasetConfigurationImportFormatOutput) ToGetData
 
 func (o GetDatasetInitialImportDatasetConfigurationImportFormatOutput) ToGetDatasetInitialImportDatasetConfigurationImportFormatOutputWithContext(ctx context.Context) GetDatasetInitialImportDatasetConfigurationImportFormatOutput {
 	return o
-}
-
-func (o GetDatasetInitialImportDatasetConfigurationImportFormatOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatasetInitialImportDatasetConfigurationImportFormat] {
-	return pulumix.Output[GetDatasetInitialImportDatasetConfigurationImportFormat]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An unique name for a label within its dataset.
@@ -2870,12 +2443,6 @@ func (o GetDatasetInitialImportDatasetConfigurationImportFormatArrayOutput) ToGe
 
 func (o GetDatasetInitialImportDatasetConfigurationImportFormatArrayOutput) ToGetDatasetInitialImportDatasetConfigurationImportFormatArrayOutputWithContext(ctx context.Context) GetDatasetInitialImportDatasetConfigurationImportFormatArrayOutput {
 	return o
-}
-
-func (o GetDatasetInitialImportDatasetConfigurationImportFormatArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetInitialImportDatasetConfigurationImportFormat] {
-	return pulumix.Output[[]GetDatasetInitialImportDatasetConfigurationImportFormat]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatasetInitialImportDatasetConfigurationImportFormatArrayOutput) Index(i pulumi.IntInput) GetDatasetInitialImportDatasetConfigurationImportFormatOutput {
@@ -2929,12 +2496,6 @@ func (i GetDatasetInitialImportDatasetConfigurationImportMetadataPathArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetInitialImportDatasetConfigurationImportMetadataPathOutput)
 }
 
-func (i GetDatasetInitialImportDatasetConfigurationImportMetadataPathArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatasetInitialImportDatasetConfigurationImportMetadataPath] {
-	return pulumix.Output[GetDatasetInitialImportDatasetConfigurationImportMetadataPath]{
-		OutputState: i.ToGetDatasetInitialImportDatasetConfigurationImportMetadataPathOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayInput is an input type that accepts GetDatasetInitialImportDatasetConfigurationImportMetadataPathArray and GetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayOutput values.
 // You can construct a concrete instance of `GetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayInput` via:
 //
@@ -2960,12 +2521,6 @@ func (i GetDatasetInitialImportDatasetConfigurationImportMetadataPathArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayOutput)
 }
 
-func (i GetDatasetInitialImportDatasetConfigurationImportMetadataPathArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetInitialImportDatasetConfigurationImportMetadataPath] {
-	return pulumix.Output[[]GetDatasetInitialImportDatasetConfigurationImportMetadataPath]{
-		OutputState: i.ToGetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatasetInitialImportDatasetConfigurationImportMetadataPathOutput struct{ *pulumi.OutputState }
 
 func (GetDatasetInitialImportDatasetConfigurationImportMetadataPathOutput) ElementType() reflect.Type {
@@ -2978,12 +2533,6 @@ func (o GetDatasetInitialImportDatasetConfigurationImportMetadataPathOutput) ToG
 
 func (o GetDatasetInitialImportDatasetConfigurationImportMetadataPathOutput) ToGetDatasetInitialImportDatasetConfigurationImportMetadataPathOutputWithContext(ctx context.Context) GetDatasetInitialImportDatasetConfigurationImportMetadataPathOutput {
 	return o
-}
-
-func (o GetDatasetInitialImportDatasetConfigurationImportMetadataPathOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatasetInitialImportDatasetConfigurationImportMetadataPath] {
-	return pulumix.Output[GetDatasetInitialImportDatasetConfigurationImportMetadataPath]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Bucket name
@@ -3018,12 +2567,6 @@ func (o GetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayOutput
 
 func (o GetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayOutput) ToGetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayOutputWithContext(ctx context.Context) GetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayOutput {
 	return o
-}
-
-func (o GetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetInitialImportDatasetConfigurationImportMetadataPath] {
-	return pulumix.Output[[]GetDatasetInitialImportDatasetConfigurationImportMetadataPath]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatasetInitialImportDatasetConfigurationImportMetadataPathArrayOutput) Index(i pulumi.IntInput) GetDatasetInitialImportDatasetConfigurationImportMetadataPathOutput {
@@ -3061,12 +2604,6 @@ func (i GetDatasetInitialRecordGenerationConfigurationArgs) ToGetDatasetInitialR
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetInitialRecordGenerationConfigurationOutput)
 }
 
-func (i GetDatasetInitialRecordGenerationConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatasetInitialRecordGenerationConfiguration] {
-	return pulumix.Output[GetDatasetInitialRecordGenerationConfiguration]{
-		OutputState: i.ToGetDatasetInitialRecordGenerationConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatasetInitialRecordGenerationConfigurationArrayInput is an input type that accepts GetDatasetInitialRecordGenerationConfigurationArray and GetDatasetInitialRecordGenerationConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetDatasetInitialRecordGenerationConfigurationArrayInput` via:
 //
@@ -3092,12 +2629,6 @@ func (i GetDatasetInitialRecordGenerationConfigurationArray) ToGetDatasetInitial
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetInitialRecordGenerationConfigurationArrayOutput)
 }
 
-func (i GetDatasetInitialRecordGenerationConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetInitialRecordGenerationConfiguration] {
-	return pulumix.Output[[]GetDatasetInitialRecordGenerationConfiguration]{
-		OutputState: i.ToGetDatasetInitialRecordGenerationConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatasetInitialRecordGenerationConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetDatasetInitialRecordGenerationConfigurationOutput) ElementType() reflect.Type {
@@ -3112,12 +2643,6 @@ func (o GetDatasetInitialRecordGenerationConfigurationOutput) ToGetDatasetInitia
 	return o
 }
 
-func (o GetDatasetInitialRecordGenerationConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatasetInitialRecordGenerationConfiguration] {
-	return pulumix.Output[GetDatasetInitialRecordGenerationConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 type GetDatasetInitialRecordGenerationConfigurationArrayOutput struct{ *pulumi.OutputState }
 
 func (GetDatasetInitialRecordGenerationConfigurationArrayOutput) ElementType() reflect.Type {
@@ -3130,12 +2655,6 @@ func (o GetDatasetInitialRecordGenerationConfigurationArrayOutput) ToGetDatasetI
 
 func (o GetDatasetInitialRecordGenerationConfigurationArrayOutput) ToGetDatasetInitialRecordGenerationConfigurationArrayOutputWithContext(ctx context.Context) GetDatasetInitialRecordGenerationConfigurationArrayOutput {
 	return o
-}
-
-func (o GetDatasetInitialRecordGenerationConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetInitialRecordGenerationConfiguration] {
-	return pulumix.Output[[]GetDatasetInitialRecordGenerationConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatasetInitialRecordGenerationConfigurationArrayOutput) Index(i pulumi.IntInput) GetDatasetInitialRecordGenerationConfigurationOutput {
@@ -3177,12 +2696,6 @@ func (i GetDatasetLabelSetArgs) ToGetDatasetLabelSetOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetLabelSetOutput)
 }
 
-func (i GetDatasetLabelSetArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatasetLabelSet] {
-	return pulumix.Output[GetDatasetLabelSet]{
-		OutputState: i.ToGetDatasetLabelSetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatasetLabelSetArrayInput is an input type that accepts GetDatasetLabelSetArray and GetDatasetLabelSetArrayOutput values.
 // You can construct a concrete instance of `GetDatasetLabelSetArrayInput` via:
 //
@@ -3208,12 +2721,6 @@ func (i GetDatasetLabelSetArray) ToGetDatasetLabelSetArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetLabelSetArrayOutput)
 }
 
-func (i GetDatasetLabelSetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetLabelSet] {
-	return pulumix.Output[[]GetDatasetLabelSet]{
-		OutputState: i.ToGetDatasetLabelSetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatasetLabelSetOutput struct{ *pulumi.OutputState }
 
 func (GetDatasetLabelSetOutput) ElementType() reflect.Type {
@@ -3226,12 +2733,6 @@ func (o GetDatasetLabelSetOutput) ToGetDatasetLabelSetOutput() GetDatasetLabelSe
 
 func (o GetDatasetLabelSetOutput) ToGetDatasetLabelSetOutputWithContext(ctx context.Context) GetDatasetLabelSetOutput {
 	return o
-}
-
-func (o GetDatasetLabelSetOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatasetLabelSet] {
-	return pulumix.Output[GetDatasetLabelSet]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An ordered collection of labels that are unique by name.
@@ -3251,12 +2752,6 @@ func (o GetDatasetLabelSetArrayOutput) ToGetDatasetLabelSetArrayOutput() GetData
 
 func (o GetDatasetLabelSetArrayOutput) ToGetDatasetLabelSetArrayOutputWithContext(ctx context.Context) GetDatasetLabelSetArrayOutput {
 	return o
-}
-
-func (o GetDatasetLabelSetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetLabelSet] {
-	return pulumix.Output[[]GetDatasetLabelSet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatasetLabelSetArrayOutput) Index(i pulumi.IntInput) GetDatasetLabelSetOutput {
@@ -3298,12 +2793,6 @@ func (i GetDatasetLabelSetItemArgs) ToGetDatasetLabelSetItemOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetLabelSetItemOutput)
 }
 
-func (i GetDatasetLabelSetItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatasetLabelSetItem] {
-	return pulumix.Output[GetDatasetLabelSetItem]{
-		OutputState: i.ToGetDatasetLabelSetItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatasetLabelSetItemArrayInput is an input type that accepts GetDatasetLabelSetItemArray and GetDatasetLabelSetItemArrayOutput values.
 // You can construct a concrete instance of `GetDatasetLabelSetItemArrayInput` via:
 //
@@ -3329,12 +2818,6 @@ func (i GetDatasetLabelSetItemArray) ToGetDatasetLabelSetItemArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetLabelSetItemArrayOutput)
 }
 
-func (i GetDatasetLabelSetItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetLabelSetItem] {
-	return pulumix.Output[[]GetDatasetLabelSetItem]{
-		OutputState: i.ToGetDatasetLabelSetItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatasetLabelSetItemOutput struct{ *pulumi.OutputState }
 
 func (GetDatasetLabelSetItemOutput) ElementType() reflect.Type {
@@ -3347,12 +2830,6 @@ func (o GetDatasetLabelSetItemOutput) ToGetDatasetLabelSetItemOutput() GetDatase
 
 func (o GetDatasetLabelSetItemOutput) ToGetDatasetLabelSetItemOutputWithContext(ctx context.Context) GetDatasetLabelSetItemOutput {
 	return o
-}
-
-func (o GetDatasetLabelSetItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatasetLabelSetItem] {
-	return pulumix.Output[GetDatasetLabelSetItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An unique name for a label within its dataset.
@@ -3372,12 +2849,6 @@ func (o GetDatasetLabelSetItemArrayOutput) ToGetDatasetLabelSetItemArrayOutput()
 
 func (o GetDatasetLabelSetItemArrayOutput) ToGetDatasetLabelSetItemArrayOutputWithContext(ctx context.Context) GetDatasetLabelSetItemArrayOutput {
 	return o
-}
-
-func (o GetDatasetLabelSetItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetLabelSetItem] {
-	return pulumix.Output[[]GetDatasetLabelSetItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatasetLabelSetItemArrayOutput) Index(i pulumi.IntInput) GetDatasetLabelSetItemOutput {
@@ -3419,12 +2890,6 @@ func (i GetDatasetsDatasetCollectionArgs) ToGetDatasetsDatasetCollectionOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetsDatasetCollectionOutput)
 }
 
-func (i GetDatasetsDatasetCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatasetsDatasetCollection] {
-	return pulumix.Output[GetDatasetsDatasetCollection]{
-		OutputState: i.ToGetDatasetsDatasetCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatasetsDatasetCollectionArrayInput is an input type that accepts GetDatasetsDatasetCollectionArray and GetDatasetsDatasetCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDatasetsDatasetCollectionArrayInput` via:
 //
@@ -3450,12 +2915,6 @@ func (i GetDatasetsDatasetCollectionArray) ToGetDatasetsDatasetCollectionArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetsDatasetCollectionArrayOutput)
 }
 
-func (i GetDatasetsDatasetCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetsDatasetCollection] {
-	return pulumix.Output[[]GetDatasetsDatasetCollection]{
-		OutputState: i.ToGetDatasetsDatasetCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatasetsDatasetCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDatasetsDatasetCollectionOutput) ElementType() reflect.Type {
@@ -3468,12 +2927,6 @@ func (o GetDatasetsDatasetCollectionOutput) ToGetDatasetsDatasetCollectionOutput
 
 func (o GetDatasetsDatasetCollectionOutput) ToGetDatasetsDatasetCollectionOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionOutput {
 	return o
-}
-
-func (o GetDatasetsDatasetCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatasetsDatasetCollection] {
-	return pulumix.Output[GetDatasetsDatasetCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An ordered collection of labels that are unique by name.
@@ -3493,12 +2946,6 @@ func (o GetDatasetsDatasetCollectionArrayOutput) ToGetDatasetsDatasetCollectionA
 
 func (o GetDatasetsDatasetCollectionArrayOutput) ToGetDatasetsDatasetCollectionArrayOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionArrayOutput {
 	return o
-}
-
-func (o GetDatasetsDatasetCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetsDatasetCollection] {
-	return pulumix.Output[[]GetDatasetsDatasetCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatasetsDatasetCollectionArrayOutput) Index(i pulumi.IntInput) GetDatasetsDatasetCollectionOutput {
@@ -3612,12 +3059,6 @@ func (i GetDatasetsDatasetCollectionItemArgs) ToGetDatasetsDatasetCollectionItem
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetsDatasetCollectionItemOutput)
 }
 
-func (i GetDatasetsDatasetCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatasetsDatasetCollectionItem] {
-	return pulumix.Output[GetDatasetsDatasetCollectionItem]{
-		OutputState: i.ToGetDatasetsDatasetCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatasetsDatasetCollectionItemArrayInput is an input type that accepts GetDatasetsDatasetCollectionItemArray and GetDatasetsDatasetCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDatasetsDatasetCollectionItemArrayInput` via:
 //
@@ -3643,12 +3084,6 @@ func (i GetDatasetsDatasetCollectionItemArray) ToGetDatasetsDatasetCollectionIte
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetsDatasetCollectionItemArrayOutput)
 }
 
-func (i GetDatasetsDatasetCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetsDatasetCollectionItem] {
-	return pulumix.Output[[]GetDatasetsDatasetCollectionItem]{
-		OutputState: i.ToGetDatasetsDatasetCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatasetsDatasetCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDatasetsDatasetCollectionItemOutput) ElementType() reflect.Type {
@@ -3661,12 +3096,6 @@ func (o GetDatasetsDatasetCollectionItemOutput) ToGetDatasetsDatasetCollectionIt
 
 func (o GetDatasetsDatasetCollectionItemOutput) ToGetDatasetsDatasetCollectionItemOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionItemOutput {
 	return o
-}
-
-func (o GetDatasetsDatasetCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatasetsDatasetCollectionItem] {
-	return pulumix.Output[GetDatasetsDatasetCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
@@ -3788,12 +3217,6 @@ func (o GetDatasetsDatasetCollectionItemArrayOutput) ToGetDatasetsDatasetCollect
 	return o
 }
 
-func (o GetDatasetsDatasetCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetsDatasetCollectionItem] {
-	return pulumix.Output[[]GetDatasetsDatasetCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDatasetsDatasetCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDatasetsDatasetCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatasetsDatasetCollectionItem {
 		return vs[0].([]GetDatasetsDatasetCollectionItem)[vs[1].(int)]
@@ -3837,12 +3260,6 @@ func (i GetDatasetsDatasetCollectionItemDatasetFormatDetailArgs) ToGetDatasetsDa
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetsDatasetCollectionItemDatasetFormatDetailOutput)
 }
 
-func (i GetDatasetsDatasetCollectionItemDatasetFormatDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatasetsDatasetCollectionItemDatasetFormatDetail] {
-	return pulumix.Output[GetDatasetsDatasetCollectionItemDatasetFormatDetail]{
-		OutputState: i.ToGetDatasetsDatasetCollectionItemDatasetFormatDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatasetsDatasetCollectionItemDatasetFormatDetailArrayInput is an input type that accepts GetDatasetsDatasetCollectionItemDatasetFormatDetailArray and GetDatasetsDatasetCollectionItemDatasetFormatDetailArrayOutput values.
 // You can construct a concrete instance of `GetDatasetsDatasetCollectionItemDatasetFormatDetailArrayInput` via:
 //
@@ -3868,12 +3285,6 @@ func (i GetDatasetsDatasetCollectionItemDatasetFormatDetailArray) ToGetDatasetsD
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetsDatasetCollectionItemDatasetFormatDetailArrayOutput)
 }
 
-func (i GetDatasetsDatasetCollectionItemDatasetFormatDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetsDatasetCollectionItemDatasetFormatDetail] {
-	return pulumix.Output[[]GetDatasetsDatasetCollectionItemDatasetFormatDetail]{
-		OutputState: i.ToGetDatasetsDatasetCollectionItemDatasetFormatDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatasetsDatasetCollectionItemDatasetFormatDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDatasetsDatasetCollectionItemDatasetFormatDetailOutput) ElementType() reflect.Type {
@@ -3886,12 +3297,6 @@ func (o GetDatasetsDatasetCollectionItemDatasetFormatDetailOutput) ToGetDatasets
 
 func (o GetDatasetsDatasetCollectionItemDatasetFormatDetailOutput) ToGetDatasetsDatasetCollectionItemDatasetFormatDetailOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionItemDatasetFormatDetailOutput {
 	return o
-}
-
-func (o GetDatasetsDatasetCollectionItemDatasetFormatDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatasetsDatasetCollectionItemDatasetFormatDetail] {
-	return pulumix.Output[GetDatasetsDatasetCollectionItemDatasetFormatDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // It defines the format type of text files.
@@ -3918,12 +3323,6 @@ func (o GetDatasetsDatasetCollectionItemDatasetFormatDetailArrayOutput) ToGetDat
 
 func (o GetDatasetsDatasetCollectionItemDatasetFormatDetailArrayOutput) ToGetDatasetsDatasetCollectionItemDatasetFormatDetailArrayOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionItemDatasetFormatDetailArrayOutput {
 	return o
-}
-
-func (o GetDatasetsDatasetCollectionItemDatasetFormatDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetsDatasetCollectionItemDatasetFormatDetail] {
-	return pulumix.Output[[]GetDatasetsDatasetCollectionItemDatasetFormatDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatasetsDatasetCollectionItemDatasetFormatDetailArrayOutput) Index(i pulumi.IntInput) GetDatasetsDatasetCollectionItemDatasetFormatDetailOutput {
@@ -3985,12 +3384,6 @@ func (i GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataA
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutput)
 }
 
-func (i GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata] {
-	return pulumix.Output[GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata]{
-		OutputState: i.ToGetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayInput is an input type that accepts GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArray and GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayOutput values.
 // You can construct a concrete instance of `GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayInput` via:
 //
@@ -4016,12 +3409,6 @@ func (i GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataA
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayOutput)
 }
 
-func (i GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata] {
-	return pulumix.Output[[]GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata]{
-		OutputState: i.ToGetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutput struct{ *pulumi.OutputState }
 
 func (GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutput) ElementType() reflect.Type {
@@ -4034,12 +3421,6 @@ func (o GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataO
 
 func (o GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutput) ToGetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutput {
 	return o
-}
-
-func (o GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata] {
-	return pulumix.Output[GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A column delimiter
@@ -4098,12 +3479,6 @@ func (o GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataA
 	return o
 }
 
-func (o GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata] {
-	return pulumix.Output[[]GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArrayOutput) Index(i pulumi.IntInput) GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata {
 		return vs[0].([]GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata)[vs[1].(int)]
@@ -4155,12 +3530,6 @@ func (i GetDatasetsDatasetCollectionItemDatasetSourceDetailArgs) ToGetDatasetsDa
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetsDatasetCollectionItemDatasetSourceDetailOutput)
 }
 
-func (i GetDatasetsDatasetCollectionItemDatasetSourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatasetsDatasetCollectionItemDatasetSourceDetail] {
-	return pulumix.Output[GetDatasetsDatasetCollectionItemDatasetSourceDetail]{
-		OutputState: i.ToGetDatasetsDatasetCollectionItemDatasetSourceDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatasetsDatasetCollectionItemDatasetSourceDetailArrayInput is an input type that accepts GetDatasetsDatasetCollectionItemDatasetSourceDetailArray and GetDatasetsDatasetCollectionItemDatasetSourceDetailArrayOutput values.
 // You can construct a concrete instance of `GetDatasetsDatasetCollectionItemDatasetSourceDetailArrayInput` via:
 //
@@ -4186,12 +3555,6 @@ func (i GetDatasetsDatasetCollectionItemDatasetSourceDetailArray) ToGetDatasetsD
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetsDatasetCollectionItemDatasetSourceDetailArrayOutput)
 }
 
-func (i GetDatasetsDatasetCollectionItemDatasetSourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetsDatasetCollectionItemDatasetSourceDetail] {
-	return pulumix.Output[[]GetDatasetsDatasetCollectionItemDatasetSourceDetail]{
-		OutputState: i.ToGetDatasetsDatasetCollectionItemDatasetSourceDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatasetsDatasetCollectionItemDatasetSourceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDatasetsDatasetCollectionItemDatasetSourceDetailOutput) ElementType() reflect.Type {
@@ -4204,12 +3567,6 @@ func (o GetDatasetsDatasetCollectionItemDatasetSourceDetailOutput) ToGetDatasets
 
 func (o GetDatasetsDatasetCollectionItemDatasetSourceDetailOutput) ToGetDatasetsDatasetCollectionItemDatasetSourceDetailOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionItemDatasetSourceDetailOutput {
 	return o
-}
-
-func (o GetDatasetsDatasetCollectionItemDatasetSourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatasetsDatasetCollectionItemDatasetSourceDetail] {
-	return pulumix.Output[GetDatasetsDatasetCollectionItemDatasetSourceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Bucket name
@@ -4244,12 +3601,6 @@ func (o GetDatasetsDatasetCollectionItemDatasetSourceDetailArrayOutput) ToGetDat
 
 func (o GetDatasetsDatasetCollectionItemDatasetSourceDetailArrayOutput) ToGetDatasetsDatasetCollectionItemDatasetSourceDetailArrayOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionItemDatasetSourceDetailArrayOutput {
 	return o
-}
-
-func (o GetDatasetsDatasetCollectionItemDatasetSourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetsDatasetCollectionItemDatasetSourceDetail] {
-	return pulumix.Output[[]GetDatasetsDatasetCollectionItemDatasetSourceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatasetsDatasetCollectionItemDatasetSourceDetailArrayOutput) Index(i pulumi.IntInput) GetDatasetsDatasetCollectionItemDatasetSourceDetailOutput {
@@ -4295,12 +3646,6 @@ func (i GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArgs) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutput)
 }
 
-func (i GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration] {
-	return pulumix.Output[GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration]{
-		OutputState: i.ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayInput is an input type that accepts GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArray and GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayInput` via:
 //
@@ -4326,12 +3671,6 @@ func (i GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayOutput)
 }
 
-func (i GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration] {
-	return pulumix.Output[[]GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration]{
-		OutputState: i.ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutput) ElementType() reflect.Type {
@@ -4344,12 +3683,6 @@ func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutput)
 
 func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutput) ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutput {
 	return o
-}
-
-func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration] {
-	return pulumix.Output[GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // File format details used for importing dataset
@@ -4378,12 +3711,6 @@ func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayOu
 
 func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayOutput) ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayOutput {
 	return o
-}
-
-func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration] {
-	return pulumix.Output[[]GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArrayOutput) Index(i pulumi.IntInput) GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationOutput {
@@ -4429,12 +3756,6 @@ func (i GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportF
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutput)
 }
 
-func (i GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat] {
-	return pulumix.Output[GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat]{
-		OutputState: i.ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayInput is an input type that accepts GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArray and GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayOutput values.
 // You can construct a concrete instance of `GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayInput` via:
 //
@@ -4460,12 +3781,6 @@ func (i GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportF
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayOutput)
 }
 
-func (i GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat] {
-	return pulumix.Output[[]GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat]{
-		OutputState: i.ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutput struct{ *pulumi.OutputState }
 
 func (GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutput) ElementType() reflect.Type {
@@ -4478,12 +3793,6 @@ func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportF
 
 func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutput) ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutput {
 	return o
-}
-
-func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat] {
-	return pulumix.Output[GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An unique name for a label within its dataset.
@@ -4512,12 +3821,6 @@ func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportF
 
 func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayOutput) ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayOutput {
 	return o
-}
-
-func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat] {
-	return pulumix.Output[[]GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArrayOutput) Index(i pulumi.IntInput) GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatOutput {
@@ -4571,12 +3874,6 @@ func (i GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportM
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutput)
 }
 
-func (i GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath] {
-	return pulumix.Output[GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath]{
-		OutputState: i.ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayInput is an input type that accepts GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArray and GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayOutput values.
 // You can construct a concrete instance of `GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayInput` via:
 //
@@ -4602,12 +3899,6 @@ func (i GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportM
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayOutput)
 }
 
-func (i GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath] {
-	return pulumix.Output[[]GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath]{
-		OutputState: i.ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutput struct{ *pulumi.OutputState }
 
 func (GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutput) ElementType() reflect.Type {
@@ -4620,12 +3911,6 @@ func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportM
 
 func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutput) ToGetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutput {
 	return o
-}
-
-func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath] {
-	return pulumix.Output[GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Bucket name
@@ -4670,12 +3955,6 @@ func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportM
 	return o
 }
 
-func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath] {
-	return pulumix.Output[[]GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArrayOutput) Index(i pulumi.IntInput) GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath {
 		return vs[0].([]GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath)[vs[1].(int)]
@@ -4711,12 +3990,6 @@ func (i GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArgs
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationOutput)
 }
 
-func (i GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatasetsDatasetCollectionItemInitialRecordGenerationConfiguration] {
-	return pulumix.Output[GetDatasetsDatasetCollectionItemInitialRecordGenerationConfiguration]{
-		OutputState: i.ToGetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArrayInput is an input type that accepts GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArray and GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArrayInput` via:
 //
@@ -4742,12 +4015,6 @@ func (i GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArrayOutput)
 }
 
-func (i GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetsDatasetCollectionItemInitialRecordGenerationConfiguration] {
-	return pulumix.Output[[]GetDatasetsDatasetCollectionItemInitialRecordGenerationConfiguration]{
-		OutputState: i.ToGetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationOutput) ElementType() reflect.Type {
@@ -4762,12 +4029,6 @@ func (o GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationOutp
 	return o
 }
 
-func (o GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatasetsDatasetCollectionItemInitialRecordGenerationConfiguration] {
-	return pulumix.Output[GetDatasetsDatasetCollectionItemInitialRecordGenerationConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 type GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArrayOutput struct{ *pulumi.OutputState }
 
 func (GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArrayOutput) ElementType() reflect.Type {
@@ -4780,12 +4041,6 @@ func (o GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArra
 
 func (o GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArrayOutput) ToGetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArrayOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArrayOutput {
 	return o
-}
-
-func (o GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetsDatasetCollectionItemInitialRecordGenerationConfiguration] {
-	return pulumix.Output[[]GetDatasetsDatasetCollectionItemInitialRecordGenerationConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArrayOutput) Index(i pulumi.IntInput) GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationOutput {
@@ -4827,12 +4082,6 @@ func (i GetDatasetsDatasetCollectionItemLabelSetArgs) ToGetDatasetsDatasetCollec
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetsDatasetCollectionItemLabelSetOutput)
 }
 
-func (i GetDatasetsDatasetCollectionItemLabelSetArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatasetsDatasetCollectionItemLabelSet] {
-	return pulumix.Output[GetDatasetsDatasetCollectionItemLabelSet]{
-		OutputState: i.ToGetDatasetsDatasetCollectionItemLabelSetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatasetsDatasetCollectionItemLabelSetArrayInput is an input type that accepts GetDatasetsDatasetCollectionItemLabelSetArray and GetDatasetsDatasetCollectionItemLabelSetArrayOutput values.
 // You can construct a concrete instance of `GetDatasetsDatasetCollectionItemLabelSetArrayInput` via:
 //
@@ -4858,12 +4107,6 @@ func (i GetDatasetsDatasetCollectionItemLabelSetArray) ToGetDatasetsDatasetColle
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetsDatasetCollectionItemLabelSetArrayOutput)
 }
 
-func (i GetDatasetsDatasetCollectionItemLabelSetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetsDatasetCollectionItemLabelSet] {
-	return pulumix.Output[[]GetDatasetsDatasetCollectionItemLabelSet]{
-		OutputState: i.ToGetDatasetsDatasetCollectionItemLabelSetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatasetsDatasetCollectionItemLabelSetOutput struct{ *pulumi.OutputState }
 
 func (GetDatasetsDatasetCollectionItemLabelSetOutput) ElementType() reflect.Type {
@@ -4876,12 +4119,6 @@ func (o GetDatasetsDatasetCollectionItemLabelSetOutput) ToGetDatasetsDatasetColl
 
 func (o GetDatasetsDatasetCollectionItemLabelSetOutput) ToGetDatasetsDatasetCollectionItemLabelSetOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionItemLabelSetOutput {
 	return o
-}
-
-func (o GetDatasetsDatasetCollectionItemLabelSetOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatasetsDatasetCollectionItemLabelSet] {
-	return pulumix.Output[GetDatasetsDatasetCollectionItemLabelSet]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An ordered collection of labels that are unique by name.
@@ -4903,12 +4140,6 @@ func (o GetDatasetsDatasetCollectionItemLabelSetArrayOutput) ToGetDatasetsDatase
 
 func (o GetDatasetsDatasetCollectionItemLabelSetArrayOutput) ToGetDatasetsDatasetCollectionItemLabelSetArrayOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionItemLabelSetArrayOutput {
 	return o
-}
-
-func (o GetDatasetsDatasetCollectionItemLabelSetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetsDatasetCollectionItemLabelSet] {
-	return pulumix.Output[[]GetDatasetsDatasetCollectionItemLabelSet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatasetsDatasetCollectionItemLabelSetArrayOutput) Index(i pulumi.IntInput) GetDatasetsDatasetCollectionItemLabelSetOutput {
@@ -4950,12 +4181,6 @@ func (i GetDatasetsDatasetCollectionItemLabelSetItemArgs) ToGetDatasetsDatasetCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetsDatasetCollectionItemLabelSetItemOutput)
 }
 
-func (i GetDatasetsDatasetCollectionItemLabelSetItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatasetsDatasetCollectionItemLabelSetItem] {
-	return pulumix.Output[GetDatasetsDatasetCollectionItemLabelSetItem]{
-		OutputState: i.ToGetDatasetsDatasetCollectionItemLabelSetItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatasetsDatasetCollectionItemLabelSetItemArrayInput is an input type that accepts GetDatasetsDatasetCollectionItemLabelSetItemArray and GetDatasetsDatasetCollectionItemLabelSetItemArrayOutput values.
 // You can construct a concrete instance of `GetDatasetsDatasetCollectionItemLabelSetItemArrayInput` via:
 //
@@ -4981,12 +4206,6 @@ func (i GetDatasetsDatasetCollectionItemLabelSetItemArray) ToGetDatasetsDatasetC
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetsDatasetCollectionItemLabelSetItemArrayOutput)
 }
 
-func (i GetDatasetsDatasetCollectionItemLabelSetItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetsDatasetCollectionItemLabelSetItem] {
-	return pulumix.Output[[]GetDatasetsDatasetCollectionItemLabelSetItem]{
-		OutputState: i.ToGetDatasetsDatasetCollectionItemLabelSetItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatasetsDatasetCollectionItemLabelSetItemOutput struct{ *pulumi.OutputState }
 
 func (GetDatasetsDatasetCollectionItemLabelSetItemOutput) ElementType() reflect.Type {
@@ -4999,12 +4218,6 @@ func (o GetDatasetsDatasetCollectionItemLabelSetItemOutput) ToGetDatasetsDataset
 
 func (o GetDatasetsDatasetCollectionItemLabelSetItemOutput) ToGetDatasetsDatasetCollectionItemLabelSetItemOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionItemLabelSetItemOutput {
 	return o
-}
-
-func (o GetDatasetsDatasetCollectionItemLabelSetItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatasetsDatasetCollectionItemLabelSetItem] {
-	return pulumix.Output[GetDatasetsDatasetCollectionItemLabelSetItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An unique name for a label within its dataset.
@@ -5024,12 +4237,6 @@ func (o GetDatasetsDatasetCollectionItemLabelSetItemArrayOutput) ToGetDatasetsDa
 
 func (o GetDatasetsDatasetCollectionItemLabelSetItemArrayOutput) ToGetDatasetsDatasetCollectionItemLabelSetItemArrayOutputWithContext(ctx context.Context) GetDatasetsDatasetCollectionItemLabelSetItemArrayOutput {
 	return o
-}
-
-func (o GetDatasetsDatasetCollectionItemLabelSetItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetsDatasetCollectionItemLabelSetItem] {
-	return pulumix.Output[[]GetDatasetsDatasetCollectionItemLabelSetItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatasetsDatasetCollectionItemLabelSetItemArrayOutput) Index(i pulumi.IntInput) GetDatasetsDatasetCollectionItemLabelSetItemOutput {
@@ -5075,12 +4282,6 @@ func (i GetDatasetsFilterArgs) ToGetDatasetsFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetsFilterOutput)
 }
 
-func (i GetDatasetsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatasetsFilter] {
-	return pulumix.Output[GetDatasetsFilter]{
-		OutputState: i.ToGetDatasetsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatasetsFilterArrayInput is an input type that accepts GetDatasetsFilterArray and GetDatasetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDatasetsFilterArrayInput` via:
 //
@@ -5106,12 +4307,6 @@ func (i GetDatasetsFilterArray) ToGetDatasetsFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatasetsFilterArrayOutput)
 }
 
-func (i GetDatasetsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetsFilter] {
-	return pulumix.Output[[]GetDatasetsFilter]{
-		OutputState: i.ToGetDatasetsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatasetsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDatasetsFilterOutput) ElementType() reflect.Type {
@@ -5124,12 +4319,6 @@ func (o GetDatasetsFilterOutput) ToGetDatasetsFilterOutput() GetDatasetsFilterOu
 
 func (o GetDatasetsFilterOutput) ToGetDatasetsFilterOutputWithContext(ctx context.Context) GetDatasetsFilterOutput {
 	return o
-}
-
-func (o GetDatasetsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatasetsFilter] {
-	return pulumix.Output[GetDatasetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An unique name for a label within its dataset.
@@ -5157,12 +4346,6 @@ func (o GetDatasetsFilterArrayOutput) ToGetDatasetsFilterArrayOutput() GetDatase
 
 func (o GetDatasetsFilterArrayOutput) ToGetDatasetsFilterArrayOutputWithContext(ctx context.Context) GetDatasetsFilterArrayOutput {
 	return o
-}
-
-func (o GetDatasetsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatasetsFilter] {
-	return pulumix.Output[[]GetDatasetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatasetsFilterArrayOutput) Index(i pulumi.IntInput) GetDatasetsFilterOutput {

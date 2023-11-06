@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Sql Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
@@ -148,12 +147,6 @@ func (o LookupSqlEndpointResultOutput) ToLookupSqlEndpointResultOutput() LookupS
 
 func (o LookupSqlEndpointResultOutput) ToLookupSqlEndpointResultOutputWithContext(ctx context.Context) LookupSqlEndpointResultOutput {
 	return o
-}
-
-func (o LookupSqlEndpointResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSqlEndpointResult] {
-	return pulumix.Output[LookupSqlEndpointResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of a compartment.

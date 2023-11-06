@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Security Zones in Oracle Cloud Infrastructure Cloud Guard service.
@@ -137,12 +136,6 @@ func (o GetSecurityZonesResultOutput) ToGetSecurityZonesResultOutput() GetSecuri
 
 func (o GetSecurityZonesResultOutput) ToGetSecurityZonesResultOutputWithContext(ctx context.Context) GetSecurityZonesResultOutput {
 	return o
-}
-
-func (o GetSecurityZonesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityZonesResult] {
-	return pulumix.Output[GetSecurityZonesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment for the security zone

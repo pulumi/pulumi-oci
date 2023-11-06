@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Network Security Group resource in Oracle Cloud Infrastructure Core service.
@@ -217,12 +216,6 @@ func (i *NetworkSecurityGroup) ToNetworkSecurityGroupOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkSecurityGroupOutput)
 }
 
-func (i *NetworkSecurityGroup) ToOutput(ctx context.Context) pulumix.Output[*NetworkSecurityGroup] {
-	return pulumix.Output[*NetworkSecurityGroup]{
-		OutputState: i.ToNetworkSecurityGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NetworkSecurityGroupArrayInput is an input type that accepts NetworkSecurityGroupArray and NetworkSecurityGroupArrayOutput values.
 // You can construct a concrete instance of `NetworkSecurityGroupArrayInput` via:
 //
@@ -246,12 +239,6 @@ func (i NetworkSecurityGroupArray) ToNetworkSecurityGroupArrayOutput() NetworkSe
 
 func (i NetworkSecurityGroupArray) ToNetworkSecurityGroupArrayOutputWithContext(ctx context.Context) NetworkSecurityGroupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkSecurityGroupArrayOutput)
-}
-
-func (i NetworkSecurityGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkSecurityGroup] {
-	return pulumix.Output[[]*NetworkSecurityGroup]{
-		OutputState: i.ToNetworkSecurityGroupArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // NetworkSecurityGroupMapInput is an input type that accepts NetworkSecurityGroupMap and NetworkSecurityGroupMapOutput values.
@@ -279,12 +266,6 @@ func (i NetworkSecurityGroupMap) ToNetworkSecurityGroupMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkSecurityGroupMapOutput)
 }
 
-func (i NetworkSecurityGroupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkSecurityGroup] {
-	return pulumix.Output[map[string]*NetworkSecurityGroup]{
-		OutputState: i.ToNetworkSecurityGroupMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NetworkSecurityGroupOutput struct{ *pulumi.OutputState }
 
 func (NetworkSecurityGroupOutput) ElementType() reflect.Type {
@@ -297,12 +278,6 @@ func (o NetworkSecurityGroupOutput) ToNetworkSecurityGroupOutput() NetworkSecuri
 
 func (o NetworkSecurityGroupOutput) ToNetworkSecurityGroupOutputWithContext(ctx context.Context) NetworkSecurityGroupOutput {
 	return o
-}
-
-func (o NetworkSecurityGroupOutput) ToOutput(ctx context.Context) pulumix.Output[*NetworkSecurityGroup] {
-	return pulumix.Output[*NetworkSecurityGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the network security group.
@@ -357,12 +332,6 @@ func (o NetworkSecurityGroupArrayOutput) ToNetworkSecurityGroupArrayOutputWithCo
 	return o
 }
 
-func (o NetworkSecurityGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkSecurityGroup] {
-	return pulumix.Output[[]*NetworkSecurityGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o NetworkSecurityGroupArrayOutput) Index(i pulumi.IntInput) NetworkSecurityGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *NetworkSecurityGroup {
 		return vs[0].([]*NetworkSecurityGroup)[vs[1].(int)]
@@ -381,12 +350,6 @@ func (o NetworkSecurityGroupMapOutput) ToNetworkSecurityGroupMapOutput() Network
 
 func (o NetworkSecurityGroupMapOutput) ToNetworkSecurityGroupMapOutputWithContext(ctx context.Context) NetworkSecurityGroupMapOutput {
 	return o
-}
-
-func (o NetworkSecurityGroupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkSecurityGroup] {
-	return pulumix.Output[map[string]*NetworkSecurityGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NetworkSecurityGroupMapOutput) MapIndex(k pulumi.StringInput) NetworkSecurityGroupOutput {

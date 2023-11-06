@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Database Sql Tuning Advisor Task resource in Oracle Cloud Infrastructure Database Management service.
@@ -127,12 +126,6 @@ func (o GetManagedDatabaseSqlTuningAdvisorTaskResultOutput) ToGetManagedDatabase
 
 func (o GetManagedDatabaseSqlTuningAdvisorTaskResultOutput) ToGetManagedDatabaseSqlTuningAdvisorTaskResultOutputWithContext(ctx context.Context) GetManagedDatabaseSqlTuningAdvisorTaskResultOutput {
 	return o
-}
-
-func (o GetManagedDatabaseSqlTuningAdvisorTaskResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseSqlTuningAdvisorTaskResult] {
-	return pulumix.Output[GetManagedDatabaseSqlTuningAdvisorTaskResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The provider-assigned unique ID for this managed resource.

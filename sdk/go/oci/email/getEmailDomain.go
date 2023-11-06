@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Email Domain resource in Oracle Cloud Infrastructure Email service.
@@ -120,12 +119,6 @@ func (o LookupEmailDomainResultOutput) ToLookupEmailDomainResultOutput() LookupE
 
 func (o LookupEmailDomainResultOutput) ToLookupEmailDomainResultOutputWithContext(ctx context.Context) LookupEmailDomainResultOutput {
 	return o
-}
-
-func (o LookupEmailDomainResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupEmailDomainResult] {
-	return pulumix.Output[LookupEmailDomainResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DKIM key that will be used to sign mail sent from this email domain.

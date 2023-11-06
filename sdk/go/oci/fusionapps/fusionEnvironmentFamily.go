@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Fusion Environment Family resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -258,12 +257,6 @@ func (i *FusionEnvironmentFamily) ToFusionEnvironmentFamilyOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentFamilyOutput)
 }
 
-func (i *FusionEnvironmentFamily) ToOutput(ctx context.Context) pulumix.Output[*FusionEnvironmentFamily] {
-	return pulumix.Output[*FusionEnvironmentFamily]{
-		OutputState: i.ToFusionEnvironmentFamilyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // FusionEnvironmentFamilyArrayInput is an input type that accepts FusionEnvironmentFamilyArray and FusionEnvironmentFamilyArrayOutput values.
 // You can construct a concrete instance of `FusionEnvironmentFamilyArrayInput` via:
 //
@@ -287,12 +280,6 @@ func (i FusionEnvironmentFamilyArray) ToFusionEnvironmentFamilyArrayOutput() Fus
 
 func (i FusionEnvironmentFamilyArray) ToFusionEnvironmentFamilyArrayOutputWithContext(ctx context.Context) FusionEnvironmentFamilyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentFamilyArrayOutput)
-}
-
-func (i FusionEnvironmentFamilyArray) ToOutput(ctx context.Context) pulumix.Output[[]*FusionEnvironmentFamily] {
-	return pulumix.Output[[]*FusionEnvironmentFamily]{
-		OutputState: i.ToFusionEnvironmentFamilyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // FusionEnvironmentFamilyMapInput is an input type that accepts FusionEnvironmentFamilyMap and FusionEnvironmentFamilyMapOutput values.
@@ -320,12 +307,6 @@ func (i FusionEnvironmentFamilyMap) ToFusionEnvironmentFamilyMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentFamilyMapOutput)
 }
 
-func (i FusionEnvironmentFamilyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*FusionEnvironmentFamily] {
-	return pulumix.Output[map[string]*FusionEnvironmentFamily]{
-		OutputState: i.ToFusionEnvironmentFamilyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FusionEnvironmentFamilyOutput struct{ *pulumi.OutputState }
 
 func (FusionEnvironmentFamilyOutput) ElementType() reflect.Type {
@@ -338,12 +319,6 @@ func (o FusionEnvironmentFamilyOutput) ToFusionEnvironmentFamilyOutput() FusionE
 
 func (o FusionEnvironmentFamilyOutput) ToFusionEnvironmentFamilyOutputWithContext(ctx context.Context) FusionEnvironmentFamilyOutput {
 	return o
-}
-
-func (o FusionEnvironmentFamilyOutput) ToOutput(ctx context.Context) pulumix.Output[*FusionEnvironmentFamily] {
-	return pulumix.Output[*FusionEnvironmentFamily]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of the compartment where the environment family is located.
@@ -424,12 +399,6 @@ func (o FusionEnvironmentFamilyArrayOutput) ToFusionEnvironmentFamilyArrayOutput
 	return o
 }
 
-func (o FusionEnvironmentFamilyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*FusionEnvironmentFamily] {
-	return pulumix.Output[[]*FusionEnvironmentFamily]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o FusionEnvironmentFamilyArrayOutput) Index(i pulumi.IntInput) FusionEnvironmentFamilyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *FusionEnvironmentFamily {
 		return vs[0].([]*FusionEnvironmentFamily)[vs[1].(int)]
@@ -448,12 +417,6 @@ func (o FusionEnvironmentFamilyMapOutput) ToFusionEnvironmentFamilyMapOutput() F
 
 func (o FusionEnvironmentFamilyMapOutput) ToFusionEnvironmentFamilyMapOutputWithContext(ctx context.Context) FusionEnvironmentFamilyMapOutput {
 	return o
-}
-
-func (o FusionEnvironmentFamilyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*FusionEnvironmentFamily] {
-	return pulumix.Output[map[string]*FusionEnvironmentFamily]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FusionEnvironmentFamilyMapOutput) MapIndex(k pulumi.StringInput) FusionEnvironmentFamilyOutput {

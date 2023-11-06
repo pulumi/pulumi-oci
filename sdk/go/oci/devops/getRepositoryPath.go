@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Repository Path resource in Oracle Cloud Infrastructure Devops service.
@@ -126,12 +125,6 @@ func (o GetRepositoryPathResultOutput) ToGetRepositoryPathResultOutput() GetRepo
 
 func (o GetRepositoryPathResultOutput) ToGetRepositoryPathResultOutputWithContext(ctx context.Context) GetRepositoryPathResultOutput {
 	return o
-}
-
-func (o GetRepositoryPathResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRepositoryPathResult] {
-	return pulumix.Output[GetRepositoryPathResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRepositoryPathResultOutput) DisplayName() pulumi.StringPtrOutput {

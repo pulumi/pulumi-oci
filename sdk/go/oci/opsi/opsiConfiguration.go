@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Opsi Configuration resource in Oracle Cloud Infrastructure Opsi service.
@@ -309,12 +308,6 @@ func (i *OpsiConfiguration) ToOpsiConfigurationOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(OpsiConfigurationOutput)
 }
 
-func (i *OpsiConfiguration) ToOutput(ctx context.Context) pulumix.Output[*OpsiConfiguration] {
-	return pulumix.Output[*OpsiConfiguration]{
-		OutputState: i.ToOpsiConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // OpsiConfigurationArrayInput is an input type that accepts OpsiConfigurationArray and OpsiConfigurationArrayOutput values.
 // You can construct a concrete instance of `OpsiConfigurationArrayInput` via:
 //
@@ -338,12 +331,6 @@ func (i OpsiConfigurationArray) ToOpsiConfigurationArrayOutput() OpsiConfigurati
 
 func (i OpsiConfigurationArray) ToOpsiConfigurationArrayOutputWithContext(ctx context.Context) OpsiConfigurationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OpsiConfigurationArrayOutput)
-}
-
-func (i OpsiConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]*OpsiConfiguration] {
-	return pulumix.Output[[]*OpsiConfiguration]{
-		OutputState: i.ToOpsiConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // OpsiConfigurationMapInput is an input type that accepts OpsiConfigurationMap and OpsiConfigurationMapOutput values.
@@ -371,12 +358,6 @@ func (i OpsiConfigurationMap) ToOpsiConfigurationMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(OpsiConfigurationMapOutput)
 }
 
-func (i OpsiConfigurationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*OpsiConfiguration] {
-	return pulumix.Output[map[string]*OpsiConfiguration]{
-		OutputState: i.ToOpsiConfigurationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type OpsiConfigurationOutput struct{ *pulumi.OutputState }
 
 func (OpsiConfigurationOutput) ElementType() reflect.Type {
@@ -389,12 +370,6 @@ func (o OpsiConfigurationOutput) ToOpsiConfigurationOutput() OpsiConfigurationOu
 
 func (o OpsiConfigurationOutput) ToOpsiConfigurationOutputWithContext(ctx context.Context) OpsiConfigurationOutput {
 	return o
-}
-
-func (o OpsiConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[*OpsiConfiguration] {
-	return pulumix.Output[*OpsiConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -494,12 +469,6 @@ func (o OpsiConfigurationArrayOutput) ToOpsiConfigurationArrayOutputWithContext(
 	return o
 }
 
-func (o OpsiConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*OpsiConfiguration] {
-	return pulumix.Output[[]*OpsiConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o OpsiConfigurationArrayOutput) Index(i pulumi.IntInput) OpsiConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *OpsiConfiguration {
 		return vs[0].([]*OpsiConfiguration)[vs[1].(int)]
@@ -518,12 +487,6 @@ func (o OpsiConfigurationMapOutput) ToOpsiConfigurationMapOutput() OpsiConfigura
 
 func (o OpsiConfigurationMapOutput) ToOpsiConfigurationMapOutputWithContext(ctx context.Context) OpsiConfigurationMapOutput {
 	return o
-}
-
-func (o OpsiConfigurationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*OpsiConfiguration] {
-	return pulumix.Output[map[string]*OpsiConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OpsiConfigurationMapOutput) MapIndex(k pulumi.StringInput) OpsiConfigurationOutput {

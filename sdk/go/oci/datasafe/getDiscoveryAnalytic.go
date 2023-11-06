@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Discovery Analytic resource in Oracle Cloud Infrastructure Data Safe service.
@@ -130,12 +129,6 @@ func (o GetDiscoveryAnalyticResultOutput) ToGetDiscoveryAnalyticResultOutput() G
 
 func (o GetDiscoveryAnalyticResultOutput) ToGetDiscoveryAnalyticResultOutputWithContext(ctx context.Context) GetDiscoveryAnalyticResultOutput {
 	return o
-}
-
-func (o GetDiscoveryAnalyticResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryAnalyticResult] {
-	return pulumix.Output[GetDiscoveryAnalyticResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDiscoveryAnalyticResultOutput) CompartmentId() pulumi.StringOutput {

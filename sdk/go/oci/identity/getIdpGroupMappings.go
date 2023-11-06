@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Idp Group Mappings in Oracle Cloud Infrastructure Identity service.
@@ -108,12 +107,6 @@ func (o GetIdpGroupMappingsResultOutput) ToGetIdpGroupMappingsResultOutput() Get
 
 func (o GetIdpGroupMappingsResultOutput) ToGetIdpGroupMappingsResultOutputWithContext(ctx context.Context) GetIdpGroupMappingsResultOutput {
 	return o
-}
-
-func (o GetIdpGroupMappingsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIdpGroupMappingsResult] {
-	return pulumix.Output[GetIdpGroupMappingsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetIdpGroupMappingsResultOutput) Filters() GetIdpGroupMappingsFilterArrayOutput {

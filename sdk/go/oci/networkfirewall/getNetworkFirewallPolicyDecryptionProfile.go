@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Network Firewall Policy Decryption Profile resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -101,12 +100,6 @@ func (o LookupNetworkFirewallPolicyDecryptionProfileResultOutput) ToLookupNetwor
 
 func (o LookupNetworkFirewallPolicyDecryptionProfileResultOutput) ToLookupNetworkFirewallPolicyDecryptionProfileResultOutputWithContext(ctx context.Context) LookupNetworkFirewallPolicyDecryptionProfileResultOutput {
 	return o
-}
-
-func (o LookupNetworkFirewallPolicyDecryptionProfileResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNetworkFirewallPolicyDecryptionProfileResult] {
-	return pulumix.Output[LookupNetworkFirewallPolicyDecryptionProfileResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.

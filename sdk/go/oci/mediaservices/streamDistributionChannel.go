@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Stream Distribution Channel resource in Oracle Cloud Infrastructure Media Services service.
@@ -224,12 +223,6 @@ func (i *StreamDistributionChannel) ToStreamDistributionChannelOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(StreamDistributionChannelOutput)
 }
 
-func (i *StreamDistributionChannel) ToOutput(ctx context.Context) pulumix.Output[*StreamDistributionChannel] {
-	return pulumix.Output[*StreamDistributionChannel]{
-		OutputState: i.ToStreamDistributionChannelOutputWithContext(ctx).OutputState,
-	}
-}
-
 // StreamDistributionChannelArrayInput is an input type that accepts StreamDistributionChannelArray and StreamDistributionChannelArrayOutput values.
 // You can construct a concrete instance of `StreamDistributionChannelArrayInput` via:
 //
@@ -253,12 +246,6 @@ func (i StreamDistributionChannelArray) ToStreamDistributionChannelArrayOutput()
 
 func (i StreamDistributionChannelArray) ToStreamDistributionChannelArrayOutputWithContext(ctx context.Context) StreamDistributionChannelArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(StreamDistributionChannelArrayOutput)
-}
-
-func (i StreamDistributionChannelArray) ToOutput(ctx context.Context) pulumix.Output[[]*StreamDistributionChannel] {
-	return pulumix.Output[[]*StreamDistributionChannel]{
-		OutputState: i.ToStreamDistributionChannelArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // StreamDistributionChannelMapInput is an input type that accepts StreamDistributionChannelMap and StreamDistributionChannelMapOutput values.
@@ -286,12 +273,6 @@ func (i StreamDistributionChannelMap) ToStreamDistributionChannelMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(StreamDistributionChannelMapOutput)
 }
 
-func (i StreamDistributionChannelMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*StreamDistributionChannel] {
-	return pulumix.Output[map[string]*StreamDistributionChannel]{
-		OutputState: i.ToStreamDistributionChannelMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type StreamDistributionChannelOutput struct{ *pulumi.OutputState }
 
 func (StreamDistributionChannelOutput) ElementType() reflect.Type {
@@ -304,12 +285,6 @@ func (o StreamDistributionChannelOutput) ToStreamDistributionChannelOutput() Str
 
 func (o StreamDistributionChannelOutput) ToStreamDistributionChannelOutputWithContext(ctx context.Context) StreamDistributionChannelOutput {
 	return o
-}
-
-func (o StreamDistributionChannelOutput) ToOutput(ctx context.Context) pulumix.Output[*StreamDistributionChannel] {
-	return pulumix.Output[*StreamDistributionChannel]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Compartment Identifier.
@@ -374,12 +349,6 @@ func (o StreamDistributionChannelArrayOutput) ToStreamDistributionChannelArrayOu
 	return o
 }
 
-func (o StreamDistributionChannelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*StreamDistributionChannel] {
-	return pulumix.Output[[]*StreamDistributionChannel]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o StreamDistributionChannelArrayOutput) Index(i pulumi.IntInput) StreamDistributionChannelOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *StreamDistributionChannel {
 		return vs[0].([]*StreamDistributionChannel)[vs[1].(int)]
@@ -398,12 +367,6 @@ func (o StreamDistributionChannelMapOutput) ToStreamDistributionChannelMapOutput
 
 func (o StreamDistributionChannelMapOutput) ToStreamDistributionChannelMapOutputWithContext(ctx context.Context) StreamDistributionChannelMapOutput {
 	return o
-}
-
-func (o StreamDistributionChannelMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*StreamDistributionChannel] {
-	return pulumix.Output[map[string]*StreamDistributionChannel]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o StreamDistributionChannelMapOutput) MapIndex(k pulumi.StringInput) StreamDistributionChannelOutput {

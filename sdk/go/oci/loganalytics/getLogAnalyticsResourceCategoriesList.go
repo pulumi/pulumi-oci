@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about Resource Categories in Oracle Cloud Infrastructure Log Analytics service.
@@ -122,12 +121,6 @@ func (o GetLogAnalyticsResourceCategoriesListResultOutput) ToGetLogAnalyticsReso
 
 func (o GetLogAnalyticsResourceCategoriesListResultOutput) ToGetLogAnalyticsResourceCategoriesListResultOutputWithContext(ctx context.Context) GetLogAnalyticsResourceCategoriesListResultOutput {
 	return o
-}
-
-func (o GetLogAnalyticsResourceCategoriesListResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsResourceCategoriesListResult] {
-	return pulumix.Output[GetLogAnalyticsResourceCategoriesListResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An array of categories. The array contents include detailed information about the distinct set of categories assigned to all the listed resources under items.

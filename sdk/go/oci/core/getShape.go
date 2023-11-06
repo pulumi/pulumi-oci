@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetShape(ctx *pulumi.Context, args *GetShapeArgs, opts ...pulumi.InvokeOption) (*GetShapeResult, error) {
@@ -79,12 +78,6 @@ func (o GetShapeResultOutput) ToGetShapeResultOutput() GetShapeResultOutput {
 
 func (o GetShapeResultOutput) ToGetShapeResultOutputWithContext(ctx context.Context) GetShapeResultOutput {
 	return o
-}
-
-func (o GetShapeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapeResult] {
-	return pulumix.Output[GetShapeResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetShapeResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {

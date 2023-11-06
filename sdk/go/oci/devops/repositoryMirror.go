@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Repository Mirror resource in Oracle Cloud Infrastructure Devops service.
@@ -154,12 +153,6 @@ func (i *RepositoryMirror) ToRepositoryMirrorOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(RepositoryMirrorOutput)
 }
 
-func (i *RepositoryMirror) ToOutput(ctx context.Context) pulumix.Output[*RepositoryMirror] {
-	return pulumix.Output[*RepositoryMirror]{
-		OutputState: i.ToRepositoryMirrorOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RepositoryMirrorArrayInput is an input type that accepts RepositoryMirrorArray and RepositoryMirrorArrayOutput values.
 // You can construct a concrete instance of `RepositoryMirrorArrayInput` via:
 //
@@ -183,12 +176,6 @@ func (i RepositoryMirrorArray) ToRepositoryMirrorArrayOutput() RepositoryMirrorA
 
 func (i RepositoryMirrorArray) ToRepositoryMirrorArrayOutputWithContext(ctx context.Context) RepositoryMirrorArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RepositoryMirrorArrayOutput)
-}
-
-func (i RepositoryMirrorArray) ToOutput(ctx context.Context) pulumix.Output[[]*RepositoryMirror] {
-	return pulumix.Output[[]*RepositoryMirror]{
-		OutputState: i.ToRepositoryMirrorArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // RepositoryMirrorMapInput is an input type that accepts RepositoryMirrorMap and RepositoryMirrorMapOutput values.
@@ -216,12 +203,6 @@ func (i RepositoryMirrorMap) ToRepositoryMirrorMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(RepositoryMirrorMapOutput)
 }
 
-func (i RepositoryMirrorMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*RepositoryMirror] {
-	return pulumix.Output[map[string]*RepositoryMirror]{
-		OutputState: i.ToRepositoryMirrorMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RepositoryMirrorOutput struct{ *pulumi.OutputState }
 
 func (RepositoryMirrorOutput) ElementType() reflect.Type {
@@ -234,12 +215,6 @@ func (o RepositoryMirrorOutput) ToRepositoryMirrorOutput() RepositoryMirrorOutpu
 
 func (o RepositoryMirrorOutput) ToRepositoryMirrorOutputWithContext(ctx context.Context) RepositoryMirrorOutput {
 	return o
-}
-
-func (o RepositoryMirrorOutput) ToOutput(ctx context.Context) pulumix.Output[*RepositoryMirror] {
-	return pulumix.Output[*RepositoryMirror]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique repository identifier.
@@ -264,12 +239,6 @@ func (o RepositoryMirrorArrayOutput) ToRepositoryMirrorArrayOutputWithContext(ct
 	return o
 }
 
-func (o RepositoryMirrorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*RepositoryMirror] {
-	return pulumix.Output[[]*RepositoryMirror]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o RepositoryMirrorArrayOutput) Index(i pulumi.IntInput) RepositoryMirrorOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *RepositoryMirror {
 		return vs[0].([]*RepositoryMirror)[vs[1].(int)]
@@ -288,12 +257,6 @@ func (o RepositoryMirrorMapOutput) ToRepositoryMirrorMapOutput() RepositoryMirro
 
 func (o RepositoryMirrorMapOutput) ToRepositoryMirrorMapOutputWithContext(ctx context.Context) RepositoryMirrorMapOutput {
 	return o
-}
-
-func (o RepositoryMirrorMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*RepositoryMirror] {
-	return pulumix.Output[map[string]*RepositoryMirror]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RepositoryMirrorMapOutput) MapIndex(k pulumi.StringInput) RepositoryMirrorOutput {

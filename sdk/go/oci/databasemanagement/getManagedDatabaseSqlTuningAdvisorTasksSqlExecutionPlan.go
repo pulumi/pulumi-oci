@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Sql Execution Plan resource in Oracle Cloud Infrastructure Database Management service.
@@ -121,12 +120,6 @@ func (o GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResultOutput) ToG
 
 func (o GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResultOutput) ToGetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResultOutputWithContext(ctx context.Context) GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResultOutput {
 	return o
-}
-
-func (o GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult] {
-	return pulumix.Output[GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The text string identifying the type of execution plan.

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Db System resource in Oracle Cloud Infrastructure Database service.
@@ -821,12 +820,6 @@ func (i *DbSystem) ToDbSystemOutputWithContext(ctx context.Context) DbSystemOutp
 	return pulumi.ToOutputWithContext(ctx, i).(DbSystemOutput)
 }
 
-func (i *DbSystem) ToOutput(ctx context.Context) pulumix.Output[*DbSystem] {
-	return pulumix.Output[*DbSystem]{
-		OutputState: i.ToDbSystemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DbSystemArrayInput is an input type that accepts DbSystemArray and DbSystemArrayOutput values.
 // You can construct a concrete instance of `DbSystemArrayInput` via:
 //
@@ -850,12 +843,6 @@ func (i DbSystemArray) ToDbSystemArrayOutput() DbSystemArrayOutput {
 
 func (i DbSystemArray) ToDbSystemArrayOutputWithContext(ctx context.Context) DbSystemArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DbSystemArrayOutput)
-}
-
-func (i DbSystemArray) ToOutput(ctx context.Context) pulumix.Output[[]*DbSystem] {
-	return pulumix.Output[[]*DbSystem]{
-		OutputState: i.ToDbSystemArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DbSystemMapInput is an input type that accepts DbSystemMap and DbSystemMapOutput values.
@@ -883,12 +870,6 @@ func (i DbSystemMap) ToDbSystemMapOutputWithContext(ctx context.Context) DbSyste
 	return pulumi.ToOutputWithContext(ctx, i).(DbSystemMapOutput)
 }
 
-func (i DbSystemMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DbSystem] {
-	return pulumix.Output[map[string]*DbSystem]{
-		OutputState: i.ToDbSystemMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DbSystemOutput struct{ *pulumi.OutputState }
 
 func (DbSystemOutput) ElementType() reflect.Type {
@@ -901,12 +882,6 @@ func (o DbSystemOutput) ToDbSystemOutput() DbSystemOutput {
 
 func (o DbSystemOutput) ToDbSystemOutputWithContext(ctx context.Context) DbSystemOutput {
 	return o
-}
-
-func (o DbSystemOutput) ToOutput(ctx context.Context) pulumix.Output[*DbSystem] {
-	return pulumix.Output[*DbSystem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The availability domain where the DB system is located.
@@ -1230,12 +1205,6 @@ func (o DbSystemArrayOutput) ToDbSystemArrayOutputWithContext(ctx context.Contex
 	return o
 }
 
-func (o DbSystemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DbSystem] {
-	return pulumix.Output[[]*DbSystem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DbSystemArrayOutput) Index(i pulumi.IntInput) DbSystemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DbSystem {
 		return vs[0].([]*DbSystem)[vs[1].(int)]
@@ -1254,12 +1223,6 @@ func (o DbSystemMapOutput) ToDbSystemMapOutput() DbSystemMapOutput {
 
 func (o DbSystemMapOutput) ToDbSystemMapOutputWithContext(ctx context.Context) DbSystemMapOutput {
 	return o
-}
-
-func (o DbSystemMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DbSystem] {
-	return pulumix.Output[map[string]*DbSystem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DbSystemMapOutput) MapIndex(k pulumi.StringInput) DbSystemOutput {

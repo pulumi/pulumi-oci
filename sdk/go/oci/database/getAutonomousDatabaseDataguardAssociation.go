@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Autonomous Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
@@ -129,12 +128,6 @@ func (o GetAutonomousDatabaseDataguardAssociationResultOutput) ToGetAutonomousDa
 
 func (o GetAutonomousDatabaseDataguardAssociationResultOutput) ToGetAutonomousDatabaseDataguardAssociationResultOutputWithContext(ctx context.Context) GetAutonomousDatabaseDataguardAssociationResultOutput {
 	return o
-}
-
-func (o GetAutonomousDatabaseDataguardAssociationResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutonomousDatabaseDataguardAssociationResult] {
-	return pulumix.Output[GetAutonomousDatabaseDataguardAssociationResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`

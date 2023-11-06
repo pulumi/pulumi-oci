@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Managed Instance Management in Oracle Cloud Infrastructure OS Management service.
@@ -250,12 +249,6 @@ func (i *ManagedInstanceManagement) ToManagedInstanceManagementOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceManagementOutput)
 }
 
-func (i *ManagedInstanceManagement) ToOutput(ctx context.Context) pulumix.Output[*ManagedInstanceManagement] {
-	return pulumix.Output[*ManagedInstanceManagement]{
-		OutputState: i.ToManagedInstanceManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ManagedInstanceManagementArrayInput is an input type that accepts ManagedInstanceManagementArray and ManagedInstanceManagementArrayOutput values.
 // You can construct a concrete instance of `ManagedInstanceManagementArrayInput` via:
 //
@@ -279,12 +272,6 @@ func (i ManagedInstanceManagementArray) ToManagedInstanceManagementArrayOutput()
 
 func (i ManagedInstanceManagementArray) ToManagedInstanceManagementArrayOutputWithContext(ctx context.Context) ManagedInstanceManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceManagementArrayOutput)
-}
-
-func (i ManagedInstanceManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*ManagedInstanceManagement] {
-	return pulumix.Output[[]*ManagedInstanceManagement]{
-		OutputState: i.ToManagedInstanceManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ManagedInstanceManagementMapInput is an input type that accepts ManagedInstanceManagementMap and ManagedInstanceManagementMapOutput values.
@@ -312,12 +299,6 @@ func (i ManagedInstanceManagementMap) ToManagedInstanceManagementMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceManagementMapOutput)
 }
 
-func (i ManagedInstanceManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagedInstanceManagement] {
-	return pulumix.Output[map[string]*ManagedInstanceManagement]{
-		OutputState: i.ToManagedInstanceManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ManagedInstanceManagementOutput struct{ *pulumi.OutputState }
 
 func (ManagedInstanceManagementOutput) ElementType() reflect.Type {
@@ -330,12 +311,6 @@ func (o ManagedInstanceManagementOutput) ToManagedInstanceManagementOutput() Man
 
 func (o ManagedInstanceManagementOutput) ToManagedInstanceManagementOutputWithContext(ctx context.Context) ManagedInstanceManagementOutput {
 	return o
-}
-
-func (o ManagedInstanceManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*ManagedInstanceManagement] {
-	return pulumix.Output[*ManagedInstanceManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) list of child Software Sources attached to the Managed Instance
@@ -428,12 +403,6 @@ func (o ManagedInstanceManagementArrayOutput) ToManagedInstanceManagementArrayOu
 	return o
 }
 
-func (o ManagedInstanceManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ManagedInstanceManagement] {
-	return pulumix.Output[[]*ManagedInstanceManagement]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ManagedInstanceManagementArrayOutput) Index(i pulumi.IntInput) ManagedInstanceManagementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ManagedInstanceManagement {
 		return vs[0].([]*ManagedInstanceManagement)[vs[1].(int)]
@@ -452,12 +421,6 @@ func (o ManagedInstanceManagementMapOutput) ToManagedInstanceManagementMapOutput
 
 func (o ManagedInstanceManagementMapOutput) ToManagedInstanceManagementMapOutputWithContext(ctx context.Context) ManagedInstanceManagementMapOutput {
 	return o
-}
-
-func (o ManagedInstanceManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagedInstanceManagement] {
-	return pulumix.Output[map[string]*ManagedInstanceManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagedInstanceManagementMapOutput) MapIndex(k pulumi.StringInput) ManagedInstanceManagementOutput {

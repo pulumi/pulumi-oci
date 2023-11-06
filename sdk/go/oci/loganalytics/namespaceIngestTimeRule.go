@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Namespace Ingest Time Rule resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -295,12 +294,6 @@ func (i *NamespaceIngestTimeRule) ToNamespaceIngestTimeRuleOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceIngestTimeRuleOutput)
 }
 
-func (i *NamespaceIngestTimeRule) ToOutput(ctx context.Context) pulumix.Output[*NamespaceIngestTimeRule] {
-	return pulumix.Output[*NamespaceIngestTimeRule]{
-		OutputState: i.ToNamespaceIngestTimeRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NamespaceIngestTimeRuleArrayInput is an input type that accepts NamespaceIngestTimeRuleArray and NamespaceIngestTimeRuleArrayOutput values.
 // You can construct a concrete instance of `NamespaceIngestTimeRuleArrayInput` via:
 //
@@ -324,12 +317,6 @@ func (i NamespaceIngestTimeRuleArray) ToNamespaceIngestTimeRuleArrayOutput() Nam
 
 func (i NamespaceIngestTimeRuleArray) ToNamespaceIngestTimeRuleArrayOutputWithContext(ctx context.Context) NamespaceIngestTimeRuleArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceIngestTimeRuleArrayOutput)
-}
-
-func (i NamespaceIngestTimeRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]*NamespaceIngestTimeRule] {
-	return pulumix.Output[[]*NamespaceIngestTimeRule]{
-		OutputState: i.ToNamespaceIngestTimeRuleArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // NamespaceIngestTimeRuleMapInput is an input type that accepts NamespaceIngestTimeRuleMap and NamespaceIngestTimeRuleMapOutput values.
@@ -357,12 +344,6 @@ func (i NamespaceIngestTimeRuleMap) ToNamespaceIngestTimeRuleMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceIngestTimeRuleMapOutput)
 }
 
-func (i NamespaceIngestTimeRuleMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NamespaceIngestTimeRule] {
-	return pulumix.Output[map[string]*NamespaceIngestTimeRule]{
-		OutputState: i.ToNamespaceIngestTimeRuleMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NamespaceIngestTimeRuleOutput struct{ *pulumi.OutputState }
 
 func (NamespaceIngestTimeRuleOutput) ElementType() reflect.Type {
@@ -375,12 +356,6 @@ func (o NamespaceIngestTimeRuleOutput) ToNamespaceIngestTimeRuleOutput() Namespa
 
 func (o NamespaceIngestTimeRuleOutput) ToNamespaceIngestTimeRuleOutputWithContext(ctx context.Context) NamespaceIngestTimeRuleOutput {
 	return o
-}
-
-func (o NamespaceIngestTimeRuleOutput) ToOutput(ctx context.Context) pulumix.Output[*NamespaceIngestTimeRule] {
-	return pulumix.Output[*NamespaceIngestTimeRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The action(s) to be performed if the ingest time rule condition(s) are satisfied.
@@ -464,12 +439,6 @@ func (o NamespaceIngestTimeRuleArrayOutput) ToNamespaceIngestTimeRuleArrayOutput
 	return o
 }
 
-func (o NamespaceIngestTimeRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NamespaceIngestTimeRule] {
-	return pulumix.Output[[]*NamespaceIngestTimeRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o NamespaceIngestTimeRuleArrayOutput) Index(i pulumi.IntInput) NamespaceIngestTimeRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *NamespaceIngestTimeRule {
 		return vs[0].([]*NamespaceIngestTimeRule)[vs[1].(int)]
@@ -488,12 +457,6 @@ func (o NamespaceIngestTimeRuleMapOutput) ToNamespaceIngestTimeRuleMapOutput() N
 
 func (o NamespaceIngestTimeRuleMapOutput) ToNamespaceIngestTimeRuleMapOutputWithContext(ctx context.Context) NamespaceIngestTimeRuleMapOutput {
 	return o
-}
-
-func (o NamespaceIngestTimeRuleMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NamespaceIngestTimeRule] {
-	return pulumix.Output[map[string]*NamespaceIngestTimeRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NamespaceIngestTimeRuleMapOutput) MapIndex(k pulumi.StringInput) NamespaceIngestTimeRuleOutput {

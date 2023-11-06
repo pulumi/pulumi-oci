@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Database User Role resource in Oracle Cloud Infrastructure Database Management service.
@@ -115,12 +114,6 @@ func (o GetManagedDatabaseUserRoleResultOutput) ToGetManagedDatabaseUserRoleResu
 
 func (o GetManagedDatabaseUserRoleResultOutput) ToGetManagedDatabaseUserRoleResultOutputWithContext(ctx context.Context) GetManagedDatabaseUserRoleResultOutput {
 	return o
-}
-
-func (o GetManagedDatabaseUserRoleResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseUserRoleResult] {
-	return pulumix.Output[GetManagedDatabaseUserRoleResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The provider-assigned unique ID for this managed resource.

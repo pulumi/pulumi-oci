@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Bds Instance Metastore Config resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -266,12 +265,6 @@ func (i *BdsInstanceMetastoreConfig) ToBdsInstanceMetastoreConfigOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceMetastoreConfigOutput)
 }
 
-func (i *BdsInstanceMetastoreConfig) ToOutput(ctx context.Context) pulumix.Output[*BdsInstanceMetastoreConfig] {
-	return pulumix.Output[*BdsInstanceMetastoreConfig]{
-		OutputState: i.ToBdsInstanceMetastoreConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BdsInstanceMetastoreConfigArrayInput is an input type that accepts BdsInstanceMetastoreConfigArray and BdsInstanceMetastoreConfigArrayOutput values.
 // You can construct a concrete instance of `BdsInstanceMetastoreConfigArrayInput` via:
 //
@@ -295,12 +288,6 @@ func (i BdsInstanceMetastoreConfigArray) ToBdsInstanceMetastoreConfigArrayOutput
 
 func (i BdsInstanceMetastoreConfigArray) ToBdsInstanceMetastoreConfigArrayOutputWithContext(ctx context.Context) BdsInstanceMetastoreConfigArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceMetastoreConfigArrayOutput)
-}
-
-func (i BdsInstanceMetastoreConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]*BdsInstanceMetastoreConfig] {
-	return pulumix.Output[[]*BdsInstanceMetastoreConfig]{
-		OutputState: i.ToBdsInstanceMetastoreConfigArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BdsInstanceMetastoreConfigMapInput is an input type that accepts BdsInstanceMetastoreConfigMap and BdsInstanceMetastoreConfigMapOutput values.
@@ -328,12 +315,6 @@ func (i BdsInstanceMetastoreConfigMap) ToBdsInstanceMetastoreConfigMapOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceMetastoreConfigMapOutput)
 }
 
-func (i BdsInstanceMetastoreConfigMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BdsInstanceMetastoreConfig] {
-	return pulumix.Output[map[string]*BdsInstanceMetastoreConfig]{
-		OutputState: i.ToBdsInstanceMetastoreConfigMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BdsInstanceMetastoreConfigOutput struct{ *pulumi.OutputState }
 
 func (BdsInstanceMetastoreConfigOutput) ElementType() reflect.Type {
@@ -346,12 +327,6 @@ func (o BdsInstanceMetastoreConfigOutput) ToBdsInstanceMetastoreConfigOutput() B
 
 func (o BdsInstanceMetastoreConfigOutput) ToBdsInstanceMetastoreConfigOutputWithContext(ctx context.Context) BdsInstanceMetastoreConfigOutput {
 	return o
-}
-
-func (o BdsInstanceMetastoreConfigOutput) ToOutput(ctx context.Context) pulumix.Output[*BdsInstanceMetastoreConfig] {
-	return pulumix.Output[*BdsInstanceMetastoreConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) An optional integer, when flipped triggers activation of metastore config.
@@ -426,12 +401,6 @@ func (o BdsInstanceMetastoreConfigArrayOutput) ToBdsInstanceMetastoreConfigArray
 	return o
 }
 
-func (o BdsInstanceMetastoreConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BdsInstanceMetastoreConfig] {
-	return pulumix.Output[[]*BdsInstanceMetastoreConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o BdsInstanceMetastoreConfigArrayOutput) Index(i pulumi.IntInput) BdsInstanceMetastoreConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BdsInstanceMetastoreConfig {
 		return vs[0].([]*BdsInstanceMetastoreConfig)[vs[1].(int)]
@@ -450,12 +419,6 @@ func (o BdsInstanceMetastoreConfigMapOutput) ToBdsInstanceMetastoreConfigMapOutp
 
 func (o BdsInstanceMetastoreConfigMapOutput) ToBdsInstanceMetastoreConfigMapOutputWithContext(ctx context.Context) BdsInstanceMetastoreConfigMapOutput {
 	return o
-}
-
-func (o BdsInstanceMetastoreConfigMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BdsInstanceMetastoreConfig] {
-	return pulumix.Output[map[string]*BdsInstanceMetastoreConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BdsInstanceMetastoreConfigMapOutput) MapIndex(k pulumi.StringInput) BdsInstanceMetastoreConfigOutput {

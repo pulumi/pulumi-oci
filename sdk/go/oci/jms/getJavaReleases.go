@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Java Releases in Oracle Cloud Infrastructure Jms service.
@@ -133,12 +132,6 @@ func (o GetJavaReleasesResultOutput) ToGetJavaReleasesResultOutput() GetJavaRele
 
 func (o GetJavaReleasesResultOutput) ToGetJavaReleasesResultOutputWithContext(ctx context.Context) GetJavaReleasesResultOutput {
 	return o
-}
-
-func (o GetJavaReleasesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleasesResult] {
-	return pulumix.Output[GetJavaReleasesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Java release family identifier.

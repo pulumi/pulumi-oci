@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['MetricExtensionsTestManagementArgs', 'MetricExtensionsTestManagement']
@@ -25,8 +25,29 @@ class MetricExtensionsTestManagementArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "metric_extension_id", metric_extension_id)
-        pulumi.set(__self__, "resource_ids", resource_ids)
+        MetricExtensionsTestManagementArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            metric_extension_id=metric_extension_id,
+            resource_ids=resource_ids,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             metric_extension_id: Optional[pulumi.Input[str]] = None,
+             resource_ids: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if metric_extension_id is None and 'metricExtensionId' in kwargs:
+            metric_extension_id = kwargs['metricExtensionId']
+        if metric_extension_id is None:
+            raise TypeError("Missing 'metric_extension_id' argument")
+        if resource_ids is None and 'resourceIds' in kwargs:
+            resource_ids = kwargs['resourceIds']
+        if resource_ids is None:
+            raise TypeError("Missing 'resource_ids' argument")
+
+        _setter("metric_extension_id", metric_extension_id)
+        _setter("resource_ids", resource_ids)
 
     @property
     @pulumi.getter(name="metricExtensionId")
@@ -79,18 +100,51 @@ class _MetricExtensionsTestManagementState:
         :param pulumi.Input[str] test_run_namespace_name: Test Run Namespace name
         :param pulumi.Input[str] test_run_resource_group_name: Test Run Resource Group name
         """
+        _MetricExtensionsTestManagementState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            metric_extension_id=metric_extension_id,
+            resource_ids=resource_ids,
+            test_run_id=test_run_id,
+            test_run_metric_suffix=test_run_metric_suffix,
+            test_run_namespace_name=test_run_namespace_name,
+            test_run_resource_group_name=test_run_resource_group_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             metric_extension_id: Optional[pulumi.Input[str]] = None,
+             resource_ids: Optional[pulumi.Input[str]] = None,
+             test_run_id: Optional[pulumi.Input[str]] = None,
+             test_run_metric_suffix: Optional[pulumi.Input[str]] = None,
+             test_run_namespace_name: Optional[pulumi.Input[str]] = None,
+             test_run_resource_group_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if metric_extension_id is None and 'metricExtensionId' in kwargs:
+            metric_extension_id = kwargs['metricExtensionId']
+        if resource_ids is None and 'resourceIds' in kwargs:
+            resource_ids = kwargs['resourceIds']
+        if test_run_id is None and 'testRunId' in kwargs:
+            test_run_id = kwargs['testRunId']
+        if test_run_metric_suffix is None and 'testRunMetricSuffix' in kwargs:
+            test_run_metric_suffix = kwargs['testRunMetricSuffix']
+        if test_run_namespace_name is None and 'testRunNamespaceName' in kwargs:
+            test_run_namespace_name = kwargs['testRunNamespaceName']
+        if test_run_resource_group_name is None and 'testRunResourceGroupName' in kwargs:
+            test_run_resource_group_name = kwargs['testRunResourceGroupName']
+
         if metric_extension_id is not None:
-            pulumi.set(__self__, "metric_extension_id", metric_extension_id)
+            _setter("metric_extension_id", metric_extension_id)
         if resource_ids is not None:
-            pulumi.set(__self__, "resource_ids", resource_ids)
+            _setter("resource_ids", resource_ids)
         if test_run_id is not None:
-            pulumi.set(__self__, "test_run_id", test_run_id)
+            _setter("test_run_id", test_run_id)
         if test_run_metric_suffix is not None:
-            pulumi.set(__self__, "test_run_metric_suffix", test_run_metric_suffix)
+            _setter("test_run_metric_suffix", test_run_metric_suffix)
         if test_run_namespace_name is not None:
-            pulumi.set(__self__, "test_run_namespace_name", test_run_namespace_name)
+            _setter("test_run_namespace_name", test_run_namespace_name)
         if test_run_resource_group_name is not None:
-            pulumi.set(__self__, "test_run_resource_group_name", test_run_resource_group_name)
+            _setter("test_run_resource_group_name", test_run_resource_group_name)
 
     @property
     @pulumi.getter(name="metricExtensionId")
@@ -242,6 +296,10 @@ class MetricExtensionsTestManagement(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            MetricExtensionsTestManagementArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

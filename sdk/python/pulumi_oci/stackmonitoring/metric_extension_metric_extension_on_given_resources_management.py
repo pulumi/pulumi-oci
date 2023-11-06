@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['MetricExtensionMetricExtensionOnGivenResourcesManagementArgs', 'MetricExtensionMetricExtensionOnGivenResourcesManagement']
@@ -27,9 +27,36 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagementArgs:
         :param pulumi.Input[str] metric_extension_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
         :param pulumi.Input[str] resource_ids: List of Resource IDs [OCIDs]. Currently, supports only one resource id per request.
         """
-        pulumi.set(__self__, "enable_metric_extension_on_given_resources", enable_metric_extension_on_given_resources)
-        pulumi.set(__self__, "metric_extension_id", metric_extension_id)
-        pulumi.set(__self__, "resource_ids", resource_ids)
+        MetricExtensionMetricExtensionOnGivenResourcesManagementArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_metric_extension_on_given_resources=enable_metric_extension_on_given_resources,
+            metric_extension_id=metric_extension_id,
+            resource_ids=resource_ids,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_metric_extension_on_given_resources: Optional[pulumi.Input[bool]] = None,
+             metric_extension_id: Optional[pulumi.Input[str]] = None,
+             resource_ids: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if enable_metric_extension_on_given_resources is None and 'enableMetricExtensionOnGivenResources' in kwargs:
+            enable_metric_extension_on_given_resources = kwargs['enableMetricExtensionOnGivenResources']
+        if enable_metric_extension_on_given_resources is None:
+            raise TypeError("Missing 'enable_metric_extension_on_given_resources' argument")
+        if metric_extension_id is None and 'metricExtensionId' in kwargs:
+            metric_extension_id = kwargs['metricExtensionId']
+        if metric_extension_id is None:
+            raise TypeError("Missing 'metric_extension_id' argument")
+        if resource_ids is None and 'resourceIds' in kwargs:
+            resource_ids = kwargs['resourceIds']
+        if resource_ids is None:
+            raise TypeError("Missing 'resource_ids' argument")
+
+        _setter("enable_metric_extension_on_given_resources", enable_metric_extension_on_given_resources)
+        _setter("metric_extension_id", metric_extension_id)
+        _setter("resource_ids", resource_ids)
 
     @property
     @pulumi.getter(name="enableMetricExtensionOnGivenResources")
@@ -88,12 +115,33 @@ class _MetricExtensionMetricExtensionOnGivenResourcesManagementState:
         :param pulumi.Input[str] metric_extension_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
         :param pulumi.Input[str] resource_ids: List of Resource IDs [OCIDs]. Currently, supports only one resource id per request.
         """
+        _MetricExtensionMetricExtensionOnGivenResourcesManagementState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_metric_extension_on_given_resources=enable_metric_extension_on_given_resources,
+            metric_extension_id=metric_extension_id,
+            resource_ids=resource_ids,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_metric_extension_on_given_resources: Optional[pulumi.Input[bool]] = None,
+             metric_extension_id: Optional[pulumi.Input[str]] = None,
+             resource_ids: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if enable_metric_extension_on_given_resources is None and 'enableMetricExtensionOnGivenResources' in kwargs:
+            enable_metric_extension_on_given_resources = kwargs['enableMetricExtensionOnGivenResources']
+        if metric_extension_id is None and 'metricExtensionId' in kwargs:
+            metric_extension_id = kwargs['metricExtensionId']
+        if resource_ids is None and 'resourceIds' in kwargs:
+            resource_ids = kwargs['resourceIds']
+
         if enable_metric_extension_on_given_resources is not None:
-            pulumi.set(__self__, "enable_metric_extension_on_given_resources", enable_metric_extension_on_given_resources)
+            _setter("enable_metric_extension_on_given_resources", enable_metric_extension_on_given_resources)
         if metric_extension_id is not None:
-            pulumi.set(__self__, "metric_extension_id", metric_extension_id)
+            _setter("metric_extension_id", metric_extension_id)
         if resource_ids is not None:
-            pulumi.set(__self__, "resource_ids", resource_ids)
+            _setter("resource_ids", resource_ids)
 
     @property
     @pulumi.getter(name="enableMetricExtensionOnGivenResources")
@@ -205,6 +253,10 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagement(pulumi.CustomReso
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            MetricExtensionMetricExtensionOnGivenResourcesManagementArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

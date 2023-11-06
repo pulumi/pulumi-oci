@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['ContainerConfigurationArgs', 'ContainerConfiguration']
@@ -20,8 +20,29 @@ class ContainerConfigurationArgs:
         The set of arguments for constructing a ContainerConfiguration resource.
         :param pulumi.Input[bool] is_repository_created_on_first_push: Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "is_repository_created_on_first_push", is_repository_created_on_first_push)
+        ContainerConfigurationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            is_repository_created_on_first_push=is_repository_created_on_first_push,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             is_repository_created_on_first_push: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if is_repository_created_on_first_push is None and 'isRepositoryCreatedOnFirstPush' in kwargs:
+            is_repository_created_on_first_push = kwargs['isRepositoryCreatedOnFirstPush']
+        if is_repository_created_on_first_push is None:
+            raise TypeError("Missing 'is_repository_created_on_first_push' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("is_repository_created_on_first_push", is_repository_created_on_first_push)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -56,12 +77,31 @@ class _ContainerConfigurationState:
         :param pulumi.Input[bool] is_repository_created_on_first_push: Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
         :param pulumi.Input[str] namespace: The tenancy namespace used in the container repository path.
         """
+        _ContainerConfigurationState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            is_repository_created_on_first_push=is_repository_created_on_first_push,
+            namespace=namespace,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             is_repository_created_on_first_push: Optional[pulumi.Input[bool]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if is_repository_created_on_first_push is None and 'isRepositoryCreatedOnFirstPush' in kwargs:
+            is_repository_created_on_first_push = kwargs['isRepositoryCreatedOnFirstPush']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if is_repository_created_on_first_push is not None:
-            pulumi.set(__self__, "is_repository_created_on_first_push", is_repository_created_on_first_push)
+            _setter("is_repository_created_on_first_push", is_repository_created_on_first_push)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -165,6 +205,10 @@ class ContainerConfiguration(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ContainerConfigurationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

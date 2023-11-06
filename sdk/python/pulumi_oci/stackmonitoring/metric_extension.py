@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -41,18 +41,71 @@ class MetricExtensionArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "collection_recurrences", collection_recurrences)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "metric_lists", metric_lists)
-        pulumi.set(__self__, "query_properties", query_properties)
-        pulumi.set(__self__, "resource_type", resource_type)
+        MetricExtensionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            collection_recurrences=collection_recurrences,
+            compartment_id=compartment_id,
+            display_name=display_name,
+            metric_lists=metric_lists,
+            query_properties=query_properties,
+            resource_type=resource_type,
+            description=description,
+            name=name,
+            publish_trigger=publish_trigger,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             collection_recurrences: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             metric_lists: Optional[pulumi.Input[Sequence[pulumi.Input['MetricExtensionMetricListArgs']]]] = None,
+             query_properties: Optional[pulumi.Input['MetricExtensionQueryPropertiesArgs']] = None,
+             resource_type: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             publish_trigger: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if collection_recurrences is None and 'collectionRecurrences' in kwargs:
+            collection_recurrences = kwargs['collectionRecurrences']
+        if collection_recurrences is None:
+            raise TypeError("Missing 'collection_recurrences' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if metric_lists is None and 'metricLists' in kwargs:
+            metric_lists = kwargs['metricLists']
+        if metric_lists is None:
+            raise TypeError("Missing 'metric_lists' argument")
+        if query_properties is None and 'queryProperties' in kwargs:
+            query_properties = kwargs['queryProperties']
+        if query_properties is None:
+            raise TypeError("Missing 'query_properties' argument")
+        if resource_type is None and 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if resource_type is None:
+            raise TypeError("Missing 'resource_type' argument")
+        if publish_trigger is None and 'publishTrigger' in kwargs:
+            publish_trigger = kwargs['publishTrigger']
+
+        _setter("collection_recurrences", collection_recurrences)
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
+        _setter("metric_lists", metric_lists)
+        _setter("query_properties", query_properties)
+        _setter("resource_type", resource_type)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if publish_trigger is not None:
-            pulumi.set(__self__, "publish_trigger", publish_trigger)
+            _setter("publish_trigger", publish_trigger)
 
     @property
     @pulumi.getter(name="collectionRecurrences")
@@ -217,46 +270,127 @@ class _MetricExtensionState:
         :param pulumi.Input[str] time_created: Metric Extension creation time. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: Metric Extension update time. An RFC3339 formatted datetime string.
         """
+        _MetricExtensionState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            collection_method=collection_method,
+            collection_recurrences=collection_recurrences,
+            compartment_id=compartment_id,
+            created_by=created_by,
+            description=description,
+            display_name=display_name,
+            enabled_on_resources=enabled_on_resources,
+            enabled_on_resources_count=enabled_on_resources_count,
+            last_updated_by=last_updated_by,
+            metric_lists=metric_lists,
+            name=name,
+            publish_trigger=publish_trigger,
+            query_properties=query_properties,
+            resource_type=resource_type,
+            resource_uri=resource_uri,
+            state=state,
+            status=status,
+            tenant_id=tenant_id,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             collection_method: Optional[pulumi.Input[str]] = None,
+             collection_recurrences: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             created_by: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             enabled_on_resources: Optional[pulumi.Input[Sequence[pulumi.Input['MetricExtensionEnabledOnResourceArgs']]]] = None,
+             enabled_on_resources_count: Optional[pulumi.Input[int]] = None,
+             last_updated_by: Optional[pulumi.Input[str]] = None,
+             metric_lists: Optional[pulumi.Input[Sequence[pulumi.Input['MetricExtensionMetricListArgs']]]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             publish_trigger: Optional[pulumi.Input[bool]] = None,
+             query_properties: Optional[pulumi.Input['MetricExtensionQueryPropertiesArgs']] = None,
+             resource_type: Optional[pulumi.Input[str]] = None,
+             resource_uri: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             tenant_id: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if collection_method is None and 'collectionMethod' in kwargs:
+            collection_method = kwargs['collectionMethod']
+        if collection_recurrences is None and 'collectionRecurrences' in kwargs:
+            collection_recurrences = kwargs['collectionRecurrences']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if created_by is None and 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if enabled_on_resources is None and 'enabledOnResources' in kwargs:
+            enabled_on_resources = kwargs['enabledOnResources']
+        if enabled_on_resources_count is None and 'enabledOnResourcesCount' in kwargs:
+            enabled_on_resources_count = kwargs['enabledOnResourcesCount']
+        if last_updated_by is None and 'lastUpdatedBy' in kwargs:
+            last_updated_by = kwargs['lastUpdatedBy']
+        if metric_lists is None and 'metricLists' in kwargs:
+            metric_lists = kwargs['metricLists']
+        if publish_trigger is None and 'publishTrigger' in kwargs:
+            publish_trigger = kwargs['publishTrigger']
+        if query_properties is None and 'queryProperties' in kwargs:
+            query_properties = kwargs['queryProperties']
+        if resource_type is None and 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if resource_uri is None and 'resourceUri' in kwargs:
+            resource_uri = kwargs['resourceUri']
+        if tenant_id is None and 'tenantId' in kwargs:
+            tenant_id = kwargs['tenantId']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if collection_method is not None:
-            pulumi.set(__self__, "collection_method", collection_method)
+            _setter("collection_method", collection_method)
         if collection_recurrences is not None:
-            pulumi.set(__self__, "collection_recurrences", collection_recurrences)
+            _setter("collection_recurrences", collection_recurrences)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if created_by is not None:
-            pulumi.set(__self__, "created_by", created_by)
+            _setter("created_by", created_by)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if enabled_on_resources is not None:
-            pulumi.set(__self__, "enabled_on_resources", enabled_on_resources)
+            _setter("enabled_on_resources", enabled_on_resources)
         if enabled_on_resources_count is not None:
-            pulumi.set(__self__, "enabled_on_resources_count", enabled_on_resources_count)
+            _setter("enabled_on_resources_count", enabled_on_resources_count)
         if last_updated_by is not None:
-            pulumi.set(__self__, "last_updated_by", last_updated_by)
+            _setter("last_updated_by", last_updated_by)
         if metric_lists is not None:
-            pulumi.set(__self__, "metric_lists", metric_lists)
+            _setter("metric_lists", metric_lists)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if publish_trigger is not None:
-            pulumi.set(__self__, "publish_trigger", publish_trigger)
+            _setter("publish_trigger", publish_trigger)
         if query_properties is not None:
-            pulumi.set(__self__, "query_properties", query_properties)
+            _setter("query_properties", query_properties)
         if resource_type is not None:
-            pulumi.set(__self__, "resource_type", resource_type)
+            _setter("resource_type", resource_type)
         if resource_uri is not None:
-            pulumi.set(__self__, "resource_uri", resource_uri)
+            _setter("resource_uri", resource_uri)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if tenant_id is not None:
-            pulumi.set(__self__, "tenant_id", tenant_id)
+            _setter("tenant_id", tenant_id)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="collectionMethod")
@@ -682,6 +816,10 @@ class MetricExtension(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            MetricExtensionArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -720,6 +858,11 @@ class MetricExtension(pulumi.CustomResource):
             __props__.__dict__["metric_lists"] = metric_lists
             __props__.__dict__["name"] = name
             __props__.__dict__["publish_trigger"] = publish_trigger
+            if query_properties is not None and not isinstance(query_properties, MetricExtensionQueryPropertiesArgs):
+                query_properties = query_properties or {}
+                def _setter(key, value):
+                    query_properties[key] = value
+                MetricExtensionQueryPropertiesArgs._configure(_setter, **query_properties)
             if query_properties is None and not opts.urn:
                 raise TypeError("Missing required property 'query_properties'")
             __props__.__dict__["query_properties"] = query_properties

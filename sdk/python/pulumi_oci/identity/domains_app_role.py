@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -170,36 +170,105 @@ class DomainsAppRoleArgs:
                * type: complex
                * uniqueness: none
         """
-        pulumi.set(__self__, "app", app)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
-        pulumi.set(__self__, "schemas", schemas)
+        DomainsAppRoleArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            app=app,
+            display_name=display_name,
+            idcs_endpoint=idcs_endpoint,
+            schemas=schemas,
+            admin_role=admin_role,
+            attribute_sets=attribute_sets,
+            attributes=attributes,
+            authorization=authorization,
+            available_to_clients=available_to_clients,
+            available_to_groups=available_to_groups,
+            available_to_users=available_to_users,
+            description=description,
+            legacy_group_name=legacy_group_name,
+            ocid=ocid,
+            public=public,
+            resource_type_schema_version=resource_type_schema_version,
+            tags=tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             app: Optional[pulumi.Input['DomainsAppRoleAppArgs']] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             idcs_endpoint: Optional[pulumi.Input[str]] = None,
+             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             admin_role: Optional[pulumi.Input[bool]] = None,
+             attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             attributes: Optional[pulumi.Input[str]] = None,
+             authorization: Optional[pulumi.Input[str]] = None,
+             available_to_clients: Optional[pulumi.Input[bool]] = None,
+             available_to_groups: Optional[pulumi.Input[bool]] = None,
+             available_to_users: Optional[pulumi.Input[bool]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             legacy_group_name: Optional[pulumi.Input[str]] = None,
+             ocid: Optional[pulumi.Input[str]] = None,
+             public: Optional[pulumi.Input[bool]] = None,
+             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
+             tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppRoleTagArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if app is None:
+            raise TypeError("Missing 'app' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
+            idcs_endpoint = kwargs['idcsEndpoint']
+        if idcs_endpoint is None:
+            raise TypeError("Missing 'idcs_endpoint' argument")
+        if schemas is None:
+            raise TypeError("Missing 'schemas' argument")
+        if admin_role is None and 'adminRole' in kwargs:
+            admin_role = kwargs['adminRole']
+        if attribute_sets is None and 'attributeSets' in kwargs:
+            attribute_sets = kwargs['attributeSets']
+        if available_to_clients is None and 'availableToClients' in kwargs:
+            available_to_clients = kwargs['availableToClients']
+        if available_to_groups is None and 'availableToGroups' in kwargs:
+            available_to_groups = kwargs['availableToGroups']
+        if available_to_users is None and 'availableToUsers' in kwargs:
+            available_to_users = kwargs['availableToUsers']
+        if legacy_group_name is None and 'legacyGroupName' in kwargs:
+            legacy_group_name = kwargs['legacyGroupName']
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
+            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
+
+        _setter("app", app)
+        _setter("display_name", display_name)
+        _setter("idcs_endpoint", idcs_endpoint)
+        _setter("schemas", schemas)
         if admin_role is not None:
-            pulumi.set(__self__, "admin_role", admin_role)
+            _setter("admin_role", admin_role)
         if attribute_sets is not None:
-            pulumi.set(__self__, "attribute_sets", attribute_sets)
+            _setter("attribute_sets", attribute_sets)
         if attributes is not None:
-            pulumi.set(__self__, "attributes", attributes)
+            _setter("attributes", attributes)
         if authorization is not None:
-            pulumi.set(__self__, "authorization", authorization)
+            _setter("authorization", authorization)
         if available_to_clients is not None:
-            pulumi.set(__self__, "available_to_clients", available_to_clients)
+            _setter("available_to_clients", available_to_clients)
         if available_to_groups is not None:
-            pulumi.set(__self__, "available_to_groups", available_to_groups)
+            _setter("available_to_groups", available_to_groups)
         if available_to_users is not None:
-            pulumi.set(__self__, "available_to_users", available_to_users)
+            _setter("available_to_users", available_to_users)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if legacy_group_name is not None:
-            pulumi.set(__self__, "legacy_group_name", legacy_group_name)
+            _setter("legacy_group_name", legacy_group_name)
         if ocid is not None:
-            pulumi.set(__self__, "ocid", ocid)
+            _setter("ocid", ocid)
         if public is not None:
-            pulumi.set(__self__, "public", public)
+            _setter("public", public)
         if resource_type_schema_version is not None:
-            pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
+            _setter("resource_type_schema_version", resource_type_schema_version)
         if tags is not None:
-            pulumi.set(__self__, "tags", tags)
+            _setter("tags", tags)
 
     @property
     @pulumi.getter
@@ -839,66 +908,175 @@ class _DomainsAppRoleState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _DomainsAppRoleState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            admin_role=admin_role,
+            app=app,
+            attribute_sets=attribute_sets,
+            attributes=attributes,
+            authorization=authorization,
+            available_to_clients=available_to_clients,
+            available_to_groups=available_to_groups,
+            available_to_users=available_to_users,
+            compartment_ocid=compartment_ocid,
+            delete_in_progress=delete_in_progress,
+            description=description,
+            display_name=display_name,
+            domain_ocid=domain_ocid,
+            idcs_created_bies=idcs_created_bies,
+            idcs_endpoint=idcs_endpoint,
+            idcs_last_modified_bies=idcs_last_modified_bies,
+            idcs_last_upgraded_in_release=idcs_last_upgraded_in_release,
+            idcs_prevented_operations=idcs_prevented_operations,
+            legacy_group_name=legacy_group_name,
+            limited_to_one_or_more_groups=limited_to_one_or_more_groups,
+            localized_display_name=localized_display_name,
+            members=members,
+            metas=metas,
+            ocid=ocid,
+            public=public,
+            resource_type_schema_version=resource_type_schema_version,
+            schemas=schemas,
+            tags=tags,
+            tenancy_ocid=tenancy_ocid,
+            unique_name=unique_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             admin_role: Optional[pulumi.Input[bool]] = None,
+             app: Optional[pulumi.Input['DomainsAppRoleAppArgs']] = None,
+             attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             attributes: Optional[pulumi.Input[str]] = None,
+             authorization: Optional[pulumi.Input[str]] = None,
+             available_to_clients: Optional[pulumi.Input[bool]] = None,
+             available_to_groups: Optional[pulumi.Input[bool]] = None,
+             available_to_users: Optional[pulumi.Input[bool]] = None,
+             compartment_ocid: Optional[pulumi.Input[str]] = None,
+             delete_in_progress: Optional[pulumi.Input[bool]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             domain_ocid: Optional[pulumi.Input[str]] = None,
+             idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppRoleIdcsCreatedByArgs']]]] = None,
+             idcs_endpoint: Optional[pulumi.Input[str]] = None,
+             idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppRoleIdcsLastModifiedByArgs']]]] = None,
+             idcs_last_upgraded_in_release: Optional[pulumi.Input[str]] = None,
+             idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             legacy_group_name: Optional[pulumi.Input[str]] = None,
+             limited_to_one_or_more_groups: Optional[pulumi.Input[bool]] = None,
+             localized_display_name: Optional[pulumi.Input[str]] = None,
+             members: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppRoleMemberArgs']]]] = None,
+             metas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppRoleMetaArgs']]]] = None,
+             ocid: Optional[pulumi.Input[str]] = None,
+             public: Optional[pulumi.Input[bool]] = None,
+             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
+             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppRoleTagArgs']]]] = None,
+             tenancy_ocid: Optional[pulumi.Input[str]] = None,
+             unique_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if admin_role is None and 'adminRole' in kwargs:
+            admin_role = kwargs['adminRole']
+        if attribute_sets is None and 'attributeSets' in kwargs:
+            attribute_sets = kwargs['attributeSets']
+        if available_to_clients is None and 'availableToClients' in kwargs:
+            available_to_clients = kwargs['availableToClients']
+        if available_to_groups is None and 'availableToGroups' in kwargs:
+            available_to_groups = kwargs['availableToGroups']
+        if available_to_users is None and 'availableToUsers' in kwargs:
+            available_to_users = kwargs['availableToUsers']
+        if compartment_ocid is None and 'compartmentOcid' in kwargs:
+            compartment_ocid = kwargs['compartmentOcid']
+        if delete_in_progress is None and 'deleteInProgress' in kwargs:
+            delete_in_progress = kwargs['deleteInProgress']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if domain_ocid is None and 'domainOcid' in kwargs:
+            domain_ocid = kwargs['domainOcid']
+        if idcs_created_bies is None and 'idcsCreatedBies' in kwargs:
+            idcs_created_bies = kwargs['idcsCreatedBies']
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
+            idcs_endpoint = kwargs['idcsEndpoint']
+        if idcs_last_modified_bies is None and 'idcsLastModifiedBies' in kwargs:
+            idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
+        if idcs_last_upgraded_in_release is None and 'idcsLastUpgradedInRelease' in kwargs:
+            idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
+        if idcs_prevented_operations is None and 'idcsPreventedOperations' in kwargs:
+            idcs_prevented_operations = kwargs['idcsPreventedOperations']
+        if legacy_group_name is None and 'legacyGroupName' in kwargs:
+            legacy_group_name = kwargs['legacyGroupName']
+        if limited_to_one_or_more_groups is None and 'limitedToOneOrMoreGroups' in kwargs:
+            limited_to_one_or_more_groups = kwargs['limitedToOneOrMoreGroups']
+        if localized_display_name is None and 'localizedDisplayName' in kwargs:
+            localized_display_name = kwargs['localizedDisplayName']
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
+            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
+        if tenancy_ocid is None and 'tenancyOcid' in kwargs:
+            tenancy_ocid = kwargs['tenancyOcid']
+        if unique_name is None and 'uniqueName' in kwargs:
+            unique_name = kwargs['uniqueName']
+
         if admin_role is not None:
-            pulumi.set(__self__, "admin_role", admin_role)
+            _setter("admin_role", admin_role)
         if app is not None:
-            pulumi.set(__self__, "app", app)
+            _setter("app", app)
         if attribute_sets is not None:
-            pulumi.set(__self__, "attribute_sets", attribute_sets)
+            _setter("attribute_sets", attribute_sets)
         if attributes is not None:
-            pulumi.set(__self__, "attributes", attributes)
+            _setter("attributes", attributes)
         if authorization is not None:
-            pulumi.set(__self__, "authorization", authorization)
+            _setter("authorization", authorization)
         if available_to_clients is not None:
-            pulumi.set(__self__, "available_to_clients", available_to_clients)
+            _setter("available_to_clients", available_to_clients)
         if available_to_groups is not None:
-            pulumi.set(__self__, "available_to_groups", available_to_groups)
+            _setter("available_to_groups", available_to_groups)
         if available_to_users is not None:
-            pulumi.set(__self__, "available_to_users", available_to_users)
+            _setter("available_to_users", available_to_users)
         if compartment_ocid is not None:
-            pulumi.set(__self__, "compartment_ocid", compartment_ocid)
+            _setter("compartment_ocid", compartment_ocid)
         if delete_in_progress is not None:
-            pulumi.set(__self__, "delete_in_progress", delete_in_progress)
+            _setter("delete_in_progress", delete_in_progress)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if domain_ocid is not None:
-            pulumi.set(__self__, "domain_ocid", domain_ocid)
+            _setter("domain_ocid", domain_ocid)
         if idcs_created_bies is not None:
-            pulumi.set(__self__, "idcs_created_bies", idcs_created_bies)
+            _setter("idcs_created_bies", idcs_created_bies)
         if idcs_endpoint is not None:
-            pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
+            _setter("idcs_endpoint", idcs_endpoint)
         if idcs_last_modified_bies is not None:
-            pulumi.set(__self__, "idcs_last_modified_bies", idcs_last_modified_bies)
+            _setter("idcs_last_modified_bies", idcs_last_modified_bies)
         if idcs_last_upgraded_in_release is not None:
-            pulumi.set(__self__, "idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
+            _setter("idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
         if idcs_prevented_operations is not None:
-            pulumi.set(__self__, "idcs_prevented_operations", idcs_prevented_operations)
+            _setter("idcs_prevented_operations", idcs_prevented_operations)
         if legacy_group_name is not None:
-            pulumi.set(__self__, "legacy_group_name", legacy_group_name)
+            _setter("legacy_group_name", legacy_group_name)
         if limited_to_one_or_more_groups is not None:
-            pulumi.set(__self__, "limited_to_one_or_more_groups", limited_to_one_or_more_groups)
+            _setter("limited_to_one_or_more_groups", limited_to_one_or_more_groups)
         if localized_display_name is not None:
-            pulumi.set(__self__, "localized_display_name", localized_display_name)
+            _setter("localized_display_name", localized_display_name)
         if members is not None:
-            pulumi.set(__self__, "members", members)
+            _setter("members", members)
         if metas is not None:
-            pulumi.set(__self__, "metas", metas)
+            _setter("metas", metas)
         if ocid is not None:
-            pulumi.set(__self__, "ocid", ocid)
+            _setter("ocid", ocid)
         if public is not None:
-            pulumi.set(__self__, "public", public)
+            _setter("public", public)
         if resource_type_schema_version is not None:
-            pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
+            _setter("resource_type_schema_version", resource_type_schema_version)
         if schemas is not None:
-            pulumi.set(__self__, "schemas", schemas)
+            _setter("schemas", schemas)
         if tags is not None:
-            pulumi.set(__self__, "tags", tags)
+            _setter("tags", tags)
         if tenancy_ocid is not None:
-            pulumi.set(__self__, "tenancy_ocid", tenancy_ocid)
+            _setter("tenancy_ocid", tenancy_ocid)
         if unique_name is not None:
-            pulumi.set(__self__, "unique_name", unique_name)
+            _setter("unique_name", unique_name)
 
     @property
     @pulumi.getter(name="adminRole")
@@ -1713,6 +1891,10 @@ class DomainsAppRole(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DomainsAppRoleArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -1745,6 +1927,11 @@ class DomainsAppRole(pulumi.CustomResource):
             __props__ = DomainsAppRoleArgs.__new__(DomainsAppRoleArgs)
 
             __props__.__dict__["admin_role"] = admin_role
+            if app is not None and not isinstance(app, DomainsAppRoleAppArgs):
+                app = app or {}
+                def _setter(key, value):
+                    app[key] = value
+                DomainsAppRoleAppArgs._configure(_setter, **app)
             if app is None and not opts.urn:
                 raise TypeError("Missing required property 'app'")
             __props__.__dict__["app"] = app

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -85,15 +85,42 @@ class ConnectorSource(dict):
         :param Sequence['ConnectorSourceMonitoringSourceArgs'] monitoring_sources: (Updatable) The list of metric namespaces to retrieve data from.
         :param str stream_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
         """
-        pulumi.set(__self__, "kind", kind)
+        ConnectorSource._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            kind=kind,
+            cursor=cursor,
+            log_sources=log_sources,
+            monitoring_sources=monitoring_sources,
+            stream_id=stream_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             kind: Optional[str] = None,
+             cursor: Optional['outputs.ConnectorSourceCursor'] = None,
+             log_sources: Optional[Sequence['outputs.ConnectorSourceLogSource']] = None,
+             monitoring_sources: Optional[Sequence['outputs.ConnectorSourceMonitoringSource']] = None,
+             stream_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+        if log_sources is None and 'logSources' in kwargs:
+            log_sources = kwargs['logSources']
+        if monitoring_sources is None and 'monitoringSources' in kwargs:
+            monitoring_sources = kwargs['monitoringSources']
+        if stream_id is None and 'streamId' in kwargs:
+            stream_id = kwargs['streamId']
+
+        _setter("kind", kind)
         if cursor is not None:
-            pulumi.set(__self__, "cursor", cursor)
+            _setter("cursor", cursor)
         if log_sources is not None:
-            pulumi.set(__self__, "log_sources", log_sources)
+            _setter("log_sources", log_sources)
         if monitoring_sources is not None:
-            pulumi.set(__self__, "monitoring_sources", monitoring_sources)
+            _setter("monitoring_sources", monitoring_sources)
         if stream_id is not None:
-            pulumi.set(__self__, "stream_id", stream_id)
+            _setter("stream_id", stream_id)
 
     @property
     @pulumi.getter
@@ -143,8 +170,19 @@ class ConnectorSourceCursor(dict):
         """
         :param str kind: (Updatable) The type descriminator.
         """
+        ConnectorSourceCursor._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            kind=kind,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             kind: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if kind is not None:
-            pulumi.set(__self__, "kind", kind)
+            _setter("kind", kind)
 
     @property
     @pulumi.getter
@@ -187,12 +225,33 @@ class ConnectorSourceLogSource(dict):
         :param str log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
         :param str log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
         """
+        ConnectorSourceLogSource._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if log_group_id is not None:
-            pulumi.set(__self__, "log_group_id", log_group_id)
+            _setter("log_group_id", log_group_id)
         if log_id is not None:
-            pulumi.set(__self__, "log_id", log_id)
+            _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -247,10 +306,27 @@ class ConnectorSourceMonitoringSource(dict):
         :param str compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
         :param 'ConnectorSourceMonitoringSourceNamespaceDetailsArgs' namespace_details: (Updatable) Discriminator for namespaces in the compartment-specific list.
         """
+        ConnectorSourceMonitoringSource._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            namespace_details=namespace_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             namespace_details: Optional['outputs.ConnectorSourceMonitoringSourceNamespaceDetails'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if namespace_details is None and 'namespaceDetails' in kwargs:
+            namespace_details = kwargs['namespaceDetails']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if namespace_details is not None:
-            pulumi.set(__self__, "namespace_details", namespace_details)
+            _setter("namespace_details", namespace_details)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -278,8 +354,25 @@ class ConnectorSourceMonitoringSourceNamespaceDetails(dict):
         :param str kind: (Updatable) The type descriminator.
         :param Sequence['ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs'] namespaces: (Updatable) The namespaces for the compartment-specific list.
         """
-        pulumi.set(__self__, "kind", kind)
-        pulumi.set(__self__, "namespaces", namespaces)
+        ConnectorSourceMonitoringSourceNamespaceDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            kind=kind,
+            namespaces=namespaces,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             kind: Optional[str] = None,
+             namespaces: Optional[Sequence['outputs.ConnectorSourceMonitoringSourceNamespaceDetailsNamespace']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+        if namespaces is None:
+            raise TypeError("Missing 'namespaces' argument")
+
+        _setter("kind", kind)
+        _setter("namespaces", namespaces)
 
     @property
     @pulumi.getter
@@ -307,8 +400,25 @@ class ConnectorSourceMonitoringSourceNamespaceDetailsNamespace(dict):
         :param 'ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs' metrics: (Updatable) The metrics to query for the specified metric namespace.
         :param str namespace: (Updatable) The namespace.
         """
-        pulumi.set(__self__, "metrics", metrics)
-        pulumi.set(__self__, "namespace", namespace)
+        ConnectorSourceMonitoringSourceNamespaceDetailsNamespace._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            metrics=metrics,
+            namespace=namespace,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             metrics: Optional['outputs.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics'] = None,
+             namespace: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if metrics is None:
+            raise TypeError("Missing 'metrics' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+
+        _setter("metrics", metrics)
+        _setter("namespace", namespace)
 
     @property
     @pulumi.getter
@@ -334,7 +444,20 @@ class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics(dict):
         """
         :param str kind: (Updatable) The type descriminator.
         """
-        pulumi.set(__self__, "kind", kind)
+        ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            kind=kind,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             kind: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+
+        _setter("kind", kind)
 
     @property
     @pulumi.getter
@@ -419,37 +542,102 @@ class ConnectorTarget(dict):
         :param str stream_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
         :param str topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
         """
-        pulumi.set(__self__, "kind", kind)
+        ConnectorTarget._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            kind=kind,
+            batch_rollover_size_in_mbs=batch_rollover_size_in_mbs,
+            batch_rollover_time_in_ms=batch_rollover_time_in_ms,
+            bucket=bucket,
+            compartment_id=compartment_id,
+            dimensions=dimensions,
+            enable_formatted_messaging=enable_formatted_messaging,
+            function_id=function_id,
+            log_group_id=log_group_id,
+            log_source_identifier=log_source_identifier,
+            metric=metric,
+            metric_namespace=metric_namespace,
+            namespace=namespace,
+            object_name_prefix=object_name_prefix,
+            stream_id=stream_id,
+            topic_id=topic_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             kind: Optional[str] = None,
+             batch_rollover_size_in_mbs: Optional[int] = None,
+             batch_rollover_time_in_ms: Optional[int] = None,
+             bucket: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             dimensions: Optional[Sequence['outputs.ConnectorTargetDimension']] = None,
+             enable_formatted_messaging: Optional[bool] = None,
+             function_id: Optional[str] = None,
+             log_group_id: Optional[str] = None,
+             log_source_identifier: Optional[str] = None,
+             metric: Optional[str] = None,
+             metric_namespace: Optional[str] = None,
+             namespace: Optional[str] = None,
+             object_name_prefix: Optional[str] = None,
+             stream_id: Optional[str] = None,
+             topic_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+        if batch_rollover_size_in_mbs is None and 'batchRolloverSizeInMbs' in kwargs:
+            batch_rollover_size_in_mbs = kwargs['batchRolloverSizeInMbs']
+        if batch_rollover_time_in_ms is None and 'batchRolloverTimeInMs' in kwargs:
+            batch_rollover_time_in_ms = kwargs['batchRolloverTimeInMs']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if enable_formatted_messaging is None and 'enableFormattedMessaging' in kwargs:
+            enable_formatted_messaging = kwargs['enableFormattedMessaging']
+        if function_id is None and 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_source_identifier is None and 'logSourceIdentifier' in kwargs:
+            log_source_identifier = kwargs['logSourceIdentifier']
+        if metric_namespace is None and 'metricNamespace' in kwargs:
+            metric_namespace = kwargs['metricNamespace']
+        if object_name_prefix is None and 'objectNamePrefix' in kwargs:
+            object_name_prefix = kwargs['objectNamePrefix']
+        if stream_id is None and 'streamId' in kwargs:
+            stream_id = kwargs['streamId']
+        if topic_id is None and 'topicId' in kwargs:
+            topic_id = kwargs['topicId']
+
+        _setter("kind", kind)
         if batch_rollover_size_in_mbs is not None:
-            pulumi.set(__self__, "batch_rollover_size_in_mbs", batch_rollover_size_in_mbs)
+            _setter("batch_rollover_size_in_mbs", batch_rollover_size_in_mbs)
         if batch_rollover_time_in_ms is not None:
-            pulumi.set(__self__, "batch_rollover_time_in_ms", batch_rollover_time_in_ms)
+            _setter("batch_rollover_time_in_ms", batch_rollover_time_in_ms)
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if dimensions is not None:
-            pulumi.set(__self__, "dimensions", dimensions)
+            _setter("dimensions", dimensions)
         if enable_formatted_messaging is not None:
-            pulumi.set(__self__, "enable_formatted_messaging", enable_formatted_messaging)
+            _setter("enable_formatted_messaging", enable_formatted_messaging)
         if function_id is not None:
-            pulumi.set(__self__, "function_id", function_id)
+            _setter("function_id", function_id)
         if log_group_id is not None:
-            pulumi.set(__self__, "log_group_id", log_group_id)
+            _setter("log_group_id", log_group_id)
         if log_source_identifier is not None:
-            pulumi.set(__self__, "log_source_identifier", log_source_identifier)
+            _setter("log_source_identifier", log_source_identifier)
         if metric is not None:
-            pulumi.set(__self__, "metric", metric)
+            _setter("metric", metric)
         if metric_namespace is not None:
-            pulumi.set(__self__, "metric_namespace", metric_namespace)
+            _setter("metric_namespace", metric_namespace)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if object_name_prefix is not None:
-            pulumi.set(__self__, "object_name_prefix", object_name_prefix)
+            _setter("object_name_prefix", object_name_prefix)
         if stream_id is not None:
-            pulumi.set(__self__, "stream_id", stream_id)
+            _setter("stream_id", stream_id)
         if topic_id is not None:
-            pulumi.set(__self__, "topic_id", topic_id)
+            _setter("topic_id", topic_id)
 
     @property
     @pulumi.getter
@@ -606,10 +794,25 @@ class ConnectorTargetDimension(dict):
         :param 'ConnectorTargetDimensionDimensionValueArgs' dimension_value: (Updatable) Instructions for extracting the value corresponding to the specified dimension key: Either extract the value as-is (static) or derive the value from a path (evaluated).
         :param str name: (Updatable) Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Service Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
         """
+        ConnectorTargetDimension._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dimension_value=dimension_value,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dimension_value: Optional['outputs.ConnectorTargetDimensionDimensionValue'] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if dimension_value is None and 'dimensionValue' in kwargs:
+            dimension_value = kwargs['dimensionValue']
+
         if dimension_value is not None:
-            pulumi.set(__self__, "dimension_value", dimension_value)
+            _setter("dimension_value", dimension_value)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter(name="dimensionValue")
@@ -639,11 +842,28 @@ class ConnectorTargetDimensionDimensionValue(dict):
         :param str path: (Updatable) The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
         :param str value: (Updatable) The data extracted from the specified dimension value (passed as-is). Unicode characters only. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails).
         """
-        pulumi.set(__self__, "kind", kind)
+        ConnectorTargetDimensionDimensionValue._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            kind=kind,
+            path=path,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             kind: Optional[str] = None,
+             path: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+
+        _setter("kind", kind)
         if path is not None:
-            pulumi.set(__self__, "path", path)
+            _setter("path", path)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter
@@ -706,15 +926,42 @@ class ConnectorTask(dict):
         :param str condition: (Updatable) A filter or mask to limit the source used in the flow defined by the service connector.
         :param str function_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
         """
-        pulumi.set(__self__, "kind", kind)
+        ConnectorTask._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            kind=kind,
+            batch_size_in_kbs=batch_size_in_kbs,
+            batch_time_in_sec=batch_time_in_sec,
+            condition=condition,
+            function_id=function_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             kind: Optional[str] = None,
+             batch_size_in_kbs: Optional[int] = None,
+             batch_time_in_sec: Optional[int] = None,
+             condition: Optional[str] = None,
+             function_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+        if batch_size_in_kbs is None and 'batchSizeInKbs' in kwargs:
+            batch_size_in_kbs = kwargs['batchSizeInKbs']
+        if batch_time_in_sec is None and 'batchTimeInSec' in kwargs:
+            batch_time_in_sec = kwargs['batchTimeInSec']
+        if function_id is None and 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+
+        _setter("kind", kind)
         if batch_size_in_kbs is not None:
-            pulumi.set(__self__, "batch_size_in_kbs", batch_size_in_kbs)
+            _setter("batch_size_in_kbs", batch_size_in_kbs)
         if batch_time_in_sec is not None:
-            pulumi.set(__self__, "batch_time_in_sec", batch_time_in_sec)
+            _setter("batch_time_in_sec", batch_time_in_sec)
         if condition is not None:
-            pulumi.set(__self__, "condition", condition)
+            _setter("condition", condition)
         if function_id is not None:
-            pulumi.set(__self__, "function_id", function_id)
+            _setter("function_id", function_id)
 
     @property
     @pulumi.getter
@@ -772,11 +1019,46 @@ class GetServiceConnectorSourceResult(dict):
         :param Sequence['GetServiceConnectorSourceMonitoringSourceArgs'] monitoring_sources: The list of metric namespaces to retrieve data from.
         :param str stream_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
         """
-        pulumi.set(__self__, "cursors", cursors)
-        pulumi.set(__self__, "kind", kind)
-        pulumi.set(__self__, "log_sources", log_sources)
-        pulumi.set(__self__, "monitoring_sources", monitoring_sources)
-        pulumi.set(__self__, "stream_id", stream_id)
+        GetServiceConnectorSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cursors=cursors,
+            kind=kind,
+            log_sources=log_sources,
+            monitoring_sources=monitoring_sources,
+            stream_id=stream_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cursors: Optional[Sequence['outputs.GetServiceConnectorSourceCursorResult']] = None,
+             kind: Optional[str] = None,
+             log_sources: Optional[Sequence['outputs.GetServiceConnectorSourceLogSourceResult']] = None,
+             monitoring_sources: Optional[Sequence['outputs.GetServiceConnectorSourceMonitoringSourceResult']] = None,
+             stream_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if cursors is None:
+            raise TypeError("Missing 'cursors' argument")
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+        if log_sources is None and 'logSources' in kwargs:
+            log_sources = kwargs['logSources']
+        if log_sources is None:
+            raise TypeError("Missing 'log_sources' argument")
+        if monitoring_sources is None and 'monitoringSources' in kwargs:
+            monitoring_sources = kwargs['monitoringSources']
+        if monitoring_sources is None:
+            raise TypeError("Missing 'monitoring_sources' argument")
+        if stream_id is None and 'streamId' in kwargs:
+            stream_id = kwargs['streamId']
+        if stream_id is None:
+            raise TypeError("Missing 'stream_id' argument")
+
+        _setter("cursors", cursors)
+        _setter("kind", kind)
+        _setter("log_sources", log_sources)
+        _setter("monitoring_sources", monitoring_sources)
+        _setter("stream_id", stream_id)
 
     @property
     @pulumi.getter
@@ -826,7 +1108,20 @@ class GetServiceConnectorSourceCursorResult(dict):
         """
         :param str kind: The type descriminator.
         """
-        pulumi.set(__self__, "kind", kind)
+        GetServiceConnectorSourceCursorResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            kind=kind,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             kind: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+
+        _setter("kind", kind)
 
     @property
     @pulumi.getter
@@ -848,9 +1143,36 @@ class GetServiceConnectorSourceLogSourceResult(dict):
         :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
         :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetServiceConnectorSourceLogSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -886,8 +1208,29 @@ class GetServiceConnectorSourceMonitoringSourceResult(dict):
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
         :param Sequence['GetServiceConnectorSourceMonitoringSourceNamespaceDetailArgs'] namespace_details: Discriminator for namespaces in the compartment-specific list.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "namespace_details", namespace_details)
+        GetServiceConnectorSourceMonitoringSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            namespace_details=namespace_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             namespace_details: Optional[Sequence['outputs.GetServiceConnectorSourceMonitoringSourceNamespaceDetailResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if namespace_details is None and 'namespaceDetails' in kwargs:
+            namespace_details = kwargs['namespaceDetails']
+        if namespace_details is None:
+            raise TypeError("Missing 'namespace_details' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("namespace_details", namespace_details)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -915,8 +1258,25 @@ class GetServiceConnectorSourceMonitoringSourceNamespaceDetailResult(dict):
         :param str kind: The type descriminator.
         :param Sequence['GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArgs'] namespaces: The namespaces for the compartment-specific list.
         """
-        pulumi.set(__self__, "kind", kind)
-        pulumi.set(__self__, "namespaces", namespaces)
+        GetServiceConnectorSourceMonitoringSourceNamespaceDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            kind=kind,
+            namespaces=namespaces,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             kind: Optional[str] = None,
+             namespaces: Optional[Sequence['outputs.GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+        if namespaces is None:
+            raise TypeError("Missing 'namespaces' argument")
+
+        _setter("kind", kind)
+        _setter("namespaces", namespaces)
 
     @property
     @pulumi.getter
@@ -944,8 +1304,25 @@ class GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceResult(di
         :param Sequence['GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs'] metrics: The metrics to query for the specified metric namespace.
         :param str namespace: The namespace.
         """
-        pulumi.set(__self__, "metrics", metrics)
-        pulumi.set(__self__, "namespace", namespace)
+        GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            metrics=metrics,
+            namespace=namespace,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             metrics: Optional[Sequence['outputs.GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricResult']] = None,
+             namespace: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if metrics is None:
+            raise TypeError("Missing 'metrics' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+
+        _setter("metrics", metrics)
+        _setter("namespace", namespace)
 
     @property
     @pulumi.getter
@@ -971,7 +1348,20 @@ class GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricRes
         """
         :param str kind: The type descriminator.
         """
-        pulumi.set(__self__, "kind", kind)
+        GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            kind=kind,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             kind: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+
+        _setter("kind", kind)
 
     @property
     @pulumi.getter
@@ -1019,22 +1409,117 @@ class GetServiceConnectorTargetResult(dict):
         :param str stream_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
         :param str topic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
         """
-        pulumi.set(__self__, "batch_rollover_size_in_mbs", batch_rollover_size_in_mbs)
-        pulumi.set(__self__, "batch_rollover_time_in_ms", batch_rollover_time_in_ms)
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "dimensions", dimensions)
-        pulumi.set(__self__, "enable_formatted_messaging", enable_formatted_messaging)
-        pulumi.set(__self__, "function_id", function_id)
-        pulumi.set(__self__, "kind", kind)
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_source_identifier", log_source_identifier)
-        pulumi.set(__self__, "metric", metric)
-        pulumi.set(__self__, "metric_namespace", metric_namespace)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object_name_prefix", object_name_prefix)
-        pulumi.set(__self__, "stream_id", stream_id)
-        pulumi.set(__self__, "topic_id", topic_id)
+        GetServiceConnectorTargetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            batch_rollover_size_in_mbs=batch_rollover_size_in_mbs,
+            batch_rollover_time_in_ms=batch_rollover_time_in_ms,
+            bucket=bucket,
+            compartment_id=compartment_id,
+            dimensions=dimensions,
+            enable_formatted_messaging=enable_formatted_messaging,
+            function_id=function_id,
+            kind=kind,
+            log_group_id=log_group_id,
+            log_source_identifier=log_source_identifier,
+            metric=metric,
+            metric_namespace=metric_namespace,
+            namespace=namespace,
+            object_name_prefix=object_name_prefix,
+            stream_id=stream_id,
+            topic_id=topic_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             batch_rollover_size_in_mbs: Optional[int] = None,
+             batch_rollover_time_in_ms: Optional[int] = None,
+             bucket: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             dimensions: Optional[Sequence['outputs.GetServiceConnectorTargetDimensionResult']] = None,
+             enable_formatted_messaging: Optional[bool] = None,
+             function_id: Optional[str] = None,
+             kind: Optional[str] = None,
+             log_group_id: Optional[str] = None,
+             log_source_identifier: Optional[str] = None,
+             metric: Optional[str] = None,
+             metric_namespace: Optional[str] = None,
+             namespace: Optional[str] = None,
+             object_name_prefix: Optional[str] = None,
+             stream_id: Optional[str] = None,
+             topic_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if batch_rollover_size_in_mbs is None and 'batchRolloverSizeInMbs' in kwargs:
+            batch_rollover_size_in_mbs = kwargs['batchRolloverSizeInMbs']
+        if batch_rollover_size_in_mbs is None:
+            raise TypeError("Missing 'batch_rollover_size_in_mbs' argument")
+        if batch_rollover_time_in_ms is None and 'batchRolloverTimeInMs' in kwargs:
+            batch_rollover_time_in_ms = kwargs['batchRolloverTimeInMs']
+        if batch_rollover_time_in_ms is None:
+            raise TypeError("Missing 'batch_rollover_time_in_ms' argument")
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if dimensions is None:
+            raise TypeError("Missing 'dimensions' argument")
+        if enable_formatted_messaging is None and 'enableFormattedMessaging' in kwargs:
+            enable_formatted_messaging = kwargs['enableFormattedMessaging']
+        if enable_formatted_messaging is None:
+            raise TypeError("Missing 'enable_formatted_messaging' argument")
+        if function_id is None and 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if function_id is None:
+            raise TypeError("Missing 'function_id' argument")
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_source_identifier is None and 'logSourceIdentifier' in kwargs:
+            log_source_identifier = kwargs['logSourceIdentifier']
+        if log_source_identifier is None:
+            raise TypeError("Missing 'log_source_identifier' argument")
+        if metric is None:
+            raise TypeError("Missing 'metric' argument")
+        if metric_namespace is None and 'metricNamespace' in kwargs:
+            metric_namespace = kwargs['metricNamespace']
+        if metric_namespace is None:
+            raise TypeError("Missing 'metric_namespace' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if object_name_prefix is None and 'objectNamePrefix' in kwargs:
+            object_name_prefix = kwargs['objectNamePrefix']
+        if object_name_prefix is None:
+            raise TypeError("Missing 'object_name_prefix' argument")
+        if stream_id is None and 'streamId' in kwargs:
+            stream_id = kwargs['streamId']
+        if stream_id is None:
+            raise TypeError("Missing 'stream_id' argument")
+        if topic_id is None and 'topicId' in kwargs:
+            topic_id = kwargs['topicId']
+        if topic_id is None:
+            raise TypeError("Missing 'topic_id' argument")
+
+        _setter("batch_rollover_size_in_mbs", batch_rollover_size_in_mbs)
+        _setter("batch_rollover_time_in_ms", batch_rollover_time_in_ms)
+        _setter("bucket", bucket)
+        _setter("compartment_id", compartment_id)
+        _setter("dimensions", dimensions)
+        _setter("enable_formatted_messaging", enable_formatted_messaging)
+        _setter("function_id", function_id)
+        _setter("kind", kind)
+        _setter("log_group_id", log_group_id)
+        _setter("log_source_identifier", log_source_identifier)
+        _setter("metric", metric)
+        _setter("metric_namespace", metric_namespace)
+        _setter("namespace", namespace)
+        _setter("object_name_prefix", object_name_prefix)
+        _setter("stream_id", stream_id)
+        _setter("topic_id", topic_id)
 
     @property
     @pulumi.getter(name="batchRolloverSizeInMbs")
@@ -1174,8 +1659,27 @@ class GetServiceConnectorTargetDimensionResult(dict):
         :param Sequence['GetServiceConnectorTargetDimensionDimensionValueArgs'] dimension_values: Instructions for extracting the value corresponding to the specified dimension key: Either extract the value as-is (static) or derive the value from a path (evaluated).
         :param str name: Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Service Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
         """
-        pulumi.set(__self__, "dimension_values", dimension_values)
-        pulumi.set(__self__, "name", name)
+        GetServiceConnectorTargetDimensionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dimension_values=dimension_values,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dimension_values: Optional[Sequence['outputs.GetServiceConnectorTargetDimensionDimensionValueResult']] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if dimension_values is None and 'dimensionValues' in kwargs:
+            dimension_values = kwargs['dimensionValues']
+        if dimension_values is None:
+            raise TypeError("Missing 'dimension_values' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("dimension_values", dimension_values)
+        _setter("name", name)
 
     @property
     @pulumi.getter(name="dimensionValues")
@@ -1205,9 +1709,30 @@ class GetServiceConnectorTargetDimensionDimensionValueResult(dict):
         :param str path: The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
         :param str value: The data extracted from the specified dimension value (passed as-is). Unicode characters only. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails).
         """
-        pulumi.set(__self__, "kind", kind)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "value", value)
+        GetServiceConnectorTargetDimensionDimensionValueResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            kind=kind,
+            path=path,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             kind: Optional[str] = None,
+             path: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("kind", kind)
+        _setter("path", path)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -1249,11 +1774,46 @@ class GetServiceConnectorTaskResult(dict):
         :param str function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
         :param str kind: The type descriminator.
         """
-        pulumi.set(__self__, "batch_size_in_kbs", batch_size_in_kbs)
-        pulumi.set(__self__, "batch_time_in_sec", batch_time_in_sec)
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "function_id", function_id)
-        pulumi.set(__self__, "kind", kind)
+        GetServiceConnectorTaskResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            batch_size_in_kbs=batch_size_in_kbs,
+            batch_time_in_sec=batch_time_in_sec,
+            condition=condition,
+            function_id=function_id,
+            kind=kind,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             batch_size_in_kbs: Optional[int] = None,
+             batch_time_in_sec: Optional[int] = None,
+             condition: Optional[str] = None,
+             function_id: Optional[str] = None,
+             kind: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if batch_size_in_kbs is None and 'batchSizeInKbs' in kwargs:
+            batch_size_in_kbs = kwargs['batchSizeInKbs']
+        if batch_size_in_kbs is None:
+            raise TypeError("Missing 'batch_size_in_kbs' argument")
+        if batch_time_in_sec is None and 'batchTimeInSec' in kwargs:
+            batch_time_in_sec = kwargs['batchTimeInSec']
+        if batch_time_in_sec is None:
+            raise TypeError("Missing 'batch_time_in_sec' argument")
+        if condition is None:
+            raise TypeError("Missing 'condition' argument")
+        if function_id is None and 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if function_id is None:
+            raise TypeError("Missing 'function_id' argument")
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+
+        _setter("batch_size_in_kbs", batch_size_in_kbs)
+        _setter("batch_time_in_sec", batch_time_in_sec)
+        _setter("condition", condition)
+        _setter("function_id", function_id)
+        _setter("kind", kind)
 
     @property
     @pulumi.getter(name="batchSizeInKbs")
@@ -1305,10 +1865,29 @@ class GetServiceConnectorsFilterResult(dict):
         """
         :param str name: Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Service Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetServiceConnectorsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1333,7 +1912,20 @@ class GetServiceConnectorsFilterResult(dict):
 class GetServiceConnectorsServiceConnectorCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetServiceConnectorsServiceConnectorCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1374,20 +1966,101 @@ class GetServiceConnectorsServiceConnectorCollectionItemResult(dict):
         :param str time_created: The date and time when the service connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         :param str time_updated: The date and time when the service connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecyle_details", lifecyle_details)
-        pulumi.set(__self__, "sources", sources)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "targets", targets)
-        pulumi.set(__self__, "tasks", tasks)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetServiceConnectorsServiceConnectorCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecyle_details=lifecyle_details,
+            sources=sources,
+            state=state,
+            system_tags=system_tags,
+            targets=targets,
+            tasks=tasks,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecyle_details: Optional[str] = None,
+             sources: Optional[Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceResult']] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             targets: Optional[Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemTargetResult']] = None,
+             tasks: Optional[Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemTaskResult']] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecyle_details is None and 'lifecyleDetails' in kwargs:
+            lifecyle_details = kwargs['lifecyleDetails']
+        if lifecyle_details is None:
+            raise TypeError("Missing 'lifecyle_details' argument")
+        if sources is None:
+            raise TypeError("Missing 'sources' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if targets is None:
+            raise TypeError("Missing 'targets' argument")
+        if tasks is None:
+            raise TypeError("Missing 'tasks' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecyle_details", lifecyle_details)
+        _setter("sources", sources)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("targets", targets)
+        _setter("tasks", tasks)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1517,11 +2190,46 @@ class GetServiceConnectorsServiceConnectorCollectionItemSourceResult(dict):
         :param Sequence['GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArgs'] monitoring_sources: The list of metric namespaces to retrieve data from.
         :param str stream_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
         """
-        pulumi.set(__self__, "cursors", cursors)
-        pulumi.set(__self__, "kind", kind)
-        pulumi.set(__self__, "log_sources", log_sources)
-        pulumi.set(__self__, "monitoring_sources", monitoring_sources)
-        pulumi.set(__self__, "stream_id", stream_id)
+        GetServiceConnectorsServiceConnectorCollectionItemSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cursors=cursors,
+            kind=kind,
+            log_sources=log_sources,
+            monitoring_sources=monitoring_sources,
+            stream_id=stream_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cursors: Optional[Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceCursorResult']] = None,
+             kind: Optional[str] = None,
+             log_sources: Optional[Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceResult']] = None,
+             monitoring_sources: Optional[Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceResult']] = None,
+             stream_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if cursors is None:
+            raise TypeError("Missing 'cursors' argument")
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+        if log_sources is None and 'logSources' in kwargs:
+            log_sources = kwargs['logSources']
+        if log_sources is None:
+            raise TypeError("Missing 'log_sources' argument")
+        if monitoring_sources is None and 'monitoringSources' in kwargs:
+            monitoring_sources = kwargs['monitoringSources']
+        if monitoring_sources is None:
+            raise TypeError("Missing 'monitoring_sources' argument")
+        if stream_id is None and 'streamId' in kwargs:
+            stream_id = kwargs['streamId']
+        if stream_id is None:
+            raise TypeError("Missing 'stream_id' argument")
+
+        _setter("cursors", cursors)
+        _setter("kind", kind)
+        _setter("log_sources", log_sources)
+        _setter("monitoring_sources", monitoring_sources)
+        _setter("stream_id", stream_id)
 
     @property
     @pulumi.getter
@@ -1571,7 +2279,20 @@ class GetServiceConnectorsServiceConnectorCollectionItemSourceCursorResult(dict)
         """
         :param str kind: The type descriminator.
         """
-        pulumi.set(__self__, "kind", kind)
+        GetServiceConnectorsServiceConnectorCollectionItemSourceCursorResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            kind=kind,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             kind: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+
+        _setter("kind", kind)
 
     @property
     @pulumi.getter
@@ -1593,9 +2314,36 @@ class GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceResult(di
         :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
         :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1631,8 +2379,29 @@ class GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceRe
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this request.
         :param Sequence['GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArgs'] namespace_details: Discriminator for namespaces in the compartment-specific list.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "namespace_details", namespace_details)
+        GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            namespace_details=namespace_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             namespace_details: Optional[Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if namespace_details is None and 'namespaceDetails' in kwargs:
+            namespace_details = kwargs['namespaceDetails']
+        if namespace_details is None:
+            raise TypeError("Missing 'namespace_details' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("namespace_details", namespace_details)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1660,8 +2429,25 @@ class GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNa
         :param str kind: The type descriminator.
         :param Sequence['GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArgs'] namespaces: The namespaces for the compartment-specific list.
         """
-        pulumi.set(__self__, "kind", kind)
-        pulumi.set(__self__, "namespaces", namespaces)
+        GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            kind=kind,
+            namespaces=namespaces,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             kind: Optional[str] = None,
+             namespaces: Optional[Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+        if namespaces is None:
+            raise TypeError("Missing 'namespaces' argument")
+
+        _setter("kind", kind)
+        _setter("namespaces", namespaces)
 
     @property
     @pulumi.getter
@@ -1689,8 +2475,25 @@ class GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNa
         :param Sequence['GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs'] metrics: The metrics to query for the specified metric namespace.
         :param str namespace: The namespace.
         """
-        pulumi.set(__self__, "metrics", metrics)
-        pulumi.set(__self__, "namespace", namespace)
+        GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            metrics=metrics,
+            namespace=namespace,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             metrics: Optional[Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricResult']] = None,
+             namespace: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if metrics is None:
+            raise TypeError("Missing 'metrics' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+
+        _setter("metrics", metrics)
+        _setter("namespace", namespace)
 
     @property
     @pulumi.getter
@@ -1716,7 +2519,20 @@ class GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNa
         """
         :param str kind: The type descriminator.
         """
-        pulumi.set(__self__, "kind", kind)
+        GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            kind=kind,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             kind: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+
+        _setter("kind", kind)
 
     @property
     @pulumi.getter
@@ -1764,22 +2580,117 @@ class GetServiceConnectorsServiceConnectorCollectionItemTargetResult(dict):
         :param str stream_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
         :param str topic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
         """
-        pulumi.set(__self__, "batch_rollover_size_in_mbs", batch_rollover_size_in_mbs)
-        pulumi.set(__self__, "batch_rollover_time_in_ms", batch_rollover_time_in_ms)
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "dimensions", dimensions)
-        pulumi.set(__self__, "enable_formatted_messaging", enable_formatted_messaging)
-        pulumi.set(__self__, "function_id", function_id)
-        pulumi.set(__self__, "kind", kind)
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_source_identifier", log_source_identifier)
-        pulumi.set(__self__, "metric", metric)
-        pulumi.set(__self__, "metric_namespace", metric_namespace)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object_name_prefix", object_name_prefix)
-        pulumi.set(__self__, "stream_id", stream_id)
-        pulumi.set(__self__, "topic_id", topic_id)
+        GetServiceConnectorsServiceConnectorCollectionItemTargetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            batch_rollover_size_in_mbs=batch_rollover_size_in_mbs,
+            batch_rollover_time_in_ms=batch_rollover_time_in_ms,
+            bucket=bucket,
+            compartment_id=compartment_id,
+            dimensions=dimensions,
+            enable_formatted_messaging=enable_formatted_messaging,
+            function_id=function_id,
+            kind=kind,
+            log_group_id=log_group_id,
+            log_source_identifier=log_source_identifier,
+            metric=metric,
+            metric_namespace=metric_namespace,
+            namespace=namespace,
+            object_name_prefix=object_name_prefix,
+            stream_id=stream_id,
+            topic_id=topic_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             batch_rollover_size_in_mbs: Optional[int] = None,
+             batch_rollover_time_in_ms: Optional[int] = None,
+             bucket: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             dimensions: Optional[Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionResult']] = None,
+             enable_formatted_messaging: Optional[bool] = None,
+             function_id: Optional[str] = None,
+             kind: Optional[str] = None,
+             log_group_id: Optional[str] = None,
+             log_source_identifier: Optional[str] = None,
+             metric: Optional[str] = None,
+             metric_namespace: Optional[str] = None,
+             namespace: Optional[str] = None,
+             object_name_prefix: Optional[str] = None,
+             stream_id: Optional[str] = None,
+             topic_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if batch_rollover_size_in_mbs is None and 'batchRolloverSizeInMbs' in kwargs:
+            batch_rollover_size_in_mbs = kwargs['batchRolloverSizeInMbs']
+        if batch_rollover_size_in_mbs is None:
+            raise TypeError("Missing 'batch_rollover_size_in_mbs' argument")
+        if batch_rollover_time_in_ms is None and 'batchRolloverTimeInMs' in kwargs:
+            batch_rollover_time_in_ms = kwargs['batchRolloverTimeInMs']
+        if batch_rollover_time_in_ms is None:
+            raise TypeError("Missing 'batch_rollover_time_in_ms' argument")
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if dimensions is None:
+            raise TypeError("Missing 'dimensions' argument")
+        if enable_formatted_messaging is None and 'enableFormattedMessaging' in kwargs:
+            enable_formatted_messaging = kwargs['enableFormattedMessaging']
+        if enable_formatted_messaging is None:
+            raise TypeError("Missing 'enable_formatted_messaging' argument")
+        if function_id is None and 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if function_id is None:
+            raise TypeError("Missing 'function_id' argument")
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_source_identifier is None and 'logSourceIdentifier' in kwargs:
+            log_source_identifier = kwargs['logSourceIdentifier']
+        if log_source_identifier is None:
+            raise TypeError("Missing 'log_source_identifier' argument")
+        if metric is None:
+            raise TypeError("Missing 'metric' argument")
+        if metric_namespace is None and 'metricNamespace' in kwargs:
+            metric_namespace = kwargs['metricNamespace']
+        if metric_namespace is None:
+            raise TypeError("Missing 'metric_namespace' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if object_name_prefix is None and 'objectNamePrefix' in kwargs:
+            object_name_prefix = kwargs['objectNamePrefix']
+        if object_name_prefix is None:
+            raise TypeError("Missing 'object_name_prefix' argument")
+        if stream_id is None and 'streamId' in kwargs:
+            stream_id = kwargs['streamId']
+        if stream_id is None:
+            raise TypeError("Missing 'stream_id' argument")
+        if topic_id is None and 'topicId' in kwargs:
+            topic_id = kwargs['topicId']
+        if topic_id is None:
+            raise TypeError("Missing 'topic_id' argument")
+
+        _setter("batch_rollover_size_in_mbs", batch_rollover_size_in_mbs)
+        _setter("batch_rollover_time_in_ms", batch_rollover_time_in_ms)
+        _setter("bucket", bucket)
+        _setter("compartment_id", compartment_id)
+        _setter("dimensions", dimensions)
+        _setter("enable_formatted_messaging", enable_formatted_messaging)
+        _setter("function_id", function_id)
+        _setter("kind", kind)
+        _setter("log_group_id", log_group_id)
+        _setter("log_source_identifier", log_source_identifier)
+        _setter("metric", metric)
+        _setter("metric_namespace", metric_namespace)
+        _setter("namespace", namespace)
+        _setter("object_name_prefix", object_name_prefix)
+        _setter("stream_id", stream_id)
+        _setter("topic_id", topic_id)
 
     @property
     @pulumi.getter(name="batchRolloverSizeInMbs")
@@ -1919,8 +2830,27 @@ class GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionResult(di
         :param Sequence['GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArgs'] dimension_values: Instructions for extracting the value corresponding to the specified dimension key: Either extract the value as-is (static) or derive the value from a path (evaluated).
         :param str name: Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Service Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
         """
-        pulumi.set(__self__, "dimension_values", dimension_values)
-        pulumi.set(__self__, "name", name)
+        GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dimension_values=dimension_values,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dimension_values: Optional[Sequence['outputs.GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueResult']] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if dimension_values is None and 'dimensionValues' in kwargs:
+            dimension_values = kwargs['dimensionValues']
+        if dimension_values is None:
+            raise TypeError("Missing 'dimension_values' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("dimension_values", dimension_values)
+        _setter("name", name)
 
     @property
     @pulumi.getter(name="dimensionValues")
@@ -1950,9 +2880,30 @@ class GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimension
         :param str path: The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
         :param str value: The data extracted from the specified dimension value (passed as-is). Unicode characters only. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails).
         """
-        pulumi.set(__self__, "kind", kind)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "value", value)
+        GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            kind=kind,
+            path=path,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             kind: Optional[str] = None,
+             path: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("kind", kind)
+        _setter("path", path)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -1994,11 +2945,46 @@ class GetServiceConnectorsServiceConnectorCollectionItemTaskResult(dict):
         :param str function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
         :param str kind: The type descriminator.
         """
-        pulumi.set(__self__, "batch_size_in_kbs", batch_size_in_kbs)
-        pulumi.set(__self__, "batch_time_in_sec", batch_time_in_sec)
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "function_id", function_id)
-        pulumi.set(__self__, "kind", kind)
+        GetServiceConnectorsServiceConnectorCollectionItemTaskResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            batch_size_in_kbs=batch_size_in_kbs,
+            batch_time_in_sec=batch_time_in_sec,
+            condition=condition,
+            function_id=function_id,
+            kind=kind,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             batch_size_in_kbs: Optional[int] = None,
+             batch_time_in_sec: Optional[int] = None,
+             condition: Optional[str] = None,
+             function_id: Optional[str] = None,
+             kind: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if batch_size_in_kbs is None and 'batchSizeInKbs' in kwargs:
+            batch_size_in_kbs = kwargs['batchSizeInKbs']
+        if batch_size_in_kbs is None:
+            raise TypeError("Missing 'batch_size_in_kbs' argument")
+        if batch_time_in_sec is None and 'batchTimeInSec' in kwargs:
+            batch_time_in_sec = kwargs['batchTimeInSec']
+        if batch_time_in_sec is None:
+            raise TypeError("Missing 'batch_time_in_sec' argument")
+        if condition is None:
+            raise TypeError("Missing 'condition' argument")
+        if function_id is None and 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if function_id is None:
+            raise TypeError("Missing 'function_id' argument")
+        if kind is None:
+            raise TypeError("Missing 'kind' argument")
+
+        _setter("batch_size_in_kbs", batch_size_in_kbs)
+        _setter("batch_time_in_sec", batch_time_in_sec)
+        _setter("condition", condition)
+        _setter("function_id", function_id)
+        _setter("kind", kind)
 
     @property
     @pulumi.getter(name="batchSizeInKbs")

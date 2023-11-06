@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -49,12 +49,29 @@ class ActionCreateZoneFromZoneFileExternalDownstreamArgs:
         :param pulumi.Input[int] port: The server's port.
         :param pulumi.Input[str] tsig_key_id: The OCID of the TSIG key.
         """
+        ActionCreateZoneFromZoneFileExternalDownstreamArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            address=address,
+            port=port,
+            tsig_key_id=tsig_key_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             address: Optional[pulumi.Input[str]] = None,
+             port: Optional[pulumi.Input[int]] = None,
+             tsig_key_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if tsig_key_id is None and 'tsigKeyId' in kwargs:
+            tsig_key_id = kwargs['tsigKeyId']
+
         if address is not None:
-            pulumi.set(__self__, "address", address)
+            _setter("address", address)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if tsig_key_id is not None:
-            pulumi.set(__self__, "tsig_key_id", tsig_key_id)
+            _setter("tsig_key_id", tsig_key_id)
 
     @property
     @pulumi.getter
@@ -104,12 +121,29 @@ class ActionCreateZoneFromZoneFileExternalMasterArgs:
         :param pulumi.Input[int] port: The server's port.
         :param pulumi.Input[str] tsig_key_id: The OCID of the TSIG key.
         """
+        ActionCreateZoneFromZoneFileExternalMasterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            address=address,
+            port=port,
+            tsig_key_id=tsig_key_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             address: Optional[pulumi.Input[str]] = None,
+             port: Optional[pulumi.Input[int]] = None,
+             tsig_key_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if tsig_key_id is None and 'tsigKeyId' in kwargs:
+            tsig_key_id = kwargs['tsigKeyId']
+
         if address is not None:
-            pulumi.set(__self__, "address", address)
+            _setter("address", address)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if tsig_key_id is not None:
-            pulumi.set(__self__, "tsig_key_id", tsig_key_id)
+            _setter("tsig_key_id", tsig_key_id)
 
     @property
     @pulumi.getter
@@ -155,8 +189,19 @@ class ActionCreateZoneFromZoneFileNameserverArgs:
         """
         :param pulumi.Input[str] hostname: The hostname of the nameserver.
         """
+        ActionCreateZoneFromZoneFileNameserverArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if hostname is not None:
-            pulumi.set(__self__, "hostname", hostname)
+            _setter("hostname", hostname)
 
     @property
     @pulumi.getter
@@ -184,14 +229,35 @@ class ActionCreateZoneFromZoneFileZoneTransferServerArgs:
         :param pulumi.Input[bool] is_transfer_source: A Boolean flag indicating whether or not the server is a zone data transfer source.
         :param pulumi.Input[int] port: The server's port.
         """
+        ActionCreateZoneFromZoneFileZoneTransferServerArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            address=address,
+            is_transfer_destination=is_transfer_destination,
+            is_transfer_source=is_transfer_source,
+            port=port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             address: Optional[pulumi.Input[str]] = None,
+             is_transfer_destination: Optional[pulumi.Input[bool]] = None,
+             is_transfer_source: Optional[pulumi.Input[bool]] = None,
+             port: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_transfer_destination is None and 'isTransferDestination' in kwargs:
+            is_transfer_destination = kwargs['isTransferDestination']
+        if is_transfer_source is None and 'isTransferSource' in kwargs:
+            is_transfer_source = kwargs['isTransferSource']
+
         if address is not None:
-            pulumi.set(__self__, "address", address)
+            _setter("address", address)
         if is_transfer_destination is not None:
-            pulumi.set(__self__, "is_transfer_destination", is_transfer_destination)
+            _setter("is_transfer_destination", is_transfer_destination)
         if is_transfer_source is not None:
-            pulumi.set(__self__, "is_transfer_source", is_transfer_source)
+            _setter("is_transfer_source", is_transfer_source)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
 
     @property
     @pulumi.getter
@@ -249,7 +315,22 @@ class ResolverAttachedViewArgs:
         """
         :param pulumi.Input[str] view_id: (Updatable) The OCID of the view.
         """
-        pulumi.set(__self__, "view_id", view_id)
+        ResolverAttachedViewArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            view_id=view_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             view_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if view_id is None and 'viewId' in kwargs:
+            view_id = kwargs['viewId']
+        if view_id is None:
+            raise TypeError("Missing 'view_id' argument")
+
+        _setter("view_id", view_id)
 
     @property
     @pulumi.getter(name="viewId")
@@ -293,30 +374,81 @@ class ResolverEndpointArgs:
         :param pulumi.Input[str] time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         :param pulumi.Input[str] time_updated: The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         """
+        ResolverEndpointArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            endpoint_type=endpoint_type,
+            forwarding_address=forwarding_address,
+            is_forwarding=is_forwarding,
+            is_listening=is_listening,
+            listening_address=listening_address,
+            name=name,
+            self=self,
+            state=state,
+            subnet_id=subnet_id,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             endpoint_type: Optional[pulumi.Input[str]] = None,
+             forwarding_address: Optional[pulumi.Input[str]] = None,
+             is_forwarding: Optional[pulumi.Input[bool]] = None,
+             is_listening: Optional[pulumi.Input[bool]] = None,
+             listening_address: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             self: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if endpoint_type is None and 'endpointType' in kwargs:
+            endpoint_type = kwargs['endpointType']
+        if forwarding_address is None and 'forwardingAddress' in kwargs:
+            forwarding_address = kwargs['forwardingAddress']
+        if is_forwarding is None and 'isForwarding' in kwargs:
+            is_forwarding = kwargs['isForwarding']
+        if is_listening is None and 'isListening' in kwargs:
+            is_listening = kwargs['isListening']
+        if listening_address is None and 'listeningAddress' in kwargs:
+            listening_address = kwargs['listeningAddress']
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if endpoint_type is not None:
-            pulumi.set(__self__, "endpoint_type", endpoint_type)
+            _setter("endpoint_type", endpoint_type)
         if forwarding_address is not None:
-            pulumi.set(__self__, "forwarding_address", forwarding_address)
+            _setter("forwarding_address", forwarding_address)
         if is_forwarding is not None:
-            pulumi.set(__self__, "is_forwarding", is_forwarding)
+            _setter("is_forwarding", is_forwarding)
         if is_listening is not None:
-            pulumi.set(__self__, "is_listening", is_listening)
+            _setter("is_listening", is_listening)
         if listening_address is not None:
-            pulumi.set(__self__, "listening_address", listening_address)
+            _setter("listening_address", listening_address)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if self is not None:
-            pulumi.set(__self__, "self", self)
+            _setter("self", self)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -478,13 +610,46 @@ class ResolverRuleArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] client_address_conditions: (Updatable) A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] qname_cover_conditions: (Updatable) A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
         """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "destination_addresses", destination_addresses)
-        pulumi.set(__self__, "source_endpoint_name", source_endpoint_name)
+        ResolverRuleArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            destination_addresses=destination_addresses,
+            source_endpoint_name=source_endpoint_name,
+            client_address_conditions=client_address_conditions,
+            qname_cover_conditions=qname_cover_conditions,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: Optional[pulumi.Input[str]] = None,
+             destination_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             source_endpoint_name: Optional[pulumi.Input[str]] = None,
+             client_address_conditions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             qname_cover_conditions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if destination_addresses is None and 'destinationAddresses' in kwargs:
+            destination_addresses = kwargs['destinationAddresses']
+        if destination_addresses is None:
+            raise TypeError("Missing 'destination_addresses' argument")
+        if source_endpoint_name is None and 'sourceEndpointName' in kwargs:
+            source_endpoint_name = kwargs['sourceEndpointName']
+        if source_endpoint_name is None:
+            raise TypeError("Missing 'source_endpoint_name' argument")
+        if client_address_conditions is None and 'clientAddressConditions' in kwargs:
+            client_address_conditions = kwargs['clientAddressConditions']
+        if qname_cover_conditions is None and 'qnameCoverConditions' in kwargs:
+            qname_cover_conditions = kwargs['qnameCoverConditions']
+
+        _setter("action", action)
+        _setter("destination_addresses", destination_addresses)
+        _setter("source_endpoint_name", source_endpoint_name)
         if client_address_conditions is not None:
-            pulumi.set(__self__, "client_address_conditions", client_address_conditions)
+            _setter("client_address_conditions", client_address_conditions)
         if qname_cover_conditions is not None:
-            pulumi.set(__self__, "qname_cover_conditions", qname_cover_conditions)
+            _setter("qname_cover_conditions", qname_cover_conditions)
 
     @property
     @pulumi.getter
@@ -566,16 +731,53 @@ class RrsetItemArgs:
         :param pulumi.Input[str] record_hash: A unique identifier for the record within its zone.
         :param pulumi.Input[str] rrset_version: The latest version of the record's zone in which its RRSet differs from the preceding version.
         """
-        pulumi.set(__self__, "domain", domain)
-        pulumi.set(__self__, "rdata", rdata)
-        pulumi.set(__self__, "rtype", rtype)
-        pulumi.set(__self__, "ttl", ttl)
+        RrsetItemArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            domain=domain,
+            rdata=rdata,
+            rtype=rtype,
+            ttl=ttl,
+            is_protected=is_protected,
+            record_hash=record_hash,
+            rrset_version=rrset_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             domain: Optional[pulumi.Input[str]] = None,
+             rdata: Optional[pulumi.Input[str]] = None,
+             rtype: Optional[pulumi.Input[str]] = None,
+             ttl: Optional[pulumi.Input[int]] = None,
+             is_protected: Optional[pulumi.Input[bool]] = None,
+             record_hash: Optional[pulumi.Input[str]] = None,
+             rrset_version: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if domain is None:
+            raise TypeError("Missing 'domain' argument")
+        if rdata is None:
+            raise TypeError("Missing 'rdata' argument")
+        if rtype is None:
+            raise TypeError("Missing 'rtype' argument")
+        if ttl is None:
+            raise TypeError("Missing 'ttl' argument")
+        if is_protected is None and 'isProtected' in kwargs:
+            is_protected = kwargs['isProtected']
+        if record_hash is None and 'recordHash' in kwargs:
+            record_hash = kwargs['recordHash']
+        if rrset_version is None and 'rrsetVersion' in kwargs:
+            rrset_version = kwargs['rrsetVersion']
+
+        _setter("domain", domain)
+        _setter("rdata", rdata)
+        _setter("rtype", rtype)
+        _setter("ttl", ttl)
         if is_protected is not None:
-            pulumi.set(__self__, "is_protected", is_protected)
+            _setter("is_protected", is_protected)
         if record_hash is not None:
-            pulumi.set(__self__, "record_hash", record_hash)
+            _setter("record_hash", record_hash)
         if rrset_version is not None:
-            pulumi.set(__self__, "rrset_version", rrset_version)
+            _setter("rrset_version", rrset_version)
 
     @property
     @pulumi.getter
@@ -677,13 +879,40 @@ class SteeringPolicyAnswerArgs:
         :param pulumi.Input[bool] is_disabled: Set this property to `true` to indicate that the answer is administratively disabled, such as when the corresponding server is down for maintenance. An answer's `isDisabled` property can be referenced in `answerCondition` properties in rules using `answer.isDisabled`.
         :param pulumi.Input[str] pool: The freeform name of a group of one or more records in which this record is included, such as "LAX data center". An answer's `pool` property can be referenced in `answerCondition` properties of rules using `answer.pool`.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "rdata", rdata)
-        pulumi.set(__self__, "rtype", rtype)
+        SteeringPolicyAnswerArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            rdata=rdata,
+            rtype=rtype,
+            is_disabled=is_disabled,
+            pool=pool,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             rdata: Optional[pulumi.Input[str]] = None,
+             rtype: Optional[pulumi.Input[str]] = None,
+             is_disabled: Optional[pulumi.Input[bool]] = None,
+             pool: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if rdata is None:
+            raise TypeError("Missing 'rdata' argument")
+        if rtype is None:
+            raise TypeError("Missing 'rtype' argument")
+        if is_disabled is None and 'isDisabled' in kwargs:
+            is_disabled = kwargs['isDisabled']
+
+        _setter("name", name)
+        _setter("rdata", rdata)
+        _setter("rtype", rtype)
         if is_disabled is not None:
-            pulumi.set(__self__, "is_disabled", is_disabled)
+            _setter("is_disabled", is_disabled)
         if pool is not None:
-            pulumi.set(__self__, "pool", pool)
+            _setter("pool", pool)
 
     @property
     @pulumi.getter
@@ -761,15 +990,42 @@ class SteeringPolicyRuleArgs:
         :param pulumi.Input[int] default_count: Defines a default count if `cases` is not defined for the rule or a matching case does not define `count`. `defaultCount` is **not** applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed. If no rules remain to be processed, the answer will be chosen from the remaining list of answers.
         :param pulumi.Input[str] description: A user-defined description of the rule's purpose or behavior.
         """
-        pulumi.set(__self__, "rule_type", rule_type)
+        SteeringPolicyRuleArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            rule_type=rule_type,
+            cases=cases,
+            default_answer_datas=default_answer_datas,
+            default_count=default_count,
+            description=description,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             rule_type: Optional[pulumi.Input[str]] = None,
+             cases: Optional[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleCaseArgs']]]] = None,
+             default_answer_datas: Optional[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleDefaultAnswerDataArgs']]]] = None,
+             default_count: Optional[pulumi.Input[int]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if rule_type is None and 'ruleType' in kwargs:
+            rule_type = kwargs['ruleType']
+        if rule_type is None:
+            raise TypeError("Missing 'rule_type' argument")
+        if default_answer_datas is None and 'defaultAnswerDatas' in kwargs:
+            default_answer_datas = kwargs['defaultAnswerDatas']
+        if default_count is None and 'defaultCount' in kwargs:
+            default_count = kwargs['defaultCount']
+
+        _setter("rule_type", rule_type)
         if cases is not None:
-            pulumi.set(__self__, "cases", cases)
+            _setter("cases", cases)
         if default_answer_datas is not None:
-            pulumi.set(__self__, "default_answer_datas", default_answer_datas)
+            _setter("default_answer_datas", default_answer_datas)
         if default_count is not None:
-            pulumi.set(__self__, "default_count", default_count)
+            _setter("default_count", default_count)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
 
     @property
     @pulumi.getter(name="ruleType")
@@ -843,12 +1099,31 @@ class SteeringPolicyRuleCaseArgs:
         :param pulumi.Input[str] case_condition: An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in ('192.0.2.0/24')` to define a case that matches queries from that office.
         :param pulumi.Input[int] count: The number of answers allowed to remain after the limit rule has been processed, keeping only the first of the remaining answers in the list. Example: If the `count` property is set to `2` and four answers remain before the limit rule is processed, only the first two answers in the list will remain after the limit rule has been processed.
         """
+        SteeringPolicyRuleCaseArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            answer_datas=answer_datas,
+            case_condition=case_condition,
+            count=count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             answer_datas: Optional[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleCaseAnswerDataArgs']]]] = None,
+             case_condition: Optional[pulumi.Input[str]] = None,
+             count: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if answer_datas is None and 'answerDatas' in kwargs:
+            answer_datas = kwargs['answerDatas']
+        if case_condition is None and 'caseCondition' in kwargs:
+            case_condition = kwargs['caseCondition']
+
         if answer_datas is not None:
-            pulumi.set(__self__, "answer_datas", answer_datas)
+            _setter("answer_datas", answer_datas)
         if case_condition is not None:
-            pulumi.set(__self__, "case_condition", case_condition)
+            _setter("case_condition", case_condition)
         if count is not None:
-            pulumi.set(__self__, "count", count)
+            _setter("count", count)
 
     @property
     @pulumi.getter(name="answerDatas")
@@ -898,12 +1173,31 @@ class SteeringPolicyRuleCaseAnswerDataArgs:
         :param pulumi.Input[bool] should_keep: Keeps the answer only if the value is `true`.
         :param pulumi.Input[int] value: The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
         """
+        SteeringPolicyRuleCaseAnswerDataArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            answer_condition=answer_condition,
+            should_keep=should_keep,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             answer_condition: Optional[pulumi.Input[str]] = None,
+             should_keep: Optional[pulumi.Input[bool]] = None,
+             value: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if answer_condition is None and 'answerCondition' in kwargs:
+            answer_condition = kwargs['answerCondition']
+        if should_keep is None and 'shouldKeep' in kwargs:
+            should_keep = kwargs['shouldKeep']
+
         if answer_condition is not None:
-            pulumi.set(__self__, "answer_condition", answer_condition)
+            _setter("answer_condition", answer_condition)
         if should_keep is not None:
-            pulumi.set(__self__, "should_keep", should_keep)
+            _setter("should_keep", should_keep)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter(name="answerCondition")
@@ -953,12 +1247,31 @@ class SteeringPolicyRuleDefaultAnswerDataArgs:
         :param pulumi.Input[bool] should_keep: Keeps the answer only if the value is `true`.
         :param pulumi.Input[int] value: The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
         """
+        SteeringPolicyRuleDefaultAnswerDataArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            answer_condition=answer_condition,
+            should_keep=should_keep,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             answer_condition: Optional[pulumi.Input[str]] = None,
+             should_keep: Optional[pulumi.Input[bool]] = None,
+             value: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if answer_condition is None and 'answerCondition' in kwargs:
+            answer_condition = kwargs['answerCondition']
+        if should_keep is None and 'shouldKeep' in kwargs:
+            should_keep = kwargs['shouldKeep']
+
         if answer_condition is not None:
-            pulumi.set(__self__, "answer_condition", answer_condition)
+            _setter("answer_condition", answer_condition)
         if should_keep is not None:
-            pulumi.set(__self__, "should_keep", should_keep)
+            _setter("should_keep", should_keep)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter(name="answerCondition")
@@ -1008,11 +1321,30 @@ class ZoneExternalDownstreamArgs:
         :param pulumi.Input[int] port: (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
         :param pulumi.Input[str] tsig_key_id: (Updatable) The OCID of the TSIG key.
         """
-        pulumi.set(__self__, "address", address)
+        ZoneExternalDownstreamArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            address=address,
+            port=port,
+            tsig_key_id=tsig_key_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             address: Optional[pulumi.Input[str]] = None,
+             port: Optional[pulumi.Input[int]] = None,
+             tsig_key_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if address is None:
+            raise TypeError("Missing 'address' argument")
+        if tsig_key_id is None and 'tsigKeyId' in kwargs:
+            tsig_key_id = kwargs['tsigKeyId']
+
+        _setter("address", address)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if tsig_key_id is not None:
-            pulumi.set(__self__, "tsig_key_id", tsig_key_id)
+            _setter("tsig_key_id", tsig_key_id)
 
     @property
     @pulumi.getter
@@ -1062,11 +1394,30 @@ class ZoneExternalMasterArgs:
         :param pulumi.Input[int] port: (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
         :param pulumi.Input[str] tsig_key_id: (Updatable) The OCID of the TSIG key.
         """
-        pulumi.set(__self__, "address", address)
+        ZoneExternalMasterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            address=address,
+            port=port,
+            tsig_key_id=tsig_key_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             address: Optional[pulumi.Input[str]] = None,
+             port: Optional[pulumi.Input[int]] = None,
+             tsig_key_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if address is None:
+            raise TypeError("Missing 'address' argument")
+        if tsig_key_id is None and 'tsigKeyId' in kwargs:
+            tsig_key_id = kwargs['tsigKeyId']
+
+        _setter("address", address)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if tsig_key_id is not None:
-            pulumi.set(__self__, "tsig_key_id", tsig_key_id)
+            _setter("tsig_key_id", tsig_key_id)
 
     @property
     @pulumi.getter
@@ -1112,8 +1463,19 @@ class ZoneNameserverArgs:
         """
         :param pulumi.Input[str] hostname: The hostname of the nameserver.
         """
+        ZoneNameserverArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if hostname is not None:
-            pulumi.set(__self__, "hostname", hostname)
+            _setter("hostname", hostname)
 
     @property
     @pulumi.getter
@@ -1141,14 +1503,35 @@ class ZoneZoneTransferServerArgs:
         :param pulumi.Input[bool] is_transfer_source: A Boolean flag indicating whether or not the server is a zone data transfer source.
         :param pulumi.Input[int] port: (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
         """
+        ZoneZoneTransferServerArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            address=address,
+            is_transfer_destination=is_transfer_destination,
+            is_transfer_source=is_transfer_source,
+            port=port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             address: Optional[pulumi.Input[str]] = None,
+             is_transfer_destination: Optional[pulumi.Input[bool]] = None,
+             is_transfer_source: Optional[pulumi.Input[bool]] = None,
+             port: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_transfer_destination is None and 'isTransferDestination' in kwargs:
+            is_transfer_destination = kwargs['isTransferDestination']
+        if is_transfer_source is None and 'isTransferSource' in kwargs:
+            is_transfer_source = kwargs['isTransferSource']
+
         if address is not None:
-            pulumi.set(__self__, "address", address)
+            _setter("address", address)
         if is_transfer_destination is not None:
-            pulumi.set(__self__, "is_transfer_destination", is_transfer_destination)
+            _setter("is_transfer_destination", is_transfer_destination)
         if is_transfer_source is not None:
-            pulumi.set(__self__, "is_transfer_source", is_transfer_source)
+            _setter("is_transfer_source", is_transfer_source)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
 
     @property
     @pulumi.getter
@@ -1205,10 +1588,29 @@ class GetRecordsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetRecordsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1247,10 +1649,29 @@ class GetResolverEndpointsFilterArgs:
         """
         :param str name: The name of a resource.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetResolverEndpointsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1289,10 +1710,29 @@ class GetResolversFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetResolversFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1328,10 +1768,29 @@ class GetRrsetsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetRrsetsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1370,10 +1829,29 @@ class GetSteeringPoliciesFilterArgs:
         """
         :param str name: A user-friendly name for the answer, unique within the steering policy. An answer's `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSteeringPoliciesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1412,10 +1890,29 @@ class GetSteeringPolicyAttachmentsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSteeringPolicyAttachmentsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1454,10 +1951,29 @@ class GetTsigKeysFilterArgs:
         """
         :param str name: The name of a resource.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetTsigKeysFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1496,10 +2012,29 @@ class GetViewsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetViewsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1538,10 +2073,29 @@ class GetZonesFilterArgs:
         """
         :param str name: A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetZonesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['NamespaceMetadataArgs', 'NamespaceMetadata']
@@ -20,11 +20,32 @@ class NamespaceMetadataArgs:
         """
         The set of arguments for constructing a NamespaceMetadata resource.
         """
-        pulumi.set(__self__, "namespace", namespace)
+        NamespaceMetadataArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            namespace=namespace,
+            default_s3compartment_id=default_s3compartment_id,
+            default_swift_compartment_id=default_swift_compartment_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             namespace: Optional[pulumi.Input[str]] = None,
+             default_s3compartment_id: Optional[pulumi.Input[str]] = None,
+             default_swift_compartment_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if default_s3compartment_id is None and 'defaultS3compartmentId' in kwargs:
+            default_s3compartment_id = kwargs['defaultS3compartmentId']
+        if default_swift_compartment_id is None and 'defaultSwiftCompartmentId' in kwargs:
+            default_swift_compartment_id = kwargs['defaultSwiftCompartmentId']
+
+        _setter("namespace", namespace)
         if default_s3compartment_id is not None:
-            pulumi.set(__self__, "default_s3compartment_id", default_s3compartment_id)
+            _setter("default_s3compartment_id", default_s3compartment_id)
         if default_swift_compartment_id is not None:
-            pulumi.set(__self__, "default_swift_compartment_id", default_swift_compartment_id)
+            _setter("default_swift_compartment_id", default_swift_compartment_id)
 
     @property
     @pulumi.getter
@@ -63,12 +84,31 @@ class _NamespaceMetadataState:
         """
         Input properties used for looking up and filtering NamespaceMetadata resources.
         """
+        _NamespaceMetadataState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_s3compartment_id=default_s3compartment_id,
+            default_swift_compartment_id=default_swift_compartment_id,
+            namespace=namespace,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_s3compartment_id: Optional[pulumi.Input[str]] = None,
+             default_swift_compartment_id: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if default_s3compartment_id is None and 'defaultS3compartmentId' in kwargs:
+            default_s3compartment_id = kwargs['defaultS3compartmentId']
+        if default_swift_compartment_id is None and 'defaultSwiftCompartmentId' in kwargs:
+            default_swift_compartment_id = kwargs['defaultSwiftCompartmentId']
+
         if default_s3compartment_id is not None:
-            pulumi.set(__self__, "default_s3compartment_id", default_s3compartment_id)
+            _setter("default_s3compartment_id", default_s3compartment_id)
         if default_swift_compartment_id is not None:
-            pulumi.set(__self__, "default_swift_compartment_id", default_swift_compartment_id)
+            _setter("default_swift_compartment_id", default_swift_compartment_id)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
 
     @property
     @pulumi.getter(name="defaultS3compartmentId")
@@ -130,6 +170,10 @@ class NamespaceMetadata(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            NamespaceMetadataArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -37,15 +37,62 @@ class AnalyticsInstancePrivateAccessChannelArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) Network Security Group OCIDs for an Analytics instance.
         :param pulumi.Input[Sequence[pulumi.Input['AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs']]] private_source_scan_hosts: (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
         """
-        pulumi.set(__self__, "analytics_instance_id", analytics_instance_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "private_source_dns_zones", private_source_dns_zones)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "vcn_id", vcn_id)
+        AnalyticsInstancePrivateAccessChannelArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            analytics_instance_id=analytics_instance_id,
+            display_name=display_name,
+            private_source_dns_zones=private_source_dns_zones,
+            subnet_id=subnet_id,
+            vcn_id=vcn_id,
+            network_security_group_ids=network_security_group_ids,
+            private_source_scan_hosts=private_source_scan_hosts,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             analytics_instance_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             private_source_dns_zones: Optional[pulumi.Input[Sequence[pulumi.Input['AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs']]]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             vcn_id: Optional[pulumi.Input[str]] = None,
+             network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             private_source_scan_hosts: Optional[pulumi.Input[Sequence[pulumi.Input['AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if analytics_instance_id is None and 'analyticsInstanceId' in kwargs:
+            analytics_instance_id = kwargs['analyticsInstanceId']
+        if analytics_instance_id is None:
+            raise TypeError("Missing 'analytics_instance_id' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if private_source_dns_zones is None and 'privateSourceDnsZones' in kwargs:
+            private_source_dns_zones = kwargs['privateSourceDnsZones']
+        if private_source_dns_zones is None:
+            raise TypeError("Missing 'private_source_dns_zones' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if vcn_id is None and 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+        if vcn_id is None:
+            raise TypeError("Missing 'vcn_id' argument")
+        if network_security_group_ids is None and 'networkSecurityGroupIds' in kwargs:
+            network_security_group_ids = kwargs['networkSecurityGroupIds']
+        if private_source_scan_hosts is None and 'privateSourceScanHosts' in kwargs:
+            private_source_scan_hosts = kwargs['privateSourceScanHosts']
+
+        _setter("analytics_instance_id", analytics_instance_id)
+        _setter("display_name", display_name)
+        _setter("private_source_dns_zones", private_source_dns_zones)
+        _setter("subnet_id", subnet_id)
+        _setter("vcn_id", vcn_id)
         if network_security_group_ids is not None:
-            pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
+            _setter("network_security_group_ids", network_security_group_ids)
         if private_source_scan_hosts is not None:
-            pulumi.set(__self__, "private_source_scan_hosts", private_source_scan_hosts)
+            _setter("private_source_scan_hosts", private_source_scan_hosts)
 
     @property
     @pulumi.getter(name="analyticsInstanceId")
@@ -166,26 +213,73 @@ class _AnalyticsInstancePrivateAccessChannelState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _AnalyticsInstancePrivateAccessChannelState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            analytics_instance_id=analytics_instance_id,
+            display_name=display_name,
+            egress_source_ip_addresses=egress_source_ip_addresses,
+            ip_address=ip_address,
+            key=key,
+            network_security_group_ids=network_security_group_ids,
+            private_source_dns_zones=private_source_dns_zones,
+            private_source_scan_hosts=private_source_scan_hosts,
+            subnet_id=subnet_id,
+            vcn_id=vcn_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             analytics_instance_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             egress_source_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             ip_address: Optional[pulumi.Input[str]] = None,
+             key: Optional[pulumi.Input[str]] = None,
+             network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             private_source_dns_zones: Optional[pulumi.Input[Sequence[pulumi.Input['AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs']]]] = None,
+             private_source_scan_hosts: Optional[pulumi.Input[Sequence[pulumi.Input['AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs']]]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             vcn_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if analytics_instance_id is None and 'analyticsInstanceId' in kwargs:
+            analytics_instance_id = kwargs['analyticsInstanceId']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if egress_source_ip_addresses is None and 'egressSourceIpAddresses' in kwargs:
+            egress_source_ip_addresses = kwargs['egressSourceIpAddresses']
+        if ip_address is None and 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if network_security_group_ids is None and 'networkSecurityGroupIds' in kwargs:
+            network_security_group_ids = kwargs['networkSecurityGroupIds']
+        if private_source_dns_zones is None and 'privateSourceDnsZones' in kwargs:
+            private_source_dns_zones = kwargs['privateSourceDnsZones']
+        if private_source_scan_hosts is None and 'privateSourceScanHosts' in kwargs:
+            private_source_scan_hosts = kwargs['privateSourceScanHosts']
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if vcn_id is None and 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+
         if analytics_instance_id is not None:
-            pulumi.set(__self__, "analytics_instance_id", analytics_instance_id)
+            _setter("analytics_instance_id", analytics_instance_id)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if egress_source_ip_addresses is not None:
-            pulumi.set(__self__, "egress_source_ip_addresses", egress_source_ip_addresses)
+            _setter("egress_source_ip_addresses", egress_source_ip_addresses)
         if ip_address is not None:
-            pulumi.set(__self__, "ip_address", ip_address)
+            _setter("ip_address", ip_address)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if network_security_group_ids is not None:
-            pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
+            _setter("network_security_group_ids", network_security_group_ids)
         if private_source_dns_zones is not None:
-            pulumi.set(__self__, "private_source_dns_zones", private_source_dns_zones)
+            _setter("private_source_dns_zones", private_source_dns_zones)
         if private_source_scan_hosts is not None:
-            pulumi.set(__self__, "private_source_scan_hosts", private_source_scan_hosts)
+            _setter("private_source_scan_hosts", private_source_scan_hosts)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
         if vcn_id is not None:
-            pulumi.set(__self__, "vcn_id", vcn_id)
+            _setter("vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="analyticsInstanceId")
@@ -429,6 +523,10 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AnalyticsInstancePrivateAccessChannelArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -25,10 +25,29 @@ class GetOrganizationSubscriptionsFilterResult(dict):
         """
         :param str name: Currency name
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetOrganizationSubscriptionsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -70,14 +89,63 @@ class GetOrganizationSubscriptionsSubscriptionResult(dict):
         :param str total_value: Total aggregate TCLV of all lines for the subscription including expired, active, and signed
         :param str type: Subscription Type i.e. IAAS,SAAS,PAAS
         """
-        pulumi.set(__self__, "currencies", currencies)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "service_name", service_name)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "time_end", time_end)
-        pulumi.set(__self__, "time_start", time_start)
-        pulumi.set(__self__, "total_value", total_value)
-        pulumi.set(__self__, "type", type)
+        GetOrganizationSubscriptionsSubscriptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            currencies=currencies,
+            id=id,
+            service_name=service_name,
+            status=status,
+            time_end=time_end,
+            time_start=time_start,
+            total_value=total_value,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             currencies: Optional[Sequence['outputs.GetOrganizationSubscriptionsSubscriptionCurrencyResult']] = None,
+             id: Optional[str] = None,
+             service_name: Optional[str] = None,
+             status: Optional[str] = None,
+             time_end: Optional[str] = None,
+             time_start: Optional[str] = None,
+             total_value: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if currencies is None:
+            raise TypeError("Missing 'currencies' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if service_name is None and 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+        if service_name is None:
+            raise TypeError("Missing 'service_name' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if time_end is None and 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if time_end is None:
+            raise TypeError("Missing 'time_end' argument")
+        if time_start is None and 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+        if time_start is None:
+            raise TypeError("Missing 'time_start' argument")
+        if total_value is None and 'totalValue' in kwargs:
+            total_value = kwargs['totalValue']
+        if total_value is None:
+            raise TypeError("Missing 'total_value' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("currencies", currencies)
+        _setter("id", id)
+        _setter("service_name", service_name)
+        _setter("status", status)
+        _setter("time_end", time_end)
+        _setter("time_start", time_start)
+        _setter("total_value", total_value)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -155,9 +223,34 @@ class GetOrganizationSubscriptionsSubscriptionCurrencyResult(dict):
         :param str name: Currency name
         :param str std_precision: Standard Precision of the Currency
         """
-        pulumi.set(__self__, "iso_code", iso_code)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "std_precision", std_precision)
+        GetOrganizationSubscriptionsSubscriptionCurrencyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            iso_code=iso_code,
+            name=name,
+            std_precision=std_precision,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             iso_code: Optional[str] = None,
+             name: Optional[str] = None,
+             std_precision: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if iso_code is None and 'isoCode' in kwargs:
+            iso_code = kwargs['isoCode']
+        if iso_code is None:
+            raise TypeError("Missing 'iso_code' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if std_precision is None and 'stdPrecision' in kwargs:
+            std_precision = kwargs['stdPrecision']
+        if std_precision is None:
+            raise TypeError("Missing 'std_precision' argument")
+
+        _setter("iso_code", iso_code)
+        _setter("name", name)
+        _setter("std_precision", std_precision)
 
     @property
     @pulumi.getter(name="isoCode")

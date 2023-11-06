@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -48,33 +48,106 @@ class ModelArgs:
         :param pulumi.Input['ModelTrainingDatasetArgs'] training_dataset: The base entity which is the input for creating and training a model.
         :param pulumi.Input['ModelValidationDatasetArgs'] validation_dataset: The base entity which is the input for creating and training a model.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "model_type", model_type)
-        pulumi.set(__self__, "project_id", project_id)
+        ModelArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            model_type=model_type,
+            project_id=project_id,
+            component_models=component_models,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            is_quick_mode=is_quick_mode,
+            max_training_time_in_hours=max_training_time_in_hours,
+            model_id=model_id,
+            model_version=model_version,
+            testing_dataset=testing_dataset,
+            training_dataset=training_dataset,
+            validation_dataset=validation_dataset,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             model_type: Optional[pulumi.Input[str]] = None,
+             project_id: Optional[pulumi.Input[str]] = None,
+             component_models: Optional[pulumi.Input[Sequence[pulumi.Input['ModelComponentModelArgs']]]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_quick_mode: Optional[pulumi.Input[bool]] = None,
+             max_training_time_in_hours: Optional[pulumi.Input[float]] = None,
+             model_id: Optional[pulumi.Input[str]] = None,
+             model_version: Optional[pulumi.Input[str]] = None,
+             testing_dataset: Optional[pulumi.Input['ModelTestingDatasetArgs']] = None,
+             training_dataset: Optional[pulumi.Input['ModelTrainingDatasetArgs']] = None,
+             validation_dataset: Optional[pulumi.Input['ModelValidationDatasetArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if model_type is None and 'modelType' in kwargs:
+            model_type = kwargs['modelType']
+        if model_type is None:
+            raise TypeError("Missing 'model_type' argument")
+        if project_id is None and 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if component_models is None and 'componentModels' in kwargs:
+            component_models = kwargs['componentModels']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_quick_mode is None and 'isQuickMode' in kwargs:
+            is_quick_mode = kwargs['isQuickMode']
+        if max_training_time_in_hours is None and 'maxTrainingTimeInHours' in kwargs:
+            max_training_time_in_hours = kwargs['maxTrainingTimeInHours']
+        if model_id is None and 'modelId' in kwargs:
+            model_id = kwargs['modelId']
+        if model_version is None and 'modelVersion' in kwargs:
+            model_version = kwargs['modelVersion']
+        if testing_dataset is None and 'testingDataset' in kwargs:
+            testing_dataset = kwargs['testingDataset']
+        if training_dataset is None and 'trainingDataset' in kwargs:
+            training_dataset = kwargs['trainingDataset']
+        if validation_dataset is None and 'validationDataset' in kwargs:
+            validation_dataset = kwargs['validationDataset']
+
+        _setter("compartment_id", compartment_id)
+        _setter("model_type", model_type)
+        _setter("project_id", project_id)
         if component_models is not None:
-            pulumi.set(__self__, "component_models", component_models)
+            _setter("component_models", component_models)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_quick_mode is not None:
-            pulumi.set(__self__, "is_quick_mode", is_quick_mode)
+            _setter("is_quick_mode", is_quick_mode)
         if max_training_time_in_hours is not None:
-            pulumi.set(__self__, "max_training_time_in_hours", max_training_time_in_hours)
+            _setter("max_training_time_in_hours", max_training_time_in_hours)
         if model_id is not None:
-            pulumi.set(__self__, "model_id", model_id)
+            _setter("model_id", model_id)
         if model_version is not None:
-            pulumi.set(__self__, "model_version", model_version)
+            _setter("model_version", model_version)
         if testing_dataset is not None:
-            pulumi.set(__self__, "testing_dataset", testing_dataset)
+            _setter("testing_dataset", testing_dataset)
         if training_dataset is not None:
-            pulumi.set(__self__, "training_dataset", training_dataset)
+            _setter("training_dataset", training_dataset)
         if validation_dataset is not None:
-            pulumi.set(__self__, "validation_dataset", validation_dataset)
+            _setter("validation_dataset", validation_dataset)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -309,56 +382,157 @@ class _ModelState:
         :param pulumi.Input['ModelTrainingDatasetArgs'] training_dataset: The base entity which is the input for creating and training a model.
         :param pulumi.Input['ModelValidationDatasetArgs'] validation_dataset: The base entity which is the input for creating and training a model.
         """
+        _ModelState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            component_models=component_models,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            is_composed_model=is_composed_model,
+            is_quick_mode=is_quick_mode,
+            labels=labels,
+            lifecycle_details=lifecycle_details,
+            max_training_time_in_hours=max_training_time_in_hours,
+            metrics=metrics,
+            model_id=model_id,
+            model_type=model_type,
+            model_version=model_version,
+            project_id=project_id,
+            state=state,
+            system_tags=system_tags,
+            tenancy_id=tenancy_id,
+            testing_dataset=testing_dataset,
+            time_created=time_created,
+            time_updated=time_updated,
+            trained_time_in_hours=trained_time_in_hours,
+            training_dataset=training_dataset,
+            validation_dataset=validation_dataset,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             component_models: Optional[pulumi.Input[Sequence[pulumi.Input['ModelComponentModelArgs']]]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_composed_model: Optional[pulumi.Input[bool]] = None,
+             is_quick_mode: Optional[pulumi.Input[bool]] = None,
+             labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             max_training_time_in_hours: Optional[pulumi.Input[float]] = None,
+             metrics: Optional[pulumi.Input[Sequence[pulumi.Input['ModelMetricArgs']]]] = None,
+             model_id: Optional[pulumi.Input[str]] = None,
+             model_type: Optional[pulumi.Input[str]] = None,
+             model_version: Optional[pulumi.Input[str]] = None,
+             project_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             tenancy_id: Optional[pulumi.Input[str]] = None,
+             testing_dataset: Optional[pulumi.Input['ModelTestingDatasetArgs']] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             trained_time_in_hours: Optional[pulumi.Input[float]] = None,
+             training_dataset: Optional[pulumi.Input['ModelTrainingDatasetArgs']] = None,
+             validation_dataset: Optional[pulumi.Input['ModelValidationDatasetArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if component_models is None and 'componentModels' in kwargs:
+            component_models = kwargs['componentModels']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_composed_model is None and 'isComposedModel' in kwargs:
+            is_composed_model = kwargs['isComposedModel']
+        if is_quick_mode is None and 'isQuickMode' in kwargs:
+            is_quick_mode = kwargs['isQuickMode']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if max_training_time_in_hours is None and 'maxTrainingTimeInHours' in kwargs:
+            max_training_time_in_hours = kwargs['maxTrainingTimeInHours']
+        if model_id is None and 'modelId' in kwargs:
+            model_id = kwargs['modelId']
+        if model_type is None and 'modelType' in kwargs:
+            model_type = kwargs['modelType']
+        if model_version is None and 'modelVersion' in kwargs:
+            model_version = kwargs['modelVersion']
+        if project_id is None and 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if tenancy_id is None and 'tenancyId' in kwargs:
+            tenancy_id = kwargs['tenancyId']
+        if testing_dataset is None and 'testingDataset' in kwargs:
+            testing_dataset = kwargs['testingDataset']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if trained_time_in_hours is None and 'trainedTimeInHours' in kwargs:
+            trained_time_in_hours = kwargs['trainedTimeInHours']
+        if training_dataset is None and 'trainingDataset' in kwargs:
+            training_dataset = kwargs['trainingDataset']
+        if validation_dataset is None and 'validationDataset' in kwargs:
+            validation_dataset = kwargs['validationDataset']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if component_models is not None:
-            pulumi.set(__self__, "component_models", component_models)
+            _setter("component_models", component_models)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_composed_model is not None:
-            pulumi.set(__self__, "is_composed_model", is_composed_model)
+            _setter("is_composed_model", is_composed_model)
         if is_quick_mode is not None:
-            pulumi.set(__self__, "is_quick_mode", is_quick_mode)
+            _setter("is_quick_mode", is_quick_mode)
         if labels is not None:
-            pulumi.set(__self__, "labels", labels)
+            _setter("labels", labels)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if max_training_time_in_hours is not None:
-            pulumi.set(__self__, "max_training_time_in_hours", max_training_time_in_hours)
+            _setter("max_training_time_in_hours", max_training_time_in_hours)
         if metrics is not None:
-            pulumi.set(__self__, "metrics", metrics)
+            _setter("metrics", metrics)
         if model_id is not None:
-            pulumi.set(__self__, "model_id", model_id)
+            _setter("model_id", model_id)
         if model_type is not None:
-            pulumi.set(__self__, "model_type", model_type)
+            _setter("model_type", model_type)
         if model_version is not None:
-            pulumi.set(__self__, "model_version", model_version)
+            _setter("model_version", model_version)
         if project_id is not None:
-            pulumi.set(__self__, "project_id", project_id)
+            _setter("project_id", project_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if tenancy_id is not None:
-            pulumi.set(__self__, "tenancy_id", tenancy_id)
+            _setter("tenancy_id", tenancy_id)
         if testing_dataset is not None:
-            pulumi.set(__self__, "testing_dataset", testing_dataset)
+            _setter("testing_dataset", testing_dataset)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if trained_time_in_hours is not None:
-            pulumi.set(__self__, "trained_time_in_hours", trained_time_in_hours)
+            _setter("trained_time_in_hours", trained_time_in_hours)
         if training_dataset is not None:
-            pulumi.set(__self__, "training_dataset", training_dataset)
+            _setter("training_dataset", training_dataset)
         if validation_dataset is not None:
-            pulumi.set(__self__, "validation_dataset", validation_dataset)
+            _setter("validation_dataset", validation_dataset)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -742,6 +916,10 @@ class Model(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ModelArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -789,8 +967,23 @@ class Model(pulumi.CustomResource):
             if project_id is None and not opts.urn:
                 raise TypeError("Missing required property 'project_id'")
             __props__.__dict__["project_id"] = project_id
+            if testing_dataset is not None and not isinstance(testing_dataset, ModelTestingDatasetArgs):
+                testing_dataset = testing_dataset or {}
+                def _setter(key, value):
+                    testing_dataset[key] = value
+                ModelTestingDatasetArgs._configure(_setter, **testing_dataset)
             __props__.__dict__["testing_dataset"] = testing_dataset
+            if training_dataset is not None and not isinstance(training_dataset, ModelTrainingDatasetArgs):
+                training_dataset = training_dataset or {}
+                def _setter(key, value):
+                    training_dataset[key] = value
+                ModelTrainingDatasetArgs._configure(_setter, **training_dataset)
             __props__.__dict__["training_dataset"] = training_dataset
+            if validation_dataset is not None and not isinstance(validation_dataset, ModelValidationDatasetArgs):
+                validation_dataset = validation_dataset or {}
+                def _setter(key, value):
+                    validation_dataset[key] = value
+                ModelValidationDatasetArgs._configure(_setter, **validation_dataset)
             __props__.__dict__["validation_dataset"] = validation_dataset
             __props__.__dict__["is_composed_model"] = None
             __props__.__dict__["labels"] = None

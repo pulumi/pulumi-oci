@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -72,45 +72,128 @@ class DataAssetDataSourceDetailsArgs:
         :param pulumi.Input['DataAssetDataSourceDetailsVersionSpecificDetailsArgs'] version_specific_details: Possible data sources
         :param pulumi.Input[str] wallet_password_secret_id: wallet password Secret ID in String format
         """
-        pulumi.set(__self__, "data_source_type", data_source_type)
+        DataAssetDataSourceDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            data_source_type=data_source_type,
+            atp_password_secret_id=atp_password_secret_id,
+            atp_user_name=atp_user_name,
+            bucket=bucket,
+            cwallet_file_secret_id=cwallet_file_secret_id,
+            database_name=database_name,
+            ewallet_file_secret_id=ewallet_file_secret_id,
+            key_store_file_secret_id=key_store_file_secret_id,
+            measurement_name=measurement_name,
+            namespace=namespace,
+            object=object,
+            ojdbc_file_secret_id=ojdbc_file_secret_id,
+            password_secret_id=password_secret_id,
+            table_name=table_name,
+            tnsnames_file_secret_id=tnsnames_file_secret_id,
+            truststore_file_secret_id=truststore_file_secret_id,
+            url=url,
+            user_name=user_name,
+            version_specific_details=version_specific_details,
+            wallet_password_secret_id=wallet_password_secret_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             data_source_type: Optional[pulumi.Input[str]] = None,
+             atp_password_secret_id: Optional[pulumi.Input[str]] = None,
+             atp_user_name: Optional[pulumi.Input[str]] = None,
+             bucket: Optional[pulumi.Input[str]] = None,
+             cwallet_file_secret_id: Optional[pulumi.Input[str]] = None,
+             database_name: Optional[pulumi.Input[str]] = None,
+             ewallet_file_secret_id: Optional[pulumi.Input[str]] = None,
+             key_store_file_secret_id: Optional[pulumi.Input[str]] = None,
+             measurement_name: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             object: Optional[pulumi.Input[str]] = None,
+             ojdbc_file_secret_id: Optional[pulumi.Input[str]] = None,
+             password_secret_id: Optional[pulumi.Input[str]] = None,
+             table_name: Optional[pulumi.Input[str]] = None,
+             tnsnames_file_secret_id: Optional[pulumi.Input[str]] = None,
+             truststore_file_secret_id: Optional[pulumi.Input[str]] = None,
+             url: Optional[pulumi.Input[str]] = None,
+             user_name: Optional[pulumi.Input[str]] = None,
+             version_specific_details: Optional[pulumi.Input['DataAssetDataSourceDetailsVersionSpecificDetailsArgs']] = None,
+             wallet_password_secret_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if data_source_type is None and 'dataSourceType' in kwargs:
+            data_source_type = kwargs['dataSourceType']
+        if data_source_type is None:
+            raise TypeError("Missing 'data_source_type' argument")
+        if atp_password_secret_id is None and 'atpPasswordSecretId' in kwargs:
+            atp_password_secret_id = kwargs['atpPasswordSecretId']
+        if atp_user_name is None and 'atpUserName' in kwargs:
+            atp_user_name = kwargs['atpUserName']
+        if cwallet_file_secret_id is None and 'cwalletFileSecretId' in kwargs:
+            cwallet_file_secret_id = kwargs['cwalletFileSecretId']
+        if database_name is None and 'databaseName' in kwargs:
+            database_name = kwargs['databaseName']
+        if ewallet_file_secret_id is None and 'ewalletFileSecretId' in kwargs:
+            ewallet_file_secret_id = kwargs['ewalletFileSecretId']
+        if key_store_file_secret_id is None and 'keyStoreFileSecretId' in kwargs:
+            key_store_file_secret_id = kwargs['keyStoreFileSecretId']
+        if measurement_name is None and 'measurementName' in kwargs:
+            measurement_name = kwargs['measurementName']
+        if ojdbc_file_secret_id is None and 'ojdbcFileSecretId' in kwargs:
+            ojdbc_file_secret_id = kwargs['ojdbcFileSecretId']
+        if password_secret_id is None and 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if table_name is None and 'tableName' in kwargs:
+            table_name = kwargs['tableName']
+        if tnsnames_file_secret_id is None and 'tnsnamesFileSecretId' in kwargs:
+            tnsnames_file_secret_id = kwargs['tnsnamesFileSecretId']
+        if truststore_file_secret_id is None and 'truststoreFileSecretId' in kwargs:
+            truststore_file_secret_id = kwargs['truststoreFileSecretId']
+        if user_name is None and 'userName' in kwargs:
+            user_name = kwargs['userName']
+        if version_specific_details is None and 'versionSpecificDetails' in kwargs:
+            version_specific_details = kwargs['versionSpecificDetails']
+        if wallet_password_secret_id is None and 'walletPasswordSecretId' in kwargs:
+            wallet_password_secret_id = kwargs['walletPasswordSecretId']
+
+        _setter("data_source_type", data_source_type)
         if atp_password_secret_id is not None:
-            pulumi.set(__self__, "atp_password_secret_id", atp_password_secret_id)
+            _setter("atp_password_secret_id", atp_password_secret_id)
         if atp_user_name is not None:
-            pulumi.set(__self__, "atp_user_name", atp_user_name)
+            _setter("atp_user_name", atp_user_name)
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if cwallet_file_secret_id is not None:
-            pulumi.set(__self__, "cwallet_file_secret_id", cwallet_file_secret_id)
+            _setter("cwallet_file_secret_id", cwallet_file_secret_id)
         if database_name is not None:
-            pulumi.set(__self__, "database_name", database_name)
+            _setter("database_name", database_name)
         if ewallet_file_secret_id is not None:
-            pulumi.set(__self__, "ewallet_file_secret_id", ewallet_file_secret_id)
+            _setter("ewallet_file_secret_id", ewallet_file_secret_id)
         if key_store_file_secret_id is not None:
-            pulumi.set(__self__, "key_store_file_secret_id", key_store_file_secret_id)
+            _setter("key_store_file_secret_id", key_store_file_secret_id)
         if measurement_name is not None:
-            pulumi.set(__self__, "measurement_name", measurement_name)
+            _setter("measurement_name", measurement_name)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
         if ojdbc_file_secret_id is not None:
-            pulumi.set(__self__, "ojdbc_file_secret_id", ojdbc_file_secret_id)
+            _setter("ojdbc_file_secret_id", ojdbc_file_secret_id)
         if password_secret_id is not None:
-            pulumi.set(__self__, "password_secret_id", password_secret_id)
+            _setter("password_secret_id", password_secret_id)
         if table_name is not None:
-            pulumi.set(__self__, "table_name", table_name)
+            _setter("table_name", table_name)
         if tnsnames_file_secret_id is not None:
-            pulumi.set(__self__, "tnsnames_file_secret_id", tnsnames_file_secret_id)
+            _setter("tnsnames_file_secret_id", tnsnames_file_secret_id)
         if truststore_file_secret_id is not None:
-            pulumi.set(__self__, "truststore_file_secret_id", truststore_file_secret_id)
+            _setter("truststore_file_secret_id", truststore_file_secret_id)
         if url is not None:
-            pulumi.set(__self__, "url", url)
+            _setter("url", url)
         if user_name is not None:
-            pulumi.set(__self__, "user_name", user_name)
+            _setter("user_name", user_name)
         if version_specific_details is not None:
-            pulumi.set(__self__, "version_specific_details", version_specific_details)
+            _setter("version_specific_details", version_specific_details)
         if wallet_password_secret_id is not None:
-            pulumi.set(__self__, "wallet_password_secret_id", wallet_password_secret_id)
+            _setter("wallet_password_secret_id", wallet_password_secret_id)
 
     @property
     @pulumi.getter(name="dataSourceType")
@@ -368,15 +451,44 @@ class DataAssetDataSourceDetailsVersionSpecificDetailsArgs:
         :param pulumi.Input[str] organization_name: Org name for the influx db
         :param pulumi.Input[str] retention_policy_name: retention policy is how long the bucket would last
         """
-        pulumi.set(__self__, "influx_version", influx_version)
+        DataAssetDataSourceDetailsVersionSpecificDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            influx_version=influx_version,
+            bucket=bucket,
+            database_name=database_name,
+            organization_name=organization_name,
+            retention_policy_name=retention_policy_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             influx_version: Optional[pulumi.Input[str]] = None,
+             bucket: Optional[pulumi.Input[str]] = None,
+             database_name: Optional[pulumi.Input[str]] = None,
+             organization_name: Optional[pulumi.Input[str]] = None,
+             retention_policy_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if influx_version is None and 'influxVersion' in kwargs:
+            influx_version = kwargs['influxVersion']
+        if influx_version is None:
+            raise TypeError("Missing 'influx_version' argument")
+        if database_name is None and 'databaseName' in kwargs:
+            database_name = kwargs['databaseName']
+        if organization_name is None and 'organizationName' in kwargs:
+            organization_name = kwargs['organizationName']
+        if retention_policy_name is None and 'retentionPolicyName' in kwargs:
+            retention_policy_name = kwargs['retentionPolicyName']
+
+        _setter("influx_version", influx_version)
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if database_name is not None:
-            pulumi.set(__self__, "database_name", database_name)
+            _setter("database_name", database_name)
         if organization_name is not None:
-            pulumi.set(__self__, "organization_name", organization_name)
+            _setter("organization_name", organization_name)
         if retention_policy_name is not None:
-            pulumi.set(__self__, "retention_policy_name", retention_policy_name)
+            _setter("retention_policy_name", retention_policy_name)
 
     @property
     @pulumi.getter(name="influxVersion")
@@ -456,19 +568,52 @@ class DetectAnomalyJobInputDetailsArgs:
         :param pulumi.Input[Sequence[pulumi.Input['DetectAnomalyJobInputDetailsObjectLocationArgs']]] object_locations: List of ObjectLocations.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] signal_names: List of signal names.
         """
-        pulumi.set(__self__, "input_type", input_type)
+        DetectAnomalyJobInputDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            input_type=input_type,
+            content=content,
+            content_type=content_type,
+            datas=datas,
+            message=message,
+            object_locations=object_locations,
+            signal_names=signal_names,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             input_type: Optional[pulumi.Input[str]] = None,
+             content: Optional[pulumi.Input[str]] = None,
+             content_type: Optional[pulumi.Input[str]] = None,
+             datas: Optional[pulumi.Input[Sequence[pulumi.Input['DetectAnomalyJobInputDetailsDataArgs']]]] = None,
+             message: Optional[pulumi.Input[str]] = None,
+             object_locations: Optional[pulumi.Input[Sequence[pulumi.Input['DetectAnomalyJobInputDetailsObjectLocationArgs']]]] = None,
+             signal_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if input_type is None and 'inputType' in kwargs:
+            input_type = kwargs['inputType']
+        if input_type is None:
+            raise TypeError("Missing 'input_type' argument")
+        if content_type is None and 'contentType' in kwargs:
+            content_type = kwargs['contentType']
+        if object_locations is None and 'objectLocations' in kwargs:
+            object_locations = kwargs['objectLocations']
+        if signal_names is None and 'signalNames' in kwargs:
+            signal_names = kwargs['signalNames']
+
+        _setter("input_type", input_type)
         if content is not None:
-            pulumi.set(__self__, "content", content)
+            _setter("content", content)
         if content_type is not None:
-            pulumi.set(__self__, "content_type", content_type)
+            _setter("content_type", content_type)
         if datas is not None:
-            pulumi.set(__self__, "datas", datas)
+            _setter("datas", datas)
         if message is not None:
-            pulumi.set(__self__, "message", message)
+            _setter("message", message)
         if object_locations is not None:
-            pulumi.set(__self__, "object_locations", object_locations)
+            _setter("object_locations", object_locations)
         if signal_names is not None:
-            pulumi.set(__self__, "signal_names", signal_names)
+            _setter("signal_names", signal_names)
 
     @property
     @pulumi.getter(name="inputType")
@@ -558,10 +703,23 @@ class DetectAnomalyJobInputDetailsDataArgs:
         :param pulumi.Input[str] timestamp: Nullable string representing timestamp.
         :param pulumi.Input[Sequence[pulumi.Input[float]]] values: Array of double precision values.
         """
+        DetectAnomalyJobInputDetailsDataArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            timestamp=timestamp,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             timestamp: Optional[pulumi.Input[str]] = None,
+             values: Optional[pulumi.Input[Sequence[pulumi.Input[float]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if timestamp is not None:
-            pulumi.set(__self__, "timestamp", timestamp)
+            _setter("timestamp", timestamp)
         if values is not None:
-            pulumi.set(__self__, "values", values)
+            _setter("values", values)
 
     @property
     @pulumi.getter
@@ -599,12 +757,27 @@ class DetectAnomalyJobInputDetailsObjectLocationArgs:
         :param pulumi.Input[str] namespace: Object Storage namespace.
         :param pulumi.Input[str] object: Object Storage object name.
         """
+        DetectAnomalyJobInputDetailsObjectLocationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             object: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
 
     @property
     @pulumi.getter
@@ -656,11 +829,36 @@ class DetectAnomalyJobOutputDetailsArgs:
         :param pulumi.Input[str] output_type: The type of output location. Allowed values are:
         :param pulumi.Input[str] prefix: Object Storage folder name.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "output_type", output_type)
+        DetectAnomalyJobOutputDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            output_type=output_type,
+            prefix=prefix,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             output_type: Optional[pulumi.Input[str]] = None,
+             prefix: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if output_type is None and 'outputType' in kwargs:
+            output_type = kwargs['outputType']
+        if output_type is None:
+            raise TypeError("Missing 'output_type' argument")
+
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
+        _setter("output_type", output_type)
         if prefix is not None:
-            pulumi.set(__self__, "prefix", prefix)
+            _setter("prefix", prefix)
 
     @property
     @pulumi.getter
@@ -726,15 +924,46 @@ class ModelModelTrainingDetailsArgs:
         :param pulumi.Input[float] training_fraction: Fraction of total data that is used for training the model. The remaining is used for validation of the model.
         :param pulumi.Input[int] window_size: This value would determine the window size of the training algorithm.
         """
-        pulumi.set(__self__, "data_asset_ids", data_asset_ids)
+        ModelModelTrainingDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            data_asset_ids=data_asset_ids,
+            algorithm_hint=algorithm_hint,
+            target_fap=target_fap,
+            training_fraction=training_fraction,
+            window_size=window_size,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             data_asset_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             algorithm_hint: Optional[pulumi.Input[str]] = None,
+             target_fap: Optional[pulumi.Input[float]] = None,
+             training_fraction: Optional[pulumi.Input[float]] = None,
+             window_size: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if data_asset_ids is None and 'dataAssetIds' in kwargs:
+            data_asset_ids = kwargs['dataAssetIds']
+        if data_asset_ids is None:
+            raise TypeError("Missing 'data_asset_ids' argument")
+        if algorithm_hint is None and 'algorithmHint' in kwargs:
+            algorithm_hint = kwargs['algorithmHint']
+        if target_fap is None and 'targetFap' in kwargs:
+            target_fap = kwargs['targetFap']
+        if training_fraction is None and 'trainingFraction' in kwargs:
+            training_fraction = kwargs['trainingFraction']
+        if window_size is None and 'windowSize' in kwargs:
+            window_size = kwargs['windowSize']
+
+        _setter("data_asset_ids", data_asset_ids)
         if algorithm_hint is not None:
-            pulumi.set(__self__, "algorithm_hint", algorithm_hint)
+            _setter("algorithm_hint", algorithm_hint)
         if target_fap is not None:
-            pulumi.set(__self__, "target_fap", target_fap)
+            _setter("target_fap", target_fap)
         if training_fraction is not None:
-            pulumi.set(__self__, "training_fraction", training_fraction)
+            _setter("training_fraction", training_fraction)
         if window_size is not None:
-            pulumi.set(__self__, "window_size", window_size)
+            _setter("window_size", window_size)
 
     @property
     @pulumi.getter(name="dataAssetIds")
@@ -819,26 +1048,67 @@ class ModelModelTrainingResultArgs:
         :param pulumi.Input[str] warning: A warning message to explain the reason when targetFap cannot be achieved for trained model
         :param pulumi.Input[int] window_size: This value would determine the window size of the training algorithm.
         """
+        ModelModelTrainingResultArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            fap=fap,
+            is_training_goal_achieved=is_training_goal_achieved,
+            mae=mae,
+            max_inference_sync_rows=max_inference_sync_rows,
+            multivariate_fap=multivariate_fap,
+            rmse=rmse,
+            row_reduction_details=row_reduction_details,
+            signal_details=signal_details,
+            warning=warning,
+            window_size=window_size,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             fap: Optional[pulumi.Input[float]] = None,
+             is_training_goal_achieved: Optional[pulumi.Input[bool]] = None,
+             mae: Optional[pulumi.Input[float]] = None,
+             max_inference_sync_rows: Optional[pulumi.Input[int]] = None,
+             multivariate_fap: Optional[pulumi.Input[float]] = None,
+             rmse: Optional[pulumi.Input[float]] = None,
+             row_reduction_details: Optional[pulumi.Input[Sequence[pulumi.Input['ModelModelTrainingResultRowReductionDetailArgs']]]] = None,
+             signal_details: Optional[pulumi.Input[Sequence[pulumi.Input['ModelModelTrainingResultSignalDetailArgs']]]] = None,
+             warning: Optional[pulumi.Input[str]] = None,
+             window_size: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_training_goal_achieved is None and 'isTrainingGoalAchieved' in kwargs:
+            is_training_goal_achieved = kwargs['isTrainingGoalAchieved']
+        if max_inference_sync_rows is None and 'maxInferenceSyncRows' in kwargs:
+            max_inference_sync_rows = kwargs['maxInferenceSyncRows']
+        if multivariate_fap is None and 'multivariateFap' in kwargs:
+            multivariate_fap = kwargs['multivariateFap']
+        if row_reduction_details is None and 'rowReductionDetails' in kwargs:
+            row_reduction_details = kwargs['rowReductionDetails']
+        if signal_details is None and 'signalDetails' in kwargs:
+            signal_details = kwargs['signalDetails']
+        if window_size is None and 'windowSize' in kwargs:
+            window_size = kwargs['windowSize']
+
         if fap is not None:
-            pulumi.set(__self__, "fap", fap)
+            _setter("fap", fap)
         if is_training_goal_achieved is not None:
-            pulumi.set(__self__, "is_training_goal_achieved", is_training_goal_achieved)
+            _setter("is_training_goal_achieved", is_training_goal_achieved)
         if mae is not None:
-            pulumi.set(__self__, "mae", mae)
+            _setter("mae", mae)
         if max_inference_sync_rows is not None:
-            pulumi.set(__self__, "max_inference_sync_rows", max_inference_sync_rows)
+            _setter("max_inference_sync_rows", max_inference_sync_rows)
         if multivariate_fap is not None:
-            pulumi.set(__self__, "multivariate_fap", multivariate_fap)
+            _setter("multivariate_fap", multivariate_fap)
         if rmse is not None:
-            pulumi.set(__self__, "rmse", rmse)
+            _setter("rmse", rmse)
         if row_reduction_details is not None:
-            pulumi.set(__self__, "row_reduction_details", row_reduction_details)
+            _setter("row_reduction_details", row_reduction_details)
         if signal_details is not None:
-            pulumi.set(__self__, "signal_details", signal_details)
+            _setter("signal_details", signal_details)
         if warning is not None:
-            pulumi.set(__self__, "warning", warning)
+            _setter("warning", warning)
         if window_size is not None:
-            pulumi.set(__self__, "window_size", window_size)
+            _setter("window_size", window_size)
 
     @property
     @pulumi.getter
@@ -965,12 +1235,33 @@ class ModelModelTrainingResultRowReductionDetailArgs:
                * AVERAGE_ROW - average multiple rows to one row
         :param pulumi.Input[float] reduction_percentage: A percentage to reduce data size down to on top of original data
         """
+        ModelModelTrainingResultRowReductionDetailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_reduction_enabled=is_reduction_enabled,
+            reduction_method=reduction_method,
+            reduction_percentage=reduction_percentage,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_reduction_enabled: Optional[pulumi.Input[bool]] = None,
+             reduction_method: Optional[pulumi.Input[str]] = None,
+             reduction_percentage: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_reduction_enabled is None and 'isReductionEnabled' in kwargs:
+            is_reduction_enabled = kwargs['isReductionEnabled']
+        if reduction_method is None and 'reductionMethod' in kwargs:
+            reduction_method = kwargs['reductionMethod']
+        if reduction_percentage is None and 'reductionPercentage' in kwargs:
+            reduction_percentage = kwargs['reductionPercentage']
+
         if is_reduction_enabled is not None:
-            pulumi.set(__self__, "is_reduction_enabled", is_reduction_enabled)
+            _setter("is_reduction_enabled", is_reduction_enabled)
         if reduction_method is not None:
-            pulumi.set(__self__, "reduction_method", reduction_method)
+            _setter("reduction_method", reduction_method)
         if reduction_percentage is not None:
-            pulumi.set(__self__, "reduction_percentage", reduction_percentage)
+            _setter("reduction_percentage", reduction_percentage)
 
     @property
     @pulumi.getter(name="isReductionEnabled")
@@ -1037,24 +1328,57 @@ class ModelModelTrainingResultSignalDetailArgs:
                * OTHER - placeholder for other status
         :param pulumi.Input[float] std: Standard deviation of values within a signal.
         """
+        ModelModelTrainingResultSignalDetailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            details=details,
+            fap=fap,
+            is_quantized=is_quantized,
+            max=max,
+            min=min,
+            mvi_ratio=mvi_ratio,
+            signal_name=signal_name,
+            status=status,
+            std=std,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             details: Optional[pulumi.Input[str]] = None,
+             fap: Optional[pulumi.Input[float]] = None,
+             is_quantized: Optional[pulumi.Input[bool]] = None,
+             max: Optional[pulumi.Input[float]] = None,
+             min: Optional[pulumi.Input[float]] = None,
+             mvi_ratio: Optional[pulumi.Input[float]] = None,
+             signal_name: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             std: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_quantized is None and 'isQuantized' in kwargs:
+            is_quantized = kwargs['isQuantized']
+        if mvi_ratio is None and 'mviRatio' in kwargs:
+            mvi_ratio = kwargs['mviRatio']
+        if signal_name is None and 'signalName' in kwargs:
+            signal_name = kwargs['signalName']
+
         if details is not None:
-            pulumi.set(__self__, "details", details)
+            _setter("details", details)
         if fap is not None:
-            pulumi.set(__self__, "fap", fap)
+            _setter("fap", fap)
         if is_quantized is not None:
-            pulumi.set(__self__, "is_quantized", is_quantized)
+            _setter("is_quantized", is_quantized)
         if max is not None:
-            pulumi.set(__self__, "max", max)
+            _setter("max", max)
         if min is not None:
-            pulumi.set(__self__, "min", min)
+            _setter("min", min)
         if mvi_ratio is not None:
-            pulumi.set(__self__, "mvi_ratio", mvi_ratio)
+            _setter("mvi_ratio", mvi_ratio)
         if signal_name is not None:
-            pulumi.set(__self__, "signal_name", signal_name)
+            _setter("signal_name", signal_name)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if std is not None:
-            pulumi.set(__self__, "std", std)
+            _setter("std", std)
 
     @property
     @pulumi.getter
@@ -1174,10 +1498,29 @@ class GetAiPrivateEndpointsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAiPrivateEndpointsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1213,10 +1556,29 @@ class GetDetectAnomalyJobsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDetectAnomalyJobsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1252,10 +1614,29 @@ class GetDetectionDataAssetsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDetectionDataAssetsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1291,10 +1672,29 @@ class GetDetectionModelsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDetectionModelsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1330,10 +1730,29 @@ class GetDetectionProjectsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDetectionProjectsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

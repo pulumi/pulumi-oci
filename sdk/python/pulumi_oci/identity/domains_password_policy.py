@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -489,94 +489,269 @@ class DomainsPasswordPolicyArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
-        pulumi.set(__self__, "schemas", schemas)
+        DomainsPasswordPolicyArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            idcs_endpoint=idcs_endpoint,
+            schemas=schemas,
+            allowed_chars=allowed_chars,
+            attribute_sets=attribute_sets,
+            attributes=attributes,
+            authorization=authorization,
+            description=description,
+            dictionary_delimiter=dictionary_delimiter,
+            dictionary_location=dictionary_location,
+            dictionary_word_disallowed=dictionary_word_disallowed,
+            disallowed_chars=disallowed_chars,
+            disallowed_substrings=disallowed_substrings,
+            disallowed_user_attribute_values=disallowed_user_attribute_values,
+            distinct_characters=distinct_characters,
+            external_id=external_id,
+            first_name_disallowed=first_name_disallowed,
+            force_password_reset=force_password_reset,
+            groups=groups,
+            last_name_disallowed=last_name_disallowed,
+            lockout_duration=lockout_duration,
+            max_incorrect_attempts=max_incorrect_attempts,
+            max_length=max_length,
+            max_repeated_chars=max_repeated_chars,
+            max_special_chars=max_special_chars,
+            min_alpha_numerals=min_alpha_numerals,
+            min_alphas=min_alphas,
+            min_length=min_length,
+            min_lower_case=min_lower_case,
+            min_numerals=min_numerals,
+            min_password_age=min_password_age,
+            min_special_chars=min_special_chars,
+            min_unique_chars=min_unique_chars,
+            min_upper_case=min_upper_case,
+            name=name,
+            num_passwords_in_history=num_passwords_in_history,
+            ocid=ocid,
+            password_expire_warning=password_expire_warning,
+            password_expires_after=password_expires_after,
+            password_strength=password_strength,
+            priority=priority,
+            required_chars=required_chars,
+            resource_type_schema_version=resource_type_schema_version,
+            starts_with_alphabet=starts_with_alphabet,
+            tags=tags,
+            user_name_disallowed=user_name_disallowed,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             idcs_endpoint: Optional[pulumi.Input[str]] = None,
+             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             allowed_chars: Optional[pulumi.Input[str]] = None,
+             attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             attributes: Optional[pulumi.Input[str]] = None,
+             authorization: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             dictionary_delimiter: Optional[pulumi.Input[str]] = None,
+             dictionary_location: Optional[pulumi.Input[str]] = None,
+             dictionary_word_disallowed: Optional[pulumi.Input[bool]] = None,
+             disallowed_chars: Optional[pulumi.Input[str]] = None,
+             disallowed_substrings: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             disallowed_user_attribute_values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             distinct_characters: Optional[pulumi.Input[int]] = None,
+             external_id: Optional[pulumi.Input[str]] = None,
+             first_name_disallowed: Optional[pulumi.Input[bool]] = None,
+             force_password_reset: Optional[pulumi.Input[bool]] = None,
+             groups: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyGroupArgs']]]] = None,
+             last_name_disallowed: Optional[pulumi.Input[bool]] = None,
+             lockout_duration: Optional[pulumi.Input[int]] = None,
+             max_incorrect_attempts: Optional[pulumi.Input[int]] = None,
+             max_length: Optional[pulumi.Input[int]] = None,
+             max_repeated_chars: Optional[pulumi.Input[int]] = None,
+             max_special_chars: Optional[pulumi.Input[int]] = None,
+             min_alpha_numerals: Optional[pulumi.Input[int]] = None,
+             min_alphas: Optional[pulumi.Input[int]] = None,
+             min_length: Optional[pulumi.Input[int]] = None,
+             min_lower_case: Optional[pulumi.Input[int]] = None,
+             min_numerals: Optional[pulumi.Input[int]] = None,
+             min_password_age: Optional[pulumi.Input[int]] = None,
+             min_special_chars: Optional[pulumi.Input[int]] = None,
+             min_unique_chars: Optional[pulumi.Input[int]] = None,
+             min_upper_case: Optional[pulumi.Input[int]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             num_passwords_in_history: Optional[pulumi.Input[int]] = None,
+             ocid: Optional[pulumi.Input[str]] = None,
+             password_expire_warning: Optional[pulumi.Input[int]] = None,
+             password_expires_after: Optional[pulumi.Input[int]] = None,
+             password_strength: Optional[pulumi.Input[str]] = None,
+             priority: Optional[pulumi.Input[int]] = None,
+             required_chars: Optional[pulumi.Input[str]] = None,
+             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
+             starts_with_alphabet: Optional[pulumi.Input[bool]] = None,
+             tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyTagArgs']]]] = None,
+             user_name_disallowed: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
+            idcs_endpoint = kwargs['idcsEndpoint']
+        if idcs_endpoint is None:
+            raise TypeError("Missing 'idcs_endpoint' argument")
+        if schemas is None:
+            raise TypeError("Missing 'schemas' argument")
+        if allowed_chars is None and 'allowedChars' in kwargs:
+            allowed_chars = kwargs['allowedChars']
+        if attribute_sets is None and 'attributeSets' in kwargs:
+            attribute_sets = kwargs['attributeSets']
+        if dictionary_delimiter is None and 'dictionaryDelimiter' in kwargs:
+            dictionary_delimiter = kwargs['dictionaryDelimiter']
+        if dictionary_location is None and 'dictionaryLocation' in kwargs:
+            dictionary_location = kwargs['dictionaryLocation']
+        if dictionary_word_disallowed is None and 'dictionaryWordDisallowed' in kwargs:
+            dictionary_word_disallowed = kwargs['dictionaryWordDisallowed']
+        if disallowed_chars is None and 'disallowedChars' in kwargs:
+            disallowed_chars = kwargs['disallowedChars']
+        if disallowed_substrings is None and 'disallowedSubstrings' in kwargs:
+            disallowed_substrings = kwargs['disallowedSubstrings']
+        if disallowed_user_attribute_values is None and 'disallowedUserAttributeValues' in kwargs:
+            disallowed_user_attribute_values = kwargs['disallowedUserAttributeValues']
+        if distinct_characters is None and 'distinctCharacters' in kwargs:
+            distinct_characters = kwargs['distinctCharacters']
+        if external_id is None and 'externalId' in kwargs:
+            external_id = kwargs['externalId']
+        if first_name_disallowed is None and 'firstNameDisallowed' in kwargs:
+            first_name_disallowed = kwargs['firstNameDisallowed']
+        if force_password_reset is None and 'forcePasswordReset' in kwargs:
+            force_password_reset = kwargs['forcePasswordReset']
+        if last_name_disallowed is None and 'lastNameDisallowed' in kwargs:
+            last_name_disallowed = kwargs['lastNameDisallowed']
+        if lockout_duration is None and 'lockoutDuration' in kwargs:
+            lockout_duration = kwargs['lockoutDuration']
+        if max_incorrect_attempts is None and 'maxIncorrectAttempts' in kwargs:
+            max_incorrect_attempts = kwargs['maxIncorrectAttempts']
+        if max_length is None and 'maxLength' in kwargs:
+            max_length = kwargs['maxLength']
+        if max_repeated_chars is None and 'maxRepeatedChars' in kwargs:
+            max_repeated_chars = kwargs['maxRepeatedChars']
+        if max_special_chars is None and 'maxSpecialChars' in kwargs:
+            max_special_chars = kwargs['maxSpecialChars']
+        if min_alpha_numerals is None and 'minAlphaNumerals' in kwargs:
+            min_alpha_numerals = kwargs['minAlphaNumerals']
+        if min_alphas is None and 'minAlphas' in kwargs:
+            min_alphas = kwargs['minAlphas']
+        if min_length is None and 'minLength' in kwargs:
+            min_length = kwargs['minLength']
+        if min_lower_case is None and 'minLowerCase' in kwargs:
+            min_lower_case = kwargs['minLowerCase']
+        if min_numerals is None and 'minNumerals' in kwargs:
+            min_numerals = kwargs['minNumerals']
+        if min_password_age is None and 'minPasswordAge' in kwargs:
+            min_password_age = kwargs['minPasswordAge']
+        if min_special_chars is None and 'minSpecialChars' in kwargs:
+            min_special_chars = kwargs['minSpecialChars']
+        if min_unique_chars is None and 'minUniqueChars' in kwargs:
+            min_unique_chars = kwargs['minUniqueChars']
+        if min_upper_case is None and 'minUpperCase' in kwargs:
+            min_upper_case = kwargs['minUpperCase']
+        if num_passwords_in_history is None and 'numPasswordsInHistory' in kwargs:
+            num_passwords_in_history = kwargs['numPasswordsInHistory']
+        if password_expire_warning is None and 'passwordExpireWarning' in kwargs:
+            password_expire_warning = kwargs['passwordExpireWarning']
+        if password_expires_after is None and 'passwordExpiresAfter' in kwargs:
+            password_expires_after = kwargs['passwordExpiresAfter']
+        if password_strength is None and 'passwordStrength' in kwargs:
+            password_strength = kwargs['passwordStrength']
+        if required_chars is None and 'requiredChars' in kwargs:
+            required_chars = kwargs['requiredChars']
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
+            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
+        if starts_with_alphabet is None and 'startsWithAlphabet' in kwargs:
+            starts_with_alphabet = kwargs['startsWithAlphabet']
+        if user_name_disallowed is None and 'userNameDisallowed' in kwargs:
+            user_name_disallowed = kwargs['userNameDisallowed']
+
+        _setter("idcs_endpoint", idcs_endpoint)
+        _setter("schemas", schemas)
         if allowed_chars is not None:
-            pulumi.set(__self__, "allowed_chars", allowed_chars)
+            _setter("allowed_chars", allowed_chars)
         if attribute_sets is not None:
-            pulumi.set(__self__, "attribute_sets", attribute_sets)
+            _setter("attribute_sets", attribute_sets)
         if attributes is not None:
-            pulumi.set(__self__, "attributes", attributes)
+            _setter("attributes", attributes)
         if authorization is not None:
-            pulumi.set(__self__, "authorization", authorization)
+            _setter("authorization", authorization)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if dictionary_delimiter is not None:
-            pulumi.set(__self__, "dictionary_delimiter", dictionary_delimiter)
+            _setter("dictionary_delimiter", dictionary_delimiter)
         if dictionary_location is not None:
-            pulumi.set(__self__, "dictionary_location", dictionary_location)
+            _setter("dictionary_location", dictionary_location)
         if dictionary_word_disallowed is not None:
-            pulumi.set(__self__, "dictionary_word_disallowed", dictionary_word_disallowed)
+            _setter("dictionary_word_disallowed", dictionary_word_disallowed)
         if disallowed_chars is not None:
-            pulumi.set(__self__, "disallowed_chars", disallowed_chars)
+            _setter("disallowed_chars", disallowed_chars)
         if disallowed_substrings is not None:
-            pulumi.set(__self__, "disallowed_substrings", disallowed_substrings)
+            _setter("disallowed_substrings", disallowed_substrings)
         if disallowed_user_attribute_values is not None:
-            pulumi.set(__self__, "disallowed_user_attribute_values", disallowed_user_attribute_values)
+            _setter("disallowed_user_attribute_values", disallowed_user_attribute_values)
         if distinct_characters is not None:
-            pulumi.set(__self__, "distinct_characters", distinct_characters)
+            _setter("distinct_characters", distinct_characters)
         if external_id is not None:
-            pulumi.set(__self__, "external_id", external_id)
+            _setter("external_id", external_id)
         if first_name_disallowed is not None:
-            pulumi.set(__self__, "first_name_disallowed", first_name_disallowed)
+            _setter("first_name_disallowed", first_name_disallowed)
         if force_password_reset is not None:
-            pulumi.set(__self__, "force_password_reset", force_password_reset)
+            _setter("force_password_reset", force_password_reset)
         if groups is not None:
-            pulumi.set(__self__, "groups", groups)
+            _setter("groups", groups)
         if last_name_disallowed is not None:
-            pulumi.set(__self__, "last_name_disallowed", last_name_disallowed)
+            _setter("last_name_disallowed", last_name_disallowed)
         if lockout_duration is not None:
-            pulumi.set(__self__, "lockout_duration", lockout_duration)
+            _setter("lockout_duration", lockout_duration)
         if max_incorrect_attempts is not None:
-            pulumi.set(__self__, "max_incorrect_attempts", max_incorrect_attempts)
+            _setter("max_incorrect_attempts", max_incorrect_attempts)
         if max_length is not None:
-            pulumi.set(__self__, "max_length", max_length)
+            _setter("max_length", max_length)
         if max_repeated_chars is not None:
-            pulumi.set(__self__, "max_repeated_chars", max_repeated_chars)
+            _setter("max_repeated_chars", max_repeated_chars)
         if max_special_chars is not None:
-            pulumi.set(__self__, "max_special_chars", max_special_chars)
+            _setter("max_special_chars", max_special_chars)
         if min_alpha_numerals is not None:
-            pulumi.set(__self__, "min_alpha_numerals", min_alpha_numerals)
+            _setter("min_alpha_numerals", min_alpha_numerals)
         if min_alphas is not None:
-            pulumi.set(__self__, "min_alphas", min_alphas)
+            _setter("min_alphas", min_alphas)
         if min_length is not None:
-            pulumi.set(__self__, "min_length", min_length)
+            _setter("min_length", min_length)
         if min_lower_case is not None:
-            pulumi.set(__self__, "min_lower_case", min_lower_case)
+            _setter("min_lower_case", min_lower_case)
         if min_numerals is not None:
-            pulumi.set(__self__, "min_numerals", min_numerals)
+            _setter("min_numerals", min_numerals)
         if min_password_age is not None:
-            pulumi.set(__self__, "min_password_age", min_password_age)
+            _setter("min_password_age", min_password_age)
         if min_special_chars is not None:
-            pulumi.set(__self__, "min_special_chars", min_special_chars)
+            _setter("min_special_chars", min_special_chars)
         if min_unique_chars is not None:
-            pulumi.set(__self__, "min_unique_chars", min_unique_chars)
+            _setter("min_unique_chars", min_unique_chars)
         if min_upper_case is not None:
-            pulumi.set(__self__, "min_upper_case", min_upper_case)
+            _setter("min_upper_case", min_upper_case)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if num_passwords_in_history is not None:
-            pulumi.set(__self__, "num_passwords_in_history", num_passwords_in_history)
+            _setter("num_passwords_in_history", num_passwords_in_history)
         if ocid is not None:
-            pulumi.set(__self__, "ocid", ocid)
+            _setter("ocid", ocid)
         if password_expire_warning is not None:
-            pulumi.set(__self__, "password_expire_warning", password_expire_warning)
+            _setter("password_expire_warning", password_expire_warning)
         if password_expires_after is not None:
-            pulumi.set(__self__, "password_expires_after", password_expires_after)
+            _setter("password_expires_after", password_expires_after)
         if password_strength is not None:
-            pulumi.set(__self__, "password_strength", password_strength)
+            _setter("password_strength", password_strength)
         if priority is not None:
-            pulumi.set(__self__, "priority", priority)
+            _setter("priority", priority)
         if required_chars is not None:
-            pulumi.set(__self__, "required_chars", required_chars)
+            _setter("required_chars", required_chars)
         if resource_type_schema_version is not None:
-            pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
+            _setter("resource_type_schema_version", resource_type_schema_version)
         if starts_with_alphabet is not None:
-            pulumi.set(__self__, "starts_with_alphabet", starts_with_alphabet)
+            _setter("starts_with_alphabet", starts_with_alphabet)
         if tags is not None:
-            pulumi.set(__self__, "tags", tags)
+            _setter("tags", tags)
         if user_name_disallowed is not None:
-            pulumi.set(__self__, "user_name_disallowed", user_name_disallowed)
+            _setter("user_name_disallowed", user_name_disallowed)
 
     @property
     @pulumi.getter(name="idcsEndpoint")
@@ -2090,116 +2265,325 @@ class _DomainsPasswordPolicyState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _DomainsPasswordPolicyState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_chars=allowed_chars,
+            attribute_sets=attribute_sets,
+            attributes=attributes,
+            authorization=authorization,
+            compartment_ocid=compartment_ocid,
+            configured_password_policy_rules=configured_password_policy_rules,
+            delete_in_progress=delete_in_progress,
+            description=description,
+            dictionary_delimiter=dictionary_delimiter,
+            dictionary_location=dictionary_location,
+            dictionary_word_disallowed=dictionary_word_disallowed,
+            disallowed_chars=disallowed_chars,
+            disallowed_substrings=disallowed_substrings,
+            disallowed_user_attribute_values=disallowed_user_attribute_values,
+            distinct_characters=distinct_characters,
+            domain_ocid=domain_ocid,
+            external_id=external_id,
+            first_name_disallowed=first_name_disallowed,
+            force_password_reset=force_password_reset,
+            groups=groups,
+            idcs_created_bies=idcs_created_bies,
+            idcs_endpoint=idcs_endpoint,
+            idcs_last_modified_bies=idcs_last_modified_bies,
+            idcs_last_upgraded_in_release=idcs_last_upgraded_in_release,
+            idcs_prevented_operations=idcs_prevented_operations,
+            last_name_disallowed=last_name_disallowed,
+            lockout_duration=lockout_duration,
+            max_incorrect_attempts=max_incorrect_attempts,
+            max_length=max_length,
+            max_repeated_chars=max_repeated_chars,
+            max_special_chars=max_special_chars,
+            metas=metas,
+            min_alpha_numerals=min_alpha_numerals,
+            min_alphas=min_alphas,
+            min_length=min_length,
+            min_lower_case=min_lower_case,
+            min_numerals=min_numerals,
+            min_password_age=min_password_age,
+            min_special_chars=min_special_chars,
+            min_unique_chars=min_unique_chars,
+            min_upper_case=min_upper_case,
+            name=name,
+            num_passwords_in_history=num_passwords_in_history,
+            ocid=ocid,
+            password_expire_warning=password_expire_warning,
+            password_expires_after=password_expires_after,
+            password_strength=password_strength,
+            priority=priority,
+            required_chars=required_chars,
+            resource_type_schema_version=resource_type_schema_version,
+            schemas=schemas,
+            starts_with_alphabet=starts_with_alphabet,
+            tags=tags,
+            tenancy_ocid=tenancy_ocid,
+            user_name_disallowed=user_name_disallowed,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_chars: Optional[pulumi.Input[str]] = None,
+             attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             attributes: Optional[pulumi.Input[str]] = None,
+             authorization: Optional[pulumi.Input[str]] = None,
+             compartment_ocid: Optional[pulumi.Input[str]] = None,
+             configured_password_policy_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgs']]]] = None,
+             delete_in_progress: Optional[pulumi.Input[bool]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             dictionary_delimiter: Optional[pulumi.Input[str]] = None,
+             dictionary_location: Optional[pulumi.Input[str]] = None,
+             dictionary_word_disallowed: Optional[pulumi.Input[bool]] = None,
+             disallowed_chars: Optional[pulumi.Input[str]] = None,
+             disallowed_substrings: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             disallowed_user_attribute_values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             distinct_characters: Optional[pulumi.Input[int]] = None,
+             domain_ocid: Optional[pulumi.Input[str]] = None,
+             external_id: Optional[pulumi.Input[str]] = None,
+             first_name_disallowed: Optional[pulumi.Input[bool]] = None,
+             force_password_reset: Optional[pulumi.Input[bool]] = None,
+             groups: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyGroupArgs']]]] = None,
+             idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyIdcsCreatedByArgs']]]] = None,
+             idcs_endpoint: Optional[pulumi.Input[str]] = None,
+             idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyIdcsLastModifiedByArgs']]]] = None,
+             idcs_last_upgraded_in_release: Optional[pulumi.Input[str]] = None,
+             idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             last_name_disallowed: Optional[pulumi.Input[bool]] = None,
+             lockout_duration: Optional[pulumi.Input[int]] = None,
+             max_incorrect_attempts: Optional[pulumi.Input[int]] = None,
+             max_length: Optional[pulumi.Input[int]] = None,
+             max_repeated_chars: Optional[pulumi.Input[int]] = None,
+             max_special_chars: Optional[pulumi.Input[int]] = None,
+             metas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyMetaArgs']]]] = None,
+             min_alpha_numerals: Optional[pulumi.Input[int]] = None,
+             min_alphas: Optional[pulumi.Input[int]] = None,
+             min_length: Optional[pulumi.Input[int]] = None,
+             min_lower_case: Optional[pulumi.Input[int]] = None,
+             min_numerals: Optional[pulumi.Input[int]] = None,
+             min_password_age: Optional[pulumi.Input[int]] = None,
+             min_special_chars: Optional[pulumi.Input[int]] = None,
+             min_unique_chars: Optional[pulumi.Input[int]] = None,
+             min_upper_case: Optional[pulumi.Input[int]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             num_passwords_in_history: Optional[pulumi.Input[int]] = None,
+             ocid: Optional[pulumi.Input[str]] = None,
+             password_expire_warning: Optional[pulumi.Input[int]] = None,
+             password_expires_after: Optional[pulumi.Input[int]] = None,
+             password_strength: Optional[pulumi.Input[str]] = None,
+             priority: Optional[pulumi.Input[int]] = None,
+             required_chars: Optional[pulumi.Input[str]] = None,
+             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
+             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             starts_with_alphabet: Optional[pulumi.Input[bool]] = None,
+             tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsPasswordPolicyTagArgs']]]] = None,
+             tenancy_ocid: Optional[pulumi.Input[str]] = None,
+             user_name_disallowed: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if allowed_chars is None and 'allowedChars' in kwargs:
+            allowed_chars = kwargs['allowedChars']
+        if attribute_sets is None and 'attributeSets' in kwargs:
+            attribute_sets = kwargs['attributeSets']
+        if compartment_ocid is None and 'compartmentOcid' in kwargs:
+            compartment_ocid = kwargs['compartmentOcid']
+        if configured_password_policy_rules is None and 'configuredPasswordPolicyRules' in kwargs:
+            configured_password_policy_rules = kwargs['configuredPasswordPolicyRules']
+        if delete_in_progress is None and 'deleteInProgress' in kwargs:
+            delete_in_progress = kwargs['deleteInProgress']
+        if dictionary_delimiter is None and 'dictionaryDelimiter' in kwargs:
+            dictionary_delimiter = kwargs['dictionaryDelimiter']
+        if dictionary_location is None and 'dictionaryLocation' in kwargs:
+            dictionary_location = kwargs['dictionaryLocation']
+        if dictionary_word_disallowed is None and 'dictionaryWordDisallowed' in kwargs:
+            dictionary_word_disallowed = kwargs['dictionaryWordDisallowed']
+        if disallowed_chars is None and 'disallowedChars' in kwargs:
+            disallowed_chars = kwargs['disallowedChars']
+        if disallowed_substrings is None and 'disallowedSubstrings' in kwargs:
+            disallowed_substrings = kwargs['disallowedSubstrings']
+        if disallowed_user_attribute_values is None and 'disallowedUserAttributeValues' in kwargs:
+            disallowed_user_attribute_values = kwargs['disallowedUserAttributeValues']
+        if distinct_characters is None and 'distinctCharacters' in kwargs:
+            distinct_characters = kwargs['distinctCharacters']
+        if domain_ocid is None and 'domainOcid' in kwargs:
+            domain_ocid = kwargs['domainOcid']
+        if external_id is None and 'externalId' in kwargs:
+            external_id = kwargs['externalId']
+        if first_name_disallowed is None and 'firstNameDisallowed' in kwargs:
+            first_name_disallowed = kwargs['firstNameDisallowed']
+        if force_password_reset is None and 'forcePasswordReset' in kwargs:
+            force_password_reset = kwargs['forcePasswordReset']
+        if idcs_created_bies is None and 'idcsCreatedBies' in kwargs:
+            idcs_created_bies = kwargs['idcsCreatedBies']
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
+            idcs_endpoint = kwargs['idcsEndpoint']
+        if idcs_last_modified_bies is None and 'idcsLastModifiedBies' in kwargs:
+            idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
+        if idcs_last_upgraded_in_release is None and 'idcsLastUpgradedInRelease' in kwargs:
+            idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
+        if idcs_prevented_operations is None and 'idcsPreventedOperations' in kwargs:
+            idcs_prevented_operations = kwargs['idcsPreventedOperations']
+        if last_name_disallowed is None and 'lastNameDisallowed' in kwargs:
+            last_name_disallowed = kwargs['lastNameDisallowed']
+        if lockout_duration is None and 'lockoutDuration' in kwargs:
+            lockout_duration = kwargs['lockoutDuration']
+        if max_incorrect_attempts is None and 'maxIncorrectAttempts' in kwargs:
+            max_incorrect_attempts = kwargs['maxIncorrectAttempts']
+        if max_length is None and 'maxLength' in kwargs:
+            max_length = kwargs['maxLength']
+        if max_repeated_chars is None and 'maxRepeatedChars' in kwargs:
+            max_repeated_chars = kwargs['maxRepeatedChars']
+        if max_special_chars is None and 'maxSpecialChars' in kwargs:
+            max_special_chars = kwargs['maxSpecialChars']
+        if min_alpha_numerals is None and 'minAlphaNumerals' in kwargs:
+            min_alpha_numerals = kwargs['minAlphaNumerals']
+        if min_alphas is None and 'minAlphas' in kwargs:
+            min_alphas = kwargs['minAlphas']
+        if min_length is None and 'minLength' in kwargs:
+            min_length = kwargs['minLength']
+        if min_lower_case is None and 'minLowerCase' in kwargs:
+            min_lower_case = kwargs['minLowerCase']
+        if min_numerals is None and 'minNumerals' in kwargs:
+            min_numerals = kwargs['minNumerals']
+        if min_password_age is None and 'minPasswordAge' in kwargs:
+            min_password_age = kwargs['minPasswordAge']
+        if min_special_chars is None and 'minSpecialChars' in kwargs:
+            min_special_chars = kwargs['minSpecialChars']
+        if min_unique_chars is None and 'minUniqueChars' in kwargs:
+            min_unique_chars = kwargs['minUniqueChars']
+        if min_upper_case is None and 'minUpperCase' in kwargs:
+            min_upper_case = kwargs['minUpperCase']
+        if num_passwords_in_history is None and 'numPasswordsInHistory' in kwargs:
+            num_passwords_in_history = kwargs['numPasswordsInHistory']
+        if password_expire_warning is None and 'passwordExpireWarning' in kwargs:
+            password_expire_warning = kwargs['passwordExpireWarning']
+        if password_expires_after is None and 'passwordExpiresAfter' in kwargs:
+            password_expires_after = kwargs['passwordExpiresAfter']
+        if password_strength is None and 'passwordStrength' in kwargs:
+            password_strength = kwargs['passwordStrength']
+        if required_chars is None and 'requiredChars' in kwargs:
+            required_chars = kwargs['requiredChars']
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
+            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
+        if starts_with_alphabet is None and 'startsWithAlphabet' in kwargs:
+            starts_with_alphabet = kwargs['startsWithAlphabet']
+        if tenancy_ocid is None and 'tenancyOcid' in kwargs:
+            tenancy_ocid = kwargs['tenancyOcid']
+        if user_name_disallowed is None and 'userNameDisallowed' in kwargs:
+            user_name_disallowed = kwargs['userNameDisallowed']
+
         if allowed_chars is not None:
-            pulumi.set(__self__, "allowed_chars", allowed_chars)
+            _setter("allowed_chars", allowed_chars)
         if attribute_sets is not None:
-            pulumi.set(__self__, "attribute_sets", attribute_sets)
+            _setter("attribute_sets", attribute_sets)
         if attributes is not None:
-            pulumi.set(__self__, "attributes", attributes)
+            _setter("attributes", attributes)
         if authorization is not None:
-            pulumi.set(__self__, "authorization", authorization)
+            _setter("authorization", authorization)
         if compartment_ocid is not None:
-            pulumi.set(__self__, "compartment_ocid", compartment_ocid)
+            _setter("compartment_ocid", compartment_ocid)
         if configured_password_policy_rules is not None:
-            pulumi.set(__self__, "configured_password_policy_rules", configured_password_policy_rules)
+            _setter("configured_password_policy_rules", configured_password_policy_rules)
         if delete_in_progress is not None:
-            pulumi.set(__self__, "delete_in_progress", delete_in_progress)
+            _setter("delete_in_progress", delete_in_progress)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if dictionary_delimiter is not None:
-            pulumi.set(__self__, "dictionary_delimiter", dictionary_delimiter)
+            _setter("dictionary_delimiter", dictionary_delimiter)
         if dictionary_location is not None:
-            pulumi.set(__self__, "dictionary_location", dictionary_location)
+            _setter("dictionary_location", dictionary_location)
         if dictionary_word_disallowed is not None:
-            pulumi.set(__self__, "dictionary_word_disallowed", dictionary_word_disallowed)
+            _setter("dictionary_word_disallowed", dictionary_word_disallowed)
         if disallowed_chars is not None:
-            pulumi.set(__self__, "disallowed_chars", disallowed_chars)
+            _setter("disallowed_chars", disallowed_chars)
         if disallowed_substrings is not None:
-            pulumi.set(__self__, "disallowed_substrings", disallowed_substrings)
+            _setter("disallowed_substrings", disallowed_substrings)
         if disallowed_user_attribute_values is not None:
-            pulumi.set(__self__, "disallowed_user_attribute_values", disallowed_user_attribute_values)
+            _setter("disallowed_user_attribute_values", disallowed_user_attribute_values)
         if distinct_characters is not None:
-            pulumi.set(__self__, "distinct_characters", distinct_characters)
+            _setter("distinct_characters", distinct_characters)
         if domain_ocid is not None:
-            pulumi.set(__self__, "domain_ocid", domain_ocid)
+            _setter("domain_ocid", domain_ocid)
         if external_id is not None:
-            pulumi.set(__self__, "external_id", external_id)
+            _setter("external_id", external_id)
         if first_name_disallowed is not None:
-            pulumi.set(__self__, "first_name_disallowed", first_name_disallowed)
+            _setter("first_name_disallowed", first_name_disallowed)
         if force_password_reset is not None:
-            pulumi.set(__self__, "force_password_reset", force_password_reset)
+            _setter("force_password_reset", force_password_reset)
         if groups is not None:
-            pulumi.set(__self__, "groups", groups)
+            _setter("groups", groups)
         if idcs_created_bies is not None:
-            pulumi.set(__self__, "idcs_created_bies", idcs_created_bies)
+            _setter("idcs_created_bies", idcs_created_bies)
         if idcs_endpoint is not None:
-            pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
+            _setter("idcs_endpoint", idcs_endpoint)
         if idcs_last_modified_bies is not None:
-            pulumi.set(__self__, "idcs_last_modified_bies", idcs_last_modified_bies)
+            _setter("idcs_last_modified_bies", idcs_last_modified_bies)
         if idcs_last_upgraded_in_release is not None:
-            pulumi.set(__self__, "idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
+            _setter("idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
         if idcs_prevented_operations is not None:
-            pulumi.set(__self__, "idcs_prevented_operations", idcs_prevented_operations)
+            _setter("idcs_prevented_operations", idcs_prevented_operations)
         if last_name_disallowed is not None:
-            pulumi.set(__self__, "last_name_disallowed", last_name_disallowed)
+            _setter("last_name_disallowed", last_name_disallowed)
         if lockout_duration is not None:
-            pulumi.set(__self__, "lockout_duration", lockout_duration)
+            _setter("lockout_duration", lockout_duration)
         if max_incorrect_attempts is not None:
-            pulumi.set(__self__, "max_incorrect_attempts", max_incorrect_attempts)
+            _setter("max_incorrect_attempts", max_incorrect_attempts)
         if max_length is not None:
-            pulumi.set(__self__, "max_length", max_length)
+            _setter("max_length", max_length)
         if max_repeated_chars is not None:
-            pulumi.set(__self__, "max_repeated_chars", max_repeated_chars)
+            _setter("max_repeated_chars", max_repeated_chars)
         if max_special_chars is not None:
-            pulumi.set(__self__, "max_special_chars", max_special_chars)
+            _setter("max_special_chars", max_special_chars)
         if metas is not None:
-            pulumi.set(__self__, "metas", metas)
+            _setter("metas", metas)
         if min_alpha_numerals is not None:
-            pulumi.set(__self__, "min_alpha_numerals", min_alpha_numerals)
+            _setter("min_alpha_numerals", min_alpha_numerals)
         if min_alphas is not None:
-            pulumi.set(__self__, "min_alphas", min_alphas)
+            _setter("min_alphas", min_alphas)
         if min_length is not None:
-            pulumi.set(__self__, "min_length", min_length)
+            _setter("min_length", min_length)
         if min_lower_case is not None:
-            pulumi.set(__self__, "min_lower_case", min_lower_case)
+            _setter("min_lower_case", min_lower_case)
         if min_numerals is not None:
-            pulumi.set(__self__, "min_numerals", min_numerals)
+            _setter("min_numerals", min_numerals)
         if min_password_age is not None:
-            pulumi.set(__self__, "min_password_age", min_password_age)
+            _setter("min_password_age", min_password_age)
         if min_special_chars is not None:
-            pulumi.set(__self__, "min_special_chars", min_special_chars)
+            _setter("min_special_chars", min_special_chars)
         if min_unique_chars is not None:
-            pulumi.set(__self__, "min_unique_chars", min_unique_chars)
+            _setter("min_unique_chars", min_unique_chars)
         if min_upper_case is not None:
-            pulumi.set(__self__, "min_upper_case", min_upper_case)
+            _setter("min_upper_case", min_upper_case)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if num_passwords_in_history is not None:
-            pulumi.set(__self__, "num_passwords_in_history", num_passwords_in_history)
+            _setter("num_passwords_in_history", num_passwords_in_history)
         if ocid is not None:
-            pulumi.set(__self__, "ocid", ocid)
+            _setter("ocid", ocid)
         if password_expire_warning is not None:
-            pulumi.set(__self__, "password_expire_warning", password_expire_warning)
+            _setter("password_expire_warning", password_expire_warning)
         if password_expires_after is not None:
-            pulumi.set(__self__, "password_expires_after", password_expires_after)
+            _setter("password_expires_after", password_expires_after)
         if password_strength is not None:
-            pulumi.set(__self__, "password_strength", password_strength)
+            _setter("password_strength", password_strength)
         if priority is not None:
-            pulumi.set(__self__, "priority", priority)
+            _setter("priority", priority)
         if required_chars is not None:
-            pulumi.set(__self__, "required_chars", required_chars)
+            _setter("required_chars", required_chars)
         if resource_type_schema_version is not None:
-            pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
+            _setter("resource_type_schema_version", resource_type_schema_version)
         if schemas is not None:
-            pulumi.set(__self__, "schemas", schemas)
+            _setter("schemas", schemas)
         if starts_with_alphabet is not None:
-            pulumi.set(__self__, "starts_with_alphabet", starts_with_alphabet)
+            _setter("starts_with_alphabet", starts_with_alphabet)
         if tags is not None:
-            pulumi.set(__self__, "tags", tags)
+            _setter("tags", tags)
         if tenancy_ocid is not None:
-            pulumi.set(__self__, "tenancy_ocid", tenancy_ocid)
+            _setter("tenancy_ocid", tenancy_ocid)
         if user_name_disallowed is not None:
-            pulumi.set(__self__, "user_name_disallowed", user_name_disallowed)
+            _setter("user_name_disallowed", user_name_disallowed)
 
     @property
     @pulumi.getter(name="allowedChars")
@@ -3858,6 +4242,10 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DomainsPasswordPolicyArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

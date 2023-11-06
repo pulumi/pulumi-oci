@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -33,12 +33,33 @@ class DatabaseToolsConnectionKeyStoreArgs:
         :param pulumi.Input['DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs'] key_store_password: (Updatable) The key store password.
         :param pulumi.Input[str] key_store_type: (Updatable) The key store type.
         """
+        DatabaseToolsConnectionKeyStoreArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key_store_content=key_store_content,
+            key_store_password=key_store_password,
+            key_store_type=key_store_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key_store_content: Optional[pulumi.Input['DatabaseToolsConnectionKeyStoreKeyStoreContentArgs']] = None,
+             key_store_password: Optional[pulumi.Input['DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs']] = None,
+             key_store_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if key_store_content is None and 'keyStoreContent' in kwargs:
+            key_store_content = kwargs['keyStoreContent']
+        if key_store_password is None and 'keyStorePassword' in kwargs:
+            key_store_password = kwargs['keyStorePassword']
+        if key_store_type is None and 'keyStoreType' in kwargs:
+            key_store_type = kwargs['keyStoreType']
+
         if key_store_content is not None:
-            pulumi.set(__self__, "key_store_content", key_store_content)
+            _setter("key_store_content", key_store_content)
         if key_store_password is not None:
-            pulumi.set(__self__, "key_store_password", key_store_password)
+            _setter("key_store_password", key_store_password)
         if key_store_type is not None:
-            pulumi.set(__self__, "key_store_type", key_store_type)
+            _setter("key_store_type", key_store_type)
 
     @property
     @pulumi.getter(name="keyStoreContent")
@@ -90,9 +111,28 @@ class DatabaseToolsConnectionKeyStoreKeyStoreContentArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
         """
-        pulumi.set(__self__, "value_type", value_type)
+        DatabaseToolsConnectionKeyStoreKeyStoreContentArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            value_type=value_type,
+            secret_id=secret_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             value_type: Optional[pulumi.Input[str]] = None,
+             secret_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if value_type is None and 'valueType' in kwargs:
+            value_type = kwargs['valueType']
+        if value_type is None:
+            raise TypeError("Missing 'value_type' argument")
+        if secret_id is None and 'secretId' in kwargs:
+            secret_id = kwargs['secretId']
+
+        _setter("value_type", value_type)
         if secret_id is not None:
-            pulumi.set(__self__, "secret_id", secret_id)
+            _setter("secret_id", secret_id)
 
     @property
     @pulumi.getter(name="valueType")
@@ -136,9 +176,28 @@ class DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
         """
-        pulumi.set(__self__, "value_type", value_type)
+        DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            value_type=value_type,
+            secret_id=secret_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             value_type: Optional[pulumi.Input[str]] = None,
+             secret_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if value_type is None and 'valueType' in kwargs:
+            value_type = kwargs['valueType']
+        if value_type is None:
+            raise TypeError("Missing 'value_type' argument")
+        if secret_id is None and 'secretId' in kwargs:
+            secret_id = kwargs['secretId']
+
+        _setter("value_type", value_type)
         if secret_id is not None:
-            pulumi.set(__self__, "secret_id", secret_id)
+            _setter("secret_id", secret_id)
 
     @property
     @pulumi.getter(name="valueType")
@@ -178,8 +237,27 @@ class DatabaseToolsConnectionRelatedResourceArgs:
         :param pulumi.Input[str] entity_type: (Updatable) The resource entity type.
         :param pulumi.Input[str] identifier: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
         """
-        pulumi.set(__self__, "entity_type", entity_type)
-        pulumi.set(__self__, "identifier", identifier)
+        DatabaseToolsConnectionRelatedResourceArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            entity_type=entity_type,
+            identifier=identifier,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             entity_type: Optional[pulumi.Input[str]] = None,
+             identifier: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if entity_type is None and 'entityType' in kwargs:
+            entity_type = kwargs['entityType']
+        if entity_type is None:
+            raise TypeError("Missing 'entity_type' argument")
+        if identifier is None:
+            raise TypeError("Missing 'identifier' argument")
+
+        _setter("entity_type", entity_type)
+        _setter("identifier", identifier)
 
     @property
     @pulumi.getter(name="entityType")
@@ -219,8 +297,29 @@ class DatabaseToolsConnectionUserPasswordArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "secret_id", secret_id)
-        pulumi.set(__self__, "value_type", value_type)
+        DatabaseToolsConnectionUserPasswordArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            secret_id=secret_id,
+            value_type=value_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             secret_id: Optional[pulumi.Input[str]] = None,
+             value_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if secret_id is None and 'secretId' in kwargs:
+            secret_id = kwargs['secretId']
+        if secret_id is None:
+            raise TypeError("Missing 'secret_id' argument")
+        if value_type is None and 'valueType' in kwargs:
+            value_type = kwargs['valueType']
+        if value_type is None:
+            raise TypeError("Missing 'value_type' argument")
+
+        _setter("secret_id", secret_id)
+        _setter("value_type", value_type)
 
     @property
     @pulumi.getter(name="secretId")
@@ -258,8 +357,21 @@ class DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs:
         """
         :param pulumi.Input[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs']]] reverse_connections_source_ips: A list of IP addresses in the customer VCN to be used as the source IPs for reverse connection packets traveling from the service's VCN to the customer's VCN.
         """
+        DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            reverse_connections_source_ips=reverse_connections_source_ips,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             reverse_connections_source_ips: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if reverse_connections_source_ips is None and 'reverseConnectionsSourceIps' in kwargs:
+            reverse_connections_source_ips = kwargs['reverseConnectionsSourceIps']
+
         if reverse_connections_source_ips is not None:
-            pulumi.set(__self__, "reverse_connections_source_ips", reverse_connections_source_ips)
+            _setter("reverse_connections_source_ips", reverse_connections_source_ips)
 
     @property
     @pulumi.getter(name="reverseConnectionsSourceIps")
@@ -281,8 +393,21 @@ class DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectio
         """
         :param pulumi.Input[str] source_ip: The IP address in the customer's VCN to be used as the source IP for reverse connection packets traveling from the customer's VCN to the service's VCN.
         """
+        DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            source_ip=source_ip,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             source_ip: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if source_ip is None and 'sourceIp' in kwargs:
+            source_ip = kwargs['sourceIp']
+
         if source_ip is not None:
-            pulumi.set(__self__, "source_ip", source_ip)
+            _setter("source_ip", source_ip)
 
     @property
     @pulumi.getter(name="sourceIp")
@@ -303,10 +428,29 @@ class GetDatabaseToolsConnectionsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDatabaseToolsConnectionsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -345,10 +489,29 @@ class GetDatabaseToolsEndpointServicesFilterArgs:
         """
         :param str name: A filter to return only resources that match the entire specified name.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDatabaseToolsEndpointServicesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -387,10 +550,29 @@ class GetDatabaseToolsPrivateEndpointsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDatabaseToolsPrivateEndpointsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

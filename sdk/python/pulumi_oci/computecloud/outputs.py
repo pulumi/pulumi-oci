@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -83,16 +83,45 @@ class AtCustomerCccInfrastructureInfrastructureInventory(dict):
         :param int performance_storage_tray_count: The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for performance storage.
         :param str serial_number: The serial number of the Compute Cloud@Customer infrastructure rack.
         """
+        AtCustomerCccInfrastructureInfrastructureInventory._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            capacity_storage_tray_count=capacity_storage_tray_count,
+            compute_node_count=compute_node_count,
+            management_node_count=management_node_count,
+            performance_storage_tray_count=performance_storage_tray_count,
+            serial_number=serial_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             capacity_storage_tray_count: Optional[int] = None,
+             compute_node_count: Optional[int] = None,
+             management_node_count: Optional[int] = None,
+             performance_storage_tray_count: Optional[int] = None,
+             serial_number: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if capacity_storage_tray_count is None and 'capacityStorageTrayCount' in kwargs:
+            capacity_storage_tray_count = kwargs['capacityStorageTrayCount']
+        if compute_node_count is None and 'computeNodeCount' in kwargs:
+            compute_node_count = kwargs['computeNodeCount']
+        if management_node_count is None and 'managementNodeCount' in kwargs:
+            management_node_count = kwargs['managementNodeCount']
+        if performance_storage_tray_count is None and 'performanceStorageTrayCount' in kwargs:
+            performance_storage_tray_count = kwargs['performanceStorageTrayCount']
+        if serial_number is None and 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+
         if capacity_storage_tray_count is not None:
-            pulumi.set(__self__, "capacity_storage_tray_count", capacity_storage_tray_count)
+            _setter("capacity_storage_tray_count", capacity_storage_tray_count)
         if compute_node_count is not None:
-            pulumi.set(__self__, "compute_node_count", compute_node_count)
+            _setter("compute_node_count", compute_node_count)
         if management_node_count is not None:
-            pulumi.set(__self__, "management_node_count", management_node_count)
+            _setter("management_node_count", management_node_count)
         if performance_storage_tray_count is not None:
-            pulumi.set(__self__, "performance_storage_tray_count", performance_storage_tray_count)
+            _setter("performance_storage_tray_count", performance_storage_tray_count)
         if serial_number is not None:
-            pulumi.set(__self__, "serial_number", serial_number)
+            _setter("serial_number", serial_number)
 
     @property
     @pulumi.getter(name="capacityStorageTrayCount")
@@ -215,36 +244,105 @@ class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration(dict):
         :param int uplink_port_speed_in_gbps: Uplink port speed defined in gigabytes per second. All uplink ports must have identical speed.
         :param int uplink_vlan_mtu: The virtual local area network (VLAN) maximum transmission unit (MTU) size for the uplink ports.
         """
+        AtCustomerCccInfrastructureInfrastructureNetworkConfiguration._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dns_ips=dns_ips,
+            infrastructure_routing_dynamics=infrastructure_routing_dynamics,
+            infrastructure_routing_statics=infrastructure_routing_statics,
+            management_nodes=management_nodes,
+            mgmt_vip_hostname=mgmt_vip_hostname,
+            mgmt_vip_ip=mgmt_vip_ip,
+            spine_ips=spine_ips,
+            spine_vip=spine_vip,
+            uplink_domain=uplink_domain,
+            uplink_gateway_ip=uplink_gateway_ip,
+            uplink_netmask=uplink_netmask,
+            uplink_port_count=uplink_port_count,
+            uplink_port_forward_error_correction=uplink_port_forward_error_correction,
+            uplink_port_speed_in_gbps=uplink_port_speed_in_gbps,
+            uplink_vlan_mtu=uplink_vlan_mtu,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dns_ips: Optional[Sequence[str]] = None,
+             infrastructure_routing_dynamics: Optional[Sequence['outputs.AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic']] = None,
+             infrastructure_routing_statics: Optional[Sequence['outputs.AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic']] = None,
+             management_nodes: Optional[Sequence['outputs.AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode']] = None,
+             mgmt_vip_hostname: Optional[str] = None,
+             mgmt_vip_ip: Optional[str] = None,
+             spine_ips: Optional[Sequence[str]] = None,
+             spine_vip: Optional[str] = None,
+             uplink_domain: Optional[str] = None,
+             uplink_gateway_ip: Optional[str] = None,
+             uplink_netmask: Optional[str] = None,
+             uplink_port_count: Optional[int] = None,
+             uplink_port_forward_error_correction: Optional[str] = None,
+             uplink_port_speed_in_gbps: Optional[int] = None,
+             uplink_vlan_mtu: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if dns_ips is None and 'dnsIps' in kwargs:
+            dns_ips = kwargs['dnsIps']
+        if infrastructure_routing_dynamics is None and 'infrastructureRoutingDynamics' in kwargs:
+            infrastructure_routing_dynamics = kwargs['infrastructureRoutingDynamics']
+        if infrastructure_routing_statics is None and 'infrastructureRoutingStatics' in kwargs:
+            infrastructure_routing_statics = kwargs['infrastructureRoutingStatics']
+        if management_nodes is None and 'managementNodes' in kwargs:
+            management_nodes = kwargs['managementNodes']
+        if mgmt_vip_hostname is None and 'mgmtVipHostname' in kwargs:
+            mgmt_vip_hostname = kwargs['mgmtVipHostname']
+        if mgmt_vip_ip is None and 'mgmtVipIp' in kwargs:
+            mgmt_vip_ip = kwargs['mgmtVipIp']
+        if spine_ips is None and 'spineIps' in kwargs:
+            spine_ips = kwargs['spineIps']
+        if spine_vip is None and 'spineVip' in kwargs:
+            spine_vip = kwargs['spineVip']
+        if uplink_domain is None and 'uplinkDomain' in kwargs:
+            uplink_domain = kwargs['uplinkDomain']
+        if uplink_gateway_ip is None and 'uplinkGatewayIp' in kwargs:
+            uplink_gateway_ip = kwargs['uplinkGatewayIp']
+        if uplink_netmask is None and 'uplinkNetmask' in kwargs:
+            uplink_netmask = kwargs['uplinkNetmask']
+        if uplink_port_count is None and 'uplinkPortCount' in kwargs:
+            uplink_port_count = kwargs['uplinkPortCount']
+        if uplink_port_forward_error_correction is None and 'uplinkPortForwardErrorCorrection' in kwargs:
+            uplink_port_forward_error_correction = kwargs['uplinkPortForwardErrorCorrection']
+        if uplink_port_speed_in_gbps is None and 'uplinkPortSpeedInGbps' in kwargs:
+            uplink_port_speed_in_gbps = kwargs['uplinkPortSpeedInGbps']
+        if uplink_vlan_mtu is None and 'uplinkVlanMtu' in kwargs:
+            uplink_vlan_mtu = kwargs['uplinkVlanMtu']
+
         if dns_ips is not None:
-            pulumi.set(__self__, "dns_ips", dns_ips)
+            _setter("dns_ips", dns_ips)
         if infrastructure_routing_dynamics is not None:
-            pulumi.set(__self__, "infrastructure_routing_dynamics", infrastructure_routing_dynamics)
+            _setter("infrastructure_routing_dynamics", infrastructure_routing_dynamics)
         if infrastructure_routing_statics is not None:
-            pulumi.set(__self__, "infrastructure_routing_statics", infrastructure_routing_statics)
+            _setter("infrastructure_routing_statics", infrastructure_routing_statics)
         if management_nodes is not None:
-            pulumi.set(__self__, "management_nodes", management_nodes)
+            _setter("management_nodes", management_nodes)
         if mgmt_vip_hostname is not None:
-            pulumi.set(__self__, "mgmt_vip_hostname", mgmt_vip_hostname)
+            _setter("mgmt_vip_hostname", mgmt_vip_hostname)
         if mgmt_vip_ip is not None:
-            pulumi.set(__self__, "mgmt_vip_ip", mgmt_vip_ip)
+            _setter("mgmt_vip_ip", mgmt_vip_ip)
         if spine_ips is not None:
-            pulumi.set(__self__, "spine_ips", spine_ips)
+            _setter("spine_ips", spine_ips)
         if spine_vip is not None:
-            pulumi.set(__self__, "spine_vip", spine_vip)
+            _setter("spine_vip", spine_vip)
         if uplink_domain is not None:
-            pulumi.set(__self__, "uplink_domain", uplink_domain)
+            _setter("uplink_domain", uplink_domain)
         if uplink_gateway_ip is not None:
-            pulumi.set(__self__, "uplink_gateway_ip", uplink_gateway_ip)
+            _setter("uplink_gateway_ip", uplink_gateway_ip)
         if uplink_netmask is not None:
-            pulumi.set(__self__, "uplink_netmask", uplink_netmask)
+            _setter("uplink_netmask", uplink_netmask)
         if uplink_port_count is not None:
-            pulumi.set(__self__, "uplink_port_count", uplink_port_count)
+            _setter("uplink_port_count", uplink_port_count)
         if uplink_port_forward_error_correction is not None:
-            pulumi.set(__self__, "uplink_port_forward_error_correction", uplink_port_forward_error_correction)
+            _setter("uplink_port_forward_error_correction", uplink_port_forward_error_correction)
         if uplink_port_speed_in_gbps is not None:
-            pulumi.set(__self__, "uplink_port_speed_in_gbps", uplink_port_speed_in_gbps)
+            _setter("uplink_port_speed_in_gbps", uplink_port_speed_in_gbps)
         if uplink_vlan_mtu is not None:
-            pulumi.set(__self__, "uplink_vlan_mtu", uplink_vlan_mtu)
+            _setter("uplink_vlan_mtu", uplink_vlan_mtu)
 
     @property
     @pulumi.getter(name="dnsIps")
@@ -399,12 +497,33 @@ class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructur
         :param int oracle_asn: The Oracle Autonomous System Number (ASN) to control routing and exchange information within the dynamic routing configuration.
         :param Sequence['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgs'] peer_informations: The list of peer devices in the dynamic routing configuration.
         """
+        AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bgp_topology=bgp_topology,
+            oracle_asn=oracle_asn,
+            peer_informations=peer_informations,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bgp_topology: Optional[str] = None,
+             oracle_asn: Optional[int] = None,
+             peer_informations: Optional[Sequence['outputs.AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bgp_topology is None and 'bgpTopology' in kwargs:
+            bgp_topology = kwargs['bgpTopology']
+        if oracle_asn is None and 'oracleAsn' in kwargs:
+            oracle_asn = kwargs['oracleAsn']
+        if peer_informations is None and 'peerInformations' in kwargs:
+            peer_informations = kwargs['peerInformations']
+
         if bgp_topology is not None:
-            pulumi.set(__self__, "bgp_topology", bgp_topology)
+            _setter("bgp_topology", bgp_topology)
         if oracle_asn is not None:
-            pulumi.set(__self__, "oracle_asn", oracle_asn)
+            _setter("oracle_asn", oracle_asn)
         if peer_informations is not None:
-            pulumi.set(__self__, "peer_informations", peer_informations)
+            _setter("peer_informations", peer_informations)
 
     @property
     @pulumi.getter(name="bgpTopology")
@@ -440,10 +559,23 @@ class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructur
         :param int asn: The Autonomous System Number (ASN) of the peer network.
         :param str ip: Address of the management node.
         """
+        AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            asn=asn,
+            ip=ip,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             asn: Optional[int] = None,
+             ip: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if asn is not None:
-            pulumi.set(__self__, "asn", asn)
+            _setter("asn", asn)
         if ip is not None:
-            pulumi.set(__self__, "ip", ip)
+            _setter("ip", ip)
 
     @property
     @pulumi.getter
@@ -490,10 +622,27 @@ class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructur
         :param int uplink_hsrp_group: The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud@Customer infrastructure.
         :param int uplink_vlan: The virtual local area network (VLAN) identifier used to connect to the uplink (only access mode is supported).
         """
+        AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            uplink_hsrp_group=uplink_hsrp_group,
+            uplink_vlan=uplink_vlan,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             uplink_hsrp_group: Optional[int] = None,
+             uplink_vlan: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if uplink_hsrp_group is None and 'uplinkHsrpGroup' in kwargs:
+            uplink_hsrp_group = kwargs['uplinkHsrpGroup']
+        if uplink_vlan is None and 'uplinkVlan' in kwargs:
+            uplink_vlan = kwargs['uplinkVlan']
+
         if uplink_hsrp_group is not None:
-            pulumi.set(__self__, "uplink_hsrp_group", uplink_hsrp_group)
+            _setter("uplink_hsrp_group", uplink_hsrp_group)
         if uplink_vlan is not None:
-            pulumi.set(__self__, "uplink_vlan", uplink_vlan)
+            _setter("uplink_vlan", uplink_vlan)
 
     @property
     @pulumi.getter(name="uplinkHsrpGroup")
@@ -521,10 +670,23 @@ class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNod
         :param str hostname: Hostname for interface to the management node.
         :param str ip: Address of the management node.
         """
+        AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+            ip=ip,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: Optional[str] = None,
+             ip: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if hostname is not None:
-            pulumi.set(__self__, "hostname", hostname)
+            _setter("hostname", hostname)
         if ip is not None:
-            pulumi.set(__self__, "ip", ip)
+            _setter("ip", ip)
 
     @property
     @pulumi.getter
@@ -579,14 +741,39 @@ class AtCustomerCccInfrastructureUpgradeInformation(dict):
         :param str scheduled_upgrade_duration: Expected duration of Compute Cloud@Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
         :param str time_of_scheduled_upgrade: Compute Cloud@Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
         """
+        AtCustomerCccInfrastructureUpgradeInformation._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            current_version=current_version,
+            is_active=is_active,
+            scheduled_upgrade_duration=scheduled_upgrade_duration,
+            time_of_scheduled_upgrade=time_of_scheduled_upgrade,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             current_version: Optional[str] = None,
+             is_active: Optional[bool] = None,
+             scheduled_upgrade_duration: Optional[str] = None,
+             time_of_scheduled_upgrade: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if current_version is None and 'currentVersion' in kwargs:
+            current_version = kwargs['currentVersion']
+        if is_active is None and 'isActive' in kwargs:
+            is_active = kwargs['isActive']
+        if scheduled_upgrade_duration is None and 'scheduledUpgradeDuration' in kwargs:
+            scheduled_upgrade_duration = kwargs['scheduledUpgradeDuration']
+        if time_of_scheduled_upgrade is None and 'timeOfScheduledUpgrade' in kwargs:
+            time_of_scheduled_upgrade = kwargs['timeOfScheduledUpgrade']
+
         if current_version is not None:
-            pulumi.set(__self__, "current_version", current_version)
+            _setter("current_version", current_version)
         if is_active is not None:
-            pulumi.set(__self__, "is_active", is_active)
+            _setter("is_active", is_active)
         if scheduled_upgrade_duration is not None:
-            pulumi.set(__self__, "scheduled_upgrade_duration", scheduled_upgrade_duration)
+            _setter("scheduled_upgrade_duration", scheduled_upgrade_duration)
         if time_of_scheduled_upgrade is not None:
-            pulumi.set(__self__, "time_of_scheduled_upgrade", time_of_scheduled_upgrade)
+            _setter("time_of_scheduled_upgrade", time_of_scheduled_upgrade)
 
     @property
     @pulumi.getter(name="currentVersion")
@@ -657,13 +844,44 @@ class AtCustomerCccUpgradeScheduleEvent(dict):
         :param str name: Generated name associated with the event.
         :param str schedule_event_recurrences: (Updatable) Frequency of recurrence of schedule block. When this field is not included, the event is assumed to be a one time occurrence. The frequency field is strictly parsed and must conform to RFC-5545 formatting for recurrences.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "schedule_event_duration", schedule_event_duration)
-        pulumi.set(__self__, "time_start", time_start)
+        AtCustomerCccUpgradeScheduleEvent._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            schedule_event_duration=schedule_event_duration,
+            time_start=time_start,
+            name=name,
+            schedule_event_recurrences=schedule_event_recurrences,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             schedule_event_duration: Optional[str] = None,
+             time_start: Optional[str] = None,
+             name: Optional[str] = None,
+             schedule_event_recurrences: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if schedule_event_duration is None and 'scheduleEventDuration' in kwargs:
+            schedule_event_duration = kwargs['scheduleEventDuration']
+        if schedule_event_duration is None:
+            raise TypeError("Missing 'schedule_event_duration' argument")
+        if time_start is None and 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+        if time_start is None:
+            raise TypeError("Missing 'time_start' argument")
+        if schedule_event_recurrences is None and 'scheduleEventRecurrences' in kwargs:
+            schedule_event_recurrences = kwargs['scheduleEventRecurrences']
+
+        _setter("description", description)
+        _setter("schedule_event_duration", schedule_event_duration)
+        _setter("time_start", time_start)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if schedule_event_recurrences is not None:
-            pulumi.set(__self__, "schedule_event_recurrences", schedule_event_recurrences)
+            _setter("schedule_event_recurrences", schedule_event_recurrences)
 
     @property
     @pulumi.getter
@@ -721,11 +939,50 @@ class GetAtCustomerCccInfrastructureInfrastructureInventoryResult(dict):
         :param int performance_storage_tray_count: The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for performance storage.
         :param str serial_number: The serial number of the Compute Cloud@Customer infrastructure rack.
         """
-        pulumi.set(__self__, "capacity_storage_tray_count", capacity_storage_tray_count)
-        pulumi.set(__self__, "compute_node_count", compute_node_count)
-        pulumi.set(__self__, "management_node_count", management_node_count)
-        pulumi.set(__self__, "performance_storage_tray_count", performance_storage_tray_count)
-        pulumi.set(__self__, "serial_number", serial_number)
+        GetAtCustomerCccInfrastructureInfrastructureInventoryResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            capacity_storage_tray_count=capacity_storage_tray_count,
+            compute_node_count=compute_node_count,
+            management_node_count=management_node_count,
+            performance_storage_tray_count=performance_storage_tray_count,
+            serial_number=serial_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             capacity_storage_tray_count: Optional[int] = None,
+             compute_node_count: Optional[int] = None,
+             management_node_count: Optional[int] = None,
+             performance_storage_tray_count: Optional[int] = None,
+             serial_number: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if capacity_storage_tray_count is None and 'capacityStorageTrayCount' in kwargs:
+            capacity_storage_tray_count = kwargs['capacityStorageTrayCount']
+        if capacity_storage_tray_count is None:
+            raise TypeError("Missing 'capacity_storage_tray_count' argument")
+        if compute_node_count is None and 'computeNodeCount' in kwargs:
+            compute_node_count = kwargs['computeNodeCount']
+        if compute_node_count is None:
+            raise TypeError("Missing 'compute_node_count' argument")
+        if management_node_count is None and 'managementNodeCount' in kwargs:
+            management_node_count = kwargs['managementNodeCount']
+        if management_node_count is None:
+            raise TypeError("Missing 'management_node_count' argument")
+        if performance_storage_tray_count is None and 'performanceStorageTrayCount' in kwargs:
+            performance_storage_tray_count = kwargs['performanceStorageTrayCount']
+        if performance_storage_tray_count is None:
+            raise TypeError("Missing 'performance_storage_tray_count' argument")
+        if serial_number is None and 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+        if serial_number is None:
+            raise TypeError("Missing 'serial_number' argument")
+
+        _setter("capacity_storage_tray_count", capacity_storage_tray_count)
+        _setter("compute_node_count", compute_node_count)
+        _setter("management_node_count", management_node_count)
+        _setter("performance_storage_tray_count", performance_storage_tray_count)
+        _setter("serial_number", serial_number)
 
     @property
     @pulumi.getter(name="capacityStorageTrayCount")
@@ -803,21 +1060,120 @@ class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationResult(dic
         :param int uplink_port_speed_in_gbps: Uplink port speed defined in gigabytes per second. All uplink ports must have identical speed.
         :param int uplink_vlan_mtu: The virtual local area network (VLAN) maximum transmission unit (MTU) size for the uplink ports.
         """
-        pulumi.set(__self__, "dns_ips", dns_ips)
-        pulumi.set(__self__, "infrastructure_routing_dynamics", infrastructure_routing_dynamics)
-        pulumi.set(__self__, "infrastructure_routing_statics", infrastructure_routing_statics)
-        pulumi.set(__self__, "management_nodes", management_nodes)
-        pulumi.set(__self__, "mgmt_vip_hostname", mgmt_vip_hostname)
-        pulumi.set(__self__, "mgmt_vip_ip", mgmt_vip_ip)
-        pulumi.set(__self__, "spine_ips", spine_ips)
-        pulumi.set(__self__, "spine_vip", spine_vip)
-        pulumi.set(__self__, "uplink_domain", uplink_domain)
-        pulumi.set(__self__, "uplink_gateway_ip", uplink_gateway_ip)
-        pulumi.set(__self__, "uplink_netmask", uplink_netmask)
-        pulumi.set(__self__, "uplink_port_count", uplink_port_count)
-        pulumi.set(__self__, "uplink_port_forward_error_correction", uplink_port_forward_error_correction)
-        pulumi.set(__self__, "uplink_port_speed_in_gbps", uplink_port_speed_in_gbps)
-        pulumi.set(__self__, "uplink_vlan_mtu", uplink_vlan_mtu)
+        GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dns_ips=dns_ips,
+            infrastructure_routing_dynamics=infrastructure_routing_dynamics,
+            infrastructure_routing_statics=infrastructure_routing_statics,
+            management_nodes=management_nodes,
+            mgmt_vip_hostname=mgmt_vip_hostname,
+            mgmt_vip_ip=mgmt_vip_ip,
+            spine_ips=spine_ips,
+            spine_vip=spine_vip,
+            uplink_domain=uplink_domain,
+            uplink_gateway_ip=uplink_gateway_ip,
+            uplink_netmask=uplink_netmask,
+            uplink_port_count=uplink_port_count,
+            uplink_port_forward_error_correction=uplink_port_forward_error_correction,
+            uplink_port_speed_in_gbps=uplink_port_speed_in_gbps,
+            uplink_vlan_mtu=uplink_vlan_mtu,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dns_ips: Optional[Sequence[str]] = None,
+             infrastructure_routing_dynamics: Optional[Sequence['outputs.GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicResult']] = None,
+             infrastructure_routing_statics: Optional[Sequence['outputs.GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticResult']] = None,
+             management_nodes: Optional[Sequence['outputs.GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeResult']] = None,
+             mgmt_vip_hostname: Optional[str] = None,
+             mgmt_vip_ip: Optional[str] = None,
+             spine_ips: Optional[Sequence[str]] = None,
+             spine_vip: Optional[str] = None,
+             uplink_domain: Optional[str] = None,
+             uplink_gateway_ip: Optional[str] = None,
+             uplink_netmask: Optional[str] = None,
+             uplink_port_count: Optional[int] = None,
+             uplink_port_forward_error_correction: Optional[str] = None,
+             uplink_port_speed_in_gbps: Optional[int] = None,
+             uplink_vlan_mtu: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if dns_ips is None and 'dnsIps' in kwargs:
+            dns_ips = kwargs['dnsIps']
+        if dns_ips is None:
+            raise TypeError("Missing 'dns_ips' argument")
+        if infrastructure_routing_dynamics is None and 'infrastructureRoutingDynamics' in kwargs:
+            infrastructure_routing_dynamics = kwargs['infrastructureRoutingDynamics']
+        if infrastructure_routing_dynamics is None:
+            raise TypeError("Missing 'infrastructure_routing_dynamics' argument")
+        if infrastructure_routing_statics is None and 'infrastructureRoutingStatics' in kwargs:
+            infrastructure_routing_statics = kwargs['infrastructureRoutingStatics']
+        if infrastructure_routing_statics is None:
+            raise TypeError("Missing 'infrastructure_routing_statics' argument")
+        if management_nodes is None and 'managementNodes' in kwargs:
+            management_nodes = kwargs['managementNodes']
+        if management_nodes is None:
+            raise TypeError("Missing 'management_nodes' argument")
+        if mgmt_vip_hostname is None and 'mgmtVipHostname' in kwargs:
+            mgmt_vip_hostname = kwargs['mgmtVipHostname']
+        if mgmt_vip_hostname is None:
+            raise TypeError("Missing 'mgmt_vip_hostname' argument")
+        if mgmt_vip_ip is None and 'mgmtVipIp' in kwargs:
+            mgmt_vip_ip = kwargs['mgmtVipIp']
+        if mgmt_vip_ip is None:
+            raise TypeError("Missing 'mgmt_vip_ip' argument")
+        if spine_ips is None and 'spineIps' in kwargs:
+            spine_ips = kwargs['spineIps']
+        if spine_ips is None:
+            raise TypeError("Missing 'spine_ips' argument")
+        if spine_vip is None and 'spineVip' in kwargs:
+            spine_vip = kwargs['spineVip']
+        if spine_vip is None:
+            raise TypeError("Missing 'spine_vip' argument")
+        if uplink_domain is None and 'uplinkDomain' in kwargs:
+            uplink_domain = kwargs['uplinkDomain']
+        if uplink_domain is None:
+            raise TypeError("Missing 'uplink_domain' argument")
+        if uplink_gateway_ip is None and 'uplinkGatewayIp' in kwargs:
+            uplink_gateway_ip = kwargs['uplinkGatewayIp']
+        if uplink_gateway_ip is None:
+            raise TypeError("Missing 'uplink_gateway_ip' argument")
+        if uplink_netmask is None and 'uplinkNetmask' in kwargs:
+            uplink_netmask = kwargs['uplinkNetmask']
+        if uplink_netmask is None:
+            raise TypeError("Missing 'uplink_netmask' argument")
+        if uplink_port_count is None and 'uplinkPortCount' in kwargs:
+            uplink_port_count = kwargs['uplinkPortCount']
+        if uplink_port_count is None:
+            raise TypeError("Missing 'uplink_port_count' argument")
+        if uplink_port_forward_error_correction is None and 'uplinkPortForwardErrorCorrection' in kwargs:
+            uplink_port_forward_error_correction = kwargs['uplinkPortForwardErrorCorrection']
+        if uplink_port_forward_error_correction is None:
+            raise TypeError("Missing 'uplink_port_forward_error_correction' argument")
+        if uplink_port_speed_in_gbps is None and 'uplinkPortSpeedInGbps' in kwargs:
+            uplink_port_speed_in_gbps = kwargs['uplinkPortSpeedInGbps']
+        if uplink_port_speed_in_gbps is None:
+            raise TypeError("Missing 'uplink_port_speed_in_gbps' argument")
+        if uplink_vlan_mtu is None and 'uplinkVlanMtu' in kwargs:
+            uplink_vlan_mtu = kwargs['uplinkVlanMtu']
+        if uplink_vlan_mtu is None:
+            raise TypeError("Missing 'uplink_vlan_mtu' argument")
+
+        _setter("dns_ips", dns_ips)
+        _setter("infrastructure_routing_dynamics", infrastructure_routing_dynamics)
+        _setter("infrastructure_routing_statics", infrastructure_routing_statics)
+        _setter("management_nodes", management_nodes)
+        _setter("mgmt_vip_hostname", mgmt_vip_hostname)
+        _setter("mgmt_vip_ip", mgmt_vip_ip)
+        _setter("spine_ips", spine_ips)
+        _setter("spine_vip", spine_vip)
+        _setter("uplink_domain", uplink_domain)
+        _setter("uplink_gateway_ip", uplink_gateway_ip)
+        _setter("uplink_netmask", uplink_netmask)
+        _setter("uplink_port_count", uplink_port_count)
+        _setter("uplink_port_forward_error_correction", uplink_port_forward_error_correction)
+        _setter("uplink_port_speed_in_gbps", uplink_port_speed_in_gbps)
+        _setter("uplink_vlan_mtu", uplink_vlan_mtu)
 
     @property
     @pulumi.getter(name="dnsIps")
@@ -951,9 +1307,36 @@ class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruc
         :param int oracle_asn: The Oracle Autonomous System Number (ASN) to control routing and exchange information within the dynamic routing configuration.
         :param Sequence['GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgs'] peer_informations: The list of peer devices in the dynamic routing configuration.
         """
-        pulumi.set(__self__, "bgp_topology", bgp_topology)
-        pulumi.set(__self__, "oracle_asn", oracle_asn)
-        pulumi.set(__self__, "peer_informations", peer_informations)
+        GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bgp_topology=bgp_topology,
+            oracle_asn=oracle_asn,
+            peer_informations=peer_informations,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bgp_topology: Optional[str] = None,
+             oracle_asn: Optional[int] = None,
+             peer_informations: Optional[Sequence['outputs.GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bgp_topology is None and 'bgpTopology' in kwargs:
+            bgp_topology = kwargs['bgpTopology']
+        if bgp_topology is None:
+            raise TypeError("Missing 'bgp_topology' argument")
+        if oracle_asn is None and 'oracleAsn' in kwargs:
+            oracle_asn = kwargs['oracleAsn']
+        if oracle_asn is None:
+            raise TypeError("Missing 'oracle_asn' argument")
+        if peer_informations is None and 'peerInformations' in kwargs:
+            peer_informations = kwargs['peerInformations']
+        if peer_informations is None:
+            raise TypeError("Missing 'peer_informations' argument")
+
+        _setter("bgp_topology", bgp_topology)
+        _setter("oracle_asn", oracle_asn)
+        _setter("peer_informations", peer_informations)
 
     @property
     @pulumi.getter(name="bgpTopology")
@@ -989,8 +1372,25 @@ class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruc
         :param int asn: The Autonomous System Number (ASN) of the peer network.
         :param str ip: Address of the management node.
         """
-        pulumi.set(__self__, "asn", asn)
-        pulumi.set(__self__, "ip", ip)
+        GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            asn=asn,
+            ip=ip,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             asn: Optional[int] = None,
+             ip: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if asn is None:
+            raise TypeError("Missing 'asn' argument")
+        if ip is None:
+            raise TypeError("Missing 'ip' argument")
+
+        _setter("asn", asn)
+        _setter("ip", ip)
 
     @property
     @pulumi.getter
@@ -1018,8 +1418,29 @@ class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruc
         :param int uplink_hsrp_group: The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud@Customer infrastructure.
         :param int uplink_vlan: The virtual local area network (VLAN) identifier used to connect to the uplink (only access mode is supported).
         """
-        pulumi.set(__self__, "uplink_hsrp_group", uplink_hsrp_group)
-        pulumi.set(__self__, "uplink_vlan", uplink_vlan)
+        GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            uplink_hsrp_group=uplink_hsrp_group,
+            uplink_vlan=uplink_vlan,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             uplink_hsrp_group: Optional[int] = None,
+             uplink_vlan: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if uplink_hsrp_group is None and 'uplinkHsrpGroup' in kwargs:
+            uplink_hsrp_group = kwargs['uplinkHsrpGroup']
+        if uplink_hsrp_group is None:
+            raise TypeError("Missing 'uplink_hsrp_group' argument")
+        if uplink_vlan is None and 'uplinkVlan' in kwargs:
+            uplink_vlan = kwargs['uplinkVlan']
+        if uplink_vlan is None:
+            raise TypeError("Missing 'uplink_vlan' argument")
+
+        _setter("uplink_hsrp_group", uplink_hsrp_group)
+        _setter("uplink_vlan", uplink_vlan)
 
     @property
     @pulumi.getter(name="uplinkHsrpGroup")
@@ -1047,8 +1468,25 @@ class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagement
         :param str hostname: Hostname for interface to the management node.
         :param str ip: Address of the management node.
         """
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "ip", ip)
+        GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+            ip=ip,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: Optional[str] = None,
+             ip: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if ip is None:
+            raise TypeError("Missing 'ip' argument")
+
+        _setter("hostname", hostname)
+        _setter("ip", ip)
 
     @property
     @pulumi.getter
@@ -1080,10 +1518,43 @@ class GetAtCustomerCccInfrastructureUpgradeInformationResult(dict):
         :param str scheduled_upgrade_duration: Expected duration of Compute Cloud@Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
         :param str time_of_scheduled_upgrade: Compute Cloud@Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
         """
-        pulumi.set(__self__, "current_version", current_version)
-        pulumi.set(__self__, "is_active", is_active)
-        pulumi.set(__self__, "scheduled_upgrade_duration", scheduled_upgrade_duration)
-        pulumi.set(__self__, "time_of_scheduled_upgrade", time_of_scheduled_upgrade)
+        GetAtCustomerCccInfrastructureUpgradeInformationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            current_version=current_version,
+            is_active=is_active,
+            scheduled_upgrade_duration=scheduled_upgrade_duration,
+            time_of_scheduled_upgrade=time_of_scheduled_upgrade,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             current_version: Optional[str] = None,
+             is_active: Optional[bool] = None,
+             scheduled_upgrade_duration: Optional[str] = None,
+             time_of_scheduled_upgrade: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if current_version is None and 'currentVersion' in kwargs:
+            current_version = kwargs['currentVersion']
+        if current_version is None:
+            raise TypeError("Missing 'current_version' argument")
+        if is_active is None and 'isActive' in kwargs:
+            is_active = kwargs['isActive']
+        if is_active is None:
+            raise TypeError("Missing 'is_active' argument")
+        if scheduled_upgrade_duration is None and 'scheduledUpgradeDuration' in kwargs:
+            scheduled_upgrade_duration = kwargs['scheduledUpgradeDuration']
+        if scheduled_upgrade_duration is None:
+            raise TypeError("Missing 'scheduled_upgrade_duration' argument")
+        if time_of_scheduled_upgrade is None and 'timeOfScheduledUpgrade' in kwargs:
+            time_of_scheduled_upgrade = kwargs['timeOfScheduledUpgrade']
+        if time_of_scheduled_upgrade is None:
+            raise TypeError("Missing 'time_of_scheduled_upgrade' argument")
+
+        _setter("current_version", current_version)
+        _setter("is_active", is_active)
+        _setter("scheduled_upgrade_duration", scheduled_upgrade_duration)
+        _setter("time_of_scheduled_upgrade", time_of_scheduled_upgrade)
 
     @property
     @pulumi.getter(name="currentVersion")
@@ -1122,7 +1593,20 @@ class GetAtCustomerCccInfrastructureUpgradeInformationResult(dict):
 class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetAtCustomerCccInfrastructuresCccInfrastructureCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1177,27 +1661,156 @@ class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemResult(dict)
         :param str time_updated: Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
         :param Sequence['GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationArgs'] upgrade_informations: Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
         """
-        pulumi.set(__self__, "ccc_upgrade_schedule_id", ccc_upgrade_schedule_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "connection_details", connection_details)
-        pulumi.set(__self__, "connection_state", connection_state)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "infrastructure_inventories", infrastructure_inventories)
-        pulumi.set(__self__, "infrastructure_network_configurations", infrastructure_network_configurations)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "provisioning_fingerprint", provisioning_fingerprint)
-        pulumi.set(__self__, "provisioning_pin", provisioning_pin)
-        pulumi.set(__self__, "short_name", short_name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "upgrade_informations", upgrade_informations)
+        GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ccc_upgrade_schedule_id=ccc_upgrade_schedule_id,
+            compartment_id=compartment_id,
+            connection_details=connection_details,
+            connection_state=connection_state,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            infrastructure_inventories=infrastructure_inventories,
+            infrastructure_network_configurations=infrastructure_network_configurations,
+            lifecycle_details=lifecycle_details,
+            provisioning_fingerprint=provisioning_fingerprint,
+            provisioning_pin=provisioning_pin,
+            short_name=short_name,
+            state=state,
+            subnet_id=subnet_id,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            upgrade_informations=upgrade_informations,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ccc_upgrade_schedule_id: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             connection_details: Optional[str] = None,
+             connection_state: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             infrastructure_inventories: Optional[Sequence['outputs.GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryResult']] = None,
+             infrastructure_network_configurations: Optional[Sequence['outputs.GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationResult']] = None,
+             lifecycle_details: Optional[str] = None,
+             provisioning_fingerprint: Optional[str] = None,
+             provisioning_pin: Optional[str] = None,
+             short_name: Optional[str] = None,
+             state: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             upgrade_informations: Optional[Sequence['outputs.GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if ccc_upgrade_schedule_id is None and 'cccUpgradeScheduleId' in kwargs:
+            ccc_upgrade_schedule_id = kwargs['cccUpgradeScheduleId']
+        if ccc_upgrade_schedule_id is None:
+            raise TypeError("Missing 'ccc_upgrade_schedule_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if connection_details is None and 'connectionDetails' in kwargs:
+            connection_details = kwargs['connectionDetails']
+        if connection_details is None:
+            raise TypeError("Missing 'connection_details' argument")
+        if connection_state is None and 'connectionState' in kwargs:
+            connection_state = kwargs['connectionState']
+        if connection_state is None:
+            raise TypeError("Missing 'connection_state' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if infrastructure_inventories is None and 'infrastructureInventories' in kwargs:
+            infrastructure_inventories = kwargs['infrastructureInventories']
+        if infrastructure_inventories is None:
+            raise TypeError("Missing 'infrastructure_inventories' argument")
+        if infrastructure_network_configurations is None and 'infrastructureNetworkConfigurations' in kwargs:
+            infrastructure_network_configurations = kwargs['infrastructureNetworkConfigurations']
+        if infrastructure_network_configurations is None:
+            raise TypeError("Missing 'infrastructure_network_configurations' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if provisioning_fingerprint is None and 'provisioningFingerprint' in kwargs:
+            provisioning_fingerprint = kwargs['provisioningFingerprint']
+        if provisioning_fingerprint is None:
+            raise TypeError("Missing 'provisioning_fingerprint' argument")
+        if provisioning_pin is None and 'provisioningPin' in kwargs:
+            provisioning_pin = kwargs['provisioningPin']
+        if provisioning_pin is None:
+            raise TypeError("Missing 'provisioning_pin' argument")
+        if short_name is None and 'shortName' in kwargs:
+            short_name = kwargs['shortName']
+        if short_name is None:
+            raise TypeError("Missing 'short_name' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if upgrade_informations is None and 'upgradeInformations' in kwargs:
+            upgrade_informations = kwargs['upgradeInformations']
+        if upgrade_informations is None:
+            raise TypeError("Missing 'upgrade_informations' argument")
+
+        _setter("ccc_upgrade_schedule_id", ccc_upgrade_schedule_id)
+        _setter("compartment_id", compartment_id)
+        _setter("connection_details", connection_details)
+        _setter("connection_state", connection_state)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("infrastructure_inventories", infrastructure_inventories)
+        _setter("infrastructure_network_configurations", infrastructure_network_configurations)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("provisioning_fingerprint", provisioning_fingerprint)
+        _setter("provisioning_pin", provisioning_pin)
+        _setter("short_name", short_name)
+        _setter("state", state)
+        _setter("subnet_id", subnet_id)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("upgrade_informations", upgrade_informations)
 
     @property
     @pulumi.getter(name="cccUpgradeScheduleId")
@@ -1383,11 +1996,50 @@ class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructu
         :param int performance_storage_tray_count: The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for performance storage.
         :param str serial_number: The serial number of the Compute Cloud@Customer infrastructure rack.
         """
-        pulumi.set(__self__, "capacity_storage_tray_count", capacity_storage_tray_count)
-        pulumi.set(__self__, "compute_node_count", compute_node_count)
-        pulumi.set(__self__, "management_node_count", management_node_count)
-        pulumi.set(__self__, "performance_storage_tray_count", performance_storage_tray_count)
-        pulumi.set(__self__, "serial_number", serial_number)
+        GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            capacity_storage_tray_count=capacity_storage_tray_count,
+            compute_node_count=compute_node_count,
+            management_node_count=management_node_count,
+            performance_storage_tray_count=performance_storage_tray_count,
+            serial_number=serial_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             capacity_storage_tray_count: Optional[int] = None,
+             compute_node_count: Optional[int] = None,
+             management_node_count: Optional[int] = None,
+             performance_storage_tray_count: Optional[int] = None,
+             serial_number: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if capacity_storage_tray_count is None and 'capacityStorageTrayCount' in kwargs:
+            capacity_storage_tray_count = kwargs['capacityStorageTrayCount']
+        if capacity_storage_tray_count is None:
+            raise TypeError("Missing 'capacity_storage_tray_count' argument")
+        if compute_node_count is None and 'computeNodeCount' in kwargs:
+            compute_node_count = kwargs['computeNodeCount']
+        if compute_node_count is None:
+            raise TypeError("Missing 'compute_node_count' argument")
+        if management_node_count is None and 'managementNodeCount' in kwargs:
+            management_node_count = kwargs['managementNodeCount']
+        if management_node_count is None:
+            raise TypeError("Missing 'management_node_count' argument")
+        if performance_storage_tray_count is None and 'performanceStorageTrayCount' in kwargs:
+            performance_storage_tray_count = kwargs['performanceStorageTrayCount']
+        if performance_storage_tray_count is None:
+            raise TypeError("Missing 'performance_storage_tray_count' argument")
+        if serial_number is None and 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+        if serial_number is None:
+            raise TypeError("Missing 'serial_number' argument")
+
+        _setter("capacity_storage_tray_count", capacity_storage_tray_count)
+        _setter("compute_node_count", compute_node_count)
+        _setter("management_node_count", management_node_count)
+        _setter("performance_storage_tray_count", performance_storage_tray_count)
+        _setter("serial_number", serial_number)
 
     @property
     @pulumi.getter(name="capacityStorageTrayCount")
@@ -1465,21 +2117,120 @@ class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructu
         :param int uplink_port_speed_in_gbps: Uplink port speed defined in gigabytes per second. All uplink ports must have identical speed.
         :param int uplink_vlan_mtu: The virtual local area network (VLAN) maximum transmission unit (MTU) size for the uplink ports.
         """
-        pulumi.set(__self__, "dns_ips", dns_ips)
-        pulumi.set(__self__, "infrastructure_routing_dynamics", infrastructure_routing_dynamics)
-        pulumi.set(__self__, "infrastructure_routing_statics", infrastructure_routing_statics)
-        pulumi.set(__self__, "management_nodes", management_nodes)
-        pulumi.set(__self__, "mgmt_vip_hostname", mgmt_vip_hostname)
-        pulumi.set(__self__, "mgmt_vip_ip", mgmt_vip_ip)
-        pulumi.set(__self__, "spine_ips", spine_ips)
-        pulumi.set(__self__, "spine_vip", spine_vip)
-        pulumi.set(__self__, "uplink_domain", uplink_domain)
-        pulumi.set(__self__, "uplink_gateway_ip", uplink_gateway_ip)
-        pulumi.set(__self__, "uplink_netmask", uplink_netmask)
-        pulumi.set(__self__, "uplink_port_count", uplink_port_count)
-        pulumi.set(__self__, "uplink_port_forward_error_correction", uplink_port_forward_error_correction)
-        pulumi.set(__self__, "uplink_port_speed_in_gbps", uplink_port_speed_in_gbps)
-        pulumi.set(__self__, "uplink_vlan_mtu", uplink_vlan_mtu)
+        GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dns_ips=dns_ips,
+            infrastructure_routing_dynamics=infrastructure_routing_dynamics,
+            infrastructure_routing_statics=infrastructure_routing_statics,
+            management_nodes=management_nodes,
+            mgmt_vip_hostname=mgmt_vip_hostname,
+            mgmt_vip_ip=mgmt_vip_ip,
+            spine_ips=spine_ips,
+            spine_vip=spine_vip,
+            uplink_domain=uplink_domain,
+            uplink_gateway_ip=uplink_gateway_ip,
+            uplink_netmask=uplink_netmask,
+            uplink_port_count=uplink_port_count,
+            uplink_port_forward_error_correction=uplink_port_forward_error_correction,
+            uplink_port_speed_in_gbps=uplink_port_speed_in_gbps,
+            uplink_vlan_mtu=uplink_vlan_mtu,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dns_ips: Optional[Sequence[str]] = None,
+             infrastructure_routing_dynamics: Optional[Sequence['outputs.GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicResult']] = None,
+             infrastructure_routing_statics: Optional[Sequence['outputs.GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticResult']] = None,
+             management_nodes: Optional[Sequence['outputs.GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeResult']] = None,
+             mgmt_vip_hostname: Optional[str] = None,
+             mgmt_vip_ip: Optional[str] = None,
+             spine_ips: Optional[Sequence[str]] = None,
+             spine_vip: Optional[str] = None,
+             uplink_domain: Optional[str] = None,
+             uplink_gateway_ip: Optional[str] = None,
+             uplink_netmask: Optional[str] = None,
+             uplink_port_count: Optional[int] = None,
+             uplink_port_forward_error_correction: Optional[str] = None,
+             uplink_port_speed_in_gbps: Optional[int] = None,
+             uplink_vlan_mtu: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if dns_ips is None and 'dnsIps' in kwargs:
+            dns_ips = kwargs['dnsIps']
+        if dns_ips is None:
+            raise TypeError("Missing 'dns_ips' argument")
+        if infrastructure_routing_dynamics is None and 'infrastructureRoutingDynamics' in kwargs:
+            infrastructure_routing_dynamics = kwargs['infrastructureRoutingDynamics']
+        if infrastructure_routing_dynamics is None:
+            raise TypeError("Missing 'infrastructure_routing_dynamics' argument")
+        if infrastructure_routing_statics is None and 'infrastructureRoutingStatics' in kwargs:
+            infrastructure_routing_statics = kwargs['infrastructureRoutingStatics']
+        if infrastructure_routing_statics is None:
+            raise TypeError("Missing 'infrastructure_routing_statics' argument")
+        if management_nodes is None and 'managementNodes' in kwargs:
+            management_nodes = kwargs['managementNodes']
+        if management_nodes is None:
+            raise TypeError("Missing 'management_nodes' argument")
+        if mgmt_vip_hostname is None and 'mgmtVipHostname' in kwargs:
+            mgmt_vip_hostname = kwargs['mgmtVipHostname']
+        if mgmt_vip_hostname is None:
+            raise TypeError("Missing 'mgmt_vip_hostname' argument")
+        if mgmt_vip_ip is None and 'mgmtVipIp' in kwargs:
+            mgmt_vip_ip = kwargs['mgmtVipIp']
+        if mgmt_vip_ip is None:
+            raise TypeError("Missing 'mgmt_vip_ip' argument")
+        if spine_ips is None and 'spineIps' in kwargs:
+            spine_ips = kwargs['spineIps']
+        if spine_ips is None:
+            raise TypeError("Missing 'spine_ips' argument")
+        if spine_vip is None and 'spineVip' in kwargs:
+            spine_vip = kwargs['spineVip']
+        if spine_vip is None:
+            raise TypeError("Missing 'spine_vip' argument")
+        if uplink_domain is None and 'uplinkDomain' in kwargs:
+            uplink_domain = kwargs['uplinkDomain']
+        if uplink_domain is None:
+            raise TypeError("Missing 'uplink_domain' argument")
+        if uplink_gateway_ip is None and 'uplinkGatewayIp' in kwargs:
+            uplink_gateway_ip = kwargs['uplinkGatewayIp']
+        if uplink_gateway_ip is None:
+            raise TypeError("Missing 'uplink_gateway_ip' argument")
+        if uplink_netmask is None and 'uplinkNetmask' in kwargs:
+            uplink_netmask = kwargs['uplinkNetmask']
+        if uplink_netmask is None:
+            raise TypeError("Missing 'uplink_netmask' argument")
+        if uplink_port_count is None and 'uplinkPortCount' in kwargs:
+            uplink_port_count = kwargs['uplinkPortCount']
+        if uplink_port_count is None:
+            raise TypeError("Missing 'uplink_port_count' argument")
+        if uplink_port_forward_error_correction is None and 'uplinkPortForwardErrorCorrection' in kwargs:
+            uplink_port_forward_error_correction = kwargs['uplinkPortForwardErrorCorrection']
+        if uplink_port_forward_error_correction is None:
+            raise TypeError("Missing 'uplink_port_forward_error_correction' argument")
+        if uplink_port_speed_in_gbps is None and 'uplinkPortSpeedInGbps' in kwargs:
+            uplink_port_speed_in_gbps = kwargs['uplinkPortSpeedInGbps']
+        if uplink_port_speed_in_gbps is None:
+            raise TypeError("Missing 'uplink_port_speed_in_gbps' argument")
+        if uplink_vlan_mtu is None and 'uplinkVlanMtu' in kwargs:
+            uplink_vlan_mtu = kwargs['uplinkVlanMtu']
+        if uplink_vlan_mtu is None:
+            raise TypeError("Missing 'uplink_vlan_mtu' argument")
+
+        _setter("dns_ips", dns_ips)
+        _setter("infrastructure_routing_dynamics", infrastructure_routing_dynamics)
+        _setter("infrastructure_routing_statics", infrastructure_routing_statics)
+        _setter("management_nodes", management_nodes)
+        _setter("mgmt_vip_hostname", mgmt_vip_hostname)
+        _setter("mgmt_vip_ip", mgmt_vip_ip)
+        _setter("spine_ips", spine_ips)
+        _setter("spine_vip", spine_vip)
+        _setter("uplink_domain", uplink_domain)
+        _setter("uplink_gateway_ip", uplink_gateway_ip)
+        _setter("uplink_netmask", uplink_netmask)
+        _setter("uplink_port_count", uplink_port_count)
+        _setter("uplink_port_forward_error_correction", uplink_port_forward_error_correction)
+        _setter("uplink_port_speed_in_gbps", uplink_port_speed_in_gbps)
+        _setter("uplink_vlan_mtu", uplink_vlan_mtu)
 
     @property
     @pulumi.getter(name="dnsIps")
@@ -1613,9 +2364,36 @@ class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructu
         :param int oracle_asn: The Oracle Autonomous System Number (ASN) to control routing and exchange information within the dynamic routing configuration.
         :param Sequence['GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgs'] peer_informations: The list of peer devices in the dynamic routing configuration.
         """
-        pulumi.set(__self__, "bgp_topology", bgp_topology)
-        pulumi.set(__self__, "oracle_asn", oracle_asn)
-        pulumi.set(__self__, "peer_informations", peer_informations)
+        GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bgp_topology=bgp_topology,
+            oracle_asn=oracle_asn,
+            peer_informations=peer_informations,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bgp_topology: Optional[str] = None,
+             oracle_asn: Optional[int] = None,
+             peer_informations: Optional[Sequence['outputs.GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bgp_topology is None and 'bgpTopology' in kwargs:
+            bgp_topology = kwargs['bgpTopology']
+        if bgp_topology is None:
+            raise TypeError("Missing 'bgp_topology' argument")
+        if oracle_asn is None and 'oracleAsn' in kwargs:
+            oracle_asn = kwargs['oracleAsn']
+        if oracle_asn is None:
+            raise TypeError("Missing 'oracle_asn' argument")
+        if peer_informations is None and 'peerInformations' in kwargs:
+            peer_informations = kwargs['peerInformations']
+        if peer_informations is None:
+            raise TypeError("Missing 'peer_informations' argument")
+
+        _setter("bgp_topology", bgp_topology)
+        _setter("oracle_asn", oracle_asn)
+        _setter("peer_informations", peer_informations)
 
     @property
     @pulumi.getter(name="bgpTopology")
@@ -1651,8 +2429,25 @@ class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructu
         :param int asn: The Autonomous System Number (ASN) of the peer network.
         :param str ip: Address of the management node.
         """
-        pulumi.set(__self__, "asn", asn)
-        pulumi.set(__self__, "ip", ip)
+        GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            asn=asn,
+            ip=ip,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             asn: Optional[int] = None,
+             ip: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if asn is None:
+            raise TypeError("Missing 'asn' argument")
+        if ip is None:
+            raise TypeError("Missing 'ip' argument")
+
+        _setter("asn", asn)
+        _setter("ip", ip)
 
     @property
     @pulumi.getter
@@ -1680,8 +2475,29 @@ class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructu
         :param int uplink_hsrp_group: The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud@Customer infrastructure.
         :param int uplink_vlan: The virtual local area network (VLAN) identifier used to connect to the uplink (only access mode is supported).
         """
-        pulumi.set(__self__, "uplink_hsrp_group", uplink_hsrp_group)
-        pulumi.set(__self__, "uplink_vlan", uplink_vlan)
+        GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            uplink_hsrp_group=uplink_hsrp_group,
+            uplink_vlan=uplink_vlan,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             uplink_hsrp_group: Optional[int] = None,
+             uplink_vlan: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if uplink_hsrp_group is None and 'uplinkHsrpGroup' in kwargs:
+            uplink_hsrp_group = kwargs['uplinkHsrpGroup']
+        if uplink_hsrp_group is None:
+            raise TypeError("Missing 'uplink_hsrp_group' argument")
+        if uplink_vlan is None and 'uplinkVlan' in kwargs:
+            uplink_vlan = kwargs['uplinkVlan']
+        if uplink_vlan is None:
+            raise TypeError("Missing 'uplink_vlan' argument")
+
+        _setter("uplink_hsrp_group", uplink_hsrp_group)
+        _setter("uplink_vlan", uplink_vlan)
 
     @property
     @pulumi.getter(name="uplinkHsrpGroup")
@@ -1709,8 +2525,25 @@ class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructu
         :param str hostname: Hostname for interface to the management node.
         :param str ip: Address of the management node.
         """
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "ip", ip)
+        GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+            ip=ip,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: Optional[str] = None,
+             ip: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if ip is None:
+            raise TypeError("Missing 'ip' argument")
+
+        _setter("hostname", hostname)
+        _setter("ip", ip)
 
     @property
     @pulumi.getter
@@ -1742,10 +2575,43 @@ class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInfor
         :param str scheduled_upgrade_duration: Expected duration of Compute Cloud@Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
         :param str time_of_scheduled_upgrade: Compute Cloud@Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
         """
-        pulumi.set(__self__, "current_version", current_version)
-        pulumi.set(__self__, "is_active", is_active)
-        pulumi.set(__self__, "scheduled_upgrade_duration", scheduled_upgrade_duration)
-        pulumi.set(__self__, "time_of_scheduled_upgrade", time_of_scheduled_upgrade)
+        GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            current_version=current_version,
+            is_active=is_active,
+            scheduled_upgrade_duration=scheduled_upgrade_duration,
+            time_of_scheduled_upgrade=time_of_scheduled_upgrade,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             current_version: Optional[str] = None,
+             is_active: Optional[bool] = None,
+             scheduled_upgrade_duration: Optional[str] = None,
+             time_of_scheduled_upgrade: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if current_version is None and 'currentVersion' in kwargs:
+            current_version = kwargs['currentVersion']
+        if current_version is None:
+            raise TypeError("Missing 'current_version' argument")
+        if is_active is None and 'isActive' in kwargs:
+            is_active = kwargs['isActive']
+        if is_active is None:
+            raise TypeError("Missing 'is_active' argument")
+        if scheduled_upgrade_duration is None and 'scheduledUpgradeDuration' in kwargs:
+            scheduled_upgrade_duration = kwargs['scheduledUpgradeDuration']
+        if scheduled_upgrade_duration is None:
+            raise TypeError("Missing 'scheduled_upgrade_duration' argument")
+        if time_of_scheduled_upgrade is None and 'timeOfScheduledUpgrade' in kwargs:
+            time_of_scheduled_upgrade = kwargs['timeOfScheduledUpgrade']
+        if time_of_scheduled_upgrade is None:
+            raise TypeError("Missing 'time_of_scheduled_upgrade' argument")
+
+        _setter("current_version", current_version)
+        _setter("is_active", is_active)
+        _setter("scheduled_upgrade_duration", scheduled_upgrade_duration)
+        _setter("time_of_scheduled_upgrade", time_of_scheduled_upgrade)
 
     @property
     @pulumi.getter(name="currentVersion")
@@ -1786,10 +2652,29 @@ class GetAtCustomerCccInfrastructuresFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAtCustomerCccInfrastructuresFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1822,11 +2707,46 @@ class GetAtCustomerCccUpgradeScheduleEventResult(dict):
         :param str schedule_event_recurrences: Frequency of recurrence of schedule block. When this field is not included, the event is assumed to be a one time occurrence. The frequency field is strictly parsed and must conform to RFC-5545 formatting for recurrences.
         :param str time_start: The date and time when the Compute Cloud@Customer upgrade schedule event starts, inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences, this is the date that a recurrence can start being applied.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "schedule_event_duration", schedule_event_duration)
-        pulumi.set(__self__, "schedule_event_recurrences", schedule_event_recurrences)
-        pulumi.set(__self__, "time_start", time_start)
+        GetAtCustomerCccUpgradeScheduleEventResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            name=name,
+            schedule_event_duration=schedule_event_duration,
+            schedule_event_recurrences=schedule_event_recurrences,
+            time_start=time_start,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             name: Optional[str] = None,
+             schedule_event_duration: Optional[str] = None,
+             schedule_event_recurrences: Optional[str] = None,
+             time_start: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if schedule_event_duration is None and 'scheduleEventDuration' in kwargs:
+            schedule_event_duration = kwargs['scheduleEventDuration']
+        if schedule_event_duration is None:
+            raise TypeError("Missing 'schedule_event_duration' argument")
+        if schedule_event_recurrences is None and 'scheduleEventRecurrences' in kwargs:
+            schedule_event_recurrences = kwargs['scheduleEventRecurrences']
+        if schedule_event_recurrences is None:
+            raise TypeError("Missing 'schedule_event_recurrences' argument")
+        if time_start is None and 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+        if time_start is None:
+            raise TypeError("Missing 'time_start' argument")
+
+        _setter("description", description)
+        _setter("name", name)
+        _setter("schedule_event_duration", schedule_event_duration)
+        _setter("schedule_event_recurrences", schedule_event_recurrences)
+        _setter("time_start", time_start)
 
     @property
     @pulumi.getter
@@ -1873,7 +2793,20 @@ class GetAtCustomerCccUpgradeScheduleEventResult(dict):
 class GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1912,19 +2845,98 @@ class GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemResult(dic
         :param str time_created: The time the upgrade schedule was created, using an RFC3339 formatted datetime string.
         :param str time_updated: The time the upgrade schedule was updated, using an RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "events", events)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "infrastructure_ids", infrastructure_ids)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            events=events,
+            freeform_tags=freeform_tags,
+            id=id,
+            infrastructure_ids=infrastructure_ids,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             events: Optional[Sequence['outputs.GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventResult']] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             infrastructure_ids: Optional[Sequence[str]] = None,
+             lifecycle_details: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if events is None:
+            raise TypeError("Missing 'events' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if infrastructure_ids is None and 'infrastructureIds' in kwargs:
+            infrastructure_ids = kwargs['infrastructureIds']
+        if infrastructure_ids is None:
+            raise TypeError("Missing 'infrastructure_ids' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("events", events)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("infrastructure_ids", infrastructure_ids)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -2046,11 +3058,46 @@ class GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventResul
         :param str schedule_event_recurrences: Frequency of recurrence of schedule block. When this field is not included, the event is assumed to be a one time occurrence. The frequency field is strictly parsed and must conform to RFC-5545 formatting for recurrences.
         :param str time_start: The date and time when the Compute Cloud@Customer upgrade schedule event starts, inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences, this is the date that a recurrence can start being applied.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "schedule_event_duration", schedule_event_duration)
-        pulumi.set(__self__, "schedule_event_recurrences", schedule_event_recurrences)
-        pulumi.set(__self__, "time_start", time_start)
+        GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            name=name,
+            schedule_event_duration=schedule_event_duration,
+            schedule_event_recurrences=schedule_event_recurrences,
+            time_start=time_start,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             name: Optional[str] = None,
+             schedule_event_duration: Optional[str] = None,
+             schedule_event_recurrences: Optional[str] = None,
+             time_start: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if schedule_event_duration is None and 'scheduleEventDuration' in kwargs:
+            schedule_event_duration = kwargs['scheduleEventDuration']
+        if schedule_event_duration is None:
+            raise TypeError("Missing 'schedule_event_duration' argument")
+        if schedule_event_recurrences is None and 'scheduleEventRecurrences' in kwargs:
+            schedule_event_recurrences = kwargs['scheduleEventRecurrences']
+        if schedule_event_recurrences is None:
+            raise TypeError("Missing 'schedule_event_recurrences' argument")
+        if time_start is None and 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+        if time_start is None:
+            raise TypeError("Missing 'time_start' argument")
+
+        _setter("description", description)
+        _setter("name", name)
+        _setter("schedule_event_duration", schedule_event_duration)
+        _setter("schedule_event_recurrences", schedule_event_recurrences)
+        _setter("time_start", time_start)
 
     @property
     @pulumi.getter
@@ -2102,10 +3149,29 @@ class GetAtCustomerCccUpgradeSchedulesFilterResult(dict):
         """
         :param str name: Generated name associated with the event.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAtCustomerCccUpgradeSchedulesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

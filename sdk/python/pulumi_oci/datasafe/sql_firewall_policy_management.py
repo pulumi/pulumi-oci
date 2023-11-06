@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['SqlFirewallPolicyManagementArgs', 'SqlFirewallPolicyManagement']
@@ -33,38 +33,105 @@ class SqlFirewallPolicyManagementArgs:
         """
         The set of arguments for constructing a SqlFirewallPolicyManagement resource.
         """
+        SqlFirewallPolicyManagementArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_client_ips=allowed_client_ips,
+            allowed_client_os_usernames=allowed_client_os_usernames,
+            allowed_client_programs=allowed_client_programs,
+            compartment_id=compartment_id,
+            db_user_name=db_user_name,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            enforcement_scope=enforcement_scope,
+            freeform_tags=freeform_tags,
+            sql_firewall_policy_id=sql_firewall_policy_id,
+            state=state,
+            status=status,
+            target_id=target_id,
+            violation_action=violation_action,
+            violation_audit=violation_audit,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_client_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             allowed_client_os_usernames: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             allowed_client_programs: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             db_user_name: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             enforcement_scope: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             sql_firewall_policy_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             target_id: Optional[pulumi.Input[str]] = None,
+             violation_action: Optional[pulumi.Input[str]] = None,
+             violation_audit: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if allowed_client_ips is None and 'allowedClientIps' in kwargs:
+            allowed_client_ips = kwargs['allowedClientIps']
+        if allowed_client_os_usernames is None and 'allowedClientOsUsernames' in kwargs:
+            allowed_client_os_usernames = kwargs['allowedClientOsUsernames']
+        if allowed_client_programs is None and 'allowedClientPrograms' in kwargs:
+            allowed_client_programs = kwargs['allowedClientPrograms']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if db_user_name is None and 'dbUserName' in kwargs:
+            db_user_name = kwargs['dbUserName']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if enforcement_scope is None and 'enforcementScope' in kwargs:
+            enforcement_scope = kwargs['enforcementScope']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if sql_firewall_policy_id is None and 'sqlFirewallPolicyId' in kwargs:
+            sql_firewall_policy_id = kwargs['sqlFirewallPolicyId']
+        if target_id is None and 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if violation_action is None and 'violationAction' in kwargs:
+            violation_action = kwargs['violationAction']
+        if violation_audit is None and 'violationAudit' in kwargs:
+            violation_audit = kwargs['violationAudit']
+
         if allowed_client_ips is not None:
-            pulumi.set(__self__, "allowed_client_ips", allowed_client_ips)
+            _setter("allowed_client_ips", allowed_client_ips)
         if allowed_client_os_usernames is not None:
-            pulumi.set(__self__, "allowed_client_os_usernames", allowed_client_os_usernames)
+            _setter("allowed_client_os_usernames", allowed_client_os_usernames)
         if allowed_client_programs is not None:
-            pulumi.set(__self__, "allowed_client_programs", allowed_client_programs)
+            _setter("allowed_client_programs", allowed_client_programs)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if db_user_name is not None:
-            pulumi.set(__self__, "db_user_name", db_user_name)
+            _setter("db_user_name", db_user_name)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if enforcement_scope is not None:
-            pulumi.set(__self__, "enforcement_scope", enforcement_scope)
+            _setter("enforcement_scope", enforcement_scope)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if sql_firewall_policy_id is not None:
-            pulumi.set(__self__, "sql_firewall_policy_id", sql_firewall_policy_id)
+            _setter("sql_firewall_policy_id", sql_firewall_policy_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if target_id is not None:
-            pulumi.set(__self__, "target_id", target_id)
+            _setter("target_id", target_id)
         if violation_action is not None:
-            pulumi.set(__self__, "violation_action", violation_action)
+            _setter("violation_action", violation_action)
         if violation_audit is not None:
-            pulumi.set(__self__, "violation_audit", violation_audit)
+            _setter("violation_audit", violation_audit)
 
     @property
     @pulumi.getter(name="allowedClientIps")
@@ -239,50 +306,141 @@ class _SqlFirewallPolicyManagementState:
         """
         Input properties used for looking up and filtering SqlFirewallPolicyManagement resources.
         """
+        _SqlFirewallPolicyManagementState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_client_ips=allowed_client_ips,
+            allowed_client_os_usernames=allowed_client_os_usernames,
+            allowed_client_programs=allowed_client_programs,
+            compartment_id=compartment_id,
+            db_user_name=db_user_name,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            enforcement_scope=enforcement_scope,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            security_policy_id=security_policy_id,
+            sql_firewall_policy_id=sql_firewall_policy_id,
+            sql_level=sql_level,
+            state=state,
+            status=status,
+            system_tags=system_tags,
+            target_id=target_id,
+            time_created=time_created,
+            time_updated=time_updated,
+            violation_action=violation_action,
+            violation_audit=violation_audit,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_client_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             allowed_client_os_usernames: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             allowed_client_programs: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             db_user_name: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             enforcement_scope: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             sql_firewall_policy_id: Optional[pulumi.Input[str]] = None,
+             sql_level: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             target_id: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             violation_action: Optional[pulumi.Input[str]] = None,
+             violation_audit: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if allowed_client_ips is None and 'allowedClientIps' in kwargs:
+            allowed_client_ips = kwargs['allowedClientIps']
+        if allowed_client_os_usernames is None and 'allowedClientOsUsernames' in kwargs:
+            allowed_client_os_usernames = kwargs['allowedClientOsUsernames']
+        if allowed_client_programs is None and 'allowedClientPrograms' in kwargs:
+            allowed_client_programs = kwargs['allowedClientPrograms']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if db_user_name is None and 'dbUserName' in kwargs:
+            db_user_name = kwargs['dbUserName']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if enforcement_scope is None and 'enforcementScope' in kwargs:
+            enforcement_scope = kwargs['enforcementScope']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if security_policy_id is None and 'securityPolicyId' in kwargs:
+            security_policy_id = kwargs['securityPolicyId']
+        if sql_firewall_policy_id is None and 'sqlFirewallPolicyId' in kwargs:
+            sql_firewall_policy_id = kwargs['sqlFirewallPolicyId']
+        if sql_level is None and 'sqlLevel' in kwargs:
+            sql_level = kwargs['sqlLevel']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if target_id is None and 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if violation_action is None and 'violationAction' in kwargs:
+            violation_action = kwargs['violationAction']
+        if violation_audit is None and 'violationAudit' in kwargs:
+            violation_audit = kwargs['violationAudit']
+
         if allowed_client_ips is not None:
-            pulumi.set(__self__, "allowed_client_ips", allowed_client_ips)
+            _setter("allowed_client_ips", allowed_client_ips)
         if allowed_client_os_usernames is not None:
-            pulumi.set(__self__, "allowed_client_os_usernames", allowed_client_os_usernames)
+            _setter("allowed_client_os_usernames", allowed_client_os_usernames)
         if allowed_client_programs is not None:
-            pulumi.set(__self__, "allowed_client_programs", allowed_client_programs)
+            _setter("allowed_client_programs", allowed_client_programs)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if db_user_name is not None:
-            pulumi.set(__self__, "db_user_name", db_user_name)
+            _setter("db_user_name", db_user_name)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if enforcement_scope is not None:
-            pulumi.set(__self__, "enforcement_scope", enforcement_scope)
+            _setter("enforcement_scope", enforcement_scope)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if security_policy_id is not None:
-            pulumi.set(__self__, "security_policy_id", security_policy_id)
+            _setter("security_policy_id", security_policy_id)
         if sql_firewall_policy_id is not None:
-            pulumi.set(__self__, "sql_firewall_policy_id", sql_firewall_policy_id)
+            _setter("sql_firewall_policy_id", sql_firewall_policy_id)
         if sql_level is not None:
-            pulumi.set(__self__, "sql_level", sql_level)
+            _setter("sql_level", sql_level)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if target_id is not None:
-            pulumi.set(__self__, "target_id", target_id)
+            _setter("target_id", target_id)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if violation_action is not None:
-            pulumi.set(__self__, "violation_action", violation_action)
+            _setter("violation_action", violation_action)
         if violation_audit is not None:
-            pulumi.set(__self__, "violation_audit", violation_audit)
+            _setter("violation_audit", violation_audit)
 
     @property
     @pulumi.getter(name="allowedClientIps")
@@ -528,6 +686,10 @@ class SqlFirewallPolicyManagement(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            SqlFirewallPolicyManagementArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

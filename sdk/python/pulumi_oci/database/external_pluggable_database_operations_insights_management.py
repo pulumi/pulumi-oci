@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['ExternalPluggableDatabaseOperationsInsightsManagementArgs', 'ExternalPluggableDatabaseOperationsInsightsManagement']
@@ -26,9 +26,36 @@ class ExternalPluggableDatabaseOperationsInsightsManagementArgs:
         :param pulumi.Input[str] external_database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         :param pulumi.Input[str] external_pluggable_database_id: The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
-        pulumi.set(__self__, "enable_operations_insights", enable_operations_insights)
-        pulumi.set(__self__, "external_database_connector_id", external_database_connector_id)
-        pulumi.set(__self__, "external_pluggable_database_id", external_pluggable_database_id)
+        ExternalPluggableDatabaseOperationsInsightsManagementArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_operations_insights=enable_operations_insights,
+            external_database_connector_id=external_database_connector_id,
+            external_pluggable_database_id=external_pluggable_database_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_operations_insights: Optional[pulumi.Input[bool]] = None,
+             external_database_connector_id: Optional[pulumi.Input[str]] = None,
+             external_pluggable_database_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if enable_operations_insights is None and 'enableOperationsInsights' in kwargs:
+            enable_operations_insights = kwargs['enableOperationsInsights']
+        if enable_operations_insights is None:
+            raise TypeError("Missing 'enable_operations_insights' argument")
+        if external_database_connector_id is None and 'externalDatabaseConnectorId' in kwargs:
+            external_database_connector_id = kwargs['externalDatabaseConnectorId']
+        if external_database_connector_id is None:
+            raise TypeError("Missing 'external_database_connector_id' argument")
+        if external_pluggable_database_id is None and 'externalPluggableDatabaseId' in kwargs:
+            external_pluggable_database_id = kwargs['externalPluggableDatabaseId']
+        if external_pluggable_database_id is None:
+            raise TypeError("Missing 'external_pluggable_database_id' argument")
+
+        _setter("enable_operations_insights", enable_operations_insights)
+        _setter("external_database_connector_id", external_database_connector_id)
+        _setter("external_pluggable_database_id", external_pluggable_database_id)
 
     @property
     @pulumi.getter(name="enableOperationsInsights")
@@ -85,12 +112,33 @@ class _ExternalPluggableDatabaseOperationsInsightsManagementState:
         :param pulumi.Input[str] external_database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         :param pulumi.Input[str] external_pluggable_database_id: The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
+        _ExternalPluggableDatabaseOperationsInsightsManagementState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_operations_insights=enable_operations_insights,
+            external_database_connector_id=external_database_connector_id,
+            external_pluggable_database_id=external_pluggable_database_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_operations_insights: Optional[pulumi.Input[bool]] = None,
+             external_database_connector_id: Optional[pulumi.Input[str]] = None,
+             external_pluggable_database_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if enable_operations_insights is None and 'enableOperationsInsights' in kwargs:
+            enable_operations_insights = kwargs['enableOperationsInsights']
+        if external_database_connector_id is None and 'externalDatabaseConnectorId' in kwargs:
+            external_database_connector_id = kwargs['externalDatabaseConnectorId']
+        if external_pluggable_database_id is None and 'externalPluggableDatabaseId' in kwargs:
+            external_pluggable_database_id = kwargs['externalPluggableDatabaseId']
+
         if enable_operations_insights is not None:
-            pulumi.set(__self__, "enable_operations_insights", enable_operations_insights)
+            _setter("enable_operations_insights", enable_operations_insights)
         if external_database_connector_id is not None:
-            pulumi.set(__self__, "external_database_connector_id", external_database_connector_id)
+            _setter("external_database_connector_id", external_database_connector_id)
         if external_pluggable_database_id is not None:
-            pulumi.set(__self__, "external_pluggable_database_id", external_pluggable_database_id)
+            _setter("external_pluggable_database_id", external_pluggable_database_id)
 
     @property
     @pulumi.getter(name="enableOperationsInsights")
@@ -210,6 +258,10 @@ class ExternalPluggableDatabaseOperationsInsightsManagement(pulumi.CustomResourc
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ExternalPluggableDatabaseOperationsInsightsManagementArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

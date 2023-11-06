@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -41,17 +41,60 @@ class CertificateArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_trust_verification_disabled: Set to `true` if the SSL certificate is self-signed.
         """
-        pulumi.set(__self__, "certificate_data", certificate_data)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "private_key_data", private_key_data)
+        CertificateArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_data=certificate_data,
+            compartment_id=compartment_id,
+            private_key_data=private_key_data,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            is_trust_verification_disabled=is_trust_verification_disabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_data: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             private_key_data: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_trust_verification_disabled: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if certificate_data is None and 'certificateData' in kwargs:
+            certificate_data = kwargs['certificateData']
+        if certificate_data is None:
+            raise TypeError("Missing 'certificate_data' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if private_key_data is None and 'privateKeyData' in kwargs:
+            private_key_data = kwargs['privateKeyData']
+        if private_key_data is None:
+            raise TypeError("Missing 'private_key_data' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_trust_verification_disabled is None and 'isTrustVerificationDisabled' in kwargs:
+            is_trust_verification_disabled = kwargs['isTrustVerificationDisabled']
+
+        _setter("certificate_data", certificate_data)
+        _setter("compartment_id", compartment_id)
+        _setter("private_key_data", private_key_data)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_trust_verification_disabled is not None:
-            pulumi.set(__self__, "is_trust_verification_disabled", is_trust_verification_disabled)
+            _setter("is_trust_verification_disabled", is_trust_verification_disabled)
 
     @property
     @pulumi.getter(name="certificateData")
@@ -197,44 +240,123 @@ class _CertificateState:
         :param pulumi.Input[str] time_not_valid_before: The date and time the certificate will become valid, expressed in RFC 3339 timestamp format.
         :param pulumi.Input[int] version: The version of the encoded certificate.
         """
+        _CertificateState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_data=certificate_data,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            extensions=extensions,
+            freeform_tags=freeform_tags,
+            is_trust_verification_disabled=is_trust_verification_disabled,
+            issued_by=issued_by,
+            issuer_names=issuer_names,
+            private_key_data=private_key_data,
+            public_key_infos=public_key_infos,
+            serial_number=serial_number,
+            signature_algorithm=signature_algorithm,
+            state=state,
+            subject_names=subject_names,
+            time_created=time_created,
+            time_not_valid_after=time_not_valid_after,
+            time_not_valid_before=time_not_valid_before,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_data: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             extensions: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateExtensionArgs']]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_trust_verification_disabled: Optional[pulumi.Input[bool]] = None,
+             issued_by: Optional[pulumi.Input[str]] = None,
+             issuer_names: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateIssuerNameArgs']]]] = None,
+             private_key_data: Optional[pulumi.Input[str]] = None,
+             public_key_infos: Optional[pulumi.Input[Sequence[pulumi.Input['CertificatePublicKeyInfoArgs']]]] = None,
+             serial_number: Optional[pulumi.Input[str]] = None,
+             signature_algorithm: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             subject_names: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateSubjectNameArgs']]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_not_valid_after: Optional[pulumi.Input[str]] = None,
+             time_not_valid_before: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if certificate_data is None and 'certificateData' in kwargs:
+            certificate_data = kwargs['certificateData']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_trust_verification_disabled is None and 'isTrustVerificationDisabled' in kwargs:
+            is_trust_verification_disabled = kwargs['isTrustVerificationDisabled']
+        if issued_by is None and 'issuedBy' in kwargs:
+            issued_by = kwargs['issuedBy']
+        if issuer_names is None and 'issuerNames' in kwargs:
+            issuer_names = kwargs['issuerNames']
+        if private_key_data is None and 'privateKeyData' in kwargs:
+            private_key_data = kwargs['privateKeyData']
+        if public_key_infos is None and 'publicKeyInfos' in kwargs:
+            public_key_infos = kwargs['publicKeyInfos']
+        if serial_number is None and 'serialNumber' in kwargs:
+            serial_number = kwargs['serialNumber']
+        if signature_algorithm is None and 'signatureAlgorithm' in kwargs:
+            signature_algorithm = kwargs['signatureAlgorithm']
+        if subject_names is None and 'subjectNames' in kwargs:
+            subject_names = kwargs['subjectNames']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_not_valid_after is None and 'timeNotValidAfter' in kwargs:
+            time_not_valid_after = kwargs['timeNotValidAfter']
+        if time_not_valid_before is None and 'timeNotValidBefore' in kwargs:
+            time_not_valid_before = kwargs['timeNotValidBefore']
+
         if certificate_data is not None:
-            pulumi.set(__self__, "certificate_data", certificate_data)
+            _setter("certificate_data", certificate_data)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if extensions is not None:
-            pulumi.set(__self__, "extensions", extensions)
+            _setter("extensions", extensions)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_trust_verification_disabled is not None:
-            pulumi.set(__self__, "is_trust_verification_disabled", is_trust_verification_disabled)
+            _setter("is_trust_verification_disabled", is_trust_verification_disabled)
         if issued_by is not None:
-            pulumi.set(__self__, "issued_by", issued_by)
+            _setter("issued_by", issued_by)
         if issuer_names is not None:
-            pulumi.set(__self__, "issuer_names", issuer_names)
+            _setter("issuer_names", issuer_names)
         if private_key_data is not None:
-            pulumi.set(__self__, "private_key_data", private_key_data)
+            _setter("private_key_data", private_key_data)
         if public_key_infos is not None:
-            pulumi.set(__self__, "public_key_infos", public_key_infos)
+            _setter("public_key_infos", public_key_infos)
         if serial_number is not None:
-            pulumi.set(__self__, "serial_number", serial_number)
+            _setter("serial_number", serial_number)
         if signature_algorithm is not None:
-            pulumi.set(__self__, "signature_algorithm", signature_algorithm)
+            _setter("signature_algorithm", signature_algorithm)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if subject_names is not None:
-            pulumi.set(__self__, "subject_names", subject_names)
+            _setter("subject_names", subject_names)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_not_valid_after is not None:
-            pulumi.set(__self__, "time_not_valid_after", time_not_valid_after)
+            _setter("time_not_valid_after", time_not_valid_after)
         if time_not_valid_before is not None:
-            pulumi.set(__self__, "time_not_valid_before", time_not_valid_before)
+            _setter("time_not_valid_before", time_not_valid_before)
         if version is not None:
-            pulumi.set(__self__, "version", version)
+            _setter("version", version)
 
     @property
     @pulumi.getter(name="certificateData")
@@ -579,6 +701,10 @@ class Certificate(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            CertificateArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

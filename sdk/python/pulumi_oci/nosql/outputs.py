@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -67,11 +67,34 @@ class IndexKey(dict):
         :param str json_field_type: If the specified column is of type JSON, jsonFieldType contains the type of the field indicated by jsonPath.
         :param str json_path: If the specified column is of type JSON, jsonPath contains a dotted path indicating the field within the JSON object that will be the index key.
         """
-        pulumi.set(__self__, "column_name", column_name)
+        IndexKey._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_name=column_name,
+            json_field_type=json_field_type,
+            json_path=json_path,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_name: Optional[str] = None,
+             json_field_type: Optional[str] = None,
+             json_path: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if column_name is None and 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if column_name is None:
+            raise TypeError("Missing 'column_name' argument")
+        if json_field_type is None and 'jsonFieldType' in kwargs:
+            json_field_type = kwargs['jsonFieldType']
+        if json_path is None and 'jsonPath' in kwargs:
+            json_path = kwargs['jsonPath']
+
+        _setter("column_name", column_name)
         if json_field_type is not None:
-            pulumi.set(__self__, "json_field_type", json_field_type)
+            _setter("json_field_type", json_field_type)
         if json_path is not None:
-            pulumi.set(__self__, "json_path", json_path)
+            _setter("json_path", json_path)
 
     @property
     @pulumi.getter(name="columnName")
@@ -142,18 +165,47 @@ class TableReplica(dict):
         :param str state: The state of a table.
         :param str table_id: The OCID of the replica table
         """
+        TableReplica._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            capacity_mode=capacity_mode,
+            lifecycle_details=lifecycle_details,
+            max_write_units=max_write_units,
+            region=region,
+            state=state,
+            table_id=table_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             capacity_mode: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             max_write_units: Optional[int] = None,
+             region: Optional[str] = None,
+             state: Optional[str] = None,
+             table_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if capacity_mode is None and 'capacityMode' in kwargs:
+            capacity_mode = kwargs['capacityMode']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if max_write_units is None and 'maxWriteUnits' in kwargs:
+            max_write_units = kwargs['maxWriteUnits']
+        if table_id is None and 'tableId' in kwargs:
+            table_id = kwargs['tableId']
+
         if capacity_mode is not None:
-            pulumi.set(__self__, "capacity_mode", capacity_mode)
+            _setter("capacity_mode", capacity_mode)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if max_write_units is not None:
-            pulumi.set(__self__, "max_write_units", max_write_units)
+            _setter("max_write_units", max_write_units)
         if region is not None:
-            pulumi.set(__self__, "region", region)
+            _setter("region", region)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if table_id is not None:
-            pulumi.set(__self__, "table_id", table_id)
+            _setter("table_id", table_id)
 
     @property
     @pulumi.getter(name="capacityMode")
@@ -242,16 +294,39 @@ class TableSchema(dict):
         :param Sequence[str] shard_keys: A list of column names that make up a key.
         :param int ttl: The default Time-to-Live for the table, in days.
         """
+        TableSchema._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            columns=columns,
+            identities=identities,
+            primary_keys=primary_keys,
+            shard_keys=shard_keys,
+            ttl=ttl,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             columns: Optional[Sequence['outputs.TableSchemaColumn']] = None,
+             identities: Optional[Sequence['outputs.TableSchemaIdentity']] = None,
+             primary_keys: Optional[Sequence[str]] = None,
+             shard_keys: Optional[Sequence[str]] = None,
+             ttl: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if primary_keys is None and 'primaryKeys' in kwargs:
+            primary_keys = kwargs['primaryKeys']
+        if shard_keys is None and 'shardKeys' in kwargs:
+            shard_keys = kwargs['shardKeys']
+
         if columns is not None:
-            pulumi.set(__self__, "columns", columns)
+            _setter("columns", columns)
         if identities is not None:
-            pulumi.set(__self__, "identities", identities)
+            _setter("identities", identities)
         if primary_keys is not None:
-            pulumi.set(__self__, "primary_keys", primary_keys)
+            _setter("primary_keys", primary_keys)
         if shard_keys is not None:
-            pulumi.set(__self__, "shard_keys", shard_keys)
+            _setter("shard_keys", shard_keys)
         if ttl is not None:
-            pulumi.set(__self__, "ttl", ttl)
+            _setter("ttl", ttl)
 
     @property
     @pulumi.getter
@@ -334,18 +409,47 @@ class TableSchemaColumn(dict):
         :param str name: Table name.
         :param str type: The column type.
         """
+        TableSchemaColumn._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_value=default_value,
+            is_as_uuid=is_as_uuid,
+            is_generated=is_generated,
+            is_nullable=is_nullable,
+            name=name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_value: Optional[str] = None,
+             is_as_uuid: Optional[bool] = None,
+             is_generated: Optional[bool] = None,
+             is_nullable: Optional[bool] = None,
+             name: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if default_value is None and 'defaultValue' in kwargs:
+            default_value = kwargs['defaultValue']
+        if is_as_uuid is None and 'isAsUuid' in kwargs:
+            is_as_uuid = kwargs['isAsUuid']
+        if is_generated is None and 'isGenerated' in kwargs:
+            is_generated = kwargs['isGenerated']
+        if is_nullable is None and 'isNullable' in kwargs:
+            is_nullable = kwargs['isNullable']
+
         if default_value is not None:
-            pulumi.set(__self__, "default_value", default_value)
+            _setter("default_value", default_value)
         if is_as_uuid is not None:
-            pulumi.set(__self__, "is_as_uuid", is_as_uuid)
+            _setter("is_as_uuid", is_as_uuid)
         if is_generated is not None:
-            pulumi.set(__self__, "is_generated", is_generated)
+            _setter("is_generated", is_generated)
         if is_nullable is not None:
-            pulumi.set(__self__, "is_nullable", is_nullable)
+            _setter("is_nullable", is_nullable)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="defaultValue")
@@ -428,12 +532,33 @@ class TableSchemaIdentity(dict):
         :param bool is_always: True if the identity value is GENERATED ALWAYS.
         :param bool is_null: True if the identity value is GENERATED BY DEFAULT ON NULL.
         """
+        TableSchemaIdentity._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_name=column_name,
+            is_always=is_always,
+            is_null=is_null,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_name: Optional[str] = None,
+             is_always: Optional[bool] = None,
+             is_null: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if column_name is None and 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if is_always is None and 'isAlways' in kwargs:
+            is_always = kwargs['isAlways']
+        if is_null is None and 'isNull' in kwargs:
+            is_null = kwargs['isNull']
+
         if column_name is not None:
-            pulumi.set(__self__, "column_name", column_name)
+            _setter("column_name", column_name)
         if is_always is not None:
-            pulumi.set(__self__, "is_always", is_always)
+            _setter("is_always", is_always)
         if is_null is not None:
-            pulumi.set(__self__, "is_null", is_null)
+            _setter("is_null", is_null)
 
     @property
     @pulumi.getter(name="columnName")
@@ -500,11 +625,42 @@ class TableTableLimits(dict):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str capacity_mode: (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
         """
-        pulumi.set(__self__, "max_read_units", max_read_units)
-        pulumi.set(__self__, "max_storage_in_gbs", max_storage_in_gbs)
-        pulumi.set(__self__, "max_write_units", max_write_units)
+        TableTableLimits._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            max_read_units=max_read_units,
+            max_storage_in_gbs=max_storage_in_gbs,
+            max_write_units=max_write_units,
+            capacity_mode=capacity_mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             max_read_units: Optional[int] = None,
+             max_storage_in_gbs: Optional[int] = None,
+             max_write_units: Optional[int] = None,
+             capacity_mode: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if max_read_units is None and 'maxReadUnits' in kwargs:
+            max_read_units = kwargs['maxReadUnits']
+        if max_read_units is None:
+            raise TypeError("Missing 'max_read_units' argument")
+        if max_storage_in_gbs is None and 'maxStorageInGbs' in kwargs:
+            max_storage_in_gbs = kwargs['maxStorageInGbs']
+        if max_storage_in_gbs is None:
+            raise TypeError("Missing 'max_storage_in_gbs' argument")
+        if max_write_units is None and 'maxWriteUnits' in kwargs:
+            max_write_units = kwargs['maxWriteUnits']
+        if max_write_units is None:
+            raise TypeError("Missing 'max_write_units' argument")
+        if capacity_mode is None and 'capacityMode' in kwargs:
+            capacity_mode = kwargs['capacityMode']
+
+        _setter("max_read_units", max_read_units)
+        _setter("max_storage_in_gbs", max_storage_in_gbs)
+        _setter("max_write_units", max_write_units)
         if capacity_mode is not None:
-            pulumi.set(__self__, "capacity_mode", capacity_mode)
+            _setter("capacity_mode", capacity_mode)
 
     @property
     @pulumi.getter(name="maxReadUnits")
@@ -554,9 +710,36 @@ class GetIndexKeyResult(dict):
         :param str json_field_type: If the specified column is of type JSON, jsonFieldType contains the type of the field indicated by jsonPath.
         :param str json_path: If the specified column is of type JSON, jsonPath contains a dotted path indicating the field within the JSON object that will be the index key.
         """
-        pulumi.set(__self__, "column_name", column_name)
-        pulumi.set(__self__, "json_field_type", json_field_type)
-        pulumi.set(__self__, "json_path", json_path)
+        GetIndexKeyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_name=column_name,
+            json_field_type=json_field_type,
+            json_path=json_path,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_name: Optional[str] = None,
+             json_field_type: Optional[str] = None,
+             json_path: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if column_name is None and 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if column_name is None:
+            raise TypeError("Missing 'column_name' argument")
+        if json_field_type is None and 'jsonFieldType' in kwargs:
+            json_field_type = kwargs['jsonFieldType']
+        if json_field_type is None:
+            raise TypeError("Missing 'json_field_type' argument")
+        if json_path is None and 'jsonPath' in kwargs:
+            json_path = kwargs['jsonPath']
+        if json_path is None:
+            raise TypeError("Missing 'json_path' argument")
+
+        _setter("column_name", column_name)
+        _setter("json_field_type", json_field_type)
+        _setter("json_path", json_path)
 
     @property
     @pulumi.getter(name="columnName")
@@ -592,10 +775,29 @@ class GetIndexesFilterResult(dict):
         """
         :param str name: A shell-globbing-style (*?[]) filter for names.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetIndexesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -639,16 +841,77 @@ class GetIndexesIndexCollectionResult(dict):
         :param str table_name: The name of the table to which this index belongs.
         :param str table_name_or_id: A table name within the compartment, or a table OCID.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_if_not_exists", is_if_not_exists)
-        pulumi.set(__self__, "keys", keys)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "table_id", table_id)
-        pulumi.set(__self__, "table_name", table_name)
-        pulumi.set(__self__, "table_name_or_id", table_name_or_id)
+        GetIndexesIndexCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            id=id,
+            is_if_not_exists=is_if_not_exists,
+            keys=keys,
+            lifecycle_details=lifecycle_details,
+            name=name,
+            state=state,
+            table_id=table_id,
+            table_name=table_name,
+            table_name_or_id=table_name_or_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             id: Optional[str] = None,
+             is_if_not_exists: Optional[bool] = None,
+             keys: Optional[Sequence['outputs.GetIndexesIndexCollectionKeyResult']] = None,
+             lifecycle_details: Optional[str] = None,
+             name: Optional[str] = None,
+             state: Optional[str] = None,
+             table_id: Optional[str] = None,
+             table_name: Optional[str] = None,
+             table_name_or_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_if_not_exists is None and 'isIfNotExists' in kwargs:
+            is_if_not_exists = kwargs['isIfNotExists']
+        if is_if_not_exists is None:
+            raise TypeError("Missing 'is_if_not_exists' argument")
+        if keys is None:
+            raise TypeError("Missing 'keys' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if table_id is None and 'tableId' in kwargs:
+            table_id = kwargs['tableId']
+        if table_id is None:
+            raise TypeError("Missing 'table_id' argument")
+        if table_name is None and 'tableName' in kwargs:
+            table_name = kwargs['tableName']
+        if table_name is None:
+            raise TypeError("Missing 'table_name' argument")
+        if table_name_or_id is None and 'tableNameOrId' in kwargs:
+            table_name_or_id = kwargs['tableNameOrId']
+        if table_name_or_id is None:
+            raise TypeError("Missing 'table_name_or_id' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("id", id)
+        _setter("is_if_not_exists", is_if_not_exists)
+        _setter("keys", keys)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("name", name)
+        _setter("state", state)
+        _setter("table_id", table_id)
+        _setter("table_name", table_name)
+        _setter("table_name_or_id", table_name_or_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -736,9 +999,36 @@ class GetIndexesIndexCollectionKeyResult(dict):
         :param str json_field_type: If the specified column is of type JSON, jsonFieldType contains the type of the field indicated by jsonPath.
         :param str json_path: If the specified column is of type JSON, jsonPath contains a dotted path indicating the field within the JSON object that will be the index key.
         """
-        pulumi.set(__self__, "column_name", column_name)
-        pulumi.set(__self__, "json_field_type", json_field_type)
-        pulumi.set(__self__, "json_path", json_path)
+        GetIndexesIndexCollectionKeyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_name=column_name,
+            json_field_type=json_field_type,
+            json_path=json_path,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_name: Optional[str] = None,
+             json_field_type: Optional[str] = None,
+             json_path: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if column_name is None and 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if column_name is None:
+            raise TypeError("Missing 'column_name' argument")
+        if json_field_type is None and 'jsonFieldType' in kwargs:
+            json_field_type = kwargs['jsonFieldType']
+        if json_field_type is None:
+            raise TypeError("Missing 'json_field_type' argument")
+        if json_path is None and 'jsonPath' in kwargs:
+            json_path = kwargs['jsonPath']
+        if json_path is None:
+            raise TypeError("Missing 'json_path' argument")
+
+        _setter("column_name", column_name)
+        _setter("json_field_type", json_field_type)
+        _setter("json_path", json_path)
 
     @property
     @pulumi.getter(name="columnName")
@@ -782,12 +1072,53 @@ class GetTableReplicaResult(dict):
         :param str state: The state of a table.
         :param str table_id: The OCID of the replica table
         """
-        pulumi.set(__self__, "capacity_mode", capacity_mode)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "max_write_units", max_write_units)
-        pulumi.set(__self__, "region", region)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "table_id", table_id)
+        GetTableReplicaResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            capacity_mode=capacity_mode,
+            lifecycle_details=lifecycle_details,
+            max_write_units=max_write_units,
+            region=region,
+            state=state,
+            table_id=table_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             capacity_mode: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             max_write_units: Optional[int] = None,
+             region: Optional[str] = None,
+             state: Optional[str] = None,
+             table_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if capacity_mode is None and 'capacityMode' in kwargs:
+            capacity_mode = kwargs['capacityMode']
+        if capacity_mode is None:
+            raise TypeError("Missing 'capacity_mode' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if max_write_units is None and 'maxWriteUnits' in kwargs:
+            max_write_units = kwargs['maxWriteUnits']
+        if max_write_units is None:
+            raise TypeError("Missing 'max_write_units' argument")
+        if region is None:
+            raise TypeError("Missing 'region' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if table_id is None and 'tableId' in kwargs:
+            table_id = kwargs['tableId']
+        if table_id is None:
+            raise TypeError("Missing 'table_id' argument")
+
+        _setter("capacity_mode", capacity_mode)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("max_write_units", max_write_units)
+        _setter("region", region)
+        _setter("state", state)
+        _setter("table_id", table_id)
 
     @property
     @pulumi.getter(name="capacityMode")
@@ -853,11 +1184,44 @@ class GetTableSchemaResult(dict):
         :param Sequence[str] shard_keys: A list of column names that make up a key.
         :param int ttl: The default Time-to-Live for the table, in days.
         """
-        pulumi.set(__self__, "columns", columns)
-        pulumi.set(__self__, "identities", identities)
-        pulumi.set(__self__, "primary_keys", primary_keys)
-        pulumi.set(__self__, "shard_keys", shard_keys)
-        pulumi.set(__self__, "ttl", ttl)
+        GetTableSchemaResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            columns=columns,
+            identities=identities,
+            primary_keys=primary_keys,
+            shard_keys=shard_keys,
+            ttl=ttl,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             columns: Optional[Sequence['outputs.GetTableSchemaColumnResult']] = None,
+             identities: Optional[Sequence['outputs.GetTableSchemaIdentityResult']] = None,
+             primary_keys: Optional[Sequence[str]] = None,
+             shard_keys: Optional[Sequence[str]] = None,
+             ttl: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if columns is None:
+            raise TypeError("Missing 'columns' argument")
+        if identities is None:
+            raise TypeError("Missing 'identities' argument")
+        if primary_keys is None and 'primaryKeys' in kwargs:
+            primary_keys = kwargs['primaryKeys']
+        if primary_keys is None:
+            raise TypeError("Missing 'primary_keys' argument")
+        if shard_keys is None and 'shardKeys' in kwargs:
+            shard_keys = kwargs['shardKeys']
+        if shard_keys is None:
+            raise TypeError("Missing 'shard_keys' argument")
+        if ttl is None:
+            raise TypeError("Missing 'ttl' argument")
+
+        _setter("columns", columns)
+        _setter("identities", identities)
+        _setter("primary_keys", primary_keys)
+        _setter("shard_keys", shard_keys)
+        _setter("ttl", ttl)
 
     @property
     @pulumi.getter
@@ -917,12 +1281,53 @@ class GetTableSchemaColumnResult(dict):
         :param str name: The column name.
         :param str type: The column type.
         """
-        pulumi.set(__self__, "default_value", default_value)
-        pulumi.set(__self__, "is_as_uuid", is_as_uuid)
-        pulumi.set(__self__, "is_generated", is_generated)
-        pulumi.set(__self__, "is_nullable", is_nullable)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+        GetTableSchemaColumnResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_value=default_value,
+            is_as_uuid=is_as_uuid,
+            is_generated=is_generated,
+            is_nullable=is_nullable,
+            name=name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_value: Optional[str] = None,
+             is_as_uuid: Optional[bool] = None,
+             is_generated: Optional[bool] = None,
+             is_nullable: Optional[bool] = None,
+             name: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if default_value is None and 'defaultValue' in kwargs:
+            default_value = kwargs['defaultValue']
+        if default_value is None:
+            raise TypeError("Missing 'default_value' argument")
+        if is_as_uuid is None and 'isAsUuid' in kwargs:
+            is_as_uuid = kwargs['isAsUuid']
+        if is_as_uuid is None:
+            raise TypeError("Missing 'is_as_uuid' argument")
+        if is_generated is None and 'isGenerated' in kwargs:
+            is_generated = kwargs['isGenerated']
+        if is_generated is None:
+            raise TypeError("Missing 'is_generated' argument")
+        if is_nullable is None and 'isNullable' in kwargs:
+            is_nullable = kwargs['isNullable']
+        if is_nullable is None:
+            raise TypeError("Missing 'is_nullable' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("default_value", default_value)
+        _setter("is_as_uuid", is_as_uuid)
+        _setter("is_generated", is_generated)
+        _setter("is_nullable", is_nullable)
+        _setter("name", name)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="defaultValue")
@@ -984,9 +1389,36 @@ class GetTableSchemaIdentityResult(dict):
         :param bool is_always: True if the identity value is GENERATED ALWAYS.
         :param bool is_null: True if the identity value is GENERATED BY DEFAULT ON NULL.
         """
-        pulumi.set(__self__, "column_name", column_name)
-        pulumi.set(__self__, "is_always", is_always)
-        pulumi.set(__self__, "is_null", is_null)
+        GetTableSchemaIdentityResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_name=column_name,
+            is_always=is_always,
+            is_null=is_null,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_name: Optional[str] = None,
+             is_always: Optional[bool] = None,
+             is_null: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if column_name is None and 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if column_name is None:
+            raise TypeError("Missing 'column_name' argument")
+        if is_always is None and 'isAlways' in kwargs:
+            is_always = kwargs['isAlways']
+        if is_always is None:
+            raise TypeError("Missing 'is_always' argument")
+        if is_null is None and 'isNull' in kwargs:
+            is_null = kwargs['isNull']
+        if is_null is None:
+            raise TypeError("Missing 'is_null' argument")
+
+        _setter("column_name", column_name)
+        _setter("is_always", is_always)
+        _setter("is_null", is_null)
 
     @property
     @pulumi.getter(name="columnName")
@@ -1026,10 +1458,43 @@ class GetTableTableLimitResult(dict):
         :param int max_storage_in_gbs: Maximum size of storage used by the table.
         :param int max_write_units: Maximum sustained write throughput limit for the table.
         """
-        pulumi.set(__self__, "capacity_mode", capacity_mode)
-        pulumi.set(__self__, "max_read_units", max_read_units)
-        pulumi.set(__self__, "max_storage_in_gbs", max_storage_in_gbs)
-        pulumi.set(__self__, "max_write_units", max_write_units)
+        GetTableTableLimitResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            capacity_mode=capacity_mode,
+            max_read_units=max_read_units,
+            max_storage_in_gbs=max_storage_in_gbs,
+            max_write_units=max_write_units,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             capacity_mode: Optional[str] = None,
+             max_read_units: Optional[int] = None,
+             max_storage_in_gbs: Optional[int] = None,
+             max_write_units: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if capacity_mode is None and 'capacityMode' in kwargs:
+            capacity_mode = kwargs['capacityMode']
+        if capacity_mode is None:
+            raise TypeError("Missing 'capacity_mode' argument")
+        if max_read_units is None and 'maxReadUnits' in kwargs:
+            max_read_units = kwargs['maxReadUnits']
+        if max_read_units is None:
+            raise TypeError("Missing 'max_read_units' argument")
+        if max_storage_in_gbs is None and 'maxStorageInGbs' in kwargs:
+            max_storage_in_gbs = kwargs['maxStorageInGbs']
+        if max_storage_in_gbs is None:
+            raise TypeError("Missing 'max_storage_in_gbs' argument")
+        if max_write_units is None and 'maxWriteUnits' in kwargs:
+            max_write_units = kwargs['maxWriteUnits']
+        if max_write_units is None:
+            raise TypeError("Missing 'max_write_units' argument")
+
+        _setter("capacity_mode", capacity_mode)
+        _setter("max_read_units", max_read_units)
+        _setter("max_storage_in_gbs", max_storage_in_gbs)
+        _setter("max_write_units", max_write_units)
 
     @property
     @pulumi.getter(name="capacityMode")
@@ -1073,10 +1538,29 @@ class GetTablesFilterResult(dict):
         """
         :param str name: A shell-globbing-style (*?[]) filter for names.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetTablesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1136,25 +1620,138 @@ class GetTablesTableCollectionResult(dict):
         :param str time_of_expiration: If lifecycleState is INACTIVE, indicates when this table will be automatically removed. An RFC3339 formatted datetime string.
         :param str time_updated: The time the the table's metadata was last updated. An RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "ddl_statement", ddl_statement)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_auto_reclaimable", is_auto_reclaimable)
-        pulumi.set(__self__, "is_multi_region", is_multi_region)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "local_replica_initialization_in_percent", local_replica_initialization_in_percent)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "replicas", replicas)
-        pulumi.set(__self__, "schema_state", schema_state)
-        pulumi.set(__self__, "schemas", schemas)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "table_limits", table_limits)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_of_expiration", time_of_expiration)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetTablesTableCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            ddl_statement=ddl_statement,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_auto_reclaimable=is_auto_reclaimable,
+            is_multi_region=is_multi_region,
+            lifecycle_details=lifecycle_details,
+            local_replica_initialization_in_percent=local_replica_initialization_in_percent,
+            name=name,
+            replicas=replicas,
+            schema_state=schema_state,
+            schemas=schemas,
+            state=state,
+            system_tags=system_tags,
+            table_limits=table_limits,
+            time_created=time_created,
+            time_of_expiration=time_of_expiration,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             ddl_statement: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_auto_reclaimable: Optional[bool] = None,
+             is_multi_region: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             local_replica_initialization_in_percent: Optional[int] = None,
+             name: Optional[str] = None,
+             replicas: Optional[Sequence['outputs.GetTablesTableCollectionReplicaResult']] = None,
+             schema_state: Optional[str] = None,
+             schemas: Optional[Sequence['outputs.GetTablesTableCollectionSchemaResult']] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             table_limits: Optional[Sequence['outputs.GetTablesTableCollectionTableLimitResult']] = None,
+             time_created: Optional[str] = None,
+             time_of_expiration: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if ddl_statement is None and 'ddlStatement' in kwargs:
+            ddl_statement = kwargs['ddlStatement']
+        if ddl_statement is None:
+            raise TypeError("Missing 'ddl_statement' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_auto_reclaimable is None and 'isAutoReclaimable' in kwargs:
+            is_auto_reclaimable = kwargs['isAutoReclaimable']
+        if is_auto_reclaimable is None:
+            raise TypeError("Missing 'is_auto_reclaimable' argument")
+        if is_multi_region is None and 'isMultiRegion' in kwargs:
+            is_multi_region = kwargs['isMultiRegion']
+        if is_multi_region is None:
+            raise TypeError("Missing 'is_multi_region' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if local_replica_initialization_in_percent is None and 'localReplicaInitializationInPercent' in kwargs:
+            local_replica_initialization_in_percent = kwargs['localReplicaInitializationInPercent']
+        if local_replica_initialization_in_percent is None:
+            raise TypeError("Missing 'local_replica_initialization_in_percent' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if replicas is None:
+            raise TypeError("Missing 'replicas' argument")
+        if schema_state is None and 'schemaState' in kwargs:
+            schema_state = kwargs['schemaState']
+        if schema_state is None:
+            raise TypeError("Missing 'schema_state' argument")
+        if schemas is None:
+            raise TypeError("Missing 'schemas' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if table_limits is None and 'tableLimits' in kwargs:
+            table_limits = kwargs['tableLimits']
+        if table_limits is None:
+            raise TypeError("Missing 'table_limits' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_of_expiration is None and 'timeOfExpiration' in kwargs:
+            time_of_expiration = kwargs['timeOfExpiration']
+        if time_of_expiration is None:
+            raise TypeError("Missing 'time_of_expiration' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("ddl_statement", ddl_statement)
+        _setter("defined_tags", defined_tags)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_auto_reclaimable", is_auto_reclaimable)
+        _setter("is_multi_region", is_multi_region)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("local_replica_initialization_in_percent", local_replica_initialization_in_percent)
+        _setter("name", name)
+        _setter("replicas", replicas)
+        _setter("schema_state", schema_state)
+        _setter("schemas", schemas)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("table_limits", table_limits)
+        _setter("time_created", time_created)
+        _setter("time_of_expiration", time_of_expiration)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1312,12 +1909,53 @@ class GetTablesTableCollectionReplicaResult(dict):
         :param int max_write_units: Maximum sustained write throughput limit for the table.
         :param str state: Filter list by the lifecycle state of the item.
         """
-        pulumi.set(__self__, "capacity_mode", capacity_mode)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "max_write_units", max_write_units)
-        pulumi.set(__self__, "region", region)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "table_id", table_id)
+        GetTablesTableCollectionReplicaResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            capacity_mode=capacity_mode,
+            lifecycle_details=lifecycle_details,
+            max_write_units=max_write_units,
+            region=region,
+            state=state,
+            table_id=table_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             capacity_mode: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             max_write_units: Optional[int] = None,
+             region: Optional[str] = None,
+             state: Optional[str] = None,
+             table_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if capacity_mode is None and 'capacityMode' in kwargs:
+            capacity_mode = kwargs['capacityMode']
+        if capacity_mode is None:
+            raise TypeError("Missing 'capacity_mode' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if max_write_units is None and 'maxWriteUnits' in kwargs:
+            max_write_units = kwargs['maxWriteUnits']
+        if max_write_units is None:
+            raise TypeError("Missing 'max_write_units' argument")
+        if region is None:
+            raise TypeError("Missing 'region' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if table_id is None and 'tableId' in kwargs:
+            table_id = kwargs['tableId']
+        if table_id is None:
+            raise TypeError("Missing 'table_id' argument")
+
+        _setter("capacity_mode", capacity_mode)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("max_write_units", max_write_units)
+        _setter("region", region)
+        _setter("state", state)
+        _setter("table_id", table_id)
 
     @property
     @pulumi.getter(name="capacityMode")
@@ -1370,11 +2008,44 @@ class GetTablesTableCollectionSchemaResult(dict):
                  primary_keys: Sequence[str],
                  shard_keys: Sequence[str],
                  ttl: int):
-        pulumi.set(__self__, "columns", columns)
-        pulumi.set(__self__, "identities", identities)
-        pulumi.set(__self__, "primary_keys", primary_keys)
-        pulumi.set(__self__, "shard_keys", shard_keys)
-        pulumi.set(__self__, "ttl", ttl)
+        GetTablesTableCollectionSchemaResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            columns=columns,
+            identities=identities,
+            primary_keys=primary_keys,
+            shard_keys=shard_keys,
+            ttl=ttl,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             columns: Optional[Sequence['outputs.GetTablesTableCollectionSchemaColumnResult']] = None,
+             identities: Optional[Sequence['outputs.GetTablesTableCollectionSchemaIdentityResult']] = None,
+             primary_keys: Optional[Sequence[str]] = None,
+             shard_keys: Optional[Sequence[str]] = None,
+             ttl: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if columns is None:
+            raise TypeError("Missing 'columns' argument")
+        if identities is None:
+            raise TypeError("Missing 'identities' argument")
+        if primary_keys is None and 'primaryKeys' in kwargs:
+            primary_keys = kwargs['primaryKeys']
+        if primary_keys is None:
+            raise TypeError("Missing 'primary_keys' argument")
+        if shard_keys is None and 'shardKeys' in kwargs:
+            shard_keys = kwargs['shardKeys']
+        if shard_keys is None:
+            raise TypeError("Missing 'shard_keys' argument")
+        if ttl is None:
+            raise TypeError("Missing 'ttl' argument")
+
+        _setter("columns", columns)
+        _setter("identities", identities)
+        _setter("primary_keys", primary_keys)
+        _setter("shard_keys", shard_keys)
+        _setter("ttl", ttl)
 
     @property
     @pulumi.getter
@@ -1414,12 +2085,53 @@ class GetTablesTableCollectionSchemaColumnResult(dict):
         """
         :param str name: A shell-globbing-style (*?[]) filter for names.
         """
-        pulumi.set(__self__, "default_value", default_value)
-        pulumi.set(__self__, "is_as_uuid", is_as_uuid)
-        pulumi.set(__self__, "is_generated", is_generated)
-        pulumi.set(__self__, "is_nullable", is_nullable)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+        GetTablesTableCollectionSchemaColumnResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_value=default_value,
+            is_as_uuid=is_as_uuid,
+            is_generated=is_generated,
+            is_nullable=is_nullable,
+            name=name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_value: Optional[str] = None,
+             is_as_uuid: Optional[bool] = None,
+             is_generated: Optional[bool] = None,
+             is_nullable: Optional[bool] = None,
+             name: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if default_value is None and 'defaultValue' in kwargs:
+            default_value = kwargs['defaultValue']
+        if default_value is None:
+            raise TypeError("Missing 'default_value' argument")
+        if is_as_uuid is None and 'isAsUuid' in kwargs:
+            is_as_uuid = kwargs['isAsUuid']
+        if is_as_uuid is None:
+            raise TypeError("Missing 'is_as_uuid' argument")
+        if is_generated is None and 'isGenerated' in kwargs:
+            is_generated = kwargs['isGenerated']
+        if is_generated is None:
+            raise TypeError("Missing 'is_generated' argument")
+        if is_nullable is None and 'isNullable' in kwargs:
+            is_nullable = kwargs['isNullable']
+        if is_nullable is None:
+            raise TypeError("Missing 'is_nullable' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("default_value", default_value)
+        _setter("is_as_uuid", is_as_uuid)
+        _setter("is_generated", is_generated)
+        _setter("is_nullable", is_nullable)
+        _setter("name", name)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="defaultValue")
@@ -1461,9 +2173,36 @@ class GetTablesTableCollectionSchemaIdentityResult(dict):
                  column_name: str,
                  is_always: bool,
                  is_null: bool):
-        pulumi.set(__self__, "column_name", column_name)
-        pulumi.set(__self__, "is_always", is_always)
-        pulumi.set(__self__, "is_null", is_null)
+        GetTablesTableCollectionSchemaIdentityResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_name=column_name,
+            is_always=is_always,
+            is_null=is_null,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_name: Optional[str] = None,
+             is_always: Optional[bool] = None,
+             is_null: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if column_name is None and 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if column_name is None:
+            raise TypeError("Missing 'column_name' argument")
+        if is_always is None and 'isAlways' in kwargs:
+            is_always = kwargs['isAlways']
+        if is_always is None:
+            raise TypeError("Missing 'is_always' argument")
+        if is_null is None and 'isNull' in kwargs:
+            is_null = kwargs['isNull']
+        if is_null is None:
+            raise TypeError("Missing 'is_null' argument")
+
+        _setter("column_name", column_name)
+        _setter("is_always", is_always)
+        _setter("is_null", is_null)
 
     @property
     @pulumi.getter(name="columnName")
@@ -1494,10 +2233,43 @@ class GetTablesTableCollectionTableLimitResult(dict):
         :param int max_storage_in_gbs: Maximum size of storage used by the table.
         :param int max_write_units: Maximum sustained write throughput limit for the table.
         """
-        pulumi.set(__self__, "capacity_mode", capacity_mode)
-        pulumi.set(__self__, "max_read_units", max_read_units)
-        pulumi.set(__self__, "max_storage_in_gbs", max_storage_in_gbs)
-        pulumi.set(__self__, "max_write_units", max_write_units)
+        GetTablesTableCollectionTableLimitResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            capacity_mode=capacity_mode,
+            max_read_units=max_read_units,
+            max_storage_in_gbs=max_storage_in_gbs,
+            max_write_units=max_write_units,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             capacity_mode: Optional[str] = None,
+             max_read_units: Optional[int] = None,
+             max_storage_in_gbs: Optional[int] = None,
+             max_write_units: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if capacity_mode is None and 'capacityMode' in kwargs:
+            capacity_mode = kwargs['capacityMode']
+        if capacity_mode is None:
+            raise TypeError("Missing 'capacity_mode' argument")
+        if max_read_units is None and 'maxReadUnits' in kwargs:
+            max_read_units = kwargs['maxReadUnits']
+        if max_read_units is None:
+            raise TypeError("Missing 'max_read_units' argument")
+        if max_storage_in_gbs is None and 'maxStorageInGbs' in kwargs:
+            max_storage_in_gbs = kwargs['maxStorageInGbs']
+        if max_storage_in_gbs is None:
+            raise TypeError("Missing 'max_storage_in_gbs' argument")
+        if max_write_units is None and 'maxWriteUnits' in kwargs:
+            max_write_units = kwargs['maxWriteUnits']
+        if max_write_units is None:
+            raise TypeError("Missing 'max_write_units' argument")
+
+        _setter("capacity_mode", capacity_mode)
+        _setter("max_read_units", max_read_units)
+        _setter("max_storage_in_gbs", max_storage_in_gbs)
+        _setter("max_write_units", max_write_units)
 
     @property
     @pulumi.getter(name="capacityMode")

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -33,18 +33,57 @@ class TableArgs:
         :param pulumi.Input[str] name: Table name.
         :param pulumi.Input['TableTableLimitsArgs'] table_limits: (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "ddl_statement", ddl_statement)
+        TableArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            ddl_statement=ddl_statement,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            is_auto_reclaimable=is_auto_reclaimable,
+            name=name,
+            table_limits=table_limits,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             ddl_statement: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_auto_reclaimable: Optional[pulumi.Input[bool]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             table_limits: Optional[pulumi.Input['TableTableLimitsArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if ddl_statement is None and 'ddlStatement' in kwargs:
+            ddl_statement = kwargs['ddlStatement']
+        if ddl_statement is None:
+            raise TypeError("Missing 'ddl_statement' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_auto_reclaimable is None and 'isAutoReclaimable' in kwargs:
+            is_auto_reclaimable = kwargs['isAutoReclaimable']
+        if table_limits is None and 'tableLimits' in kwargs:
+            table_limits = kwargs['tableLimits']
+
+        _setter("compartment_id", compartment_id)
+        _setter("ddl_statement", ddl_statement)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_auto_reclaimable is not None:
-            pulumi.set(__self__, "is_auto_reclaimable", is_auto_reclaimable)
+            _setter("is_auto_reclaimable", is_auto_reclaimable)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if table_limits is not None:
-            pulumi.set(__self__, "table_limits", table_limits)
+            _setter("table_limits", table_limits)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -173,42 +212,115 @@ class _TableState:
         :param pulumi.Input[str] time_of_expiration: If lifecycleState is INACTIVE, indicates when this table will be automatically removed. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the the table's metadata was last updated. An RFC3339 formatted datetime string.
         """
+        _TableState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            ddl_statement=ddl_statement,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            is_auto_reclaimable=is_auto_reclaimable,
+            is_multi_region=is_multi_region,
+            lifecycle_details=lifecycle_details,
+            local_replica_initialization_in_percent=local_replica_initialization_in_percent,
+            name=name,
+            replicas=replicas,
+            schema_state=schema_state,
+            schemas=schemas,
+            state=state,
+            system_tags=system_tags,
+            table_limits=table_limits,
+            time_created=time_created,
+            time_of_expiration=time_of_expiration,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             ddl_statement: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_auto_reclaimable: Optional[pulumi.Input[bool]] = None,
+             is_multi_region: Optional[pulumi.Input[bool]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             local_replica_initialization_in_percent: Optional[pulumi.Input[int]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             replicas: Optional[pulumi.Input[Sequence[pulumi.Input['TableReplicaArgs']]]] = None,
+             schema_state: Optional[pulumi.Input[str]] = None,
+             schemas: Optional[pulumi.Input[Sequence[pulumi.Input['TableSchemaArgs']]]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             table_limits: Optional[pulumi.Input['TableTableLimitsArgs']] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_of_expiration: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if ddl_statement is None and 'ddlStatement' in kwargs:
+            ddl_statement = kwargs['ddlStatement']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_auto_reclaimable is None and 'isAutoReclaimable' in kwargs:
+            is_auto_reclaimable = kwargs['isAutoReclaimable']
+        if is_multi_region is None and 'isMultiRegion' in kwargs:
+            is_multi_region = kwargs['isMultiRegion']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if local_replica_initialization_in_percent is None and 'localReplicaInitializationInPercent' in kwargs:
+            local_replica_initialization_in_percent = kwargs['localReplicaInitializationInPercent']
+        if schema_state is None and 'schemaState' in kwargs:
+            schema_state = kwargs['schemaState']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if table_limits is None and 'tableLimits' in kwargs:
+            table_limits = kwargs['tableLimits']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_of_expiration is None and 'timeOfExpiration' in kwargs:
+            time_of_expiration = kwargs['timeOfExpiration']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if ddl_statement is not None:
-            pulumi.set(__self__, "ddl_statement", ddl_statement)
+            _setter("ddl_statement", ddl_statement)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_auto_reclaimable is not None:
-            pulumi.set(__self__, "is_auto_reclaimable", is_auto_reclaimable)
+            _setter("is_auto_reclaimable", is_auto_reclaimable)
         if is_multi_region is not None:
-            pulumi.set(__self__, "is_multi_region", is_multi_region)
+            _setter("is_multi_region", is_multi_region)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if local_replica_initialization_in_percent is not None:
-            pulumi.set(__self__, "local_replica_initialization_in_percent", local_replica_initialization_in_percent)
+            _setter("local_replica_initialization_in_percent", local_replica_initialization_in_percent)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if replicas is not None:
-            pulumi.set(__self__, "replicas", replicas)
+            _setter("replicas", replicas)
         if schema_state is not None:
-            pulumi.set(__self__, "schema_state", schema_state)
+            _setter("schema_state", schema_state)
         if schemas is not None:
-            pulumi.set(__self__, "schemas", schemas)
+            _setter("schemas", schemas)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if table_limits is not None:
-            pulumi.set(__self__, "table_limits", table_limits)
+            _setter("table_limits", table_limits)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_of_expiration is not None:
-            pulumi.set(__self__, "time_of_expiration", time_of_expiration)
+            _setter("time_of_expiration", time_of_expiration)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -536,6 +648,10 @@ class Table(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            TableArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -567,6 +683,11 @@ class Table(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_auto_reclaimable"] = is_auto_reclaimable
             __props__.__dict__["name"] = name
+            if table_limits is not None and not isinstance(table_limits, TableTableLimitsArgs):
+                table_limits = table_limits or {}
+                def _setter(key, value):
+                    table_limits[key] = value
+                TableTableLimitsArgs._configure(_setter, **table_limits)
             __props__.__dict__["table_limits"] = table_limits
             __props__.__dict__["is_multi_region"] = None
             __props__.__dict__["lifecycle_details"] = None

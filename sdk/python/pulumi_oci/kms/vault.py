@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -41,23 +41,78 @@ class VaultArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "vault_type", vault_type)
+        VaultArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            vault_type=vault_type,
+            defined_tags=defined_tags,
+            external_key_manager_metadata=external_key_manager_metadata,
+            freeform_tags=freeform_tags,
+            restore_from_file=restore_from_file,
+            restore_from_object_store=restore_from_object_store,
+            restore_trigger=restore_trigger,
+            time_of_deletion=time_of_deletion,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             vault_type: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             external_key_manager_metadata: Optional[pulumi.Input['VaultExternalKeyManagerMetadataArgs']] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             restore_from_file: Optional[pulumi.Input['VaultRestoreFromFileArgs']] = None,
+             restore_from_object_store: Optional[pulumi.Input['VaultRestoreFromObjectStoreArgs']] = None,
+             restore_trigger: Optional[pulumi.Input[bool]] = None,
+             time_of_deletion: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if vault_type is None and 'vaultType' in kwargs:
+            vault_type = kwargs['vaultType']
+        if vault_type is None:
+            raise TypeError("Missing 'vault_type' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if external_key_manager_metadata is None and 'externalKeyManagerMetadata' in kwargs:
+            external_key_manager_metadata = kwargs['externalKeyManagerMetadata']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if restore_from_file is None and 'restoreFromFile' in kwargs:
+            restore_from_file = kwargs['restoreFromFile']
+        if restore_from_object_store is None and 'restoreFromObjectStore' in kwargs:
+            restore_from_object_store = kwargs['restoreFromObjectStore']
+        if restore_trigger is None and 'restoreTrigger' in kwargs:
+            restore_trigger = kwargs['restoreTrigger']
+        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
+            time_of_deletion = kwargs['timeOfDeletion']
+
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
+        _setter("vault_type", vault_type)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if external_key_manager_metadata is not None:
-            pulumi.set(__self__, "external_key_manager_metadata", external_key_manager_metadata)
+            _setter("external_key_manager_metadata", external_key_manager_metadata)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if restore_from_file is not None:
-            pulumi.set(__self__, "restore_from_file", restore_from_file)
+            _setter("restore_from_file", restore_from_file)
         if restore_from_object_store is not None:
-            pulumi.set(__self__, "restore_from_object_store", restore_from_object_store)
+            _setter("restore_from_object_store", restore_from_object_store)
         if restore_trigger is not None:
-            pulumi.set(__self__, "restore_trigger", restore_trigger)
+            _setter("restore_trigger", restore_trigger)
         if time_of_deletion is not None:
-            pulumi.set(__self__, "time_of_deletion", time_of_deletion)
+            _setter("time_of_deletion", time_of_deletion)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -224,42 +279,121 @@ class _VaultState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] vault_type: The type of vault to create. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
         """
+        _VaultState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            crypto_endpoint=crypto_endpoint,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            external_key_manager_metadata=external_key_manager_metadata,
+            external_key_manager_metadata_summaries=external_key_manager_metadata_summaries,
+            freeform_tags=freeform_tags,
+            is_primary=is_primary,
+            management_endpoint=management_endpoint,
+            replica_details=replica_details,
+            restore_from_file=restore_from_file,
+            restore_from_object_store=restore_from_object_store,
+            restore_trigger=restore_trigger,
+            restored_from_vault_id=restored_from_vault_id,
+            state=state,
+            time_created=time_created,
+            time_of_deletion=time_of_deletion,
+            vault_type=vault_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             crypto_endpoint: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             external_key_manager_metadata: Optional[pulumi.Input['VaultExternalKeyManagerMetadataArgs']] = None,
+             external_key_manager_metadata_summaries: Optional[pulumi.Input[Sequence[pulumi.Input['VaultExternalKeyManagerMetadataSummaryArgs']]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_primary: Optional[pulumi.Input[bool]] = None,
+             management_endpoint: Optional[pulumi.Input[str]] = None,
+             replica_details: Optional[pulumi.Input[Sequence[pulumi.Input['VaultReplicaDetailArgs']]]] = None,
+             restore_from_file: Optional[pulumi.Input['VaultRestoreFromFileArgs']] = None,
+             restore_from_object_store: Optional[pulumi.Input['VaultRestoreFromObjectStoreArgs']] = None,
+             restore_trigger: Optional[pulumi.Input[bool]] = None,
+             restored_from_vault_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_of_deletion: Optional[pulumi.Input[str]] = None,
+             vault_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if crypto_endpoint is None and 'cryptoEndpoint' in kwargs:
+            crypto_endpoint = kwargs['cryptoEndpoint']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if external_key_manager_metadata is None and 'externalKeyManagerMetadata' in kwargs:
+            external_key_manager_metadata = kwargs['externalKeyManagerMetadata']
+        if external_key_manager_metadata_summaries is None and 'externalKeyManagerMetadataSummaries' in kwargs:
+            external_key_manager_metadata_summaries = kwargs['externalKeyManagerMetadataSummaries']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_primary is None and 'isPrimary' in kwargs:
+            is_primary = kwargs['isPrimary']
+        if management_endpoint is None and 'managementEndpoint' in kwargs:
+            management_endpoint = kwargs['managementEndpoint']
+        if replica_details is None and 'replicaDetails' in kwargs:
+            replica_details = kwargs['replicaDetails']
+        if restore_from_file is None and 'restoreFromFile' in kwargs:
+            restore_from_file = kwargs['restoreFromFile']
+        if restore_from_object_store is None and 'restoreFromObjectStore' in kwargs:
+            restore_from_object_store = kwargs['restoreFromObjectStore']
+        if restore_trigger is None and 'restoreTrigger' in kwargs:
+            restore_trigger = kwargs['restoreTrigger']
+        if restored_from_vault_id is None and 'restoredFromVaultId' in kwargs:
+            restored_from_vault_id = kwargs['restoredFromVaultId']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
+            time_of_deletion = kwargs['timeOfDeletion']
+        if vault_type is None and 'vaultType' in kwargs:
+            vault_type = kwargs['vaultType']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if crypto_endpoint is not None:
-            pulumi.set(__self__, "crypto_endpoint", crypto_endpoint)
+            _setter("crypto_endpoint", crypto_endpoint)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if external_key_manager_metadata is not None:
-            pulumi.set(__self__, "external_key_manager_metadata", external_key_manager_metadata)
+            _setter("external_key_manager_metadata", external_key_manager_metadata)
         if external_key_manager_metadata_summaries is not None:
-            pulumi.set(__self__, "external_key_manager_metadata_summaries", external_key_manager_metadata_summaries)
+            _setter("external_key_manager_metadata_summaries", external_key_manager_metadata_summaries)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_primary is not None:
-            pulumi.set(__self__, "is_primary", is_primary)
+            _setter("is_primary", is_primary)
         if management_endpoint is not None:
-            pulumi.set(__self__, "management_endpoint", management_endpoint)
+            _setter("management_endpoint", management_endpoint)
         if replica_details is not None:
-            pulumi.set(__self__, "replica_details", replica_details)
+            _setter("replica_details", replica_details)
         if restore_from_file is not None:
-            pulumi.set(__self__, "restore_from_file", restore_from_file)
+            _setter("restore_from_file", restore_from_file)
         if restore_from_object_store is not None:
-            pulumi.set(__self__, "restore_from_object_store", restore_from_object_store)
+            _setter("restore_from_object_store", restore_from_object_store)
         if restore_trigger is not None:
-            pulumi.set(__self__, "restore_trigger", restore_trigger)
+            _setter("restore_trigger", restore_trigger)
         if restored_from_vault_id is not None:
-            pulumi.set(__self__, "restored_from_vault_id", restored_from_vault_id)
+            _setter("restored_from_vault_id", restored_from_vault_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_of_deletion is not None:
-            pulumi.set(__self__, "time_of_deletion", time_of_deletion)
+            _setter("time_of_deletion", time_of_deletion)
         if vault_type is not None:
-            pulumi.set(__self__, "vault_type", vault_type)
+            _setter("vault_type", vault_type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -621,6 +755,10 @@ class Vault(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            VaultArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -652,9 +790,24 @@ class Vault(pulumi.CustomResource):
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
+            if external_key_manager_metadata is not None and not isinstance(external_key_manager_metadata, VaultExternalKeyManagerMetadataArgs):
+                external_key_manager_metadata = external_key_manager_metadata or {}
+                def _setter(key, value):
+                    external_key_manager_metadata[key] = value
+                VaultExternalKeyManagerMetadataArgs._configure(_setter, **external_key_manager_metadata)
             __props__.__dict__["external_key_manager_metadata"] = external_key_manager_metadata
             __props__.__dict__["freeform_tags"] = freeform_tags
+            if restore_from_file is not None and not isinstance(restore_from_file, VaultRestoreFromFileArgs):
+                restore_from_file = restore_from_file or {}
+                def _setter(key, value):
+                    restore_from_file[key] = value
+                VaultRestoreFromFileArgs._configure(_setter, **restore_from_file)
             __props__.__dict__["restore_from_file"] = restore_from_file
+            if restore_from_object_store is not None and not isinstance(restore_from_object_store, VaultRestoreFromObjectStoreArgs):
+                restore_from_object_store = restore_from_object_store or {}
+                def _setter(key, value):
+                    restore_from_object_store[key] = value
+                VaultRestoreFromObjectStoreArgs._configure(_setter, **restore_from_object_store)
             __props__.__dict__["restore_from_object_store"] = restore_from_object_store
             __props__.__dict__["restore_trigger"] = restore_trigger
             __props__.__dict__["time_of_deletion"] = time_of_deletion

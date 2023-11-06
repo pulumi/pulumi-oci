@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['SensitiveDataModelsApplyDiscoveryJobResultsArgs', 'SensitiveDataModelsApplyDiscoveryJobResults']
@@ -19,8 +19,29 @@ class SensitiveDataModelsApplyDiscoveryJobResultsArgs:
         """
         The set of arguments for constructing a SensitiveDataModelsApplyDiscoveryJobResults resource.
         """
-        pulumi.set(__self__, "discovery_job_id", discovery_job_id)
-        pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
+        SensitiveDataModelsApplyDiscoveryJobResultsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            discovery_job_id=discovery_job_id,
+            sensitive_data_model_id=sensitive_data_model_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             discovery_job_id: Optional[pulumi.Input[str]] = None,
+             sensitive_data_model_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if discovery_job_id is None and 'discoveryJobId' in kwargs:
+            discovery_job_id = kwargs['discoveryJobId']
+        if discovery_job_id is None:
+            raise TypeError("Missing 'discovery_job_id' argument")
+        if sensitive_data_model_id is None and 'sensitiveDataModelId' in kwargs:
+            sensitive_data_model_id = kwargs['sensitiveDataModelId']
+        if sensitive_data_model_id is None:
+            raise TypeError("Missing 'sensitive_data_model_id' argument")
+
+        _setter("discovery_job_id", discovery_job_id)
+        _setter("sensitive_data_model_id", sensitive_data_model_id)
 
     @property
     @pulumi.getter(name="discoveryJobId")
@@ -49,10 +70,27 @@ class _SensitiveDataModelsApplyDiscoveryJobResultsState:
         """
         Input properties used for looking up and filtering SensitiveDataModelsApplyDiscoveryJobResults resources.
         """
+        _SensitiveDataModelsApplyDiscoveryJobResultsState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            discovery_job_id=discovery_job_id,
+            sensitive_data_model_id=sensitive_data_model_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             discovery_job_id: Optional[pulumi.Input[str]] = None,
+             sensitive_data_model_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if discovery_job_id is None and 'discoveryJobId' in kwargs:
+            discovery_job_id = kwargs['discoveryJobId']
+        if sensitive_data_model_id is None and 'sensitiveDataModelId' in kwargs:
+            sensitive_data_model_id = kwargs['sensitiveDataModelId']
+
         if discovery_job_id is not None:
-            pulumi.set(__self__, "discovery_job_id", discovery_job_id)
+            _setter("discovery_job_id", discovery_job_id)
         if sensitive_data_model_id is not None:
-            pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
+            _setter("sensitive_data_model_id", sensitive_data_model_id)
 
     @property
     @pulumi.getter(name="discoveryJobId")
@@ -104,6 +142,10 @@ class SensitiveDataModelsApplyDiscoveryJobResults(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            SensitiveDataModelsApplyDiscoveryJobResultsArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

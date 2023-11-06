@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['FusionEnvironmentDataMaskingActivityArgs', 'FusionEnvironmentDataMaskingActivity']
@@ -25,9 +25,28 @@ class FusionEnvironmentDataMaskingActivityArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "fusion_environment_id", fusion_environment_id)
+        FusionEnvironmentDataMaskingActivityArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            fusion_environment_id=fusion_environment_id,
+            is_resume_data_masking=is_resume_data_masking,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             fusion_environment_id: Optional[pulumi.Input[str]] = None,
+             is_resume_data_masking: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if fusion_environment_id is None and 'fusionEnvironmentId' in kwargs:
+            fusion_environment_id = kwargs['fusionEnvironmentId']
+        if fusion_environment_id is None:
+            raise TypeError("Missing 'fusion_environment_id' argument")
+        if is_resume_data_masking is None and 'isResumeDataMasking' in kwargs:
+            is_resume_data_masking = kwargs['isResumeDataMasking']
+
+        _setter("fusion_environment_id", fusion_environment_id)
         if is_resume_data_masking is not None:
-            pulumi.set(__self__, "is_resume_data_masking", is_resume_data_masking)
+            _setter("is_resume_data_masking", is_resume_data_masking)
 
     @property
     @pulumi.getter(name="fusionEnvironmentId")
@@ -78,16 +97,43 @@ class _FusionEnvironmentDataMaskingActivityState:
         :param pulumi.Input[str] time_masking_finish: The time the data masking activity ended. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_masking_start: The time the data masking activity started. An RFC3339 formatted datetime string.
         """
+        _FusionEnvironmentDataMaskingActivityState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            fusion_environment_id=fusion_environment_id,
+            is_resume_data_masking=is_resume_data_masking,
+            state=state,
+            time_masking_finish=time_masking_finish,
+            time_masking_start=time_masking_start,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             fusion_environment_id: Optional[pulumi.Input[str]] = None,
+             is_resume_data_masking: Optional[pulumi.Input[bool]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_masking_finish: Optional[pulumi.Input[str]] = None,
+             time_masking_start: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if fusion_environment_id is None and 'fusionEnvironmentId' in kwargs:
+            fusion_environment_id = kwargs['fusionEnvironmentId']
+        if is_resume_data_masking is None and 'isResumeDataMasking' in kwargs:
+            is_resume_data_masking = kwargs['isResumeDataMasking']
+        if time_masking_finish is None and 'timeMaskingFinish' in kwargs:
+            time_masking_finish = kwargs['timeMaskingFinish']
+        if time_masking_start is None and 'timeMaskingStart' in kwargs:
+            time_masking_start = kwargs['timeMaskingStart']
+
         if fusion_environment_id is not None:
-            pulumi.set(__self__, "fusion_environment_id", fusion_environment_id)
+            _setter("fusion_environment_id", fusion_environment_id)
         if is_resume_data_masking is not None:
-            pulumi.set(__self__, "is_resume_data_masking", is_resume_data_masking)
+            _setter("is_resume_data_masking", is_resume_data_masking)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_masking_finish is not None:
-            pulumi.set(__self__, "time_masking_finish", time_masking_finish)
+            _setter("time_masking_finish", time_masking_finish)
         if time_masking_start is not None:
-            pulumi.set(__self__, "time_masking_start", time_masking_start)
+            _setter("time_masking_start", time_masking_start)
 
     @property
     @pulumi.getter(name="fusionEnvironmentId")
@@ -235,6 +281,10 @@ class FusionEnvironmentDataMaskingActivity(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            FusionEnvironmentDataMaskingActivityArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

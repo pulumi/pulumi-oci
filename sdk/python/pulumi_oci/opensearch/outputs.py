@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -26,10 +26,29 @@ class GetOpensearchClustersFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetOpensearchClustersFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -51,7 +70,20 @@ class GetOpensearchClustersFilterResult(dict):
 class GetOpensearchClustersOpensearchClusterCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetOpensearchClustersOpensearchClusterCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -144,46 +176,289 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         :param str vcn_compartment_id: The OCID for the compartment where the cluster's VCN is located.
         :param str vcn_id: The OCID of the cluster's VCN.
         """
-        pulumi.set(__self__, "availability_domains", availability_domains)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "data_node_count", data_node_count)
-        pulumi.set(__self__, "data_node_host_bare_metal_shape", data_node_host_bare_metal_shape)
-        pulumi.set(__self__, "data_node_host_memory_gb", data_node_host_memory_gb)
-        pulumi.set(__self__, "data_node_host_ocpu_count", data_node_host_ocpu_count)
-        pulumi.set(__self__, "data_node_host_type", data_node_host_type)
-        pulumi.set(__self__, "data_node_storage_gb", data_node_storage_gb)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "fqdn", fqdn)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "master_node_count", master_node_count)
-        pulumi.set(__self__, "master_node_host_bare_metal_shape", master_node_host_bare_metal_shape)
-        pulumi.set(__self__, "master_node_host_memory_gb", master_node_host_memory_gb)
-        pulumi.set(__self__, "master_node_host_ocpu_count", master_node_host_ocpu_count)
-        pulumi.set(__self__, "master_node_host_type", master_node_host_type)
-        pulumi.set(__self__, "opendashboard_fqdn", opendashboard_fqdn)
-        pulumi.set(__self__, "opendashboard_node_count", opendashboard_node_count)
-        pulumi.set(__self__, "opendashboard_node_host_memory_gb", opendashboard_node_host_memory_gb)
-        pulumi.set(__self__, "opendashboard_node_host_ocpu_count", opendashboard_node_host_ocpu_count)
-        pulumi.set(__self__, "opendashboard_private_ip", opendashboard_private_ip)
-        pulumi.set(__self__, "opensearch_fqdn", opensearch_fqdn)
-        pulumi.set(__self__, "opensearch_private_ip", opensearch_private_ip)
-        pulumi.set(__self__, "security_master_user_name", security_master_user_name)
-        pulumi.set(__self__, "security_master_user_password_hash", security_master_user_password_hash)
-        pulumi.set(__self__, "security_mode", security_mode)
-        pulumi.set(__self__, "software_version", software_version)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_compartment_id", subnet_compartment_id)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_deleted", time_deleted)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "total_storage_gb", total_storage_gb)
-        pulumi.set(__self__, "vcn_compartment_id", vcn_compartment_id)
-        pulumi.set(__self__, "vcn_id", vcn_id)
+        GetOpensearchClustersOpensearchClusterCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domains=availability_domains,
+            compartment_id=compartment_id,
+            data_node_count=data_node_count,
+            data_node_host_bare_metal_shape=data_node_host_bare_metal_shape,
+            data_node_host_memory_gb=data_node_host_memory_gb,
+            data_node_host_ocpu_count=data_node_host_ocpu_count,
+            data_node_host_type=data_node_host_type,
+            data_node_storage_gb=data_node_storage_gb,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            fqdn=fqdn,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            master_node_count=master_node_count,
+            master_node_host_bare_metal_shape=master_node_host_bare_metal_shape,
+            master_node_host_memory_gb=master_node_host_memory_gb,
+            master_node_host_ocpu_count=master_node_host_ocpu_count,
+            master_node_host_type=master_node_host_type,
+            opendashboard_fqdn=opendashboard_fqdn,
+            opendashboard_node_count=opendashboard_node_count,
+            opendashboard_node_host_memory_gb=opendashboard_node_host_memory_gb,
+            opendashboard_node_host_ocpu_count=opendashboard_node_host_ocpu_count,
+            opendashboard_private_ip=opendashboard_private_ip,
+            opensearch_fqdn=opensearch_fqdn,
+            opensearch_private_ip=opensearch_private_ip,
+            security_master_user_name=security_master_user_name,
+            security_master_user_password_hash=security_master_user_password_hash,
+            security_mode=security_mode,
+            software_version=software_version,
+            state=state,
+            subnet_compartment_id=subnet_compartment_id,
+            subnet_id=subnet_id,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_deleted=time_deleted,
+            time_updated=time_updated,
+            total_storage_gb=total_storage_gb,
+            vcn_compartment_id=vcn_compartment_id,
+            vcn_id=vcn_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domains: Optional[Sequence[str]] = None,
+             compartment_id: Optional[str] = None,
+             data_node_count: Optional[int] = None,
+             data_node_host_bare_metal_shape: Optional[str] = None,
+             data_node_host_memory_gb: Optional[int] = None,
+             data_node_host_ocpu_count: Optional[int] = None,
+             data_node_host_type: Optional[str] = None,
+             data_node_storage_gb: Optional[int] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             fqdn: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             master_node_count: Optional[int] = None,
+             master_node_host_bare_metal_shape: Optional[str] = None,
+             master_node_host_memory_gb: Optional[int] = None,
+             master_node_host_ocpu_count: Optional[int] = None,
+             master_node_host_type: Optional[str] = None,
+             opendashboard_fqdn: Optional[str] = None,
+             opendashboard_node_count: Optional[int] = None,
+             opendashboard_node_host_memory_gb: Optional[int] = None,
+             opendashboard_node_host_ocpu_count: Optional[int] = None,
+             opendashboard_private_ip: Optional[str] = None,
+             opensearch_fqdn: Optional[str] = None,
+             opensearch_private_ip: Optional[str] = None,
+             security_master_user_name: Optional[str] = None,
+             security_master_user_password_hash: Optional[str] = None,
+             security_mode: Optional[str] = None,
+             software_version: Optional[str] = None,
+             state: Optional[str] = None,
+             subnet_compartment_id: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_deleted: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             total_storage_gb: Optional[int] = None,
+             vcn_compartment_id: Optional[str] = None,
+             vcn_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if availability_domains is None and 'availabilityDomains' in kwargs:
+            availability_domains = kwargs['availabilityDomains']
+        if availability_domains is None:
+            raise TypeError("Missing 'availability_domains' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if data_node_count is None and 'dataNodeCount' in kwargs:
+            data_node_count = kwargs['dataNodeCount']
+        if data_node_count is None:
+            raise TypeError("Missing 'data_node_count' argument")
+        if data_node_host_bare_metal_shape is None and 'dataNodeHostBareMetalShape' in kwargs:
+            data_node_host_bare_metal_shape = kwargs['dataNodeHostBareMetalShape']
+        if data_node_host_bare_metal_shape is None:
+            raise TypeError("Missing 'data_node_host_bare_metal_shape' argument")
+        if data_node_host_memory_gb is None and 'dataNodeHostMemoryGb' in kwargs:
+            data_node_host_memory_gb = kwargs['dataNodeHostMemoryGb']
+        if data_node_host_memory_gb is None:
+            raise TypeError("Missing 'data_node_host_memory_gb' argument")
+        if data_node_host_ocpu_count is None and 'dataNodeHostOcpuCount' in kwargs:
+            data_node_host_ocpu_count = kwargs['dataNodeHostOcpuCount']
+        if data_node_host_ocpu_count is None:
+            raise TypeError("Missing 'data_node_host_ocpu_count' argument")
+        if data_node_host_type is None and 'dataNodeHostType' in kwargs:
+            data_node_host_type = kwargs['dataNodeHostType']
+        if data_node_host_type is None:
+            raise TypeError("Missing 'data_node_host_type' argument")
+        if data_node_storage_gb is None and 'dataNodeStorageGb' in kwargs:
+            data_node_storage_gb = kwargs['dataNodeStorageGb']
+        if data_node_storage_gb is None:
+            raise TypeError("Missing 'data_node_storage_gb' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if fqdn is None:
+            raise TypeError("Missing 'fqdn' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if master_node_count is None and 'masterNodeCount' in kwargs:
+            master_node_count = kwargs['masterNodeCount']
+        if master_node_count is None:
+            raise TypeError("Missing 'master_node_count' argument")
+        if master_node_host_bare_metal_shape is None and 'masterNodeHostBareMetalShape' in kwargs:
+            master_node_host_bare_metal_shape = kwargs['masterNodeHostBareMetalShape']
+        if master_node_host_bare_metal_shape is None:
+            raise TypeError("Missing 'master_node_host_bare_metal_shape' argument")
+        if master_node_host_memory_gb is None and 'masterNodeHostMemoryGb' in kwargs:
+            master_node_host_memory_gb = kwargs['masterNodeHostMemoryGb']
+        if master_node_host_memory_gb is None:
+            raise TypeError("Missing 'master_node_host_memory_gb' argument")
+        if master_node_host_ocpu_count is None and 'masterNodeHostOcpuCount' in kwargs:
+            master_node_host_ocpu_count = kwargs['masterNodeHostOcpuCount']
+        if master_node_host_ocpu_count is None:
+            raise TypeError("Missing 'master_node_host_ocpu_count' argument")
+        if master_node_host_type is None and 'masterNodeHostType' in kwargs:
+            master_node_host_type = kwargs['masterNodeHostType']
+        if master_node_host_type is None:
+            raise TypeError("Missing 'master_node_host_type' argument")
+        if opendashboard_fqdn is None and 'opendashboardFqdn' in kwargs:
+            opendashboard_fqdn = kwargs['opendashboardFqdn']
+        if opendashboard_fqdn is None:
+            raise TypeError("Missing 'opendashboard_fqdn' argument")
+        if opendashboard_node_count is None and 'opendashboardNodeCount' in kwargs:
+            opendashboard_node_count = kwargs['opendashboardNodeCount']
+        if opendashboard_node_count is None:
+            raise TypeError("Missing 'opendashboard_node_count' argument")
+        if opendashboard_node_host_memory_gb is None and 'opendashboardNodeHostMemoryGb' in kwargs:
+            opendashboard_node_host_memory_gb = kwargs['opendashboardNodeHostMemoryGb']
+        if opendashboard_node_host_memory_gb is None:
+            raise TypeError("Missing 'opendashboard_node_host_memory_gb' argument")
+        if opendashboard_node_host_ocpu_count is None and 'opendashboardNodeHostOcpuCount' in kwargs:
+            opendashboard_node_host_ocpu_count = kwargs['opendashboardNodeHostOcpuCount']
+        if opendashboard_node_host_ocpu_count is None:
+            raise TypeError("Missing 'opendashboard_node_host_ocpu_count' argument")
+        if opendashboard_private_ip is None and 'opendashboardPrivateIp' in kwargs:
+            opendashboard_private_ip = kwargs['opendashboardPrivateIp']
+        if opendashboard_private_ip is None:
+            raise TypeError("Missing 'opendashboard_private_ip' argument")
+        if opensearch_fqdn is None and 'opensearchFqdn' in kwargs:
+            opensearch_fqdn = kwargs['opensearchFqdn']
+        if opensearch_fqdn is None:
+            raise TypeError("Missing 'opensearch_fqdn' argument")
+        if opensearch_private_ip is None and 'opensearchPrivateIp' in kwargs:
+            opensearch_private_ip = kwargs['opensearchPrivateIp']
+        if opensearch_private_ip is None:
+            raise TypeError("Missing 'opensearch_private_ip' argument")
+        if security_master_user_name is None and 'securityMasterUserName' in kwargs:
+            security_master_user_name = kwargs['securityMasterUserName']
+        if security_master_user_name is None:
+            raise TypeError("Missing 'security_master_user_name' argument")
+        if security_master_user_password_hash is None and 'securityMasterUserPasswordHash' in kwargs:
+            security_master_user_password_hash = kwargs['securityMasterUserPasswordHash']
+        if security_master_user_password_hash is None:
+            raise TypeError("Missing 'security_master_user_password_hash' argument")
+        if security_mode is None and 'securityMode' in kwargs:
+            security_mode = kwargs['securityMode']
+        if security_mode is None:
+            raise TypeError("Missing 'security_mode' argument")
+        if software_version is None and 'softwareVersion' in kwargs:
+            software_version = kwargs['softwareVersion']
+        if software_version is None:
+            raise TypeError("Missing 'software_version' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if subnet_compartment_id is None and 'subnetCompartmentId' in kwargs:
+            subnet_compartment_id = kwargs['subnetCompartmentId']
+        if subnet_compartment_id is None:
+            raise TypeError("Missing 'subnet_compartment_id' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_deleted is None and 'timeDeleted' in kwargs:
+            time_deleted = kwargs['timeDeleted']
+        if time_deleted is None:
+            raise TypeError("Missing 'time_deleted' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if total_storage_gb is None and 'totalStorageGb' in kwargs:
+            total_storage_gb = kwargs['totalStorageGb']
+        if total_storage_gb is None:
+            raise TypeError("Missing 'total_storage_gb' argument")
+        if vcn_compartment_id is None and 'vcnCompartmentId' in kwargs:
+            vcn_compartment_id = kwargs['vcnCompartmentId']
+        if vcn_compartment_id is None:
+            raise TypeError("Missing 'vcn_compartment_id' argument")
+        if vcn_id is None and 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+        if vcn_id is None:
+            raise TypeError("Missing 'vcn_id' argument")
+
+        _setter("availability_domains", availability_domains)
+        _setter("compartment_id", compartment_id)
+        _setter("data_node_count", data_node_count)
+        _setter("data_node_host_bare_metal_shape", data_node_host_bare_metal_shape)
+        _setter("data_node_host_memory_gb", data_node_host_memory_gb)
+        _setter("data_node_host_ocpu_count", data_node_host_ocpu_count)
+        _setter("data_node_host_type", data_node_host_type)
+        _setter("data_node_storage_gb", data_node_storage_gb)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("fqdn", fqdn)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("master_node_count", master_node_count)
+        _setter("master_node_host_bare_metal_shape", master_node_host_bare_metal_shape)
+        _setter("master_node_host_memory_gb", master_node_host_memory_gb)
+        _setter("master_node_host_ocpu_count", master_node_host_ocpu_count)
+        _setter("master_node_host_type", master_node_host_type)
+        _setter("opendashboard_fqdn", opendashboard_fqdn)
+        _setter("opendashboard_node_count", opendashboard_node_count)
+        _setter("opendashboard_node_host_memory_gb", opendashboard_node_host_memory_gb)
+        _setter("opendashboard_node_host_ocpu_count", opendashboard_node_host_ocpu_count)
+        _setter("opendashboard_private_ip", opendashboard_private_ip)
+        _setter("opensearch_fqdn", opensearch_fqdn)
+        _setter("opensearch_private_ip", opensearch_private_ip)
+        _setter("security_master_user_name", security_master_user_name)
+        _setter("security_master_user_password_hash", security_master_user_password_hash)
+        _setter("security_mode", security_mode)
+        _setter("software_version", software_version)
+        _setter("state", state)
+        _setter("subnet_compartment_id", subnet_compartment_id)
+        _setter("subnet_id", subnet_id)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_deleted", time_deleted)
+        _setter("time_updated", time_updated)
+        _setter("total_storage_gb", total_storage_gb)
+        _setter("vcn_compartment_id", vcn_compartment_id)
+        _setter("vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="availabilityDomains")
@@ -513,7 +788,20 @@ class GetOpensearchVersionItemResult(dict):
         """
         :param str version: The version of OpenSearch.
         """
-        pulumi.set(__self__, "version", version)
+        GetOpensearchVersionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if version is None:
+            raise TypeError("Missing 'version' argument")
+
+        _setter("version", version)
 
     @property
     @pulumi.getter
@@ -530,10 +818,29 @@ class GetOpensearchVersionsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetOpensearchVersionsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -558,7 +865,20 @@ class GetOpensearchVersionsOpensearchVersionsCollectionResult(dict):
         """
         :param Sequence['GetOpensearchVersionsOpensearchVersionsCollectionItemArgs'] items: A list of OpenSearch versions.
         """
-        pulumi.set(__self__, "items", items)
+        GetOpensearchVersionsOpensearchVersionsCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetOpensearchVersionsOpensearchVersionsCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -576,7 +896,20 @@ class GetOpensearchVersionsOpensearchVersionsCollectionItemResult(dict):
         """
         :param str version: The version of OpenSearch.
         """
-        pulumi.set(__self__, "version", version)
+        GetOpensearchVersionsOpensearchVersionsCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if version is None:
+            raise TypeError("Missing 'version' argument")
+
+        _setter("version", version)
 
     @property
     @pulumi.getter

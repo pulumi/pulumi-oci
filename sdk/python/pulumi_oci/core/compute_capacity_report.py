@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -25,9 +25,36 @@ class ComputeCapacityReportArgs:
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
         :param pulumi.Input[Sequence[pulumi.Input['ComputeCapacityReportShapeAvailabilityArgs']]] shape_availabilities: Information about the shapes in the capacity report.
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "shape_availabilities", shape_availabilities)
+        ComputeCapacityReportArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            compartment_id=compartment_id,
+            shape_availabilities=shape_availabilities,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             shape_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input['ComputeCapacityReportShapeAvailabilityArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if availability_domain is None and 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if shape_availabilities is None and 'shapeAvailabilities' in kwargs:
+            shape_availabilities = kwargs['shapeAvailabilities']
+        if shape_availabilities is None:
+            raise TypeError("Missing 'shape_availabilities' argument")
+
+        _setter("availability_domain", availability_domain)
+        _setter("compartment_id", compartment_id)
+        _setter("shape_availabilities", shape_availabilities)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -80,14 +107,39 @@ class _ComputeCapacityReportState:
         :param pulumi.Input[Sequence[pulumi.Input['ComputeCapacityReportShapeAvailabilityArgs']]] shape_availabilities: Information about the shapes in the capacity report.
         :param pulumi.Input[str] time_created: The date and time the capacity report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
+        _ComputeCapacityReportState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            compartment_id=compartment_id,
+            shape_availabilities=shape_availabilities,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             shape_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input['ComputeCapacityReportShapeAvailabilityArgs']]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if availability_domain is None and 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if shape_availabilities is None and 'shapeAvailabilities' in kwargs:
+            shape_availabilities = kwargs['shapeAvailabilities']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if shape_availabilities is not None:
-            pulumi.set(__self__, "shape_availabilities", shape_availabilities)
+            _setter("shape_availabilities", shape_availabilities)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -245,6 +297,10 @@ class ComputeCapacityReport(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ComputeCapacityReportArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

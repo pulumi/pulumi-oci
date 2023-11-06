@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -65,10 +65,33 @@ class SddcDatastore(dict):
         :param str datastore_type: Type of the datastore.
         :param float capacity: Size of the Block Storage Volume in GB.
         """
-        pulumi.set(__self__, "block_volume_ids", block_volume_ids)
-        pulumi.set(__self__, "datastore_type", datastore_type)
+        SddcDatastore._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_volume_ids=block_volume_ids,
+            datastore_type=datastore_type,
+            capacity=capacity,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_volume_ids: Optional[Sequence[str]] = None,
+             datastore_type: Optional[str] = None,
+             capacity: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if block_volume_ids is None and 'blockVolumeIds' in kwargs:
+            block_volume_ids = kwargs['blockVolumeIds']
+        if block_volume_ids is None:
+            raise TypeError("Missing 'block_volume_ids' argument")
+        if datastore_type is None and 'datastoreType' in kwargs:
+            datastore_type = kwargs['datastoreType']
+        if datastore_type is None:
+            raise TypeError("Missing 'datastore_type' argument")
+
+        _setter("block_volume_ids", block_volume_ids)
+        _setter("datastore_type", datastore_type)
         if capacity is not None:
-            pulumi.set(__self__, "capacity", capacity)
+            _setter("capacity", capacity)
 
     @property
     @pulumi.getter(name="blockVolumeIds")
@@ -125,12 +148,31 @@ class SddcHcxOnPremLicense(dict):
         :param str status: status of HCX on-premise license.
         :param str system_name: Name of the system that consumed the HCX on-premise license
         """
+        SddcHcxOnPremLicense._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            activation_key=activation_key,
+            status=status,
+            system_name=system_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             activation_key: Optional[str] = None,
+             status: Optional[str] = None,
+             system_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if activation_key is None and 'activationKey' in kwargs:
+            activation_key = kwargs['activationKey']
+        if system_name is None and 'systemName' in kwargs:
+            system_name = kwargs['systemName']
+
         if activation_key is not None:
-            pulumi.set(__self__, "activation_key", activation_key)
+            _setter("activation_key", activation_key)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if system_name is not None:
-            pulumi.set(__self__, "system_name", system_name)
+            _setter("system_name", system_name)
 
     @property
     @pulumi.getter(name="activationKey")
@@ -185,10 +227,27 @@ class SddcUpgradeLicense(dict):
         :param str license_key: vSphere license key value.
         :param str license_type: vSphere license type.
         """
+        SddcUpgradeLicense._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            license_key=license_key,
+            license_type=license_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             license_key: Optional[str] = None,
+             license_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if license_key is None and 'licenseKey' in kwargs:
+            license_key = kwargs['licenseKey']
+        if license_type is None and 'licenseType' in kwargs:
+            license_type = kwargs['licenseType']
+
         if license_key is not None:
-            pulumi.set(__self__, "license_key", license_key)
+            _setter("license_key", license_key)
         if license_type is not None:
-            pulumi.set(__self__, "license_type", license_type)
+            _setter("license_type", license_type)
 
     @property
     @pulumi.getter(name="licenseKey")
@@ -235,10 +294,27 @@ class SddcVsphereUpgradeObject(dict):
         :param str download_link: Binary object download link.
         :param str link_description: Binary object description.
         """
+        SddcVsphereUpgradeObject._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            download_link=download_link,
+            link_description=link_description,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             download_link: Optional[str] = None,
+             link_description: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if download_link is None and 'downloadLink' in kwargs:
+            download_link = kwargs['downloadLink']
+        if link_description is None and 'linkDescription' in kwargs:
+            link_description = kwargs['linkDescription']
+
         if download_link is not None:
-            pulumi.set(__self__, "download_link", download_link)
+            _setter("download_link", download_link)
         if link_description is not None:
-            pulumi.set(__self__, "link_description", link_description)
+            _setter("link_description", link_description)
 
     @property
     @pulumi.getter(name="downloadLink")
@@ -316,33 +392,200 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         :param str upgraded_replacement_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
         :param str vmware_software_version: The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
         """
-        pulumi.set(__self__, "billing_contract_end_date", billing_contract_end_date)
-        pulumi.set(__self__, "billing_donor_host_id", billing_donor_host_id)
-        pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "compute_availability_domain", compute_availability_domain)
-        pulumi.set(__self__, "compute_instance_id", compute_instance_id)
-        pulumi.set(__self__, "current_sku", current_sku)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "failed_esxi_host_id", failed_esxi_host_id)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "grace_period_end_date", grace_period_end_date)
-        pulumi.set(__self__, "host_ocpu_count", host_ocpu_count)
-        pulumi.set(__self__, "host_shape_name", host_shape_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_billing_continuation_in_progress", is_billing_continuation_in_progress)
-        pulumi.set(__self__, "is_billing_swapping_in_progress", is_billing_swapping_in_progress)
-        pulumi.set(__self__, "next_sku", next_sku)
-        pulumi.set(__self__, "non_upgraded_esxi_host_id", non_upgraded_esxi_host_id)
-        pulumi.set(__self__, "replacement_esxi_host_id", replacement_esxi_host_id)
-        pulumi.set(__self__, "sddc_id", sddc_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "swap_billing_host_id", swap_billing_host_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "upgraded_replacement_esxi_host_id", upgraded_replacement_esxi_host_id)
-        pulumi.set(__self__, "vmware_software_version", vmware_software_version)
+        GetExsiHostsEsxiHostCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            billing_contract_end_date=billing_contract_end_date,
+            billing_donor_host_id=billing_donor_host_id,
+            capacity_reservation_id=capacity_reservation_id,
+            compartment_id=compartment_id,
+            compute_availability_domain=compute_availability_domain,
+            compute_instance_id=compute_instance_id,
+            current_sku=current_sku,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            failed_esxi_host_id=failed_esxi_host_id,
+            freeform_tags=freeform_tags,
+            grace_period_end_date=grace_period_end_date,
+            host_ocpu_count=host_ocpu_count,
+            host_shape_name=host_shape_name,
+            id=id,
+            is_billing_continuation_in_progress=is_billing_continuation_in_progress,
+            is_billing_swapping_in_progress=is_billing_swapping_in_progress,
+            next_sku=next_sku,
+            non_upgraded_esxi_host_id=non_upgraded_esxi_host_id,
+            replacement_esxi_host_id=replacement_esxi_host_id,
+            sddc_id=sddc_id,
+            state=state,
+            swap_billing_host_id=swap_billing_host_id,
+            time_created=time_created,
+            time_updated=time_updated,
+            upgraded_replacement_esxi_host_id=upgraded_replacement_esxi_host_id,
+            vmware_software_version=vmware_software_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             billing_contract_end_date: Optional[str] = None,
+             billing_donor_host_id: Optional[str] = None,
+             capacity_reservation_id: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             compute_availability_domain: Optional[str] = None,
+             compute_instance_id: Optional[str] = None,
+             current_sku: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             failed_esxi_host_id: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             grace_period_end_date: Optional[str] = None,
+             host_ocpu_count: Optional[float] = None,
+             host_shape_name: Optional[str] = None,
+             id: Optional[str] = None,
+             is_billing_continuation_in_progress: Optional[bool] = None,
+             is_billing_swapping_in_progress: Optional[bool] = None,
+             next_sku: Optional[str] = None,
+             non_upgraded_esxi_host_id: Optional[str] = None,
+             replacement_esxi_host_id: Optional[str] = None,
+             sddc_id: Optional[str] = None,
+             state: Optional[str] = None,
+             swap_billing_host_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             upgraded_replacement_esxi_host_id: Optional[str] = None,
+             vmware_software_version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if billing_contract_end_date is None and 'billingContractEndDate' in kwargs:
+            billing_contract_end_date = kwargs['billingContractEndDate']
+        if billing_contract_end_date is None:
+            raise TypeError("Missing 'billing_contract_end_date' argument")
+        if billing_donor_host_id is None and 'billingDonorHostId' in kwargs:
+            billing_donor_host_id = kwargs['billingDonorHostId']
+        if billing_donor_host_id is None:
+            raise TypeError("Missing 'billing_donor_host_id' argument")
+        if capacity_reservation_id is None and 'capacityReservationId' in kwargs:
+            capacity_reservation_id = kwargs['capacityReservationId']
+        if capacity_reservation_id is None:
+            raise TypeError("Missing 'capacity_reservation_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if compute_availability_domain is None and 'computeAvailabilityDomain' in kwargs:
+            compute_availability_domain = kwargs['computeAvailabilityDomain']
+        if compute_availability_domain is None:
+            raise TypeError("Missing 'compute_availability_domain' argument")
+        if compute_instance_id is None and 'computeInstanceId' in kwargs:
+            compute_instance_id = kwargs['computeInstanceId']
+        if compute_instance_id is None:
+            raise TypeError("Missing 'compute_instance_id' argument")
+        if current_sku is None and 'currentSku' in kwargs:
+            current_sku = kwargs['currentSku']
+        if current_sku is None:
+            raise TypeError("Missing 'current_sku' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if failed_esxi_host_id is None and 'failedEsxiHostId' in kwargs:
+            failed_esxi_host_id = kwargs['failedEsxiHostId']
+        if failed_esxi_host_id is None:
+            raise TypeError("Missing 'failed_esxi_host_id' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if grace_period_end_date is None and 'gracePeriodEndDate' in kwargs:
+            grace_period_end_date = kwargs['gracePeriodEndDate']
+        if grace_period_end_date is None:
+            raise TypeError("Missing 'grace_period_end_date' argument")
+        if host_ocpu_count is None and 'hostOcpuCount' in kwargs:
+            host_ocpu_count = kwargs['hostOcpuCount']
+        if host_ocpu_count is None:
+            raise TypeError("Missing 'host_ocpu_count' argument")
+        if host_shape_name is None and 'hostShapeName' in kwargs:
+            host_shape_name = kwargs['hostShapeName']
+        if host_shape_name is None:
+            raise TypeError("Missing 'host_shape_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_billing_continuation_in_progress is None and 'isBillingContinuationInProgress' in kwargs:
+            is_billing_continuation_in_progress = kwargs['isBillingContinuationInProgress']
+        if is_billing_continuation_in_progress is None:
+            raise TypeError("Missing 'is_billing_continuation_in_progress' argument")
+        if is_billing_swapping_in_progress is None and 'isBillingSwappingInProgress' in kwargs:
+            is_billing_swapping_in_progress = kwargs['isBillingSwappingInProgress']
+        if is_billing_swapping_in_progress is None:
+            raise TypeError("Missing 'is_billing_swapping_in_progress' argument")
+        if next_sku is None and 'nextSku' in kwargs:
+            next_sku = kwargs['nextSku']
+        if next_sku is None:
+            raise TypeError("Missing 'next_sku' argument")
+        if non_upgraded_esxi_host_id is None and 'nonUpgradedEsxiHostId' in kwargs:
+            non_upgraded_esxi_host_id = kwargs['nonUpgradedEsxiHostId']
+        if non_upgraded_esxi_host_id is None:
+            raise TypeError("Missing 'non_upgraded_esxi_host_id' argument")
+        if replacement_esxi_host_id is None and 'replacementEsxiHostId' in kwargs:
+            replacement_esxi_host_id = kwargs['replacementEsxiHostId']
+        if replacement_esxi_host_id is None:
+            raise TypeError("Missing 'replacement_esxi_host_id' argument")
+        if sddc_id is None and 'sddcId' in kwargs:
+            sddc_id = kwargs['sddcId']
+        if sddc_id is None:
+            raise TypeError("Missing 'sddc_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if swap_billing_host_id is None and 'swapBillingHostId' in kwargs:
+            swap_billing_host_id = kwargs['swapBillingHostId']
+        if swap_billing_host_id is None:
+            raise TypeError("Missing 'swap_billing_host_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if upgraded_replacement_esxi_host_id is None and 'upgradedReplacementEsxiHostId' in kwargs:
+            upgraded_replacement_esxi_host_id = kwargs['upgradedReplacementEsxiHostId']
+        if upgraded_replacement_esxi_host_id is None:
+            raise TypeError("Missing 'upgraded_replacement_esxi_host_id' argument")
+        if vmware_software_version is None and 'vmwareSoftwareVersion' in kwargs:
+            vmware_software_version = kwargs['vmwareSoftwareVersion']
+        if vmware_software_version is None:
+            raise TypeError("Missing 'vmware_software_version' argument")
+
+        _setter("billing_contract_end_date", billing_contract_end_date)
+        _setter("billing_donor_host_id", billing_donor_host_id)
+        _setter("capacity_reservation_id", capacity_reservation_id)
+        _setter("compartment_id", compartment_id)
+        _setter("compute_availability_domain", compute_availability_domain)
+        _setter("compute_instance_id", compute_instance_id)
+        _setter("current_sku", current_sku)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("failed_esxi_host_id", failed_esxi_host_id)
+        _setter("freeform_tags", freeform_tags)
+        _setter("grace_period_end_date", grace_period_end_date)
+        _setter("host_ocpu_count", host_ocpu_count)
+        _setter("host_shape_name", host_shape_name)
+        _setter("id", id)
+        _setter("is_billing_continuation_in_progress", is_billing_continuation_in_progress)
+        _setter("is_billing_swapping_in_progress", is_billing_swapping_in_progress)
+        _setter("next_sku", next_sku)
+        _setter("non_upgraded_esxi_host_id", non_upgraded_esxi_host_id)
+        _setter("replacement_esxi_host_id", replacement_esxi_host_id)
+        _setter("sddc_id", sddc_id)
+        _setter("state", state)
+        _setter("swap_billing_host_id", swap_billing_host_id)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("upgraded_replacement_esxi_host_id", upgraded_replacement_esxi_host_id)
+        _setter("vmware_software_version", vmware_software_version)
 
     @property
     @pulumi.getter(name="billingContractEndDate")
@@ -585,10 +828,29 @@ class GetExsiHostsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetExsiHostsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -617,9 +879,34 @@ class GetSddcDatastoreResult(dict):
         :param float capacity: Size of the Block Storage Volume in GB.
         :param str datastore_type: Type of the datastore.
         """
-        pulumi.set(__self__, "block_volume_ids", block_volume_ids)
-        pulumi.set(__self__, "capacity", capacity)
-        pulumi.set(__self__, "datastore_type", datastore_type)
+        GetSddcDatastoreResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_volume_ids=block_volume_ids,
+            capacity=capacity,
+            datastore_type=datastore_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_volume_ids: Optional[Sequence[str]] = None,
+             capacity: Optional[float] = None,
+             datastore_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if block_volume_ids is None and 'blockVolumeIds' in kwargs:
+            block_volume_ids = kwargs['blockVolumeIds']
+        if block_volume_ids is None:
+            raise TypeError("Missing 'block_volume_ids' argument")
+        if capacity is None:
+            raise TypeError("Missing 'capacity' argument")
+        if datastore_type is None and 'datastoreType' in kwargs:
+            datastore_type = kwargs['datastoreType']
+        if datastore_type is None:
+            raise TypeError("Missing 'datastore_type' argument")
+
+        _setter("block_volume_ids", block_volume_ids)
+        _setter("capacity", capacity)
+        _setter("datastore_type", datastore_type)
 
     @property
     @pulumi.getter(name="blockVolumeIds")
@@ -657,9 +944,34 @@ class GetSddcHcxOnPremLicenseResult(dict):
         :param str status: status of HCX on-premise license.
         :param str system_name: Name of the system that consumed the HCX on-premise license
         """
-        pulumi.set(__self__, "activation_key", activation_key)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "system_name", system_name)
+        GetSddcHcxOnPremLicenseResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            activation_key=activation_key,
+            status=status,
+            system_name=system_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             activation_key: Optional[str] = None,
+             status: Optional[str] = None,
+             system_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if activation_key is None and 'activationKey' in kwargs:
+            activation_key = kwargs['activationKey']
+        if activation_key is None:
+            raise TypeError("Missing 'activation_key' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if system_name is None and 'systemName' in kwargs:
+            system_name = kwargs['systemName']
+        if system_name is None:
+            raise TypeError("Missing 'system_name' argument")
+
+        _setter("activation_key", activation_key)
+        _setter("status", status)
+        _setter("system_name", system_name)
 
     @property
     @pulumi.getter(name="activationKey")
@@ -695,8 +1007,29 @@ class GetSddcUpgradeLicenseResult(dict):
         :param str license_key: vSphere license key value.
         :param str license_type: vSphere license type.
         """
-        pulumi.set(__self__, "license_key", license_key)
-        pulumi.set(__self__, "license_type", license_type)
+        GetSddcUpgradeLicenseResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            license_key=license_key,
+            license_type=license_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             license_key: Optional[str] = None,
+             license_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if license_key is None and 'licenseKey' in kwargs:
+            license_key = kwargs['licenseKey']
+        if license_key is None:
+            raise TypeError("Missing 'license_key' argument")
+        if license_type is None and 'licenseType' in kwargs:
+            license_type = kwargs['licenseType']
+        if license_type is None:
+            raise TypeError("Missing 'license_type' argument")
+
+        _setter("license_key", license_key)
+        _setter("license_type", license_type)
 
     @property
     @pulumi.getter(name="licenseKey")
@@ -724,8 +1057,29 @@ class GetSddcVsphereUpgradeObjectResult(dict):
         :param str download_link: Binary object download link.
         :param str link_description: Binary object description.
         """
-        pulumi.set(__self__, "download_link", download_link)
-        pulumi.set(__self__, "link_description", link_description)
+        GetSddcVsphereUpgradeObjectResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            download_link=download_link,
+            link_description=link_description,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             download_link: Optional[str] = None,
+             link_description: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if download_link is None and 'downloadLink' in kwargs:
+            download_link = kwargs['downloadLink']
+        if download_link is None:
+            raise TypeError("Missing 'download_link' argument")
+        if link_description is None and 'linkDescription' in kwargs:
+            link_description = kwargs['linkDescription']
+        if link_description is None:
+            raise TypeError("Missing 'link_description' argument")
+
+        _setter("download_link", download_link)
+        _setter("link_description", link_description)
 
     @property
     @pulumi.getter(name="downloadLink")
@@ -750,10 +1104,29 @@ class GetSddcsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSddcsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -891,65 +1264,422 @@ class GetSddcsSddcCollectionResult(dict):
         :param str vsphere_vlan_id: (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
         :param str workload_network_cidr: (**Deprecated**) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
         """
-        pulumi.set(__self__, "actual_esxi_hosts_count", actual_esxi_hosts_count)
-        pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "compute_availability_domain", compute_availability_domain)
-        pulumi.set(__self__, "datastores", datastores)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "esxi_hosts_count", esxi_hosts_count)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "hcx_action", hcx_action)
-        pulumi.set(__self__, "hcx_fqdn", hcx_fqdn)
-        pulumi.set(__self__, "hcx_initial_password", hcx_initial_password)
-        pulumi.set(__self__, "hcx_on_prem_key", hcx_on_prem_key)
-        pulumi.set(__self__, "hcx_on_prem_licenses", hcx_on_prem_licenses)
-        pulumi.set(__self__, "hcx_private_ip_id", hcx_private_ip_id)
-        pulumi.set(__self__, "hcx_vlan_id", hcx_vlan_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "initial_host_ocpu_count", initial_host_ocpu_count)
-        pulumi.set(__self__, "initial_host_shape_name", initial_host_shape_name)
-        pulumi.set(__self__, "initial_sku", initial_sku)
-        pulumi.set(__self__, "instance_display_name_prefix", instance_display_name_prefix)
-        pulumi.set(__self__, "is_hcx_enabled", is_hcx_enabled)
-        pulumi.set(__self__, "is_hcx_enterprise_enabled", is_hcx_enterprise_enabled)
-        pulumi.set(__self__, "is_hcx_pending_downgrade", is_hcx_pending_downgrade)
-        pulumi.set(__self__, "is_shielded_instance_enabled", is_shielded_instance_enabled)
-        pulumi.set(__self__, "is_single_host_sddc", is_single_host_sddc)
-        pulumi.set(__self__, "nsx_edge_uplink1vlan_id", nsx_edge_uplink1vlan_id)
-        pulumi.set(__self__, "nsx_edge_uplink2vlan_id", nsx_edge_uplink2vlan_id)
-        pulumi.set(__self__, "nsx_edge_uplink_ip_id", nsx_edge_uplink_ip_id)
-        pulumi.set(__self__, "nsx_edge_vtep_vlan_id", nsx_edge_vtep_vlan_id)
-        pulumi.set(__self__, "nsx_manager_fqdn", nsx_manager_fqdn)
-        pulumi.set(__self__, "nsx_manager_initial_password", nsx_manager_initial_password)
-        pulumi.set(__self__, "nsx_manager_private_ip_id", nsx_manager_private_ip_id)
-        pulumi.set(__self__, "nsx_manager_username", nsx_manager_username)
-        pulumi.set(__self__, "nsx_overlay_segment_name", nsx_overlay_segment_name)
-        pulumi.set(__self__, "nsx_vtep_vlan_id", nsx_vtep_vlan_id)
-        pulumi.set(__self__, "provisioning_subnet_id", provisioning_subnet_id)
-        pulumi.set(__self__, "provisioning_vlan_id", provisioning_vlan_id)
-        pulumi.set(__self__, "refresh_hcx_license_status", refresh_hcx_license_status)
-        pulumi.set(__self__, "replication_vlan_id", replication_vlan_id)
-        pulumi.set(__self__, "reserving_hcx_on_premise_license_keys", reserving_hcx_on_premise_license_keys)
-        pulumi.set(__self__, "ssh_authorized_keys", ssh_authorized_keys)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_hcx_billing_cycle_end", time_hcx_billing_cycle_end)
-        pulumi.set(__self__, "time_hcx_license_status_updated", time_hcx_license_status_updated)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "upgrade_licenses", upgrade_licenses)
-        pulumi.set(__self__, "vcenter_fqdn", vcenter_fqdn)
-        pulumi.set(__self__, "vcenter_initial_password", vcenter_initial_password)
-        pulumi.set(__self__, "vcenter_private_ip_id", vcenter_private_ip_id)
-        pulumi.set(__self__, "vcenter_username", vcenter_username)
-        pulumi.set(__self__, "vmotion_vlan_id", vmotion_vlan_id)
-        pulumi.set(__self__, "vmware_software_version", vmware_software_version)
-        pulumi.set(__self__, "vsan_vlan_id", vsan_vlan_id)
-        pulumi.set(__self__, "vsphere_upgrade_guide", vsphere_upgrade_guide)
-        pulumi.set(__self__, "vsphere_upgrade_objects", vsphere_upgrade_objects)
-        pulumi.set(__self__, "vsphere_vlan_id", vsphere_vlan_id)
-        pulumi.set(__self__, "workload_network_cidr", workload_network_cidr)
+        GetSddcsSddcCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            actual_esxi_hosts_count=actual_esxi_hosts_count,
+            capacity_reservation_id=capacity_reservation_id,
+            compartment_id=compartment_id,
+            compute_availability_domain=compute_availability_domain,
+            datastores=datastores,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            esxi_hosts_count=esxi_hosts_count,
+            freeform_tags=freeform_tags,
+            hcx_action=hcx_action,
+            hcx_fqdn=hcx_fqdn,
+            hcx_initial_password=hcx_initial_password,
+            hcx_on_prem_key=hcx_on_prem_key,
+            hcx_on_prem_licenses=hcx_on_prem_licenses,
+            hcx_private_ip_id=hcx_private_ip_id,
+            hcx_vlan_id=hcx_vlan_id,
+            id=id,
+            initial_host_ocpu_count=initial_host_ocpu_count,
+            initial_host_shape_name=initial_host_shape_name,
+            initial_sku=initial_sku,
+            instance_display_name_prefix=instance_display_name_prefix,
+            is_hcx_enabled=is_hcx_enabled,
+            is_hcx_enterprise_enabled=is_hcx_enterprise_enabled,
+            is_hcx_pending_downgrade=is_hcx_pending_downgrade,
+            is_shielded_instance_enabled=is_shielded_instance_enabled,
+            is_single_host_sddc=is_single_host_sddc,
+            nsx_edge_uplink1vlan_id=nsx_edge_uplink1vlan_id,
+            nsx_edge_uplink2vlan_id=nsx_edge_uplink2vlan_id,
+            nsx_edge_uplink_ip_id=nsx_edge_uplink_ip_id,
+            nsx_edge_vtep_vlan_id=nsx_edge_vtep_vlan_id,
+            nsx_manager_fqdn=nsx_manager_fqdn,
+            nsx_manager_initial_password=nsx_manager_initial_password,
+            nsx_manager_private_ip_id=nsx_manager_private_ip_id,
+            nsx_manager_username=nsx_manager_username,
+            nsx_overlay_segment_name=nsx_overlay_segment_name,
+            nsx_vtep_vlan_id=nsx_vtep_vlan_id,
+            provisioning_subnet_id=provisioning_subnet_id,
+            provisioning_vlan_id=provisioning_vlan_id,
+            refresh_hcx_license_status=refresh_hcx_license_status,
+            replication_vlan_id=replication_vlan_id,
+            reserving_hcx_on_premise_license_keys=reserving_hcx_on_premise_license_keys,
+            ssh_authorized_keys=ssh_authorized_keys,
+            state=state,
+            time_created=time_created,
+            time_hcx_billing_cycle_end=time_hcx_billing_cycle_end,
+            time_hcx_license_status_updated=time_hcx_license_status_updated,
+            time_updated=time_updated,
+            upgrade_licenses=upgrade_licenses,
+            vcenter_fqdn=vcenter_fqdn,
+            vcenter_initial_password=vcenter_initial_password,
+            vcenter_private_ip_id=vcenter_private_ip_id,
+            vcenter_username=vcenter_username,
+            vmotion_vlan_id=vmotion_vlan_id,
+            vmware_software_version=vmware_software_version,
+            vsan_vlan_id=vsan_vlan_id,
+            vsphere_upgrade_guide=vsphere_upgrade_guide,
+            vsphere_upgrade_objects=vsphere_upgrade_objects,
+            vsphere_vlan_id=vsphere_vlan_id,
+            workload_network_cidr=workload_network_cidr,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             actual_esxi_hosts_count: Optional[int] = None,
+             capacity_reservation_id: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             compute_availability_domain: Optional[str] = None,
+             datastores: Optional[Sequence['outputs.GetSddcsSddcCollectionDatastoreResult']] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             esxi_hosts_count: Optional[int] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             hcx_action: Optional[str] = None,
+             hcx_fqdn: Optional[str] = None,
+             hcx_initial_password: Optional[str] = None,
+             hcx_on_prem_key: Optional[str] = None,
+             hcx_on_prem_licenses: Optional[Sequence['outputs.GetSddcsSddcCollectionHcxOnPremLicenseResult']] = None,
+             hcx_private_ip_id: Optional[str] = None,
+             hcx_vlan_id: Optional[str] = None,
+             id: Optional[str] = None,
+             initial_host_ocpu_count: Optional[float] = None,
+             initial_host_shape_name: Optional[str] = None,
+             initial_sku: Optional[str] = None,
+             instance_display_name_prefix: Optional[str] = None,
+             is_hcx_enabled: Optional[bool] = None,
+             is_hcx_enterprise_enabled: Optional[bool] = None,
+             is_hcx_pending_downgrade: Optional[bool] = None,
+             is_shielded_instance_enabled: Optional[bool] = None,
+             is_single_host_sddc: Optional[bool] = None,
+             nsx_edge_uplink1vlan_id: Optional[str] = None,
+             nsx_edge_uplink2vlan_id: Optional[str] = None,
+             nsx_edge_uplink_ip_id: Optional[str] = None,
+             nsx_edge_vtep_vlan_id: Optional[str] = None,
+             nsx_manager_fqdn: Optional[str] = None,
+             nsx_manager_initial_password: Optional[str] = None,
+             nsx_manager_private_ip_id: Optional[str] = None,
+             nsx_manager_username: Optional[str] = None,
+             nsx_overlay_segment_name: Optional[str] = None,
+             nsx_vtep_vlan_id: Optional[str] = None,
+             provisioning_subnet_id: Optional[str] = None,
+             provisioning_vlan_id: Optional[str] = None,
+             refresh_hcx_license_status: Optional[bool] = None,
+             replication_vlan_id: Optional[str] = None,
+             reserving_hcx_on_premise_license_keys: Optional[Sequence[str]] = None,
+             ssh_authorized_keys: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_hcx_billing_cycle_end: Optional[str] = None,
+             time_hcx_license_status_updated: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             upgrade_licenses: Optional[Sequence['outputs.GetSddcsSddcCollectionUpgradeLicenseResult']] = None,
+             vcenter_fqdn: Optional[str] = None,
+             vcenter_initial_password: Optional[str] = None,
+             vcenter_private_ip_id: Optional[str] = None,
+             vcenter_username: Optional[str] = None,
+             vmotion_vlan_id: Optional[str] = None,
+             vmware_software_version: Optional[str] = None,
+             vsan_vlan_id: Optional[str] = None,
+             vsphere_upgrade_guide: Optional[str] = None,
+             vsphere_upgrade_objects: Optional[Sequence['outputs.GetSddcsSddcCollectionVsphereUpgradeObjectResult']] = None,
+             vsphere_vlan_id: Optional[str] = None,
+             workload_network_cidr: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if actual_esxi_hosts_count is None and 'actualEsxiHostsCount' in kwargs:
+            actual_esxi_hosts_count = kwargs['actualEsxiHostsCount']
+        if actual_esxi_hosts_count is None:
+            raise TypeError("Missing 'actual_esxi_hosts_count' argument")
+        if capacity_reservation_id is None and 'capacityReservationId' in kwargs:
+            capacity_reservation_id = kwargs['capacityReservationId']
+        if capacity_reservation_id is None:
+            raise TypeError("Missing 'capacity_reservation_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if compute_availability_domain is None and 'computeAvailabilityDomain' in kwargs:
+            compute_availability_domain = kwargs['computeAvailabilityDomain']
+        if compute_availability_domain is None:
+            raise TypeError("Missing 'compute_availability_domain' argument")
+        if datastores is None:
+            raise TypeError("Missing 'datastores' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if esxi_hosts_count is None and 'esxiHostsCount' in kwargs:
+            esxi_hosts_count = kwargs['esxiHostsCount']
+        if esxi_hosts_count is None:
+            raise TypeError("Missing 'esxi_hosts_count' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if hcx_action is None and 'hcxAction' in kwargs:
+            hcx_action = kwargs['hcxAction']
+        if hcx_action is None:
+            raise TypeError("Missing 'hcx_action' argument")
+        if hcx_fqdn is None and 'hcxFqdn' in kwargs:
+            hcx_fqdn = kwargs['hcxFqdn']
+        if hcx_fqdn is None:
+            raise TypeError("Missing 'hcx_fqdn' argument")
+        if hcx_initial_password is None and 'hcxInitialPassword' in kwargs:
+            hcx_initial_password = kwargs['hcxInitialPassword']
+        if hcx_initial_password is None:
+            raise TypeError("Missing 'hcx_initial_password' argument")
+        if hcx_on_prem_key is None and 'hcxOnPremKey' in kwargs:
+            hcx_on_prem_key = kwargs['hcxOnPremKey']
+        if hcx_on_prem_key is None:
+            raise TypeError("Missing 'hcx_on_prem_key' argument")
+        if hcx_on_prem_licenses is None and 'hcxOnPremLicenses' in kwargs:
+            hcx_on_prem_licenses = kwargs['hcxOnPremLicenses']
+        if hcx_on_prem_licenses is None:
+            raise TypeError("Missing 'hcx_on_prem_licenses' argument")
+        if hcx_private_ip_id is None and 'hcxPrivateIpId' in kwargs:
+            hcx_private_ip_id = kwargs['hcxPrivateIpId']
+        if hcx_private_ip_id is None:
+            raise TypeError("Missing 'hcx_private_ip_id' argument")
+        if hcx_vlan_id is None and 'hcxVlanId' in kwargs:
+            hcx_vlan_id = kwargs['hcxVlanId']
+        if hcx_vlan_id is None:
+            raise TypeError("Missing 'hcx_vlan_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if initial_host_ocpu_count is None and 'initialHostOcpuCount' in kwargs:
+            initial_host_ocpu_count = kwargs['initialHostOcpuCount']
+        if initial_host_ocpu_count is None:
+            raise TypeError("Missing 'initial_host_ocpu_count' argument")
+        if initial_host_shape_name is None and 'initialHostShapeName' in kwargs:
+            initial_host_shape_name = kwargs['initialHostShapeName']
+        if initial_host_shape_name is None:
+            raise TypeError("Missing 'initial_host_shape_name' argument")
+        if initial_sku is None and 'initialSku' in kwargs:
+            initial_sku = kwargs['initialSku']
+        if initial_sku is None:
+            raise TypeError("Missing 'initial_sku' argument")
+        if instance_display_name_prefix is None and 'instanceDisplayNamePrefix' in kwargs:
+            instance_display_name_prefix = kwargs['instanceDisplayNamePrefix']
+        if instance_display_name_prefix is None:
+            raise TypeError("Missing 'instance_display_name_prefix' argument")
+        if is_hcx_enabled is None and 'isHcxEnabled' in kwargs:
+            is_hcx_enabled = kwargs['isHcxEnabled']
+        if is_hcx_enabled is None:
+            raise TypeError("Missing 'is_hcx_enabled' argument")
+        if is_hcx_enterprise_enabled is None and 'isHcxEnterpriseEnabled' in kwargs:
+            is_hcx_enterprise_enabled = kwargs['isHcxEnterpriseEnabled']
+        if is_hcx_enterprise_enabled is None:
+            raise TypeError("Missing 'is_hcx_enterprise_enabled' argument")
+        if is_hcx_pending_downgrade is None and 'isHcxPendingDowngrade' in kwargs:
+            is_hcx_pending_downgrade = kwargs['isHcxPendingDowngrade']
+        if is_hcx_pending_downgrade is None:
+            raise TypeError("Missing 'is_hcx_pending_downgrade' argument")
+        if is_shielded_instance_enabled is None and 'isShieldedInstanceEnabled' in kwargs:
+            is_shielded_instance_enabled = kwargs['isShieldedInstanceEnabled']
+        if is_shielded_instance_enabled is None:
+            raise TypeError("Missing 'is_shielded_instance_enabled' argument")
+        if is_single_host_sddc is None and 'isSingleHostSddc' in kwargs:
+            is_single_host_sddc = kwargs['isSingleHostSddc']
+        if is_single_host_sddc is None:
+            raise TypeError("Missing 'is_single_host_sddc' argument")
+        if nsx_edge_uplink1vlan_id is None and 'nsxEdgeUplink1vlanId' in kwargs:
+            nsx_edge_uplink1vlan_id = kwargs['nsxEdgeUplink1vlanId']
+        if nsx_edge_uplink1vlan_id is None:
+            raise TypeError("Missing 'nsx_edge_uplink1vlan_id' argument")
+        if nsx_edge_uplink2vlan_id is None and 'nsxEdgeUplink2vlanId' in kwargs:
+            nsx_edge_uplink2vlan_id = kwargs['nsxEdgeUplink2vlanId']
+        if nsx_edge_uplink2vlan_id is None:
+            raise TypeError("Missing 'nsx_edge_uplink2vlan_id' argument")
+        if nsx_edge_uplink_ip_id is None and 'nsxEdgeUplinkIpId' in kwargs:
+            nsx_edge_uplink_ip_id = kwargs['nsxEdgeUplinkIpId']
+        if nsx_edge_uplink_ip_id is None:
+            raise TypeError("Missing 'nsx_edge_uplink_ip_id' argument")
+        if nsx_edge_vtep_vlan_id is None and 'nsxEdgeVtepVlanId' in kwargs:
+            nsx_edge_vtep_vlan_id = kwargs['nsxEdgeVtepVlanId']
+        if nsx_edge_vtep_vlan_id is None:
+            raise TypeError("Missing 'nsx_edge_vtep_vlan_id' argument")
+        if nsx_manager_fqdn is None and 'nsxManagerFqdn' in kwargs:
+            nsx_manager_fqdn = kwargs['nsxManagerFqdn']
+        if nsx_manager_fqdn is None:
+            raise TypeError("Missing 'nsx_manager_fqdn' argument")
+        if nsx_manager_initial_password is None and 'nsxManagerInitialPassword' in kwargs:
+            nsx_manager_initial_password = kwargs['nsxManagerInitialPassword']
+        if nsx_manager_initial_password is None:
+            raise TypeError("Missing 'nsx_manager_initial_password' argument")
+        if nsx_manager_private_ip_id is None and 'nsxManagerPrivateIpId' in kwargs:
+            nsx_manager_private_ip_id = kwargs['nsxManagerPrivateIpId']
+        if nsx_manager_private_ip_id is None:
+            raise TypeError("Missing 'nsx_manager_private_ip_id' argument")
+        if nsx_manager_username is None and 'nsxManagerUsername' in kwargs:
+            nsx_manager_username = kwargs['nsxManagerUsername']
+        if nsx_manager_username is None:
+            raise TypeError("Missing 'nsx_manager_username' argument")
+        if nsx_overlay_segment_name is None and 'nsxOverlaySegmentName' in kwargs:
+            nsx_overlay_segment_name = kwargs['nsxOverlaySegmentName']
+        if nsx_overlay_segment_name is None:
+            raise TypeError("Missing 'nsx_overlay_segment_name' argument")
+        if nsx_vtep_vlan_id is None and 'nsxVtepVlanId' in kwargs:
+            nsx_vtep_vlan_id = kwargs['nsxVtepVlanId']
+        if nsx_vtep_vlan_id is None:
+            raise TypeError("Missing 'nsx_vtep_vlan_id' argument")
+        if provisioning_subnet_id is None and 'provisioningSubnetId' in kwargs:
+            provisioning_subnet_id = kwargs['provisioningSubnetId']
+        if provisioning_subnet_id is None:
+            raise TypeError("Missing 'provisioning_subnet_id' argument")
+        if provisioning_vlan_id is None and 'provisioningVlanId' in kwargs:
+            provisioning_vlan_id = kwargs['provisioningVlanId']
+        if provisioning_vlan_id is None:
+            raise TypeError("Missing 'provisioning_vlan_id' argument")
+        if refresh_hcx_license_status is None and 'refreshHcxLicenseStatus' in kwargs:
+            refresh_hcx_license_status = kwargs['refreshHcxLicenseStatus']
+        if refresh_hcx_license_status is None:
+            raise TypeError("Missing 'refresh_hcx_license_status' argument")
+        if replication_vlan_id is None and 'replicationVlanId' in kwargs:
+            replication_vlan_id = kwargs['replicationVlanId']
+        if replication_vlan_id is None:
+            raise TypeError("Missing 'replication_vlan_id' argument")
+        if reserving_hcx_on_premise_license_keys is None and 'reservingHcxOnPremiseLicenseKeys' in kwargs:
+            reserving_hcx_on_premise_license_keys = kwargs['reservingHcxOnPremiseLicenseKeys']
+        if reserving_hcx_on_premise_license_keys is None:
+            raise TypeError("Missing 'reserving_hcx_on_premise_license_keys' argument")
+        if ssh_authorized_keys is None and 'sshAuthorizedKeys' in kwargs:
+            ssh_authorized_keys = kwargs['sshAuthorizedKeys']
+        if ssh_authorized_keys is None:
+            raise TypeError("Missing 'ssh_authorized_keys' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_hcx_billing_cycle_end is None and 'timeHcxBillingCycleEnd' in kwargs:
+            time_hcx_billing_cycle_end = kwargs['timeHcxBillingCycleEnd']
+        if time_hcx_billing_cycle_end is None:
+            raise TypeError("Missing 'time_hcx_billing_cycle_end' argument")
+        if time_hcx_license_status_updated is None and 'timeHcxLicenseStatusUpdated' in kwargs:
+            time_hcx_license_status_updated = kwargs['timeHcxLicenseStatusUpdated']
+        if time_hcx_license_status_updated is None:
+            raise TypeError("Missing 'time_hcx_license_status_updated' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if upgrade_licenses is None and 'upgradeLicenses' in kwargs:
+            upgrade_licenses = kwargs['upgradeLicenses']
+        if upgrade_licenses is None:
+            raise TypeError("Missing 'upgrade_licenses' argument")
+        if vcenter_fqdn is None and 'vcenterFqdn' in kwargs:
+            vcenter_fqdn = kwargs['vcenterFqdn']
+        if vcenter_fqdn is None:
+            raise TypeError("Missing 'vcenter_fqdn' argument")
+        if vcenter_initial_password is None and 'vcenterInitialPassword' in kwargs:
+            vcenter_initial_password = kwargs['vcenterInitialPassword']
+        if vcenter_initial_password is None:
+            raise TypeError("Missing 'vcenter_initial_password' argument")
+        if vcenter_private_ip_id is None and 'vcenterPrivateIpId' in kwargs:
+            vcenter_private_ip_id = kwargs['vcenterPrivateIpId']
+        if vcenter_private_ip_id is None:
+            raise TypeError("Missing 'vcenter_private_ip_id' argument")
+        if vcenter_username is None and 'vcenterUsername' in kwargs:
+            vcenter_username = kwargs['vcenterUsername']
+        if vcenter_username is None:
+            raise TypeError("Missing 'vcenter_username' argument")
+        if vmotion_vlan_id is None and 'vmotionVlanId' in kwargs:
+            vmotion_vlan_id = kwargs['vmotionVlanId']
+        if vmotion_vlan_id is None:
+            raise TypeError("Missing 'vmotion_vlan_id' argument")
+        if vmware_software_version is None and 'vmwareSoftwareVersion' in kwargs:
+            vmware_software_version = kwargs['vmwareSoftwareVersion']
+        if vmware_software_version is None:
+            raise TypeError("Missing 'vmware_software_version' argument")
+        if vsan_vlan_id is None and 'vsanVlanId' in kwargs:
+            vsan_vlan_id = kwargs['vsanVlanId']
+        if vsan_vlan_id is None:
+            raise TypeError("Missing 'vsan_vlan_id' argument")
+        if vsphere_upgrade_guide is None and 'vsphereUpgradeGuide' in kwargs:
+            vsphere_upgrade_guide = kwargs['vsphereUpgradeGuide']
+        if vsphere_upgrade_guide is None:
+            raise TypeError("Missing 'vsphere_upgrade_guide' argument")
+        if vsphere_upgrade_objects is None and 'vsphereUpgradeObjects' in kwargs:
+            vsphere_upgrade_objects = kwargs['vsphereUpgradeObjects']
+        if vsphere_upgrade_objects is None:
+            raise TypeError("Missing 'vsphere_upgrade_objects' argument")
+        if vsphere_vlan_id is None and 'vsphereVlanId' in kwargs:
+            vsphere_vlan_id = kwargs['vsphereVlanId']
+        if vsphere_vlan_id is None:
+            raise TypeError("Missing 'vsphere_vlan_id' argument")
+        if workload_network_cidr is None and 'workloadNetworkCidr' in kwargs:
+            workload_network_cidr = kwargs['workloadNetworkCidr']
+        if workload_network_cidr is None:
+            raise TypeError("Missing 'workload_network_cidr' argument")
+
+        _setter("actual_esxi_hosts_count", actual_esxi_hosts_count)
+        _setter("capacity_reservation_id", capacity_reservation_id)
+        _setter("compartment_id", compartment_id)
+        _setter("compute_availability_domain", compute_availability_domain)
+        _setter("datastores", datastores)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("esxi_hosts_count", esxi_hosts_count)
+        _setter("freeform_tags", freeform_tags)
+        _setter("hcx_action", hcx_action)
+        _setter("hcx_fqdn", hcx_fqdn)
+        _setter("hcx_initial_password", hcx_initial_password)
+        _setter("hcx_on_prem_key", hcx_on_prem_key)
+        _setter("hcx_on_prem_licenses", hcx_on_prem_licenses)
+        _setter("hcx_private_ip_id", hcx_private_ip_id)
+        _setter("hcx_vlan_id", hcx_vlan_id)
+        _setter("id", id)
+        _setter("initial_host_ocpu_count", initial_host_ocpu_count)
+        _setter("initial_host_shape_name", initial_host_shape_name)
+        _setter("initial_sku", initial_sku)
+        _setter("instance_display_name_prefix", instance_display_name_prefix)
+        _setter("is_hcx_enabled", is_hcx_enabled)
+        _setter("is_hcx_enterprise_enabled", is_hcx_enterprise_enabled)
+        _setter("is_hcx_pending_downgrade", is_hcx_pending_downgrade)
+        _setter("is_shielded_instance_enabled", is_shielded_instance_enabled)
+        _setter("is_single_host_sddc", is_single_host_sddc)
+        _setter("nsx_edge_uplink1vlan_id", nsx_edge_uplink1vlan_id)
+        _setter("nsx_edge_uplink2vlan_id", nsx_edge_uplink2vlan_id)
+        _setter("nsx_edge_uplink_ip_id", nsx_edge_uplink_ip_id)
+        _setter("nsx_edge_vtep_vlan_id", nsx_edge_vtep_vlan_id)
+        _setter("nsx_manager_fqdn", nsx_manager_fqdn)
+        _setter("nsx_manager_initial_password", nsx_manager_initial_password)
+        _setter("nsx_manager_private_ip_id", nsx_manager_private_ip_id)
+        _setter("nsx_manager_username", nsx_manager_username)
+        _setter("nsx_overlay_segment_name", nsx_overlay_segment_name)
+        _setter("nsx_vtep_vlan_id", nsx_vtep_vlan_id)
+        _setter("provisioning_subnet_id", provisioning_subnet_id)
+        _setter("provisioning_vlan_id", provisioning_vlan_id)
+        _setter("refresh_hcx_license_status", refresh_hcx_license_status)
+        _setter("replication_vlan_id", replication_vlan_id)
+        _setter("reserving_hcx_on_premise_license_keys", reserving_hcx_on_premise_license_keys)
+        _setter("ssh_authorized_keys", ssh_authorized_keys)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_hcx_billing_cycle_end", time_hcx_billing_cycle_end)
+        _setter("time_hcx_license_status_updated", time_hcx_license_status_updated)
+        _setter("time_updated", time_updated)
+        _setter("upgrade_licenses", upgrade_licenses)
+        _setter("vcenter_fqdn", vcenter_fqdn)
+        _setter("vcenter_initial_password", vcenter_initial_password)
+        _setter("vcenter_private_ip_id", vcenter_private_ip_id)
+        _setter("vcenter_username", vcenter_username)
+        _setter("vmotion_vlan_id", vmotion_vlan_id)
+        _setter("vmware_software_version", vmware_software_version)
+        _setter("vsan_vlan_id", vsan_vlan_id)
+        _setter("vsphere_upgrade_guide", vsphere_upgrade_guide)
+        _setter("vsphere_upgrade_objects", vsphere_upgrade_objects)
+        _setter("vsphere_vlan_id", vsphere_vlan_id)
+        _setter("workload_network_cidr", workload_network_cidr)
 
     @property
     @pulumi.getter(name="actualEsxiHostsCount")
@@ -1522,9 +2252,34 @@ class GetSddcsSddcCollectionDatastoreResult(dict):
         :param float capacity: Size of the Block Storage Volume in GB.
         :param str datastore_type: Type of the datastore.
         """
-        pulumi.set(__self__, "block_volume_ids", block_volume_ids)
-        pulumi.set(__self__, "capacity", capacity)
-        pulumi.set(__self__, "datastore_type", datastore_type)
+        GetSddcsSddcCollectionDatastoreResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_volume_ids=block_volume_ids,
+            capacity=capacity,
+            datastore_type=datastore_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_volume_ids: Optional[Sequence[str]] = None,
+             capacity: Optional[float] = None,
+             datastore_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if block_volume_ids is None and 'blockVolumeIds' in kwargs:
+            block_volume_ids = kwargs['blockVolumeIds']
+        if block_volume_ids is None:
+            raise TypeError("Missing 'block_volume_ids' argument")
+        if capacity is None:
+            raise TypeError("Missing 'capacity' argument")
+        if datastore_type is None and 'datastoreType' in kwargs:
+            datastore_type = kwargs['datastoreType']
+        if datastore_type is None:
+            raise TypeError("Missing 'datastore_type' argument")
+
+        _setter("block_volume_ids", block_volume_ids)
+        _setter("capacity", capacity)
+        _setter("datastore_type", datastore_type)
 
     @property
     @pulumi.getter(name="blockVolumeIds")
@@ -1562,9 +2317,34 @@ class GetSddcsSddcCollectionHcxOnPremLicenseResult(dict):
         :param str status: status of HCX on-premise license.
         :param str system_name: Name of the system that consumed the HCX on-premise license
         """
-        pulumi.set(__self__, "activation_key", activation_key)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "system_name", system_name)
+        GetSddcsSddcCollectionHcxOnPremLicenseResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            activation_key=activation_key,
+            status=status,
+            system_name=system_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             activation_key: Optional[str] = None,
+             status: Optional[str] = None,
+             system_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if activation_key is None and 'activationKey' in kwargs:
+            activation_key = kwargs['activationKey']
+        if activation_key is None:
+            raise TypeError("Missing 'activation_key' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if system_name is None and 'systemName' in kwargs:
+            system_name = kwargs['systemName']
+        if system_name is None:
+            raise TypeError("Missing 'system_name' argument")
+
+        _setter("activation_key", activation_key)
+        _setter("status", status)
+        _setter("system_name", system_name)
 
     @property
     @pulumi.getter(name="activationKey")
@@ -1600,8 +2380,29 @@ class GetSddcsSddcCollectionUpgradeLicenseResult(dict):
         :param str license_key: vSphere license key value.
         :param str license_type: vSphere license type.
         """
-        pulumi.set(__self__, "license_key", license_key)
-        pulumi.set(__self__, "license_type", license_type)
+        GetSddcsSddcCollectionUpgradeLicenseResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            license_key=license_key,
+            license_type=license_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             license_key: Optional[str] = None,
+             license_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if license_key is None and 'licenseKey' in kwargs:
+            license_key = kwargs['licenseKey']
+        if license_key is None:
+            raise TypeError("Missing 'license_key' argument")
+        if license_type is None and 'licenseType' in kwargs:
+            license_type = kwargs['licenseType']
+        if license_type is None:
+            raise TypeError("Missing 'license_type' argument")
+
+        _setter("license_key", license_key)
+        _setter("license_type", license_type)
 
     @property
     @pulumi.getter(name="licenseKey")
@@ -1629,8 +2430,29 @@ class GetSddcsSddcCollectionVsphereUpgradeObjectResult(dict):
         :param str download_link: Binary object download link.
         :param str link_description: Binary object description.
         """
-        pulumi.set(__self__, "download_link", download_link)
-        pulumi.set(__self__, "link_description", link_description)
+        GetSddcsSddcCollectionVsphereUpgradeObjectResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            download_link=download_link,
+            link_description=link_description,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             download_link: Optional[str] = None,
+             link_description: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if download_link is None and 'downloadLink' in kwargs:
+            download_link = kwargs['downloadLink']
+        if download_link is None:
+            raise TypeError("Missing 'download_link' argument")
+        if link_description is None and 'linkDescription' in kwargs:
+            link_description = kwargs['linkDescription']
+        if link_description is None:
+            raise TypeError("Missing 'link_description' argument")
+
+        _setter("download_link", download_link)
+        _setter("link_description", link_description)
 
     @property
     @pulumi.getter(name="downloadLink")
@@ -1658,10 +2480,29 @@ class GetSupportedHostShapesFilterResult(dict):
         """
         :param str name: A filter to return only resources that match the given name exactly.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSupportedHostShapesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1707,16 +2548,81 @@ class GetSupportedHostShapesItemResult(dict):
         :param Sequence[str] supported_sddc_types: The supported SDDC types for the shape.
         :param Sequence[str] supported_vmware_software_versions: The VMware software versions supported by the shape.
         """
-        pulumi.set(__self__, "default_ocpu_count", default_ocpu_count)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "is_support_monthly_sku", is_support_monthly_sku)
-        pulumi.set(__self__, "is_support_shielded_instances", is_support_shielded_instances)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "shape_family", shape_family)
-        pulumi.set(__self__, "supported_ocpu_counts", supported_ocpu_counts)
-        pulumi.set(__self__, "supported_operations", supported_operations)
-        pulumi.set(__self__, "supported_sddc_types", supported_sddc_types)
-        pulumi.set(__self__, "supported_vmware_software_versions", supported_vmware_software_versions)
+        GetSupportedHostShapesItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_ocpu_count=default_ocpu_count,
+            description=description,
+            is_support_monthly_sku=is_support_monthly_sku,
+            is_support_shielded_instances=is_support_shielded_instances,
+            name=name,
+            shape_family=shape_family,
+            supported_ocpu_counts=supported_ocpu_counts,
+            supported_operations=supported_operations,
+            supported_sddc_types=supported_sddc_types,
+            supported_vmware_software_versions=supported_vmware_software_versions,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_ocpu_count: Optional[float] = None,
+             description: Optional[str] = None,
+             is_support_monthly_sku: Optional[bool] = None,
+             is_support_shielded_instances: Optional[bool] = None,
+             name: Optional[str] = None,
+             shape_family: Optional[str] = None,
+             supported_ocpu_counts: Optional[Sequence[float]] = None,
+             supported_operations: Optional[Sequence[str]] = None,
+             supported_sddc_types: Optional[Sequence[str]] = None,
+             supported_vmware_software_versions: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if default_ocpu_count is None and 'defaultOcpuCount' in kwargs:
+            default_ocpu_count = kwargs['defaultOcpuCount']
+        if default_ocpu_count is None:
+            raise TypeError("Missing 'default_ocpu_count' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if is_support_monthly_sku is None and 'isSupportMonthlySku' in kwargs:
+            is_support_monthly_sku = kwargs['isSupportMonthlySku']
+        if is_support_monthly_sku is None:
+            raise TypeError("Missing 'is_support_monthly_sku' argument")
+        if is_support_shielded_instances is None and 'isSupportShieldedInstances' in kwargs:
+            is_support_shielded_instances = kwargs['isSupportShieldedInstances']
+        if is_support_shielded_instances is None:
+            raise TypeError("Missing 'is_support_shielded_instances' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if shape_family is None and 'shapeFamily' in kwargs:
+            shape_family = kwargs['shapeFamily']
+        if shape_family is None:
+            raise TypeError("Missing 'shape_family' argument")
+        if supported_ocpu_counts is None and 'supportedOcpuCounts' in kwargs:
+            supported_ocpu_counts = kwargs['supportedOcpuCounts']
+        if supported_ocpu_counts is None:
+            raise TypeError("Missing 'supported_ocpu_counts' argument")
+        if supported_operations is None and 'supportedOperations' in kwargs:
+            supported_operations = kwargs['supportedOperations']
+        if supported_operations is None:
+            raise TypeError("Missing 'supported_operations' argument")
+        if supported_sddc_types is None and 'supportedSddcTypes' in kwargs:
+            supported_sddc_types = kwargs['supportedSddcTypes']
+        if supported_sddc_types is None:
+            raise TypeError("Missing 'supported_sddc_types' argument")
+        if supported_vmware_software_versions is None and 'supportedVmwareSoftwareVersions' in kwargs:
+            supported_vmware_software_versions = kwargs['supportedVmwareSoftwareVersions']
+        if supported_vmware_software_versions is None:
+            raise TypeError("Missing 'supported_vmware_software_versions' argument")
+
+        _setter("default_ocpu_count", default_ocpu_count)
+        _setter("description", description)
+        _setter("is_support_monthly_sku", is_support_monthly_sku)
+        _setter("is_support_shielded_instances", is_support_shielded_instances)
+        _setter("name", name)
+        _setter("shape_family", shape_family)
+        _setter("supported_ocpu_counts", supported_ocpu_counts)
+        _setter("supported_operations", supported_operations)
+        _setter("supported_sddc_types", supported_sddc_types)
+        _setter("supported_vmware_software_versions", supported_vmware_software_versions)
 
     @property
     @pulumi.getter(name="defaultOcpuCount")
@@ -1811,10 +2717,29 @@ class GetSupportedSkusFilterResult(dict):
         """
         :param str name: name of SKU
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSupportedSkusFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1842,7 +2767,20 @@ class GetSupportedSkusItemResult(dict):
         """
         :param str name: name of SKU
         """
-        pulumi.set(__self__, "name", name)
+        GetSupportedSkusItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -1859,10 +2797,29 @@ class GetSupportedVmwareSoftwareVersionsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSupportedVmwareSoftwareVersionsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1889,8 +2846,25 @@ class GetSupportedVmwareSoftwareVersionsItemResult(dict):
         :param str description: A description of the software in the bundle.
         :param str version: A short, unique string that identifies the version of bundled software.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "version", version)
+        GetSupportedVmwareSoftwareVersionsItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
+
+        _setter("description", description)
+        _setter("version", version)
 
     @property
     @pulumi.getter

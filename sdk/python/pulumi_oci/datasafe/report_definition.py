@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -39,19 +39,78 @@ class ReportDefinitionArgs:
         :param pulumi.Input[str] description: (Updatable) The description of the report definition.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
-        pulumi.set(__self__, "column_filters", column_filters)
-        pulumi.set(__self__, "column_infos", column_infos)
-        pulumi.set(__self__, "column_sortings", column_sortings)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "parent_id", parent_id)
-        pulumi.set(__self__, "summaries", summaries)
+        ReportDefinitionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_filters=column_filters,
+            column_infos=column_infos,
+            column_sortings=column_sortings,
+            compartment_id=compartment_id,
+            display_name=display_name,
+            parent_id=parent_id,
+            summaries=summaries,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_filters: Optional[pulumi.Input[Sequence[pulumi.Input['ReportDefinitionColumnFilterArgs']]]] = None,
+             column_infos: Optional[pulumi.Input[Sequence[pulumi.Input['ReportDefinitionColumnInfoArgs']]]] = None,
+             column_sortings: Optional[pulumi.Input[Sequence[pulumi.Input['ReportDefinitionColumnSortingArgs']]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             parent_id: Optional[pulumi.Input[str]] = None,
+             summaries: Optional[pulumi.Input[Sequence[pulumi.Input['ReportDefinitionSummaryArgs']]]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if column_filters is None and 'columnFilters' in kwargs:
+            column_filters = kwargs['columnFilters']
+        if column_filters is None:
+            raise TypeError("Missing 'column_filters' argument")
+        if column_infos is None and 'columnInfos' in kwargs:
+            column_infos = kwargs['columnInfos']
+        if column_infos is None:
+            raise TypeError("Missing 'column_infos' argument")
+        if column_sortings is None and 'columnSortings' in kwargs:
+            column_sortings = kwargs['columnSortings']
+        if column_sortings is None:
+            raise TypeError("Missing 'column_sortings' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if parent_id is None and 'parentId' in kwargs:
+            parent_id = kwargs['parentId']
+        if parent_id is None:
+            raise TypeError("Missing 'parent_id' argument")
+        if summaries is None:
+            raise TypeError("Missing 'summaries' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
+        _setter("column_filters", column_filters)
+        _setter("column_infos", column_infos)
+        _setter("column_sortings", column_sortings)
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
+        _setter("parent_id", parent_id)
+        _setter("summaries", summaries)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="columnFilters")
@@ -236,58 +295,161 @@ class _ReportDefinitionState:
         :param pulumi.Input[str] time_created: Specifies the data and time the report definition was created.
         :param pulumi.Input[str] time_updated: The date and time the report definition was update.
         """
+        _ReportDefinitionState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            category=category,
+            column_filters=column_filters,
+            column_infos=column_infos,
+            column_sortings=column_sortings,
+            compartment_id=compartment_id,
+            compliance_standards=compliance_standards,
+            data_source=data_source,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            display_order=display_order,
+            freeform_tags=freeform_tags,
+            is_seeded=is_seeded,
+            parent_id=parent_id,
+            record_time_span=record_time_span,
+            schedule=schedule,
+            scheduled_report_compartment_id=scheduled_report_compartment_id,
+            scheduled_report_mime_type=scheduled_report_mime_type,
+            scheduled_report_name=scheduled_report_name,
+            scheduled_report_row_limit=scheduled_report_row_limit,
+            scim_filter=scim_filter,
+            state=state,
+            summaries=summaries,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             category: Optional[pulumi.Input[str]] = None,
+             column_filters: Optional[pulumi.Input[Sequence[pulumi.Input['ReportDefinitionColumnFilterArgs']]]] = None,
+             column_infos: Optional[pulumi.Input[Sequence[pulumi.Input['ReportDefinitionColumnInfoArgs']]]] = None,
+             column_sortings: Optional[pulumi.Input[Sequence[pulumi.Input['ReportDefinitionColumnSortingArgs']]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             compliance_standards: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             data_source: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             display_order: Optional[pulumi.Input[int]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_seeded: Optional[pulumi.Input[bool]] = None,
+             parent_id: Optional[pulumi.Input[str]] = None,
+             record_time_span: Optional[pulumi.Input[str]] = None,
+             schedule: Optional[pulumi.Input[str]] = None,
+             scheduled_report_compartment_id: Optional[pulumi.Input[str]] = None,
+             scheduled_report_mime_type: Optional[pulumi.Input[str]] = None,
+             scheduled_report_name: Optional[pulumi.Input[str]] = None,
+             scheduled_report_row_limit: Optional[pulumi.Input[int]] = None,
+             scim_filter: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             summaries: Optional[pulumi.Input[Sequence[pulumi.Input['ReportDefinitionSummaryArgs']]]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if column_filters is None and 'columnFilters' in kwargs:
+            column_filters = kwargs['columnFilters']
+        if column_infos is None and 'columnInfos' in kwargs:
+            column_infos = kwargs['columnInfos']
+        if column_sortings is None and 'columnSortings' in kwargs:
+            column_sortings = kwargs['columnSortings']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compliance_standards is None and 'complianceStandards' in kwargs:
+            compliance_standards = kwargs['complianceStandards']
+        if data_source is None and 'dataSource' in kwargs:
+            data_source = kwargs['dataSource']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_order is None and 'displayOrder' in kwargs:
+            display_order = kwargs['displayOrder']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_seeded is None and 'isSeeded' in kwargs:
+            is_seeded = kwargs['isSeeded']
+        if parent_id is None and 'parentId' in kwargs:
+            parent_id = kwargs['parentId']
+        if record_time_span is None and 'recordTimeSpan' in kwargs:
+            record_time_span = kwargs['recordTimeSpan']
+        if scheduled_report_compartment_id is None and 'scheduledReportCompartmentId' in kwargs:
+            scheduled_report_compartment_id = kwargs['scheduledReportCompartmentId']
+        if scheduled_report_mime_type is None and 'scheduledReportMimeType' in kwargs:
+            scheduled_report_mime_type = kwargs['scheduledReportMimeType']
+        if scheduled_report_name is None and 'scheduledReportName' in kwargs:
+            scheduled_report_name = kwargs['scheduledReportName']
+        if scheduled_report_row_limit is None and 'scheduledReportRowLimit' in kwargs:
+            scheduled_report_row_limit = kwargs['scheduledReportRowLimit']
+        if scim_filter is None and 'scimFilter' in kwargs:
+            scim_filter = kwargs['scimFilter']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if category is not None:
-            pulumi.set(__self__, "category", category)
+            _setter("category", category)
         if column_filters is not None:
-            pulumi.set(__self__, "column_filters", column_filters)
+            _setter("column_filters", column_filters)
         if column_infos is not None:
-            pulumi.set(__self__, "column_infos", column_infos)
+            _setter("column_infos", column_infos)
         if column_sortings is not None:
-            pulumi.set(__self__, "column_sortings", column_sortings)
+            _setter("column_sortings", column_sortings)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if compliance_standards is not None:
-            pulumi.set(__self__, "compliance_standards", compliance_standards)
+            _setter("compliance_standards", compliance_standards)
         if data_source is not None:
-            pulumi.set(__self__, "data_source", data_source)
+            _setter("data_source", data_source)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if display_order is not None:
-            pulumi.set(__self__, "display_order", display_order)
+            _setter("display_order", display_order)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_seeded is not None:
-            pulumi.set(__self__, "is_seeded", is_seeded)
+            _setter("is_seeded", is_seeded)
         if parent_id is not None:
-            pulumi.set(__self__, "parent_id", parent_id)
+            _setter("parent_id", parent_id)
         if record_time_span is not None:
-            pulumi.set(__self__, "record_time_span", record_time_span)
+            _setter("record_time_span", record_time_span)
         if schedule is not None:
-            pulumi.set(__self__, "schedule", schedule)
+            _setter("schedule", schedule)
         if scheduled_report_compartment_id is not None:
-            pulumi.set(__self__, "scheduled_report_compartment_id", scheduled_report_compartment_id)
+            _setter("scheduled_report_compartment_id", scheduled_report_compartment_id)
         if scheduled_report_mime_type is not None:
-            pulumi.set(__self__, "scheduled_report_mime_type", scheduled_report_mime_type)
+            _setter("scheduled_report_mime_type", scheduled_report_mime_type)
         if scheduled_report_name is not None:
-            pulumi.set(__self__, "scheduled_report_name", scheduled_report_name)
+            _setter("scheduled_report_name", scheduled_report_name)
         if scheduled_report_row_limit is not None:
-            pulumi.set(__self__, "scheduled_report_row_limit", scheduled_report_row_limit)
+            _setter("scheduled_report_row_limit", scheduled_report_row_limit)
         if scim_filter is not None:
-            pulumi.set(__self__, "scim_filter", scim_filter)
+            _setter("scim_filter", scim_filter)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if summaries is not None:
-            pulumi.set(__self__, "summaries", summaries)
+            _setter("summaries", summaries)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter
@@ -769,6 +931,10 @@ class ReportDefinition(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ReportDefinitionArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

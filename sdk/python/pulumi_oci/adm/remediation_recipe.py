@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -45,21 +45,86 @@ class RemediationRecipeArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "detect_configuration", detect_configuration)
-        pulumi.set(__self__, "is_run_triggered_on_kb_change", is_run_triggered_on_kb_change)
-        pulumi.set(__self__, "knowledge_base_id", knowledge_base_id)
-        pulumi.set(__self__, "network_configuration", network_configuration)
-        pulumi.set(__self__, "scm_configuration", scm_configuration)
-        pulumi.set(__self__, "verify_configuration", verify_configuration)
+        RemediationRecipeArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            detect_configuration=detect_configuration,
+            is_run_triggered_on_kb_change=is_run_triggered_on_kb_change,
+            knowledge_base_id=knowledge_base_id,
+            network_configuration=network_configuration,
+            scm_configuration=scm_configuration,
+            verify_configuration=verify_configuration,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             detect_configuration: Optional[pulumi.Input['RemediationRecipeDetectConfigurationArgs']] = None,
+             is_run_triggered_on_kb_change: Optional[pulumi.Input[bool]] = None,
+             knowledge_base_id: Optional[pulumi.Input[str]] = None,
+             network_configuration: Optional[pulumi.Input['RemediationRecipeNetworkConfigurationArgs']] = None,
+             scm_configuration: Optional[pulumi.Input['RemediationRecipeScmConfigurationArgs']] = None,
+             verify_configuration: Optional[pulumi.Input['RemediationRecipeVerifyConfigurationArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if detect_configuration is None and 'detectConfiguration' in kwargs:
+            detect_configuration = kwargs['detectConfiguration']
+        if detect_configuration is None:
+            raise TypeError("Missing 'detect_configuration' argument")
+        if is_run_triggered_on_kb_change is None and 'isRunTriggeredOnKbChange' in kwargs:
+            is_run_triggered_on_kb_change = kwargs['isRunTriggeredOnKbChange']
+        if is_run_triggered_on_kb_change is None:
+            raise TypeError("Missing 'is_run_triggered_on_kb_change' argument")
+        if knowledge_base_id is None and 'knowledgeBaseId' in kwargs:
+            knowledge_base_id = kwargs['knowledgeBaseId']
+        if knowledge_base_id is None:
+            raise TypeError("Missing 'knowledge_base_id' argument")
+        if network_configuration is None and 'networkConfiguration' in kwargs:
+            network_configuration = kwargs['networkConfiguration']
+        if network_configuration is None:
+            raise TypeError("Missing 'network_configuration' argument")
+        if scm_configuration is None and 'scmConfiguration' in kwargs:
+            scm_configuration = kwargs['scmConfiguration']
+        if scm_configuration is None:
+            raise TypeError("Missing 'scm_configuration' argument")
+        if verify_configuration is None and 'verifyConfiguration' in kwargs:
+            verify_configuration = kwargs['verifyConfiguration']
+        if verify_configuration is None:
+            raise TypeError("Missing 'verify_configuration' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
+        _setter("compartment_id", compartment_id)
+        _setter("detect_configuration", detect_configuration)
+        _setter("is_run_triggered_on_kb_change", is_run_triggered_on_kb_change)
+        _setter("knowledge_base_id", knowledge_base_id)
+        _setter("network_configuration", network_configuration)
+        _setter("scm_configuration", scm_configuration)
+        _setter("verify_configuration", verify_configuration)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -236,34 +301,97 @@ class _RemediationRecipeState:
         :param pulumi.Input[str] time_updated: The date and time the Remediation Recipe was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param pulumi.Input['RemediationRecipeVerifyConfigurationArgs'] verify_configuration: (Updatable) The Verify stage configuration specifies a build service to run a pipeline for the recommended code changes. The build pipeline will be initiated to ensure that there is no breaking change after the dependency versions have been updated in source to avoid vulnerabilities.
         """
+        _RemediationRecipeState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            detect_configuration=detect_configuration,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            is_run_triggered_on_kb_change=is_run_triggered_on_kb_change,
+            knowledge_base_id=knowledge_base_id,
+            network_configuration=network_configuration,
+            scm_configuration=scm_configuration,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            verify_configuration=verify_configuration,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             detect_configuration: Optional[pulumi.Input['RemediationRecipeDetectConfigurationArgs']] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_run_triggered_on_kb_change: Optional[pulumi.Input[bool]] = None,
+             knowledge_base_id: Optional[pulumi.Input[str]] = None,
+             network_configuration: Optional[pulumi.Input['RemediationRecipeNetworkConfigurationArgs']] = None,
+             scm_configuration: Optional[pulumi.Input['RemediationRecipeScmConfigurationArgs']] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             verify_configuration: Optional[pulumi.Input['RemediationRecipeVerifyConfigurationArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if detect_configuration is None and 'detectConfiguration' in kwargs:
+            detect_configuration = kwargs['detectConfiguration']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_run_triggered_on_kb_change is None and 'isRunTriggeredOnKbChange' in kwargs:
+            is_run_triggered_on_kb_change = kwargs['isRunTriggeredOnKbChange']
+        if knowledge_base_id is None and 'knowledgeBaseId' in kwargs:
+            knowledge_base_id = kwargs['knowledgeBaseId']
+        if network_configuration is None and 'networkConfiguration' in kwargs:
+            network_configuration = kwargs['networkConfiguration']
+        if scm_configuration is None and 'scmConfiguration' in kwargs:
+            scm_configuration = kwargs['scmConfiguration']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if verify_configuration is None and 'verifyConfiguration' in kwargs:
+            verify_configuration = kwargs['verifyConfiguration']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if detect_configuration is not None:
-            pulumi.set(__self__, "detect_configuration", detect_configuration)
+            _setter("detect_configuration", detect_configuration)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_run_triggered_on_kb_change is not None:
-            pulumi.set(__self__, "is_run_triggered_on_kb_change", is_run_triggered_on_kb_change)
+            _setter("is_run_triggered_on_kb_change", is_run_triggered_on_kb_change)
         if knowledge_base_id is not None:
-            pulumi.set(__self__, "knowledge_base_id", knowledge_base_id)
+            _setter("knowledge_base_id", knowledge_base_id)
         if network_configuration is not None:
-            pulumi.set(__self__, "network_configuration", network_configuration)
+            _setter("network_configuration", network_configuration)
         if scm_configuration is not None:
-            pulumi.set(__self__, "scm_configuration", scm_configuration)
+            _setter("scm_configuration", scm_configuration)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if verify_configuration is not None:
-            pulumi.set(__self__, "verify_configuration", verify_configuration)
+            _setter("verify_configuration", verify_configuration)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -619,6 +747,10 @@ class RemediationRecipe(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            RemediationRecipeArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -648,6 +780,11 @@ class RemediationRecipe(pulumi.CustomResource):
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["defined_tags"] = defined_tags
+            if detect_configuration is not None and not isinstance(detect_configuration, RemediationRecipeDetectConfigurationArgs):
+                detect_configuration = detect_configuration or {}
+                def _setter(key, value):
+                    detect_configuration[key] = value
+                RemediationRecipeDetectConfigurationArgs._configure(_setter, **detect_configuration)
             if detect_configuration is None and not opts.urn:
                 raise TypeError("Missing required property 'detect_configuration'")
             __props__.__dict__["detect_configuration"] = detect_configuration
@@ -659,13 +796,28 @@ class RemediationRecipe(pulumi.CustomResource):
             if knowledge_base_id is None and not opts.urn:
                 raise TypeError("Missing required property 'knowledge_base_id'")
             __props__.__dict__["knowledge_base_id"] = knowledge_base_id
+            if network_configuration is not None and not isinstance(network_configuration, RemediationRecipeNetworkConfigurationArgs):
+                network_configuration = network_configuration or {}
+                def _setter(key, value):
+                    network_configuration[key] = value
+                RemediationRecipeNetworkConfigurationArgs._configure(_setter, **network_configuration)
             if network_configuration is None and not opts.urn:
                 raise TypeError("Missing required property 'network_configuration'")
             __props__.__dict__["network_configuration"] = network_configuration
+            if scm_configuration is not None and not isinstance(scm_configuration, RemediationRecipeScmConfigurationArgs):
+                scm_configuration = scm_configuration or {}
+                def _setter(key, value):
+                    scm_configuration[key] = value
+                RemediationRecipeScmConfigurationArgs._configure(_setter, **scm_configuration)
             if scm_configuration is None and not opts.urn:
                 raise TypeError("Missing required property 'scm_configuration'")
             __props__.__dict__["scm_configuration"] = scm_configuration
             __props__.__dict__["state"] = state
+            if verify_configuration is not None and not isinstance(verify_configuration, RemediationRecipeVerifyConfigurationArgs):
+                verify_configuration = verify_configuration or {}
+                def _setter(key, value):
+                    verify_configuration[key] = value
+                RemediationRecipeVerifyConfigurationArgs._configure(_setter, **verify_configuration)
             if verify_configuration is None and not opts.urn:
                 raise TypeError("Missing required property 'verify_configuration'")
             __props__.__dict__["verify_configuration"] = verify_configuration

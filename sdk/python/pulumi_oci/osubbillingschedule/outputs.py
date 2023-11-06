@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -45,18 +45,93 @@ class GetBillingScheduleBillingScheduleResult(dict):
         :param str time_invoicing: Billing schedule invoicing date
         :param str time_start: Billing schedule start date
         """
-        pulumi.set(__self__, "amount", amount)
-        pulumi.set(__self__, "ar_customer_transaction_id", ar_customer_transaction_id)
-        pulumi.set(__self__, "ar_invoice_number", ar_invoice_number)
-        pulumi.set(__self__, "billing_frequency", billing_frequency)
-        pulumi.set(__self__, "invoice_status", invoice_status)
-        pulumi.set(__self__, "net_unit_price", net_unit_price)
-        pulumi.set(__self__, "order_number", order_number)
-        pulumi.set(__self__, "products", products)
-        pulumi.set(__self__, "quantity", quantity)
-        pulumi.set(__self__, "time_end", time_end)
-        pulumi.set(__self__, "time_invoicing", time_invoicing)
-        pulumi.set(__self__, "time_start", time_start)
+        GetBillingScheduleBillingScheduleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            amount=amount,
+            ar_customer_transaction_id=ar_customer_transaction_id,
+            ar_invoice_number=ar_invoice_number,
+            billing_frequency=billing_frequency,
+            invoice_status=invoice_status,
+            net_unit_price=net_unit_price,
+            order_number=order_number,
+            products=products,
+            quantity=quantity,
+            time_end=time_end,
+            time_invoicing=time_invoicing,
+            time_start=time_start,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             amount: Optional[str] = None,
+             ar_customer_transaction_id: Optional[str] = None,
+             ar_invoice_number: Optional[str] = None,
+             billing_frequency: Optional[str] = None,
+             invoice_status: Optional[str] = None,
+             net_unit_price: Optional[str] = None,
+             order_number: Optional[str] = None,
+             products: Optional[Sequence['outputs.GetBillingScheduleBillingScheduleProductResult']] = None,
+             quantity: Optional[str] = None,
+             time_end: Optional[str] = None,
+             time_invoicing: Optional[str] = None,
+             time_start: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if amount is None:
+            raise TypeError("Missing 'amount' argument")
+        if ar_customer_transaction_id is None and 'arCustomerTransactionId' in kwargs:
+            ar_customer_transaction_id = kwargs['arCustomerTransactionId']
+        if ar_customer_transaction_id is None:
+            raise TypeError("Missing 'ar_customer_transaction_id' argument")
+        if ar_invoice_number is None and 'arInvoiceNumber' in kwargs:
+            ar_invoice_number = kwargs['arInvoiceNumber']
+        if ar_invoice_number is None:
+            raise TypeError("Missing 'ar_invoice_number' argument")
+        if billing_frequency is None and 'billingFrequency' in kwargs:
+            billing_frequency = kwargs['billingFrequency']
+        if billing_frequency is None:
+            raise TypeError("Missing 'billing_frequency' argument")
+        if invoice_status is None and 'invoiceStatus' in kwargs:
+            invoice_status = kwargs['invoiceStatus']
+        if invoice_status is None:
+            raise TypeError("Missing 'invoice_status' argument")
+        if net_unit_price is None and 'netUnitPrice' in kwargs:
+            net_unit_price = kwargs['netUnitPrice']
+        if net_unit_price is None:
+            raise TypeError("Missing 'net_unit_price' argument")
+        if order_number is None and 'orderNumber' in kwargs:
+            order_number = kwargs['orderNumber']
+        if order_number is None:
+            raise TypeError("Missing 'order_number' argument")
+        if products is None:
+            raise TypeError("Missing 'products' argument")
+        if quantity is None:
+            raise TypeError("Missing 'quantity' argument")
+        if time_end is None and 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if time_end is None:
+            raise TypeError("Missing 'time_end' argument")
+        if time_invoicing is None and 'timeInvoicing' in kwargs:
+            time_invoicing = kwargs['timeInvoicing']
+        if time_invoicing is None:
+            raise TypeError("Missing 'time_invoicing' argument")
+        if time_start is None and 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+        if time_start is None:
+            raise TypeError("Missing 'time_start' argument")
+
+        _setter("amount", amount)
+        _setter("ar_customer_transaction_id", ar_customer_transaction_id)
+        _setter("ar_invoice_number", ar_invoice_number)
+        _setter("billing_frequency", billing_frequency)
+        _setter("invoice_status", invoice_status)
+        _setter("net_unit_price", net_unit_price)
+        _setter("order_number", order_number)
+        _setter("products", products)
+        _setter("quantity", quantity)
+        _setter("time_end", time_end)
+        _setter("time_invoicing", time_invoicing)
+        _setter("time_start", time_start)
 
     @property
     @pulumi.getter
@@ -164,8 +239,27 @@ class GetBillingScheduleBillingScheduleProductResult(dict):
         :param str name: Product name
         :param str part_number: Indicates the associated AR Invoice Number
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "part_number", part_number)
+        GetBillingScheduleBillingScheduleProductResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            part_number=part_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             part_number: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if part_number is None and 'partNumber' in kwargs:
+            part_number = kwargs['partNumber']
+        if part_number is None:
+            raise TypeError("Missing 'part_number' argument")
+
+        _setter("name", name)
+        _setter("part_number", part_number)
 
     @property
     @pulumi.getter
@@ -193,10 +287,29 @@ class GetBillingScheduleFilterResult(dict):
         """
         :param str name: Product name
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetBillingScheduleFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

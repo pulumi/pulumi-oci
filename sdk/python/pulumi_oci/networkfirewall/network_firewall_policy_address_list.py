@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['NetworkFirewallPolicyAddressListArgs', 'NetworkFirewallPolicyAddressList']
@@ -29,11 +29,36 @@ class NetworkFirewallPolicyAddressListArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] name: Unique name to identify the group of addresses to be used in the policy rules.
         """
-        pulumi.set(__self__, "addresses", addresses)
-        pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
-        pulumi.set(__self__, "type", type)
+        NetworkFirewallPolicyAddressListArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            addresses=addresses,
+            network_firewall_policy_id=network_firewall_policy_id,
+            type=type,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if addresses is None:
+            raise TypeError("Missing 'addresses' argument")
+        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
+            network_firewall_policy_id = kwargs['networkFirewallPolicyId']
+        if network_firewall_policy_id is None:
+            raise TypeError("Missing 'network_firewall_policy_id' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("addresses", addresses)
+        _setter("network_firewall_policy_id", network_firewall_policy_id)
+        _setter("type", type)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -110,18 +135,45 @@ class _NetworkFirewallPolicyAddressListState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _NetworkFirewallPolicyAddressListState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            addresses=addresses,
+            name=name,
+            network_firewall_policy_id=network_firewall_policy_id,
+            parent_resource_id=parent_resource_id,
+            total_addresses=total_addresses,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
+             parent_resource_id: Optional[pulumi.Input[str]] = None,
+             total_addresses: Optional[pulumi.Input[int]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
+            network_firewall_policy_id = kwargs['networkFirewallPolicyId']
+        if parent_resource_id is None and 'parentResourceId' in kwargs:
+            parent_resource_id = kwargs['parentResourceId']
+        if total_addresses is None and 'totalAddresses' in kwargs:
+            total_addresses = kwargs['totalAddresses']
+
         if addresses is not None:
-            pulumi.set(__self__, "addresses", addresses)
+            _setter("addresses", addresses)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if network_firewall_policy_id is not None:
-            pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
+            _setter("network_firewall_policy_id", network_firewall_policy_id)
         if parent_resource_id is not None:
-            pulumi.set(__self__, "parent_resource_id", parent_resource_id)
+            _setter("parent_resource_id", parent_resource_id)
         if total_addresses is not None:
-            pulumi.set(__self__, "total_addresses", total_addresses)
+            _setter("total_addresses", total_addresses)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter
@@ -287,6 +339,10 @@ class NetworkFirewallPolicyAddressList(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            NetworkFirewallPolicyAddressListArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

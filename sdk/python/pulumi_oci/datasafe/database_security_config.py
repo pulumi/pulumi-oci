@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -39,21 +39,62 @@ class DatabaseSecurityConfigArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input['DatabaseSecurityConfigSqlFirewallConfigArgs'] sql_firewall_config: (Updatable) Details to update the SQL firewall config.
         """
-        pulumi.set(__self__, "database_security_config_id", database_security_config_id)
+        DatabaseSecurityConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            database_security_config_id=database_security_config_id,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            refresh_trigger=refresh_trigger,
+            sql_firewall_config=sql_firewall_config,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             database_security_config_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             refresh_trigger: Optional[pulumi.Input[int]] = None,
+             sql_firewall_config: Optional[pulumi.Input['DatabaseSecurityConfigSqlFirewallConfigArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if database_security_config_id is None and 'databaseSecurityConfigId' in kwargs:
+            database_security_config_id = kwargs['databaseSecurityConfigId']
+        if database_security_config_id is None:
+            raise TypeError("Missing 'database_security_config_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if refresh_trigger is None and 'refreshTrigger' in kwargs:
+            refresh_trigger = kwargs['refreshTrigger']
+        if sql_firewall_config is None and 'sqlFirewallConfig' in kwargs:
+            sql_firewall_config = kwargs['sqlFirewallConfig']
+
+        _setter("database_security_config_id", database_security_config_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if refresh_trigger is not None:
-            pulumi.set(__self__, "refresh_trigger", refresh_trigger)
+            _setter("refresh_trigger", refresh_trigger)
         if sql_firewall_config is not None:
-            pulumi.set(__self__, "sql_firewall_config", sql_firewall_config)
+            _setter("sql_firewall_config", sql_firewall_config)
 
     @property
     @pulumi.getter(name="databaseSecurityConfigId")
@@ -196,36 +237,101 @@ class _DatabaseSecurityConfigState:
         :param pulumi.Input[str] time_last_refreshed: The last date and time the database security config was refreshed, in the format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the database security configuration was last updated, in the format defined by RFC3339.
         """
+        _DatabaseSecurityConfigState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            database_security_config_id=database_security_config_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            refresh_trigger=refresh_trigger,
+            sql_firewall_config=sql_firewall_config,
+            state=state,
+            system_tags=system_tags,
+            target_id=target_id,
+            time_created=time_created,
+            time_last_refreshed=time_last_refreshed,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             database_security_config_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             refresh_trigger: Optional[pulumi.Input[int]] = None,
+             sql_firewall_config: Optional[pulumi.Input['DatabaseSecurityConfigSqlFirewallConfigArgs']] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             target_id: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_last_refreshed: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if database_security_config_id is None and 'databaseSecurityConfigId' in kwargs:
+            database_security_config_id = kwargs['databaseSecurityConfigId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if refresh_trigger is None and 'refreshTrigger' in kwargs:
+            refresh_trigger = kwargs['refreshTrigger']
+        if sql_firewall_config is None and 'sqlFirewallConfig' in kwargs:
+            sql_firewall_config = kwargs['sqlFirewallConfig']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if target_id is None and 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_last_refreshed is None and 'timeLastRefreshed' in kwargs:
+            time_last_refreshed = kwargs['timeLastRefreshed']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if database_security_config_id is not None:
-            pulumi.set(__self__, "database_security_config_id", database_security_config_id)
+            _setter("database_security_config_id", database_security_config_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if refresh_trigger is not None:
-            pulumi.set(__self__, "refresh_trigger", refresh_trigger)
+            _setter("refresh_trigger", refresh_trigger)
         if sql_firewall_config is not None:
-            pulumi.set(__self__, "sql_firewall_config", sql_firewall_config)
+            _setter("sql_firewall_config", sql_firewall_config)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if target_id is not None:
-            pulumi.set(__self__, "target_id", target_id)
+            _setter("target_id", target_id)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_last_refreshed is not None:
-            pulumi.set(__self__, "time_last_refreshed", time_last_refreshed)
+            _setter("time_last_refreshed", time_last_refreshed)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -483,6 +589,10 @@ class DatabaseSecurityConfig(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DatabaseSecurityConfigArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -514,6 +624,11 @@ class DatabaseSecurityConfig(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["refresh_trigger"] = refresh_trigger
+            if sql_firewall_config is not None and not isinstance(sql_firewall_config, DatabaseSecurityConfigSqlFirewallConfigArgs):
+                sql_firewall_config = sql_firewall_config or {}
+                def _setter(key, value):
+                    sql_firewall_config[key] = value
+                DatabaseSecurityConfigSqlFirewallConfigArgs._configure(_setter, **sql_firewall_config)
             __props__.__dict__["sql_firewall_config"] = sql_firewall_config
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['SteeringPolicyAttachmentArgs', 'SteeringPolicyAttachment']
@@ -29,11 +29,42 @@ class SteeringPolicyAttachmentArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the steering policy attachment. Does not have to be unique and can be changed. Avoid entering confidential information.
         """
-        pulumi.set(__self__, "domain_name", domain_name)
-        pulumi.set(__self__, "steering_policy_id", steering_policy_id)
-        pulumi.set(__self__, "zone_id", zone_id)
+        SteeringPolicyAttachmentArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            domain_name=domain_name,
+            steering_policy_id=steering_policy_id,
+            zone_id=zone_id,
+            display_name=display_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             domain_name: Optional[pulumi.Input[str]] = None,
+             steering_policy_id: Optional[pulumi.Input[str]] = None,
+             zone_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if domain_name is None and 'domainName' in kwargs:
+            domain_name = kwargs['domainName']
+        if domain_name is None:
+            raise TypeError("Missing 'domain_name' argument")
+        if steering_policy_id is None and 'steeringPolicyId' in kwargs:
+            steering_policy_id = kwargs['steeringPolicyId']
+        if steering_policy_id is None:
+            raise TypeError("Missing 'steering_policy_id' argument")
+        if zone_id is None and 'zoneId' in kwargs:
+            zone_id = kwargs['zoneId']
+        if zone_id is None:
+            raise TypeError("Missing 'zone_id' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
+        _setter("domain_name", domain_name)
+        _setter("steering_policy_id", steering_policy_id)
+        _setter("zone_id", zone_id)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
 
     @property
     @pulumi.getter(name="domainName")
@@ -116,24 +147,63 @@ class _SteeringPolicyAttachmentState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _SteeringPolicyAttachmentState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            domain_name=domain_name,
+            rtypes=rtypes,
+            self=self,
+            state=state,
+            steering_policy_id=steering_policy_id,
+            time_created=time_created,
+            zone_id=zone_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             domain_name: Optional[pulumi.Input[str]] = None,
+             rtypes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             self: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             steering_policy_id: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             zone_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if domain_name is None and 'domainName' in kwargs:
+            domain_name = kwargs['domainName']
+        if steering_policy_id is None and 'steeringPolicyId' in kwargs:
+            steering_policy_id = kwargs['steeringPolicyId']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if zone_id is None and 'zoneId' in kwargs:
+            zone_id = kwargs['zoneId']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if domain_name is not None:
-            pulumi.set(__self__, "domain_name", domain_name)
+            _setter("domain_name", domain_name)
         if rtypes is not None:
-            pulumi.set(__self__, "rtypes", rtypes)
+            _setter("rtypes", rtypes)
         if self is not None:
-            pulumi.set(__self__, "self", self)
+            _setter("self", self)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if steering_policy_id is not None:
-            pulumi.set(__self__, "steering_policy_id", steering_policy_id)
+            _setter("steering_policy_id", steering_policy_id)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if zone_id is not None:
-            pulumi.set(__self__, "zone_id", zone_id)
+            _setter("zone_id", zone_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -347,6 +417,10 @@ class SteeringPolicyAttachment(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            SteeringPolicyAttachmentArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

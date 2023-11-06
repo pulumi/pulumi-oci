@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -37,16 +37,57 @@ class DedicatedVantagePointArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "apm_domain_id", apm_domain_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "dvp_stack_details", dvp_stack_details)
-        pulumi.set(__self__, "region", region)
+        DedicatedVantagePointArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            apm_domain_id=apm_domain_id,
+            display_name=display_name,
+            dvp_stack_details=dvp_stack_details,
+            region=region,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            status=status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             apm_domain_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             dvp_stack_details: Optional[pulumi.Input['DedicatedVantagePointDvpStackDetailsArgs']] = None,
+             region: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if apm_domain_id is None and 'apmDomainId' in kwargs:
+            apm_domain_id = kwargs['apmDomainId']
+        if apm_domain_id is None:
+            raise TypeError("Missing 'apm_domain_id' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if dvp_stack_details is None and 'dvpStackDetails' in kwargs:
+            dvp_stack_details = kwargs['dvpStackDetails']
+        if dvp_stack_details is None:
+            raise TypeError("Missing 'dvp_stack_details' argument")
+        if region is None:
+            raise TypeError("Missing 'region' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
+        _setter("apm_domain_id", apm_domain_id)
+        _setter("display_name", display_name)
+        _setter("dvp_stack_details", dvp_stack_details)
+        _setter("region", region)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
 
     @property
     @pulumi.getter(name="apmDomainId")
@@ -169,28 +210,75 @@ class _DedicatedVantagePointState:
         :param pulumi.Input[str] time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         :param pulumi.Input[str] time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         """
+        _DedicatedVantagePointState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            apm_domain_id=apm_domain_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            dvp_stack_details=dvp_stack_details,
+            freeform_tags=freeform_tags,
+            monitor_status_count_maps=monitor_status_count_maps,
+            name=name,
+            region=region,
+            status=status,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             apm_domain_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             dvp_stack_details: Optional[pulumi.Input['DedicatedVantagePointDvpStackDetailsArgs']] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             monitor_status_count_maps: Optional[pulumi.Input[Sequence[pulumi.Input['DedicatedVantagePointMonitorStatusCountMapArgs']]]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             region: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if apm_domain_id is None and 'apmDomainId' in kwargs:
+            apm_domain_id = kwargs['apmDomainId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if dvp_stack_details is None and 'dvpStackDetails' in kwargs:
+            dvp_stack_details = kwargs['dvpStackDetails']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if monitor_status_count_maps is None and 'monitorStatusCountMaps' in kwargs:
+            monitor_status_count_maps = kwargs['monitorStatusCountMaps']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if apm_domain_id is not None:
-            pulumi.set(__self__, "apm_domain_id", apm_domain_id)
+            _setter("apm_domain_id", apm_domain_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if dvp_stack_details is not None:
-            pulumi.set(__self__, "dvp_stack_details", dvp_stack_details)
+            _setter("dvp_stack_details", dvp_stack_details)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if monitor_status_count_maps is not None:
-            pulumi.set(__self__, "monitor_status_count_maps", monitor_status_count_maps)
+            _setter("monitor_status_count_maps", monitor_status_count_maps)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if region is not None:
-            pulumi.set(__self__, "region", region)
+            _setter("region", region)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="apmDomainId")
@@ -448,6 +536,10 @@ class DedicatedVantagePoint(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DedicatedVantagePointArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -476,6 +568,11 @@ class DedicatedVantagePoint(pulumi.CustomResource):
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
+            if dvp_stack_details is not None and not isinstance(dvp_stack_details, DedicatedVantagePointDvpStackDetailsArgs):
+                dvp_stack_details = dvp_stack_details or {}
+                def _setter(key, value):
+                    dvp_stack_details[key] = value
+                DedicatedVantagePointDvpStackDetailsArgs._configure(_setter, **dvp_stack_details)
             if dvp_stack_details is None and not opts.urn:
                 raise TypeError("Missing required property 'dvp_stack_details'")
             __props__.__dict__["dvp_stack_details"] = dvp_stack_details

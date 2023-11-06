@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['BudgetArgs', 'Budget']
@@ -49,34 +49,99 @@ class BudgetArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "amount", amount)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "reset_period", reset_period)
+        BudgetArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            amount=amount,
+            compartment_id=compartment_id,
+            reset_period=reset_period,
+            budget_processing_period_start_offset=budget_processing_period_start_offset,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            end_date=end_date,
+            freeform_tags=freeform_tags,
+            processing_period_type=processing_period_type,
+            start_date=start_date,
+            target_compartment_id=target_compartment_id,
+            target_type=target_type,
+            targets=targets,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             amount: Optional[pulumi.Input[int]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             reset_period: Optional[pulumi.Input[str]] = None,
+             budget_processing_period_start_offset: Optional[pulumi.Input[int]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             end_date: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             processing_period_type: Optional[pulumi.Input[str]] = None,
+             start_date: Optional[pulumi.Input[str]] = None,
+             target_compartment_id: Optional[pulumi.Input[str]] = None,
+             target_type: Optional[pulumi.Input[str]] = None,
+             targets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if amount is None:
+            raise TypeError("Missing 'amount' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if reset_period is None and 'resetPeriod' in kwargs:
+            reset_period = kwargs['resetPeriod']
+        if reset_period is None:
+            raise TypeError("Missing 'reset_period' argument")
+        if budget_processing_period_start_offset is None and 'budgetProcessingPeriodStartOffset' in kwargs:
+            budget_processing_period_start_offset = kwargs['budgetProcessingPeriodStartOffset']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if end_date is None and 'endDate' in kwargs:
+            end_date = kwargs['endDate']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if processing_period_type is None and 'processingPeriodType' in kwargs:
+            processing_period_type = kwargs['processingPeriodType']
+        if start_date is None and 'startDate' in kwargs:
+            start_date = kwargs['startDate']
+        if target_compartment_id is None and 'targetCompartmentId' in kwargs:
+            target_compartment_id = kwargs['targetCompartmentId']
+        if target_type is None and 'targetType' in kwargs:
+            target_type = kwargs['targetType']
+
+        _setter("amount", amount)
+        _setter("compartment_id", compartment_id)
+        _setter("reset_period", reset_period)
         if budget_processing_period_start_offset is not None:
-            pulumi.set(__self__, "budget_processing_period_start_offset", budget_processing_period_start_offset)
+            _setter("budget_processing_period_start_offset", budget_processing_period_start_offset)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if end_date is not None:
-            pulumi.set(__self__, "end_date", end_date)
+            _setter("end_date", end_date)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if processing_period_type is not None:
-            pulumi.set(__self__, "processing_period_type", processing_period_type)
+            _setter("processing_period_type", processing_period_type)
         if start_date is not None:
-            pulumi.set(__self__, "start_date", start_date)
+            _setter("start_date", start_date)
         if target_compartment_id is not None:
             warnings.warn("""The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""", DeprecationWarning)
             pulumi.log.warn("""target_compartment_id is deprecated: The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""")
         if target_compartment_id is not None:
-            pulumi.set(__self__, "target_compartment_id", target_compartment_id)
+            _setter("target_compartment_id", target_compartment_id)
         if target_type is not None:
-            pulumi.set(__self__, "target_type", target_type)
+            _setter("target_type", target_type)
         if targets is not None:
-            pulumi.set(__self__, "targets", targets)
+            _setter("targets", targets)
 
     @property
     @pulumi.getter
@@ -308,53 +373,140 @@ class _BudgetState:
         :param pulumi.Input[str] time_updated: The time that the budget was updated.
         :param pulumi.Input[int] version: The version of the budget. Starts from 1 and increments by 1.
         """
+        _BudgetState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            actual_spend=actual_spend,
+            alert_rule_count=alert_rule_count,
+            amount=amount,
+            budget_processing_period_start_offset=budget_processing_period_start_offset,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            end_date=end_date,
+            forecasted_spend=forecasted_spend,
+            freeform_tags=freeform_tags,
+            processing_period_type=processing_period_type,
+            reset_period=reset_period,
+            start_date=start_date,
+            state=state,
+            target_compartment_id=target_compartment_id,
+            target_type=target_type,
+            targets=targets,
+            time_created=time_created,
+            time_spend_computed=time_spend_computed,
+            time_updated=time_updated,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             actual_spend: Optional[pulumi.Input[float]] = None,
+             alert_rule_count: Optional[pulumi.Input[int]] = None,
+             amount: Optional[pulumi.Input[int]] = None,
+             budget_processing_period_start_offset: Optional[pulumi.Input[int]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             end_date: Optional[pulumi.Input[str]] = None,
+             forecasted_spend: Optional[pulumi.Input[float]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             processing_period_type: Optional[pulumi.Input[str]] = None,
+             reset_period: Optional[pulumi.Input[str]] = None,
+             start_date: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             target_compartment_id: Optional[pulumi.Input[str]] = None,
+             target_type: Optional[pulumi.Input[str]] = None,
+             targets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_spend_computed: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if actual_spend is None and 'actualSpend' in kwargs:
+            actual_spend = kwargs['actualSpend']
+        if alert_rule_count is None and 'alertRuleCount' in kwargs:
+            alert_rule_count = kwargs['alertRuleCount']
+        if budget_processing_period_start_offset is None and 'budgetProcessingPeriodStartOffset' in kwargs:
+            budget_processing_period_start_offset = kwargs['budgetProcessingPeriodStartOffset']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if end_date is None and 'endDate' in kwargs:
+            end_date = kwargs['endDate']
+        if forecasted_spend is None and 'forecastedSpend' in kwargs:
+            forecasted_spend = kwargs['forecastedSpend']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if processing_period_type is None and 'processingPeriodType' in kwargs:
+            processing_period_type = kwargs['processingPeriodType']
+        if reset_period is None and 'resetPeriod' in kwargs:
+            reset_period = kwargs['resetPeriod']
+        if start_date is None and 'startDate' in kwargs:
+            start_date = kwargs['startDate']
+        if target_compartment_id is None and 'targetCompartmentId' in kwargs:
+            target_compartment_id = kwargs['targetCompartmentId']
+        if target_type is None and 'targetType' in kwargs:
+            target_type = kwargs['targetType']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_spend_computed is None and 'timeSpendComputed' in kwargs:
+            time_spend_computed = kwargs['timeSpendComputed']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if actual_spend is not None:
-            pulumi.set(__self__, "actual_spend", actual_spend)
+            _setter("actual_spend", actual_spend)
         if alert_rule_count is not None:
-            pulumi.set(__self__, "alert_rule_count", alert_rule_count)
+            _setter("alert_rule_count", alert_rule_count)
         if amount is not None:
-            pulumi.set(__self__, "amount", amount)
+            _setter("amount", amount)
         if budget_processing_period_start_offset is not None:
-            pulumi.set(__self__, "budget_processing_period_start_offset", budget_processing_period_start_offset)
+            _setter("budget_processing_period_start_offset", budget_processing_period_start_offset)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if end_date is not None:
-            pulumi.set(__self__, "end_date", end_date)
+            _setter("end_date", end_date)
         if forecasted_spend is not None:
-            pulumi.set(__self__, "forecasted_spend", forecasted_spend)
+            _setter("forecasted_spend", forecasted_spend)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if processing_period_type is not None:
-            pulumi.set(__self__, "processing_period_type", processing_period_type)
+            _setter("processing_period_type", processing_period_type)
         if reset_period is not None:
-            pulumi.set(__self__, "reset_period", reset_period)
+            _setter("reset_period", reset_period)
         if start_date is not None:
-            pulumi.set(__self__, "start_date", start_date)
+            _setter("start_date", start_date)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if target_compartment_id is not None:
             warnings.warn("""The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""", DeprecationWarning)
             pulumi.log.warn("""target_compartment_id is deprecated: The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""")
         if target_compartment_id is not None:
-            pulumi.set(__self__, "target_compartment_id", target_compartment_id)
+            _setter("target_compartment_id", target_compartment_id)
         if target_type is not None:
-            pulumi.set(__self__, "target_type", target_type)
+            _setter("target_type", target_type)
         if targets is not None:
-            pulumi.set(__self__, "targets", targets)
+            _setter("targets", targets)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_spend_computed is not None:
-            pulumi.set(__self__, "time_spend_computed", time_spend_computed)
+            _setter("time_spend_computed", time_spend_computed)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if version is not None:
-            pulumi.set(__self__, "version", version)
+            _setter("version", version)
 
     @property
     @pulumi.getter(name="actualSpend")
@@ -765,6 +917,10 @@ class Budget(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            BudgetArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

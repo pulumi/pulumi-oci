@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -35,15 +35,52 @@ class StreamCdnConfigArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "config", config)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "distribution_channel_id", distribution_channel_id)
+        StreamCdnConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config=config,
+            display_name=display_name,
+            distribution_channel_id=distribution_channel_id,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config: Optional[pulumi.Input['StreamCdnConfigConfigArgs']] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             distribution_channel_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_enabled: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if config is None:
+            raise TypeError("Missing 'config' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if distribution_channel_id is None and 'distributionChannelId' in kwargs:
+            distribution_channel_id = kwargs['distributionChannelId']
+        if distribution_channel_id is None:
+            raise TypeError("Missing 'distribution_channel_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
+        _setter("config", config)
+        _setter("display_name", display_name)
+        _setter("distribution_channel_id", distribution_channel_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter
@@ -156,30 +193,83 @@ class _StreamCdnConfigState:
         :param pulumi.Input[str] time_created: The time when the CDN Config was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when the CDN Config was updated. An RFC3339 formatted datetime string.
         """
+        _StreamCdnConfigState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            config=config,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            distribution_channel_id=distribution_channel_id,
+            freeform_tags=freeform_tags,
+            is_enabled=is_enabled,
+            lifecyle_details=lifecyle_details,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             config: Optional[pulumi.Input['StreamCdnConfigConfigArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             distribution_channel_id: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_enabled: Optional[pulumi.Input[bool]] = None,
+             lifecyle_details: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if distribution_channel_id is None and 'distributionChannelId' in kwargs:
+            distribution_channel_id = kwargs['distributionChannelId']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if lifecyle_details is None and 'lifecyleDetails' in kwargs:
+            lifecyle_details = kwargs['lifecyleDetails']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if config is not None:
-            pulumi.set(__self__, "config", config)
+            _setter("config", config)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if distribution_channel_id is not None:
-            pulumi.set(__self__, "distribution_channel_id", distribution_channel_id)
+            _setter("distribution_channel_id", distribution_channel_id)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if lifecyle_details is not None:
-            pulumi.set(__self__, "lifecyle_details", lifecyle_details)
+            _setter("lifecyle_details", lifecyle_details)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -461,6 +551,10 @@ class StreamCdnConfig(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            StreamCdnConfigArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -481,6 +575,11 @@ class StreamCdnConfig(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = StreamCdnConfigArgs.__new__(StreamCdnConfigArgs)
 
+            if config is not None and not isinstance(config, StreamCdnConfigConfigArgs):
+                config = config or {}
+                def _setter(key, value):
+                    config[key] = value
+                StreamCdnConfigConfigArgs._configure(_setter, **config)
             if config is None and not opts.urn:
                 raise TypeError("Missing required property 'config'")
             __props__.__dict__["config"] = config

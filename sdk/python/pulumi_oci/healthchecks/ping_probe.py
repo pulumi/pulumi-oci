@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['PingProbeArgs', 'PingProbe']
@@ -33,15 +33,48 @@ class PingProbeArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "targets", targets)
+        PingProbeArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            protocol=protocol,
+            targets=targets,
+            port=port,
+            timeout_in_seconds=timeout_in_seconds,
+            vantage_point_names=vantage_point_names,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             protocol: Optional[pulumi.Input[str]] = None,
+             targets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             port: Optional[pulumi.Input[int]] = None,
+             timeout_in_seconds: Optional[pulumi.Input[int]] = None,
+             vantage_point_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if targets is None:
+            raise TypeError("Missing 'targets' argument")
+        if timeout_in_seconds is None and 'timeoutInSeconds' in kwargs:
+            timeout_in_seconds = kwargs['timeoutInSeconds']
+        if vantage_point_names is None and 'vantagePointNames' in kwargs:
+            vantage_point_names = kwargs['vantagePointNames']
+
+        _setter("compartment_id", compartment_id)
+        _setter("protocol", protocol)
+        _setter("targets", targets)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if timeout_in_seconds is not None:
-            pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
+            _setter("timeout_in_seconds", timeout_in_seconds)
         if vantage_point_names is not None:
-            pulumi.set(__self__, "vantage_point_names", vantage_point_names)
+            _setter("vantage_point_names", vantage_point_names)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -148,24 +181,63 @@ class _PingProbeState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _PingProbeState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            home_region=home_region,
+            port=port,
+            protocol=protocol,
+            results_url=results_url,
+            targets=targets,
+            time_created=time_created,
+            timeout_in_seconds=timeout_in_seconds,
+            vantage_point_names=vantage_point_names,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             home_region: Optional[pulumi.Input[str]] = None,
+             port: Optional[pulumi.Input[int]] = None,
+             protocol: Optional[pulumi.Input[str]] = None,
+             results_url: Optional[pulumi.Input[str]] = None,
+             targets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             timeout_in_seconds: Optional[pulumi.Input[int]] = None,
+             vantage_point_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if home_region is None and 'homeRegion' in kwargs:
+            home_region = kwargs['homeRegion']
+        if results_url is None and 'resultsUrl' in kwargs:
+            results_url = kwargs['resultsUrl']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if timeout_in_seconds is None and 'timeoutInSeconds' in kwargs:
+            timeout_in_seconds = kwargs['timeoutInSeconds']
+        if vantage_point_names is None and 'vantagePointNames' in kwargs:
+            vantage_point_names = kwargs['vantagePointNames']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if home_region is not None:
-            pulumi.set(__self__, "home_region", home_region)
+            _setter("home_region", home_region)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if protocol is not None:
-            pulumi.set(__self__, "protocol", protocol)
+            _setter("protocol", protocol)
         if results_url is not None:
-            pulumi.set(__self__, "results_url", results_url)
+            _setter("results_url", results_url)
         if targets is not None:
-            pulumi.set(__self__, "targets", targets)
+            _setter("targets", targets)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if timeout_in_seconds is not None:
-            pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
+            _setter("timeout_in_seconds", timeout_in_seconds)
         if vantage_point_names is not None:
-            pulumi.set(__self__, "vantage_point_names", vantage_point_names)
+            _setter("vantage_point_names", vantage_point_names)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -383,6 +455,10 @@ class PingProbe(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            PingProbeArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

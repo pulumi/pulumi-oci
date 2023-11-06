@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -41,20 +41,71 @@ class MaskingPoliciesMaskingColumnArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "column_name", column_name)
-        pulumi.set(__self__, "masking_policy_id", masking_policy_id)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "schema_name", schema_name)
+        MaskingPoliciesMaskingColumnArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_name=column_name,
+            masking_policy_id=masking_policy_id,
+            object=object,
+            schema_name=schema_name,
+            is_masking_enabled=is_masking_enabled,
+            masking_column_group=masking_column_group,
+            masking_formats=masking_formats,
+            object_type=object_type,
+            sensitive_type_id=sensitive_type_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_name: Optional[pulumi.Input[str]] = None,
+             masking_policy_id: Optional[pulumi.Input[str]] = None,
+             object: Optional[pulumi.Input[str]] = None,
+             schema_name: Optional[pulumi.Input[str]] = None,
+             is_masking_enabled: Optional[pulumi.Input[bool]] = None,
+             masking_column_group: Optional[pulumi.Input[str]] = None,
+             masking_formats: Optional[pulumi.Input[Sequence[pulumi.Input['MaskingPoliciesMaskingColumnMaskingFormatArgs']]]] = None,
+             object_type: Optional[pulumi.Input[str]] = None,
+             sensitive_type_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if column_name is None and 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if column_name is None:
+            raise TypeError("Missing 'column_name' argument")
+        if masking_policy_id is None and 'maskingPolicyId' in kwargs:
+            masking_policy_id = kwargs['maskingPolicyId']
+        if masking_policy_id is None:
+            raise TypeError("Missing 'masking_policy_id' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
+        if schema_name is None and 'schemaName' in kwargs:
+            schema_name = kwargs['schemaName']
+        if schema_name is None:
+            raise TypeError("Missing 'schema_name' argument")
+        if is_masking_enabled is None and 'isMaskingEnabled' in kwargs:
+            is_masking_enabled = kwargs['isMaskingEnabled']
+        if masking_column_group is None and 'maskingColumnGroup' in kwargs:
+            masking_column_group = kwargs['maskingColumnGroup']
+        if masking_formats is None and 'maskingFormats' in kwargs:
+            masking_formats = kwargs['maskingFormats']
+        if object_type is None and 'objectType' in kwargs:
+            object_type = kwargs['objectType']
+        if sensitive_type_id is None and 'sensitiveTypeId' in kwargs:
+            sensitive_type_id = kwargs['sensitiveTypeId']
+
+        _setter("column_name", column_name)
+        _setter("masking_policy_id", masking_policy_id)
+        _setter("object", object)
+        _setter("schema_name", schema_name)
         if is_masking_enabled is not None:
-            pulumi.set(__self__, "is_masking_enabled", is_masking_enabled)
+            _setter("is_masking_enabled", is_masking_enabled)
         if masking_column_group is not None:
-            pulumi.set(__self__, "masking_column_group", masking_column_group)
+            _setter("masking_column_group", masking_column_group)
         if masking_formats is not None:
-            pulumi.set(__self__, "masking_formats", masking_formats)
+            _setter("masking_formats", masking_formats)
         if object_type is not None:
-            pulumi.set(__self__, "object_type", object_type)
+            _setter("object_type", object_type)
         if sensitive_type_id is not None:
-            pulumi.set(__self__, "sensitive_type_id", sensitive_type_id)
+            _setter("sensitive_type_id", sensitive_type_id)
 
     @property
     @pulumi.getter(name="columnName")
@@ -211,38 +262,105 @@ class _MaskingPoliciesMaskingColumnState:
         :param pulumi.Input[str] time_created: The date and time the masking column was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_updated: The date and time the masking column was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
+        _MaskingPoliciesMaskingColumnState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            child_columns=child_columns,
+            column_name=column_name,
+            data_type=data_type,
+            is_masking_enabled=is_masking_enabled,
+            key=key,
+            lifecycle_details=lifecycle_details,
+            masking_column_group=masking_column_group,
+            masking_formats=masking_formats,
+            masking_policy_id=masking_policy_id,
+            object=object,
+            object_type=object_type,
+            schema_name=schema_name,
+            sensitive_type_id=sensitive_type_id,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             child_columns: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             column_name: Optional[pulumi.Input[str]] = None,
+             data_type: Optional[pulumi.Input[str]] = None,
+             is_masking_enabled: Optional[pulumi.Input[bool]] = None,
+             key: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             masking_column_group: Optional[pulumi.Input[str]] = None,
+             masking_formats: Optional[pulumi.Input[Sequence[pulumi.Input['MaskingPoliciesMaskingColumnMaskingFormatArgs']]]] = None,
+             masking_policy_id: Optional[pulumi.Input[str]] = None,
+             object: Optional[pulumi.Input[str]] = None,
+             object_type: Optional[pulumi.Input[str]] = None,
+             schema_name: Optional[pulumi.Input[str]] = None,
+             sensitive_type_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if child_columns is None and 'childColumns' in kwargs:
+            child_columns = kwargs['childColumns']
+        if column_name is None and 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if data_type is None and 'dataType' in kwargs:
+            data_type = kwargs['dataType']
+        if is_masking_enabled is None and 'isMaskingEnabled' in kwargs:
+            is_masking_enabled = kwargs['isMaskingEnabled']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if masking_column_group is None and 'maskingColumnGroup' in kwargs:
+            masking_column_group = kwargs['maskingColumnGroup']
+        if masking_formats is None and 'maskingFormats' in kwargs:
+            masking_formats = kwargs['maskingFormats']
+        if masking_policy_id is None and 'maskingPolicyId' in kwargs:
+            masking_policy_id = kwargs['maskingPolicyId']
+        if object_type is None and 'objectType' in kwargs:
+            object_type = kwargs['objectType']
+        if schema_name is None and 'schemaName' in kwargs:
+            schema_name = kwargs['schemaName']
+        if sensitive_type_id is None and 'sensitiveTypeId' in kwargs:
+            sensitive_type_id = kwargs['sensitiveTypeId']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if child_columns is not None:
-            pulumi.set(__self__, "child_columns", child_columns)
+            _setter("child_columns", child_columns)
         if column_name is not None:
-            pulumi.set(__self__, "column_name", column_name)
+            _setter("column_name", column_name)
         if data_type is not None:
-            pulumi.set(__self__, "data_type", data_type)
+            _setter("data_type", data_type)
         if is_masking_enabled is not None:
-            pulumi.set(__self__, "is_masking_enabled", is_masking_enabled)
+            _setter("is_masking_enabled", is_masking_enabled)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if masking_column_group is not None:
-            pulumi.set(__self__, "masking_column_group", masking_column_group)
+            _setter("masking_column_group", masking_column_group)
         if masking_formats is not None:
-            pulumi.set(__self__, "masking_formats", masking_formats)
+            _setter("masking_formats", masking_formats)
         if masking_policy_id is not None:
-            pulumi.set(__self__, "masking_policy_id", masking_policy_id)
+            _setter("masking_policy_id", masking_policy_id)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
         if object_type is not None:
-            pulumi.set(__self__, "object_type", object_type)
+            _setter("object_type", object_type)
         if schema_name is not None:
-            pulumi.set(__self__, "schema_name", schema_name)
+            _setter("schema_name", schema_name)
         if sensitive_type_id is not None:
-            pulumi.set(__self__, "sensitive_type_id", sensitive_type_id)
+            _setter("sensitive_type_id", sensitive_type_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="childColumns")
@@ -644,6 +762,10 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            MaskingPoliciesMaskingColumnArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

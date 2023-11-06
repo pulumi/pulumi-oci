@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -43,25 +43,84 @@ class VolumeGroupArgs:
         :param pulumi.Input[Sequence[pulumi.Input['VolumeGroupVolumeGroupReplicaArgs']]] volume_group_replicas: (Updatable) The list of volume group replicas that this volume group will be enabled to have in the specified destination availability domains.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] volume_ids: OCIDs for the volumes in this volume group.
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "source_details", source_details)
+        VolumeGroupArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            compartment_id=compartment_id,
+            source_details=source_details,
+            backup_policy_id=backup_policy_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            preserve_volume_replica=preserve_volume_replica,
+            volume_group_replicas=volume_group_replicas,
+            volume_group_replicas_deletion=volume_group_replicas_deletion,
+            volume_ids=volume_ids,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             source_details: Optional[pulumi.Input['VolumeGroupSourceDetailsArgs']] = None,
+             backup_policy_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             preserve_volume_replica: Optional[pulumi.Input[bool]] = None,
+             volume_group_replicas: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupVolumeGroupReplicaArgs']]]] = None,
+             volume_group_replicas_deletion: Optional[pulumi.Input[bool]] = None,
+             volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if availability_domain is None and 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if source_details is None and 'sourceDetails' in kwargs:
+            source_details = kwargs['sourceDetails']
+        if source_details is None:
+            raise TypeError("Missing 'source_details' argument")
+        if backup_policy_id is None and 'backupPolicyId' in kwargs:
+            backup_policy_id = kwargs['backupPolicyId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if preserve_volume_replica is None and 'preserveVolumeReplica' in kwargs:
+            preserve_volume_replica = kwargs['preserveVolumeReplica']
+        if volume_group_replicas is None and 'volumeGroupReplicas' in kwargs:
+            volume_group_replicas = kwargs['volumeGroupReplicas']
+        if volume_group_replicas_deletion is None and 'volumeGroupReplicasDeletion' in kwargs:
+            volume_group_replicas_deletion = kwargs['volumeGroupReplicasDeletion']
+        if volume_ids is None and 'volumeIds' in kwargs:
+            volume_ids = kwargs['volumeIds']
+
+        _setter("availability_domain", availability_domain)
+        _setter("compartment_id", compartment_id)
+        _setter("source_details", source_details)
         if backup_policy_id is not None:
-            pulumi.set(__self__, "backup_policy_id", backup_policy_id)
+            _setter("backup_policy_id", backup_policy_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if preserve_volume_replica is not None:
-            pulumi.set(__self__, "preserve_volume_replica", preserve_volume_replica)
+            _setter("preserve_volume_replica", preserve_volume_replica)
         if volume_group_replicas is not None:
-            pulumi.set(__self__, "volume_group_replicas", volume_group_replicas)
+            _setter("volume_group_replicas", volume_group_replicas)
         if volume_group_replicas_deletion is not None:
-            pulumi.set(__self__, "volume_group_replicas_deletion", volume_group_replicas_deletion)
+            _setter("volume_group_replicas_deletion", volume_group_replicas_deletion)
         if volume_ids is not None:
-            pulumi.set(__self__, "volume_ids", volume_ids)
+            _setter("volume_ids", volume_ids)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -234,38 +293,109 @@ class _VolumeGroupState:
         :param pulumi.Input[Sequence[pulumi.Input['VolumeGroupVolumeGroupReplicaArgs']]] volume_group_replicas: (Updatable) The list of volume group replicas that this volume group will be enabled to have in the specified destination availability domains.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] volume_ids: OCIDs for the volumes in this volume group.
         """
+        _VolumeGroupState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            backup_policy_id=backup_policy_id,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            is_hydrated=is_hydrated,
+            preserve_volume_replica=preserve_volume_replica,
+            size_in_gbs=size_in_gbs,
+            size_in_mbs=size_in_mbs,
+            source_details=source_details,
+            state=state,
+            time_created=time_created,
+            volume_group_replicas=volume_group_replicas,
+            volume_group_replicas_deletion=volume_group_replicas_deletion,
+            volume_ids=volume_ids,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             backup_policy_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_hydrated: Optional[pulumi.Input[bool]] = None,
+             preserve_volume_replica: Optional[pulumi.Input[bool]] = None,
+             size_in_gbs: Optional[pulumi.Input[str]] = None,
+             size_in_mbs: Optional[pulumi.Input[str]] = None,
+             source_details: Optional[pulumi.Input['VolumeGroupSourceDetailsArgs']] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             volume_group_replicas: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupVolumeGroupReplicaArgs']]]] = None,
+             volume_group_replicas_deletion: Optional[pulumi.Input[bool]] = None,
+             volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if availability_domain is None and 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if backup_policy_id is None and 'backupPolicyId' in kwargs:
+            backup_policy_id = kwargs['backupPolicyId']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_hydrated is None and 'isHydrated' in kwargs:
+            is_hydrated = kwargs['isHydrated']
+        if preserve_volume_replica is None and 'preserveVolumeReplica' in kwargs:
+            preserve_volume_replica = kwargs['preserveVolumeReplica']
+        if size_in_gbs is None and 'sizeInGbs' in kwargs:
+            size_in_gbs = kwargs['sizeInGbs']
+        if size_in_mbs is None and 'sizeInMbs' in kwargs:
+            size_in_mbs = kwargs['sizeInMbs']
+        if source_details is None and 'sourceDetails' in kwargs:
+            source_details = kwargs['sourceDetails']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if volume_group_replicas is None and 'volumeGroupReplicas' in kwargs:
+            volume_group_replicas = kwargs['volumeGroupReplicas']
+        if volume_group_replicas_deletion is None and 'volumeGroupReplicasDeletion' in kwargs:
+            volume_group_replicas_deletion = kwargs['volumeGroupReplicasDeletion']
+        if volume_ids is None and 'volumeIds' in kwargs:
+            volume_ids = kwargs['volumeIds']
+
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if backup_policy_id is not None:
-            pulumi.set(__self__, "backup_policy_id", backup_policy_id)
+            _setter("backup_policy_id", backup_policy_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_hydrated is not None:
-            pulumi.set(__self__, "is_hydrated", is_hydrated)
+            _setter("is_hydrated", is_hydrated)
         if preserve_volume_replica is not None:
-            pulumi.set(__self__, "preserve_volume_replica", preserve_volume_replica)
+            _setter("preserve_volume_replica", preserve_volume_replica)
         if size_in_gbs is not None:
-            pulumi.set(__self__, "size_in_gbs", size_in_gbs)
+            _setter("size_in_gbs", size_in_gbs)
         if size_in_mbs is not None:
-            pulumi.set(__self__, "size_in_mbs", size_in_mbs)
+            _setter("size_in_mbs", size_in_mbs)
         if source_details is not None:
-            pulumi.set(__self__, "source_details", source_details)
+            _setter("source_details", source_details)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if volume_group_replicas is not None:
-            pulumi.set(__self__, "volume_group_replicas", volume_group_replicas)
+            _setter("volume_group_replicas", volume_group_replicas)
         if volume_group_replicas_deletion is not None:
-            pulumi.set(__self__, "volume_group_replicas_deletion", volume_group_replicas_deletion)
+            _setter("volume_group_replicas_deletion", volume_group_replicas_deletion)
         if volume_ids is not None:
-            pulumi.set(__self__, "volume_ids", volume_ids)
+            _setter("volume_ids", volume_ids)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -579,6 +709,10 @@ class VolumeGroup(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            VolumeGroupArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -615,6 +749,11 @@ class VolumeGroup(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["preserve_volume_replica"] = preserve_volume_replica
+            if source_details is not None and not isinstance(source_details, VolumeGroupSourceDetailsArgs):
+                source_details = source_details or {}
+                def _setter(key, value):
+                    source_details[key] = value
+                VolumeGroupSourceDetailsArgs._configure(_setter, **source_details)
             if source_details is None and not opts.urn:
                 raise TypeError("Missing required property 'source_details'")
             __props__.__dict__["source_details"] = source_details

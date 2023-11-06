@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -41,23 +41,66 @@ class PathAnalysiArgs:
         :param pulumi.Input['PathAnalysiQueryOptionsArgs'] query_options: Defines the query options required for a `PathAnalyzerTest` resource.
         :param pulumi.Input['PathAnalysiSourceEndpointArgs'] source_endpoint: Information describing a source or destination in a `PathAnalyzerTest` resource.
         """
-        pulumi.set(__self__, "type", type)
+        PathAnalysiArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            cache_control=cache_control,
+            compartment_id=compartment_id,
+            destination_endpoint=destination_endpoint,
+            path_analyzer_test_id=path_analyzer_test_id,
+            protocol=protocol,
+            protocol_parameters=protocol_parameters,
+            query_options=query_options,
+            source_endpoint=source_endpoint,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[pulumi.Input[str]] = None,
+             cache_control: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             destination_endpoint: Optional[pulumi.Input['PathAnalysiDestinationEndpointArgs']] = None,
+             path_analyzer_test_id: Optional[pulumi.Input[str]] = None,
+             protocol: Optional[pulumi.Input[int]] = None,
+             protocol_parameters: Optional[pulumi.Input['PathAnalysiProtocolParametersArgs']] = None,
+             query_options: Optional[pulumi.Input['PathAnalysiQueryOptionsArgs']] = None,
+             source_endpoint: Optional[pulumi.Input['PathAnalysiSourceEndpointArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if cache_control is None and 'cacheControl' in kwargs:
+            cache_control = kwargs['cacheControl']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if destination_endpoint is None and 'destinationEndpoint' in kwargs:
+            destination_endpoint = kwargs['destinationEndpoint']
+        if path_analyzer_test_id is None and 'pathAnalyzerTestId' in kwargs:
+            path_analyzer_test_id = kwargs['pathAnalyzerTestId']
+        if protocol_parameters is None and 'protocolParameters' in kwargs:
+            protocol_parameters = kwargs['protocolParameters']
+        if query_options is None and 'queryOptions' in kwargs:
+            query_options = kwargs['queryOptions']
+        if source_endpoint is None and 'sourceEndpoint' in kwargs:
+            source_endpoint = kwargs['sourceEndpoint']
+
+        _setter("type", type)
         if cache_control is not None:
-            pulumi.set(__self__, "cache_control", cache_control)
+            _setter("cache_control", cache_control)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if destination_endpoint is not None:
-            pulumi.set(__self__, "destination_endpoint", destination_endpoint)
+            _setter("destination_endpoint", destination_endpoint)
         if path_analyzer_test_id is not None:
-            pulumi.set(__self__, "path_analyzer_test_id", path_analyzer_test_id)
+            _setter("path_analyzer_test_id", path_analyzer_test_id)
         if protocol is not None:
-            pulumi.set(__self__, "protocol", protocol)
+            _setter("protocol", protocol)
         if protocol_parameters is not None:
-            pulumi.set(__self__, "protocol_parameters", protocol_parameters)
+            _setter("protocol_parameters", protocol_parameters)
         if query_options is not None:
-            pulumi.set(__self__, "query_options", query_options)
+            _setter("query_options", query_options)
         if source_endpoint is not None:
-            pulumi.set(__self__, "source_endpoint", source_endpoint)
+            _setter("source_endpoint", source_endpoint)
 
     @property
     @pulumi.getter
@@ -200,24 +243,65 @@ class _PathAnalysiState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _PathAnalysiState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cache_control=cache_control,
+            compartment_id=compartment_id,
+            destination_endpoint=destination_endpoint,
+            path_analyzer_test_id=path_analyzer_test_id,
+            protocol=protocol,
+            protocol_parameters=protocol_parameters,
+            query_options=query_options,
+            source_endpoint=source_endpoint,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cache_control: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             destination_endpoint: Optional[pulumi.Input['PathAnalysiDestinationEndpointArgs']] = None,
+             path_analyzer_test_id: Optional[pulumi.Input[str]] = None,
+             protocol: Optional[pulumi.Input[int]] = None,
+             protocol_parameters: Optional[pulumi.Input['PathAnalysiProtocolParametersArgs']] = None,
+             query_options: Optional[pulumi.Input['PathAnalysiQueryOptionsArgs']] = None,
+             source_endpoint: Optional[pulumi.Input['PathAnalysiSourceEndpointArgs']] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if cache_control is None and 'cacheControl' in kwargs:
+            cache_control = kwargs['cacheControl']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if destination_endpoint is None and 'destinationEndpoint' in kwargs:
+            destination_endpoint = kwargs['destinationEndpoint']
+        if path_analyzer_test_id is None and 'pathAnalyzerTestId' in kwargs:
+            path_analyzer_test_id = kwargs['pathAnalyzerTestId']
+        if protocol_parameters is None and 'protocolParameters' in kwargs:
+            protocol_parameters = kwargs['protocolParameters']
+        if query_options is None and 'queryOptions' in kwargs:
+            query_options = kwargs['queryOptions']
+        if source_endpoint is None and 'sourceEndpoint' in kwargs:
+            source_endpoint = kwargs['sourceEndpoint']
+
         if cache_control is not None:
-            pulumi.set(__self__, "cache_control", cache_control)
+            _setter("cache_control", cache_control)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if destination_endpoint is not None:
-            pulumi.set(__self__, "destination_endpoint", destination_endpoint)
+            _setter("destination_endpoint", destination_endpoint)
         if path_analyzer_test_id is not None:
-            pulumi.set(__self__, "path_analyzer_test_id", path_analyzer_test_id)
+            _setter("path_analyzer_test_id", path_analyzer_test_id)
         if protocol is not None:
-            pulumi.set(__self__, "protocol", protocol)
+            _setter("protocol", protocol)
         if protocol_parameters is not None:
-            pulumi.set(__self__, "protocol_parameters", protocol_parameters)
+            _setter("protocol_parameters", protocol_parameters)
         if query_options is not None:
-            pulumi.set(__self__, "query_options", query_options)
+            _setter("query_options", query_options)
         if source_endpoint is not None:
-            pulumi.set(__self__, "source_endpoint", source_endpoint)
+            _setter("source_endpoint", source_endpoint)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="cacheControl")
@@ -511,6 +595,10 @@ class PathAnalysi(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            PathAnalysiArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -536,11 +624,31 @@ class PathAnalysi(pulumi.CustomResource):
 
             __props__.__dict__["cache_control"] = cache_control
             __props__.__dict__["compartment_id"] = compartment_id
+            if destination_endpoint is not None and not isinstance(destination_endpoint, PathAnalysiDestinationEndpointArgs):
+                destination_endpoint = destination_endpoint or {}
+                def _setter(key, value):
+                    destination_endpoint[key] = value
+                PathAnalysiDestinationEndpointArgs._configure(_setter, **destination_endpoint)
             __props__.__dict__["destination_endpoint"] = destination_endpoint
             __props__.__dict__["path_analyzer_test_id"] = path_analyzer_test_id
             __props__.__dict__["protocol"] = protocol
+            if protocol_parameters is not None and not isinstance(protocol_parameters, PathAnalysiProtocolParametersArgs):
+                protocol_parameters = protocol_parameters or {}
+                def _setter(key, value):
+                    protocol_parameters[key] = value
+                PathAnalysiProtocolParametersArgs._configure(_setter, **protocol_parameters)
             __props__.__dict__["protocol_parameters"] = protocol_parameters
+            if query_options is not None and not isinstance(query_options, PathAnalysiQueryOptionsArgs):
+                query_options = query_options or {}
+                def _setter(key, value):
+                    query_options[key] = value
+                PathAnalysiQueryOptionsArgs._configure(_setter, **query_options)
             __props__.__dict__["query_options"] = query_options
+            if source_endpoint is not None and not isinstance(source_endpoint, PathAnalysiSourceEndpointArgs):
+                source_endpoint = source_endpoint or {}
+                def _setter(key, value):
+                    source_endpoint[key] = value
+                PathAnalysiSourceEndpointArgs._configure(_setter, **source_endpoint)
             __props__.__dict__["source_endpoint"] = source_endpoint
             if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")

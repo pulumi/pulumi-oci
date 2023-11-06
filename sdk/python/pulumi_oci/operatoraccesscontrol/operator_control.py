@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['OperatorControlArgs', 'OperatorControl']
@@ -45,25 +45,90 @@ class OperatorControlArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "approver_groups_lists", approver_groups_lists)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "is_fully_pre_approved", is_fully_pre_approved)
-        pulumi.set(__self__, "operator_control_name", operator_control_name)
-        pulumi.set(__self__, "resource_type", resource_type)
+        OperatorControlArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            approver_groups_lists=approver_groups_lists,
+            compartment_id=compartment_id,
+            is_fully_pre_approved=is_fully_pre_approved,
+            operator_control_name=operator_control_name,
+            resource_type=resource_type,
+            approvers_lists=approvers_lists,
+            defined_tags=defined_tags,
+            description=description,
+            email_id_lists=email_id_lists,
+            freeform_tags=freeform_tags,
+            pre_approved_op_action_lists=pre_approved_op_action_lists,
+            system_message=system_message,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             approver_groups_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             is_fully_pre_approved: Optional[pulumi.Input[bool]] = None,
+             operator_control_name: Optional[pulumi.Input[str]] = None,
+             resource_type: Optional[pulumi.Input[str]] = None,
+             approvers_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             email_id_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             pre_approved_op_action_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             system_message: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if approver_groups_lists is None and 'approverGroupsLists' in kwargs:
+            approver_groups_lists = kwargs['approverGroupsLists']
+        if approver_groups_lists is None:
+            raise TypeError("Missing 'approver_groups_lists' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if is_fully_pre_approved is None and 'isFullyPreApproved' in kwargs:
+            is_fully_pre_approved = kwargs['isFullyPreApproved']
+        if is_fully_pre_approved is None:
+            raise TypeError("Missing 'is_fully_pre_approved' argument")
+        if operator_control_name is None and 'operatorControlName' in kwargs:
+            operator_control_name = kwargs['operatorControlName']
+        if operator_control_name is None:
+            raise TypeError("Missing 'operator_control_name' argument")
+        if resource_type is None and 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if resource_type is None:
+            raise TypeError("Missing 'resource_type' argument")
+        if approvers_lists is None and 'approversLists' in kwargs:
+            approvers_lists = kwargs['approversLists']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if email_id_lists is None and 'emailIdLists' in kwargs:
+            email_id_lists = kwargs['emailIdLists']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if pre_approved_op_action_lists is None and 'preApprovedOpActionLists' in kwargs:
+            pre_approved_op_action_lists = kwargs['preApprovedOpActionLists']
+        if system_message is None and 'systemMessage' in kwargs:
+            system_message = kwargs['systemMessage']
+
+        _setter("approver_groups_lists", approver_groups_lists)
+        _setter("compartment_id", compartment_id)
+        _setter("is_fully_pre_approved", is_fully_pre_approved)
+        _setter("operator_control_name", operator_control_name)
+        _setter("resource_type", resource_type)
         if approvers_lists is not None:
-            pulumi.set(__self__, "approvers_lists", approvers_lists)
+            _setter("approvers_lists", approvers_lists)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if email_id_lists is not None:
-            pulumi.set(__self__, "email_id_lists", email_id_lists)
+            _setter("email_id_lists", email_id_lists)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if pre_approved_op_action_lists is not None:
-            pulumi.set(__self__, "pre_approved_op_action_lists", pre_approved_op_action_lists)
+            _setter("pre_approved_op_action_lists", pre_approved_op_action_lists)
         if system_message is not None:
-            pulumi.set(__self__, "system_message", system_message)
+            _setter("system_message", system_message)
 
     @property
     @pulumi.getter(name="approverGroupsLists")
@@ -262,44 +327,125 @@ class _OperatorControlState:
         :param pulumi.Input[str] time_of_deletion: Time when deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'. Note a deleted operator control still stays in the system, so that you can still audit operator actions associated with access requests raised on target resources governed by the deleted operator control.
         :param pulumi.Input[str] time_of_modification: Time when the operator control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
         """
+        _OperatorControlState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            approval_required_op_action_lists=approval_required_op_action_lists,
+            approver_groups_lists=approver_groups_lists,
+            approvers_lists=approvers_lists,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            email_id_lists=email_id_lists,
+            freeform_tags=freeform_tags,
+            is_default_operator_control=is_default_operator_control,
+            is_fully_pre_approved=is_fully_pre_approved,
+            last_modified_info=last_modified_info,
+            operator_control_name=operator_control_name,
+            pre_approved_op_action_lists=pre_approved_op_action_lists,
+            resource_type=resource_type,
+            state=state,
+            system_message=system_message,
+            time_of_creation=time_of_creation,
+            time_of_deletion=time_of_deletion,
+            time_of_modification=time_of_modification,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             approval_required_op_action_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             approver_groups_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             approvers_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             email_id_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_default_operator_control: Optional[pulumi.Input[bool]] = None,
+             is_fully_pre_approved: Optional[pulumi.Input[bool]] = None,
+             last_modified_info: Optional[pulumi.Input[str]] = None,
+             operator_control_name: Optional[pulumi.Input[str]] = None,
+             pre_approved_op_action_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             resource_type: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_message: Optional[pulumi.Input[str]] = None,
+             time_of_creation: Optional[pulumi.Input[str]] = None,
+             time_of_deletion: Optional[pulumi.Input[str]] = None,
+             time_of_modification: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if approval_required_op_action_lists is None and 'approvalRequiredOpActionLists' in kwargs:
+            approval_required_op_action_lists = kwargs['approvalRequiredOpActionLists']
+        if approver_groups_lists is None and 'approverGroupsLists' in kwargs:
+            approver_groups_lists = kwargs['approverGroupsLists']
+        if approvers_lists is None and 'approversLists' in kwargs:
+            approvers_lists = kwargs['approversLists']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if email_id_lists is None and 'emailIdLists' in kwargs:
+            email_id_lists = kwargs['emailIdLists']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_default_operator_control is None and 'isDefaultOperatorControl' in kwargs:
+            is_default_operator_control = kwargs['isDefaultOperatorControl']
+        if is_fully_pre_approved is None and 'isFullyPreApproved' in kwargs:
+            is_fully_pre_approved = kwargs['isFullyPreApproved']
+        if last_modified_info is None and 'lastModifiedInfo' in kwargs:
+            last_modified_info = kwargs['lastModifiedInfo']
+        if operator_control_name is None and 'operatorControlName' in kwargs:
+            operator_control_name = kwargs['operatorControlName']
+        if pre_approved_op_action_lists is None and 'preApprovedOpActionLists' in kwargs:
+            pre_approved_op_action_lists = kwargs['preApprovedOpActionLists']
+        if resource_type is None and 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if system_message is None and 'systemMessage' in kwargs:
+            system_message = kwargs['systemMessage']
+        if time_of_creation is None and 'timeOfCreation' in kwargs:
+            time_of_creation = kwargs['timeOfCreation']
+        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
+            time_of_deletion = kwargs['timeOfDeletion']
+        if time_of_modification is None and 'timeOfModification' in kwargs:
+            time_of_modification = kwargs['timeOfModification']
+
         if approval_required_op_action_lists is not None:
-            pulumi.set(__self__, "approval_required_op_action_lists", approval_required_op_action_lists)
+            _setter("approval_required_op_action_lists", approval_required_op_action_lists)
         if approver_groups_lists is not None:
-            pulumi.set(__self__, "approver_groups_lists", approver_groups_lists)
+            _setter("approver_groups_lists", approver_groups_lists)
         if approvers_lists is not None:
-            pulumi.set(__self__, "approvers_lists", approvers_lists)
+            _setter("approvers_lists", approvers_lists)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if email_id_lists is not None:
-            pulumi.set(__self__, "email_id_lists", email_id_lists)
+            _setter("email_id_lists", email_id_lists)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_default_operator_control is not None:
-            pulumi.set(__self__, "is_default_operator_control", is_default_operator_control)
+            _setter("is_default_operator_control", is_default_operator_control)
         if is_fully_pre_approved is not None:
-            pulumi.set(__self__, "is_fully_pre_approved", is_fully_pre_approved)
+            _setter("is_fully_pre_approved", is_fully_pre_approved)
         if last_modified_info is not None:
-            pulumi.set(__self__, "last_modified_info", last_modified_info)
+            _setter("last_modified_info", last_modified_info)
         if operator_control_name is not None:
-            pulumi.set(__self__, "operator_control_name", operator_control_name)
+            _setter("operator_control_name", operator_control_name)
         if pre_approved_op_action_lists is not None:
-            pulumi.set(__self__, "pre_approved_op_action_lists", pre_approved_op_action_lists)
+            _setter("pre_approved_op_action_lists", pre_approved_op_action_lists)
         if resource_type is not None:
-            pulumi.set(__self__, "resource_type", resource_type)
+            _setter("resource_type", resource_type)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_message is not None:
-            pulumi.set(__self__, "system_message", system_message)
+            _setter("system_message", system_message)
         if time_of_creation is not None:
-            pulumi.set(__self__, "time_of_creation", time_of_creation)
+            _setter("time_of_creation", time_of_creation)
         if time_of_deletion is not None:
-            pulumi.set(__self__, "time_of_deletion", time_of_deletion)
+            _setter("time_of_deletion", time_of_deletion)
         if time_of_modification is not None:
-            pulumi.set(__self__, "time_of_modification", time_of_modification)
+            _setter("time_of_modification", time_of_modification)
 
     @property
     @pulumi.getter(name="approvalRequiredOpActionLists")
@@ -613,6 +759,10 @@ class OperatorControl(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            OperatorControlArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

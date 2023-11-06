@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -45,24 +45,79 @@ class UsageArgs:
         :param pulumi.Input[bool] is_aggregate_by_time: Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
         :param pulumi.Input[str] query_type: The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
         """
-        pulumi.set(__self__, "granularity", granularity)
-        pulumi.set(__self__, "tenant_id", tenant_id)
-        pulumi.set(__self__, "time_usage_ended", time_usage_ended)
-        pulumi.set(__self__, "time_usage_started", time_usage_started)
+        UsageArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            granularity=granularity,
+            tenant_id=tenant_id,
+            time_usage_ended=time_usage_ended,
+            time_usage_started=time_usage_started,
+            compartment_depth=compartment_depth,
+            filter=filter,
+            forecast=forecast,
+            group_bies=group_bies,
+            group_by_tags=group_by_tags,
+            is_aggregate_by_time=is_aggregate_by_time,
+            query_type=query_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             granularity: Optional[pulumi.Input[str]] = None,
+             tenant_id: Optional[pulumi.Input[str]] = None,
+             time_usage_ended: Optional[pulumi.Input[str]] = None,
+             time_usage_started: Optional[pulumi.Input[str]] = None,
+             compartment_depth: Optional[pulumi.Input[float]] = None,
+             filter: Optional[pulumi.Input[str]] = None,
+             forecast: Optional[pulumi.Input['UsageForecastArgs']] = None,
+             group_bies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input['UsageGroupByTagArgs']]]] = None,
+             is_aggregate_by_time: Optional[pulumi.Input[bool]] = None,
+             query_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if granularity is None:
+            raise TypeError("Missing 'granularity' argument")
+        if tenant_id is None and 'tenantId' in kwargs:
+            tenant_id = kwargs['tenantId']
+        if tenant_id is None:
+            raise TypeError("Missing 'tenant_id' argument")
+        if time_usage_ended is None and 'timeUsageEnded' in kwargs:
+            time_usage_ended = kwargs['timeUsageEnded']
+        if time_usage_ended is None:
+            raise TypeError("Missing 'time_usage_ended' argument")
+        if time_usage_started is None and 'timeUsageStarted' in kwargs:
+            time_usage_started = kwargs['timeUsageStarted']
+        if time_usage_started is None:
+            raise TypeError("Missing 'time_usage_started' argument")
+        if compartment_depth is None and 'compartmentDepth' in kwargs:
+            compartment_depth = kwargs['compartmentDepth']
+        if group_bies is None and 'groupBies' in kwargs:
+            group_bies = kwargs['groupBies']
+        if group_by_tags is None and 'groupByTags' in kwargs:
+            group_by_tags = kwargs['groupByTags']
+        if is_aggregate_by_time is None and 'isAggregateByTime' in kwargs:
+            is_aggregate_by_time = kwargs['isAggregateByTime']
+        if query_type is None and 'queryType' in kwargs:
+            query_type = kwargs['queryType']
+
+        _setter("granularity", granularity)
+        _setter("tenant_id", tenant_id)
+        _setter("time_usage_ended", time_usage_ended)
+        _setter("time_usage_started", time_usage_started)
         if compartment_depth is not None:
-            pulumi.set(__self__, "compartment_depth", compartment_depth)
+            _setter("compartment_depth", compartment_depth)
         if filter is not None:
-            pulumi.set(__self__, "filter", filter)
+            _setter("filter", filter)
         if forecast is not None:
-            pulumi.set(__self__, "forecast", forecast)
+            _setter("forecast", forecast)
         if group_bies is not None:
-            pulumi.set(__self__, "group_bies", group_bies)
+            _setter("group_bies", group_bies)
         if group_by_tags is not None:
-            pulumi.set(__self__, "group_by_tags", group_by_tags)
+            _setter("group_by_tags", group_by_tags)
         if is_aggregate_by_time is not None:
-            pulumi.set(__self__, "is_aggregate_by_time", is_aggregate_by_time)
+            _setter("is_aggregate_by_time", is_aggregate_by_time)
         if query_type is not None:
-            pulumi.set(__self__, "query_type", query_type)
+            _setter("query_type", query_type)
 
     @property
     @pulumi.getter
@@ -235,30 +290,79 @@ class _UsageState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _UsageState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_depth=compartment_depth,
+            filter=filter,
+            forecast=forecast,
+            granularity=granularity,
+            group_bies=group_bies,
+            group_by_tags=group_by_tags,
+            is_aggregate_by_time=is_aggregate_by_time,
+            items=items,
+            query_type=query_type,
+            tenant_id=tenant_id,
+            time_usage_ended=time_usage_ended,
+            time_usage_started=time_usage_started,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_depth: Optional[pulumi.Input[float]] = None,
+             filter: Optional[pulumi.Input[str]] = None,
+             forecast: Optional[pulumi.Input['UsageForecastArgs']] = None,
+             granularity: Optional[pulumi.Input[str]] = None,
+             group_bies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input['UsageGroupByTagArgs']]]] = None,
+             is_aggregate_by_time: Optional[pulumi.Input[bool]] = None,
+             items: Optional[pulumi.Input[Sequence[pulumi.Input['UsageItemArgs']]]] = None,
+             query_type: Optional[pulumi.Input[str]] = None,
+             tenant_id: Optional[pulumi.Input[str]] = None,
+             time_usage_ended: Optional[pulumi.Input[str]] = None,
+             time_usage_started: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_depth is None and 'compartmentDepth' in kwargs:
+            compartment_depth = kwargs['compartmentDepth']
+        if group_bies is None and 'groupBies' in kwargs:
+            group_bies = kwargs['groupBies']
+        if group_by_tags is None and 'groupByTags' in kwargs:
+            group_by_tags = kwargs['groupByTags']
+        if is_aggregate_by_time is None and 'isAggregateByTime' in kwargs:
+            is_aggregate_by_time = kwargs['isAggregateByTime']
+        if query_type is None and 'queryType' in kwargs:
+            query_type = kwargs['queryType']
+        if tenant_id is None and 'tenantId' in kwargs:
+            tenant_id = kwargs['tenantId']
+        if time_usage_ended is None and 'timeUsageEnded' in kwargs:
+            time_usage_ended = kwargs['timeUsageEnded']
+        if time_usage_started is None and 'timeUsageStarted' in kwargs:
+            time_usage_started = kwargs['timeUsageStarted']
+
         if compartment_depth is not None:
-            pulumi.set(__self__, "compartment_depth", compartment_depth)
+            _setter("compartment_depth", compartment_depth)
         if filter is not None:
-            pulumi.set(__self__, "filter", filter)
+            _setter("filter", filter)
         if forecast is not None:
-            pulumi.set(__self__, "forecast", forecast)
+            _setter("forecast", forecast)
         if granularity is not None:
-            pulumi.set(__self__, "granularity", granularity)
+            _setter("granularity", granularity)
         if group_bies is not None:
-            pulumi.set(__self__, "group_bies", group_bies)
+            _setter("group_bies", group_bies)
         if group_by_tags is not None:
-            pulumi.set(__self__, "group_by_tags", group_by_tags)
+            _setter("group_by_tags", group_by_tags)
         if is_aggregate_by_time is not None:
-            pulumi.set(__self__, "is_aggregate_by_time", is_aggregate_by_time)
+            _setter("is_aggregate_by_time", is_aggregate_by_time)
         if items is not None:
-            pulumi.set(__self__, "items", items)
+            _setter("items", items)
         if query_type is not None:
-            pulumi.set(__self__, "query_type", query_type)
+            _setter("query_type", query_type)
         if tenant_id is not None:
-            pulumi.set(__self__, "tenant_id", tenant_id)
+            _setter("tenant_id", tenant_id)
         if time_usage_ended is not None:
-            pulumi.set(__self__, "time_usage_ended", time_usage_ended)
+            _setter("time_usage_ended", time_usage_ended)
         if time_usage_started is not None:
-            pulumi.set(__self__, "time_usage_started", time_usage_started)
+            _setter("time_usage_started", time_usage_started)
 
     @property
     @pulumi.getter(name="compartmentDepth")
@@ -534,6 +638,10 @@ class Usage(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            UsageArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -561,6 +669,11 @@ class Usage(pulumi.CustomResource):
 
             __props__.__dict__["compartment_depth"] = compartment_depth
             __props__.__dict__["filter"] = filter
+            if forecast is not None and not isinstance(forecast, UsageForecastArgs):
+                forecast = forecast or {}
+                def _setter(key, value):
+                    forecast[key] = value
+                UsageForecastArgs._configure(_setter, **forecast)
             __props__.__dict__["forecast"] = forecast
             if granularity is None and not opts.urn:
                 raise TypeError("Missing required property 'granularity'")

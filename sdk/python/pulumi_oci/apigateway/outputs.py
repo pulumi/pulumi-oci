@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -458,10 +458,23 @@ class ApiValidationResult(dict):
         :param str name: Name of the validation.
         :param str result: Result of the validation.
         """
+        ApiValidationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            result=result,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             result: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if result is not None:
-            pulumi.set(__self__, "result", result)
+            _setter("result", result)
 
     @property
     @pulumi.getter
@@ -510,11 +523,32 @@ class DeploymentSpecification(dict):
         :param 'DeploymentSpecificationLoggingPoliciesArgs' logging_policies: (Updatable) Policies controlling the pushing of logs to Oracle Cloud Infrastructure Public Logging.
         :param 'DeploymentSpecificationRequestPoliciesArgs' request_policies: (Updatable) Behavior applied to any requests received by the API on this route.
         """
-        pulumi.set(__self__, "routes", routes)
+        DeploymentSpecification._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            routes=routes,
+            logging_policies=logging_policies,
+            request_policies=request_policies,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             routes: Optional[Sequence['outputs.DeploymentSpecificationRoute']] = None,
+             logging_policies: Optional['outputs.DeploymentSpecificationLoggingPolicies'] = None,
+             request_policies: Optional['outputs.DeploymentSpecificationRequestPolicies'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if routes is None:
+            raise TypeError("Missing 'routes' argument")
+        if logging_policies is None and 'loggingPolicies' in kwargs:
+            logging_policies = kwargs['loggingPolicies']
+        if request_policies is None and 'requestPolicies' in kwargs:
+            request_policies = kwargs['requestPolicies']
+
+        _setter("routes", routes)
         if logging_policies is not None:
-            pulumi.set(__self__, "logging_policies", logging_policies)
+            _setter("logging_policies", logging_policies)
         if request_policies is not None:
-            pulumi.set(__self__, "request_policies", request_policies)
+            _setter("request_policies", request_policies)
 
     @property
     @pulumi.getter
@@ -569,10 +603,27 @@ class DeploymentSpecificationLoggingPolicies(dict):
         :param 'DeploymentSpecificationLoggingPoliciesAccessLogArgs' access_log: (Updatable) Configures the logging policies for the access logs of an API Deployment.
         :param 'DeploymentSpecificationLoggingPoliciesExecutionLogArgs' execution_log: (Updatable) Configures the logging policies for the execution logs of an API Deployment.
         """
+        DeploymentSpecificationLoggingPolicies._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            access_log=access_log,
+            execution_log=execution_log,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             access_log: Optional['outputs.DeploymentSpecificationLoggingPoliciesAccessLog'] = None,
+             execution_log: Optional['outputs.DeploymentSpecificationLoggingPoliciesExecutionLog'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if access_log is None and 'accessLog' in kwargs:
+            access_log = kwargs['accessLog']
+        if execution_log is None and 'executionLog' in kwargs:
+            execution_log = kwargs['executionLog']
+
         if access_log is not None:
-            pulumi.set(__self__, "access_log", access_log)
+            _setter("access_log", access_log)
         if execution_log is not None:
-            pulumi.set(__self__, "execution_log", execution_log)
+            _setter("execution_log", execution_log)
 
     @property
     @pulumi.getter(name="accessLog")
@@ -615,8 +666,21 @@ class DeploymentSpecificationLoggingPoliciesAccessLog(dict):
         """
         :param bool is_enabled: (Updatable) Whether this policy is currently enabled.
         """
+        DeploymentSpecificationLoggingPoliciesAccessLog._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -655,10 +719,27 @@ class DeploymentSpecificationLoggingPoliciesExecutionLog(dict):
         :param bool is_enabled: (Updatable) Whether this policy is currently enabled.
         :param str log_level: (Updatable) Specifies the log level used to control logging output of execution logs. Enabling logging at a given level also enables logging at all higher levels.
         """
+        DeploymentSpecificationLoggingPoliciesExecutionLog._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+            log_level=log_level,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: Optional[bool] = None,
+             log_level: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if log_level is None and 'logLevel' in kwargs:
+            log_level = kwargs['logLevel']
+
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if log_level is not None:
-            pulumi.set(__self__, "log_level", log_level)
+            _setter("log_level", log_level)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -717,18 +798,47 @@ class DeploymentSpecificationRequestPolicies(dict):
         :param 'DeploymentSpecificationRequestPoliciesRateLimitingArgs' rate_limiting: (Updatable) Limit the number of requests that should be handled for the specified window using a specfic key.
         :param 'DeploymentSpecificationRequestPoliciesUsagePlansArgs' usage_plans: (Updatable) Usage plan policies for this deployment
         """
+        DeploymentSpecificationRequestPolicies._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            authentication=authentication,
+            cors=cors,
+            dynamic_authentication=dynamic_authentication,
+            mutual_tls=mutual_tls,
+            rate_limiting=rate_limiting,
+            usage_plans=usage_plans,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             authentication: Optional['outputs.DeploymentSpecificationRequestPoliciesAuthentication'] = None,
+             cors: Optional['outputs.DeploymentSpecificationRequestPoliciesCors'] = None,
+             dynamic_authentication: Optional['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthentication'] = None,
+             mutual_tls: Optional['outputs.DeploymentSpecificationRequestPoliciesMutualTls'] = None,
+             rate_limiting: Optional['outputs.DeploymentSpecificationRequestPoliciesRateLimiting'] = None,
+             usage_plans: Optional['outputs.DeploymentSpecificationRequestPoliciesUsagePlans'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if dynamic_authentication is None and 'dynamicAuthentication' in kwargs:
+            dynamic_authentication = kwargs['dynamicAuthentication']
+        if mutual_tls is None and 'mutualTls' in kwargs:
+            mutual_tls = kwargs['mutualTls']
+        if rate_limiting is None and 'rateLimiting' in kwargs:
+            rate_limiting = kwargs['rateLimiting']
+        if usage_plans is None and 'usagePlans' in kwargs:
+            usage_plans = kwargs['usagePlans']
+
         if authentication is not None:
-            pulumi.set(__self__, "authentication", authentication)
+            _setter("authentication", authentication)
         if cors is not None:
-            pulumi.set(__self__, "cors", cors)
+            _setter("cors", cors)
         if dynamic_authentication is not None:
-            pulumi.set(__self__, "dynamic_authentication", dynamic_authentication)
+            _setter("dynamic_authentication", dynamic_authentication)
         if mutual_tls is not None:
-            pulumi.set(__self__, "mutual_tls", mutual_tls)
+            _setter("mutual_tls", mutual_tls)
         if rate_limiting is not None:
-            pulumi.set(__self__, "rate_limiting", rate_limiting)
+            _setter("rate_limiting", rate_limiting)
         if usage_plans is not None:
-            pulumi.set(__self__, "usage_plans", usage_plans)
+            _setter("usage_plans", usage_plans)
 
     @property
     @pulumi.getter
@@ -855,35 +965,98 @@ class DeploymentSpecificationRequestPoliciesAuthentication(dict):
         :param 'DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs' validation_policy: (Updatable) Authentication Policies for the Token Authentication types.
         :param Sequence['DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArgs'] verify_claims: (Updatable) A list of claims which should be validated to consider the token valid.
         """
-        pulumi.set(__self__, "type", type)
+        DeploymentSpecificationRequestPoliciesAuthentication._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            audiences=audiences,
+            cache_keys=cache_keys,
+            function_id=function_id,
+            is_anonymous_access_allowed=is_anonymous_access_allowed,
+            issuers=issuers,
+            max_clock_skew_in_seconds=max_clock_skew_in_seconds,
+            parameters=parameters,
+            public_keys=public_keys,
+            token_auth_scheme=token_auth_scheme,
+            token_header=token_header,
+            token_query_param=token_query_param,
+            validation_failure_policy=validation_failure_policy,
+            validation_policy=validation_policy,
+            verify_claims=verify_claims,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             audiences: Optional[Sequence[str]] = None,
+             cache_keys: Optional[Sequence[str]] = None,
+             function_id: Optional[str] = None,
+             is_anonymous_access_allowed: Optional[bool] = None,
+             issuers: Optional[Sequence[str]] = None,
+             max_clock_skew_in_seconds: Optional[float] = None,
+             parameters: Optional[Mapping[str, Any]] = None,
+             public_keys: Optional['outputs.DeploymentSpecificationRequestPoliciesAuthenticationPublicKeys'] = None,
+             token_auth_scheme: Optional[str] = None,
+             token_header: Optional[str] = None,
+             token_query_param: Optional[str] = None,
+             validation_failure_policy: Optional['outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicy'] = None,
+             validation_policy: Optional['outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicy'] = None,
+             verify_claims: Optional[Sequence['outputs.DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaim']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if cache_keys is None and 'cacheKeys' in kwargs:
+            cache_keys = kwargs['cacheKeys']
+        if function_id is None and 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if is_anonymous_access_allowed is None and 'isAnonymousAccessAllowed' in kwargs:
+            is_anonymous_access_allowed = kwargs['isAnonymousAccessAllowed']
+        if max_clock_skew_in_seconds is None and 'maxClockSkewInSeconds' in kwargs:
+            max_clock_skew_in_seconds = kwargs['maxClockSkewInSeconds']
+        if public_keys is None and 'publicKeys' in kwargs:
+            public_keys = kwargs['publicKeys']
+        if token_auth_scheme is None and 'tokenAuthScheme' in kwargs:
+            token_auth_scheme = kwargs['tokenAuthScheme']
+        if token_header is None and 'tokenHeader' in kwargs:
+            token_header = kwargs['tokenHeader']
+        if token_query_param is None and 'tokenQueryParam' in kwargs:
+            token_query_param = kwargs['tokenQueryParam']
+        if validation_failure_policy is None and 'validationFailurePolicy' in kwargs:
+            validation_failure_policy = kwargs['validationFailurePolicy']
+        if validation_policy is None and 'validationPolicy' in kwargs:
+            validation_policy = kwargs['validationPolicy']
+        if verify_claims is None and 'verifyClaims' in kwargs:
+            verify_claims = kwargs['verifyClaims']
+
+        _setter("type", type)
         if audiences is not None:
-            pulumi.set(__self__, "audiences", audiences)
+            _setter("audiences", audiences)
         if cache_keys is not None:
-            pulumi.set(__self__, "cache_keys", cache_keys)
+            _setter("cache_keys", cache_keys)
         if function_id is not None:
-            pulumi.set(__self__, "function_id", function_id)
+            _setter("function_id", function_id)
         if is_anonymous_access_allowed is not None:
-            pulumi.set(__self__, "is_anonymous_access_allowed", is_anonymous_access_allowed)
+            _setter("is_anonymous_access_allowed", is_anonymous_access_allowed)
         if issuers is not None:
-            pulumi.set(__self__, "issuers", issuers)
+            _setter("issuers", issuers)
         if max_clock_skew_in_seconds is not None:
-            pulumi.set(__self__, "max_clock_skew_in_seconds", max_clock_skew_in_seconds)
+            _setter("max_clock_skew_in_seconds", max_clock_skew_in_seconds)
         if parameters is not None:
-            pulumi.set(__self__, "parameters", parameters)
+            _setter("parameters", parameters)
         if public_keys is not None:
-            pulumi.set(__self__, "public_keys", public_keys)
+            _setter("public_keys", public_keys)
         if token_auth_scheme is not None:
-            pulumi.set(__self__, "token_auth_scheme", token_auth_scheme)
+            _setter("token_auth_scheme", token_auth_scheme)
         if token_header is not None:
-            pulumi.set(__self__, "token_header", token_header)
+            _setter("token_header", token_header)
         if token_query_param is not None:
-            pulumi.set(__self__, "token_query_param", token_query_param)
+            _setter("token_query_param", token_query_param)
         if validation_failure_policy is not None:
-            pulumi.set(__self__, "validation_failure_policy", validation_failure_policy)
+            _setter("validation_failure_policy", validation_failure_policy)
         if validation_policy is not None:
-            pulumi.set(__self__, "validation_policy", validation_policy)
+            _setter("validation_policy", validation_policy)
         if verify_claims is not None:
-            pulumi.set(__self__, "verify_claims", verify_claims)
+            _setter("verify_claims", verify_claims)
 
     @property
     @pulumi.getter
@@ -1048,15 +1221,40 @@ class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeys(dict):
         :param int max_cache_duration_in_hours: (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
         :param str uri: (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
         """
-        pulumi.set(__self__, "type", type)
+        DeploymentSpecificationRequestPoliciesAuthenticationPublicKeys._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            is_ssl_verify_disabled=is_ssl_verify_disabled,
+            keys=keys,
+            max_cache_duration_in_hours=max_cache_duration_in_hours,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             is_ssl_verify_disabled: Optional[bool] = None,
+             keys: Optional[Sequence['outputs.DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKey']] = None,
+             max_cache_duration_in_hours: Optional[int] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if max_cache_duration_in_hours is None and 'maxCacheDurationInHours' in kwargs:
+            max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
+
+        _setter("type", type)
         if is_ssl_verify_disabled is not None:
-            pulumi.set(__self__, "is_ssl_verify_disabled", is_ssl_verify_disabled)
+            _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
         if keys is not None:
-            pulumi.set(__self__, "keys", keys)
+            _setter("keys", keys)
         if max_cache_duration_in_hours is not None:
-            pulumi.set(__self__, "max_cache_duration_in_hours", max_cache_duration_in_hours)
+            _setter("max_cache_duration_in_hours", max_cache_duration_in_hours)
         if uri is not None:
-            pulumi.set(__self__, "uri", uri)
+            _setter("uri", uri)
 
     @property
     @pulumi.getter
@@ -1143,23 +1341,54 @@ class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKey(dict):
         :param str n: (Updatable) The base64 url encoded modulus of the RSA public key represented by this key.
         :param str use: (Updatable) The intended use of the public key.
         """
-        pulumi.set(__self__, "format", format)
+        DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKey._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            format=format,
+            alg=alg,
+            e=e,
+            key=key,
+            key_ops=key_ops,
+            kid=kid,
+            kty=kty,
+            n=n,
+            use=use,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             format: Optional[str] = None,
+             alg: Optional[str] = None,
+             e: Optional[str] = None,
+             key: Optional[str] = None,
+             key_ops: Optional[Sequence[str]] = None,
+             kid: Optional[str] = None,
+             kty: Optional[str] = None,
+             n: Optional[str] = None,
+             use: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if format is None:
+            raise TypeError("Missing 'format' argument")
+        if key_ops is None and 'keyOps' in kwargs:
+            key_ops = kwargs['keyOps']
+
+        _setter("format", format)
         if alg is not None:
-            pulumi.set(__self__, "alg", alg)
+            _setter("alg", alg)
         if e is not None:
-            pulumi.set(__self__, "e", e)
+            _setter("e", e)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if key_ops is not None:
-            pulumi.set(__self__, "key_ops", key_ops)
+            _setter("key_ops", key_ops)
         if kid is not None:
-            pulumi.set(__self__, "kid", kid)
+            _setter("kid", kid)
         if kty is not None:
-            pulumi.set(__self__, "kty", kty)
+            _setter("kty", kty)
         if n is not None:
-            pulumi.set(__self__, "n", n)
+            _setter("n", n)
         if use is not None:
-            pulumi.set(__self__, "use", use)
+            _setter("use", use)
 
     @property
     @pulumi.getter
@@ -1310,33 +1539,96 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
         :param bool use_cookies_for_session: (Updatable) Defines whether or not to use cookies for session maintenance.
         :param bool use_pkce: (Updatable) Defines whether or not to support PKCE.
         """
-        pulumi.set(__self__, "type", type)
+        DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicy._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            client_details=client_details,
+            fallback_redirect_path=fallback_redirect_path,
+            logout_path=logout_path,
+            max_expiry_duration_in_hours=max_expiry_duration_in_hours,
+            response_code=response_code,
+            response_header_transformations=response_header_transformations,
+            response_message=response_message,
+            response_type=response_type,
+            scopes=scopes,
+            source_uri_details=source_uri_details,
+            use_cookies_for_intermediate_steps=use_cookies_for_intermediate_steps,
+            use_cookies_for_session=use_cookies_for_session,
+            use_pkce=use_pkce,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             client_details: Optional['outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyClientDetails'] = None,
+             fallback_redirect_path: Optional[str] = None,
+             logout_path: Optional[str] = None,
+             max_expiry_duration_in_hours: Optional[int] = None,
+             response_code: Optional[str] = None,
+             response_header_transformations: Optional['outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformations'] = None,
+             response_message: Optional[str] = None,
+             response_type: Optional[str] = None,
+             scopes: Optional[Sequence[str]] = None,
+             source_uri_details: Optional['outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetails'] = None,
+             use_cookies_for_intermediate_steps: Optional[bool] = None,
+             use_cookies_for_session: Optional[bool] = None,
+             use_pkce: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if client_details is None and 'clientDetails' in kwargs:
+            client_details = kwargs['clientDetails']
+        if fallback_redirect_path is None and 'fallbackRedirectPath' in kwargs:
+            fallback_redirect_path = kwargs['fallbackRedirectPath']
+        if logout_path is None and 'logoutPath' in kwargs:
+            logout_path = kwargs['logoutPath']
+        if max_expiry_duration_in_hours is None and 'maxExpiryDurationInHours' in kwargs:
+            max_expiry_duration_in_hours = kwargs['maxExpiryDurationInHours']
+        if response_code is None and 'responseCode' in kwargs:
+            response_code = kwargs['responseCode']
+        if response_header_transformations is None and 'responseHeaderTransformations' in kwargs:
+            response_header_transformations = kwargs['responseHeaderTransformations']
+        if response_message is None and 'responseMessage' in kwargs:
+            response_message = kwargs['responseMessage']
+        if response_type is None and 'responseType' in kwargs:
+            response_type = kwargs['responseType']
+        if source_uri_details is None and 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+        if use_cookies_for_intermediate_steps is None and 'useCookiesForIntermediateSteps' in kwargs:
+            use_cookies_for_intermediate_steps = kwargs['useCookiesForIntermediateSteps']
+        if use_cookies_for_session is None and 'useCookiesForSession' in kwargs:
+            use_cookies_for_session = kwargs['useCookiesForSession']
+        if use_pkce is None and 'usePkce' in kwargs:
+            use_pkce = kwargs['usePkce']
+
+        _setter("type", type)
         if client_details is not None:
-            pulumi.set(__self__, "client_details", client_details)
+            _setter("client_details", client_details)
         if fallback_redirect_path is not None:
-            pulumi.set(__self__, "fallback_redirect_path", fallback_redirect_path)
+            _setter("fallback_redirect_path", fallback_redirect_path)
         if logout_path is not None:
-            pulumi.set(__self__, "logout_path", logout_path)
+            _setter("logout_path", logout_path)
         if max_expiry_duration_in_hours is not None:
-            pulumi.set(__self__, "max_expiry_duration_in_hours", max_expiry_duration_in_hours)
+            _setter("max_expiry_duration_in_hours", max_expiry_duration_in_hours)
         if response_code is not None:
-            pulumi.set(__self__, "response_code", response_code)
+            _setter("response_code", response_code)
         if response_header_transformations is not None:
-            pulumi.set(__self__, "response_header_transformations", response_header_transformations)
+            _setter("response_header_transformations", response_header_transformations)
         if response_message is not None:
-            pulumi.set(__self__, "response_message", response_message)
+            _setter("response_message", response_message)
         if response_type is not None:
-            pulumi.set(__self__, "response_type", response_type)
+            _setter("response_type", response_type)
         if scopes is not None:
-            pulumi.set(__self__, "scopes", scopes)
+            _setter("scopes", scopes)
         if source_uri_details is not None:
-            pulumi.set(__self__, "source_uri_details", source_uri_details)
+            _setter("source_uri_details", source_uri_details)
         if use_cookies_for_intermediate_steps is not None:
-            pulumi.set(__self__, "use_cookies_for_intermediate_steps", use_cookies_for_intermediate_steps)
+            _setter("use_cookies_for_intermediate_steps", use_cookies_for_intermediate_steps)
         if use_cookies_for_session is not None:
-            pulumi.set(__self__, "use_cookies_for_session", use_cookies_for_session)
+            _setter("use_cookies_for_session", use_cookies_for_session)
         if use_pkce is not None:
-            pulumi.set(__self__, "use_pkce", use_pkce)
+            _setter("use_pkce", use_pkce)
 
     @property
     @pulumi.getter
@@ -1493,13 +1785,38 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
         :param str client_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
         :param str client_secret_version_number: (Updatable) The version number of the client secret to use.
         """
-        pulumi.set(__self__, "type", type)
+        DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyClientDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            client_id=client_id,
+            client_secret_id=client_secret_id,
+            client_secret_version_number=client_secret_version_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             client_id: Optional[str] = None,
+             client_secret_id: Optional[str] = None,
+             client_secret_version_number: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if client_id is None and 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if client_secret_id is None and 'clientSecretId' in kwargs:
+            client_secret_id = kwargs['clientSecretId']
+        if client_secret_version_number is None and 'clientSecretVersionNumber' in kwargs:
+            client_secret_version_number = kwargs['clientSecretVersionNumber']
+
+        _setter("type", type)
         if client_id is not None:
-            pulumi.set(__self__, "client_id", client_id)
+            _setter("client_id", client_id)
         if client_secret_id is not None:
-            pulumi.set(__self__, "client_secret_id", client_secret_id)
+            _setter("client_secret_id", client_secret_id)
         if client_secret_version_number is not None:
-            pulumi.set(__self__, "client_secret_version_number", client_secret_version_number)
+            _setter("client_secret_version_number", client_secret_version_number)
 
     @property
     @pulumi.getter
@@ -1570,12 +1887,33 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
         :param 'DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgs' rename_headers: (Updatable) Rename HTTP headers as they pass through the gateway.
         :param 'DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgs' set_headers: (Updatable) Set HTTP headers as they pass through the gateway.
         """
+        DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformations._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            filter_headers=filter_headers,
+            rename_headers=rename_headers,
+            set_headers=set_headers,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             filter_headers: Optional['outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeaders'] = None,
+             rename_headers: Optional['outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeaders'] = None,
+             set_headers: Optional['outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeaders'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if filter_headers is None and 'filterHeaders' in kwargs:
+            filter_headers = kwargs['filterHeaders']
+        if rename_headers is None and 'renameHeaders' in kwargs:
+            rename_headers = kwargs['renameHeaders']
+        if set_headers is None and 'setHeaders' in kwargs:
+            set_headers = kwargs['setHeaders']
+
         if filter_headers is not None:
-            pulumi.set(__self__, "filter_headers", filter_headers)
+            _setter("filter_headers", filter_headers)
         if rename_headers is not None:
-            pulumi.set(__self__, "rename_headers", rename_headers)
+            _setter("rename_headers", rename_headers)
         if set_headers is not None:
-            pulumi.set(__self__, "set_headers", set_headers)
+            _setter("set_headers", set_headers)
 
     @property
     @pulumi.getter(name="filterHeaders")
@@ -1615,10 +1953,23 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeaders._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItem']] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
-            pulumi.set(__self__, "items", items)
+            _setter("items", items)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter
@@ -1648,8 +1999,19 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
         """
         :param str name: (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
         """
+        DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItem._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -1667,8 +2029,19 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
         """
         :param Sequence['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgs'] items: (Updatable) The list of headers.
         """
+        DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeaders._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItem']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
-            pulumi.set(__self__, "items", items)
+            _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1705,10 +2078,25 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
         :param str from_: (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
         :param str to: (Updatable) The new name of the header.  This name must be unique across transformation policies.
         """
+        DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItem._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            from_=from_,
+            to=to,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             from_: Optional[str] = None,
+             to: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if from_ is None and 'from' in kwargs:
+            from_ = kwargs['from']
+
         if from_ is not None:
-            pulumi.set(__self__, "from_", from_)
+            _setter("from_", from_)
         if to is not None:
-            pulumi.set(__self__, "to", to)
+            _setter("to", to)
 
     @property
     @pulumi.getter(name="from")
@@ -1734,8 +2122,19 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
         """
         :param Sequence['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgs'] items: (Updatable) The list of headers.
         """
+        DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeaders._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersItem']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
-            pulumi.set(__self__, "items", items)
+            _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1774,12 +2173,29 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
         :param str name: (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param Sequence[str] values: (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
+        DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersItem._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            if_exists=if_exists,
+            name=name,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             if_exists: Optional[str] = None,
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if if_exists is None and 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+
         if if_exists is not None:
-            pulumi.set(__self__, "if_exists", if_exists)
+            _setter("if_exists", if_exists)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if values is not None:
-            pulumi.set(__self__, "values", values)
+            _setter("values", values)
 
     @property
     @pulumi.getter(name="ifExists")
@@ -1819,9 +2235,24 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str uri: (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
         """
-        pulumi.set(__self__, "type", type)
+        DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("type", type)
         if uri is not None:
-            pulumi.set(__self__, "uri", uri)
+            _setter("uri", uri)
 
     @property
     @pulumi.getter
@@ -1894,21 +2325,58 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicy(dict)
         :param 'DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetailsArgs' source_uri_details: (Updatable) Auth endpoint details.
         :param str uri: (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
         """
-        pulumi.set(__self__, "type", type)
+        DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicy._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            additional_validation_policy=additional_validation_policy,
+            client_details=client_details,
+            is_ssl_verify_disabled=is_ssl_verify_disabled,
+            keys=keys,
+            max_cache_duration_in_hours=max_cache_duration_in_hours,
+            source_uri_details=source_uri_details,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             additional_validation_policy: Optional['outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicy'] = None,
+             client_details: Optional['outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClientDetails'] = None,
+             is_ssl_verify_disabled: Optional[bool] = None,
+             keys: Optional[Sequence['outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKey']] = None,
+             max_cache_duration_in_hours: Optional[int] = None,
+             source_uri_details: Optional['outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetails'] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if additional_validation_policy is None and 'additionalValidationPolicy' in kwargs:
+            additional_validation_policy = kwargs['additionalValidationPolicy']
+        if client_details is None and 'clientDetails' in kwargs:
+            client_details = kwargs['clientDetails']
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if max_cache_duration_in_hours is None and 'maxCacheDurationInHours' in kwargs:
+            max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
+        if source_uri_details is None and 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+
+        _setter("type", type)
         if additional_validation_policy is not None:
-            pulumi.set(__self__, "additional_validation_policy", additional_validation_policy)
+            _setter("additional_validation_policy", additional_validation_policy)
         if client_details is not None:
-            pulumi.set(__self__, "client_details", client_details)
+            _setter("client_details", client_details)
         if is_ssl_verify_disabled is not None:
-            pulumi.set(__self__, "is_ssl_verify_disabled", is_ssl_verify_disabled)
+            _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
         if keys is not None:
-            pulumi.set(__self__, "keys", keys)
+            _setter("keys", keys)
         if max_cache_duration_in_hours is not None:
-            pulumi.set(__self__, "max_cache_duration_in_hours", max_cache_duration_in_hours)
+            _setter("max_cache_duration_in_hours", max_cache_duration_in_hours)
         if source_uri_details is not None:
-            pulumi.set(__self__, "source_uri_details", source_uri_details)
+            _setter("source_uri_details", source_uri_details)
         if uri is not None:
-            pulumi.set(__self__, "uri", uri)
+            _setter("uri", uri)
 
     @property
     @pulumi.getter
@@ -2007,12 +2475,29 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditi
         :param Sequence[str] issuers: (Updatable) A list of parties that could have issued the token.
         :param Sequence['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimArgs'] verify_claims: (Updatable) A list of claims which should be validated to consider the token valid.
         """
+        DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicy._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audiences=audiences,
+            issuers=issuers,
+            verify_claims=verify_claims,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audiences: Optional[Sequence[str]] = None,
+             issuers: Optional[Sequence[str]] = None,
+             verify_claims: Optional[Sequence['outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaim']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if verify_claims is None and 'verifyClaims' in kwargs:
+            verify_claims = kwargs['verifyClaims']
+
         if audiences is not None:
-            pulumi.set(__self__, "audiences", audiences)
+            _setter("audiences", audiences)
         if issuers is not None:
-            pulumi.set(__self__, "issuers", issuers)
+            _setter("issuers", issuers)
         if verify_claims is not None:
-            pulumi.set(__self__, "verify_claims", verify_claims)
+            _setter("verify_claims", verify_claims)
 
     @property
     @pulumi.getter
@@ -2067,12 +2552,29 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditi
         :param str key: (Updatable) Information around the values for selector of an authentication/ routing branch.
         :param Sequence[str] values: (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
+        DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaim._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_required=is_required,
+            key=key,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_required: Optional[bool] = None,
+             key: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_required is None and 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+
         if is_required is not None:
-            pulumi.set(__self__, "is_required", is_required)
+            _setter("is_required", is_required)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if values is not None:
-            pulumi.set(__self__, "values", values)
+            _setter("values", values)
 
     @property
     @pulumi.getter(name="isRequired")
@@ -2137,13 +2639,38 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClient
         :param str client_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
         :param str client_secret_version_number: (Updatable) The version number of the client secret to use.
         """
-        pulumi.set(__self__, "type", type)
+        DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClientDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            client_id=client_id,
+            client_secret_id=client_secret_id,
+            client_secret_version_number=client_secret_version_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             client_id: Optional[str] = None,
+             client_secret_id: Optional[str] = None,
+             client_secret_version_number: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if client_id is None and 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if client_secret_id is None and 'clientSecretId' in kwargs:
+            client_secret_id = kwargs['clientSecretId']
+        if client_secret_version_number is None and 'clientSecretVersionNumber' in kwargs:
+            client_secret_version_number = kwargs['clientSecretVersionNumber']
+
+        _setter("type", type)
         if client_id is not None:
-            pulumi.set(__self__, "client_id", client_id)
+            _setter("client_id", client_id)
         if client_secret_id is not None:
-            pulumi.set(__self__, "client_secret_id", client_secret_id)
+            _setter("client_secret_id", client_secret_id)
         if client_secret_version_number is not None:
-            pulumi.set(__self__, "client_secret_version_number", client_secret_version_number)
+            _setter("client_secret_version_number", client_secret_version_number)
 
     @property
     @pulumi.getter
@@ -2222,23 +2749,54 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKey(di
         :param str n: (Updatable) The base64 url encoded modulus of the RSA public key represented by this key.
         :param str use: (Updatable) The intended use of the public key.
         """
-        pulumi.set(__self__, "format", format)
+        DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKey._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            format=format,
+            alg=alg,
+            e=e,
+            key=key,
+            key_ops=key_ops,
+            kid=kid,
+            kty=kty,
+            n=n,
+            use=use,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             format: Optional[str] = None,
+             alg: Optional[str] = None,
+             e: Optional[str] = None,
+             key: Optional[str] = None,
+             key_ops: Optional[Sequence[str]] = None,
+             kid: Optional[str] = None,
+             kty: Optional[str] = None,
+             n: Optional[str] = None,
+             use: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if format is None:
+            raise TypeError("Missing 'format' argument")
+        if key_ops is None and 'keyOps' in kwargs:
+            key_ops = kwargs['keyOps']
+
+        _setter("format", format)
         if alg is not None:
-            pulumi.set(__self__, "alg", alg)
+            _setter("alg", alg)
         if e is not None:
-            pulumi.set(__self__, "e", e)
+            _setter("e", e)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if key_ops is not None:
-            pulumi.set(__self__, "key_ops", key_ops)
+            _setter("key_ops", key_ops)
         if kid is not None:
-            pulumi.set(__self__, "kid", kid)
+            _setter("kid", kid)
         if kty is not None:
-            pulumi.set(__self__, "kty", kty)
+            _setter("kty", kty)
         if n is not None:
-            pulumi.set(__self__, "n", n)
+            _setter("n", n)
         if use is not None:
-            pulumi.set(__self__, "use", use)
+            _setter("use", use)
 
     @property
     @pulumi.getter
@@ -2326,9 +2884,24 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySource
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str uri: (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
         """
-        pulumi.set(__self__, "type", type)
+        DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("type", type)
         if uri is not None:
-            pulumi.set(__self__, "uri", uri)
+            _setter("uri", uri)
 
     @property
     @pulumi.getter
@@ -2379,12 +2952,29 @@ class DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaim(dict):
         :param str key: (Updatable) Information around the values for selector of an authentication/ routing branch.
         :param Sequence[str] values: (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
+        DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaim._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_required=is_required,
+            key=key,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_required: Optional[bool] = None,
+             key: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_required is None and 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+
         if is_required is not None:
-            pulumi.set(__self__, "is_required", is_required)
+            _setter("is_required", is_required)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if values is not None:
-            pulumi.set(__self__, "values", values)
+            _setter("values", values)
 
     @property
     @pulumi.getter(name="isRequired")
@@ -2455,17 +3045,52 @@ class DeploymentSpecificationRequestPoliciesCors(dict):
         :param bool is_allow_credentials_enabled: (Updatable) Whether to send the Access-Control-Allow-Credentials header to allow CORS requests with cookies.
         :param int max_age_in_seconds: (Updatable) The time in seconds for the client to cache preflight responses. This is sent as the Access-Control-Max-Age if greater than 0.
         """
-        pulumi.set(__self__, "allowed_origins", allowed_origins)
+        DeploymentSpecificationRequestPoliciesCors._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_origins=allowed_origins,
+            allowed_headers=allowed_headers,
+            allowed_methods=allowed_methods,
+            exposed_headers=exposed_headers,
+            is_allow_credentials_enabled=is_allow_credentials_enabled,
+            max_age_in_seconds=max_age_in_seconds,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_origins: Optional[Sequence[str]] = None,
+             allowed_headers: Optional[Sequence[str]] = None,
+             allowed_methods: Optional[Sequence[str]] = None,
+             exposed_headers: Optional[Sequence[str]] = None,
+             is_allow_credentials_enabled: Optional[bool] = None,
+             max_age_in_seconds: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if allowed_origins is None and 'allowedOrigins' in kwargs:
+            allowed_origins = kwargs['allowedOrigins']
+        if allowed_origins is None:
+            raise TypeError("Missing 'allowed_origins' argument")
+        if allowed_headers is None and 'allowedHeaders' in kwargs:
+            allowed_headers = kwargs['allowedHeaders']
+        if allowed_methods is None and 'allowedMethods' in kwargs:
+            allowed_methods = kwargs['allowedMethods']
+        if exposed_headers is None and 'exposedHeaders' in kwargs:
+            exposed_headers = kwargs['exposedHeaders']
+        if is_allow_credentials_enabled is None and 'isAllowCredentialsEnabled' in kwargs:
+            is_allow_credentials_enabled = kwargs['isAllowCredentialsEnabled']
+        if max_age_in_seconds is None and 'maxAgeInSeconds' in kwargs:
+            max_age_in_seconds = kwargs['maxAgeInSeconds']
+
+        _setter("allowed_origins", allowed_origins)
         if allowed_headers is not None:
-            pulumi.set(__self__, "allowed_headers", allowed_headers)
+            _setter("allowed_headers", allowed_headers)
         if allowed_methods is not None:
-            pulumi.set(__self__, "allowed_methods", allowed_methods)
+            _setter("allowed_methods", allowed_methods)
         if exposed_headers is not None:
-            pulumi.set(__self__, "exposed_headers", exposed_headers)
+            _setter("exposed_headers", exposed_headers)
         if is_allow_credentials_enabled is not None:
-            pulumi.set(__self__, "is_allow_credentials_enabled", is_allow_credentials_enabled)
+            _setter("is_allow_credentials_enabled", is_allow_credentials_enabled)
         if max_age_in_seconds is not None:
-            pulumi.set(__self__, "max_age_in_seconds", max_age_in_seconds)
+            _setter("max_age_in_seconds", max_age_in_seconds)
 
     @property
     @pulumi.getter(name="allowedOrigins")
@@ -2544,8 +3169,29 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthentication(dict):
         :param Sequence['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerArgs'] authentication_servers: (Updatable) List of authentication servers to choose from during dynamic authentication.
         :param 'DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSourceArgs' selection_source: (Updatable) Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
         """
-        pulumi.set(__self__, "authentication_servers", authentication_servers)
-        pulumi.set(__self__, "selection_source", selection_source)
+        DeploymentSpecificationRequestPoliciesDynamicAuthentication._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            authentication_servers=authentication_servers,
+            selection_source=selection_source,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             authentication_servers: Optional[Sequence['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServer']] = None,
+             selection_source: Optional['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSource'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if authentication_servers is None and 'authenticationServers' in kwargs:
+            authentication_servers = kwargs['authenticationServers']
+        if authentication_servers is None:
+            raise TypeError("Missing 'authentication_servers' argument")
+        if selection_source is None and 'selectionSource' in kwargs:
+            selection_source = kwargs['selectionSource']
+        if selection_source is None:
+            raise TypeError("Missing 'selection_source' argument")
+
+        _setter("authentication_servers", authentication_servers)
+        _setter("selection_source", selection_source)
 
     @property
     @pulumi.getter(name="authenticationServers")
@@ -2590,8 +3236,27 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         :param 'DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailArgs' authentication_server_detail: (Updatable) Information on how to authenticate incoming requests.
         :param 'DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerKeyArgs' key: (Updatable) Information around the values for selector of an authentication/ routing branch.
         """
-        pulumi.set(__self__, "authentication_server_detail", authentication_server_detail)
-        pulumi.set(__self__, "key", key)
+        DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServer._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            authentication_server_detail=authentication_server_detail,
+            key=key,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             authentication_server_detail: Optional['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetail'] = None,
+             key: Optional['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerKey'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if authentication_server_detail is None and 'authenticationServerDetail' in kwargs:
+            authentication_server_detail = kwargs['authenticationServerDetail']
+        if authentication_server_detail is None:
+            raise TypeError("Missing 'authentication_server_detail' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+
+        _setter("authentication_server_detail", authentication_server_detail)
+        _setter("key", key)
 
     @property
     @pulumi.getter(name="authenticationServerDetail")
@@ -2686,35 +3351,98 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         :param 'DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyArgs' validation_policy: (Updatable) Authentication Policies for the Token Authentication types.
         :param Sequence['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimArgs'] verify_claims: (Updatable) A list of claims which should be validated to consider the token valid.
         """
-        pulumi.set(__self__, "type", type)
+        DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            audiences=audiences,
+            cache_keys=cache_keys,
+            function_id=function_id,
+            is_anonymous_access_allowed=is_anonymous_access_allowed,
+            issuers=issuers,
+            max_clock_skew_in_seconds=max_clock_skew_in_seconds,
+            parameters=parameters,
+            public_keys=public_keys,
+            token_auth_scheme=token_auth_scheme,
+            token_header=token_header,
+            token_query_param=token_query_param,
+            validation_failure_policy=validation_failure_policy,
+            validation_policy=validation_policy,
+            verify_claims=verify_claims,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             audiences: Optional[Sequence[str]] = None,
+             cache_keys: Optional[Sequence[str]] = None,
+             function_id: Optional[str] = None,
+             is_anonymous_access_allowed: Optional[bool] = None,
+             issuers: Optional[Sequence[str]] = None,
+             max_clock_skew_in_seconds: Optional[float] = None,
+             parameters: Optional[Mapping[str, Any]] = None,
+             public_keys: Optional['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeys'] = None,
+             token_auth_scheme: Optional[str] = None,
+             token_header: Optional[str] = None,
+             token_query_param: Optional[str] = None,
+             validation_failure_policy: Optional['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicy'] = None,
+             validation_policy: Optional['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicy'] = None,
+             verify_claims: Optional[Sequence['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaim']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if cache_keys is None and 'cacheKeys' in kwargs:
+            cache_keys = kwargs['cacheKeys']
+        if function_id is None and 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if is_anonymous_access_allowed is None and 'isAnonymousAccessAllowed' in kwargs:
+            is_anonymous_access_allowed = kwargs['isAnonymousAccessAllowed']
+        if max_clock_skew_in_seconds is None and 'maxClockSkewInSeconds' in kwargs:
+            max_clock_skew_in_seconds = kwargs['maxClockSkewInSeconds']
+        if public_keys is None and 'publicKeys' in kwargs:
+            public_keys = kwargs['publicKeys']
+        if token_auth_scheme is None and 'tokenAuthScheme' in kwargs:
+            token_auth_scheme = kwargs['tokenAuthScheme']
+        if token_header is None and 'tokenHeader' in kwargs:
+            token_header = kwargs['tokenHeader']
+        if token_query_param is None and 'tokenQueryParam' in kwargs:
+            token_query_param = kwargs['tokenQueryParam']
+        if validation_failure_policy is None and 'validationFailurePolicy' in kwargs:
+            validation_failure_policy = kwargs['validationFailurePolicy']
+        if validation_policy is None and 'validationPolicy' in kwargs:
+            validation_policy = kwargs['validationPolicy']
+        if verify_claims is None and 'verifyClaims' in kwargs:
+            verify_claims = kwargs['verifyClaims']
+
+        _setter("type", type)
         if audiences is not None:
-            pulumi.set(__self__, "audiences", audiences)
+            _setter("audiences", audiences)
         if cache_keys is not None:
-            pulumi.set(__self__, "cache_keys", cache_keys)
+            _setter("cache_keys", cache_keys)
         if function_id is not None:
-            pulumi.set(__self__, "function_id", function_id)
+            _setter("function_id", function_id)
         if is_anonymous_access_allowed is not None:
-            pulumi.set(__self__, "is_anonymous_access_allowed", is_anonymous_access_allowed)
+            _setter("is_anonymous_access_allowed", is_anonymous_access_allowed)
         if issuers is not None:
-            pulumi.set(__self__, "issuers", issuers)
+            _setter("issuers", issuers)
         if max_clock_skew_in_seconds is not None:
-            pulumi.set(__self__, "max_clock_skew_in_seconds", max_clock_skew_in_seconds)
+            _setter("max_clock_skew_in_seconds", max_clock_skew_in_seconds)
         if parameters is not None:
-            pulumi.set(__self__, "parameters", parameters)
+            _setter("parameters", parameters)
         if public_keys is not None:
-            pulumi.set(__self__, "public_keys", public_keys)
+            _setter("public_keys", public_keys)
         if token_auth_scheme is not None:
-            pulumi.set(__self__, "token_auth_scheme", token_auth_scheme)
+            _setter("token_auth_scheme", token_auth_scheme)
         if token_header is not None:
-            pulumi.set(__self__, "token_header", token_header)
+            _setter("token_header", token_header)
         if token_query_param is not None:
-            pulumi.set(__self__, "token_query_param", token_query_param)
+            _setter("token_query_param", token_query_param)
         if validation_failure_policy is not None:
-            pulumi.set(__self__, "validation_failure_policy", validation_failure_policy)
+            _setter("validation_failure_policy", validation_failure_policy)
         if validation_policy is not None:
-            pulumi.set(__self__, "validation_policy", validation_policy)
+            _setter("validation_policy", validation_policy)
         if verify_claims is not None:
-            pulumi.set(__self__, "verify_claims", verify_claims)
+            _setter("verify_claims", verify_claims)
 
     @property
     @pulumi.getter
@@ -2879,15 +3607,40 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         :param int max_cache_duration_in_hours: (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
         :param str uri: (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
         """
-        pulumi.set(__self__, "type", type)
+        DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeys._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            is_ssl_verify_disabled=is_ssl_verify_disabled,
+            keys=keys,
+            max_cache_duration_in_hours=max_cache_duration_in_hours,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             is_ssl_verify_disabled: Optional[bool] = None,
+             keys: Optional[Sequence['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysKey']] = None,
+             max_cache_duration_in_hours: Optional[int] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if max_cache_duration_in_hours is None and 'maxCacheDurationInHours' in kwargs:
+            max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
+
+        _setter("type", type)
         if is_ssl_verify_disabled is not None:
-            pulumi.set(__self__, "is_ssl_verify_disabled", is_ssl_verify_disabled)
+            _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
         if keys is not None:
-            pulumi.set(__self__, "keys", keys)
+            _setter("keys", keys)
         if max_cache_duration_in_hours is not None:
-            pulumi.set(__self__, "max_cache_duration_in_hours", max_cache_duration_in_hours)
+            _setter("max_cache_duration_in_hours", max_cache_duration_in_hours)
         if uri is not None:
-            pulumi.set(__self__, "uri", uri)
+            _setter("uri", uri)
 
     @property
     @pulumi.getter
@@ -2974,23 +3727,54 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         :param str n: (Updatable) The base64 url encoded modulus of the RSA public key represented by this key.
         :param str use: (Updatable) The intended use of the public key.
         """
-        pulumi.set(__self__, "format", format)
+        DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysKey._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            format=format,
+            alg=alg,
+            e=e,
+            key=key,
+            key_ops=key_ops,
+            kid=kid,
+            kty=kty,
+            n=n,
+            use=use,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             format: Optional[str] = None,
+             alg: Optional[str] = None,
+             e: Optional[str] = None,
+             key: Optional[str] = None,
+             key_ops: Optional[Sequence[str]] = None,
+             kid: Optional[str] = None,
+             kty: Optional[str] = None,
+             n: Optional[str] = None,
+             use: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if format is None:
+            raise TypeError("Missing 'format' argument")
+        if key_ops is None and 'keyOps' in kwargs:
+            key_ops = kwargs['keyOps']
+
+        _setter("format", format)
         if alg is not None:
-            pulumi.set(__self__, "alg", alg)
+            _setter("alg", alg)
         if e is not None:
-            pulumi.set(__self__, "e", e)
+            _setter("e", e)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if key_ops is not None:
-            pulumi.set(__self__, "key_ops", key_ops)
+            _setter("key_ops", key_ops)
         if kid is not None:
-            pulumi.set(__self__, "kid", kid)
+            _setter("kid", kid)
         if kty is not None:
-            pulumi.set(__self__, "kty", kty)
+            _setter("kty", kty)
         if n is not None:
-            pulumi.set(__self__, "n", n)
+            _setter("n", n)
         if use is not None:
-            pulumi.set(__self__, "use", use)
+            _setter("use", use)
 
     @property
     @pulumi.getter
@@ -3141,33 +3925,96 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         :param bool use_cookies_for_session: (Updatable) Defines whether or not to use cookies for session maintenance.
         :param bool use_pkce: (Updatable) Defines whether or not to support PKCE.
         """
-        pulumi.set(__self__, "type", type)
+        DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicy._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            client_details=client_details,
+            fallback_redirect_path=fallback_redirect_path,
+            logout_path=logout_path,
+            max_expiry_duration_in_hours=max_expiry_duration_in_hours,
+            response_code=response_code,
+            response_header_transformations=response_header_transformations,
+            response_message=response_message,
+            response_type=response_type,
+            scopes=scopes,
+            source_uri_details=source_uri_details,
+            use_cookies_for_intermediate_steps=use_cookies_for_intermediate_steps,
+            use_cookies_for_session=use_cookies_for_session,
+            use_pkce=use_pkce,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             client_details: Optional['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetails'] = None,
+             fallback_redirect_path: Optional[str] = None,
+             logout_path: Optional[str] = None,
+             max_expiry_duration_in_hours: Optional[int] = None,
+             response_code: Optional[str] = None,
+             response_header_transformations: Optional['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformations'] = None,
+             response_message: Optional[str] = None,
+             response_type: Optional[str] = None,
+             scopes: Optional[Sequence[str]] = None,
+             source_uri_details: Optional['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetails'] = None,
+             use_cookies_for_intermediate_steps: Optional[bool] = None,
+             use_cookies_for_session: Optional[bool] = None,
+             use_pkce: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if client_details is None and 'clientDetails' in kwargs:
+            client_details = kwargs['clientDetails']
+        if fallback_redirect_path is None and 'fallbackRedirectPath' in kwargs:
+            fallback_redirect_path = kwargs['fallbackRedirectPath']
+        if logout_path is None and 'logoutPath' in kwargs:
+            logout_path = kwargs['logoutPath']
+        if max_expiry_duration_in_hours is None and 'maxExpiryDurationInHours' in kwargs:
+            max_expiry_duration_in_hours = kwargs['maxExpiryDurationInHours']
+        if response_code is None and 'responseCode' in kwargs:
+            response_code = kwargs['responseCode']
+        if response_header_transformations is None and 'responseHeaderTransformations' in kwargs:
+            response_header_transformations = kwargs['responseHeaderTransformations']
+        if response_message is None and 'responseMessage' in kwargs:
+            response_message = kwargs['responseMessage']
+        if response_type is None and 'responseType' in kwargs:
+            response_type = kwargs['responseType']
+        if source_uri_details is None and 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+        if use_cookies_for_intermediate_steps is None and 'useCookiesForIntermediateSteps' in kwargs:
+            use_cookies_for_intermediate_steps = kwargs['useCookiesForIntermediateSteps']
+        if use_cookies_for_session is None and 'useCookiesForSession' in kwargs:
+            use_cookies_for_session = kwargs['useCookiesForSession']
+        if use_pkce is None and 'usePkce' in kwargs:
+            use_pkce = kwargs['usePkce']
+
+        _setter("type", type)
         if client_details is not None:
-            pulumi.set(__self__, "client_details", client_details)
+            _setter("client_details", client_details)
         if fallback_redirect_path is not None:
-            pulumi.set(__self__, "fallback_redirect_path", fallback_redirect_path)
+            _setter("fallback_redirect_path", fallback_redirect_path)
         if logout_path is not None:
-            pulumi.set(__self__, "logout_path", logout_path)
+            _setter("logout_path", logout_path)
         if max_expiry_duration_in_hours is not None:
-            pulumi.set(__self__, "max_expiry_duration_in_hours", max_expiry_duration_in_hours)
+            _setter("max_expiry_duration_in_hours", max_expiry_duration_in_hours)
         if response_code is not None:
-            pulumi.set(__self__, "response_code", response_code)
+            _setter("response_code", response_code)
         if response_header_transformations is not None:
-            pulumi.set(__self__, "response_header_transformations", response_header_transformations)
+            _setter("response_header_transformations", response_header_transformations)
         if response_message is not None:
-            pulumi.set(__self__, "response_message", response_message)
+            _setter("response_message", response_message)
         if response_type is not None:
-            pulumi.set(__self__, "response_type", response_type)
+            _setter("response_type", response_type)
         if scopes is not None:
-            pulumi.set(__self__, "scopes", scopes)
+            _setter("scopes", scopes)
         if source_uri_details is not None:
-            pulumi.set(__self__, "source_uri_details", source_uri_details)
+            _setter("source_uri_details", source_uri_details)
         if use_cookies_for_intermediate_steps is not None:
-            pulumi.set(__self__, "use_cookies_for_intermediate_steps", use_cookies_for_intermediate_steps)
+            _setter("use_cookies_for_intermediate_steps", use_cookies_for_intermediate_steps)
         if use_cookies_for_session is not None:
-            pulumi.set(__self__, "use_cookies_for_session", use_cookies_for_session)
+            _setter("use_cookies_for_session", use_cookies_for_session)
         if use_pkce is not None:
-            pulumi.set(__self__, "use_pkce", use_pkce)
+            _setter("use_pkce", use_pkce)
 
     @property
     @pulumi.getter
@@ -3324,13 +4171,38 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         :param str client_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
         :param str client_secret_version_number: (Updatable) The version number of the client secret to use.
         """
-        pulumi.set(__self__, "type", type)
+        DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            client_id=client_id,
+            client_secret_id=client_secret_id,
+            client_secret_version_number=client_secret_version_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             client_id: Optional[str] = None,
+             client_secret_id: Optional[str] = None,
+             client_secret_version_number: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if client_id is None and 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if client_secret_id is None and 'clientSecretId' in kwargs:
+            client_secret_id = kwargs['clientSecretId']
+        if client_secret_version_number is None and 'clientSecretVersionNumber' in kwargs:
+            client_secret_version_number = kwargs['clientSecretVersionNumber']
+
+        _setter("type", type)
         if client_id is not None:
-            pulumi.set(__self__, "client_id", client_id)
+            _setter("client_id", client_id)
         if client_secret_id is not None:
-            pulumi.set(__self__, "client_secret_id", client_secret_id)
+            _setter("client_secret_id", client_secret_id)
         if client_secret_version_number is not None:
-            pulumi.set(__self__, "client_secret_version_number", client_secret_version_number)
+            _setter("client_secret_version_number", client_secret_version_number)
 
     @property
     @pulumi.getter
@@ -3401,12 +4273,33 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         :param 'DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgs' rename_headers: (Updatable) Rename HTTP headers as they pass through the gateway.
         :param 'DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgs' set_headers: (Updatable) Set HTTP headers as they pass through the gateway.
         """
+        DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformations._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            filter_headers=filter_headers,
+            rename_headers=rename_headers,
+            set_headers=set_headers,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             filter_headers: Optional['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeaders'] = None,
+             rename_headers: Optional['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeaders'] = None,
+             set_headers: Optional['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeaders'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if filter_headers is None and 'filterHeaders' in kwargs:
+            filter_headers = kwargs['filterHeaders']
+        if rename_headers is None and 'renameHeaders' in kwargs:
+            rename_headers = kwargs['renameHeaders']
+        if set_headers is None and 'setHeaders' in kwargs:
+            set_headers = kwargs['setHeaders']
+
         if filter_headers is not None:
-            pulumi.set(__self__, "filter_headers", filter_headers)
+            _setter("filter_headers", filter_headers)
         if rename_headers is not None:
-            pulumi.set(__self__, "rename_headers", rename_headers)
+            _setter("rename_headers", rename_headers)
         if set_headers is not None:
-            pulumi.set(__self__, "set_headers", set_headers)
+            _setter("set_headers", set_headers)
 
     @property
     @pulumi.getter(name="filterHeaders")
@@ -3446,10 +4339,23 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeaders._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItem']] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
-            pulumi.set(__self__, "items", items)
+            _setter("items", items)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter
@@ -3479,8 +4385,19 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         """
         :param str name: (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
         """
+        DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItem._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -3498,8 +4415,19 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         """
         :param Sequence['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgs'] items: (Updatable) The list of headers.
         """
+        DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeaders._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItem']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
-            pulumi.set(__self__, "items", items)
+            _setter("items", items)
 
     @property
     @pulumi.getter
@@ -3536,10 +4464,25 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         :param str from_: (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
         :param str to: (Updatable) The new name of the header.  This name must be unique across transformation policies.
         """
+        DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItem._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            from_=from_,
+            to=to,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             from_: Optional[str] = None,
+             to: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if from_ is None and 'from' in kwargs:
+            from_ = kwargs['from']
+
         if from_ is not None:
-            pulumi.set(__self__, "from_", from_)
+            _setter("from_", from_)
         if to is not None:
-            pulumi.set(__self__, "to", to)
+            _setter("to", to)
 
     @property
     @pulumi.getter(name="from")
@@ -3565,8 +4508,19 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         """
         :param Sequence['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgs'] items: (Updatable) The list of headers.
         """
+        DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeaders._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersItem']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if items is not None:
-            pulumi.set(__self__, "items", items)
+            _setter("items", items)
 
     @property
     @pulumi.getter
@@ -3605,12 +4559,29 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         :param str name: (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param Sequence[str] values: (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
+        DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersItem._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            if_exists=if_exists,
+            name=name,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             if_exists: Optional[str] = None,
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if if_exists is None and 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+
         if if_exists is not None:
-            pulumi.set(__self__, "if_exists", if_exists)
+            _setter("if_exists", if_exists)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if values is not None:
-            pulumi.set(__self__, "values", values)
+            _setter("values", values)
 
     @property
     @pulumi.getter(name="ifExists")
@@ -3650,9 +4621,24 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str uri: (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
         """
-        pulumi.set(__self__, "type", type)
+        DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("type", type)
         if uri is not None:
-            pulumi.set(__self__, "uri", uri)
+            _setter("uri", uri)
 
     @property
     @pulumi.getter
@@ -3725,21 +4711,58 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         :param 'DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicySourceUriDetailsArgs' source_uri_details: (Updatable) Auth endpoint details.
         :param str uri: (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
         """
-        pulumi.set(__self__, "type", type)
+        DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicy._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            additional_validation_policy=additional_validation_policy,
+            client_details=client_details,
+            is_ssl_verify_disabled=is_ssl_verify_disabled,
+            keys=keys,
+            max_cache_duration_in_hours=max_cache_duration_in_hours,
+            source_uri_details=source_uri_details,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             additional_validation_policy: Optional['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicy'] = None,
+             client_details: Optional['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyClientDetails'] = None,
+             is_ssl_verify_disabled: Optional[bool] = None,
+             keys: Optional[Sequence['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKey']] = None,
+             max_cache_duration_in_hours: Optional[int] = None,
+             source_uri_details: Optional['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicySourceUriDetails'] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if additional_validation_policy is None and 'additionalValidationPolicy' in kwargs:
+            additional_validation_policy = kwargs['additionalValidationPolicy']
+        if client_details is None and 'clientDetails' in kwargs:
+            client_details = kwargs['clientDetails']
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if max_cache_duration_in_hours is None and 'maxCacheDurationInHours' in kwargs:
+            max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
+        if source_uri_details is None and 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+
+        _setter("type", type)
         if additional_validation_policy is not None:
-            pulumi.set(__self__, "additional_validation_policy", additional_validation_policy)
+            _setter("additional_validation_policy", additional_validation_policy)
         if client_details is not None:
-            pulumi.set(__self__, "client_details", client_details)
+            _setter("client_details", client_details)
         if is_ssl_verify_disabled is not None:
-            pulumi.set(__self__, "is_ssl_verify_disabled", is_ssl_verify_disabled)
+            _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
         if keys is not None:
-            pulumi.set(__self__, "keys", keys)
+            _setter("keys", keys)
         if max_cache_duration_in_hours is not None:
-            pulumi.set(__self__, "max_cache_duration_in_hours", max_cache_duration_in_hours)
+            _setter("max_cache_duration_in_hours", max_cache_duration_in_hours)
         if source_uri_details is not None:
-            pulumi.set(__self__, "source_uri_details", source_uri_details)
+            _setter("source_uri_details", source_uri_details)
         if uri is not None:
-            pulumi.set(__self__, "uri", uri)
+            _setter("uri", uri)
 
     @property
     @pulumi.getter
@@ -3838,12 +4861,29 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         :param Sequence[str] issuers: (Updatable) A list of parties that could have issued the token.
         :param Sequence['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimArgs'] verify_claims: (Updatable) A list of claims which should be validated to consider the token valid.
         """
+        DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicy._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audiences=audiences,
+            issuers=issuers,
+            verify_claims=verify_claims,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audiences: Optional[Sequence[str]] = None,
+             issuers: Optional[Sequence[str]] = None,
+             verify_claims: Optional[Sequence['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaim']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if verify_claims is None and 'verifyClaims' in kwargs:
+            verify_claims = kwargs['verifyClaims']
+
         if audiences is not None:
-            pulumi.set(__self__, "audiences", audiences)
+            _setter("audiences", audiences)
         if issuers is not None:
-            pulumi.set(__self__, "issuers", issuers)
+            _setter("issuers", issuers)
         if verify_claims is not None:
-            pulumi.set(__self__, "verify_claims", verify_claims)
+            _setter("verify_claims", verify_claims)
 
     @property
     @pulumi.getter
@@ -3898,12 +4938,29 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         :param str key: (Updatable) Information around the values for selector of an authentication/ routing branch.
         :param Sequence[str] values: (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
+        DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaim._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_required=is_required,
+            key=key,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_required: Optional[bool] = None,
+             key: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_required is None and 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+
         if is_required is not None:
-            pulumi.set(__self__, "is_required", is_required)
+            _setter("is_required", is_required)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if values is not None:
-            pulumi.set(__self__, "values", values)
+            _setter("values", values)
 
     @property
     @pulumi.getter(name="isRequired")
@@ -3968,13 +5025,38 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         :param str client_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
         :param str client_secret_version_number: (Updatable) The version number of the client secret to use.
         """
-        pulumi.set(__self__, "type", type)
+        DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyClientDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            client_id=client_id,
+            client_secret_id=client_secret_id,
+            client_secret_version_number=client_secret_version_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             client_id: Optional[str] = None,
+             client_secret_id: Optional[str] = None,
+             client_secret_version_number: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if client_id is None and 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if client_secret_id is None and 'clientSecretId' in kwargs:
+            client_secret_id = kwargs['clientSecretId']
+        if client_secret_version_number is None and 'clientSecretVersionNumber' in kwargs:
+            client_secret_version_number = kwargs['clientSecretVersionNumber']
+
+        _setter("type", type)
         if client_id is not None:
-            pulumi.set(__self__, "client_id", client_id)
+            _setter("client_id", client_id)
         if client_secret_id is not None:
-            pulumi.set(__self__, "client_secret_id", client_secret_id)
+            _setter("client_secret_id", client_secret_id)
         if client_secret_version_number is not None:
-            pulumi.set(__self__, "client_secret_version_number", client_secret_version_number)
+            _setter("client_secret_version_number", client_secret_version_number)
 
     @property
     @pulumi.getter
@@ -4053,23 +5135,54 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         :param str n: (Updatable) The base64 url encoded modulus of the RSA public key represented by this key.
         :param str use: (Updatable) The intended use of the public key.
         """
-        pulumi.set(__self__, "format", format)
+        DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKey._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            format=format,
+            alg=alg,
+            e=e,
+            key=key,
+            key_ops=key_ops,
+            kid=kid,
+            kty=kty,
+            n=n,
+            use=use,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             format: Optional[str] = None,
+             alg: Optional[str] = None,
+             e: Optional[str] = None,
+             key: Optional[str] = None,
+             key_ops: Optional[Sequence[str]] = None,
+             kid: Optional[str] = None,
+             kty: Optional[str] = None,
+             n: Optional[str] = None,
+             use: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if format is None:
+            raise TypeError("Missing 'format' argument")
+        if key_ops is None and 'keyOps' in kwargs:
+            key_ops = kwargs['keyOps']
+
+        _setter("format", format)
         if alg is not None:
-            pulumi.set(__self__, "alg", alg)
+            _setter("alg", alg)
         if e is not None:
-            pulumi.set(__self__, "e", e)
+            _setter("e", e)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if key_ops is not None:
-            pulumi.set(__self__, "key_ops", key_ops)
+            _setter("key_ops", key_ops)
         if kid is not None:
-            pulumi.set(__self__, "kid", kid)
+            _setter("kid", kid)
         if kty is not None:
-            pulumi.set(__self__, "kty", kty)
+            _setter("kty", kty)
         if n is not None:
-            pulumi.set(__self__, "n", n)
+            _setter("n", n)
         if use is not None:
-            pulumi.set(__self__, "use", use)
+            _setter("use", use)
 
     @property
     @pulumi.getter
@@ -4157,9 +5270,24 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str uri: (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
         """
-        pulumi.set(__self__, "type", type)
+        DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicySourceUriDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("type", type)
         if uri is not None:
-            pulumi.set(__self__, "uri", uri)
+            _setter("uri", uri)
 
     @property
     @pulumi.getter
@@ -4210,12 +5338,29 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         :param str key: (Updatable) Information around the values for selector of an authentication/ routing branch.
         :param Sequence[str] values: (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
+        DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaim._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_required=is_required,
+            key=key,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_required: Optional[bool] = None,
+             key: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_required is None and 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+
         if is_required is not None:
-            pulumi.set(__self__, "is_required", is_required)
+            _setter("is_required", is_required)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if values is not None:
-            pulumi.set(__self__, "values", values)
+            _setter("values", values)
 
     @property
     @pulumi.getter(name="isRequired")
@@ -4278,15 +5423,38 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param Sequence[str] values: (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "name", name)
+        DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerKey._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            expression=expression,
+            is_default=is_default,
+            type=type,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             expression: Optional[str] = None,
+             is_default: Optional[bool] = None,
+             type: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if is_default is None and 'isDefault' in kwargs:
+            is_default = kwargs['isDefault']
+
+        _setter("name", name)
         if expression is not None:
-            pulumi.set(__self__, "expression", expression)
+            _setter("expression", expression)
         if is_default is not None:
-            pulumi.set(__self__, "is_default", is_default)
+            _setter("is_default", is_default)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
         if values is not None:
-            pulumi.set(__self__, "values", values)
+            _setter("values", values)
 
     @property
     @pulumi.getter
@@ -4346,8 +5514,25 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSource
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "selector", selector)
-        pulumi.set(__self__, "type", type)
+        DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSource._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            selector=selector,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             selector: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if selector is None:
+            raise TypeError("Missing 'selector' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("selector", selector)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -4398,10 +5583,27 @@ class DeploymentSpecificationRequestPoliciesMutualTls(dict):
         :param Sequence[str] allowed_sans: (Updatable) Allowed list of CN or SAN which will be used for verification of certificate.
         :param bool is_verified_certificate_required: (Updatable) Determines whether to enable client verification when API Consumer makes connection to the gateway.
         """
+        DeploymentSpecificationRequestPoliciesMutualTls._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_sans=allowed_sans,
+            is_verified_certificate_required=is_verified_certificate_required,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_sans: Optional[Sequence[str]] = None,
+             is_verified_certificate_required: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if allowed_sans is None and 'allowedSans' in kwargs:
+            allowed_sans = kwargs['allowedSans']
+        if is_verified_certificate_required is None and 'isVerifiedCertificateRequired' in kwargs:
+            is_verified_certificate_required = kwargs['isVerifiedCertificateRequired']
+
         if allowed_sans is not None:
-            pulumi.set(__self__, "allowed_sans", allowed_sans)
+            _setter("allowed_sans", allowed_sans)
         if is_verified_certificate_required is not None:
-            pulumi.set(__self__, "is_verified_certificate_required", is_verified_certificate_required)
+            _setter("is_verified_certificate_required", is_verified_certificate_required)
 
     @property
     @pulumi.getter(name="allowedSans")
@@ -4448,8 +5650,29 @@ class DeploymentSpecificationRequestPoliciesRateLimiting(dict):
         :param int rate_in_requests_per_second: (Updatable) The maximum number of requests per second to allow.
         :param str rate_key: (Updatable) The key used to group requests together.
         """
-        pulumi.set(__self__, "rate_in_requests_per_second", rate_in_requests_per_second)
-        pulumi.set(__self__, "rate_key", rate_key)
+        DeploymentSpecificationRequestPoliciesRateLimiting._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            rate_in_requests_per_second=rate_in_requests_per_second,
+            rate_key=rate_key,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             rate_in_requests_per_second: Optional[int] = None,
+             rate_key: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if rate_in_requests_per_second is None and 'rateInRequestsPerSecond' in kwargs:
+            rate_in_requests_per_second = kwargs['rateInRequestsPerSecond']
+        if rate_in_requests_per_second is None:
+            raise TypeError("Missing 'rate_in_requests_per_second' argument")
+        if rate_key is None and 'rateKey' in kwargs:
+            rate_key = kwargs['rateKey']
+        if rate_key is None:
+            raise TypeError("Missing 'rate_key' argument")
+
+        _setter("rate_in_requests_per_second", rate_in_requests_per_second)
+        _setter("rate_key", rate_key)
 
     @property
     @pulumi.getter(name="rateInRequestsPerSecond")
@@ -4496,7 +5719,22 @@ class DeploymentSpecificationRequestPoliciesUsagePlans(dict):
                * "request.auth[Token]"
                * "request.path[TOKEN]"
         """
-        pulumi.set(__self__, "token_locations", token_locations)
+        DeploymentSpecificationRequestPoliciesUsagePlans._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            token_locations=token_locations,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             token_locations: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if token_locations is None and 'tokenLocations' in kwargs:
+            token_locations = kwargs['tokenLocations']
+        if token_locations is None:
+            raise TypeError("Missing 'token_locations' argument")
+
+        _setter("token_locations", token_locations)
 
     @property
     @pulumi.getter(name="tokenLocations")
@@ -4549,16 +5787,47 @@ class DeploymentSpecificationRoute(dict):
         :param 'DeploymentSpecificationRouteRequestPoliciesArgs' request_policies: (Updatable) Behavior applied to any requests received by the API on this route.
         :param 'DeploymentSpecificationRouteResponsePoliciesArgs' response_policies: (Updatable) Behavior applied to any responses sent by the API for requests on this route.
         """
-        pulumi.set(__self__, "backend", backend)
-        pulumi.set(__self__, "path", path)
+        DeploymentSpecificationRoute._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backend=backend,
+            path=path,
+            logging_policies=logging_policies,
+            methods=methods,
+            request_policies=request_policies,
+            response_policies=response_policies,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backend: Optional['outputs.DeploymentSpecificationRouteBackend'] = None,
+             path: Optional[str] = None,
+             logging_policies: Optional['outputs.DeploymentSpecificationRouteLoggingPolicies'] = None,
+             methods: Optional[Sequence[str]] = None,
+             request_policies: Optional['outputs.DeploymentSpecificationRouteRequestPolicies'] = None,
+             response_policies: Optional['outputs.DeploymentSpecificationRouteResponsePolicies'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if backend is None:
+            raise TypeError("Missing 'backend' argument")
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+        if logging_policies is None and 'loggingPolicies' in kwargs:
+            logging_policies = kwargs['loggingPolicies']
+        if request_policies is None and 'requestPolicies' in kwargs:
+            request_policies = kwargs['requestPolicies']
+        if response_policies is None and 'responsePolicies' in kwargs:
+            response_policies = kwargs['responsePolicies']
+
+        _setter("backend", backend)
+        _setter("path", path)
         if logging_policies is not None:
-            pulumi.set(__self__, "logging_policies", logging_policies)
+            _setter("logging_policies", logging_policies)
         if methods is not None:
-            pulumi.set(__self__, "methods", methods)
+            _setter("methods", methods)
         if request_policies is not None:
-            pulumi.set(__self__, "request_policies", request_policies)
+            _setter("request_policies", request_policies)
         if response_policies is not None:
-            pulumi.set(__self__, "response_policies", response_policies)
+            _setter("response_policies", response_policies)
 
     @property
     @pulumi.getter
@@ -4679,33 +5948,90 @@ class DeploymentSpecificationRouteBackend(dict):
         :param int status: (Updatable) The status code of the stock response from the mock backend.
         :param str url: (Updatable)
         """
-        pulumi.set(__self__, "type", type)
+        DeploymentSpecificationRouteBackend._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            allowed_post_logout_uris=allowed_post_logout_uris,
+            body=body,
+            connect_timeout_in_seconds=connect_timeout_in_seconds,
+            function_id=function_id,
+            headers=headers,
+            is_ssl_verify_disabled=is_ssl_verify_disabled,
+            post_logout_state=post_logout_state,
+            read_timeout_in_seconds=read_timeout_in_seconds,
+            routing_backends=routing_backends,
+            selection_source=selection_source,
+            send_timeout_in_seconds=send_timeout_in_seconds,
+            status=status,
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             allowed_post_logout_uris: Optional[Sequence[str]] = None,
+             body: Optional[str] = None,
+             connect_timeout_in_seconds: Optional[float] = None,
+             function_id: Optional[str] = None,
+             headers: Optional[Sequence['outputs.DeploymentSpecificationRouteBackendHeader']] = None,
+             is_ssl_verify_disabled: Optional[bool] = None,
+             post_logout_state: Optional[str] = None,
+             read_timeout_in_seconds: Optional[float] = None,
+             routing_backends: Optional[Sequence['outputs.DeploymentSpecificationRouteBackendRoutingBackend']] = None,
+             selection_source: Optional['outputs.DeploymentSpecificationRouteBackendSelectionSource'] = None,
+             send_timeout_in_seconds: Optional[float] = None,
+             status: Optional[int] = None,
+             url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if allowed_post_logout_uris is None and 'allowedPostLogoutUris' in kwargs:
+            allowed_post_logout_uris = kwargs['allowedPostLogoutUris']
+        if connect_timeout_in_seconds is None and 'connectTimeoutInSeconds' in kwargs:
+            connect_timeout_in_seconds = kwargs['connectTimeoutInSeconds']
+        if function_id is None and 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if post_logout_state is None and 'postLogoutState' in kwargs:
+            post_logout_state = kwargs['postLogoutState']
+        if read_timeout_in_seconds is None and 'readTimeoutInSeconds' in kwargs:
+            read_timeout_in_seconds = kwargs['readTimeoutInSeconds']
+        if routing_backends is None and 'routingBackends' in kwargs:
+            routing_backends = kwargs['routingBackends']
+        if selection_source is None and 'selectionSource' in kwargs:
+            selection_source = kwargs['selectionSource']
+        if send_timeout_in_seconds is None and 'sendTimeoutInSeconds' in kwargs:
+            send_timeout_in_seconds = kwargs['sendTimeoutInSeconds']
+
+        _setter("type", type)
         if allowed_post_logout_uris is not None:
-            pulumi.set(__self__, "allowed_post_logout_uris", allowed_post_logout_uris)
+            _setter("allowed_post_logout_uris", allowed_post_logout_uris)
         if body is not None:
-            pulumi.set(__self__, "body", body)
+            _setter("body", body)
         if connect_timeout_in_seconds is not None:
-            pulumi.set(__self__, "connect_timeout_in_seconds", connect_timeout_in_seconds)
+            _setter("connect_timeout_in_seconds", connect_timeout_in_seconds)
         if function_id is not None:
-            pulumi.set(__self__, "function_id", function_id)
+            _setter("function_id", function_id)
         if headers is not None:
-            pulumi.set(__self__, "headers", headers)
+            _setter("headers", headers)
         if is_ssl_verify_disabled is not None:
-            pulumi.set(__self__, "is_ssl_verify_disabled", is_ssl_verify_disabled)
+            _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
         if post_logout_state is not None:
-            pulumi.set(__self__, "post_logout_state", post_logout_state)
+            _setter("post_logout_state", post_logout_state)
         if read_timeout_in_seconds is not None:
-            pulumi.set(__self__, "read_timeout_in_seconds", read_timeout_in_seconds)
+            _setter("read_timeout_in_seconds", read_timeout_in_seconds)
         if routing_backends is not None:
-            pulumi.set(__self__, "routing_backends", routing_backends)
+            _setter("routing_backends", routing_backends)
         if selection_source is not None:
-            pulumi.set(__self__, "selection_source", selection_source)
+            _setter("selection_source", selection_source)
         if send_timeout_in_seconds is not None:
-            pulumi.set(__self__, "send_timeout_in_seconds", send_timeout_in_seconds)
+            _setter("send_timeout_in_seconds", send_timeout_in_seconds)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if url is not None:
-            pulumi.set(__self__, "url", url)
+            _setter("url", url)
 
     @property
     @pulumi.getter
@@ -4833,10 +6159,23 @@ class DeploymentSpecificationRouteBackendHeader(dict):
         :param str name: (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param str value: (Updatable) Value of the header.
         """
+        DeploymentSpecificationRouteBackendHeader._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter
@@ -4864,10 +6203,23 @@ class DeploymentSpecificationRouteBackendRoutingBackend(dict):
         :param 'DeploymentSpecificationRouteBackendRoutingBackendBackendArgs' backend: (Updatable) The backend to forward requests to.
         :param 'DeploymentSpecificationRouteBackendRoutingBackendKeyArgs' key: (Updatable) Information around the values for selector of an authentication/ routing branch.
         """
+        DeploymentSpecificationRouteBackendRoutingBackend._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backend=backend,
+            key=key,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backend: Optional['outputs.DeploymentSpecificationRouteBackendRoutingBackendBackend'] = None,
+             key: Optional['outputs.DeploymentSpecificationRouteBackendRoutingBackendKey'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if backend is not None:
-            pulumi.set(__self__, "backend", backend)
+            _setter("backend", backend)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
 
     @property
     @pulumi.getter
@@ -4940,25 +6292,66 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackend(dict):
         :param int status: (Updatable) The status code of the stock response from the mock backend.
         :param str url: (Updatable)
         """
-        pulumi.set(__self__, "type", type)
+        DeploymentSpecificationRouteBackendRoutingBackendBackend._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            body=body,
+            connect_timeout_in_seconds=connect_timeout_in_seconds,
+            function_id=function_id,
+            headers=headers,
+            is_ssl_verify_disabled=is_ssl_verify_disabled,
+            read_timeout_in_seconds=read_timeout_in_seconds,
+            send_timeout_in_seconds=send_timeout_in_seconds,
+            status=status,
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             body: Optional[str] = None,
+             connect_timeout_in_seconds: Optional[float] = None,
+             function_id: Optional[str] = None,
+             headers: Optional[Sequence['outputs.DeploymentSpecificationRouteBackendRoutingBackendBackendHeader']] = None,
+             is_ssl_verify_disabled: Optional[bool] = None,
+             read_timeout_in_seconds: Optional[float] = None,
+             send_timeout_in_seconds: Optional[float] = None,
+             status: Optional[int] = None,
+             url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if connect_timeout_in_seconds is None and 'connectTimeoutInSeconds' in kwargs:
+            connect_timeout_in_seconds = kwargs['connectTimeoutInSeconds']
+        if function_id is None and 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if read_timeout_in_seconds is None and 'readTimeoutInSeconds' in kwargs:
+            read_timeout_in_seconds = kwargs['readTimeoutInSeconds']
+        if send_timeout_in_seconds is None and 'sendTimeoutInSeconds' in kwargs:
+            send_timeout_in_seconds = kwargs['sendTimeoutInSeconds']
+
+        _setter("type", type)
         if body is not None:
-            pulumi.set(__self__, "body", body)
+            _setter("body", body)
         if connect_timeout_in_seconds is not None:
-            pulumi.set(__self__, "connect_timeout_in_seconds", connect_timeout_in_seconds)
+            _setter("connect_timeout_in_seconds", connect_timeout_in_seconds)
         if function_id is not None:
-            pulumi.set(__self__, "function_id", function_id)
+            _setter("function_id", function_id)
         if headers is not None:
-            pulumi.set(__self__, "headers", headers)
+            _setter("headers", headers)
         if is_ssl_verify_disabled is not None:
-            pulumi.set(__self__, "is_ssl_verify_disabled", is_ssl_verify_disabled)
+            _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
         if read_timeout_in_seconds is not None:
-            pulumi.set(__self__, "read_timeout_in_seconds", read_timeout_in_seconds)
+            _setter("read_timeout_in_seconds", read_timeout_in_seconds)
         if send_timeout_in_seconds is not None:
-            pulumi.set(__self__, "send_timeout_in_seconds", send_timeout_in_seconds)
+            _setter("send_timeout_in_seconds", send_timeout_in_seconds)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if url is not None:
-            pulumi.set(__self__, "url", url)
+            _setter("url", url)
 
     @property
     @pulumi.getter
@@ -5054,10 +6447,23 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendHeader(dict):
         :param str name: (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param str value: (Updatable) Value of the header.
         """
+        DeploymentSpecificationRouteBackendRoutingBackendBackendHeader._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter
@@ -5112,14 +6518,39 @@ class DeploymentSpecificationRouteBackendRoutingBackendKey(dict):
         :param bool is_default: (Updatable) Information regarding whether this is the default branch.
         :param Sequence[str] values: (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+        DeploymentSpecificationRouteBackendRoutingBackendKey._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            type=type,
+            expression=expression,
+            is_default=is_default,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             type: Optional[str] = None,
+             expression: Optional[str] = None,
+             is_default: Optional[bool] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if is_default is None and 'isDefault' in kwargs:
+            is_default = kwargs['isDefault']
+
+        _setter("name", name)
+        _setter("type", type)
         if expression is not None:
-            pulumi.set(__self__, "expression", expression)
+            _setter("expression", expression)
         if is_default is not None:
-            pulumi.set(__self__, "is_default", is_default)
+            _setter("is_default", is_default)
         if values is not None:
-            pulumi.set(__self__, "values", values)
+            _setter("values", values)
 
     @property
     @pulumi.getter
@@ -5179,8 +6610,25 @@ class DeploymentSpecificationRouteBackendSelectionSource(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "selector", selector)
-        pulumi.set(__self__, "type", type)
+        DeploymentSpecificationRouteBackendSelectionSource._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            selector=selector,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             selector: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if selector is None:
+            raise TypeError("Missing 'selector' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("selector", selector)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -5231,10 +6679,27 @@ class DeploymentSpecificationRouteLoggingPolicies(dict):
         :param 'DeploymentSpecificationRouteLoggingPoliciesAccessLogArgs' access_log: (Updatable) Configures the logging policies for the access logs of an API Deployment.
         :param 'DeploymentSpecificationRouteLoggingPoliciesExecutionLogArgs' execution_log: (Updatable) Configures the logging policies for the execution logs of an API Deployment.
         """
+        DeploymentSpecificationRouteLoggingPolicies._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            access_log=access_log,
+            execution_log=execution_log,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             access_log: Optional['outputs.DeploymentSpecificationRouteLoggingPoliciesAccessLog'] = None,
+             execution_log: Optional['outputs.DeploymentSpecificationRouteLoggingPoliciesExecutionLog'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if access_log is None and 'accessLog' in kwargs:
+            access_log = kwargs['accessLog']
+        if execution_log is None and 'executionLog' in kwargs:
+            execution_log = kwargs['executionLog']
+
         if access_log is not None:
-            pulumi.set(__self__, "access_log", access_log)
+            _setter("access_log", access_log)
         if execution_log is not None:
-            pulumi.set(__self__, "execution_log", execution_log)
+            _setter("execution_log", execution_log)
 
     @property
     @pulumi.getter(name="accessLog")
@@ -5277,8 +6742,21 @@ class DeploymentSpecificationRouteLoggingPoliciesAccessLog(dict):
         """
         :param bool is_enabled: (Updatable) Whether this policy is currently enabled.
         """
+        DeploymentSpecificationRouteLoggingPoliciesAccessLog._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -5317,10 +6795,27 @@ class DeploymentSpecificationRouteLoggingPoliciesExecutionLog(dict):
         :param bool is_enabled: (Updatable) Whether this policy is currently enabled.
         :param str log_level: (Updatable) Specifies the log level used to control logging output of execution logs. Enabling logging at a given level also enables logging at all higher levels.
         """
+        DeploymentSpecificationRouteLoggingPoliciesExecutionLog._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+            log_level=log_level,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: Optional[bool] = None,
+             log_level: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if log_level is None and 'logLevel' in kwargs:
+            log_level = kwargs['logLevel']
+
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if log_level is not None:
-            pulumi.set(__self__, "log_level", log_level)
+            _setter("log_level", log_level)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -5387,22 +6882,59 @@ class DeploymentSpecificationRouteRequestPolicies(dict):
         :param 'DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsArgs' query_parameter_validations: (Updatable) Validate the URL query parameters on the incoming API requests on a specific route.
         :param 'DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgs' response_cache_lookup: (Updatable) Base policy for Response Cache lookup.
         """
+        DeploymentSpecificationRouteRequestPolicies._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            authorization=authorization,
+            body_validation=body_validation,
+            cors=cors,
+            header_transformations=header_transformations,
+            header_validations=header_validations,
+            query_parameter_transformations=query_parameter_transformations,
+            query_parameter_validations=query_parameter_validations,
+            response_cache_lookup=response_cache_lookup,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             authorization: Optional['outputs.DeploymentSpecificationRouteRequestPoliciesAuthorization'] = None,
+             body_validation: Optional['outputs.DeploymentSpecificationRouteRequestPoliciesBodyValidation'] = None,
+             cors: Optional['outputs.DeploymentSpecificationRouteRequestPoliciesCors'] = None,
+             header_transformations: Optional['outputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformations'] = None,
+             header_validations: Optional['outputs.DeploymentSpecificationRouteRequestPoliciesHeaderValidations'] = None,
+             query_parameter_transformations: Optional['outputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformations'] = None,
+             query_parameter_validations: Optional['outputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterValidations'] = None,
+             response_cache_lookup: Optional['outputs.DeploymentSpecificationRouteRequestPoliciesResponseCacheLookup'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if body_validation is None and 'bodyValidation' in kwargs:
+            body_validation = kwargs['bodyValidation']
+        if header_transformations is None and 'headerTransformations' in kwargs:
+            header_transformations = kwargs['headerTransformations']
+        if header_validations is None and 'headerValidations' in kwargs:
+            header_validations = kwargs['headerValidations']
+        if query_parameter_transformations is None and 'queryParameterTransformations' in kwargs:
+            query_parameter_transformations = kwargs['queryParameterTransformations']
+        if query_parameter_validations is None and 'queryParameterValidations' in kwargs:
+            query_parameter_validations = kwargs['queryParameterValidations']
+        if response_cache_lookup is None and 'responseCacheLookup' in kwargs:
+            response_cache_lookup = kwargs['responseCacheLookup']
+
         if authorization is not None:
-            pulumi.set(__self__, "authorization", authorization)
+            _setter("authorization", authorization)
         if body_validation is not None:
-            pulumi.set(__self__, "body_validation", body_validation)
+            _setter("body_validation", body_validation)
         if cors is not None:
-            pulumi.set(__self__, "cors", cors)
+            _setter("cors", cors)
         if header_transformations is not None:
-            pulumi.set(__self__, "header_transformations", header_transformations)
+            _setter("header_transformations", header_transformations)
         if header_validations is not None:
-            pulumi.set(__self__, "header_validations", header_validations)
+            _setter("header_validations", header_validations)
         if query_parameter_transformations is not None:
-            pulumi.set(__self__, "query_parameter_transformations", query_parameter_transformations)
+            _setter("query_parameter_transformations", query_parameter_transformations)
         if query_parameter_validations is not None:
-            pulumi.set(__self__, "query_parameter_validations", query_parameter_validations)
+            _setter("query_parameter_validations", query_parameter_validations)
         if response_cache_lookup is not None:
-            pulumi.set(__self__, "response_cache_lookup", response_cache_lookup)
+            _setter("response_cache_lookup", response_cache_lookup)
 
     @property
     @pulumi.getter
@@ -5499,10 +7031,25 @@ class DeploymentSpecificationRouteRequestPoliciesAuthorization(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        DeploymentSpecificationRouteRequestPoliciesAuthorization._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_scopes=allowed_scopes,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_scopes: Optional[Sequence[str]] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if allowed_scopes is None and 'allowedScopes' in kwargs:
+            allowed_scopes = kwargs['allowedScopes']
+
         if allowed_scopes is not None:
-            pulumi.set(__self__, "allowed_scopes", allowed_scopes)
+            _setter("allowed_scopes", allowed_scopes)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="allowedScopes")
@@ -5559,12 +7106,29 @@ class DeploymentSpecificationRouteRequestPoliciesBodyValidation(dict):
                
                `DISABLED` type turns the validation off.
         """
+        DeploymentSpecificationRouteRequestPoliciesBodyValidation._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            contents=contents,
+            required=required,
+            validation_mode=validation_mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             contents: Optional[Sequence['outputs.DeploymentSpecificationRouteRequestPoliciesBodyValidationContent']] = None,
+             required: Optional[bool] = None,
+             validation_mode: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if validation_mode is None and 'validationMode' in kwargs:
+            validation_mode = kwargs['validationMode']
+
         if contents is not None:
-            pulumi.set(__self__, "contents", contents)
+            _setter("contents", contents)
         if required is not None:
-            pulumi.set(__self__, "required", required)
+            _setter("required", required)
         if validation_mode is not None:
-            pulumi.set(__self__, "validation_mode", validation_mode)
+            _setter("validation_mode", validation_mode)
 
     @property
     @pulumi.getter
@@ -5631,8 +7195,29 @@ class DeploymentSpecificationRouteRequestPoliciesBodyValidationContent(dict):
                
                Make the validation to first parse the body as the respective format.
         """
-        pulumi.set(__self__, "media_type", media_type)
-        pulumi.set(__self__, "validation_type", validation_type)
+        DeploymentSpecificationRouteRequestPoliciesBodyValidationContent._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            media_type=media_type,
+            validation_type=validation_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             media_type: Optional[str] = None,
+             validation_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if media_type is None and 'mediaType' in kwargs:
+            media_type = kwargs['mediaType']
+        if media_type is None:
+            raise TypeError("Missing 'media_type' argument")
+        if validation_type is None and 'validationType' in kwargs:
+            validation_type = kwargs['validationType']
+        if validation_type is None:
+            raise TypeError("Missing 'validation_type' argument")
+
+        _setter("media_type", media_type)
+        _setter("validation_type", validation_type)
 
     @property
     @pulumi.getter(name="mediaType")
@@ -5701,17 +7286,52 @@ class DeploymentSpecificationRouteRequestPoliciesCors(dict):
         :param bool is_allow_credentials_enabled: (Updatable) Whether to send the Access-Control-Allow-Credentials header to allow CORS requests with cookies.
         :param int max_age_in_seconds: (Updatable) The time in seconds for the client to cache preflight responses. This is sent as the Access-Control-Max-Age if greater than 0.
         """
-        pulumi.set(__self__, "allowed_origins", allowed_origins)
+        DeploymentSpecificationRouteRequestPoliciesCors._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_origins=allowed_origins,
+            allowed_headers=allowed_headers,
+            allowed_methods=allowed_methods,
+            exposed_headers=exposed_headers,
+            is_allow_credentials_enabled=is_allow_credentials_enabled,
+            max_age_in_seconds=max_age_in_seconds,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_origins: Optional[Sequence[str]] = None,
+             allowed_headers: Optional[Sequence[str]] = None,
+             allowed_methods: Optional[Sequence[str]] = None,
+             exposed_headers: Optional[Sequence[str]] = None,
+             is_allow_credentials_enabled: Optional[bool] = None,
+             max_age_in_seconds: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if allowed_origins is None and 'allowedOrigins' in kwargs:
+            allowed_origins = kwargs['allowedOrigins']
+        if allowed_origins is None:
+            raise TypeError("Missing 'allowed_origins' argument")
+        if allowed_headers is None and 'allowedHeaders' in kwargs:
+            allowed_headers = kwargs['allowedHeaders']
+        if allowed_methods is None and 'allowedMethods' in kwargs:
+            allowed_methods = kwargs['allowedMethods']
+        if exposed_headers is None and 'exposedHeaders' in kwargs:
+            exposed_headers = kwargs['exposedHeaders']
+        if is_allow_credentials_enabled is None and 'isAllowCredentialsEnabled' in kwargs:
+            is_allow_credentials_enabled = kwargs['isAllowCredentialsEnabled']
+        if max_age_in_seconds is None and 'maxAgeInSeconds' in kwargs:
+            max_age_in_seconds = kwargs['maxAgeInSeconds']
+
+        _setter("allowed_origins", allowed_origins)
         if allowed_headers is not None:
-            pulumi.set(__self__, "allowed_headers", allowed_headers)
+            _setter("allowed_headers", allowed_headers)
         if allowed_methods is not None:
-            pulumi.set(__self__, "allowed_methods", allowed_methods)
+            _setter("allowed_methods", allowed_methods)
         if exposed_headers is not None:
-            pulumi.set(__self__, "exposed_headers", exposed_headers)
+            _setter("exposed_headers", exposed_headers)
         if is_allow_credentials_enabled is not None:
-            pulumi.set(__self__, "is_allow_credentials_enabled", is_allow_credentials_enabled)
+            _setter("is_allow_credentials_enabled", is_allow_credentials_enabled)
         if max_age_in_seconds is not None:
-            pulumi.set(__self__, "max_age_in_seconds", max_age_in_seconds)
+            _setter("max_age_in_seconds", max_age_in_seconds)
 
     @property
     @pulumi.getter(name="allowedOrigins")
@@ -5794,12 +7414,33 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformations(dict):
         :param 'DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersArgs' rename_headers: (Updatable) Rename HTTP headers as they pass through the gateway.
         :param 'DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersArgs' set_headers: (Updatable) Set HTTP headers as they pass through the gateway.
         """
+        DeploymentSpecificationRouteRequestPoliciesHeaderTransformations._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            filter_headers=filter_headers,
+            rename_headers=rename_headers,
+            set_headers=set_headers,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             filter_headers: Optional['outputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeaders'] = None,
+             rename_headers: Optional['outputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeaders'] = None,
+             set_headers: Optional['outputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeaders'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if filter_headers is None and 'filterHeaders' in kwargs:
+            filter_headers = kwargs['filterHeaders']
+        if rename_headers is None and 'renameHeaders' in kwargs:
+            rename_headers = kwargs['renameHeaders']
+        if set_headers is None and 'setHeaders' in kwargs:
+            set_headers = kwargs['setHeaders']
+
         if filter_headers is not None:
-            pulumi.set(__self__, "filter_headers", filter_headers)
+            _setter("filter_headers", filter_headers)
         if rename_headers is not None:
-            pulumi.set(__self__, "rename_headers", rename_headers)
+            _setter("rename_headers", rename_headers)
         if set_headers is not None:
-            pulumi.set(__self__, "set_headers", set_headers)
+            _setter("set_headers", set_headers)
 
     @property
     @pulumi.getter(name="filterHeaders")
@@ -5839,8 +7480,25 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHead
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "type", type)
+        DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeaders._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersItem']] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("items", items)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -5870,7 +7528,20 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHead
         """
         :param str name: (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "name", name)
+        DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersItem._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -5888,7 +7559,20 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHead
         """
         :param Sequence['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersItemArgs'] items: (Updatable) The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeaders._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersItem']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -5925,8 +7609,27 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHead
         :param str from_: (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
         :param str to: (Updatable) The new name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "from_", from_)
-        pulumi.set(__self__, "to", to)
+        DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersItem._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            from_=from_,
+            to=to,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             from_: Optional[str] = None,
+             to: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if from_ is None and 'from' in kwargs:
+            from_ = kwargs['from']
+        if from_ is None:
+            raise TypeError("Missing 'from_' argument")
+        if to is None:
+            raise TypeError("Missing 'to' argument")
+
+        _setter("from_", from_)
+        _setter("to", to)
 
     @property
     @pulumi.getter(name="from")
@@ -5952,7 +7655,20 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeaders
         """
         :param Sequence['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersItemArgs'] items: (Updatable) The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeaders._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersItem']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -5991,10 +7707,31 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeaders
         :param Sequence[str] values: (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         :param str if_exists: (Updatable) If a header with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersItem._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            if_exists=if_exists,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             if_exists: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+        if if_exists is None and 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+
+        _setter("name", name)
+        _setter("values", values)
         if if_exists is not None:
-            pulumi.set(__self__, "if_exists", if_exists)
+            _setter("if_exists", if_exists)
 
     @property
     @pulumi.getter
@@ -6053,10 +7790,25 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderValidations(dict):
                
                `DISABLED` type turns the validation off.
         """
+        DeploymentSpecificationRouteRequestPoliciesHeaderValidations._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            headers=headers,
+            validation_mode=validation_mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             headers: Optional[Sequence['outputs.DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeader']] = None,
+             validation_mode: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if validation_mode is None and 'validationMode' in kwargs:
+            validation_mode = kwargs['validationMode']
+
         if headers is not None:
-            pulumi.set(__self__, "headers", headers)
+            _setter("headers", headers)
         if validation_mode is not None:
-            pulumi.set(__self__, "validation_mode", validation_mode)
+            _setter("validation_mode", validation_mode)
 
     @property
     @pulumi.getter
@@ -6090,9 +7842,24 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeader(dict):
         :param str name: (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param bool required: (Updatable) Determines if the parameter is required in the request.
         """
-        pulumi.set(__self__, "name", name)
+        DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeader._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            required=required,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             required: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
         if required is not None:
-            pulumi.set(__self__, "required", required)
+            _setter("required", required)
 
     @property
     @pulumi.getter
@@ -6143,12 +7910,33 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformations(d
         :param 'DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersArgs' rename_query_parameters: (Updatable) Rename parameters on the query string as they pass through the gateway.
         :param 'DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersArgs' set_query_parameters: (Updatable) Set parameters on the query string as they pass through the gateway.
         """
+        DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformations._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            filter_query_parameters=filter_query_parameters,
+            rename_query_parameters=rename_query_parameters,
+            set_query_parameters=set_query_parameters,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             filter_query_parameters: Optional['outputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParameters'] = None,
+             rename_query_parameters: Optional['outputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParameters'] = None,
+             set_query_parameters: Optional['outputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParameters'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if filter_query_parameters is None and 'filterQueryParameters' in kwargs:
+            filter_query_parameters = kwargs['filterQueryParameters']
+        if rename_query_parameters is None and 'renameQueryParameters' in kwargs:
+            rename_query_parameters = kwargs['renameQueryParameters']
+        if set_query_parameters is None and 'setQueryParameters' in kwargs:
+            set_query_parameters = kwargs['setQueryParameters']
+
         if filter_query_parameters is not None:
-            pulumi.set(__self__, "filter_query_parameters", filter_query_parameters)
+            _setter("filter_query_parameters", filter_query_parameters)
         if rename_query_parameters is not None:
-            pulumi.set(__self__, "rename_query_parameters", rename_query_parameters)
+            _setter("rename_query_parameters", rename_query_parameters)
         if set_query_parameters is not None:
-            pulumi.set(__self__, "set_query_parameters", set_query_parameters)
+            _setter("set_query_parameters", set_query_parameters)
 
     @property
     @pulumi.getter(name="filterQueryParameters")
@@ -6188,8 +7976,25 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFi
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "type", type)
+        DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParameters._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItem']] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("items", items)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -6219,7 +8024,20 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFi
         """
         :param str name: (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "name", name)
+        DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItem._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -6237,7 +8055,20 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRe
         """
         :param Sequence['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemArgs'] items: (Updatable) The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParameters._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItem']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -6274,8 +8105,27 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRe
         :param str from_: (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
         :param str to: (Updatable) The new name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "from_", from_)
-        pulumi.set(__self__, "to", to)
+        DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItem._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            from_=from_,
+            to=to,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             from_: Optional[str] = None,
+             to: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if from_ is None and 'from' in kwargs:
+            from_ = kwargs['from']
+        if from_ is None:
+            raise TypeError("Missing 'from_' argument")
+        if to is None:
+            raise TypeError("Missing 'to' argument")
+
+        _setter("from_", from_)
+        _setter("to", to)
 
     @property
     @pulumi.getter(name="from")
@@ -6301,7 +8151,20 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSe
         """
         :param Sequence['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersItemArgs'] items: (Updatable) The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParameters._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersItem']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -6340,10 +8203,31 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSe
         :param Sequence[str] values: (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         :param str if_exists: (Updatable) If a header with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersItem._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            if_exists=if_exists,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             if_exists: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+        if if_exists is None and 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+
+        _setter("name", name)
+        _setter("values", values)
         if if_exists is not None:
-            pulumi.set(__self__, "if_exists", if_exists)
+            _setter("if_exists", if_exists)
 
     @property
     @pulumi.getter
@@ -6402,10 +8286,25 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterValidations(dict)
                
                `DISABLED` type turns the validation off.
         """
+        DeploymentSpecificationRouteRequestPoliciesQueryParameterValidations._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            parameters=parameters,
+            validation_mode=validation_mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             parameters: Optional[Sequence['outputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameter']] = None,
+             validation_mode: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if validation_mode is None and 'validationMode' in kwargs:
+            validation_mode = kwargs['validationMode']
+
         if parameters is not None:
-            pulumi.set(__self__, "parameters", parameters)
+            _setter("parameters", parameters)
         if validation_mode is not None:
-            pulumi.set(__self__, "validation_mode", validation_mode)
+            _setter("validation_mode", validation_mode)
 
     @property
     @pulumi.getter
@@ -6439,9 +8338,24 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParame
         :param str name: (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param bool required: (Updatable) Determines if the parameter is required in the request.
         """
-        pulumi.set(__self__, "name", name)
+        DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameter._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            required=required,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             required: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
         if required is not None:
-            pulumi.set(__self__, "required", required)
+            _setter("required", required)
 
     @property
     @pulumi.getter
@@ -6502,13 +8416,38 @@ class DeploymentSpecificationRouteRequestPoliciesResponseCacheLookup(dict):
                
                If using the CustomAuthenticationPolicy then the tokenHeader/tokenQueryParam are also subject to this check.
         """
-        pulumi.set(__self__, "type", type)
+        DeploymentSpecificationRouteRequestPoliciesResponseCacheLookup._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            cache_key_additions=cache_key_additions,
+            is_enabled=is_enabled,
+            is_private_caching_enabled=is_private_caching_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             cache_key_additions: Optional[Sequence[str]] = None,
+             is_enabled: Optional[bool] = None,
+             is_private_caching_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if cache_key_additions is None and 'cacheKeyAdditions' in kwargs:
+            cache_key_additions = kwargs['cacheKeyAdditions']
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_private_caching_enabled is None and 'isPrivateCachingEnabled' in kwargs:
+            is_private_caching_enabled = kwargs['isPrivateCachingEnabled']
+
+        _setter("type", type)
         if cache_key_additions is not None:
-            pulumi.set(__self__, "cache_key_additions", cache_key_additions)
+            _setter("cache_key_additions", cache_key_additions)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if is_private_caching_enabled is not None:
-            pulumi.set(__self__, "is_private_caching_enabled", is_private_caching_enabled)
+            _setter("is_private_caching_enabled", is_private_caching_enabled)
 
     @property
     @pulumi.getter
@@ -6579,10 +8518,27 @@ class DeploymentSpecificationRouteResponsePolicies(dict):
         :param 'DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsArgs' header_transformations: (Updatable) A set of transformations to apply to HTTP headers that pass through the gateway.
         :param 'DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreArgs' response_cache_store: (Updatable) Base policy for how a response from a backend is cached in the Response Cache.
         """
+        DeploymentSpecificationRouteResponsePolicies._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            header_transformations=header_transformations,
+            response_cache_store=response_cache_store,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             header_transformations: Optional['outputs.DeploymentSpecificationRouteResponsePoliciesHeaderTransformations'] = None,
+             response_cache_store: Optional['outputs.DeploymentSpecificationRouteResponsePoliciesResponseCacheStore'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if header_transformations is None and 'headerTransformations' in kwargs:
+            header_transformations = kwargs['headerTransformations']
+        if response_cache_store is None and 'responseCacheStore' in kwargs:
+            response_cache_store = kwargs['responseCacheStore']
+
         if header_transformations is not None:
-            pulumi.set(__self__, "header_transformations", header_transformations)
+            _setter("header_transformations", header_transformations)
         if response_cache_store is not None:
-            pulumi.set(__self__, "response_cache_store", response_cache_store)
+            _setter("response_cache_store", response_cache_store)
 
     @property
     @pulumi.getter(name="headerTransformations")
@@ -6633,12 +8589,33 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformations(dict):
         :param 'DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersArgs' rename_headers: (Updatable) Rename HTTP headers as they pass through the gateway.
         :param 'DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersArgs' set_headers: (Updatable) Set HTTP headers as they pass through the gateway.
         """
+        DeploymentSpecificationRouteResponsePoliciesHeaderTransformations._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            filter_headers=filter_headers,
+            rename_headers=rename_headers,
+            set_headers=set_headers,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             filter_headers: Optional['outputs.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeaders'] = None,
+             rename_headers: Optional['outputs.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeaders'] = None,
+             set_headers: Optional['outputs.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeaders'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if filter_headers is None and 'filterHeaders' in kwargs:
+            filter_headers = kwargs['filterHeaders']
+        if rename_headers is None and 'renameHeaders' in kwargs:
+            rename_headers = kwargs['renameHeaders']
+        if set_headers is None and 'setHeaders' in kwargs:
+            set_headers = kwargs['setHeaders']
+
         if filter_headers is not None:
-            pulumi.set(__self__, "filter_headers", filter_headers)
+            _setter("filter_headers", filter_headers)
         if rename_headers is not None:
-            pulumi.set(__self__, "rename_headers", rename_headers)
+            _setter("rename_headers", rename_headers)
         if set_headers is not None:
-            pulumi.set(__self__, "set_headers", set_headers)
+            _setter("set_headers", set_headers)
 
     @property
     @pulumi.getter(name="filterHeaders")
@@ -6678,8 +8655,25 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHea
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "type", type)
+        DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeaders._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersItem']] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("items", items)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -6709,7 +8703,20 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHea
         """
         :param str name: (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "name", name)
+        DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersItem._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -6727,7 +8734,20 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHea
         """
         :param Sequence['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersItemArgs'] items: (Updatable) The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeaders._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersItem']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -6764,8 +8784,27 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHea
         :param str from_: (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
         :param str to: (Updatable) The new name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "from_", from_)
-        pulumi.set(__self__, "to", to)
+        DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersItem._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            from_=from_,
+            to=to,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             from_: Optional[str] = None,
+             to: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if from_ is None and 'from' in kwargs:
+            from_ = kwargs['from']
+        if from_ is None:
+            raise TypeError("Missing 'from_' argument")
+        if to is None:
+            raise TypeError("Missing 'to' argument")
+
+        _setter("from_", from_)
+        _setter("to", to)
 
     @property
     @pulumi.getter(name="from")
@@ -6791,7 +8830,20 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeader
         """
         :param Sequence['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersItemArgs'] items: (Updatable) The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeaders._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersItem']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -6830,10 +8882,31 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeader
         :param Sequence[str] values: (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         :param str if_exists: (Updatable) If a header with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersItem._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            if_exists=if_exists,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             if_exists: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+        if if_exists is None and 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+
+        _setter("name", name)
+        _setter("values", values)
         if if_exists is not None:
-            pulumi.set(__self__, "if_exists", if_exists)
+            _setter("if_exists", if_exists)
 
     @property
     @pulumi.getter
@@ -6890,8 +8963,27 @@ class DeploymentSpecificationRouteResponsePoliciesResponseCacheStore(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "time_to_live_in_seconds", time_to_live_in_seconds)
-        pulumi.set(__self__, "type", type)
+        DeploymentSpecificationRouteResponsePoliciesResponseCacheStore._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_to_live_in_seconds=time_to_live_in_seconds,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_to_live_in_seconds: Optional[int] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if time_to_live_in_seconds is None and 'timeToLiveInSeconds' in kwargs:
+            time_to_live_in_seconds = kwargs['timeToLiveInSeconds']
+        if time_to_live_in_seconds is None:
+            raise TypeError("Missing 'time_to_live_in_seconds' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("time_to_live_in_seconds", time_to_live_in_seconds)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="timeToLiveInSeconds")
@@ -6944,11 +9036,32 @@ class GatewayCaBundle(dict):
         :param str ca_bundle_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         :param str certificate_authority_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         """
-        pulumi.set(__self__, "type", type)
+        GatewayCaBundle._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            ca_bundle_id=ca_bundle_id,
+            certificate_authority_id=certificate_authority_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             ca_bundle_id: Optional[str] = None,
+             certificate_authority_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if ca_bundle_id is None and 'caBundleId' in kwargs:
+            ca_bundle_id = kwargs['caBundleId']
+        if certificate_authority_id is None and 'certificateAuthorityId' in kwargs:
+            certificate_authority_id = kwargs['certificateAuthorityId']
+
+        _setter("type", type)
         if ca_bundle_id is not None:
-            pulumi.set(__self__, "ca_bundle_id", ca_bundle_id)
+            _setter("ca_bundle_id", ca_bundle_id)
         if certificate_authority_id is not None:
-            pulumi.set(__self__, "certificate_authority_id", certificate_authority_id)
+            _setter("certificate_authority_id", certificate_authority_id)
 
     @property
     @pulumi.getter
@@ -6999,8 +9112,21 @@ class GatewayIpAddress(dict):
         """
         :param str ip_address: An IP address.
         """
+        GatewayIpAddress._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ip_address=ip_address,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ip_address: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if ip_address is None and 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+
         if ip_address is not None:
-            pulumi.set(__self__, "ip_address", ip_address)
+            _setter("ip_address", ip_address)
 
     @property
     @pulumi.getter(name="ipAddress")
@@ -7063,23 +9189,66 @@ class GatewayResponseCacheDetails(dict):
         :param int send_timeout_in_ms: (Updatable) Defines the timeout for transmitting data to the Response Cache.
         :param Sequence['GatewayResponseCacheDetailsServerArgs'] servers: (Updatable) The set of cache store members to connect to. At present only a single server is supported.
         """
-        pulumi.set(__self__, "type", type)
+        GatewayResponseCacheDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            authentication_secret_id=authentication_secret_id,
+            authentication_secret_version_number=authentication_secret_version_number,
+            connect_timeout_in_ms=connect_timeout_in_ms,
+            is_ssl_enabled=is_ssl_enabled,
+            is_ssl_verify_disabled=is_ssl_verify_disabled,
+            read_timeout_in_ms=read_timeout_in_ms,
+            send_timeout_in_ms=send_timeout_in_ms,
+            servers=servers,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             authentication_secret_id: Optional[str] = None,
+             authentication_secret_version_number: Optional[str] = None,
+             connect_timeout_in_ms: Optional[int] = None,
+             is_ssl_enabled: Optional[bool] = None,
+             is_ssl_verify_disabled: Optional[bool] = None,
+             read_timeout_in_ms: Optional[int] = None,
+             send_timeout_in_ms: Optional[int] = None,
+             servers: Optional[Sequence['outputs.GatewayResponseCacheDetailsServer']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if authentication_secret_id is None and 'authenticationSecretId' in kwargs:
+            authentication_secret_id = kwargs['authenticationSecretId']
+        if authentication_secret_version_number is None and 'authenticationSecretVersionNumber' in kwargs:
+            authentication_secret_version_number = kwargs['authenticationSecretVersionNumber']
+        if connect_timeout_in_ms is None and 'connectTimeoutInMs' in kwargs:
+            connect_timeout_in_ms = kwargs['connectTimeoutInMs']
+        if is_ssl_enabled is None and 'isSslEnabled' in kwargs:
+            is_ssl_enabled = kwargs['isSslEnabled']
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if read_timeout_in_ms is None and 'readTimeoutInMs' in kwargs:
+            read_timeout_in_ms = kwargs['readTimeoutInMs']
+        if send_timeout_in_ms is None and 'sendTimeoutInMs' in kwargs:
+            send_timeout_in_ms = kwargs['sendTimeoutInMs']
+
+        _setter("type", type)
         if authentication_secret_id is not None:
-            pulumi.set(__self__, "authentication_secret_id", authentication_secret_id)
+            _setter("authentication_secret_id", authentication_secret_id)
         if authentication_secret_version_number is not None:
-            pulumi.set(__self__, "authentication_secret_version_number", authentication_secret_version_number)
+            _setter("authentication_secret_version_number", authentication_secret_version_number)
         if connect_timeout_in_ms is not None:
-            pulumi.set(__self__, "connect_timeout_in_ms", connect_timeout_in_ms)
+            _setter("connect_timeout_in_ms", connect_timeout_in_ms)
         if is_ssl_enabled is not None:
-            pulumi.set(__self__, "is_ssl_enabled", is_ssl_enabled)
+            _setter("is_ssl_enabled", is_ssl_enabled)
         if is_ssl_verify_disabled is not None:
-            pulumi.set(__self__, "is_ssl_verify_disabled", is_ssl_verify_disabled)
+            _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
         if read_timeout_in_ms is not None:
-            pulumi.set(__self__, "read_timeout_in_ms", read_timeout_in_ms)
+            _setter("read_timeout_in_ms", read_timeout_in_ms)
         if send_timeout_in_ms is not None:
-            pulumi.set(__self__, "send_timeout_in_ms", send_timeout_in_ms)
+            _setter("send_timeout_in_ms", send_timeout_in_ms)
         if servers is not None:
-            pulumi.set(__self__, "servers", servers)
+            _setter("servers", servers)
 
     @property
     @pulumi.getter
@@ -7163,10 +9332,23 @@ class GatewayResponseCacheDetailsServer(dict):
         :param str host: (Updatable) Hostname or IP address (IPv4 only) where the cache store is running.
         :param int port: (Updatable) The port the cache store is exposed on.
         """
+        GatewayResponseCacheDetailsServer._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host=host,
+            port=port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host: Optional[str] = None,
+             port: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if host is not None:
-            pulumi.set(__self__, "host", host)
+            _setter("host", host)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
 
     @property
     @pulumi.getter
@@ -7194,8 +9376,25 @@ class SubscriberClient(dict):
         :param str name: (Updatable) The name of the client. Must be unique within a subscriber.
         :param str token: (Updatable) The token for the client. Must be unique within a tenancy.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "token", token)
+        SubscriberClient._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            token=token,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             token: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if token is None:
+            raise TypeError("Missing 'token' argument")
+
+        _setter("name", name)
+        _setter("token", token)
 
     @property
     @pulumi.getter
@@ -7246,15 +9445,38 @@ class UsagePlanEntitlement(dict):
         :param 'UsagePlanEntitlementRateLimitArgs' rate_limit: (Updatable) Rate-limiting policy for a usage plan.
         :param Sequence['UsagePlanEntitlementTargetArgs'] targets: (Updatable) A collection of targeted deployments that the entitlement will be applied to.
         """
-        pulumi.set(__self__, "name", name)
+        UsagePlanEntitlement._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            description=description,
+            quota=quota,
+            rate_limit=rate_limit,
+            targets=targets,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             description: Optional[str] = None,
+             quota: Optional['outputs.UsagePlanEntitlementQuota'] = None,
+             rate_limit: Optional['outputs.UsagePlanEntitlementRateLimit'] = None,
+             targets: Optional[Sequence['outputs.UsagePlanEntitlementTarget']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if rate_limit is None and 'rateLimit' in kwargs:
+            rate_limit = kwargs['rateLimit']
+
+        _setter("name", name)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if quota is not None:
-            pulumi.set(__self__, "quota", quota)
+            _setter("quota", quota)
         if rate_limit is not None:
-            pulumi.set(__self__, "rate_limit", rate_limit)
+            _setter("rate_limit", rate_limit)
         if targets is not None:
-            pulumi.set(__self__, "targets", targets)
+            _setter("targets", targets)
 
     @property
     @pulumi.getter
@@ -7329,10 +9551,39 @@ class UsagePlanEntitlementQuota(dict):
         :param str unit: (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
         :param int value: (Updatable) The number of requests that can be made per time period.
         """
-        pulumi.set(__self__, "operation_on_breach", operation_on_breach)
-        pulumi.set(__self__, "reset_policy", reset_policy)
-        pulumi.set(__self__, "unit", unit)
-        pulumi.set(__self__, "value", value)
+        UsagePlanEntitlementQuota._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            operation_on_breach=operation_on_breach,
+            reset_policy=reset_policy,
+            unit=unit,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             operation_on_breach: Optional[str] = None,
+             reset_policy: Optional[str] = None,
+             unit: Optional[str] = None,
+             value: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if operation_on_breach is None and 'operationOnBreach' in kwargs:
+            operation_on_breach = kwargs['operationOnBreach']
+        if operation_on_breach is None:
+            raise TypeError("Missing 'operation_on_breach' argument")
+        if reset_policy is None and 'resetPolicy' in kwargs:
+            reset_policy = kwargs['resetPolicy']
+        if reset_policy is None:
+            raise TypeError("Missing 'reset_policy' argument")
+        if unit is None:
+            raise TypeError("Missing 'unit' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("operation_on_breach", operation_on_breach)
+        _setter("reset_policy", reset_policy)
+        _setter("unit", unit)
+        _setter("value", value)
 
     @property
     @pulumi.getter(name="operationOnBreach")
@@ -7376,8 +9627,25 @@ class UsagePlanEntitlementRateLimit(dict):
         :param str unit: (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
         :param int value: (Updatable) The number of requests that can be made per time period.
         """
-        pulumi.set(__self__, "unit", unit)
-        pulumi.set(__self__, "value", value)
+        UsagePlanEntitlementRateLimit._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            unit=unit,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             unit: Optional[str] = None,
+             value: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if unit is None:
+            raise TypeError("Missing 'unit' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("unit", unit)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -7420,7 +9688,22 @@ class UsagePlanEntitlementTarget(dict):
         """
         :param str deployment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
         """
-        pulumi.set(__self__, "deployment_id", deployment_id)
+        UsagePlanEntitlementTarget._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            deployment_id=deployment_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             deployment_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if deployment_id is None and 'deploymentId' in kwargs:
+            deployment_id = kwargs['deploymentId']
+        if deployment_id is None:
+            raise TypeError("Missing 'deployment_id' argument")
+
+        _setter("deployment_id", deployment_id)
 
     @property
     @pulumi.getter(name="deploymentId")
@@ -7440,8 +9723,29 @@ class GetApiDeploymentSpecificationLoggingPolicyResult(dict):
         :param Sequence['GetApiDeploymentSpecificationLoggingPolicyAccessLogArgs'] access_logs: Configures the logging policies for the access logs of an API Deployment.
         :param Sequence['GetApiDeploymentSpecificationLoggingPolicyExecutionLogArgs'] execution_logs: Configures the logging policies for the execution logs of an API Deployment.
         """
-        pulumi.set(__self__, "access_logs", access_logs)
-        pulumi.set(__self__, "execution_logs", execution_logs)
+        GetApiDeploymentSpecificationLoggingPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            access_logs=access_logs,
+            execution_logs=execution_logs,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             access_logs: Optional[Sequence['outputs.GetApiDeploymentSpecificationLoggingPolicyAccessLogResult']] = None,
+             execution_logs: Optional[Sequence['outputs.GetApiDeploymentSpecificationLoggingPolicyExecutionLogResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if access_logs is None and 'accessLogs' in kwargs:
+            access_logs = kwargs['accessLogs']
+        if access_logs is None:
+            raise TypeError("Missing 'access_logs' argument")
+        if execution_logs is None and 'executionLogs' in kwargs:
+            execution_logs = kwargs['executionLogs']
+        if execution_logs is None:
+            raise TypeError("Missing 'execution_logs' argument")
+
+        _setter("access_logs", access_logs)
+        _setter("execution_logs", execution_logs)
 
     @property
     @pulumi.getter(name="accessLogs")
@@ -7467,7 +9771,22 @@ class GetApiDeploymentSpecificationLoggingPolicyAccessLogResult(dict):
         """
         :param bool is_enabled: Whether this policy is currently enabled.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        GetApiDeploymentSpecificationLoggingPolicyAccessLogResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+
+        _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -7487,8 +9806,29 @@ class GetApiDeploymentSpecificationLoggingPolicyExecutionLogResult(dict):
         :param bool is_enabled: Whether this policy is currently enabled.
         :param str log_level: Specifies the log level used to control logging output of execution logs. Enabling logging at a given level also enables logging at all higher levels.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "log_level", log_level)
+        GetApiDeploymentSpecificationLoggingPolicyExecutionLogResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+            log_level=log_level,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: Optional[bool] = None,
+             log_level: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if log_level is None and 'logLevel' in kwargs:
+            log_level = kwargs['logLevel']
+        if log_level is None:
+            raise TypeError("Missing 'log_level' argument")
+
+        _setter("is_enabled", is_enabled)
+        _setter("log_level", log_level)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -7524,12 +9864,53 @@ class GetApiDeploymentSpecificationRequestPolicyResult(dict):
         :param Sequence['GetApiDeploymentSpecificationRequestPolicyRateLimitingArgs'] rate_limitings: Limit the number of requests that should be handled for the specified window using a specfic key.
         :param Sequence['GetApiDeploymentSpecificationRequestPolicyUsagePlanArgs'] usage_plans: Usage plan policies for this deployment
         """
-        pulumi.set(__self__, "authentications", authentications)
-        pulumi.set(__self__, "cors", cors)
-        pulumi.set(__self__, "dynamic_authentications", dynamic_authentications)
-        pulumi.set(__self__, "mutual_tls", mutual_tls)
-        pulumi.set(__self__, "rate_limitings", rate_limitings)
-        pulumi.set(__self__, "usage_plans", usage_plans)
+        GetApiDeploymentSpecificationRequestPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            authentications=authentications,
+            cors=cors,
+            dynamic_authentications=dynamic_authentications,
+            mutual_tls=mutual_tls,
+            rate_limitings=rate_limitings,
+            usage_plans=usage_plans,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             authentications: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationResult']] = None,
+             cors: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyCorResult']] = None,
+             dynamic_authentications: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationResult']] = None,
+             mutual_tls: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyMutualTlResult']] = None,
+             rate_limitings: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyRateLimitingResult']] = None,
+             usage_plans: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyUsagePlanResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if authentications is None:
+            raise TypeError("Missing 'authentications' argument")
+        if cors is None:
+            raise TypeError("Missing 'cors' argument")
+        if dynamic_authentications is None and 'dynamicAuthentications' in kwargs:
+            dynamic_authentications = kwargs['dynamicAuthentications']
+        if dynamic_authentications is None:
+            raise TypeError("Missing 'dynamic_authentications' argument")
+        if mutual_tls is None and 'mutualTls' in kwargs:
+            mutual_tls = kwargs['mutualTls']
+        if mutual_tls is None:
+            raise TypeError("Missing 'mutual_tls' argument")
+        if rate_limitings is None and 'rateLimitings' in kwargs:
+            rate_limitings = kwargs['rateLimitings']
+        if rate_limitings is None:
+            raise TypeError("Missing 'rate_limitings' argument")
+        if usage_plans is None and 'usagePlans' in kwargs:
+            usage_plans = kwargs['usagePlans']
+        if usage_plans is None:
+            raise TypeError("Missing 'usage_plans' argument")
+
+        _setter("authentications", authentications)
+        _setter("cors", cors)
+        _setter("dynamic_authentications", dynamic_authentications)
+        _setter("mutual_tls", mutual_tls)
+        _setter("rate_limitings", rate_limitings)
+        _setter("usage_plans", usage_plans)
 
     @property
     @pulumi.getter
@@ -7614,21 +9995,112 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationResult(dict):
         :param Sequence['GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyArgs'] validation_policies: Authentication Policies for the Token Authentication types.
         :param Sequence['GetApiDeploymentSpecificationRequestPolicyAuthenticationVerifyClaimArgs'] verify_claims: A list of claims which should be validated to consider the token valid.
         """
-        pulumi.set(__self__, "audiences", audiences)
-        pulumi.set(__self__, "cache_keys", cache_keys)
-        pulumi.set(__self__, "function_id", function_id)
-        pulumi.set(__self__, "is_anonymous_access_allowed", is_anonymous_access_allowed)
-        pulumi.set(__self__, "issuers", issuers)
-        pulumi.set(__self__, "max_clock_skew_in_seconds", max_clock_skew_in_seconds)
-        pulumi.set(__self__, "parameters", parameters)
-        pulumi.set(__self__, "public_keys", public_keys)
-        pulumi.set(__self__, "token_auth_scheme", token_auth_scheme)
-        pulumi.set(__self__, "token_header", token_header)
-        pulumi.set(__self__, "token_query_param", token_query_param)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "validation_failure_policies", validation_failure_policies)
-        pulumi.set(__self__, "validation_policies", validation_policies)
-        pulumi.set(__self__, "verify_claims", verify_claims)
+        GetApiDeploymentSpecificationRequestPolicyAuthenticationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audiences=audiences,
+            cache_keys=cache_keys,
+            function_id=function_id,
+            is_anonymous_access_allowed=is_anonymous_access_allowed,
+            issuers=issuers,
+            max_clock_skew_in_seconds=max_clock_skew_in_seconds,
+            parameters=parameters,
+            public_keys=public_keys,
+            token_auth_scheme=token_auth_scheme,
+            token_header=token_header,
+            token_query_param=token_query_param,
+            type=type,
+            validation_failure_policies=validation_failure_policies,
+            validation_policies=validation_policies,
+            verify_claims=verify_claims,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audiences: Optional[Sequence[str]] = None,
+             cache_keys: Optional[Sequence[str]] = None,
+             function_id: Optional[str] = None,
+             is_anonymous_access_allowed: Optional[bool] = None,
+             issuers: Optional[Sequence[str]] = None,
+             max_clock_skew_in_seconds: Optional[float] = None,
+             parameters: Optional[Mapping[str, Any]] = None,
+             public_keys: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationPublicKeyResult']] = None,
+             token_auth_scheme: Optional[str] = None,
+             token_header: Optional[str] = None,
+             token_query_param: Optional[str] = None,
+             type: Optional[str] = None,
+             validation_failure_policies: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResult']] = None,
+             validation_policies: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyResult']] = None,
+             verify_claims: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationVerifyClaimResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if audiences is None:
+            raise TypeError("Missing 'audiences' argument")
+        if cache_keys is None and 'cacheKeys' in kwargs:
+            cache_keys = kwargs['cacheKeys']
+        if cache_keys is None:
+            raise TypeError("Missing 'cache_keys' argument")
+        if function_id is None and 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if function_id is None:
+            raise TypeError("Missing 'function_id' argument")
+        if is_anonymous_access_allowed is None and 'isAnonymousAccessAllowed' in kwargs:
+            is_anonymous_access_allowed = kwargs['isAnonymousAccessAllowed']
+        if is_anonymous_access_allowed is None:
+            raise TypeError("Missing 'is_anonymous_access_allowed' argument")
+        if issuers is None:
+            raise TypeError("Missing 'issuers' argument")
+        if max_clock_skew_in_seconds is None and 'maxClockSkewInSeconds' in kwargs:
+            max_clock_skew_in_seconds = kwargs['maxClockSkewInSeconds']
+        if max_clock_skew_in_seconds is None:
+            raise TypeError("Missing 'max_clock_skew_in_seconds' argument")
+        if parameters is None:
+            raise TypeError("Missing 'parameters' argument")
+        if public_keys is None and 'publicKeys' in kwargs:
+            public_keys = kwargs['publicKeys']
+        if public_keys is None:
+            raise TypeError("Missing 'public_keys' argument")
+        if token_auth_scheme is None and 'tokenAuthScheme' in kwargs:
+            token_auth_scheme = kwargs['tokenAuthScheme']
+        if token_auth_scheme is None:
+            raise TypeError("Missing 'token_auth_scheme' argument")
+        if token_header is None and 'tokenHeader' in kwargs:
+            token_header = kwargs['tokenHeader']
+        if token_header is None:
+            raise TypeError("Missing 'token_header' argument")
+        if token_query_param is None and 'tokenQueryParam' in kwargs:
+            token_query_param = kwargs['tokenQueryParam']
+        if token_query_param is None:
+            raise TypeError("Missing 'token_query_param' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if validation_failure_policies is None and 'validationFailurePolicies' in kwargs:
+            validation_failure_policies = kwargs['validationFailurePolicies']
+        if validation_failure_policies is None:
+            raise TypeError("Missing 'validation_failure_policies' argument")
+        if validation_policies is None and 'validationPolicies' in kwargs:
+            validation_policies = kwargs['validationPolicies']
+        if validation_policies is None:
+            raise TypeError("Missing 'validation_policies' argument")
+        if verify_claims is None and 'verifyClaims' in kwargs:
+            verify_claims = kwargs['verifyClaims']
+        if verify_claims is None:
+            raise TypeError("Missing 'verify_claims' argument")
+
+        _setter("audiences", audiences)
+        _setter("cache_keys", cache_keys)
+        _setter("function_id", function_id)
+        _setter("is_anonymous_access_allowed", is_anonymous_access_allowed)
+        _setter("issuers", issuers)
+        _setter("max_clock_skew_in_seconds", max_clock_skew_in_seconds)
+        _setter("parameters", parameters)
+        _setter("public_keys", public_keys)
+        _setter("token_auth_scheme", token_auth_scheme)
+        _setter("token_header", token_header)
+        _setter("token_query_param", token_query_param)
+        _setter("type", type)
+        _setter("validation_failure_policies", validation_failure_policies)
+        _setter("validation_policies", validation_policies)
+        _setter("verify_claims", verify_claims)
 
     @property
     @pulumi.getter
@@ -7763,11 +10235,44 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationPublicKeyResult(di
         :param str type: Type of the Response Cache Store Policy.
         :param str uri: The uri from which to retrieve the key. It must be accessible without authentication.
         """
-        pulumi.set(__self__, "is_ssl_verify_disabled", is_ssl_verify_disabled)
-        pulumi.set(__self__, "keys", keys)
-        pulumi.set(__self__, "max_cache_duration_in_hours", max_cache_duration_in_hours)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "uri", uri)
+        GetApiDeploymentSpecificationRequestPolicyAuthenticationPublicKeyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_ssl_verify_disabled=is_ssl_verify_disabled,
+            keys=keys,
+            max_cache_duration_in_hours=max_cache_duration_in_hours,
+            type=type,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_ssl_verify_disabled: Optional[bool] = None,
+             keys: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationPublicKeyKeyResult']] = None,
+             max_cache_duration_in_hours: Optional[int] = None,
+             type: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if is_ssl_verify_disabled is None:
+            raise TypeError("Missing 'is_ssl_verify_disabled' argument")
+        if keys is None:
+            raise TypeError("Missing 'keys' argument")
+        if max_cache_duration_in_hours is None and 'maxCacheDurationInHours' in kwargs:
+            max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
+        if max_cache_duration_in_hours is None:
+            raise TypeError("Missing 'max_cache_duration_in_hours' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
+
+        _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
+        _setter("keys", keys)
+        _setter("max_cache_duration_in_hours", max_cache_duration_in_hours)
+        _setter("type", type)
+        _setter("uri", uri)
 
     @property
     @pulumi.getter(name="isSslVerifyDisabled")
@@ -7833,15 +10338,62 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationPublicKeyKeyResult
         :param str n: The base64 url encoded modulus of the RSA public key represented by this key.
         :param str use: The intended use of the public key.
         """
-        pulumi.set(__self__, "alg", alg)
-        pulumi.set(__self__, "e", e)
-        pulumi.set(__self__, "format", format)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "key_ops", key_ops)
-        pulumi.set(__self__, "kid", kid)
-        pulumi.set(__self__, "kty", kty)
-        pulumi.set(__self__, "n", n)
-        pulumi.set(__self__, "use", use)
+        GetApiDeploymentSpecificationRequestPolicyAuthenticationPublicKeyKeyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            alg=alg,
+            e=e,
+            format=format,
+            key=key,
+            key_ops=key_ops,
+            kid=kid,
+            kty=kty,
+            n=n,
+            use=use,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             alg: Optional[str] = None,
+             e: Optional[str] = None,
+             format: Optional[str] = None,
+             key: Optional[str] = None,
+             key_ops: Optional[Sequence[str]] = None,
+             kid: Optional[str] = None,
+             kty: Optional[str] = None,
+             n: Optional[str] = None,
+             use: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if alg is None:
+            raise TypeError("Missing 'alg' argument")
+        if e is None:
+            raise TypeError("Missing 'e' argument")
+        if format is None:
+            raise TypeError("Missing 'format' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if key_ops is None and 'keyOps' in kwargs:
+            key_ops = kwargs['keyOps']
+        if key_ops is None:
+            raise TypeError("Missing 'key_ops' argument")
+        if kid is None:
+            raise TypeError("Missing 'kid' argument")
+        if kty is None:
+            raise TypeError("Missing 'kty' argument")
+        if n is None:
+            raise TypeError("Missing 'n' argument")
+        if use is None:
+            raise TypeError("Missing 'use' argument")
+
+        _setter("alg", alg)
+        _setter("e", e)
+        _setter("format", format)
+        _setter("key", key)
+        _setter("key_ops", key_ops)
+        _setter("kid", kid)
+        _setter("kty", kty)
+        _setter("n", n)
+        _setter("use", use)
 
     @property
     @pulumi.getter
@@ -7949,20 +10501,109 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailureP
         :param bool use_cookies_for_session: Defines whether or not to use cookies for session maintenance.
         :param bool use_pkce: Defines whether or not to support PKCE.
         """
-        pulumi.set(__self__, "client_details", client_details)
-        pulumi.set(__self__, "fallback_redirect_path", fallback_redirect_path)
-        pulumi.set(__self__, "logout_path", logout_path)
-        pulumi.set(__self__, "max_expiry_duration_in_hours", max_expiry_duration_in_hours)
-        pulumi.set(__self__, "response_code", response_code)
-        pulumi.set(__self__, "response_header_transformations", response_header_transformations)
-        pulumi.set(__self__, "response_message", response_message)
-        pulumi.set(__self__, "response_type", response_type)
-        pulumi.set(__self__, "scopes", scopes)
-        pulumi.set(__self__, "source_uri_details", source_uri_details)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "use_cookies_for_intermediate_steps", use_cookies_for_intermediate_steps)
-        pulumi.set(__self__, "use_cookies_for_session", use_cookies_for_session)
-        pulumi.set(__self__, "use_pkce", use_pkce)
+        GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            client_details=client_details,
+            fallback_redirect_path=fallback_redirect_path,
+            logout_path=logout_path,
+            max_expiry_duration_in_hours=max_expiry_duration_in_hours,
+            response_code=response_code,
+            response_header_transformations=response_header_transformations,
+            response_message=response_message,
+            response_type=response_type,
+            scopes=scopes,
+            source_uri_details=source_uri_details,
+            type=type,
+            use_cookies_for_intermediate_steps=use_cookies_for_intermediate_steps,
+            use_cookies_for_session=use_cookies_for_session,
+            use_pkce=use_pkce,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             client_details: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyClientDetailResult']] = None,
+             fallback_redirect_path: Optional[str] = None,
+             logout_path: Optional[str] = None,
+             max_expiry_duration_in_hours: Optional[int] = None,
+             response_code: Optional[str] = None,
+             response_header_transformations: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationResult']] = None,
+             response_message: Optional[str] = None,
+             response_type: Optional[str] = None,
+             scopes: Optional[Sequence[str]] = None,
+             source_uri_details: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicySourceUriDetailResult']] = None,
+             type: Optional[str] = None,
+             use_cookies_for_intermediate_steps: Optional[bool] = None,
+             use_cookies_for_session: Optional[bool] = None,
+             use_pkce: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if client_details is None and 'clientDetails' in kwargs:
+            client_details = kwargs['clientDetails']
+        if client_details is None:
+            raise TypeError("Missing 'client_details' argument")
+        if fallback_redirect_path is None and 'fallbackRedirectPath' in kwargs:
+            fallback_redirect_path = kwargs['fallbackRedirectPath']
+        if fallback_redirect_path is None:
+            raise TypeError("Missing 'fallback_redirect_path' argument")
+        if logout_path is None and 'logoutPath' in kwargs:
+            logout_path = kwargs['logoutPath']
+        if logout_path is None:
+            raise TypeError("Missing 'logout_path' argument")
+        if max_expiry_duration_in_hours is None and 'maxExpiryDurationInHours' in kwargs:
+            max_expiry_duration_in_hours = kwargs['maxExpiryDurationInHours']
+        if max_expiry_duration_in_hours is None:
+            raise TypeError("Missing 'max_expiry_duration_in_hours' argument")
+        if response_code is None and 'responseCode' in kwargs:
+            response_code = kwargs['responseCode']
+        if response_code is None:
+            raise TypeError("Missing 'response_code' argument")
+        if response_header_transformations is None and 'responseHeaderTransformations' in kwargs:
+            response_header_transformations = kwargs['responseHeaderTransformations']
+        if response_header_transformations is None:
+            raise TypeError("Missing 'response_header_transformations' argument")
+        if response_message is None and 'responseMessage' in kwargs:
+            response_message = kwargs['responseMessage']
+        if response_message is None:
+            raise TypeError("Missing 'response_message' argument")
+        if response_type is None and 'responseType' in kwargs:
+            response_type = kwargs['responseType']
+        if response_type is None:
+            raise TypeError("Missing 'response_type' argument")
+        if scopes is None:
+            raise TypeError("Missing 'scopes' argument")
+        if source_uri_details is None and 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+        if source_uri_details is None:
+            raise TypeError("Missing 'source_uri_details' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if use_cookies_for_intermediate_steps is None and 'useCookiesForIntermediateSteps' in kwargs:
+            use_cookies_for_intermediate_steps = kwargs['useCookiesForIntermediateSteps']
+        if use_cookies_for_intermediate_steps is None:
+            raise TypeError("Missing 'use_cookies_for_intermediate_steps' argument")
+        if use_cookies_for_session is None and 'useCookiesForSession' in kwargs:
+            use_cookies_for_session = kwargs['useCookiesForSession']
+        if use_cookies_for_session is None:
+            raise TypeError("Missing 'use_cookies_for_session' argument")
+        if use_pkce is None and 'usePkce' in kwargs:
+            use_pkce = kwargs['usePkce']
+        if use_pkce is None:
+            raise TypeError("Missing 'use_pkce' argument")
+
+        _setter("client_details", client_details)
+        _setter("fallback_redirect_path", fallback_redirect_path)
+        _setter("logout_path", logout_path)
+        _setter("max_expiry_duration_in_hours", max_expiry_duration_in_hours)
+        _setter("response_code", response_code)
+        _setter("response_header_transformations", response_header_transformations)
+        _setter("response_message", response_message)
+        _setter("response_type", response_type)
+        _setter("scopes", scopes)
+        _setter("source_uri_details", source_uri_details)
+        _setter("type", type)
+        _setter("use_cookies_for_intermediate_steps", use_cookies_for_intermediate_steps)
+        _setter("use_cookies_for_session", use_cookies_for_session)
+        _setter("use_pkce", use_pkce)
 
     @property
     @pulumi.getter(name="clientDetails")
@@ -8090,10 +10731,41 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailureP
         :param str client_secret_version_number: The version number of the client secret to use.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "client_id", client_id)
-        pulumi.set(__self__, "client_secret_id", client_secret_id)
-        pulumi.set(__self__, "client_secret_version_number", client_secret_version_number)
-        pulumi.set(__self__, "type", type)
+        GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyClientDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            client_id=client_id,
+            client_secret_id=client_secret_id,
+            client_secret_version_number=client_secret_version_number,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             client_id: Optional[str] = None,
+             client_secret_id: Optional[str] = None,
+             client_secret_version_number: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if client_id is None and 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if client_id is None:
+            raise TypeError("Missing 'client_id' argument")
+        if client_secret_id is None and 'clientSecretId' in kwargs:
+            client_secret_id = kwargs['clientSecretId']
+        if client_secret_id is None:
+            raise TypeError("Missing 'client_secret_id' argument")
+        if client_secret_version_number is None and 'clientSecretVersionNumber' in kwargs:
+            client_secret_version_number = kwargs['clientSecretVersionNumber']
+        if client_secret_version_number is None:
+            raise TypeError("Missing 'client_secret_version_number' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("client_id", client_id)
+        _setter("client_secret_id", client_secret_id)
+        _setter("client_secret_version_number", client_secret_version_number)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="clientId")
@@ -8139,9 +10811,36 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailureP
         :param Sequence['GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeaderArgs'] rename_headers: Rename HTTP headers as they pass through the gateway.
         :param Sequence['GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderArgs'] set_headers: Set HTTP headers as they pass through the gateway.
         """
-        pulumi.set(__self__, "filter_headers", filter_headers)
-        pulumi.set(__self__, "rename_headers", rename_headers)
-        pulumi.set(__self__, "set_headers", set_headers)
+        GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            filter_headers=filter_headers,
+            rename_headers=rename_headers,
+            set_headers=set_headers,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             filter_headers: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeaderResult']] = None,
+             rename_headers: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeaderResult']] = None,
+             set_headers: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if filter_headers is None and 'filterHeaders' in kwargs:
+            filter_headers = kwargs['filterHeaders']
+        if filter_headers is None:
+            raise TypeError("Missing 'filter_headers' argument")
+        if rename_headers is None and 'renameHeaders' in kwargs:
+            rename_headers = kwargs['renameHeaders']
+        if rename_headers is None:
+            raise TypeError("Missing 'rename_headers' argument")
+        if set_headers is None and 'setHeaders' in kwargs:
+            set_headers = kwargs['setHeaders']
+        if set_headers is None:
+            raise TypeError("Missing 'set_headers' argument")
+
+        _setter("filter_headers", filter_headers)
+        _setter("rename_headers", rename_headers)
+        _setter("set_headers", set_headers)
 
     @property
     @pulumi.getter(name="filterHeaders")
@@ -8177,8 +10876,25 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailureP
         :param Sequence['GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeaderItemArgs'] items: The list of headers.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "type", type)
+        GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeaderItemResult']] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("items", items)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -8204,7 +10920,20 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailureP
         """
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "name", name)
+        GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -8222,7 +10951,20 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailureP
         """
         :param Sequence['GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeaderItemArgs'] items: The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeaderItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -8242,8 +10984,27 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailureP
         :param str from_: The original case-insensitive name of the header.  This name must be unique across transformation policies.
         :param str to: The new name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "from_", from_)
-        pulumi.set(__self__, "to", to)
+        GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            from_=from_,
+            to=to,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             from_: Optional[str] = None,
+             to: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if from_ is None and 'from' in kwargs:
+            from_ = kwargs['from']
+        if from_ is None:
+            raise TypeError("Missing 'from_' argument")
+        if to is None:
+            raise TypeError("Missing 'to' argument")
+
+        _setter("from_", from_)
+        _setter("to", to)
 
     @property
     @pulumi.getter(name="from")
@@ -8269,7 +11030,20 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailureP
         """
         :param Sequence['GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderItemArgs'] items: The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -8291,9 +11065,32 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailureP
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "if_exists", if_exists)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            if_exists=if_exists,
+            name=name,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             if_exists: Optional[str] = None,
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if if_exists is None and 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+        if if_exists is None:
+            raise TypeError("Missing 'if_exists' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("if_exists", if_exists)
+        _setter("name", name)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="ifExists")
@@ -8329,8 +11126,25 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailureP
         :param str type: Type of the Response Cache Store Policy.
         :param str uri: The uri from which to retrieve the key. It must be accessible without authentication.
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "uri", uri)
+        GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicySourceUriDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
+
+        _setter("type", type)
+        _setter("uri", uri)
 
     @property
     @pulumi.getter
@@ -8370,14 +11184,65 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyRe
         :param str type: Type of the Response Cache Store Policy.
         :param str uri: The uri from which to retrieve the key. It must be accessible without authentication.
         """
-        pulumi.set(__self__, "additional_validation_policies", additional_validation_policies)
-        pulumi.set(__self__, "client_details", client_details)
-        pulumi.set(__self__, "is_ssl_verify_disabled", is_ssl_verify_disabled)
-        pulumi.set(__self__, "keys", keys)
-        pulumi.set(__self__, "max_cache_duration_in_hours", max_cache_duration_in_hours)
-        pulumi.set(__self__, "source_uri_details", source_uri_details)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "uri", uri)
+        GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            additional_validation_policies=additional_validation_policies,
+            client_details=client_details,
+            is_ssl_verify_disabled=is_ssl_verify_disabled,
+            keys=keys,
+            max_cache_duration_in_hours=max_cache_duration_in_hours,
+            source_uri_details=source_uri_details,
+            type=type,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             additional_validation_policies: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicyResult']] = None,
+             client_details: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyClientDetailResult']] = None,
+             is_ssl_verify_disabled: Optional[bool] = None,
+             keys: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyKeyResult']] = None,
+             max_cache_duration_in_hours: Optional[int] = None,
+             source_uri_details: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicySourceUriDetailResult']] = None,
+             type: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if additional_validation_policies is None and 'additionalValidationPolicies' in kwargs:
+            additional_validation_policies = kwargs['additionalValidationPolicies']
+        if additional_validation_policies is None:
+            raise TypeError("Missing 'additional_validation_policies' argument")
+        if client_details is None and 'clientDetails' in kwargs:
+            client_details = kwargs['clientDetails']
+        if client_details is None:
+            raise TypeError("Missing 'client_details' argument")
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if is_ssl_verify_disabled is None:
+            raise TypeError("Missing 'is_ssl_verify_disabled' argument")
+        if keys is None:
+            raise TypeError("Missing 'keys' argument")
+        if max_cache_duration_in_hours is None and 'maxCacheDurationInHours' in kwargs:
+            max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
+        if max_cache_duration_in_hours is None:
+            raise TypeError("Missing 'max_cache_duration_in_hours' argument")
+        if source_uri_details is None and 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+        if source_uri_details is None:
+            raise TypeError("Missing 'source_uri_details' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
+
+        _setter("additional_validation_policies", additional_validation_policies)
+        _setter("client_details", client_details)
+        _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
+        _setter("keys", keys)
+        _setter("max_cache_duration_in_hours", max_cache_duration_in_hours)
+        _setter("source_uri_details", source_uri_details)
+        _setter("type", type)
+        _setter("uri", uri)
 
     @property
     @pulumi.getter(name="additionalValidationPolicies")
@@ -8455,9 +11320,32 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAd
         :param Sequence[str] issuers: A list of parties that could have issued the token.
         :param Sequence['GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimArgs'] verify_claims: A list of claims which should be validated to consider the token valid.
         """
-        pulumi.set(__self__, "audiences", audiences)
-        pulumi.set(__self__, "issuers", issuers)
-        pulumi.set(__self__, "verify_claims", verify_claims)
+        GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audiences=audiences,
+            issuers=issuers,
+            verify_claims=verify_claims,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audiences: Optional[Sequence[str]] = None,
+             issuers: Optional[Sequence[str]] = None,
+             verify_claims: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if audiences is None:
+            raise TypeError("Missing 'audiences' argument")
+        if issuers is None:
+            raise TypeError("Missing 'issuers' argument")
+        if verify_claims is None and 'verifyClaims' in kwargs:
+            verify_claims = kwargs['verifyClaims']
+        if verify_claims is None:
+            raise TypeError("Missing 'verify_claims' argument")
+
+        _setter("audiences", audiences)
+        _setter("issuers", issuers)
+        _setter("verify_claims", verify_claims)
 
     @property
     @pulumi.getter
@@ -8495,9 +11383,32 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAd
         :param str key: Information around the values for selector of an authentication/ routing branch.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "is_required", is_required)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "values", values)
+        GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_required=is_required,
+            key=key,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_required: Optional[bool] = None,
+             key: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_required is None and 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+        if is_required is None:
+            raise TypeError("Missing 'is_required' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("is_required", is_required)
+        _setter("key", key)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="isRequired")
@@ -8537,10 +11448,41 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyCl
         :param str client_secret_version_number: The version number of the client secret to use.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "client_id", client_id)
-        pulumi.set(__self__, "client_secret_id", client_secret_id)
-        pulumi.set(__self__, "client_secret_version_number", client_secret_version_number)
-        pulumi.set(__self__, "type", type)
+        GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyClientDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            client_id=client_id,
+            client_secret_id=client_secret_id,
+            client_secret_version_number=client_secret_version_number,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             client_id: Optional[str] = None,
+             client_secret_id: Optional[str] = None,
+             client_secret_version_number: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if client_id is None and 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if client_id is None:
+            raise TypeError("Missing 'client_id' argument")
+        if client_secret_id is None and 'clientSecretId' in kwargs:
+            client_secret_id = kwargs['clientSecretId']
+        if client_secret_id is None:
+            raise TypeError("Missing 'client_secret_id' argument")
+        if client_secret_version_number is None and 'clientSecretVersionNumber' in kwargs:
+            client_secret_version_number = kwargs['clientSecretVersionNumber']
+        if client_secret_version_number is None:
+            raise TypeError("Missing 'client_secret_version_number' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("client_id", client_id)
+        _setter("client_secret_id", client_secret_id)
+        _setter("client_secret_version_number", client_secret_version_number)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="clientId")
@@ -8598,15 +11540,62 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyKe
         :param str n: The base64 url encoded modulus of the RSA public key represented by this key.
         :param str use: The intended use of the public key.
         """
-        pulumi.set(__self__, "alg", alg)
-        pulumi.set(__self__, "e", e)
-        pulumi.set(__self__, "format", format)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "key_ops", key_ops)
-        pulumi.set(__self__, "kid", kid)
-        pulumi.set(__self__, "kty", kty)
-        pulumi.set(__self__, "n", n)
-        pulumi.set(__self__, "use", use)
+        GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyKeyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            alg=alg,
+            e=e,
+            format=format,
+            key=key,
+            key_ops=key_ops,
+            kid=kid,
+            kty=kty,
+            n=n,
+            use=use,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             alg: Optional[str] = None,
+             e: Optional[str] = None,
+             format: Optional[str] = None,
+             key: Optional[str] = None,
+             key_ops: Optional[Sequence[str]] = None,
+             kid: Optional[str] = None,
+             kty: Optional[str] = None,
+             n: Optional[str] = None,
+             use: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if alg is None:
+            raise TypeError("Missing 'alg' argument")
+        if e is None:
+            raise TypeError("Missing 'e' argument")
+        if format is None:
+            raise TypeError("Missing 'format' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if key_ops is None and 'keyOps' in kwargs:
+            key_ops = kwargs['keyOps']
+        if key_ops is None:
+            raise TypeError("Missing 'key_ops' argument")
+        if kid is None:
+            raise TypeError("Missing 'kid' argument")
+        if kty is None:
+            raise TypeError("Missing 'kty' argument")
+        if n is None:
+            raise TypeError("Missing 'n' argument")
+        if use is None:
+            raise TypeError("Missing 'use' argument")
+
+        _setter("alg", alg)
+        _setter("e", e)
+        _setter("format", format)
+        _setter("key", key)
+        _setter("key_ops", key_ops)
+        _setter("kid", kid)
+        _setter("kty", kty)
+        _setter("n", n)
+        _setter("use", use)
 
     @property
     @pulumi.getter
@@ -8690,8 +11679,25 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicySo
         :param str type: Type of the Response Cache Store Policy.
         :param str uri: The uri from which to retrieve the key. It must be accessible without authentication.
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "uri", uri)
+        GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicySourceUriDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
+
+        _setter("type", type)
+        _setter("uri", uri)
 
     @property
     @pulumi.getter
@@ -8721,9 +11727,32 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationVerifyClaimResult(
         :param str key: Information around the values for selector of an authentication/ routing branch.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "is_required", is_required)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "values", values)
+        GetApiDeploymentSpecificationRequestPolicyAuthenticationVerifyClaimResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_required=is_required,
+            key=key,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_required: Optional[bool] = None,
+             key: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_required is None and 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+        if is_required is None:
+            raise TypeError("Missing 'is_required' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("is_required", is_required)
+        _setter("key", key)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="isRequired")
@@ -8767,12 +11796,57 @@ class GetApiDeploymentSpecificationRequestPolicyCorResult(dict):
         :param bool is_allow_credentials_enabled: Whether to send the Access-Control-Allow-Credentials header to allow CORS requests with cookies.
         :param int max_age_in_seconds: The time in seconds for the client to cache preflight responses. This is sent as the Access-Control-Max-Age if greater than 0.
         """
-        pulumi.set(__self__, "allowed_headers", allowed_headers)
-        pulumi.set(__self__, "allowed_methods", allowed_methods)
-        pulumi.set(__self__, "allowed_origins", allowed_origins)
-        pulumi.set(__self__, "exposed_headers", exposed_headers)
-        pulumi.set(__self__, "is_allow_credentials_enabled", is_allow_credentials_enabled)
-        pulumi.set(__self__, "max_age_in_seconds", max_age_in_seconds)
+        GetApiDeploymentSpecificationRequestPolicyCorResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_headers=allowed_headers,
+            allowed_methods=allowed_methods,
+            allowed_origins=allowed_origins,
+            exposed_headers=exposed_headers,
+            is_allow_credentials_enabled=is_allow_credentials_enabled,
+            max_age_in_seconds=max_age_in_seconds,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_headers: Optional[Sequence[str]] = None,
+             allowed_methods: Optional[Sequence[str]] = None,
+             allowed_origins: Optional[Sequence[str]] = None,
+             exposed_headers: Optional[Sequence[str]] = None,
+             is_allow_credentials_enabled: Optional[bool] = None,
+             max_age_in_seconds: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if allowed_headers is None and 'allowedHeaders' in kwargs:
+            allowed_headers = kwargs['allowedHeaders']
+        if allowed_headers is None:
+            raise TypeError("Missing 'allowed_headers' argument")
+        if allowed_methods is None and 'allowedMethods' in kwargs:
+            allowed_methods = kwargs['allowedMethods']
+        if allowed_methods is None:
+            raise TypeError("Missing 'allowed_methods' argument")
+        if allowed_origins is None and 'allowedOrigins' in kwargs:
+            allowed_origins = kwargs['allowedOrigins']
+        if allowed_origins is None:
+            raise TypeError("Missing 'allowed_origins' argument")
+        if exposed_headers is None and 'exposedHeaders' in kwargs:
+            exposed_headers = kwargs['exposedHeaders']
+        if exposed_headers is None:
+            raise TypeError("Missing 'exposed_headers' argument")
+        if is_allow_credentials_enabled is None and 'isAllowCredentialsEnabled' in kwargs:
+            is_allow_credentials_enabled = kwargs['isAllowCredentialsEnabled']
+        if is_allow_credentials_enabled is None:
+            raise TypeError("Missing 'is_allow_credentials_enabled' argument")
+        if max_age_in_seconds is None and 'maxAgeInSeconds' in kwargs:
+            max_age_in_seconds = kwargs['maxAgeInSeconds']
+        if max_age_in_seconds is None:
+            raise TypeError("Missing 'max_age_in_seconds' argument")
+
+        _setter("allowed_headers", allowed_headers)
+        _setter("allowed_methods", allowed_methods)
+        _setter("allowed_origins", allowed_origins)
+        _setter("exposed_headers", exposed_headers)
+        _setter("is_allow_credentials_enabled", is_allow_credentials_enabled)
+        _setter("max_age_in_seconds", max_age_in_seconds)
 
     @property
     @pulumi.getter(name="allowedHeaders")
@@ -8832,8 +11906,29 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationResult(dict
         :param Sequence['GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerArgs'] authentication_servers: List of authentication servers to choose from during dynamic authentication.
         :param Sequence['GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationSelectionSourceArgs'] selection_sources: Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
         """
-        pulumi.set(__self__, "authentication_servers", authentication_servers)
-        pulumi.set(__self__, "selection_sources", selection_sources)
+        GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            authentication_servers=authentication_servers,
+            selection_sources=selection_sources,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             authentication_servers: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerResult']] = None,
+             selection_sources: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationSelectionSourceResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if authentication_servers is None and 'authenticationServers' in kwargs:
+            authentication_servers = kwargs['authenticationServers']
+        if authentication_servers is None:
+            raise TypeError("Missing 'authentication_servers' argument")
+        if selection_sources is None and 'selectionSources' in kwargs:
+            selection_sources = kwargs['selectionSources']
+        if selection_sources is None:
+            raise TypeError("Missing 'selection_sources' argument")
+
+        _setter("authentication_servers", authentication_servers)
+        _setter("selection_sources", selection_sources)
 
     @property
     @pulumi.getter(name="authenticationServers")
@@ -8861,8 +11956,27 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
         :param Sequence['GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailArgs'] authentication_server_details: Information on how to authenticate incoming requests.
         :param Sequence['GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKeyArgs'] keys: Information around the values for selector of an authentication/ routing branch.
         """
-        pulumi.set(__self__, "authentication_server_details", authentication_server_details)
-        pulumi.set(__self__, "keys", keys)
+        GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            authentication_server_details=authentication_server_details,
+            keys=keys,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             authentication_server_details: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailResult']] = None,
+             keys: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKeyResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if authentication_server_details is None and 'authenticationServerDetails' in kwargs:
+            authentication_server_details = kwargs['authenticationServerDetails']
+        if authentication_server_details is None:
+            raise TypeError("Missing 'authentication_server_details' argument")
+        if keys is None:
+            raise TypeError("Missing 'keys' argument")
+
+        _setter("authentication_server_details", authentication_server_details)
+        _setter("keys", keys)
 
     @property
     @pulumi.getter(name="authenticationServerDetails")
@@ -8915,21 +12029,112 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
         :param Sequence['GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyArgs'] validation_policies: Authentication Policies for the Token Authentication types.
         :param Sequence['GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimArgs'] verify_claims: A list of claims which should be validated to consider the token valid.
         """
-        pulumi.set(__self__, "audiences", audiences)
-        pulumi.set(__self__, "cache_keys", cache_keys)
-        pulumi.set(__self__, "function_id", function_id)
-        pulumi.set(__self__, "is_anonymous_access_allowed", is_anonymous_access_allowed)
-        pulumi.set(__self__, "issuers", issuers)
-        pulumi.set(__self__, "max_clock_skew_in_seconds", max_clock_skew_in_seconds)
-        pulumi.set(__self__, "parameters", parameters)
-        pulumi.set(__self__, "public_keys", public_keys)
-        pulumi.set(__self__, "token_auth_scheme", token_auth_scheme)
-        pulumi.set(__self__, "token_header", token_header)
-        pulumi.set(__self__, "token_query_param", token_query_param)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "validation_failure_policies", validation_failure_policies)
-        pulumi.set(__self__, "validation_policies", validation_policies)
-        pulumi.set(__self__, "verify_claims", verify_claims)
+        GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audiences=audiences,
+            cache_keys=cache_keys,
+            function_id=function_id,
+            is_anonymous_access_allowed=is_anonymous_access_allowed,
+            issuers=issuers,
+            max_clock_skew_in_seconds=max_clock_skew_in_seconds,
+            parameters=parameters,
+            public_keys=public_keys,
+            token_auth_scheme=token_auth_scheme,
+            token_header=token_header,
+            token_query_param=token_query_param,
+            type=type,
+            validation_failure_policies=validation_failure_policies,
+            validation_policies=validation_policies,
+            verify_claims=verify_claims,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audiences: Optional[Sequence[str]] = None,
+             cache_keys: Optional[Sequence[str]] = None,
+             function_id: Optional[str] = None,
+             is_anonymous_access_allowed: Optional[bool] = None,
+             issuers: Optional[Sequence[str]] = None,
+             max_clock_skew_in_seconds: Optional[float] = None,
+             parameters: Optional[Mapping[str, Any]] = None,
+             public_keys: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeyResult']] = None,
+             token_auth_scheme: Optional[str] = None,
+             token_header: Optional[str] = None,
+             token_query_param: Optional[str] = None,
+             type: Optional[str] = None,
+             validation_failure_policies: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResult']] = None,
+             validation_policies: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyResult']] = None,
+             verify_claims: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if audiences is None:
+            raise TypeError("Missing 'audiences' argument")
+        if cache_keys is None and 'cacheKeys' in kwargs:
+            cache_keys = kwargs['cacheKeys']
+        if cache_keys is None:
+            raise TypeError("Missing 'cache_keys' argument")
+        if function_id is None and 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if function_id is None:
+            raise TypeError("Missing 'function_id' argument")
+        if is_anonymous_access_allowed is None and 'isAnonymousAccessAllowed' in kwargs:
+            is_anonymous_access_allowed = kwargs['isAnonymousAccessAllowed']
+        if is_anonymous_access_allowed is None:
+            raise TypeError("Missing 'is_anonymous_access_allowed' argument")
+        if issuers is None:
+            raise TypeError("Missing 'issuers' argument")
+        if max_clock_skew_in_seconds is None and 'maxClockSkewInSeconds' in kwargs:
+            max_clock_skew_in_seconds = kwargs['maxClockSkewInSeconds']
+        if max_clock_skew_in_seconds is None:
+            raise TypeError("Missing 'max_clock_skew_in_seconds' argument")
+        if parameters is None:
+            raise TypeError("Missing 'parameters' argument")
+        if public_keys is None and 'publicKeys' in kwargs:
+            public_keys = kwargs['publicKeys']
+        if public_keys is None:
+            raise TypeError("Missing 'public_keys' argument")
+        if token_auth_scheme is None and 'tokenAuthScheme' in kwargs:
+            token_auth_scheme = kwargs['tokenAuthScheme']
+        if token_auth_scheme is None:
+            raise TypeError("Missing 'token_auth_scheme' argument")
+        if token_header is None and 'tokenHeader' in kwargs:
+            token_header = kwargs['tokenHeader']
+        if token_header is None:
+            raise TypeError("Missing 'token_header' argument")
+        if token_query_param is None and 'tokenQueryParam' in kwargs:
+            token_query_param = kwargs['tokenQueryParam']
+        if token_query_param is None:
+            raise TypeError("Missing 'token_query_param' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if validation_failure_policies is None and 'validationFailurePolicies' in kwargs:
+            validation_failure_policies = kwargs['validationFailurePolicies']
+        if validation_failure_policies is None:
+            raise TypeError("Missing 'validation_failure_policies' argument")
+        if validation_policies is None and 'validationPolicies' in kwargs:
+            validation_policies = kwargs['validationPolicies']
+        if validation_policies is None:
+            raise TypeError("Missing 'validation_policies' argument")
+        if verify_claims is None and 'verifyClaims' in kwargs:
+            verify_claims = kwargs['verifyClaims']
+        if verify_claims is None:
+            raise TypeError("Missing 'verify_claims' argument")
+
+        _setter("audiences", audiences)
+        _setter("cache_keys", cache_keys)
+        _setter("function_id", function_id)
+        _setter("is_anonymous_access_allowed", is_anonymous_access_allowed)
+        _setter("issuers", issuers)
+        _setter("max_clock_skew_in_seconds", max_clock_skew_in_seconds)
+        _setter("parameters", parameters)
+        _setter("public_keys", public_keys)
+        _setter("token_auth_scheme", token_auth_scheme)
+        _setter("token_header", token_header)
+        _setter("token_query_param", token_query_param)
+        _setter("type", type)
+        _setter("validation_failure_policies", validation_failure_policies)
+        _setter("validation_policies", validation_policies)
+        _setter("verify_claims", verify_claims)
 
     @property
     @pulumi.getter
@@ -9064,11 +12269,44 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
         :param str type: Type of the Response Cache Store Policy.
         :param str uri: The uri from which to retrieve the key. It must be accessible without authentication.
         """
-        pulumi.set(__self__, "is_ssl_verify_disabled", is_ssl_verify_disabled)
-        pulumi.set(__self__, "keys", keys)
-        pulumi.set(__self__, "max_cache_duration_in_hours", max_cache_duration_in_hours)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "uri", uri)
+        GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_ssl_verify_disabled=is_ssl_verify_disabled,
+            keys=keys,
+            max_cache_duration_in_hours=max_cache_duration_in_hours,
+            type=type,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_ssl_verify_disabled: Optional[bool] = None,
+             keys: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeyKeyResult']] = None,
+             max_cache_duration_in_hours: Optional[int] = None,
+             type: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if is_ssl_verify_disabled is None:
+            raise TypeError("Missing 'is_ssl_verify_disabled' argument")
+        if keys is None:
+            raise TypeError("Missing 'keys' argument")
+        if max_cache_duration_in_hours is None and 'maxCacheDurationInHours' in kwargs:
+            max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
+        if max_cache_duration_in_hours is None:
+            raise TypeError("Missing 'max_cache_duration_in_hours' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
+
+        _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
+        _setter("keys", keys)
+        _setter("max_cache_duration_in_hours", max_cache_duration_in_hours)
+        _setter("type", type)
+        _setter("uri", uri)
 
     @property
     @pulumi.getter(name="isSslVerifyDisabled")
@@ -9134,15 +12372,62 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
         :param str n: The base64 url encoded modulus of the RSA public key represented by this key.
         :param str use: The intended use of the public key.
         """
-        pulumi.set(__self__, "alg", alg)
-        pulumi.set(__self__, "e", e)
-        pulumi.set(__self__, "format", format)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "key_ops", key_ops)
-        pulumi.set(__self__, "kid", kid)
-        pulumi.set(__self__, "kty", kty)
-        pulumi.set(__self__, "n", n)
-        pulumi.set(__self__, "use", use)
+        GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeyKeyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            alg=alg,
+            e=e,
+            format=format,
+            key=key,
+            key_ops=key_ops,
+            kid=kid,
+            kty=kty,
+            n=n,
+            use=use,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             alg: Optional[str] = None,
+             e: Optional[str] = None,
+             format: Optional[str] = None,
+             key: Optional[str] = None,
+             key_ops: Optional[Sequence[str]] = None,
+             kid: Optional[str] = None,
+             kty: Optional[str] = None,
+             n: Optional[str] = None,
+             use: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if alg is None:
+            raise TypeError("Missing 'alg' argument")
+        if e is None:
+            raise TypeError("Missing 'e' argument")
+        if format is None:
+            raise TypeError("Missing 'format' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if key_ops is None and 'keyOps' in kwargs:
+            key_ops = kwargs['keyOps']
+        if key_ops is None:
+            raise TypeError("Missing 'key_ops' argument")
+        if kid is None:
+            raise TypeError("Missing 'kid' argument")
+        if kty is None:
+            raise TypeError("Missing 'kty' argument")
+        if n is None:
+            raise TypeError("Missing 'n' argument")
+        if use is None:
+            raise TypeError("Missing 'use' argument")
+
+        _setter("alg", alg)
+        _setter("e", e)
+        _setter("format", format)
+        _setter("key", key)
+        _setter("key_ops", key_ops)
+        _setter("kid", kid)
+        _setter("kty", kty)
+        _setter("n", n)
+        _setter("use", use)
 
     @property
     @pulumi.getter
@@ -9250,20 +12535,109 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
         :param bool use_cookies_for_session: Defines whether or not to use cookies for session maintenance.
         :param bool use_pkce: Defines whether or not to support PKCE.
         """
-        pulumi.set(__self__, "client_details", client_details)
-        pulumi.set(__self__, "fallback_redirect_path", fallback_redirect_path)
-        pulumi.set(__self__, "logout_path", logout_path)
-        pulumi.set(__self__, "max_expiry_duration_in_hours", max_expiry_duration_in_hours)
-        pulumi.set(__self__, "response_code", response_code)
-        pulumi.set(__self__, "response_header_transformations", response_header_transformations)
-        pulumi.set(__self__, "response_message", response_message)
-        pulumi.set(__self__, "response_type", response_type)
-        pulumi.set(__self__, "scopes", scopes)
-        pulumi.set(__self__, "source_uri_details", source_uri_details)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "use_cookies_for_intermediate_steps", use_cookies_for_intermediate_steps)
-        pulumi.set(__self__, "use_cookies_for_session", use_cookies_for_session)
-        pulumi.set(__self__, "use_pkce", use_pkce)
+        GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            client_details=client_details,
+            fallback_redirect_path=fallback_redirect_path,
+            logout_path=logout_path,
+            max_expiry_duration_in_hours=max_expiry_duration_in_hours,
+            response_code=response_code,
+            response_header_transformations=response_header_transformations,
+            response_message=response_message,
+            response_type=response_type,
+            scopes=scopes,
+            source_uri_details=source_uri_details,
+            type=type,
+            use_cookies_for_intermediate_steps=use_cookies_for_intermediate_steps,
+            use_cookies_for_session=use_cookies_for_session,
+            use_pkce=use_pkce,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             client_details: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetailResult']] = None,
+             fallback_redirect_path: Optional[str] = None,
+             logout_path: Optional[str] = None,
+             max_expiry_duration_in_hours: Optional[int] = None,
+             response_code: Optional[str] = None,
+             response_header_transformations: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationResult']] = None,
+             response_message: Optional[str] = None,
+             response_type: Optional[str] = None,
+             scopes: Optional[Sequence[str]] = None,
+             source_uri_details: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetailResult']] = None,
+             type: Optional[str] = None,
+             use_cookies_for_intermediate_steps: Optional[bool] = None,
+             use_cookies_for_session: Optional[bool] = None,
+             use_pkce: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if client_details is None and 'clientDetails' in kwargs:
+            client_details = kwargs['clientDetails']
+        if client_details is None:
+            raise TypeError("Missing 'client_details' argument")
+        if fallback_redirect_path is None and 'fallbackRedirectPath' in kwargs:
+            fallback_redirect_path = kwargs['fallbackRedirectPath']
+        if fallback_redirect_path is None:
+            raise TypeError("Missing 'fallback_redirect_path' argument")
+        if logout_path is None and 'logoutPath' in kwargs:
+            logout_path = kwargs['logoutPath']
+        if logout_path is None:
+            raise TypeError("Missing 'logout_path' argument")
+        if max_expiry_duration_in_hours is None and 'maxExpiryDurationInHours' in kwargs:
+            max_expiry_duration_in_hours = kwargs['maxExpiryDurationInHours']
+        if max_expiry_duration_in_hours is None:
+            raise TypeError("Missing 'max_expiry_duration_in_hours' argument")
+        if response_code is None and 'responseCode' in kwargs:
+            response_code = kwargs['responseCode']
+        if response_code is None:
+            raise TypeError("Missing 'response_code' argument")
+        if response_header_transformations is None and 'responseHeaderTransformations' in kwargs:
+            response_header_transformations = kwargs['responseHeaderTransformations']
+        if response_header_transformations is None:
+            raise TypeError("Missing 'response_header_transformations' argument")
+        if response_message is None and 'responseMessage' in kwargs:
+            response_message = kwargs['responseMessage']
+        if response_message is None:
+            raise TypeError("Missing 'response_message' argument")
+        if response_type is None and 'responseType' in kwargs:
+            response_type = kwargs['responseType']
+        if response_type is None:
+            raise TypeError("Missing 'response_type' argument")
+        if scopes is None:
+            raise TypeError("Missing 'scopes' argument")
+        if source_uri_details is None and 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+        if source_uri_details is None:
+            raise TypeError("Missing 'source_uri_details' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if use_cookies_for_intermediate_steps is None and 'useCookiesForIntermediateSteps' in kwargs:
+            use_cookies_for_intermediate_steps = kwargs['useCookiesForIntermediateSteps']
+        if use_cookies_for_intermediate_steps is None:
+            raise TypeError("Missing 'use_cookies_for_intermediate_steps' argument")
+        if use_cookies_for_session is None and 'useCookiesForSession' in kwargs:
+            use_cookies_for_session = kwargs['useCookiesForSession']
+        if use_cookies_for_session is None:
+            raise TypeError("Missing 'use_cookies_for_session' argument")
+        if use_pkce is None and 'usePkce' in kwargs:
+            use_pkce = kwargs['usePkce']
+        if use_pkce is None:
+            raise TypeError("Missing 'use_pkce' argument")
+
+        _setter("client_details", client_details)
+        _setter("fallback_redirect_path", fallback_redirect_path)
+        _setter("logout_path", logout_path)
+        _setter("max_expiry_duration_in_hours", max_expiry_duration_in_hours)
+        _setter("response_code", response_code)
+        _setter("response_header_transformations", response_header_transformations)
+        _setter("response_message", response_message)
+        _setter("response_type", response_type)
+        _setter("scopes", scopes)
+        _setter("source_uri_details", source_uri_details)
+        _setter("type", type)
+        _setter("use_cookies_for_intermediate_steps", use_cookies_for_intermediate_steps)
+        _setter("use_cookies_for_session", use_cookies_for_session)
+        _setter("use_pkce", use_pkce)
 
     @property
     @pulumi.getter(name="clientDetails")
@@ -9391,10 +12765,41 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
         :param str client_secret_version_number: The version number of the client secret to use.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "client_id", client_id)
-        pulumi.set(__self__, "client_secret_id", client_secret_id)
-        pulumi.set(__self__, "client_secret_version_number", client_secret_version_number)
-        pulumi.set(__self__, "type", type)
+        GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            client_id=client_id,
+            client_secret_id=client_secret_id,
+            client_secret_version_number=client_secret_version_number,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             client_id: Optional[str] = None,
+             client_secret_id: Optional[str] = None,
+             client_secret_version_number: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if client_id is None and 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if client_id is None:
+            raise TypeError("Missing 'client_id' argument")
+        if client_secret_id is None and 'clientSecretId' in kwargs:
+            client_secret_id = kwargs['clientSecretId']
+        if client_secret_id is None:
+            raise TypeError("Missing 'client_secret_id' argument")
+        if client_secret_version_number is None and 'clientSecretVersionNumber' in kwargs:
+            client_secret_version_number = kwargs['clientSecretVersionNumber']
+        if client_secret_version_number is None:
+            raise TypeError("Missing 'client_secret_version_number' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("client_id", client_id)
+        _setter("client_secret_id", client_secret_id)
+        _setter("client_secret_version_number", client_secret_version_number)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="clientId")
@@ -9440,9 +12845,36 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
         :param Sequence['GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationRenameHeaderArgs'] rename_headers: Rename HTTP headers as they pass through the gateway.
         :param Sequence['GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationSetHeaderArgs'] set_headers: Set HTTP headers as they pass through the gateway.
         """
-        pulumi.set(__self__, "filter_headers", filter_headers)
-        pulumi.set(__self__, "rename_headers", rename_headers)
-        pulumi.set(__self__, "set_headers", set_headers)
+        GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            filter_headers=filter_headers,
+            rename_headers=rename_headers,
+            set_headers=set_headers,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             filter_headers: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationFilterHeaderResult']] = None,
+             rename_headers: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationRenameHeaderResult']] = None,
+             set_headers: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationSetHeaderResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if filter_headers is None and 'filterHeaders' in kwargs:
+            filter_headers = kwargs['filterHeaders']
+        if filter_headers is None:
+            raise TypeError("Missing 'filter_headers' argument")
+        if rename_headers is None and 'renameHeaders' in kwargs:
+            rename_headers = kwargs['renameHeaders']
+        if rename_headers is None:
+            raise TypeError("Missing 'rename_headers' argument")
+        if set_headers is None and 'setHeaders' in kwargs:
+            set_headers = kwargs['setHeaders']
+        if set_headers is None:
+            raise TypeError("Missing 'set_headers' argument")
+
+        _setter("filter_headers", filter_headers)
+        _setter("rename_headers", rename_headers)
+        _setter("set_headers", set_headers)
 
     @property
     @pulumi.getter(name="filterHeaders")
@@ -9478,8 +12910,25 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
         :param Sequence['GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationFilterHeaderItemArgs'] items: The list of headers.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "type", type)
+        GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationFilterHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationFilterHeaderItemResult']] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("items", items)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -9505,7 +12954,20 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
         """
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "name", name)
+        GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationFilterHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -9523,7 +12985,20 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
         """
         :param Sequence['GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationRenameHeaderItemArgs'] items: The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationRenameHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationRenameHeaderItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -9543,8 +13018,27 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
         :param str from_: The original case-insensitive name of the header.  This name must be unique across transformation policies.
         :param str to: The new name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "from_", from_)
-        pulumi.set(__self__, "to", to)
+        GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationRenameHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            from_=from_,
+            to=to,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             from_: Optional[str] = None,
+             to: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if from_ is None and 'from' in kwargs:
+            from_ = kwargs['from']
+        if from_ is None:
+            raise TypeError("Missing 'from_' argument")
+        if to is None:
+            raise TypeError("Missing 'to' argument")
+
+        _setter("from_", from_)
+        _setter("to", to)
 
     @property
     @pulumi.getter(name="from")
@@ -9570,7 +13064,20 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
         """
         :param Sequence['GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationSetHeaderItemArgs'] items: The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationSetHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationSetHeaderItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -9592,9 +13099,32 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "if_exists", if_exists)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationSetHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            if_exists=if_exists,
+            name=name,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             if_exists: Optional[str] = None,
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if if_exists is None and 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+        if if_exists is None:
+            raise TypeError("Missing 'if_exists' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("if_exists", if_exists)
+        _setter("name", name)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="ifExists")
@@ -9630,8 +13160,25 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
         :param str type: Type of the Response Cache Store Policy.
         :param str uri: The uri from which to retrieve the key. It must be accessible without authentication.
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "uri", uri)
+        GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
+
+        _setter("type", type)
+        _setter("uri", uri)
 
     @property
     @pulumi.getter
@@ -9671,14 +13218,65 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
         :param str type: Type of the Response Cache Store Policy.
         :param str uri: The uri from which to retrieve the key. It must be accessible without authentication.
         """
-        pulumi.set(__self__, "additional_validation_policies", additional_validation_policies)
-        pulumi.set(__self__, "client_details", client_details)
-        pulumi.set(__self__, "is_ssl_verify_disabled", is_ssl_verify_disabled)
-        pulumi.set(__self__, "keys", keys)
-        pulumi.set(__self__, "max_cache_duration_in_hours", max_cache_duration_in_hours)
-        pulumi.set(__self__, "source_uri_details", source_uri_details)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "uri", uri)
+        GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            additional_validation_policies=additional_validation_policies,
+            client_details=client_details,
+            is_ssl_verify_disabled=is_ssl_verify_disabled,
+            keys=keys,
+            max_cache_duration_in_hours=max_cache_duration_in_hours,
+            source_uri_details=source_uri_details,
+            type=type,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             additional_validation_policies: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyResult']] = None,
+             client_details: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyClientDetailResult']] = None,
+             is_ssl_verify_disabled: Optional[bool] = None,
+             keys: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKeyResult']] = None,
+             max_cache_duration_in_hours: Optional[int] = None,
+             source_uri_details: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicySourceUriDetailResult']] = None,
+             type: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if additional_validation_policies is None and 'additionalValidationPolicies' in kwargs:
+            additional_validation_policies = kwargs['additionalValidationPolicies']
+        if additional_validation_policies is None:
+            raise TypeError("Missing 'additional_validation_policies' argument")
+        if client_details is None and 'clientDetails' in kwargs:
+            client_details = kwargs['clientDetails']
+        if client_details is None:
+            raise TypeError("Missing 'client_details' argument")
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if is_ssl_verify_disabled is None:
+            raise TypeError("Missing 'is_ssl_verify_disabled' argument")
+        if keys is None:
+            raise TypeError("Missing 'keys' argument")
+        if max_cache_duration_in_hours is None and 'maxCacheDurationInHours' in kwargs:
+            max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
+        if max_cache_duration_in_hours is None:
+            raise TypeError("Missing 'max_cache_duration_in_hours' argument")
+        if source_uri_details is None and 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+        if source_uri_details is None:
+            raise TypeError("Missing 'source_uri_details' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
+
+        _setter("additional_validation_policies", additional_validation_policies)
+        _setter("client_details", client_details)
+        _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
+        _setter("keys", keys)
+        _setter("max_cache_duration_in_hours", max_cache_duration_in_hours)
+        _setter("source_uri_details", source_uri_details)
+        _setter("type", type)
+        _setter("uri", uri)
 
     @property
     @pulumi.getter(name="additionalValidationPolicies")
@@ -9756,9 +13354,32 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
         :param Sequence[str] issuers: A list of parties that could have issued the token.
         :param Sequence['GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimArgs'] verify_claims: A list of claims which should be validated to consider the token valid.
         """
-        pulumi.set(__self__, "audiences", audiences)
-        pulumi.set(__self__, "issuers", issuers)
-        pulumi.set(__self__, "verify_claims", verify_claims)
+        GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audiences=audiences,
+            issuers=issuers,
+            verify_claims=verify_claims,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audiences: Optional[Sequence[str]] = None,
+             issuers: Optional[Sequence[str]] = None,
+             verify_claims: Optional[Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if audiences is None:
+            raise TypeError("Missing 'audiences' argument")
+        if issuers is None:
+            raise TypeError("Missing 'issuers' argument")
+        if verify_claims is None and 'verifyClaims' in kwargs:
+            verify_claims = kwargs['verifyClaims']
+        if verify_claims is None:
+            raise TypeError("Missing 'verify_claims' argument")
+
+        _setter("audiences", audiences)
+        _setter("issuers", issuers)
+        _setter("verify_claims", verify_claims)
 
     @property
     @pulumi.getter
@@ -9796,9 +13417,32 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
         :param str key: Information around the values for selector of an authentication/ routing branch.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "is_required", is_required)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "values", values)
+        GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_required=is_required,
+            key=key,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_required: Optional[bool] = None,
+             key: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_required is None and 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+        if is_required is None:
+            raise TypeError("Missing 'is_required' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("is_required", is_required)
+        _setter("key", key)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="isRequired")
@@ -9838,10 +13482,41 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
         :param str client_secret_version_number: The version number of the client secret to use.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "client_id", client_id)
-        pulumi.set(__self__, "client_secret_id", client_secret_id)
-        pulumi.set(__self__, "client_secret_version_number", client_secret_version_number)
-        pulumi.set(__self__, "type", type)
+        GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyClientDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            client_id=client_id,
+            client_secret_id=client_secret_id,
+            client_secret_version_number=client_secret_version_number,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             client_id: Optional[str] = None,
+             client_secret_id: Optional[str] = None,
+             client_secret_version_number: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if client_id is None and 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if client_id is None:
+            raise TypeError("Missing 'client_id' argument")
+        if client_secret_id is None and 'clientSecretId' in kwargs:
+            client_secret_id = kwargs['clientSecretId']
+        if client_secret_id is None:
+            raise TypeError("Missing 'client_secret_id' argument")
+        if client_secret_version_number is None and 'clientSecretVersionNumber' in kwargs:
+            client_secret_version_number = kwargs['clientSecretVersionNumber']
+        if client_secret_version_number is None:
+            raise TypeError("Missing 'client_secret_version_number' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("client_id", client_id)
+        _setter("client_secret_id", client_secret_id)
+        _setter("client_secret_version_number", client_secret_version_number)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="clientId")
@@ -9899,15 +13574,62 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
         :param str n: The base64 url encoded modulus of the RSA public key represented by this key.
         :param str use: The intended use of the public key.
         """
-        pulumi.set(__self__, "alg", alg)
-        pulumi.set(__self__, "e", e)
-        pulumi.set(__self__, "format", format)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "key_ops", key_ops)
-        pulumi.set(__self__, "kid", kid)
-        pulumi.set(__self__, "kty", kty)
-        pulumi.set(__self__, "n", n)
-        pulumi.set(__self__, "use", use)
+        GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKeyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            alg=alg,
+            e=e,
+            format=format,
+            key=key,
+            key_ops=key_ops,
+            kid=kid,
+            kty=kty,
+            n=n,
+            use=use,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             alg: Optional[str] = None,
+             e: Optional[str] = None,
+             format: Optional[str] = None,
+             key: Optional[str] = None,
+             key_ops: Optional[Sequence[str]] = None,
+             kid: Optional[str] = None,
+             kty: Optional[str] = None,
+             n: Optional[str] = None,
+             use: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if alg is None:
+            raise TypeError("Missing 'alg' argument")
+        if e is None:
+            raise TypeError("Missing 'e' argument")
+        if format is None:
+            raise TypeError("Missing 'format' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if key_ops is None and 'keyOps' in kwargs:
+            key_ops = kwargs['keyOps']
+        if key_ops is None:
+            raise TypeError("Missing 'key_ops' argument")
+        if kid is None:
+            raise TypeError("Missing 'kid' argument")
+        if kty is None:
+            raise TypeError("Missing 'kty' argument")
+        if n is None:
+            raise TypeError("Missing 'n' argument")
+        if use is None:
+            raise TypeError("Missing 'use' argument")
+
+        _setter("alg", alg)
+        _setter("e", e)
+        _setter("format", format)
+        _setter("key", key)
+        _setter("key_ops", key_ops)
+        _setter("kid", kid)
+        _setter("kty", kty)
+        _setter("n", n)
+        _setter("use", use)
 
     @property
     @pulumi.getter
@@ -9991,8 +13713,25 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
         :param str type: Type of the Response Cache Store Policy.
         :param str uri: The uri from which to retrieve the key. It must be accessible without authentication.
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "uri", uri)
+        GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicySourceUriDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
+
+        _setter("type", type)
+        _setter("uri", uri)
 
     @property
     @pulumi.getter
@@ -10022,9 +13761,32 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
         :param str key: Information around the values for selector of an authentication/ routing branch.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "is_required", is_required)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "values", values)
+        GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_required=is_required,
+            key=key,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_required: Optional[bool] = None,
+             key: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_required is None and 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+        if is_required is None:
+            raise TypeError("Missing 'is_required' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("is_required", is_required)
+        _setter("key", key)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="isRequired")
@@ -10066,11 +13828,42 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
         :param str type: Type of the Response Cache Store Policy.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "expression", expression)
-        pulumi.set(__self__, "is_default", is_default)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "values", values)
+        GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKeyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            expression=expression,
+            is_default=is_default,
+            name=name,
+            type=type,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             expression: Optional[str] = None,
+             is_default: Optional[bool] = None,
+             name: Optional[str] = None,
+             type: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if expression is None:
+            raise TypeError("Missing 'expression' argument")
+        if is_default is None and 'isDefault' in kwargs:
+            is_default = kwargs['isDefault']
+        if is_default is None:
+            raise TypeError("Missing 'is_default' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("expression", expression)
+        _setter("is_default", is_default)
+        _setter("name", name)
+        _setter("type", type)
+        _setter("values", values)
 
     @property
     @pulumi.getter
@@ -10122,8 +13915,25 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationSelectionSo
         :param str selector: String describing the context variable used as selector.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "selector", selector)
-        pulumi.set(__self__, "type", type)
+        GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationSelectionSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            selector=selector,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             selector: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if selector is None:
+            raise TypeError("Missing 'selector' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("selector", selector)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -10151,8 +13961,29 @@ class GetApiDeploymentSpecificationRequestPolicyMutualTlResult(dict):
         :param Sequence[str] allowed_sans: Allowed list of CN or SAN which will be used for verification of certificate.
         :param bool is_verified_certificate_required: Determines whether to enable client verification when API Consumer makes connection to the gateway.
         """
-        pulumi.set(__self__, "allowed_sans", allowed_sans)
-        pulumi.set(__self__, "is_verified_certificate_required", is_verified_certificate_required)
+        GetApiDeploymentSpecificationRequestPolicyMutualTlResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_sans=allowed_sans,
+            is_verified_certificate_required=is_verified_certificate_required,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_sans: Optional[Sequence[str]] = None,
+             is_verified_certificate_required: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if allowed_sans is None and 'allowedSans' in kwargs:
+            allowed_sans = kwargs['allowedSans']
+        if allowed_sans is None:
+            raise TypeError("Missing 'allowed_sans' argument")
+        if is_verified_certificate_required is None and 'isVerifiedCertificateRequired' in kwargs:
+            is_verified_certificate_required = kwargs['isVerifiedCertificateRequired']
+        if is_verified_certificate_required is None:
+            raise TypeError("Missing 'is_verified_certificate_required' argument")
+
+        _setter("allowed_sans", allowed_sans)
+        _setter("is_verified_certificate_required", is_verified_certificate_required)
 
     @property
     @pulumi.getter(name="allowedSans")
@@ -10180,8 +14011,29 @@ class GetApiDeploymentSpecificationRequestPolicyRateLimitingResult(dict):
         :param int rate_in_requests_per_second: The maximum number of requests per second to allow.
         :param str rate_key: The key used to group requests together.
         """
-        pulumi.set(__self__, "rate_in_requests_per_second", rate_in_requests_per_second)
-        pulumi.set(__self__, "rate_key", rate_key)
+        GetApiDeploymentSpecificationRequestPolicyRateLimitingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            rate_in_requests_per_second=rate_in_requests_per_second,
+            rate_key=rate_key,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             rate_in_requests_per_second: Optional[int] = None,
+             rate_key: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if rate_in_requests_per_second is None and 'rateInRequestsPerSecond' in kwargs:
+            rate_in_requests_per_second = kwargs['rateInRequestsPerSecond']
+        if rate_in_requests_per_second is None:
+            raise TypeError("Missing 'rate_in_requests_per_second' argument")
+        if rate_key is None and 'rateKey' in kwargs:
+            rate_key = kwargs['rateKey']
+        if rate_key is None:
+            raise TypeError("Missing 'rate_key' argument")
+
+        _setter("rate_in_requests_per_second", rate_in_requests_per_second)
+        _setter("rate_key", rate_key)
 
     @property
     @pulumi.getter(name="rateInRequestsPerSecond")
@@ -10211,7 +14063,22 @@ class GetApiDeploymentSpecificationRequestPolicyUsagePlanResult(dict):
                * "request.auth[Token]"
                * "request.path[TOKEN]"
         """
-        pulumi.set(__self__, "token_locations", token_locations)
+        GetApiDeploymentSpecificationRequestPolicyUsagePlanResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            token_locations=token_locations,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             token_locations: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if token_locations is None and 'tokenLocations' in kwargs:
+            token_locations = kwargs['tokenLocations']
+        if token_locations is None:
+            raise TypeError("Missing 'token_locations' argument")
+
+        _setter("token_locations", token_locations)
 
     @property
     @pulumi.getter(name="tokenLocations")
@@ -10243,12 +14110,51 @@ class GetApiDeploymentSpecificationRouteResult(dict):
         :param Sequence['GetApiDeploymentSpecificationRouteRequestPolicyArgs'] request_policies: Behavior applied to any requests received by the API on this route.
         :param Sequence['GetApiDeploymentSpecificationRouteResponsePolicyArgs'] response_policies: Behavior applied to any responses sent by the API for requests on this route.
         """
-        pulumi.set(__self__, "backends", backends)
-        pulumi.set(__self__, "logging_policies", logging_policies)
-        pulumi.set(__self__, "methods", methods)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "request_policies", request_policies)
-        pulumi.set(__self__, "response_policies", response_policies)
+        GetApiDeploymentSpecificationRouteResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backends=backends,
+            logging_policies=logging_policies,
+            methods=methods,
+            path=path,
+            request_policies=request_policies,
+            response_policies=response_policies,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backends: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteBackendResult']] = None,
+             logging_policies: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteLoggingPolicyResult']] = None,
+             methods: Optional[Sequence[str]] = None,
+             path: Optional[str] = None,
+             request_policies: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyResult']] = None,
+             response_policies: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteResponsePolicyResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if backends is None:
+            raise TypeError("Missing 'backends' argument")
+        if logging_policies is None and 'loggingPolicies' in kwargs:
+            logging_policies = kwargs['loggingPolicies']
+        if logging_policies is None:
+            raise TypeError("Missing 'logging_policies' argument")
+        if methods is None:
+            raise TypeError("Missing 'methods' argument")
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+        if request_policies is None and 'requestPolicies' in kwargs:
+            request_policies = kwargs['requestPolicies']
+        if request_policies is None:
+            raise TypeError("Missing 'request_policies' argument")
+        if response_policies is None and 'responsePolicies' in kwargs:
+            response_policies = kwargs['responsePolicies']
+        if response_policies is None:
+            raise TypeError("Missing 'response_policies' argument")
+
+        _setter("backends", backends)
+        _setter("logging_policies", logging_policies)
+        _setter("methods", methods)
+        _setter("path", path)
+        _setter("request_policies", request_policies)
+        _setter("response_policies", response_policies)
 
     @property
     @pulumi.getter
@@ -10329,20 +14235,103 @@ class GetApiDeploymentSpecificationRouteBackendResult(dict):
         :param int status: The status code of the stock response from the mock backend.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "allowed_post_logout_uris", allowed_post_logout_uris)
-        pulumi.set(__self__, "body", body)
-        pulumi.set(__self__, "connect_timeout_in_seconds", connect_timeout_in_seconds)
-        pulumi.set(__self__, "function_id", function_id)
-        pulumi.set(__self__, "headers", headers)
-        pulumi.set(__self__, "is_ssl_verify_disabled", is_ssl_verify_disabled)
-        pulumi.set(__self__, "post_logout_state", post_logout_state)
-        pulumi.set(__self__, "read_timeout_in_seconds", read_timeout_in_seconds)
-        pulumi.set(__self__, "routing_backends", routing_backends)
-        pulumi.set(__self__, "selection_sources", selection_sources)
-        pulumi.set(__self__, "send_timeout_in_seconds", send_timeout_in_seconds)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "url", url)
+        GetApiDeploymentSpecificationRouteBackendResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_post_logout_uris=allowed_post_logout_uris,
+            body=body,
+            connect_timeout_in_seconds=connect_timeout_in_seconds,
+            function_id=function_id,
+            headers=headers,
+            is_ssl_verify_disabled=is_ssl_verify_disabled,
+            post_logout_state=post_logout_state,
+            read_timeout_in_seconds=read_timeout_in_seconds,
+            routing_backends=routing_backends,
+            selection_sources=selection_sources,
+            send_timeout_in_seconds=send_timeout_in_seconds,
+            status=status,
+            type=type,
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_post_logout_uris: Optional[Sequence[str]] = None,
+             body: Optional[str] = None,
+             connect_timeout_in_seconds: Optional[float] = None,
+             function_id: Optional[str] = None,
+             headers: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteBackendHeaderResult']] = None,
+             is_ssl_verify_disabled: Optional[bool] = None,
+             post_logout_state: Optional[str] = None,
+             read_timeout_in_seconds: Optional[float] = None,
+             routing_backends: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteBackendRoutingBackendResult']] = None,
+             selection_sources: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteBackendSelectionSourceResult']] = None,
+             send_timeout_in_seconds: Optional[float] = None,
+             status: Optional[int] = None,
+             type: Optional[str] = None,
+             url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if allowed_post_logout_uris is None and 'allowedPostLogoutUris' in kwargs:
+            allowed_post_logout_uris = kwargs['allowedPostLogoutUris']
+        if allowed_post_logout_uris is None:
+            raise TypeError("Missing 'allowed_post_logout_uris' argument")
+        if body is None:
+            raise TypeError("Missing 'body' argument")
+        if connect_timeout_in_seconds is None and 'connectTimeoutInSeconds' in kwargs:
+            connect_timeout_in_seconds = kwargs['connectTimeoutInSeconds']
+        if connect_timeout_in_seconds is None:
+            raise TypeError("Missing 'connect_timeout_in_seconds' argument")
+        if function_id is None and 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if function_id is None:
+            raise TypeError("Missing 'function_id' argument")
+        if headers is None:
+            raise TypeError("Missing 'headers' argument")
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if is_ssl_verify_disabled is None:
+            raise TypeError("Missing 'is_ssl_verify_disabled' argument")
+        if post_logout_state is None and 'postLogoutState' in kwargs:
+            post_logout_state = kwargs['postLogoutState']
+        if post_logout_state is None:
+            raise TypeError("Missing 'post_logout_state' argument")
+        if read_timeout_in_seconds is None and 'readTimeoutInSeconds' in kwargs:
+            read_timeout_in_seconds = kwargs['readTimeoutInSeconds']
+        if read_timeout_in_seconds is None:
+            raise TypeError("Missing 'read_timeout_in_seconds' argument")
+        if routing_backends is None and 'routingBackends' in kwargs:
+            routing_backends = kwargs['routingBackends']
+        if routing_backends is None:
+            raise TypeError("Missing 'routing_backends' argument")
+        if selection_sources is None and 'selectionSources' in kwargs:
+            selection_sources = kwargs['selectionSources']
+        if selection_sources is None:
+            raise TypeError("Missing 'selection_sources' argument")
+        if send_timeout_in_seconds is None and 'sendTimeoutInSeconds' in kwargs:
+            send_timeout_in_seconds = kwargs['sendTimeoutInSeconds']
+        if send_timeout_in_seconds is None:
+            raise TypeError("Missing 'send_timeout_in_seconds' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if url is None:
+            raise TypeError("Missing 'url' argument")
+
+        _setter("allowed_post_logout_uris", allowed_post_logout_uris)
+        _setter("body", body)
+        _setter("connect_timeout_in_seconds", connect_timeout_in_seconds)
+        _setter("function_id", function_id)
+        _setter("headers", headers)
+        _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
+        _setter("post_logout_state", post_logout_state)
+        _setter("read_timeout_in_seconds", read_timeout_in_seconds)
+        _setter("routing_backends", routing_backends)
+        _setter("selection_sources", selection_sources)
+        _setter("send_timeout_in_seconds", send_timeout_in_seconds)
+        _setter("status", status)
+        _setter("type", type)
+        _setter("url", url)
 
     @property
     @pulumi.getter(name="allowedPostLogoutUris")
@@ -10457,8 +14446,25 @@ class GetApiDeploymentSpecificationRouteBackendHeaderResult(dict):
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param str value: Value of the header.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetApiDeploymentSpecificationRouteBackendHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -10486,8 +14492,25 @@ class GetApiDeploymentSpecificationRouteBackendRoutingBackendResult(dict):
         :param Sequence['GetApiDeploymentSpecificationRouteBackendRoutingBackendBackendArgs'] backends: The backend to forward requests to.
         :param Sequence['GetApiDeploymentSpecificationRouteBackendRoutingBackendKeyArgs'] keys: Information around the values for selector of an authentication/ routing branch.
         """
-        pulumi.set(__self__, "backends", backends)
-        pulumi.set(__self__, "keys", keys)
+        GetApiDeploymentSpecificationRouteBackendRoutingBackendResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backends=backends,
+            keys=keys,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backends: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteBackendRoutingBackendBackendResult']] = None,
+             keys: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteBackendRoutingBackendKeyResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if backends is None:
+            raise TypeError("Missing 'backends' argument")
+        if keys is None:
+            raise TypeError("Missing 'keys' argument")
+
+        _setter("backends", backends)
+        _setter("keys", keys)
 
     @property
     @pulumi.getter
@@ -10529,16 +14552,75 @@ class GetApiDeploymentSpecificationRouteBackendRoutingBackendBackendResult(dict)
         :param int status: The status code of the stock response from the mock backend.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "body", body)
-        pulumi.set(__self__, "connect_timeout_in_seconds", connect_timeout_in_seconds)
-        pulumi.set(__self__, "function_id", function_id)
-        pulumi.set(__self__, "headers", headers)
-        pulumi.set(__self__, "is_ssl_verify_disabled", is_ssl_verify_disabled)
-        pulumi.set(__self__, "read_timeout_in_seconds", read_timeout_in_seconds)
-        pulumi.set(__self__, "send_timeout_in_seconds", send_timeout_in_seconds)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "url", url)
+        GetApiDeploymentSpecificationRouteBackendRoutingBackendBackendResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            body=body,
+            connect_timeout_in_seconds=connect_timeout_in_seconds,
+            function_id=function_id,
+            headers=headers,
+            is_ssl_verify_disabled=is_ssl_verify_disabled,
+            read_timeout_in_seconds=read_timeout_in_seconds,
+            send_timeout_in_seconds=send_timeout_in_seconds,
+            status=status,
+            type=type,
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             body: Optional[str] = None,
+             connect_timeout_in_seconds: Optional[float] = None,
+             function_id: Optional[str] = None,
+             headers: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteBackendRoutingBackendBackendHeaderResult']] = None,
+             is_ssl_verify_disabled: Optional[bool] = None,
+             read_timeout_in_seconds: Optional[float] = None,
+             send_timeout_in_seconds: Optional[float] = None,
+             status: Optional[int] = None,
+             type: Optional[str] = None,
+             url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if body is None:
+            raise TypeError("Missing 'body' argument")
+        if connect_timeout_in_seconds is None and 'connectTimeoutInSeconds' in kwargs:
+            connect_timeout_in_seconds = kwargs['connectTimeoutInSeconds']
+        if connect_timeout_in_seconds is None:
+            raise TypeError("Missing 'connect_timeout_in_seconds' argument")
+        if function_id is None and 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if function_id is None:
+            raise TypeError("Missing 'function_id' argument")
+        if headers is None:
+            raise TypeError("Missing 'headers' argument")
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if is_ssl_verify_disabled is None:
+            raise TypeError("Missing 'is_ssl_verify_disabled' argument")
+        if read_timeout_in_seconds is None and 'readTimeoutInSeconds' in kwargs:
+            read_timeout_in_seconds = kwargs['readTimeoutInSeconds']
+        if read_timeout_in_seconds is None:
+            raise TypeError("Missing 'read_timeout_in_seconds' argument")
+        if send_timeout_in_seconds is None and 'sendTimeoutInSeconds' in kwargs:
+            send_timeout_in_seconds = kwargs['sendTimeoutInSeconds']
+        if send_timeout_in_seconds is None:
+            raise TypeError("Missing 'send_timeout_in_seconds' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if url is None:
+            raise TypeError("Missing 'url' argument")
+
+        _setter("body", body)
+        _setter("connect_timeout_in_seconds", connect_timeout_in_seconds)
+        _setter("function_id", function_id)
+        _setter("headers", headers)
+        _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
+        _setter("read_timeout_in_seconds", read_timeout_in_seconds)
+        _setter("send_timeout_in_seconds", send_timeout_in_seconds)
+        _setter("status", status)
+        _setter("type", type)
+        _setter("url", url)
 
     @property
     @pulumi.getter
@@ -10624,8 +14706,25 @@ class GetApiDeploymentSpecificationRouteBackendRoutingBackendBackendHeaderResult
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param str value: Value of the header.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetApiDeploymentSpecificationRouteBackendRoutingBackendBackendHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -10659,11 +14758,42 @@ class GetApiDeploymentSpecificationRouteBackendRoutingBackendKeyResult(dict):
         :param str type: Type of the Response Cache Store Policy.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "expression", expression)
-        pulumi.set(__self__, "is_default", is_default)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "values", values)
+        GetApiDeploymentSpecificationRouteBackendRoutingBackendKeyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            expression=expression,
+            is_default=is_default,
+            name=name,
+            type=type,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             expression: Optional[str] = None,
+             is_default: Optional[bool] = None,
+             name: Optional[str] = None,
+             type: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if expression is None:
+            raise TypeError("Missing 'expression' argument")
+        if is_default is None and 'isDefault' in kwargs:
+            is_default = kwargs['isDefault']
+        if is_default is None:
+            raise TypeError("Missing 'is_default' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("expression", expression)
+        _setter("is_default", is_default)
+        _setter("name", name)
+        _setter("type", type)
+        _setter("values", values)
 
     @property
     @pulumi.getter
@@ -10715,8 +14845,25 @@ class GetApiDeploymentSpecificationRouteBackendSelectionSourceResult(dict):
         :param str selector: String describing the context variable used as selector.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "selector", selector)
-        pulumi.set(__self__, "type", type)
+        GetApiDeploymentSpecificationRouteBackendSelectionSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            selector=selector,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             selector: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if selector is None:
+            raise TypeError("Missing 'selector' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("selector", selector)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -10744,8 +14891,29 @@ class GetApiDeploymentSpecificationRouteLoggingPolicyResult(dict):
         :param Sequence['GetApiDeploymentSpecificationRouteLoggingPolicyAccessLogArgs'] access_logs: Configures the logging policies for the access logs of an API Deployment.
         :param Sequence['GetApiDeploymentSpecificationRouteLoggingPolicyExecutionLogArgs'] execution_logs: Configures the logging policies for the execution logs of an API Deployment.
         """
-        pulumi.set(__self__, "access_logs", access_logs)
-        pulumi.set(__self__, "execution_logs", execution_logs)
+        GetApiDeploymentSpecificationRouteLoggingPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            access_logs=access_logs,
+            execution_logs=execution_logs,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             access_logs: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteLoggingPolicyAccessLogResult']] = None,
+             execution_logs: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteLoggingPolicyExecutionLogResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if access_logs is None and 'accessLogs' in kwargs:
+            access_logs = kwargs['accessLogs']
+        if access_logs is None:
+            raise TypeError("Missing 'access_logs' argument")
+        if execution_logs is None and 'executionLogs' in kwargs:
+            execution_logs = kwargs['executionLogs']
+        if execution_logs is None:
+            raise TypeError("Missing 'execution_logs' argument")
+
+        _setter("access_logs", access_logs)
+        _setter("execution_logs", execution_logs)
 
     @property
     @pulumi.getter(name="accessLogs")
@@ -10771,7 +14939,22 @@ class GetApiDeploymentSpecificationRouteLoggingPolicyAccessLogResult(dict):
         """
         :param bool is_enabled: Whether this policy is currently enabled.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        GetApiDeploymentSpecificationRouteLoggingPolicyAccessLogResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+
+        _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -10791,8 +14974,29 @@ class GetApiDeploymentSpecificationRouteLoggingPolicyExecutionLogResult(dict):
         :param bool is_enabled: Whether this policy is currently enabled.
         :param str log_level: Specifies the log level used to control logging output of execution logs. Enabling logging at a given level also enables logging at all higher levels.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "log_level", log_level)
+        GetApiDeploymentSpecificationRouteLoggingPolicyExecutionLogResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+            log_level=log_level,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: Optional[bool] = None,
+             log_level: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if log_level is None and 'logLevel' in kwargs:
+            log_level = kwargs['logLevel']
+        if log_level is None:
+            raise TypeError("Missing 'log_level' argument")
+
+        _setter("is_enabled", is_enabled)
+        _setter("log_level", log_level)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -10832,14 +15036,67 @@ class GetApiDeploymentSpecificationRouteRequestPolicyResult(dict):
         :param Sequence['GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidationArgs'] query_parameter_validations: Validate the URL query parameters on the incoming API requests on a specific route.
         :param Sequence['GetApiDeploymentSpecificationRouteRequestPolicyResponseCacheLookupArgs'] response_cache_lookups: Base policy for Response Cache lookup.
         """
-        pulumi.set(__self__, "authorizations", authorizations)
-        pulumi.set(__self__, "body_validations", body_validations)
-        pulumi.set(__self__, "cors", cors)
-        pulumi.set(__self__, "header_transformations", header_transformations)
-        pulumi.set(__self__, "header_validations", header_validations)
-        pulumi.set(__self__, "query_parameter_transformations", query_parameter_transformations)
-        pulumi.set(__self__, "query_parameter_validations", query_parameter_validations)
-        pulumi.set(__self__, "response_cache_lookups", response_cache_lookups)
+        GetApiDeploymentSpecificationRouteRequestPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            authorizations=authorizations,
+            body_validations=body_validations,
+            cors=cors,
+            header_transformations=header_transformations,
+            header_validations=header_validations,
+            query_parameter_transformations=query_parameter_transformations,
+            query_parameter_validations=query_parameter_validations,
+            response_cache_lookups=response_cache_lookups,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             authorizations: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyAuthorizationResult']] = None,
+             body_validations: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyBodyValidationResult']] = None,
+             cors: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyCorResult']] = None,
+             header_transformations: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationResult']] = None,
+             header_validations: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidationResult']] = None,
+             query_parameter_transformations: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationResult']] = None,
+             query_parameter_validations: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidationResult']] = None,
+             response_cache_lookups: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyResponseCacheLookupResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if authorizations is None:
+            raise TypeError("Missing 'authorizations' argument")
+        if body_validations is None and 'bodyValidations' in kwargs:
+            body_validations = kwargs['bodyValidations']
+        if body_validations is None:
+            raise TypeError("Missing 'body_validations' argument")
+        if cors is None:
+            raise TypeError("Missing 'cors' argument")
+        if header_transformations is None and 'headerTransformations' in kwargs:
+            header_transformations = kwargs['headerTransformations']
+        if header_transformations is None:
+            raise TypeError("Missing 'header_transformations' argument")
+        if header_validations is None and 'headerValidations' in kwargs:
+            header_validations = kwargs['headerValidations']
+        if header_validations is None:
+            raise TypeError("Missing 'header_validations' argument")
+        if query_parameter_transformations is None and 'queryParameterTransformations' in kwargs:
+            query_parameter_transformations = kwargs['queryParameterTransformations']
+        if query_parameter_transformations is None:
+            raise TypeError("Missing 'query_parameter_transformations' argument")
+        if query_parameter_validations is None and 'queryParameterValidations' in kwargs:
+            query_parameter_validations = kwargs['queryParameterValidations']
+        if query_parameter_validations is None:
+            raise TypeError("Missing 'query_parameter_validations' argument")
+        if response_cache_lookups is None and 'responseCacheLookups' in kwargs:
+            response_cache_lookups = kwargs['responseCacheLookups']
+        if response_cache_lookups is None:
+            raise TypeError("Missing 'response_cache_lookups' argument")
+
+        _setter("authorizations", authorizations)
+        _setter("body_validations", body_validations)
+        _setter("cors", cors)
+        _setter("header_transformations", header_transformations)
+        _setter("header_validations", header_validations)
+        _setter("query_parameter_transformations", query_parameter_transformations)
+        _setter("query_parameter_validations", query_parameter_validations)
+        _setter("response_cache_lookups", response_cache_lookups)
 
     @property
     @pulumi.getter
@@ -10915,8 +15172,27 @@ class GetApiDeploymentSpecificationRouteRequestPolicyAuthorizationResult(dict):
         :param Sequence[str] allowed_scopes: A user whose scope includes any of these access ranges is allowed on this route. Access ranges are case-sensitive.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "allowed_scopes", allowed_scopes)
-        pulumi.set(__self__, "type", type)
+        GetApiDeploymentSpecificationRouteRequestPolicyAuthorizationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_scopes=allowed_scopes,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_scopes: Optional[Sequence[str]] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if allowed_scopes is None and 'allowedScopes' in kwargs:
+            allowed_scopes = kwargs['allowedScopes']
+        if allowed_scopes is None:
+            raise TypeError("Missing 'allowed_scopes' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("allowed_scopes", allowed_scopes)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="allowedScopes")
@@ -10946,9 +15222,32 @@ class GetApiDeploymentSpecificationRouteRequestPolicyBodyValidationResult(dict):
         :param bool required: Determines if the parameter is required in the request.
         :param str validation_mode: Validation behavior mode.
         """
-        pulumi.set(__self__, "contents", contents)
-        pulumi.set(__self__, "required", required)
-        pulumi.set(__self__, "validation_mode", validation_mode)
+        GetApiDeploymentSpecificationRouteRequestPolicyBodyValidationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            contents=contents,
+            required=required,
+            validation_mode=validation_mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             contents: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyBodyValidationContentResult']] = None,
+             required: Optional[bool] = None,
+             validation_mode: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if contents is None:
+            raise TypeError("Missing 'contents' argument")
+        if required is None:
+            raise TypeError("Missing 'required' argument")
+        if validation_mode is None and 'validationMode' in kwargs:
+            validation_mode = kwargs['validationMode']
+        if validation_mode is None:
+            raise TypeError("Missing 'validation_mode' argument")
+
+        _setter("contents", contents)
+        _setter("required", required)
+        _setter("validation_mode", validation_mode)
 
     @property
     @pulumi.getter
@@ -10984,8 +15283,29 @@ class GetApiDeploymentSpecificationRouteRequestPolicyBodyValidationContentResult
         :param str media_type: The media type is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following schema
         :param str validation_type: Validation type defines the content validation method.
         """
-        pulumi.set(__self__, "media_type", media_type)
-        pulumi.set(__self__, "validation_type", validation_type)
+        GetApiDeploymentSpecificationRouteRequestPolicyBodyValidationContentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            media_type=media_type,
+            validation_type=validation_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             media_type: Optional[str] = None,
+             validation_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if media_type is None and 'mediaType' in kwargs:
+            media_type = kwargs['mediaType']
+        if media_type is None:
+            raise TypeError("Missing 'media_type' argument")
+        if validation_type is None and 'validationType' in kwargs:
+            validation_type = kwargs['validationType']
+        if validation_type is None:
+            raise TypeError("Missing 'validation_type' argument")
+
+        _setter("media_type", media_type)
+        _setter("validation_type", validation_type)
 
     @property
     @pulumi.getter(name="mediaType")
@@ -11021,12 +15341,57 @@ class GetApiDeploymentSpecificationRouteRequestPolicyCorResult(dict):
         :param bool is_allow_credentials_enabled: Whether to send the Access-Control-Allow-Credentials header to allow CORS requests with cookies.
         :param int max_age_in_seconds: The time in seconds for the client to cache preflight responses. This is sent as the Access-Control-Max-Age if greater than 0.
         """
-        pulumi.set(__self__, "allowed_headers", allowed_headers)
-        pulumi.set(__self__, "allowed_methods", allowed_methods)
-        pulumi.set(__self__, "allowed_origins", allowed_origins)
-        pulumi.set(__self__, "exposed_headers", exposed_headers)
-        pulumi.set(__self__, "is_allow_credentials_enabled", is_allow_credentials_enabled)
-        pulumi.set(__self__, "max_age_in_seconds", max_age_in_seconds)
+        GetApiDeploymentSpecificationRouteRequestPolicyCorResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_headers=allowed_headers,
+            allowed_methods=allowed_methods,
+            allowed_origins=allowed_origins,
+            exposed_headers=exposed_headers,
+            is_allow_credentials_enabled=is_allow_credentials_enabled,
+            max_age_in_seconds=max_age_in_seconds,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_headers: Optional[Sequence[str]] = None,
+             allowed_methods: Optional[Sequence[str]] = None,
+             allowed_origins: Optional[Sequence[str]] = None,
+             exposed_headers: Optional[Sequence[str]] = None,
+             is_allow_credentials_enabled: Optional[bool] = None,
+             max_age_in_seconds: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if allowed_headers is None and 'allowedHeaders' in kwargs:
+            allowed_headers = kwargs['allowedHeaders']
+        if allowed_headers is None:
+            raise TypeError("Missing 'allowed_headers' argument")
+        if allowed_methods is None and 'allowedMethods' in kwargs:
+            allowed_methods = kwargs['allowedMethods']
+        if allowed_methods is None:
+            raise TypeError("Missing 'allowed_methods' argument")
+        if allowed_origins is None and 'allowedOrigins' in kwargs:
+            allowed_origins = kwargs['allowedOrigins']
+        if allowed_origins is None:
+            raise TypeError("Missing 'allowed_origins' argument")
+        if exposed_headers is None and 'exposedHeaders' in kwargs:
+            exposed_headers = kwargs['exposedHeaders']
+        if exposed_headers is None:
+            raise TypeError("Missing 'exposed_headers' argument")
+        if is_allow_credentials_enabled is None and 'isAllowCredentialsEnabled' in kwargs:
+            is_allow_credentials_enabled = kwargs['isAllowCredentialsEnabled']
+        if is_allow_credentials_enabled is None:
+            raise TypeError("Missing 'is_allow_credentials_enabled' argument")
+        if max_age_in_seconds is None and 'maxAgeInSeconds' in kwargs:
+            max_age_in_seconds = kwargs['maxAgeInSeconds']
+        if max_age_in_seconds is None:
+            raise TypeError("Missing 'max_age_in_seconds' argument")
+
+        _setter("allowed_headers", allowed_headers)
+        _setter("allowed_methods", allowed_methods)
+        _setter("allowed_origins", allowed_origins)
+        _setter("exposed_headers", exposed_headers)
+        _setter("is_allow_credentials_enabled", is_allow_credentials_enabled)
+        _setter("max_age_in_seconds", max_age_in_seconds)
 
     @property
     @pulumi.getter(name="allowedHeaders")
@@ -11088,9 +15453,36 @@ class GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationResult(
         :param Sequence['GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderArgs'] rename_headers: Rename HTTP headers as they pass through the gateway.
         :param Sequence['GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeaderArgs'] set_headers: Set HTTP headers as they pass through the gateway.
         """
-        pulumi.set(__self__, "filter_headers", filter_headers)
-        pulumi.set(__self__, "rename_headers", rename_headers)
-        pulumi.set(__self__, "set_headers", set_headers)
+        GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            filter_headers=filter_headers,
+            rename_headers=rename_headers,
+            set_headers=set_headers,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             filter_headers: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderResult']] = None,
+             rename_headers: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderResult']] = None,
+             set_headers: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeaderResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if filter_headers is None and 'filterHeaders' in kwargs:
+            filter_headers = kwargs['filterHeaders']
+        if filter_headers is None:
+            raise TypeError("Missing 'filter_headers' argument")
+        if rename_headers is None and 'renameHeaders' in kwargs:
+            rename_headers = kwargs['renameHeaders']
+        if rename_headers is None:
+            raise TypeError("Missing 'rename_headers' argument")
+        if set_headers is None and 'setHeaders' in kwargs:
+            set_headers = kwargs['setHeaders']
+        if set_headers is None:
+            raise TypeError("Missing 'set_headers' argument")
+
+        _setter("filter_headers", filter_headers)
+        _setter("rename_headers", rename_headers)
+        _setter("set_headers", set_headers)
 
     @property
     @pulumi.getter(name="filterHeaders")
@@ -11126,8 +15518,25 @@ class GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterH
         :param Sequence['GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItemArgs'] items: The list of headers.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "type", type)
+        GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItemResult']] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("items", items)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -11153,7 +15562,20 @@ class GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterH
         """
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "name", name)
+        GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -11171,7 +15593,20 @@ class GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameH
         """
         :param Sequence['GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderItemArgs'] items: The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -11191,8 +15626,27 @@ class GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameH
         :param str from_: The original case-insensitive name of the header.  This name must be unique across transformation policies.
         :param str to: The new name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "from_", from_)
-        pulumi.set(__self__, "to", to)
+        GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            from_=from_,
+            to=to,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             from_: Optional[str] = None,
+             to: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if from_ is None and 'from' in kwargs:
+            from_ = kwargs['from']
+        if from_ is None:
+            raise TypeError("Missing 'from_' argument")
+        if to is None:
+            raise TypeError("Missing 'to' argument")
+
+        _setter("from_", from_)
+        _setter("to", to)
 
     @property
     @pulumi.getter(name="from")
@@ -11218,7 +15672,20 @@ class GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHead
         """
         :param Sequence['GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeaderItemArgs'] items: The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeaderItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -11240,9 +15707,32 @@ class GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHead
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "if_exists", if_exists)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            if_exists=if_exists,
+            name=name,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             if_exists: Optional[str] = None,
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if if_exists is None and 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+        if if_exists is None:
+            raise TypeError("Missing 'if_exists' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("if_exists", if_exists)
+        _setter("name", name)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="ifExists")
@@ -11277,8 +15767,27 @@ class GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidationResult(dict
         """
         :param str validation_mode: Validation behavior mode.
         """
-        pulumi.set(__self__, "headers", headers)
-        pulumi.set(__self__, "validation_mode", validation_mode)
+        GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            headers=headers,
+            validation_mode=validation_mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             headers: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidationHeaderResult']] = None,
+             validation_mode: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if headers is None:
+            raise TypeError("Missing 'headers' argument")
+        if validation_mode is None and 'validationMode' in kwargs:
+            validation_mode = kwargs['validationMode']
+        if validation_mode is None:
+            raise TypeError("Missing 'validation_mode' argument")
+
+        _setter("headers", headers)
+        _setter("validation_mode", validation_mode)
 
     @property
     @pulumi.getter
@@ -11303,8 +15812,25 @@ class GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidationHeaderResul
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param bool required: Determines if the parameter is required in the request.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "required", required)
+        GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidationHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            required=required,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             required: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if required is None:
+            raise TypeError("Missing 'required' argument")
+
+        _setter("name", name)
+        _setter("required", required)
 
     @property
     @pulumi.getter
@@ -11334,9 +15860,36 @@ class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformatio
         :param Sequence['GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterArgs'] rename_query_parameters: Rename parameters on the query string as they pass through the gateway.
         :param Sequence['GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterArgs'] set_query_parameters: Set parameters on the query string as they pass through the gateway.
         """
-        pulumi.set(__self__, "filter_query_parameters", filter_query_parameters)
-        pulumi.set(__self__, "rename_query_parameters", rename_query_parameters)
-        pulumi.set(__self__, "set_query_parameters", set_query_parameters)
+        GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            filter_query_parameters=filter_query_parameters,
+            rename_query_parameters=rename_query_parameters,
+            set_query_parameters=set_query_parameters,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             filter_query_parameters: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameterResult']] = None,
+             rename_query_parameters: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterResult']] = None,
+             set_query_parameters: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if filter_query_parameters is None and 'filterQueryParameters' in kwargs:
+            filter_query_parameters = kwargs['filterQueryParameters']
+        if filter_query_parameters is None:
+            raise TypeError("Missing 'filter_query_parameters' argument")
+        if rename_query_parameters is None and 'renameQueryParameters' in kwargs:
+            rename_query_parameters = kwargs['renameQueryParameters']
+        if rename_query_parameters is None:
+            raise TypeError("Missing 'rename_query_parameters' argument")
+        if set_query_parameters is None and 'setQueryParameters' in kwargs:
+            set_query_parameters = kwargs['setQueryParameters']
+        if set_query_parameters is None:
+            raise TypeError("Missing 'set_query_parameters' argument")
+
+        _setter("filter_query_parameters", filter_query_parameters)
+        _setter("rename_query_parameters", rename_query_parameters)
+        _setter("set_query_parameters", set_query_parameters)
 
     @property
     @pulumi.getter(name="filterQueryParameters")
@@ -11372,8 +15925,25 @@ class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformatio
         :param Sequence['GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameterItemArgs'] items: The list of headers.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "type", type)
+        GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameterItemResult']] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("items", items)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -11399,7 +15969,20 @@ class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformatio
         """
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "name", name)
+        GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameterItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -11417,7 +16000,20 @@ class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformatio
         """
         :param Sequence['GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItemArgs'] items: The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -11437,8 +16033,27 @@ class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformatio
         :param str from_: The original case-insensitive name of the header.  This name must be unique across transformation policies.
         :param str to: The new name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "from_", from_)
-        pulumi.set(__self__, "to", to)
+        GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            from_=from_,
+            to=to,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             from_: Optional[str] = None,
+             to: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if from_ is None and 'from' in kwargs:
+            from_ = kwargs['from']
+        if from_ is None:
+            raise TypeError("Missing 'from_' argument")
+        if to is None:
+            raise TypeError("Missing 'to' argument")
+
+        _setter("from_", from_)
+        _setter("to", to)
 
     @property
     @pulumi.getter(name="from")
@@ -11464,7 +16079,20 @@ class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformatio
         """
         :param Sequence['GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterItemArgs'] items: The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -11486,9 +16114,32 @@ class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformatio
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "if_exists", if_exists)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            if_exists=if_exists,
+            name=name,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             if_exists: Optional[str] = None,
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if if_exists is None and 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+        if if_exists is None:
+            raise TypeError("Missing 'if_exists' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("if_exists", if_exists)
+        _setter("name", name)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="ifExists")
@@ -11523,8 +16174,27 @@ class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidationRes
         """
         :param str validation_mode: Validation behavior mode.
         """
-        pulumi.set(__self__, "parameters", parameters)
-        pulumi.set(__self__, "validation_mode", validation_mode)
+        GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            parameters=parameters,
+            validation_mode=validation_mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             parameters: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidationParameterResult']] = None,
+             validation_mode: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if parameters is None:
+            raise TypeError("Missing 'parameters' argument")
+        if validation_mode is None and 'validationMode' in kwargs:
+            validation_mode = kwargs['validationMode']
+        if validation_mode is None:
+            raise TypeError("Missing 'validation_mode' argument")
+
+        _setter("parameters", parameters)
+        _setter("validation_mode", validation_mode)
 
     @property
     @pulumi.getter
@@ -11549,8 +16219,25 @@ class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidationPar
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param bool required: Determines if the parameter is required in the request.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "required", required)
+        GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidationParameterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            required=required,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             required: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if required is None:
+            raise TypeError("Missing 'required' argument")
+
+        _setter("name", name)
+        _setter("required", required)
 
     @property
     @pulumi.getter
@@ -11582,10 +16269,41 @@ class GetApiDeploymentSpecificationRouteRequestPolicyResponseCacheLookupResult(d
         :param bool is_private_caching_enabled: Set true to allow caching responses where the request has an Authorization header. Ensure you have configured your  cache key additions to get the level of isolation across authenticated requests that you require.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "cache_key_additions", cache_key_additions)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "is_private_caching_enabled", is_private_caching_enabled)
-        pulumi.set(__self__, "type", type)
+        GetApiDeploymentSpecificationRouteRequestPolicyResponseCacheLookupResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cache_key_additions=cache_key_additions,
+            is_enabled=is_enabled,
+            is_private_caching_enabled=is_private_caching_enabled,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cache_key_additions: Optional[Sequence[str]] = None,
+             is_enabled: Optional[bool] = None,
+             is_private_caching_enabled: Optional[bool] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if cache_key_additions is None and 'cacheKeyAdditions' in kwargs:
+            cache_key_additions = kwargs['cacheKeyAdditions']
+        if cache_key_additions is None:
+            raise TypeError("Missing 'cache_key_additions' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if is_private_caching_enabled is None and 'isPrivateCachingEnabled' in kwargs:
+            is_private_caching_enabled = kwargs['isPrivateCachingEnabled']
+        if is_private_caching_enabled is None:
+            raise TypeError("Missing 'is_private_caching_enabled' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("cache_key_additions", cache_key_additions)
+        _setter("is_enabled", is_enabled)
+        _setter("is_private_caching_enabled", is_private_caching_enabled)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="cacheKeyAdditions")
@@ -11629,8 +16347,29 @@ class GetApiDeploymentSpecificationRouteResponsePolicyResult(dict):
         :param Sequence['GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationArgs'] header_transformations: A set of transformations to apply to HTTP headers that pass through the gateway.
         :param Sequence['GetApiDeploymentSpecificationRouteResponsePolicyResponseCacheStoreArgs'] response_cache_stores: Base policy for how a response from a backend is cached in the Response Cache.
         """
-        pulumi.set(__self__, "header_transformations", header_transformations)
-        pulumi.set(__self__, "response_cache_stores", response_cache_stores)
+        GetApiDeploymentSpecificationRouteResponsePolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            header_transformations=header_transformations,
+            response_cache_stores=response_cache_stores,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             header_transformations: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationResult']] = None,
+             response_cache_stores: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteResponsePolicyResponseCacheStoreResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if header_transformations is None and 'headerTransformations' in kwargs:
+            header_transformations = kwargs['headerTransformations']
+        if header_transformations is None:
+            raise TypeError("Missing 'header_transformations' argument")
+        if response_cache_stores is None and 'responseCacheStores' in kwargs:
+            response_cache_stores = kwargs['responseCacheStores']
+        if response_cache_stores is None:
+            raise TypeError("Missing 'response_cache_stores' argument")
+
+        _setter("header_transformations", header_transformations)
+        _setter("response_cache_stores", response_cache_stores)
 
     @property
     @pulumi.getter(name="headerTransformations")
@@ -11660,9 +16399,36 @@ class GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationResult
         :param Sequence['GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderArgs'] rename_headers: Rename HTTP headers as they pass through the gateway.
         :param Sequence['GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderArgs'] set_headers: Set HTTP headers as they pass through the gateway.
         """
-        pulumi.set(__self__, "filter_headers", filter_headers)
-        pulumi.set(__self__, "rename_headers", rename_headers)
-        pulumi.set(__self__, "set_headers", set_headers)
+        GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            filter_headers=filter_headers,
+            rename_headers=rename_headers,
+            set_headers=set_headers,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             filter_headers: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationFilterHeaderResult']] = None,
+             rename_headers: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderResult']] = None,
+             set_headers: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if filter_headers is None and 'filterHeaders' in kwargs:
+            filter_headers = kwargs['filterHeaders']
+        if filter_headers is None:
+            raise TypeError("Missing 'filter_headers' argument")
+        if rename_headers is None and 'renameHeaders' in kwargs:
+            rename_headers = kwargs['renameHeaders']
+        if rename_headers is None:
+            raise TypeError("Missing 'rename_headers' argument")
+        if set_headers is None and 'setHeaders' in kwargs:
+            set_headers = kwargs['setHeaders']
+        if set_headers is None:
+            raise TypeError("Missing 'set_headers' argument")
+
+        _setter("filter_headers", filter_headers)
+        _setter("rename_headers", rename_headers)
+        _setter("set_headers", set_headers)
 
     @property
     @pulumi.getter(name="filterHeaders")
@@ -11698,8 +16464,25 @@ class GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationFilter
         :param Sequence['GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationFilterHeaderItemArgs'] items: The list of headers.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "type", type)
+        GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationFilterHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationFilterHeaderItemResult']] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("items", items)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -11725,7 +16508,20 @@ class GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationFilter
         """
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "name", name)
+        GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationFilterHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -11743,7 +16539,20 @@ class GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationRename
         """
         :param Sequence['GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderItemArgs'] items: The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -11763,8 +16572,27 @@ class GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationRename
         :param str from_: The original case-insensitive name of the header.  This name must be unique across transformation policies.
         :param str to: The new name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "from_", from_)
-        pulumi.set(__self__, "to", to)
+        GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            from_=from_,
+            to=to,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             from_: Optional[str] = None,
+             to: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if from_ is None and 'from' in kwargs:
+            from_ = kwargs['from']
+        if from_ is None:
+            raise TypeError("Missing 'from_' argument")
+        if to is None:
+            raise TypeError("Missing 'to' argument")
+
+        _setter("from_", from_)
+        _setter("to", to)
 
     @property
     @pulumi.getter(name="from")
@@ -11790,7 +16618,20 @@ class GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHea
         """
         :param Sequence['GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItemArgs'] items: The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -11812,9 +16653,32 @@ class GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHea
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "if_exists", if_exists)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            if_exists=if_exists,
+            name=name,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             if_exists: Optional[str] = None,
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if if_exists is None and 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+        if if_exists is None:
+            raise TypeError("Missing 'if_exists' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("if_exists", if_exists)
+        _setter("name", name)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="ifExists")
@@ -11850,8 +16714,27 @@ class GetApiDeploymentSpecificationRouteResponsePolicyResponseCacheStoreResult(d
         :param int time_to_live_in_seconds: Sets the number of seconds for a response from a backend being stored in the Response Cache before it expires.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "time_to_live_in_seconds", time_to_live_in_seconds)
-        pulumi.set(__self__, "type", type)
+        GetApiDeploymentSpecificationRouteResponsePolicyResponseCacheStoreResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_to_live_in_seconds=time_to_live_in_seconds,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_to_live_in_seconds: Optional[int] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if time_to_live_in_seconds is None and 'timeToLiveInSeconds' in kwargs:
+            time_to_live_in_seconds = kwargs['timeToLiveInSeconds']
+        if time_to_live_in_seconds is None:
+            raise TypeError("Missing 'time_to_live_in_seconds' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("time_to_live_in_seconds", time_to_live_in_seconds)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="timeToLiveInSeconds")
@@ -11879,8 +16762,25 @@ class GetApiValidationResultResult(dict):
         :param str name: Name of the validation.
         :param str result: Result of the validation.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "result", result)
+        GetApiValidationResultResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            result=result,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             result: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if result is None:
+            raise TypeError("Missing 'result' argument")
+
+        _setter("name", name)
+        _setter("result", result)
 
     @property
     @pulumi.getter
@@ -11910,9 +16810,30 @@ class GetApiValidationValidationResult(dict):
         :param str name: Name of the validation.
         :param str result: Result of the validation.
         """
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "result", result)
+        GetApiValidationValidationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            details=details,
+            name=name,
+            result=result,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             details: Optional[Sequence['outputs.GetApiValidationValidationDetailResult']] = None,
+             name: Optional[str] = None,
+             result: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if details is None:
+            raise TypeError("Missing 'details' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if result is None:
+            raise TypeError("Missing 'result' argument")
+
+        _setter("details", details)
+        _setter("name", name)
+        _setter("result", result)
 
     @property
     @pulumi.getter
@@ -11950,9 +16871,30 @@ class GetApiValidationValidationDetailResult(dict):
         :param str severity: Severity of the issue.
         :param Sequence['GetApiValidationValidationDetailSrcArgs'] srcs: Position of the issue in the specification file (line, column).
         """
-        pulumi.set(__self__, "msg", msg)
-        pulumi.set(__self__, "severity", severity)
-        pulumi.set(__self__, "srcs", srcs)
+        GetApiValidationValidationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            msg=msg,
+            severity=severity,
+            srcs=srcs,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             msg: Optional[str] = None,
+             severity: Optional[str] = None,
+             srcs: Optional[Sequence['outputs.GetApiValidationValidationDetailSrcResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if msg is None:
+            raise TypeError("Missing 'msg' argument")
+        if severity is None:
+            raise TypeError("Missing 'severity' argument")
+        if srcs is None:
+            raise TypeError("Missing 'srcs' argument")
+
+        _setter("msg", msg)
+        _setter("severity", severity)
+        _setter("srcs", srcs)
 
     @property
     @pulumi.getter
@@ -11983,7 +16925,20 @@ class GetApiValidationValidationDetailResult(dict):
 class GetApiValidationValidationDetailSrcResult(dict):
     def __init__(__self__, *,
                  items: Sequence[Any]):
-        pulumi.set(__self__, "items", items)
+        GetApiValidationValidationDetailSrcResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence[Any]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -11995,7 +16950,20 @@ class GetApiValidationValidationDetailSrcResult(dict):
 class GetApisApiCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetApisApiCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetApisApiCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetApisApiCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -12038,18 +17006,93 @@ class GetApisApiCollectionItemResult(dict):
         :param str time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
         :param Sequence['GetApisApiCollectionItemValidationResultArgs'] validation_results: Status of each feature available from the API.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "content", content)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "specification_type", specification_type)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "validation_results", validation_results)
+        GetApisApiCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            content=content,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            specification_type=specification_type,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+            validation_results=validation_results,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             content: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             specification_type: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             validation_results: Optional[Sequence['outputs.GetApisApiCollectionItemValidationResultResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if content is None:
+            raise TypeError("Missing 'content' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if specification_type is None and 'specificationType' in kwargs:
+            specification_type = kwargs['specificationType']
+        if specification_type is None:
+            raise TypeError("Missing 'specification_type' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if validation_results is None and 'validationResults' in kwargs:
+            validation_results = kwargs['validationResults']
+        if validation_results is None:
+            raise TypeError("Missing 'validation_results' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("content", content)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("specification_type", specification_type)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("validation_results", validation_results)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -12161,8 +17204,25 @@ class GetApisApiCollectionItemValidationResultResult(dict):
         :param str name: Name of the validation.
         :param str result: Result of the validation.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "result", result)
+        GetApisApiCollectionItemValidationResultResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            result=result,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             result: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if result is None:
+            raise TypeError("Missing 'result' argument")
+
+        _setter("name", name)
+        _setter("result", result)
 
     @property
     @pulumi.getter
@@ -12190,10 +17250,29 @@ class GetApisFilterResult(dict):
         """
         :param str name: Name of the validation.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetApisFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -12218,7 +17297,20 @@ class GetApisFilterResult(dict):
 class GetCertificatesCertificateCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetCertificatesCertificateCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetCertificatesCertificateCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetCertificatesCertificateCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -12258,20 +17350,107 @@ class GetCertificatesCertificateCollectionItemResult(dict):
         :param str time_not_valid_after: The date and time the certificate will expire.
         :param str time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "certificate", certificate)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "intermediate_certificates", intermediate_certificates)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "private_key", private_key)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subject_names", subject_names)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_not_valid_after", time_not_valid_after)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetCertificatesCertificateCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate=certificate,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            intermediate_certificates=intermediate_certificates,
+            lifecycle_details=lifecycle_details,
+            private_key=private_key,
+            state=state,
+            subject_names=subject_names,
+            time_created=time_created,
+            time_not_valid_after=time_not_valid_after,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             intermediate_certificates: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             private_key: Optional[str] = None,
+             state: Optional[str] = None,
+             subject_names: Optional[Sequence[str]] = None,
+             time_created: Optional[str] = None,
+             time_not_valid_after: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if certificate is None:
+            raise TypeError("Missing 'certificate' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if intermediate_certificates is None and 'intermediateCertificates' in kwargs:
+            intermediate_certificates = kwargs['intermediateCertificates']
+        if intermediate_certificates is None:
+            raise TypeError("Missing 'intermediate_certificates' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if private_key is None and 'privateKey' in kwargs:
+            private_key = kwargs['privateKey']
+        if private_key is None:
+            raise TypeError("Missing 'private_key' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if subject_names is None and 'subjectNames' in kwargs:
+            subject_names = kwargs['subjectNames']
+        if subject_names is None:
+            raise TypeError("Missing 'subject_names' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_not_valid_after is None and 'timeNotValidAfter' in kwargs:
+            time_not_valid_after = kwargs['timeNotValidAfter']
+        if time_not_valid_after is None:
+            raise TypeError("Missing 'time_not_valid_after' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+
+        _setter("certificate", certificate)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("intermediate_certificates", intermediate_certificates)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("private_key", private_key)
+        _setter("state", state)
+        _setter("subject_names", subject_names)
+        _setter("time_created", time_created)
+        _setter("time_not_valid_after", time_not_valid_after)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter
@@ -12389,10 +17568,29 @@ class GetCertificatesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetCertificatesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -12421,9 +17619,34 @@ class GetDeploymentSpecificationResult(dict):
         :param Sequence['GetDeploymentSpecificationRequestPolicyArgs'] request_policies: Behavior applied to any requests received by the API on this route.
         :param Sequence['GetDeploymentSpecificationRouteArgs'] routes: A list of routes that this API exposes.
         """
-        pulumi.set(__self__, "logging_policies", logging_policies)
-        pulumi.set(__self__, "request_policies", request_policies)
-        pulumi.set(__self__, "routes", routes)
+        GetDeploymentSpecificationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            logging_policies=logging_policies,
+            request_policies=request_policies,
+            routes=routes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             logging_policies: Optional[Sequence['outputs.GetDeploymentSpecificationLoggingPolicyResult']] = None,
+             request_policies: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyResult']] = None,
+             routes: Optional[Sequence['outputs.GetDeploymentSpecificationRouteResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if logging_policies is None and 'loggingPolicies' in kwargs:
+            logging_policies = kwargs['loggingPolicies']
+        if logging_policies is None:
+            raise TypeError("Missing 'logging_policies' argument")
+        if request_policies is None and 'requestPolicies' in kwargs:
+            request_policies = kwargs['requestPolicies']
+        if request_policies is None:
+            raise TypeError("Missing 'request_policies' argument")
+        if routes is None:
+            raise TypeError("Missing 'routes' argument")
+
+        _setter("logging_policies", logging_policies)
+        _setter("request_policies", request_policies)
+        _setter("routes", routes)
 
     @property
     @pulumi.getter(name="loggingPolicies")
@@ -12459,8 +17682,29 @@ class GetDeploymentSpecificationLoggingPolicyResult(dict):
         :param Sequence['GetDeploymentSpecificationLoggingPolicyAccessLogArgs'] access_logs: Configures the logging policies for the access logs of an API Deployment.
         :param Sequence['GetDeploymentSpecificationLoggingPolicyExecutionLogArgs'] execution_logs: Configures the logging policies for the execution logs of an API Deployment.
         """
-        pulumi.set(__self__, "access_logs", access_logs)
-        pulumi.set(__self__, "execution_logs", execution_logs)
+        GetDeploymentSpecificationLoggingPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            access_logs=access_logs,
+            execution_logs=execution_logs,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             access_logs: Optional[Sequence['outputs.GetDeploymentSpecificationLoggingPolicyAccessLogResult']] = None,
+             execution_logs: Optional[Sequence['outputs.GetDeploymentSpecificationLoggingPolicyExecutionLogResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if access_logs is None and 'accessLogs' in kwargs:
+            access_logs = kwargs['accessLogs']
+        if access_logs is None:
+            raise TypeError("Missing 'access_logs' argument")
+        if execution_logs is None and 'executionLogs' in kwargs:
+            execution_logs = kwargs['executionLogs']
+        if execution_logs is None:
+            raise TypeError("Missing 'execution_logs' argument")
+
+        _setter("access_logs", access_logs)
+        _setter("execution_logs", execution_logs)
 
     @property
     @pulumi.getter(name="accessLogs")
@@ -12486,7 +17730,22 @@ class GetDeploymentSpecificationLoggingPolicyAccessLogResult(dict):
         """
         :param bool is_enabled: Whether this policy is currently enabled.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        GetDeploymentSpecificationLoggingPolicyAccessLogResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+
+        _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -12506,8 +17765,29 @@ class GetDeploymentSpecificationLoggingPolicyExecutionLogResult(dict):
         :param bool is_enabled: Whether this policy is currently enabled.
         :param str log_level: Specifies the log level used to control logging output of execution logs. Enabling logging at a given level also enables logging at all higher levels.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "log_level", log_level)
+        GetDeploymentSpecificationLoggingPolicyExecutionLogResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+            log_level=log_level,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: Optional[bool] = None,
+             log_level: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if log_level is None and 'logLevel' in kwargs:
+            log_level = kwargs['logLevel']
+        if log_level is None:
+            raise TypeError("Missing 'log_level' argument")
+
+        _setter("is_enabled", is_enabled)
+        _setter("log_level", log_level)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -12543,12 +17823,53 @@ class GetDeploymentSpecificationRequestPolicyResult(dict):
         :param Sequence['GetDeploymentSpecificationRequestPolicyRateLimitingArgs'] rate_limitings: Limit the number of requests that should be handled for the specified window using a specfic key.
         :param Sequence['GetDeploymentSpecificationRequestPolicyUsagePlanArgs'] usage_plans: Usage plan policies for this deployment
         """
-        pulumi.set(__self__, "authentications", authentications)
-        pulumi.set(__self__, "cors", cors)
-        pulumi.set(__self__, "dynamic_authentications", dynamic_authentications)
-        pulumi.set(__self__, "mutual_tls", mutual_tls)
-        pulumi.set(__self__, "rate_limitings", rate_limitings)
-        pulumi.set(__self__, "usage_plans", usage_plans)
+        GetDeploymentSpecificationRequestPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            authentications=authentications,
+            cors=cors,
+            dynamic_authentications=dynamic_authentications,
+            mutual_tls=mutual_tls,
+            rate_limitings=rate_limitings,
+            usage_plans=usage_plans,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             authentications: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationResult']] = None,
+             cors: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyCorResult']] = None,
+             dynamic_authentications: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationResult']] = None,
+             mutual_tls: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyMutualTlResult']] = None,
+             rate_limitings: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyRateLimitingResult']] = None,
+             usage_plans: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyUsagePlanResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if authentications is None:
+            raise TypeError("Missing 'authentications' argument")
+        if cors is None:
+            raise TypeError("Missing 'cors' argument")
+        if dynamic_authentications is None and 'dynamicAuthentications' in kwargs:
+            dynamic_authentications = kwargs['dynamicAuthentications']
+        if dynamic_authentications is None:
+            raise TypeError("Missing 'dynamic_authentications' argument")
+        if mutual_tls is None and 'mutualTls' in kwargs:
+            mutual_tls = kwargs['mutualTls']
+        if mutual_tls is None:
+            raise TypeError("Missing 'mutual_tls' argument")
+        if rate_limitings is None and 'rateLimitings' in kwargs:
+            rate_limitings = kwargs['rateLimitings']
+        if rate_limitings is None:
+            raise TypeError("Missing 'rate_limitings' argument")
+        if usage_plans is None and 'usagePlans' in kwargs:
+            usage_plans = kwargs['usagePlans']
+        if usage_plans is None:
+            raise TypeError("Missing 'usage_plans' argument")
+
+        _setter("authentications", authentications)
+        _setter("cors", cors)
+        _setter("dynamic_authentications", dynamic_authentications)
+        _setter("mutual_tls", mutual_tls)
+        _setter("rate_limitings", rate_limitings)
+        _setter("usage_plans", usage_plans)
 
     @property
     @pulumi.getter
@@ -12633,21 +17954,112 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationResult(dict):
         :param Sequence['GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyArgs'] validation_policies: Authentication Policies for the Token Authentication types.
         :param Sequence['GetDeploymentSpecificationRequestPolicyAuthenticationVerifyClaimArgs'] verify_claims: A list of claims which should be validated to consider the token valid.
         """
-        pulumi.set(__self__, "audiences", audiences)
-        pulumi.set(__self__, "cache_keys", cache_keys)
-        pulumi.set(__self__, "function_id", function_id)
-        pulumi.set(__self__, "is_anonymous_access_allowed", is_anonymous_access_allowed)
-        pulumi.set(__self__, "issuers", issuers)
-        pulumi.set(__self__, "max_clock_skew_in_seconds", max_clock_skew_in_seconds)
-        pulumi.set(__self__, "parameters", parameters)
-        pulumi.set(__self__, "public_keys", public_keys)
-        pulumi.set(__self__, "token_auth_scheme", token_auth_scheme)
-        pulumi.set(__self__, "token_header", token_header)
-        pulumi.set(__self__, "token_query_param", token_query_param)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "validation_failure_policies", validation_failure_policies)
-        pulumi.set(__self__, "validation_policies", validation_policies)
-        pulumi.set(__self__, "verify_claims", verify_claims)
+        GetDeploymentSpecificationRequestPolicyAuthenticationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audiences=audiences,
+            cache_keys=cache_keys,
+            function_id=function_id,
+            is_anonymous_access_allowed=is_anonymous_access_allowed,
+            issuers=issuers,
+            max_clock_skew_in_seconds=max_clock_skew_in_seconds,
+            parameters=parameters,
+            public_keys=public_keys,
+            token_auth_scheme=token_auth_scheme,
+            token_header=token_header,
+            token_query_param=token_query_param,
+            type=type,
+            validation_failure_policies=validation_failure_policies,
+            validation_policies=validation_policies,
+            verify_claims=verify_claims,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audiences: Optional[Sequence[str]] = None,
+             cache_keys: Optional[Sequence[str]] = None,
+             function_id: Optional[str] = None,
+             is_anonymous_access_allowed: Optional[bool] = None,
+             issuers: Optional[Sequence[str]] = None,
+             max_clock_skew_in_seconds: Optional[float] = None,
+             parameters: Optional[Mapping[str, Any]] = None,
+             public_keys: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationPublicKeyResult']] = None,
+             token_auth_scheme: Optional[str] = None,
+             token_header: Optional[str] = None,
+             token_query_param: Optional[str] = None,
+             type: Optional[str] = None,
+             validation_failure_policies: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResult']] = None,
+             validation_policies: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyResult']] = None,
+             verify_claims: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationVerifyClaimResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if audiences is None:
+            raise TypeError("Missing 'audiences' argument")
+        if cache_keys is None and 'cacheKeys' in kwargs:
+            cache_keys = kwargs['cacheKeys']
+        if cache_keys is None:
+            raise TypeError("Missing 'cache_keys' argument")
+        if function_id is None and 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if function_id is None:
+            raise TypeError("Missing 'function_id' argument")
+        if is_anonymous_access_allowed is None and 'isAnonymousAccessAllowed' in kwargs:
+            is_anonymous_access_allowed = kwargs['isAnonymousAccessAllowed']
+        if is_anonymous_access_allowed is None:
+            raise TypeError("Missing 'is_anonymous_access_allowed' argument")
+        if issuers is None:
+            raise TypeError("Missing 'issuers' argument")
+        if max_clock_skew_in_seconds is None and 'maxClockSkewInSeconds' in kwargs:
+            max_clock_skew_in_seconds = kwargs['maxClockSkewInSeconds']
+        if max_clock_skew_in_seconds is None:
+            raise TypeError("Missing 'max_clock_skew_in_seconds' argument")
+        if parameters is None:
+            raise TypeError("Missing 'parameters' argument")
+        if public_keys is None and 'publicKeys' in kwargs:
+            public_keys = kwargs['publicKeys']
+        if public_keys is None:
+            raise TypeError("Missing 'public_keys' argument")
+        if token_auth_scheme is None and 'tokenAuthScheme' in kwargs:
+            token_auth_scheme = kwargs['tokenAuthScheme']
+        if token_auth_scheme is None:
+            raise TypeError("Missing 'token_auth_scheme' argument")
+        if token_header is None and 'tokenHeader' in kwargs:
+            token_header = kwargs['tokenHeader']
+        if token_header is None:
+            raise TypeError("Missing 'token_header' argument")
+        if token_query_param is None and 'tokenQueryParam' in kwargs:
+            token_query_param = kwargs['tokenQueryParam']
+        if token_query_param is None:
+            raise TypeError("Missing 'token_query_param' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if validation_failure_policies is None and 'validationFailurePolicies' in kwargs:
+            validation_failure_policies = kwargs['validationFailurePolicies']
+        if validation_failure_policies is None:
+            raise TypeError("Missing 'validation_failure_policies' argument")
+        if validation_policies is None and 'validationPolicies' in kwargs:
+            validation_policies = kwargs['validationPolicies']
+        if validation_policies is None:
+            raise TypeError("Missing 'validation_policies' argument")
+        if verify_claims is None and 'verifyClaims' in kwargs:
+            verify_claims = kwargs['verifyClaims']
+        if verify_claims is None:
+            raise TypeError("Missing 'verify_claims' argument")
+
+        _setter("audiences", audiences)
+        _setter("cache_keys", cache_keys)
+        _setter("function_id", function_id)
+        _setter("is_anonymous_access_allowed", is_anonymous_access_allowed)
+        _setter("issuers", issuers)
+        _setter("max_clock_skew_in_seconds", max_clock_skew_in_seconds)
+        _setter("parameters", parameters)
+        _setter("public_keys", public_keys)
+        _setter("token_auth_scheme", token_auth_scheme)
+        _setter("token_header", token_header)
+        _setter("token_query_param", token_query_param)
+        _setter("type", type)
+        _setter("validation_failure_policies", validation_failure_policies)
+        _setter("validation_policies", validation_policies)
+        _setter("verify_claims", verify_claims)
 
     @property
     @pulumi.getter
@@ -12782,11 +18194,44 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationPublicKeyResult(dict)
         :param str type: Type of the Response Cache Store Policy.
         :param str uri: The uri from which to retrieve the key. It must be accessible without authentication.
         """
-        pulumi.set(__self__, "is_ssl_verify_disabled", is_ssl_verify_disabled)
-        pulumi.set(__self__, "keys", keys)
-        pulumi.set(__self__, "max_cache_duration_in_hours", max_cache_duration_in_hours)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "uri", uri)
+        GetDeploymentSpecificationRequestPolicyAuthenticationPublicKeyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_ssl_verify_disabled=is_ssl_verify_disabled,
+            keys=keys,
+            max_cache_duration_in_hours=max_cache_duration_in_hours,
+            type=type,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_ssl_verify_disabled: Optional[bool] = None,
+             keys: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationPublicKeyKeyResult']] = None,
+             max_cache_duration_in_hours: Optional[int] = None,
+             type: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if is_ssl_verify_disabled is None:
+            raise TypeError("Missing 'is_ssl_verify_disabled' argument")
+        if keys is None:
+            raise TypeError("Missing 'keys' argument")
+        if max_cache_duration_in_hours is None and 'maxCacheDurationInHours' in kwargs:
+            max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
+        if max_cache_duration_in_hours is None:
+            raise TypeError("Missing 'max_cache_duration_in_hours' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
+
+        _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
+        _setter("keys", keys)
+        _setter("max_cache_duration_in_hours", max_cache_duration_in_hours)
+        _setter("type", type)
+        _setter("uri", uri)
 
     @property
     @pulumi.getter(name="isSslVerifyDisabled")
@@ -12852,15 +18297,62 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationPublicKeyKeyResult(di
         :param str n: The base64 url encoded modulus of the RSA public key represented by this key.
         :param str use: The intended use of the public key.
         """
-        pulumi.set(__self__, "alg", alg)
-        pulumi.set(__self__, "e", e)
-        pulumi.set(__self__, "format", format)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "key_ops", key_ops)
-        pulumi.set(__self__, "kid", kid)
-        pulumi.set(__self__, "kty", kty)
-        pulumi.set(__self__, "n", n)
-        pulumi.set(__self__, "use", use)
+        GetDeploymentSpecificationRequestPolicyAuthenticationPublicKeyKeyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            alg=alg,
+            e=e,
+            format=format,
+            key=key,
+            key_ops=key_ops,
+            kid=kid,
+            kty=kty,
+            n=n,
+            use=use,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             alg: Optional[str] = None,
+             e: Optional[str] = None,
+             format: Optional[str] = None,
+             key: Optional[str] = None,
+             key_ops: Optional[Sequence[str]] = None,
+             kid: Optional[str] = None,
+             kty: Optional[str] = None,
+             n: Optional[str] = None,
+             use: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if alg is None:
+            raise TypeError("Missing 'alg' argument")
+        if e is None:
+            raise TypeError("Missing 'e' argument")
+        if format is None:
+            raise TypeError("Missing 'format' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if key_ops is None and 'keyOps' in kwargs:
+            key_ops = kwargs['keyOps']
+        if key_ops is None:
+            raise TypeError("Missing 'key_ops' argument")
+        if kid is None:
+            raise TypeError("Missing 'kid' argument")
+        if kty is None:
+            raise TypeError("Missing 'kty' argument")
+        if n is None:
+            raise TypeError("Missing 'n' argument")
+        if use is None:
+            raise TypeError("Missing 'use' argument")
+
+        _setter("alg", alg)
+        _setter("e", e)
+        _setter("format", format)
+        _setter("key", key)
+        _setter("key_ops", key_ops)
+        _setter("kid", kid)
+        _setter("kty", kty)
+        _setter("n", n)
+        _setter("use", use)
 
     @property
     @pulumi.getter
@@ -12968,20 +18460,109 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePoli
         :param bool use_cookies_for_session: Defines whether or not to use cookies for session maintenance.
         :param bool use_pkce: Defines whether or not to support PKCE.
         """
-        pulumi.set(__self__, "client_details", client_details)
-        pulumi.set(__self__, "fallback_redirect_path", fallback_redirect_path)
-        pulumi.set(__self__, "logout_path", logout_path)
-        pulumi.set(__self__, "max_expiry_duration_in_hours", max_expiry_duration_in_hours)
-        pulumi.set(__self__, "response_code", response_code)
-        pulumi.set(__self__, "response_header_transformations", response_header_transformations)
-        pulumi.set(__self__, "response_message", response_message)
-        pulumi.set(__self__, "response_type", response_type)
-        pulumi.set(__self__, "scopes", scopes)
-        pulumi.set(__self__, "source_uri_details", source_uri_details)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "use_cookies_for_intermediate_steps", use_cookies_for_intermediate_steps)
-        pulumi.set(__self__, "use_cookies_for_session", use_cookies_for_session)
-        pulumi.set(__self__, "use_pkce", use_pkce)
+        GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            client_details=client_details,
+            fallback_redirect_path=fallback_redirect_path,
+            logout_path=logout_path,
+            max_expiry_duration_in_hours=max_expiry_duration_in_hours,
+            response_code=response_code,
+            response_header_transformations=response_header_transformations,
+            response_message=response_message,
+            response_type=response_type,
+            scopes=scopes,
+            source_uri_details=source_uri_details,
+            type=type,
+            use_cookies_for_intermediate_steps=use_cookies_for_intermediate_steps,
+            use_cookies_for_session=use_cookies_for_session,
+            use_pkce=use_pkce,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             client_details: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyClientDetailResult']] = None,
+             fallback_redirect_path: Optional[str] = None,
+             logout_path: Optional[str] = None,
+             max_expiry_duration_in_hours: Optional[int] = None,
+             response_code: Optional[str] = None,
+             response_header_transformations: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationResult']] = None,
+             response_message: Optional[str] = None,
+             response_type: Optional[str] = None,
+             scopes: Optional[Sequence[str]] = None,
+             source_uri_details: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicySourceUriDetailResult']] = None,
+             type: Optional[str] = None,
+             use_cookies_for_intermediate_steps: Optional[bool] = None,
+             use_cookies_for_session: Optional[bool] = None,
+             use_pkce: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if client_details is None and 'clientDetails' in kwargs:
+            client_details = kwargs['clientDetails']
+        if client_details is None:
+            raise TypeError("Missing 'client_details' argument")
+        if fallback_redirect_path is None and 'fallbackRedirectPath' in kwargs:
+            fallback_redirect_path = kwargs['fallbackRedirectPath']
+        if fallback_redirect_path is None:
+            raise TypeError("Missing 'fallback_redirect_path' argument")
+        if logout_path is None and 'logoutPath' in kwargs:
+            logout_path = kwargs['logoutPath']
+        if logout_path is None:
+            raise TypeError("Missing 'logout_path' argument")
+        if max_expiry_duration_in_hours is None and 'maxExpiryDurationInHours' in kwargs:
+            max_expiry_duration_in_hours = kwargs['maxExpiryDurationInHours']
+        if max_expiry_duration_in_hours is None:
+            raise TypeError("Missing 'max_expiry_duration_in_hours' argument")
+        if response_code is None and 'responseCode' in kwargs:
+            response_code = kwargs['responseCode']
+        if response_code is None:
+            raise TypeError("Missing 'response_code' argument")
+        if response_header_transformations is None and 'responseHeaderTransformations' in kwargs:
+            response_header_transformations = kwargs['responseHeaderTransformations']
+        if response_header_transformations is None:
+            raise TypeError("Missing 'response_header_transformations' argument")
+        if response_message is None and 'responseMessage' in kwargs:
+            response_message = kwargs['responseMessage']
+        if response_message is None:
+            raise TypeError("Missing 'response_message' argument")
+        if response_type is None and 'responseType' in kwargs:
+            response_type = kwargs['responseType']
+        if response_type is None:
+            raise TypeError("Missing 'response_type' argument")
+        if scopes is None:
+            raise TypeError("Missing 'scopes' argument")
+        if source_uri_details is None and 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+        if source_uri_details is None:
+            raise TypeError("Missing 'source_uri_details' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if use_cookies_for_intermediate_steps is None and 'useCookiesForIntermediateSteps' in kwargs:
+            use_cookies_for_intermediate_steps = kwargs['useCookiesForIntermediateSteps']
+        if use_cookies_for_intermediate_steps is None:
+            raise TypeError("Missing 'use_cookies_for_intermediate_steps' argument")
+        if use_cookies_for_session is None and 'useCookiesForSession' in kwargs:
+            use_cookies_for_session = kwargs['useCookiesForSession']
+        if use_cookies_for_session is None:
+            raise TypeError("Missing 'use_cookies_for_session' argument")
+        if use_pkce is None and 'usePkce' in kwargs:
+            use_pkce = kwargs['usePkce']
+        if use_pkce is None:
+            raise TypeError("Missing 'use_pkce' argument")
+
+        _setter("client_details", client_details)
+        _setter("fallback_redirect_path", fallback_redirect_path)
+        _setter("logout_path", logout_path)
+        _setter("max_expiry_duration_in_hours", max_expiry_duration_in_hours)
+        _setter("response_code", response_code)
+        _setter("response_header_transformations", response_header_transformations)
+        _setter("response_message", response_message)
+        _setter("response_type", response_type)
+        _setter("scopes", scopes)
+        _setter("source_uri_details", source_uri_details)
+        _setter("type", type)
+        _setter("use_cookies_for_intermediate_steps", use_cookies_for_intermediate_steps)
+        _setter("use_cookies_for_session", use_cookies_for_session)
+        _setter("use_pkce", use_pkce)
 
     @property
     @pulumi.getter(name="clientDetails")
@@ -13109,10 +18690,41 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePoli
         :param str client_secret_version_number: The version number of the client secret to use.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "client_id", client_id)
-        pulumi.set(__self__, "client_secret_id", client_secret_id)
-        pulumi.set(__self__, "client_secret_version_number", client_secret_version_number)
-        pulumi.set(__self__, "type", type)
+        GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyClientDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            client_id=client_id,
+            client_secret_id=client_secret_id,
+            client_secret_version_number=client_secret_version_number,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             client_id: Optional[str] = None,
+             client_secret_id: Optional[str] = None,
+             client_secret_version_number: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if client_id is None and 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if client_id is None:
+            raise TypeError("Missing 'client_id' argument")
+        if client_secret_id is None and 'clientSecretId' in kwargs:
+            client_secret_id = kwargs['clientSecretId']
+        if client_secret_id is None:
+            raise TypeError("Missing 'client_secret_id' argument")
+        if client_secret_version_number is None and 'clientSecretVersionNumber' in kwargs:
+            client_secret_version_number = kwargs['clientSecretVersionNumber']
+        if client_secret_version_number is None:
+            raise TypeError("Missing 'client_secret_version_number' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("client_id", client_id)
+        _setter("client_secret_id", client_secret_id)
+        _setter("client_secret_version_number", client_secret_version_number)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="clientId")
@@ -13158,9 +18770,36 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePoli
         :param Sequence['GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeaderArgs'] rename_headers: Rename HTTP headers as they pass through the gateway.
         :param Sequence['GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderArgs'] set_headers: Set HTTP headers as they pass through the gateway.
         """
-        pulumi.set(__self__, "filter_headers", filter_headers)
-        pulumi.set(__self__, "rename_headers", rename_headers)
-        pulumi.set(__self__, "set_headers", set_headers)
+        GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            filter_headers=filter_headers,
+            rename_headers=rename_headers,
+            set_headers=set_headers,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             filter_headers: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeaderResult']] = None,
+             rename_headers: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeaderResult']] = None,
+             set_headers: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if filter_headers is None and 'filterHeaders' in kwargs:
+            filter_headers = kwargs['filterHeaders']
+        if filter_headers is None:
+            raise TypeError("Missing 'filter_headers' argument")
+        if rename_headers is None and 'renameHeaders' in kwargs:
+            rename_headers = kwargs['renameHeaders']
+        if rename_headers is None:
+            raise TypeError("Missing 'rename_headers' argument")
+        if set_headers is None and 'setHeaders' in kwargs:
+            set_headers = kwargs['setHeaders']
+        if set_headers is None:
+            raise TypeError("Missing 'set_headers' argument")
+
+        _setter("filter_headers", filter_headers)
+        _setter("rename_headers", rename_headers)
+        _setter("set_headers", set_headers)
 
     @property
     @pulumi.getter(name="filterHeaders")
@@ -13196,8 +18835,25 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePoli
         :param Sequence['GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeaderItemArgs'] items: The list of headers.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "type", type)
+        GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeaderItemResult']] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("items", items)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -13223,7 +18879,20 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePoli
         """
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "name", name)
+        GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -13241,7 +18910,20 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePoli
         """
         :param Sequence['GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeaderItemArgs'] items: The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeaderItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -13261,8 +18943,27 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePoli
         :param str from_: The original case-insensitive name of the header.  This name must be unique across transformation policies.
         :param str to: The new name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "from_", from_)
-        pulumi.set(__self__, "to", to)
+        GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            from_=from_,
+            to=to,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             from_: Optional[str] = None,
+             to: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if from_ is None and 'from' in kwargs:
+            from_ = kwargs['from']
+        if from_ is None:
+            raise TypeError("Missing 'from_' argument")
+        if to is None:
+            raise TypeError("Missing 'to' argument")
+
+        _setter("from_", from_)
+        _setter("to", to)
 
     @property
     @pulumi.getter(name="from")
@@ -13288,7 +18989,20 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePoli
         """
         :param Sequence['GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderItemArgs'] items: The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -13310,9 +19024,32 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePoli
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "if_exists", if_exists)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            if_exists=if_exists,
+            name=name,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             if_exists: Optional[str] = None,
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if if_exists is None and 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+        if if_exists is None:
+            raise TypeError("Missing 'if_exists' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("if_exists", if_exists)
+        _setter("name", name)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="ifExists")
@@ -13348,8 +19085,25 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePoli
         :param str type: Type of the Response Cache Store Policy.
         :param str uri: The uri from which to retrieve the key. It must be accessible without authentication.
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "uri", uri)
+        GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicySourceUriDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
+
+        _setter("type", type)
+        _setter("uri", uri)
 
     @property
     @pulumi.getter
@@ -13389,14 +19143,65 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyResul
         :param str type: Type of the Response Cache Store Policy.
         :param str uri: The uri from which to retrieve the key. It must be accessible without authentication.
         """
-        pulumi.set(__self__, "additional_validation_policies", additional_validation_policies)
-        pulumi.set(__self__, "client_details", client_details)
-        pulumi.set(__self__, "is_ssl_verify_disabled", is_ssl_verify_disabled)
-        pulumi.set(__self__, "keys", keys)
-        pulumi.set(__self__, "max_cache_duration_in_hours", max_cache_duration_in_hours)
-        pulumi.set(__self__, "source_uri_details", source_uri_details)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "uri", uri)
+        GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            additional_validation_policies=additional_validation_policies,
+            client_details=client_details,
+            is_ssl_verify_disabled=is_ssl_verify_disabled,
+            keys=keys,
+            max_cache_duration_in_hours=max_cache_duration_in_hours,
+            source_uri_details=source_uri_details,
+            type=type,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             additional_validation_policies: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicyResult']] = None,
+             client_details: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyClientDetailResult']] = None,
+             is_ssl_verify_disabled: Optional[bool] = None,
+             keys: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyKeyResult']] = None,
+             max_cache_duration_in_hours: Optional[int] = None,
+             source_uri_details: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicySourceUriDetailResult']] = None,
+             type: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if additional_validation_policies is None and 'additionalValidationPolicies' in kwargs:
+            additional_validation_policies = kwargs['additionalValidationPolicies']
+        if additional_validation_policies is None:
+            raise TypeError("Missing 'additional_validation_policies' argument")
+        if client_details is None and 'clientDetails' in kwargs:
+            client_details = kwargs['clientDetails']
+        if client_details is None:
+            raise TypeError("Missing 'client_details' argument")
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if is_ssl_verify_disabled is None:
+            raise TypeError("Missing 'is_ssl_verify_disabled' argument")
+        if keys is None:
+            raise TypeError("Missing 'keys' argument")
+        if max_cache_duration_in_hours is None and 'maxCacheDurationInHours' in kwargs:
+            max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
+        if max_cache_duration_in_hours is None:
+            raise TypeError("Missing 'max_cache_duration_in_hours' argument")
+        if source_uri_details is None and 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+        if source_uri_details is None:
+            raise TypeError("Missing 'source_uri_details' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
+
+        _setter("additional_validation_policies", additional_validation_policies)
+        _setter("client_details", client_details)
+        _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
+        _setter("keys", keys)
+        _setter("max_cache_duration_in_hours", max_cache_duration_in_hours)
+        _setter("source_uri_details", source_uri_details)
+        _setter("type", type)
+        _setter("uri", uri)
 
     @property
     @pulumi.getter(name="additionalValidationPolicies")
@@ -13474,9 +19279,32 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAddit
         :param Sequence[str] issuers: A list of parties that could have issued the token.
         :param Sequence['GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimArgs'] verify_claims: A list of claims which should be validated to consider the token valid.
         """
-        pulumi.set(__self__, "audiences", audiences)
-        pulumi.set(__self__, "issuers", issuers)
-        pulumi.set(__self__, "verify_claims", verify_claims)
+        GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audiences=audiences,
+            issuers=issuers,
+            verify_claims=verify_claims,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audiences: Optional[Sequence[str]] = None,
+             issuers: Optional[Sequence[str]] = None,
+             verify_claims: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if audiences is None:
+            raise TypeError("Missing 'audiences' argument")
+        if issuers is None:
+            raise TypeError("Missing 'issuers' argument")
+        if verify_claims is None and 'verifyClaims' in kwargs:
+            verify_claims = kwargs['verifyClaims']
+        if verify_claims is None:
+            raise TypeError("Missing 'verify_claims' argument")
+
+        _setter("audiences", audiences)
+        _setter("issuers", issuers)
+        _setter("verify_claims", verify_claims)
 
     @property
     @pulumi.getter
@@ -13514,9 +19342,32 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAddit
         :param str key: Information around the values for selector of an authentication/ routing branch.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "is_required", is_required)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "values", values)
+        GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_required=is_required,
+            key=key,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_required: Optional[bool] = None,
+             key: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_required is None and 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+        if is_required is None:
+            raise TypeError("Missing 'is_required' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("is_required", is_required)
+        _setter("key", key)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="isRequired")
@@ -13556,10 +19407,41 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyClien
         :param str client_secret_version_number: The version number of the client secret to use.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "client_id", client_id)
-        pulumi.set(__self__, "client_secret_id", client_secret_id)
-        pulumi.set(__self__, "client_secret_version_number", client_secret_version_number)
-        pulumi.set(__self__, "type", type)
+        GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyClientDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            client_id=client_id,
+            client_secret_id=client_secret_id,
+            client_secret_version_number=client_secret_version_number,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             client_id: Optional[str] = None,
+             client_secret_id: Optional[str] = None,
+             client_secret_version_number: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if client_id is None and 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if client_id is None:
+            raise TypeError("Missing 'client_id' argument")
+        if client_secret_id is None and 'clientSecretId' in kwargs:
+            client_secret_id = kwargs['clientSecretId']
+        if client_secret_id is None:
+            raise TypeError("Missing 'client_secret_id' argument")
+        if client_secret_version_number is None and 'clientSecretVersionNumber' in kwargs:
+            client_secret_version_number = kwargs['clientSecretVersionNumber']
+        if client_secret_version_number is None:
+            raise TypeError("Missing 'client_secret_version_number' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("client_id", client_id)
+        _setter("client_secret_id", client_secret_id)
+        _setter("client_secret_version_number", client_secret_version_number)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="clientId")
@@ -13617,15 +19499,62 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyKeyRe
         :param str n: The base64 url encoded modulus of the RSA public key represented by this key.
         :param str use: The intended use of the public key.
         """
-        pulumi.set(__self__, "alg", alg)
-        pulumi.set(__self__, "e", e)
-        pulumi.set(__self__, "format", format)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "key_ops", key_ops)
-        pulumi.set(__self__, "kid", kid)
-        pulumi.set(__self__, "kty", kty)
-        pulumi.set(__self__, "n", n)
-        pulumi.set(__self__, "use", use)
+        GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyKeyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            alg=alg,
+            e=e,
+            format=format,
+            key=key,
+            key_ops=key_ops,
+            kid=kid,
+            kty=kty,
+            n=n,
+            use=use,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             alg: Optional[str] = None,
+             e: Optional[str] = None,
+             format: Optional[str] = None,
+             key: Optional[str] = None,
+             key_ops: Optional[Sequence[str]] = None,
+             kid: Optional[str] = None,
+             kty: Optional[str] = None,
+             n: Optional[str] = None,
+             use: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if alg is None:
+            raise TypeError("Missing 'alg' argument")
+        if e is None:
+            raise TypeError("Missing 'e' argument")
+        if format is None:
+            raise TypeError("Missing 'format' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if key_ops is None and 'keyOps' in kwargs:
+            key_ops = kwargs['keyOps']
+        if key_ops is None:
+            raise TypeError("Missing 'key_ops' argument")
+        if kid is None:
+            raise TypeError("Missing 'kid' argument")
+        if kty is None:
+            raise TypeError("Missing 'kty' argument")
+        if n is None:
+            raise TypeError("Missing 'n' argument")
+        if use is None:
+            raise TypeError("Missing 'use' argument")
+
+        _setter("alg", alg)
+        _setter("e", e)
+        _setter("format", format)
+        _setter("key", key)
+        _setter("key_ops", key_ops)
+        _setter("kid", kid)
+        _setter("kty", kty)
+        _setter("n", n)
+        _setter("use", use)
 
     @property
     @pulumi.getter
@@ -13709,8 +19638,25 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicySourc
         :param str type: Type of the Response Cache Store Policy.
         :param str uri: The uri from which to retrieve the key. It must be accessible without authentication.
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "uri", uri)
+        GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicySourceUriDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
+
+        _setter("type", type)
+        _setter("uri", uri)
 
     @property
     @pulumi.getter
@@ -13740,9 +19686,32 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationVerifyClaimResult(dic
         :param str key: Information around the values for selector of an authentication/ routing branch.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "is_required", is_required)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "values", values)
+        GetDeploymentSpecificationRequestPolicyAuthenticationVerifyClaimResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_required=is_required,
+            key=key,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_required: Optional[bool] = None,
+             key: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_required is None and 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+        if is_required is None:
+            raise TypeError("Missing 'is_required' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("is_required", is_required)
+        _setter("key", key)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="isRequired")
@@ -13786,12 +19755,57 @@ class GetDeploymentSpecificationRequestPolicyCorResult(dict):
         :param bool is_allow_credentials_enabled: Whether to send the Access-Control-Allow-Credentials header to allow CORS requests with cookies.
         :param int max_age_in_seconds: The time in seconds for the client to cache preflight responses. This is sent as the Access-Control-Max-Age if greater than 0.
         """
-        pulumi.set(__self__, "allowed_headers", allowed_headers)
-        pulumi.set(__self__, "allowed_methods", allowed_methods)
-        pulumi.set(__self__, "allowed_origins", allowed_origins)
-        pulumi.set(__self__, "exposed_headers", exposed_headers)
-        pulumi.set(__self__, "is_allow_credentials_enabled", is_allow_credentials_enabled)
-        pulumi.set(__self__, "max_age_in_seconds", max_age_in_seconds)
+        GetDeploymentSpecificationRequestPolicyCorResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_headers=allowed_headers,
+            allowed_methods=allowed_methods,
+            allowed_origins=allowed_origins,
+            exposed_headers=exposed_headers,
+            is_allow_credentials_enabled=is_allow_credentials_enabled,
+            max_age_in_seconds=max_age_in_seconds,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_headers: Optional[Sequence[str]] = None,
+             allowed_methods: Optional[Sequence[str]] = None,
+             allowed_origins: Optional[Sequence[str]] = None,
+             exposed_headers: Optional[Sequence[str]] = None,
+             is_allow_credentials_enabled: Optional[bool] = None,
+             max_age_in_seconds: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if allowed_headers is None and 'allowedHeaders' in kwargs:
+            allowed_headers = kwargs['allowedHeaders']
+        if allowed_headers is None:
+            raise TypeError("Missing 'allowed_headers' argument")
+        if allowed_methods is None and 'allowedMethods' in kwargs:
+            allowed_methods = kwargs['allowedMethods']
+        if allowed_methods is None:
+            raise TypeError("Missing 'allowed_methods' argument")
+        if allowed_origins is None and 'allowedOrigins' in kwargs:
+            allowed_origins = kwargs['allowedOrigins']
+        if allowed_origins is None:
+            raise TypeError("Missing 'allowed_origins' argument")
+        if exposed_headers is None and 'exposedHeaders' in kwargs:
+            exposed_headers = kwargs['exposedHeaders']
+        if exposed_headers is None:
+            raise TypeError("Missing 'exposed_headers' argument")
+        if is_allow_credentials_enabled is None and 'isAllowCredentialsEnabled' in kwargs:
+            is_allow_credentials_enabled = kwargs['isAllowCredentialsEnabled']
+        if is_allow_credentials_enabled is None:
+            raise TypeError("Missing 'is_allow_credentials_enabled' argument")
+        if max_age_in_seconds is None and 'maxAgeInSeconds' in kwargs:
+            max_age_in_seconds = kwargs['maxAgeInSeconds']
+        if max_age_in_seconds is None:
+            raise TypeError("Missing 'max_age_in_seconds' argument")
+
+        _setter("allowed_headers", allowed_headers)
+        _setter("allowed_methods", allowed_methods)
+        _setter("allowed_origins", allowed_origins)
+        _setter("exposed_headers", exposed_headers)
+        _setter("is_allow_credentials_enabled", is_allow_credentials_enabled)
+        _setter("max_age_in_seconds", max_age_in_seconds)
 
     @property
     @pulumi.getter(name="allowedHeaders")
@@ -13851,8 +19865,29 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationResult(dict):
         :param Sequence['GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerArgs'] authentication_servers: List of authentication servers to choose from during dynamic authentication.
         :param Sequence['GetDeploymentSpecificationRequestPolicyDynamicAuthenticationSelectionSourceArgs'] selection_sources: Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
         """
-        pulumi.set(__self__, "authentication_servers", authentication_servers)
-        pulumi.set(__self__, "selection_sources", selection_sources)
+        GetDeploymentSpecificationRequestPolicyDynamicAuthenticationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            authentication_servers=authentication_servers,
+            selection_sources=selection_sources,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             authentication_servers: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerResult']] = None,
+             selection_sources: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationSelectionSourceResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if authentication_servers is None and 'authenticationServers' in kwargs:
+            authentication_servers = kwargs['authenticationServers']
+        if authentication_servers is None:
+            raise TypeError("Missing 'authentication_servers' argument")
+        if selection_sources is None and 'selectionSources' in kwargs:
+            selection_sources = kwargs['selectionSources']
+        if selection_sources is None:
+            raise TypeError("Missing 'selection_sources' argument")
+
+        _setter("authentication_servers", authentication_servers)
+        _setter("selection_sources", selection_sources)
 
     @property
     @pulumi.getter(name="authenticationServers")
@@ -13880,8 +19915,27 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
         :param Sequence['GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailArgs'] authentication_server_details: Information on how to authenticate incoming requests.
         :param Sequence['GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKeyArgs'] keys: Information around the values for selector of an authentication/ routing branch.
         """
-        pulumi.set(__self__, "authentication_server_details", authentication_server_details)
-        pulumi.set(__self__, "keys", keys)
+        GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            authentication_server_details=authentication_server_details,
+            keys=keys,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             authentication_server_details: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailResult']] = None,
+             keys: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKeyResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if authentication_server_details is None and 'authenticationServerDetails' in kwargs:
+            authentication_server_details = kwargs['authenticationServerDetails']
+        if authentication_server_details is None:
+            raise TypeError("Missing 'authentication_server_details' argument")
+        if keys is None:
+            raise TypeError("Missing 'keys' argument")
+
+        _setter("authentication_server_details", authentication_server_details)
+        _setter("keys", keys)
 
     @property
     @pulumi.getter(name="authenticationServerDetails")
@@ -13934,21 +19988,112 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
         :param Sequence['GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyArgs'] validation_policies: Authentication Policies for the Token Authentication types.
         :param Sequence['GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimArgs'] verify_claims: A list of claims which should be validated to consider the token valid.
         """
-        pulumi.set(__self__, "audiences", audiences)
-        pulumi.set(__self__, "cache_keys", cache_keys)
-        pulumi.set(__self__, "function_id", function_id)
-        pulumi.set(__self__, "is_anonymous_access_allowed", is_anonymous_access_allowed)
-        pulumi.set(__self__, "issuers", issuers)
-        pulumi.set(__self__, "max_clock_skew_in_seconds", max_clock_skew_in_seconds)
-        pulumi.set(__self__, "parameters", parameters)
-        pulumi.set(__self__, "public_keys", public_keys)
-        pulumi.set(__self__, "token_auth_scheme", token_auth_scheme)
-        pulumi.set(__self__, "token_header", token_header)
-        pulumi.set(__self__, "token_query_param", token_query_param)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "validation_failure_policies", validation_failure_policies)
-        pulumi.set(__self__, "validation_policies", validation_policies)
-        pulumi.set(__self__, "verify_claims", verify_claims)
+        GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audiences=audiences,
+            cache_keys=cache_keys,
+            function_id=function_id,
+            is_anonymous_access_allowed=is_anonymous_access_allowed,
+            issuers=issuers,
+            max_clock_skew_in_seconds=max_clock_skew_in_seconds,
+            parameters=parameters,
+            public_keys=public_keys,
+            token_auth_scheme=token_auth_scheme,
+            token_header=token_header,
+            token_query_param=token_query_param,
+            type=type,
+            validation_failure_policies=validation_failure_policies,
+            validation_policies=validation_policies,
+            verify_claims=verify_claims,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audiences: Optional[Sequence[str]] = None,
+             cache_keys: Optional[Sequence[str]] = None,
+             function_id: Optional[str] = None,
+             is_anonymous_access_allowed: Optional[bool] = None,
+             issuers: Optional[Sequence[str]] = None,
+             max_clock_skew_in_seconds: Optional[float] = None,
+             parameters: Optional[Mapping[str, Any]] = None,
+             public_keys: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeyResult']] = None,
+             token_auth_scheme: Optional[str] = None,
+             token_header: Optional[str] = None,
+             token_query_param: Optional[str] = None,
+             type: Optional[str] = None,
+             validation_failure_policies: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResult']] = None,
+             validation_policies: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyResult']] = None,
+             verify_claims: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if audiences is None:
+            raise TypeError("Missing 'audiences' argument")
+        if cache_keys is None and 'cacheKeys' in kwargs:
+            cache_keys = kwargs['cacheKeys']
+        if cache_keys is None:
+            raise TypeError("Missing 'cache_keys' argument")
+        if function_id is None and 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if function_id is None:
+            raise TypeError("Missing 'function_id' argument")
+        if is_anonymous_access_allowed is None and 'isAnonymousAccessAllowed' in kwargs:
+            is_anonymous_access_allowed = kwargs['isAnonymousAccessAllowed']
+        if is_anonymous_access_allowed is None:
+            raise TypeError("Missing 'is_anonymous_access_allowed' argument")
+        if issuers is None:
+            raise TypeError("Missing 'issuers' argument")
+        if max_clock_skew_in_seconds is None and 'maxClockSkewInSeconds' in kwargs:
+            max_clock_skew_in_seconds = kwargs['maxClockSkewInSeconds']
+        if max_clock_skew_in_seconds is None:
+            raise TypeError("Missing 'max_clock_skew_in_seconds' argument")
+        if parameters is None:
+            raise TypeError("Missing 'parameters' argument")
+        if public_keys is None and 'publicKeys' in kwargs:
+            public_keys = kwargs['publicKeys']
+        if public_keys is None:
+            raise TypeError("Missing 'public_keys' argument")
+        if token_auth_scheme is None and 'tokenAuthScheme' in kwargs:
+            token_auth_scheme = kwargs['tokenAuthScheme']
+        if token_auth_scheme is None:
+            raise TypeError("Missing 'token_auth_scheme' argument")
+        if token_header is None and 'tokenHeader' in kwargs:
+            token_header = kwargs['tokenHeader']
+        if token_header is None:
+            raise TypeError("Missing 'token_header' argument")
+        if token_query_param is None and 'tokenQueryParam' in kwargs:
+            token_query_param = kwargs['tokenQueryParam']
+        if token_query_param is None:
+            raise TypeError("Missing 'token_query_param' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if validation_failure_policies is None and 'validationFailurePolicies' in kwargs:
+            validation_failure_policies = kwargs['validationFailurePolicies']
+        if validation_failure_policies is None:
+            raise TypeError("Missing 'validation_failure_policies' argument")
+        if validation_policies is None and 'validationPolicies' in kwargs:
+            validation_policies = kwargs['validationPolicies']
+        if validation_policies is None:
+            raise TypeError("Missing 'validation_policies' argument")
+        if verify_claims is None and 'verifyClaims' in kwargs:
+            verify_claims = kwargs['verifyClaims']
+        if verify_claims is None:
+            raise TypeError("Missing 'verify_claims' argument")
+
+        _setter("audiences", audiences)
+        _setter("cache_keys", cache_keys)
+        _setter("function_id", function_id)
+        _setter("is_anonymous_access_allowed", is_anonymous_access_allowed)
+        _setter("issuers", issuers)
+        _setter("max_clock_skew_in_seconds", max_clock_skew_in_seconds)
+        _setter("parameters", parameters)
+        _setter("public_keys", public_keys)
+        _setter("token_auth_scheme", token_auth_scheme)
+        _setter("token_header", token_header)
+        _setter("token_query_param", token_query_param)
+        _setter("type", type)
+        _setter("validation_failure_policies", validation_failure_policies)
+        _setter("validation_policies", validation_policies)
+        _setter("verify_claims", verify_claims)
 
     @property
     @pulumi.getter
@@ -14083,11 +20228,44 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
         :param str type: Type of the Response Cache Store Policy.
         :param str uri: The uri from which to retrieve the key. It must be accessible without authentication.
         """
-        pulumi.set(__self__, "is_ssl_verify_disabled", is_ssl_verify_disabled)
-        pulumi.set(__self__, "keys", keys)
-        pulumi.set(__self__, "max_cache_duration_in_hours", max_cache_duration_in_hours)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "uri", uri)
+        GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_ssl_verify_disabled=is_ssl_verify_disabled,
+            keys=keys,
+            max_cache_duration_in_hours=max_cache_duration_in_hours,
+            type=type,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_ssl_verify_disabled: Optional[bool] = None,
+             keys: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeyKeyResult']] = None,
+             max_cache_duration_in_hours: Optional[int] = None,
+             type: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if is_ssl_verify_disabled is None:
+            raise TypeError("Missing 'is_ssl_verify_disabled' argument")
+        if keys is None:
+            raise TypeError("Missing 'keys' argument")
+        if max_cache_duration_in_hours is None and 'maxCacheDurationInHours' in kwargs:
+            max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
+        if max_cache_duration_in_hours is None:
+            raise TypeError("Missing 'max_cache_duration_in_hours' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
+
+        _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
+        _setter("keys", keys)
+        _setter("max_cache_duration_in_hours", max_cache_duration_in_hours)
+        _setter("type", type)
+        _setter("uri", uri)
 
     @property
     @pulumi.getter(name="isSslVerifyDisabled")
@@ -14153,15 +20331,62 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
         :param str n: The base64 url encoded modulus of the RSA public key represented by this key.
         :param str use: The intended use of the public key.
         """
-        pulumi.set(__self__, "alg", alg)
-        pulumi.set(__self__, "e", e)
-        pulumi.set(__self__, "format", format)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "key_ops", key_ops)
-        pulumi.set(__self__, "kid", kid)
-        pulumi.set(__self__, "kty", kty)
-        pulumi.set(__self__, "n", n)
-        pulumi.set(__self__, "use", use)
+        GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeyKeyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            alg=alg,
+            e=e,
+            format=format,
+            key=key,
+            key_ops=key_ops,
+            kid=kid,
+            kty=kty,
+            n=n,
+            use=use,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             alg: Optional[str] = None,
+             e: Optional[str] = None,
+             format: Optional[str] = None,
+             key: Optional[str] = None,
+             key_ops: Optional[Sequence[str]] = None,
+             kid: Optional[str] = None,
+             kty: Optional[str] = None,
+             n: Optional[str] = None,
+             use: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if alg is None:
+            raise TypeError("Missing 'alg' argument")
+        if e is None:
+            raise TypeError("Missing 'e' argument")
+        if format is None:
+            raise TypeError("Missing 'format' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if key_ops is None and 'keyOps' in kwargs:
+            key_ops = kwargs['keyOps']
+        if key_ops is None:
+            raise TypeError("Missing 'key_ops' argument")
+        if kid is None:
+            raise TypeError("Missing 'kid' argument")
+        if kty is None:
+            raise TypeError("Missing 'kty' argument")
+        if n is None:
+            raise TypeError("Missing 'n' argument")
+        if use is None:
+            raise TypeError("Missing 'use' argument")
+
+        _setter("alg", alg)
+        _setter("e", e)
+        _setter("format", format)
+        _setter("key", key)
+        _setter("key_ops", key_ops)
+        _setter("kid", kid)
+        _setter("kty", kty)
+        _setter("n", n)
+        _setter("use", use)
 
     @property
     @pulumi.getter
@@ -14269,20 +20494,109 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
         :param bool use_cookies_for_session: Defines whether or not to use cookies for session maintenance.
         :param bool use_pkce: Defines whether or not to support PKCE.
         """
-        pulumi.set(__self__, "client_details", client_details)
-        pulumi.set(__self__, "fallback_redirect_path", fallback_redirect_path)
-        pulumi.set(__self__, "logout_path", logout_path)
-        pulumi.set(__self__, "max_expiry_duration_in_hours", max_expiry_duration_in_hours)
-        pulumi.set(__self__, "response_code", response_code)
-        pulumi.set(__self__, "response_header_transformations", response_header_transformations)
-        pulumi.set(__self__, "response_message", response_message)
-        pulumi.set(__self__, "response_type", response_type)
-        pulumi.set(__self__, "scopes", scopes)
-        pulumi.set(__self__, "source_uri_details", source_uri_details)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "use_cookies_for_intermediate_steps", use_cookies_for_intermediate_steps)
-        pulumi.set(__self__, "use_cookies_for_session", use_cookies_for_session)
-        pulumi.set(__self__, "use_pkce", use_pkce)
+        GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            client_details=client_details,
+            fallback_redirect_path=fallback_redirect_path,
+            logout_path=logout_path,
+            max_expiry_duration_in_hours=max_expiry_duration_in_hours,
+            response_code=response_code,
+            response_header_transformations=response_header_transformations,
+            response_message=response_message,
+            response_type=response_type,
+            scopes=scopes,
+            source_uri_details=source_uri_details,
+            type=type,
+            use_cookies_for_intermediate_steps=use_cookies_for_intermediate_steps,
+            use_cookies_for_session=use_cookies_for_session,
+            use_pkce=use_pkce,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             client_details: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetailResult']] = None,
+             fallback_redirect_path: Optional[str] = None,
+             logout_path: Optional[str] = None,
+             max_expiry_duration_in_hours: Optional[int] = None,
+             response_code: Optional[str] = None,
+             response_header_transformations: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationResult']] = None,
+             response_message: Optional[str] = None,
+             response_type: Optional[str] = None,
+             scopes: Optional[Sequence[str]] = None,
+             source_uri_details: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetailResult']] = None,
+             type: Optional[str] = None,
+             use_cookies_for_intermediate_steps: Optional[bool] = None,
+             use_cookies_for_session: Optional[bool] = None,
+             use_pkce: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if client_details is None and 'clientDetails' in kwargs:
+            client_details = kwargs['clientDetails']
+        if client_details is None:
+            raise TypeError("Missing 'client_details' argument")
+        if fallback_redirect_path is None and 'fallbackRedirectPath' in kwargs:
+            fallback_redirect_path = kwargs['fallbackRedirectPath']
+        if fallback_redirect_path is None:
+            raise TypeError("Missing 'fallback_redirect_path' argument")
+        if logout_path is None and 'logoutPath' in kwargs:
+            logout_path = kwargs['logoutPath']
+        if logout_path is None:
+            raise TypeError("Missing 'logout_path' argument")
+        if max_expiry_duration_in_hours is None and 'maxExpiryDurationInHours' in kwargs:
+            max_expiry_duration_in_hours = kwargs['maxExpiryDurationInHours']
+        if max_expiry_duration_in_hours is None:
+            raise TypeError("Missing 'max_expiry_duration_in_hours' argument")
+        if response_code is None and 'responseCode' in kwargs:
+            response_code = kwargs['responseCode']
+        if response_code is None:
+            raise TypeError("Missing 'response_code' argument")
+        if response_header_transformations is None and 'responseHeaderTransformations' in kwargs:
+            response_header_transformations = kwargs['responseHeaderTransformations']
+        if response_header_transformations is None:
+            raise TypeError("Missing 'response_header_transformations' argument")
+        if response_message is None and 'responseMessage' in kwargs:
+            response_message = kwargs['responseMessage']
+        if response_message is None:
+            raise TypeError("Missing 'response_message' argument")
+        if response_type is None and 'responseType' in kwargs:
+            response_type = kwargs['responseType']
+        if response_type is None:
+            raise TypeError("Missing 'response_type' argument")
+        if scopes is None:
+            raise TypeError("Missing 'scopes' argument")
+        if source_uri_details is None and 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+        if source_uri_details is None:
+            raise TypeError("Missing 'source_uri_details' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if use_cookies_for_intermediate_steps is None and 'useCookiesForIntermediateSteps' in kwargs:
+            use_cookies_for_intermediate_steps = kwargs['useCookiesForIntermediateSteps']
+        if use_cookies_for_intermediate_steps is None:
+            raise TypeError("Missing 'use_cookies_for_intermediate_steps' argument")
+        if use_cookies_for_session is None and 'useCookiesForSession' in kwargs:
+            use_cookies_for_session = kwargs['useCookiesForSession']
+        if use_cookies_for_session is None:
+            raise TypeError("Missing 'use_cookies_for_session' argument")
+        if use_pkce is None and 'usePkce' in kwargs:
+            use_pkce = kwargs['usePkce']
+        if use_pkce is None:
+            raise TypeError("Missing 'use_pkce' argument")
+
+        _setter("client_details", client_details)
+        _setter("fallback_redirect_path", fallback_redirect_path)
+        _setter("logout_path", logout_path)
+        _setter("max_expiry_duration_in_hours", max_expiry_duration_in_hours)
+        _setter("response_code", response_code)
+        _setter("response_header_transformations", response_header_transformations)
+        _setter("response_message", response_message)
+        _setter("response_type", response_type)
+        _setter("scopes", scopes)
+        _setter("source_uri_details", source_uri_details)
+        _setter("type", type)
+        _setter("use_cookies_for_intermediate_steps", use_cookies_for_intermediate_steps)
+        _setter("use_cookies_for_session", use_cookies_for_session)
+        _setter("use_pkce", use_pkce)
 
     @property
     @pulumi.getter(name="clientDetails")
@@ -14410,10 +20724,41 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
         :param str client_secret_version_number: The version number of the client secret to use.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "client_id", client_id)
-        pulumi.set(__self__, "client_secret_id", client_secret_id)
-        pulumi.set(__self__, "client_secret_version_number", client_secret_version_number)
-        pulumi.set(__self__, "type", type)
+        GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            client_id=client_id,
+            client_secret_id=client_secret_id,
+            client_secret_version_number=client_secret_version_number,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             client_id: Optional[str] = None,
+             client_secret_id: Optional[str] = None,
+             client_secret_version_number: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if client_id is None and 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if client_id is None:
+            raise TypeError("Missing 'client_id' argument")
+        if client_secret_id is None and 'clientSecretId' in kwargs:
+            client_secret_id = kwargs['clientSecretId']
+        if client_secret_id is None:
+            raise TypeError("Missing 'client_secret_id' argument")
+        if client_secret_version_number is None and 'clientSecretVersionNumber' in kwargs:
+            client_secret_version_number = kwargs['clientSecretVersionNumber']
+        if client_secret_version_number is None:
+            raise TypeError("Missing 'client_secret_version_number' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("client_id", client_id)
+        _setter("client_secret_id", client_secret_id)
+        _setter("client_secret_version_number", client_secret_version_number)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="clientId")
@@ -14459,9 +20804,36 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
         :param Sequence['GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationRenameHeaderArgs'] rename_headers: Rename HTTP headers as they pass through the gateway.
         :param Sequence['GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationSetHeaderArgs'] set_headers: Set HTTP headers as they pass through the gateway.
         """
-        pulumi.set(__self__, "filter_headers", filter_headers)
-        pulumi.set(__self__, "rename_headers", rename_headers)
-        pulumi.set(__self__, "set_headers", set_headers)
+        GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            filter_headers=filter_headers,
+            rename_headers=rename_headers,
+            set_headers=set_headers,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             filter_headers: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationFilterHeaderResult']] = None,
+             rename_headers: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationRenameHeaderResult']] = None,
+             set_headers: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationSetHeaderResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if filter_headers is None and 'filterHeaders' in kwargs:
+            filter_headers = kwargs['filterHeaders']
+        if filter_headers is None:
+            raise TypeError("Missing 'filter_headers' argument")
+        if rename_headers is None and 'renameHeaders' in kwargs:
+            rename_headers = kwargs['renameHeaders']
+        if rename_headers is None:
+            raise TypeError("Missing 'rename_headers' argument")
+        if set_headers is None and 'setHeaders' in kwargs:
+            set_headers = kwargs['setHeaders']
+        if set_headers is None:
+            raise TypeError("Missing 'set_headers' argument")
+
+        _setter("filter_headers", filter_headers)
+        _setter("rename_headers", rename_headers)
+        _setter("set_headers", set_headers)
 
     @property
     @pulumi.getter(name="filterHeaders")
@@ -14497,8 +20869,25 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
         :param Sequence['GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationFilterHeaderItemArgs'] items: The list of headers.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "type", type)
+        GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationFilterHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationFilterHeaderItemResult']] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("items", items)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -14524,7 +20913,20 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
         """
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "name", name)
+        GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationFilterHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -14542,7 +20944,20 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
         """
         :param Sequence['GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationRenameHeaderItemArgs'] items: The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationRenameHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationRenameHeaderItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -14562,8 +20977,27 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
         :param str from_: The original case-insensitive name of the header.  This name must be unique across transformation policies.
         :param str to: The new name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "from_", from_)
-        pulumi.set(__self__, "to", to)
+        GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationRenameHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            from_=from_,
+            to=to,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             from_: Optional[str] = None,
+             to: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if from_ is None and 'from' in kwargs:
+            from_ = kwargs['from']
+        if from_ is None:
+            raise TypeError("Missing 'from_' argument")
+        if to is None:
+            raise TypeError("Missing 'to' argument")
+
+        _setter("from_", from_)
+        _setter("to", to)
 
     @property
     @pulumi.getter(name="from")
@@ -14589,7 +21023,20 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
         """
         :param Sequence['GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationSetHeaderItemArgs'] items: The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationSetHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationSetHeaderItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -14611,9 +21058,32 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "if_exists", if_exists)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationSetHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            if_exists=if_exists,
+            name=name,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             if_exists: Optional[str] = None,
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if if_exists is None and 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+        if if_exists is None:
+            raise TypeError("Missing 'if_exists' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("if_exists", if_exists)
+        _setter("name", name)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="ifExists")
@@ -14649,8 +21119,25 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
         :param str type: Type of the Response Cache Store Policy.
         :param str uri: The uri from which to retrieve the key. It must be accessible without authentication.
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "uri", uri)
+        GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
+
+        _setter("type", type)
+        _setter("uri", uri)
 
     @property
     @pulumi.getter
@@ -14690,14 +21177,65 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
         :param str type: Type of the Response Cache Store Policy.
         :param str uri: The uri from which to retrieve the key. It must be accessible without authentication.
         """
-        pulumi.set(__self__, "additional_validation_policies", additional_validation_policies)
-        pulumi.set(__self__, "client_details", client_details)
-        pulumi.set(__self__, "is_ssl_verify_disabled", is_ssl_verify_disabled)
-        pulumi.set(__self__, "keys", keys)
-        pulumi.set(__self__, "max_cache_duration_in_hours", max_cache_duration_in_hours)
-        pulumi.set(__self__, "source_uri_details", source_uri_details)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "uri", uri)
+        GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            additional_validation_policies=additional_validation_policies,
+            client_details=client_details,
+            is_ssl_verify_disabled=is_ssl_verify_disabled,
+            keys=keys,
+            max_cache_duration_in_hours=max_cache_duration_in_hours,
+            source_uri_details=source_uri_details,
+            type=type,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             additional_validation_policies: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyResult']] = None,
+             client_details: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyClientDetailResult']] = None,
+             is_ssl_verify_disabled: Optional[bool] = None,
+             keys: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKeyResult']] = None,
+             max_cache_duration_in_hours: Optional[int] = None,
+             source_uri_details: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicySourceUriDetailResult']] = None,
+             type: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if additional_validation_policies is None and 'additionalValidationPolicies' in kwargs:
+            additional_validation_policies = kwargs['additionalValidationPolicies']
+        if additional_validation_policies is None:
+            raise TypeError("Missing 'additional_validation_policies' argument")
+        if client_details is None and 'clientDetails' in kwargs:
+            client_details = kwargs['clientDetails']
+        if client_details is None:
+            raise TypeError("Missing 'client_details' argument")
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if is_ssl_verify_disabled is None:
+            raise TypeError("Missing 'is_ssl_verify_disabled' argument")
+        if keys is None:
+            raise TypeError("Missing 'keys' argument")
+        if max_cache_duration_in_hours is None and 'maxCacheDurationInHours' in kwargs:
+            max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
+        if max_cache_duration_in_hours is None:
+            raise TypeError("Missing 'max_cache_duration_in_hours' argument")
+        if source_uri_details is None and 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+        if source_uri_details is None:
+            raise TypeError("Missing 'source_uri_details' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
+
+        _setter("additional_validation_policies", additional_validation_policies)
+        _setter("client_details", client_details)
+        _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
+        _setter("keys", keys)
+        _setter("max_cache_duration_in_hours", max_cache_duration_in_hours)
+        _setter("source_uri_details", source_uri_details)
+        _setter("type", type)
+        _setter("uri", uri)
 
     @property
     @pulumi.getter(name="additionalValidationPolicies")
@@ -14775,9 +21313,32 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
         :param Sequence[str] issuers: A list of parties that could have issued the token.
         :param Sequence['GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimArgs'] verify_claims: A list of claims which should be validated to consider the token valid.
         """
-        pulumi.set(__self__, "audiences", audiences)
-        pulumi.set(__self__, "issuers", issuers)
-        pulumi.set(__self__, "verify_claims", verify_claims)
+        GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audiences=audiences,
+            issuers=issuers,
+            verify_claims=verify_claims,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audiences: Optional[Sequence[str]] = None,
+             issuers: Optional[Sequence[str]] = None,
+             verify_claims: Optional[Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if audiences is None:
+            raise TypeError("Missing 'audiences' argument")
+        if issuers is None:
+            raise TypeError("Missing 'issuers' argument")
+        if verify_claims is None and 'verifyClaims' in kwargs:
+            verify_claims = kwargs['verifyClaims']
+        if verify_claims is None:
+            raise TypeError("Missing 'verify_claims' argument")
+
+        _setter("audiences", audiences)
+        _setter("issuers", issuers)
+        _setter("verify_claims", verify_claims)
 
     @property
     @pulumi.getter
@@ -14815,9 +21376,32 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
         :param str key: Information around the values for selector of an authentication/ routing branch.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "is_required", is_required)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "values", values)
+        GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_required=is_required,
+            key=key,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_required: Optional[bool] = None,
+             key: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_required is None and 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+        if is_required is None:
+            raise TypeError("Missing 'is_required' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("is_required", is_required)
+        _setter("key", key)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="isRequired")
@@ -14857,10 +21441,41 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
         :param str client_secret_version_number: The version number of the client secret to use.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "client_id", client_id)
-        pulumi.set(__self__, "client_secret_id", client_secret_id)
-        pulumi.set(__self__, "client_secret_version_number", client_secret_version_number)
-        pulumi.set(__self__, "type", type)
+        GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyClientDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            client_id=client_id,
+            client_secret_id=client_secret_id,
+            client_secret_version_number=client_secret_version_number,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             client_id: Optional[str] = None,
+             client_secret_id: Optional[str] = None,
+             client_secret_version_number: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if client_id is None and 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if client_id is None:
+            raise TypeError("Missing 'client_id' argument")
+        if client_secret_id is None and 'clientSecretId' in kwargs:
+            client_secret_id = kwargs['clientSecretId']
+        if client_secret_id is None:
+            raise TypeError("Missing 'client_secret_id' argument")
+        if client_secret_version_number is None and 'clientSecretVersionNumber' in kwargs:
+            client_secret_version_number = kwargs['clientSecretVersionNumber']
+        if client_secret_version_number is None:
+            raise TypeError("Missing 'client_secret_version_number' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("client_id", client_id)
+        _setter("client_secret_id", client_secret_id)
+        _setter("client_secret_version_number", client_secret_version_number)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="clientId")
@@ -14918,15 +21533,62 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
         :param str n: The base64 url encoded modulus of the RSA public key represented by this key.
         :param str use: The intended use of the public key.
         """
-        pulumi.set(__self__, "alg", alg)
-        pulumi.set(__self__, "e", e)
-        pulumi.set(__self__, "format", format)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "key_ops", key_ops)
-        pulumi.set(__self__, "kid", kid)
-        pulumi.set(__self__, "kty", kty)
-        pulumi.set(__self__, "n", n)
-        pulumi.set(__self__, "use", use)
+        GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKeyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            alg=alg,
+            e=e,
+            format=format,
+            key=key,
+            key_ops=key_ops,
+            kid=kid,
+            kty=kty,
+            n=n,
+            use=use,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             alg: Optional[str] = None,
+             e: Optional[str] = None,
+             format: Optional[str] = None,
+             key: Optional[str] = None,
+             key_ops: Optional[Sequence[str]] = None,
+             kid: Optional[str] = None,
+             kty: Optional[str] = None,
+             n: Optional[str] = None,
+             use: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if alg is None:
+            raise TypeError("Missing 'alg' argument")
+        if e is None:
+            raise TypeError("Missing 'e' argument")
+        if format is None:
+            raise TypeError("Missing 'format' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if key_ops is None and 'keyOps' in kwargs:
+            key_ops = kwargs['keyOps']
+        if key_ops is None:
+            raise TypeError("Missing 'key_ops' argument")
+        if kid is None:
+            raise TypeError("Missing 'kid' argument")
+        if kty is None:
+            raise TypeError("Missing 'kty' argument")
+        if n is None:
+            raise TypeError("Missing 'n' argument")
+        if use is None:
+            raise TypeError("Missing 'use' argument")
+
+        _setter("alg", alg)
+        _setter("e", e)
+        _setter("format", format)
+        _setter("key", key)
+        _setter("key_ops", key_ops)
+        _setter("kid", kid)
+        _setter("kty", kty)
+        _setter("n", n)
+        _setter("use", use)
 
     @property
     @pulumi.getter
@@ -15010,8 +21672,25 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
         :param str type: Type of the Response Cache Store Policy.
         :param str uri: The uri from which to retrieve the key. It must be accessible without authentication.
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "uri", uri)
+        GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicySourceUriDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
+
+        _setter("type", type)
+        _setter("uri", uri)
 
     @property
     @pulumi.getter
@@ -15041,9 +21720,32 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
         :param str key: Information around the values for selector of an authentication/ routing branch.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "is_required", is_required)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "values", values)
+        GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_required=is_required,
+            key=key,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_required: Optional[bool] = None,
+             key: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_required is None and 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+        if is_required is None:
+            raise TypeError("Missing 'is_required' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("is_required", is_required)
+        _setter("key", key)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="isRequired")
@@ -15085,11 +21787,42 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
         :param str type: Type of the Response Cache Store Policy.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "expression", expression)
-        pulumi.set(__self__, "is_default", is_default)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "values", values)
+        GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKeyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            expression=expression,
+            is_default=is_default,
+            name=name,
+            type=type,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             expression: Optional[str] = None,
+             is_default: Optional[bool] = None,
+             name: Optional[str] = None,
+             type: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if expression is None:
+            raise TypeError("Missing 'expression' argument")
+        if is_default is None and 'isDefault' in kwargs:
+            is_default = kwargs['isDefault']
+        if is_default is None:
+            raise TypeError("Missing 'is_default' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("expression", expression)
+        _setter("is_default", is_default)
+        _setter("name", name)
+        _setter("type", type)
+        _setter("values", values)
 
     @property
     @pulumi.getter
@@ -15141,8 +21874,25 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationSelectionSourc
         :param str selector: String describing the context variable used as selector.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "selector", selector)
-        pulumi.set(__self__, "type", type)
+        GetDeploymentSpecificationRequestPolicyDynamicAuthenticationSelectionSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            selector=selector,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             selector: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if selector is None:
+            raise TypeError("Missing 'selector' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("selector", selector)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -15170,8 +21920,29 @@ class GetDeploymentSpecificationRequestPolicyMutualTlResult(dict):
         :param Sequence[str] allowed_sans: Allowed list of CN or SAN which will be used for verification of certificate.
         :param bool is_verified_certificate_required: Determines whether to enable client verification when API Consumer makes connection to the gateway.
         """
-        pulumi.set(__self__, "allowed_sans", allowed_sans)
-        pulumi.set(__self__, "is_verified_certificate_required", is_verified_certificate_required)
+        GetDeploymentSpecificationRequestPolicyMutualTlResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_sans=allowed_sans,
+            is_verified_certificate_required=is_verified_certificate_required,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_sans: Optional[Sequence[str]] = None,
+             is_verified_certificate_required: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if allowed_sans is None and 'allowedSans' in kwargs:
+            allowed_sans = kwargs['allowedSans']
+        if allowed_sans is None:
+            raise TypeError("Missing 'allowed_sans' argument")
+        if is_verified_certificate_required is None and 'isVerifiedCertificateRequired' in kwargs:
+            is_verified_certificate_required = kwargs['isVerifiedCertificateRequired']
+        if is_verified_certificate_required is None:
+            raise TypeError("Missing 'is_verified_certificate_required' argument")
+
+        _setter("allowed_sans", allowed_sans)
+        _setter("is_verified_certificate_required", is_verified_certificate_required)
 
     @property
     @pulumi.getter(name="allowedSans")
@@ -15199,8 +21970,29 @@ class GetDeploymentSpecificationRequestPolicyRateLimitingResult(dict):
         :param int rate_in_requests_per_second: The maximum number of requests per second to allow.
         :param str rate_key: The key used to group requests together.
         """
-        pulumi.set(__self__, "rate_in_requests_per_second", rate_in_requests_per_second)
-        pulumi.set(__self__, "rate_key", rate_key)
+        GetDeploymentSpecificationRequestPolicyRateLimitingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            rate_in_requests_per_second=rate_in_requests_per_second,
+            rate_key=rate_key,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             rate_in_requests_per_second: Optional[int] = None,
+             rate_key: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if rate_in_requests_per_second is None and 'rateInRequestsPerSecond' in kwargs:
+            rate_in_requests_per_second = kwargs['rateInRequestsPerSecond']
+        if rate_in_requests_per_second is None:
+            raise TypeError("Missing 'rate_in_requests_per_second' argument")
+        if rate_key is None and 'rateKey' in kwargs:
+            rate_key = kwargs['rateKey']
+        if rate_key is None:
+            raise TypeError("Missing 'rate_key' argument")
+
+        _setter("rate_in_requests_per_second", rate_in_requests_per_second)
+        _setter("rate_key", rate_key)
 
     @property
     @pulumi.getter(name="rateInRequestsPerSecond")
@@ -15230,7 +22022,22 @@ class GetDeploymentSpecificationRequestPolicyUsagePlanResult(dict):
                * "request.auth[Token]"
                * "request.path[TOKEN]"
         """
-        pulumi.set(__self__, "token_locations", token_locations)
+        GetDeploymentSpecificationRequestPolicyUsagePlanResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            token_locations=token_locations,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             token_locations: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if token_locations is None and 'tokenLocations' in kwargs:
+            token_locations = kwargs['tokenLocations']
+        if token_locations is None:
+            raise TypeError("Missing 'token_locations' argument")
+
+        _setter("token_locations", token_locations)
 
     @property
     @pulumi.getter(name="tokenLocations")
@@ -15262,12 +22069,51 @@ class GetDeploymentSpecificationRouteResult(dict):
         :param Sequence['GetDeploymentSpecificationRouteRequestPolicyArgs'] request_policies: Behavior applied to any requests received by the API on this route.
         :param Sequence['GetDeploymentSpecificationRouteResponsePolicyArgs'] response_policies: Behavior applied to any responses sent by the API for requests on this route.
         """
-        pulumi.set(__self__, "backends", backends)
-        pulumi.set(__self__, "logging_policies", logging_policies)
-        pulumi.set(__self__, "methods", methods)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "request_policies", request_policies)
-        pulumi.set(__self__, "response_policies", response_policies)
+        GetDeploymentSpecificationRouteResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backends=backends,
+            logging_policies=logging_policies,
+            methods=methods,
+            path=path,
+            request_policies=request_policies,
+            response_policies=response_policies,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backends: Optional[Sequence['outputs.GetDeploymentSpecificationRouteBackendResult']] = None,
+             logging_policies: Optional[Sequence['outputs.GetDeploymentSpecificationRouteLoggingPolicyResult']] = None,
+             methods: Optional[Sequence[str]] = None,
+             path: Optional[str] = None,
+             request_policies: Optional[Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyResult']] = None,
+             response_policies: Optional[Sequence['outputs.GetDeploymentSpecificationRouteResponsePolicyResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if backends is None:
+            raise TypeError("Missing 'backends' argument")
+        if logging_policies is None and 'loggingPolicies' in kwargs:
+            logging_policies = kwargs['loggingPolicies']
+        if logging_policies is None:
+            raise TypeError("Missing 'logging_policies' argument")
+        if methods is None:
+            raise TypeError("Missing 'methods' argument")
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+        if request_policies is None and 'requestPolicies' in kwargs:
+            request_policies = kwargs['requestPolicies']
+        if request_policies is None:
+            raise TypeError("Missing 'request_policies' argument")
+        if response_policies is None and 'responsePolicies' in kwargs:
+            response_policies = kwargs['responsePolicies']
+        if response_policies is None:
+            raise TypeError("Missing 'response_policies' argument")
+
+        _setter("backends", backends)
+        _setter("logging_policies", logging_policies)
+        _setter("methods", methods)
+        _setter("path", path)
+        _setter("request_policies", request_policies)
+        _setter("response_policies", response_policies)
 
     @property
     @pulumi.getter
@@ -15348,20 +22194,103 @@ class GetDeploymentSpecificationRouteBackendResult(dict):
         :param int status: The status code of the stock response from the mock backend.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "allowed_post_logout_uris", allowed_post_logout_uris)
-        pulumi.set(__self__, "body", body)
-        pulumi.set(__self__, "connect_timeout_in_seconds", connect_timeout_in_seconds)
-        pulumi.set(__self__, "function_id", function_id)
-        pulumi.set(__self__, "headers", headers)
-        pulumi.set(__self__, "is_ssl_verify_disabled", is_ssl_verify_disabled)
-        pulumi.set(__self__, "post_logout_state", post_logout_state)
-        pulumi.set(__self__, "read_timeout_in_seconds", read_timeout_in_seconds)
-        pulumi.set(__self__, "routing_backends", routing_backends)
-        pulumi.set(__self__, "selection_sources", selection_sources)
-        pulumi.set(__self__, "send_timeout_in_seconds", send_timeout_in_seconds)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "url", url)
+        GetDeploymentSpecificationRouteBackendResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_post_logout_uris=allowed_post_logout_uris,
+            body=body,
+            connect_timeout_in_seconds=connect_timeout_in_seconds,
+            function_id=function_id,
+            headers=headers,
+            is_ssl_verify_disabled=is_ssl_verify_disabled,
+            post_logout_state=post_logout_state,
+            read_timeout_in_seconds=read_timeout_in_seconds,
+            routing_backends=routing_backends,
+            selection_sources=selection_sources,
+            send_timeout_in_seconds=send_timeout_in_seconds,
+            status=status,
+            type=type,
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_post_logout_uris: Optional[Sequence[str]] = None,
+             body: Optional[str] = None,
+             connect_timeout_in_seconds: Optional[float] = None,
+             function_id: Optional[str] = None,
+             headers: Optional[Sequence['outputs.GetDeploymentSpecificationRouteBackendHeaderResult']] = None,
+             is_ssl_verify_disabled: Optional[bool] = None,
+             post_logout_state: Optional[str] = None,
+             read_timeout_in_seconds: Optional[float] = None,
+             routing_backends: Optional[Sequence['outputs.GetDeploymentSpecificationRouteBackendRoutingBackendResult']] = None,
+             selection_sources: Optional[Sequence['outputs.GetDeploymentSpecificationRouteBackendSelectionSourceResult']] = None,
+             send_timeout_in_seconds: Optional[float] = None,
+             status: Optional[int] = None,
+             type: Optional[str] = None,
+             url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if allowed_post_logout_uris is None and 'allowedPostLogoutUris' in kwargs:
+            allowed_post_logout_uris = kwargs['allowedPostLogoutUris']
+        if allowed_post_logout_uris is None:
+            raise TypeError("Missing 'allowed_post_logout_uris' argument")
+        if body is None:
+            raise TypeError("Missing 'body' argument")
+        if connect_timeout_in_seconds is None and 'connectTimeoutInSeconds' in kwargs:
+            connect_timeout_in_seconds = kwargs['connectTimeoutInSeconds']
+        if connect_timeout_in_seconds is None:
+            raise TypeError("Missing 'connect_timeout_in_seconds' argument")
+        if function_id is None and 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if function_id is None:
+            raise TypeError("Missing 'function_id' argument")
+        if headers is None:
+            raise TypeError("Missing 'headers' argument")
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if is_ssl_verify_disabled is None:
+            raise TypeError("Missing 'is_ssl_verify_disabled' argument")
+        if post_logout_state is None and 'postLogoutState' in kwargs:
+            post_logout_state = kwargs['postLogoutState']
+        if post_logout_state is None:
+            raise TypeError("Missing 'post_logout_state' argument")
+        if read_timeout_in_seconds is None and 'readTimeoutInSeconds' in kwargs:
+            read_timeout_in_seconds = kwargs['readTimeoutInSeconds']
+        if read_timeout_in_seconds is None:
+            raise TypeError("Missing 'read_timeout_in_seconds' argument")
+        if routing_backends is None and 'routingBackends' in kwargs:
+            routing_backends = kwargs['routingBackends']
+        if routing_backends is None:
+            raise TypeError("Missing 'routing_backends' argument")
+        if selection_sources is None and 'selectionSources' in kwargs:
+            selection_sources = kwargs['selectionSources']
+        if selection_sources is None:
+            raise TypeError("Missing 'selection_sources' argument")
+        if send_timeout_in_seconds is None and 'sendTimeoutInSeconds' in kwargs:
+            send_timeout_in_seconds = kwargs['sendTimeoutInSeconds']
+        if send_timeout_in_seconds is None:
+            raise TypeError("Missing 'send_timeout_in_seconds' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if url is None:
+            raise TypeError("Missing 'url' argument")
+
+        _setter("allowed_post_logout_uris", allowed_post_logout_uris)
+        _setter("body", body)
+        _setter("connect_timeout_in_seconds", connect_timeout_in_seconds)
+        _setter("function_id", function_id)
+        _setter("headers", headers)
+        _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
+        _setter("post_logout_state", post_logout_state)
+        _setter("read_timeout_in_seconds", read_timeout_in_seconds)
+        _setter("routing_backends", routing_backends)
+        _setter("selection_sources", selection_sources)
+        _setter("send_timeout_in_seconds", send_timeout_in_seconds)
+        _setter("status", status)
+        _setter("type", type)
+        _setter("url", url)
 
     @property
     @pulumi.getter(name="allowedPostLogoutUris")
@@ -15476,8 +22405,25 @@ class GetDeploymentSpecificationRouteBackendHeaderResult(dict):
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param str value: Value of the header.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetDeploymentSpecificationRouteBackendHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -15505,8 +22451,25 @@ class GetDeploymentSpecificationRouteBackendRoutingBackendResult(dict):
         :param Sequence['GetDeploymentSpecificationRouteBackendRoutingBackendBackendArgs'] backends: The backend to forward requests to.
         :param Sequence['GetDeploymentSpecificationRouteBackendRoutingBackendKeyArgs'] keys: Information around the values for selector of an authentication/ routing branch.
         """
-        pulumi.set(__self__, "backends", backends)
-        pulumi.set(__self__, "keys", keys)
+        GetDeploymentSpecificationRouteBackendRoutingBackendResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backends=backends,
+            keys=keys,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backends: Optional[Sequence['outputs.GetDeploymentSpecificationRouteBackendRoutingBackendBackendResult']] = None,
+             keys: Optional[Sequence['outputs.GetDeploymentSpecificationRouteBackendRoutingBackendKeyResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if backends is None:
+            raise TypeError("Missing 'backends' argument")
+        if keys is None:
+            raise TypeError("Missing 'keys' argument")
+
+        _setter("backends", backends)
+        _setter("keys", keys)
 
     @property
     @pulumi.getter
@@ -15548,16 +22511,75 @@ class GetDeploymentSpecificationRouteBackendRoutingBackendBackendResult(dict):
         :param int status: The status code of the stock response from the mock backend.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "body", body)
-        pulumi.set(__self__, "connect_timeout_in_seconds", connect_timeout_in_seconds)
-        pulumi.set(__self__, "function_id", function_id)
-        pulumi.set(__self__, "headers", headers)
-        pulumi.set(__self__, "is_ssl_verify_disabled", is_ssl_verify_disabled)
-        pulumi.set(__self__, "read_timeout_in_seconds", read_timeout_in_seconds)
-        pulumi.set(__self__, "send_timeout_in_seconds", send_timeout_in_seconds)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "url", url)
+        GetDeploymentSpecificationRouteBackendRoutingBackendBackendResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            body=body,
+            connect_timeout_in_seconds=connect_timeout_in_seconds,
+            function_id=function_id,
+            headers=headers,
+            is_ssl_verify_disabled=is_ssl_verify_disabled,
+            read_timeout_in_seconds=read_timeout_in_seconds,
+            send_timeout_in_seconds=send_timeout_in_seconds,
+            status=status,
+            type=type,
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             body: Optional[str] = None,
+             connect_timeout_in_seconds: Optional[float] = None,
+             function_id: Optional[str] = None,
+             headers: Optional[Sequence['outputs.GetDeploymentSpecificationRouteBackendRoutingBackendBackendHeaderResult']] = None,
+             is_ssl_verify_disabled: Optional[bool] = None,
+             read_timeout_in_seconds: Optional[float] = None,
+             send_timeout_in_seconds: Optional[float] = None,
+             status: Optional[int] = None,
+             type: Optional[str] = None,
+             url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if body is None:
+            raise TypeError("Missing 'body' argument")
+        if connect_timeout_in_seconds is None and 'connectTimeoutInSeconds' in kwargs:
+            connect_timeout_in_seconds = kwargs['connectTimeoutInSeconds']
+        if connect_timeout_in_seconds is None:
+            raise TypeError("Missing 'connect_timeout_in_seconds' argument")
+        if function_id is None and 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if function_id is None:
+            raise TypeError("Missing 'function_id' argument")
+        if headers is None:
+            raise TypeError("Missing 'headers' argument")
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if is_ssl_verify_disabled is None:
+            raise TypeError("Missing 'is_ssl_verify_disabled' argument")
+        if read_timeout_in_seconds is None and 'readTimeoutInSeconds' in kwargs:
+            read_timeout_in_seconds = kwargs['readTimeoutInSeconds']
+        if read_timeout_in_seconds is None:
+            raise TypeError("Missing 'read_timeout_in_seconds' argument")
+        if send_timeout_in_seconds is None and 'sendTimeoutInSeconds' in kwargs:
+            send_timeout_in_seconds = kwargs['sendTimeoutInSeconds']
+        if send_timeout_in_seconds is None:
+            raise TypeError("Missing 'send_timeout_in_seconds' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if url is None:
+            raise TypeError("Missing 'url' argument")
+
+        _setter("body", body)
+        _setter("connect_timeout_in_seconds", connect_timeout_in_seconds)
+        _setter("function_id", function_id)
+        _setter("headers", headers)
+        _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
+        _setter("read_timeout_in_seconds", read_timeout_in_seconds)
+        _setter("send_timeout_in_seconds", send_timeout_in_seconds)
+        _setter("status", status)
+        _setter("type", type)
+        _setter("url", url)
 
     @property
     @pulumi.getter
@@ -15643,8 +22665,25 @@ class GetDeploymentSpecificationRouteBackendRoutingBackendBackendHeaderResult(di
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param str value: Value of the header.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetDeploymentSpecificationRouteBackendRoutingBackendBackendHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -15678,11 +22717,42 @@ class GetDeploymentSpecificationRouteBackendRoutingBackendKeyResult(dict):
         :param str type: Type of the Response Cache Store Policy.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "expression", expression)
-        pulumi.set(__self__, "is_default", is_default)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "values", values)
+        GetDeploymentSpecificationRouteBackendRoutingBackendKeyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            expression=expression,
+            is_default=is_default,
+            name=name,
+            type=type,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             expression: Optional[str] = None,
+             is_default: Optional[bool] = None,
+             name: Optional[str] = None,
+             type: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if expression is None:
+            raise TypeError("Missing 'expression' argument")
+        if is_default is None and 'isDefault' in kwargs:
+            is_default = kwargs['isDefault']
+        if is_default is None:
+            raise TypeError("Missing 'is_default' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("expression", expression)
+        _setter("is_default", is_default)
+        _setter("name", name)
+        _setter("type", type)
+        _setter("values", values)
 
     @property
     @pulumi.getter
@@ -15734,8 +22804,25 @@ class GetDeploymentSpecificationRouteBackendSelectionSourceResult(dict):
         :param str selector: String describing the context variable used as selector.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "selector", selector)
-        pulumi.set(__self__, "type", type)
+        GetDeploymentSpecificationRouteBackendSelectionSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            selector=selector,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             selector: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if selector is None:
+            raise TypeError("Missing 'selector' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("selector", selector)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -15763,8 +22850,29 @@ class GetDeploymentSpecificationRouteLoggingPolicyResult(dict):
         :param Sequence['GetDeploymentSpecificationRouteLoggingPolicyAccessLogArgs'] access_logs: Configures the logging policies for the access logs of an API Deployment.
         :param Sequence['GetDeploymentSpecificationRouteLoggingPolicyExecutionLogArgs'] execution_logs: Configures the logging policies for the execution logs of an API Deployment.
         """
-        pulumi.set(__self__, "access_logs", access_logs)
-        pulumi.set(__self__, "execution_logs", execution_logs)
+        GetDeploymentSpecificationRouteLoggingPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            access_logs=access_logs,
+            execution_logs=execution_logs,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             access_logs: Optional[Sequence['outputs.GetDeploymentSpecificationRouteLoggingPolicyAccessLogResult']] = None,
+             execution_logs: Optional[Sequence['outputs.GetDeploymentSpecificationRouteLoggingPolicyExecutionLogResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if access_logs is None and 'accessLogs' in kwargs:
+            access_logs = kwargs['accessLogs']
+        if access_logs is None:
+            raise TypeError("Missing 'access_logs' argument")
+        if execution_logs is None and 'executionLogs' in kwargs:
+            execution_logs = kwargs['executionLogs']
+        if execution_logs is None:
+            raise TypeError("Missing 'execution_logs' argument")
+
+        _setter("access_logs", access_logs)
+        _setter("execution_logs", execution_logs)
 
     @property
     @pulumi.getter(name="accessLogs")
@@ -15790,7 +22898,22 @@ class GetDeploymentSpecificationRouteLoggingPolicyAccessLogResult(dict):
         """
         :param bool is_enabled: Whether this policy is currently enabled.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        GetDeploymentSpecificationRouteLoggingPolicyAccessLogResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+
+        _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -15810,8 +22933,29 @@ class GetDeploymentSpecificationRouteLoggingPolicyExecutionLogResult(dict):
         :param bool is_enabled: Whether this policy is currently enabled.
         :param str log_level: Specifies the log level used to control logging output of execution logs. Enabling logging at a given level also enables logging at all higher levels.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "log_level", log_level)
+        GetDeploymentSpecificationRouteLoggingPolicyExecutionLogResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+            log_level=log_level,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: Optional[bool] = None,
+             log_level: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if log_level is None and 'logLevel' in kwargs:
+            log_level = kwargs['logLevel']
+        if log_level is None:
+            raise TypeError("Missing 'log_level' argument")
+
+        _setter("is_enabled", is_enabled)
+        _setter("log_level", log_level)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -15851,14 +22995,67 @@ class GetDeploymentSpecificationRouteRequestPolicyResult(dict):
         :param Sequence['GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidationArgs'] query_parameter_validations: Validate the URL query parameters on the incoming API requests on a specific route.
         :param Sequence['GetDeploymentSpecificationRouteRequestPolicyResponseCacheLookupArgs'] response_cache_lookups: Base policy for Response Cache lookup.
         """
-        pulumi.set(__self__, "authorizations", authorizations)
-        pulumi.set(__self__, "body_validations", body_validations)
-        pulumi.set(__self__, "cors", cors)
-        pulumi.set(__self__, "header_transformations", header_transformations)
-        pulumi.set(__self__, "header_validations", header_validations)
-        pulumi.set(__self__, "query_parameter_transformations", query_parameter_transformations)
-        pulumi.set(__self__, "query_parameter_validations", query_parameter_validations)
-        pulumi.set(__self__, "response_cache_lookups", response_cache_lookups)
+        GetDeploymentSpecificationRouteRequestPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            authorizations=authorizations,
+            body_validations=body_validations,
+            cors=cors,
+            header_transformations=header_transformations,
+            header_validations=header_validations,
+            query_parameter_transformations=query_parameter_transformations,
+            query_parameter_validations=query_parameter_validations,
+            response_cache_lookups=response_cache_lookups,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             authorizations: Optional[Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyAuthorizationResult']] = None,
+             body_validations: Optional[Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyBodyValidationResult']] = None,
+             cors: Optional[Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyCorResult']] = None,
+             header_transformations: Optional[Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationResult']] = None,
+             header_validations: Optional[Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyHeaderValidationResult']] = None,
+             query_parameter_transformations: Optional[Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationResult']] = None,
+             query_parameter_validations: Optional[Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidationResult']] = None,
+             response_cache_lookups: Optional[Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyResponseCacheLookupResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if authorizations is None:
+            raise TypeError("Missing 'authorizations' argument")
+        if body_validations is None and 'bodyValidations' in kwargs:
+            body_validations = kwargs['bodyValidations']
+        if body_validations is None:
+            raise TypeError("Missing 'body_validations' argument")
+        if cors is None:
+            raise TypeError("Missing 'cors' argument")
+        if header_transformations is None and 'headerTransformations' in kwargs:
+            header_transformations = kwargs['headerTransformations']
+        if header_transformations is None:
+            raise TypeError("Missing 'header_transformations' argument")
+        if header_validations is None and 'headerValidations' in kwargs:
+            header_validations = kwargs['headerValidations']
+        if header_validations is None:
+            raise TypeError("Missing 'header_validations' argument")
+        if query_parameter_transformations is None and 'queryParameterTransformations' in kwargs:
+            query_parameter_transformations = kwargs['queryParameterTransformations']
+        if query_parameter_transformations is None:
+            raise TypeError("Missing 'query_parameter_transformations' argument")
+        if query_parameter_validations is None and 'queryParameterValidations' in kwargs:
+            query_parameter_validations = kwargs['queryParameterValidations']
+        if query_parameter_validations is None:
+            raise TypeError("Missing 'query_parameter_validations' argument")
+        if response_cache_lookups is None and 'responseCacheLookups' in kwargs:
+            response_cache_lookups = kwargs['responseCacheLookups']
+        if response_cache_lookups is None:
+            raise TypeError("Missing 'response_cache_lookups' argument")
+
+        _setter("authorizations", authorizations)
+        _setter("body_validations", body_validations)
+        _setter("cors", cors)
+        _setter("header_transformations", header_transformations)
+        _setter("header_validations", header_validations)
+        _setter("query_parameter_transformations", query_parameter_transformations)
+        _setter("query_parameter_validations", query_parameter_validations)
+        _setter("response_cache_lookups", response_cache_lookups)
 
     @property
     @pulumi.getter
@@ -15934,8 +23131,27 @@ class GetDeploymentSpecificationRouteRequestPolicyAuthorizationResult(dict):
         :param Sequence[str] allowed_scopes: A user whose scope includes any of these access ranges is allowed on this route. Access ranges are case-sensitive.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "allowed_scopes", allowed_scopes)
-        pulumi.set(__self__, "type", type)
+        GetDeploymentSpecificationRouteRequestPolicyAuthorizationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_scopes=allowed_scopes,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_scopes: Optional[Sequence[str]] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if allowed_scopes is None and 'allowedScopes' in kwargs:
+            allowed_scopes = kwargs['allowedScopes']
+        if allowed_scopes is None:
+            raise TypeError("Missing 'allowed_scopes' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("allowed_scopes", allowed_scopes)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="allowedScopes")
@@ -15965,9 +23181,32 @@ class GetDeploymentSpecificationRouteRequestPolicyBodyValidationResult(dict):
         :param bool required: Determines if the parameter is required in the request.
         :param str validation_mode: Validation behavior mode.
         """
-        pulumi.set(__self__, "contents", contents)
-        pulumi.set(__self__, "required", required)
-        pulumi.set(__self__, "validation_mode", validation_mode)
+        GetDeploymentSpecificationRouteRequestPolicyBodyValidationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            contents=contents,
+            required=required,
+            validation_mode=validation_mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             contents: Optional[Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyBodyValidationContentResult']] = None,
+             required: Optional[bool] = None,
+             validation_mode: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if contents is None:
+            raise TypeError("Missing 'contents' argument")
+        if required is None:
+            raise TypeError("Missing 'required' argument")
+        if validation_mode is None and 'validationMode' in kwargs:
+            validation_mode = kwargs['validationMode']
+        if validation_mode is None:
+            raise TypeError("Missing 'validation_mode' argument")
+
+        _setter("contents", contents)
+        _setter("required", required)
+        _setter("validation_mode", validation_mode)
 
     @property
     @pulumi.getter
@@ -16003,8 +23242,29 @@ class GetDeploymentSpecificationRouteRequestPolicyBodyValidationContentResult(di
         :param str media_type: The media type is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following schema
         :param str validation_type: Validation type defines the content validation method.
         """
-        pulumi.set(__self__, "media_type", media_type)
-        pulumi.set(__self__, "validation_type", validation_type)
+        GetDeploymentSpecificationRouteRequestPolicyBodyValidationContentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            media_type=media_type,
+            validation_type=validation_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             media_type: Optional[str] = None,
+             validation_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if media_type is None and 'mediaType' in kwargs:
+            media_type = kwargs['mediaType']
+        if media_type is None:
+            raise TypeError("Missing 'media_type' argument")
+        if validation_type is None and 'validationType' in kwargs:
+            validation_type = kwargs['validationType']
+        if validation_type is None:
+            raise TypeError("Missing 'validation_type' argument")
+
+        _setter("media_type", media_type)
+        _setter("validation_type", validation_type)
 
     @property
     @pulumi.getter(name="mediaType")
@@ -16040,12 +23300,57 @@ class GetDeploymentSpecificationRouteRequestPolicyCorResult(dict):
         :param bool is_allow_credentials_enabled: Whether to send the Access-Control-Allow-Credentials header to allow CORS requests with cookies.
         :param int max_age_in_seconds: The time in seconds for the client to cache preflight responses. This is sent as the Access-Control-Max-Age if greater than 0.
         """
-        pulumi.set(__self__, "allowed_headers", allowed_headers)
-        pulumi.set(__self__, "allowed_methods", allowed_methods)
-        pulumi.set(__self__, "allowed_origins", allowed_origins)
-        pulumi.set(__self__, "exposed_headers", exposed_headers)
-        pulumi.set(__self__, "is_allow_credentials_enabled", is_allow_credentials_enabled)
-        pulumi.set(__self__, "max_age_in_seconds", max_age_in_seconds)
+        GetDeploymentSpecificationRouteRequestPolicyCorResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_headers=allowed_headers,
+            allowed_methods=allowed_methods,
+            allowed_origins=allowed_origins,
+            exposed_headers=exposed_headers,
+            is_allow_credentials_enabled=is_allow_credentials_enabled,
+            max_age_in_seconds=max_age_in_seconds,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_headers: Optional[Sequence[str]] = None,
+             allowed_methods: Optional[Sequence[str]] = None,
+             allowed_origins: Optional[Sequence[str]] = None,
+             exposed_headers: Optional[Sequence[str]] = None,
+             is_allow_credentials_enabled: Optional[bool] = None,
+             max_age_in_seconds: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if allowed_headers is None and 'allowedHeaders' in kwargs:
+            allowed_headers = kwargs['allowedHeaders']
+        if allowed_headers is None:
+            raise TypeError("Missing 'allowed_headers' argument")
+        if allowed_methods is None and 'allowedMethods' in kwargs:
+            allowed_methods = kwargs['allowedMethods']
+        if allowed_methods is None:
+            raise TypeError("Missing 'allowed_methods' argument")
+        if allowed_origins is None and 'allowedOrigins' in kwargs:
+            allowed_origins = kwargs['allowedOrigins']
+        if allowed_origins is None:
+            raise TypeError("Missing 'allowed_origins' argument")
+        if exposed_headers is None and 'exposedHeaders' in kwargs:
+            exposed_headers = kwargs['exposedHeaders']
+        if exposed_headers is None:
+            raise TypeError("Missing 'exposed_headers' argument")
+        if is_allow_credentials_enabled is None and 'isAllowCredentialsEnabled' in kwargs:
+            is_allow_credentials_enabled = kwargs['isAllowCredentialsEnabled']
+        if is_allow_credentials_enabled is None:
+            raise TypeError("Missing 'is_allow_credentials_enabled' argument")
+        if max_age_in_seconds is None and 'maxAgeInSeconds' in kwargs:
+            max_age_in_seconds = kwargs['maxAgeInSeconds']
+        if max_age_in_seconds is None:
+            raise TypeError("Missing 'max_age_in_seconds' argument")
+
+        _setter("allowed_headers", allowed_headers)
+        _setter("allowed_methods", allowed_methods)
+        _setter("allowed_origins", allowed_origins)
+        _setter("exposed_headers", exposed_headers)
+        _setter("is_allow_credentials_enabled", is_allow_credentials_enabled)
+        _setter("max_age_in_seconds", max_age_in_seconds)
 
     @property
     @pulumi.getter(name="allowedHeaders")
@@ -16107,9 +23412,36 @@ class GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationResult(dic
         :param Sequence['GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderArgs'] rename_headers: Rename HTTP headers as they pass through the gateway.
         :param Sequence['GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeaderArgs'] set_headers: Set HTTP headers as they pass through the gateway.
         """
-        pulumi.set(__self__, "filter_headers", filter_headers)
-        pulumi.set(__self__, "rename_headers", rename_headers)
-        pulumi.set(__self__, "set_headers", set_headers)
+        GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            filter_headers=filter_headers,
+            rename_headers=rename_headers,
+            set_headers=set_headers,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             filter_headers: Optional[Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderResult']] = None,
+             rename_headers: Optional[Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderResult']] = None,
+             set_headers: Optional[Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeaderResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if filter_headers is None and 'filterHeaders' in kwargs:
+            filter_headers = kwargs['filterHeaders']
+        if filter_headers is None:
+            raise TypeError("Missing 'filter_headers' argument")
+        if rename_headers is None and 'renameHeaders' in kwargs:
+            rename_headers = kwargs['renameHeaders']
+        if rename_headers is None:
+            raise TypeError("Missing 'rename_headers' argument")
+        if set_headers is None and 'setHeaders' in kwargs:
+            set_headers = kwargs['setHeaders']
+        if set_headers is None:
+            raise TypeError("Missing 'set_headers' argument")
+
+        _setter("filter_headers", filter_headers)
+        _setter("rename_headers", rename_headers)
+        _setter("set_headers", set_headers)
 
     @property
     @pulumi.getter(name="filterHeaders")
@@ -16145,8 +23477,25 @@ class GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHead
         :param Sequence['GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItemArgs'] items: The list of headers.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "type", type)
+        GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItemResult']] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("items", items)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -16172,7 +23521,20 @@ class GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHead
         """
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "name", name)
+        GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -16190,7 +23552,20 @@ class GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHead
         """
         :param Sequence['GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderItemArgs'] items: The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -16210,8 +23585,27 @@ class GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHead
         :param str from_: The original case-insensitive name of the header.  This name must be unique across transformation policies.
         :param str to: The new name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "from_", from_)
-        pulumi.set(__self__, "to", to)
+        GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            from_=from_,
+            to=to,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             from_: Optional[str] = None,
+             to: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if from_ is None and 'from' in kwargs:
+            from_ = kwargs['from']
+        if from_ is None:
+            raise TypeError("Missing 'from_' argument")
+        if to is None:
+            raise TypeError("Missing 'to' argument")
+
+        _setter("from_", from_)
+        _setter("to", to)
 
     @property
     @pulumi.getter(name="from")
@@ -16237,7 +23631,20 @@ class GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeaderR
         """
         :param Sequence['GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeaderItemArgs'] items: The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeaderItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -16259,9 +23666,32 @@ class GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeaderI
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "if_exists", if_exists)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationSetHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            if_exists=if_exists,
+            name=name,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             if_exists: Optional[str] = None,
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if if_exists is None and 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+        if if_exists is None:
+            raise TypeError("Missing 'if_exists' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("if_exists", if_exists)
+        _setter("name", name)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="ifExists")
@@ -16296,8 +23726,27 @@ class GetDeploymentSpecificationRouteRequestPolicyHeaderValidationResult(dict):
         """
         :param str validation_mode: Validation behavior mode.
         """
-        pulumi.set(__self__, "headers", headers)
-        pulumi.set(__self__, "validation_mode", validation_mode)
+        GetDeploymentSpecificationRouteRequestPolicyHeaderValidationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            headers=headers,
+            validation_mode=validation_mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             headers: Optional[Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyHeaderValidationHeaderResult']] = None,
+             validation_mode: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if headers is None:
+            raise TypeError("Missing 'headers' argument")
+        if validation_mode is None and 'validationMode' in kwargs:
+            validation_mode = kwargs['validationMode']
+        if validation_mode is None:
+            raise TypeError("Missing 'validation_mode' argument")
+
+        _setter("headers", headers)
+        _setter("validation_mode", validation_mode)
 
     @property
     @pulumi.getter
@@ -16322,8 +23771,25 @@ class GetDeploymentSpecificationRouteRequestPolicyHeaderValidationHeaderResult(d
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param bool required: Determines if the parameter is required in the request.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "required", required)
+        GetDeploymentSpecificationRouteRequestPolicyHeaderValidationHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            required=required,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             required: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if required is None:
+            raise TypeError("Missing 'required' argument")
+
+        _setter("name", name)
+        _setter("required", required)
 
     @property
     @pulumi.getter
@@ -16353,9 +23819,36 @@ class GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRe
         :param Sequence['GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterArgs'] rename_query_parameters: Rename parameters on the query string as they pass through the gateway.
         :param Sequence['GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterArgs'] set_query_parameters: Set parameters on the query string as they pass through the gateway.
         """
-        pulumi.set(__self__, "filter_query_parameters", filter_query_parameters)
-        pulumi.set(__self__, "rename_query_parameters", rename_query_parameters)
-        pulumi.set(__self__, "set_query_parameters", set_query_parameters)
+        GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            filter_query_parameters=filter_query_parameters,
+            rename_query_parameters=rename_query_parameters,
+            set_query_parameters=set_query_parameters,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             filter_query_parameters: Optional[Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameterResult']] = None,
+             rename_query_parameters: Optional[Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterResult']] = None,
+             set_query_parameters: Optional[Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if filter_query_parameters is None and 'filterQueryParameters' in kwargs:
+            filter_query_parameters = kwargs['filterQueryParameters']
+        if filter_query_parameters is None:
+            raise TypeError("Missing 'filter_query_parameters' argument")
+        if rename_query_parameters is None and 'renameQueryParameters' in kwargs:
+            rename_query_parameters = kwargs['renameQueryParameters']
+        if rename_query_parameters is None:
+            raise TypeError("Missing 'rename_query_parameters' argument")
+        if set_query_parameters is None and 'setQueryParameters' in kwargs:
+            set_query_parameters = kwargs['setQueryParameters']
+        if set_query_parameters is None:
+            raise TypeError("Missing 'set_query_parameters' argument")
+
+        _setter("filter_query_parameters", filter_query_parameters)
+        _setter("rename_query_parameters", rename_query_parameters)
+        _setter("set_query_parameters", set_query_parameters)
 
     @property
     @pulumi.getter(name="filterQueryParameters")
@@ -16391,8 +23884,25 @@ class GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFi
         :param Sequence['GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameterItemArgs'] items: The list of headers.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "type", type)
+        GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameterItemResult']] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("items", items)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -16418,7 +23928,20 @@ class GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFi
         """
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "name", name)
+        GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameterItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -16436,7 +23959,20 @@ class GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRe
         """
         :param Sequence['GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItemArgs'] items: The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -16456,8 +23992,27 @@ class GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRe
         :param str from_: The original case-insensitive name of the header.  This name must be unique across transformation policies.
         :param str to: The new name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "from_", from_)
-        pulumi.set(__self__, "to", to)
+        GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            from_=from_,
+            to=to,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             from_: Optional[str] = None,
+             to: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if from_ is None and 'from' in kwargs:
+            from_ = kwargs['from']
+        if from_ is None:
+            raise TypeError("Missing 'from_' argument")
+        if to is None:
+            raise TypeError("Missing 'to' argument")
+
+        _setter("from_", from_)
+        _setter("to", to)
 
     @property
     @pulumi.getter(name="from")
@@ -16483,7 +24038,20 @@ class GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSe
         """
         :param Sequence['GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterItemArgs'] items: The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -16505,9 +24073,32 @@ class GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSe
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "if_exists", if_exists)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            if_exists=if_exists,
+            name=name,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             if_exists: Optional[str] = None,
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if if_exists is None and 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+        if if_exists is None:
+            raise TypeError("Missing 'if_exists' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("if_exists", if_exists)
+        _setter("name", name)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="ifExists")
@@ -16542,8 +24133,27 @@ class GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidationResult
         """
         :param str validation_mode: Validation behavior mode.
         """
-        pulumi.set(__self__, "parameters", parameters)
-        pulumi.set(__self__, "validation_mode", validation_mode)
+        GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            parameters=parameters,
+            validation_mode=validation_mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             parameters: Optional[Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidationParameterResult']] = None,
+             validation_mode: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if parameters is None:
+            raise TypeError("Missing 'parameters' argument")
+        if validation_mode is None and 'validationMode' in kwargs:
+            validation_mode = kwargs['validationMode']
+        if validation_mode is None:
+            raise TypeError("Missing 'validation_mode' argument")
+
+        _setter("parameters", parameters)
+        _setter("validation_mode", validation_mode)
 
     @property
     @pulumi.getter
@@ -16568,8 +24178,25 @@ class GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidationParame
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param bool required: Determines if the parameter is required in the request.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "required", required)
+        GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidationParameterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            required=required,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             required: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if required is None:
+            raise TypeError("Missing 'required' argument")
+
+        _setter("name", name)
+        _setter("required", required)
 
     @property
     @pulumi.getter
@@ -16601,10 +24228,41 @@ class GetDeploymentSpecificationRouteRequestPolicyResponseCacheLookupResult(dict
         :param bool is_private_caching_enabled: Set true to allow caching responses where the request has an Authorization header. Ensure you have configured your  cache key additions to get the level of isolation across authenticated requests that you require.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "cache_key_additions", cache_key_additions)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "is_private_caching_enabled", is_private_caching_enabled)
-        pulumi.set(__self__, "type", type)
+        GetDeploymentSpecificationRouteRequestPolicyResponseCacheLookupResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cache_key_additions=cache_key_additions,
+            is_enabled=is_enabled,
+            is_private_caching_enabled=is_private_caching_enabled,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cache_key_additions: Optional[Sequence[str]] = None,
+             is_enabled: Optional[bool] = None,
+             is_private_caching_enabled: Optional[bool] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if cache_key_additions is None and 'cacheKeyAdditions' in kwargs:
+            cache_key_additions = kwargs['cacheKeyAdditions']
+        if cache_key_additions is None:
+            raise TypeError("Missing 'cache_key_additions' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if is_private_caching_enabled is None and 'isPrivateCachingEnabled' in kwargs:
+            is_private_caching_enabled = kwargs['isPrivateCachingEnabled']
+        if is_private_caching_enabled is None:
+            raise TypeError("Missing 'is_private_caching_enabled' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("cache_key_additions", cache_key_additions)
+        _setter("is_enabled", is_enabled)
+        _setter("is_private_caching_enabled", is_private_caching_enabled)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="cacheKeyAdditions")
@@ -16648,8 +24306,29 @@ class GetDeploymentSpecificationRouteResponsePolicyResult(dict):
         :param Sequence['GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationArgs'] header_transformations: A set of transformations to apply to HTTP headers that pass through the gateway.
         :param Sequence['GetDeploymentSpecificationRouteResponsePolicyResponseCacheStoreArgs'] response_cache_stores: Base policy for how a response from a backend is cached in the Response Cache.
         """
-        pulumi.set(__self__, "header_transformations", header_transformations)
-        pulumi.set(__self__, "response_cache_stores", response_cache_stores)
+        GetDeploymentSpecificationRouteResponsePolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            header_transformations=header_transformations,
+            response_cache_stores=response_cache_stores,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             header_transformations: Optional[Sequence['outputs.GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationResult']] = None,
+             response_cache_stores: Optional[Sequence['outputs.GetDeploymentSpecificationRouteResponsePolicyResponseCacheStoreResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if header_transformations is None and 'headerTransformations' in kwargs:
+            header_transformations = kwargs['headerTransformations']
+        if header_transformations is None:
+            raise TypeError("Missing 'header_transformations' argument")
+        if response_cache_stores is None and 'responseCacheStores' in kwargs:
+            response_cache_stores = kwargs['responseCacheStores']
+        if response_cache_stores is None:
+            raise TypeError("Missing 'response_cache_stores' argument")
+
+        _setter("header_transformations", header_transformations)
+        _setter("response_cache_stores", response_cache_stores)
 
     @property
     @pulumi.getter(name="headerTransformations")
@@ -16679,9 +24358,36 @@ class GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationResult(di
         :param Sequence['GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderArgs'] rename_headers: Rename HTTP headers as they pass through the gateway.
         :param Sequence['GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderArgs'] set_headers: Set HTTP headers as they pass through the gateway.
         """
-        pulumi.set(__self__, "filter_headers", filter_headers)
-        pulumi.set(__self__, "rename_headers", rename_headers)
-        pulumi.set(__self__, "set_headers", set_headers)
+        GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            filter_headers=filter_headers,
+            rename_headers=rename_headers,
+            set_headers=set_headers,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             filter_headers: Optional[Sequence['outputs.GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationFilterHeaderResult']] = None,
+             rename_headers: Optional[Sequence['outputs.GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderResult']] = None,
+             set_headers: Optional[Sequence['outputs.GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if filter_headers is None and 'filterHeaders' in kwargs:
+            filter_headers = kwargs['filterHeaders']
+        if filter_headers is None:
+            raise TypeError("Missing 'filter_headers' argument")
+        if rename_headers is None and 'renameHeaders' in kwargs:
+            rename_headers = kwargs['renameHeaders']
+        if rename_headers is None:
+            raise TypeError("Missing 'rename_headers' argument")
+        if set_headers is None and 'setHeaders' in kwargs:
+            set_headers = kwargs['setHeaders']
+        if set_headers is None:
+            raise TypeError("Missing 'set_headers' argument")
+
+        _setter("filter_headers", filter_headers)
+        _setter("rename_headers", rename_headers)
+        _setter("set_headers", set_headers)
 
     @property
     @pulumi.getter(name="filterHeaders")
@@ -16717,8 +24423,25 @@ class GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationFilterHea
         :param Sequence['GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationFilterHeaderItemArgs'] items: The list of headers.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "type", type)
+        GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationFilterHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationFilterHeaderItemResult']] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("items", items)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -16744,7 +24467,20 @@ class GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationFilterHea
         """
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "name", name)
+        GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationFilterHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -16762,7 +24498,20 @@ class GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHea
         """
         :param Sequence['GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderItemArgs'] items: The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -16782,8 +24531,27 @@ class GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHea
         :param str from_: The original case-insensitive name of the header.  This name must be unique across transformation policies.
         :param str to: The new name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "from_", from_)
-        pulumi.set(__self__, "to", to)
+        GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            from_=from_,
+            to=to,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             from_: Optional[str] = None,
+             to: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if from_ is None and 'from' in kwargs:
+            from_ = kwargs['from']
+        if from_ is None:
+            raise TypeError("Missing 'from_' argument")
+        if to is None:
+            raise TypeError("Missing 'to' argument")
+
+        _setter("from_", from_)
+        _setter("to", to)
 
     @property
     @pulumi.getter(name="from")
@@ -16809,7 +24577,20 @@ class GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeader
         """
         :param Sequence['GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItemArgs'] items: The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -16831,9 +24612,32 @@ class GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeader
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "if_exists", if_exists)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            if_exists=if_exists,
+            name=name,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             if_exists: Optional[str] = None,
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if if_exists is None and 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+        if if_exists is None:
+            raise TypeError("Missing 'if_exists' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("if_exists", if_exists)
+        _setter("name", name)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="ifExists")
@@ -16869,8 +24673,27 @@ class GetDeploymentSpecificationRouteResponsePolicyResponseCacheStoreResult(dict
         :param int time_to_live_in_seconds: Sets the number of seconds for a response from a backend being stored in the Response Cache before it expires.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "time_to_live_in_seconds", time_to_live_in_seconds)
-        pulumi.set(__self__, "type", type)
+        GetDeploymentSpecificationRouteResponsePolicyResponseCacheStoreResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_to_live_in_seconds=time_to_live_in_seconds,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_to_live_in_seconds: Optional[int] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if time_to_live_in_seconds is None and 'timeToLiveInSeconds' in kwargs:
+            time_to_live_in_seconds = kwargs['timeToLiveInSeconds']
+        if time_to_live_in_seconds is None:
+            raise TypeError("Missing 'time_to_live_in_seconds' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("time_to_live_in_seconds", time_to_live_in_seconds)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="timeToLiveInSeconds")
@@ -16920,19 +24743,98 @@ class GetDeploymentsDeploymentCollectionResult(dict):
         :param str time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "endpoint", endpoint)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "gateway_id", gateway_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "path_prefix", path_prefix)
-        pulumi.set(__self__, "specifications", specifications)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetDeploymentsDeploymentCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            endpoint=endpoint,
+            freeform_tags=freeform_tags,
+            gateway_id=gateway_id,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            path_prefix=path_prefix,
+            specifications=specifications,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             endpoint: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             gateway_id: Optional[str] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             path_prefix: Optional[str] = None,
+             specifications: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationResult']] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if endpoint is None:
+            raise TypeError("Missing 'endpoint' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if gateway_id is None and 'gatewayId' in kwargs:
+            gateway_id = kwargs['gatewayId']
+        if gateway_id is None:
+            raise TypeError("Missing 'gateway_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if path_prefix is None and 'pathPrefix' in kwargs:
+            path_prefix = kwargs['pathPrefix']
+        if path_prefix is None:
+            raise TypeError("Missing 'path_prefix' argument")
+        if specifications is None:
+            raise TypeError("Missing 'specifications' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("endpoint", endpoint)
+        _setter("freeform_tags", freeform_tags)
+        _setter("gateway_id", gateway_id)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("path_prefix", path_prefix)
+        _setter("specifications", specifications)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -17050,9 +24952,34 @@ class GetDeploymentsDeploymentCollectionSpecificationResult(dict):
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRequestPolicyArgs'] request_policies: Behavior applied to any requests received by the API on this route.
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRouteArgs'] routes: A list of routes that this API exposes.
         """
-        pulumi.set(__self__, "logging_policies", logging_policies)
-        pulumi.set(__self__, "request_policies", request_policies)
-        pulumi.set(__self__, "routes", routes)
+        GetDeploymentsDeploymentCollectionSpecificationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            logging_policies=logging_policies,
+            request_policies=request_policies,
+            routes=routes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             logging_policies: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyResult']] = None,
+             request_policies: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyResult']] = None,
+             routes: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if logging_policies is None and 'loggingPolicies' in kwargs:
+            logging_policies = kwargs['loggingPolicies']
+        if logging_policies is None:
+            raise TypeError("Missing 'logging_policies' argument")
+        if request_policies is None and 'requestPolicies' in kwargs:
+            request_policies = kwargs['requestPolicies']
+        if request_policies is None:
+            raise TypeError("Missing 'request_policies' argument")
+        if routes is None:
+            raise TypeError("Missing 'routes' argument")
+
+        _setter("logging_policies", logging_policies)
+        _setter("request_policies", request_policies)
+        _setter("routes", routes)
 
     @property
     @pulumi.getter(name="loggingPolicies")
@@ -17088,8 +25015,29 @@ class GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyResult(dict):
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyAccessLogArgs'] access_logs: Configures the logging policies for the access logs of an API Deployment.
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyExecutionLogArgs'] execution_logs: Configures the logging policies for the execution logs of an API Deployment.
         """
-        pulumi.set(__self__, "access_logs", access_logs)
-        pulumi.set(__self__, "execution_logs", execution_logs)
+        GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            access_logs=access_logs,
+            execution_logs=execution_logs,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             access_logs: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyAccessLogResult']] = None,
+             execution_logs: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyExecutionLogResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if access_logs is None and 'accessLogs' in kwargs:
+            access_logs = kwargs['accessLogs']
+        if access_logs is None:
+            raise TypeError("Missing 'access_logs' argument")
+        if execution_logs is None and 'executionLogs' in kwargs:
+            execution_logs = kwargs['executionLogs']
+        if execution_logs is None:
+            raise TypeError("Missing 'execution_logs' argument")
+
+        _setter("access_logs", access_logs)
+        _setter("execution_logs", execution_logs)
 
     @property
     @pulumi.getter(name="accessLogs")
@@ -17115,7 +25063,22 @@ class GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyAccessLogResul
         """
         :param bool is_enabled: Whether this policy is currently enabled.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyAccessLogResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+
+        _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -17135,8 +25098,29 @@ class GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyExecutionLogRe
         :param bool is_enabled: Whether this policy is currently enabled.
         :param str log_level: Specifies the log level used to control logging output of execution logs. Enabling logging at a given level also enables logging at all higher levels.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "log_level", log_level)
+        GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyExecutionLogResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+            log_level=log_level,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: Optional[bool] = None,
+             log_level: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if log_level is None and 'logLevel' in kwargs:
+            log_level = kwargs['logLevel']
+        if log_level is None:
+            raise TypeError("Missing 'log_level' argument")
+
+        _setter("is_enabled", is_enabled)
+        _setter("log_level", log_level)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -17172,12 +25156,53 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyResult(dict):
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimitingArgs'] rate_limitings: Limit the number of requests that should be handled for the specified window using a specfic key.
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanArgs'] usage_plans: Usage plan policies for this deployment
         """
-        pulumi.set(__self__, "authentications", authentications)
-        pulumi.set(__self__, "cors", cors)
-        pulumi.set(__self__, "dynamic_authentications", dynamic_authentications)
-        pulumi.set(__self__, "mutual_tls", mutual_tls)
-        pulumi.set(__self__, "rate_limitings", rate_limitings)
-        pulumi.set(__self__, "usage_plans", usage_plans)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            authentications=authentications,
+            cors=cors,
+            dynamic_authentications=dynamic_authentications,
+            mutual_tls=mutual_tls,
+            rate_limitings=rate_limitings,
+            usage_plans=usage_plans,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             authentications: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationResult']] = None,
+             cors: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyCorResult']] = None,
+             dynamic_authentications: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationResult']] = None,
+             mutual_tls: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyMutualTlResult']] = None,
+             rate_limitings: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimitingResult']] = None,
+             usage_plans: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if authentications is None:
+            raise TypeError("Missing 'authentications' argument")
+        if cors is None:
+            raise TypeError("Missing 'cors' argument")
+        if dynamic_authentications is None and 'dynamicAuthentications' in kwargs:
+            dynamic_authentications = kwargs['dynamicAuthentications']
+        if dynamic_authentications is None:
+            raise TypeError("Missing 'dynamic_authentications' argument")
+        if mutual_tls is None and 'mutualTls' in kwargs:
+            mutual_tls = kwargs['mutualTls']
+        if mutual_tls is None:
+            raise TypeError("Missing 'mutual_tls' argument")
+        if rate_limitings is None and 'rateLimitings' in kwargs:
+            rate_limitings = kwargs['rateLimitings']
+        if rate_limitings is None:
+            raise TypeError("Missing 'rate_limitings' argument")
+        if usage_plans is None and 'usagePlans' in kwargs:
+            usage_plans = kwargs['usagePlans']
+        if usage_plans is None:
+            raise TypeError("Missing 'usage_plans' argument")
+
+        _setter("authentications", authentications)
+        _setter("cors", cors)
+        _setter("dynamic_authentications", dynamic_authentications)
+        _setter("mutual_tls", mutual_tls)
+        _setter("rate_limitings", rate_limitings)
+        _setter("usage_plans", usage_plans)
 
     @property
     @pulumi.getter
@@ -17262,21 +25287,112 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicyArgs'] validation_policies: Authentication Policies for the Token Authentication types.
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationVerifyClaimArgs'] verify_claims: A list of claims which should be validated to consider the token valid.
         """
-        pulumi.set(__self__, "audiences", audiences)
-        pulumi.set(__self__, "cache_keys", cache_keys)
-        pulumi.set(__self__, "function_id", function_id)
-        pulumi.set(__self__, "is_anonymous_access_allowed", is_anonymous_access_allowed)
-        pulumi.set(__self__, "issuers", issuers)
-        pulumi.set(__self__, "max_clock_skew_in_seconds", max_clock_skew_in_seconds)
-        pulumi.set(__self__, "parameters", parameters)
-        pulumi.set(__self__, "public_keys", public_keys)
-        pulumi.set(__self__, "token_auth_scheme", token_auth_scheme)
-        pulumi.set(__self__, "token_header", token_header)
-        pulumi.set(__self__, "token_query_param", token_query_param)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "validation_failure_policies", validation_failure_policies)
-        pulumi.set(__self__, "validation_policies", validation_policies)
-        pulumi.set(__self__, "verify_claims", verify_claims)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audiences=audiences,
+            cache_keys=cache_keys,
+            function_id=function_id,
+            is_anonymous_access_allowed=is_anonymous_access_allowed,
+            issuers=issuers,
+            max_clock_skew_in_seconds=max_clock_skew_in_seconds,
+            parameters=parameters,
+            public_keys=public_keys,
+            token_auth_scheme=token_auth_scheme,
+            token_header=token_header,
+            token_query_param=token_query_param,
+            type=type,
+            validation_failure_policies=validation_failure_policies,
+            validation_policies=validation_policies,
+            verify_claims=verify_claims,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audiences: Optional[Sequence[str]] = None,
+             cache_keys: Optional[Sequence[str]] = None,
+             function_id: Optional[str] = None,
+             is_anonymous_access_allowed: Optional[bool] = None,
+             issuers: Optional[Sequence[str]] = None,
+             max_clock_skew_in_seconds: Optional[float] = None,
+             parameters: Optional[Mapping[str, Any]] = None,
+             public_keys: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationPublicKeyResult']] = None,
+             token_auth_scheme: Optional[str] = None,
+             token_header: Optional[str] = None,
+             token_query_param: Optional[str] = None,
+             type: Optional[str] = None,
+             validation_failure_policies: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResult']] = None,
+             validation_policies: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicyResult']] = None,
+             verify_claims: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationVerifyClaimResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if audiences is None:
+            raise TypeError("Missing 'audiences' argument")
+        if cache_keys is None and 'cacheKeys' in kwargs:
+            cache_keys = kwargs['cacheKeys']
+        if cache_keys is None:
+            raise TypeError("Missing 'cache_keys' argument")
+        if function_id is None and 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if function_id is None:
+            raise TypeError("Missing 'function_id' argument")
+        if is_anonymous_access_allowed is None and 'isAnonymousAccessAllowed' in kwargs:
+            is_anonymous_access_allowed = kwargs['isAnonymousAccessAllowed']
+        if is_anonymous_access_allowed is None:
+            raise TypeError("Missing 'is_anonymous_access_allowed' argument")
+        if issuers is None:
+            raise TypeError("Missing 'issuers' argument")
+        if max_clock_skew_in_seconds is None and 'maxClockSkewInSeconds' in kwargs:
+            max_clock_skew_in_seconds = kwargs['maxClockSkewInSeconds']
+        if max_clock_skew_in_seconds is None:
+            raise TypeError("Missing 'max_clock_skew_in_seconds' argument")
+        if parameters is None:
+            raise TypeError("Missing 'parameters' argument")
+        if public_keys is None and 'publicKeys' in kwargs:
+            public_keys = kwargs['publicKeys']
+        if public_keys is None:
+            raise TypeError("Missing 'public_keys' argument")
+        if token_auth_scheme is None and 'tokenAuthScheme' in kwargs:
+            token_auth_scheme = kwargs['tokenAuthScheme']
+        if token_auth_scheme is None:
+            raise TypeError("Missing 'token_auth_scheme' argument")
+        if token_header is None and 'tokenHeader' in kwargs:
+            token_header = kwargs['tokenHeader']
+        if token_header is None:
+            raise TypeError("Missing 'token_header' argument")
+        if token_query_param is None and 'tokenQueryParam' in kwargs:
+            token_query_param = kwargs['tokenQueryParam']
+        if token_query_param is None:
+            raise TypeError("Missing 'token_query_param' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if validation_failure_policies is None and 'validationFailurePolicies' in kwargs:
+            validation_failure_policies = kwargs['validationFailurePolicies']
+        if validation_failure_policies is None:
+            raise TypeError("Missing 'validation_failure_policies' argument")
+        if validation_policies is None and 'validationPolicies' in kwargs:
+            validation_policies = kwargs['validationPolicies']
+        if validation_policies is None:
+            raise TypeError("Missing 'validation_policies' argument")
+        if verify_claims is None and 'verifyClaims' in kwargs:
+            verify_claims = kwargs['verifyClaims']
+        if verify_claims is None:
+            raise TypeError("Missing 'verify_claims' argument")
+
+        _setter("audiences", audiences)
+        _setter("cache_keys", cache_keys)
+        _setter("function_id", function_id)
+        _setter("is_anonymous_access_allowed", is_anonymous_access_allowed)
+        _setter("issuers", issuers)
+        _setter("max_clock_skew_in_seconds", max_clock_skew_in_seconds)
+        _setter("parameters", parameters)
+        _setter("public_keys", public_keys)
+        _setter("token_auth_scheme", token_auth_scheme)
+        _setter("token_header", token_header)
+        _setter("token_query_param", token_query_param)
+        _setter("type", type)
+        _setter("validation_failure_policies", validation_failure_policies)
+        _setter("validation_policies", validation_policies)
+        _setter("verify_claims", verify_claims)
 
     @property
     @pulumi.getter
@@ -17411,11 +25527,44 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
         :param str type: Type of the Response Cache Store Policy.
         :param str uri: The uri from which to retrieve the key. It must be accessible without authentication.
         """
-        pulumi.set(__self__, "is_ssl_verify_disabled", is_ssl_verify_disabled)
-        pulumi.set(__self__, "keys", keys)
-        pulumi.set(__self__, "max_cache_duration_in_hours", max_cache_duration_in_hours)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "uri", uri)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationPublicKeyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_ssl_verify_disabled=is_ssl_verify_disabled,
+            keys=keys,
+            max_cache_duration_in_hours=max_cache_duration_in_hours,
+            type=type,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_ssl_verify_disabled: Optional[bool] = None,
+             keys: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationPublicKeyKeyResult']] = None,
+             max_cache_duration_in_hours: Optional[int] = None,
+             type: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if is_ssl_verify_disabled is None:
+            raise TypeError("Missing 'is_ssl_verify_disabled' argument")
+        if keys is None:
+            raise TypeError("Missing 'keys' argument")
+        if max_cache_duration_in_hours is None and 'maxCacheDurationInHours' in kwargs:
+            max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
+        if max_cache_duration_in_hours is None:
+            raise TypeError("Missing 'max_cache_duration_in_hours' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
+
+        _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
+        _setter("keys", keys)
+        _setter("max_cache_duration_in_hours", max_cache_duration_in_hours)
+        _setter("type", type)
+        _setter("uri", uri)
 
     @property
     @pulumi.getter(name="isSslVerifyDisabled")
@@ -17481,15 +25630,62 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
         :param str n: The base64 url encoded modulus of the RSA public key represented by this key.
         :param str use: The intended use of the public key.
         """
-        pulumi.set(__self__, "alg", alg)
-        pulumi.set(__self__, "e", e)
-        pulumi.set(__self__, "format", format)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "key_ops", key_ops)
-        pulumi.set(__self__, "kid", kid)
-        pulumi.set(__self__, "kty", kty)
-        pulumi.set(__self__, "n", n)
-        pulumi.set(__self__, "use", use)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationPublicKeyKeyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            alg=alg,
+            e=e,
+            format=format,
+            key=key,
+            key_ops=key_ops,
+            kid=kid,
+            kty=kty,
+            n=n,
+            use=use,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             alg: Optional[str] = None,
+             e: Optional[str] = None,
+             format: Optional[str] = None,
+             key: Optional[str] = None,
+             key_ops: Optional[Sequence[str]] = None,
+             kid: Optional[str] = None,
+             kty: Optional[str] = None,
+             n: Optional[str] = None,
+             use: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if alg is None:
+            raise TypeError("Missing 'alg' argument")
+        if e is None:
+            raise TypeError("Missing 'e' argument")
+        if format is None:
+            raise TypeError("Missing 'format' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if key_ops is None and 'keyOps' in kwargs:
+            key_ops = kwargs['keyOps']
+        if key_ops is None:
+            raise TypeError("Missing 'key_ops' argument")
+        if kid is None:
+            raise TypeError("Missing 'kid' argument")
+        if kty is None:
+            raise TypeError("Missing 'kty' argument")
+        if n is None:
+            raise TypeError("Missing 'n' argument")
+        if use is None:
+            raise TypeError("Missing 'use' argument")
+
+        _setter("alg", alg)
+        _setter("e", e)
+        _setter("format", format)
+        _setter("key", key)
+        _setter("key_ops", key_ops)
+        _setter("kid", kid)
+        _setter("kty", kty)
+        _setter("n", n)
+        _setter("use", use)
 
     @property
     @pulumi.getter
@@ -17597,20 +25793,109 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
         :param bool use_cookies_for_session: Defines whether or not to use cookies for session maintenance.
         :param bool use_pkce: Defines whether or not to support PKCE.
         """
-        pulumi.set(__self__, "client_details", client_details)
-        pulumi.set(__self__, "fallback_redirect_path", fallback_redirect_path)
-        pulumi.set(__self__, "logout_path", logout_path)
-        pulumi.set(__self__, "max_expiry_duration_in_hours", max_expiry_duration_in_hours)
-        pulumi.set(__self__, "response_code", response_code)
-        pulumi.set(__self__, "response_header_transformations", response_header_transformations)
-        pulumi.set(__self__, "response_message", response_message)
-        pulumi.set(__self__, "response_type", response_type)
-        pulumi.set(__self__, "scopes", scopes)
-        pulumi.set(__self__, "source_uri_details", source_uri_details)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "use_cookies_for_intermediate_steps", use_cookies_for_intermediate_steps)
-        pulumi.set(__self__, "use_cookies_for_session", use_cookies_for_session)
-        pulumi.set(__self__, "use_pkce", use_pkce)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            client_details=client_details,
+            fallback_redirect_path=fallback_redirect_path,
+            logout_path=logout_path,
+            max_expiry_duration_in_hours=max_expiry_duration_in_hours,
+            response_code=response_code,
+            response_header_transformations=response_header_transformations,
+            response_message=response_message,
+            response_type=response_type,
+            scopes=scopes,
+            source_uri_details=source_uri_details,
+            type=type,
+            use_cookies_for_intermediate_steps=use_cookies_for_intermediate_steps,
+            use_cookies_for_session=use_cookies_for_session,
+            use_pkce=use_pkce,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             client_details: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyClientDetailResult']] = None,
+             fallback_redirect_path: Optional[str] = None,
+             logout_path: Optional[str] = None,
+             max_expiry_duration_in_hours: Optional[int] = None,
+             response_code: Optional[str] = None,
+             response_header_transformations: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationResult']] = None,
+             response_message: Optional[str] = None,
+             response_type: Optional[str] = None,
+             scopes: Optional[Sequence[str]] = None,
+             source_uri_details: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicySourceUriDetailResult']] = None,
+             type: Optional[str] = None,
+             use_cookies_for_intermediate_steps: Optional[bool] = None,
+             use_cookies_for_session: Optional[bool] = None,
+             use_pkce: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if client_details is None and 'clientDetails' in kwargs:
+            client_details = kwargs['clientDetails']
+        if client_details is None:
+            raise TypeError("Missing 'client_details' argument")
+        if fallback_redirect_path is None and 'fallbackRedirectPath' in kwargs:
+            fallback_redirect_path = kwargs['fallbackRedirectPath']
+        if fallback_redirect_path is None:
+            raise TypeError("Missing 'fallback_redirect_path' argument")
+        if logout_path is None and 'logoutPath' in kwargs:
+            logout_path = kwargs['logoutPath']
+        if logout_path is None:
+            raise TypeError("Missing 'logout_path' argument")
+        if max_expiry_duration_in_hours is None and 'maxExpiryDurationInHours' in kwargs:
+            max_expiry_duration_in_hours = kwargs['maxExpiryDurationInHours']
+        if max_expiry_duration_in_hours is None:
+            raise TypeError("Missing 'max_expiry_duration_in_hours' argument")
+        if response_code is None and 'responseCode' in kwargs:
+            response_code = kwargs['responseCode']
+        if response_code is None:
+            raise TypeError("Missing 'response_code' argument")
+        if response_header_transformations is None and 'responseHeaderTransformations' in kwargs:
+            response_header_transformations = kwargs['responseHeaderTransformations']
+        if response_header_transformations is None:
+            raise TypeError("Missing 'response_header_transformations' argument")
+        if response_message is None and 'responseMessage' in kwargs:
+            response_message = kwargs['responseMessage']
+        if response_message is None:
+            raise TypeError("Missing 'response_message' argument")
+        if response_type is None and 'responseType' in kwargs:
+            response_type = kwargs['responseType']
+        if response_type is None:
+            raise TypeError("Missing 'response_type' argument")
+        if scopes is None:
+            raise TypeError("Missing 'scopes' argument")
+        if source_uri_details is None and 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+        if source_uri_details is None:
+            raise TypeError("Missing 'source_uri_details' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if use_cookies_for_intermediate_steps is None and 'useCookiesForIntermediateSteps' in kwargs:
+            use_cookies_for_intermediate_steps = kwargs['useCookiesForIntermediateSteps']
+        if use_cookies_for_intermediate_steps is None:
+            raise TypeError("Missing 'use_cookies_for_intermediate_steps' argument")
+        if use_cookies_for_session is None and 'useCookiesForSession' in kwargs:
+            use_cookies_for_session = kwargs['useCookiesForSession']
+        if use_cookies_for_session is None:
+            raise TypeError("Missing 'use_cookies_for_session' argument")
+        if use_pkce is None and 'usePkce' in kwargs:
+            use_pkce = kwargs['usePkce']
+        if use_pkce is None:
+            raise TypeError("Missing 'use_pkce' argument")
+
+        _setter("client_details", client_details)
+        _setter("fallback_redirect_path", fallback_redirect_path)
+        _setter("logout_path", logout_path)
+        _setter("max_expiry_duration_in_hours", max_expiry_duration_in_hours)
+        _setter("response_code", response_code)
+        _setter("response_header_transformations", response_header_transformations)
+        _setter("response_message", response_message)
+        _setter("response_type", response_type)
+        _setter("scopes", scopes)
+        _setter("source_uri_details", source_uri_details)
+        _setter("type", type)
+        _setter("use_cookies_for_intermediate_steps", use_cookies_for_intermediate_steps)
+        _setter("use_cookies_for_session", use_cookies_for_session)
+        _setter("use_pkce", use_pkce)
 
     @property
     @pulumi.getter(name="clientDetails")
@@ -17738,10 +26023,41 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
         :param str client_secret_version_number: The version number of the client secret to use.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "client_id", client_id)
-        pulumi.set(__self__, "client_secret_id", client_secret_id)
-        pulumi.set(__self__, "client_secret_version_number", client_secret_version_number)
-        pulumi.set(__self__, "type", type)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyClientDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            client_id=client_id,
+            client_secret_id=client_secret_id,
+            client_secret_version_number=client_secret_version_number,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             client_id: Optional[str] = None,
+             client_secret_id: Optional[str] = None,
+             client_secret_version_number: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if client_id is None and 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if client_id is None:
+            raise TypeError("Missing 'client_id' argument")
+        if client_secret_id is None and 'clientSecretId' in kwargs:
+            client_secret_id = kwargs['clientSecretId']
+        if client_secret_id is None:
+            raise TypeError("Missing 'client_secret_id' argument")
+        if client_secret_version_number is None and 'clientSecretVersionNumber' in kwargs:
+            client_secret_version_number = kwargs['clientSecretVersionNumber']
+        if client_secret_version_number is None:
+            raise TypeError("Missing 'client_secret_version_number' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("client_id", client_id)
+        _setter("client_secret_id", client_secret_id)
+        _setter("client_secret_version_number", client_secret_version_number)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="clientId")
@@ -17787,9 +26103,36 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeaderArgs'] rename_headers: Rename HTTP headers as they pass through the gateway.
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderArgs'] set_headers: Set HTTP headers as they pass through the gateway.
         """
-        pulumi.set(__self__, "filter_headers", filter_headers)
-        pulumi.set(__self__, "rename_headers", rename_headers)
-        pulumi.set(__self__, "set_headers", set_headers)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            filter_headers=filter_headers,
+            rename_headers=rename_headers,
+            set_headers=set_headers,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             filter_headers: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeaderResult']] = None,
+             rename_headers: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeaderResult']] = None,
+             set_headers: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if filter_headers is None and 'filterHeaders' in kwargs:
+            filter_headers = kwargs['filterHeaders']
+        if filter_headers is None:
+            raise TypeError("Missing 'filter_headers' argument")
+        if rename_headers is None and 'renameHeaders' in kwargs:
+            rename_headers = kwargs['renameHeaders']
+        if rename_headers is None:
+            raise TypeError("Missing 'rename_headers' argument")
+        if set_headers is None and 'setHeaders' in kwargs:
+            set_headers = kwargs['setHeaders']
+        if set_headers is None:
+            raise TypeError("Missing 'set_headers' argument")
+
+        _setter("filter_headers", filter_headers)
+        _setter("rename_headers", rename_headers)
+        _setter("set_headers", set_headers)
 
     @property
     @pulumi.getter(name="filterHeaders")
@@ -17825,8 +26168,25 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeaderItemArgs'] items: The list of headers.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "type", type)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeaderItemResult']] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("items", items)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -17852,7 +26212,20 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
         """
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "name", name)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -17870,7 +26243,20 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
         """
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeaderItemArgs'] items: The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeaderItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -17890,8 +26276,27 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
         :param str from_: The original case-insensitive name of the header.  This name must be unique across transformation policies.
         :param str to: The new name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "from_", from_)
-        pulumi.set(__self__, "to", to)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            from_=from_,
+            to=to,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             from_: Optional[str] = None,
+             to: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if from_ is None and 'from' in kwargs:
+            from_ = kwargs['from']
+        if from_ is None:
+            raise TypeError("Missing 'from_' argument")
+        if to is None:
+            raise TypeError("Missing 'to' argument")
+
+        _setter("from_", from_)
+        _setter("to", to)
 
     @property
     @pulumi.getter(name="from")
@@ -17917,7 +26322,20 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
         """
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderItemArgs'] items: The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -17939,9 +26357,32 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "if_exists", if_exists)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            if_exists=if_exists,
+            name=name,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             if_exists: Optional[str] = None,
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if if_exists is None and 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+        if if_exists is None:
+            raise TypeError("Missing 'if_exists' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("if_exists", if_exists)
+        _setter("name", name)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="ifExists")
@@ -17977,8 +26418,25 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
         :param str type: Type of the Response Cache Store Policy.
         :param str uri: The uri from which to retrieve the key. It must be accessible without authentication.
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "uri", uri)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicySourceUriDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
+
+        _setter("type", type)
+        _setter("uri", uri)
 
     @property
     @pulumi.getter
@@ -18018,14 +26476,65 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
         :param str type: Type of the Response Cache Store Policy.
         :param str uri: The uri from which to retrieve the key. It must be accessible without authentication.
         """
-        pulumi.set(__self__, "additional_validation_policies", additional_validation_policies)
-        pulumi.set(__self__, "client_details", client_details)
-        pulumi.set(__self__, "is_ssl_verify_disabled", is_ssl_verify_disabled)
-        pulumi.set(__self__, "keys", keys)
-        pulumi.set(__self__, "max_cache_duration_in_hours", max_cache_duration_in_hours)
-        pulumi.set(__self__, "source_uri_details", source_uri_details)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "uri", uri)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            additional_validation_policies=additional_validation_policies,
+            client_details=client_details,
+            is_ssl_verify_disabled=is_ssl_verify_disabled,
+            keys=keys,
+            max_cache_duration_in_hours=max_cache_duration_in_hours,
+            source_uri_details=source_uri_details,
+            type=type,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             additional_validation_policies: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicyResult']] = None,
+             client_details: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicyClientDetailResult']] = None,
+             is_ssl_verify_disabled: Optional[bool] = None,
+             keys: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicyKeyResult']] = None,
+             max_cache_duration_in_hours: Optional[int] = None,
+             source_uri_details: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicySourceUriDetailResult']] = None,
+             type: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if additional_validation_policies is None and 'additionalValidationPolicies' in kwargs:
+            additional_validation_policies = kwargs['additionalValidationPolicies']
+        if additional_validation_policies is None:
+            raise TypeError("Missing 'additional_validation_policies' argument")
+        if client_details is None and 'clientDetails' in kwargs:
+            client_details = kwargs['clientDetails']
+        if client_details is None:
+            raise TypeError("Missing 'client_details' argument")
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if is_ssl_verify_disabled is None:
+            raise TypeError("Missing 'is_ssl_verify_disabled' argument")
+        if keys is None:
+            raise TypeError("Missing 'keys' argument")
+        if max_cache_duration_in_hours is None and 'maxCacheDurationInHours' in kwargs:
+            max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
+        if max_cache_duration_in_hours is None:
+            raise TypeError("Missing 'max_cache_duration_in_hours' argument")
+        if source_uri_details is None and 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+        if source_uri_details is None:
+            raise TypeError("Missing 'source_uri_details' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
+
+        _setter("additional_validation_policies", additional_validation_policies)
+        _setter("client_details", client_details)
+        _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
+        _setter("keys", keys)
+        _setter("max_cache_duration_in_hours", max_cache_duration_in_hours)
+        _setter("source_uri_details", source_uri_details)
+        _setter("type", type)
+        _setter("uri", uri)
 
     @property
     @pulumi.getter(name="additionalValidationPolicies")
@@ -18103,9 +26612,32 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
         :param Sequence[str] issuers: A list of parties that could have issued the token.
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimArgs'] verify_claims: A list of claims which should be validated to consider the token valid.
         """
-        pulumi.set(__self__, "audiences", audiences)
-        pulumi.set(__self__, "issuers", issuers)
-        pulumi.set(__self__, "verify_claims", verify_claims)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audiences=audiences,
+            issuers=issuers,
+            verify_claims=verify_claims,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audiences: Optional[Sequence[str]] = None,
+             issuers: Optional[Sequence[str]] = None,
+             verify_claims: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if audiences is None:
+            raise TypeError("Missing 'audiences' argument")
+        if issuers is None:
+            raise TypeError("Missing 'issuers' argument")
+        if verify_claims is None and 'verifyClaims' in kwargs:
+            verify_claims = kwargs['verifyClaims']
+        if verify_claims is None:
+            raise TypeError("Missing 'verify_claims' argument")
+
+        _setter("audiences", audiences)
+        _setter("issuers", issuers)
+        _setter("verify_claims", verify_claims)
 
     @property
     @pulumi.getter
@@ -18143,9 +26675,32 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
         :param str key: Information around the values for selector of an authentication/ routing branch.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "is_required", is_required)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "values", values)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_required=is_required,
+            key=key,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_required: Optional[bool] = None,
+             key: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_required is None and 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+        if is_required is None:
+            raise TypeError("Missing 'is_required' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("is_required", is_required)
+        _setter("key", key)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="isRequired")
@@ -18185,10 +26740,41 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
         :param str client_secret_version_number: The version number of the client secret to use.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "client_id", client_id)
-        pulumi.set(__self__, "client_secret_id", client_secret_id)
-        pulumi.set(__self__, "client_secret_version_number", client_secret_version_number)
-        pulumi.set(__self__, "type", type)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicyClientDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            client_id=client_id,
+            client_secret_id=client_secret_id,
+            client_secret_version_number=client_secret_version_number,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             client_id: Optional[str] = None,
+             client_secret_id: Optional[str] = None,
+             client_secret_version_number: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if client_id is None and 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if client_id is None:
+            raise TypeError("Missing 'client_id' argument")
+        if client_secret_id is None and 'clientSecretId' in kwargs:
+            client_secret_id = kwargs['clientSecretId']
+        if client_secret_id is None:
+            raise TypeError("Missing 'client_secret_id' argument")
+        if client_secret_version_number is None and 'clientSecretVersionNumber' in kwargs:
+            client_secret_version_number = kwargs['clientSecretVersionNumber']
+        if client_secret_version_number is None:
+            raise TypeError("Missing 'client_secret_version_number' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("client_id", client_id)
+        _setter("client_secret_id", client_secret_id)
+        _setter("client_secret_version_number", client_secret_version_number)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="clientId")
@@ -18246,15 +26832,62 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
         :param str n: The base64 url encoded modulus of the RSA public key represented by this key.
         :param str use: The intended use of the public key.
         """
-        pulumi.set(__self__, "alg", alg)
-        pulumi.set(__self__, "e", e)
-        pulumi.set(__self__, "format", format)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "key_ops", key_ops)
-        pulumi.set(__self__, "kid", kid)
-        pulumi.set(__self__, "kty", kty)
-        pulumi.set(__self__, "n", n)
-        pulumi.set(__self__, "use", use)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicyKeyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            alg=alg,
+            e=e,
+            format=format,
+            key=key,
+            key_ops=key_ops,
+            kid=kid,
+            kty=kty,
+            n=n,
+            use=use,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             alg: Optional[str] = None,
+             e: Optional[str] = None,
+             format: Optional[str] = None,
+             key: Optional[str] = None,
+             key_ops: Optional[Sequence[str]] = None,
+             kid: Optional[str] = None,
+             kty: Optional[str] = None,
+             n: Optional[str] = None,
+             use: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if alg is None:
+            raise TypeError("Missing 'alg' argument")
+        if e is None:
+            raise TypeError("Missing 'e' argument")
+        if format is None:
+            raise TypeError("Missing 'format' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if key_ops is None and 'keyOps' in kwargs:
+            key_ops = kwargs['keyOps']
+        if key_ops is None:
+            raise TypeError("Missing 'key_ops' argument")
+        if kid is None:
+            raise TypeError("Missing 'kid' argument")
+        if kty is None:
+            raise TypeError("Missing 'kty' argument")
+        if n is None:
+            raise TypeError("Missing 'n' argument")
+        if use is None:
+            raise TypeError("Missing 'use' argument")
+
+        _setter("alg", alg)
+        _setter("e", e)
+        _setter("format", format)
+        _setter("key", key)
+        _setter("key_ops", key_ops)
+        _setter("kid", kid)
+        _setter("kty", kty)
+        _setter("n", n)
+        _setter("use", use)
 
     @property
     @pulumi.getter
@@ -18338,8 +26971,25 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
         :param str type: Type of the Response Cache Store Policy.
         :param str uri: The uri from which to retrieve the key. It must be accessible without authentication.
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "uri", uri)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicySourceUriDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
+
+        _setter("type", type)
+        _setter("uri", uri)
 
     @property
     @pulumi.getter
@@ -18369,9 +27019,32 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
         :param str key: Information around the values for selector of an authentication/ routing branch.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "is_required", is_required)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "values", values)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationVerifyClaimResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_required=is_required,
+            key=key,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_required: Optional[bool] = None,
+             key: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_required is None and 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+        if is_required is None:
+            raise TypeError("Missing 'is_required' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("is_required", is_required)
+        _setter("key", key)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="isRequired")
@@ -18415,12 +27088,57 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyCorResult(dict
         :param bool is_allow_credentials_enabled: Whether to send the Access-Control-Allow-Credentials header to allow CORS requests with cookies.
         :param int max_age_in_seconds: The time in seconds for the client to cache preflight responses. This is sent as the Access-Control-Max-Age if greater than 0.
         """
-        pulumi.set(__self__, "allowed_headers", allowed_headers)
-        pulumi.set(__self__, "allowed_methods", allowed_methods)
-        pulumi.set(__self__, "allowed_origins", allowed_origins)
-        pulumi.set(__self__, "exposed_headers", exposed_headers)
-        pulumi.set(__self__, "is_allow_credentials_enabled", is_allow_credentials_enabled)
-        pulumi.set(__self__, "max_age_in_seconds", max_age_in_seconds)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyCorResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_headers=allowed_headers,
+            allowed_methods=allowed_methods,
+            allowed_origins=allowed_origins,
+            exposed_headers=exposed_headers,
+            is_allow_credentials_enabled=is_allow_credentials_enabled,
+            max_age_in_seconds=max_age_in_seconds,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_headers: Optional[Sequence[str]] = None,
+             allowed_methods: Optional[Sequence[str]] = None,
+             allowed_origins: Optional[Sequence[str]] = None,
+             exposed_headers: Optional[Sequence[str]] = None,
+             is_allow_credentials_enabled: Optional[bool] = None,
+             max_age_in_seconds: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if allowed_headers is None and 'allowedHeaders' in kwargs:
+            allowed_headers = kwargs['allowedHeaders']
+        if allowed_headers is None:
+            raise TypeError("Missing 'allowed_headers' argument")
+        if allowed_methods is None and 'allowedMethods' in kwargs:
+            allowed_methods = kwargs['allowedMethods']
+        if allowed_methods is None:
+            raise TypeError("Missing 'allowed_methods' argument")
+        if allowed_origins is None and 'allowedOrigins' in kwargs:
+            allowed_origins = kwargs['allowedOrigins']
+        if allowed_origins is None:
+            raise TypeError("Missing 'allowed_origins' argument")
+        if exposed_headers is None and 'exposedHeaders' in kwargs:
+            exposed_headers = kwargs['exposedHeaders']
+        if exposed_headers is None:
+            raise TypeError("Missing 'exposed_headers' argument")
+        if is_allow_credentials_enabled is None and 'isAllowCredentialsEnabled' in kwargs:
+            is_allow_credentials_enabled = kwargs['isAllowCredentialsEnabled']
+        if is_allow_credentials_enabled is None:
+            raise TypeError("Missing 'is_allow_credentials_enabled' argument")
+        if max_age_in_seconds is None and 'maxAgeInSeconds' in kwargs:
+            max_age_in_seconds = kwargs['maxAgeInSeconds']
+        if max_age_in_seconds is None:
+            raise TypeError("Missing 'max_age_in_seconds' argument")
+
+        _setter("allowed_headers", allowed_headers)
+        _setter("allowed_methods", allowed_methods)
+        _setter("allowed_origins", allowed_origins)
+        _setter("exposed_headers", exposed_headers)
+        _setter("is_allow_credentials_enabled", is_allow_credentials_enabled)
+        _setter("max_age_in_seconds", max_age_in_seconds)
 
     @property
     @pulumi.getter(name="allowedHeaders")
@@ -18480,8 +27198,29 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerArgs'] authentication_servers: List of authentication servers to choose from during dynamic authentication.
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationSelectionSourceArgs'] selection_sources: Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
         """
-        pulumi.set(__self__, "authentication_servers", authentication_servers)
-        pulumi.set(__self__, "selection_sources", selection_sources)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            authentication_servers=authentication_servers,
+            selection_sources=selection_sources,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             authentication_servers: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerResult']] = None,
+             selection_sources: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationSelectionSourceResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if authentication_servers is None and 'authenticationServers' in kwargs:
+            authentication_servers = kwargs['authenticationServers']
+        if authentication_servers is None:
+            raise TypeError("Missing 'authentication_servers' argument")
+        if selection_sources is None and 'selectionSources' in kwargs:
+            selection_sources = kwargs['selectionSources']
+        if selection_sources is None:
+            raise TypeError("Missing 'selection_sources' argument")
+
+        _setter("authentication_servers", authentication_servers)
+        _setter("selection_sources", selection_sources)
 
     @property
     @pulumi.getter(name="authenticationServers")
@@ -18509,8 +27248,27 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailArgs'] authentication_server_details: Information on how to authenticate incoming requests.
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKeyArgs'] keys: Information around the values for selector of an authentication/ routing branch.
         """
-        pulumi.set(__self__, "authentication_server_details", authentication_server_details)
-        pulumi.set(__self__, "keys", keys)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            authentication_server_details=authentication_server_details,
+            keys=keys,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             authentication_server_details: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailResult']] = None,
+             keys: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKeyResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if authentication_server_details is None and 'authenticationServerDetails' in kwargs:
+            authentication_server_details = kwargs['authenticationServerDetails']
+        if authentication_server_details is None:
+            raise TypeError("Missing 'authentication_server_details' argument")
+        if keys is None:
+            raise TypeError("Missing 'keys' argument")
+
+        _setter("authentication_server_details", authentication_server_details)
+        _setter("keys", keys)
 
     @property
     @pulumi.getter(name="authenticationServerDetails")
@@ -18563,21 +27321,112 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyArgs'] validation_policies: Authentication Policies for the Token Authentication types.
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimArgs'] verify_claims: A list of claims which should be validated to consider the token valid.
         """
-        pulumi.set(__self__, "audiences", audiences)
-        pulumi.set(__self__, "cache_keys", cache_keys)
-        pulumi.set(__self__, "function_id", function_id)
-        pulumi.set(__self__, "is_anonymous_access_allowed", is_anonymous_access_allowed)
-        pulumi.set(__self__, "issuers", issuers)
-        pulumi.set(__self__, "max_clock_skew_in_seconds", max_clock_skew_in_seconds)
-        pulumi.set(__self__, "parameters", parameters)
-        pulumi.set(__self__, "public_keys", public_keys)
-        pulumi.set(__self__, "token_auth_scheme", token_auth_scheme)
-        pulumi.set(__self__, "token_header", token_header)
-        pulumi.set(__self__, "token_query_param", token_query_param)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "validation_failure_policies", validation_failure_policies)
-        pulumi.set(__self__, "validation_policies", validation_policies)
-        pulumi.set(__self__, "verify_claims", verify_claims)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audiences=audiences,
+            cache_keys=cache_keys,
+            function_id=function_id,
+            is_anonymous_access_allowed=is_anonymous_access_allowed,
+            issuers=issuers,
+            max_clock_skew_in_seconds=max_clock_skew_in_seconds,
+            parameters=parameters,
+            public_keys=public_keys,
+            token_auth_scheme=token_auth_scheme,
+            token_header=token_header,
+            token_query_param=token_query_param,
+            type=type,
+            validation_failure_policies=validation_failure_policies,
+            validation_policies=validation_policies,
+            verify_claims=verify_claims,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audiences: Optional[Sequence[str]] = None,
+             cache_keys: Optional[Sequence[str]] = None,
+             function_id: Optional[str] = None,
+             is_anonymous_access_allowed: Optional[bool] = None,
+             issuers: Optional[Sequence[str]] = None,
+             max_clock_skew_in_seconds: Optional[float] = None,
+             parameters: Optional[Mapping[str, Any]] = None,
+             public_keys: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeyResult']] = None,
+             token_auth_scheme: Optional[str] = None,
+             token_header: Optional[str] = None,
+             token_query_param: Optional[str] = None,
+             type: Optional[str] = None,
+             validation_failure_policies: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResult']] = None,
+             validation_policies: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyResult']] = None,
+             verify_claims: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if audiences is None:
+            raise TypeError("Missing 'audiences' argument")
+        if cache_keys is None and 'cacheKeys' in kwargs:
+            cache_keys = kwargs['cacheKeys']
+        if cache_keys is None:
+            raise TypeError("Missing 'cache_keys' argument")
+        if function_id is None and 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if function_id is None:
+            raise TypeError("Missing 'function_id' argument")
+        if is_anonymous_access_allowed is None and 'isAnonymousAccessAllowed' in kwargs:
+            is_anonymous_access_allowed = kwargs['isAnonymousAccessAllowed']
+        if is_anonymous_access_allowed is None:
+            raise TypeError("Missing 'is_anonymous_access_allowed' argument")
+        if issuers is None:
+            raise TypeError("Missing 'issuers' argument")
+        if max_clock_skew_in_seconds is None and 'maxClockSkewInSeconds' in kwargs:
+            max_clock_skew_in_seconds = kwargs['maxClockSkewInSeconds']
+        if max_clock_skew_in_seconds is None:
+            raise TypeError("Missing 'max_clock_skew_in_seconds' argument")
+        if parameters is None:
+            raise TypeError("Missing 'parameters' argument")
+        if public_keys is None and 'publicKeys' in kwargs:
+            public_keys = kwargs['publicKeys']
+        if public_keys is None:
+            raise TypeError("Missing 'public_keys' argument")
+        if token_auth_scheme is None and 'tokenAuthScheme' in kwargs:
+            token_auth_scheme = kwargs['tokenAuthScheme']
+        if token_auth_scheme is None:
+            raise TypeError("Missing 'token_auth_scheme' argument")
+        if token_header is None and 'tokenHeader' in kwargs:
+            token_header = kwargs['tokenHeader']
+        if token_header is None:
+            raise TypeError("Missing 'token_header' argument")
+        if token_query_param is None and 'tokenQueryParam' in kwargs:
+            token_query_param = kwargs['tokenQueryParam']
+        if token_query_param is None:
+            raise TypeError("Missing 'token_query_param' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if validation_failure_policies is None and 'validationFailurePolicies' in kwargs:
+            validation_failure_policies = kwargs['validationFailurePolicies']
+        if validation_failure_policies is None:
+            raise TypeError("Missing 'validation_failure_policies' argument")
+        if validation_policies is None and 'validationPolicies' in kwargs:
+            validation_policies = kwargs['validationPolicies']
+        if validation_policies is None:
+            raise TypeError("Missing 'validation_policies' argument")
+        if verify_claims is None and 'verifyClaims' in kwargs:
+            verify_claims = kwargs['verifyClaims']
+        if verify_claims is None:
+            raise TypeError("Missing 'verify_claims' argument")
+
+        _setter("audiences", audiences)
+        _setter("cache_keys", cache_keys)
+        _setter("function_id", function_id)
+        _setter("is_anonymous_access_allowed", is_anonymous_access_allowed)
+        _setter("issuers", issuers)
+        _setter("max_clock_skew_in_seconds", max_clock_skew_in_seconds)
+        _setter("parameters", parameters)
+        _setter("public_keys", public_keys)
+        _setter("token_auth_scheme", token_auth_scheme)
+        _setter("token_header", token_header)
+        _setter("token_query_param", token_query_param)
+        _setter("type", type)
+        _setter("validation_failure_policies", validation_failure_policies)
+        _setter("validation_policies", validation_policies)
+        _setter("verify_claims", verify_claims)
 
     @property
     @pulumi.getter
@@ -18712,11 +27561,44 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
         :param str type: Type of the Response Cache Store Policy.
         :param str uri: The uri from which to retrieve the key. It must be accessible without authentication.
         """
-        pulumi.set(__self__, "is_ssl_verify_disabled", is_ssl_verify_disabled)
-        pulumi.set(__self__, "keys", keys)
-        pulumi.set(__self__, "max_cache_duration_in_hours", max_cache_duration_in_hours)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "uri", uri)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_ssl_verify_disabled=is_ssl_verify_disabled,
+            keys=keys,
+            max_cache_duration_in_hours=max_cache_duration_in_hours,
+            type=type,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_ssl_verify_disabled: Optional[bool] = None,
+             keys: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeyKeyResult']] = None,
+             max_cache_duration_in_hours: Optional[int] = None,
+             type: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if is_ssl_verify_disabled is None:
+            raise TypeError("Missing 'is_ssl_verify_disabled' argument")
+        if keys is None:
+            raise TypeError("Missing 'keys' argument")
+        if max_cache_duration_in_hours is None and 'maxCacheDurationInHours' in kwargs:
+            max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
+        if max_cache_duration_in_hours is None:
+            raise TypeError("Missing 'max_cache_duration_in_hours' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
+
+        _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
+        _setter("keys", keys)
+        _setter("max_cache_duration_in_hours", max_cache_duration_in_hours)
+        _setter("type", type)
+        _setter("uri", uri)
 
     @property
     @pulumi.getter(name="isSslVerifyDisabled")
@@ -18782,15 +27664,62 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
         :param str n: The base64 url encoded modulus of the RSA public key represented by this key.
         :param str use: The intended use of the public key.
         """
-        pulumi.set(__self__, "alg", alg)
-        pulumi.set(__self__, "e", e)
-        pulumi.set(__self__, "format", format)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "key_ops", key_ops)
-        pulumi.set(__self__, "kid", kid)
-        pulumi.set(__self__, "kty", kty)
-        pulumi.set(__self__, "n", n)
-        pulumi.set(__self__, "use", use)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeyKeyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            alg=alg,
+            e=e,
+            format=format,
+            key=key,
+            key_ops=key_ops,
+            kid=kid,
+            kty=kty,
+            n=n,
+            use=use,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             alg: Optional[str] = None,
+             e: Optional[str] = None,
+             format: Optional[str] = None,
+             key: Optional[str] = None,
+             key_ops: Optional[Sequence[str]] = None,
+             kid: Optional[str] = None,
+             kty: Optional[str] = None,
+             n: Optional[str] = None,
+             use: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if alg is None:
+            raise TypeError("Missing 'alg' argument")
+        if e is None:
+            raise TypeError("Missing 'e' argument")
+        if format is None:
+            raise TypeError("Missing 'format' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if key_ops is None and 'keyOps' in kwargs:
+            key_ops = kwargs['keyOps']
+        if key_ops is None:
+            raise TypeError("Missing 'key_ops' argument")
+        if kid is None:
+            raise TypeError("Missing 'kid' argument")
+        if kty is None:
+            raise TypeError("Missing 'kty' argument")
+        if n is None:
+            raise TypeError("Missing 'n' argument")
+        if use is None:
+            raise TypeError("Missing 'use' argument")
+
+        _setter("alg", alg)
+        _setter("e", e)
+        _setter("format", format)
+        _setter("key", key)
+        _setter("key_ops", key_ops)
+        _setter("kid", kid)
+        _setter("kty", kty)
+        _setter("n", n)
+        _setter("use", use)
 
     @property
     @pulumi.getter
@@ -18898,20 +27827,109 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
         :param bool use_cookies_for_session: Defines whether or not to use cookies for session maintenance.
         :param bool use_pkce: Defines whether or not to support PKCE.
         """
-        pulumi.set(__self__, "client_details", client_details)
-        pulumi.set(__self__, "fallback_redirect_path", fallback_redirect_path)
-        pulumi.set(__self__, "logout_path", logout_path)
-        pulumi.set(__self__, "max_expiry_duration_in_hours", max_expiry_duration_in_hours)
-        pulumi.set(__self__, "response_code", response_code)
-        pulumi.set(__self__, "response_header_transformations", response_header_transformations)
-        pulumi.set(__self__, "response_message", response_message)
-        pulumi.set(__self__, "response_type", response_type)
-        pulumi.set(__self__, "scopes", scopes)
-        pulumi.set(__self__, "source_uri_details", source_uri_details)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "use_cookies_for_intermediate_steps", use_cookies_for_intermediate_steps)
-        pulumi.set(__self__, "use_cookies_for_session", use_cookies_for_session)
-        pulumi.set(__self__, "use_pkce", use_pkce)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            client_details=client_details,
+            fallback_redirect_path=fallback_redirect_path,
+            logout_path=logout_path,
+            max_expiry_duration_in_hours=max_expiry_duration_in_hours,
+            response_code=response_code,
+            response_header_transformations=response_header_transformations,
+            response_message=response_message,
+            response_type=response_type,
+            scopes=scopes,
+            source_uri_details=source_uri_details,
+            type=type,
+            use_cookies_for_intermediate_steps=use_cookies_for_intermediate_steps,
+            use_cookies_for_session=use_cookies_for_session,
+            use_pkce=use_pkce,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             client_details: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetailResult']] = None,
+             fallback_redirect_path: Optional[str] = None,
+             logout_path: Optional[str] = None,
+             max_expiry_duration_in_hours: Optional[int] = None,
+             response_code: Optional[str] = None,
+             response_header_transformations: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationResult']] = None,
+             response_message: Optional[str] = None,
+             response_type: Optional[str] = None,
+             scopes: Optional[Sequence[str]] = None,
+             source_uri_details: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetailResult']] = None,
+             type: Optional[str] = None,
+             use_cookies_for_intermediate_steps: Optional[bool] = None,
+             use_cookies_for_session: Optional[bool] = None,
+             use_pkce: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if client_details is None and 'clientDetails' in kwargs:
+            client_details = kwargs['clientDetails']
+        if client_details is None:
+            raise TypeError("Missing 'client_details' argument")
+        if fallback_redirect_path is None and 'fallbackRedirectPath' in kwargs:
+            fallback_redirect_path = kwargs['fallbackRedirectPath']
+        if fallback_redirect_path is None:
+            raise TypeError("Missing 'fallback_redirect_path' argument")
+        if logout_path is None and 'logoutPath' in kwargs:
+            logout_path = kwargs['logoutPath']
+        if logout_path is None:
+            raise TypeError("Missing 'logout_path' argument")
+        if max_expiry_duration_in_hours is None and 'maxExpiryDurationInHours' in kwargs:
+            max_expiry_duration_in_hours = kwargs['maxExpiryDurationInHours']
+        if max_expiry_duration_in_hours is None:
+            raise TypeError("Missing 'max_expiry_duration_in_hours' argument")
+        if response_code is None and 'responseCode' in kwargs:
+            response_code = kwargs['responseCode']
+        if response_code is None:
+            raise TypeError("Missing 'response_code' argument")
+        if response_header_transformations is None and 'responseHeaderTransformations' in kwargs:
+            response_header_transformations = kwargs['responseHeaderTransformations']
+        if response_header_transformations is None:
+            raise TypeError("Missing 'response_header_transformations' argument")
+        if response_message is None and 'responseMessage' in kwargs:
+            response_message = kwargs['responseMessage']
+        if response_message is None:
+            raise TypeError("Missing 'response_message' argument")
+        if response_type is None and 'responseType' in kwargs:
+            response_type = kwargs['responseType']
+        if response_type is None:
+            raise TypeError("Missing 'response_type' argument")
+        if scopes is None:
+            raise TypeError("Missing 'scopes' argument")
+        if source_uri_details is None and 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+        if source_uri_details is None:
+            raise TypeError("Missing 'source_uri_details' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if use_cookies_for_intermediate_steps is None and 'useCookiesForIntermediateSteps' in kwargs:
+            use_cookies_for_intermediate_steps = kwargs['useCookiesForIntermediateSteps']
+        if use_cookies_for_intermediate_steps is None:
+            raise TypeError("Missing 'use_cookies_for_intermediate_steps' argument")
+        if use_cookies_for_session is None and 'useCookiesForSession' in kwargs:
+            use_cookies_for_session = kwargs['useCookiesForSession']
+        if use_cookies_for_session is None:
+            raise TypeError("Missing 'use_cookies_for_session' argument")
+        if use_pkce is None and 'usePkce' in kwargs:
+            use_pkce = kwargs['usePkce']
+        if use_pkce is None:
+            raise TypeError("Missing 'use_pkce' argument")
+
+        _setter("client_details", client_details)
+        _setter("fallback_redirect_path", fallback_redirect_path)
+        _setter("logout_path", logout_path)
+        _setter("max_expiry_duration_in_hours", max_expiry_duration_in_hours)
+        _setter("response_code", response_code)
+        _setter("response_header_transformations", response_header_transformations)
+        _setter("response_message", response_message)
+        _setter("response_type", response_type)
+        _setter("scopes", scopes)
+        _setter("source_uri_details", source_uri_details)
+        _setter("type", type)
+        _setter("use_cookies_for_intermediate_steps", use_cookies_for_intermediate_steps)
+        _setter("use_cookies_for_session", use_cookies_for_session)
+        _setter("use_pkce", use_pkce)
 
     @property
     @pulumi.getter(name="clientDetails")
@@ -19039,10 +28057,41 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
         :param str client_secret_version_number: The version number of the client secret to use.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "client_id", client_id)
-        pulumi.set(__self__, "client_secret_id", client_secret_id)
-        pulumi.set(__self__, "client_secret_version_number", client_secret_version_number)
-        pulumi.set(__self__, "type", type)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            client_id=client_id,
+            client_secret_id=client_secret_id,
+            client_secret_version_number=client_secret_version_number,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             client_id: Optional[str] = None,
+             client_secret_id: Optional[str] = None,
+             client_secret_version_number: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if client_id is None and 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if client_id is None:
+            raise TypeError("Missing 'client_id' argument")
+        if client_secret_id is None and 'clientSecretId' in kwargs:
+            client_secret_id = kwargs['clientSecretId']
+        if client_secret_id is None:
+            raise TypeError("Missing 'client_secret_id' argument")
+        if client_secret_version_number is None and 'clientSecretVersionNumber' in kwargs:
+            client_secret_version_number = kwargs['clientSecretVersionNumber']
+        if client_secret_version_number is None:
+            raise TypeError("Missing 'client_secret_version_number' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("client_id", client_id)
+        _setter("client_secret_id", client_secret_id)
+        _setter("client_secret_version_number", client_secret_version_number)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="clientId")
@@ -19088,9 +28137,36 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationRenameHeaderArgs'] rename_headers: Rename HTTP headers as they pass through the gateway.
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationSetHeaderArgs'] set_headers: Set HTTP headers as they pass through the gateway.
         """
-        pulumi.set(__self__, "filter_headers", filter_headers)
-        pulumi.set(__self__, "rename_headers", rename_headers)
-        pulumi.set(__self__, "set_headers", set_headers)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            filter_headers=filter_headers,
+            rename_headers=rename_headers,
+            set_headers=set_headers,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             filter_headers: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationFilterHeaderResult']] = None,
+             rename_headers: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationRenameHeaderResult']] = None,
+             set_headers: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationSetHeaderResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if filter_headers is None and 'filterHeaders' in kwargs:
+            filter_headers = kwargs['filterHeaders']
+        if filter_headers is None:
+            raise TypeError("Missing 'filter_headers' argument")
+        if rename_headers is None and 'renameHeaders' in kwargs:
+            rename_headers = kwargs['renameHeaders']
+        if rename_headers is None:
+            raise TypeError("Missing 'rename_headers' argument")
+        if set_headers is None and 'setHeaders' in kwargs:
+            set_headers = kwargs['setHeaders']
+        if set_headers is None:
+            raise TypeError("Missing 'set_headers' argument")
+
+        _setter("filter_headers", filter_headers)
+        _setter("rename_headers", rename_headers)
+        _setter("set_headers", set_headers)
 
     @property
     @pulumi.getter(name="filterHeaders")
@@ -19126,8 +28202,25 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationFilterHeaderItemArgs'] items: The list of headers.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "type", type)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationFilterHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationFilterHeaderItemResult']] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("items", items)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -19153,7 +28246,20 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
         """
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "name", name)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationFilterHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -19171,7 +28277,20 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
         """
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationRenameHeaderItemArgs'] items: The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationRenameHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationRenameHeaderItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -19191,8 +28310,27 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
         :param str from_: The original case-insensitive name of the header.  This name must be unique across transformation policies.
         :param str to: The new name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "from_", from_)
-        pulumi.set(__self__, "to", to)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationRenameHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            from_=from_,
+            to=to,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             from_: Optional[str] = None,
+             to: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if from_ is None and 'from' in kwargs:
+            from_ = kwargs['from']
+        if from_ is None:
+            raise TypeError("Missing 'from_' argument")
+        if to is None:
+            raise TypeError("Missing 'to' argument")
+
+        _setter("from_", from_)
+        _setter("to", to)
 
     @property
     @pulumi.getter(name="from")
@@ -19218,7 +28356,20 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
         """
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationSetHeaderItemArgs'] items: The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationSetHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationSetHeaderItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -19240,9 +28391,32 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "if_exists", if_exists)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationSetHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            if_exists=if_exists,
+            name=name,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             if_exists: Optional[str] = None,
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if if_exists is None and 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+        if if_exists is None:
+            raise TypeError("Missing 'if_exists' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("if_exists", if_exists)
+        _setter("name", name)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="ifExists")
@@ -19278,8 +28452,25 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
         :param str type: Type of the Response Cache Store Policy.
         :param str uri: The uri from which to retrieve the key. It must be accessible without authentication.
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "uri", uri)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
+
+        _setter("type", type)
+        _setter("uri", uri)
 
     @property
     @pulumi.getter
@@ -19319,14 +28510,65 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
         :param str type: Type of the Response Cache Store Policy.
         :param str uri: The uri from which to retrieve the key. It must be accessible without authentication.
         """
-        pulumi.set(__self__, "additional_validation_policies", additional_validation_policies)
-        pulumi.set(__self__, "client_details", client_details)
-        pulumi.set(__self__, "is_ssl_verify_disabled", is_ssl_verify_disabled)
-        pulumi.set(__self__, "keys", keys)
-        pulumi.set(__self__, "max_cache_duration_in_hours", max_cache_duration_in_hours)
-        pulumi.set(__self__, "source_uri_details", source_uri_details)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "uri", uri)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            additional_validation_policies=additional_validation_policies,
+            client_details=client_details,
+            is_ssl_verify_disabled=is_ssl_verify_disabled,
+            keys=keys,
+            max_cache_duration_in_hours=max_cache_duration_in_hours,
+            source_uri_details=source_uri_details,
+            type=type,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             additional_validation_policies: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyResult']] = None,
+             client_details: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyClientDetailResult']] = None,
+             is_ssl_verify_disabled: Optional[bool] = None,
+             keys: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKeyResult']] = None,
+             max_cache_duration_in_hours: Optional[int] = None,
+             source_uri_details: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicySourceUriDetailResult']] = None,
+             type: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if additional_validation_policies is None and 'additionalValidationPolicies' in kwargs:
+            additional_validation_policies = kwargs['additionalValidationPolicies']
+        if additional_validation_policies is None:
+            raise TypeError("Missing 'additional_validation_policies' argument")
+        if client_details is None and 'clientDetails' in kwargs:
+            client_details = kwargs['clientDetails']
+        if client_details is None:
+            raise TypeError("Missing 'client_details' argument")
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if is_ssl_verify_disabled is None:
+            raise TypeError("Missing 'is_ssl_verify_disabled' argument")
+        if keys is None:
+            raise TypeError("Missing 'keys' argument")
+        if max_cache_duration_in_hours is None and 'maxCacheDurationInHours' in kwargs:
+            max_cache_duration_in_hours = kwargs['maxCacheDurationInHours']
+        if max_cache_duration_in_hours is None:
+            raise TypeError("Missing 'max_cache_duration_in_hours' argument")
+        if source_uri_details is None and 'sourceUriDetails' in kwargs:
+            source_uri_details = kwargs['sourceUriDetails']
+        if source_uri_details is None:
+            raise TypeError("Missing 'source_uri_details' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
+
+        _setter("additional_validation_policies", additional_validation_policies)
+        _setter("client_details", client_details)
+        _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
+        _setter("keys", keys)
+        _setter("max_cache_duration_in_hours", max_cache_duration_in_hours)
+        _setter("source_uri_details", source_uri_details)
+        _setter("type", type)
+        _setter("uri", uri)
 
     @property
     @pulumi.getter(name="additionalValidationPolicies")
@@ -19404,9 +28646,32 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
         :param Sequence[str] issuers: A list of parties that could have issued the token.
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimArgs'] verify_claims: A list of claims which should be validated to consider the token valid.
         """
-        pulumi.set(__self__, "audiences", audiences)
-        pulumi.set(__self__, "issuers", issuers)
-        pulumi.set(__self__, "verify_claims", verify_claims)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audiences=audiences,
+            issuers=issuers,
+            verify_claims=verify_claims,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audiences: Optional[Sequence[str]] = None,
+             issuers: Optional[Sequence[str]] = None,
+             verify_claims: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if audiences is None:
+            raise TypeError("Missing 'audiences' argument")
+        if issuers is None:
+            raise TypeError("Missing 'issuers' argument")
+        if verify_claims is None and 'verifyClaims' in kwargs:
+            verify_claims = kwargs['verifyClaims']
+        if verify_claims is None:
+            raise TypeError("Missing 'verify_claims' argument")
+
+        _setter("audiences", audiences)
+        _setter("issuers", issuers)
+        _setter("verify_claims", verify_claims)
 
     @property
     @pulumi.getter
@@ -19444,9 +28709,32 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
         :param str key: Information around the values for selector of an authentication/ routing branch.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "is_required", is_required)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "values", values)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_required=is_required,
+            key=key,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_required: Optional[bool] = None,
+             key: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_required is None and 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+        if is_required is None:
+            raise TypeError("Missing 'is_required' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("is_required", is_required)
+        _setter("key", key)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="isRequired")
@@ -19486,10 +28774,41 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
         :param str client_secret_version_number: The version number of the client secret to use.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "client_id", client_id)
-        pulumi.set(__self__, "client_secret_id", client_secret_id)
-        pulumi.set(__self__, "client_secret_version_number", client_secret_version_number)
-        pulumi.set(__self__, "type", type)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyClientDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            client_id=client_id,
+            client_secret_id=client_secret_id,
+            client_secret_version_number=client_secret_version_number,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             client_id: Optional[str] = None,
+             client_secret_id: Optional[str] = None,
+             client_secret_version_number: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if client_id is None and 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if client_id is None:
+            raise TypeError("Missing 'client_id' argument")
+        if client_secret_id is None and 'clientSecretId' in kwargs:
+            client_secret_id = kwargs['clientSecretId']
+        if client_secret_id is None:
+            raise TypeError("Missing 'client_secret_id' argument")
+        if client_secret_version_number is None and 'clientSecretVersionNumber' in kwargs:
+            client_secret_version_number = kwargs['clientSecretVersionNumber']
+        if client_secret_version_number is None:
+            raise TypeError("Missing 'client_secret_version_number' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("client_id", client_id)
+        _setter("client_secret_id", client_secret_id)
+        _setter("client_secret_version_number", client_secret_version_number)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="clientId")
@@ -19547,15 +28866,62 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
         :param str n: The base64 url encoded modulus of the RSA public key represented by this key.
         :param str use: The intended use of the public key.
         """
-        pulumi.set(__self__, "alg", alg)
-        pulumi.set(__self__, "e", e)
-        pulumi.set(__self__, "format", format)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "key_ops", key_ops)
-        pulumi.set(__self__, "kid", kid)
-        pulumi.set(__self__, "kty", kty)
-        pulumi.set(__self__, "n", n)
-        pulumi.set(__self__, "use", use)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKeyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            alg=alg,
+            e=e,
+            format=format,
+            key=key,
+            key_ops=key_ops,
+            kid=kid,
+            kty=kty,
+            n=n,
+            use=use,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             alg: Optional[str] = None,
+             e: Optional[str] = None,
+             format: Optional[str] = None,
+             key: Optional[str] = None,
+             key_ops: Optional[Sequence[str]] = None,
+             kid: Optional[str] = None,
+             kty: Optional[str] = None,
+             n: Optional[str] = None,
+             use: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if alg is None:
+            raise TypeError("Missing 'alg' argument")
+        if e is None:
+            raise TypeError("Missing 'e' argument")
+        if format is None:
+            raise TypeError("Missing 'format' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if key_ops is None and 'keyOps' in kwargs:
+            key_ops = kwargs['keyOps']
+        if key_ops is None:
+            raise TypeError("Missing 'key_ops' argument")
+        if kid is None:
+            raise TypeError("Missing 'kid' argument")
+        if kty is None:
+            raise TypeError("Missing 'kty' argument")
+        if n is None:
+            raise TypeError("Missing 'n' argument")
+        if use is None:
+            raise TypeError("Missing 'use' argument")
+
+        _setter("alg", alg)
+        _setter("e", e)
+        _setter("format", format)
+        _setter("key", key)
+        _setter("key_ops", key_ops)
+        _setter("kid", kid)
+        _setter("kty", kty)
+        _setter("n", n)
+        _setter("use", use)
 
     @property
     @pulumi.getter
@@ -19639,8 +29005,25 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
         :param str type: Type of the Response Cache Store Policy.
         :param str uri: The uri from which to retrieve the key. It must be accessible without authentication.
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "uri", uri)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicySourceUriDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if uri is None:
+            raise TypeError("Missing 'uri' argument")
+
+        _setter("type", type)
+        _setter("uri", uri)
 
     @property
     @pulumi.getter
@@ -19670,9 +29053,32 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
         :param str key: Information around the values for selector of an authentication/ routing branch.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "is_required", is_required)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "values", values)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_required=is_required,
+            key=key,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_required: Optional[bool] = None,
+             key: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_required is None and 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+        if is_required is None:
+            raise TypeError("Missing 'is_required' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("is_required", is_required)
+        _setter("key", key)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="isRequired")
@@ -19714,11 +29120,42 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
         :param str type: Type of the Response Cache Store Policy.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "expression", expression)
-        pulumi.set(__self__, "is_default", is_default)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "values", values)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKeyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            expression=expression,
+            is_default=is_default,
+            name=name,
+            type=type,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             expression: Optional[str] = None,
+             is_default: Optional[bool] = None,
+             name: Optional[str] = None,
+             type: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if expression is None:
+            raise TypeError("Missing 'expression' argument")
+        if is_default is None and 'isDefault' in kwargs:
+            is_default = kwargs['isDefault']
+        if is_default is None:
+            raise TypeError("Missing 'is_default' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("expression", expression)
+        _setter("is_default", is_default)
+        _setter("name", name)
+        _setter("type", type)
+        _setter("values", values)
 
     @property
     @pulumi.getter
@@ -19770,8 +29207,25 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
         :param str selector: String describing the context variable used as selector.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "selector", selector)
-        pulumi.set(__self__, "type", type)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationSelectionSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            selector=selector,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             selector: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if selector is None:
+            raise TypeError("Missing 'selector' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("selector", selector)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -19799,8 +29253,29 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyMutualTlResult
         :param Sequence[str] allowed_sans: Allowed list of CN or SAN which will be used for verification of certificate.
         :param bool is_verified_certificate_required: Determines whether to enable client verification when API Consumer makes connection to the gateway.
         """
-        pulumi.set(__self__, "allowed_sans", allowed_sans)
-        pulumi.set(__self__, "is_verified_certificate_required", is_verified_certificate_required)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyMutualTlResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_sans=allowed_sans,
+            is_verified_certificate_required=is_verified_certificate_required,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_sans: Optional[Sequence[str]] = None,
+             is_verified_certificate_required: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if allowed_sans is None and 'allowedSans' in kwargs:
+            allowed_sans = kwargs['allowedSans']
+        if allowed_sans is None:
+            raise TypeError("Missing 'allowed_sans' argument")
+        if is_verified_certificate_required is None and 'isVerifiedCertificateRequired' in kwargs:
+            is_verified_certificate_required = kwargs['isVerifiedCertificateRequired']
+        if is_verified_certificate_required is None:
+            raise TypeError("Missing 'is_verified_certificate_required' argument")
+
+        _setter("allowed_sans", allowed_sans)
+        _setter("is_verified_certificate_required", is_verified_certificate_required)
 
     @property
     @pulumi.getter(name="allowedSans")
@@ -19828,8 +29303,29 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimitingRe
         :param int rate_in_requests_per_second: The maximum number of requests per second to allow.
         :param str rate_key: The key used to group requests together.
         """
-        pulumi.set(__self__, "rate_in_requests_per_second", rate_in_requests_per_second)
-        pulumi.set(__self__, "rate_key", rate_key)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimitingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            rate_in_requests_per_second=rate_in_requests_per_second,
+            rate_key=rate_key,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             rate_in_requests_per_second: Optional[int] = None,
+             rate_key: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if rate_in_requests_per_second is None and 'rateInRequestsPerSecond' in kwargs:
+            rate_in_requests_per_second = kwargs['rateInRequestsPerSecond']
+        if rate_in_requests_per_second is None:
+            raise TypeError("Missing 'rate_in_requests_per_second' argument")
+        if rate_key is None and 'rateKey' in kwargs:
+            rate_key = kwargs['rateKey']
+        if rate_key is None:
+            raise TypeError("Missing 'rate_key' argument")
+
+        _setter("rate_in_requests_per_second", rate_in_requests_per_second)
+        _setter("rate_key", rate_key)
 
     @property
     @pulumi.getter(name="rateInRequestsPerSecond")
@@ -19859,7 +29355,22 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanResul
                * "request.auth[Token]"
                * "request.path[TOKEN]"
         """
-        pulumi.set(__self__, "token_locations", token_locations)
+        GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlanResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            token_locations=token_locations,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             token_locations: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if token_locations is None and 'tokenLocations' in kwargs:
+            token_locations = kwargs['tokenLocations']
+        if token_locations is None:
+            raise TypeError("Missing 'token_locations' argument")
+
+        _setter("token_locations", token_locations)
 
     @property
     @pulumi.getter(name="tokenLocations")
@@ -19891,12 +29402,51 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteResult(dict):
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyArgs'] request_policies: Behavior applied to any requests received by the API on this route.
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyArgs'] response_policies: Behavior applied to any responses sent by the API for requests on this route.
         """
-        pulumi.set(__self__, "backends", backends)
-        pulumi.set(__self__, "logging_policies", logging_policies)
-        pulumi.set(__self__, "methods", methods)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "request_policies", request_policies)
-        pulumi.set(__self__, "response_policies", response_policies)
+        GetDeploymentsDeploymentCollectionSpecificationRouteResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backends=backends,
+            logging_policies=logging_policies,
+            methods=methods,
+            path=path,
+            request_policies=request_policies,
+            response_policies=response_policies,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backends: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteBackendResult']] = None,
+             logging_policies: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyResult']] = None,
+             methods: Optional[Sequence[str]] = None,
+             path: Optional[str] = None,
+             request_policies: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyResult']] = None,
+             response_policies: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if backends is None:
+            raise TypeError("Missing 'backends' argument")
+        if logging_policies is None and 'loggingPolicies' in kwargs:
+            logging_policies = kwargs['loggingPolicies']
+        if logging_policies is None:
+            raise TypeError("Missing 'logging_policies' argument")
+        if methods is None:
+            raise TypeError("Missing 'methods' argument")
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+        if request_policies is None and 'requestPolicies' in kwargs:
+            request_policies = kwargs['requestPolicies']
+        if request_policies is None:
+            raise TypeError("Missing 'request_policies' argument")
+        if response_policies is None and 'responsePolicies' in kwargs:
+            response_policies = kwargs['responsePolicies']
+        if response_policies is None:
+            raise TypeError("Missing 'response_policies' argument")
+
+        _setter("backends", backends)
+        _setter("logging_policies", logging_policies)
+        _setter("methods", methods)
+        _setter("path", path)
+        _setter("request_policies", request_policies)
+        _setter("response_policies", response_policies)
 
     @property
     @pulumi.getter
@@ -19977,20 +29527,103 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteBackendResult(dict):
         :param int status: The status code of the stock response from the mock backend.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "allowed_post_logout_uris", allowed_post_logout_uris)
-        pulumi.set(__self__, "body", body)
-        pulumi.set(__self__, "connect_timeout_in_seconds", connect_timeout_in_seconds)
-        pulumi.set(__self__, "function_id", function_id)
-        pulumi.set(__self__, "headers", headers)
-        pulumi.set(__self__, "is_ssl_verify_disabled", is_ssl_verify_disabled)
-        pulumi.set(__self__, "post_logout_state", post_logout_state)
-        pulumi.set(__self__, "read_timeout_in_seconds", read_timeout_in_seconds)
-        pulumi.set(__self__, "routing_backends", routing_backends)
-        pulumi.set(__self__, "selection_sources", selection_sources)
-        pulumi.set(__self__, "send_timeout_in_seconds", send_timeout_in_seconds)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "url", url)
+        GetDeploymentsDeploymentCollectionSpecificationRouteBackendResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_post_logout_uris=allowed_post_logout_uris,
+            body=body,
+            connect_timeout_in_seconds=connect_timeout_in_seconds,
+            function_id=function_id,
+            headers=headers,
+            is_ssl_verify_disabled=is_ssl_verify_disabled,
+            post_logout_state=post_logout_state,
+            read_timeout_in_seconds=read_timeout_in_seconds,
+            routing_backends=routing_backends,
+            selection_sources=selection_sources,
+            send_timeout_in_seconds=send_timeout_in_seconds,
+            status=status,
+            type=type,
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_post_logout_uris: Optional[Sequence[str]] = None,
+             body: Optional[str] = None,
+             connect_timeout_in_seconds: Optional[float] = None,
+             function_id: Optional[str] = None,
+             headers: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteBackendHeaderResult']] = None,
+             is_ssl_verify_disabled: Optional[bool] = None,
+             post_logout_state: Optional[str] = None,
+             read_timeout_in_seconds: Optional[float] = None,
+             routing_backends: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendResult']] = None,
+             selection_sources: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteBackendSelectionSourceResult']] = None,
+             send_timeout_in_seconds: Optional[float] = None,
+             status: Optional[int] = None,
+             type: Optional[str] = None,
+             url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if allowed_post_logout_uris is None and 'allowedPostLogoutUris' in kwargs:
+            allowed_post_logout_uris = kwargs['allowedPostLogoutUris']
+        if allowed_post_logout_uris is None:
+            raise TypeError("Missing 'allowed_post_logout_uris' argument")
+        if body is None:
+            raise TypeError("Missing 'body' argument")
+        if connect_timeout_in_seconds is None and 'connectTimeoutInSeconds' in kwargs:
+            connect_timeout_in_seconds = kwargs['connectTimeoutInSeconds']
+        if connect_timeout_in_seconds is None:
+            raise TypeError("Missing 'connect_timeout_in_seconds' argument")
+        if function_id is None and 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if function_id is None:
+            raise TypeError("Missing 'function_id' argument")
+        if headers is None:
+            raise TypeError("Missing 'headers' argument")
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if is_ssl_verify_disabled is None:
+            raise TypeError("Missing 'is_ssl_verify_disabled' argument")
+        if post_logout_state is None and 'postLogoutState' in kwargs:
+            post_logout_state = kwargs['postLogoutState']
+        if post_logout_state is None:
+            raise TypeError("Missing 'post_logout_state' argument")
+        if read_timeout_in_seconds is None and 'readTimeoutInSeconds' in kwargs:
+            read_timeout_in_seconds = kwargs['readTimeoutInSeconds']
+        if read_timeout_in_seconds is None:
+            raise TypeError("Missing 'read_timeout_in_seconds' argument")
+        if routing_backends is None and 'routingBackends' in kwargs:
+            routing_backends = kwargs['routingBackends']
+        if routing_backends is None:
+            raise TypeError("Missing 'routing_backends' argument")
+        if selection_sources is None and 'selectionSources' in kwargs:
+            selection_sources = kwargs['selectionSources']
+        if selection_sources is None:
+            raise TypeError("Missing 'selection_sources' argument")
+        if send_timeout_in_seconds is None and 'sendTimeoutInSeconds' in kwargs:
+            send_timeout_in_seconds = kwargs['sendTimeoutInSeconds']
+        if send_timeout_in_seconds is None:
+            raise TypeError("Missing 'send_timeout_in_seconds' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if url is None:
+            raise TypeError("Missing 'url' argument")
+
+        _setter("allowed_post_logout_uris", allowed_post_logout_uris)
+        _setter("body", body)
+        _setter("connect_timeout_in_seconds", connect_timeout_in_seconds)
+        _setter("function_id", function_id)
+        _setter("headers", headers)
+        _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
+        _setter("post_logout_state", post_logout_state)
+        _setter("read_timeout_in_seconds", read_timeout_in_seconds)
+        _setter("routing_backends", routing_backends)
+        _setter("selection_sources", selection_sources)
+        _setter("send_timeout_in_seconds", send_timeout_in_seconds)
+        _setter("status", status)
+        _setter("type", type)
+        _setter("url", url)
 
     @property
     @pulumi.getter(name="allowedPostLogoutUris")
@@ -20105,8 +29738,25 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteBackendHeaderResult(di
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param str value: Value of the header.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetDeploymentsDeploymentCollectionSpecificationRouteBackendHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -20134,8 +29784,25 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendR
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendBackendArgs'] backends: The backend to forward requests to.
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendKeyArgs'] keys: Information around the values for selector of an authentication/ routing branch.
         """
-        pulumi.set(__self__, "backends", backends)
-        pulumi.set(__self__, "keys", keys)
+        GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backends=backends,
+            keys=keys,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backends: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendBackendResult']] = None,
+             keys: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendKeyResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if backends is None:
+            raise TypeError("Missing 'backends' argument")
+        if keys is None:
+            raise TypeError("Missing 'keys' argument")
+
+        _setter("backends", backends)
+        _setter("keys", keys)
 
     @property
     @pulumi.getter
@@ -20177,16 +29844,75 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendB
         :param int status: The status code of the stock response from the mock backend.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "body", body)
-        pulumi.set(__self__, "connect_timeout_in_seconds", connect_timeout_in_seconds)
-        pulumi.set(__self__, "function_id", function_id)
-        pulumi.set(__self__, "headers", headers)
-        pulumi.set(__self__, "is_ssl_verify_disabled", is_ssl_verify_disabled)
-        pulumi.set(__self__, "read_timeout_in_seconds", read_timeout_in_seconds)
-        pulumi.set(__self__, "send_timeout_in_seconds", send_timeout_in_seconds)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "url", url)
+        GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendBackendResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            body=body,
+            connect_timeout_in_seconds=connect_timeout_in_seconds,
+            function_id=function_id,
+            headers=headers,
+            is_ssl_verify_disabled=is_ssl_verify_disabled,
+            read_timeout_in_seconds=read_timeout_in_seconds,
+            send_timeout_in_seconds=send_timeout_in_seconds,
+            status=status,
+            type=type,
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             body: Optional[str] = None,
+             connect_timeout_in_seconds: Optional[float] = None,
+             function_id: Optional[str] = None,
+             headers: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendBackendHeaderResult']] = None,
+             is_ssl_verify_disabled: Optional[bool] = None,
+             read_timeout_in_seconds: Optional[float] = None,
+             send_timeout_in_seconds: Optional[float] = None,
+             status: Optional[int] = None,
+             type: Optional[str] = None,
+             url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if body is None:
+            raise TypeError("Missing 'body' argument")
+        if connect_timeout_in_seconds is None and 'connectTimeoutInSeconds' in kwargs:
+            connect_timeout_in_seconds = kwargs['connectTimeoutInSeconds']
+        if connect_timeout_in_seconds is None:
+            raise TypeError("Missing 'connect_timeout_in_seconds' argument")
+        if function_id is None and 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if function_id is None:
+            raise TypeError("Missing 'function_id' argument")
+        if headers is None:
+            raise TypeError("Missing 'headers' argument")
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if is_ssl_verify_disabled is None:
+            raise TypeError("Missing 'is_ssl_verify_disabled' argument")
+        if read_timeout_in_seconds is None and 'readTimeoutInSeconds' in kwargs:
+            read_timeout_in_seconds = kwargs['readTimeoutInSeconds']
+        if read_timeout_in_seconds is None:
+            raise TypeError("Missing 'read_timeout_in_seconds' argument")
+        if send_timeout_in_seconds is None and 'sendTimeoutInSeconds' in kwargs:
+            send_timeout_in_seconds = kwargs['sendTimeoutInSeconds']
+        if send_timeout_in_seconds is None:
+            raise TypeError("Missing 'send_timeout_in_seconds' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if url is None:
+            raise TypeError("Missing 'url' argument")
+
+        _setter("body", body)
+        _setter("connect_timeout_in_seconds", connect_timeout_in_seconds)
+        _setter("function_id", function_id)
+        _setter("headers", headers)
+        _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
+        _setter("read_timeout_in_seconds", read_timeout_in_seconds)
+        _setter("send_timeout_in_seconds", send_timeout_in_seconds)
+        _setter("status", status)
+        _setter("type", type)
+        _setter("url", url)
 
     @property
     @pulumi.getter
@@ -20272,8 +29998,25 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendB
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param str value: Value of the header.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendBackendHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -20307,11 +30050,42 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendK
         :param str type: Type of the Response Cache Store Policy.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "expression", expression)
-        pulumi.set(__self__, "is_default", is_default)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "values", values)
+        GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendKeyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            expression=expression,
+            is_default=is_default,
+            name=name,
+            type=type,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             expression: Optional[str] = None,
+             is_default: Optional[bool] = None,
+             name: Optional[str] = None,
+             type: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if expression is None:
+            raise TypeError("Missing 'expression' argument")
+        if is_default is None and 'isDefault' in kwargs:
+            is_default = kwargs['isDefault']
+        if is_default is None:
+            raise TypeError("Missing 'is_default' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("expression", expression)
+        _setter("is_default", is_default)
+        _setter("name", name)
+        _setter("type", type)
+        _setter("values", values)
 
     @property
     @pulumi.getter
@@ -20363,8 +30137,25 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteBackendSelectionSource
         :param str selector: String describing the context variable used as selector.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "selector", selector)
-        pulumi.set(__self__, "type", type)
+        GetDeploymentsDeploymentCollectionSpecificationRouteBackendSelectionSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            selector=selector,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             selector: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if selector is None:
+            raise TypeError("Missing 'selector' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("selector", selector)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -20392,8 +30183,29 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyResult(di
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyAccessLogArgs'] access_logs: Configures the logging policies for the access logs of an API Deployment.
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyExecutionLogArgs'] execution_logs: Configures the logging policies for the execution logs of an API Deployment.
         """
-        pulumi.set(__self__, "access_logs", access_logs)
-        pulumi.set(__self__, "execution_logs", execution_logs)
+        GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            access_logs=access_logs,
+            execution_logs=execution_logs,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             access_logs: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyAccessLogResult']] = None,
+             execution_logs: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyExecutionLogResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if access_logs is None and 'accessLogs' in kwargs:
+            access_logs = kwargs['accessLogs']
+        if access_logs is None:
+            raise TypeError("Missing 'access_logs' argument")
+        if execution_logs is None and 'executionLogs' in kwargs:
+            execution_logs = kwargs['executionLogs']
+        if execution_logs is None:
+            raise TypeError("Missing 'execution_logs' argument")
+
+        _setter("access_logs", access_logs)
+        _setter("execution_logs", execution_logs)
 
     @property
     @pulumi.getter(name="accessLogs")
@@ -20419,7 +30231,22 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyAccessLog
         """
         :param bool is_enabled: Whether this policy is currently enabled.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyAccessLogResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+
+        _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -20439,8 +30266,29 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyExecution
         :param bool is_enabled: Whether this policy is currently enabled.
         :param str log_level: Specifies the log level used to control logging output of execution logs. Enabling logging at a given level also enables logging at all higher levels.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "log_level", log_level)
+        GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyExecutionLogResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+            log_level=log_level,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: Optional[bool] = None,
+             log_level: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if log_level is None and 'logLevel' in kwargs:
+            log_level = kwargs['logLevel']
+        if log_level is None:
+            raise TypeError("Missing 'log_level' argument")
+
+        _setter("is_enabled", is_enabled)
+        _setter("log_level", log_level)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -20480,14 +30328,67 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyResult(di
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterValidationArgs'] query_parameter_validations: Validate the URL query parameters on the incoming API requests on a specific route.
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyResponseCacheLookupArgs'] response_cache_lookups: Base policy for Response Cache lookup.
         """
-        pulumi.set(__self__, "authorizations", authorizations)
-        pulumi.set(__self__, "body_validations", body_validations)
-        pulumi.set(__self__, "cors", cors)
-        pulumi.set(__self__, "header_transformations", header_transformations)
-        pulumi.set(__self__, "header_validations", header_validations)
-        pulumi.set(__self__, "query_parameter_transformations", query_parameter_transformations)
-        pulumi.set(__self__, "query_parameter_validations", query_parameter_validations)
-        pulumi.set(__self__, "response_cache_lookups", response_cache_lookups)
+        GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            authorizations=authorizations,
+            body_validations=body_validations,
+            cors=cors,
+            header_transformations=header_transformations,
+            header_validations=header_validations,
+            query_parameter_transformations=query_parameter_transformations,
+            query_parameter_validations=query_parameter_validations,
+            response_cache_lookups=response_cache_lookups,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             authorizations: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyAuthorizationResult']] = None,
+             body_validations: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyBodyValidationResult']] = None,
+             cors: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyCorResult']] = None,
+             header_transformations: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationResult']] = None,
+             header_validations: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationResult']] = None,
+             query_parameter_transformations: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationResult']] = None,
+             query_parameter_validations: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterValidationResult']] = None,
+             response_cache_lookups: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyResponseCacheLookupResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if authorizations is None:
+            raise TypeError("Missing 'authorizations' argument")
+        if body_validations is None and 'bodyValidations' in kwargs:
+            body_validations = kwargs['bodyValidations']
+        if body_validations is None:
+            raise TypeError("Missing 'body_validations' argument")
+        if cors is None:
+            raise TypeError("Missing 'cors' argument")
+        if header_transformations is None and 'headerTransformations' in kwargs:
+            header_transformations = kwargs['headerTransformations']
+        if header_transformations is None:
+            raise TypeError("Missing 'header_transformations' argument")
+        if header_validations is None and 'headerValidations' in kwargs:
+            header_validations = kwargs['headerValidations']
+        if header_validations is None:
+            raise TypeError("Missing 'header_validations' argument")
+        if query_parameter_transformations is None and 'queryParameterTransformations' in kwargs:
+            query_parameter_transformations = kwargs['queryParameterTransformations']
+        if query_parameter_transformations is None:
+            raise TypeError("Missing 'query_parameter_transformations' argument")
+        if query_parameter_validations is None and 'queryParameterValidations' in kwargs:
+            query_parameter_validations = kwargs['queryParameterValidations']
+        if query_parameter_validations is None:
+            raise TypeError("Missing 'query_parameter_validations' argument")
+        if response_cache_lookups is None and 'responseCacheLookups' in kwargs:
+            response_cache_lookups = kwargs['responseCacheLookups']
+        if response_cache_lookups is None:
+            raise TypeError("Missing 'response_cache_lookups' argument")
+
+        _setter("authorizations", authorizations)
+        _setter("body_validations", body_validations)
+        _setter("cors", cors)
+        _setter("header_transformations", header_transformations)
+        _setter("header_validations", header_validations)
+        _setter("query_parameter_transformations", query_parameter_transformations)
+        _setter("query_parameter_validations", query_parameter_validations)
+        _setter("response_cache_lookups", response_cache_lookups)
 
     @property
     @pulumi.getter
@@ -20563,8 +30464,27 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyAuthoriza
         :param Sequence[str] allowed_scopes: A user whose scope includes any of these access ranges is allowed on this route. Access ranges are case-sensitive.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "allowed_scopes", allowed_scopes)
-        pulumi.set(__self__, "type", type)
+        GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyAuthorizationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_scopes=allowed_scopes,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_scopes: Optional[Sequence[str]] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if allowed_scopes is None and 'allowedScopes' in kwargs:
+            allowed_scopes = kwargs['allowedScopes']
+        if allowed_scopes is None:
+            raise TypeError("Missing 'allowed_scopes' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("allowed_scopes", allowed_scopes)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="allowedScopes")
@@ -20594,9 +30514,32 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyBodyValid
         :param bool required: Determines if the parameter is required in the request.
         :param str validation_mode: Validation behavior mode.
         """
-        pulumi.set(__self__, "contents", contents)
-        pulumi.set(__self__, "required", required)
-        pulumi.set(__self__, "validation_mode", validation_mode)
+        GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyBodyValidationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            contents=contents,
+            required=required,
+            validation_mode=validation_mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             contents: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyBodyValidationContentResult']] = None,
+             required: Optional[bool] = None,
+             validation_mode: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if contents is None:
+            raise TypeError("Missing 'contents' argument")
+        if required is None:
+            raise TypeError("Missing 'required' argument")
+        if validation_mode is None and 'validationMode' in kwargs:
+            validation_mode = kwargs['validationMode']
+        if validation_mode is None:
+            raise TypeError("Missing 'validation_mode' argument")
+
+        _setter("contents", contents)
+        _setter("required", required)
+        _setter("validation_mode", validation_mode)
 
     @property
     @pulumi.getter
@@ -20632,8 +30575,29 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyBodyValid
         :param str media_type: The key is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following schema
         :param str validation_type: Validation type defines the content validation method.
         """
-        pulumi.set(__self__, "media_type", media_type)
-        pulumi.set(__self__, "validation_type", validation_type)
+        GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyBodyValidationContentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            media_type=media_type,
+            validation_type=validation_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             media_type: Optional[str] = None,
+             validation_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if media_type is None and 'mediaType' in kwargs:
+            media_type = kwargs['mediaType']
+        if media_type is None:
+            raise TypeError("Missing 'media_type' argument")
+        if validation_type is None and 'validationType' in kwargs:
+            validation_type = kwargs['validationType']
+        if validation_type is None:
+            raise TypeError("Missing 'validation_type' argument")
+
+        _setter("media_type", media_type)
+        _setter("validation_type", validation_type)
 
     @property
     @pulumi.getter(name="mediaType")
@@ -20669,12 +30633,57 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyCorResult
         :param bool is_allow_credentials_enabled: Whether to send the Access-Control-Allow-Credentials header to allow CORS requests with cookies.
         :param int max_age_in_seconds: The time in seconds for the client to cache preflight responses. This is sent as the Access-Control-Max-Age if greater than 0.
         """
-        pulumi.set(__self__, "allowed_headers", allowed_headers)
-        pulumi.set(__self__, "allowed_methods", allowed_methods)
-        pulumi.set(__self__, "allowed_origins", allowed_origins)
-        pulumi.set(__self__, "exposed_headers", exposed_headers)
-        pulumi.set(__self__, "is_allow_credentials_enabled", is_allow_credentials_enabled)
-        pulumi.set(__self__, "max_age_in_seconds", max_age_in_seconds)
+        GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyCorResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_headers=allowed_headers,
+            allowed_methods=allowed_methods,
+            allowed_origins=allowed_origins,
+            exposed_headers=exposed_headers,
+            is_allow_credentials_enabled=is_allow_credentials_enabled,
+            max_age_in_seconds=max_age_in_seconds,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_headers: Optional[Sequence[str]] = None,
+             allowed_methods: Optional[Sequence[str]] = None,
+             allowed_origins: Optional[Sequence[str]] = None,
+             exposed_headers: Optional[Sequence[str]] = None,
+             is_allow_credentials_enabled: Optional[bool] = None,
+             max_age_in_seconds: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if allowed_headers is None and 'allowedHeaders' in kwargs:
+            allowed_headers = kwargs['allowedHeaders']
+        if allowed_headers is None:
+            raise TypeError("Missing 'allowed_headers' argument")
+        if allowed_methods is None and 'allowedMethods' in kwargs:
+            allowed_methods = kwargs['allowedMethods']
+        if allowed_methods is None:
+            raise TypeError("Missing 'allowed_methods' argument")
+        if allowed_origins is None and 'allowedOrigins' in kwargs:
+            allowed_origins = kwargs['allowedOrigins']
+        if allowed_origins is None:
+            raise TypeError("Missing 'allowed_origins' argument")
+        if exposed_headers is None and 'exposedHeaders' in kwargs:
+            exposed_headers = kwargs['exposedHeaders']
+        if exposed_headers is None:
+            raise TypeError("Missing 'exposed_headers' argument")
+        if is_allow_credentials_enabled is None and 'isAllowCredentialsEnabled' in kwargs:
+            is_allow_credentials_enabled = kwargs['isAllowCredentialsEnabled']
+        if is_allow_credentials_enabled is None:
+            raise TypeError("Missing 'is_allow_credentials_enabled' argument")
+        if max_age_in_seconds is None and 'maxAgeInSeconds' in kwargs:
+            max_age_in_seconds = kwargs['maxAgeInSeconds']
+        if max_age_in_seconds is None:
+            raise TypeError("Missing 'max_age_in_seconds' argument")
+
+        _setter("allowed_headers", allowed_headers)
+        _setter("allowed_methods", allowed_methods)
+        _setter("allowed_origins", allowed_origins)
+        _setter("exposed_headers", exposed_headers)
+        _setter("is_allow_credentials_enabled", is_allow_credentials_enabled)
+        _setter("max_age_in_seconds", max_age_in_seconds)
 
     @property
     @pulumi.getter(name="allowedHeaders")
@@ -20736,9 +30745,36 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTra
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderArgs'] rename_headers: Rename HTTP headers as they pass through the gateway.
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationSetHeaderArgs'] set_headers: Set HTTP headers as they pass through the gateway.
         """
-        pulumi.set(__self__, "filter_headers", filter_headers)
-        pulumi.set(__self__, "rename_headers", rename_headers)
-        pulumi.set(__self__, "set_headers", set_headers)
+        GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            filter_headers=filter_headers,
+            rename_headers=rename_headers,
+            set_headers=set_headers,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             filter_headers: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderResult']] = None,
+             rename_headers: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderResult']] = None,
+             set_headers: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationSetHeaderResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if filter_headers is None and 'filterHeaders' in kwargs:
+            filter_headers = kwargs['filterHeaders']
+        if filter_headers is None:
+            raise TypeError("Missing 'filter_headers' argument")
+        if rename_headers is None and 'renameHeaders' in kwargs:
+            rename_headers = kwargs['renameHeaders']
+        if rename_headers is None:
+            raise TypeError("Missing 'rename_headers' argument")
+        if set_headers is None and 'setHeaders' in kwargs:
+            set_headers = kwargs['setHeaders']
+        if set_headers is None:
+            raise TypeError("Missing 'set_headers' argument")
+
+        _setter("filter_headers", filter_headers)
+        _setter("rename_headers", rename_headers)
+        _setter("set_headers", set_headers)
 
     @property
     @pulumi.getter(name="filterHeaders")
@@ -20774,8 +30810,25 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTra
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItemArgs'] items: The list of headers.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "type", type)
+        GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItemResult']] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("items", items)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -20801,7 +30854,20 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTra
         """
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "name", name)
+        GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -20819,7 +30885,20 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTra
         """
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderItemArgs'] items: The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -20839,8 +30918,27 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTra
         :param str from_: The original case-insensitive name of the header.  This name must be unique across transformation policies.
         :param str to: The new name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "from_", from_)
-        pulumi.set(__self__, "to", to)
+        GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            from_=from_,
+            to=to,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             from_: Optional[str] = None,
+             to: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if from_ is None and 'from' in kwargs:
+            from_ = kwargs['from']
+        if from_ is None:
+            raise TypeError("Missing 'from_' argument")
+        if to is None:
+            raise TypeError("Missing 'to' argument")
+
+        _setter("from_", from_)
+        _setter("to", to)
 
     @property
     @pulumi.getter(name="from")
@@ -20866,7 +30964,20 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTra
         """
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationSetHeaderItemArgs'] items: The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationSetHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationSetHeaderItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -20888,9 +30999,32 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTra
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "if_exists", if_exists)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationSetHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            if_exists=if_exists,
+            name=name,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             if_exists: Optional[str] = None,
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if if_exists is None and 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+        if if_exists is None:
+            raise TypeError("Missing 'if_exists' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("if_exists", if_exists)
+        _setter("name", name)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="ifExists")
@@ -20925,8 +31059,27 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderVal
         """
         :param str validation_mode: Validation behavior mode.
         """
-        pulumi.set(__self__, "headers", headers)
-        pulumi.set(__self__, "validation_mode", validation_mode)
+        GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            headers=headers,
+            validation_mode=validation_mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             headers: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationHeaderResult']] = None,
+             validation_mode: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if headers is None:
+            raise TypeError("Missing 'headers' argument")
+        if validation_mode is None and 'validationMode' in kwargs:
+            validation_mode = kwargs['validationMode']
+        if validation_mode is None:
+            raise TypeError("Missing 'validation_mode' argument")
+
+        _setter("headers", headers)
+        _setter("validation_mode", validation_mode)
 
     @property
     @pulumi.getter
@@ -20951,8 +31104,25 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderVal
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param bool required: Determines if the parameter is required in the request.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "required", required)
+        GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            required=required,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             required: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if required is None:
+            raise TypeError("Missing 'required' argument")
+
+        _setter("name", name)
+        _setter("required", required)
 
     @property
     @pulumi.getter
@@ -20982,9 +31152,36 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryPara
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterArgs'] rename_query_parameters: Rename parameters on the query string as they pass through the gateway.
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterArgs'] set_query_parameters: Set parameters on the query string as they pass through the gateway.
         """
-        pulumi.set(__self__, "filter_query_parameters", filter_query_parameters)
-        pulumi.set(__self__, "rename_query_parameters", rename_query_parameters)
-        pulumi.set(__self__, "set_query_parameters", set_query_parameters)
+        GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            filter_query_parameters=filter_query_parameters,
+            rename_query_parameters=rename_query_parameters,
+            set_query_parameters=set_query_parameters,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             filter_query_parameters: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameterResult']] = None,
+             rename_query_parameters: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterResult']] = None,
+             set_query_parameters: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if filter_query_parameters is None and 'filterQueryParameters' in kwargs:
+            filter_query_parameters = kwargs['filterQueryParameters']
+        if filter_query_parameters is None:
+            raise TypeError("Missing 'filter_query_parameters' argument")
+        if rename_query_parameters is None and 'renameQueryParameters' in kwargs:
+            rename_query_parameters = kwargs['renameQueryParameters']
+        if rename_query_parameters is None:
+            raise TypeError("Missing 'rename_query_parameters' argument")
+        if set_query_parameters is None and 'setQueryParameters' in kwargs:
+            set_query_parameters = kwargs['setQueryParameters']
+        if set_query_parameters is None:
+            raise TypeError("Missing 'set_query_parameters' argument")
+
+        _setter("filter_query_parameters", filter_query_parameters)
+        _setter("rename_query_parameters", rename_query_parameters)
+        _setter("set_query_parameters", set_query_parameters)
 
     @property
     @pulumi.getter(name="filterQueryParameters")
@@ -21020,8 +31217,25 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryPara
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameterItemArgs'] items: The list of headers.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "type", type)
+        GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameterItemResult']] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("items", items)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -21047,7 +31261,20 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryPara
         """
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "name", name)
+        GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameterItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -21065,7 +31292,20 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryPara
         """
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItemArgs'] items: The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -21085,8 +31325,27 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryPara
         :param str from_: The original case-insensitive name of the header.  This name must be unique across transformation policies.
         :param str to: The new name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "from_", from_)
-        pulumi.set(__self__, "to", to)
+        GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            from_=from_,
+            to=to,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             from_: Optional[str] = None,
+             to: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if from_ is None and 'from' in kwargs:
+            from_ = kwargs['from']
+        if from_ is None:
+            raise TypeError("Missing 'from_' argument")
+        if to is None:
+            raise TypeError("Missing 'to' argument")
+
+        _setter("from_", from_)
+        _setter("to", to)
 
     @property
     @pulumi.getter(name="from")
@@ -21112,7 +31371,20 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryPara
         """
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterItemArgs'] items: The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -21134,9 +31406,32 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryPara
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "if_exists", if_exists)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            if_exists=if_exists,
+            name=name,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             if_exists: Optional[str] = None,
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if if_exists is None and 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+        if if_exists is None:
+            raise TypeError("Missing 'if_exists' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("if_exists", if_exists)
+        _setter("name", name)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="ifExists")
@@ -21171,8 +31466,27 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryPara
         """
         :param str validation_mode: Validation behavior mode.
         """
-        pulumi.set(__self__, "parameters", parameters)
-        pulumi.set(__self__, "validation_mode", validation_mode)
+        GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterValidationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            parameters=parameters,
+            validation_mode=validation_mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             parameters: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterValidationParameterResult']] = None,
+             validation_mode: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if parameters is None:
+            raise TypeError("Missing 'parameters' argument")
+        if validation_mode is None and 'validationMode' in kwargs:
+            validation_mode = kwargs['validationMode']
+        if validation_mode is None:
+            raise TypeError("Missing 'validation_mode' argument")
+
+        _setter("parameters", parameters)
+        _setter("validation_mode", validation_mode)
 
     @property
     @pulumi.getter
@@ -21197,8 +31511,25 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryPara
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param bool required: Determines if the parameter is required in the request.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "required", required)
+        GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterValidationParameterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            required=required,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             required: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if required is None:
+            raise TypeError("Missing 'required' argument")
+
+        _setter("name", name)
+        _setter("required", required)
 
     @property
     @pulumi.getter
@@ -21230,10 +31561,41 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyResponseC
         :param bool is_private_caching_enabled: Set true to allow caching responses where the request has an Authorization header. Ensure you have configured your  cache key additions to get the level of isolation across authenticated requests that you require.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "cache_key_additions", cache_key_additions)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "is_private_caching_enabled", is_private_caching_enabled)
-        pulumi.set(__self__, "type", type)
+        GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyResponseCacheLookupResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cache_key_additions=cache_key_additions,
+            is_enabled=is_enabled,
+            is_private_caching_enabled=is_private_caching_enabled,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cache_key_additions: Optional[Sequence[str]] = None,
+             is_enabled: Optional[bool] = None,
+             is_private_caching_enabled: Optional[bool] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if cache_key_additions is None and 'cacheKeyAdditions' in kwargs:
+            cache_key_additions = kwargs['cacheKeyAdditions']
+        if cache_key_additions is None:
+            raise TypeError("Missing 'cache_key_additions' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if is_private_caching_enabled is None and 'isPrivateCachingEnabled' in kwargs:
+            is_private_caching_enabled = kwargs['isPrivateCachingEnabled']
+        if is_private_caching_enabled is None:
+            raise TypeError("Missing 'is_private_caching_enabled' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("cache_key_additions", cache_key_additions)
+        _setter("is_enabled", is_enabled)
+        _setter("is_private_caching_enabled", is_private_caching_enabled)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="cacheKeyAdditions")
@@ -21277,8 +31639,29 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResult(d
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationArgs'] header_transformations: A set of transformations to apply to HTTP headers that pass through the gateway.
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStoreArgs'] response_cache_stores: Base policy for how a response from a backend is cached in the Response Cache.
         """
-        pulumi.set(__self__, "header_transformations", header_transformations)
-        pulumi.set(__self__, "response_cache_stores", response_cache_stores)
+        GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            header_transformations=header_transformations,
+            response_cache_stores=response_cache_stores,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             header_transformations: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationResult']] = None,
+             response_cache_stores: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStoreResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if header_transformations is None and 'headerTransformations' in kwargs:
+            header_transformations = kwargs['headerTransformations']
+        if header_transformations is None:
+            raise TypeError("Missing 'header_transformations' argument")
+        if response_cache_stores is None and 'responseCacheStores' in kwargs:
+            response_cache_stores = kwargs['responseCacheStores']
+        if response_cache_stores is None:
+            raise TypeError("Missing 'response_cache_stores' argument")
+
+        _setter("header_transformations", header_transformations)
+        _setter("response_cache_stores", response_cache_stores)
 
     @property
     @pulumi.getter(name="headerTransformations")
@@ -21308,9 +31691,36 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTr
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderArgs'] rename_headers: Rename HTTP headers as they pass through the gateway.
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationSetHeaderArgs'] set_headers: Set HTTP headers as they pass through the gateway.
         """
-        pulumi.set(__self__, "filter_headers", filter_headers)
-        pulumi.set(__self__, "rename_headers", rename_headers)
-        pulumi.set(__self__, "set_headers", set_headers)
+        GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            filter_headers=filter_headers,
+            rename_headers=rename_headers,
+            set_headers=set_headers,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             filter_headers: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationFilterHeaderResult']] = None,
+             rename_headers: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderResult']] = None,
+             set_headers: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationSetHeaderResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if filter_headers is None and 'filterHeaders' in kwargs:
+            filter_headers = kwargs['filterHeaders']
+        if filter_headers is None:
+            raise TypeError("Missing 'filter_headers' argument")
+        if rename_headers is None and 'renameHeaders' in kwargs:
+            rename_headers = kwargs['renameHeaders']
+        if rename_headers is None:
+            raise TypeError("Missing 'rename_headers' argument")
+        if set_headers is None and 'setHeaders' in kwargs:
+            set_headers = kwargs['setHeaders']
+        if set_headers is None:
+            raise TypeError("Missing 'set_headers' argument")
+
+        _setter("filter_headers", filter_headers)
+        _setter("rename_headers", rename_headers)
+        _setter("set_headers", set_headers)
 
     @property
     @pulumi.getter(name="filterHeaders")
@@ -21346,8 +31756,25 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTr
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationFilterHeaderItemArgs'] items: The list of headers.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "type", type)
+        GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationFilterHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationFilterHeaderItemResult']] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("items", items)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -21373,7 +31800,20 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTr
         """
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "name", name)
+        GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationFilterHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -21391,7 +31831,20 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTr
         """
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderItemArgs'] items: The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -21411,8 +31864,27 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTr
         :param str from_: The original case-insensitive name of the header.  This name must be unique across transformation policies.
         :param str to: The new name of the header.  This name must be unique across transformation policies.
         """
-        pulumi.set(__self__, "from_", from_)
-        pulumi.set(__self__, "to", to)
+        GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            from_=from_,
+            to=to,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             from_: Optional[str] = None,
+             to: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if from_ is None and 'from' in kwargs:
+            from_ = kwargs['from']
+        if from_ is None:
+            raise TypeError("Missing 'from_' argument")
+        if to is None:
+            raise TypeError("Missing 'to' argument")
+
+        _setter("from_", from_)
+        _setter("to", to)
 
     @property
     @pulumi.getter(name="from")
@@ -21438,7 +31910,20 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTr
         """
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItemArgs'] items: The list of headers.
         """
-        pulumi.set(__self__, "items", items)
+        GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationSetHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -21460,9 +31945,32 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTr
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "if_exists", if_exists)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            if_exists=if_exists,
+            name=name,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             if_exists: Optional[str] = None,
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if if_exists is None and 'ifExists' in kwargs:
+            if_exists = kwargs['ifExists']
+        if if_exists is None:
+            raise TypeError("Missing 'if_exists' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("if_exists", if_exists)
+        _setter("name", name)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="ifExists")
@@ -21498,8 +32006,27 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponse
         :param int time_to_live_in_seconds: Sets the number of seconds for a response from a backend being stored in the Response Cache before it expires.
         :param str type: Type of the Response Cache Store Policy.
         """
-        pulumi.set(__self__, "time_to_live_in_seconds", time_to_live_in_seconds)
-        pulumi.set(__self__, "type", type)
+        GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStoreResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_to_live_in_seconds=time_to_live_in_seconds,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_to_live_in_seconds: Optional[int] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if time_to_live_in_seconds is None and 'timeToLiveInSeconds' in kwargs:
+            time_to_live_in_seconds = kwargs['timeToLiveInSeconds']
+        if time_to_live_in_seconds is None:
+            raise TypeError("Missing 'time_to_live_in_seconds' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("time_to_live_in_seconds", time_to_live_in_seconds)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="timeToLiveInSeconds")
@@ -21528,10 +32055,29 @@ class GetDeploymentsFilterResult(dict):
         :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
         :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDeploymentsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -21566,9 +32112,34 @@ class GetGatewayCaBundleResult(dict):
         :param str certificate_authority_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         :param str type: Type of the Response Cache.
         """
-        pulumi.set(__self__, "ca_bundle_id", ca_bundle_id)
-        pulumi.set(__self__, "certificate_authority_id", certificate_authority_id)
-        pulumi.set(__self__, "type", type)
+        GetGatewayCaBundleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ca_bundle_id=ca_bundle_id,
+            certificate_authority_id=certificate_authority_id,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ca_bundle_id: Optional[str] = None,
+             certificate_authority_id: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if ca_bundle_id is None and 'caBundleId' in kwargs:
+            ca_bundle_id = kwargs['caBundleId']
+        if ca_bundle_id is None:
+            raise TypeError("Missing 'ca_bundle_id' argument")
+        if certificate_authority_id is None and 'certificateAuthorityId' in kwargs:
+            certificate_authority_id = kwargs['certificateAuthorityId']
+        if certificate_authority_id is None:
+            raise TypeError("Missing 'certificate_authority_id' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("ca_bundle_id", ca_bundle_id)
+        _setter("certificate_authority_id", certificate_authority_id)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="caBundleId")
@@ -21602,7 +32173,22 @@ class GetGatewayIpAddressResult(dict):
         """
         :param str ip_address: An IP address.
         """
-        pulumi.set(__self__, "ip_address", ip_address)
+        GetGatewayIpAddressResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ip_address=ip_address,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ip_address: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if ip_address is None and 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if ip_address is None:
+            raise TypeError("Missing 'ip_address' argument")
+
+        _setter("ip_address", ip_address)
 
     @property
     @pulumi.getter(name="ipAddress")
@@ -21636,15 +32222,74 @@ class GetGatewayResponseCacheDetailResult(dict):
         :param Sequence['GetGatewayResponseCacheDetailServerArgs'] servers: The set of cache store members to connect to. At present only a single server is supported.
         :param str type: Type of the Response Cache.
         """
-        pulumi.set(__self__, "authentication_secret_id", authentication_secret_id)
-        pulumi.set(__self__, "authentication_secret_version_number", authentication_secret_version_number)
-        pulumi.set(__self__, "connect_timeout_in_ms", connect_timeout_in_ms)
-        pulumi.set(__self__, "is_ssl_enabled", is_ssl_enabled)
-        pulumi.set(__self__, "is_ssl_verify_disabled", is_ssl_verify_disabled)
-        pulumi.set(__self__, "read_timeout_in_ms", read_timeout_in_ms)
-        pulumi.set(__self__, "send_timeout_in_ms", send_timeout_in_ms)
-        pulumi.set(__self__, "servers", servers)
-        pulumi.set(__self__, "type", type)
+        GetGatewayResponseCacheDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            authentication_secret_id=authentication_secret_id,
+            authentication_secret_version_number=authentication_secret_version_number,
+            connect_timeout_in_ms=connect_timeout_in_ms,
+            is_ssl_enabled=is_ssl_enabled,
+            is_ssl_verify_disabled=is_ssl_verify_disabled,
+            read_timeout_in_ms=read_timeout_in_ms,
+            send_timeout_in_ms=send_timeout_in_ms,
+            servers=servers,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             authentication_secret_id: Optional[str] = None,
+             authentication_secret_version_number: Optional[str] = None,
+             connect_timeout_in_ms: Optional[int] = None,
+             is_ssl_enabled: Optional[bool] = None,
+             is_ssl_verify_disabled: Optional[bool] = None,
+             read_timeout_in_ms: Optional[int] = None,
+             send_timeout_in_ms: Optional[int] = None,
+             servers: Optional[Sequence['outputs.GetGatewayResponseCacheDetailServerResult']] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if authentication_secret_id is None and 'authenticationSecretId' in kwargs:
+            authentication_secret_id = kwargs['authenticationSecretId']
+        if authentication_secret_id is None:
+            raise TypeError("Missing 'authentication_secret_id' argument")
+        if authentication_secret_version_number is None and 'authenticationSecretVersionNumber' in kwargs:
+            authentication_secret_version_number = kwargs['authenticationSecretVersionNumber']
+        if authentication_secret_version_number is None:
+            raise TypeError("Missing 'authentication_secret_version_number' argument")
+        if connect_timeout_in_ms is None and 'connectTimeoutInMs' in kwargs:
+            connect_timeout_in_ms = kwargs['connectTimeoutInMs']
+        if connect_timeout_in_ms is None:
+            raise TypeError("Missing 'connect_timeout_in_ms' argument")
+        if is_ssl_enabled is None and 'isSslEnabled' in kwargs:
+            is_ssl_enabled = kwargs['isSslEnabled']
+        if is_ssl_enabled is None:
+            raise TypeError("Missing 'is_ssl_enabled' argument")
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if is_ssl_verify_disabled is None:
+            raise TypeError("Missing 'is_ssl_verify_disabled' argument")
+        if read_timeout_in_ms is None and 'readTimeoutInMs' in kwargs:
+            read_timeout_in_ms = kwargs['readTimeoutInMs']
+        if read_timeout_in_ms is None:
+            raise TypeError("Missing 'read_timeout_in_ms' argument")
+        if send_timeout_in_ms is None and 'sendTimeoutInMs' in kwargs:
+            send_timeout_in_ms = kwargs['sendTimeoutInMs']
+        if send_timeout_in_ms is None:
+            raise TypeError("Missing 'send_timeout_in_ms' argument")
+        if servers is None:
+            raise TypeError("Missing 'servers' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("authentication_secret_id", authentication_secret_id)
+        _setter("authentication_secret_version_number", authentication_secret_version_number)
+        _setter("connect_timeout_in_ms", connect_timeout_in_ms)
+        _setter("is_ssl_enabled", is_ssl_enabled)
+        _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
+        _setter("read_timeout_in_ms", read_timeout_in_ms)
+        _setter("send_timeout_in_ms", send_timeout_in_ms)
+        _setter("servers", servers)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="authenticationSecretId")
@@ -21728,8 +32373,25 @@ class GetGatewayResponseCacheDetailServerResult(dict):
         :param str host: Hostname or IP address (IPv4 only) where the cache store is running.
         :param int port: The port the cache store is exposed on.
         """
-        pulumi.set(__self__, "host", host)
-        pulumi.set(__self__, "port", port)
+        GetGatewayResponseCacheDetailServerResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host=host,
+            port=port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host: Optional[str] = None,
+             port: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if host is None:
+            raise TypeError("Missing 'host' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+
+        _setter("host", host)
+        _setter("port", port)
 
     @property
     @pulumi.getter
@@ -21754,10 +32416,29 @@ class GetGatewaysFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetGatewaysFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -21814,23 +32495,128 @@ class GetGatewaysGatewayCollectionResult(dict):
         :param str time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "ca_bundles", ca_bundles)
-        pulumi.set(__self__, "certificate_id", certificate_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "endpoint_type", endpoint_type)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "ip_addresses", ip_addresses)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
-        pulumi.set(__self__, "response_cache_details", response_cache_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetGatewaysGatewayCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ca_bundles=ca_bundles,
+            certificate_id=certificate_id,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            endpoint_type=endpoint_type,
+            freeform_tags=freeform_tags,
+            hostname=hostname,
+            id=id,
+            ip_addresses=ip_addresses,
+            lifecycle_details=lifecycle_details,
+            network_security_group_ids=network_security_group_ids,
+            response_cache_details=response_cache_details,
+            state=state,
+            subnet_id=subnet_id,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ca_bundles: Optional[Sequence['outputs.GetGatewaysGatewayCollectionCaBundleResult']] = None,
+             certificate_id: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             endpoint_type: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             hostname: Optional[str] = None,
+             id: Optional[str] = None,
+             ip_addresses: Optional[Sequence['outputs.GetGatewaysGatewayCollectionIpAddressResult']] = None,
+             lifecycle_details: Optional[str] = None,
+             network_security_group_ids: Optional[Sequence[str]] = None,
+             response_cache_details: Optional[Sequence['outputs.GetGatewaysGatewayCollectionResponseCacheDetailResult']] = None,
+             state: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if ca_bundles is None and 'caBundles' in kwargs:
+            ca_bundles = kwargs['caBundles']
+        if ca_bundles is None:
+            raise TypeError("Missing 'ca_bundles' argument")
+        if certificate_id is None and 'certificateId' in kwargs:
+            certificate_id = kwargs['certificateId']
+        if certificate_id is None:
+            raise TypeError("Missing 'certificate_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if endpoint_type is None and 'endpointType' in kwargs:
+            endpoint_type = kwargs['endpointType']
+        if endpoint_type is None:
+            raise TypeError("Missing 'endpoint_type' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if ip_addresses is None and 'ipAddresses' in kwargs:
+            ip_addresses = kwargs['ipAddresses']
+        if ip_addresses is None:
+            raise TypeError("Missing 'ip_addresses' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if network_security_group_ids is None and 'networkSecurityGroupIds' in kwargs:
+            network_security_group_ids = kwargs['networkSecurityGroupIds']
+        if network_security_group_ids is None:
+            raise TypeError("Missing 'network_security_group_ids' argument")
+        if response_cache_details is None and 'responseCacheDetails' in kwargs:
+            response_cache_details = kwargs['responseCacheDetails']
+        if response_cache_details is None:
+            raise TypeError("Missing 'response_cache_details' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+
+        _setter("ca_bundles", ca_bundles)
+        _setter("certificate_id", certificate_id)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("endpoint_type", endpoint_type)
+        _setter("freeform_tags", freeform_tags)
+        _setter("hostname", hostname)
+        _setter("id", id)
+        _setter("ip_addresses", ip_addresses)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("network_security_group_ids", network_security_group_ids)
+        _setter("response_cache_details", response_cache_details)
+        _setter("state", state)
+        _setter("subnet_id", subnet_id)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="caBundles")
@@ -21980,9 +32766,34 @@ class GetGatewaysGatewayCollectionCaBundleResult(dict):
         :param str certificate_authority_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         :param str type: Type of the Response Cache.
         """
-        pulumi.set(__self__, "ca_bundle_id", ca_bundle_id)
-        pulumi.set(__self__, "certificate_authority_id", certificate_authority_id)
-        pulumi.set(__self__, "type", type)
+        GetGatewaysGatewayCollectionCaBundleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ca_bundle_id=ca_bundle_id,
+            certificate_authority_id=certificate_authority_id,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ca_bundle_id: Optional[str] = None,
+             certificate_authority_id: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if ca_bundle_id is None and 'caBundleId' in kwargs:
+            ca_bundle_id = kwargs['caBundleId']
+        if ca_bundle_id is None:
+            raise TypeError("Missing 'ca_bundle_id' argument")
+        if certificate_authority_id is None and 'certificateAuthorityId' in kwargs:
+            certificate_authority_id = kwargs['certificateAuthorityId']
+        if certificate_authority_id is None:
+            raise TypeError("Missing 'certificate_authority_id' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("ca_bundle_id", ca_bundle_id)
+        _setter("certificate_authority_id", certificate_authority_id)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="caBundleId")
@@ -22016,7 +32827,22 @@ class GetGatewaysGatewayCollectionIpAddressResult(dict):
         """
         :param str ip_address: An IP address.
         """
-        pulumi.set(__self__, "ip_address", ip_address)
+        GetGatewaysGatewayCollectionIpAddressResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ip_address=ip_address,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ip_address: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if ip_address is None and 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if ip_address is None:
+            raise TypeError("Missing 'ip_address' argument")
+
+        _setter("ip_address", ip_address)
 
     @property
     @pulumi.getter(name="ipAddress")
@@ -22050,15 +32876,74 @@ class GetGatewaysGatewayCollectionResponseCacheDetailResult(dict):
         :param Sequence['GetGatewaysGatewayCollectionResponseCacheDetailServerArgs'] servers: The set of cache store members to connect to. At present only a single server is supported.
         :param str type: Type of the Response Cache.
         """
-        pulumi.set(__self__, "authentication_secret_id", authentication_secret_id)
-        pulumi.set(__self__, "authentication_secret_version_number", authentication_secret_version_number)
-        pulumi.set(__self__, "connect_timeout_in_ms", connect_timeout_in_ms)
-        pulumi.set(__self__, "is_ssl_enabled", is_ssl_enabled)
-        pulumi.set(__self__, "is_ssl_verify_disabled", is_ssl_verify_disabled)
-        pulumi.set(__self__, "read_timeout_in_ms", read_timeout_in_ms)
-        pulumi.set(__self__, "send_timeout_in_ms", send_timeout_in_ms)
-        pulumi.set(__self__, "servers", servers)
-        pulumi.set(__self__, "type", type)
+        GetGatewaysGatewayCollectionResponseCacheDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            authentication_secret_id=authentication_secret_id,
+            authentication_secret_version_number=authentication_secret_version_number,
+            connect_timeout_in_ms=connect_timeout_in_ms,
+            is_ssl_enabled=is_ssl_enabled,
+            is_ssl_verify_disabled=is_ssl_verify_disabled,
+            read_timeout_in_ms=read_timeout_in_ms,
+            send_timeout_in_ms=send_timeout_in_ms,
+            servers=servers,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             authentication_secret_id: Optional[str] = None,
+             authentication_secret_version_number: Optional[str] = None,
+             connect_timeout_in_ms: Optional[int] = None,
+             is_ssl_enabled: Optional[bool] = None,
+             is_ssl_verify_disabled: Optional[bool] = None,
+             read_timeout_in_ms: Optional[int] = None,
+             send_timeout_in_ms: Optional[int] = None,
+             servers: Optional[Sequence['outputs.GetGatewaysGatewayCollectionResponseCacheDetailServerResult']] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if authentication_secret_id is None and 'authenticationSecretId' in kwargs:
+            authentication_secret_id = kwargs['authenticationSecretId']
+        if authentication_secret_id is None:
+            raise TypeError("Missing 'authentication_secret_id' argument")
+        if authentication_secret_version_number is None and 'authenticationSecretVersionNumber' in kwargs:
+            authentication_secret_version_number = kwargs['authenticationSecretVersionNumber']
+        if authentication_secret_version_number is None:
+            raise TypeError("Missing 'authentication_secret_version_number' argument")
+        if connect_timeout_in_ms is None and 'connectTimeoutInMs' in kwargs:
+            connect_timeout_in_ms = kwargs['connectTimeoutInMs']
+        if connect_timeout_in_ms is None:
+            raise TypeError("Missing 'connect_timeout_in_ms' argument")
+        if is_ssl_enabled is None and 'isSslEnabled' in kwargs:
+            is_ssl_enabled = kwargs['isSslEnabled']
+        if is_ssl_enabled is None:
+            raise TypeError("Missing 'is_ssl_enabled' argument")
+        if is_ssl_verify_disabled is None and 'isSslVerifyDisabled' in kwargs:
+            is_ssl_verify_disabled = kwargs['isSslVerifyDisabled']
+        if is_ssl_verify_disabled is None:
+            raise TypeError("Missing 'is_ssl_verify_disabled' argument")
+        if read_timeout_in_ms is None and 'readTimeoutInMs' in kwargs:
+            read_timeout_in_ms = kwargs['readTimeoutInMs']
+        if read_timeout_in_ms is None:
+            raise TypeError("Missing 'read_timeout_in_ms' argument")
+        if send_timeout_in_ms is None and 'sendTimeoutInMs' in kwargs:
+            send_timeout_in_ms = kwargs['sendTimeoutInMs']
+        if send_timeout_in_ms is None:
+            raise TypeError("Missing 'send_timeout_in_ms' argument")
+        if servers is None:
+            raise TypeError("Missing 'servers' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("authentication_secret_id", authentication_secret_id)
+        _setter("authentication_secret_version_number", authentication_secret_version_number)
+        _setter("connect_timeout_in_ms", connect_timeout_in_ms)
+        _setter("is_ssl_enabled", is_ssl_enabled)
+        _setter("is_ssl_verify_disabled", is_ssl_verify_disabled)
+        _setter("read_timeout_in_ms", read_timeout_in_ms)
+        _setter("send_timeout_in_ms", send_timeout_in_ms)
+        _setter("servers", servers)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="authenticationSecretId")
@@ -22142,8 +33027,25 @@ class GetGatewaysGatewayCollectionResponseCacheDetailServerResult(dict):
         :param str host: Hostname or IP address (IPv4 only) where the cache store is running.
         :param int port: The port the cache store is exposed on.
         """
-        pulumi.set(__self__, "host", host)
-        pulumi.set(__self__, "port", port)
+        GetGatewaysGatewayCollectionResponseCacheDetailServerResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host=host,
+            port=port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host: Optional[str] = None,
+             port: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if host is None:
+            raise TypeError("Missing 'host' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+
+        _setter("host", host)
+        _setter("port", port)
 
     @property
     @pulumi.getter
@@ -22171,8 +33073,25 @@ class GetSubscriberClientResult(dict):
         :param str name: The name of the client. Must be unique within a subscriber.
         :param str token: The token for the client. Must be unique within a tenancy.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "token", token)
+        GetSubscriberClientResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            token=token,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             token: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if token is None:
+            raise TypeError("Missing 'token' argument")
+
+        _setter("name", name)
+        _setter("token", token)
 
     @property
     @pulumi.getter
@@ -22200,10 +33119,29 @@ class GetSubscribersFilterResult(dict):
         """
         :param str name: The name of the client. Must be unique within a subscriber.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSubscribersFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -22228,7 +33166,20 @@ class GetSubscribersFilterResult(dict):
 class GetSubscribersSubscriberCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetSubscribersSubscriberCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetSubscribersSubscriberCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetSubscribersSubscriberCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -22263,17 +33214,86 @@ class GetSubscribersSubscriberCollectionItemResult(dict):
         :param str time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
         :param Sequence[str] usage_plans: An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
         """
-        pulumi.set(__self__, "clients", clients)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "usage_plans", usage_plans)
+        GetSubscribersSubscriberCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            clients=clients,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+            usage_plans=usage_plans,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             clients: Optional[Sequence['outputs.GetSubscribersSubscriberCollectionItemClientResult']] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             usage_plans: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if clients is None:
+            raise TypeError("Missing 'clients' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if usage_plans is None and 'usagePlans' in kwargs:
+            usage_plans = kwargs['usagePlans']
+        if usage_plans is None:
+            raise TypeError("Missing 'usage_plans' argument")
+
+        _setter("clients", clients)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("usage_plans", usage_plans)
 
     @property
     @pulumi.getter
@@ -22373,8 +33393,25 @@ class GetSubscribersSubscriberCollectionItemClientResult(dict):
         :param str name: The name of the client. Must be unique within a subscriber.
         :param str token: The token for the client. Must be unique within a tenancy.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "token", token)
+        GetSubscribersSubscriberCollectionItemClientResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            token=token,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             token: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if token is None:
+            raise TypeError("Missing 'token' argument")
+
+        _setter("name", name)
+        _setter("token", token)
 
     @property
     @pulumi.getter
@@ -22408,11 +33445,42 @@ class GetUsagePlanEntitlementResult(dict):
         :param Sequence['GetUsagePlanEntitlementRateLimitArgs'] rate_limits: Rate-limiting policy for a usage plan.
         :param Sequence['GetUsagePlanEntitlementTargetArgs'] targets: A collection of targeted deployments that the entitlement will be applied to.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "quotas", quotas)
-        pulumi.set(__self__, "rate_limits", rate_limits)
-        pulumi.set(__self__, "targets", targets)
+        GetUsagePlanEntitlementResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            name=name,
+            quotas=quotas,
+            rate_limits=rate_limits,
+            targets=targets,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             name: Optional[str] = None,
+             quotas: Optional[Sequence['outputs.GetUsagePlanEntitlementQuotaResult']] = None,
+             rate_limits: Optional[Sequence['outputs.GetUsagePlanEntitlementRateLimitResult']] = None,
+             targets: Optional[Sequence['outputs.GetUsagePlanEntitlementTargetResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if quotas is None:
+            raise TypeError("Missing 'quotas' argument")
+        if rate_limits is None and 'rateLimits' in kwargs:
+            rate_limits = kwargs['rateLimits']
+        if rate_limits is None:
+            raise TypeError("Missing 'rate_limits' argument")
+        if targets is None:
+            raise TypeError("Missing 'targets' argument")
+
+        _setter("description", description)
+        _setter("name", name)
+        _setter("quotas", quotas)
+        _setter("rate_limits", rate_limits)
+        _setter("targets", targets)
 
     @property
     @pulumi.getter
@@ -22468,10 +33536,39 @@ class GetUsagePlanEntitlementQuotaResult(dict):
         :param str unit: The unit of time over which rate limits are calculated. Example: `SECOND`
         :param int value: The number of requests that can be made per time period.
         """
-        pulumi.set(__self__, "operation_on_breach", operation_on_breach)
-        pulumi.set(__self__, "reset_policy", reset_policy)
-        pulumi.set(__self__, "unit", unit)
-        pulumi.set(__self__, "value", value)
+        GetUsagePlanEntitlementQuotaResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            operation_on_breach=operation_on_breach,
+            reset_policy=reset_policy,
+            unit=unit,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             operation_on_breach: Optional[str] = None,
+             reset_policy: Optional[str] = None,
+             unit: Optional[str] = None,
+             value: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if operation_on_breach is None and 'operationOnBreach' in kwargs:
+            operation_on_breach = kwargs['operationOnBreach']
+        if operation_on_breach is None:
+            raise TypeError("Missing 'operation_on_breach' argument")
+        if reset_policy is None and 'resetPolicy' in kwargs:
+            reset_policy = kwargs['resetPolicy']
+        if reset_policy is None:
+            raise TypeError("Missing 'reset_policy' argument")
+        if unit is None:
+            raise TypeError("Missing 'unit' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("operation_on_breach", operation_on_breach)
+        _setter("reset_policy", reset_policy)
+        _setter("unit", unit)
+        _setter("value", value)
 
     @property
     @pulumi.getter(name="operationOnBreach")
@@ -22515,8 +33612,25 @@ class GetUsagePlanEntitlementRateLimitResult(dict):
         :param str unit: The unit of time over which rate limits are calculated. Example: `SECOND`
         :param int value: The number of requests that can be made per time period.
         """
-        pulumi.set(__self__, "unit", unit)
-        pulumi.set(__self__, "value", value)
+        GetUsagePlanEntitlementRateLimitResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            unit=unit,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             unit: Optional[str] = None,
+             value: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if unit is None:
+            raise TypeError("Missing 'unit' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("unit", unit)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -22542,7 +33656,22 @@ class GetUsagePlanEntitlementTargetResult(dict):
         """
         :param str deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
         """
-        pulumi.set(__self__, "deployment_id", deployment_id)
+        GetUsagePlanEntitlementTargetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            deployment_id=deployment_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             deployment_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if deployment_id is None and 'deploymentId' in kwargs:
+            deployment_id = kwargs['deploymentId']
+        if deployment_id is None:
+            raise TypeError("Missing 'deployment_id' argument")
+
+        _setter("deployment_id", deployment_id)
 
     @property
     @pulumi.getter(name="deploymentId")
@@ -22562,10 +33691,29 @@ class GetUsagePlansFilterResult(dict):
         """
         :param str name: An entitlement name, unique within a usage plan.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetUsagePlansFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -22590,7 +33738,20 @@ class GetUsagePlansFilterResult(dict):
 class GetUsagePlansUsagePlanCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetUsagePlansUsagePlanCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetUsagePlansUsagePlanCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetUsagePlansUsagePlanCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -22623,16 +33784,79 @@ class GetUsagePlansUsagePlanCollectionItemResult(dict):
         :param str time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "entitlements", entitlements)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetUsagePlansUsagePlanCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            entitlements=entitlements,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             entitlements: Optional[Sequence['outputs.GetUsagePlansUsagePlanCollectionItemEntitlementResult']] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if entitlements is None:
+            raise TypeError("Missing 'entitlements' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("entitlements", entitlements)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -22730,11 +33954,42 @@ class GetUsagePlansUsagePlanCollectionItemEntitlementResult(dict):
         :param Sequence['GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitArgs'] rate_limits: Rate-limiting policy for a usage plan.
         :param Sequence['GetUsagePlansUsagePlanCollectionItemEntitlementTargetArgs'] targets: A collection of targeted deployments that the entitlement will be applied to.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "quotas", quotas)
-        pulumi.set(__self__, "rate_limits", rate_limits)
-        pulumi.set(__self__, "targets", targets)
+        GetUsagePlansUsagePlanCollectionItemEntitlementResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            name=name,
+            quotas=quotas,
+            rate_limits=rate_limits,
+            targets=targets,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             name: Optional[str] = None,
+             quotas: Optional[Sequence['outputs.GetUsagePlansUsagePlanCollectionItemEntitlementQuotaResult']] = None,
+             rate_limits: Optional[Sequence['outputs.GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitResult']] = None,
+             targets: Optional[Sequence['outputs.GetUsagePlansUsagePlanCollectionItemEntitlementTargetResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if quotas is None:
+            raise TypeError("Missing 'quotas' argument")
+        if rate_limits is None and 'rateLimits' in kwargs:
+            rate_limits = kwargs['rateLimits']
+        if rate_limits is None:
+            raise TypeError("Missing 'rate_limits' argument")
+        if targets is None:
+            raise TypeError("Missing 'targets' argument")
+
+        _setter("description", description)
+        _setter("name", name)
+        _setter("quotas", quotas)
+        _setter("rate_limits", rate_limits)
+        _setter("targets", targets)
 
     @property
     @pulumi.getter
@@ -22790,10 +34045,39 @@ class GetUsagePlansUsagePlanCollectionItemEntitlementQuotaResult(dict):
         :param str unit: The unit of time over which rate limits are calculated. Example: `SECOND`
         :param int value: The number of requests that can be made per time period.
         """
-        pulumi.set(__self__, "operation_on_breach", operation_on_breach)
-        pulumi.set(__self__, "reset_policy", reset_policy)
-        pulumi.set(__self__, "unit", unit)
-        pulumi.set(__self__, "value", value)
+        GetUsagePlansUsagePlanCollectionItemEntitlementQuotaResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            operation_on_breach=operation_on_breach,
+            reset_policy=reset_policy,
+            unit=unit,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             operation_on_breach: Optional[str] = None,
+             reset_policy: Optional[str] = None,
+             unit: Optional[str] = None,
+             value: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if operation_on_breach is None and 'operationOnBreach' in kwargs:
+            operation_on_breach = kwargs['operationOnBreach']
+        if operation_on_breach is None:
+            raise TypeError("Missing 'operation_on_breach' argument")
+        if reset_policy is None and 'resetPolicy' in kwargs:
+            reset_policy = kwargs['resetPolicy']
+        if reset_policy is None:
+            raise TypeError("Missing 'reset_policy' argument")
+        if unit is None:
+            raise TypeError("Missing 'unit' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("operation_on_breach", operation_on_breach)
+        _setter("reset_policy", reset_policy)
+        _setter("unit", unit)
+        _setter("value", value)
 
     @property
     @pulumi.getter(name="operationOnBreach")
@@ -22837,8 +34121,25 @@ class GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitResult(dict):
         :param str unit: The unit of time over which rate limits are calculated. Example: `SECOND`
         :param int value: The number of requests that can be made per time period.
         """
-        pulumi.set(__self__, "unit", unit)
-        pulumi.set(__self__, "value", value)
+        GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            unit=unit,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             unit: Optional[str] = None,
+             value: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if unit is None:
+            raise TypeError("Missing 'unit' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("unit", unit)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -22864,7 +34165,22 @@ class GetUsagePlansUsagePlanCollectionItemEntitlementTargetResult(dict):
         """
         :param str deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
         """
-        pulumi.set(__self__, "deployment_id", deployment_id)
+        GetUsagePlansUsagePlanCollectionItemEntitlementTargetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            deployment_id=deployment_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             deployment_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if deployment_id is None and 'deploymentId' in kwargs:
+            deployment_id = kwargs['deploymentId']
+        if deployment_id is None:
+            raise TypeError("Missing 'deployment_id' argument")
+
+        _setter("deployment_id", deployment_id)
 
     @property
     @pulumi.getter(name="deploymentId")

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['NetworkFirewallPolicyDecryptionProfileArgs', 'NetworkFirewallPolicyDecryptionProfile']
@@ -45,28 +45,85 @@ class NetworkFirewallPolicyDecryptionProfileArgs:
         :param pulumi.Input[bool] is_untrusted_issuer_blocked: (Updatable) Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
         :param pulumi.Input[str] name: Name of the decryption profile.
         """
-        pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
-        pulumi.set(__self__, "type", type)
+        NetworkFirewallPolicyDecryptionProfileArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            network_firewall_policy_id=network_firewall_policy_id,
+            type=type,
+            are_certificate_extensions_restricted=are_certificate_extensions_restricted,
+            is_auto_include_alt_name=is_auto_include_alt_name,
+            is_expired_certificate_blocked=is_expired_certificate_blocked,
+            is_out_of_capacity_blocked=is_out_of_capacity_blocked,
+            is_revocation_status_timeout_blocked=is_revocation_status_timeout_blocked,
+            is_unknown_revocation_status_blocked=is_unknown_revocation_status_blocked,
+            is_unsupported_cipher_blocked=is_unsupported_cipher_blocked,
+            is_unsupported_version_blocked=is_unsupported_version_blocked,
+            is_untrusted_issuer_blocked=is_untrusted_issuer_blocked,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             are_certificate_extensions_restricted: Optional[pulumi.Input[bool]] = None,
+             is_auto_include_alt_name: Optional[pulumi.Input[bool]] = None,
+             is_expired_certificate_blocked: Optional[pulumi.Input[bool]] = None,
+             is_out_of_capacity_blocked: Optional[pulumi.Input[bool]] = None,
+             is_revocation_status_timeout_blocked: Optional[pulumi.Input[bool]] = None,
+             is_unknown_revocation_status_blocked: Optional[pulumi.Input[bool]] = None,
+             is_unsupported_cipher_blocked: Optional[pulumi.Input[bool]] = None,
+             is_unsupported_version_blocked: Optional[pulumi.Input[bool]] = None,
+             is_untrusted_issuer_blocked: Optional[pulumi.Input[bool]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
+            network_firewall_policy_id = kwargs['networkFirewallPolicyId']
+        if network_firewall_policy_id is None:
+            raise TypeError("Missing 'network_firewall_policy_id' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if are_certificate_extensions_restricted is None and 'areCertificateExtensionsRestricted' in kwargs:
+            are_certificate_extensions_restricted = kwargs['areCertificateExtensionsRestricted']
+        if is_auto_include_alt_name is None and 'isAutoIncludeAltName' in kwargs:
+            is_auto_include_alt_name = kwargs['isAutoIncludeAltName']
+        if is_expired_certificate_blocked is None and 'isExpiredCertificateBlocked' in kwargs:
+            is_expired_certificate_blocked = kwargs['isExpiredCertificateBlocked']
+        if is_out_of_capacity_blocked is None and 'isOutOfCapacityBlocked' in kwargs:
+            is_out_of_capacity_blocked = kwargs['isOutOfCapacityBlocked']
+        if is_revocation_status_timeout_blocked is None and 'isRevocationStatusTimeoutBlocked' in kwargs:
+            is_revocation_status_timeout_blocked = kwargs['isRevocationStatusTimeoutBlocked']
+        if is_unknown_revocation_status_blocked is None and 'isUnknownRevocationStatusBlocked' in kwargs:
+            is_unknown_revocation_status_blocked = kwargs['isUnknownRevocationStatusBlocked']
+        if is_unsupported_cipher_blocked is None and 'isUnsupportedCipherBlocked' in kwargs:
+            is_unsupported_cipher_blocked = kwargs['isUnsupportedCipherBlocked']
+        if is_unsupported_version_blocked is None and 'isUnsupportedVersionBlocked' in kwargs:
+            is_unsupported_version_blocked = kwargs['isUnsupportedVersionBlocked']
+        if is_untrusted_issuer_blocked is None and 'isUntrustedIssuerBlocked' in kwargs:
+            is_untrusted_issuer_blocked = kwargs['isUntrustedIssuerBlocked']
+
+        _setter("network_firewall_policy_id", network_firewall_policy_id)
+        _setter("type", type)
         if are_certificate_extensions_restricted is not None:
-            pulumi.set(__self__, "are_certificate_extensions_restricted", are_certificate_extensions_restricted)
+            _setter("are_certificate_extensions_restricted", are_certificate_extensions_restricted)
         if is_auto_include_alt_name is not None:
-            pulumi.set(__self__, "is_auto_include_alt_name", is_auto_include_alt_name)
+            _setter("is_auto_include_alt_name", is_auto_include_alt_name)
         if is_expired_certificate_blocked is not None:
-            pulumi.set(__self__, "is_expired_certificate_blocked", is_expired_certificate_blocked)
+            _setter("is_expired_certificate_blocked", is_expired_certificate_blocked)
         if is_out_of_capacity_blocked is not None:
-            pulumi.set(__self__, "is_out_of_capacity_blocked", is_out_of_capacity_blocked)
+            _setter("is_out_of_capacity_blocked", is_out_of_capacity_blocked)
         if is_revocation_status_timeout_blocked is not None:
-            pulumi.set(__self__, "is_revocation_status_timeout_blocked", is_revocation_status_timeout_blocked)
+            _setter("is_revocation_status_timeout_blocked", is_revocation_status_timeout_blocked)
         if is_unknown_revocation_status_blocked is not None:
-            pulumi.set(__self__, "is_unknown_revocation_status_blocked", is_unknown_revocation_status_blocked)
+            _setter("is_unknown_revocation_status_blocked", is_unknown_revocation_status_blocked)
         if is_unsupported_cipher_blocked is not None:
-            pulumi.set(__self__, "is_unsupported_cipher_blocked", is_unsupported_cipher_blocked)
+            _setter("is_unsupported_cipher_blocked", is_unsupported_cipher_blocked)
         if is_unsupported_version_blocked is not None:
-            pulumi.set(__self__, "is_unsupported_version_blocked", is_unsupported_version_blocked)
+            _setter("is_unsupported_version_blocked", is_unsupported_version_blocked)
         if is_untrusted_issuer_blocked is not None:
-            pulumi.set(__self__, "is_untrusted_issuer_blocked", is_untrusted_issuer_blocked)
+            _setter("is_untrusted_issuer_blocked", is_untrusted_issuer_blocked)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter(name="networkFirewallPolicyId")
@@ -253,32 +310,89 @@ class _NetworkFirewallPolicyDecryptionProfileState:
         :param pulumi.Input[str] parent_resource_id: OCID of the Network Firewall Policy this decryption profile belongs to.
         :param pulumi.Input[str] type: Describes the type of decryption profile. The accepted values are - * SSL_FORWARD_PROXY * SSL_INBOUND_INSPECTION
         """
+        _NetworkFirewallPolicyDecryptionProfileState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            are_certificate_extensions_restricted=are_certificate_extensions_restricted,
+            is_auto_include_alt_name=is_auto_include_alt_name,
+            is_expired_certificate_blocked=is_expired_certificate_blocked,
+            is_out_of_capacity_blocked=is_out_of_capacity_blocked,
+            is_revocation_status_timeout_blocked=is_revocation_status_timeout_blocked,
+            is_unknown_revocation_status_blocked=is_unknown_revocation_status_blocked,
+            is_unsupported_cipher_blocked=is_unsupported_cipher_blocked,
+            is_unsupported_version_blocked=is_unsupported_version_blocked,
+            is_untrusted_issuer_blocked=is_untrusted_issuer_blocked,
+            name=name,
+            network_firewall_policy_id=network_firewall_policy_id,
+            parent_resource_id=parent_resource_id,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             are_certificate_extensions_restricted: Optional[pulumi.Input[bool]] = None,
+             is_auto_include_alt_name: Optional[pulumi.Input[bool]] = None,
+             is_expired_certificate_blocked: Optional[pulumi.Input[bool]] = None,
+             is_out_of_capacity_blocked: Optional[pulumi.Input[bool]] = None,
+             is_revocation_status_timeout_blocked: Optional[pulumi.Input[bool]] = None,
+             is_unknown_revocation_status_blocked: Optional[pulumi.Input[bool]] = None,
+             is_unsupported_cipher_blocked: Optional[pulumi.Input[bool]] = None,
+             is_unsupported_version_blocked: Optional[pulumi.Input[bool]] = None,
+             is_untrusted_issuer_blocked: Optional[pulumi.Input[bool]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
+             parent_resource_id: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if are_certificate_extensions_restricted is None and 'areCertificateExtensionsRestricted' in kwargs:
+            are_certificate_extensions_restricted = kwargs['areCertificateExtensionsRestricted']
+        if is_auto_include_alt_name is None and 'isAutoIncludeAltName' in kwargs:
+            is_auto_include_alt_name = kwargs['isAutoIncludeAltName']
+        if is_expired_certificate_blocked is None and 'isExpiredCertificateBlocked' in kwargs:
+            is_expired_certificate_blocked = kwargs['isExpiredCertificateBlocked']
+        if is_out_of_capacity_blocked is None and 'isOutOfCapacityBlocked' in kwargs:
+            is_out_of_capacity_blocked = kwargs['isOutOfCapacityBlocked']
+        if is_revocation_status_timeout_blocked is None and 'isRevocationStatusTimeoutBlocked' in kwargs:
+            is_revocation_status_timeout_blocked = kwargs['isRevocationStatusTimeoutBlocked']
+        if is_unknown_revocation_status_blocked is None and 'isUnknownRevocationStatusBlocked' in kwargs:
+            is_unknown_revocation_status_blocked = kwargs['isUnknownRevocationStatusBlocked']
+        if is_unsupported_cipher_blocked is None and 'isUnsupportedCipherBlocked' in kwargs:
+            is_unsupported_cipher_blocked = kwargs['isUnsupportedCipherBlocked']
+        if is_unsupported_version_blocked is None and 'isUnsupportedVersionBlocked' in kwargs:
+            is_unsupported_version_blocked = kwargs['isUnsupportedVersionBlocked']
+        if is_untrusted_issuer_blocked is None and 'isUntrustedIssuerBlocked' in kwargs:
+            is_untrusted_issuer_blocked = kwargs['isUntrustedIssuerBlocked']
+        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
+            network_firewall_policy_id = kwargs['networkFirewallPolicyId']
+        if parent_resource_id is None and 'parentResourceId' in kwargs:
+            parent_resource_id = kwargs['parentResourceId']
+
         if are_certificate_extensions_restricted is not None:
-            pulumi.set(__self__, "are_certificate_extensions_restricted", are_certificate_extensions_restricted)
+            _setter("are_certificate_extensions_restricted", are_certificate_extensions_restricted)
         if is_auto_include_alt_name is not None:
-            pulumi.set(__self__, "is_auto_include_alt_name", is_auto_include_alt_name)
+            _setter("is_auto_include_alt_name", is_auto_include_alt_name)
         if is_expired_certificate_blocked is not None:
-            pulumi.set(__self__, "is_expired_certificate_blocked", is_expired_certificate_blocked)
+            _setter("is_expired_certificate_blocked", is_expired_certificate_blocked)
         if is_out_of_capacity_blocked is not None:
-            pulumi.set(__self__, "is_out_of_capacity_blocked", is_out_of_capacity_blocked)
+            _setter("is_out_of_capacity_blocked", is_out_of_capacity_blocked)
         if is_revocation_status_timeout_blocked is not None:
-            pulumi.set(__self__, "is_revocation_status_timeout_blocked", is_revocation_status_timeout_blocked)
+            _setter("is_revocation_status_timeout_blocked", is_revocation_status_timeout_blocked)
         if is_unknown_revocation_status_blocked is not None:
-            pulumi.set(__self__, "is_unknown_revocation_status_blocked", is_unknown_revocation_status_blocked)
+            _setter("is_unknown_revocation_status_blocked", is_unknown_revocation_status_blocked)
         if is_unsupported_cipher_blocked is not None:
-            pulumi.set(__self__, "is_unsupported_cipher_blocked", is_unsupported_cipher_blocked)
+            _setter("is_unsupported_cipher_blocked", is_unsupported_cipher_blocked)
         if is_unsupported_version_blocked is not None:
-            pulumi.set(__self__, "is_unsupported_version_blocked", is_unsupported_version_blocked)
+            _setter("is_unsupported_version_blocked", is_unsupported_version_blocked)
         if is_untrusted_issuer_blocked is not None:
-            pulumi.set(__self__, "is_untrusted_issuer_blocked", is_untrusted_issuer_blocked)
+            _setter("is_untrusted_issuer_blocked", is_untrusted_issuer_blocked)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if network_firewall_policy_id is not None:
-            pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
+            _setter("network_firewall_policy_id", network_firewall_policy_id)
         if parent_resource_id is not None:
-            pulumi.set(__self__, "parent_resource_id", parent_resource_id)
+            _setter("parent_resource_id", parent_resource_id)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="areCertificateExtensionsRestricted")
@@ -560,6 +674,10 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            NetworkFirewallPolicyDecryptionProfileArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

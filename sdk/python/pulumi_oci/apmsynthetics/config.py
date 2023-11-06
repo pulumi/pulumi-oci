@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -63,41 +63,134 @@ class ConfigArgs:
         :param pulumi.Input[str] target: (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         """
-        pulumi.set(__self__, "apm_domain_id", apm_domain_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "monitor_type", monitor_type)
-        pulumi.set(__self__, "repeat_interval_in_seconds", repeat_interval_in_seconds)
-        pulumi.set(__self__, "vantage_points", vantage_points)
+        ConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            apm_domain_id=apm_domain_id,
+            display_name=display_name,
+            monitor_type=monitor_type,
+            repeat_interval_in_seconds=repeat_interval_in_seconds,
+            vantage_points=vantage_points,
+            availability_configuration=availability_configuration,
+            batch_interval_in_seconds=batch_interval_in_seconds,
+            configuration=configuration,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            is_run_now=is_run_now,
+            is_run_once=is_run_once,
+            maintenance_window_schedule=maintenance_window_schedule,
+            scheduling_policy=scheduling_policy,
+            script_id=script_id,
+            script_name=script_name,
+            script_parameters=script_parameters,
+            status=status,
+            target=target,
+            timeout_in_seconds=timeout_in_seconds,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             apm_domain_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             monitor_type: Optional[pulumi.Input[str]] = None,
+             repeat_interval_in_seconds: Optional[pulumi.Input[int]] = None,
+             vantage_points: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigVantagePointArgs']]]] = None,
+             availability_configuration: Optional[pulumi.Input['ConfigAvailabilityConfigurationArgs']] = None,
+             batch_interval_in_seconds: Optional[pulumi.Input[int]] = None,
+             configuration: Optional[pulumi.Input['ConfigConfigurationArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_run_now: Optional[pulumi.Input[bool]] = None,
+             is_run_once: Optional[pulumi.Input[bool]] = None,
+             maintenance_window_schedule: Optional[pulumi.Input['ConfigMaintenanceWindowScheduleArgs']] = None,
+             scheduling_policy: Optional[pulumi.Input[str]] = None,
+             script_id: Optional[pulumi.Input[str]] = None,
+             script_name: Optional[pulumi.Input[str]] = None,
+             script_parameters: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigScriptParameterArgs']]]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             target: Optional[pulumi.Input[str]] = None,
+             timeout_in_seconds: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if apm_domain_id is None and 'apmDomainId' in kwargs:
+            apm_domain_id = kwargs['apmDomainId']
+        if apm_domain_id is None:
+            raise TypeError("Missing 'apm_domain_id' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if monitor_type is None and 'monitorType' in kwargs:
+            monitor_type = kwargs['monitorType']
+        if monitor_type is None:
+            raise TypeError("Missing 'monitor_type' argument")
+        if repeat_interval_in_seconds is None and 'repeatIntervalInSeconds' in kwargs:
+            repeat_interval_in_seconds = kwargs['repeatIntervalInSeconds']
+        if repeat_interval_in_seconds is None:
+            raise TypeError("Missing 'repeat_interval_in_seconds' argument")
+        if vantage_points is None and 'vantagePoints' in kwargs:
+            vantage_points = kwargs['vantagePoints']
+        if vantage_points is None:
+            raise TypeError("Missing 'vantage_points' argument")
+        if availability_configuration is None and 'availabilityConfiguration' in kwargs:
+            availability_configuration = kwargs['availabilityConfiguration']
+        if batch_interval_in_seconds is None and 'batchIntervalInSeconds' in kwargs:
+            batch_interval_in_seconds = kwargs['batchIntervalInSeconds']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_run_now is None and 'isRunNow' in kwargs:
+            is_run_now = kwargs['isRunNow']
+        if is_run_once is None and 'isRunOnce' in kwargs:
+            is_run_once = kwargs['isRunOnce']
+        if maintenance_window_schedule is None and 'maintenanceWindowSchedule' in kwargs:
+            maintenance_window_schedule = kwargs['maintenanceWindowSchedule']
+        if scheduling_policy is None and 'schedulingPolicy' in kwargs:
+            scheduling_policy = kwargs['schedulingPolicy']
+        if script_id is None and 'scriptId' in kwargs:
+            script_id = kwargs['scriptId']
+        if script_name is None and 'scriptName' in kwargs:
+            script_name = kwargs['scriptName']
+        if script_parameters is None and 'scriptParameters' in kwargs:
+            script_parameters = kwargs['scriptParameters']
+        if timeout_in_seconds is None and 'timeoutInSeconds' in kwargs:
+            timeout_in_seconds = kwargs['timeoutInSeconds']
+
+        _setter("apm_domain_id", apm_domain_id)
+        _setter("display_name", display_name)
+        _setter("monitor_type", monitor_type)
+        _setter("repeat_interval_in_seconds", repeat_interval_in_seconds)
+        _setter("vantage_points", vantage_points)
         if availability_configuration is not None:
-            pulumi.set(__self__, "availability_configuration", availability_configuration)
+            _setter("availability_configuration", availability_configuration)
         if batch_interval_in_seconds is not None:
-            pulumi.set(__self__, "batch_interval_in_seconds", batch_interval_in_seconds)
+            _setter("batch_interval_in_seconds", batch_interval_in_seconds)
         if configuration is not None:
-            pulumi.set(__self__, "configuration", configuration)
+            _setter("configuration", configuration)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_run_now is not None:
-            pulumi.set(__self__, "is_run_now", is_run_now)
+            _setter("is_run_now", is_run_now)
         if is_run_once is not None:
-            pulumi.set(__self__, "is_run_once", is_run_once)
+            _setter("is_run_once", is_run_once)
         if maintenance_window_schedule is not None:
-            pulumi.set(__self__, "maintenance_window_schedule", maintenance_window_schedule)
+            _setter("maintenance_window_schedule", maintenance_window_schedule)
         if scheduling_policy is not None:
-            pulumi.set(__self__, "scheduling_policy", scheduling_policy)
+            _setter("scheduling_policy", scheduling_policy)
         if script_id is not None:
-            pulumi.set(__self__, "script_id", script_id)
+            _setter("script_id", script_id)
         if script_name is not None:
-            pulumi.set(__self__, "script_name", script_name)
+            _setter("script_name", script_name)
         if script_parameters is not None:
-            pulumi.set(__self__, "script_parameters", script_parameters)
+            _setter("script_parameters", script_parameters)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if target is not None:
-            pulumi.set(__self__, "target", target)
+            _setter("target", target)
         if timeout_in_seconds is not None:
-            pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
+            _setter("timeout_in_seconds", timeout_in_seconds)
 
     @property
     @pulumi.getter(name="apmDomainId")
@@ -400,52 +493,147 @@ class _ConfigState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _ConfigState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            apm_domain_id=apm_domain_id,
+            availability_configuration=availability_configuration,
+            batch_interval_in_seconds=batch_interval_in_seconds,
+            configuration=configuration,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            is_run_now=is_run_now,
+            is_run_once=is_run_once,
+            maintenance_window_schedule=maintenance_window_schedule,
+            monitor_type=monitor_type,
+            repeat_interval_in_seconds=repeat_interval_in_seconds,
+            scheduling_policy=scheduling_policy,
+            script_id=script_id,
+            script_name=script_name,
+            script_parameters=script_parameters,
+            status=status,
+            target=target,
+            time_created=time_created,
+            time_updated=time_updated,
+            timeout_in_seconds=timeout_in_seconds,
+            vantage_point_count=vantage_point_count,
+            vantage_points=vantage_points,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             apm_domain_id: Optional[pulumi.Input[str]] = None,
+             availability_configuration: Optional[pulumi.Input['ConfigAvailabilityConfigurationArgs']] = None,
+             batch_interval_in_seconds: Optional[pulumi.Input[int]] = None,
+             configuration: Optional[pulumi.Input['ConfigConfigurationArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_run_now: Optional[pulumi.Input[bool]] = None,
+             is_run_once: Optional[pulumi.Input[bool]] = None,
+             maintenance_window_schedule: Optional[pulumi.Input['ConfigMaintenanceWindowScheduleArgs']] = None,
+             monitor_type: Optional[pulumi.Input[str]] = None,
+             repeat_interval_in_seconds: Optional[pulumi.Input[int]] = None,
+             scheduling_policy: Optional[pulumi.Input[str]] = None,
+             script_id: Optional[pulumi.Input[str]] = None,
+             script_name: Optional[pulumi.Input[str]] = None,
+             script_parameters: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigScriptParameterArgs']]]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             target: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             timeout_in_seconds: Optional[pulumi.Input[int]] = None,
+             vantage_point_count: Optional[pulumi.Input[int]] = None,
+             vantage_points: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigVantagePointArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if apm_domain_id is None and 'apmDomainId' in kwargs:
+            apm_domain_id = kwargs['apmDomainId']
+        if availability_configuration is None and 'availabilityConfiguration' in kwargs:
+            availability_configuration = kwargs['availabilityConfiguration']
+        if batch_interval_in_seconds is None and 'batchIntervalInSeconds' in kwargs:
+            batch_interval_in_seconds = kwargs['batchIntervalInSeconds']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_run_now is None and 'isRunNow' in kwargs:
+            is_run_now = kwargs['isRunNow']
+        if is_run_once is None and 'isRunOnce' in kwargs:
+            is_run_once = kwargs['isRunOnce']
+        if maintenance_window_schedule is None and 'maintenanceWindowSchedule' in kwargs:
+            maintenance_window_schedule = kwargs['maintenanceWindowSchedule']
+        if monitor_type is None and 'monitorType' in kwargs:
+            monitor_type = kwargs['monitorType']
+        if repeat_interval_in_seconds is None and 'repeatIntervalInSeconds' in kwargs:
+            repeat_interval_in_seconds = kwargs['repeatIntervalInSeconds']
+        if scheduling_policy is None and 'schedulingPolicy' in kwargs:
+            scheduling_policy = kwargs['schedulingPolicy']
+        if script_id is None and 'scriptId' in kwargs:
+            script_id = kwargs['scriptId']
+        if script_name is None and 'scriptName' in kwargs:
+            script_name = kwargs['scriptName']
+        if script_parameters is None and 'scriptParameters' in kwargs:
+            script_parameters = kwargs['scriptParameters']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if timeout_in_seconds is None and 'timeoutInSeconds' in kwargs:
+            timeout_in_seconds = kwargs['timeoutInSeconds']
+        if vantage_point_count is None and 'vantagePointCount' in kwargs:
+            vantage_point_count = kwargs['vantagePointCount']
+        if vantage_points is None and 'vantagePoints' in kwargs:
+            vantage_points = kwargs['vantagePoints']
+
         if apm_domain_id is not None:
-            pulumi.set(__self__, "apm_domain_id", apm_domain_id)
+            _setter("apm_domain_id", apm_domain_id)
         if availability_configuration is not None:
-            pulumi.set(__self__, "availability_configuration", availability_configuration)
+            _setter("availability_configuration", availability_configuration)
         if batch_interval_in_seconds is not None:
-            pulumi.set(__self__, "batch_interval_in_seconds", batch_interval_in_seconds)
+            _setter("batch_interval_in_seconds", batch_interval_in_seconds)
         if configuration is not None:
-            pulumi.set(__self__, "configuration", configuration)
+            _setter("configuration", configuration)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_run_now is not None:
-            pulumi.set(__self__, "is_run_now", is_run_now)
+            _setter("is_run_now", is_run_now)
         if is_run_once is not None:
-            pulumi.set(__self__, "is_run_once", is_run_once)
+            _setter("is_run_once", is_run_once)
         if maintenance_window_schedule is not None:
-            pulumi.set(__self__, "maintenance_window_schedule", maintenance_window_schedule)
+            _setter("maintenance_window_schedule", maintenance_window_schedule)
         if monitor_type is not None:
-            pulumi.set(__self__, "monitor_type", monitor_type)
+            _setter("monitor_type", monitor_type)
         if repeat_interval_in_seconds is not None:
-            pulumi.set(__self__, "repeat_interval_in_seconds", repeat_interval_in_seconds)
+            _setter("repeat_interval_in_seconds", repeat_interval_in_seconds)
         if scheduling_policy is not None:
-            pulumi.set(__self__, "scheduling_policy", scheduling_policy)
+            _setter("scheduling_policy", scheduling_policy)
         if script_id is not None:
-            pulumi.set(__self__, "script_id", script_id)
+            _setter("script_id", script_id)
         if script_name is not None:
-            pulumi.set(__self__, "script_name", script_name)
+            _setter("script_name", script_name)
         if script_parameters is not None:
-            pulumi.set(__self__, "script_parameters", script_parameters)
+            _setter("script_parameters", script_parameters)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if target is not None:
-            pulumi.set(__self__, "target", target)
+            _setter("target", target)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if timeout_in_seconds is not None:
-            pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
+            _setter("timeout_in_seconds", timeout_in_seconds)
         if vantage_point_count is not None:
-            pulumi.set(__self__, "vantage_point_count", vantage_point_count)
+            _setter("vantage_point_count", vantage_point_count)
         if vantage_points is not None:
-            pulumi.set(__self__, "vantage_points", vantage_points)
+            _setter("vantage_points", vantage_points)
 
     @property
     @pulumi.getter(name="apmDomainId")
@@ -1023,6 +1211,10 @@ class Config(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ConfigArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -1060,8 +1252,18 @@ class Config(pulumi.CustomResource):
             if apm_domain_id is None and not opts.urn:
                 raise TypeError("Missing required property 'apm_domain_id'")
             __props__.__dict__["apm_domain_id"] = apm_domain_id
+            if availability_configuration is not None and not isinstance(availability_configuration, ConfigAvailabilityConfigurationArgs):
+                availability_configuration = availability_configuration or {}
+                def _setter(key, value):
+                    availability_configuration[key] = value
+                ConfigAvailabilityConfigurationArgs._configure(_setter, **availability_configuration)
             __props__.__dict__["availability_configuration"] = availability_configuration
             __props__.__dict__["batch_interval_in_seconds"] = batch_interval_in_seconds
+            if configuration is not None and not isinstance(configuration, ConfigConfigurationArgs):
+                configuration = configuration or {}
+                def _setter(key, value):
+                    configuration[key] = value
+                ConfigConfigurationArgs._configure(_setter, **configuration)
             __props__.__dict__["configuration"] = configuration
             __props__.__dict__["defined_tags"] = defined_tags
             if display_name is None and not opts.urn:
@@ -1070,6 +1272,11 @@ class Config(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_run_now"] = is_run_now
             __props__.__dict__["is_run_once"] = is_run_once
+            if maintenance_window_schedule is not None and not isinstance(maintenance_window_schedule, ConfigMaintenanceWindowScheduleArgs):
+                maintenance_window_schedule = maintenance_window_schedule or {}
+                def _setter(key, value):
+                    maintenance_window_schedule[key] = value
+                ConfigMaintenanceWindowScheduleArgs._configure(_setter, **maintenance_window_schedule)
             __props__.__dict__["maintenance_window_schedule"] = maintenance_window_schedule
             if monitor_type is None and not opts.urn:
                 raise TypeError("Missing required property 'monitor_type'")

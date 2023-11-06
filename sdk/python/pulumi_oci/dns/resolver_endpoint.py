@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['ResolverEndpointInitArgs', 'ResolverEndpoint']
@@ -41,22 +41,75 @@ class ResolverEndpointInitArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
         :param pulumi.Input[str] scope: Value must be `PRIVATE` when creating private name resolver endpoints.
         """
-        pulumi.set(__self__, "is_forwarding", is_forwarding)
-        pulumi.set(__self__, "is_listening", is_listening)
-        pulumi.set(__self__, "resolver_id", resolver_id)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        ResolverEndpointInitArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_forwarding=is_forwarding,
+            is_listening=is_listening,
+            resolver_id=resolver_id,
+            subnet_id=subnet_id,
+            endpoint_type=endpoint_type,
+            forwarding_address=forwarding_address,
+            listening_address=listening_address,
+            name=name,
+            nsg_ids=nsg_ids,
+            scope=scope,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_forwarding: Optional[pulumi.Input[bool]] = None,
+             is_listening: Optional[pulumi.Input[bool]] = None,
+             resolver_id: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             endpoint_type: Optional[pulumi.Input[str]] = None,
+             forwarding_address: Optional[pulumi.Input[str]] = None,
+             listening_address: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             scope: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_forwarding is None and 'isForwarding' in kwargs:
+            is_forwarding = kwargs['isForwarding']
+        if is_forwarding is None:
+            raise TypeError("Missing 'is_forwarding' argument")
+        if is_listening is None and 'isListening' in kwargs:
+            is_listening = kwargs['isListening']
+        if is_listening is None:
+            raise TypeError("Missing 'is_listening' argument")
+        if resolver_id is None and 'resolverId' in kwargs:
+            resolver_id = kwargs['resolverId']
+        if resolver_id is None:
+            raise TypeError("Missing 'resolver_id' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if endpoint_type is None and 'endpointType' in kwargs:
+            endpoint_type = kwargs['endpointType']
+        if forwarding_address is None and 'forwardingAddress' in kwargs:
+            forwarding_address = kwargs['forwardingAddress']
+        if listening_address is None and 'listeningAddress' in kwargs:
+            listening_address = kwargs['listeningAddress']
+        if nsg_ids is None and 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+
+        _setter("is_forwarding", is_forwarding)
+        _setter("is_listening", is_listening)
+        _setter("resolver_id", resolver_id)
+        _setter("subnet_id", subnet_id)
         if endpoint_type is not None:
-            pulumi.set(__self__, "endpoint_type", endpoint_type)
+            _setter("endpoint_type", endpoint_type)
         if forwarding_address is not None:
-            pulumi.set(__self__, "forwarding_address", forwarding_address)
+            _setter("forwarding_address", forwarding_address)
         if listening_address is not None:
-            pulumi.set(__self__, "listening_address", listening_address)
+            _setter("listening_address", listening_address)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if nsg_ids is not None:
-            pulumi.set(__self__, "nsg_ids", nsg_ids)
+            _setter("nsg_ids", nsg_ids)
         if scope is not None:
-            pulumi.set(__self__, "scope", scope)
+            _setter("scope", scope)
 
     @property
     @pulumi.getter(name="isForwarding")
@@ -223,36 +276,97 @@ class _ResolverEndpointState:
         :param pulumi.Input[str] time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         :param pulumi.Input[str] time_updated: The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         """
+        _ResolverEndpointState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            endpoint_type=endpoint_type,
+            forwarding_address=forwarding_address,
+            is_forwarding=is_forwarding,
+            is_listening=is_listening,
+            listening_address=listening_address,
+            name=name,
+            nsg_ids=nsg_ids,
+            resolver_id=resolver_id,
+            scope=scope,
+            self=self,
+            state=state,
+            subnet_id=subnet_id,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             endpoint_type: Optional[pulumi.Input[str]] = None,
+             forwarding_address: Optional[pulumi.Input[str]] = None,
+             is_forwarding: Optional[pulumi.Input[bool]] = None,
+             is_listening: Optional[pulumi.Input[bool]] = None,
+             listening_address: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             resolver_id: Optional[pulumi.Input[str]] = None,
+             scope: Optional[pulumi.Input[str]] = None,
+             self: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if endpoint_type is None and 'endpointType' in kwargs:
+            endpoint_type = kwargs['endpointType']
+        if forwarding_address is None and 'forwardingAddress' in kwargs:
+            forwarding_address = kwargs['forwardingAddress']
+        if is_forwarding is None and 'isForwarding' in kwargs:
+            is_forwarding = kwargs['isForwarding']
+        if is_listening is None and 'isListening' in kwargs:
+            is_listening = kwargs['isListening']
+        if listening_address is None and 'listeningAddress' in kwargs:
+            listening_address = kwargs['listeningAddress']
+        if nsg_ids is None and 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if resolver_id is None and 'resolverId' in kwargs:
+            resolver_id = kwargs['resolverId']
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if endpoint_type is not None:
-            pulumi.set(__self__, "endpoint_type", endpoint_type)
+            _setter("endpoint_type", endpoint_type)
         if forwarding_address is not None:
-            pulumi.set(__self__, "forwarding_address", forwarding_address)
+            _setter("forwarding_address", forwarding_address)
         if is_forwarding is not None:
-            pulumi.set(__self__, "is_forwarding", is_forwarding)
+            _setter("is_forwarding", is_forwarding)
         if is_listening is not None:
-            pulumi.set(__self__, "is_listening", is_listening)
+            _setter("is_listening", is_listening)
         if listening_address is not None:
-            pulumi.set(__self__, "listening_address", listening_address)
+            _setter("listening_address", listening_address)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if nsg_ids is not None:
-            pulumi.set(__self__, "nsg_ids", nsg_ids)
+            _setter("nsg_ids", nsg_ids)
         if resolver_id is not None:
-            pulumi.set(__self__, "resolver_id", resolver_id)
+            _setter("resolver_id", resolver_id)
         if scope is not None:
-            pulumi.set(__self__, "scope", scope)
+            _setter("scope", scope)
         if self is not None:
-            pulumi.set(__self__, "self", self)
+            _setter("self", self)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -560,6 +674,10 @@ class ResolverEndpoint(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ResolverEndpointInitArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

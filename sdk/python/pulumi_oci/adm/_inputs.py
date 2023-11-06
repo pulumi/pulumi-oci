@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -41,14 +41,37 @@ class RemediationRecipeDetectConfigurationArgs:
         :param pulumi.Input[float] max_permissible_cvss_v3score: (Updatable) The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
         :param pulumi.Input[str] upgrade_policy: (Updatable) The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
         """
+        RemediationRecipeDetectConfigurationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            exclusions=exclusions,
+            max_permissible_cvss_v2score=max_permissible_cvss_v2score,
+            max_permissible_cvss_v3score=max_permissible_cvss_v3score,
+            upgrade_policy=upgrade_policy,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             exclusions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             max_permissible_cvss_v2score: Optional[pulumi.Input[float]] = None,
+             max_permissible_cvss_v3score: Optional[pulumi.Input[float]] = None,
+             upgrade_policy: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if max_permissible_cvss_v2score is None and 'maxPermissibleCvssV2score' in kwargs:
+            max_permissible_cvss_v2score = kwargs['maxPermissibleCvssV2score']
+        if max_permissible_cvss_v3score is None and 'maxPermissibleCvssV3score' in kwargs:
+            max_permissible_cvss_v3score = kwargs['maxPermissibleCvssV3score']
+        if upgrade_policy is None and 'upgradePolicy' in kwargs:
+            upgrade_policy = kwargs['upgradePolicy']
+
         if exclusions is not None:
-            pulumi.set(__self__, "exclusions", exclusions)
+            _setter("exclusions", exclusions)
         if max_permissible_cvss_v2score is not None:
-            pulumi.set(__self__, "max_permissible_cvss_v2score", max_permissible_cvss_v2score)
+            _setter("max_permissible_cvss_v2score", max_permissible_cvss_v2score)
         if max_permissible_cvss_v3score is not None:
-            pulumi.set(__self__, "max_permissible_cvss_v3score", max_permissible_cvss_v3score)
+            _setter("max_permissible_cvss_v3score", max_permissible_cvss_v3score)
         if upgrade_policy is not None:
-            pulumi.set(__self__, "upgrade_policy", upgrade_policy)
+            _setter("upgrade_policy", upgrade_policy)
 
     @property
     @pulumi.getter
@@ -108,9 +131,28 @@ class RemediationRecipeNetworkConfigurationArgs:
         :param pulumi.Input[str] subnet_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the subnet.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of Oracle Cloud Identifiers ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) corresponding to Network Security Groups.
         """
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        RemediationRecipeNetworkConfigurationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            subnet_id=subnet_id,
+            nsg_ids=nsg_ids,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if nsg_ids is None and 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+
+        _setter("subnet_id", subnet_id)
         if nsg_ids is not None:
-            pulumi.set(__self__, "nsg_ids", nsg_ids)
+            _setter("nsg_ids", nsg_ids)
 
     @property
     @pulumi.getter(name="subnetId")
@@ -160,21 +202,68 @@ class RemediationRecipeScmConfigurationArgs:
         :param pulumi.Input[str] repository_url: (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
         :param pulumi.Input[str] username: (Updatable) The username that will be used to authenticate with Jenkins.
         """
-        pulumi.set(__self__, "branch", branch)
-        pulumi.set(__self__, "is_automerge_enabled", is_automerge_enabled)
-        pulumi.set(__self__, "scm_type", scm_type)
+        RemediationRecipeScmConfigurationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            branch=branch,
+            is_automerge_enabled=is_automerge_enabled,
+            scm_type=scm_type,
+            build_file_location=build_file_location,
+            external_scm_type=external_scm_type,
+            oci_code_repository_id=oci_code_repository_id,
+            pat_secret_id=pat_secret_id,
+            repository_url=repository_url,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             branch: Optional[pulumi.Input[str]] = None,
+             is_automerge_enabled: Optional[pulumi.Input[bool]] = None,
+             scm_type: Optional[pulumi.Input[str]] = None,
+             build_file_location: Optional[pulumi.Input[str]] = None,
+             external_scm_type: Optional[pulumi.Input[str]] = None,
+             oci_code_repository_id: Optional[pulumi.Input[str]] = None,
+             pat_secret_id: Optional[pulumi.Input[str]] = None,
+             repository_url: Optional[pulumi.Input[str]] = None,
+             username: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if branch is None:
+            raise TypeError("Missing 'branch' argument")
+        if is_automerge_enabled is None and 'isAutomergeEnabled' in kwargs:
+            is_automerge_enabled = kwargs['isAutomergeEnabled']
+        if is_automerge_enabled is None:
+            raise TypeError("Missing 'is_automerge_enabled' argument")
+        if scm_type is None and 'scmType' in kwargs:
+            scm_type = kwargs['scmType']
+        if scm_type is None:
+            raise TypeError("Missing 'scm_type' argument")
+        if build_file_location is None and 'buildFileLocation' in kwargs:
+            build_file_location = kwargs['buildFileLocation']
+        if external_scm_type is None and 'externalScmType' in kwargs:
+            external_scm_type = kwargs['externalScmType']
+        if oci_code_repository_id is None and 'ociCodeRepositoryId' in kwargs:
+            oci_code_repository_id = kwargs['ociCodeRepositoryId']
+        if pat_secret_id is None and 'patSecretId' in kwargs:
+            pat_secret_id = kwargs['patSecretId']
+        if repository_url is None and 'repositoryUrl' in kwargs:
+            repository_url = kwargs['repositoryUrl']
+
+        _setter("branch", branch)
+        _setter("is_automerge_enabled", is_automerge_enabled)
+        _setter("scm_type", scm_type)
         if build_file_location is not None:
-            pulumi.set(__self__, "build_file_location", build_file_location)
+            _setter("build_file_location", build_file_location)
         if external_scm_type is not None:
-            pulumi.set(__self__, "external_scm_type", external_scm_type)
+            _setter("external_scm_type", external_scm_type)
         if oci_code_repository_id is not None:
-            pulumi.set(__self__, "oci_code_repository_id", oci_code_repository_id)
+            _setter("oci_code_repository_id", oci_code_repository_id)
         if pat_secret_id is not None:
-            pulumi.set(__self__, "pat_secret_id", pat_secret_id)
+            _setter("pat_secret_id", pat_secret_id)
         if repository_url is not None:
-            pulumi.set(__self__, "repository_url", repository_url)
+            _setter("repository_url", repository_url)
         if username is not None:
-            pulumi.set(__self__, "username", username)
+            _setter("username", username)
 
     @property
     @pulumi.getter
@@ -310,25 +399,74 @@ class RemediationRecipeVerifyConfigurationArgs:
         :param pulumi.Input[str] username: (Updatable) The username that will be used to authenticate with Jenkins.
         :param pulumi.Input[str] workflow_name: (Updatable) The name of the GitHub Actions workflow that defines the build pipeline.
         """
-        pulumi.set(__self__, "build_service_type", build_service_type)
+        RemediationRecipeVerifyConfigurationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            build_service_type=build_service_type,
+            additional_parameters=additional_parameters,
+            jenkins_url=jenkins_url,
+            job_name=job_name,
+            pat_secret_id=pat_secret_id,
+            pipeline_id=pipeline_id,
+            repository_url=repository_url,
+            trigger_secret_id=trigger_secret_id,
+            username=username,
+            workflow_name=workflow_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             build_service_type: Optional[pulumi.Input[str]] = None,
+             additional_parameters: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             jenkins_url: Optional[pulumi.Input[str]] = None,
+             job_name: Optional[pulumi.Input[str]] = None,
+             pat_secret_id: Optional[pulumi.Input[str]] = None,
+             pipeline_id: Optional[pulumi.Input[str]] = None,
+             repository_url: Optional[pulumi.Input[str]] = None,
+             trigger_secret_id: Optional[pulumi.Input[str]] = None,
+             username: Optional[pulumi.Input[str]] = None,
+             workflow_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if build_service_type is None and 'buildServiceType' in kwargs:
+            build_service_type = kwargs['buildServiceType']
+        if build_service_type is None:
+            raise TypeError("Missing 'build_service_type' argument")
+        if additional_parameters is None and 'additionalParameters' in kwargs:
+            additional_parameters = kwargs['additionalParameters']
+        if jenkins_url is None and 'jenkinsUrl' in kwargs:
+            jenkins_url = kwargs['jenkinsUrl']
+        if job_name is None and 'jobName' in kwargs:
+            job_name = kwargs['jobName']
+        if pat_secret_id is None and 'patSecretId' in kwargs:
+            pat_secret_id = kwargs['patSecretId']
+        if pipeline_id is None and 'pipelineId' in kwargs:
+            pipeline_id = kwargs['pipelineId']
+        if repository_url is None and 'repositoryUrl' in kwargs:
+            repository_url = kwargs['repositoryUrl']
+        if trigger_secret_id is None and 'triggerSecretId' in kwargs:
+            trigger_secret_id = kwargs['triggerSecretId']
+        if workflow_name is None and 'workflowName' in kwargs:
+            workflow_name = kwargs['workflowName']
+
+        _setter("build_service_type", build_service_type)
         if additional_parameters is not None:
-            pulumi.set(__self__, "additional_parameters", additional_parameters)
+            _setter("additional_parameters", additional_parameters)
         if jenkins_url is not None:
-            pulumi.set(__self__, "jenkins_url", jenkins_url)
+            _setter("jenkins_url", jenkins_url)
         if job_name is not None:
-            pulumi.set(__self__, "job_name", job_name)
+            _setter("job_name", job_name)
         if pat_secret_id is not None:
-            pulumi.set(__self__, "pat_secret_id", pat_secret_id)
+            _setter("pat_secret_id", pat_secret_id)
         if pipeline_id is not None:
-            pulumi.set(__self__, "pipeline_id", pipeline_id)
+            _setter("pipeline_id", pipeline_id)
         if repository_url is not None:
-            pulumi.set(__self__, "repository_url", repository_url)
+            _setter("repository_url", repository_url)
         if trigger_secret_id is not None:
-            pulumi.set(__self__, "trigger_secret_id", trigger_secret_id)
+            _setter("trigger_secret_id", trigger_secret_id)
         if username is not None:
-            pulumi.set(__self__, "username", username)
+            _setter("username", username)
         if workflow_name is not None:
-            pulumi.set(__self__, "workflow_name", workflow_name)
+            _setter("workflow_name", workflow_name)
 
     @property
     @pulumi.getter(name="buildServiceType")
@@ -466,16 +604,41 @@ class RemediationRunStageArgs:
         :param pulumi.Input[str] time_started: The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param pulumi.Input[str] type: The type of stage.
         """
+        RemediationRunStageArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            summary=summary,
+            time_created=time_created,
+            time_finished=time_finished,
+            time_started=time_started,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             summary: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_finished: Optional[pulumi.Input[str]] = None,
+             time_started: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_finished is None and 'timeFinished' in kwargs:
+            time_finished = kwargs['timeFinished']
+        if time_started is None and 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+
         if summary is not None:
-            pulumi.set(__self__, "summary", summary)
+            _setter("summary", summary)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_finished is not None:
-            pulumi.set(__self__, "time_finished", time_finished)
+            _setter("time_finished", time_finished)
         if time_started is not None:
-            pulumi.set(__self__, "time_started", time_started)
+            _setter("time_started", time_started)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter
@@ -549,10 +712,33 @@ class VulnerabilityAuditApplicationDependencyArgs:
         :param pulumi.Input[str] node_id: Unique identifier of an application dependency, for example nodeId1. The nodeId can be generated by assigning a unique id to each application dependency in the tree of application dependencies. Every node, even those who share the same GAV, should have a different nodeId. The preferred way of constructing a nodeId is to assign incremental integers during a breadth first or depth first search. A nodeId can be reused only it refers to the same subtree of application dependencies. (This is not equivalent to referring to the same GAV, that is, a GAV can have multiple transitive dependencies.)
         :param pulumi.Input[Sequence[pulumi.Input[str]]] application_dependency_node_ids: List of application dependencies on which this application dependency depends, each identified by its nodeId.
         """
-        pulumi.set(__self__, "gav", gav)
-        pulumi.set(__self__, "node_id", node_id)
+        VulnerabilityAuditApplicationDependencyArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            gav=gav,
+            node_id=node_id,
+            application_dependency_node_ids=application_dependency_node_ids,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             gav: Optional[pulumi.Input[str]] = None,
+             node_id: Optional[pulumi.Input[str]] = None,
+             application_dependency_node_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if gav is None:
+            raise TypeError("Missing 'gav' argument")
+        if node_id is None and 'nodeId' in kwargs:
+            node_id = kwargs['nodeId']
+        if node_id is None:
+            raise TypeError("Missing 'node_id' argument")
+        if application_dependency_node_ids is None and 'applicationDependencyNodeIds' in kwargs:
+            application_dependency_node_ids = kwargs['applicationDependencyNodeIds']
+
+        _setter("gav", gav)
+        _setter("node_id", node_id)
         if application_dependency_node_ids is not None:
-            pulumi.set(__self__, "application_dependency_node_ids", application_dependency_node_ids)
+            _setter("application_dependency_node_ids", application_dependency_node_ids)
 
     @property
     @pulumi.getter
@@ -602,12 +788,31 @@ class VulnerabilityAuditConfigurationArgs:
         :param pulumi.Input[float] max_permissible_cvss_v2score: A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
         :param pulumi.Input[float] max_permissible_cvss_v3score: A vulnerable application dependency is ignored if the score of its associated Vulnerability is below maxPermissibleCvssV2Score and below maxPermissibleCvssV3Score.
         """
+        VulnerabilityAuditConfigurationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            exclusions=exclusions,
+            max_permissible_cvss_v2score=max_permissible_cvss_v2score,
+            max_permissible_cvss_v3score=max_permissible_cvss_v3score,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             exclusions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             max_permissible_cvss_v2score: Optional[pulumi.Input[float]] = None,
+             max_permissible_cvss_v3score: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if max_permissible_cvss_v2score is None and 'maxPermissibleCvssV2score' in kwargs:
+            max_permissible_cvss_v2score = kwargs['maxPermissibleCvssV2score']
+        if max_permissible_cvss_v3score is None and 'maxPermissibleCvssV3score' in kwargs:
+            max_permissible_cvss_v3score = kwargs['maxPermissibleCvssV3score']
+
         if exclusions is not None:
-            pulumi.set(__self__, "exclusions", exclusions)
+            _setter("exclusions", exclusions)
         if max_permissible_cvss_v2score is not None:
-            pulumi.set(__self__, "max_permissible_cvss_v2score", max_permissible_cvss_v2score)
+            _setter("max_permissible_cvss_v2score", max_permissible_cvss_v2score)
         if max_permissible_cvss_v3score is not None:
-            pulumi.set(__self__, "max_permissible_cvss_v3score", max_permissible_cvss_v3score)
+            _setter("max_permissible_cvss_v3score", max_permissible_cvss_v3score)
 
     @property
     @pulumi.getter
@@ -661,11 +866,30 @@ class VulnerabilityAuditSourceArgs:
         :param pulumi.Input[str] description: Description of the external resource source.
         :param pulumi.Input[str] oci_resource_id: The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the vulnerability audit.
         """
-        pulumi.set(__self__, "type", type)
+        VulnerabilityAuditSourceArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            description=description,
+            oci_resource_id=oci_resource_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             oci_resource_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if oci_resource_id is None and 'ociResourceId' in kwargs:
+            oci_resource_id = kwargs['ociResourceId']
+
+        _setter("type", type)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if oci_resource_id is not None:
-            pulumi.set(__self__, "oci_resource_id", oci_resource_id)
+            _setter("oci_resource_id", oci_resource_id)
 
     @property
     @pulumi.getter
@@ -721,14 +945,37 @@ class VulnerabilityAuditVulnerabilityArgs:
         :param pulumi.Input[str] id: Unique vulnerability identifier, e.g. CVE-1999-0067.
         :param pulumi.Input[bool] is_ignored: Indicates if the vulnerability was ignored according to the audit configuration.
         """
+        VulnerabilityAuditVulnerabilityArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cvss_v2score=cvss_v2score,
+            cvss_v3score=cvss_v3score,
+            id=id,
+            is_ignored=is_ignored,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cvss_v2score: Optional[pulumi.Input[float]] = None,
+             cvss_v3score: Optional[pulumi.Input[float]] = None,
+             id: Optional[pulumi.Input[str]] = None,
+             is_ignored: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if cvss_v2score is None and 'cvssV2score' in kwargs:
+            cvss_v2score = kwargs['cvssV2score']
+        if cvss_v3score is None and 'cvssV3score' in kwargs:
+            cvss_v3score = kwargs['cvssV3score']
+        if is_ignored is None and 'isIgnored' in kwargs:
+            is_ignored = kwargs['isIgnored']
+
         if cvss_v2score is not None:
-            pulumi.set(__self__, "cvss_v2score", cvss_v2score)
+            _setter("cvss_v2score", cvss_v2score)
         if cvss_v3score is not None:
-            pulumi.set(__self__, "cvss_v3score", cvss_v3score)
+            _setter("cvss_v3score", cvss_v3score)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if is_ignored is not None:
-            pulumi.set(__self__, "is_ignored", is_ignored)
+            _setter("is_ignored", is_ignored)
 
     @property
     @pulumi.getter(name="cvssV2score")
@@ -785,10 +1032,29 @@ class GetKnowledgebasesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetKnowledgebasesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -824,10 +1090,29 @@ class GetRemediationRecipesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetRemediationRecipesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -863,10 +1148,29 @@ class GetRemediationRunApplicationDependencyRecommendationsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetRemediationRunApplicationDependencyRecommendationsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -902,10 +1206,29 @@ class GetRemediationRunStagesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetRemediationRunStagesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -941,10 +1264,29 @@ class GetRemediationRunsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetRemediationRunsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -980,10 +1322,29 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1019,10 +1380,29 @@ class GetVulnerabilityAuditsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetVulnerabilityAuditsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

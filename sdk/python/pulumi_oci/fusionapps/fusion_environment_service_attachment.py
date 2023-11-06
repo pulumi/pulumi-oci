@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['FusionEnvironmentServiceAttachmentArgs', 'FusionEnvironmentServiceAttachment']
@@ -29,11 +29,42 @@ class FusionEnvironmentServiceAttachmentArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
-        pulumi.set(__self__, "fusion_environment_id", fusion_environment_id)
-        pulumi.set(__self__, "service_instance_id", service_instance_id)
-        pulumi.set(__self__, "service_instance_type", service_instance_type)
+        FusionEnvironmentServiceAttachmentArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            fusion_environment_id=fusion_environment_id,
+            service_instance_id=service_instance_id,
+            service_instance_type=service_instance_type,
+            defined_tags=defined_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             fusion_environment_id: Optional[pulumi.Input[str]] = None,
+             service_instance_id: Optional[pulumi.Input[str]] = None,
+             service_instance_type: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if fusion_environment_id is None and 'fusionEnvironmentId' in kwargs:
+            fusion_environment_id = kwargs['fusionEnvironmentId']
+        if fusion_environment_id is None:
+            raise TypeError("Missing 'fusion_environment_id' argument")
+        if service_instance_id is None and 'serviceInstanceId' in kwargs:
+            service_instance_id = kwargs['serviceInstanceId']
+        if service_instance_id is None:
+            raise TypeError("Missing 'service_instance_id' argument")
+        if service_instance_type is None and 'serviceInstanceType' in kwargs:
+            service_instance_type = kwargs['serviceInstanceType']
+        if service_instance_type is None:
+            raise TypeError("Missing 'service_instance_type' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+
+        _setter("fusion_environment_id", fusion_environment_id)
+        _setter("service_instance_id", service_instance_id)
+        _setter("service_instance_type", service_instance_type)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
 
     @property
     @pulumi.getter(name="fusionEnvironmentId")
@@ -122,30 +153,85 @@ class _FusionEnvironmentServiceAttachmentState:
         :param pulumi.Input[str] time_created: The time the the ServiceInstance was created. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time the ServiceInstance was updated. An RFC3339 formatted datetime string
         """
+        _FusionEnvironmentServiceAttachmentState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            fusion_environment_id=fusion_environment_id,
+            is_sku_based=is_sku_based,
+            service_instance_id=service_instance_id,
+            service_instance_type=service_instance_type,
+            service_url=service_url,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             fusion_environment_id: Optional[pulumi.Input[str]] = None,
+             is_sku_based: Optional[pulumi.Input[bool]] = None,
+             service_instance_id: Optional[pulumi.Input[str]] = None,
+             service_instance_type: Optional[pulumi.Input[str]] = None,
+             service_url: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if fusion_environment_id is None and 'fusionEnvironmentId' in kwargs:
+            fusion_environment_id = kwargs['fusionEnvironmentId']
+        if is_sku_based is None and 'isSkuBased' in kwargs:
+            is_sku_based = kwargs['isSkuBased']
+        if service_instance_id is None and 'serviceInstanceId' in kwargs:
+            service_instance_id = kwargs['serviceInstanceId']
+        if service_instance_type is None and 'serviceInstanceType' in kwargs:
+            service_instance_type = kwargs['serviceInstanceType']
+        if service_url is None and 'serviceUrl' in kwargs:
+            service_url = kwargs['serviceUrl']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if fusion_environment_id is not None:
-            pulumi.set(__self__, "fusion_environment_id", fusion_environment_id)
+            _setter("fusion_environment_id", fusion_environment_id)
         if is_sku_based is not None:
-            pulumi.set(__self__, "is_sku_based", is_sku_based)
+            _setter("is_sku_based", is_sku_based)
         if service_instance_id is not None:
-            pulumi.set(__self__, "service_instance_id", service_instance_id)
+            _setter("service_instance_id", service_instance_id)
         if service_instance_type is not None:
-            pulumi.set(__self__, "service_instance_type", service_instance_type)
+            _setter("service_instance_type", service_instance_type)
         if service_url is not None:
-            pulumi.set(__self__, "service_url", service_url)
+            _setter("service_url", service_url)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -383,6 +469,10 @@ class FusionEnvironmentServiceAttachment(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            FusionEnvironmentServiceAttachmentArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

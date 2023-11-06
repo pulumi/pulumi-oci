@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['CatalogAssociationArgs', 'CatalogAssociation']
@@ -27,10 +27,35 @@ class CatalogAssociationArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] entity_type: The type of the entity that is associated with the service catalog.
         """
-        pulumi.set(__self__, "entity_id", entity_id)
-        pulumi.set(__self__, "service_catalog_id", service_catalog_id)
+        CatalogAssociationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            entity_id=entity_id,
+            service_catalog_id=service_catalog_id,
+            entity_type=entity_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             entity_id: Optional[pulumi.Input[str]] = None,
+             service_catalog_id: Optional[pulumi.Input[str]] = None,
+             entity_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if entity_id is None and 'entityId' in kwargs:
+            entity_id = kwargs['entityId']
+        if entity_id is None:
+            raise TypeError("Missing 'entity_id' argument")
+        if service_catalog_id is None and 'serviceCatalogId' in kwargs:
+            service_catalog_id = kwargs['serviceCatalogId']
+        if service_catalog_id is None:
+            raise TypeError("Missing 'service_catalog_id' argument")
+        if entity_type is None and 'entityType' in kwargs:
+            entity_type = kwargs['entityType']
+
+        _setter("entity_id", entity_id)
+        _setter("service_catalog_id", service_catalog_id)
         if entity_type is not None:
-            pulumi.set(__self__, "entity_type", entity_type)
+            _setter("entity_type", entity_type)
 
     @property
     @pulumi.getter(name="entityId")
@@ -91,14 +116,39 @@ class _CatalogAssociationState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: Timestamp of when the resource was associated with service catalog.
         """
+        _CatalogAssociationState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            entity_id=entity_id,
+            entity_type=entity_type,
+            service_catalog_id=service_catalog_id,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             entity_id: Optional[pulumi.Input[str]] = None,
+             entity_type: Optional[pulumi.Input[str]] = None,
+             service_catalog_id: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if entity_id is None and 'entityId' in kwargs:
+            entity_id = kwargs['entityId']
+        if entity_type is None and 'entityType' in kwargs:
+            entity_type = kwargs['entityType']
+        if service_catalog_id is None and 'serviceCatalogId' in kwargs:
+            service_catalog_id = kwargs['serviceCatalogId']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if entity_id is not None:
-            pulumi.set(__self__, "entity_id", entity_id)
+            _setter("entity_id", entity_id)
         if entity_type is not None:
-            pulumi.set(__self__, "entity_type", entity_type)
+            _setter("entity_type", entity_type)
         if service_catalog_id is not None:
-            pulumi.set(__self__, "service_catalog_id", service_catalog_id)
+            _setter("service_catalog_id", service_catalog_id)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="entityId")
@@ -238,6 +288,10 @@ class CatalogAssociation(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            CatalogAssociationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

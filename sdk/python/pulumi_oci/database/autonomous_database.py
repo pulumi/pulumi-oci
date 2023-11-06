@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -214,140 +214,419 @@ class AutonomousDatabaseArgs:
                
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "db_name", db_name)
+        AutonomousDatabaseArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            db_name=db_name,
+            admin_password=admin_password,
+            are_primary_whitelisted_ips_used=are_primary_whitelisted_ips_used,
+            autonomous_container_database_id=autonomous_container_database_id,
+            autonomous_database_backup_id=autonomous_database_backup_id,
+            autonomous_database_id=autonomous_database_id,
+            autonomous_maintenance_schedule_type=autonomous_maintenance_schedule_type,
+            backup_retention_period_in_days=backup_retention_period_in_days,
+            character_set=character_set,
+            clone_type=clone_type,
+            compute_count=compute_count,
+            compute_model=compute_model,
+            cpu_core_count=cpu_core_count,
+            customer_contacts=customer_contacts,
+            data_safe_status=data_safe_status,
+            data_storage_size_in_gb=data_storage_size_in_gb,
+            data_storage_size_in_tbs=data_storage_size_in_tbs,
+            database_edition=database_edition,
+            database_management_status=database_management_status,
+            db_version=db_version,
+            db_workload=db_workload,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            in_memory_percentage=in_memory_percentage,
+            is_access_control_enabled=is_access_control_enabled,
+            is_auto_scaling_enabled=is_auto_scaling_enabled,
+            is_auto_scaling_for_storage_enabled=is_auto_scaling_for_storage_enabled,
+            is_data_guard_enabled=is_data_guard_enabled,
+            is_dedicated=is_dedicated,
+            is_free_tier=is_free_tier,
+            is_local_data_guard_enabled=is_local_data_guard_enabled,
+            is_mtls_connection_required=is_mtls_connection_required,
+            is_preview_version_with_service_terms_accepted=is_preview_version_with_service_terms_accepted,
+            is_refreshable_clone=is_refreshable_clone,
+            is_shrink_only=is_shrink_only,
+            kms_key_id=kms_key_id,
+            license_model=license_model,
+            local_adg_auto_failover_max_data_loss_limit=local_adg_auto_failover_max_data_loss_limit,
+            max_cpu_core_count=max_cpu_core_count,
+            ncharacter_set=ncharacter_set,
+            nsg_ids=nsg_ids,
+            ocpu_count=ocpu_count,
+            open_mode=open_mode,
+            operations_insights_status=operations_insights_status,
+            permission_level=permission_level,
+            private_endpoint_ip=private_endpoint_ip,
+            private_endpoint_label=private_endpoint_label,
+            refreshable_mode=refreshable_mode,
+            remote_disaster_recovery_type=remote_disaster_recovery_type,
+            resource_pool_leader_id=resource_pool_leader_id,
+            resource_pool_summary=resource_pool_summary,
+            rotate_key_trigger=rotate_key_trigger,
+            scheduled_operations=scheduled_operations,
+            secret_id=secret_id,
+            secret_version_number=secret_version_number,
+            source=source,
+            source_id=source_id,
+            standby_whitelisted_ips=standby_whitelisted_ips,
+            state=state,
+            subnet_id=subnet_id,
+            switchover_to=switchover_to,
+            switchover_to_remote_peer_id=switchover_to_remote_peer_id,
+            timestamp=timestamp,
+            use_latest_available_backup_time_stamp=use_latest_available_backup_time_stamp,
+            vault_id=vault_id,
+            whitelisted_ips=whitelisted_ips,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             db_name: Optional[pulumi.Input[str]] = None,
+             admin_password: Optional[pulumi.Input[str]] = None,
+             are_primary_whitelisted_ips_used: Optional[pulumi.Input[bool]] = None,
+             autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
+             autonomous_database_backup_id: Optional[pulumi.Input[str]] = None,
+             autonomous_database_id: Optional[pulumi.Input[str]] = None,
+             autonomous_maintenance_schedule_type: Optional[pulumi.Input[str]] = None,
+             backup_retention_period_in_days: Optional[pulumi.Input[int]] = None,
+             character_set: Optional[pulumi.Input[str]] = None,
+             clone_type: Optional[pulumi.Input[str]] = None,
+             compute_count: Optional[pulumi.Input[float]] = None,
+             compute_model: Optional[pulumi.Input[str]] = None,
+             cpu_core_count: Optional[pulumi.Input[int]] = None,
+             customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseCustomerContactArgs']]]] = None,
+             data_safe_status: Optional[pulumi.Input[str]] = None,
+             data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
+             data_storage_size_in_tbs: Optional[pulumi.Input[int]] = None,
+             database_edition: Optional[pulumi.Input[str]] = None,
+             database_management_status: Optional[pulumi.Input[str]] = None,
+             db_version: Optional[pulumi.Input[str]] = None,
+             db_workload: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             in_memory_percentage: Optional[pulumi.Input[int]] = None,
+             is_access_control_enabled: Optional[pulumi.Input[bool]] = None,
+             is_auto_scaling_enabled: Optional[pulumi.Input[bool]] = None,
+             is_auto_scaling_for_storage_enabled: Optional[pulumi.Input[bool]] = None,
+             is_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
+             is_dedicated: Optional[pulumi.Input[bool]] = None,
+             is_free_tier: Optional[pulumi.Input[bool]] = None,
+             is_local_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
+             is_mtls_connection_required: Optional[pulumi.Input[bool]] = None,
+             is_preview_version_with_service_terms_accepted: Optional[pulumi.Input[bool]] = None,
+             is_refreshable_clone: Optional[pulumi.Input[bool]] = None,
+             is_shrink_only: Optional[pulumi.Input[bool]] = None,
+             kms_key_id: Optional[pulumi.Input[str]] = None,
+             license_model: Optional[pulumi.Input[str]] = None,
+             local_adg_auto_failover_max_data_loss_limit: Optional[pulumi.Input[int]] = None,
+             max_cpu_core_count: Optional[pulumi.Input[int]] = None,
+             ncharacter_set: Optional[pulumi.Input[str]] = None,
+             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             ocpu_count: Optional[pulumi.Input[float]] = None,
+             open_mode: Optional[pulumi.Input[str]] = None,
+             operations_insights_status: Optional[pulumi.Input[str]] = None,
+             permission_level: Optional[pulumi.Input[str]] = None,
+             private_endpoint_ip: Optional[pulumi.Input[str]] = None,
+             private_endpoint_label: Optional[pulumi.Input[str]] = None,
+             refreshable_mode: Optional[pulumi.Input[str]] = None,
+             remote_disaster_recovery_type: Optional[pulumi.Input[str]] = None,
+             resource_pool_leader_id: Optional[pulumi.Input[str]] = None,
+             resource_pool_summary: Optional[pulumi.Input['AutonomousDatabaseResourcePoolSummaryArgs']] = None,
+             rotate_key_trigger: Optional[pulumi.Input[bool]] = None,
+             scheduled_operations: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]]] = None,
+             secret_id: Optional[pulumi.Input[str]] = None,
+             secret_version_number: Optional[pulumi.Input[int]] = None,
+             source: Optional[pulumi.Input[str]] = None,
+             source_id: Optional[pulumi.Input[str]] = None,
+             standby_whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             switchover_to: Optional[pulumi.Input[str]] = None,
+             switchover_to_remote_peer_id: Optional[pulumi.Input[str]] = None,
+             timestamp: Optional[pulumi.Input[str]] = None,
+             use_latest_available_backup_time_stamp: Optional[pulumi.Input[bool]] = None,
+             vault_id: Optional[pulumi.Input[str]] = None,
+             whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if db_name is None and 'dbName' in kwargs:
+            db_name = kwargs['dbName']
+        if db_name is None:
+            raise TypeError("Missing 'db_name' argument")
+        if admin_password is None and 'adminPassword' in kwargs:
+            admin_password = kwargs['adminPassword']
+        if are_primary_whitelisted_ips_used is None and 'arePrimaryWhitelistedIpsUsed' in kwargs:
+            are_primary_whitelisted_ips_used = kwargs['arePrimaryWhitelistedIpsUsed']
+        if autonomous_container_database_id is None and 'autonomousContainerDatabaseId' in kwargs:
+            autonomous_container_database_id = kwargs['autonomousContainerDatabaseId']
+        if autonomous_database_backup_id is None and 'autonomousDatabaseBackupId' in kwargs:
+            autonomous_database_backup_id = kwargs['autonomousDatabaseBackupId']
+        if autonomous_database_id is None and 'autonomousDatabaseId' in kwargs:
+            autonomous_database_id = kwargs['autonomousDatabaseId']
+        if autonomous_maintenance_schedule_type is None and 'autonomousMaintenanceScheduleType' in kwargs:
+            autonomous_maintenance_schedule_type = kwargs['autonomousMaintenanceScheduleType']
+        if backup_retention_period_in_days is None and 'backupRetentionPeriodInDays' in kwargs:
+            backup_retention_period_in_days = kwargs['backupRetentionPeriodInDays']
+        if character_set is None and 'characterSet' in kwargs:
+            character_set = kwargs['characterSet']
+        if clone_type is None and 'cloneType' in kwargs:
+            clone_type = kwargs['cloneType']
+        if compute_count is None and 'computeCount' in kwargs:
+            compute_count = kwargs['computeCount']
+        if compute_model is None and 'computeModel' in kwargs:
+            compute_model = kwargs['computeModel']
+        if cpu_core_count is None and 'cpuCoreCount' in kwargs:
+            cpu_core_count = kwargs['cpuCoreCount']
+        if customer_contacts is None and 'customerContacts' in kwargs:
+            customer_contacts = kwargs['customerContacts']
+        if data_safe_status is None and 'dataSafeStatus' in kwargs:
+            data_safe_status = kwargs['dataSafeStatus']
+        if data_storage_size_in_gb is None and 'dataStorageSizeInGb' in kwargs:
+            data_storage_size_in_gb = kwargs['dataStorageSizeInGb']
+        if data_storage_size_in_tbs is None and 'dataStorageSizeInTbs' in kwargs:
+            data_storage_size_in_tbs = kwargs['dataStorageSizeInTbs']
+        if database_edition is None and 'databaseEdition' in kwargs:
+            database_edition = kwargs['databaseEdition']
+        if database_management_status is None and 'databaseManagementStatus' in kwargs:
+            database_management_status = kwargs['databaseManagementStatus']
+        if db_version is None and 'dbVersion' in kwargs:
+            db_version = kwargs['dbVersion']
+        if db_workload is None and 'dbWorkload' in kwargs:
+            db_workload = kwargs['dbWorkload']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if in_memory_percentage is None and 'inMemoryPercentage' in kwargs:
+            in_memory_percentage = kwargs['inMemoryPercentage']
+        if is_access_control_enabled is None and 'isAccessControlEnabled' in kwargs:
+            is_access_control_enabled = kwargs['isAccessControlEnabled']
+        if is_auto_scaling_enabled is None and 'isAutoScalingEnabled' in kwargs:
+            is_auto_scaling_enabled = kwargs['isAutoScalingEnabled']
+        if is_auto_scaling_for_storage_enabled is None and 'isAutoScalingForStorageEnabled' in kwargs:
+            is_auto_scaling_for_storage_enabled = kwargs['isAutoScalingForStorageEnabled']
+        if is_data_guard_enabled is None and 'isDataGuardEnabled' in kwargs:
+            is_data_guard_enabled = kwargs['isDataGuardEnabled']
+        if is_dedicated is None and 'isDedicated' in kwargs:
+            is_dedicated = kwargs['isDedicated']
+        if is_free_tier is None and 'isFreeTier' in kwargs:
+            is_free_tier = kwargs['isFreeTier']
+        if is_local_data_guard_enabled is None and 'isLocalDataGuardEnabled' in kwargs:
+            is_local_data_guard_enabled = kwargs['isLocalDataGuardEnabled']
+        if is_mtls_connection_required is None and 'isMtlsConnectionRequired' in kwargs:
+            is_mtls_connection_required = kwargs['isMtlsConnectionRequired']
+        if is_preview_version_with_service_terms_accepted is None and 'isPreviewVersionWithServiceTermsAccepted' in kwargs:
+            is_preview_version_with_service_terms_accepted = kwargs['isPreviewVersionWithServiceTermsAccepted']
+        if is_refreshable_clone is None and 'isRefreshableClone' in kwargs:
+            is_refreshable_clone = kwargs['isRefreshableClone']
+        if is_shrink_only is None and 'isShrinkOnly' in kwargs:
+            is_shrink_only = kwargs['isShrinkOnly']
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if license_model is None and 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+        if local_adg_auto_failover_max_data_loss_limit is None and 'localAdgAutoFailoverMaxDataLossLimit' in kwargs:
+            local_adg_auto_failover_max_data_loss_limit = kwargs['localAdgAutoFailoverMaxDataLossLimit']
+        if max_cpu_core_count is None and 'maxCpuCoreCount' in kwargs:
+            max_cpu_core_count = kwargs['maxCpuCoreCount']
+        if ncharacter_set is None and 'ncharacterSet' in kwargs:
+            ncharacter_set = kwargs['ncharacterSet']
+        if nsg_ids is None and 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if ocpu_count is None and 'ocpuCount' in kwargs:
+            ocpu_count = kwargs['ocpuCount']
+        if open_mode is None and 'openMode' in kwargs:
+            open_mode = kwargs['openMode']
+        if operations_insights_status is None and 'operationsInsightsStatus' in kwargs:
+            operations_insights_status = kwargs['operationsInsightsStatus']
+        if permission_level is None and 'permissionLevel' in kwargs:
+            permission_level = kwargs['permissionLevel']
+        if private_endpoint_ip is None and 'privateEndpointIp' in kwargs:
+            private_endpoint_ip = kwargs['privateEndpointIp']
+        if private_endpoint_label is None and 'privateEndpointLabel' in kwargs:
+            private_endpoint_label = kwargs['privateEndpointLabel']
+        if refreshable_mode is None and 'refreshableMode' in kwargs:
+            refreshable_mode = kwargs['refreshableMode']
+        if remote_disaster_recovery_type is None and 'remoteDisasterRecoveryType' in kwargs:
+            remote_disaster_recovery_type = kwargs['remoteDisasterRecoveryType']
+        if resource_pool_leader_id is None and 'resourcePoolLeaderId' in kwargs:
+            resource_pool_leader_id = kwargs['resourcePoolLeaderId']
+        if resource_pool_summary is None and 'resourcePoolSummary' in kwargs:
+            resource_pool_summary = kwargs['resourcePoolSummary']
+        if rotate_key_trigger is None and 'rotateKeyTrigger' in kwargs:
+            rotate_key_trigger = kwargs['rotateKeyTrigger']
+        if scheduled_operations is None and 'scheduledOperations' in kwargs:
+            scheduled_operations = kwargs['scheduledOperations']
+        if secret_id is None and 'secretId' in kwargs:
+            secret_id = kwargs['secretId']
+        if secret_version_number is None and 'secretVersionNumber' in kwargs:
+            secret_version_number = kwargs['secretVersionNumber']
+        if source_id is None and 'sourceId' in kwargs:
+            source_id = kwargs['sourceId']
+        if standby_whitelisted_ips is None and 'standbyWhitelistedIps' in kwargs:
+            standby_whitelisted_ips = kwargs['standbyWhitelistedIps']
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if switchover_to is None and 'switchoverTo' in kwargs:
+            switchover_to = kwargs['switchoverTo']
+        if switchover_to_remote_peer_id is None and 'switchoverToRemotePeerId' in kwargs:
+            switchover_to_remote_peer_id = kwargs['switchoverToRemotePeerId']
+        if use_latest_available_backup_time_stamp is None and 'useLatestAvailableBackupTimeStamp' in kwargs:
+            use_latest_available_backup_time_stamp = kwargs['useLatestAvailableBackupTimeStamp']
+        if vault_id is None and 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+        if whitelisted_ips is None and 'whitelistedIps' in kwargs:
+            whitelisted_ips = kwargs['whitelistedIps']
+
+        _setter("compartment_id", compartment_id)
+        _setter("db_name", db_name)
         if admin_password is not None:
-            pulumi.set(__self__, "admin_password", admin_password)
+            _setter("admin_password", admin_password)
         if are_primary_whitelisted_ips_used is not None:
-            pulumi.set(__self__, "are_primary_whitelisted_ips_used", are_primary_whitelisted_ips_used)
+            _setter("are_primary_whitelisted_ips_used", are_primary_whitelisted_ips_used)
         if autonomous_container_database_id is not None:
-            pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
+            _setter("autonomous_container_database_id", autonomous_container_database_id)
         if autonomous_database_backup_id is not None:
-            pulumi.set(__self__, "autonomous_database_backup_id", autonomous_database_backup_id)
+            _setter("autonomous_database_backup_id", autonomous_database_backup_id)
         if autonomous_database_id is not None:
-            pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
+            _setter("autonomous_database_id", autonomous_database_id)
         if autonomous_maintenance_schedule_type is not None:
-            pulumi.set(__self__, "autonomous_maintenance_schedule_type", autonomous_maintenance_schedule_type)
+            _setter("autonomous_maintenance_schedule_type", autonomous_maintenance_schedule_type)
         if backup_retention_period_in_days is not None:
-            pulumi.set(__self__, "backup_retention_period_in_days", backup_retention_period_in_days)
+            _setter("backup_retention_period_in_days", backup_retention_period_in_days)
         if character_set is not None:
-            pulumi.set(__self__, "character_set", character_set)
+            _setter("character_set", character_set)
         if clone_type is not None:
-            pulumi.set(__self__, "clone_type", clone_type)
+            _setter("clone_type", clone_type)
         if compute_count is not None:
-            pulumi.set(__self__, "compute_count", compute_count)
+            _setter("compute_count", compute_count)
         if compute_model is not None:
-            pulumi.set(__self__, "compute_model", compute_model)
+            _setter("compute_model", compute_model)
         if cpu_core_count is not None:
-            pulumi.set(__self__, "cpu_core_count", cpu_core_count)
+            _setter("cpu_core_count", cpu_core_count)
         if customer_contacts is not None:
-            pulumi.set(__self__, "customer_contacts", customer_contacts)
+            _setter("customer_contacts", customer_contacts)
         if data_safe_status is not None:
-            pulumi.set(__self__, "data_safe_status", data_safe_status)
+            _setter("data_safe_status", data_safe_status)
         if data_storage_size_in_gb is not None:
-            pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+            _setter("data_storage_size_in_gb", data_storage_size_in_gb)
         if data_storage_size_in_tbs is not None:
-            pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
+            _setter("data_storage_size_in_tbs", data_storage_size_in_tbs)
         if database_edition is not None:
-            pulumi.set(__self__, "database_edition", database_edition)
+            _setter("database_edition", database_edition)
         if database_management_status is not None:
-            pulumi.set(__self__, "database_management_status", database_management_status)
+            _setter("database_management_status", database_management_status)
         if db_version is not None:
-            pulumi.set(__self__, "db_version", db_version)
+            _setter("db_version", db_version)
         if db_workload is not None:
-            pulumi.set(__self__, "db_workload", db_workload)
+            _setter("db_workload", db_workload)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if in_memory_percentage is not None:
-            pulumi.set(__self__, "in_memory_percentage", in_memory_percentage)
+            _setter("in_memory_percentage", in_memory_percentage)
         if is_access_control_enabled is not None:
-            pulumi.set(__self__, "is_access_control_enabled", is_access_control_enabled)
+            _setter("is_access_control_enabled", is_access_control_enabled)
         if is_auto_scaling_enabled is not None:
-            pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
+            _setter("is_auto_scaling_enabled", is_auto_scaling_enabled)
         if is_auto_scaling_for_storage_enabled is not None:
-            pulumi.set(__self__, "is_auto_scaling_for_storage_enabled", is_auto_scaling_for_storage_enabled)
+            _setter("is_auto_scaling_for_storage_enabled", is_auto_scaling_for_storage_enabled)
         if is_data_guard_enabled is not None:
-            pulumi.set(__self__, "is_data_guard_enabled", is_data_guard_enabled)
+            _setter("is_data_guard_enabled", is_data_guard_enabled)
         if is_dedicated is not None:
-            pulumi.set(__self__, "is_dedicated", is_dedicated)
+            _setter("is_dedicated", is_dedicated)
         if is_free_tier is not None:
-            pulumi.set(__self__, "is_free_tier", is_free_tier)
+            _setter("is_free_tier", is_free_tier)
         if is_local_data_guard_enabled is not None:
-            pulumi.set(__self__, "is_local_data_guard_enabled", is_local_data_guard_enabled)
+            _setter("is_local_data_guard_enabled", is_local_data_guard_enabled)
         if is_mtls_connection_required is not None:
-            pulumi.set(__self__, "is_mtls_connection_required", is_mtls_connection_required)
+            _setter("is_mtls_connection_required", is_mtls_connection_required)
         if is_preview_version_with_service_terms_accepted is not None:
-            pulumi.set(__self__, "is_preview_version_with_service_terms_accepted", is_preview_version_with_service_terms_accepted)
+            _setter("is_preview_version_with_service_terms_accepted", is_preview_version_with_service_terms_accepted)
         if is_refreshable_clone is not None:
-            pulumi.set(__self__, "is_refreshable_clone", is_refreshable_clone)
+            _setter("is_refreshable_clone", is_refreshable_clone)
         if is_shrink_only is not None:
-            pulumi.set(__self__, "is_shrink_only", is_shrink_only)
+            _setter("is_shrink_only", is_shrink_only)
         if kms_key_id is not None:
-            pulumi.set(__self__, "kms_key_id", kms_key_id)
+            _setter("kms_key_id", kms_key_id)
         if license_model is not None:
-            pulumi.set(__self__, "license_model", license_model)
+            _setter("license_model", license_model)
         if local_adg_auto_failover_max_data_loss_limit is not None:
-            pulumi.set(__self__, "local_adg_auto_failover_max_data_loss_limit", local_adg_auto_failover_max_data_loss_limit)
+            _setter("local_adg_auto_failover_max_data_loss_limit", local_adg_auto_failover_max_data_loss_limit)
         if max_cpu_core_count is not None:
-            pulumi.set(__self__, "max_cpu_core_count", max_cpu_core_count)
+            _setter("max_cpu_core_count", max_cpu_core_count)
         if ncharacter_set is not None:
-            pulumi.set(__self__, "ncharacter_set", ncharacter_set)
+            _setter("ncharacter_set", ncharacter_set)
         if nsg_ids is not None:
-            pulumi.set(__self__, "nsg_ids", nsg_ids)
+            _setter("nsg_ids", nsg_ids)
         if ocpu_count is not None:
-            pulumi.set(__self__, "ocpu_count", ocpu_count)
+            _setter("ocpu_count", ocpu_count)
         if open_mode is not None:
-            pulumi.set(__self__, "open_mode", open_mode)
+            _setter("open_mode", open_mode)
         if operations_insights_status is not None:
-            pulumi.set(__self__, "operations_insights_status", operations_insights_status)
+            _setter("operations_insights_status", operations_insights_status)
         if permission_level is not None:
-            pulumi.set(__self__, "permission_level", permission_level)
+            _setter("permission_level", permission_level)
         if private_endpoint_ip is not None:
-            pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
+            _setter("private_endpoint_ip", private_endpoint_ip)
         if private_endpoint_label is not None:
-            pulumi.set(__self__, "private_endpoint_label", private_endpoint_label)
+            _setter("private_endpoint_label", private_endpoint_label)
         if refreshable_mode is not None:
-            pulumi.set(__self__, "refreshable_mode", refreshable_mode)
+            _setter("refreshable_mode", refreshable_mode)
         if remote_disaster_recovery_type is not None:
-            pulumi.set(__self__, "remote_disaster_recovery_type", remote_disaster_recovery_type)
+            _setter("remote_disaster_recovery_type", remote_disaster_recovery_type)
         if resource_pool_leader_id is not None:
-            pulumi.set(__self__, "resource_pool_leader_id", resource_pool_leader_id)
+            _setter("resource_pool_leader_id", resource_pool_leader_id)
         if resource_pool_summary is not None:
-            pulumi.set(__self__, "resource_pool_summary", resource_pool_summary)
+            _setter("resource_pool_summary", resource_pool_summary)
         if rotate_key_trigger is not None:
-            pulumi.set(__self__, "rotate_key_trigger", rotate_key_trigger)
+            _setter("rotate_key_trigger", rotate_key_trigger)
         if scheduled_operations is not None:
-            pulumi.set(__self__, "scheduled_operations", scheduled_operations)
+            _setter("scheduled_operations", scheduled_operations)
         if secret_id is not None:
-            pulumi.set(__self__, "secret_id", secret_id)
+            _setter("secret_id", secret_id)
         if secret_version_number is not None:
-            pulumi.set(__self__, "secret_version_number", secret_version_number)
+            _setter("secret_version_number", secret_version_number)
         if source is not None:
-            pulumi.set(__self__, "source", source)
+            _setter("source", source)
         if source_id is not None:
-            pulumi.set(__self__, "source_id", source_id)
+            _setter("source_id", source_id)
         if standby_whitelisted_ips is not None:
-            pulumi.set(__self__, "standby_whitelisted_ips", standby_whitelisted_ips)
+            _setter("standby_whitelisted_ips", standby_whitelisted_ips)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
         if switchover_to is not None:
-            pulumi.set(__self__, "switchover_to", switchover_to)
+            _setter("switchover_to", switchover_to)
         if switchover_to_remote_peer_id is not None:
-            pulumi.set(__self__, "switchover_to_remote_peer_id", switchover_to_remote_peer_id)
+            _setter("switchover_to_remote_peer_id", switchover_to_remote_peer_id)
         if timestamp is not None:
-            pulumi.set(__self__, "timestamp", timestamp)
+            _setter("timestamp", timestamp)
         if use_latest_available_backup_time_stamp is not None:
-            pulumi.set(__self__, "use_latest_available_backup_time_stamp", use_latest_available_backup_time_stamp)
+            _setter("use_latest_available_backup_time_stamp", use_latest_available_backup_time_stamp)
         if vault_id is not None:
-            pulumi.set(__self__, "vault_id", vault_id)
+            _setter("vault_id", vault_id)
         if whitelisted_ips is not None:
-            pulumi.set(__self__, "whitelisted_ips", whitelisted_ips)
+            _setter("whitelisted_ips", whitelisted_ips)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1529,250 +1808,739 @@ class _AutonomousDatabaseState:
                
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
         """
+        _AutonomousDatabaseState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            actual_used_data_storage_size_in_tbs=actual_used_data_storage_size_in_tbs,
+            admin_password=admin_password,
+            allocated_storage_size_in_tbs=allocated_storage_size_in_tbs,
+            apex_details=apex_details,
+            are_primary_whitelisted_ips_used=are_primary_whitelisted_ips_used,
+            autonomous_container_database_id=autonomous_container_database_id,
+            autonomous_database_backup_id=autonomous_database_backup_id,
+            autonomous_database_id=autonomous_database_id,
+            autonomous_maintenance_schedule_type=autonomous_maintenance_schedule_type,
+            available_upgrade_versions=available_upgrade_versions,
+            backup_configs=backup_configs,
+            backup_retention_period_in_days=backup_retention_period_in_days,
+            character_set=character_set,
+            clone_type=clone_type,
+            compartment_id=compartment_id,
+            compute_count=compute_count,
+            compute_model=compute_model,
+            connection_strings=connection_strings,
+            connection_urls=connection_urls,
+            cpu_core_count=cpu_core_count,
+            customer_contacts=customer_contacts,
+            data_safe_status=data_safe_status,
+            data_storage_size_in_gb=data_storage_size_in_gb,
+            data_storage_size_in_tbs=data_storage_size_in_tbs,
+            database_edition=database_edition,
+            database_management_status=database_management_status,
+            dataguard_region_type=dataguard_region_type,
+            db_name=db_name,
+            db_version=db_version,
+            db_workload=db_workload,
+            defined_tags=defined_tags,
+            disaster_recovery_region_type=disaster_recovery_region_type,
+            display_name=display_name,
+            failed_data_recovery_in_seconds=failed_data_recovery_in_seconds,
+            freeform_tags=freeform_tags,
+            in_memory_area_in_gbs=in_memory_area_in_gbs,
+            in_memory_percentage=in_memory_percentage,
+            infrastructure_type=infrastructure_type,
+            is_access_control_enabled=is_access_control_enabled,
+            is_auto_scaling_enabled=is_auto_scaling_enabled,
+            is_auto_scaling_for_storage_enabled=is_auto_scaling_for_storage_enabled,
+            is_data_guard_enabled=is_data_guard_enabled,
+            is_dedicated=is_dedicated,
+            is_free_tier=is_free_tier,
+            is_local_data_guard_enabled=is_local_data_guard_enabled,
+            is_mtls_connection_required=is_mtls_connection_required,
+            is_preview=is_preview,
+            is_preview_version_with_service_terms_accepted=is_preview_version_with_service_terms_accepted,
+            is_reconnect_clone_enabled=is_reconnect_clone_enabled,
+            is_refreshable_clone=is_refreshable_clone,
+            is_remote_data_guard_enabled=is_remote_data_guard_enabled,
+            is_shrink_only=is_shrink_only,
+            key_history_entries=key_history_entries,
+            key_store_id=key_store_id,
+            key_store_wallet_name=key_store_wallet_name,
+            kms_key_id=kms_key_id,
+            kms_key_lifecycle_details=kms_key_lifecycle_details,
+            kms_key_version_id=kms_key_version_id,
+            license_model=license_model,
+            lifecycle_details=lifecycle_details,
+            local_adg_auto_failover_max_data_loss_limit=local_adg_auto_failover_max_data_loss_limit,
+            local_disaster_recovery_type=local_disaster_recovery_type,
+            local_standby_dbs=local_standby_dbs,
+            long_term_backup_schedules=long_term_backup_schedules,
+            max_cpu_core_count=max_cpu_core_count,
+            memory_per_oracle_compute_unit_in_gbs=memory_per_oracle_compute_unit_in_gbs,
+            ncharacter_set=ncharacter_set,
+            next_long_term_backup_time_stamp=next_long_term_backup_time_stamp,
+            nsg_ids=nsg_ids,
+            ocpu_count=ocpu_count,
+            open_mode=open_mode,
+            operations_insights_status=operations_insights_status,
+            peer_db_ids=peer_db_ids,
+            permission_level=permission_level,
+            private_endpoint=private_endpoint,
+            private_endpoint_ip=private_endpoint_ip,
+            private_endpoint_label=private_endpoint_label,
+            provisionable_cpuses=provisionable_cpuses,
+            refreshable_mode=refreshable_mode,
+            refreshable_status=refreshable_status,
+            remote_disaster_recovery_configurations=remote_disaster_recovery_configurations,
+            remote_disaster_recovery_type=remote_disaster_recovery_type,
+            resource_pool_leader_id=resource_pool_leader_id,
+            resource_pool_summary=resource_pool_summary,
+            role=role,
+            rotate_key_trigger=rotate_key_trigger,
+            scheduled_operations=scheduled_operations,
+            secret_id=secret_id,
+            secret_version_number=secret_version_number,
+            service_console_url=service_console_url,
+            source=source,
+            source_id=source_id,
+            standby_dbs=standby_dbs,
+            standby_whitelisted_ips=standby_whitelisted_ips,
+            state=state,
+            subnet_id=subnet_id,
+            supported_regions_to_clone_tos=supported_regions_to_clone_tos,
+            switchover_to=switchover_to,
+            switchover_to_remote_peer_id=switchover_to_remote_peer_id,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_data_guard_role_changed=time_data_guard_role_changed,
+            time_deletion_of_free_autonomous_database=time_deletion_of_free_autonomous_database,
+            time_disaster_recovery_role_changed=time_disaster_recovery_role_changed,
+            time_local_data_guard_enabled=time_local_data_guard_enabled,
+            time_maintenance_begin=time_maintenance_begin,
+            time_maintenance_end=time_maintenance_end,
+            time_of_joining_resource_pool=time_of_joining_resource_pool,
+            time_of_last_failover=time_of_last_failover,
+            time_of_last_refresh=time_of_last_refresh,
+            time_of_last_refresh_point=time_of_last_refresh_point,
+            time_of_last_switchover=time_of_last_switchover,
+            time_of_next_refresh=time_of_next_refresh,
+            time_reclamation_of_free_autonomous_database=time_reclamation_of_free_autonomous_database,
+            time_until_reconnect_clone_enabled=time_until_reconnect_clone_enabled,
+            timestamp=timestamp,
+            total_backup_storage_size_in_gbs=total_backup_storage_size_in_gbs,
+            use_latest_available_backup_time_stamp=use_latest_available_backup_time_stamp,
+            used_data_storage_size_in_gbs=used_data_storage_size_in_gbs,
+            used_data_storage_size_in_tbs=used_data_storage_size_in_tbs,
+            vault_id=vault_id,
+            whitelisted_ips=whitelisted_ips,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             actual_used_data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
+             admin_password: Optional[pulumi.Input[str]] = None,
+             allocated_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
+             apex_details: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseApexDetailArgs']]]] = None,
+             are_primary_whitelisted_ips_used: Optional[pulumi.Input[bool]] = None,
+             autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
+             autonomous_database_backup_id: Optional[pulumi.Input[str]] = None,
+             autonomous_database_id: Optional[pulumi.Input[str]] = None,
+             autonomous_maintenance_schedule_type: Optional[pulumi.Input[str]] = None,
+             available_upgrade_versions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             backup_configs: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseBackupConfigArgs']]]] = None,
+             backup_retention_period_in_days: Optional[pulumi.Input[int]] = None,
+             character_set: Optional[pulumi.Input[str]] = None,
+             clone_type: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             compute_count: Optional[pulumi.Input[float]] = None,
+             compute_model: Optional[pulumi.Input[str]] = None,
+             connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseConnectionStringArgs']]]] = None,
+             connection_urls: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseConnectionUrlArgs']]]] = None,
+             cpu_core_count: Optional[pulumi.Input[int]] = None,
+             customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseCustomerContactArgs']]]] = None,
+             data_safe_status: Optional[pulumi.Input[str]] = None,
+             data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
+             data_storage_size_in_tbs: Optional[pulumi.Input[int]] = None,
+             database_edition: Optional[pulumi.Input[str]] = None,
+             database_management_status: Optional[pulumi.Input[str]] = None,
+             dataguard_region_type: Optional[pulumi.Input[str]] = None,
+             db_name: Optional[pulumi.Input[str]] = None,
+             db_version: Optional[pulumi.Input[str]] = None,
+             db_workload: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             disaster_recovery_region_type: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             failed_data_recovery_in_seconds: Optional[pulumi.Input[int]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             in_memory_area_in_gbs: Optional[pulumi.Input[int]] = None,
+             in_memory_percentage: Optional[pulumi.Input[int]] = None,
+             infrastructure_type: Optional[pulumi.Input[str]] = None,
+             is_access_control_enabled: Optional[pulumi.Input[bool]] = None,
+             is_auto_scaling_enabled: Optional[pulumi.Input[bool]] = None,
+             is_auto_scaling_for_storage_enabled: Optional[pulumi.Input[bool]] = None,
+             is_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
+             is_dedicated: Optional[pulumi.Input[bool]] = None,
+             is_free_tier: Optional[pulumi.Input[bool]] = None,
+             is_local_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
+             is_mtls_connection_required: Optional[pulumi.Input[bool]] = None,
+             is_preview: Optional[pulumi.Input[bool]] = None,
+             is_preview_version_with_service_terms_accepted: Optional[pulumi.Input[bool]] = None,
+             is_reconnect_clone_enabled: Optional[pulumi.Input[bool]] = None,
+             is_refreshable_clone: Optional[pulumi.Input[bool]] = None,
+             is_remote_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
+             is_shrink_only: Optional[pulumi.Input[bool]] = None,
+             key_history_entries: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseKeyHistoryEntryArgs']]]] = None,
+             key_store_id: Optional[pulumi.Input[str]] = None,
+             key_store_wallet_name: Optional[pulumi.Input[str]] = None,
+             kms_key_id: Optional[pulumi.Input[str]] = None,
+             kms_key_lifecycle_details: Optional[pulumi.Input[str]] = None,
+             kms_key_version_id: Optional[pulumi.Input[str]] = None,
+             license_model: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             local_adg_auto_failover_max_data_loss_limit: Optional[pulumi.Input[int]] = None,
+             local_disaster_recovery_type: Optional[pulumi.Input[str]] = None,
+             local_standby_dbs: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLocalStandbyDbArgs']]]] = None,
+             long_term_backup_schedules: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]]] = None,
+             max_cpu_core_count: Optional[pulumi.Input[int]] = None,
+             memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[int]] = None,
+             ncharacter_set: Optional[pulumi.Input[str]] = None,
+             next_long_term_backup_time_stamp: Optional[pulumi.Input[str]] = None,
+             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             ocpu_count: Optional[pulumi.Input[float]] = None,
+             open_mode: Optional[pulumi.Input[str]] = None,
+             operations_insights_status: Optional[pulumi.Input[str]] = None,
+             peer_db_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             permission_level: Optional[pulumi.Input[str]] = None,
+             private_endpoint: Optional[pulumi.Input[str]] = None,
+             private_endpoint_ip: Optional[pulumi.Input[str]] = None,
+             private_endpoint_label: Optional[pulumi.Input[str]] = None,
+             provisionable_cpuses: Optional[pulumi.Input[Sequence[pulumi.Input[float]]]] = None,
+             refreshable_mode: Optional[pulumi.Input[str]] = None,
+             refreshable_status: Optional[pulumi.Input[str]] = None,
+             remote_disaster_recovery_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs']]]] = None,
+             remote_disaster_recovery_type: Optional[pulumi.Input[str]] = None,
+             resource_pool_leader_id: Optional[pulumi.Input[str]] = None,
+             resource_pool_summary: Optional[pulumi.Input['AutonomousDatabaseResourcePoolSummaryArgs']] = None,
+             role: Optional[pulumi.Input[str]] = None,
+             rotate_key_trigger: Optional[pulumi.Input[bool]] = None,
+             scheduled_operations: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseScheduledOperationArgs']]]] = None,
+             secret_id: Optional[pulumi.Input[str]] = None,
+             secret_version_number: Optional[pulumi.Input[int]] = None,
+             service_console_url: Optional[pulumi.Input[str]] = None,
+             source: Optional[pulumi.Input[str]] = None,
+             source_id: Optional[pulumi.Input[str]] = None,
+             standby_dbs: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseStandbyDbArgs']]]] = None,
+             standby_whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             supported_regions_to_clone_tos: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             switchover_to: Optional[pulumi.Input[str]] = None,
+             switchover_to_remote_peer_id: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_data_guard_role_changed: Optional[pulumi.Input[str]] = None,
+             time_deletion_of_free_autonomous_database: Optional[pulumi.Input[str]] = None,
+             time_disaster_recovery_role_changed: Optional[pulumi.Input[str]] = None,
+             time_local_data_guard_enabled: Optional[pulumi.Input[str]] = None,
+             time_maintenance_begin: Optional[pulumi.Input[str]] = None,
+             time_maintenance_end: Optional[pulumi.Input[str]] = None,
+             time_of_joining_resource_pool: Optional[pulumi.Input[str]] = None,
+             time_of_last_failover: Optional[pulumi.Input[str]] = None,
+             time_of_last_refresh: Optional[pulumi.Input[str]] = None,
+             time_of_last_refresh_point: Optional[pulumi.Input[str]] = None,
+             time_of_last_switchover: Optional[pulumi.Input[str]] = None,
+             time_of_next_refresh: Optional[pulumi.Input[str]] = None,
+             time_reclamation_of_free_autonomous_database: Optional[pulumi.Input[str]] = None,
+             time_until_reconnect_clone_enabled: Optional[pulumi.Input[str]] = None,
+             timestamp: Optional[pulumi.Input[str]] = None,
+             total_backup_storage_size_in_gbs: Optional[pulumi.Input[float]] = None,
+             use_latest_available_backup_time_stamp: Optional[pulumi.Input[bool]] = None,
+             used_data_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
+             used_data_storage_size_in_tbs: Optional[pulumi.Input[int]] = None,
+             vault_id: Optional[pulumi.Input[str]] = None,
+             whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if actual_used_data_storage_size_in_tbs is None and 'actualUsedDataStorageSizeInTbs' in kwargs:
+            actual_used_data_storage_size_in_tbs = kwargs['actualUsedDataStorageSizeInTbs']
+        if admin_password is None and 'adminPassword' in kwargs:
+            admin_password = kwargs['adminPassword']
+        if allocated_storage_size_in_tbs is None and 'allocatedStorageSizeInTbs' in kwargs:
+            allocated_storage_size_in_tbs = kwargs['allocatedStorageSizeInTbs']
+        if apex_details is None and 'apexDetails' in kwargs:
+            apex_details = kwargs['apexDetails']
+        if are_primary_whitelisted_ips_used is None and 'arePrimaryWhitelistedIpsUsed' in kwargs:
+            are_primary_whitelisted_ips_used = kwargs['arePrimaryWhitelistedIpsUsed']
+        if autonomous_container_database_id is None and 'autonomousContainerDatabaseId' in kwargs:
+            autonomous_container_database_id = kwargs['autonomousContainerDatabaseId']
+        if autonomous_database_backup_id is None and 'autonomousDatabaseBackupId' in kwargs:
+            autonomous_database_backup_id = kwargs['autonomousDatabaseBackupId']
+        if autonomous_database_id is None and 'autonomousDatabaseId' in kwargs:
+            autonomous_database_id = kwargs['autonomousDatabaseId']
+        if autonomous_maintenance_schedule_type is None and 'autonomousMaintenanceScheduleType' in kwargs:
+            autonomous_maintenance_schedule_type = kwargs['autonomousMaintenanceScheduleType']
+        if available_upgrade_versions is None and 'availableUpgradeVersions' in kwargs:
+            available_upgrade_versions = kwargs['availableUpgradeVersions']
+        if backup_configs is None and 'backupConfigs' in kwargs:
+            backup_configs = kwargs['backupConfigs']
+        if backup_retention_period_in_days is None and 'backupRetentionPeriodInDays' in kwargs:
+            backup_retention_period_in_days = kwargs['backupRetentionPeriodInDays']
+        if character_set is None and 'characterSet' in kwargs:
+            character_set = kwargs['characterSet']
+        if clone_type is None and 'cloneType' in kwargs:
+            clone_type = kwargs['cloneType']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compute_count is None and 'computeCount' in kwargs:
+            compute_count = kwargs['computeCount']
+        if compute_model is None and 'computeModel' in kwargs:
+            compute_model = kwargs['computeModel']
+        if connection_strings is None and 'connectionStrings' in kwargs:
+            connection_strings = kwargs['connectionStrings']
+        if connection_urls is None and 'connectionUrls' in kwargs:
+            connection_urls = kwargs['connectionUrls']
+        if cpu_core_count is None and 'cpuCoreCount' in kwargs:
+            cpu_core_count = kwargs['cpuCoreCount']
+        if customer_contacts is None and 'customerContacts' in kwargs:
+            customer_contacts = kwargs['customerContacts']
+        if data_safe_status is None and 'dataSafeStatus' in kwargs:
+            data_safe_status = kwargs['dataSafeStatus']
+        if data_storage_size_in_gb is None and 'dataStorageSizeInGb' in kwargs:
+            data_storage_size_in_gb = kwargs['dataStorageSizeInGb']
+        if data_storage_size_in_tbs is None and 'dataStorageSizeInTbs' in kwargs:
+            data_storage_size_in_tbs = kwargs['dataStorageSizeInTbs']
+        if database_edition is None and 'databaseEdition' in kwargs:
+            database_edition = kwargs['databaseEdition']
+        if database_management_status is None and 'databaseManagementStatus' in kwargs:
+            database_management_status = kwargs['databaseManagementStatus']
+        if dataguard_region_type is None and 'dataguardRegionType' in kwargs:
+            dataguard_region_type = kwargs['dataguardRegionType']
+        if db_name is None and 'dbName' in kwargs:
+            db_name = kwargs['dbName']
+        if db_version is None and 'dbVersion' in kwargs:
+            db_version = kwargs['dbVersion']
+        if db_workload is None and 'dbWorkload' in kwargs:
+            db_workload = kwargs['dbWorkload']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if disaster_recovery_region_type is None and 'disasterRecoveryRegionType' in kwargs:
+            disaster_recovery_region_type = kwargs['disasterRecoveryRegionType']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if failed_data_recovery_in_seconds is None and 'failedDataRecoveryInSeconds' in kwargs:
+            failed_data_recovery_in_seconds = kwargs['failedDataRecoveryInSeconds']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if in_memory_area_in_gbs is None and 'inMemoryAreaInGbs' in kwargs:
+            in_memory_area_in_gbs = kwargs['inMemoryAreaInGbs']
+        if in_memory_percentage is None and 'inMemoryPercentage' in kwargs:
+            in_memory_percentage = kwargs['inMemoryPercentage']
+        if infrastructure_type is None and 'infrastructureType' in kwargs:
+            infrastructure_type = kwargs['infrastructureType']
+        if is_access_control_enabled is None and 'isAccessControlEnabled' in kwargs:
+            is_access_control_enabled = kwargs['isAccessControlEnabled']
+        if is_auto_scaling_enabled is None and 'isAutoScalingEnabled' in kwargs:
+            is_auto_scaling_enabled = kwargs['isAutoScalingEnabled']
+        if is_auto_scaling_for_storage_enabled is None and 'isAutoScalingForStorageEnabled' in kwargs:
+            is_auto_scaling_for_storage_enabled = kwargs['isAutoScalingForStorageEnabled']
+        if is_data_guard_enabled is None and 'isDataGuardEnabled' in kwargs:
+            is_data_guard_enabled = kwargs['isDataGuardEnabled']
+        if is_dedicated is None and 'isDedicated' in kwargs:
+            is_dedicated = kwargs['isDedicated']
+        if is_free_tier is None and 'isFreeTier' in kwargs:
+            is_free_tier = kwargs['isFreeTier']
+        if is_local_data_guard_enabled is None and 'isLocalDataGuardEnabled' in kwargs:
+            is_local_data_guard_enabled = kwargs['isLocalDataGuardEnabled']
+        if is_mtls_connection_required is None and 'isMtlsConnectionRequired' in kwargs:
+            is_mtls_connection_required = kwargs['isMtlsConnectionRequired']
+        if is_preview is None and 'isPreview' in kwargs:
+            is_preview = kwargs['isPreview']
+        if is_preview_version_with_service_terms_accepted is None and 'isPreviewVersionWithServiceTermsAccepted' in kwargs:
+            is_preview_version_with_service_terms_accepted = kwargs['isPreviewVersionWithServiceTermsAccepted']
+        if is_reconnect_clone_enabled is None and 'isReconnectCloneEnabled' in kwargs:
+            is_reconnect_clone_enabled = kwargs['isReconnectCloneEnabled']
+        if is_refreshable_clone is None and 'isRefreshableClone' in kwargs:
+            is_refreshable_clone = kwargs['isRefreshableClone']
+        if is_remote_data_guard_enabled is None and 'isRemoteDataGuardEnabled' in kwargs:
+            is_remote_data_guard_enabled = kwargs['isRemoteDataGuardEnabled']
+        if is_shrink_only is None and 'isShrinkOnly' in kwargs:
+            is_shrink_only = kwargs['isShrinkOnly']
+        if key_history_entries is None and 'keyHistoryEntries' in kwargs:
+            key_history_entries = kwargs['keyHistoryEntries']
+        if key_store_id is None and 'keyStoreId' in kwargs:
+            key_store_id = kwargs['keyStoreId']
+        if key_store_wallet_name is None and 'keyStoreWalletName' in kwargs:
+            key_store_wallet_name = kwargs['keyStoreWalletName']
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if kms_key_lifecycle_details is None and 'kmsKeyLifecycleDetails' in kwargs:
+            kms_key_lifecycle_details = kwargs['kmsKeyLifecycleDetails']
+        if kms_key_version_id is None and 'kmsKeyVersionId' in kwargs:
+            kms_key_version_id = kwargs['kmsKeyVersionId']
+        if license_model is None and 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if local_adg_auto_failover_max_data_loss_limit is None and 'localAdgAutoFailoverMaxDataLossLimit' in kwargs:
+            local_adg_auto_failover_max_data_loss_limit = kwargs['localAdgAutoFailoverMaxDataLossLimit']
+        if local_disaster_recovery_type is None and 'localDisasterRecoveryType' in kwargs:
+            local_disaster_recovery_type = kwargs['localDisasterRecoveryType']
+        if local_standby_dbs is None and 'localStandbyDbs' in kwargs:
+            local_standby_dbs = kwargs['localStandbyDbs']
+        if long_term_backup_schedules is None and 'longTermBackupSchedules' in kwargs:
+            long_term_backup_schedules = kwargs['longTermBackupSchedules']
+        if max_cpu_core_count is None and 'maxCpuCoreCount' in kwargs:
+            max_cpu_core_count = kwargs['maxCpuCoreCount']
+        if memory_per_oracle_compute_unit_in_gbs is None and 'memoryPerOracleComputeUnitInGbs' in kwargs:
+            memory_per_oracle_compute_unit_in_gbs = kwargs['memoryPerOracleComputeUnitInGbs']
+        if ncharacter_set is None and 'ncharacterSet' in kwargs:
+            ncharacter_set = kwargs['ncharacterSet']
+        if next_long_term_backup_time_stamp is None and 'nextLongTermBackupTimeStamp' in kwargs:
+            next_long_term_backup_time_stamp = kwargs['nextLongTermBackupTimeStamp']
+        if nsg_ids is None and 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if ocpu_count is None and 'ocpuCount' in kwargs:
+            ocpu_count = kwargs['ocpuCount']
+        if open_mode is None and 'openMode' in kwargs:
+            open_mode = kwargs['openMode']
+        if operations_insights_status is None and 'operationsInsightsStatus' in kwargs:
+            operations_insights_status = kwargs['operationsInsightsStatus']
+        if peer_db_ids is None and 'peerDbIds' in kwargs:
+            peer_db_ids = kwargs['peerDbIds']
+        if permission_level is None and 'permissionLevel' in kwargs:
+            permission_level = kwargs['permissionLevel']
+        if private_endpoint is None and 'privateEndpoint' in kwargs:
+            private_endpoint = kwargs['privateEndpoint']
+        if private_endpoint_ip is None and 'privateEndpointIp' in kwargs:
+            private_endpoint_ip = kwargs['privateEndpointIp']
+        if private_endpoint_label is None and 'privateEndpointLabel' in kwargs:
+            private_endpoint_label = kwargs['privateEndpointLabel']
+        if provisionable_cpuses is None and 'provisionableCpuses' in kwargs:
+            provisionable_cpuses = kwargs['provisionableCpuses']
+        if refreshable_mode is None and 'refreshableMode' in kwargs:
+            refreshable_mode = kwargs['refreshableMode']
+        if refreshable_status is None and 'refreshableStatus' in kwargs:
+            refreshable_status = kwargs['refreshableStatus']
+        if remote_disaster_recovery_configurations is None and 'remoteDisasterRecoveryConfigurations' in kwargs:
+            remote_disaster_recovery_configurations = kwargs['remoteDisasterRecoveryConfigurations']
+        if remote_disaster_recovery_type is None and 'remoteDisasterRecoveryType' in kwargs:
+            remote_disaster_recovery_type = kwargs['remoteDisasterRecoveryType']
+        if resource_pool_leader_id is None and 'resourcePoolLeaderId' in kwargs:
+            resource_pool_leader_id = kwargs['resourcePoolLeaderId']
+        if resource_pool_summary is None and 'resourcePoolSummary' in kwargs:
+            resource_pool_summary = kwargs['resourcePoolSummary']
+        if rotate_key_trigger is None and 'rotateKeyTrigger' in kwargs:
+            rotate_key_trigger = kwargs['rotateKeyTrigger']
+        if scheduled_operations is None and 'scheduledOperations' in kwargs:
+            scheduled_operations = kwargs['scheduledOperations']
+        if secret_id is None and 'secretId' in kwargs:
+            secret_id = kwargs['secretId']
+        if secret_version_number is None and 'secretVersionNumber' in kwargs:
+            secret_version_number = kwargs['secretVersionNumber']
+        if service_console_url is None and 'serviceConsoleUrl' in kwargs:
+            service_console_url = kwargs['serviceConsoleUrl']
+        if source_id is None and 'sourceId' in kwargs:
+            source_id = kwargs['sourceId']
+        if standby_dbs is None and 'standbyDbs' in kwargs:
+            standby_dbs = kwargs['standbyDbs']
+        if standby_whitelisted_ips is None and 'standbyWhitelistedIps' in kwargs:
+            standby_whitelisted_ips = kwargs['standbyWhitelistedIps']
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if supported_regions_to_clone_tos is None and 'supportedRegionsToCloneTos' in kwargs:
+            supported_regions_to_clone_tos = kwargs['supportedRegionsToCloneTos']
+        if switchover_to is None and 'switchoverTo' in kwargs:
+            switchover_to = kwargs['switchoverTo']
+        if switchover_to_remote_peer_id is None and 'switchoverToRemotePeerId' in kwargs:
+            switchover_to_remote_peer_id = kwargs['switchoverToRemotePeerId']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_data_guard_role_changed is None and 'timeDataGuardRoleChanged' in kwargs:
+            time_data_guard_role_changed = kwargs['timeDataGuardRoleChanged']
+        if time_deletion_of_free_autonomous_database is None and 'timeDeletionOfFreeAutonomousDatabase' in kwargs:
+            time_deletion_of_free_autonomous_database = kwargs['timeDeletionOfFreeAutonomousDatabase']
+        if time_disaster_recovery_role_changed is None and 'timeDisasterRecoveryRoleChanged' in kwargs:
+            time_disaster_recovery_role_changed = kwargs['timeDisasterRecoveryRoleChanged']
+        if time_local_data_guard_enabled is None and 'timeLocalDataGuardEnabled' in kwargs:
+            time_local_data_guard_enabled = kwargs['timeLocalDataGuardEnabled']
+        if time_maintenance_begin is None and 'timeMaintenanceBegin' in kwargs:
+            time_maintenance_begin = kwargs['timeMaintenanceBegin']
+        if time_maintenance_end is None and 'timeMaintenanceEnd' in kwargs:
+            time_maintenance_end = kwargs['timeMaintenanceEnd']
+        if time_of_joining_resource_pool is None and 'timeOfJoiningResourcePool' in kwargs:
+            time_of_joining_resource_pool = kwargs['timeOfJoiningResourcePool']
+        if time_of_last_failover is None and 'timeOfLastFailover' in kwargs:
+            time_of_last_failover = kwargs['timeOfLastFailover']
+        if time_of_last_refresh is None and 'timeOfLastRefresh' in kwargs:
+            time_of_last_refresh = kwargs['timeOfLastRefresh']
+        if time_of_last_refresh_point is None and 'timeOfLastRefreshPoint' in kwargs:
+            time_of_last_refresh_point = kwargs['timeOfLastRefreshPoint']
+        if time_of_last_switchover is None and 'timeOfLastSwitchover' in kwargs:
+            time_of_last_switchover = kwargs['timeOfLastSwitchover']
+        if time_of_next_refresh is None and 'timeOfNextRefresh' in kwargs:
+            time_of_next_refresh = kwargs['timeOfNextRefresh']
+        if time_reclamation_of_free_autonomous_database is None and 'timeReclamationOfFreeAutonomousDatabase' in kwargs:
+            time_reclamation_of_free_autonomous_database = kwargs['timeReclamationOfFreeAutonomousDatabase']
+        if time_until_reconnect_clone_enabled is None and 'timeUntilReconnectCloneEnabled' in kwargs:
+            time_until_reconnect_clone_enabled = kwargs['timeUntilReconnectCloneEnabled']
+        if total_backup_storage_size_in_gbs is None and 'totalBackupStorageSizeInGbs' in kwargs:
+            total_backup_storage_size_in_gbs = kwargs['totalBackupStorageSizeInGbs']
+        if use_latest_available_backup_time_stamp is None and 'useLatestAvailableBackupTimeStamp' in kwargs:
+            use_latest_available_backup_time_stamp = kwargs['useLatestAvailableBackupTimeStamp']
+        if used_data_storage_size_in_gbs is None and 'usedDataStorageSizeInGbs' in kwargs:
+            used_data_storage_size_in_gbs = kwargs['usedDataStorageSizeInGbs']
+        if used_data_storage_size_in_tbs is None and 'usedDataStorageSizeInTbs' in kwargs:
+            used_data_storage_size_in_tbs = kwargs['usedDataStorageSizeInTbs']
+        if vault_id is None and 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+        if whitelisted_ips is None and 'whitelistedIps' in kwargs:
+            whitelisted_ips = kwargs['whitelistedIps']
+
         if actual_used_data_storage_size_in_tbs is not None:
-            pulumi.set(__self__, "actual_used_data_storage_size_in_tbs", actual_used_data_storage_size_in_tbs)
+            _setter("actual_used_data_storage_size_in_tbs", actual_used_data_storage_size_in_tbs)
         if admin_password is not None:
-            pulumi.set(__self__, "admin_password", admin_password)
+            _setter("admin_password", admin_password)
         if allocated_storage_size_in_tbs is not None:
-            pulumi.set(__self__, "allocated_storage_size_in_tbs", allocated_storage_size_in_tbs)
+            _setter("allocated_storage_size_in_tbs", allocated_storage_size_in_tbs)
         if apex_details is not None:
-            pulumi.set(__self__, "apex_details", apex_details)
+            _setter("apex_details", apex_details)
         if are_primary_whitelisted_ips_used is not None:
-            pulumi.set(__self__, "are_primary_whitelisted_ips_used", are_primary_whitelisted_ips_used)
+            _setter("are_primary_whitelisted_ips_used", are_primary_whitelisted_ips_used)
         if autonomous_container_database_id is not None:
-            pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
+            _setter("autonomous_container_database_id", autonomous_container_database_id)
         if autonomous_database_backup_id is not None:
-            pulumi.set(__self__, "autonomous_database_backup_id", autonomous_database_backup_id)
+            _setter("autonomous_database_backup_id", autonomous_database_backup_id)
         if autonomous_database_id is not None:
-            pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
+            _setter("autonomous_database_id", autonomous_database_id)
         if autonomous_maintenance_schedule_type is not None:
-            pulumi.set(__self__, "autonomous_maintenance_schedule_type", autonomous_maintenance_schedule_type)
+            _setter("autonomous_maintenance_schedule_type", autonomous_maintenance_schedule_type)
         if available_upgrade_versions is not None:
-            pulumi.set(__self__, "available_upgrade_versions", available_upgrade_versions)
+            _setter("available_upgrade_versions", available_upgrade_versions)
         if backup_configs is not None:
-            pulumi.set(__self__, "backup_configs", backup_configs)
+            _setter("backup_configs", backup_configs)
         if backup_retention_period_in_days is not None:
-            pulumi.set(__self__, "backup_retention_period_in_days", backup_retention_period_in_days)
+            _setter("backup_retention_period_in_days", backup_retention_period_in_days)
         if character_set is not None:
-            pulumi.set(__self__, "character_set", character_set)
+            _setter("character_set", character_set)
         if clone_type is not None:
-            pulumi.set(__self__, "clone_type", clone_type)
+            _setter("clone_type", clone_type)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if compute_count is not None:
-            pulumi.set(__self__, "compute_count", compute_count)
+            _setter("compute_count", compute_count)
         if compute_model is not None:
-            pulumi.set(__self__, "compute_model", compute_model)
+            _setter("compute_model", compute_model)
         if connection_strings is not None:
-            pulumi.set(__self__, "connection_strings", connection_strings)
+            _setter("connection_strings", connection_strings)
         if connection_urls is not None:
-            pulumi.set(__self__, "connection_urls", connection_urls)
+            _setter("connection_urls", connection_urls)
         if cpu_core_count is not None:
-            pulumi.set(__self__, "cpu_core_count", cpu_core_count)
+            _setter("cpu_core_count", cpu_core_count)
         if customer_contacts is not None:
-            pulumi.set(__self__, "customer_contacts", customer_contacts)
+            _setter("customer_contacts", customer_contacts)
         if data_safe_status is not None:
-            pulumi.set(__self__, "data_safe_status", data_safe_status)
+            _setter("data_safe_status", data_safe_status)
         if data_storage_size_in_gb is not None:
-            pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+            _setter("data_storage_size_in_gb", data_storage_size_in_gb)
         if data_storage_size_in_tbs is not None:
-            pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
+            _setter("data_storage_size_in_tbs", data_storage_size_in_tbs)
         if database_edition is not None:
-            pulumi.set(__self__, "database_edition", database_edition)
+            _setter("database_edition", database_edition)
         if database_management_status is not None:
-            pulumi.set(__self__, "database_management_status", database_management_status)
+            _setter("database_management_status", database_management_status)
         if dataguard_region_type is not None:
-            pulumi.set(__self__, "dataguard_region_type", dataguard_region_type)
+            _setter("dataguard_region_type", dataguard_region_type)
         if db_name is not None:
-            pulumi.set(__self__, "db_name", db_name)
+            _setter("db_name", db_name)
         if db_version is not None:
-            pulumi.set(__self__, "db_version", db_version)
+            _setter("db_version", db_version)
         if db_workload is not None:
-            pulumi.set(__self__, "db_workload", db_workload)
+            _setter("db_workload", db_workload)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if disaster_recovery_region_type is not None:
-            pulumi.set(__self__, "disaster_recovery_region_type", disaster_recovery_region_type)
+            _setter("disaster_recovery_region_type", disaster_recovery_region_type)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if failed_data_recovery_in_seconds is not None:
-            pulumi.set(__self__, "failed_data_recovery_in_seconds", failed_data_recovery_in_seconds)
+            _setter("failed_data_recovery_in_seconds", failed_data_recovery_in_seconds)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if in_memory_area_in_gbs is not None:
-            pulumi.set(__self__, "in_memory_area_in_gbs", in_memory_area_in_gbs)
+            _setter("in_memory_area_in_gbs", in_memory_area_in_gbs)
         if in_memory_percentage is not None:
-            pulumi.set(__self__, "in_memory_percentage", in_memory_percentage)
+            _setter("in_memory_percentage", in_memory_percentage)
         if infrastructure_type is not None:
-            pulumi.set(__self__, "infrastructure_type", infrastructure_type)
+            _setter("infrastructure_type", infrastructure_type)
         if is_access_control_enabled is not None:
-            pulumi.set(__self__, "is_access_control_enabled", is_access_control_enabled)
+            _setter("is_access_control_enabled", is_access_control_enabled)
         if is_auto_scaling_enabled is not None:
-            pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
+            _setter("is_auto_scaling_enabled", is_auto_scaling_enabled)
         if is_auto_scaling_for_storage_enabled is not None:
-            pulumi.set(__self__, "is_auto_scaling_for_storage_enabled", is_auto_scaling_for_storage_enabled)
+            _setter("is_auto_scaling_for_storage_enabled", is_auto_scaling_for_storage_enabled)
         if is_data_guard_enabled is not None:
-            pulumi.set(__self__, "is_data_guard_enabled", is_data_guard_enabled)
+            _setter("is_data_guard_enabled", is_data_guard_enabled)
         if is_dedicated is not None:
-            pulumi.set(__self__, "is_dedicated", is_dedicated)
+            _setter("is_dedicated", is_dedicated)
         if is_free_tier is not None:
-            pulumi.set(__self__, "is_free_tier", is_free_tier)
+            _setter("is_free_tier", is_free_tier)
         if is_local_data_guard_enabled is not None:
-            pulumi.set(__self__, "is_local_data_guard_enabled", is_local_data_guard_enabled)
+            _setter("is_local_data_guard_enabled", is_local_data_guard_enabled)
         if is_mtls_connection_required is not None:
-            pulumi.set(__self__, "is_mtls_connection_required", is_mtls_connection_required)
+            _setter("is_mtls_connection_required", is_mtls_connection_required)
         if is_preview is not None:
-            pulumi.set(__self__, "is_preview", is_preview)
+            _setter("is_preview", is_preview)
         if is_preview_version_with_service_terms_accepted is not None:
-            pulumi.set(__self__, "is_preview_version_with_service_terms_accepted", is_preview_version_with_service_terms_accepted)
+            _setter("is_preview_version_with_service_terms_accepted", is_preview_version_with_service_terms_accepted)
         if is_reconnect_clone_enabled is not None:
-            pulumi.set(__self__, "is_reconnect_clone_enabled", is_reconnect_clone_enabled)
+            _setter("is_reconnect_clone_enabled", is_reconnect_clone_enabled)
         if is_refreshable_clone is not None:
-            pulumi.set(__self__, "is_refreshable_clone", is_refreshable_clone)
+            _setter("is_refreshable_clone", is_refreshable_clone)
         if is_remote_data_guard_enabled is not None:
-            pulumi.set(__self__, "is_remote_data_guard_enabled", is_remote_data_guard_enabled)
+            _setter("is_remote_data_guard_enabled", is_remote_data_guard_enabled)
         if is_shrink_only is not None:
-            pulumi.set(__self__, "is_shrink_only", is_shrink_only)
+            _setter("is_shrink_only", is_shrink_only)
         if key_history_entries is not None:
-            pulumi.set(__self__, "key_history_entries", key_history_entries)
+            _setter("key_history_entries", key_history_entries)
         if key_store_id is not None:
-            pulumi.set(__self__, "key_store_id", key_store_id)
+            _setter("key_store_id", key_store_id)
         if key_store_wallet_name is not None:
-            pulumi.set(__self__, "key_store_wallet_name", key_store_wallet_name)
+            _setter("key_store_wallet_name", key_store_wallet_name)
         if kms_key_id is not None:
-            pulumi.set(__self__, "kms_key_id", kms_key_id)
+            _setter("kms_key_id", kms_key_id)
         if kms_key_lifecycle_details is not None:
-            pulumi.set(__self__, "kms_key_lifecycle_details", kms_key_lifecycle_details)
+            _setter("kms_key_lifecycle_details", kms_key_lifecycle_details)
         if kms_key_version_id is not None:
-            pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
+            _setter("kms_key_version_id", kms_key_version_id)
         if license_model is not None:
-            pulumi.set(__self__, "license_model", license_model)
+            _setter("license_model", license_model)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if local_adg_auto_failover_max_data_loss_limit is not None:
-            pulumi.set(__self__, "local_adg_auto_failover_max_data_loss_limit", local_adg_auto_failover_max_data_loss_limit)
+            _setter("local_adg_auto_failover_max_data_loss_limit", local_adg_auto_failover_max_data_loss_limit)
         if local_disaster_recovery_type is not None:
-            pulumi.set(__self__, "local_disaster_recovery_type", local_disaster_recovery_type)
+            _setter("local_disaster_recovery_type", local_disaster_recovery_type)
         if local_standby_dbs is not None:
-            pulumi.set(__self__, "local_standby_dbs", local_standby_dbs)
+            _setter("local_standby_dbs", local_standby_dbs)
         if long_term_backup_schedules is not None:
-            pulumi.set(__self__, "long_term_backup_schedules", long_term_backup_schedules)
+            _setter("long_term_backup_schedules", long_term_backup_schedules)
         if max_cpu_core_count is not None:
-            pulumi.set(__self__, "max_cpu_core_count", max_cpu_core_count)
+            _setter("max_cpu_core_count", max_cpu_core_count)
         if memory_per_oracle_compute_unit_in_gbs is not None:
-            pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
+            _setter("memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
         if ncharacter_set is not None:
-            pulumi.set(__self__, "ncharacter_set", ncharacter_set)
+            _setter("ncharacter_set", ncharacter_set)
         if next_long_term_backup_time_stamp is not None:
-            pulumi.set(__self__, "next_long_term_backup_time_stamp", next_long_term_backup_time_stamp)
+            _setter("next_long_term_backup_time_stamp", next_long_term_backup_time_stamp)
         if nsg_ids is not None:
-            pulumi.set(__self__, "nsg_ids", nsg_ids)
+            _setter("nsg_ids", nsg_ids)
         if ocpu_count is not None:
-            pulumi.set(__self__, "ocpu_count", ocpu_count)
+            _setter("ocpu_count", ocpu_count)
         if open_mode is not None:
-            pulumi.set(__self__, "open_mode", open_mode)
+            _setter("open_mode", open_mode)
         if operations_insights_status is not None:
-            pulumi.set(__self__, "operations_insights_status", operations_insights_status)
+            _setter("operations_insights_status", operations_insights_status)
         if peer_db_ids is not None:
-            pulumi.set(__self__, "peer_db_ids", peer_db_ids)
+            _setter("peer_db_ids", peer_db_ids)
         if permission_level is not None:
-            pulumi.set(__self__, "permission_level", permission_level)
+            _setter("permission_level", permission_level)
         if private_endpoint is not None:
-            pulumi.set(__self__, "private_endpoint", private_endpoint)
+            _setter("private_endpoint", private_endpoint)
         if private_endpoint_ip is not None:
-            pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
+            _setter("private_endpoint_ip", private_endpoint_ip)
         if private_endpoint_label is not None:
-            pulumi.set(__self__, "private_endpoint_label", private_endpoint_label)
+            _setter("private_endpoint_label", private_endpoint_label)
         if provisionable_cpuses is not None:
-            pulumi.set(__self__, "provisionable_cpuses", provisionable_cpuses)
+            _setter("provisionable_cpuses", provisionable_cpuses)
         if refreshable_mode is not None:
-            pulumi.set(__self__, "refreshable_mode", refreshable_mode)
+            _setter("refreshable_mode", refreshable_mode)
         if refreshable_status is not None:
-            pulumi.set(__self__, "refreshable_status", refreshable_status)
+            _setter("refreshable_status", refreshable_status)
         if remote_disaster_recovery_configurations is not None:
-            pulumi.set(__self__, "remote_disaster_recovery_configurations", remote_disaster_recovery_configurations)
+            _setter("remote_disaster_recovery_configurations", remote_disaster_recovery_configurations)
         if remote_disaster_recovery_type is not None:
-            pulumi.set(__self__, "remote_disaster_recovery_type", remote_disaster_recovery_type)
+            _setter("remote_disaster_recovery_type", remote_disaster_recovery_type)
         if resource_pool_leader_id is not None:
-            pulumi.set(__self__, "resource_pool_leader_id", resource_pool_leader_id)
+            _setter("resource_pool_leader_id", resource_pool_leader_id)
         if resource_pool_summary is not None:
-            pulumi.set(__self__, "resource_pool_summary", resource_pool_summary)
+            _setter("resource_pool_summary", resource_pool_summary)
         if role is not None:
-            pulumi.set(__self__, "role", role)
+            _setter("role", role)
         if rotate_key_trigger is not None:
-            pulumi.set(__self__, "rotate_key_trigger", rotate_key_trigger)
+            _setter("rotate_key_trigger", rotate_key_trigger)
         if scheduled_operations is not None:
-            pulumi.set(__self__, "scheduled_operations", scheduled_operations)
+            _setter("scheduled_operations", scheduled_operations)
         if secret_id is not None:
-            pulumi.set(__self__, "secret_id", secret_id)
+            _setter("secret_id", secret_id)
         if secret_version_number is not None:
-            pulumi.set(__self__, "secret_version_number", secret_version_number)
+            _setter("secret_version_number", secret_version_number)
         if service_console_url is not None:
-            pulumi.set(__self__, "service_console_url", service_console_url)
+            _setter("service_console_url", service_console_url)
         if source is not None:
-            pulumi.set(__self__, "source", source)
+            _setter("source", source)
         if source_id is not None:
-            pulumi.set(__self__, "source_id", source_id)
+            _setter("source_id", source_id)
         if standby_dbs is not None:
-            pulumi.set(__self__, "standby_dbs", standby_dbs)
+            _setter("standby_dbs", standby_dbs)
         if standby_whitelisted_ips is not None:
-            pulumi.set(__self__, "standby_whitelisted_ips", standby_whitelisted_ips)
+            _setter("standby_whitelisted_ips", standby_whitelisted_ips)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
         if supported_regions_to_clone_tos is not None:
-            pulumi.set(__self__, "supported_regions_to_clone_tos", supported_regions_to_clone_tos)
+            _setter("supported_regions_to_clone_tos", supported_regions_to_clone_tos)
         if switchover_to is not None:
-            pulumi.set(__self__, "switchover_to", switchover_to)
+            _setter("switchover_to", switchover_to)
         if switchover_to_remote_peer_id is not None:
-            pulumi.set(__self__, "switchover_to_remote_peer_id", switchover_to_remote_peer_id)
+            _setter("switchover_to_remote_peer_id", switchover_to_remote_peer_id)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_data_guard_role_changed is not None:
-            pulumi.set(__self__, "time_data_guard_role_changed", time_data_guard_role_changed)
+            _setter("time_data_guard_role_changed", time_data_guard_role_changed)
         if time_deletion_of_free_autonomous_database is not None:
-            pulumi.set(__self__, "time_deletion_of_free_autonomous_database", time_deletion_of_free_autonomous_database)
+            _setter("time_deletion_of_free_autonomous_database", time_deletion_of_free_autonomous_database)
         if time_disaster_recovery_role_changed is not None:
-            pulumi.set(__self__, "time_disaster_recovery_role_changed", time_disaster_recovery_role_changed)
+            _setter("time_disaster_recovery_role_changed", time_disaster_recovery_role_changed)
         if time_local_data_guard_enabled is not None:
-            pulumi.set(__self__, "time_local_data_guard_enabled", time_local_data_guard_enabled)
+            _setter("time_local_data_guard_enabled", time_local_data_guard_enabled)
         if time_maintenance_begin is not None:
-            pulumi.set(__self__, "time_maintenance_begin", time_maintenance_begin)
+            _setter("time_maintenance_begin", time_maintenance_begin)
         if time_maintenance_end is not None:
-            pulumi.set(__self__, "time_maintenance_end", time_maintenance_end)
+            _setter("time_maintenance_end", time_maintenance_end)
         if time_of_joining_resource_pool is not None:
-            pulumi.set(__self__, "time_of_joining_resource_pool", time_of_joining_resource_pool)
+            _setter("time_of_joining_resource_pool", time_of_joining_resource_pool)
         if time_of_last_failover is not None:
-            pulumi.set(__self__, "time_of_last_failover", time_of_last_failover)
+            _setter("time_of_last_failover", time_of_last_failover)
         if time_of_last_refresh is not None:
-            pulumi.set(__self__, "time_of_last_refresh", time_of_last_refresh)
+            _setter("time_of_last_refresh", time_of_last_refresh)
         if time_of_last_refresh_point is not None:
-            pulumi.set(__self__, "time_of_last_refresh_point", time_of_last_refresh_point)
+            _setter("time_of_last_refresh_point", time_of_last_refresh_point)
         if time_of_last_switchover is not None:
-            pulumi.set(__self__, "time_of_last_switchover", time_of_last_switchover)
+            _setter("time_of_last_switchover", time_of_last_switchover)
         if time_of_next_refresh is not None:
-            pulumi.set(__self__, "time_of_next_refresh", time_of_next_refresh)
+            _setter("time_of_next_refresh", time_of_next_refresh)
         if time_reclamation_of_free_autonomous_database is not None:
-            pulumi.set(__self__, "time_reclamation_of_free_autonomous_database", time_reclamation_of_free_autonomous_database)
+            _setter("time_reclamation_of_free_autonomous_database", time_reclamation_of_free_autonomous_database)
         if time_until_reconnect_clone_enabled is not None:
-            pulumi.set(__self__, "time_until_reconnect_clone_enabled", time_until_reconnect_clone_enabled)
+            _setter("time_until_reconnect_clone_enabled", time_until_reconnect_clone_enabled)
         if timestamp is not None:
-            pulumi.set(__self__, "timestamp", timestamp)
+            _setter("timestamp", timestamp)
         if total_backup_storage_size_in_gbs is not None:
-            pulumi.set(__self__, "total_backup_storage_size_in_gbs", total_backup_storage_size_in_gbs)
+            _setter("total_backup_storage_size_in_gbs", total_backup_storage_size_in_gbs)
         if use_latest_available_backup_time_stamp is not None:
-            pulumi.set(__self__, "use_latest_available_backup_time_stamp", use_latest_available_backup_time_stamp)
+            _setter("use_latest_available_backup_time_stamp", use_latest_available_backup_time_stamp)
         if used_data_storage_size_in_gbs is not None:
-            pulumi.set(__self__, "used_data_storage_size_in_gbs", used_data_storage_size_in_gbs)
+            _setter("used_data_storage_size_in_gbs", used_data_storage_size_in_gbs)
         if used_data_storage_size_in_tbs is not None:
-            pulumi.set(__self__, "used_data_storage_size_in_tbs", used_data_storage_size_in_tbs)
+            _setter("used_data_storage_size_in_tbs", used_data_storage_size_in_tbs)
         if vault_id is not None:
-            pulumi.set(__self__, "vault_id", vault_id)
+            _setter("vault_id", vault_id)
         if whitelisted_ips is not None:
-            pulumi.set(__self__, "whitelisted_ips", whitelisted_ips)
+            _setter("whitelisted_ips", whitelisted_ips)
 
     @property
     @pulumi.getter(name="actualUsedDataStorageSizeInTbs")
@@ -3537,6 +4305,10 @@ class AutonomousDatabase(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AutonomousDatabaseArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -3675,6 +4447,11 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["refreshable_mode"] = refreshable_mode
             __props__.__dict__["remote_disaster_recovery_type"] = remote_disaster_recovery_type
             __props__.__dict__["resource_pool_leader_id"] = resource_pool_leader_id
+            if resource_pool_summary is not None and not isinstance(resource_pool_summary, AutonomousDatabaseResourcePoolSummaryArgs):
+                resource_pool_summary = resource_pool_summary or {}
+                def _setter(key, value):
+                    resource_pool_summary[key] = value
+                AutonomousDatabaseResourcePoolSummaryArgs._configure(_setter, **resource_pool_summary)
             __props__.__dict__["resource_pool_summary"] = resource_pool_summary
             __props__.__dict__["rotate_key_trigger"] = rotate_key_trigger
             __props__.__dict__["scheduled_operations"] = scheduled_operations

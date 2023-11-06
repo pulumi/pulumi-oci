@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['ImportStandardTagsManagementArgs', 'ImportStandardTagsManagement']
@@ -25,8 +25,29 @@ class ImportStandardTagsManagementArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "standard_tag_namespace_name", standard_tag_namespace_name)
+        ImportStandardTagsManagementArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            standard_tag_namespace_name=standard_tag_namespace_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             standard_tag_namespace_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if standard_tag_namespace_name is None and 'standardTagNamespaceName' in kwargs:
+            standard_tag_namespace_name = kwargs['standardTagNamespaceName']
+        if standard_tag_namespace_name is None:
+            raise TypeError("Missing 'standard_tag_namespace_name' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("standard_tag_namespace_name", standard_tag_namespace_name)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -72,12 +93,33 @@ class _ImportStandardTagsManagementState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _ImportStandardTagsManagementState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            standard_tag_namespace_name=standard_tag_namespace_name,
+            work_request_id=work_request_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             standard_tag_namespace_name: Optional[pulumi.Input[str]] = None,
+             work_request_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if standard_tag_namespace_name is None and 'standardTagNamespaceName' in kwargs:
+            standard_tag_namespace_name = kwargs['standardTagNamespaceName']
+        if work_request_id is None and 'workRequestId' in kwargs:
+            work_request_id = kwargs['workRequestId']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if standard_tag_namespace_name is not None:
-            pulumi.set(__self__, "standard_tag_namespace_name", standard_tag_namespace_name)
+            _setter("standard_tag_namespace_name", standard_tag_namespace_name)
         if work_request_id is not None:
-            pulumi.set(__self__, "work_request_id", work_request_id)
+            _setter("work_request_id", work_request_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -200,6 +242,10 @@ class ImportStandardTagsManagement(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ImportStandardTagsManagementArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

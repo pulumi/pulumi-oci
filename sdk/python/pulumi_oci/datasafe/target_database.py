@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -37,22 +37,67 @@ class TargetDatabaseArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input['TargetDatabaseTlsConfigArgs'] tls_config: (Updatable) The details required to establish a TLS enabled connection.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "database_details", database_details)
+        TargetDatabaseArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            database_details=database_details,
+            connection_option=connection_option,
+            credentials=credentials,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            tls_config=tls_config,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             database_details: Optional[pulumi.Input['TargetDatabaseDatabaseDetailsArgs']] = None,
+             connection_option: Optional[pulumi.Input['TargetDatabaseConnectionOptionArgs']] = None,
+             credentials: Optional[pulumi.Input['TargetDatabaseCredentialsArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             tls_config: Optional[pulumi.Input['TargetDatabaseTlsConfigArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if database_details is None and 'databaseDetails' in kwargs:
+            database_details = kwargs['databaseDetails']
+        if database_details is None:
+            raise TypeError("Missing 'database_details' argument")
+        if connection_option is None and 'connectionOption' in kwargs:
+            connection_option = kwargs['connectionOption']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if tls_config is None and 'tlsConfig' in kwargs:
+            tls_config = kwargs['tlsConfig']
+
+        _setter("compartment_id", compartment_id)
+        _setter("database_details", database_details)
         if connection_option is not None:
-            pulumi.set(__self__, "connection_option", connection_option)
+            _setter("connection_option", connection_option)
         if credentials is not None:
-            pulumi.set(__self__, "credentials", credentials)
+            _setter("credentials", credentials)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if tls_config is not None:
-            pulumi.set(__self__, "tls_config", tls_config)
+            _setter("tls_config", tls_config)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -199,36 +244,99 @@ class _TargetDatabaseState:
         :param pulumi.Input[str] time_updated: The date and time of the target database update in Data Safe.
         :param pulumi.Input['TargetDatabaseTlsConfigArgs'] tls_config: (Updatable) The details required to establish a TLS enabled connection.
         """
+        _TargetDatabaseState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            associated_resource_ids=associated_resource_ids,
+            compartment_id=compartment_id,
+            connection_option=connection_option,
+            credentials=credentials,
+            database_details=database_details,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            tls_config=tls_config,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             associated_resource_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             connection_option: Optional[pulumi.Input['TargetDatabaseConnectionOptionArgs']] = None,
+             credentials: Optional[pulumi.Input['TargetDatabaseCredentialsArgs']] = None,
+             database_details: Optional[pulumi.Input['TargetDatabaseDatabaseDetailsArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             tls_config: Optional[pulumi.Input['TargetDatabaseTlsConfigArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if associated_resource_ids is None and 'associatedResourceIds' in kwargs:
+            associated_resource_ids = kwargs['associatedResourceIds']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if connection_option is None and 'connectionOption' in kwargs:
+            connection_option = kwargs['connectionOption']
+        if database_details is None and 'databaseDetails' in kwargs:
+            database_details = kwargs['databaseDetails']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if tls_config is None and 'tlsConfig' in kwargs:
+            tls_config = kwargs['tlsConfig']
+
         if associated_resource_ids is not None:
-            pulumi.set(__self__, "associated_resource_ids", associated_resource_ids)
+            _setter("associated_resource_ids", associated_resource_ids)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if connection_option is not None:
-            pulumi.set(__self__, "connection_option", connection_option)
+            _setter("connection_option", connection_option)
         if credentials is not None:
-            pulumi.set(__self__, "credentials", credentials)
+            _setter("credentials", credentials)
         if database_details is not None:
-            pulumi.set(__self__, "database_details", database_details)
+            _setter("database_details", database_details)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if tls_config is not None:
-            pulumi.set(__self__, "tls_config", tls_config)
+            _setter("tls_config", tls_config)
 
     @property
     @pulumi.getter(name="associatedResourceIds")
@@ -570,6 +678,10 @@ class TargetDatabase(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            TargetDatabaseArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -596,8 +708,23 @@ class TargetDatabase(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            if connection_option is not None and not isinstance(connection_option, TargetDatabaseConnectionOptionArgs):
+                connection_option = connection_option or {}
+                def _setter(key, value):
+                    connection_option[key] = value
+                TargetDatabaseConnectionOptionArgs._configure(_setter, **connection_option)
             __props__.__dict__["connection_option"] = connection_option
+            if credentials is not None and not isinstance(credentials, TargetDatabaseCredentialsArgs):
+                credentials = credentials or {}
+                def _setter(key, value):
+                    credentials[key] = value
+                TargetDatabaseCredentialsArgs._configure(_setter, **credentials)
             __props__.__dict__["credentials"] = credentials
+            if database_details is not None and not isinstance(database_details, TargetDatabaseDatabaseDetailsArgs):
+                database_details = database_details or {}
+                def _setter(key, value):
+                    database_details[key] = value
+                TargetDatabaseDatabaseDetailsArgs._configure(_setter, **database_details)
             if database_details is None and not opts.urn:
                 raise TypeError("Missing required property 'database_details'")
             __props__.__dict__["database_details"] = database_details
@@ -605,6 +732,11 @@ class TargetDatabase(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            if tls_config is not None and not isinstance(tls_config, TargetDatabaseTlsConfigArgs):
+                tls_config = tls_config or {}
+                def _setter(key, value):
+                    tls_config[key] = value
+                TargetDatabaseTlsConfigArgs._configure(_setter, **tls_config)
             __props__.__dict__["tls_config"] = tls_config
             __props__.__dict__["associated_resource_ids"] = None
             __props__.__dict__["lifecycle_details"] = None

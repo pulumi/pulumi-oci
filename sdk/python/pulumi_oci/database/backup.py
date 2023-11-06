@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['BackupArgs', 'Backup']
@@ -25,8 +25,29 @@ class BackupArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "database_id", database_id)
-        pulumi.set(__self__, "display_name", display_name)
+        BackupArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            database_id=database_id,
+            display_name=display_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             database_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if database_id is None and 'databaseId' in kwargs:
+            database_id = kwargs['databaseId']
+        if database_id is None:
+            raise TypeError("Missing 'database_id' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+
+        _setter("database_id", database_id)
+        _setter("display_name", display_name)
 
     @property
     @pulumi.getter(name="databaseId")
@@ -103,42 +124,115 @@ class _BackupState:
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param pulumi.Input[str] version: Version of the backup's source database
         """
+        _BackupState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            compartment_id=compartment_id,
+            database_edition=database_edition,
+            database_id=database_id,
+            database_size_in_gbs=database_size_in_gbs,
+            display_name=display_name,
+            key_store_id=key_store_id,
+            key_store_wallet_name=key_store_wallet_name,
+            kms_key_id=kms_key_id,
+            kms_key_version_id=kms_key_version_id,
+            lifecycle_details=lifecycle_details,
+            shape=shape,
+            state=state,
+            time_ended=time_ended,
+            time_started=time_started,
+            type=type,
+            vault_id=vault_id,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             database_edition: Optional[pulumi.Input[str]] = None,
+             database_id: Optional[pulumi.Input[str]] = None,
+             database_size_in_gbs: Optional[pulumi.Input[float]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             key_store_id: Optional[pulumi.Input[str]] = None,
+             key_store_wallet_name: Optional[pulumi.Input[str]] = None,
+             kms_key_id: Optional[pulumi.Input[str]] = None,
+             kms_key_version_id: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             shape: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_ended: Optional[pulumi.Input[str]] = None,
+             time_started: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             vault_id: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if availability_domain is None and 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if database_edition is None and 'databaseEdition' in kwargs:
+            database_edition = kwargs['databaseEdition']
+        if database_id is None and 'databaseId' in kwargs:
+            database_id = kwargs['databaseId']
+        if database_size_in_gbs is None and 'databaseSizeInGbs' in kwargs:
+            database_size_in_gbs = kwargs['databaseSizeInGbs']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if key_store_id is None and 'keyStoreId' in kwargs:
+            key_store_id = kwargs['keyStoreId']
+        if key_store_wallet_name is None and 'keyStoreWalletName' in kwargs:
+            key_store_wallet_name = kwargs['keyStoreWalletName']
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if kms_key_version_id is None and 'kmsKeyVersionId' in kwargs:
+            kms_key_version_id = kwargs['kmsKeyVersionId']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if time_ended is None and 'timeEnded' in kwargs:
+            time_ended = kwargs['timeEnded']
+        if time_started is None and 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+        if vault_id is None and 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if database_edition is not None:
-            pulumi.set(__self__, "database_edition", database_edition)
+            _setter("database_edition", database_edition)
         if database_id is not None:
-            pulumi.set(__self__, "database_id", database_id)
+            _setter("database_id", database_id)
         if database_size_in_gbs is not None:
-            pulumi.set(__self__, "database_size_in_gbs", database_size_in_gbs)
+            _setter("database_size_in_gbs", database_size_in_gbs)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if key_store_id is not None:
-            pulumi.set(__self__, "key_store_id", key_store_id)
+            _setter("key_store_id", key_store_id)
         if key_store_wallet_name is not None:
-            pulumi.set(__self__, "key_store_wallet_name", key_store_wallet_name)
+            _setter("key_store_wallet_name", key_store_wallet_name)
         if kms_key_id is not None:
-            pulumi.set(__self__, "kms_key_id", kms_key_id)
+            _setter("kms_key_id", kms_key_id)
         if kms_key_version_id is not None:
-            pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
+            _setter("kms_key_version_id", kms_key_version_id)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if shape is not None:
-            pulumi.set(__self__, "shape", shape)
+            _setter("shape", shape)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_ended is not None:
-            pulumi.set(__self__, "time_ended", time_ended)
+            _setter("time_ended", time_ended)
         if time_started is not None:
-            pulumi.set(__self__, "time_started", time_started)
+            _setter("time_started", time_started)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
         if vault_id is not None:
-            pulumi.set(__self__, "vault_id", vault_id)
+            _setter("vault_id", vault_id)
         if version is not None:
-            pulumi.set(__self__, "version", version)
+            _setter("version", version)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -442,6 +536,10 @@ class Backup(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            BackupArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['PolicyArgs', 'Policy']
@@ -35,17 +35,54 @@ class PolicyArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "statements", statements)
+        PolicyArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            description=description,
+            statements=statements,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            name=name,
+            version_date=version_date,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             statements: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             version_date: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if statements is None:
+            raise TypeError("Missing 'statements' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if version_date is None and 'versionDate' in kwargs:
+            version_date = kwargs['versionDate']
+
+        _setter("compartment_id", compartment_id)
+        _setter("description", description)
+        _setter("statements", statements)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if version_date is not None:
-            pulumi.set(__self__, "version_date", version_date)
+            _setter("version_date", version_date)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -169,41 +206,94 @@ class _PolicyState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _PolicyState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            e_tag=e_tag,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            inactive_state=inactive_state,
+            last_update_e_tag=last_update_e_tag,
+            name=name,
+            policy_hash=policy_hash,
+            state=state,
+            statements=statements,
+            time_created=time_created,
+            version_date=version_date,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             e_tag: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             inactive_state: Optional[pulumi.Input[str]] = None,
+             last_update_e_tag: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             policy_hash: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             statements: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             version_date: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if e_tag is None and 'ETag' in kwargs:
+            e_tag = kwargs['ETag']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if inactive_state is None and 'inactiveState' in kwargs:
+            inactive_state = kwargs['inactiveState']
+        if last_update_e_tag is None and 'lastUpdateETag' in kwargs:
+            last_update_e_tag = kwargs['lastUpdateETag']
+        if policy_hash is None and 'policyHash' in kwargs:
+            policy_hash = kwargs['policyHash']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if version_date is None and 'versionDate' in kwargs:
+            version_date = kwargs['versionDate']
+
         if e_tag is not None:
             warnings.warn("""The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
             pulumi.log.warn("""e_tag is deprecated: The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field.""")
         if e_tag is not None:
-            pulumi.set(__self__, "e_tag", e_tag)
+            _setter("e_tag", e_tag)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if inactive_state is not None:
-            pulumi.set(__self__, "inactive_state", inactive_state)
+            _setter("inactive_state", inactive_state)
         if last_update_e_tag is not None:
             warnings.warn("""The 'lastUpdateETag' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
             pulumi.log.warn("""last_update_e_tag is deprecated: The 'lastUpdateETag' field has been deprecated and may be removed in a future version. Do not use this field.""")
         if last_update_e_tag is not None:
-            pulumi.set(__self__, "last_update_e_tag", last_update_e_tag)
+            _setter("last_update_e_tag", last_update_e_tag)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if policy_hash is not None:
             warnings.warn("""The 'policyHash' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
             pulumi.log.warn("""policy_hash is deprecated: The 'policyHash' field has been deprecated and may be removed in a future version. Do not use this field.""")
         if policy_hash is not None:
-            pulumi.set(__self__, "policy_hash", policy_hash)
+            _setter("policy_hash", policy_hash)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if statements is not None:
-            pulumi.set(__self__, "statements", statements)
+            _setter("statements", statements)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if version_date is not None:
-            pulumi.set(__self__, "version_date", version_date)
+            _setter("version_date", version_date)
 
     @property
     @pulumi.getter(name="ETag")
@@ -497,6 +587,10 @@ class Policy(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            PolicyArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

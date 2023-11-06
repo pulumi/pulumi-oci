@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['BdsInstancePatchActionArgs', 'BdsInstancePatchAction']
@@ -27,9 +27,34 @@ class BdsInstancePatchActionArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "bds_instance_id", bds_instance_id)
-        pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
-        pulumi.set(__self__, "version", version)
+        BdsInstancePatchActionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bds_instance_id=bds_instance_id,
+            cluster_admin_password=cluster_admin_password,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bds_instance_id: Optional[pulumi.Input[str]] = None,
+             cluster_admin_password: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bds_instance_id is None and 'bdsInstanceId' in kwargs:
+            bds_instance_id = kwargs['bdsInstanceId']
+        if bds_instance_id is None:
+            raise TypeError("Missing 'bds_instance_id' argument")
+        if cluster_admin_password is None and 'clusterAdminPassword' in kwargs:
+            cluster_admin_password = kwargs['clusterAdminPassword']
+        if cluster_admin_password is None:
+            raise TypeError("Missing 'cluster_admin_password' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
+
+        _setter("bds_instance_id", bds_instance_id)
+        _setter("cluster_admin_password", cluster_admin_password)
+        _setter("version", version)
 
     @property
     @pulumi.getter(name="bdsInstanceId")
@@ -88,12 +113,31 @@ class _BdsInstancePatchActionState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _BdsInstancePatchActionState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bds_instance_id=bds_instance_id,
+            cluster_admin_password=cluster_admin_password,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bds_instance_id: Optional[pulumi.Input[str]] = None,
+             cluster_admin_password: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bds_instance_id is None and 'bdsInstanceId' in kwargs:
+            bds_instance_id = kwargs['bdsInstanceId']
+        if cluster_admin_password is None and 'clusterAdminPassword' in kwargs:
+            cluster_admin_password = kwargs['clusterAdminPassword']
+
         if bds_instance_id is not None:
-            pulumi.set(__self__, "bds_instance_id", bds_instance_id)
+            _setter("bds_instance_id", bds_instance_id)
         if cluster_admin_password is not None:
-            pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
+            _setter("cluster_admin_password", cluster_admin_password)
         if version is not None:
-            pulumi.set(__self__, "version", version)
+            _setter("version", version)
 
     @property
     @pulumi.getter(name="bdsInstanceId")
@@ -213,6 +257,10 @@ class BdsInstancePatchAction(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            BdsInstancePatchActionArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['TagDefaultArgs', 'TagDefault']
@@ -33,11 +33,40 @@ class TagDefaultArgs:
                
                Example: `false`
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "tag_definition_id", tag_definition_id)
-        pulumi.set(__self__, "value", value)
+        TagDefaultArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            tag_definition_id=tag_definition_id,
+            value=value,
+            is_required=is_required,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             tag_definition_id: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             is_required: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if tag_definition_id is None and 'tagDefinitionId' in kwargs:
+            tag_definition_id = kwargs['tagDefinitionId']
+        if tag_definition_id is None:
+            raise TypeError("Missing 'tag_definition_id' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+        if is_required is None and 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+
+        _setter("compartment_id", compartment_id)
+        _setter("tag_definition_id", tag_definition_id)
+        _setter("value", value)
         if is_required is not None:
-            pulumi.set(__self__, "is_required", is_required)
+            _setter("is_required", is_required)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -126,22 +155,59 @@ class _TagDefaultState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _TagDefaultState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            is_required=is_required,
+            state=state,
+            tag_definition_id=tag_definition_id,
+            tag_definition_name=tag_definition_name,
+            tag_namespace_id=tag_namespace_id,
+            time_created=time_created,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             is_required: Optional[pulumi.Input[bool]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             tag_definition_id: Optional[pulumi.Input[str]] = None,
+             tag_definition_name: Optional[pulumi.Input[str]] = None,
+             tag_namespace_id: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if is_required is None and 'isRequired' in kwargs:
+            is_required = kwargs['isRequired']
+        if tag_definition_id is None and 'tagDefinitionId' in kwargs:
+            tag_definition_id = kwargs['tagDefinitionId']
+        if tag_definition_name is None and 'tagDefinitionName' in kwargs:
+            tag_definition_name = kwargs['tagDefinitionName']
+        if tag_namespace_id is None and 'tagNamespaceId' in kwargs:
+            tag_namespace_id = kwargs['tagNamespaceId']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if is_required is not None:
-            pulumi.set(__self__, "is_required", is_required)
+            _setter("is_required", is_required)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if tag_definition_id is not None:
-            pulumi.set(__self__, "tag_definition_id", tag_definition_id)
+            _setter("tag_definition_id", tag_definition_id)
         if tag_definition_name is not None:
-            pulumi.set(__self__, "tag_definition_name", tag_definition_name)
+            _setter("tag_definition_name", tag_definition_name)
         if tag_namespace_id is not None:
-            pulumi.set(__self__, "tag_namespace_id", tag_namespace_id)
+            _setter("tag_namespace_id", tag_namespace_id)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -355,6 +421,10 @@ class TagDefault(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            TagDefaultArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

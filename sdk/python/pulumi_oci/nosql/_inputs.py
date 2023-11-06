@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -31,11 +31,34 @@ class IndexKeyArgs:
         :param pulumi.Input[str] json_field_type: If the specified column is of type JSON, jsonFieldType contains the type of the field indicated by jsonPath.
         :param pulumi.Input[str] json_path: If the specified column is of type JSON, jsonPath contains a dotted path indicating the field within the JSON object that will be the index key.
         """
-        pulumi.set(__self__, "column_name", column_name)
+        IndexKeyArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_name=column_name,
+            json_field_type=json_field_type,
+            json_path=json_path,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_name: Optional[pulumi.Input[str]] = None,
+             json_field_type: Optional[pulumi.Input[str]] = None,
+             json_path: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if column_name is None and 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if column_name is None:
+            raise TypeError("Missing 'column_name' argument")
+        if json_field_type is None and 'jsonFieldType' in kwargs:
+            json_field_type = kwargs['jsonFieldType']
+        if json_path is None and 'jsonPath' in kwargs:
+            json_path = kwargs['jsonPath']
+
+        _setter("column_name", column_name)
         if json_field_type is not None:
-            pulumi.set(__self__, "json_field_type", json_field_type)
+            _setter("json_field_type", json_field_type)
         if json_path is not None:
-            pulumi.set(__self__, "json_path", json_path)
+            _setter("json_path", json_path)
 
     @property
     @pulumi.getter(name="columnName")
@@ -95,18 +118,47 @@ class TableReplicaArgs:
         :param pulumi.Input[str] state: The state of a table.
         :param pulumi.Input[str] table_id: The OCID of the replica table
         """
+        TableReplicaArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            capacity_mode=capacity_mode,
+            lifecycle_details=lifecycle_details,
+            max_write_units=max_write_units,
+            region=region,
+            state=state,
+            table_id=table_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             capacity_mode: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             max_write_units: Optional[pulumi.Input[int]] = None,
+             region: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             table_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if capacity_mode is None and 'capacityMode' in kwargs:
+            capacity_mode = kwargs['capacityMode']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if max_write_units is None and 'maxWriteUnits' in kwargs:
+            max_write_units = kwargs['maxWriteUnits']
+        if table_id is None and 'tableId' in kwargs:
+            table_id = kwargs['tableId']
+
         if capacity_mode is not None:
-            pulumi.set(__self__, "capacity_mode", capacity_mode)
+            _setter("capacity_mode", capacity_mode)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if max_write_units is not None:
-            pulumi.set(__self__, "max_write_units", max_write_units)
+            _setter("max_write_units", max_write_units)
         if region is not None:
-            pulumi.set(__self__, "region", region)
+            _setter("region", region)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if table_id is not None:
-            pulumi.set(__self__, "table_id", table_id)
+            _setter("table_id", table_id)
 
     @property
     @pulumi.getter(name="capacityMode")
@@ -200,16 +252,39 @@ class TableSchemaArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] shard_keys: A list of column names that make up a key.
         :param pulumi.Input[int] ttl: The default Time-to-Live for the table, in days.
         """
+        TableSchemaArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            columns=columns,
+            identities=identities,
+            primary_keys=primary_keys,
+            shard_keys=shard_keys,
+            ttl=ttl,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             columns: Optional[pulumi.Input[Sequence[pulumi.Input['TableSchemaColumnArgs']]]] = None,
+             identities: Optional[pulumi.Input[Sequence[pulumi.Input['TableSchemaIdentityArgs']]]] = None,
+             primary_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             shard_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             ttl: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if primary_keys is None and 'primaryKeys' in kwargs:
+            primary_keys = kwargs['primaryKeys']
+        if shard_keys is None and 'shardKeys' in kwargs:
+            shard_keys = kwargs['shardKeys']
+
         if columns is not None:
-            pulumi.set(__self__, "columns", columns)
+            _setter("columns", columns)
         if identities is not None:
-            pulumi.set(__self__, "identities", identities)
+            _setter("identities", identities)
         if primary_keys is not None:
-            pulumi.set(__self__, "primary_keys", primary_keys)
+            _setter("primary_keys", primary_keys)
         if shard_keys is not None:
-            pulumi.set(__self__, "shard_keys", shard_keys)
+            _setter("shard_keys", shard_keys)
         if ttl is not None:
-            pulumi.set(__self__, "ttl", ttl)
+            _setter("ttl", ttl)
 
     @property
     @pulumi.getter
@@ -289,18 +364,47 @@ class TableSchemaColumnArgs:
         :param pulumi.Input[str] name: Table name.
         :param pulumi.Input[str] type: The column type.
         """
+        TableSchemaColumnArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_value=default_value,
+            is_as_uuid=is_as_uuid,
+            is_generated=is_generated,
+            is_nullable=is_nullable,
+            name=name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_value: Optional[pulumi.Input[str]] = None,
+             is_as_uuid: Optional[pulumi.Input[bool]] = None,
+             is_generated: Optional[pulumi.Input[bool]] = None,
+             is_nullable: Optional[pulumi.Input[bool]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if default_value is None and 'defaultValue' in kwargs:
+            default_value = kwargs['defaultValue']
+        if is_as_uuid is None and 'isAsUuid' in kwargs:
+            is_as_uuid = kwargs['isAsUuid']
+        if is_generated is None and 'isGenerated' in kwargs:
+            is_generated = kwargs['isGenerated']
+        if is_nullable is None and 'isNullable' in kwargs:
+            is_nullable = kwargs['isNullable']
+
         if default_value is not None:
-            pulumi.set(__self__, "default_value", default_value)
+            _setter("default_value", default_value)
         if is_as_uuid is not None:
-            pulumi.set(__self__, "is_as_uuid", is_as_uuid)
+            _setter("is_as_uuid", is_as_uuid)
         if is_generated is not None:
-            pulumi.set(__self__, "is_generated", is_generated)
+            _setter("is_generated", is_generated)
         if is_nullable is not None:
-            pulumi.set(__self__, "is_nullable", is_nullable)
+            _setter("is_nullable", is_nullable)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="defaultValue")
@@ -386,12 +490,33 @@ class TableSchemaIdentityArgs:
         :param pulumi.Input[bool] is_always: True if the identity value is GENERATED ALWAYS.
         :param pulumi.Input[bool] is_null: True if the identity value is GENERATED BY DEFAULT ON NULL.
         """
+        TableSchemaIdentityArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_name=column_name,
+            is_always=is_always,
+            is_null=is_null,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_name: Optional[pulumi.Input[str]] = None,
+             is_always: Optional[pulumi.Input[bool]] = None,
+             is_null: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if column_name is None and 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if is_always is None and 'isAlways' in kwargs:
+            is_always = kwargs['isAlways']
+        if is_null is None and 'isNull' in kwargs:
+            is_null = kwargs['isNull']
+
         if column_name is not None:
-            pulumi.set(__self__, "column_name", column_name)
+            _setter("column_name", column_name)
         if is_always is not None:
-            pulumi.set(__self__, "is_always", is_always)
+            _setter("is_always", is_always)
         if is_null is not None:
-            pulumi.set(__self__, "is_null", is_null)
+            _setter("is_null", is_null)
 
     @property
     @pulumi.getter(name="columnName")
@@ -447,11 +572,42 @@ class TableTableLimitsArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] capacity_mode: (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
         """
-        pulumi.set(__self__, "max_read_units", max_read_units)
-        pulumi.set(__self__, "max_storage_in_gbs", max_storage_in_gbs)
-        pulumi.set(__self__, "max_write_units", max_write_units)
+        TableTableLimitsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            max_read_units=max_read_units,
+            max_storage_in_gbs=max_storage_in_gbs,
+            max_write_units=max_write_units,
+            capacity_mode=capacity_mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             max_read_units: Optional[pulumi.Input[int]] = None,
+             max_storage_in_gbs: Optional[pulumi.Input[int]] = None,
+             max_write_units: Optional[pulumi.Input[int]] = None,
+             capacity_mode: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if max_read_units is None and 'maxReadUnits' in kwargs:
+            max_read_units = kwargs['maxReadUnits']
+        if max_read_units is None:
+            raise TypeError("Missing 'max_read_units' argument")
+        if max_storage_in_gbs is None and 'maxStorageInGbs' in kwargs:
+            max_storage_in_gbs = kwargs['maxStorageInGbs']
+        if max_storage_in_gbs is None:
+            raise TypeError("Missing 'max_storage_in_gbs' argument")
+        if max_write_units is None and 'maxWriteUnits' in kwargs:
+            max_write_units = kwargs['maxWriteUnits']
+        if max_write_units is None:
+            raise TypeError("Missing 'max_write_units' argument")
+        if capacity_mode is None and 'capacityMode' in kwargs:
+            capacity_mode = kwargs['capacityMode']
+
+        _setter("max_read_units", max_read_units)
+        _setter("max_storage_in_gbs", max_storage_in_gbs)
+        _setter("max_write_units", max_write_units)
         if capacity_mode is not None:
-            pulumi.set(__self__, "capacity_mode", capacity_mode)
+            _setter("capacity_mode", capacity_mode)
 
     @property
     @pulumi.getter(name="maxReadUnits")
@@ -515,10 +671,29 @@ class GetIndexesFilterArgs:
         """
         :param str name: A shell-globbing-style (*?[]) filter for names.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetIndexesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -560,10 +735,29 @@ class GetTablesFilterArgs:
         """
         :param str name: A shell-globbing-style (*?[]) filter for names.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetTablesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

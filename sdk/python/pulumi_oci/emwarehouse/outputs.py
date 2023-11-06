@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -26,7 +26,20 @@ __all__ = [
 class GetEmWarehousesEmWarehouseCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetEmWarehousesEmWarehouseCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetEmWarehousesEmWarehouseCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetEmWarehousesEmWarehouseCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -71,22 +84,123 @@ class GetEmWarehousesEmWarehouseCollectionItemResult(dict):
         :param str time_created: The time the the EmWarehouse was created. An RFC3339 formatted datetime string
         :param str time_updated: The time the EmWarehouse was updated. An RFC3339 formatted datetime string
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "em_bridge_id", em_bridge_id)
-        pulumi.set(__self__, "em_warehouse_type", em_warehouse_type)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "latest_etl_run_message", latest_etl_run_message)
-        pulumi.set(__self__, "latest_etl_run_status", latest_etl_run_status)
-        pulumi.set(__self__, "latest_etl_run_time", latest_etl_run_time)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "operations_insights_warehouse_id", operations_insights_warehouse_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetEmWarehousesEmWarehouseCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            em_bridge_id=em_bridge_id,
+            em_warehouse_type=em_warehouse_type,
+            freeform_tags=freeform_tags,
+            id=id,
+            latest_etl_run_message=latest_etl_run_message,
+            latest_etl_run_status=latest_etl_run_status,
+            latest_etl_run_time=latest_etl_run_time,
+            lifecycle_details=lifecycle_details,
+            operations_insights_warehouse_id=operations_insights_warehouse_id,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             em_bridge_id: Optional[str] = None,
+             em_warehouse_type: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             latest_etl_run_message: Optional[str] = None,
+             latest_etl_run_status: Optional[str] = None,
+             latest_etl_run_time: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             operations_insights_warehouse_id: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if em_bridge_id is None and 'emBridgeId' in kwargs:
+            em_bridge_id = kwargs['emBridgeId']
+        if em_bridge_id is None:
+            raise TypeError("Missing 'em_bridge_id' argument")
+        if em_warehouse_type is None and 'emWarehouseType' in kwargs:
+            em_warehouse_type = kwargs['emWarehouseType']
+        if em_warehouse_type is None:
+            raise TypeError("Missing 'em_warehouse_type' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if latest_etl_run_message is None and 'latestEtlRunMessage' in kwargs:
+            latest_etl_run_message = kwargs['latestEtlRunMessage']
+        if latest_etl_run_message is None:
+            raise TypeError("Missing 'latest_etl_run_message' argument")
+        if latest_etl_run_status is None and 'latestEtlRunStatus' in kwargs:
+            latest_etl_run_status = kwargs['latestEtlRunStatus']
+        if latest_etl_run_status is None:
+            raise TypeError("Missing 'latest_etl_run_status' argument")
+        if latest_etl_run_time is None and 'latestEtlRunTime' in kwargs:
+            latest_etl_run_time = kwargs['latestEtlRunTime']
+        if latest_etl_run_time is None:
+            raise TypeError("Missing 'latest_etl_run_time' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if operations_insights_warehouse_id is None and 'operationsInsightsWarehouseId' in kwargs:
+            operations_insights_warehouse_id = kwargs['operationsInsightsWarehouseId']
+        if operations_insights_warehouse_id is None:
+            raise TypeError("Missing 'operations_insights_warehouse_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("em_bridge_id", em_bridge_id)
+        _setter("em_warehouse_type", em_warehouse_type)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("latest_etl_run_message", latest_etl_run_message)
+        _setter("latest_etl_run_status", latest_etl_run_status)
+        _setter("latest_etl_run_time", latest_etl_run_time)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("operations_insights_warehouse_id", operations_insights_warehouse_id)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -223,10 +337,29 @@ class GetEmWarehousesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetEmWarehousesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -271,17 +404,90 @@ class GetEtlRunItemResult(dict):
         :param str time_created: Time when the dataflow run was created
         :param str time_updated: Time when the dataflow run was updated
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "data_read_in_bytes", data_read_in_bytes)
-        pulumi.set(__self__, "data_written", data_written)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "run_duration_in_milliseconds", run_duration_in_milliseconds)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetEtlRunItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            data_read_in_bytes=data_read_in_bytes,
+            data_written=data_written,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            run_duration_in_milliseconds=run_duration_in_milliseconds,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             data_read_in_bytes: Optional[str] = None,
+             data_written: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             lifecycle_details: Optional[str] = None,
+             run_duration_in_milliseconds: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if data_read_in_bytes is None and 'dataReadInBytes' in kwargs:
+            data_read_in_bytes = kwargs['dataReadInBytes']
+        if data_read_in_bytes is None:
+            raise TypeError("Missing 'data_read_in_bytes' argument")
+        if data_written is None and 'dataWritten' in kwargs:
+            data_written = kwargs['dataWritten']
+        if data_written is None:
+            raise TypeError("Missing 'data_written' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if run_duration_in_milliseconds is None and 'runDurationInMilliseconds' in kwargs:
+            run_duration_in_milliseconds = kwargs['runDurationInMilliseconds']
+        if run_duration_in_milliseconds is None:
+            raise TypeError("Missing 'run_duration_in_milliseconds' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("data_read_in_bytes", data_read_in_bytes)
+        _setter("data_written", data_written)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("run_duration_in_milliseconds", run_duration_in_milliseconds)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -379,7 +585,20 @@ class GetEtlRunsEtlRunCollectionResult(dict):
         """
         :param Sequence['GetEtlRunsEtlRunCollectionItemArgs'] items: List of runs
         """
-        pulumi.set(__self__, "items", items)
+        GetEtlRunsEtlRunCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetEtlRunsEtlRunCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -397,7 +616,20 @@ class GetEtlRunsEtlRunCollectionItemResult(dict):
         """
         :param Sequence['GetEtlRunsEtlRunCollectionItemItemArgs'] items: List of runs
         """
-        pulumi.set(__self__, "items", items)
+        GetEtlRunsEtlRunCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetEtlRunsEtlRunCollectionItemItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -435,17 +667,90 @@ class GetEtlRunsEtlRunCollectionItemItemResult(dict):
         :param str time_created: Time when the dataflow run was created
         :param str time_updated: Time when the dataflow run was updated
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "data_read_in_bytes", data_read_in_bytes)
-        pulumi.set(__self__, "data_written", data_written)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "run_duration_in_milliseconds", run_duration_in_milliseconds)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetEtlRunsEtlRunCollectionItemItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            data_read_in_bytes=data_read_in_bytes,
+            data_written=data_written,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            run_duration_in_milliseconds=run_duration_in_milliseconds,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             data_read_in_bytes: Optional[str] = None,
+             data_written: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             lifecycle_details: Optional[str] = None,
+             run_duration_in_milliseconds: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if data_read_in_bytes is None and 'dataReadInBytes' in kwargs:
+            data_read_in_bytes = kwargs['dataReadInBytes']
+        if data_read_in_bytes is None:
+            raise TypeError("Missing 'data_read_in_bytes' argument")
+        if data_written is None and 'dataWritten' in kwargs:
+            data_written = kwargs['dataWritten']
+        if data_written is None:
+            raise TypeError("Missing 'data_written' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if run_duration_in_milliseconds is None and 'runDurationInMilliseconds' in kwargs:
+            run_duration_in_milliseconds = kwargs['runDurationInMilliseconds']
+        if run_duration_in_milliseconds is None:
+            raise TypeError("Missing 'run_duration_in_milliseconds' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("data_read_in_bytes", data_read_in_bytes)
+        _setter("data_written", data_written)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("run_duration_in_milliseconds", run_duration_in_milliseconds)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -542,10 +847,29 @@ class GetEtlRunsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetEtlRunsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -576,10 +900,43 @@ class GetResourceUsageEmInstanceResult(dict):
         :param str em_id: operations Insights Warehouse Identifier
         :param int targets_count: EmInstance Target count
         """
-        pulumi.set(__self__, "em_discoverer_url", em_discoverer_url)
-        pulumi.set(__self__, "em_host", em_host)
-        pulumi.set(__self__, "em_id", em_id)
-        pulumi.set(__self__, "targets_count", targets_count)
+        GetResourceUsageEmInstanceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            em_discoverer_url=em_discoverer_url,
+            em_host=em_host,
+            em_id=em_id,
+            targets_count=targets_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             em_discoverer_url: Optional[str] = None,
+             em_host: Optional[str] = None,
+             em_id: Optional[str] = None,
+             targets_count: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if em_discoverer_url is None and 'emDiscovererUrl' in kwargs:
+            em_discoverer_url = kwargs['emDiscovererUrl']
+        if em_discoverer_url is None:
+            raise TypeError("Missing 'em_discoverer_url' argument")
+        if em_host is None and 'emHost' in kwargs:
+            em_host = kwargs['emHost']
+        if em_host is None:
+            raise TypeError("Missing 'em_host' argument")
+        if em_id is None and 'emId' in kwargs:
+            em_id = kwargs['emId']
+        if em_id is None:
+            raise TypeError("Missing 'em_id' argument")
+        if targets_count is None and 'targetsCount' in kwargs:
+            targets_count = kwargs['targetsCount']
+        if targets_count is None:
+            raise TypeError("Missing 'targets_count' argument")
+
+        _setter("em_discoverer_url", em_discoverer_url)
+        _setter("em_host", em_host)
+        _setter("em_id", em_id)
+        _setter("targets_count", targets_count)
 
     @property
     @pulumi.getter(name="emDiscovererUrl")

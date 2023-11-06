@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['ApplicationVipArgs', 'ApplicationVip']
@@ -31,13 +31,48 @@ class ApplicationVipArgs:
         :param pulumi.Input[str] db_node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB node associated with the application virtual IP (VIP) address.
         :param pulumi.Input[str] ip_address: The application virtual IP (VIP) address.
         """
-        pulumi.set(__self__, "cloud_vm_cluster_id", cloud_vm_cluster_id)
-        pulumi.set(__self__, "hostname_label", hostname_label)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        ApplicationVipArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cloud_vm_cluster_id=cloud_vm_cluster_id,
+            hostname_label=hostname_label,
+            subnet_id=subnet_id,
+            db_node_id=db_node_id,
+            ip_address=ip_address,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cloud_vm_cluster_id: Optional[pulumi.Input[str]] = None,
+             hostname_label: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             db_node_id: Optional[pulumi.Input[str]] = None,
+             ip_address: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if cloud_vm_cluster_id is None and 'cloudVmClusterId' in kwargs:
+            cloud_vm_cluster_id = kwargs['cloudVmClusterId']
+        if cloud_vm_cluster_id is None:
+            raise TypeError("Missing 'cloud_vm_cluster_id' argument")
+        if hostname_label is None and 'hostnameLabel' in kwargs:
+            hostname_label = kwargs['hostnameLabel']
+        if hostname_label is None:
+            raise TypeError("Missing 'hostname_label' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if db_node_id is None and 'dbNodeId' in kwargs:
+            db_node_id = kwargs['dbNodeId']
+        if ip_address is None and 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+
+        _setter("cloud_vm_cluster_id", cloud_vm_cluster_id)
+        _setter("hostname_label", hostname_label)
+        _setter("subnet_id", subnet_id)
         if db_node_id is not None:
-            pulumi.set(__self__, "db_node_id", db_node_id)
+            _setter("db_node_id", db_node_id)
         if ip_address is not None:
-            pulumi.set(__self__, "ip_address", ip_address)
+            _setter("ip_address", ip_address)
 
     @property
     @pulumi.getter(name="cloudVmClusterId")
@@ -136,28 +171,79 @@ class _ApplicationVipState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_assigned: The date and time when the create operation for the application virtual IP (VIP) address completed.
         """
+        _ApplicationVipState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cloud_vm_cluster_id=cloud_vm_cluster_id,
+            compartment_id=compartment_id,
+            db_node_id=db_node_id,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            hostname_label=hostname_label,
+            ip_address=ip_address,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            subnet_id=subnet_id,
+            time_assigned=time_assigned,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cloud_vm_cluster_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             db_node_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             hostname_label: Optional[pulumi.Input[str]] = None,
+             ip_address: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             time_assigned: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if cloud_vm_cluster_id is None and 'cloudVmClusterId' in kwargs:
+            cloud_vm_cluster_id = kwargs['cloudVmClusterId']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if db_node_id is None and 'dbNodeId' in kwargs:
+            db_node_id = kwargs['dbNodeId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if hostname_label is None and 'hostnameLabel' in kwargs:
+            hostname_label = kwargs['hostnameLabel']
+        if ip_address is None and 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if time_assigned is None and 'timeAssigned' in kwargs:
+            time_assigned = kwargs['timeAssigned']
+
         if cloud_vm_cluster_id is not None:
-            pulumi.set(__self__, "cloud_vm_cluster_id", cloud_vm_cluster_id)
+            _setter("cloud_vm_cluster_id", cloud_vm_cluster_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if db_node_id is not None:
-            pulumi.set(__self__, "db_node_id", db_node_id)
+            _setter("db_node_id", db_node_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if hostname_label is not None:
-            pulumi.set(__self__, "hostname_label", hostname_label)
+            _setter("hostname_label", hostname_label)
         if ip_address is not None:
-            pulumi.set(__self__, "ip_address", ip_address)
+            _setter("ip_address", ip_address)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
         if time_assigned is not None:
-            pulumi.set(__self__, "time_assigned", time_assigned)
+            _setter("time_assigned", time_assigned)
 
     @property
     @pulumi.getter(name="cloudVmClusterId")
@@ -389,6 +475,10 @@ class ApplicationVip(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ApplicationVipArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

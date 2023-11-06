@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -38,9 +38,26 @@ class LogConfigurationArgs:
         :param pulumi.Input['LogConfigurationSourceArgs'] source: The source the log object comes from.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment that the resource belongs to.
         """
-        pulumi.set(__self__, "source", source)
+        LogConfigurationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            source=source,
+            compartment_id=compartment_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             source: Optional[pulumi.Input['LogConfigurationSourceArgs']] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if source is None:
+            raise TypeError("Missing 'source' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+
+        _setter("source", source)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
 
     @property
     @pulumi.getter
@@ -81,10 +98,37 @@ class LogConfigurationSourceArgs:
         :param pulumi.Input[str] source_type: The log source.
                * **OCISERVICE:** Oracle Service.
         """
-        pulumi.set(__self__, "category", category)
-        pulumi.set(__self__, "resource", resource)
-        pulumi.set(__self__, "service", service)
-        pulumi.set(__self__, "source_type", source_type)
+        LogConfigurationSourceArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            category=category,
+            resource=resource,
+            service=service,
+            source_type=source_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             category: Optional[pulumi.Input[str]] = None,
+             resource: Optional[pulumi.Input[str]] = None,
+             service: Optional[pulumi.Input[str]] = None,
+             source_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if category is None:
+            raise TypeError("Missing 'category' argument")
+        if resource is None:
+            raise TypeError("Missing 'resource' argument")
+        if service is None:
+            raise TypeError("Missing 'service' argument")
+        if source_type is None and 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
+
+        _setter("category", category)
+        _setter("resource", resource)
+        _setter("service", service)
+        _setter("source_type", source_type)
 
     @property
     @pulumi.getter
@@ -143,8 +187,21 @@ class UnifiedAgentConfigurationGroupAssociationArgs:
         """
         :param pulumi.Input[Sequence[pulumi.Input[str]]] group_lists: (Updatable) list of group/dynamic group ids associated with this configuration.
         """
+        UnifiedAgentConfigurationGroupAssociationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            group_lists=group_lists,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             group_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if group_lists is None and 'groupLists' in kwargs:
+            group_lists = kwargs['groupLists']
+
         if group_lists is not None:
-            pulumi.set(__self__, "group_lists", group_lists)
+            _setter("group_lists", group_lists)
 
     @property
     @pulumi.getter(name="groupLists")
@@ -170,9 +227,32 @@ class UnifiedAgentConfigurationServiceConfigurationArgs:
         :param pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationArgs'] destination: (Updatable) Unified monitoring agent operational metrics destination object.
         :param pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceArgs']]] sources: (Updatable) Logging source object.
         """
-        pulumi.set(__self__, "configuration_type", configuration_type)
-        pulumi.set(__self__, "destination", destination)
-        pulumi.set(__self__, "sources", sources)
+        UnifiedAgentConfigurationServiceConfigurationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            configuration_type=configuration_type,
+            destination=destination,
+            sources=sources,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             configuration_type: Optional[pulumi.Input[str]] = None,
+             destination: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationArgs']] = None,
+             sources: Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if configuration_type is None and 'configurationType' in kwargs:
+            configuration_type = kwargs['configurationType']
+        if configuration_type is None:
+            raise TypeError("Missing 'configuration_type' argument")
+        if destination is None:
+            raise TypeError("Missing 'destination' argument")
+        if sources is None:
+            raise TypeError("Missing 'sources' argument")
+
+        _setter("configuration_type", configuration_type)
+        _setter("destination", destination)
+        _setter("sources", sources)
 
     @property
     @pulumi.getter(name="configurationType")
@@ -220,9 +300,28 @@ class UnifiedAgentConfigurationServiceConfigurationDestinationArgs:
         :param pulumi.Input[str] log_object_id: (Updatable) The OCID of the resource.
         :param pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgs'] operational_metrics_configuration: (Updatable) Unified monitoring agent operational metrics configuration object.
         """
-        pulumi.set(__self__, "log_object_id", log_object_id)
+        UnifiedAgentConfigurationServiceConfigurationDestinationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_object_id=log_object_id,
+            operational_metrics_configuration=operational_metrics_configuration,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_object_id: Optional[pulumi.Input[str]] = None,
+             operational_metrics_configuration: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if log_object_id is None and 'logObjectId' in kwargs:
+            log_object_id = kwargs['logObjectId']
+        if log_object_id is None:
+            raise TypeError("Missing 'log_object_id' argument")
+        if operational_metrics_configuration is None and 'operationalMetricsConfiguration' in kwargs:
+            operational_metrics_configuration = kwargs['operationalMetricsConfiguration']
+
+        _setter("log_object_id", log_object_id)
         if operational_metrics_configuration is not None:
-            pulumi.set(__self__, "operational_metrics_configuration", operational_metrics_configuration)
+            _setter("operational_metrics_configuration", operational_metrics_configuration)
 
     @property
     @pulumi.getter(name="logObjectId")
@@ -258,8 +357,25 @@ class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetrics
         :param pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestinationArgs'] destination: (Updatable) Unified monitoring agent operational metrics destination object.
         :param pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceArgs'] source: (Updatable) Unified monitoring agent operational metrics source object.
         """
-        pulumi.set(__self__, "destination", destination)
-        pulumi.set(__self__, "source", source)
+        UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            destination=destination,
+            source=source,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             destination: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestinationArgs']] = None,
+             source: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if destination is None:
+            raise TypeError("Missing 'destination' argument")
+        if source is None:
+            raise TypeError("Missing 'source' argument")
+
+        _setter("destination", destination)
+        _setter("source", source)
 
     @property
     @pulumi.getter
@@ -293,7 +409,22 @@ class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetrics
         """
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that the resource belongs to.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
+        UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestinationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+
+        _setter("compartment_id", compartment_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -319,10 +450,31 @@ class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetrics
         :param pulumi.Input[str] type: (Updatable) Type of the unified monitoring agent operational metrics source object.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] metrics: (Updatable) List of unified monitoring agent operational metrics.
         """
-        pulumi.set(__self__, "record_input", record_input)
-        pulumi.set(__self__, "type", type)
+        UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            record_input=record_input,
+            type=type,
+            metrics=metrics,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             record_input: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgs']] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             metrics: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if record_input is None and 'recordInput' in kwargs:
+            record_input = kwargs['recordInput']
+        if record_input is None:
+            raise TypeError("Missing 'record_input' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("record_input", record_input)
+        _setter("type", type)
         if metrics is not None:
-            pulumi.set(__self__, "metrics", metrics)
+            _setter("metrics", metrics)
 
     @property
     @pulumi.getter(name="recordInput")
@@ -370,9 +522,26 @@ class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetrics
         :param pulumi.Input[str] namespace: (Updatable) Namespace to emit the operational metrics.
         :param pulumi.Input[str] resource_group: (Updatable) Resource group to emit the operational metrics.
         """
-        pulumi.set(__self__, "namespace", namespace)
+        UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            namespace=namespace,
+            resource_group=resource_group,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             namespace: Optional[pulumi.Input[str]] = None,
+             resource_group: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if resource_group is None and 'resourceGroup' in kwargs:
+            resource_group = kwargs['resourceGroup']
+
+        _setter("namespace", namespace)
         if resource_group is not None:
-            pulumi.set(__self__, "resource_group", resource_group)
+            _setter("resource_group", resource_group)
 
     @property
     @pulumi.getter
@@ -418,15 +587,38 @@ class UnifiedAgentConfigurationServiceConfigurationSourceArgs:
         :param pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserArgs'] parser: (Updatable) Source parser object.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] paths: (Updatable) Absolute paths for log source files. Wildcards can be used.
         """
-        pulumi.set(__self__, "source_type", source_type)
+        UnifiedAgentConfigurationServiceConfigurationSourceArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            source_type=source_type,
+            channels=channels,
+            name=name,
+            parser=parser,
+            paths=paths,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             source_type: Optional[pulumi.Input[str]] = None,
+             channels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             parser: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserArgs']] = None,
+             paths: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if source_type is None and 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
+
+        _setter("source_type", source_type)
         if channels is not None:
-            pulumi.set(__self__, "channels", channels)
+            _setter("channels", channels)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if parser is not None:
-            pulumi.set(__self__, "parser", parser)
+            _setter("parser", parser)
         if paths is not None:
-            pulumi.set(__self__, "paths", paths)
+            _setter("paths", paths)
 
     @property
     @pulumi.getter(name="sourceType")
@@ -558,59 +750,166 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs:
                
                record: { "host"   : "192.168.0.1", "req_id" : "111", "user"   : "-" }
         """
-        pulumi.set(__self__, "parser_type", parser_type)
+        UnifiedAgentConfigurationServiceConfigurationSourceParserArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            parser_type=parser_type,
+            delimiter=delimiter,
+            expression=expression,
+            field_time_key=field_time_key,
+            format_firstline=format_firstline,
+            formats=formats,
+            grok_failure_key=grok_failure_key,
+            grok_name_key=grok_name_key,
+            is_estimate_current_event=is_estimate_current_event,
+            is_keep_time_key=is_keep_time_key,
+            is_merge_cri_fields=is_merge_cri_fields,
+            is_null_empty_string=is_null_empty_string,
+            is_support_colonless_ident=is_support_colonless_ident,
+            is_with_priority=is_with_priority,
+            keys=keys,
+            message_format=message_format,
+            message_key=message_key,
+            multi_line_start_regexp=multi_line_start_regexp,
+            nested_parser=nested_parser,
+            null_value_pattern=null_value_pattern,
+            patterns=patterns,
+            rfc5424time_format=rfc5424time_format,
+            syslog_parser_type=syslog_parser_type,
+            time_format=time_format,
+            time_type=time_type,
+            timeout_in_milliseconds=timeout_in_milliseconds,
+            types=types,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             parser_type: Optional[pulumi.Input[str]] = None,
+             delimiter: Optional[pulumi.Input[str]] = None,
+             expression: Optional[pulumi.Input[str]] = None,
+             field_time_key: Optional[pulumi.Input[str]] = None,
+             format_firstline: Optional[pulumi.Input[str]] = None,
+             formats: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             grok_failure_key: Optional[pulumi.Input[str]] = None,
+             grok_name_key: Optional[pulumi.Input[str]] = None,
+             is_estimate_current_event: Optional[pulumi.Input[bool]] = None,
+             is_keep_time_key: Optional[pulumi.Input[bool]] = None,
+             is_merge_cri_fields: Optional[pulumi.Input[bool]] = None,
+             is_null_empty_string: Optional[pulumi.Input[bool]] = None,
+             is_support_colonless_ident: Optional[pulumi.Input[bool]] = None,
+             is_with_priority: Optional[pulumi.Input[bool]] = None,
+             keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             message_format: Optional[pulumi.Input[str]] = None,
+             message_key: Optional[pulumi.Input[str]] = None,
+             multi_line_start_regexp: Optional[pulumi.Input[str]] = None,
+             nested_parser: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs']] = None,
+             null_value_pattern: Optional[pulumi.Input[str]] = None,
+             patterns: Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs']]]] = None,
+             rfc5424time_format: Optional[pulumi.Input[str]] = None,
+             syslog_parser_type: Optional[pulumi.Input[str]] = None,
+             time_format: Optional[pulumi.Input[str]] = None,
+             time_type: Optional[pulumi.Input[str]] = None,
+             timeout_in_milliseconds: Optional[pulumi.Input[int]] = None,
+             types: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if parser_type is None and 'parserType' in kwargs:
+            parser_type = kwargs['parserType']
+        if parser_type is None:
+            raise TypeError("Missing 'parser_type' argument")
+        if field_time_key is None and 'fieldTimeKey' in kwargs:
+            field_time_key = kwargs['fieldTimeKey']
+        if format_firstline is None and 'formatFirstline' in kwargs:
+            format_firstline = kwargs['formatFirstline']
+        if grok_failure_key is None and 'grokFailureKey' in kwargs:
+            grok_failure_key = kwargs['grokFailureKey']
+        if grok_name_key is None and 'grokNameKey' in kwargs:
+            grok_name_key = kwargs['grokNameKey']
+        if is_estimate_current_event is None and 'isEstimateCurrentEvent' in kwargs:
+            is_estimate_current_event = kwargs['isEstimateCurrentEvent']
+        if is_keep_time_key is None and 'isKeepTimeKey' in kwargs:
+            is_keep_time_key = kwargs['isKeepTimeKey']
+        if is_merge_cri_fields is None and 'isMergeCriFields' in kwargs:
+            is_merge_cri_fields = kwargs['isMergeCriFields']
+        if is_null_empty_string is None and 'isNullEmptyString' in kwargs:
+            is_null_empty_string = kwargs['isNullEmptyString']
+        if is_support_colonless_ident is None and 'isSupportColonlessIdent' in kwargs:
+            is_support_colonless_ident = kwargs['isSupportColonlessIdent']
+        if is_with_priority is None and 'isWithPriority' in kwargs:
+            is_with_priority = kwargs['isWithPriority']
+        if message_format is None and 'messageFormat' in kwargs:
+            message_format = kwargs['messageFormat']
+        if message_key is None and 'messageKey' in kwargs:
+            message_key = kwargs['messageKey']
+        if multi_line_start_regexp is None and 'multiLineStartRegexp' in kwargs:
+            multi_line_start_regexp = kwargs['multiLineStartRegexp']
+        if nested_parser is None and 'nestedParser' in kwargs:
+            nested_parser = kwargs['nestedParser']
+        if null_value_pattern is None and 'nullValuePattern' in kwargs:
+            null_value_pattern = kwargs['nullValuePattern']
+        if rfc5424time_format is None and 'rfc5424timeFormat' in kwargs:
+            rfc5424time_format = kwargs['rfc5424timeFormat']
+        if syslog_parser_type is None and 'syslogParserType' in kwargs:
+            syslog_parser_type = kwargs['syslogParserType']
+        if time_format is None and 'timeFormat' in kwargs:
+            time_format = kwargs['timeFormat']
+        if time_type is None and 'timeType' in kwargs:
+            time_type = kwargs['timeType']
+        if timeout_in_milliseconds is None and 'timeoutInMilliseconds' in kwargs:
+            timeout_in_milliseconds = kwargs['timeoutInMilliseconds']
+
+        _setter("parser_type", parser_type)
         if delimiter is not None:
-            pulumi.set(__self__, "delimiter", delimiter)
+            _setter("delimiter", delimiter)
         if expression is not None:
-            pulumi.set(__self__, "expression", expression)
+            _setter("expression", expression)
         if field_time_key is not None:
-            pulumi.set(__self__, "field_time_key", field_time_key)
+            _setter("field_time_key", field_time_key)
         if format_firstline is not None:
-            pulumi.set(__self__, "format_firstline", format_firstline)
+            _setter("format_firstline", format_firstline)
         if formats is not None:
-            pulumi.set(__self__, "formats", formats)
+            _setter("formats", formats)
         if grok_failure_key is not None:
-            pulumi.set(__self__, "grok_failure_key", grok_failure_key)
+            _setter("grok_failure_key", grok_failure_key)
         if grok_name_key is not None:
-            pulumi.set(__self__, "grok_name_key", grok_name_key)
+            _setter("grok_name_key", grok_name_key)
         if is_estimate_current_event is not None:
-            pulumi.set(__self__, "is_estimate_current_event", is_estimate_current_event)
+            _setter("is_estimate_current_event", is_estimate_current_event)
         if is_keep_time_key is not None:
-            pulumi.set(__self__, "is_keep_time_key", is_keep_time_key)
+            _setter("is_keep_time_key", is_keep_time_key)
         if is_merge_cri_fields is not None:
-            pulumi.set(__self__, "is_merge_cri_fields", is_merge_cri_fields)
+            _setter("is_merge_cri_fields", is_merge_cri_fields)
         if is_null_empty_string is not None:
-            pulumi.set(__self__, "is_null_empty_string", is_null_empty_string)
+            _setter("is_null_empty_string", is_null_empty_string)
         if is_support_colonless_ident is not None:
-            pulumi.set(__self__, "is_support_colonless_ident", is_support_colonless_ident)
+            _setter("is_support_colonless_ident", is_support_colonless_ident)
         if is_with_priority is not None:
-            pulumi.set(__self__, "is_with_priority", is_with_priority)
+            _setter("is_with_priority", is_with_priority)
         if keys is not None:
-            pulumi.set(__self__, "keys", keys)
+            _setter("keys", keys)
         if message_format is not None:
-            pulumi.set(__self__, "message_format", message_format)
+            _setter("message_format", message_format)
         if message_key is not None:
-            pulumi.set(__self__, "message_key", message_key)
+            _setter("message_key", message_key)
         if multi_line_start_regexp is not None:
-            pulumi.set(__self__, "multi_line_start_regexp", multi_line_start_regexp)
+            _setter("multi_line_start_regexp", multi_line_start_regexp)
         if nested_parser is not None:
-            pulumi.set(__self__, "nested_parser", nested_parser)
+            _setter("nested_parser", nested_parser)
         if null_value_pattern is not None:
-            pulumi.set(__self__, "null_value_pattern", null_value_pattern)
+            _setter("null_value_pattern", null_value_pattern)
         if patterns is not None:
-            pulumi.set(__self__, "patterns", patterns)
+            _setter("patterns", patterns)
         if rfc5424time_format is not None:
-            pulumi.set(__self__, "rfc5424time_format", rfc5424time_format)
+            _setter("rfc5424time_format", rfc5424time_format)
         if syslog_parser_type is not None:
-            pulumi.set(__self__, "syslog_parser_type", syslog_parser_type)
+            _setter("syslog_parser_type", syslog_parser_type)
         if time_format is not None:
-            pulumi.set(__self__, "time_format", time_format)
+            _setter("time_format", time_format)
         if time_type is not None:
-            pulumi.set(__self__, "time_type", time_type)
+            _setter("time_type", time_type)
         if timeout_in_milliseconds is not None:
-            pulumi.set(__self__, "timeout_in_milliseconds", timeout_in_milliseconds)
+            _setter("timeout_in_milliseconds", timeout_in_milliseconds)
         if types is not None:
-            pulumi.set(__self__, "types", types)
+            _setter("types", types)
 
     @property
     @pulumi.getter(name="parserType")
@@ -956,14 +1255,39 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs:
         :param pulumi.Input[str] time_format: (Updatable) Process time value using the specified format.
         :param pulumi.Input[str] time_type: (Updatable) JSON parser time type.
         """
+        UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            field_time_key=field_time_key,
+            is_keep_time_key=is_keep_time_key,
+            time_format=time_format,
+            time_type=time_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             field_time_key: Optional[pulumi.Input[str]] = None,
+             is_keep_time_key: Optional[pulumi.Input[bool]] = None,
+             time_format: Optional[pulumi.Input[str]] = None,
+             time_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if field_time_key is None and 'fieldTimeKey' in kwargs:
+            field_time_key = kwargs['fieldTimeKey']
+        if is_keep_time_key is None and 'isKeepTimeKey' in kwargs:
+            is_keep_time_key = kwargs['isKeepTimeKey']
+        if time_format is None and 'timeFormat' in kwargs:
+            time_format = kwargs['timeFormat']
+        if time_type is None and 'timeType' in kwargs:
+            time_type = kwargs['timeType']
+
         if field_time_key is not None:
-            pulumi.set(__self__, "field_time_key", field_time_key)
+            _setter("field_time_key", field_time_key)
         if is_keep_time_key is not None:
-            pulumi.set(__self__, "is_keep_time_key", is_keep_time_key)
+            _setter("is_keep_time_key", is_keep_time_key)
         if time_format is not None:
-            pulumi.set(__self__, "time_format", time_format)
+            _setter("time_format", time_format)
         if time_type is not None:
-            pulumi.set(__self__, "time_type", time_type)
+            _setter("time_type", time_type)
 
     @property
     @pulumi.getter(name="fieldTimeKey")
@@ -1029,16 +1353,41 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs:
         :param pulumi.Input[str] name: (Updatable) The name key to tag this Grok pattern.
         :param pulumi.Input[str] pattern: (Updatable) The Grok pattern.
         """
+        UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            field_time_format=field_time_format,
+            field_time_key=field_time_key,
+            field_time_zone=field_time_zone,
+            name=name,
+            pattern=pattern,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             field_time_format: Optional[pulumi.Input[str]] = None,
+             field_time_key: Optional[pulumi.Input[str]] = None,
+             field_time_zone: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             pattern: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if field_time_format is None and 'fieldTimeFormat' in kwargs:
+            field_time_format = kwargs['fieldTimeFormat']
+        if field_time_key is None and 'fieldTimeKey' in kwargs:
+            field_time_key = kwargs['fieldTimeKey']
+        if field_time_zone is None and 'fieldTimeZone' in kwargs:
+            field_time_zone = kwargs['fieldTimeZone']
+
         if field_time_format is not None:
-            pulumi.set(__self__, "field_time_format", field_time_format)
+            _setter("field_time_format", field_time_format)
         if field_time_key is not None:
-            pulumi.set(__self__, "field_time_key", field_time_key)
+            _setter("field_time_key", field_time_key)
         if field_time_zone is not None:
-            pulumi.set(__self__, "field_time_zone", field_time_zone)
+            _setter("field_time_zone", field_time_zone)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if pattern is not None:
-            pulumi.set(__self__, "pattern", pattern)
+            _setter("pattern", pattern)
 
     @property
     @pulumi.getter(name="fieldTimeFormat")
@@ -1107,10 +1456,29 @@ class GetLogGroupsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetLogGroupsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1149,10 +1517,29 @@ class GetLogSavedSearchesFilterArgs:
         """
         :param str name: Resource name.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetLogSavedSearchesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1191,10 +1578,29 @@ class GetLogsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetLogsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1233,10 +1639,29 @@ class GetUnifiedAgentConfigurationsFilterArgs:
         """
         :param str name: The name key to tag this Grok pattern.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetUnifiedAgentConfigurationsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

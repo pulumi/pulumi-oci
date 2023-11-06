@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -33,11 +33,50 @@ class ExternalExadataStorageConnectorArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "agent_id", agent_id)
-        pulumi.set(__self__, "connection_uri", connection_uri)
-        pulumi.set(__self__, "connector_name", connector_name)
-        pulumi.set(__self__, "credential_info", credential_info)
-        pulumi.set(__self__, "storage_server_id", storage_server_id)
+        ExternalExadataStorageConnectorArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            agent_id=agent_id,
+            connection_uri=connection_uri,
+            connector_name=connector_name,
+            credential_info=credential_info,
+            storage_server_id=storage_server_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             agent_id: Optional[pulumi.Input[str]] = None,
+             connection_uri: Optional[pulumi.Input[str]] = None,
+             connector_name: Optional[pulumi.Input[str]] = None,
+             credential_info: Optional[pulumi.Input['ExternalExadataStorageConnectorCredentialInfoArgs']] = None,
+             storage_server_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if agent_id is None and 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if agent_id is None:
+            raise TypeError("Missing 'agent_id' argument")
+        if connection_uri is None and 'connectionUri' in kwargs:
+            connection_uri = kwargs['connectionUri']
+        if connection_uri is None:
+            raise TypeError("Missing 'connection_uri' argument")
+        if connector_name is None and 'connectorName' in kwargs:
+            connector_name = kwargs['connectorName']
+        if connector_name is None:
+            raise TypeError("Missing 'connector_name' argument")
+        if credential_info is None and 'credentialInfo' in kwargs:
+            credential_info = kwargs['credentialInfo']
+        if credential_info is None:
+            raise TypeError("Missing 'credential_info' argument")
+        if storage_server_id is None and 'storageServerId' in kwargs:
+            storage_server_id = kwargs['storageServerId']
+        if storage_server_id is None:
+            raise TypeError("Missing 'storage_server_id' argument")
+
+        _setter("agent_id", agent_id)
+        _setter("connection_uri", connection_uri)
+        _setter("connector_name", connector_name)
+        _setter("credential_info", credential_info)
+        _setter("storage_server_id", storage_server_id)
 
     @property
     @pulumi.getter(name="agentId")
@@ -144,36 +183,99 @@ class _ExternalExadataStorageConnectorState:
         :param pulumi.Input[str] time_updated: The timestamp of the last update of the Exadata resource.
         :param pulumi.Input[str] version: The version of the Exadata resource.
         """
+        _ExternalExadataStorageConnectorState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            additional_details=additional_details,
+            agent_id=agent_id,
+            connection_uri=connection_uri,
+            connector_name=connector_name,
+            credential_info=credential_info,
+            display_name=display_name,
+            exadata_infrastructure_id=exadata_infrastructure_id,
+            internal_id=internal_id,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            status=status,
+            storage_server_id=storage_server_id,
+            time_created=time_created,
+            time_updated=time_updated,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             additional_details: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             agent_id: Optional[pulumi.Input[str]] = None,
+             connection_uri: Optional[pulumi.Input[str]] = None,
+             connector_name: Optional[pulumi.Input[str]] = None,
+             credential_info: Optional[pulumi.Input['ExternalExadataStorageConnectorCredentialInfoArgs']] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
+             internal_id: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             storage_server_id: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if additional_details is None and 'additionalDetails' in kwargs:
+            additional_details = kwargs['additionalDetails']
+        if agent_id is None and 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if connection_uri is None and 'connectionUri' in kwargs:
+            connection_uri = kwargs['connectionUri']
+        if connector_name is None and 'connectorName' in kwargs:
+            connector_name = kwargs['connectorName']
+        if credential_info is None and 'credentialInfo' in kwargs:
+            credential_info = kwargs['credentialInfo']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if exadata_infrastructure_id is None and 'exadataInfrastructureId' in kwargs:
+            exadata_infrastructure_id = kwargs['exadataInfrastructureId']
+        if internal_id is None and 'internalId' in kwargs:
+            internal_id = kwargs['internalId']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if storage_server_id is None and 'storageServerId' in kwargs:
+            storage_server_id = kwargs['storageServerId']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if additional_details is not None:
-            pulumi.set(__self__, "additional_details", additional_details)
+            _setter("additional_details", additional_details)
         if agent_id is not None:
-            pulumi.set(__self__, "agent_id", agent_id)
+            _setter("agent_id", agent_id)
         if connection_uri is not None:
-            pulumi.set(__self__, "connection_uri", connection_uri)
+            _setter("connection_uri", connection_uri)
         if connector_name is not None:
-            pulumi.set(__self__, "connector_name", connector_name)
+            _setter("connector_name", connector_name)
         if credential_info is not None:
-            pulumi.set(__self__, "credential_info", credential_info)
+            _setter("credential_info", credential_info)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if exadata_infrastructure_id is not None:
-            pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
+            _setter("exadata_infrastructure_id", exadata_infrastructure_id)
         if internal_id is not None:
-            pulumi.set(__self__, "internal_id", internal_id)
+            _setter("internal_id", internal_id)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if storage_server_id is not None:
-            pulumi.set(__self__, "storage_server_id", storage_server_id)
+            _setter("storage_server_id", storage_server_id)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if version is not None:
-            pulumi.set(__self__, "version", version)
+            _setter("version", version)
 
     @property
     @pulumi.getter(name="additionalDetails")
@@ -465,6 +567,10 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ExternalExadataStorageConnectorArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -493,6 +599,11 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
             if connector_name is None and not opts.urn:
                 raise TypeError("Missing required property 'connector_name'")
             __props__.__dict__["connector_name"] = connector_name
+            if credential_info is not None and not isinstance(credential_info, ExternalExadataStorageConnectorCredentialInfoArgs):
+                credential_info = credential_info or {}
+                def _setter(key, value):
+                    credential_info[key] = value
+                ExternalExadataStorageConnectorCredentialInfoArgs._configure(_setter, **credential_info)
             if credential_info is None and not opts.urn:
                 raise TypeError("Missing required property 'credential_info'")
             __props__.__dict__["credential_info"] = credential_info

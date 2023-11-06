@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -91,56 +91,171 @@ class MysqlDbSystemArgs:
         :param pulumi.Input['MysqlDbSystemSourceArgs'] source: Parameters detailing how to provision the initial data of the system.
         :param pulumi.Input[str] state: (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        MysqlDbSystemArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            compartment_id=compartment_id,
+            shape_name=shape_name,
+            subnet_id=subnet_id,
+            admin_password=admin_password,
+            admin_username=admin_username,
+            backup_policy=backup_policy,
+            configuration_id=configuration_id,
+            crash_recovery=crash_recovery,
+            data_storage_size_in_gb=data_storage_size_in_gb,
+            database_management=database_management,
+            defined_tags=defined_tags,
+            deletion_policies=deletion_policies,
+            description=description,
+            display_name=display_name,
+            fault_domain=fault_domain,
+            freeform_tags=freeform_tags,
+            hostname_label=hostname_label,
+            ip_address=ip_address,
+            is_highly_available=is_highly_available,
+            maintenance=maintenance,
+            mysql_version=mysql_version,
+            port=port,
+            port_x=port_x,
+            shutdown_type=shutdown_type,
+            source=source,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             shape_name: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             admin_password: Optional[pulumi.Input[str]] = None,
+             admin_username: Optional[pulumi.Input[str]] = None,
+             backup_policy: Optional[pulumi.Input['MysqlDbSystemBackupPolicyArgs']] = None,
+             configuration_id: Optional[pulumi.Input[str]] = None,
+             crash_recovery: Optional[pulumi.Input[str]] = None,
+             data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
+             database_management: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             deletion_policies: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemDeletionPolicyArgs']]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             fault_domain: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             hostname_label: Optional[pulumi.Input[str]] = None,
+             ip_address: Optional[pulumi.Input[str]] = None,
+             is_highly_available: Optional[pulumi.Input[bool]] = None,
+             maintenance: Optional[pulumi.Input['MysqlDbSystemMaintenanceArgs']] = None,
+             mysql_version: Optional[pulumi.Input[str]] = None,
+             port: Optional[pulumi.Input[int]] = None,
+             port_x: Optional[pulumi.Input[int]] = None,
+             shutdown_type: Optional[pulumi.Input[str]] = None,
+             source: Optional[pulumi.Input['MysqlDbSystemSourceArgs']] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if availability_domain is None and 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if shape_name is None and 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if admin_password is None and 'adminPassword' in kwargs:
+            admin_password = kwargs['adminPassword']
+        if admin_username is None and 'adminUsername' in kwargs:
+            admin_username = kwargs['adminUsername']
+        if backup_policy is None and 'backupPolicy' in kwargs:
+            backup_policy = kwargs['backupPolicy']
+        if configuration_id is None and 'configurationId' in kwargs:
+            configuration_id = kwargs['configurationId']
+        if crash_recovery is None and 'crashRecovery' in kwargs:
+            crash_recovery = kwargs['crashRecovery']
+        if data_storage_size_in_gb is None and 'dataStorageSizeInGb' in kwargs:
+            data_storage_size_in_gb = kwargs['dataStorageSizeInGb']
+        if database_management is None and 'databaseManagement' in kwargs:
+            database_management = kwargs['databaseManagement']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if deletion_policies is None and 'deletionPolicies' in kwargs:
+            deletion_policies = kwargs['deletionPolicies']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if fault_domain is None and 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if hostname_label is None and 'hostnameLabel' in kwargs:
+            hostname_label = kwargs['hostnameLabel']
+        if ip_address is None and 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if is_highly_available is None and 'isHighlyAvailable' in kwargs:
+            is_highly_available = kwargs['isHighlyAvailable']
+        if mysql_version is None and 'mysqlVersion' in kwargs:
+            mysql_version = kwargs['mysqlVersion']
+        if port_x is None and 'portX' in kwargs:
+            port_x = kwargs['portX']
+        if shutdown_type is None and 'shutdownType' in kwargs:
+            shutdown_type = kwargs['shutdownType']
+
+        _setter("availability_domain", availability_domain)
+        _setter("compartment_id", compartment_id)
+        _setter("shape_name", shape_name)
+        _setter("subnet_id", subnet_id)
         if admin_password is not None:
-            pulumi.set(__self__, "admin_password", admin_password)
+            _setter("admin_password", admin_password)
         if admin_username is not None:
-            pulumi.set(__self__, "admin_username", admin_username)
+            _setter("admin_username", admin_username)
         if backup_policy is not None:
-            pulumi.set(__self__, "backup_policy", backup_policy)
+            _setter("backup_policy", backup_policy)
         if configuration_id is not None:
-            pulumi.set(__self__, "configuration_id", configuration_id)
+            _setter("configuration_id", configuration_id)
         if crash_recovery is not None:
-            pulumi.set(__self__, "crash_recovery", crash_recovery)
+            _setter("crash_recovery", crash_recovery)
         if data_storage_size_in_gb is not None:
-            pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+            _setter("data_storage_size_in_gb", data_storage_size_in_gb)
         if database_management is not None:
-            pulumi.set(__self__, "database_management", database_management)
+            _setter("database_management", database_management)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if deletion_policies is not None:
-            pulumi.set(__self__, "deletion_policies", deletion_policies)
+            _setter("deletion_policies", deletion_policies)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if fault_domain is not None:
-            pulumi.set(__self__, "fault_domain", fault_domain)
+            _setter("fault_domain", fault_domain)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if hostname_label is not None:
-            pulumi.set(__self__, "hostname_label", hostname_label)
+            _setter("hostname_label", hostname_label)
         if ip_address is not None:
-            pulumi.set(__self__, "ip_address", ip_address)
+            _setter("ip_address", ip_address)
         if is_highly_available is not None:
-            pulumi.set(__self__, "is_highly_available", is_highly_available)
+            _setter("is_highly_available", is_highly_available)
         if maintenance is not None:
-            pulumi.set(__self__, "maintenance", maintenance)
+            _setter("maintenance", maintenance)
         if mysql_version is not None:
-            pulumi.set(__self__, "mysql_version", mysql_version)
+            _setter("mysql_version", mysql_version)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if port_x is not None:
-            pulumi.set(__self__, "port_x", port_x)
+            _setter("port_x", port_x)
         if shutdown_type is not None:
-            pulumi.set(__self__, "shutdown_type", shutdown_type)
+            _setter("shutdown_type", shutdown_type)
         if source is not None:
-            pulumi.set(__self__, "source", source)
+            _setter("source", source)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -581,78 +696,217 @@ class _MysqlDbSystemState:
         :param pulumi.Input[str] time_created: The date and time the DB System was created.
         :param pulumi.Input[str] time_updated: The time the DB System was last updated.
         """
+        _MysqlDbSystemState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            admin_password=admin_password,
+            admin_username=admin_username,
+            availability_domain=availability_domain,
+            backup_policy=backup_policy,
+            channels=channels,
+            compartment_id=compartment_id,
+            configuration_id=configuration_id,
+            crash_recovery=crash_recovery,
+            current_placements=current_placements,
+            data_storage_size_in_gb=data_storage_size_in_gb,
+            database_management=database_management,
+            defined_tags=defined_tags,
+            deletion_policies=deletion_policies,
+            description=description,
+            display_name=display_name,
+            endpoints=endpoints,
+            fault_domain=fault_domain,
+            freeform_tags=freeform_tags,
+            heat_wave_clusters=heat_wave_clusters,
+            hostname_label=hostname_label,
+            ip_address=ip_address,
+            is_heat_wave_cluster_attached=is_heat_wave_cluster_attached,
+            is_highly_available=is_highly_available,
+            lifecycle_details=lifecycle_details,
+            maintenance=maintenance,
+            mysql_version=mysql_version,
+            point_in_time_recovery_details=point_in_time_recovery_details,
+            port=port,
+            port_x=port_x,
+            shape_name=shape_name,
+            shutdown_type=shutdown_type,
+            source=source,
+            state=state,
+            subnet_id=subnet_id,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             admin_password: Optional[pulumi.Input[str]] = None,
+             admin_username: Optional[pulumi.Input[str]] = None,
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             backup_policy: Optional[pulumi.Input['MysqlDbSystemBackupPolicyArgs']] = None,
+             channels: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelArgs']]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             configuration_id: Optional[pulumi.Input[str]] = None,
+             crash_recovery: Optional[pulumi.Input[str]] = None,
+             current_placements: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemCurrentPlacementArgs']]]] = None,
+             data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
+             database_management: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             deletion_policies: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemDeletionPolicyArgs']]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             endpoints: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemEndpointArgs']]]] = None,
+             fault_domain: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             heat_wave_clusters: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemHeatWaveClusterArgs']]]] = None,
+             hostname_label: Optional[pulumi.Input[str]] = None,
+             ip_address: Optional[pulumi.Input[str]] = None,
+             is_heat_wave_cluster_attached: Optional[pulumi.Input[bool]] = None,
+             is_highly_available: Optional[pulumi.Input[bool]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             maintenance: Optional[pulumi.Input['MysqlDbSystemMaintenanceArgs']] = None,
+             mysql_version: Optional[pulumi.Input[str]] = None,
+             point_in_time_recovery_details: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemPointInTimeRecoveryDetailArgs']]]] = None,
+             port: Optional[pulumi.Input[int]] = None,
+             port_x: Optional[pulumi.Input[int]] = None,
+             shape_name: Optional[pulumi.Input[str]] = None,
+             shutdown_type: Optional[pulumi.Input[str]] = None,
+             source: Optional[pulumi.Input['MysqlDbSystemSourceArgs']] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if admin_password is None and 'adminPassword' in kwargs:
+            admin_password = kwargs['adminPassword']
+        if admin_username is None and 'adminUsername' in kwargs:
+            admin_username = kwargs['adminUsername']
+        if availability_domain is None and 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if backup_policy is None and 'backupPolicy' in kwargs:
+            backup_policy = kwargs['backupPolicy']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if configuration_id is None and 'configurationId' in kwargs:
+            configuration_id = kwargs['configurationId']
+        if crash_recovery is None and 'crashRecovery' in kwargs:
+            crash_recovery = kwargs['crashRecovery']
+        if current_placements is None and 'currentPlacements' in kwargs:
+            current_placements = kwargs['currentPlacements']
+        if data_storage_size_in_gb is None and 'dataStorageSizeInGb' in kwargs:
+            data_storage_size_in_gb = kwargs['dataStorageSizeInGb']
+        if database_management is None and 'databaseManagement' in kwargs:
+            database_management = kwargs['databaseManagement']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if deletion_policies is None and 'deletionPolicies' in kwargs:
+            deletion_policies = kwargs['deletionPolicies']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if fault_domain is None and 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if heat_wave_clusters is None and 'heatWaveClusters' in kwargs:
+            heat_wave_clusters = kwargs['heatWaveClusters']
+        if hostname_label is None and 'hostnameLabel' in kwargs:
+            hostname_label = kwargs['hostnameLabel']
+        if ip_address is None and 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if is_heat_wave_cluster_attached is None and 'isHeatWaveClusterAttached' in kwargs:
+            is_heat_wave_cluster_attached = kwargs['isHeatWaveClusterAttached']
+        if is_highly_available is None and 'isHighlyAvailable' in kwargs:
+            is_highly_available = kwargs['isHighlyAvailable']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if mysql_version is None and 'mysqlVersion' in kwargs:
+            mysql_version = kwargs['mysqlVersion']
+        if point_in_time_recovery_details is None and 'pointInTimeRecoveryDetails' in kwargs:
+            point_in_time_recovery_details = kwargs['pointInTimeRecoveryDetails']
+        if port_x is None and 'portX' in kwargs:
+            port_x = kwargs['portX']
+        if shape_name is None and 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if shutdown_type is None and 'shutdownType' in kwargs:
+            shutdown_type = kwargs['shutdownType']
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if admin_password is not None:
-            pulumi.set(__self__, "admin_password", admin_password)
+            _setter("admin_password", admin_password)
         if admin_username is not None:
-            pulumi.set(__self__, "admin_username", admin_username)
+            _setter("admin_username", admin_username)
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if backup_policy is not None:
-            pulumi.set(__self__, "backup_policy", backup_policy)
+            _setter("backup_policy", backup_policy)
         if channels is not None:
-            pulumi.set(__self__, "channels", channels)
+            _setter("channels", channels)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if configuration_id is not None:
-            pulumi.set(__self__, "configuration_id", configuration_id)
+            _setter("configuration_id", configuration_id)
         if crash_recovery is not None:
-            pulumi.set(__self__, "crash_recovery", crash_recovery)
+            _setter("crash_recovery", crash_recovery)
         if current_placements is not None:
-            pulumi.set(__self__, "current_placements", current_placements)
+            _setter("current_placements", current_placements)
         if data_storage_size_in_gb is not None:
-            pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+            _setter("data_storage_size_in_gb", data_storage_size_in_gb)
         if database_management is not None:
-            pulumi.set(__self__, "database_management", database_management)
+            _setter("database_management", database_management)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if deletion_policies is not None:
-            pulumi.set(__self__, "deletion_policies", deletion_policies)
+            _setter("deletion_policies", deletion_policies)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if endpoints is not None:
-            pulumi.set(__self__, "endpoints", endpoints)
+            _setter("endpoints", endpoints)
         if fault_domain is not None:
-            pulumi.set(__self__, "fault_domain", fault_domain)
+            _setter("fault_domain", fault_domain)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if heat_wave_clusters is not None:
-            pulumi.set(__self__, "heat_wave_clusters", heat_wave_clusters)
+            _setter("heat_wave_clusters", heat_wave_clusters)
         if hostname_label is not None:
-            pulumi.set(__self__, "hostname_label", hostname_label)
+            _setter("hostname_label", hostname_label)
         if ip_address is not None:
-            pulumi.set(__self__, "ip_address", ip_address)
+            _setter("ip_address", ip_address)
         if is_heat_wave_cluster_attached is not None:
-            pulumi.set(__self__, "is_heat_wave_cluster_attached", is_heat_wave_cluster_attached)
+            _setter("is_heat_wave_cluster_attached", is_heat_wave_cluster_attached)
         if is_highly_available is not None:
-            pulumi.set(__self__, "is_highly_available", is_highly_available)
+            _setter("is_highly_available", is_highly_available)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if maintenance is not None:
-            pulumi.set(__self__, "maintenance", maintenance)
+            _setter("maintenance", maintenance)
         if mysql_version is not None:
-            pulumi.set(__self__, "mysql_version", mysql_version)
+            _setter("mysql_version", mysql_version)
         if point_in_time_recovery_details is not None:
-            pulumi.set(__self__, "point_in_time_recovery_details", point_in_time_recovery_details)
+            _setter("point_in_time_recovery_details", point_in_time_recovery_details)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if port_x is not None:
-            pulumi.set(__self__, "port_x", port_x)
+            _setter("port_x", port_x)
         if shape_name is not None:
-            pulumi.set(__self__, "shape_name", shape_name)
+            _setter("shape_name", shape_name)
         if shutdown_type is not None:
-            pulumi.set(__self__, "shutdown_type", shutdown_type)
+            _setter("shutdown_type", shutdown_type)
         if source is not None:
-            pulumi.set(__self__, "source", source)
+            _setter("source", source)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="adminPassword")
@@ -1346,6 +1600,10 @@ class MysqlDbSystem(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            MysqlDbSystemArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -1392,6 +1650,11 @@ class MysqlDbSystem(pulumi.CustomResource):
             if availability_domain is None and not opts.urn:
                 raise TypeError("Missing required property 'availability_domain'")
             __props__.__dict__["availability_domain"] = availability_domain
+            if backup_policy is not None and not isinstance(backup_policy, MysqlDbSystemBackupPolicyArgs):
+                backup_policy = backup_policy or {}
+                def _setter(key, value):
+                    backup_policy[key] = value
+                MysqlDbSystemBackupPolicyArgs._configure(_setter, **backup_policy)
             __props__.__dict__["backup_policy"] = backup_policy
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
@@ -1409,6 +1672,11 @@ class MysqlDbSystem(pulumi.CustomResource):
             __props__.__dict__["hostname_label"] = hostname_label
             __props__.__dict__["ip_address"] = ip_address
             __props__.__dict__["is_highly_available"] = is_highly_available
+            if maintenance is not None and not isinstance(maintenance, MysqlDbSystemMaintenanceArgs):
+                maintenance = maintenance or {}
+                def _setter(key, value):
+                    maintenance[key] = value
+                MysqlDbSystemMaintenanceArgs._configure(_setter, **maintenance)
             __props__.__dict__["maintenance"] = maintenance
             __props__.__dict__["mysql_version"] = mysql_version
             __props__.__dict__["port"] = port
@@ -1417,6 +1685,11 @@ class MysqlDbSystem(pulumi.CustomResource):
                 raise TypeError("Missing required property 'shape_name'")
             __props__.__dict__["shape_name"] = shape_name
             __props__.__dict__["shutdown_type"] = shutdown_type
+            if source is not None and not isinstance(source, MysqlDbSystemSourceArgs):
+                source = source or {}
+                def _setter(key, value):
+                    source[key] = value
+                MysqlDbSystemSourceArgs._configure(_setter, **source)
             __props__.__dict__["source"] = source
             __props__.__dict__["state"] = state
             if subnet_id is None and not opts.urn:

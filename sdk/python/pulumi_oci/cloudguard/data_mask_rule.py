@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -43,21 +43,76 @@ class DataMaskRuleArgs:
                Avoid entering confidential information.
         :param pulumi.Input[str] state: The current state of the DataMaskRule.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "data_mask_categories", data_mask_categories)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "iam_group_id", iam_group_id)
-        pulumi.set(__self__, "target_selected", target_selected)
+        DataMaskRuleArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            data_mask_categories=data_mask_categories,
+            display_name=display_name,
+            iam_group_id=iam_group_id,
+            target_selected=target_selected,
+            data_mask_rule_status=data_mask_rule_status,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             data_mask_categories: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             iam_group_id: Optional[pulumi.Input[str]] = None,
+             target_selected: Optional[pulumi.Input['DataMaskRuleTargetSelectedArgs']] = None,
+             data_mask_rule_status: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if data_mask_categories is None and 'dataMaskCategories' in kwargs:
+            data_mask_categories = kwargs['dataMaskCategories']
+        if data_mask_categories is None:
+            raise TypeError("Missing 'data_mask_categories' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if iam_group_id is None and 'iamGroupId' in kwargs:
+            iam_group_id = kwargs['iamGroupId']
+        if iam_group_id is None:
+            raise TypeError("Missing 'iam_group_id' argument")
+        if target_selected is None and 'targetSelected' in kwargs:
+            target_selected = kwargs['targetSelected']
+        if target_selected is None:
+            raise TypeError("Missing 'target_selected' argument")
+        if data_mask_rule_status is None and 'dataMaskRuleStatus' in kwargs:
+            data_mask_rule_status = kwargs['dataMaskRuleStatus']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
+        _setter("compartment_id", compartment_id)
+        _setter("data_mask_categories", data_mask_categories)
+        _setter("display_name", display_name)
+        _setter("iam_group_id", iam_group_id)
+        _setter("target_selected", target_selected)
         if data_mask_rule_status is not None:
-            pulumi.set(__self__, "data_mask_rule_status", data_mask_rule_status)
+            _setter("data_mask_rule_status", data_mask_rule_status)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -222,34 +277,95 @@ class _DataMaskRuleState:
         :param pulumi.Input[str] time_created: The date and time the target was created. Format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
+        _DataMaskRuleState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            data_mask_categories=data_mask_categories,
+            data_mask_rule_status=data_mask_rule_status,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            iam_group_id=iam_group_id,
+            lifecyle_details=lifecyle_details,
+            state=state,
+            system_tags=system_tags,
+            target_selected=target_selected,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             data_mask_categories: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             data_mask_rule_status: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             iam_group_id: Optional[pulumi.Input[str]] = None,
+             lifecyle_details: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             target_selected: Optional[pulumi.Input['DataMaskRuleTargetSelectedArgs']] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if data_mask_categories is None and 'dataMaskCategories' in kwargs:
+            data_mask_categories = kwargs['dataMaskCategories']
+        if data_mask_rule_status is None and 'dataMaskRuleStatus' in kwargs:
+            data_mask_rule_status = kwargs['dataMaskRuleStatus']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if iam_group_id is None and 'iamGroupId' in kwargs:
+            iam_group_id = kwargs['iamGroupId']
+        if lifecyle_details is None and 'lifecyleDetails' in kwargs:
+            lifecyle_details = kwargs['lifecyleDetails']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if target_selected is None and 'targetSelected' in kwargs:
+            target_selected = kwargs['targetSelected']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if data_mask_categories is not None:
-            pulumi.set(__self__, "data_mask_categories", data_mask_categories)
+            _setter("data_mask_categories", data_mask_categories)
         if data_mask_rule_status is not None:
-            pulumi.set(__self__, "data_mask_rule_status", data_mask_rule_status)
+            _setter("data_mask_rule_status", data_mask_rule_status)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if iam_group_id is not None:
-            pulumi.set(__self__, "iam_group_id", iam_group_id)
+            _setter("iam_group_id", iam_group_id)
         if lifecyle_details is not None:
-            pulumi.set(__self__, "lifecyle_details", lifecyle_details)
+            _setter("lifecyle_details", lifecyle_details)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if target_selected is not None:
-            pulumi.set(__self__, "target_selected", target_selected)
+            _setter("target_selected", target_selected)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -551,6 +667,10 @@ class DataMaskRule(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DataMaskRuleArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -592,6 +712,11 @@ class DataMaskRule(pulumi.CustomResource):
                 raise TypeError("Missing required property 'iam_group_id'")
             __props__.__dict__["iam_group_id"] = iam_group_id
             __props__.__dict__["state"] = state
+            if target_selected is not None and not isinstance(target_selected, DataMaskRuleTargetSelectedArgs):
+                target_selected = target_selected or {}
+                def _setter(key, value):
+                    target_selected[key] = value
+                DataMaskRuleTargetSelectedArgs._configure(_setter, **target_selected)
             if target_selected is None and not opts.urn:
                 raise TypeError("Missing required property 'target_selected'")
             __props__.__dict__["target_selected"] = target_selected

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['CloudGuardConfigurationArgs', 'CloudGuardConfiguration']
@@ -29,11 +29,40 @@ class CloudGuardConfigurationArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[bool] self_manage_resources: (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "reporting_region", reporting_region)
-        pulumi.set(__self__, "status", status)
+        CloudGuardConfigurationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            reporting_region=reporting_region,
+            status=status,
+            self_manage_resources=self_manage_resources,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             reporting_region: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             self_manage_resources: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if reporting_region is None and 'reportingRegion' in kwargs:
+            reporting_region = kwargs['reportingRegion']
+        if reporting_region is None:
+            raise TypeError("Missing 'reporting_region' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if self_manage_resources is None and 'selfManageResources' in kwargs:
+            self_manage_resources = kwargs['selfManageResources']
+
+        _setter("compartment_id", compartment_id)
+        _setter("reporting_region", reporting_region)
+        _setter("status", status)
         if self_manage_resources is not None:
-            pulumi.set(__self__, "self_manage_resources", self_manage_resources)
+            _setter("self_manage_resources", self_manage_resources)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -106,14 +135,37 @@ class _CloudGuardConfigurationState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _CloudGuardConfigurationState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            reporting_region=reporting_region,
+            self_manage_resources=self_manage_resources,
+            status=status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             reporting_region: Optional[pulumi.Input[str]] = None,
+             self_manage_resources: Optional[pulumi.Input[bool]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if reporting_region is None and 'reportingRegion' in kwargs:
+            reporting_region = kwargs['reportingRegion']
+        if self_manage_resources is None and 'selfManageResources' in kwargs:
+            self_manage_resources = kwargs['selfManageResources']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if reporting_region is not None:
-            pulumi.set(__self__, "reporting_region", reporting_region)
+            _setter("reporting_region", reporting_region)
         if self_manage_resources is not None:
-            pulumi.set(__self__, "self_manage_resources", self_manage_resources)
+            _setter("self_manage_resources", self_manage_resources)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -249,6 +301,10 @@ class CloudGuardConfiguration(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            CloudGuardConfigurationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

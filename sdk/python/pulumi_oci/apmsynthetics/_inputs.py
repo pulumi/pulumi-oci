@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -46,10 +46,27 @@ class ConfigAvailabilityConfigurationArgs:
         :param pulumi.Input[int] max_allowed_failures_per_interval: (Updatable) Intervals with failed runs more than this value will be classified as UNAVAILABLE.
         :param pulumi.Input[int] min_allowed_runs_per_interval: (Updatable) Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
         """
+        ConfigAvailabilityConfigurationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            max_allowed_failures_per_interval=max_allowed_failures_per_interval,
+            min_allowed_runs_per_interval=min_allowed_runs_per_interval,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             max_allowed_failures_per_interval: Optional[pulumi.Input[int]] = None,
+             min_allowed_runs_per_interval: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if max_allowed_failures_per_interval is None and 'maxAllowedFailuresPerInterval' in kwargs:
+            max_allowed_failures_per_interval = kwargs['maxAllowedFailuresPerInterval']
+        if min_allowed_runs_per_interval is None and 'minAllowedRunsPerInterval' in kwargs:
+            min_allowed_runs_per_interval = kwargs['minAllowedRunsPerInterval']
+
         if max_allowed_failures_per_interval is not None:
-            pulumi.set(__self__, "max_allowed_failures_per_interval", max_allowed_failures_per_interval)
+            _setter("max_allowed_failures_per_interval", max_allowed_failures_per_interval)
         if min_allowed_runs_per_interval is not None:
-            pulumi.set(__self__, "min_allowed_runs_per_interval", min_allowed_runs_per_interval)
+            _setter("min_allowed_runs_per_interval", min_allowed_runs_per_interval)
 
     @property
     @pulumi.getter(name="maxAllowedFailuresPerInterval")
@@ -115,40 +132,117 @@ class ConfigConfigurationArgs:
         :param pulumi.Input[str] verify_response_content: (Updatable) Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
         :param pulumi.Input[Sequence[pulumi.Input['ConfigConfigurationVerifyTextArgs']]] verify_texts: (Updatable) Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
         """
+        ConfigConfigurationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            client_certificate_details=client_certificate_details,
+            config_type=config_type,
+            dns_configuration=dns_configuration,
+            is_certificate_validation_enabled=is_certificate_validation_enabled,
+            is_default_snapshot_enabled=is_default_snapshot_enabled,
+            is_failure_retried=is_failure_retried,
+            is_redirection_enabled=is_redirection_enabled,
+            network_configuration=network_configuration,
+            req_authentication_details=req_authentication_details,
+            req_authentication_scheme=req_authentication_scheme,
+            request_headers=request_headers,
+            request_method=request_method,
+            request_post_body=request_post_body,
+            request_query_params=request_query_params,
+            verify_response_codes=verify_response_codes,
+            verify_response_content=verify_response_content,
+            verify_texts=verify_texts,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             client_certificate_details: Optional[pulumi.Input['ConfigConfigurationClientCertificateDetailsArgs']] = None,
+             config_type: Optional[pulumi.Input[str]] = None,
+             dns_configuration: Optional[pulumi.Input['ConfigConfigurationDnsConfigurationArgs']] = None,
+             is_certificate_validation_enabled: Optional[pulumi.Input[bool]] = None,
+             is_default_snapshot_enabled: Optional[pulumi.Input[bool]] = None,
+             is_failure_retried: Optional[pulumi.Input[bool]] = None,
+             is_redirection_enabled: Optional[pulumi.Input[bool]] = None,
+             network_configuration: Optional[pulumi.Input['ConfigConfigurationNetworkConfigurationArgs']] = None,
+             req_authentication_details: Optional[pulumi.Input['ConfigConfigurationReqAuthenticationDetailsArgs']] = None,
+             req_authentication_scheme: Optional[pulumi.Input[str]] = None,
+             request_headers: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigConfigurationRequestHeaderArgs']]]] = None,
+             request_method: Optional[pulumi.Input[str]] = None,
+             request_post_body: Optional[pulumi.Input[str]] = None,
+             request_query_params: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigConfigurationRequestQueryParamArgs']]]] = None,
+             verify_response_codes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             verify_response_content: Optional[pulumi.Input[str]] = None,
+             verify_texts: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigConfigurationVerifyTextArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if client_certificate_details is None and 'clientCertificateDetails' in kwargs:
+            client_certificate_details = kwargs['clientCertificateDetails']
+        if config_type is None and 'configType' in kwargs:
+            config_type = kwargs['configType']
+        if dns_configuration is None and 'dnsConfiguration' in kwargs:
+            dns_configuration = kwargs['dnsConfiguration']
+        if is_certificate_validation_enabled is None and 'isCertificateValidationEnabled' in kwargs:
+            is_certificate_validation_enabled = kwargs['isCertificateValidationEnabled']
+        if is_default_snapshot_enabled is None and 'isDefaultSnapshotEnabled' in kwargs:
+            is_default_snapshot_enabled = kwargs['isDefaultSnapshotEnabled']
+        if is_failure_retried is None and 'isFailureRetried' in kwargs:
+            is_failure_retried = kwargs['isFailureRetried']
+        if is_redirection_enabled is None and 'isRedirectionEnabled' in kwargs:
+            is_redirection_enabled = kwargs['isRedirectionEnabled']
+        if network_configuration is None and 'networkConfiguration' in kwargs:
+            network_configuration = kwargs['networkConfiguration']
+        if req_authentication_details is None and 'reqAuthenticationDetails' in kwargs:
+            req_authentication_details = kwargs['reqAuthenticationDetails']
+        if req_authentication_scheme is None and 'reqAuthenticationScheme' in kwargs:
+            req_authentication_scheme = kwargs['reqAuthenticationScheme']
+        if request_headers is None and 'requestHeaders' in kwargs:
+            request_headers = kwargs['requestHeaders']
+        if request_method is None and 'requestMethod' in kwargs:
+            request_method = kwargs['requestMethod']
+        if request_post_body is None and 'requestPostBody' in kwargs:
+            request_post_body = kwargs['requestPostBody']
+        if request_query_params is None and 'requestQueryParams' in kwargs:
+            request_query_params = kwargs['requestQueryParams']
+        if verify_response_codes is None and 'verifyResponseCodes' in kwargs:
+            verify_response_codes = kwargs['verifyResponseCodes']
+        if verify_response_content is None and 'verifyResponseContent' in kwargs:
+            verify_response_content = kwargs['verifyResponseContent']
+        if verify_texts is None and 'verifyTexts' in kwargs:
+            verify_texts = kwargs['verifyTexts']
+
         if client_certificate_details is not None:
-            pulumi.set(__self__, "client_certificate_details", client_certificate_details)
+            _setter("client_certificate_details", client_certificate_details)
         if config_type is not None:
-            pulumi.set(__self__, "config_type", config_type)
+            _setter("config_type", config_type)
         if dns_configuration is not None:
-            pulumi.set(__self__, "dns_configuration", dns_configuration)
+            _setter("dns_configuration", dns_configuration)
         if is_certificate_validation_enabled is not None:
-            pulumi.set(__self__, "is_certificate_validation_enabled", is_certificate_validation_enabled)
+            _setter("is_certificate_validation_enabled", is_certificate_validation_enabled)
         if is_default_snapshot_enabled is not None:
-            pulumi.set(__self__, "is_default_snapshot_enabled", is_default_snapshot_enabled)
+            _setter("is_default_snapshot_enabled", is_default_snapshot_enabled)
         if is_failure_retried is not None:
-            pulumi.set(__self__, "is_failure_retried", is_failure_retried)
+            _setter("is_failure_retried", is_failure_retried)
         if is_redirection_enabled is not None:
-            pulumi.set(__self__, "is_redirection_enabled", is_redirection_enabled)
+            _setter("is_redirection_enabled", is_redirection_enabled)
         if network_configuration is not None:
-            pulumi.set(__self__, "network_configuration", network_configuration)
+            _setter("network_configuration", network_configuration)
         if req_authentication_details is not None:
-            pulumi.set(__self__, "req_authentication_details", req_authentication_details)
+            _setter("req_authentication_details", req_authentication_details)
         if req_authentication_scheme is not None:
-            pulumi.set(__self__, "req_authentication_scheme", req_authentication_scheme)
+            _setter("req_authentication_scheme", req_authentication_scheme)
         if request_headers is not None:
-            pulumi.set(__self__, "request_headers", request_headers)
+            _setter("request_headers", request_headers)
         if request_method is not None:
-            pulumi.set(__self__, "request_method", request_method)
+            _setter("request_method", request_method)
         if request_post_body is not None:
-            pulumi.set(__self__, "request_post_body", request_post_body)
+            _setter("request_post_body", request_post_body)
         if request_query_params is not None:
-            pulumi.set(__self__, "request_query_params", request_query_params)
+            _setter("request_query_params", request_query_params)
         if verify_response_codes is not None:
-            pulumi.set(__self__, "verify_response_codes", verify_response_codes)
+            _setter("verify_response_codes", verify_response_codes)
         if verify_response_content is not None:
-            pulumi.set(__self__, "verify_response_content", verify_response_content)
+            _setter("verify_response_content", verify_response_content)
         if verify_texts is not None:
-            pulumi.set(__self__, "verify_texts", verify_texts)
+            _setter("verify_texts", verify_texts)
 
     @property
     @pulumi.getter(name="clientCertificateDetails")
@@ -364,10 +458,27 @@ class ConfigConfigurationClientCertificateDetailsArgs:
         :param pulumi.Input['ConfigConfigurationClientCertificateDetailsClientCertificateArgs'] client_certificate: (Updatable) Client certificate in PEM format.
         :param pulumi.Input['ConfigConfigurationClientCertificateDetailsPrivateKeyArgs'] private_key: (Updatable) The private key associated with the client certificate in PEM format.
         """
+        ConfigConfigurationClientCertificateDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            client_certificate=client_certificate,
+            private_key=private_key,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             client_certificate: Optional[pulumi.Input['ConfigConfigurationClientCertificateDetailsClientCertificateArgs']] = None,
+             private_key: Optional[pulumi.Input['ConfigConfigurationClientCertificateDetailsPrivateKeyArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if client_certificate is None and 'clientCertificate' in kwargs:
+            client_certificate = kwargs['clientCertificate']
+        if private_key is None and 'privateKey' in kwargs:
+            private_key = kwargs['privateKey']
+
         if client_certificate is not None:
-            pulumi.set(__self__, "client_certificate", client_certificate)
+            _setter("client_certificate", client_certificate)
         if private_key is not None:
-            pulumi.set(__self__, "private_key", private_key)
+            _setter("private_key", private_key)
 
     @property
     @pulumi.getter(name="clientCertificate")
@@ -403,10 +514,25 @@ class ConfigConfigurationClientCertificateDetailsClientCertificateArgs:
         :param pulumi.Input[str] content: (Updatable) Content of the private key file.
         :param pulumi.Input[str] file_name: (Updatable) Name of the private key file.
         """
+        ConfigConfigurationClientCertificateDetailsClientCertificateArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            content=content,
+            file_name=file_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             content: Optional[pulumi.Input[str]] = None,
+             file_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if file_name is None and 'fileName' in kwargs:
+            file_name = kwargs['fileName']
+
         if content is not None:
-            pulumi.set(__self__, "content", content)
+            _setter("content", content)
         if file_name is not None:
-            pulumi.set(__self__, "file_name", file_name)
+            _setter("file_name", file_name)
 
     @property
     @pulumi.getter
@@ -442,10 +568,25 @@ class ConfigConfigurationClientCertificateDetailsPrivateKeyArgs:
         :param pulumi.Input[str] content: (Updatable) Content of the private key file.
         :param pulumi.Input[str] file_name: (Updatable) Name of the private key file.
         """
+        ConfigConfigurationClientCertificateDetailsPrivateKeyArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            content=content,
+            file_name=file_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             content: Optional[pulumi.Input[str]] = None,
+             file_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if file_name is None and 'fileName' in kwargs:
+            file_name = kwargs['fileName']
+
         if content is not None:
-            pulumi.set(__self__, "content", content)
+            _setter("content", content)
         if file_name is not None:
-            pulumi.set(__self__, "file_name", file_name)
+            _setter("file_name", file_name)
 
     @property
     @pulumi.getter
@@ -481,10 +622,27 @@ class ConfigConfigurationDnsConfigurationArgs:
         :param pulumi.Input[bool] is_override_dns: (Updatable) If isOverrideDns is true, then DNS settings will be overridden.
         :param pulumi.Input[str] override_dns_ip: (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
         """
+        ConfigConfigurationDnsConfigurationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_override_dns=is_override_dns,
+            override_dns_ip=override_dns_ip,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_override_dns: Optional[pulumi.Input[bool]] = None,
+             override_dns_ip: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_override_dns is None and 'isOverrideDns' in kwargs:
+            is_override_dns = kwargs['isOverrideDns']
+        if override_dns_ip is None and 'overrideDnsIp' in kwargs:
+            override_dns_ip = kwargs['overrideDnsIp']
+
         if is_override_dns is not None:
-            pulumi.set(__self__, "is_override_dns", is_override_dns)
+            _setter("is_override_dns", is_override_dns)
         if override_dns_ip is not None:
-            pulumi.set(__self__, "override_dns_ip", override_dns_ip)
+            _setter("override_dns_ip", override_dns_ip)
 
     @property
     @pulumi.getter(name="isOverrideDns")
@@ -526,16 +684,43 @@ class ConfigConfigurationNetworkConfigurationArgs:
         :param pulumi.Input[str] protocol: (Updatable) Type of protocol.
         :param pulumi.Input[int] transmission_rate: (Updatable) Number of probe packets sent out simultaneously.
         """
+        ConfigConfigurationNetworkConfigurationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            number_of_hops=number_of_hops,
+            probe_mode=probe_mode,
+            probe_per_hop=probe_per_hop,
+            protocol=protocol,
+            transmission_rate=transmission_rate,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             number_of_hops: Optional[pulumi.Input[int]] = None,
+             probe_mode: Optional[pulumi.Input[str]] = None,
+             probe_per_hop: Optional[pulumi.Input[int]] = None,
+             protocol: Optional[pulumi.Input[str]] = None,
+             transmission_rate: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if number_of_hops is None and 'numberOfHops' in kwargs:
+            number_of_hops = kwargs['numberOfHops']
+        if probe_mode is None and 'probeMode' in kwargs:
+            probe_mode = kwargs['probeMode']
+        if probe_per_hop is None and 'probePerHop' in kwargs:
+            probe_per_hop = kwargs['probePerHop']
+        if transmission_rate is None and 'transmissionRate' in kwargs:
+            transmission_rate = kwargs['transmissionRate']
+
         if number_of_hops is not None:
-            pulumi.set(__self__, "number_of_hops", number_of_hops)
+            _setter("number_of_hops", number_of_hops)
         if probe_mode is not None:
-            pulumi.set(__self__, "probe_mode", probe_mode)
+            _setter("probe_mode", probe_mode)
         if probe_per_hop is not None:
-            pulumi.set(__self__, "probe_per_hop", probe_per_hop)
+            _setter("probe_per_hop", probe_per_hop)
         if protocol is not None:
-            pulumi.set(__self__, "protocol", protocol)
+            _setter("protocol", protocol)
         if transmission_rate is not None:
-            pulumi.set(__self__, "transmission_rate", transmission_rate)
+            _setter("transmission_rate", transmission_rate)
 
     @property
     @pulumi.getter(name="numberOfHops")
@@ -619,22 +804,63 @@ class ConfigConfigurationReqAuthenticationDetailsArgs:
         :param pulumi.Input[str] auth_user_password: (Updatable) User password for authentication.
         :param pulumi.Input[str] oauth_scheme: (Updatable) Request HTTP OAuth scheme.
         """
+        ConfigConfigurationReqAuthenticationDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auth_headers=auth_headers,
+            auth_request_method=auth_request_method,
+            auth_request_post_body=auth_request_post_body,
+            auth_token=auth_token,
+            auth_url=auth_url,
+            auth_user_name=auth_user_name,
+            auth_user_password=auth_user_password,
+            oauth_scheme=oauth_scheme,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auth_headers: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgs']]]] = None,
+             auth_request_method: Optional[pulumi.Input[str]] = None,
+             auth_request_post_body: Optional[pulumi.Input[str]] = None,
+             auth_token: Optional[pulumi.Input[str]] = None,
+             auth_url: Optional[pulumi.Input[str]] = None,
+             auth_user_name: Optional[pulumi.Input[str]] = None,
+             auth_user_password: Optional[pulumi.Input[str]] = None,
+             oauth_scheme: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if auth_headers is None and 'authHeaders' in kwargs:
+            auth_headers = kwargs['authHeaders']
+        if auth_request_method is None and 'authRequestMethod' in kwargs:
+            auth_request_method = kwargs['authRequestMethod']
+        if auth_request_post_body is None and 'authRequestPostBody' in kwargs:
+            auth_request_post_body = kwargs['authRequestPostBody']
+        if auth_token is None and 'authToken' in kwargs:
+            auth_token = kwargs['authToken']
+        if auth_url is None and 'authUrl' in kwargs:
+            auth_url = kwargs['authUrl']
+        if auth_user_name is None and 'authUserName' in kwargs:
+            auth_user_name = kwargs['authUserName']
+        if auth_user_password is None and 'authUserPassword' in kwargs:
+            auth_user_password = kwargs['authUserPassword']
+        if oauth_scheme is None and 'oauthScheme' in kwargs:
+            oauth_scheme = kwargs['oauthScheme']
+
         if auth_headers is not None:
-            pulumi.set(__self__, "auth_headers", auth_headers)
+            _setter("auth_headers", auth_headers)
         if auth_request_method is not None:
-            pulumi.set(__self__, "auth_request_method", auth_request_method)
+            _setter("auth_request_method", auth_request_method)
         if auth_request_post_body is not None:
-            pulumi.set(__self__, "auth_request_post_body", auth_request_post_body)
+            _setter("auth_request_post_body", auth_request_post_body)
         if auth_token is not None:
-            pulumi.set(__self__, "auth_token", auth_token)
+            _setter("auth_token", auth_token)
         if auth_url is not None:
-            pulumi.set(__self__, "auth_url", auth_url)
+            _setter("auth_url", auth_url)
         if auth_user_name is not None:
-            pulumi.set(__self__, "auth_user_name", auth_user_name)
+            _setter("auth_user_name", auth_user_name)
         if auth_user_password is not None:
-            pulumi.set(__self__, "auth_user_password", auth_user_password)
+            _setter("auth_user_password", auth_user_password)
         if oauth_scheme is not None:
-            pulumi.set(__self__, "oauth_scheme", oauth_scheme)
+            _setter("oauth_scheme", oauth_scheme)
 
     @property
     @pulumi.getter(name="authHeaders")
@@ -742,10 +968,27 @@ class ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgs:
         :param pulumi.Input[str] header_name: (Updatable) Name of the header.
         :param pulumi.Input[str] header_value: (Updatable) Value of the header.
         """
+        ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            header_name=header_name,
+            header_value=header_value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             header_name: Optional[pulumi.Input[str]] = None,
+             header_value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if header_name is None and 'headerName' in kwargs:
+            header_name = kwargs['headerName']
+        if header_value is None and 'headerValue' in kwargs:
+            header_value = kwargs['headerValue']
+
         if header_name is not None:
-            pulumi.set(__self__, "header_name", header_name)
+            _setter("header_name", header_name)
         if header_value is not None:
-            pulumi.set(__self__, "header_value", header_value)
+            _setter("header_value", header_value)
 
     @property
     @pulumi.getter(name="headerName")
@@ -781,10 +1024,27 @@ class ConfigConfigurationRequestHeaderArgs:
         :param pulumi.Input[str] header_name: (Updatable) Name of the header.
         :param pulumi.Input[str] header_value: (Updatable) Value of the header.
         """
+        ConfigConfigurationRequestHeaderArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            header_name=header_name,
+            header_value=header_value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             header_name: Optional[pulumi.Input[str]] = None,
+             header_value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if header_name is None and 'headerName' in kwargs:
+            header_name = kwargs['headerName']
+        if header_value is None and 'headerValue' in kwargs:
+            header_value = kwargs['headerValue']
+
         if header_name is not None:
-            pulumi.set(__self__, "header_name", header_name)
+            _setter("header_name", header_name)
         if header_value is not None:
-            pulumi.set(__self__, "header_value", header_value)
+            _setter("header_value", header_value)
 
     @property
     @pulumi.getter(name="headerName")
@@ -820,10 +1080,27 @@ class ConfigConfigurationRequestQueryParamArgs:
         :param pulumi.Input[str] param_name: (Updatable) Name of the parameter.
         :param pulumi.Input[str] param_value: (Updatable) Value of the parameter.
         """
+        ConfigConfigurationRequestQueryParamArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            param_name=param_name,
+            param_value=param_value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             param_name: Optional[pulumi.Input[str]] = None,
+             param_value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if param_name is None and 'paramName' in kwargs:
+            param_name = kwargs['paramName']
+        if param_value is None and 'paramValue' in kwargs:
+            param_value = kwargs['paramValue']
+
         if param_name is not None:
-            pulumi.set(__self__, "param_name", param_name)
+            _setter("param_name", param_name)
         if param_value is not None:
-            pulumi.set(__self__, "param_value", param_value)
+            _setter("param_value", param_value)
 
     @property
     @pulumi.getter(name="paramName")
@@ -857,8 +1134,19 @@ class ConfigConfigurationVerifyTextArgs:
         """
         :param pulumi.Input[str] text: (Updatable) Verification text in the response.
         """
+        ConfigConfigurationVerifyTextArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            text=text,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             text: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if text is not None:
-            pulumi.set(__self__, "text", text)
+            _setter("text", text)
 
     @property
     @pulumi.getter
@@ -882,10 +1170,27 @@ class ConfigMaintenanceWindowScheduleArgs:
         :param pulumi.Input[str] time_ended: (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         :param pulumi.Input[str] time_started: (Updatable) Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         """
+        ConfigMaintenanceWindowScheduleArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_ended=time_ended,
+            time_started=time_started,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_ended: Optional[pulumi.Input[str]] = None,
+             time_started: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if time_ended is None and 'timeEnded' in kwargs:
+            time_ended = kwargs['timeEnded']
+        if time_started is None and 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+
         if time_ended is not None:
-            pulumi.set(__self__, "time_ended", time_ended)
+            _setter("time_ended", time_ended)
         if time_started is not None:
-            pulumi.set(__self__, "time_started", time_started)
+            _setter("time_started", time_started)
 
     @property
     @pulumi.getter(name="timeEnded")
@@ -927,14 +1232,47 @@ class ConfigScriptParameterArgs:
         :param pulumi.Input[bool] is_secret: Describes if  the parameter value is secret and should be kept confidential. isSecret is specified in either CreateScript or UpdateScript API.
         :param pulumi.Input[Sequence[pulumi.Input['ConfigScriptParameterMonitorScriptParameterArgs']]] monitor_script_parameters: Details of the script parameter that can be used to overwrite the parameter present in the script.
         """
-        pulumi.set(__self__, "param_name", param_name)
-        pulumi.set(__self__, "param_value", param_value)
+        ConfigScriptParameterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            param_name=param_name,
+            param_value=param_value,
+            is_overwritten=is_overwritten,
+            is_secret=is_secret,
+            monitor_script_parameters=monitor_script_parameters,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             param_name: Optional[pulumi.Input[str]] = None,
+             param_value: Optional[pulumi.Input[str]] = None,
+             is_overwritten: Optional[pulumi.Input[bool]] = None,
+             is_secret: Optional[pulumi.Input[bool]] = None,
+             monitor_script_parameters: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigScriptParameterMonitorScriptParameterArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if param_name is None and 'paramName' in kwargs:
+            param_name = kwargs['paramName']
+        if param_name is None:
+            raise TypeError("Missing 'param_name' argument")
+        if param_value is None and 'paramValue' in kwargs:
+            param_value = kwargs['paramValue']
+        if param_value is None:
+            raise TypeError("Missing 'param_value' argument")
+        if is_overwritten is None and 'isOverwritten' in kwargs:
+            is_overwritten = kwargs['isOverwritten']
+        if is_secret is None and 'isSecret' in kwargs:
+            is_secret = kwargs['isSecret']
+        if monitor_script_parameters is None and 'monitorScriptParameters' in kwargs:
+            monitor_script_parameters = kwargs['monitorScriptParameters']
+
+        _setter("param_name", param_name)
+        _setter("param_value", param_value)
         if is_overwritten is not None:
-            pulumi.set(__self__, "is_overwritten", is_overwritten)
+            _setter("is_overwritten", is_overwritten)
         if is_secret is not None:
-            pulumi.set(__self__, "is_secret", is_secret)
+            _setter("is_secret", is_secret)
         if monitor_script_parameters is not None:
-            pulumi.set(__self__, "monitor_script_parameters", monitor_script_parameters)
+            _setter("monitor_script_parameters", monitor_script_parameters)
 
     @property
     @pulumi.getter(name="paramName")
@@ -1006,10 +1344,27 @@ class ConfigScriptParameterMonitorScriptParameterArgs:
         :param pulumi.Input[str] param_name: (Updatable) Name of the parameter.
         :param pulumi.Input[str] param_value: (Updatable) Value of the parameter.
         """
+        ConfigScriptParameterMonitorScriptParameterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            param_name=param_name,
+            param_value=param_value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             param_name: Optional[pulumi.Input[str]] = None,
+             param_value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if param_name is None and 'paramName' in kwargs:
+            param_name = kwargs['paramName']
+        if param_value is None and 'paramValue' in kwargs:
+            param_value = kwargs['paramValue']
+
         if param_name is not None:
-            pulumi.set(__self__, "param_name", param_name)
+            _setter("param_name", param_name)
         if param_value is not None:
-            pulumi.set(__self__, "param_value", param_value)
+            _setter("param_value", param_value)
 
     @property
     @pulumi.getter(name="paramName")
@@ -1045,9 +1400,26 @@ class ConfigVantagePointArgs:
         :param pulumi.Input[str] name: Name of the vantage point.
         :param pulumi.Input[str] display_name: Unique name that can be edited. The name should not contain any confidential information.
         """
-        pulumi.set(__self__, "name", name)
+        ConfigVantagePointArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            display_name=display_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
+        _setter("name", name)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
 
     @property
     @pulumi.getter
@@ -1087,10 +1459,43 @@ class DedicatedVantagePointDvpStackDetailsArgs:
         :param pulumi.Input[str] dvp_stream_id: (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
         :param pulumi.Input[str] dvp_version: (Updatable) Version of the dedicated vantage point.
         """
-        pulumi.set(__self__, "dvp_stack_id", dvp_stack_id)
-        pulumi.set(__self__, "dvp_stack_type", dvp_stack_type)
-        pulumi.set(__self__, "dvp_stream_id", dvp_stream_id)
-        pulumi.set(__self__, "dvp_version", dvp_version)
+        DedicatedVantagePointDvpStackDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dvp_stack_id=dvp_stack_id,
+            dvp_stack_type=dvp_stack_type,
+            dvp_stream_id=dvp_stream_id,
+            dvp_version=dvp_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dvp_stack_id: Optional[pulumi.Input[str]] = None,
+             dvp_stack_type: Optional[pulumi.Input[str]] = None,
+             dvp_stream_id: Optional[pulumi.Input[str]] = None,
+             dvp_version: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if dvp_stack_id is None and 'dvpStackId' in kwargs:
+            dvp_stack_id = kwargs['dvpStackId']
+        if dvp_stack_id is None:
+            raise TypeError("Missing 'dvp_stack_id' argument")
+        if dvp_stack_type is None and 'dvpStackType' in kwargs:
+            dvp_stack_type = kwargs['dvpStackType']
+        if dvp_stack_type is None:
+            raise TypeError("Missing 'dvp_stack_type' argument")
+        if dvp_stream_id is None and 'dvpStreamId' in kwargs:
+            dvp_stream_id = kwargs['dvpStreamId']
+        if dvp_stream_id is None:
+            raise TypeError("Missing 'dvp_stream_id' argument")
+        if dvp_version is None and 'dvpVersion' in kwargs:
+            dvp_version = kwargs['dvpVersion']
+        if dvp_version is None:
+            raise TypeError("Missing 'dvp_version' argument")
+
+        _setter("dvp_stack_id", dvp_stack_id)
+        _setter("dvp_stack_type", dvp_stack_type)
+        _setter("dvp_stream_id", dvp_stream_id)
+        _setter("dvp_version", dvp_version)
 
     @property
     @pulumi.getter(name="dvpStackId")
@@ -1154,14 +1559,31 @@ class DedicatedVantagePointMonitorStatusCountMapArgs:
         :param pulumi.Input[int] invalid: Number of invalid monitors using the script.
         :param pulumi.Input[int] total: Total number of monitors using the script.
         """
+        DedicatedVantagePointMonitorStatusCountMapArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            disabled=disabled,
+            enabled=enabled,
+            invalid=invalid,
+            total=total,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             disabled: Optional[pulumi.Input[int]] = None,
+             enabled: Optional[pulumi.Input[int]] = None,
+             invalid: Optional[pulumi.Input[int]] = None,
+             total: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if disabled is not None:
-            pulumi.set(__self__, "disabled", disabled)
+            _setter("disabled", disabled)
         if enabled is not None:
-            pulumi.set(__self__, "enabled", enabled)
+            _setter("enabled", enabled)
         if invalid is not None:
-            pulumi.set(__self__, "invalid", invalid)
+            _setter("invalid", invalid)
         if total is not None:
-            pulumi.set(__self__, "total", total)
+            _setter("total", total)
 
     @property
     @pulumi.getter
@@ -1225,14 +1647,31 @@ class ScriptMonitorStatusCountMapArgs:
         :param pulumi.Input[int] invalid: Number of invalid monitors using the script.
         :param pulumi.Input[int] total: Total number of monitors using the script.
         """
+        ScriptMonitorStatusCountMapArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            disabled=disabled,
+            enabled=enabled,
+            invalid=invalid,
+            total=total,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             disabled: Optional[pulumi.Input[int]] = None,
+             enabled: Optional[pulumi.Input[int]] = None,
+             invalid: Optional[pulumi.Input[int]] = None,
+             total: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if disabled is not None:
-            pulumi.set(__self__, "disabled", disabled)
+            _setter("disabled", disabled)
         if enabled is not None:
-            pulumi.set(__self__, "enabled", enabled)
+            _setter("enabled", enabled)
         if invalid is not None:
-            pulumi.set(__self__, "invalid", invalid)
+            _setter("invalid", invalid)
         if total is not None:
-            pulumi.set(__self__, "total", total)
+            _setter("total", total)
 
     @property
     @pulumi.getter
@@ -1302,15 +1741,46 @@ class ScriptParameterArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input['ScriptParameterScriptParameterArgs']]] script_parameters: Details of the script parameters, paramName must be from the script content and these details can be used to overwrite the default parameter present in the script content.
         """
-        pulumi.set(__self__, "param_name", param_name)
+        ScriptParameterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            param_name=param_name,
+            is_overwritten=is_overwritten,
+            is_secret=is_secret,
+            param_value=param_value,
+            script_parameters=script_parameters,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             param_name: Optional[pulumi.Input[str]] = None,
+             is_overwritten: Optional[pulumi.Input[bool]] = None,
+             is_secret: Optional[pulumi.Input[bool]] = None,
+             param_value: Optional[pulumi.Input[str]] = None,
+             script_parameters: Optional[pulumi.Input[Sequence[pulumi.Input['ScriptParameterScriptParameterArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if param_name is None and 'paramName' in kwargs:
+            param_name = kwargs['paramName']
+        if param_name is None:
+            raise TypeError("Missing 'param_name' argument")
+        if is_overwritten is None and 'isOverwritten' in kwargs:
+            is_overwritten = kwargs['isOverwritten']
+        if is_secret is None and 'isSecret' in kwargs:
+            is_secret = kwargs['isSecret']
+        if param_value is None and 'paramValue' in kwargs:
+            param_value = kwargs['paramValue']
+        if script_parameters is None and 'scriptParameters' in kwargs:
+            script_parameters = kwargs['scriptParameters']
+
+        _setter("param_name", param_name)
         if is_overwritten is not None:
-            pulumi.set(__self__, "is_overwritten", is_overwritten)
+            _setter("is_overwritten", is_overwritten)
         if is_secret is not None:
-            pulumi.set(__self__, "is_secret", is_secret)
+            _setter("is_secret", is_secret)
         if param_value is not None:
-            pulumi.set(__self__, "param_value", param_value)
+            _setter("param_value", param_value)
         if script_parameters is not None:
-            pulumi.set(__self__, "script_parameters", script_parameters)
+            _setter("script_parameters", script_parameters)
 
     @property
     @pulumi.getter(name="paramName")
@@ -1392,12 +1862,33 @@ class ScriptParameterScriptParameterArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        ScriptParameterScriptParameterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_secret=is_secret,
+            param_name=param_name,
+            param_value=param_value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_secret: Optional[pulumi.Input[bool]] = None,
+             param_name: Optional[pulumi.Input[str]] = None,
+             param_value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_secret is None and 'isSecret' in kwargs:
+            is_secret = kwargs['isSecret']
+        if param_name is None and 'paramName' in kwargs:
+            param_name = kwargs['paramName']
+        if param_value is None and 'paramValue' in kwargs:
+            param_value = kwargs['paramValue']
+
         if is_secret is not None:
-            pulumi.set(__self__, "is_secret", is_secret)
+            _setter("is_secret", is_secret)
         if param_name is not None:
-            pulumi.set(__self__, "param_name", param_name)
+            _setter("param_name", param_name)
         if param_value is not None:
-            pulumi.set(__self__, "param_value", param_value)
+            _setter("param_value", param_value)
 
     @property
     @pulumi.getter(name="isSecret")
@@ -1449,10 +1940,29 @@ class GetDedicatedVantagePointsFilterArgs:
         """
         :param str name: A filter to return only the resources that match the entire name.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDedicatedVantagePointsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1494,10 +2004,29 @@ class GetMonitorsFilterArgs:
         """
         :param str name: Name of the vantage point.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMonitorsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1536,10 +2065,29 @@ class GetScriptsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetScriptsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1578,10 +2126,29 @@ class GetVantagePointsFilterArgs:
         """
         :param str name: A filter to return only the resources that match the entire name.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetVantagePointsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['NetworkFirewallPolicyMappedSecretArgs', 'NetworkFirewallPolicyMappedSecret']
@@ -33,13 +33,50 @@ class NetworkFirewallPolicyMappedSecretArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] name: Unique name to identify the group of urls to be used in the policy rules.
         """
-        pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
-        pulumi.set(__self__, "source", source)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "vault_secret_id", vault_secret_id)
-        pulumi.set(__self__, "version_number", version_number)
+        NetworkFirewallPolicyMappedSecretArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            network_firewall_policy_id=network_firewall_policy_id,
+            source=source,
+            type=type,
+            vault_secret_id=vault_secret_id,
+            version_number=version_number,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
+             source: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             vault_secret_id: Optional[pulumi.Input[str]] = None,
+             version_number: Optional[pulumi.Input[int]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
+            network_firewall_policy_id = kwargs['networkFirewallPolicyId']
+        if network_firewall_policy_id is None:
+            raise TypeError("Missing 'network_firewall_policy_id' argument")
+        if source is None:
+            raise TypeError("Missing 'source' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if vault_secret_id is None and 'vaultSecretId' in kwargs:
+            vault_secret_id = kwargs['vaultSecretId']
+        if vault_secret_id is None:
+            raise TypeError("Missing 'vault_secret_id' argument")
+        if version_number is None and 'versionNumber' in kwargs:
+            version_number = kwargs['versionNumber']
+        if version_number is None:
+            raise TypeError("Missing 'version_number' argument")
+
+        _setter("network_firewall_policy_id", network_firewall_policy_id)
+        _setter("source", source)
+        _setter("type", type)
+        _setter("vault_secret_id", vault_secret_id)
+        _setter("version_number", version_number)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter(name="networkFirewallPolicyId")
@@ -142,20 +179,51 @@ class _NetworkFirewallPolicyMappedSecretState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _NetworkFirewallPolicyMappedSecretState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            network_firewall_policy_id=network_firewall_policy_id,
+            parent_resource_id=parent_resource_id,
+            source=source,
+            type=type,
+            vault_secret_id=vault_secret_id,
+            version_number=version_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
+             parent_resource_id: Optional[pulumi.Input[str]] = None,
+             source: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             vault_secret_id: Optional[pulumi.Input[str]] = None,
+             version_number: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
+            network_firewall_policy_id = kwargs['networkFirewallPolicyId']
+        if parent_resource_id is None and 'parentResourceId' in kwargs:
+            parent_resource_id = kwargs['parentResourceId']
+        if vault_secret_id is None and 'vaultSecretId' in kwargs:
+            vault_secret_id = kwargs['vaultSecretId']
+        if version_number is None and 'versionNumber' in kwargs:
+            version_number = kwargs['versionNumber']
+
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if network_firewall_policy_id is not None:
-            pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
+            _setter("network_firewall_policy_id", network_firewall_policy_id)
         if parent_resource_id is not None:
-            pulumi.set(__self__, "parent_resource_id", parent_resource_id)
+            _setter("parent_resource_id", parent_resource_id)
         if source is not None:
-            pulumi.set(__self__, "source", source)
+            _setter("source", source)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
         if vault_secret_id is not None:
-            pulumi.set(__self__, "vault_secret_id", vault_secret_id)
+            _setter("vault_secret_id", vault_secret_id)
         if version_number is not None:
-            pulumi.set(__self__, "version_number", version_number)
+            _setter("version_number", version_number)
 
     @property
     @pulumi.getter
@@ -341,6 +409,10 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            NetworkFirewallPolicyMappedSecretArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

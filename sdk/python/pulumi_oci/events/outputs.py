@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -28,7 +28,20 @@ class RuleActions(dict):
         """
         :param Sequence['RuleActionsActionArgs'] actions: (Updatable) A list of one or more ActionDetails objects.
         """
-        pulumi.set(__self__, "actions", actions)
+        RuleActions._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            actions=actions,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             actions: Optional[Sequence['outputs.RuleActionsAction']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if actions is None:
+            raise TypeError("Missing 'actions' argument")
+
+        _setter("actions", actions)
 
     @property
     @pulumi.getter
@@ -96,22 +109,65 @@ class RuleActionsAction(dict):
         :param str stream_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
         :param str topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
         """
-        pulumi.set(__self__, "action_type", action_type)
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        RuleActionsAction._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_type=action_type,
+            is_enabled=is_enabled,
+            description=description,
+            function_id=function_id,
+            id=id,
+            lifecycle_message=lifecycle_message,
+            state=state,
+            stream_id=stream_id,
+            topic_id=topic_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_type: Optional[str] = None,
+             is_enabled: Optional[bool] = None,
+             description: Optional[str] = None,
+             function_id: Optional[str] = None,
+             id: Optional[str] = None,
+             lifecycle_message: Optional[str] = None,
+             state: Optional[str] = None,
+             stream_id: Optional[str] = None,
+             topic_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if action_type is None and 'actionType' in kwargs:
+            action_type = kwargs['actionType']
+        if action_type is None:
+            raise TypeError("Missing 'action_type' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if function_id is None and 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if lifecycle_message is None and 'lifecycleMessage' in kwargs:
+            lifecycle_message = kwargs['lifecycleMessage']
+        if stream_id is None and 'streamId' in kwargs:
+            stream_id = kwargs['streamId']
+        if topic_id is None and 'topicId' in kwargs:
+            topic_id = kwargs['topicId']
+
+        _setter("action_type", action_type)
+        _setter("is_enabled", is_enabled)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if function_id is not None:
-            pulumi.set(__self__, "function_id", function_id)
+            _setter("function_id", function_id)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if lifecycle_message is not None:
-            pulumi.set(__self__, "lifecycle_message", lifecycle_message)
+            _setter("lifecycle_message", lifecycle_message)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if stream_id is not None:
-            pulumi.set(__self__, "stream_id", stream_id)
+            _setter("stream_id", stream_id)
         if topic_id is not None:
-            pulumi.set(__self__, "topic_id", topic_id)
+            _setter("topic_id", topic_id)
 
     @property
     @pulumi.getter(name="actionType")
@@ -200,7 +256,20 @@ class GetRuleActionResult(dict):
         """
         :param Sequence['GetRuleActionActionArgs'] actions: A list of one or more Action objects.
         """
-        pulumi.set(__self__, "actions", actions)
+        GetRuleActionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            actions=actions,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             actions: Optional[Sequence['outputs.GetRuleActionActionResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if actions is None:
+            raise TypeError("Missing 'actions' argument")
+
+        _setter("actions", actions)
 
     @property
     @pulumi.getter
@@ -237,15 +306,72 @@ class GetRuleActionActionResult(dict):
         :param str stream_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
         :param str topic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
         """
-        pulumi.set(__self__, "action_type", action_type)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "function_id", function_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "lifecycle_message", lifecycle_message)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "stream_id", stream_id)
-        pulumi.set(__self__, "topic_id", topic_id)
+        GetRuleActionActionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_type=action_type,
+            description=description,
+            function_id=function_id,
+            id=id,
+            is_enabled=is_enabled,
+            lifecycle_message=lifecycle_message,
+            state=state,
+            stream_id=stream_id,
+            topic_id=topic_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_type: Optional[str] = None,
+             description: Optional[str] = None,
+             function_id: Optional[str] = None,
+             id: Optional[str] = None,
+             is_enabled: Optional[bool] = None,
+             lifecycle_message: Optional[str] = None,
+             state: Optional[str] = None,
+             stream_id: Optional[str] = None,
+             topic_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if action_type is None and 'actionType' in kwargs:
+            action_type = kwargs['actionType']
+        if action_type is None:
+            raise TypeError("Missing 'action_type' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if function_id is None and 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if function_id is None:
+            raise TypeError("Missing 'function_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if lifecycle_message is None and 'lifecycleMessage' in kwargs:
+            lifecycle_message = kwargs['lifecycleMessage']
+        if lifecycle_message is None:
+            raise TypeError("Missing 'lifecycle_message' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if stream_id is None and 'streamId' in kwargs:
+            stream_id = kwargs['streamId']
+        if stream_id is None:
+            raise TypeError("Missing 'stream_id' argument")
+        if topic_id is None and 'topicId' in kwargs:
+            topic_id = kwargs['topicId']
+        if topic_id is None:
+            raise TypeError("Missing 'topic_id' argument")
+
+        _setter("action_type", action_type)
+        _setter("description", description)
+        _setter("function_id", function_id)
+        _setter("id", id)
+        _setter("is_enabled", is_enabled)
+        _setter("lifecycle_message", lifecycle_message)
+        _setter("state", state)
+        _setter("stream_id", stream_id)
+        _setter("topic_id", topic_id)
 
     @property
     @pulumi.getter(name="actionType")
@@ -329,10 +455,29 @@ class GetRulesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetRulesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -380,18 +525,89 @@ class GetRulesRuleResult(dict):
         :param str state: A filter to return only rules that match the lifecycle state in this parameter.  Example: `Creating`
         :param str time_created: The time this rule was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
         """
-        pulumi.set(__self__, "actions", actions)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "lifecycle_message", lifecycle_message)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+        GetRulesRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            actions=actions,
+            compartment_id=compartment_id,
+            condition=condition,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_enabled=is_enabled,
+            lifecycle_message=lifecycle_message,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             actions: Optional[Sequence['outputs.GetRulesRuleActionResult']] = None,
+             compartment_id: Optional[str] = None,
+             condition: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_enabled: Optional[bool] = None,
+             lifecycle_message: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if actions is None:
+            raise TypeError("Missing 'actions' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if condition is None:
+            raise TypeError("Missing 'condition' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if lifecycle_message is None and 'lifecycleMessage' in kwargs:
+            lifecycle_message = kwargs['lifecycleMessage']
+        if lifecycle_message is None:
+            raise TypeError("Missing 'lifecycle_message' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+
+        _setter("actions", actions)
+        _setter("compartment_id", compartment_id)
+        _setter("condition", condition)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_enabled", is_enabled)
+        _setter("lifecycle_message", lifecycle_message)
+        _setter("state", state)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter
@@ -498,7 +714,20 @@ class GetRulesRuleActionResult(dict):
         """
         :param Sequence['GetRulesRuleActionActionArgs'] actions: A list of one or more Action objects.
         """
-        pulumi.set(__self__, "actions", actions)
+        GetRulesRuleActionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            actions=actions,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             actions: Optional[Sequence['outputs.GetRulesRuleActionActionResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if actions is None:
+            raise TypeError("Missing 'actions' argument")
+
+        _setter("actions", actions)
 
     @property
     @pulumi.getter
@@ -535,15 +764,72 @@ class GetRulesRuleActionActionResult(dict):
         :param str stream_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
         :param str topic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
         """
-        pulumi.set(__self__, "action_type", action_type)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "function_id", function_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "lifecycle_message", lifecycle_message)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "stream_id", stream_id)
-        pulumi.set(__self__, "topic_id", topic_id)
+        GetRulesRuleActionActionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_type=action_type,
+            description=description,
+            function_id=function_id,
+            id=id,
+            is_enabled=is_enabled,
+            lifecycle_message=lifecycle_message,
+            state=state,
+            stream_id=stream_id,
+            topic_id=topic_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_type: Optional[str] = None,
+             description: Optional[str] = None,
+             function_id: Optional[str] = None,
+             id: Optional[str] = None,
+             is_enabled: Optional[bool] = None,
+             lifecycle_message: Optional[str] = None,
+             state: Optional[str] = None,
+             stream_id: Optional[str] = None,
+             topic_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if action_type is None and 'actionType' in kwargs:
+            action_type = kwargs['actionType']
+        if action_type is None:
+            raise TypeError("Missing 'action_type' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if function_id is None and 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if function_id is None:
+            raise TypeError("Missing 'function_id' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if lifecycle_message is None and 'lifecycleMessage' in kwargs:
+            lifecycle_message = kwargs['lifecycleMessage']
+        if lifecycle_message is None:
+            raise TypeError("Missing 'lifecycle_message' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if stream_id is None and 'streamId' in kwargs:
+            stream_id = kwargs['streamId']
+        if stream_id is None:
+            raise TypeError("Missing 'stream_id' argument")
+        if topic_id is None and 'topicId' in kwargs:
+            topic_id = kwargs['topicId']
+        if topic_id is None:
+            raise TypeError("Missing 'topic_id' argument")
+
+        _setter("action_type", action_type)
+        _setter("description", description)
+        _setter("function_id", function_id)
+        _setter("id", id)
+        _setter("is_enabled", is_enabled)
+        _setter("lifecycle_message", lifecycle_message)
+        _setter("state", state)
+        _setter("stream_id", stream_id)
+        _setter("topic_id", topic_id)
 
     @property
     @pulumi.getter(name="actionType")

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -41,22 +41,67 @@ class WorkspaceExportRequestArgs:
         :param pulumi.Input[str] object_storage_region: Region of the object storage (if using object storage of different region)
         :param pulumi.Input[str] object_storage_tenancy_id: Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "workspace_id", workspace_id)
+        WorkspaceExportRequestArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            workspace_id=workspace_id,
+            are_references_included=are_references_included,
+            file_name=file_name,
+            filters=filters,
+            is_object_overwrite_enabled=is_object_overwrite_enabled,
+            object_keys=object_keys,
+            object_storage_region=object_storage_region,
+            object_storage_tenancy_id=object_storage_tenancy_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[pulumi.Input[str]] = None,
+             workspace_id: Optional[pulumi.Input[str]] = None,
+             are_references_included: Optional[pulumi.Input[bool]] = None,
+             file_name: Optional[pulumi.Input[str]] = None,
+             filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             is_object_overwrite_enabled: Optional[pulumi.Input[bool]] = None,
+             object_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             object_storage_region: Optional[pulumi.Input[str]] = None,
+             object_storage_tenancy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if workspace_id is None and 'workspaceId' in kwargs:
+            workspace_id = kwargs['workspaceId']
+        if workspace_id is None:
+            raise TypeError("Missing 'workspace_id' argument")
+        if are_references_included is None and 'areReferencesIncluded' in kwargs:
+            are_references_included = kwargs['areReferencesIncluded']
+        if file_name is None and 'fileName' in kwargs:
+            file_name = kwargs['fileName']
+        if is_object_overwrite_enabled is None and 'isObjectOverwriteEnabled' in kwargs:
+            is_object_overwrite_enabled = kwargs['isObjectOverwriteEnabled']
+        if object_keys is None and 'objectKeys' in kwargs:
+            object_keys = kwargs['objectKeys']
+        if object_storage_region is None and 'objectStorageRegion' in kwargs:
+            object_storage_region = kwargs['objectStorageRegion']
+        if object_storage_tenancy_id is None and 'objectStorageTenancyId' in kwargs:
+            object_storage_tenancy_id = kwargs['objectStorageTenancyId']
+
+        _setter("bucket", bucket)
+        _setter("workspace_id", workspace_id)
         if are_references_included is not None:
-            pulumi.set(__self__, "are_references_included", are_references_included)
+            _setter("are_references_included", are_references_included)
         if file_name is not None:
-            pulumi.set(__self__, "file_name", file_name)
+            _setter("file_name", file_name)
         if filters is not None:
-            pulumi.set(__self__, "filters", filters)
+            _setter("filters", filters)
         if is_object_overwrite_enabled is not None:
-            pulumi.set(__self__, "is_object_overwrite_enabled", is_object_overwrite_enabled)
+            _setter("is_object_overwrite_enabled", is_object_overwrite_enabled)
         if object_keys is not None:
-            pulumi.set(__self__, "object_keys", object_keys)
+            _setter("object_keys", object_keys)
         if object_storage_region is not None:
-            pulumi.set(__self__, "object_storage_region", object_storage_region)
+            _setter("object_storage_region", object_storage_region)
         if object_storage_tenancy_id is not None:
-            pulumi.set(__self__, "object_storage_tenancy_id", object_storage_tenancy_id)
+            _setter("object_storage_tenancy_id", object_storage_tenancy_id)
 
     @property
     @pulumi.getter
@@ -219,44 +264,119 @@ class _WorkspaceExportRequestState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _WorkspaceExportRequestState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            are_references_included=are_references_included,
+            bucket=bucket,
+            created_by=created_by,
+            error_messages=error_messages,
+            exported_items=exported_items,
+            file_name=file_name,
+            filters=filters,
+            is_object_overwrite_enabled=is_object_overwrite_enabled,
+            key=key,
+            name=name,
+            object_keys=object_keys,
+            object_storage_region=object_storage_region,
+            object_storage_tenancy_id=object_storage_tenancy_id,
+            referenced_items=referenced_items,
+            status=status,
+            time_ended_in_millis=time_ended_in_millis,
+            time_started_in_millis=time_started_in_millis,
+            total_exported_object_count=total_exported_object_count,
+            workspace_id=workspace_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             are_references_included: Optional[pulumi.Input[bool]] = None,
+             bucket: Optional[pulumi.Input[str]] = None,
+             created_by: Optional[pulumi.Input[str]] = None,
+             error_messages: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             exported_items: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceExportRequestExportedItemArgs']]]] = None,
+             file_name: Optional[pulumi.Input[str]] = None,
+             filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             is_object_overwrite_enabled: Optional[pulumi.Input[bool]] = None,
+             key: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             object_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             object_storage_region: Optional[pulumi.Input[str]] = None,
+             object_storage_tenancy_id: Optional[pulumi.Input[str]] = None,
+             referenced_items: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             time_ended_in_millis: Optional[pulumi.Input[str]] = None,
+             time_started_in_millis: Optional[pulumi.Input[str]] = None,
+             total_exported_object_count: Optional[pulumi.Input[int]] = None,
+             workspace_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if are_references_included is None and 'areReferencesIncluded' in kwargs:
+            are_references_included = kwargs['areReferencesIncluded']
+        if created_by is None and 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if error_messages is None and 'errorMessages' in kwargs:
+            error_messages = kwargs['errorMessages']
+        if exported_items is None and 'exportedItems' in kwargs:
+            exported_items = kwargs['exportedItems']
+        if file_name is None and 'fileName' in kwargs:
+            file_name = kwargs['fileName']
+        if is_object_overwrite_enabled is None and 'isObjectOverwriteEnabled' in kwargs:
+            is_object_overwrite_enabled = kwargs['isObjectOverwriteEnabled']
+        if object_keys is None and 'objectKeys' in kwargs:
+            object_keys = kwargs['objectKeys']
+        if object_storage_region is None and 'objectStorageRegion' in kwargs:
+            object_storage_region = kwargs['objectStorageRegion']
+        if object_storage_tenancy_id is None and 'objectStorageTenancyId' in kwargs:
+            object_storage_tenancy_id = kwargs['objectStorageTenancyId']
+        if referenced_items is None and 'referencedItems' in kwargs:
+            referenced_items = kwargs['referencedItems']
+        if time_ended_in_millis is None and 'timeEndedInMillis' in kwargs:
+            time_ended_in_millis = kwargs['timeEndedInMillis']
+        if time_started_in_millis is None and 'timeStartedInMillis' in kwargs:
+            time_started_in_millis = kwargs['timeStartedInMillis']
+        if total_exported_object_count is None and 'totalExportedObjectCount' in kwargs:
+            total_exported_object_count = kwargs['totalExportedObjectCount']
+        if workspace_id is None and 'workspaceId' in kwargs:
+            workspace_id = kwargs['workspaceId']
+
         if are_references_included is not None:
-            pulumi.set(__self__, "are_references_included", are_references_included)
+            _setter("are_references_included", are_references_included)
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if created_by is not None:
-            pulumi.set(__self__, "created_by", created_by)
+            _setter("created_by", created_by)
         if error_messages is not None:
-            pulumi.set(__self__, "error_messages", error_messages)
+            _setter("error_messages", error_messages)
         if exported_items is not None:
-            pulumi.set(__self__, "exported_items", exported_items)
+            _setter("exported_items", exported_items)
         if file_name is not None:
-            pulumi.set(__self__, "file_name", file_name)
+            _setter("file_name", file_name)
         if filters is not None:
-            pulumi.set(__self__, "filters", filters)
+            _setter("filters", filters)
         if is_object_overwrite_enabled is not None:
-            pulumi.set(__self__, "is_object_overwrite_enabled", is_object_overwrite_enabled)
+            _setter("is_object_overwrite_enabled", is_object_overwrite_enabled)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if object_keys is not None:
-            pulumi.set(__self__, "object_keys", object_keys)
+            _setter("object_keys", object_keys)
         if object_storage_region is not None:
-            pulumi.set(__self__, "object_storage_region", object_storage_region)
+            _setter("object_storage_region", object_storage_region)
         if object_storage_tenancy_id is not None:
-            pulumi.set(__self__, "object_storage_tenancy_id", object_storage_tenancy_id)
+            _setter("object_storage_tenancy_id", object_storage_tenancy_id)
         if referenced_items is not None:
-            pulumi.set(__self__, "referenced_items", referenced_items)
+            _setter("referenced_items", referenced_items)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if time_ended_in_millis is not None:
-            pulumi.set(__self__, "time_ended_in_millis", time_ended_in_millis)
+            _setter("time_ended_in_millis", time_ended_in_millis)
         if time_started_in_millis is not None:
-            pulumi.set(__self__, "time_started_in_millis", time_started_in_millis)
+            _setter("time_started_in_millis", time_started_in_millis)
         if total_exported_object_count is not None:
-            pulumi.set(__self__, "total_exported_object_count", total_exported_object_count)
+            _setter("total_exported_object_count", total_exported_object_count)
         if workspace_id is not None:
-            pulumi.set(__self__, "workspace_id", workspace_id)
+            _setter("workspace_id", workspace_id)
 
     @property
     @pulumi.getter(name="areReferencesIncluded")
@@ -600,6 +720,10 @@ class WorkspaceExportRequest(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            WorkspaceExportRequestArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

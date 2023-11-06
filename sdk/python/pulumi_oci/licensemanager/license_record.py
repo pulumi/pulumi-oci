@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['LicenseRecordArgs', 'LicenseRecord']
@@ -41,22 +41,79 @@ class LicenseRecordArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "is_perpetual", is_perpetual)
-        pulumi.set(__self__, "is_unlimited", is_unlimited)
-        pulumi.set(__self__, "product_license_id", product_license_id)
+        LicenseRecordArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            is_perpetual=is_perpetual,
+            is_unlimited=is_unlimited,
+            product_license_id=product_license_id,
+            defined_tags=defined_tags,
+            expiration_date=expiration_date,
+            freeform_tags=freeform_tags,
+            license_count=license_count,
+            product_id=product_id,
+            support_end_date=support_end_date,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[pulumi.Input[str]] = None,
+             is_perpetual: Optional[pulumi.Input[bool]] = None,
+             is_unlimited: Optional[pulumi.Input[bool]] = None,
+             product_license_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             expiration_date: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             license_count: Optional[pulumi.Input[int]] = None,
+             product_id: Optional[pulumi.Input[str]] = None,
+             support_end_date: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if is_perpetual is None and 'isPerpetual' in kwargs:
+            is_perpetual = kwargs['isPerpetual']
+        if is_perpetual is None:
+            raise TypeError("Missing 'is_perpetual' argument")
+        if is_unlimited is None and 'isUnlimited' in kwargs:
+            is_unlimited = kwargs['isUnlimited']
+        if is_unlimited is None:
+            raise TypeError("Missing 'is_unlimited' argument")
+        if product_license_id is None and 'productLicenseId' in kwargs:
+            product_license_id = kwargs['productLicenseId']
+        if product_license_id is None:
+            raise TypeError("Missing 'product_license_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if expiration_date is None and 'expirationDate' in kwargs:
+            expiration_date = kwargs['expirationDate']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if license_count is None and 'licenseCount' in kwargs:
+            license_count = kwargs['licenseCount']
+        if product_id is None and 'productId' in kwargs:
+            product_id = kwargs['productId']
+        if support_end_date is None and 'supportEndDate' in kwargs:
+            support_end_date = kwargs['supportEndDate']
+
+        _setter("display_name", display_name)
+        _setter("is_perpetual", is_perpetual)
+        _setter("is_unlimited", is_unlimited)
+        _setter("product_license_id", product_license_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if expiration_date is not None:
-            pulumi.set(__self__, "expiration_date", expiration_date)
+            _setter("expiration_date", expiration_date)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if license_count is not None:
-            pulumi.set(__self__, "license_count", license_count)
+            _setter("license_count", license_count)
         if product_id is not None:
-            pulumi.set(__self__, "product_id", product_id)
+            _setter("product_id", product_id)
         if support_end_date is not None:
-            pulumi.set(__self__, "support_end_date", support_end_date)
+            _setter("support_end_date", support_end_date)
 
     @property
     @pulumi.getter(name="displayName")
@@ -227,40 +284,115 @@ class _LicenseRecordState:
         :param pulumi.Input[str] time_created: The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
         """
+        _LicenseRecordState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            expiration_date=expiration_date,
+            freeform_tags=freeform_tags,
+            is_perpetual=is_perpetual,
+            is_unlimited=is_unlimited,
+            license_count=license_count,
+            license_unit=license_unit,
+            product_id=product_id,
+            product_license=product_license,
+            product_license_id=product_license_id,
+            state=state,
+            support_end_date=support_end_date,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             expiration_date: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_perpetual: Optional[pulumi.Input[bool]] = None,
+             is_unlimited: Optional[pulumi.Input[bool]] = None,
+             license_count: Optional[pulumi.Input[int]] = None,
+             license_unit: Optional[pulumi.Input[str]] = None,
+             product_id: Optional[pulumi.Input[str]] = None,
+             product_license: Optional[pulumi.Input[str]] = None,
+             product_license_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             support_end_date: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if expiration_date is None and 'expirationDate' in kwargs:
+            expiration_date = kwargs['expirationDate']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_perpetual is None and 'isPerpetual' in kwargs:
+            is_perpetual = kwargs['isPerpetual']
+        if is_unlimited is None and 'isUnlimited' in kwargs:
+            is_unlimited = kwargs['isUnlimited']
+        if license_count is None and 'licenseCount' in kwargs:
+            license_count = kwargs['licenseCount']
+        if license_unit is None and 'licenseUnit' in kwargs:
+            license_unit = kwargs['licenseUnit']
+        if product_id is None and 'productId' in kwargs:
+            product_id = kwargs['productId']
+        if product_license is None and 'productLicense' in kwargs:
+            product_license = kwargs['productLicense']
+        if product_license_id is None and 'productLicenseId' in kwargs:
+            product_license_id = kwargs['productLicenseId']
+        if support_end_date is None and 'supportEndDate' in kwargs:
+            support_end_date = kwargs['supportEndDate']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if expiration_date is not None:
-            pulumi.set(__self__, "expiration_date", expiration_date)
+            _setter("expiration_date", expiration_date)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_perpetual is not None:
-            pulumi.set(__self__, "is_perpetual", is_perpetual)
+            _setter("is_perpetual", is_perpetual)
         if is_unlimited is not None:
-            pulumi.set(__self__, "is_unlimited", is_unlimited)
+            _setter("is_unlimited", is_unlimited)
         if license_count is not None:
-            pulumi.set(__self__, "license_count", license_count)
+            _setter("license_count", license_count)
         if license_unit is not None:
-            pulumi.set(__self__, "license_unit", license_unit)
+            _setter("license_unit", license_unit)
         if product_id is not None:
-            pulumi.set(__self__, "product_id", product_id)
+            _setter("product_id", product_id)
         if product_license is not None:
-            pulumi.set(__self__, "product_license", product_license)
+            _setter("product_license", product_license)
         if product_license_id is not None:
-            pulumi.set(__self__, "product_license_id", product_license_id)
+            _setter("product_license_id", product_license_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if support_end_date is not None:
-            pulumi.set(__self__, "support_end_date", support_end_date)
+            _setter("support_end_date", support_end_date)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -592,6 +724,10 @@ class LicenseRecord(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            LicenseRecordArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

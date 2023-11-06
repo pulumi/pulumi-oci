@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['SqlCollectionArgs', 'SqlCollection']
@@ -49,31 +49,98 @@ class SqlCollectionArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "db_user_name", db_user_name)
-        pulumi.set(__self__, "target_id", target_id)
+        SqlCollectionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            db_user_name=db_user_name,
+            target_id=target_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            generate_sql_firewall_policy_trigger=generate_sql_firewall_policy_trigger,
+            purge_logs_trigger=purge_logs_trigger,
+            refresh_log_insights_trigger=refresh_log_insights_trigger,
+            sql_level=sql_level,
+            start_trigger=start_trigger,
+            status=status,
+            stop_trigger=stop_trigger,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             db_user_name: Optional[pulumi.Input[str]] = None,
+             target_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             generate_sql_firewall_policy_trigger: Optional[pulumi.Input[bool]] = None,
+             purge_logs_trigger: Optional[pulumi.Input[bool]] = None,
+             refresh_log_insights_trigger: Optional[pulumi.Input[bool]] = None,
+             sql_level: Optional[pulumi.Input[str]] = None,
+             start_trigger: Optional[pulumi.Input[bool]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             stop_trigger: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if db_user_name is None and 'dbUserName' in kwargs:
+            db_user_name = kwargs['dbUserName']
+        if db_user_name is None:
+            raise TypeError("Missing 'db_user_name' argument")
+        if target_id is None and 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if target_id is None:
+            raise TypeError("Missing 'target_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if generate_sql_firewall_policy_trigger is None and 'generateSqlFirewallPolicyTrigger' in kwargs:
+            generate_sql_firewall_policy_trigger = kwargs['generateSqlFirewallPolicyTrigger']
+        if purge_logs_trigger is None and 'purgeLogsTrigger' in kwargs:
+            purge_logs_trigger = kwargs['purgeLogsTrigger']
+        if refresh_log_insights_trigger is None and 'refreshLogInsightsTrigger' in kwargs:
+            refresh_log_insights_trigger = kwargs['refreshLogInsightsTrigger']
+        if sql_level is None and 'sqlLevel' in kwargs:
+            sql_level = kwargs['sqlLevel']
+        if start_trigger is None and 'startTrigger' in kwargs:
+            start_trigger = kwargs['startTrigger']
+        if stop_trigger is None and 'stopTrigger' in kwargs:
+            stop_trigger = kwargs['stopTrigger']
+
+        _setter("compartment_id", compartment_id)
+        _setter("db_user_name", db_user_name)
+        _setter("target_id", target_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if generate_sql_firewall_policy_trigger is not None:
-            pulumi.set(__self__, "generate_sql_firewall_policy_trigger", generate_sql_firewall_policy_trigger)
+            _setter("generate_sql_firewall_policy_trigger", generate_sql_firewall_policy_trigger)
         if purge_logs_trigger is not None:
-            pulumi.set(__self__, "purge_logs_trigger", purge_logs_trigger)
+            _setter("purge_logs_trigger", purge_logs_trigger)
         if refresh_log_insights_trigger is not None:
-            pulumi.set(__self__, "refresh_log_insights_trigger", refresh_log_insights_trigger)
+            _setter("refresh_log_insights_trigger", refresh_log_insights_trigger)
         if sql_level is not None:
-            pulumi.set(__self__, "sql_level", sql_level)
+            _setter("sql_level", sql_level)
         if start_trigger is not None:
-            pulumi.set(__self__, "start_trigger", start_trigger)
+            _setter("start_trigger", start_trigger)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if stop_trigger is not None:
-            pulumi.set(__self__, "stop_trigger", stop_trigger)
+            _setter("stop_trigger", stop_trigger)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -300,48 +367,135 @@ class _SqlCollectionState:
         :param pulumi.Input[str] time_last_stopped: The timestamp of the most recent SqlCollection stop operation, in the format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The last date and time the SQL collection was updated, in the format defined by RFC3339.
         """
+        _SqlCollectionState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            db_user_name=db_user_name,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            generate_sql_firewall_policy_trigger=generate_sql_firewall_policy_trigger,
+            lifecycle_details=lifecycle_details,
+            purge_logs_trigger=purge_logs_trigger,
+            refresh_log_insights_trigger=refresh_log_insights_trigger,
+            sql_level=sql_level,
+            start_trigger=start_trigger,
+            state=state,
+            status=status,
+            stop_trigger=stop_trigger,
+            system_tags=system_tags,
+            target_id=target_id,
+            time_created=time_created,
+            time_last_started=time_last_started,
+            time_last_stopped=time_last_stopped,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             db_user_name: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             generate_sql_firewall_policy_trigger: Optional[pulumi.Input[bool]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             purge_logs_trigger: Optional[pulumi.Input[bool]] = None,
+             refresh_log_insights_trigger: Optional[pulumi.Input[bool]] = None,
+             sql_level: Optional[pulumi.Input[str]] = None,
+             start_trigger: Optional[pulumi.Input[bool]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             stop_trigger: Optional[pulumi.Input[bool]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             target_id: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_last_started: Optional[pulumi.Input[str]] = None,
+             time_last_stopped: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if db_user_name is None and 'dbUserName' in kwargs:
+            db_user_name = kwargs['dbUserName']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if generate_sql_firewall_policy_trigger is None and 'generateSqlFirewallPolicyTrigger' in kwargs:
+            generate_sql_firewall_policy_trigger = kwargs['generateSqlFirewallPolicyTrigger']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if purge_logs_trigger is None and 'purgeLogsTrigger' in kwargs:
+            purge_logs_trigger = kwargs['purgeLogsTrigger']
+        if refresh_log_insights_trigger is None and 'refreshLogInsightsTrigger' in kwargs:
+            refresh_log_insights_trigger = kwargs['refreshLogInsightsTrigger']
+        if sql_level is None and 'sqlLevel' in kwargs:
+            sql_level = kwargs['sqlLevel']
+        if start_trigger is None and 'startTrigger' in kwargs:
+            start_trigger = kwargs['startTrigger']
+        if stop_trigger is None and 'stopTrigger' in kwargs:
+            stop_trigger = kwargs['stopTrigger']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if target_id is None and 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_last_started is None and 'timeLastStarted' in kwargs:
+            time_last_started = kwargs['timeLastStarted']
+        if time_last_stopped is None and 'timeLastStopped' in kwargs:
+            time_last_stopped = kwargs['timeLastStopped']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if db_user_name is not None:
-            pulumi.set(__self__, "db_user_name", db_user_name)
+            _setter("db_user_name", db_user_name)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if generate_sql_firewall_policy_trigger is not None:
-            pulumi.set(__self__, "generate_sql_firewall_policy_trigger", generate_sql_firewall_policy_trigger)
+            _setter("generate_sql_firewall_policy_trigger", generate_sql_firewall_policy_trigger)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if purge_logs_trigger is not None:
-            pulumi.set(__self__, "purge_logs_trigger", purge_logs_trigger)
+            _setter("purge_logs_trigger", purge_logs_trigger)
         if refresh_log_insights_trigger is not None:
-            pulumi.set(__self__, "refresh_log_insights_trigger", refresh_log_insights_trigger)
+            _setter("refresh_log_insights_trigger", refresh_log_insights_trigger)
         if sql_level is not None:
-            pulumi.set(__self__, "sql_level", sql_level)
+            _setter("sql_level", sql_level)
         if start_trigger is not None:
-            pulumi.set(__self__, "start_trigger", start_trigger)
+            _setter("start_trigger", start_trigger)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if stop_trigger is not None:
-            pulumi.set(__self__, "stop_trigger", stop_trigger)
+            _setter("stop_trigger", stop_trigger)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if target_id is not None:
-            pulumi.set(__self__, "target_id", target_id)
+            _setter("target_id", target_id)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_last_started is not None:
-            pulumi.set(__self__, "time_last_started", time_last_started)
+            _setter("time_last_started", time_last_started)
         if time_last_stopped is not None:
-            pulumi.set(__self__, "time_last_stopped", time_last_stopped)
+            _setter("time_last_stopped", time_last_stopped)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -727,6 +881,10 @@ class SqlCollection(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            SqlCollectionArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

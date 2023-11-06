@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -60,16 +60,45 @@ class OpaInstanceAttachment(dict):
         :param str target_role: The role of the target attachment.
         :param str target_service_type: The type of the target instance, such as "FUSION".
         """
+        OpaInstanceAttachment._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_implicit=is_implicit,
+            target_id=target_id,
+            target_instance_url=target_instance_url,
+            target_role=target_role,
+            target_service_type=target_service_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_implicit: Optional[bool] = None,
+             target_id: Optional[str] = None,
+             target_instance_url: Optional[str] = None,
+             target_role: Optional[str] = None,
+             target_service_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_implicit is None and 'isImplicit' in kwargs:
+            is_implicit = kwargs['isImplicit']
+        if target_id is None and 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if target_instance_url is None and 'targetInstanceUrl' in kwargs:
+            target_instance_url = kwargs['targetInstanceUrl']
+        if target_role is None and 'targetRole' in kwargs:
+            target_role = kwargs['targetRole']
+        if target_service_type is None and 'targetServiceType' in kwargs:
+            target_service_type = kwargs['targetServiceType']
+
         if is_implicit is not None:
-            pulumi.set(__self__, "is_implicit", is_implicit)
+            _setter("is_implicit", is_implicit)
         if target_id is not None:
-            pulumi.set(__self__, "target_id", target_id)
+            _setter("target_id", target_id)
         if target_instance_url is not None:
-            pulumi.set(__self__, "target_instance_url", target_instance_url)
+            _setter("target_instance_url", target_instance_url)
         if target_role is not None:
-            pulumi.set(__self__, "target_role", target_role)
+            _setter("target_role", target_role)
         if target_service_type is not None:
-            pulumi.set(__self__, "target_service_type", target_service_type)
+            _setter("target_service_type", target_service_type)
 
     @property
     @pulumi.getter(name="isImplicit")
@@ -129,11 +158,50 @@ class GetOpaInstanceAttachmentResult(dict):
         :param str target_role: The role of the target attachment.
         :param str target_service_type: The type of the target instance, such as "FUSION".
         """
-        pulumi.set(__self__, "is_implicit", is_implicit)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "target_instance_url", target_instance_url)
-        pulumi.set(__self__, "target_role", target_role)
-        pulumi.set(__self__, "target_service_type", target_service_type)
+        GetOpaInstanceAttachmentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_implicit=is_implicit,
+            target_id=target_id,
+            target_instance_url=target_instance_url,
+            target_role=target_role,
+            target_service_type=target_service_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_implicit: Optional[bool] = None,
+             target_id: Optional[str] = None,
+             target_instance_url: Optional[str] = None,
+             target_role: Optional[str] = None,
+             target_service_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_implicit is None and 'isImplicit' in kwargs:
+            is_implicit = kwargs['isImplicit']
+        if is_implicit is None:
+            raise TypeError("Missing 'is_implicit' argument")
+        if target_id is None and 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if target_id is None:
+            raise TypeError("Missing 'target_id' argument")
+        if target_instance_url is None and 'targetInstanceUrl' in kwargs:
+            target_instance_url = kwargs['targetInstanceUrl']
+        if target_instance_url is None:
+            raise TypeError("Missing 'target_instance_url' argument")
+        if target_role is None and 'targetRole' in kwargs:
+            target_role = kwargs['targetRole']
+        if target_role is None:
+            raise TypeError("Missing 'target_role' argument")
+        if target_service_type is None and 'targetServiceType' in kwargs:
+            target_service_type = kwargs['targetServiceType']
+        if target_service_type is None:
+            raise TypeError("Missing 'target_service_type' argument")
+
+        _setter("is_implicit", is_implicit)
+        _setter("target_id", target_id)
+        _setter("target_instance_url", target_instance_url)
+        _setter("target_role", target_role)
+        _setter("target_service_type", target_service_type)
 
     @property
     @pulumi.getter(name="isImplicit")
@@ -183,10 +251,29 @@ class GetOpaInstancesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetOpaInstancesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -208,7 +295,20 @@ class GetOpaInstancesFilterResult(dict):
 class GetOpaInstancesOpaInstanceCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetOpaInstancesOpaInstanceCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetOpaInstancesOpaInstanceCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetOpaInstancesOpaInstanceCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -262,27 +362,154 @@ class GetOpaInstancesOpaInstanceCollectionItemResult(dict):
         :param str time_created: The time when OpaInstance was created. An RFC3339 formatted datetime string
         :param str time_updated: The time the OpaInstance was updated. An RFC3339 formatted datetime string
         """
-        pulumi.set(__self__, "attachments", attachments)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "consumption_model", consumption_model)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "idcs_at", idcs_at)
-        pulumi.set(__self__, "identity_app_display_name", identity_app_display_name)
-        pulumi.set(__self__, "identity_app_guid", identity_app_guid)
-        pulumi.set(__self__, "identity_app_opc_service_instance_guid", identity_app_opc_service_instance_guid)
-        pulumi.set(__self__, "identity_domain_url", identity_domain_url)
-        pulumi.set(__self__, "instance_url", instance_url)
-        pulumi.set(__self__, "is_breakglass_enabled", is_breakglass_enabled)
-        pulumi.set(__self__, "metering_type", metering_type)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetOpaInstancesOpaInstanceCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            attachments=attachments,
+            compartment_id=compartment_id,
+            consumption_model=consumption_model,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            idcs_at=idcs_at,
+            identity_app_display_name=identity_app_display_name,
+            identity_app_guid=identity_app_guid,
+            identity_app_opc_service_instance_guid=identity_app_opc_service_instance_guid,
+            identity_domain_url=identity_domain_url,
+            instance_url=instance_url,
+            is_breakglass_enabled=is_breakglass_enabled,
+            metering_type=metering_type,
+            shape_name=shape_name,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             attachments: Optional[Sequence['outputs.GetOpaInstancesOpaInstanceCollectionItemAttachmentResult']] = None,
+             compartment_id: Optional[str] = None,
+             consumption_model: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             idcs_at: Optional[str] = None,
+             identity_app_display_name: Optional[str] = None,
+             identity_app_guid: Optional[str] = None,
+             identity_app_opc_service_instance_guid: Optional[str] = None,
+             identity_domain_url: Optional[str] = None,
+             instance_url: Optional[str] = None,
+             is_breakglass_enabled: Optional[bool] = None,
+             metering_type: Optional[str] = None,
+             shape_name: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if attachments is None:
+            raise TypeError("Missing 'attachments' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if consumption_model is None and 'consumptionModel' in kwargs:
+            consumption_model = kwargs['consumptionModel']
+        if consumption_model is None:
+            raise TypeError("Missing 'consumption_model' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if idcs_at is None and 'idcsAt' in kwargs:
+            idcs_at = kwargs['idcsAt']
+        if idcs_at is None:
+            raise TypeError("Missing 'idcs_at' argument")
+        if identity_app_display_name is None and 'identityAppDisplayName' in kwargs:
+            identity_app_display_name = kwargs['identityAppDisplayName']
+        if identity_app_display_name is None:
+            raise TypeError("Missing 'identity_app_display_name' argument")
+        if identity_app_guid is None and 'identityAppGuid' in kwargs:
+            identity_app_guid = kwargs['identityAppGuid']
+        if identity_app_guid is None:
+            raise TypeError("Missing 'identity_app_guid' argument")
+        if identity_app_opc_service_instance_guid is None and 'identityAppOpcServiceInstanceGuid' in kwargs:
+            identity_app_opc_service_instance_guid = kwargs['identityAppOpcServiceInstanceGuid']
+        if identity_app_opc_service_instance_guid is None:
+            raise TypeError("Missing 'identity_app_opc_service_instance_guid' argument")
+        if identity_domain_url is None and 'identityDomainUrl' in kwargs:
+            identity_domain_url = kwargs['identityDomainUrl']
+        if identity_domain_url is None:
+            raise TypeError("Missing 'identity_domain_url' argument")
+        if instance_url is None and 'instanceUrl' in kwargs:
+            instance_url = kwargs['instanceUrl']
+        if instance_url is None:
+            raise TypeError("Missing 'instance_url' argument")
+        if is_breakglass_enabled is None and 'isBreakglassEnabled' in kwargs:
+            is_breakglass_enabled = kwargs['isBreakglassEnabled']
+        if is_breakglass_enabled is None:
+            raise TypeError("Missing 'is_breakglass_enabled' argument")
+        if metering_type is None and 'meteringType' in kwargs:
+            metering_type = kwargs['meteringType']
+        if metering_type is None:
+            raise TypeError("Missing 'metering_type' argument")
+        if shape_name is None and 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+
+        _setter("attachments", attachments)
+        _setter("compartment_id", compartment_id)
+        _setter("consumption_model", consumption_model)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("idcs_at", idcs_at)
+        _setter("identity_app_display_name", identity_app_display_name)
+        _setter("identity_app_guid", identity_app_guid)
+        _setter("identity_app_opc_service_instance_guid", identity_app_opc_service_instance_guid)
+        _setter("identity_domain_url", identity_domain_url)
+        _setter("instance_url", instance_url)
+        _setter("is_breakglass_enabled", is_breakglass_enabled)
+        _setter("metering_type", metering_type)
+        _setter("shape_name", shape_name)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter
@@ -466,11 +693,50 @@ class GetOpaInstancesOpaInstanceCollectionItemAttachmentResult(dict):
         :param str target_role: The role of the target attachment.
         :param str target_service_type: The type of the target instance, such as "FUSION".
         """
-        pulumi.set(__self__, "is_implicit", is_implicit)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "target_instance_url", target_instance_url)
-        pulumi.set(__self__, "target_role", target_role)
-        pulumi.set(__self__, "target_service_type", target_service_type)
+        GetOpaInstancesOpaInstanceCollectionItemAttachmentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_implicit=is_implicit,
+            target_id=target_id,
+            target_instance_url=target_instance_url,
+            target_role=target_role,
+            target_service_type=target_service_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_implicit: Optional[bool] = None,
+             target_id: Optional[str] = None,
+             target_instance_url: Optional[str] = None,
+             target_role: Optional[str] = None,
+             target_service_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_implicit is None and 'isImplicit' in kwargs:
+            is_implicit = kwargs['isImplicit']
+        if is_implicit is None:
+            raise TypeError("Missing 'is_implicit' argument")
+        if target_id is None and 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if target_id is None:
+            raise TypeError("Missing 'target_id' argument")
+        if target_instance_url is None and 'targetInstanceUrl' in kwargs:
+            target_instance_url = kwargs['targetInstanceUrl']
+        if target_instance_url is None:
+            raise TypeError("Missing 'target_instance_url' argument")
+        if target_role is None and 'targetRole' in kwargs:
+            target_role = kwargs['targetRole']
+        if target_role is None:
+            raise TypeError("Missing 'target_role' argument")
+        if target_service_type is None and 'targetServiceType' in kwargs:
+            target_service_type = kwargs['targetServiceType']
+        if target_service_type is None:
+            raise TypeError("Missing 'target_service_type' argument")
+
+        _setter("is_implicit", is_implicit)
+        _setter("target_id", target_id)
+        _setter("target_instance_url", target_instance_url)
+        _setter("target_role", target_role)
+        _setter("target_service_type", target_service_type)
 
     @property
     @pulumi.getter(name="isImplicit")

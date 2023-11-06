@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['SensitiveDataModelsSensitiveColumnArgs', 'SensitiveDataModelsSensitiveColumn']
@@ -47,28 +47,93 @@ class SensitiveDataModelsSensitiveColumnArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "column_name", column_name)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "schema_name", schema_name)
-        pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
+        SensitiveDataModelsSensitiveColumnArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_name=column_name,
+            object=object,
+            schema_name=schema_name,
+            sensitive_data_model_id=sensitive_data_model_id,
+            app_defined_child_column_keys=app_defined_child_column_keys,
+            app_name=app_name,
+            data_type=data_type,
+            db_defined_child_column_keys=db_defined_child_column_keys,
+            object_type=object_type,
+            parent_column_keys=parent_column_keys,
+            relation_type=relation_type,
+            sensitive_type_id=sensitive_type_id,
+            status=status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_name: Optional[pulumi.Input[str]] = None,
+             object: Optional[pulumi.Input[str]] = None,
+             schema_name: Optional[pulumi.Input[str]] = None,
+             sensitive_data_model_id: Optional[pulumi.Input[str]] = None,
+             app_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             app_name: Optional[pulumi.Input[str]] = None,
+             data_type: Optional[pulumi.Input[str]] = None,
+             db_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             object_type: Optional[pulumi.Input[str]] = None,
+             parent_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             relation_type: Optional[pulumi.Input[str]] = None,
+             sensitive_type_id: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if column_name is None and 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if column_name is None:
+            raise TypeError("Missing 'column_name' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
+        if schema_name is None and 'schemaName' in kwargs:
+            schema_name = kwargs['schemaName']
+        if schema_name is None:
+            raise TypeError("Missing 'schema_name' argument")
+        if sensitive_data_model_id is None and 'sensitiveDataModelId' in kwargs:
+            sensitive_data_model_id = kwargs['sensitiveDataModelId']
+        if sensitive_data_model_id is None:
+            raise TypeError("Missing 'sensitive_data_model_id' argument")
+        if app_defined_child_column_keys is None and 'appDefinedChildColumnKeys' in kwargs:
+            app_defined_child_column_keys = kwargs['appDefinedChildColumnKeys']
+        if app_name is None and 'appName' in kwargs:
+            app_name = kwargs['appName']
+        if data_type is None and 'dataType' in kwargs:
+            data_type = kwargs['dataType']
+        if db_defined_child_column_keys is None and 'dbDefinedChildColumnKeys' in kwargs:
+            db_defined_child_column_keys = kwargs['dbDefinedChildColumnKeys']
+        if object_type is None and 'objectType' in kwargs:
+            object_type = kwargs['objectType']
+        if parent_column_keys is None and 'parentColumnKeys' in kwargs:
+            parent_column_keys = kwargs['parentColumnKeys']
+        if relation_type is None and 'relationType' in kwargs:
+            relation_type = kwargs['relationType']
+        if sensitive_type_id is None and 'sensitiveTypeId' in kwargs:
+            sensitive_type_id = kwargs['sensitiveTypeId']
+
+        _setter("column_name", column_name)
+        _setter("object", object)
+        _setter("schema_name", schema_name)
+        _setter("sensitive_data_model_id", sensitive_data_model_id)
         if app_defined_child_column_keys is not None:
-            pulumi.set(__self__, "app_defined_child_column_keys", app_defined_child_column_keys)
+            _setter("app_defined_child_column_keys", app_defined_child_column_keys)
         if app_name is not None:
-            pulumi.set(__self__, "app_name", app_name)
+            _setter("app_name", app_name)
         if data_type is not None:
-            pulumi.set(__self__, "data_type", data_type)
+            _setter("data_type", data_type)
         if db_defined_child_column_keys is not None:
-            pulumi.set(__self__, "db_defined_child_column_keys", db_defined_child_column_keys)
+            _setter("db_defined_child_column_keys", db_defined_child_column_keys)
         if object_type is not None:
-            pulumi.set(__self__, "object_type", object_type)
+            _setter("object_type", object_type)
         if parent_column_keys is not None:
-            pulumi.set(__self__, "parent_column_keys", parent_column_keys)
+            _setter("parent_column_keys", parent_column_keys)
         if relation_type is not None:
-            pulumi.set(__self__, "relation_type", relation_type)
+            _setter("relation_type", relation_type)
         if sensitive_type_id is not None:
-            pulumi.set(__self__, "sensitive_type_id", sensitive_type_id)
+            _setter("sensitive_type_id", sensitive_type_id)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
 
     @property
     @pulumi.getter(name="columnName")
@@ -285,50 +350,137 @@ class _SensitiveDataModelsSensitiveColumnState:
         :param pulumi.Input[str] time_created: The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was created in the sensitive data model.
         :param pulumi.Input[str] time_updated: The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was last updated in the sensitive data model.
         """
+        _SensitiveDataModelsSensitiveColumnState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            app_defined_child_column_keys=app_defined_child_column_keys,
+            app_name=app_name,
+            column_groups=column_groups,
+            column_name=column_name,
+            data_type=data_type,
+            db_defined_child_column_keys=db_defined_child_column_keys,
+            estimated_data_value_count=estimated_data_value_count,
+            key=key,
+            lifecycle_details=lifecycle_details,
+            object=object,
+            object_type=object_type,
+            parent_column_keys=parent_column_keys,
+            relation_type=relation_type,
+            sample_data_values=sample_data_values,
+            schema_name=schema_name,
+            sensitive_data_model_id=sensitive_data_model_id,
+            sensitive_type_id=sensitive_type_id,
+            source=source,
+            state=state,
+            status=status,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             app_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             app_name: Optional[pulumi.Input[str]] = None,
+             column_groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             column_name: Optional[pulumi.Input[str]] = None,
+             data_type: Optional[pulumi.Input[str]] = None,
+             db_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             estimated_data_value_count: Optional[pulumi.Input[str]] = None,
+             key: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             object: Optional[pulumi.Input[str]] = None,
+             object_type: Optional[pulumi.Input[str]] = None,
+             parent_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             relation_type: Optional[pulumi.Input[str]] = None,
+             sample_data_values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             schema_name: Optional[pulumi.Input[str]] = None,
+             sensitive_data_model_id: Optional[pulumi.Input[str]] = None,
+             sensitive_type_id: Optional[pulumi.Input[str]] = None,
+             source: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if app_defined_child_column_keys is None and 'appDefinedChildColumnKeys' in kwargs:
+            app_defined_child_column_keys = kwargs['appDefinedChildColumnKeys']
+        if app_name is None and 'appName' in kwargs:
+            app_name = kwargs['appName']
+        if column_groups is None and 'columnGroups' in kwargs:
+            column_groups = kwargs['columnGroups']
+        if column_name is None and 'columnName' in kwargs:
+            column_name = kwargs['columnName']
+        if data_type is None and 'dataType' in kwargs:
+            data_type = kwargs['dataType']
+        if db_defined_child_column_keys is None and 'dbDefinedChildColumnKeys' in kwargs:
+            db_defined_child_column_keys = kwargs['dbDefinedChildColumnKeys']
+        if estimated_data_value_count is None and 'estimatedDataValueCount' in kwargs:
+            estimated_data_value_count = kwargs['estimatedDataValueCount']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if object_type is None and 'objectType' in kwargs:
+            object_type = kwargs['objectType']
+        if parent_column_keys is None and 'parentColumnKeys' in kwargs:
+            parent_column_keys = kwargs['parentColumnKeys']
+        if relation_type is None and 'relationType' in kwargs:
+            relation_type = kwargs['relationType']
+        if sample_data_values is None and 'sampleDataValues' in kwargs:
+            sample_data_values = kwargs['sampleDataValues']
+        if schema_name is None and 'schemaName' in kwargs:
+            schema_name = kwargs['schemaName']
+        if sensitive_data_model_id is None and 'sensitiveDataModelId' in kwargs:
+            sensitive_data_model_id = kwargs['sensitiveDataModelId']
+        if sensitive_type_id is None and 'sensitiveTypeId' in kwargs:
+            sensitive_type_id = kwargs['sensitiveTypeId']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if app_defined_child_column_keys is not None:
-            pulumi.set(__self__, "app_defined_child_column_keys", app_defined_child_column_keys)
+            _setter("app_defined_child_column_keys", app_defined_child_column_keys)
         if app_name is not None:
-            pulumi.set(__self__, "app_name", app_name)
+            _setter("app_name", app_name)
         if column_groups is not None:
-            pulumi.set(__self__, "column_groups", column_groups)
+            _setter("column_groups", column_groups)
         if column_name is not None:
-            pulumi.set(__self__, "column_name", column_name)
+            _setter("column_name", column_name)
         if data_type is not None:
-            pulumi.set(__self__, "data_type", data_type)
+            _setter("data_type", data_type)
         if db_defined_child_column_keys is not None:
-            pulumi.set(__self__, "db_defined_child_column_keys", db_defined_child_column_keys)
+            _setter("db_defined_child_column_keys", db_defined_child_column_keys)
         if estimated_data_value_count is not None:
-            pulumi.set(__self__, "estimated_data_value_count", estimated_data_value_count)
+            _setter("estimated_data_value_count", estimated_data_value_count)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
         if object_type is not None:
-            pulumi.set(__self__, "object_type", object_type)
+            _setter("object_type", object_type)
         if parent_column_keys is not None:
-            pulumi.set(__self__, "parent_column_keys", parent_column_keys)
+            _setter("parent_column_keys", parent_column_keys)
         if relation_type is not None:
-            pulumi.set(__self__, "relation_type", relation_type)
+            _setter("relation_type", relation_type)
         if sample_data_values is not None:
-            pulumi.set(__self__, "sample_data_values", sample_data_values)
+            _setter("sample_data_values", sample_data_values)
         if schema_name is not None:
-            pulumi.set(__self__, "schema_name", schema_name)
+            _setter("schema_name", schema_name)
         if sensitive_data_model_id is not None:
-            pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
+            _setter("sensitive_data_model_id", sensitive_data_model_id)
         if sensitive_type_id is not None:
-            pulumi.set(__self__, "sensitive_type_id", sensitive_type_id)
+            _setter("sensitive_type_id", sensitive_type_id)
         if source is not None:
-            pulumi.set(__self__, "source", source)
+            _setter("source", source)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="appDefinedChildColumnKeys")
@@ -724,6 +876,10 @@ class SensitiveDataModelsSensitiveColumn(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            SensitiveDataModelsSensitiveColumnArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

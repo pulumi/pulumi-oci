@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -33,18 +33,57 @@ class ContainerRepositoryArgs:
         :param pulumi.Input[bool] is_public: (Updatable) Whether the repository is public. A public repository allows unauthenticated access.
         :param pulumi.Input['ContainerRepositoryReadmeArgs'] readme: (Updatable) Container repository readme.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
+        ContainerRepositoryArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            is_immutable=is_immutable,
+            is_public=is_public,
+            readme=readme,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_immutable: Optional[pulumi.Input[bool]] = None,
+             is_public: Optional[pulumi.Input[bool]] = None,
+             readme: Optional[pulumi.Input['ContainerRepositoryReadmeArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_immutable is None and 'isImmutable' in kwargs:
+            is_immutable = kwargs['isImmutable']
+        if is_public is None and 'isPublic' in kwargs:
+            is_public = kwargs['isPublic']
+
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_immutable is not None:
-            pulumi.set(__self__, "is_immutable", is_immutable)
+            _setter("is_immutable", is_immutable)
         if is_public is not None:
-            pulumi.set(__self__, "is_public", is_public)
+            _setter("is_public", is_public)
         if readme is not None:
-            pulumi.set(__self__, "readme", readme)
+            _setter("readme", readme)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -171,40 +210,111 @@ class _ContainerRepositoryState:
         :param pulumi.Input[str] time_created: An RFC 3339 timestamp indicating when the repository was created.
         :param pulumi.Input[str] time_last_pushed: An RFC 3339 timestamp indicating when an image was last pushed to the repository.
         """
+        _ContainerRepositoryState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            billable_size_in_gbs=billable_size_in_gbs,
+            compartment_id=compartment_id,
+            created_by=created_by,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            image_count=image_count,
+            is_immutable=is_immutable,
+            is_public=is_public,
+            layer_count=layer_count,
+            layers_size_in_bytes=layers_size_in_bytes,
+            namespace=namespace,
+            readme=readme,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_last_pushed=time_last_pushed,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             billable_size_in_gbs: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             created_by: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             image_count: Optional[pulumi.Input[int]] = None,
+             is_immutable: Optional[pulumi.Input[bool]] = None,
+             is_public: Optional[pulumi.Input[bool]] = None,
+             layer_count: Optional[pulumi.Input[int]] = None,
+             layers_size_in_bytes: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             readme: Optional[pulumi.Input['ContainerRepositoryReadmeArgs']] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_last_pushed: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if billable_size_in_gbs is None and 'billableSizeInGbs' in kwargs:
+            billable_size_in_gbs = kwargs['billableSizeInGbs']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if created_by is None and 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if image_count is None and 'imageCount' in kwargs:
+            image_count = kwargs['imageCount']
+        if is_immutable is None and 'isImmutable' in kwargs:
+            is_immutable = kwargs['isImmutable']
+        if is_public is None and 'isPublic' in kwargs:
+            is_public = kwargs['isPublic']
+        if layer_count is None and 'layerCount' in kwargs:
+            layer_count = kwargs['layerCount']
+        if layers_size_in_bytes is None and 'layersSizeInBytes' in kwargs:
+            layers_size_in_bytes = kwargs['layersSizeInBytes']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_last_pushed is None and 'timeLastPushed' in kwargs:
+            time_last_pushed = kwargs['timeLastPushed']
+
         if billable_size_in_gbs is not None:
-            pulumi.set(__self__, "billable_size_in_gbs", billable_size_in_gbs)
+            _setter("billable_size_in_gbs", billable_size_in_gbs)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if created_by is not None:
-            pulumi.set(__self__, "created_by", created_by)
+            _setter("created_by", created_by)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if image_count is not None:
-            pulumi.set(__self__, "image_count", image_count)
+            _setter("image_count", image_count)
         if is_immutable is not None:
-            pulumi.set(__self__, "is_immutable", is_immutable)
+            _setter("is_immutable", is_immutable)
         if is_public is not None:
-            pulumi.set(__self__, "is_public", is_public)
+            _setter("is_public", is_public)
         if layer_count is not None:
-            pulumi.set(__self__, "layer_count", layer_count)
+            _setter("layer_count", layer_count)
         if layers_size_in_bytes is not None:
-            pulumi.set(__self__, "layers_size_in_bytes", layers_size_in_bytes)
+            _setter("layers_size_in_bytes", layers_size_in_bytes)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if readme is not None:
-            pulumi.set(__self__, "readme", readme)
+            _setter("readme", readme)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_last_pushed is not None:
-            pulumi.set(__self__, "time_last_pushed", time_last_pushed)
+            _setter("time_last_pushed", time_last_pushed)
 
     @property
     @pulumi.getter(name="billableSizeInGbs")
@@ -522,6 +632,10 @@ class ContainerRepository(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ContainerRepositoryArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -553,6 +667,11 @@ class ContainerRepository(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_immutable"] = is_immutable
             __props__.__dict__["is_public"] = is_public
+            if readme is not None and not isinstance(readme, ContainerRepositoryReadmeArgs):
+                readme = readme or {}
+                def _setter(key, value):
+                    readme[key] = value
+                ContainerRepositoryReadmeArgs._configure(_setter, **readme)
             __props__.__dict__["readme"] = readme
             __props__.__dict__["billable_size_in_gbs"] = None
             __props__.__dict__["created_by"] = None

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['AgentPluginArgs', 'AgentPlugin']
@@ -27,10 +27,35 @@ class AgentPluginArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] desired_state: (Updatable) State to which the customer wants the plugin to move to.
         """
-        pulumi.set(__self__, "agent_id", agent_id)
-        pulumi.set(__self__, "plugin_name", plugin_name)
+        AgentPluginArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            agent_id=agent_id,
+            plugin_name=plugin_name,
+            desired_state=desired_state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             agent_id: Optional[pulumi.Input[str]] = None,
+             plugin_name: Optional[pulumi.Input[str]] = None,
+             desired_state: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if agent_id is None and 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if agent_id is None:
+            raise TypeError("Missing 'agent_id' argument")
+        if plugin_name is None and 'pluginName' in kwargs:
+            plugin_name = kwargs['pluginName']
+        if plugin_name is None:
+            raise TypeError("Missing 'plugin_name' argument")
+        if desired_state is None and 'desiredState' in kwargs:
+            desired_state = kwargs['desiredState']
+
+        _setter("agent_id", agent_id)
+        _setter("plugin_name", plugin_name)
         if desired_state is not None:
-            pulumi.set(__self__, "desired_state", desired_state)
+            _setter("desired_state", desired_state)
 
     @property
     @pulumi.getter(name="agentId")
@@ -107,30 +132,83 @@ class _AgentPluginState:
         :param pulumi.Input[str] time_created: The time when the Agent was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when the Agent was updated. An RFC3339 formatted datetime string.
         """
+        _AgentPluginState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            agent_id=agent_id,
+            defined_tags=defined_tags,
+            desired_state=desired_state,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            name=name,
+            plugin_name=plugin_name,
+            plugin_version=plugin_version,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             agent_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             desired_state: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             plugin_name: Optional[pulumi.Input[str]] = None,
+             plugin_version: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if agent_id is None and 'agentId' in kwargs:
+            agent_id = kwargs['agentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if desired_state is None and 'desiredState' in kwargs:
+            desired_state = kwargs['desiredState']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if plugin_name is None and 'pluginName' in kwargs:
+            plugin_name = kwargs['pluginName']
+        if plugin_version is None and 'pluginVersion' in kwargs:
+            plugin_version = kwargs['pluginVersion']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if agent_id is not None:
-            pulumi.set(__self__, "agent_id", agent_id)
+            _setter("agent_id", agent_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if desired_state is not None:
-            pulumi.set(__self__, "desired_state", desired_state)
+            _setter("desired_state", desired_state)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if plugin_name is not None:
-            pulumi.set(__self__, "plugin_name", plugin_name)
+            _setter("plugin_name", plugin_name)
         if plugin_version is not None:
-            pulumi.set(__self__, "plugin_version", plugin_version)
+            _setter("plugin_version", plugin_version)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="agentId")
@@ -366,6 +444,10 @@ class AgentPlugin(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AgentPluginArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

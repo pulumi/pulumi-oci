@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -42,26 +42,81 @@ class ExadataInsightArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "entity_source", entity_source)
+        ExadataInsightArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            entity_source=entity_source,
+            defined_tags=defined_tags,
+            enterprise_manager_bridge_id=enterprise_manager_bridge_id,
+            enterprise_manager_entity_identifier=enterprise_manager_entity_identifier,
+            enterprise_manager_identifier=enterprise_manager_identifier,
+            exadata_infra_id=exadata_infra_id,
+            freeform_tags=freeform_tags,
+            is_auto_sync_enabled=is_auto_sync_enabled,
+            member_vm_cluster_details=member_vm_cluster_details,
+            status=status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             entity_source: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             enterprise_manager_bridge_id: Optional[pulumi.Input[str]] = None,
+             enterprise_manager_entity_identifier: Optional[pulumi.Input[str]] = None,
+             enterprise_manager_identifier: Optional[pulumi.Input[str]] = None,
+             exadata_infra_id: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_auto_sync_enabled: Optional[pulumi.Input[bool]] = None,
+             member_vm_cluster_details: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailArgs']]]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if entity_source is None and 'entitySource' in kwargs:
+            entity_source = kwargs['entitySource']
+        if entity_source is None:
+            raise TypeError("Missing 'entity_source' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if enterprise_manager_bridge_id is None and 'enterpriseManagerBridgeId' in kwargs:
+            enterprise_manager_bridge_id = kwargs['enterpriseManagerBridgeId']
+        if enterprise_manager_entity_identifier is None and 'enterpriseManagerEntityIdentifier' in kwargs:
+            enterprise_manager_entity_identifier = kwargs['enterpriseManagerEntityIdentifier']
+        if enterprise_manager_identifier is None and 'enterpriseManagerIdentifier' in kwargs:
+            enterprise_manager_identifier = kwargs['enterpriseManagerIdentifier']
+        if exadata_infra_id is None and 'exadataInfraId' in kwargs:
+            exadata_infra_id = kwargs['exadataInfraId']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_auto_sync_enabled is None and 'isAutoSyncEnabled' in kwargs:
+            is_auto_sync_enabled = kwargs['isAutoSyncEnabled']
+        if member_vm_cluster_details is None and 'memberVmClusterDetails' in kwargs:
+            member_vm_cluster_details = kwargs['memberVmClusterDetails']
+
+        _setter("compartment_id", compartment_id)
+        _setter("entity_source", entity_source)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if enterprise_manager_bridge_id is not None:
-            pulumi.set(__self__, "enterprise_manager_bridge_id", enterprise_manager_bridge_id)
+            _setter("enterprise_manager_bridge_id", enterprise_manager_bridge_id)
         if enterprise_manager_entity_identifier is not None:
-            pulumi.set(__self__, "enterprise_manager_entity_identifier", enterprise_manager_entity_identifier)
+            _setter("enterprise_manager_entity_identifier", enterprise_manager_entity_identifier)
         if enterprise_manager_identifier is not None:
-            pulumi.set(__self__, "enterprise_manager_identifier", enterprise_manager_identifier)
+            _setter("enterprise_manager_identifier", enterprise_manager_identifier)
         if exadata_infra_id is not None:
-            pulumi.set(__self__, "exadata_infra_id", exadata_infra_id)
+            _setter("exadata_infra_id", exadata_infra_id)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_auto_sync_enabled is not None:
-            pulumi.set(__self__, "is_auto_sync_enabled", is_auto_sync_enabled)
+            _setter("is_auto_sync_enabled", is_auto_sync_enabled)
         if member_vm_cluster_details is not None:
-            pulumi.set(__self__, "member_vm_cluster_details", member_vm_cluster_details)
+            _setter("member_vm_cluster_details", member_vm_cluster_details)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -250,58 +305,167 @@ class _ExadataInsightState:
         :param pulumi.Input[str] time_created: The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time the Exadata insight was updated. An RFC3339 formatted datetime string
         """
+        _ExadataInsightState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            enterprise_manager_bridge_id=enterprise_manager_bridge_id,
+            enterprise_manager_entity_display_name=enterprise_manager_entity_display_name,
+            enterprise_manager_entity_identifier=enterprise_manager_entity_identifier,
+            enterprise_manager_entity_name=enterprise_manager_entity_name,
+            enterprise_manager_entity_type=enterprise_manager_entity_type,
+            enterprise_manager_identifier=enterprise_manager_identifier,
+            entity_source=entity_source,
+            exadata_display_name=exadata_display_name,
+            exadata_infra_id=exadata_infra_id,
+            exadata_infra_resource_type=exadata_infra_resource_type,
+            exadata_name=exadata_name,
+            exadata_rack_type=exadata_rack_type,
+            exadata_shape=exadata_shape,
+            exadata_type=exadata_type,
+            freeform_tags=freeform_tags,
+            is_auto_sync_enabled=is_auto_sync_enabled,
+            is_virtualized_exadata=is_virtualized_exadata,
+            lifecycle_details=lifecycle_details,
+            member_vm_cluster_details=member_vm_cluster_details,
+            state=state,
+            status=status,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             enterprise_manager_bridge_id: Optional[pulumi.Input[str]] = None,
+             enterprise_manager_entity_display_name: Optional[pulumi.Input[str]] = None,
+             enterprise_manager_entity_identifier: Optional[pulumi.Input[str]] = None,
+             enterprise_manager_entity_name: Optional[pulumi.Input[str]] = None,
+             enterprise_manager_entity_type: Optional[pulumi.Input[str]] = None,
+             enterprise_manager_identifier: Optional[pulumi.Input[str]] = None,
+             entity_source: Optional[pulumi.Input[str]] = None,
+             exadata_display_name: Optional[pulumi.Input[str]] = None,
+             exadata_infra_id: Optional[pulumi.Input[str]] = None,
+             exadata_infra_resource_type: Optional[pulumi.Input[str]] = None,
+             exadata_name: Optional[pulumi.Input[str]] = None,
+             exadata_rack_type: Optional[pulumi.Input[str]] = None,
+             exadata_shape: Optional[pulumi.Input[str]] = None,
+             exadata_type: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_auto_sync_enabled: Optional[pulumi.Input[bool]] = None,
+             is_virtualized_exadata: Optional[pulumi.Input[bool]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             member_vm_cluster_details: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailArgs']]]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if enterprise_manager_bridge_id is None and 'enterpriseManagerBridgeId' in kwargs:
+            enterprise_manager_bridge_id = kwargs['enterpriseManagerBridgeId']
+        if enterprise_manager_entity_display_name is None and 'enterpriseManagerEntityDisplayName' in kwargs:
+            enterprise_manager_entity_display_name = kwargs['enterpriseManagerEntityDisplayName']
+        if enterprise_manager_entity_identifier is None and 'enterpriseManagerEntityIdentifier' in kwargs:
+            enterprise_manager_entity_identifier = kwargs['enterpriseManagerEntityIdentifier']
+        if enterprise_manager_entity_name is None and 'enterpriseManagerEntityName' in kwargs:
+            enterprise_manager_entity_name = kwargs['enterpriseManagerEntityName']
+        if enterprise_manager_entity_type is None and 'enterpriseManagerEntityType' in kwargs:
+            enterprise_manager_entity_type = kwargs['enterpriseManagerEntityType']
+        if enterprise_manager_identifier is None and 'enterpriseManagerIdentifier' in kwargs:
+            enterprise_manager_identifier = kwargs['enterpriseManagerIdentifier']
+        if entity_source is None and 'entitySource' in kwargs:
+            entity_source = kwargs['entitySource']
+        if exadata_display_name is None and 'exadataDisplayName' in kwargs:
+            exadata_display_name = kwargs['exadataDisplayName']
+        if exadata_infra_id is None and 'exadataInfraId' in kwargs:
+            exadata_infra_id = kwargs['exadataInfraId']
+        if exadata_infra_resource_type is None and 'exadataInfraResourceType' in kwargs:
+            exadata_infra_resource_type = kwargs['exadataInfraResourceType']
+        if exadata_name is None and 'exadataName' in kwargs:
+            exadata_name = kwargs['exadataName']
+        if exadata_rack_type is None and 'exadataRackType' in kwargs:
+            exadata_rack_type = kwargs['exadataRackType']
+        if exadata_shape is None and 'exadataShape' in kwargs:
+            exadata_shape = kwargs['exadataShape']
+        if exadata_type is None and 'exadataType' in kwargs:
+            exadata_type = kwargs['exadataType']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_auto_sync_enabled is None and 'isAutoSyncEnabled' in kwargs:
+            is_auto_sync_enabled = kwargs['isAutoSyncEnabled']
+        if is_virtualized_exadata is None and 'isVirtualizedExadata' in kwargs:
+            is_virtualized_exadata = kwargs['isVirtualizedExadata']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if member_vm_cluster_details is None and 'memberVmClusterDetails' in kwargs:
+            member_vm_cluster_details = kwargs['memberVmClusterDetails']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if enterprise_manager_bridge_id is not None:
-            pulumi.set(__self__, "enterprise_manager_bridge_id", enterprise_manager_bridge_id)
+            _setter("enterprise_manager_bridge_id", enterprise_manager_bridge_id)
         if enterprise_manager_entity_display_name is not None:
-            pulumi.set(__self__, "enterprise_manager_entity_display_name", enterprise_manager_entity_display_name)
+            _setter("enterprise_manager_entity_display_name", enterprise_manager_entity_display_name)
         if enterprise_manager_entity_identifier is not None:
-            pulumi.set(__self__, "enterprise_manager_entity_identifier", enterprise_manager_entity_identifier)
+            _setter("enterprise_manager_entity_identifier", enterprise_manager_entity_identifier)
         if enterprise_manager_entity_name is not None:
-            pulumi.set(__self__, "enterprise_manager_entity_name", enterprise_manager_entity_name)
+            _setter("enterprise_manager_entity_name", enterprise_manager_entity_name)
         if enterprise_manager_entity_type is not None:
-            pulumi.set(__self__, "enterprise_manager_entity_type", enterprise_manager_entity_type)
+            _setter("enterprise_manager_entity_type", enterprise_manager_entity_type)
         if enterprise_manager_identifier is not None:
-            pulumi.set(__self__, "enterprise_manager_identifier", enterprise_manager_identifier)
+            _setter("enterprise_manager_identifier", enterprise_manager_identifier)
         if entity_source is not None:
-            pulumi.set(__self__, "entity_source", entity_source)
+            _setter("entity_source", entity_source)
         if exadata_display_name is not None:
-            pulumi.set(__self__, "exadata_display_name", exadata_display_name)
+            _setter("exadata_display_name", exadata_display_name)
         if exadata_infra_id is not None:
-            pulumi.set(__self__, "exadata_infra_id", exadata_infra_id)
+            _setter("exadata_infra_id", exadata_infra_id)
         if exadata_infra_resource_type is not None:
-            pulumi.set(__self__, "exadata_infra_resource_type", exadata_infra_resource_type)
+            _setter("exadata_infra_resource_type", exadata_infra_resource_type)
         if exadata_name is not None:
-            pulumi.set(__self__, "exadata_name", exadata_name)
+            _setter("exadata_name", exadata_name)
         if exadata_rack_type is not None:
-            pulumi.set(__self__, "exadata_rack_type", exadata_rack_type)
+            _setter("exadata_rack_type", exadata_rack_type)
         if exadata_shape is not None:
-            pulumi.set(__self__, "exadata_shape", exadata_shape)
+            _setter("exadata_shape", exadata_shape)
         if exadata_type is not None:
-            pulumi.set(__self__, "exadata_type", exadata_type)
+            _setter("exadata_type", exadata_type)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_auto_sync_enabled is not None:
-            pulumi.set(__self__, "is_auto_sync_enabled", is_auto_sync_enabled)
+            _setter("is_auto_sync_enabled", is_auto_sync_enabled)
         if is_virtualized_exadata is not None:
-            pulumi.set(__self__, "is_virtualized_exadata", is_virtualized_exadata)
+            _setter("is_virtualized_exadata", is_virtualized_exadata)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if member_vm_cluster_details is not None:
-            pulumi.set(__self__, "member_vm_cluster_details", member_vm_cluster_details)
+            _setter("member_vm_cluster_details", member_vm_cluster_details)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -793,6 +957,10 @@ class ExadataInsight(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ExadataInsightArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

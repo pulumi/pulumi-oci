@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -41,20 +41,71 @@ class DatabaseToolsPrivateEndpointArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         :param pulumi.Input[str] private_endpoint_ip: The private IP address that represents the access point for the associated endpoint service.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "endpoint_service_id", endpoint_service_id)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        DatabaseToolsPrivateEndpointArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            endpoint_service_id=endpoint_service_id,
+            subnet_id=subnet_id,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            nsg_ids=nsg_ids,
+            private_endpoint_ip=private_endpoint_ip,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             endpoint_service_id: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             private_endpoint_ip: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if endpoint_service_id is None and 'endpointServiceId' in kwargs:
+            endpoint_service_id = kwargs['endpointServiceId']
+        if endpoint_service_id is None:
+            raise TypeError("Missing 'endpoint_service_id' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if nsg_ids is None and 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if private_endpoint_ip is None and 'privateEndpointIp' in kwargs:
+            private_endpoint_ip = kwargs['privateEndpointIp']
+
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
+        _setter("endpoint_service_id", endpoint_service_id)
+        _setter("subnet_id", subnet_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if nsg_ids is not None:
-            pulumi.set(__self__, "nsg_ids", nsg_ids)
+            _setter("nsg_ids", nsg_ids)
         if private_endpoint_ip is not None:
-            pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
+            _setter("private_endpoint_ip", private_endpoint_ip)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -217,44 +268,125 @@ class _DatabaseToolsPrivateEndpointState:
         :param pulumi.Input[str] time_updated: The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
         :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that the private endpoint belongs to.
         """
+        _DatabaseToolsPrivateEndpointState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            additional_fqdns=additional_fqdns,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            endpoint_fqdn=endpoint_fqdn,
+            endpoint_service_id=endpoint_service_id,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            nsg_ids=nsg_ids,
+            private_endpoint_ip=private_endpoint_ip,
+            private_endpoint_vnic_id=private_endpoint_vnic_id,
+            reverse_connection_configurations=reverse_connection_configurations,
+            state=state,
+            subnet_id=subnet_id,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            vcn_id=vcn_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             additional_fqdns: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             endpoint_fqdn: Optional[pulumi.Input[str]] = None,
+             endpoint_service_id: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             private_endpoint_ip: Optional[pulumi.Input[str]] = None,
+             private_endpoint_vnic_id: Optional[pulumi.Input[str]] = None,
+             reverse_connection_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs']]]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             vcn_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if additional_fqdns is None and 'additionalFqdns' in kwargs:
+            additional_fqdns = kwargs['additionalFqdns']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if endpoint_fqdn is None and 'endpointFqdn' in kwargs:
+            endpoint_fqdn = kwargs['endpointFqdn']
+        if endpoint_service_id is None and 'endpointServiceId' in kwargs:
+            endpoint_service_id = kwargs['endpointServiceId']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if nsg_ids is None and 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if private_endpoint_ip is None and 'privateEndpointIp' in kwargs:
+            private_endpoint_ip = kwargs['privateEndpointIp']
+        if private_endpoint_vnic_id is None and 'privateEndpointVnicId' in kwargs:
+            private_endpoint_vnic_id = kwargs['privateEndpointVnicId']
+        if reverse_connection_configurations is None and 'reverseConnectionConfigurations' in kwargs:
+            reverse_connection_configurations = kwargs['reverseConnectionConfigurations']
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if vcn_id is None and 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+
         if additional_fqdns is not None:
-            pulumi.set(__self__, "additional_fqdns", additional_fqdns)
+            _setter("additional_fqdns", additional_fqdns)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if endpoint_fqdn is not None:
-            pulumi.set(__self__, "endpoint_fqdn", endpoint_fqdn)
+            _setter("endpoint_fqdn", endpoint_fqdn)
         if endpoint_service_id is not None:
-            pulumi.set(__self__, "endpoint_service_id", endpoint_service_id)
+            _setter("endpoint_service_id", endpoint_service_id)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if nsg_ids is not None:
-            pulumi.set(__self__, "nsg_ids", nsg_ids)
+            _setter("nsg_ids", nsg_ids)
         if private_endpoint_ip is not None:
-            pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
+            _setter("private_endpoint_ip", private_endpoint_ip)
         if private_endpoint_vnic_id is not None:
-            pulumi.set(__self__, "private_endpoint_vnic_id", private_endpoint_vnic_id)
+            _setter("private_endpoint_vnic_id", private_endpoint_vnic_id)
         if reverse_connection_configurations is not None:
-            pulumi.set(__self__, "reverse_connection_configurations", reverse_connection_configurations)
+            _setter("reverse_connection_configurations", reverse_connection_configurations)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if vcn_id is not None:
-            pulumi.set(__self__, "vcn_id", vcn_id)
+            _setter("vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="additionalFqdns")
@@ -606,6 +738,10 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DatabaseToolsPrivateEndpointArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

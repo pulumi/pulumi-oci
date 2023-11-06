@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['DatabaseRegistrationArgs', 'DatabaseRegistration']
@@ -57,36 +57,119 @@ class DatabaseRegistrationArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "alias_name", alias_name)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "fqdn", fqdn)
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "username", username)
+        DatabaseRegistrationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            alias_name=alias_name,
+            compartment_id=compartment_id,
+            display_name=display_name,
+            fqdn=fqdn,
+            password=password,
+            username=username,
+            connection_string=connection_string,
+            database_id=database_id,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            ip_address=ip_address,
+            key_id=key_id,
+            secret_compartment_id=secret_compartment_id,
+            session_mode=session_mode,
+            subnet_id=subnet_id,
+            vault_id=vault_id,
+            wallet=wallet,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             alias_name: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             fqdn: Optional[pulumi.Input[str]] = None,
+             password: Optional[pulumi.Input[str]] = None,
+             username: Optional[pulumi.Input[str]] = None,
+             connection_string: Optional[pulumi.Input[str]] = None,
+             database_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             ip_address: Optional[pulumi.Input[str]] = None,
+             key_id: Optional[pulumi.Input[str]] = None,
+             secret_compartment_id: Optional[pulumi.Input[str]] = None,
+             session_mode: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             vault_id: Optional[pulumi.Input[str]] = None,
+             wallet: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if alias_name is None and 'aliasName' in kwargs:
+            alias_name = kwargs['aliasName']
+        if alias_name is None:
+            raise TypeError("Missing 'alias_name' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if fqdn is None:
+            raise TypeError("Missing 'fqdn' argument")
+        if password is None:
+            raise TypeError("Missing 'password' argument")
+        if username is None:
+            raise TypeError("Missing 'username' argument")
+        if connection_string is None and 'connectionString' in kwargs:
+            connection_string = kwargs['connectionString']
+        if database_id is None and 'databaseId' in kwargs:
+            database_id = kwargs['databaseId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if ip_address is None and 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if key_id is None and 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if secret_compartment_id is None and 'secretCompartmentId' in kwargs:
+            secret_compartment_id = kwargs['secretCompartmentId']
+        if session_mode is None and 'sessionMode' in kwargs:
+            session_mode = kwargs['sessionMode']
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if vault_id is None and 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+
+        _setter("alias_name", alias_name)
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
+        _setter("fqdn", fqdn)
+        _setter("password", password)
+        _setter("username", username)
         if connection_string is not None:
-            pulumi.set(__self__, "connection_string", connection_string)
+            _setter("connection_string", connection_string)
         if database_id is not None:
-            pulumi.set(__self__, "database_id", database_id)
+            _setter("database_id", database_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if ip_address is not None:
-            pulumi.set(__self__, "ip_address", ip_address)
+            _setter("ip_address", ip_address)
         if key_id is not None:
-            pulumi.set(__self__, "key_id", key_id)
+            _setter("key_id", key_id)
         if secret_compartment_id is not None:
-            pulumi.set(__self__, "secret_compartment_id", secret_compartment_id)
+            _setter("secret_compartment_id", secret_compartment_id)
         if session_mode is not None:
-            pulumi.set(__self__, "session_mode", session_mode)
+            _setter("session_mode", session_mode)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
         if vault_id is not None:
-            pulumi.set(__self__, "vault_id", vault_id)
+            _setter("vault_id", vault_id)
         if wallet is not None:
-            pulumi.set(__self__, "wallet", wallet)
+            _setter("wallet", wallet)
 
     @property
     @pulumi.getter(name="aliasName")
@@ -369,56 +452,153 @@ class _DatabaseRegistrationState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _DatabaseRegistrationState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            alias_name=alias_name,
+            compartment_id=compartment_id,
+            connection_string=connection_string,
+            database_id=database_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            fqdn=fqdn,
+            freeform_tags=freeform_tags,
+            ip_address=ip_address,
+            key_id=key_id,
+            lifecycle_details=lifecycle_details,
+            password=password,
+            rce_private_ip=rce_private_ip,
+            secret_compartment_id=secret_compartment_id,
+            secret_id=secret_id,
+            session_mode=session_mode,
+            state=state,
+            subnet_id=subnet_id,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            username=username,
+            vault_id=vault_id,
+            wallet=wallet,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             alias_name: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             connection_string: Optional[pulumi.Input[str]] = None,
+             database_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             fqdn: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             ip_address: Optional[pulumi.Input[str]] = None,
+             key_id: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             password: Optional[pulumi.Input[str]] = None,
+             rce_private_ip: Optional[pulumi.Input[str]] = None,
+             secret_compartment_id: Optional[pulumi.Input[str]] = None,
+             secret_id: Optional[pulumi.Input[str]] = None,
+             session_mode: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             username: Optional[pulumi.Input[str]] = None,
+             vault_id: Optional[pulumi.Input[str]] = None,
+             wallet: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if alias_name is None and 'aliasName' in kwargs:
+            alias_name = kwargs['aliasName']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if connection_string is None and 'connectionString' in kwargs:
+            connection_string = kwargs['connectionString']
+        if database_id is None and 'databaseId' in kwargs:
+            database_id = kwargs['databaseId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if ip_address is None and 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if key_id is None and 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if rce_private_ip is None and 'rcePrivateIp' in kwargs:
+            rce_private_ip = kwargs['rcePrivateIp']
+        if secret_compartment_id is None and 'secretCompartmentId' in kwargs:
+            secret_compartment_id = kwargs['secretCompartmentId']
+        if secret_id is None and 'secretId' in kwargs:
+            secret_id = kwargs['secretId']
+        if session_mode is None and 'sessionMode' in kwargs:
+            session_mode = kwargs['sessionMode']
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if vault_id is None and 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+
         if alias_name is not None:
-            pulumi.set(__self__, "alias_name", alias_name)
+            _setter("alias_name", alias_name)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if connection_string is not None:
-            pulumi.set(__self__, "connection_string", connection_string)
+            _setter("connection_string", connection_string)
         if database_id is not None:
-            pulumi.set(__self__, "database_id", database_id)
+            _setter("database_id", database_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if fqdn is not None:
-            pulumi.set(__self__, "fqdn", fqdn)
+            _setter("fqdn", fqdn)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if ip_address is not None:
-            pulumi.set(__self__, "ip_address", ip_address)
+            _setter("ip_address", ip_address)
         if key_id is not None:
-            pulumi.set(__self__, "key_id", key_id)
+            _setter("key_id", key_id)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if password is not None:
-            pulumi.set(__self__, "password", password)
+            _setter("password", password)
         if rce_private_ip is not None:
-            pulumi.set(__self__, "rce_private_ip", rce_private_ip)
+            _setter("rce_private_ip", rce_private_ip)
         if secret_compartment_id is not None:
-            pulumi.set(__self__, "secret_compartment_id", secret_compartment_id)
+            _setter("secret_compartment_id", secret_compartment_id)
         if secret_id is not None:
-            pulumi.set(__self__, "secret_id", secret_id)
+            _setter("secret_id", secret_id)
         if session_mode is not None:
-            pulumi.set(__self__, "session_mode", session_mode)
+            _setter("session_mode", session_mode)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if username is not None:
-            pulumi.set(__self__, "username", username)
+            _setter("username", username)
         if vault_id is not None:
-            pulumi.set(__self__, "vault_id", vault_id)
+            _setter("vault_id", vault_id)
         if wallet is not None:
-            pulumi.set(__self__, "wallet", wallet)
+            _setter("wallet", wallet)
 
     @property
     @pulumi.getter(name="aliasName")
@@ -880,6 +1060,10 @@ class DatabaseRegistration(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DatabaseRegistrationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

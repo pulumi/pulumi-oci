@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -25,10 +25,33 @@ class PathRouteSetArgs:
         :param pulumi.Input[Sequence[pulumi.Input['PathRouteSetPathRouteArgs']]] path_routes: (Updatable) The set of path route rules.
         :param pulumi.Input[str] name: The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_path_route_set`
         """
-        pulumi.set(__self__, "load_balancer_id", load_balancer_id)
-        pulumi.set(__self__, "path_routes", path_routes)
+        PathRouteSetArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            load_balancer_id=load_balancer_id,
+            path_routes=path_routes,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             load_balancer_id: Optional[pulumi.Input[str]] = None,
+             path_routes: Optional[pulumi.Input[Sequence[pulumi.Input['PathRouteSetPathRouteArgs']]]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if load_balancer_id is None and 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+        if load_balancer_id is None:
+            raise TypeError("Missing 'load_balancer_id' argument")
+        if path_routes is None and 'pathRoutes' in kwargs:
+            path_routes = kwargs['pathRoutes']
+        if path_routes is None:
+            raise TypeError("Missing 'path_routes' argument")
+
+        _setter("load_balancer_id", load_balancer_id)
+        _setter("path_routes", path_routes)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter(name="loadBalancerId")
@@ -80,14 +103,35 @@ class _PathRouteSetState:
         :param pulumi.Input[str] name: The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_path_route_set`
         :param pulumi.Input[Sequence[pulumi.Input['PathRouteSetPathRouteArgs']]] path_routes: (Updatable) The set of path route rules.
         """
+        _PathRouteSetState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            load_balancer_id=load_balancer_id,
+            name=name,
+            path_routes=path_routes,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             load_balancer_id: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             path_routes: Optional[pulumi.Input[Sequence[pulumi.Input['PathRouteSetPathRouteArgs']]]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if load_balancer_id is None and 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+        if path_routes is None and 'pathRoutes' in kwargs:
+            path_routes = kwargs['pathRoutes']
+
         if load_balancer_id is not None:
-            pulumi.set(__self__, "load_balancer_id", load_balancer_id)
+            _setter("load_balancer_id", load_balancer_id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if path_routes is not None:
-            pulumi.set(__self__, "path_routes", path_routes)
+            _setter("path_routes", path_routes)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter(name="loadBalancerId")
@@ -228,6 +272,10 @@ class PathRouteSet(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            PathRouteSetArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

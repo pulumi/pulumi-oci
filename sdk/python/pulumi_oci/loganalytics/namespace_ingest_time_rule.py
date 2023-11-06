@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -39,17 +39,60 @@ class NamespaceIngestTimeRuleArgs:
         :param pulumi.Input[str] description: (Updatable) Description for this resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
-        pulumi.set(__self__, "actions", actions)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "conditions", conditions)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "namespace", namespace)
+        NamespaceIngestTimeRuleArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            actions=actions,
+            compartment_id=compartment_id,
+            conditions=conditions,
+            display_name=display_name,
+            namespace=namespace,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             actions: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceIngestTimeRuleActionArgs']]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             conditions: Optional[pulumi.Input['NamespaceIngestTimeRuleConditionsArgs']] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if actions is None:
+            raise TypeError("Missing 'actions' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if conditions is None:
+            raise TypeError("Missing 'conditions' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
+        _setter("actions", actions)
+        _setter("compartment_id", compartment_id)
+        _setter("conditions", conditions)
+        _setter("display_name", display_name)
+        _setter("namespace", namespace)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter
@@ -187,32 +230,83 @@ class _NamespaceIngestTimeRuleState:
         :param pulumi.Input[str] time_created: The date and time the resource was created, in the format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the resource was last updated, in the format defined by RFC3339.
         """
+        _NamespaceIngestTimeRuleState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            actions=actions,
+            compartment_id=compartment_id,
+            conditions=conditions,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            ingest_time_rule_id=ingest_time_rule_id,
+            is_enabled=is_enabled,
+            namespace=namespace,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             actions: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceIngestTimeRuleActionArgs']]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             conditions: Optional[pulumi.Input['NamespaceIngestTimeRuleConditionsArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             ingest_time_rule_id: Optional[pulumi.Input[str]] = None,
+             is_enabled: Optional[pulumi.Input[bool]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if ingest_time_rule_id is None and 'ingestTimeRuleId' in kwargs:
+            ingest_time_rule_id = kwargs['ingestTimeRuleId']
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if actions is not None:
-            pulumi.set(__self__, "actions", actions)
+            _setter("actions", actions)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if conditions is not None:
-            pulumi.set(__self__, "conditions", conditions)
+            _setter("conditions", conditions)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if ingest_time_rule_id is not None:
-            pulumi.set(__self__, "ingest_time_rule_id", ingest_time_rule_id)
+            _setter("ingest_time_rule_id", ingest_time_rule_id)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter
@@ -519,6 +613,10 @@ class NamespaceIngestTimeRule(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            NamespaceIngestTimeRuleArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -547,6 +645,11 @@ class NamespaceIngestTimeRule(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            if conditions is not None and not isinstance(conditions, NamespaceIngestTimeRuleConditionsArgs):
+                conditions = conditions or {}
+                def _setter(key, value):
+                    conditions[key] = value
+                NamespaceIngestTimeRuleConditionsArgs._configure(_setter, **conditions)
             if conditions is None and not opts.urn:
                 raise TypeError("Missing required property 'conditions'")
             __props__.__dict__["conditions"] = conditions

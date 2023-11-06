@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -34,10 +34,23 @@ class BlockchainPlatformComponentDetailArgs:
         :param pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailOsnArgs']]] osns: List of OSNs
         :param pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailPeerArgs']]] peers: List of Peers
         """
+        BlockchainPlatformComponentDetailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            osns=osns,
+            peers=peers,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             osns: Optional[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailOsnArgs']]]] = None,
+             peers: Optional[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailPeerArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if osns is not None:
-            pulumi.set(__self__, "osns", osns)
+            _setter("osns", osns)
         if peers is not None:
-            pulumi.set(__self__, "peers", peers)
+            _setter("peers", peers)
 
     @property
     @pulumi.getter
@@ -77,14 +90,35 @@ class BlockchainPlatformComponentDetailOsnArgs:
         :param pulumi.Input[str] osn_key: OSN identifier
         :param pulumi.Input[str] state: The current state of the Platform Instance.
         """
+        BlockchainPlatformComponentDetailOsnArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ad=ad,
+            ocpu_allocation_params=ocpu_allocation_params,
+            osn_key=osn_key,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ad: Optional[pulumi.Input[str]] = None,
+             ocpu_allocation_params: Optional[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs']]]] = None,
+             osn_key: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if ocpu_allocation_params is None and 'ocpuAllocationParams' in kwargs:
+            ocpu_allocation_params = kwargs['ocpuAllocationParams']
+        if osn_key is None and 'osnKey' in kwargs:
+            osn_key = kwargs['osnKey']
+
         if ad is not None:
-            pulumi.set(__self__, "ad", ad)
+            _setter("ad", ad)
         if ocpu_allocation_params is not None:
-            pulumi.set(__self__, "ocpu_allocation_params", ocpu_allocation_params)
+            _setter("ocpu_allocation_params", ocpu_allocation_params)
         if osn_key is not None:
-            pulumi.set(__self__, "osn_key", osn_key)
+            _setter("osn_key", osn_key)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter
@@ -142,8 +176,21 @@ class BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs:
         """
         :param pulumi.Input[float] ocpu_allocation_number: Number of OCPU allocation
         """
+        BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ocpu_allocation_number=ocpu_allocation_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ocpu_allocation_number: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if ocpu_allocation_number is None and 'ocpuAllocationNumber' in kwargs:
+            ocpu_allocation_number = kwargs['ocpuAllocationNumber']
+
         if ocpu_allocation_number is not None:
-            pulumi.set(__self__, "ocpu_allocation_number", ocpu_allocation_number)
+            _setter("ocpu_allocation_number", ocpu_allocation_number)
 
     @property
     @pulumi.getter(name="ocpuAllocationNumber")
@@ -177,20 +224,47 @@ class BlockchainPlatformComponentDetailPeerArgs:
         :param pulumi.Input[str] role: Peer role
         :param pulumi.Input[str] state: The current state of the Platform Instance.
         """
+        BlockchainPlatformComponentDetailPeerArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ad=ad,
+            alias=alias,
+            host=host,
+            ocpu_allocation_params=ocpu_allocation_params,
+            peer_key=peer_key,
+            role=role,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ad: Optional[pulumi.Input[str]] = None,
+             alias: Optional[pulumi.Input[str]] = None,
+             host: Optional[pulumi.Input[str]] = None,
+             ocpu_allocation_params: Optional[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailPeerOcpuAllocationParamArgs']]]] = None,
+             peer_key: Optional[pulumi.Input[str]] = None,
+             role: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if ocpu_allocation_params is None and 'ocpuAllocationParams' in kwargs:
+            ocpu_allocation_params = kwargs['ocpuAllocationParams']
+        if peer_key is None and 'peerKey' in kwargs:
+            peer_key = kwargs['peerKey']
+
         if ad is not None:
-            pulumi.set(__self__, "ad", ad)
+            _setter("ad", ad)
         if alias is not None:
-            pulumi.set(__self__, "alias", alias)
+            _setter("alias", alias)
         if host is not None:
-            pulumi.set(__self__, "host", host)
+            _setter("host", host)
         if ocpu_allocation_params is not None:
-            pulumi.set(__self__, "ocpu_allocation_params", ocpu_allocation_params)
+            _setter("ocpu_allocation_params", ocpu_allocation_params)
         if peer_key is not None:
-            pulumi.set(__self__, "peer_key", peer_key)
+            _setter("peer_key", peer_key)
         if role is not None:
-            pulumi.set(__self__, "role", role)
+            _setter("role", role)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter
@@ -284,8 +358,21 @@ class BlockchainPlatformComponentDetailPeerOcpuAllocationParamArgs:
         """
         :param pulumi.Input[float] ocpu_allocation_number: Number of OCPU allocation
         """
+        BlockchainPlatformComponentDetailPeerOcpuAllocationParamArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ocpu_allocation_number=ocpu_allocation_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ocpu_allocation_number: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if ocpu_allocation_number is None and 'ocpuAllocationNumber' in kwargs:
+            ocpu_allocation_number = kwargs['ocpuAllocationNumber']
+
         if ocpu_allocation_number is not None:
-            pulumi.set(__self__, "ocpu_allocation_number", ocpu_allocation_number)
+            _setter("ocpu_allocation_number", ocpu_allocation_number)
 
     @property
     @pulumi.getter(name="ocpuAllocationNumber")
@@ -311,12 +398,31 @@ class BlockchainPlatformHostOcpuUtilizationInfoArgs:
         :param pulumi.Input[float] ocpu_capacity_number: Number of total OCPU capacity on the host
         :param pulumi.Input[float] ocpu_utilization_number: Number of OCPU utilized
         """
+        BlockchainPlatformHostOcpuUtilizationInfoArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host=host,
+            ocpu_capacity_number=ocpu_capacity_number,
+            ocpu_utilization_number=ocpu_utilization_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host: Optional[pulumi.Input[str]] = None,
+             ocpu_capacity_number: Optional[pulumi.Input[float]] = None,
+             ocpu_utilization_number: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if ocpu_capacity_number is None and 'ocpuCapacityNumber' in kwargs:
+            ocpu_capacity_number = kwargs['ocpuCapacityNumber']
+        if ocpu_utilization_number is None and 'ocpuUtilizationNumber' in kwargs:
+            ocpu_utilization_number = kwargs['ocpuUtilizationNumber']
+
         if host is not None:
-            pulumi.set(__self__, "host", host)
+            _setter("host", host)
         if ocpu_capacity_number is not None:
-            pulumi.set(__self__, "ocpu_capacity_number", ocpu_capacity_number)
+            _setter("ocpu_capacity_number", ocpu_capacity_number)
         if ocpu_utilization_number is not None:
-            pulumi.set(__self__, "ocpu_utilization_number", ocpu_utilization_number)
+            _setter("ocpu_utilization_number", ocpu_utilization_number)
 
     @property
     @pulumi.getter
@@ -366,12 +472,33 @@ class BlockchainPlatformReplicasArgs:
         :param pulumi.Input[int] console_count: Number of console replicas
         :param pulumi.Input[int] proxy_count: Number of REST proxy replicas
         """
+        BlockchainPlatformReplicasArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ca_count=ca_count,
+            console_count=console_count,
+            proxy_count=proxy_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ca_count: Optional[pulumi.Input[int]] = None,
+             console_count: Optional[pulumi.Input[int]] = None,
+             proxy_count: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if ca_count is None and 'caCount' in kwargs:
+            ca_count = kwargs['caCount']
+        if console_count is None and 'consoleCount' in kwargs:
+            console_count = kwargs['consoleCount']
+        if proxy_count is None and 'proxyCount' in kwargs:
+            proxy_count = kwargs['proxyCount']
+
         if ca_count is not None:
-            pulumi.set(__self__, "ca_count", ca_count)
+            _setter("ca_count", ca_count)
         if console_count is not None:
-            pulumi.set(__self__, "console_count", console_count)
+            _setter("console_count", console_count)
         if proxy_count is not None:
-            pulumi.set(__self__, "proxy_count", proxy_count)
+            _setter("proxy_count", proxy_count)
 
     @property
     @pulumi.getter(name="caCount")
@@ -421,7 +548,22 @@ class OsnOcpuAllocationParamArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "ocpu_allocation_number", ocpu_allocation_number)
+        OsnOcpuAllocationParamArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ocpu_allocation_number=ocpu_allocation_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ocpu_allocation_number: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if ocpu_allocation_number is None and 'ocpuAllocationNumber' in kwargs:
+            ocpu_allocation_number = kwargs['ocpuAllocationNumber']
+        if ocpu_allocation_number is None:
+            raise TypeError("Missing 'ocpu_allocation_number' argument")
+
+        _setter("ocpu_allocation_number", ocpu_allocation_number)
 
     @property
     @pulumi.getter(name="ocpuAllocationNumber")
@@ -447,7 +589,22 @@ class PeerOcpuAllocationParamArgs:
         """
         :param pulumi.Input[float] ocpu_allocation_number: (Updatable) Number of OCPU allocation
         """
-        pulumi.set(__self__, "ocpu_allocation_number", ocpu_allocation_number)
+        PeerOcpuAllocationParamArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ocpu_allocation_number=ocpu_allocation_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ocpu_allocation_number: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if ocpu_allocation_number is None and 'ocpuAllocationNumber' in kwargs:
+            ocpu_allocation_number = kwargs['ocpuAllocationNumber']
+        if ocpu_allocation_number is None:
+            raise TypeError("Missing 'ocpu_allocation_number' argument")
+
+        _setter("ocpu_allocation_number", ocpu_allocation_number)
 
     @property
     @pulumi.getter(name="ocpuAllocationNumber")
@@ -468,10 +625,29 @@ class GetBlockchainPlatformPatchesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetBlockchainPlatformPatchesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -507,10 +683,29 @@ class GetBlockchainPlatformsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetBlockchainPlatformsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -546,10 +741,29 @@ class GetOsnsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetOsnsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -585,10 +799,29 @@ class GetPeersFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetPeersFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

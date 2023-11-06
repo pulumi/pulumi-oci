@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -397,96 +397,261 @@ class DomainsUserArgs:
                * type: complex
                * uniqueness: none
         """
-        pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "schemas", schemas)
-        pulumi.set(__self__, "user_name", user_name)
+        DomainsUserArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            idcs_endpoint=idcs_endpoint,
+            name=name,
+            schemas=schemas,
+            user_name=user_name,
+            active=active,
+            addresses=addresses,
+            attribute_sets=attribute_sets,
+            attributes=attributes,
+            authorization=authorization,
+            description=description,
+            display_name=display_name,
+            emails=emails,
+            entitlements=entitlements,
+            external_id=external_id,
+            ims=ims,
+            locale=locale,
+            nick_name=nick_name,
+            ocid=ocid,
+            password=password,
+            phone_numbers=phone_numbers,
+            photos=photos,
+            preferred_language=preferred_language,
+            profile_url=profile_url,
+            resource_type_schema_version=resource_type_schema_version,
+            roles=roles,
+            tags=tags,
+            timezone=timezone,
+            title=title,
+            urnietfparamsscimschemasextensionenterprise20user=urnietfparamsscimschemasextensionenterprise20user,
+            urnietfparamsscimschemasoracleidcsextension_oci_tags=urnietfparamsscimschemasoracleidcsextension_oci_tags,
+            urnietfparamsscimschemasoracleidcsextensionadaptive_user=urnietfparamsscimschemasoracleidcsextensionadaptive_user,
+            urnietfparamsscimschemasoracleidcsextensioncapabilities_user=urnietfparamsscimschemasoracleidcsextensioncapabilities_user,
+            urnietfparamsscimschemasoracleidcsextensiondb_credentials_user=urnietfparamsscimschemasoracleidcsextensiondb_credentials_user,
+            urnietfparamsscimschemasoracleidcsextensionkerberos_user_user=urnietfparamsscimschemasoracleidcsextensionkerberos_user_user,
+            urnietfparamsscimschemasoracleidcsextensionmfa_user=urnietfparamsscimschemasoracleidcsextensionmfa_user,
+            urnietfparamsscimschemasoracleidcsextensionpasswordless_user=urnietfparamsscimschemasoracleidcsextensionpasswordless_user,
+            urnietfparamsscimschemasoracleidcsextensionposix_user=urnietfparamsscimschemasoracleidcsextensionposix_user,
+            urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user=urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user,
+            urnietfparamsscimschemasoracleidcsextensionself_change_user=urnietfparamsscimschemasoracleidcsextensionself_change_user,
+            urnietfparamsscimschemasoracleidcsextensionself_registration_user=urnietfparamsscimschemasoracleidcsextensionself_registration_user,
+            urnietfparamsscimschemasoracleidcsextensionsff_user=urnietfparamsscimschemasoracleidcsextensionsff_user,
+            urnietfparamsscimschemasoracleidcsextensionsocial_account_user=urnietfparamsscimschemasoracleidcsextensionsocial_account_user,
+            urnietfparamsscimschemasoracleidcsextensionterms_of_use_user=urnietfparamsscimschemasoracleidcsextensionterms_of_use_user,
+            urnietfparamsscimschemasoracleidcsextensionuser_state_user=urnietfparamsscimschemasoracleidcsextensionuser_state_user,
+            urnietfparamsscimschemasoracleidcsextensionuser_user=urnietfparamsscimschemasoracleidcsextensionuser_user,
+            user_type=user_type,
+            x509certificates=x509certificates,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             idcs_endpoint: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input['DomainsUserNameArgs']] = None,
+             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             user_name: Optional[pulumi.Input[str]] = None,
+             active: Optional[pulumi.Input[bool]] = None,
+             addresses: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserAddressArgs']]]] = None,
+             attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             attributes: Optional[pulumi.Input[str]] = None,
+             authorization: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             emails: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserEmailArgs']]]] = None,
+             entitlements: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserEntitlementArgs']]]] = None,
+             external_id: Optional[pulumi.Input[str]] = None,
+             ims: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserImArgs']]]] = None,
+             locale: Optional[pulumi.Input[str]] = None,
+             nick_name: Optional[pulumi.Input[str]] = None,
+             ocid: Optional[pulumi.Input[str]] = None,
+             password: Optional[pulumi.Input[str]] = None,
+             phone_numbers: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserPhoneNumberArgs']]]] = None,
+             photos: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserPhotoArgs']]]] = None,
+             preferred_language: Optional[pulumi.Input[str]] = None,
+             profile_url: Optional[pulumi.Input[str]] = None,
+             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
+             roles: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserRoleArgs']]]] = None,
+             tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserTagArgs']]]] = None,
+             timezone: Optional[pulumi.Input[str]] = None,
+             title: Optional[pulumi.Input[str]] = None,
+             urnietfparamsscimschemasextensionenterprise20user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextension_oci_tags: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionadaptive_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensioncapabilities_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensiondb_credentials_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionkerberos_user_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionmfa_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionpasswordless_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionposix_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionself_change_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionself_registration_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionsff_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionsocial_account_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionterms_of_use_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionuser_state_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionuser_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs']] = None,
+             user_type: Optional[pulumi.Input[str]] = None,
+             x509certificates: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserX509certificateArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
+            idcs_endpoint = kwargs['idcsEndpoint']
+        if idcs_endpoint is None:
+            raise TypeError("Missing 'idcs_endpoint' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if schemas is None:
+            raise TypeError("Missing 'schemas' argument")
+        if user_name is None and 'userName' in kwargs:
+            user_name = kwargs['userName']
+        if user_name is None:
+            raise TypeError("Missing 'user_name' argument")
+        if attribute_sets is None and 'attributeSets' in kwargs:
+            attribute_sets = kwargs['attributeSets']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if external_id is None and 'externalId' in kwargs:
+            external_id = kwargs['externalId']
+        if nick_name is None and 'nickName' in kwargs:
+            nick_name = kwargs['nickName']
+        if phone_numbers is None and 'phoneNumbers' in kwargs:
+            phone_numbers = kwargs['phoneNumbers']
+        if preferred_language is None and 'preferredLanguage' in kwargs:
+            preferred_language = kwargs['preferredLanguage']
+        if profile_url is None and 'profileUrl' in kwargs:
+            profile_url = kwargs['profileUrl']
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
+            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
+        if urnietfparamsscimschemasoracleidcsextension_oci_tags is None and 'urnietfparamsscimschemasoracleidcsextensionOciTags' in kwargs:
+            urnietfparamsscimschemasoracleidcsextension_oci_tags = kwargs['urnietfparamsscimschemasoracleidcsextensionOciTags']
+        if urnietfparamsscimschemasoracleidcsextensionadaptive_user is None and 'urnietfparamsscimschemasoracleidcsextensionadaptiveUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionadaptive_user = kwargs['urnietfparamsscimschemasoracleidcsextensionadaptiveUser']
+        if urnietfparamsscimschemasoracleidcsextensioncapabilities_user is None and 'urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensioncapabilities_user = kwargs['urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser']
+        if urnietfparamsscimschemasoracleidcsextensiondb_credentials_user is None and 'urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensiondb_credentials_user = kwargs['urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser']
+        if urnietfparamsscimschemasoracleidcsextensionkerberos_user_user is None and 'urnietfparamsscimschemasoracleidcsextensionkerberosUserUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionkerberos_user_user = kwargs['urnietfparamsscimschemasoracleidcsextensionkerberosUserUser']
+        if urnietfparamsscimschemasoracleidcsextensionmfa_user is None and 'urnietfparamsscimschemasoracleidcsextensionmfaUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionmfa_user = kwargs['urnietfparamsscimschemasoracleidcsextensionmfaUser']
+        if urnietfparamsscimschemasoracleidcsextensionpasswordless_user is None and 'urnietfparamsscimschemasoracleidcsextensionpasswordlessUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionpasswordless_user = kwargs['urnietfparamsscimschemasoracleidcsextensionpasswordlessUser']
+        if urnietfparamsscimschemasoracleidcsextensionposix_user is None and 'urnietfparamsscimschemasoracleidcsextensionposixUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionposix_user = kwargs['urnietfparamsscimschemasoracleidcsextensionposixUser']
+        if urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user is None and 'urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user = kwargs['urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser']
+        if urnietfparamsscimschemasoracleidcsextensionself_change_user is None and 'urnietfparamsscimschemasoracleidcsextensionselfChangeUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionself_change_user = kwargs['urnietfparamsscimschemasoracleidcsextensionselfChangeUser']
+        if urnietfparamsscimschemasoracleidcsextensionself_registration_user is None and 'urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionself_registration_user = kwargs['urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser']
+        if urnietfparamsscimschemasoracleidcsextensionsff_user is None and 'urnietfparamsscimschemasoracleidcsextensionsffUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionsff_user = kwargs['urnietfparamsscimschemasoracleidcsextensionsffUser']
+        if urnietfparamsscimschemasoracleidcsextensionsocial_account_user is None and 'urnietfparamsscimschemasoracleidcsextensionsocialAccountUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionsocial_account_user = kwargs['urnietfparamsscimschemasoracleidcsextensionsocialAccountUser']
+        if urnietfparamsscimschemasoracleidcsextensionterms_of_use_user is None and 'urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionterms_of_use_user = kwargs['urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser']
+        if urnietfparamsscimschemasoracleidcsextensionuser_state_user is None and 'urnietfparamsscimschemasoracleidcsextensionuserStateUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionuser_state_user = kwargs['urnietfparamsscimschemasoracleidcsextensionuserStateUser']
+        if urnietfparamsscimschemasoracleidcsextensionuser_user is None and 'urnietfparamsscimschemasoracleidcsextensionuserUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionuser_user = kwargs['urnietfparamsscimschemasoracleidcsextensionuserUser']
+        if user_type is None and 'userType' in kwargs:
+            user_type = kwargs['userType']
+
+        _setter("idcs_endpoint", idcs_endpoint)
+        _setter("name", name)
+        _setter("schemas", schemas)
+        _setter("user_name", user_name)
         if active is not None:
-            pulumi.set(__self__, "active", active)
+            _setter("active", active)
         if addresses is not None:
-            pulumi.set(__self__, "addresses", addresses)
+            _setter("addresses", addresses)
         if attribute_sets is not None:
-            pulumi.set(__self__, "attribute_sets", attribute_sets)
+            _setter("attribute_sets", attribute_sets)
         if attributes is not None:
-            pulumi.set(__self__, "attributes", attributes)
+            _setter("attributes", attributes)
         if authorization is not None:
-            pulumi.set(__self__, "authorization", authorization)
+            _setter("authorization", authorization)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if emails is not None:
-            pulumi.set(__self__, "emails", emails)
+            _setter("emails", emails)
         if entitlements is not None:
-            pulumi.set(__self__, "entitlements", entitlements)
+            _setter("entitlements", entitlements)
         if external_id is not None:
-            pulumi.set(__self__, "external_id", external_id)
+            _setter("external_id", external_id)
         if ims is not None:
-            pulumi.set(__self__, "ims", ims)
+            _setter("ims", ims)
         if locale is not None:
-            pulumi.set(__self__, "locale", locale)
+            _setter("locale", locale)
         if nick_name is not None:
-            pulumi.set(__self__, "nick_name", nick_name)
+            _setter("nick_name", nick_name)
         if ocid is not None:
-            pulumi.set(__self__, "ocid", ocid)
+            _setter("ocid", ocid)
         if password is not None:
-            pulumi.set(__self__, "password", password)
+            _setter("password", password)
         if phone_numbers is not None:
-            pulumi.set(__self__, "phone_numbers", phone_numbers)
+            _setter("phone_numbers", phone_numbers)
         if photos is not None:
-            pulumi.set(__self__, "photos", photos)
+            _setter("photos", photos)
         if preferred_language is not None:
-            pulumi.set(__self__, "preferred_language", preferred_language)
+            _setter("preferred_language", preferred_language)
         if profile_url is not None:
-            pulumi.set(__self__, "profile_url", profile_url)
+            _setter("profile_url", profile_url)
         if resource_type_schema_version is not None:
-            pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
+            _setter("resource_type_schema_version", resource_type_schema_version)
         if roles is not None:
-            pulumi.set(__self__, "roles", roles)
+            _setter("roles", roles)
         if tags is not None:
-            pulumi.set(__self__, "tags", tags)
+            _setter("tags", tags)
         if timezone is not None:
-            pulumi.set(__self__, "timezone", timezone)
+            _setter("timezone", timezone)
         if title is not None:
-            pulumi.set(__self__, "title", title)
+            _setter("title", title)
         if urnietfparamsscimschemasextensionenterprise20user is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasextensionenterprise20user", urnietfparamsscimschemasextensionenterprise20user)
+            _setter("urnietfparamsscimschemasextensionenterprise20user", urnietfparamsscimschemasextensionenterprise20user)
         if urnietfparamsscimschemasoracleidcsextension_oci_tags is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextension_oci_tags", urnietfparamsscimschemasoracleidcsextension_oci_tags)
+            _setter("urnietfparamsscimschemasoracleidcsextension_oci_tags", urnietfparamsscimschemasoracleidcsextension_oci_tags)
         if urnietfparamsscimschemasoracleidcsextensionadaptive_user is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionadaptive_user", urnietfparamsscimschemasoracleidcsextensionadaptive_user)
+            _setter("urnietfparamsscimschemasoracleidcsextensionadaptive_user", urnietfparamsscimschemasoracleidcsextensionadaptive_user)
         if urnietfparamsscimschemasoracleidcsextensioncapabilities_user is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensioncapabilities_user", urnietfparamsscimschemasoracleidcsextensioncapabilities_user)
+            _setter("urnietfparamsscimschemasoracleidcsextensioncapabilities_user", urnietfparamsscimschemasoracleidcsextensioncapabilities_user)
         if urnietfparamsscimschemasoracleidcsextensiondb_credentials_user is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensiondb_credentials_user", urnietfparamsscimschemasoracleidcsextensiondb_credentials_user)
+            _setter("urnietfparamsscimschemasoracleidcsextensiondb_credentials_user", urnietfparamsscimschemasoracleidcsextensiondb_credentials_user)
         if urnietfparamsscimschemasoracleidcsextensionkerberos_user_user is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionkerberos_user_user", urnietfparamsscimschemasoracleidcsextensionkerberos_user_user)
+            _setter("urnietfparamsscimschemasoracleidcsextensionkerberos_user_user", urnietfparamsscimschemasoracleidcsextensionkerberos_user_user)
         if urnietfparamsscimschemasoracleidcsextensionmfa_user is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionmfa_user", urnietfparamsscimschemasoracleidcsextensionmfa_user)
+            _setter("urnietfparamsscimschemasoracleidcsextensionmfa_user", urnietfparamsscimschemasoracleidcsextensionmfa_user)
         if urnietfparamsscimschemasoracleidcsextensionpasswordless_user is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionpasswordless_user", urnietfparamsscimschemasoracleidcsextensionpasswordless_user)
+            _setter("urnietfparamsscimschemasoracleidcsextensionpasswordless_user", urnietfparamsscimschemasoracleidcsextensionpasswordless_user)
         if urnietfparamsscimschemasoracleidcsextensionposix_user is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionposix_user", urnietfparamsscimschemasoracleidcsextensionposix_user)
+            _setter("urnietfparamsscimschemasoracleidcsextensionposix_user", urnietfparamsscimschemasoracleidcsextensionposix_user)
         if urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user", urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user)
+            _setter("urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user", urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user)
         if urnietfparamsscimschemasoracleidcsextensionself_change_user is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionself_change_user", urnietfparamsscimschemasoracleidcsextensionself_change_user)
+            _setter("urnietfparamsscimschemasoracleidcsextensionself_change_user", urnietfparamsscimschemasoracleidcsextensionself_change_user)
         if urnietfparamsscimschemasoracleidcsextensionself_registration_user is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionself_registration_user", urnietfparamsscimschemasoracleidcsextensionself_registration_user)
+            _setter("urnietfparamsscimschemasoracleidcsextensionself_registration_user", urnietfparamsscimschemasoracleidcsextensionself_registration_user)
         if urnietfparamsscimschemasoracleidcsextensionsff_user is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionsff_user", urnietfparamsscimschemasoracleidcsextensionsff_user)
+            _setter("urnietfparamsscimschemasoracleidcsextensionsff_user", urnietfparamsscimschemasoracleidcsextensionsff_user)
         if urnietfparamsscimschemasoracleidcsextensionsocial_account_user is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionsocial_account_user", urnietfparamsscimschemasoracleidcsextensionsocial_account_user)
+            _setter("urnietfparamsscimschemasoracleidcsextensionsocial_account_user", urnietfparamsscimschemasoracleidcsextensionsocial_account_user)
         if urnietfparamsscimschemasoracleidcsextensionterms_of_use_user is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionterms_of_use_user", urnietfparamsscimschemasoracleidcsextensionterms_of_use_user)
+            _setter("urnietfparamsscimschemasoracleidcsextensionterms_of_use_user", urnietfparamsscimschemasoracleidcsextensionterms_of_use_user)
         if urnietfparamsscimschemasoracleidcsextensionuser_state_user is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionuser_state_user", urnietfparamsscimschemasoracleidcsextensionuser_state_user)
+            _setter("urnietfparamsscimschemasoracleidcsextensionuser_state_user", urnietfparamsscimschemasoracleidcsextensionuser_state_user)
         if urnietfparamsscimschemasoracleidcsextensionuser_user is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionuser_user", urnietfparamsscimschemasoracleidcsextensionuser_user)
+            _setter("urnietfparamsscimschemasoracleidcsextensionuser_user", urnietfparamsscimschemasoracleidcsextensionuser_user)
         if user_type is not None:
-            pulumi.set(__self__, "user_type", user_type)
+            _setter("user_type", user_type)
         if x509certificates is not None:
-            pulumi.set(__self__, "x509certificates", x509certificates)
+            _setter("x509certificates", x509certificates)
 
     @property
     @pulumi.getter(name="idcsEndpoint")
@@ -1842,126 +2007,331 @@ class _DomainsUserState:
                * type: complex
                * uniqueness: none
         """
+        _DomainsUserState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            active=active,
+            addresses=addresses,
+            attribute_sets=attribute_sets,
+            attributes=attributes,
+            authorization=authorization,
+            compartment_ocid=compartment_ocid,
+            delete_in_progress=delete_in_progress,
+            description=description,
+            display_name=display_name,
+            domain_ocid=domain_ocid,
+            emails=emails,
+            entitlements=entitlements,
+            external_id=external_id,
+            groups=groups,
+            idcs_created_bies=idcs_created_bies,
+            idcs_endpoint=idcs_endpoint,
+            idcs_last_modified_bies=idcs_last_modified_bies,
+            idcs_last_upgraded_in_release=idcs_last_upgraded_in_release,
+            idcs_prevented_operations=idcs_prevented_operations,
+            ims=ims,
+            locale=locale,
+            metas=metas,
+            name=name,
+            nick_name=nick_name,
+            ocid=ocid,
+            password=password,
+            phone_numbers=phone_numbers,
+            photos=photos,
+            preferred_language=preferred_language,
+            profile_url=profile_url,
+            resource_type_schema_version=resource_type_schema_version,
+            roles=roles,
+            schemas=schemas,
+            tags=tags,
+            tenancy_ocid=tenancy_ocid,
+            timezone=timezone,
+            title=title,
+            urnietfparamsscimschemasextensionenterprise20user=urnietfparamsscimschemasextensionenterprise20user,
+            urnietfparamsscimschemasoracleidcsextension_oci_tags=urnietfparamsscimschemasoracleidcsextension_oci_tags,
+            urnietfparamsscimschemasoracleidcsextensionadaptive_user=urnietfparamsscimschemasoracleidcsextensionadaptive_user,
+            urnietfparamsscimschemasoracleidcsextensioncapabilities_user=urnietfparamsscimschemasoracleidcsextensioncapabilities_user,
+            urnietfparamsscimschemasoracleidcsextensiondb_credentials_user=urnietfparamsscimschemasoracleidcsextensiondb_credentials_user,
+            urnietfparamsscimschemasoracleidcsextensiondb_user_users=urnietfparamsscimschemasoracleidcsextensiondb_user_users,
+            urnietfparamsscimschemasoracleidcsextensionkerberos_user_user=urnietfparamsscimschemasoracleidcsextensionkerberos_user_user,
+            urnietfparamsscimschemasoracleidcsextensionmfa_user=urnietfparamsscimschemasoracleidcsextensionmfa_user,
+            urnietfparamsscimschemasoracleidcsextensionpassword_state_users=urnietfparamsscimschemasoracleidcsextensionpassword_state_users,
+            urnietfparamsscimschemasoracleidcsextensionpasswordless_user=urnietfparamsscimschemasoracleidcsextensionpasswordless_user,
+            urnietfparamsscimschemasoracleidcsextensionposix_user=urnietfparamsscimschemasoracleidcsextensionposix_user,
+            urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user=urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user,
+            urnietfparamsscimschemasoracleidcsextensionself_change_user=urnietfparamsscimschemasoracleidcsextensionself_change_user,
+            urnietfparamsscimschemasoracleidcsextensionself_registration_user=urnietfparamsscimschemasoracleidcsextensionself_registration_user,
+            urnietfparamsscimschemasoracleidcsextensionsff_user=urnietfparamsscimschemasoracleidcsextensionsff_user,
+            urnietfparamsscimschemasoracleidcsextensionsocial_account_user=urnietfparamsscimschemasoracleidcsextensionsocial_account_user,
+            urnietfparamsscimschemasoracleidcsextensionterms_of_use_user=urnietfparamsscimschemasoracleidcsextensionterms_of_use_user,
+            urnietfparamsscimschemasoracleidcsextensionuser_credentials_users=urnietfparamsscimschemasoracleidcsextensionuser_credentials_users,
+            urnietfparamsscimschemasoracleidcsextensionuser_state_user=urnietfparamsscimschemasoracleidcsextensionuser_state_user,
+            urnietfparamsscimschemasoracleidcsextensionuser_user=urnietfparamsscimschemasoracleidcsextensionuser_user,
+            user_name=user_name,
+            user_type=user_type,
+            x509certificates=x509certificates,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             active: Optional[pulumi.Input[bool]] = None,
+             addresses: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserAddressArgs']]]] = None,
+             attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             attributes: Optional[pulumi.Input[str]] = None,
+             authorization: Optional[pulumi.Input[str]] = None,
+             compartment_ocid: Optional[pulumi.Input[str]] = None,
+             delete_in_progress: Optional[pulumi.Input[bool]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             domain_ocid: Optional[pulumi.Input[str]] = None,
+             emails: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserEmailArgs']]]] = None,
+             entitlements: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserEntitlementArgs']]]] = None,
+             external_id: Optional[pulumi.Input[str]] = None,
+             groups: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserGroupArgs']]]] = None,
+             idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserIdcsCreatedByArgs']]]] = None,
+             idcs_endpoint: Optional[pulumi.Input[str]] = None,
+             idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserIdcsLastModifiedByArgs']]]] = None,
+             idcs_last_upgraded_in_release: Optional[pulumi.Input[str]] = None,
+             idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             ims: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserImArgs']]]] = None,
+             locale: Optional[pulumi.Input[str]] = None,
+             metas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserMetaArgs']]]] = None,
+             name: Optional[pulumi.Input['DomainsUserNameArgs']] = None,
+             nick_name: Optional[pulumi.Input[str]] = None,
+             ocid: Optional[pulumi.Input[str]] = None,
+             password: Optional[pulumi.Input[str]] = None,
+             phone_numbers: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserPhoneNumberArgs']]]] = None,
+             photos: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserPhotoArgs']]]] = None,
+             preferred_language: Optional[pulumi.Input[str]] = None,
+             profile_url: Optional[pulumi.Input[str]] = None,
+             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
+             roles: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserRoleArgs']]]] = None,
+             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserTagArgs']]]] = None,
+             tenancy_ocid: Optional[pulumi.Input[str]] = None,
+             timezone: Optional[pulumi.Input[str]] = None,
+             title: Optional[pulumi.Input[str]] = None,
+             urnietfparamsscimschemasextensionenterprise20user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextension_oci_tags: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionadaptive_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensioncapabilities_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensiondb_credentials_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensiondb_user_users: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArgs']]]] = None,
+             urnietfparamsscimschemasoracleidcsextensionkerberos_user_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionmfa_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionpassword_state_users: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArgs']]]] = None,
+             urnietfparamsscimschemasoracleidcsextensionpasswordless_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionposix_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionself_change_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionself_registration_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionsff_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionsocial_account_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionterms_of_use_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionuser_credentials_users: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArgs']]]] = None,
+             urnietfparamsscimschemasoracleidcsextensionuser_state_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionuser_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs']] = None,
+             user_name: Optional[pulumi.Input[str]] = None,
+             user_type: Optional[pulumi.Input[str]] = None,
+             x509certificates: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserX509certificateArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if attribute_sets is None and 'attributeSets' in kwargs:
+            attribute_sets = kwargs['attributeSets']
+        if compartment_ocid is None and 'compartmentOcid' in kwargs:
+            compartment_ocid = kwargs['compartmentOcid']
+        if delete_in_progress is None and 'deleteInProgress' in kwargs:
+            delete_in_progress = kwargs['deleteInProgress']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if domain_ocid is None and 'domainOcid' in kwargs:
+            domain_ocid = kwargs['domainOcid']
+        if external_id is None and 'externalId' in kwargs:
+            external_id = kwargs['externalId']
+        if idcs_created_bies is None and 'idcsCreatedBies' in kwargs:
+            idcs_created_bies = kwargs['idcsCreatedBies']
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
+            idcs_endpoint = kwargs['idcsEndpoint']
+        if idcs_last_modified_bies is None and 'idcsLastModifiedBies' in kwargs:
+            idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
+        if idcs_last_upgraded_in_release is None and 'idcsLastUpgradedInRelease' in kwargs:
+            idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
+        if idcs_prevented_operations is None and 'idcsPreventedOperations' in kwargs:
+            idcs_prevented_operations = kwargs['idcsPreventedOperations']
+        if nick_name is None and 'nickName' in kwargs:
+            nick_name = kwargs['nickName']
+        if phone_numbers is None and 'phoneNumbers' in kwargs:
+            phone_numbers = kwargs['phoneNumbers']
+        if preferred_language is None and 'preferredLanguage' in kwargs:
+            preferred_language = kwargs['preferredLanguage']
+        if profile_url is None and 'profileUrl' in kwargs:
+            profile_url = kwargs['profileUrl']
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
+            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
+        if tenancy_ocid is None and 'tenancyOcid' in kwargs:
+            tenancy_ocid = kwargs['tenancyOcid']
+        if urnietfparamsscimschemasoracleidcsextension_oci_tags is None and 'urnietfparamsscimschemasoracleidcsextensionOciTags' in kwargs:
+            urnietfparamsscimschemasoracleidcsextension_oci_tags = kwargs['urnietfparamsscimschemasoracleidcsextensionOciTags']
+        if urnietfparamsscimschemasoracleidcsextensionadaptive_user is None and 'urnietfparamsscimschemasoracleidcsextensionadaptiveUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionadaptive_user = kwargs['urnietfparamsscimschemasoracleidcsextensionadaptiveUser']
+        if urnietfparamsscimschemasoracleidcsextensioncapabilities_user is None and 'urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensioncapabilities_user = kwargs['urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser']
+        if urnietfparamsscimschemasoracleidcsextensiondb_credentials_user is None and 'urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensiondb_credentials_user = kwargs['urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser']
+        if urnietfparamsscimschemasoracleidcsextensiondb_user_users is None and 'urnietfparamsscimschemasoracleidcsextensiondbUserUsers' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensiondb_user_users = kwargs['urnietfparamsscimschemasoracleidcsextensiondbUserUsers']
+        if urnietfparamsscimschemasoracleidcsextensionkerberos_user_user is None and 'urnietfparamsscimschemasoracleidcsextensionkerberosUserUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionkerberos_user_user = kwargs['urnietfparamsscimschemasoracleidcsextensionkerberosUserUser']
+        if urnietfparamsscimschemasoracleidcsextensionmfa_user is None and 'urnietfparamsscimschemasoracleidcsextensionmfaUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionmfa_user = kwargs['urnietfparamsscimschemasoracleidcsextensionmfaUser']
+        if urnietfparamsscimschemasoracleidcsextensionpassword_state_users is None and 'urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionpassword_state_users = kwargs['urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers']
+        if urnietfparamsscimschemasoracleidcsextensionpasswordless_user is None and 'urnietfparamsscimschemasoracleidcsextensionpasswordlessUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionpasswordless_user = kwargs['urnietfparamsscimschemasoracleidcsextensionpasswordlessUser']
+        if urnietfparamsscimschemasoracleidcsextensionposix_user is None and 'urnietfparamsscimschemasoracleidcsextensionposixUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionposix_user = kwargs['urnietfparamsscimschemasoracleidcsextensionposixUser']
+        if urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user is None and 'urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user = kwargs['urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser']
+        if urnietfparamsscimschemasoracleidcsextensionself_change_user is None and 'urnietfparamsscimschemasoracleidcsextensionselfChangeUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionself_change_user = kwargs['urnietfparamsscimschemasoracleidcsextensionselfChangeUser']
+        if urnietfparamsscimschemasoracleidcsextensionself_registration_user is None and 'urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionself_registration_user = kwargs['urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser']
+        if urnietfparamsscimschemasoracleidcsextensionsff_user is None and 'urnietfparamsscimschemasoracleidcsextensionsffUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionsff_user = kwargs['urnietfparamsscimschemasoracleidcsextensionsffUser']
+        if urnietfparamsscimschemasoracleidcsextensionsocial_account_user is None and 'urnietfparamsscimschemasoracleidcsextensionsocialAccountUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionsocial_account_user = kwargs['urnietfparamsscimschemasoracleidcsextensionsocialAccountUser']
+        if urnietfparamsscimschemasoracleidcsextensionterms_of_use_user is None and 'urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionterms_of_use_user = kwargs['urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser']
+        if urnietfparamsscimschemasoracleidcsextensionuser_credentials_users is None and 'urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionuser_credentials_users = kwargs['urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers']
+        if urnietfparamsscimschemasoracleidcsextensionuser_state_user is None and 'urnietfparamsscimschemasoracleidcsextensionuserStateUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionuser_state_user = kwargs['urnietfparamsscimschemasoracleidcsextensionuserStateUser']
+        if urnietfparamsscimschemasoracleidcsextensionuser_user is None and 'urnietfparamsscimschemasoracleidcsextensionuserUser' in kwargs:
+            urnietfparamsscimschemasoracleidcsextensionuser_user = kwargs['urnietfparamsscimschemasoracleidcsextensionuserUser']
+        if user_name is None and 'userName' in kwargs:
+            user_name = kwargs['userName']
+        if user_type is None and 'userType' in kwargs:
+            user_type = kwargs['userType']
+
         if active is not None:
-            pulumi.set(__self__, "active", active)
+            _setter("active", active)
         if addresses is not None:
-            pulumi.set(__self__, "addresses", addresses)
+            _setter("addresses", addresses)
         if attribute_sets is not None:
-            pulumi.set(__self__, "attribute_sets", attribute_sets)
+            _setter("attribute_sets", attribute_sets)
         if attributes is not None:
-            pulumi.set(__self__, "attributes", attributes)
+            _setter("attributes", attributes)
         if authorization is not None:
-            pulumi.set(__self__, "authorization", authorization)
+            _setter("authorization", authorization)
         if compartment_ocid is not None:
-            pulumi.set(__self__, "compartment_ocid", compartment_ocid)
+            _setter("compartment_ocid", compartment_ocid)
         if delete_in_progress is not None:
-            pulumi.set(__self__, "delete_in_progress", delete_in_progress)
+            _setter("delete_in_progress", delete_in_progress)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if domain_ocid is not None:
-            pulumi.set(__self__, "domain_ocid", domain_ocid)
+            _setter("domain_ocid", domain_ocid)
         if emails is not None:
-            pulumi.set(__self__, "emails", emails)
+            _setter("emails", emails)
         if entitlements is not None:
-            pulumi.set(__self__, "entitlements", entitlements)
+            _setter("entitlements", entitlements)
         if external_id is not None:
-            pulumi.set(__self__, "external_id", external_id)
+            _setter("external_id", external_id)
         if groups is not None:
-            pulumi.set(__self__, "groups", groups)
+            _setter("groups", groups)
         if idcs_created_bies is not None:
-            pulumi.set(__self__, "idcs_created_bies", idcs_created_bies)
+            _setter("idcs_created_bies", idcs_created_bies)
         if idcs_endpoint is not None:
-            pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
+            _setter("idcs_endpoint", idcs_endpoint)
         if idcs_last_modified_bies is not None:
-            pulumi.set(__self__, "idcs_last_modified_bies", idcs_last_modified_bies)
+            _setter("idcs_last_modified_bies", idcs_last_modified_bies)
         if idcs_last_upgraded_in_release is not None:
-            pulumi.set(__self__, "idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
+            _setter("idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
         if idcs_prevented_operations is not None:
-            pulumi.set(__self__, "idcs_prevented_operations", idcs_prevented_operations)
+            _setter("idcs_prevented_operations", idcs_prevented_operations)
         if ims is not None:
-            pulumi.set(__self__, "ims", ims)
+            _setter("ims", ims)
         if locale is not None:
-            pulumi.set(__self__, "locale", locale)
+            _setter("locale", locale)
         if metas is not None:
-            pulumi.set(__self__, "metas", metas)
+            _setter("metas", metas)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if nick_name is not None:
-            pulumi.set(__self__, "nick_name", nick_name)
+            _setter("nick_name", nick_name)
         if ocid is not None:
-            pulumi.set(__self__, "ocid", ocid)
+            _setter("ocid", ocid)
         if password is not None:
-            pulumi.set(__self__, "password", password)
+            _setter("password", password)
         if phone_numbers is not None:
-            pulumi.set(__self__, "phone_numbers", phone_numbers)
+            _setter("phone_numbers", phone_numbers)
         if photos is not None:
-            pulumi.set(__self__, "photos", photos)
+            _setter("photos", photos)
         if preferred_language is not None:
-            pulumi.set(__self__, "preferred_language", preferred_language)
+            _setter("preferred_language", preferred_language)
         if profile_url is not None:
-            pulumi.set(__self__, "profile_url", profile_url)
+            _setter("profile_url", profile_url)
         if resource_type_schema_version is not None:
-            pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
+            _setter("resource_type_schema_version", resource_type_schema_version)
         if roles is not None:
-            pulumi.set(__self__, "roles", roles)
+            _setter("roles", roles)
         if schemas is not None:
-            pulumi.set(__self__, "schemas", schemas)
+            _setter("schemas", schemas)
         if tags is not None:
-            pulumi.set(__self__, "tags", tags)
+            _setter("tags", tags)
         if tenancy_ocid is not None:
-            pulumi.set(__self__, "tenancy_ocid", tenancy_ocid)
+            _setter("tenancy_ocid", tenancy_ocid)
         if timezone is not None:
-            pulumi.set(__self__, "timezone", timezone)
+            _setter("timezone", timezone)
         if title is not None:
-            pulumi.set(__self__, "title", title)
+            _setter("title", title)
         if urnietfparamsscimschemasextensionenterprise20user is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasextensionenterprise20user", urnietfparamsscimschemasextensionenterprise20user)
+            _setter("urnietfparamsscimschemasextensionenterprise20user", urnietfparamsscimschemasextensionenterprise20user)
         if urnietfparamsscimschemasoracleidcsextension_oci_tags is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextension_oci_tags", urnietfparamsscimschemasoracleidcsextension_oci_tags)
+            _setter("urnietfparamsscimschemasoracleidcsextension_oci_tags", urnietfparamsscimschemasoracleidcsextension_oci_tags)
         if urnietfparamsscimschemasoracleidcsextensionadaptive_user is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionadaptive_user", urnietfparamsscimschemasoracleidcsextensionadaptive_user)
+            _setter("urnietfparamsscimschemasoracleidcsextensionadaptive_user", urnietfparamsscimschemasoracleidcsextensionadaptive_user)
         if urnietfparamsscimschemasoracleidcsextensioncapabilities_user is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensioncapabilities_user", urnietfparamsscimschemasoracleidcsextensioncapabilities_user)
+            _setter("urnietfparamsscimschemasoracleidcsextensioncapabilities_user", urnietfparamsscimschemasoracleidcsextensioncapabilities_user)
         if urnietfparamsscimschemasoracleidcsextensiondb_credentials_user is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensiondb_credentials_user", urnietfparamsscimschemasoracleidcsextensiondb_credentials_user)
+            _setter("urnietfparamsscimschemasoracleidcsextensiondb_credentials_user", urnietfparamsscimschemasoracleidcsextensiondb_credentials_user)
         if urnietfparamsscimschemasoracleidcsextensiondb_user_users is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensiondb_user_users", urnietfparamsscimschemasoracleidcsextensiondb_user_users)
+            _setter("urnietfparamsscimschemasoracleidcsextensiondb_user_users", urnietfparamsscimschemasoracleidcsextensiondb_user_users)
         if urnietfparamsscimschemasoracleidcsextensionkerberos_user_user is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionkerberos_user_user", urnietfparamsscimschemasoracleidcsextensionkerberos_user_user)
+            _setter("urnietfparamsscimschemasoracleidcsextensionkerberos_user_user", urnietfparamsscimschemasoracleidcsextensionkerberos_user_user)
         if urnietfparamsscimschemasoracleidcsextensionmfa_user is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionmfa_user", urnietfparamsscimschemasoracleidcsextensionmfa_user)
+            _setter("urnietfparamsscimschemasoracleidcsextensionmfa_user", urnietfparamsscimschemasoracleidcsextensionmfa_user)
         if urnietfparamsscimschemasoracleidcsextensionpassword_state_users is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionpassword_state_users", urnietfparamsscimschemasoracleidcsextensionpassword_state_users)
+            _setter("urnietfparamsscimschemasoracleidcsextensionpassword_state_users", urnietfparamsscimschemasoracleidcsextensionpassword_state_users)
         if urnietfparamsscimschemasoracleidcsextensionpasswordless_user is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionpasswordless_user", urnietfparamsscimschemasoracleidcsextensionpasswordless_user)
+            _setter("urnietfparamsscimschemasoracleidcsextensionpasswordless_user", urnietfparamsscimschemasoracleidcsextensionpasswordless_user)
         if urnietfparamsscimschemasoracleidcsextensionposix_user is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionposix_user", urnietfparamsscimschemasoracleidcsextensionposix_user)
+            _setter("urnietfparamsscimschemasoracleidcsextensionposix_user", urnietfparamsscimschemasoracleidcsextensionposix_user)
         if urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user", urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user)
+            _setter("urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user", urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user)
         if urnietfparamsscimschemasoracleidcsextensionself_change_user is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionself_change_user", urnietfparamsscimschemasoracleidcsextensionself_change_user)
+            _setter("urnietfparamsscimschemasoracleidcsextensionself_change_user", urnietfparamsscimschemasoracleidcsextensionself_change_user)
         if urnietfparamsscimschemasoracleidcsextensionself_registration_user is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionself_registration_user", urnietfparamsscimschemasoracleidcsextensionself_registration_user)
+            _setter("urnietfparamsscimschemasoracleidcsextensionself_registration_user", urnietfparamsscimschemasoracleidcsextensionself_registration_user)
         if urnietfparamsscimschemasoracleidcsextensionsff_user is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionsff_user", urnietfparamsscimschemasoracleidcsextensionsff_user)
+            _setter("urnietfparamsscimschemasoracleidcsextensionsff_user", urnietfparamsscimschemasoracleidcsextensionsff_user)
         if urnietfparamsscimschemasoracleidcsextensionsocial_account_user is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionsocial_account_user", urnietfparamsscimschemasoracleidcsextensionsocial_account_user)
+            _setter("urnietfparamsscimschemasoracleidcsextensionsocial_account_user", urnietfparamsscimschemasoracleidcsextensionsocial_account_user)
         if urnietfparamsscimschemasoracleidcsextensionterms_of_use_user is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionterms_of_use_user", urnietfparamsscimschemasoracleidcsextensionterms_of_use_user)
+            _setter("urnietfparamsscimschemasoracleidcsextensionterms_of_use_user", urnietfparamsscimschemasoracleidcsextensionterms_of_use_user)
         if urnietfparamsscimschemasoracleidcsextensionuser_credentials_users is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionuser_credentials_users", urnietfparamsscimschemasoracleidcsextensionuser_credentials_users)
+            _setter("urnietfparamsscimschemasoracleidcsextensionuser_credentials_users", urnietfparamsscimschemasoracleidcsextensionuser_credentials_users)
         if urnietfparamsscimschemasoracleidcsextensionuser_state_user is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionuser_state_user", urnietfparamsscimschemasoracleidcsextensionuser_state_user)
+            _setter("urnietfparamsscimschemasoracleidcsextensionuser_state_user", urnietfparamsscimschemasoracleidcsextensionuser_state_user)
         if urnietfparamsscimschemasoracleidcsextensionuser_user is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionuser_user", urnietfparamsscimschemasoracleidcsextensionuser_user)
+            _setter("urnietfparamsscimschemasoracleidcsextensionuser_user", urnietfparamsscimschemasoracleidcsextensionuser_user)
         if user_name is not None:
-            pulumi.set(__self__, "user_name", user_name)
+            _setter("user_name", user_name)
         if user_type is not None:
-            pulumi.set(__self__, "user_type", user_type)
+            _setter("user_type", user_type)
         if x509certificates is not None:
-            pulumi.set(__self__, "x509certificates", x509certificates)
+            _setter("x509certificates", x509certificates)
 
     @property
     @pulumi.getter
@@ -3492,6 +3862,10 @@ class DomainsUser(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DomainsUserArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -3568,6 +3942,11 @@ class DomainsUser(pulumi.CustomResource):
             __props__.__dict__["idcs_endpoint"] = idcs_endpoint
             __props__.__dict__["ims"] = ims
             __props__.__dict__["locale"] = locale
+            if name is not None and not isinstance(name, DomainsUserNameArgs):
+                name = name or {}
+                def _setter(key, value):
+                    name[key] = value
+                DomainsUserNameArgs._configure(_setter, **name)
             if name is None and not opts.urn:
                 raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
@@ -3586,22 +3965,107 @@ class DomainsUser(pulumi.CustomResource):
             __props__.__dict__["tags"] = tags
             __props__.__dict__["timezone"] = timezone
             __props__.__dict__["title"] = title
+            if urnietfparamsscimschemasextensionenterprise20user is not None and not isinstance(urnietfparamsscimschemasextensionenterprise20user, DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs):
+                urnietfparamsscimschemasextensionenterprise20user = urnietfparamsscimschemasextensionenterprise20user or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasextensionenterprise20user[key] = value
+                DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs._configure(_setter, **urnietfparamsscimschemasextensionenterprise20user)
             __props__.__dict__["urnietfparamsscimschemasextensionenterprise20user"] = urnietfparamsscimschemasextensionenterprise20user
+            if urnietfparamsscimschemasoracleidcsextension_oci_tags is not None and not isinstance(urnietfparamsscimschemasoracleidcsextension_oci_tags, DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs):
+                urnietfparamsscimschemasoracleidcsextension_oci_tags = urnietfparamsscimschemasoracleidcsextension_oci_tags or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextension_oci_tags[key] = value
+                DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextension_oci_tags)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextension_oci_tags"] = urnietfparamsscimschemasoracleidcsextension_oci_tags
+            if urnietfparamsscimschemasoracleidcsextensionadaptive_user is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionadaptive_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs):
+                urnietfparamsscimschemasoracleidcsextensionadaptive_user = urnietfparamsscimschemasoracleidcsextensionadaptive_user or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensionadaptive_user[key] = value
+                DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionadaptive_user)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionadaptive_user"] = urnietfparamsscimschemasoracleidcsextensionadaptive_user
+            if urnietfparamsscimschemasoracleidcsextensioncapabilities_user is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensioncapabilities_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs):
+                urnietfparamsscimschemasoracleidcsextensioncapabilities_user = urnietfparamsscimschemasoracleidcsextensioncapabilities_user or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensioncapabilities_user[key] = value
+                DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensioncapabilities_user)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensioncapabilities_user"] = urnietfparamsscimschemasoracleidcsextensioncapabilities_user
+            if urnietfparamsscimschemasoracleidcsextensiondb_credentials_user is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensiondb_credentials_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs):
+                urnietfparamsscimschemasoracleidcsextensiondb_credentials_user = urnietfparamsscimschemasoracleidcsextensiondb_credentials_user or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensiondb_credentials_user[key] = value
+                DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensiondb_credentials_user)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensiondb_credentials_user"] = urnietfparamsscimschemasoracleidcsextensiondb_credentials_user
+            if urnietfparamsscimschemasoracleidcsextensionkerberos_user_user is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionkerberos_user_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs):
+                urnietfparamsscimschemasoracleidcsextensionkerberos_user_user = urnietfparamsscimschemasoracleidcsextensionkerberos_user_user or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensionkerberos_user_user[key] = value
+                DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionkerberos_user_user)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionkerberos_user_user"] = urnietfparamsscimschemasoracleidcsextensionkerberos_user_user
+            if urnietfparamsscimschemasoracleidcsextensionmfa_user is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionmfa_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs):
+                urnietfparamsscimschemasoracleidcsextensionmfa_user = urnietfparamsscimschemasoracleidcsextensionmfa_user or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensionmfa_user[key] = value
+                DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionmfa_user)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionmfa_user"] = urnietfparamsscimschemasoracleidcsextensionmfa_user
+            if urnietfparamsscimschemasoracleidcsextensionpasswordless_user is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionpasswordless_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs):
+                urnietfparamsscimschemasoracleidcsextensionpasswordless_user = urnietfparamsscimschemasoracleidcsextensionpasswordless_user or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensionpasswordless_user[key] = value
+                DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionpasswordless_user)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionpasswordless_user"] = urnietfparamsscimschemasoracleidcsextensionpasswordless_user
+            if urnietfparamsscimschemasoracleidcsextensionposix_user is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionposix_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs):
+                urnietfparamsscimschemasoracleidcsextensionposix_user = urnietfparamsscimschemasoracleidcsextensionposix_user or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensionposix_user[key] = value
+                DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionposix_user)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionposix_user"] = urnietfparamsscimschemasoracleidcsextensionposix_user
+            if urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs):
+                urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user = urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user[key] = value
+                DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user"] = urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user
+            if urnietfparamsscimschemasoracleidcsextensionself_change_user is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionself_change_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs):
+                urnietfparamsscimschemasoracleidcsextensionself_change_user = urnietfparamsscimschemasoracleidcsextensionself_change_user or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensionself_change_user[key] = value
+                DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionself_change_user)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionself_change_user"] = urnietfparamsscimschemasoracleidcsextensionself_change_user
+            if urnietfparamsscimschemasoracleidcsextensionself_registration_user is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionself_registration_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs):
+                urnietfparamsscimschemasoracleidcsextensionself_registration_user = urnietfparamsscimschemasoracleidcsextensionself_registration_user or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensionself_registration_user[key] = value
+                DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionself_registration_user)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionself_registration_user"] = urnietfparamsscimschemasoracleidcsextensionself_registration_user
+            if urnietfparamsscimschemasoracleidcsextensionsff_user is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionsff_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs):
+                urnietfparamsscimschemasoracleidcsextensionsff_user = urnietfparamsscimschemasoracleidcsextensionsff_user or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensionsff_user[key] = value
+                DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionsff_user)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionsff_user"] = urnietfparamsscimschemasoracleidcsextensionsff_user
+            if urnietfparamsscimschemasoracleidcsextensionsocial_account_user is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionsocial_account_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs):
+                urnietfparamsscimschemasoracleidcsextensionsocial_account_user = urnietfparamsscimschemasoracleidcsextensionsocial_account_user or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensionsocial_account_user[key] = value
+                DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionsocial_account_user)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionsocial_account_user"] = urnietfparamsscimschemasoracleidcsextensionsocial_account_user
+            if urnietfparamsscimschemasoracleidcsextensionterms_of_use_user is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionterms_of_use_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs):
+                urnietfparamsscimschemasoracleidcsextensionterms_of_use_user = urnietfparamsscimschemasoracleidcsextensionterms_of_use_user or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensionterms_of_use_user[key] = value
+                DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionterms_of_use_user)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionterms_of_use_user"] = urnietfparamsscimschemasoracleidcsextensionterms_of_use_user
+            if urnietfparamsscimschemasoracleidcsextensionuser_state_user is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionuser_state_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs):
+                urnietfparamsscimschemasoracleidcsextensionuser_state_user = urnietfparamsscimschemasoracleidcsextensionuser_state_user or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensionuser_state_user[key] = value
+                DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionuser_state_user)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionuser_state_user"] = urnietfparamsscimschemasoracleidcsextensionuser_state_user
+            if urnietfparamsscimschemasoracleidcsextensionuser_user is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionuser_user, DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs):
+                urnietfparamsscimschemasoracleidcsextensionuser_user = urnietfparamsscimschemasoracleidcsextensionuser_user or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensionuser_user[key] = value
+                DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionuser_user)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionuser_user"] = urnietfparamsscimschemasoracleidcsextensionuser_user
             if user_name is None and not opts.urn:
                 raise TypeError("Missing required property 'user_name'")

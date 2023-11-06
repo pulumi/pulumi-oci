@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -35,14 +35,55 @@ class GeneratedKeyArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "crypto_endpoint", crypto_endpoint)
-        pulumi.set(__self__, "include_plaintext_key", include_plaintext_key)
-        pulumi.set(__self__, "key_id", key_id)
-        pulumi.set(__self__, "key_shape", key_shape)
+        GeneratedKeyArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            crypto_endpoint=crypto_endpoint,
+            include_plaintext_key=include_plaintext_key,
+            key_id=key_id,
+            key_shape=key_shape,
+            associated_data=associated_data,
+            logging_context=logging_context,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             crypto_endpoint: Optional[pulumi.Input[str]] = None,
+             include_plaintext_key: Optional[pulumi.Input[bool]] = None,
+             key_id: Optional[pulumi.Input[str]] = None,
+             key_shape: Optional[pulumi.Input['GeneratedKeyKeyShapeArgs']] = None,
+             associated_data: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             logging_context: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if crypto_endpoint is None and 'cryptoEndpoint' in kwargs:
+            crypto_endpoint = kwargs['cryptoEndpoint']
+        if crypto_endpoint is None:
+            raise TypeError("Missing 'crypto_endpoint' argument")
+        if include_plaintext_key is None and 'includePlaintextKey' in kwargs:
+            include_plaintext_key = kwargs['includePlaintextKey']
+        if include_plaintext_key is None:
+            raise TypeError("Missing 'include_plaintext_key' argument")
+        if key_id is None and 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if key_id is None:
+            raise TypeError("Missing 'key_id' argument")
+        if key_shape is None and 'keyShape' in kwargs:
+            key_shape = kwargs['keyShape']
+        if key_shape is None:
+            raise TypeError("Missing 'key_shape' argument")
+        if associated_data is None and 'associatedData' in kwargs:
+            associated_data = kwargs['associatedData']
+        if logging_context is None and 'loggingContext' in kwargs:
+            logging_context = kwargs['loggingContext']
+
+        _setter("crypto_endpoint", crypto_endpoint)
+        _setter("include_plaintext_key", include_plaintext_key)
+        _setter("key_id", key_id)
+        _setter("key_shape", key_shape)
         if associated_data is not None:
-            pulumi.set(__self__, "associated_data", associated_data)
+            _setter("associated_data", associated_data)
         if logging_context is not None:
-            pulumi.set(__self__, "logging_context", logging_context)
+            _setter("logging_context", logging_context)
 
     @property
     @pulumi.getter(name="cryptoEndpoint")
@@ -149,24 +190,65 @@ class _GeneratedKeyState:
         :param pulumi.Input[str] plaintext: The plaintext data encryption key, a base64-encoded sequence of random bytes, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
         :param pulumi.Input[str] plaintext_checksum: The checksum of the plaintext data encryption key, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
         """
+        _GeneratedKeyState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            associated_data=associated_data,
+            ciphertext=ciphertext,
+            crypto_endpoint=crypto_endpoint,
+            include_plaintext_key=include_plaintext_key,
+            key_id=key_id,
+            key_shape=key_shape,
+            logging_context=logging_context,
+            plaintext=plaintext,
+            plaintext_checksum=plaintext_checksum,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             associated_data: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             ciphertext: Optional[pulumi.Input[str]] = None,
+             crypto_endpoint: Optional[pulumi.Input[str]] = None,
+             include_plaintext_key: Optional[pulumi.Input[bool]] = None,
+             key_id: Optional[pulumi.Input[str]] = None,
+             key_shape: Optional[pulumi.Input['GeneratedKeyKeyShapeArgs']] = None,
+             logging_context: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             plaintext: Optional[pulumi.Input[str]] = None,
+             plaintext_checksum: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if associated_data is None and 'associatedData' in kwargs:
+            associated_data = kwargs['associatedData']
+        if crypto_endpoint is None and 'cryptoEndpoint' in kwargs:
+            crypto_endpoint = kwargs['cryptoEndpoint']
+        if include_plaintext_key is None and 'includePlaintextKey' in kwargs:
+            include_plaintext_key = kwargs['includePlaintextKey']
+        if key_id is None and 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if key_shape is None and 'keyShape' in kwargs:
+            key_shape = kwargs['keyShape']
+        if logging_context is None and 'loggingContext' in kwargs:
+            logging_context = kwargs['loggingContext']
+        if plaintext_checksum is None and 'plaintextChecksum' in kwargs:
+            plaintext_checksum = kwargs['plaintextChecksum']
+
         if associated_data is not None:
-            pulumi.set(__self__, "associated_data", associated_data)
+            _setter("associated_data", associated_data)
         if ciphertext is not None:
-            pulumi.set(__self__, "ciphertext", ciphertext)
+            _setter("ciphertext", ciphertext)
         if crypto_endpoint is not None:
-            pulumi.set(__self__, "crypto_endpoint", crypto_endpoint)
+            _setter("crypto_endpoint", crypto_endpoint)
         if include_plaintext_key is not None:
-            pulumi.set(__self__, "include_plaintext_key", include_plaintext_key)
+            _setter("include_plaintext_key", include_plaintext_key)
         if key_id is not None:
-            pulumi.set(__self__, "key_id", key_id)
+            _setter("key_id", key_id)
         if key_shape is not None:
-            pulumi.set(__self__, "key_shape", key_shape)
+            _setter("key_shape", key_shape)
         if logging_context is not None:
-            pulumi.set(__self__, "logging_context", logging_context)
+            _setter("logging_context", logging_context)
         if plaintext is not None:
-            pulumi.set(__self__, "plaintext", plaintext)
+            _setter("plaintext", plaintext)
         if plaintext_checksum is not None:
-            pulumi.set(__self__, "plaintext_checksum", plaintext_checksum)
+            _setter("plaintext_checksum", plaintext_checksum)
 
     @property
     @pulumi.getter(name="associatedData")
@@ -378,6 +460,10 @@ class GeneratedKey(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            GeneratedKeyArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -408,6 +494,11 @@ class GeneratedKey(pulumi.CustomResource):
             if key_id is None and not opts.urn:
                 raise TypeError("Missing required property 'key_id'")
             __props__.__dict__["key_id"] = key_id
+            if key_shape is not None and not isinstance(key_shape, GeneratedKeyKeyShapeArgs):
+                key_shape = key_shape or {}
+                def _setter(key, value):
+                    key_shape[key] = value
+                GeneratedKeyKeyShapeArgs._configure(_setter, **key_shape)
             if key_shape is None and not opts.urn:
                 raise TypeError("Missing required property 'key_shape'")
             __props__.__dict__["key_shape"] = key_shape

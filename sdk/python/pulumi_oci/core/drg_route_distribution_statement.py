@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -31,10 +31,39 @@ class DrgRouteDistributionStatementArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "drg_route_distribution_id", drg_route_distribution_id)
-        pulumi.set(__self__, "match_criteria", match_criteria)
-        pulumi.set(__self__, "priority", priority)
+        DrgRouteDistributionStatementArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            drg_route_distribution_id=drg_route_distribution_id,
+            match_criteria=match_criteria,
+            priority=priority,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: Optional[pulumi.Input[str]] = None,
+             drg_route_distribution_id: Optional[pulumi.Input[str]] = None,
+             match_criteria: Optional[pulumi.Input['DrgRouteDistributionStatementMatchCriteriaArgs']] = None,
+             priority: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if drg_route_distribution_id is None and 'drgRouteDistributionId' in kwargs:
+            drg_route_distribution_id = kwargs['drgRouteDistributionId']
+        if drg_route_distribution_id is None:
+            raise TypeError("Missing 'drg_route_distribution_id' argument")
+        if match_criteria is None and 'matchCriteria' in kwargs:
+            match_criteria = kwargs['matchCriteria']
+        if match_criteria is None:
+            raise TypeError("Missing 'match_criteria' argument")
+        if priority is None:
+            raise TypeError("Missing 'priority' argument")
+
+        _setter("action", action)
+        _setter("drg_route_distribution_id", drg_route_distribution_id)
+        _setter("match_criteria", match_criteria)
+        _setter("priority", priority)
 
     @property
     @pulumi.getter
@@ -107,14 +136,35 @@ class _DrgRouteDistributionStatementState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _DrgRouteDistributionStatementState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            drg_route_distribution_id=drg_route_distribution_id,
+            match_criteria=match_criteria,
+            priority=priority,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: Optional[pulumi.Input[str]] = None,
+             drg_route_distribution_id: Optional[pulumi.Input[str]] = None,
+             match_criteria: Optional[pulumi.Input['DrgRouteDistributionStatementMatchCriteriaArgs']] = None,
+             priority: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if drg_route_distribution_id is None and 'drgRouteDistributionId' in kwargs:
+            drg_route_distribution_id = kwargs['drgRouteDistributionId']
+        if match_criteria is None and 'matchCriteria' in kwargs:
+            match_criteria = kwargs['matchCriteria']
+
         if action is not None:
-            pulumi.set(__self__, "action", action)
+            _setter("action", action)
         if drg_route_distribution_id is not None:
-            pulumi.set(__self__, "drg_route_distribution_id", drg_route_distribution_id)
+            _setter("drg_route_distribution_id", drg_route_distribution_id)
         if match_criteria is not None:
-            pulumi.set(__self__, "match_criteria", match_criteria)
+            _setter("match_criteria", match_criteria)
         if priority is not None:
-            pulumi.set(__self__, "priority", priority)
+            _setter("priority", priority)
 
     @property
     @pulumi.getter
@@ -266,6 +316,10 @@ class DrgRouteDistributionStatement(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DrgRouteDistributionStatementArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -290,6 +344,11 @@ class DrgRouteDistributionStatement(pulumi.CustomResource):
             if drg_route_distribution_id is None and not opts.urn:
                 raise TypeError("Missing required property 'drg_route_distribution_id'")
             __props__.__dict__["drg_route_distribution_id"] = drg_route_distribution_id
+            if match_criteria is not None and not isinstance(match_criteria, DrgRouteDistributionStatementMatchCriteriaArgs):
+                match_criteria = match_criteria or {}
+                def _setter(key, value):
+                    match_criteria[key] = value
+                DrgRouteDistributionStatementMatchCriteriaArgs._configure(_setter, **match_criteria)
             if match_criteria is None and not opts.urn:
                 raise TypeError("Missing required property 'match_criteria'")
             __props__.__dict__["match_criteria"] = match_criteria

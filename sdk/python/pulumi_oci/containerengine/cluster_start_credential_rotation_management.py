@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['ClusterStartCredentialRotationManagementArgs', 'ClusterStartCredentialRotationManagement']
@@ -25,8 +25,29 @@ class ClusterStartCredentialRotationManagementArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "auto_completion_delay_duration", auto_completion_delay_duration)
-        pulumi.set(__self__, "cluster_id", cluster_id)
+        ClusterStartCredentialRotationManagementArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auto_completion_delay_duration=auto_completion_delay_duration,
+            cluster_id=cluster_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auto_completion_delay_duration: Optional[pulumi.Input[str]] = None,
+             cluster_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if auto_completion_delay_duration is None and 'autoCompletionDelayDuration' in kwargs:
+            auto_completion_delay_duration = kwargs['autoCompletionDelayDuration']
+        if auto_completion_delay_duration is None:
+            raise TypeError("Missing 'auto_completion_delay_duration' argument")
+        if cluster_id is None and 'clusterId' in kwargs:
+            cluster_id = kwargs['clusterId']
+        if cluster_id is None:
+            raise TypeError("Missing 'cluster_id' argument")
+
+        _setter("auto_completion_delay_duration", auto_completion_delay_duration)
+        _setter("cluster_id", cluster_id)
 
     @property
     @pulumi.getter(name="autoCompletionDelayDuration")
@@ -71,10 +92,27 @@ class _ClusterStartCredentialRotationManagementState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _ClusterStartCredentialRotationManagementState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auto_completion_delay_duration=auto_completion_delay_duration,
+            cluster_id=cluster_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auto_completion_delay_duration: Optional[pulumi.Input[str]] = None,
+             cluster_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if auto_completion_delay_duration is None and 'autoCompletionDelayDuration' in kwargs:
+            auto_completion_delay_duration = kwargs['autoCompletionDelayDuration']
+        if cluster_id is None and 'clusterId' in kwargs:
+            cluster_id = kwargs['clusterId']
+
         if auto_completion_delay_duration is not None:
-            pulumi.set(__self__, "auto_completion_delay_duration", auto_completion_delay_duration)
+            _setter("auto_completion_delay_duration", auto_completion_delay_duration)
         if cluster_id is not None:
-            pulumi.set(__self__, "cluster_id", cluster_id)
+            _setter("cluster_id", cluster_id)
 
     @property
     @pulumi.getter(name="autoCompletionDelayDuration")
@@ -178,6 +216,10 @@ class ClusterStartCredentialRotationManagement(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ClusterStartCredentialRotationManagementArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

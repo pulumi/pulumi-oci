@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -43,21 +43,76 @@ class SecretArgs:
         :param pulumi.Input[Mapping[str, Any]] metadata: (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
         :param pulumi.Input[Sequence[pulumi.Input['SecretSecretRuleArgs']]] secret_rules: (Updatable) A list of rules to control how the secret is used and managed.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "key_id", key_id)
-        pulumi.set(__self__, "secret_content", secret_content)
-        pulumi.set(__self__, "secret_name", secret_name)
-        pulumi.set(__self__, "vault_id", vault_id)
+        SecretArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            key_id=key_id,
+            secret_content=secret_content,
+            secret_name=secret_name,
+            vault_id=vault_id,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            metadata=metadata,
+            secret_rules=secret_rules,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             key_id: Optional[pulumi.Input[str]] = None,
+             secret_content: Optional[pulumi.Input['SecretSecretContentArgs']] = None,
+             secret_name: Optional[pulumi.Input[str]] = None,
+             vault_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             secret_rules: Optional[pulumi.Input[Sequence[pulumi.Input['SecretSecretRuleArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if key_id is None and 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if key_id is None:
+            raise TypeError("Missing 'key_id' argument")
+        if secret_content is None and 'secretContent' in kwargs:
+            secret_content = kwargs['secretContent']
+        if secret_content is None:
+            raise TypeError("Missing 'secret_content' argument")
+        if secret_name is None and 'secretName' in kwargs:
+            secret_name = kwargs['secretName']
+        if secret_name is None:
+            raise TypeError("Missing 'secret_name' argument")
+        if vault_id is None and 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+        if vault_id is None:
+            raise TypeError("Missing 'vault_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if secret_rules is None and 'secretRules' in kwargs:
+            secret_rules = kwargs['secretRules']
+
+        _setter("compartment_id", compartment_id)
+        _setter("key_id", key_id)
+        _setter("secret_content", secret_content)
+        _setter("secret_name", secret_name)
+        _setter("vault_id", vault_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if metadata is not None:
-            pulumi.set(__self__, "metadata", metadata)
+            _setter("metadata", metadata)
         if secret_rules is not None:
-            pulumi.set(__self__, "secret_rules", secret_rules)
+            _setter("secret_rules", secret_rules)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -226,38 +281,105 @@ class _SecretState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _SecretState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            current_version_number=current_version_number,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            key_id=key_id,
+            lifecycle_details=lifecycle_details,
+            metadata=metadata,
+            secret_content=secret_content,
+            secret_name=secret_name,
+            secret_rules=secret_rules,
+            state=state,
+            time_created=time_created,
+            time_of_current_version_expiry=time_of_current_version_expiry,
+            time_of_deletion=time_of_deletion,
+            vault_id=vault_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             current_version_number: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             key_id: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             secret_content: Optional[pulumi.Input['SecretSecretContentArgs']] = None,
+             secret_name: Optional[pulumi.Input[str]] = None,
+             secret_rules: Optional[pulumi.Input[Sequence[pulumi.Input['SecretSecretRuleArgs']]]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_of_current_version_expiry: Optional[pulumi.Input[str]] = None,
+             time_of_deletion: Optional[pulumi.Input[str]] = None,
+             vault_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if current_version_number is None and 'currentVersionNumber' in kwargs:
+            current_version_number = kwargs['currentVersionNumber']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if key_id is None and 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if secret_content is None and 'secretContent' in kwargs:
+            secret_content = kwargs['secretContent']
+        if secret_name is None and 'secretName' in kwargs:
+            secret_name = kwargs['secretName']
+        if secret_rules is None and 'secretRules' in kwargs:
+            secret_rules = kwargs['secretRules']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_of_current_version_expiry is None and 'timeOfCurrentVersionExpiry' in kwargs:
+            time_of_current_version_expiry = kwargs['timeOfCurrentVersionExpiry']
+        if time_of_deletion is None and 'timeOfDeletion' in kwargs:
+            time_of_deletion = kwargs['timeOfDeletion']
+        if vault_id is None and 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if current_version_number is not None:
-            pulumi.set(__self__, "current_version_number", current_version_number)
+            _setter("current_version_number", current_version_number)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if key_id is not None:
-            pulumi.set(__self__, "key_id", key_id)
+            _setter("key_id", key_id)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if metadata is not None:
-            pulumi.set(__self__, "metadata", metadata)
+            _setter("metadata", metadata)
         if secret_content is not None:
-            pulumi.set(__self__, "secret_content", secret_content)
+            _setter("secret_content", secret_content)
         if secret_name is not None:
-            pulumi.set(__self__, "secret_name", secret_name)
+            _setter("secret_name", secret_name)
         if secret_rules is not None:
-            pulumi.set(__self__, "secret_rules", secret_rules)
+            _setter("secret_rules", secret_rules)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_of_current_version_expiry is not None:
-            pulumi.set(__self__, "time_of_current_version_expiry", time_of_current_version_expiry)
+            _setter("time_of_current_version_expiry", time_of_current_version_expiry)
         if time_of_deletion is not None:
-            pulumi.set(__self__, "time_of_deletion", time_of_deletion)
+            _setter("time_of_deletion", time_of_deletion)
         if vault_id is not None:
-            pulumi.set(__self__, "vault_id", vault_id)
+            _setter("vault_id", vault_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -531,6 +653,10 @@ class Secret(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            SecretArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -565,6 +691,11 @@ class Secret(pulumi.CustomResource):
                 raise TypeError("Missing required property 'key_id'")
             __props__.__dict__["key_id"] = key_id
             __props__.__dict__["metadata"] = metadata
+            if secret_content is not None and not isinstance(secret_content, SecretSecretContentArgs):
+                secret_content = secret_content or {}
+                def _setter(key, value):
+                    secret_content[key] = value
+                SecretSecretContentArgs._configure(_setter, **secret_content)
             if secret_content is None and not opts.urn:
                 raise TypeError("Missing required property 'secret_content'")
             __props__.__dict__["secret_content"] = secret_content

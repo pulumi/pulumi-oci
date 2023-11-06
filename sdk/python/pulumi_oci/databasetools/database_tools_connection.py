@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -43,27 +43,88 @@ class DatabaseToolsConnectionArgs:
         :param pulumi.Input[str] user_name: (Updatable) The database user name.
         :param pulumi.Input['DatabaseToolsConnectionUserPasswordArgs'] user_password: (Updatable) The user password.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "type", type)
+        DatabaseToolsConnectionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            type=type,
+            advanced_properties=advanced_properties,
+            connection_string=connection_string,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            key_stores=key_stores,
+            private_endpoint_id=private_endpoint_id,
+            related_resource=related_resource,
+            user_name=user_name,
+            user_password=user_password,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             advanced_properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             connection_string: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             key_stores: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseToolsConnectionKeyStoreArgs']]]] = None,
+             private_endpoint_id: Optional[pulumi.Input[str]] = None,
+             related_resource: Optional[pulumi.Input['DatabaseToolsConnectionRelatedResourceArgs']] = None,
+             user_name: Optional[pulumi.Input[str]] = None,
+             user_password: Optional[pulumi.Input['DatabaseToolsConnectionUserPasswordArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if advanced_properties is None and 'advancedProperties' in kwargs:
+            advanced_properties = kwargs['advancedProperties']
+        if connection_string is None and 'connectionString' in kwargs:
+            connection_string = kwargs['connectionString']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if key_stores is None and 'keyStores' in kwargs:
+            key_stores = kwargs['keyStores']
+        if private_endpoint_id is None and 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+        if related_resource is None and 'relatedResource' in kwargs:
+            related_resource = kwargs['relatedResource']
+        if user_name is None and 'userName' in kwargs:
+            user_name = kwargs['userName']
+        if user_password is None and 'userPassword' in kwargs:
+            user_password = kwargs['userPassword']
+
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
+        _setter("type", type)
         if advanced_properties is not None:
-            pulumi.set(__self__, "advanced_properties", advanced_properties)
+            _setter("advanced_properties", advanced_properties)
         if connection_string is not None:
-            pulumi.set(__self__, "connection_string", connection_string)
+            _setter("connection_string", connection_string)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if key_stores is not None:
-            pulumi.set(__self__, "key_stores", key_stores)
+            _setter("key_stores", key_stores)
         if private_endpoint_id is not None:
-            pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+            _setter("private_endpoint_id", private_endpoint_id)
         if related_resource is not None:
-            pulumi.set(__self__, "related_resource", related_resource)
+            _setter("related_resource", related_resource)
         if user_name is not None:
-            pulumi.set(__self__, "user_name", user_name)
+            _setter("user_name", user_name)
         if user_password is not None:
-            pulumi.set(__self__, "user_password", user_password)
+            _setter("user_password", user_password)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -250,40 +311,113 @@ class _DatabaseToolsConnectionState:
         :param pulumi.Input[str] user_name: (Updatable) The database user name.
         :param pulumi.Input['DatabaseToolsConnectionUserPasswordArgs'] user_password: (Updatable) The user password.
         """
+        _DatabaseToolsConnectionState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            advanced_properties=advanced_properties,
+            compartment_id=compartment_id,
+            connection_string=connection_string,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            key_stores=key_stores,
+            lifecycle_details=lifecycle_details,
+            private_endpoint_id=private_endpoint_id,
+            related_resource=related_resource,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            type=type,
+            user_name=user_name,
+            user_password=user_password,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             advanced_properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             connection_string: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             key_stores: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseToolsConnectionKeyStoreArgs']]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             private_endpoint_id: Optional[pulumi.Input[str]] = None,
+             related_resource: Optional[pulumi.Input['DatabaseToolsConnectionRelatedResourceArgs']] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             user_name: Optional[pulumi.Input[str]] = None,
+             user_password: Optional[pulumi.Input['DatabaseToolsConnectionUserPasswordArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if advanced_properties is None and 'advancedProperties' in kwargs:
+            advanced_properties = kwargs['advancedProperties']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if connection_string is None and 'connectionString' in kwargs:
+            connection_string = kwargs['connectionString']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if key_stores is None and 'keyStores' in kwargs:
+            key_stores = kwargs['keyStores']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if private_endpoint_id is None and 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+        if related_resource is None and 'relatedResource' in kwargs:
+            related_resource = kwargs['relatedResource']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if user_name is None and 'userName' in kwargs:
+            user_name = kwargs['userName']
+        if user_password is None and 'userPassword' in kwargs:
+            user_password = kwargs['userPassword']
+
         if advanced_properties is not None:
-            pulumi.set(__self__, "advanced_properties", advanced_properties)
+            _setter("advanced_properties", advanced_properties)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if connection_string is not None:
-            pulumi.set(__self__, "connection_string", connection_string)
+            _setter("connection_string", connection_string)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if key_stores is not None:
-            pulumi.set(__self__, "key_stores", key_stores)
+            _setter("key_stores", key_stores)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if private_endpoint_id is not None:
-            pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+            _setter("private_endpoint_id", private_endpoint_id)
         if related_resource is not None:
-            pulumi.set(__self__, "related_resource", related_resource)
+            _setter("related_resource", related_resource)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
         if user_name is not None:
-            pulumi.set(__self__, "user_name", user_name)
+            _setter("user_name", user_name)
         if user_password is not None:
-            pulumi.set(__self__, "user_password", user_password)
+            _setter("user_password", user_password)
 
     @property
     @pulumi.getter(name="advancedProperties")
@@ -647,6 +781,10 @@ class DatabaseToolsConnection(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DatabaseToolsConnectionArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -685,11 +823,21 @@ class DatabaseToolsConnection(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["key_stores"] = key_stores
             __props__.__dict__["private_endpoint_id"] = private_endpoint_id
+            if related_resource is not None and not isinstance(related_resource, DatabaseToolsConnectionRelatedResourceArgs):
+                related_resource = related_resource or {}
+                def _setter(key, value):
+                    related_resource[key] = value
+                DatabaseToolsConnectionRelatedResourceArgs._configure(_setter, **related_resource)
             __props__.__dict__["related_resource"] = related_resource
             if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")
             __props__.__dict__["type"] = type
             __props__.__dict__["user_name"] = user_name
+            if user_password is not None and not isinstance(user_password, DatabaseToolsConnectionUserPasswordArgs):
+                user_password = user_password or {}
+                def _setter(key, value):
+                    user_password[key] = value
+                DatabaseToolsConnectionUserPasswordArgs._configure(_setter, **user_password)
             __props__.__dict__["user_password"] = user_password
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None

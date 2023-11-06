@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -39,21 +39,62 @@ class MysqlBackupArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "db_system_id", db_system_id)
+        MysqlBackupArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            db_system_id=db_system_id,
+            backup_type=backup_type,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            retention_in_days=retention_in_days,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             db_system_id: Optional[pulumi.Input[str]] = None,
+             backup_type: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             retention_in_days: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if db_system_id is None and 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if db_system_id is None:
+            raise TypeError("Missing 'db_system_id' argument")
+        if backup_type is None and 'backupType' in kwargs:
+            backup_type = kwargs['backupType']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if retention_in_days is None and 'retentionInDays' in kwargs:
+            retention_in_days = kwargs['retentionInDays']
+
+        _setter("db_system_id", db_system_id)
         if backup_type is not None:
-            pulumi.set(__self__, "backup_type", backup_type)
+            _setter("backup_type", backup_type)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if retention_in_days is not None:
-            pulumi.set(__self__, "retention_in_days", retention_in_days)
+            _setter("retention_in_days", retention_in_days)
 
     @property
     @pulumi.getter(name="dbSystemId")
@@ -202,42 +243,119 @@ class _MysqlBackupState:
         :param pulumi.Input[str] time_created: The time the backup record was created.
         :param pulumi.Input[str] time_updated: The time at which the backup was updated.
         """
+        _MysqlBackupState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backup_size_in_gbs=backup_size_in_gbs,
+            backup_type=backup_type,
+            compartment_id=compartment_id,
+            creation_type=creation_type,
+            data_storage_size_in_gb=data_storage_size_in_gb,
+            db_system_id=db_system_id,
+            db_system_snapshots=db_system_snapshots,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            mysql_version=mysql_version,
+            retention_in_days=retention_in_days,
+            shape_name=shape_name,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backup_size_in_gbs: Optional[pulumi.Input[int]] = None,
+             backup_type: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             creation_type: Optional[pulumi.Input[str]] = None,
+             data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
+             db_system_id: Optional[pulumi.Input[str]] = None,
+             db_system_snapshots: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotArgs']]]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             mysql_version: Optional[pulumi.Input[str]] = None,
+             retention_in_days: Optional[pulumi.Input[int]] = None,
+             shape_name: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if backup_size_in_gbs is None and 'backupSizeInGbs' in kwargs:
+            backup_size_in_gbs = kwargs['backupSizeInGbs']
+        if backup_type is None and 'backupType' in kwargs:
+            backup_type = kwargs['backupType']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if creation_type is None and 'creationType' in kwargs:
+            creation_type = kwargs['creationType']
+        if data_storage_size_in_gb is None and 'dataStorageSizeInGb' in kwargs:
+            data_storage_size_in_gb = kwargs['dataStorageSizeInGb']
+        if db_system_id is None and 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if db_system_snapshots is None and 'dbSystemSnapshots' in kwargs:
+            db_system_snapshots = kwargs['dbSystemSnapshots']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if mysql_version is None and 'mysqlVersion' in kwargs:
+            mysql_version = kwargs['mysqlVersion']
+        if retention_in_days is None and 'retentionInDays' in kwargs:
+            retention_in_days = kwargs['retentionInDays']
+        if shape_name is None and 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if backup_size_in_gbs is not None:
-            pulumi.set(__self__, "backup_size_in_gbs", backup_size_in_gbs)
+            _setter("backup_size_in_gbs", backup_size_in_gbs)
         if backup_type is not None:
-            pulumi.set(__self__, "backup_type", backup_type)
+            _setter("backup_type", backup_type)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if creation_type is not None:
-            pulumi.set(__self__, "creation_type", creation_type)
+            _setter("creation_type", creation_type)
         if data_storage_size_in_gb is not None:
-            pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+            _setter("data_storage_size_in_gb", data_storage_size_in_gb)
         if db_system_id is not None:
-            pulumi.set(__self__, "db_system_id", db_system_id)
+            _setter("db_system_id", db_system_id)
         if db_system_snapshots is not None:
-            pulumi.set(__self__, "db_system_snapshots", db_system_snapshots)
+            _setter("db_system_snapshots", db_system_snapshots)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if mysql_version is not None:
-            pulumi.set(__self__, "mysql_version", mysql_version)
+            _setter("mysql_version", mysql_version)
         if retention_in_days is not None:
-            pulumi.set(__self__, "retention_in_days", retention_in_days)
+            _setter("retention_in_days", retention_in_days)
         if shape_name is not None:
-            pulumi.set(__self__, "shape_name", shape_name)
+            _setter("shape_name", shape_name)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="backupSizeInGbs")
@@ -571,6 +689,10 @@ class MysqlBackup(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            MysqlBackupArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['AuditArchiveRetrievalArgs', 'AuditArchiveRetrieval']
@@ -37,18 +37,65 @@ class AuditArchiveRetrievalArgs:
         :param pulumi.Input[str] display_name: (Updatable) The display name of the archive retrieval. The name does not have to be unique, and is changeable.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "end_date", end_date)
-        pulumi.set(__self__, "start_date", start_date)
-        pulumi.set(__self__, "target_id", target_id)
+        AuditArchiveRetrievalArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            end_date=end_date,
+            start_date=start_date,
+            target_id=target_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             end_date: Optional[pulumi.Input[str]] = None,
+             start_date: Optional[pulumi.Input[str]] = None,
+             target_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if end_date is None and 'endDate' in kwargs:
+            end_date = kwargs['endDate']
+        if end_date is None:
+            raise TypeError("Missing 'end_date' argument")
+        if start_date is None and 'startDate' in kwargs:
+            start_date = kwargs['startDate']
+        if start_date is None:
+            raise TypeError("Missing 'start_date' argument")
+        if target_id is None and 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if target_id is None:
+            raise TypeError("Missing 'target_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
+        _setter("compartment_id", compartment_id)
+        _setter("end_date", end_date)
+        _setter("start_date", start_date)
+        _setter("target_id", target_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -193,38 +240,107 @@ class _AuditArchiveRetrievalState:
         :param pulumi.Input[str] time_of_expiry: The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
         :param pulumi.Input[str] time_requested: The date time when archive retrieval was requested, in the format defined by RFC3339.
         """
+        _AuditArchiveRetrievalState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audit_event_count=audit_event_count,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            end_date=end_date,
+            error_info=error_info,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            start_date=start_date,
+            state=state,
+            system_tags=system_tags,
+            target_id=target_id,
+            time_completed=time_completed,
+            time_of_expiry=time_of_expiry,
+            time_requested=time_requested,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audit_event_count: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             end_date: Optional[pulumi.Input[str]] = None,
+             error_info: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             start_date: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             target_id: Optional[pulumi.Input[str]] = None,
+             time_completed: Optional[pulumi.Input[str]] = None,
+             time_of_expiry: Optional[pulumi.Input[str]] = None,
+             time_requested: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if audit_event_count is None and 'auditEventCount' in kwargs:
+            audit_event_count = kwargs['auditEventCount']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if end_date is None and 'endDate' in kwargs:
+            end_date = kwargs['endDate']
+        if error_info is None and 'errorInfo' in kwargs:
+            error_info = kwargs['errorInfo']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if start_date is None and 'startDate' in kwargs:
+            start_date = kwargs['startDate']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if target_id is None and 'targetId' in kwargs:
+            target_id = kwargs['targetId']
+        if time_completed is None and 'timeCompleted' in kwargs:
+            time_completed = kwargs['timeCompleted']
+        if time_of_expiry is None and 'timeOfExpiry' in kwargs:
+            time_of_expiry = kwargs['timeOfExpiry']
+        if time_requested is None and 'timeRequested' in kwargs:
+            time_requested = kwargs['timeRequested']
+
         if audit_event_count is not None:
-            pulumi.set(__self__, "audit_event_count", audit_event_count)
+            _setter("audit_event_count", audit_event_count)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if end_date is not None:
-            pulumi.set(__self__, "end_date", end_date)
+            _setter("end_date", end_date)
         if error_info is not None:
-            pulumi.set(__self__, "error_info", error_info)
+            _setter("error_info", error_info)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if start_date is not None:
-            pulumi.set(__self__, "start_date", start_date)
+            _setter("start_date", start_date)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if target_id is not None:
-            pulumi.set(__self__, "target_id", target_id)
+            _setter("target_id", target_id)
         if time_completed is not None:
-            pulumi.set(__self__, "time_completed", time_completed)
+            _setter("time_completed", time_completed)
         if time_of_expiry is not None:
-            pulumi.set(__self__, "time_of_expiry", time_of_expiry)
+            _setter("time_of_expiry", time_of_expiry)
         if time_requested is not None:
-            pulumi.set(__self__, "time_requested", time_requested)
+            _setter("time_requested", time_requested)
 
     @property
     @pulumi.getter(name="auditEventCount")
@@ -540,6 +656,10 @@ class AuditArchiveRetrieval(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AuditArchiveRetrievalArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

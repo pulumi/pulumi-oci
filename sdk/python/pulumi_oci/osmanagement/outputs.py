@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -71,8 +71,21 @@ class ManagedInstanceAutonomouse(dict):
         """
         :param bool is_auto_update_enabled: True if daily updates are enabled
         """
+        ManagedInstanceAutonomouse._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_auto_update_enabled=is_auto_update_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_auto_update_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_auto_update_enabled is None and 'isAutoUpdateEnabled' in kwargs:
+            is_auto_update_enabled = kwargs['isAutoUpdateEnabled']
+
         if is_auto_update_enabled is not None:
-            pulumi.set(__self__, "is_auto_update_enabled", is_auto_update_enabled)
+            _setter("is_auto_update_enabled", is_auto_update_enabled)
 
     @property
     @pulumi.getter(name="isAutoUpdateEnabled")
@@ -92,10 +105,23 @@ class ManagedInstanceChildSoftwareSource(dict):
         :param str id: software source identifier
         :param str name: software source name
         """
+        ManagedInstanceChildSoftwareSource._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -140,10 +166,25 @@ class ManagedInstanceGroupManagedInstance(dict):
         :param str display_name: (Updatable) Managed Instance Group identifier
         :param str id: unique identifier that is immutable on creation
         """
+        ManagedInstanceGroupManagedInstance._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -188,10 +229,25 @@ class ManagedInstanceManagedInstanceGroup(dict):
         :param str display_name: User friendly name
         :param str id: software source identifier
         """
+        ManagedInstanceManagedInstanceGroup._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -223,10 +279,23 @@ class ManagedInstanceManagementChildSoftwareSource(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        ManagedInstanceManagementChildSoftwareSource._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -275,10 +344,25 @@ class ManagedInstanceManagementManagedInstanceGroup(dict):
         :param str display_name: User friendly name
         :param str id: software source identifier
         """
+        ManagedInstanceManagementManagedInstanceGroup._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -310,10 +394,23 @@ class ManagedInstanceManagementParentSoftwareSource(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        ManagedInstanceManagementParentSoftwareSource._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -345,10 +442,23 @@ class ManagedInstanceParentSoftwareSource(dict):
         :param str id: software source identifier
         :param str name: software source name
         """
+        ManagedInstanceParentSoftwareSource._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -393,10 +503,25 @@ class SoftwareSourceAssociatedManagedInstance(dict):
         :param str display_name: (Updatable) User friendly name for the software source
         :param str id: OCID for the Software Source
         """
+        SoftwareSourceAssociatedManagedInstance._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -422,7 +547,22 @@ class GetManagedInstanceAutonomouseResult(dict):
         """
         :param bool is_auto_update_enabled: True if daily updates are enabled
         """
-        pulumi.set(__self__, "is_auto_update_enabled", is_auto_update_enabled)
+        GetManagedInstanceAutonomouseResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_auto_update_enabled=is_auto_update_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_auto_update_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_auto_update_enabled is None and 'isAutoUpdateEnabled' in kwargs:
+            is_auto_update_enabled = kwargs['isAutoUpdateEnabled']
+        if is_auto_update_enabled is None:
+            raise TypeError("Missing 'is_auto_update_enabled' argument")
+
+        _setter("is_auto_update_enabled", is_auto_update_enabled)
 
     @property
     @pulumi.getter(name="isAutoUpdateEnabled")
@@ -442,8 +582,25 @@ class GetManagedInstanceChildSoftwareSourceResult(dict):
         :param str id: software source identifier
         :param str name: software source name
         """
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
+        GetManagedInstanceChildSoftwareSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("id", id)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -471,8 +628,27 @@ class GetManagedInstanceGroupManagedInstanceResult(dict):
         :param str display_name: User friendly name
         :param str id: unique identifier that is immutable on creation
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+        GetManagedInstanceGroupManagedInstanceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+
+        _setter("display_name", display_name)
+        _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -497,10 +673,29 @@ class GetManagedInstanceGroupsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedInstanceGroupsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -542,16 +737,79 @@ class GetManagedInstanceGroupsManagedInstanceGroupResult(dict):
         :param str os_family: The OS family for which to list resources.
         :param str state: The current lifecycle state for the object.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "managed_instance_count", managed_instance_count)
-        pulumi.set(__self__, "managed_instances", managed_instances)
-        pulumi.set(__self__, "os_family", os_family)
-        pulumi.set(__self__, "state", state)
+        GetManagedInstanceGroupsManagedInstanceGroupResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            managed_instance_count=managed_instance_count,
+            managed_instances=managed_instances,
+            os_family=os_family,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             managed_instance_count: Optional[int] = None,
+             managed_instances: Optional[Sequence['outputs.GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceResult']] = None,
+             os_family: Optional[str] = None,
+             state: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if managed_instance_count is None and 'managedInstanceCount' in kwargs:
+            managed_instance_count = kwargs['managedInstanceCount']
+        if managed_instance_count is None:
+            raise TypeError("Missing 'managed_instance_count' argument")
+        if managed_instances is None and 'managedInstances' in kwargs:
+            managed_instances = kwargs['managedInstances']
+        if managed_instances is None:
+            raise TypeError("Missing 'managed_instances' argument")
+        if os_family is None and 'osFamily' in kwargs:
+            os_family = kwargs['osFamily']
+        if os_family is None:
+            raise TypeError("Missing 'os_family' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("managed_instance_count", managed_instance_count)
+        _setter("managed_instances", managed_instances)
+        _setter("os_family", os_family)
+        _setter("state", state)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -640,8 +898,27 @@ class GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceResult(dict):
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
         :param str id: unique identifier that is immutable on creation
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+        GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+
+        _setter("display_name", display_name)
+        _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -669,8 +946,27 @@ class GetManagedInstanceManagedInstanceGroupResult(dict):
         :param str display_name: User friendly name
         :param str id: software source identifier
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+        GetManagedInstanceManagedInstanceGroupResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+
+        _setter("display_name", display_name)
+        _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -695,10 +991,29 @@ class GetManagedInstanceModuleStreamsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedInstanceModuleStreamsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -733,12 +1048,53 @@ class GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceResult(dict):
         :param str stream_name: The name of the stream of the containing module.  This parameter is required if a profileName is specified.
         :param str time_modified: The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         """
-        pulumi.set(__self__, "module_name", module_name)
-        pulumi.set(__self__, "profiles", profiles)
-        pulumi.set(__self__, "software_source_id", software_source_id)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "stream_name", stream_name)
-        pulumi.set(__self__, "time_modified", time_modified)
+        GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            module_name=module_name,
+            profiles=profiles,
+            software_source_id=software_source_id,
+            status=status,
+            stream_name=stream_name,
+            time_modified=time_modified,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             module_name: Optional[str] = None,
+             profiles: Optional[Sequence['outputs.GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileResult']] = None,
+             software_source_id: Optional[str] = None,
+             status: Optional[str] = None,
+             stream_name: Optional[str] = None,
+             time_modified: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if module_name is None and 'moduleName' in kwargs:
+            module_name = kwargs['moduleName']
+        if module_name is None:
+            raise TypeError("Missing 'module_name' argument")
+        if profiles is None:
+            raise TypeError("Missing 'profiles' argument")
+        if software_source_id is None and 'softwareSourceId' in kwargs:
+            software_source_id = kwargs['softwareSourceId']
+        if software_source_id is None:
+            raise TypeError("Missing 'software_source_id' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if stream_name is None and 'streamName' in kwargs:
+            stream_name = kwargs['streamName']
+        if stream_name is None:
+            raise TypeError("Missing 'stream_name' argument")
+        if time_modified is None and 'timeModified' in kwargs:
+            time_modified = kwargs['timeModified']
+        if time_modified is None:
+            raise TypeError("Missing 'time_modified' argument")
+
+        _setter("module_name", module_name)
+        _setter("profiles", profiles)
+        _setter("software_source_id", software_source_id)
+        _setter("status", status)
+        _setter("stream_name", stream_name)
+        _setter("time_modified", time_modified)
 
     @property
     @pulumi.getter(name="moduleName")
@@ -804,11 +1160,48 @@ class GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileResult(
         :param str stream_name: The name of the stream of the containing module.  This parameter is required if a profileName is specified.
         :param str time_modified: The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         """
-        pulumi.set(__self__, "module_name", module_name)
-        pulumi.set(__self__, "profile_name", profile_name)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "stream_name", stream_name)
-        pulumi.set(__self__, "time_modified", time_modified)
+        GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            module_name=module_name,
+            profile_name=profile_name,
+            status=status,
+            stream_name=stream_name,
+            time_modified=time_modified,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             module_name: Optional[str] = None,
+             profile_name: Optional[str] = None,
+             status: Optional[str] = None,
+             stream_name: Optional[str] = None,
+             time_modified: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if module_name is None and 'moduleName' in kwargs:
+            module_name = kwargs['moduleName']
+        if module_name is None:
+            raise TypeError("Missing 'module_name' argument")
+        if profile_name is None and 'profileName' in kwargs:
+            profile_name = kwargs['profileName']
+        if profile_name is None:
+            raise TypeError("Missing 'profile_name' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if stream_name is None and 'streamName' in kwargs:
+            stream_name = kwargs['streamName']
+        if stream_name is None:
+            raise TypeError("Missing 'stream_name' argument")
+        if time_modified is None and 'timeModified' in kwargs:
+            time_modified = kwargs['timeModified']
+        if time_modified is None:
+            raise TypeError("Missing 'time_modified' argument")
+
+        _setter("module_name", module_name)
+        _setter("profile_name", profile_name)
+        _setter("status", status)
+        _setter("stream_name", stream_name)
+        _setter("time_modified", time_modified)
 
     @property
     @pulumi.getter(name="moduleName")
@@ -860,8 +1253,25 @@ class GetManagedInstanceParentSoftwareSourceResult(dict):
         :param str id: software source identifier
         :param str name: software source name
         """
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
+        GetManagedInstanceParentSoftwareSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("id", id)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -886,10 +1296,29 @@ class GetManagedInstanceStreamProfileFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedInstanceStreamProfileFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -922,11 +1351,48 @@ class GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceResult(
         :param str stream_name: The name of the stream of the containing module.  This parameter is required if a profileName is specified.
         :param str time_modified: The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         """
-        pulumi.set(__self__, "module_name", module_name)
-        pulumi.set(__self__, "profile_name", profile_name)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "stream_name", stream_name)
-        pulumi.set(__self__, "time_modified", time_modified)
+        GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            module_name=module_name,
+            profile_name=profile_name,
+            status=status,
+            stream_name=stream_name,
+            time_modified=time_modified,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             module_name: Optional[str] = None,
+             profile_name: Optional[str] = None,
+             status: Optional[str] = None,
+             stream_name: Optional[str] = None,
+             time_modified: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if module_name is None and 'moduleName' in kwargs:
+            module_name = kwargs['moduleName']
+        if module_name is None:
+            raise TypeError("Missing 'module_name' argument")
+        if profile_name is None and 'profileName' in kwargs:
+            profile_name = kwargs['profileName']
+        if profile_name is None:
+            raise TypeError("Missing 'profile_name' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if stream_name is None and 'streamName' in kwargs:
+            stream_name = kwargs['streamName']
+        if stream_name is None:
+            raise TypeError("Missing 'stream_name' argument")
+        if time_modified is None and 'timeModified' in kwargs:
+            time_modified = kwargs['timeModified']
+        if time_modified is None:
+            raise TypeError("Missing 'time_modified' argument")
+
+        _setter("module_name", module_name)
+        _setter("profile_name", profile_name)
+        _setter("status", status)
+        _setter("stream_name", stream_name)
+        _setter("time_modified", time_modified)
 
     @property
     @pulumi.getter(name="moduleName")
@@ -978,10 +1444,29 @@ class GetManagedInstancesFilterResult(dict):
         """
         :param str name: software source name
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedInstancesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1060,33 +1545,196 @@ class GetManagedInstancesManagedInstanceResult(dict):
         :param int updates_available: Number of updates available to be installed
         :param int work_request_count: Number of work requests associated with this instance
         """
-        pulumi.set(__self__, "autonomouses", autonomouses)
-        pulumi.set(__self__, "bug_updates_available", bug_updates_available)
-        pulumi.set(__self__, "child_software_sources", child_software_sources)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "enhancement_updates_available", enhancement_updates_available)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_data_collection_authorized", is_data_collection_authorized)
-        pulumi.set(__self__, "is_reboot_required", is_reboot_required)
-        pulumi.set(__self__, "ksplice_effective_kernel_version", ksplice_effective_kernel_version)
-        pulumi.set(__self__, "last_boot", last_boot)
-        pulumi.set(__self__, "last_checkin", last_checkin)
-        pulumi.set(__self__, "managed_instance_groups", managed_instance_groups)
-        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
-        pulumi.set(__self__, "notification_topic_id", notification_topic_id)
-        pulumi.set(__self__, "os_family", os_family)
-        pulumi.set(__self__, "os_kernel_version", os_kernel_version)
-        pulumi.set(__self__, "os_name", os_name)
-        pulumi.set(__self__, "os_version", os_version)
-        pulumi.set(__self__, "other_updates_available", other_updates_available)
-        pulumi.set(__self__, "parent_software_sources", parent_software_sources)
-        pulumi.set(__self__, "scheduled_job_count", scheduled_job_count)
-        pulumi.set(__self__, "security_updates_available", security_updates_available)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "updates_available", updates_available)
-        pulumi.set(__self__, "work_request_count", work_request_count)
+        GetManagedInstancesManagedInstanceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            autonomouses=autonomouses,
+            bug_updates_available=bug_updates_available,
+            child_software_sources=child_software_sources,
+            compartment_id=compartment_id,
+            description=description,
+            display_name=display_name,
+            enhancement_updates_available=enhancement_updates_available,
+            id=id,
+            is_data_collection_authorized=is_data_collection_authorized,
+            is_reboot_required=is_reboot_required,
+            ksplice_effective_kernel_version=ksplice_effective_kernel_version,
+            last_boot=last_boot,
+            last_checkin=last_checkin,
+            managed_instance_groups=managed_instance_groups,
+            managed_instance_id=managed_instance_id,
+            notification_topic_id=notification_topic_id,
+            os_family=os_family,
+            os_kernel_version=os_kernel_version,
+            os_name=os_name,
+            os_version=os_version,
+            other_updates_available=other_updates_available,
+            parent_software_sources=parent_software_sources,
+            scheduled_job_count=scheduled_job_count,
+            security_updates_available=security_updates_available,
+            status=status,
+            updates_available=updates_available,
+            work_request_count=work_request_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             autonomouses: Optional[Sequence['outputs.GetManagedInstancesManagedInstanceAutonomouseResult']] = None,
+             bug_updates_available: Optional[int] = None,
+             child_software_sources: Optional[Sequence['outputs.GetManagedInstancesManagedInstanceChildSoftwareSourceResult']] = None,
+             compartment_id: Optional[str] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             enhancement_updates_available: Optional[int] = None,
+             id: Optional[str] = None,
+             is_data_collection_authorized: Optional[bool] = None,
+             is_reboot_required: Optional[bool] = None,
+             ksplice_effective_kernel_version: Optional[str] = None,
+             last_boot: Optional[str] = None,
+             last_checkin: Optional[str] = None,
+             managed_instance_groups: Optional[Sequence['outputs.GetManagedInstancesManagedInstanceManagedInstanceGroupResult']] = None,
+             managed_instance_id: Optional[str] = None,
+             notification_topic_id: Optional[str] = None,
+             os_family: Optional[str] = None,
+             os_kernel_version: Optional[str] = None,
+             os_name: Optional[str] = None,
+             os_version: Optional[str] = None,
+             other_updates_available: Optional[int] = None,
+             parent_software_sources: Optional[Sequence['outputs.GetManagedInstancesManagedInstanceParentSoftwareSourceResult']] = None,
+             scheduled_job_count: Optional[int] = None,
+             security_updates_available: Optional[int] = None,
+             status: Optional[str] = None,
+             updates_available: Optional[int] = None,
+             work_request_count: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if autonomouses is None:
+            raise TypeError("Missing 'autonomouses' argument")
+        if bug_updates_available is None and 'bugUpdatesAvailable' in kwargs:
+            bug_updates_available = kwargs['bugUpdatesAvailable']
+        if bug_updates_available is None:
+            raise TypeError("Missing 'bug_updates_available' argument")
+        if child_software_sources is None and 'childSoftwareSources' in kwargs:
+            child_software_sources = kwargs['childSoftwareSources']
+        if child_software_sources is None:
+            raise TypeError("Missing 'child_software_sources' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if enhancement_updates_available is None and 'enhancementUpdatesAvailable' in kwargs:
+            enhancement_updates_available = kwargs['enhancementUpdatesAvailable']
+        if enhancement_updates_available is None:
+            raise TypeError("Missing 'enhancement_updates_available' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_data_collection_authorized is None and 'isDataCollectionAuthorized' in kwargs:
+            is_data_collection_authorized = kwargs['isDataCollectionAuthorized']
+        if is_data_collection_authorized is None:
+            raise TypeError("Missing 'is_data_collection_authorized' argument")
+        if is_reboot_required is None and 'isRebootRequired' in kwargs:
+            is_reboot_required = kwargs['isRebootRequired']
+        if is_reboot_required is None:
+            raise TypeError("Missing 'is_reboot_required' argument")
+        if ksplice_effective_kernel_version is None and 'kspliceEffectiveKernelVersion' in kwargs:
+            ksplice_effective_kernel_version = kwargs['kspliceEffectiveKernelVersion']
+        if ksplice_effective_kernel_version is None:
+            raise TypeError("Missing 'ksplice_effective_kernel_version' argument")
+        if last_boot is None and 'lastBoot' in kwargs:
+            last_boot = kwargs['lastBoot']
+        if last_boot is None:
+            raise TypeError("Missing 'last_boot' argument")
+        if last_checkin is None and 'lastCheckin' in kwargs:
+            last_checkin = kwargs['lastCheckin']
+        if last_checkin is None:
+            raise TypeError("Missing 'last_checkin' argument")
+        if managed_instance_groups is None and 'managedInstanceGroups' in kwargs:
+            managed_instance_groups = kwargs['managedInstanceGroups']
+        if managed_instance_groups is None:
+            raise TypeError("Missing 'managed_instance_groups' argument")
+        if managed_instance_id is None and 'managedInstanceId' in kwargs:
+            managed_instance_id = kwargs['managedInstanceId']
+        if managed_instance_id is None:
+            raise TypeError("Missing 'managed_instance_id' argument")
+        if notification_topic_id is None and 'notificationTopicId' in kwargs:
+            notification_topic_id = kwargs['notificationTopicId']
+        if notification_topic_id is None:
+            raise TypeError("Missing 'notification_topic_id' argument")
+        if os_family is None and 'osFamily' in kwargs:
+            os_family = kwargs['osFamily']
+        if os_family is None:
+            raise TypeError("Missing 'os_family' argument")
+        if os_kernel_version is None and 'osKernelVersion' in kwargs:
+            os_kernel_version = kwargs['osKernelVersion']
+        if os_kernel_version is None:
+            raise TypeError("Missing 'os_kernel_version' argument")
+        if os_name is None and 'osName' in kwargs:
+            os_name = kwargs['osName']
+        if os_name is None:
+            raise TypeError("Missing 'os_name' argument")
+        if os_version is None and 'osVersion' in kwargs:
+            os_version = kwargs['osVersion']
+        if os_version is None:
+            raise TypeError("Missing 'os_version' argument")
+        if other_updates_available is None and 'otherUpdatesAvailable' in kwargs:
+            other_updates_available = kwargs['otherUpdatesAvailable']
+        if other_updates_available is None:
+            raise TypeError("Missing 'other_updates_available' argument")
+        if parent_software_sources is None and 'parentSoftwareSources' in kwargs:
+            parent_software_sources = kwargs['parentSoftwareSources']
+        if parent_software_sources is None:
+            raise TypeError("Missing 'parent_software_sources' argument")
+        if scheduled_job_count is None and 'scheduledJobCount' in kwargs:
+            scheduled_job_count = kwargs['scheduledJobCount']
+        if scheduled_job_count is None:
+            raise TypeError("Missing 'scheduled_job_count' argument")
+        if security_updates_available is None and 'securityUpdatesAvailable' in kwargs:
+            security_updates_available = kwargs['securityUpdatesAvailable']
+        if security_updates_available is None:
+            raise TypeError("Missing 'security_updates_available' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if updates_available is None and 'updatesAvailable' in kwargs:
+            updates_available = kwargs['updatesAvailable']
+        if updates_available is None:
+            raise TypeError("Missing 'updates_available' argument")
+        if work_request_count is None and 'workRequestCount' in kwargs:
+            work_request_count = kwargs['workRequestCount']
+        if work_request_count is None:
+            raise TypeError("Missing 'work_request_count' argument")
+
+        _setter("autonomouses", autonomouses)
+        _setter("bug_updates_available", bug_updates_available)
+        _setter("child_software_sources", child_software_sources)
+        _setter("compartment_id", compartment_id)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("enhancement_updates_available", enhancement_updates_available)
+        _setter("id", id)
+        _setter("is_data_collection_authorized", is_data_collection_authorized)
+        _setter("is_reboot_required", is_reboot_required)
+        _setter("ksplice_effective_kernel_version", ksplice_effective_kernel_version)
+        _setter("last_boot", last_boot)
+        _setter("last_checkin", last_checkin)
+        _setter("managed_instance_groups", managed_instance_groups)
+        _setter("managed_instance_id", managed_instance_id)
+        _setter("notification_topic_id", notification_topic_id)
+        _setter("os_family", os_family)
+        _setter("os_kernel_version", os_kernel_version)
+        _setter("os_name", os_name)
+        _setter("os_version", os_version)
+        _setter("other_updates_available", other_updates_available)
+        _setter("parent_software_sources", parent_software_sources)
+        _setter("scheduled_job_count", scheduled_job_count)
+        _setter("security_updates_available", security_updates_available)
+        _setter("status", status)
+        _setter("updates_available", updates_available)
+        _setter("work_request_count", work_request_count)
 
     @property
     @pulumi.getter
@@ -1309,7 +1957,22 @@ class GetManagedInstancesManagedInstanceAutonomouseResult(dict):
         """
         :param bool is_auto_update_enabled: True if daily updates are enabled
         """
-        pulumi.set(__self__, "is_auto_update_enabled", is_auto_update_enabled)
+        GetManagedInstancesManagedInstanceAutonomouseResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_auto_update_enabled=is_auto_update_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_auto_update_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_auto_update_enabled is None and 'isAutoUpdateEnabled' in kwargs:
+            is_auto_update_enabled = kwargs['isAutoUpdateEnabled']
+        if is_auto_update_enabled is None:
+            raise TypeError("Missing 'is_auto_update_enabled' argument")
+
+        _setter("is_auto_update_enabled", is_auto_update_enabled)
 
     @property
     @pulumi.getter(name="isAutoUpdateEnabled")
@@ -1329,8 +1992,25 @@ class GetManagedInstancesManagedInstanceChildSoftwareSourceResult(dict):
         :param str id: software source identifier
         :param str name: software source name
         """
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
+        GetManagedInstancesManagedInstanceChildSoftwareSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("id", id)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -1358,8 +2038,27 @@ class GetManagedInstancesManagedInstanceManagedInstanceGroupResult(dict):
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
         :param str id: software source identifier
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+        GetManagedInstancesManagedInstanceManagedInstanceGroupResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+
+        _setter("display_name", display_name)
+        _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -1387,8 +2086,25 @@ class GetManagedInstancesManagedInstanceParentSoftwareSourceResult(dict):
         :param str id: software source identifier
         :param str name: software source name
         """
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
+        GetManagedInstancesManagedInstanceParentSoftwareSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("id", id)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -1416,8 +2132,27 @@ class GetSoftwareSourceAssociatedManagedInstanceResult(dict):
         :param str display_name: User friendly name for the software source
         :param str id: OCID for the Software Source
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+        GetSoftwareSourceAssociatedManagedInstanceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+
+        _setter("display_name", display_name)
+        _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -1442,10 +2177,29 @@ class GetSoftwareSourceStreamProfileFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSoftwareSourceStreamProfileFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1474,9 +2228,36 @@ class GetSoftwareSourceStreamProfileModuleStreamProfileResult(dict):
         :param str profile_name: The name of the profile of the containing module stream
         :param str stream_name: The name of the stream of the containing module.  This parameter is required if a profileName is specified.
         """
-        pulumi.set(__self__, "module_name", module_name)
-        pulumi.set(__self__, "profile_name", profile_name)
-        pulumi.set(__self__, "stream_name", stream_name)
+        GetSoftwareSourceStreamProfileModuleStreamProfileResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            module_name=module_name,
+            profile_name=profile_name,
+            stream_name=stream_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             module_name: Optional[str] = None,
+             profile_name: Optional[str] = None,
+             stream_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if module_name is None and 'moduleName' in kwargs:
+            module_name = kwargs['moduleName']
+        if module_name is None:
+            raise TypeError("Missing 'module_name' argument")
+        if profile_name is None and 'profileName' in kwargs:
+            profile_name = kwargs['profileName']
+        if profile_name is None:
+            raise TypeError("Missing 'profile_name' argument")
+        if stream_name is None and 'streamName' in kwargs:
+            stream_name = kwargs['streamName']
+        if stream_name is None:
+            raise TypeError("Missing 'stream_name' argument")
+
+        _setter("module_name", module_name)
+        _setter("profile_name", profile_name)
+        _setter("stream_name", stream_name)
 
     @property
     @pulumi.getter(name="moduleName")
@@ -1509,10 +2290,29 @@ class GetSoftwareSourcesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSoftwareSourcesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1579,28 +2379,157 @@ class GetSoftwareSourcesSoftwareSourceResult(dict):
         :param str status: status of the software source.
         :param str url: URL for the repostiory
         """
-        pulumi.set(__self__, "arch_type", arch_type)
-        pulumi.set(__self__, "associated_managed_instances", associated_managed_instances)
-        pulumi.set(__self__, "checksum_type", checksum_type)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "gpg_key_fingerprint", gpg_key_fingerprint)
-        pulumi.set(__self__, "gpg_key_id", gpg_key_id)
-        pulumi.set(__self__, "gpg_key_url", gpg_key_url)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "maintainer_email", maintainer_email)
-        pulumi.set(__self__, "maintainer_name", maintainer_name)
-        pulumi.set(__self__, "maintainer_phone", maintainer_phone)
-        pulumi.set(__self__, "packages", packages)
-        pulumi.set(__self__, "parent_id", parent_id)
-        pulumi.set(__self__, "parent_name", parent_name)
-        pulumi.set(__self__, "repo_type", repo_type)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "url", url)
+        GetSoftwareSourcesSoftwareSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            arch_type=arch_type,
+            associated_managed_instances=associated_managed_instances,
+            checksum_type=checksum_type,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            gpg_key_fingerprint=gpg_key_fingerprint,
+            gpg_key_id=gpg_key_id,
+            gpg_key_url=gpg_key_url,
+            id=id,
+            maintainer_email=maintainer_email,
+            maintainer_name=maintainer_name,
+            maintainer_phone=maintainer_phone,
+            packages=packages,
+            parent_id=parent_id,
+            parent_name=parent_name,
+            repo_type=repo_type,
+            state=state,
+            status=status,
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             arch_type: Optional[str] = None,
+             associated_managed_instances: Optional[Sequence['outputs.GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceResult']] = None,
+             checksum_type: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             gpg_key_fingerprint: Optional[str] = None,
+             gpg_key_id: Optional[str] = None,
+             gpg_key_url: Optional[str] = None,
+             id: Optional[str] = None,
+             maintainer_email: Optional[str] = None,
+             maintainer_name: Optional[str] = None,
+             maintainer_phone: Optional[str] = None,
+             packages: Optional[int] = None,
+             parent_id: Optional[str] = None,
+             parent_name: Optional[str] = None,
+             repo_type: Optional[str] = None,
+             state: Optional[str] = None,
+             status: Optional[str] = None,
+             url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if arch_type is None and 'archType' in kwargs:
+            arch_type = kwargs['archType']
+        if arch_type is None:
+            raise TypeError("Missing 'arch_type' argument")
+        if associated_managed_instances is None and 'associatedManagedInstances' in kwargs:
+            associated_managed_instances = kwargs['associatedManagedInstances']
+        if associated_managed_instances is None:
+            raise TypeError("Missing 'associated_managed_instances' argument")
+        if checksum_type is None and 'checksumType' in kwargs:
+            checksum_type = kwargs['checksumType']
+        if checksum_type is None:
+            raise TypeError("Missing 'checksum_type' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if gpg_key_fingerprint is None and 'gpgKeyFingerprint' in kwargs:
+            gpg_key_fingerprint = kwargs['gpgKeyFingerprint']
+        if gpg_key_fingerprint is None:
+            raise TypeError("Missing 'gpg_key_fingerprint' argument")
+        if gpg_key_id is None and 'gpgKeyId' in kwargs:
+            gpg_key_id = kwargs['gpgKeyId']
+        if gpg_key_id is None:
+            raise TypeError("Missing 'gpg_key_id' argument")
+        if gpg_key_url is None and 'gpgKeyUrl' in kwargs:
+            gpg_key_url = kwargs['gpgKeyUrl']
+        if gpg_key_url is None:
+            raise TypeError("Missing 'gpg_key_url' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if maintainer_email is None and 'maintainerEmail' in kwargs:
+            maintainer_email = kwargs['maintainerEmail']
+        if maintainer_email is None:
+            raise TypeError("Missing 'maintainer_email' argument")
+        if maintainer_name is None and 'maintainerName' in kwargs:
+            maintainer_name = kwargs['maintainerName']
+        if maintainer_name is None:
+            raise TypeError("Missing 'maintainer_name' argument")
+        if maintainer_phone is None and 'maintainerPhone' in kwargs:
+            maintainer_phone = kwargs['maintainerPhone']
+        if maintainer_phone is None:
+            raise TypeError("Missing 'maintainer_phone' argument")
+        if packages is None:
+            raise TypeError("Missing 'packages' argument")
+        if parent_id is None and 'parentId' in kwargs:
+            parent_id = kwargs['parentId']
+        if parent_id is None:
+            raise TypeError("Missing 'parent_id' argument")
+        if parent_name is None and 'parentName' in kwargs:
+            parent_name = kwargs['parentName']
+        if parent_name is None:
+            raise TypeError("Missing 'parent_name' argument")
+        if repo_type is None and 'repoType' in kwargs:
+            repo_type = kwargs['repoType']
+        if repo_type is None:
+            raise TypeError("Missing 'repo_type' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if url is None:
+            raise TypeError("Missing 'url' argument")
+
+        _setter("arch_type", arch_type)
+        _setter("associated_managed_instances", associated_managed_instances)
+        _setter("checksum_type", checksum_type)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("gpg_key_fingerprint", gpg_key_fingerprint)
+        _setter("gpg_key_id", gpg_key_id)
+        _setter("gpg_key_url", gpg_key_url)
+        _setter("id", id)
+        _setter("maintainer_email", maintainer_email)
+        _setter("maintainer_name", maintainer_name)
+        _setter("maintainer_phone", maintainer_phone)
+        _setter("packages", packages)
+        _setter("parent_id", parent_id)
+        _setter("parent_name", parent_name)
+        _setter("repo_type", repo_type)
+        _setter("state", state)
+        _setter("status", status)
+        _setter("url", url)
 
     @property
     @pulumi.getter(name="archType")
@@ -1788,8 +2717,27 @@ class GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceResult(dict):
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
         :param str id: OCID for the Software Source
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+        GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+
+        _setter("display_name", display_name)
+        _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")

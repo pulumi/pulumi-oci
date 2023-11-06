@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['AutonomousVmClusterSslCertificateManagementArgs', 'AutonomousVmClusterSslCertificateManagement']
@@ -31,14 +31,47 @@ class AutonomousVmClusterSslCertificateManagementArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "autonomous_vm_cluster_id", autonomous_vm_cluster_id)
-        pulumi.set(__self__, "certificate_generation_type", certificate_generation_type)
+        AutonomousVmClusterSslCertificateManagementArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            autonomous_vm_cluster_id=autonomous_vm_cluster_id,
+            certificate_generation_type=certificate_generation_type,
+            ca_bundle_id=ca_bundle_id,
+            certificate_authority_id=certificate_authority_id,
+            certificate_id=certificate_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
+             certificate_generation_type: Optional[pulumi.Input[str]] = None,
+             ca_bundle_id: Optional[pulumi.Input[str]] = None,
+             certificate_authority_id: Optional[pulumi.Input[str]] = None,
+             certificate_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if autonomous_vm_cluster_id is None and 'autonomousVmClusterId' in kwargs:
+            autonomous_vm_cluster_id = kwargs['autonomousVmClusterId']
+        if autonomous_vm_cluster_id is None:
+            raise TypeError("Missing 'autonomous_vm_cluster_id' argument")
+        if certificate_generation_type is None and 'certificateGenerationType' in kwargs:
+            certificate_generation_type = kwargs['certificateGenerationType']
+        if certificate_generation_type is None:
+            raise TypeError("Missing 'certificate_generation_type' argument")
+        if ca_bundle_id is None and 'caBundleId' in kwargs:
+            ca_bundle_id = kwargs['caBundleId']
+        if certificate_authority_id is None and 'certificateAuthorityId' in kwargs:
+            certificate_authority_id = kwargs['certificateAuthorityId']
+        if certificate_id is None and 'certificateId' in kwargs:
+            certificate_id = kwargs['certificateId']
+
+        _setter("autonomous_vm_cluster_id", autonomous_vm_cluster_id)
+        _setter("certificate_generation_type", certificate_generation_type)
         if ca_bundle_id is not None:
-            pulumi.set(__self__, "ca_bundle_id", ca_bundle_id)
+            _setter("ca_bundle_id", ca_bundle_id)
         if certificate_authority_id is not None:
-            pulumi.set(__self__, "certificate_authority_id", certificate_authority_id)
+            _setter("certificate_authority_id", certificate_authority_id)
         if certificate_id is not None:
-            pulumi.set(__self__, "certificate_id", certificate_id)
+            _setter("certificate_id", certificate_id)
 
     @property
     @pulumi.getter(name="autonomousVmClusterId")
@@ -125,16 +158,45 @@ class _AutonomousVmClusterSslCertificateManagementState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _AutonomousVmClusterSslCertificateManagementState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            autonomous_vm_cluster_id=autonomous_vm_cluster_id,
+            ca_bundle_id=ca_bundle_id,
+            certificate_authority_id=certificate_authority_id,
+            certificate_generation_type=certificate_generation_type,
+            certificate_id=certificate_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
+             ca_bundle_id: Optional[pulumi.Input[str]] = None,
+             certificate_authority_id: Optional[pulumi.Input[str]] = None,
+             certificate_generation_type: Optional[pulumi.Input[str]] = None,
+             certificate_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if autonomous_vm_cluster_id is None and 'autonomousVmClusterId' in kwargs:
+            autonomous_vm_cluster_id = kwargs['autonomousVmClusterId']
+        if ca_bundle_id is None and 'caBundleId' in kwargs:
+            ca_bundle_id = kwargs['caBundleId']
+        if certificate_authority_id is None and 'certificateAuthorityId' in kwargs:
+            certificate_authority_id = kwargs['certificateAuthorityId']
+        if certificate_generation_type is None and 'certificateGenerationType' in kwargs:
+            certificate_generation_type = kwargs['certificateGenerationType']
+        if certificate_id is None and 'certificateId' in kwargs:
+            certificate_id = kwargs['certificateId']
+
         if autonomous_vm_cluster_id is not None:
-            pulumi.set(__self__, "autonomous_vm_cluster_id", autonomous_vm_cluster_id)
+            _setter("autonomous_vm_cluster_id", autonomous_vm_cluster_id)
         if ca_bundle_id is not None:
-            pulumi.set(__self__, "ca_bundle_id", ca_bundle_id)
+            _setter("ca_bundle_id", ca_bundle_id)
         if certificate_authority_id is not None:
-            pulumi.set(__self__, "certificate_authority_id", certificate_authority_id)
+            _setter("certificate_authority_id", certificate_authority_id)
         if certificate_generation_type is not None:
-            pulumi.set(__self__, "certificate_generation_type", certificate_generation_type)
+            _setter("certificate_generation_type", certificate_generation_type)
         if certificate_id is not None:
-            pulumi.set(__self__, "certificate_id", certificate_id)
+            _setter("certificate_id", certificate_id)
 
     @property
     @pulumi.getter(name="autonomousVmClusterId")
@@ -286,6 +348,10 @@ class AutonomousVmClusterSslCertificateManagement(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AutonomousVmClusterSslCertificateManagementArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

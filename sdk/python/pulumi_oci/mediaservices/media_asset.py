@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -59,40 +59,115 @@ class MediaAssetArgs:
         :param pulumi.Input[str] source_media_workflow_id: The ID of the MediaWorkflow used to produce this asset.
         :param pulumi.Input[str] source_media_workflow_version: The version of the MediaWorkflow used to produce this asset.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "type", type)
+        MediaAssetArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            type=type,
+            bucket=bucket,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            master_media_asset_id=master_media_asset_id,
+            media_asset_tags=media_asset_tags,
+            media_workflow_job_id=media_workflow_job_id,
+            metadatas=metadatas,
+            namespace=namespace,
+            object=object,
+            object_etag=object_etag,
+            parent_media_asset_id=parent_media_asset_id,
+            segment_range_end_index=segment_range_end_index,
+            segment_range_start_index=segment_range_start_index,
+            source_media_workflow_id=source_media_workflow_id,
+            source_media_workflow_version=source_media_workflow_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             bucket: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             master_media_asset_id: Optional[pulumi.Input[str]] = None,
+             media_asset_tags: Optional[pulumi.Input[Sequence[pulumi.Input['MediaAssetMediaAssetTagArgs']]]] = None,
+             media_workflow_job_id: Optional[pulumi.Input[str]] = None,
+             metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['MediaAssetMetadataArgs']]]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             object: Optional[pulumi.Input[str]] = None,
+             object_etag: Optional[pulumi.Input[str]] = None,
+             parent_media_asset_id: Optional[pulumi.Input[str]] = None,
+             segment_range_end_index: Optional[pulumi.Input[str]] = None,
+             segment_range_start_index: Optional[pulumi.Input[str]] = None,
+             source_media_workflow_id: Optional[pulumi.Input[str]] = None,
+             source_media_workflow_version: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if master_media_asset_id is None and 'masterMediaAssetId' in kwargs:
+            master_media_asset_id = kwargs['masterMediaAssetId']
+        if media_asset_tags is None and 'mediaAssetTags' in kwargs:
+            media_asset_tags = kwargs['mediaAssetTags']
+        if media_workflow_job_id is None and 'mediaWorkflowJobId' in kwargs:
+            media_workflow_job_id = kwargs['mediaWorkflowJobId']
+        if object_etag is None and 'objectEtag' in kwargs:
+            object_etag = kwargs['objectEtag']
+        if parent_media_asset_id is None and 'parentMediaAssetId' in kwargs:
+            parent_media_asset_id = kwargs['parentMediaAssetId']
+        if segment_range_end_index is None and 'segmentRangeEndIndex' in kwargs:
+            segment_range_end_index = kwargs['segmentRangeEndIndex']
+        if segment_range_start_index is None and 'segmentRangeStartIndex' in kwargs:
+            segment_range_start_index = kwargs['segmentRangeStartIndex']
+        if source_media_workflow_id is None and 'sourceMediaWorkflowId' in kwargs:
+            source_media_workflow_id = kwargs['sourceMediaWorkflowId']
+        if source_media_workflow_version is None and 'sourceMediaWorkflowVersion' in kwargs:
+            source_media_workflow_version = kwargs['sourceMediaWorkflowVersion']
+
+        _setter("compartment_id", compartment_id)
+        _setter("type", type)
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if master_media_asset_id is not None:
-            pulumi.set(__self__, "master_media_asset_id", master_media_asset_id)
+            _setter("master_media_asset_id", master_media_asset_id)
         if media_asset_tags is not None:
-            pulumi.set(__self__, "media_asset_tags", media_asset_tags)
+            _setter("media_asset_tags", media_asset_tags)
         if media_workflow_job_id is not None:
-            pulumi.set(__self__, "media_workflow_job_id", media_workflow_job_id)
+            _setter("media_workflow_job_id", media_workflow_job_id)
         if metadatas is not None:
-            pulumi.set(__self__, "metadatas", metadatas)
+            _setter("metadatas", metadatas)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
         if object_etag is not None:
-            pulumi.set(__self__, "object_etag", object_etag)
+            _setter("object_etag", object_etag)
         if parent_media_asset_id is not None:
-            pulumi.set(__self__, "parent_media_asset_id", parent_media_asset_id)
+            _setter("parent_media_asset_id", parent_media_asset_id)
         if segment_range_end_index is not None:
-            pulumi.set(__self__, "segment_range_end_index", segment_range_end_index)
+            _setter("segment_range_end_index", segment_range_end_index)
         if segment_range_start_index is not None:
-            pulumi.set(__self__, "segment_range_start_index", segment_range_start_index)
+            _setter("segment_range_start_index", segment_range_start_index)
         if source_media_workflow_id is not None:
-            pulumi.set(__self__, "source_media_workflow_id", source_media_workflow_id)
+            _setter("source_media_workflow_id", source_media_workflow_id)
         if source_media_workflow_version is not None:
-            pulumi.set(__self__, "source_media_workflow_version", source_media_workflow_version)
+            _setter("source_media_workflow_version", source_media_workflow_version)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -369,50 +444,135 @@ class _MediaAssetState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _MediaAssetState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            master_media_asset_id=master_media_asset_id,
+            media_asset_tags=media_asset_tags,
+            media_workflow_job_id=media_workflow_job_id,
+            metadatas=metadatas,
+            namespace=namespace,
+            object=object,
+            object_etag=object_etag,
+            parent_media_asset_id=parent_media_asset_id,
+            segment_range_end_index=segment_range_end_index,
+            segment_range_start_index=segment_range_start_index,
+            source_media_workflow_id=source_media_workflow_id,
+            source_media_workflow_version=source_media_workflow_version,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             master_media_asset_id: Optional[pulumi.Input[str]] = None,
+             media_asset_tags: Optional[pulumi.Input[Sequence[pulumi.Input['MediaAssetMediaAssetTagArgs']]]] = None,
+             media_workflow_job_id: Optional[pulumi.Input[str]] = None,
+             metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['MediaAssetMetadataArgs']]]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             object: Optional[pulumi.Input[str]] = None,
+             object_etag: Optional[pulumi.Input[str]] = None,
+             parent_media_asset_id: Optional[pulumi.Input[str]] = None,
+             segment_range_end_index: Optional[pulumi.Input[str]] = None,
+             segment_range_start_index: Optional[pulumi.Input[str]] = None,
+             source_media_workflow_id: Optional[pulumi.Input[str]] = None,
+             source_media_workflow_version: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if master_media_asset_id is None and 'masterMediaAssetId' in kwargs:
+            master_media_asset_id = kwargs['masterMediaAssetId']
+        if media_asset_tags is None and 'mediaAssetTags' in kwargs:
+            media_asset_tags = kwargs['mediaAssetTags']
+        if media_workflow_job_id is None and 'mediaWorkflowJobId' in kwargs:
+            media_workflow_job_id = kwargs['mediaWorkflowJobId']
+        if object_etag is None and 'objectEtag' in kwargs:
+            object_etag = kwargs['objectEtag']
+        if parent_media_asset_id is None and 'parentMediaAssetId' in kwargs:
+            parent_media_asset_id = kwargs['parentMediaAssetId']
+        if segment_range_end_index is None and 'segmentRangeEndIndex' in kwargs:
+            segment_range_end_index = kwargs['segmentRangeEndIndex']
+        if segment_range_start_index is None and 'segmentRangeStartIndex' in kwargs:
+            segment_range_start_index = kwargs['segmentRangeStartIndex']
+        if source_media_workflow_id is None and 'sourceMediaWorkflowId' in kwargs:
+            source_media_workflow_id = kwargs['sourceMediaWorkflowId']
+        if source_media_workflow_version is None and 'sourceMediaWorkflowVersion' in kwargs:
+            source_media_workflow_version = kwargs['sourceMediaWorkflowVersion']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if master_media_asset_id is not None:
-            pulumi.set(__self__, "master_media_asset_id", master_media_asset_id)
+            _setter("master_media_asset_id", master_media_asset_id)
         if media_asset_tags is not None:
-            pulumi.set(__self__, "media_asset_tags", media_asset_tags)
+            _setter("media_asset_tags", media_asset_tags)
         if media_workflow_job_id is not None:
-            pulumi.set(__self__, "media_workflow_job_id", media_workflow_job_id)
+            _setter("media_workflow_job_id", media_workflow_job_id)
         if metadatas is not None:
-            pulumi.set(__self__, "metadatas", metadatas)
+            _setter("metadatas", metadatas)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
         if object_etag is not None:
-            pulumi.set(__self__, "object_etag", object_etag)
+            _setter("object_etag", object_etag)
         if parent_media_asset_id is not None:
-            pulumi.set(__self__, "parent_media_asset_id", parent_media_asset_id)
+            _setter("parent_media_asset_id", parent_media_asset_id)
         if segment_range_end_index is not None:
-            pulumi.set(__self__, "segment_range_end_index", segment_range_end_index)
+            _setter("segment_range_end_index", segment_range_end_index)
         if segment_range_start_index is not None:
-            pulumi.set(__self__, "segment_range_start_index", segment_range_start_index)
+            _setter("segment_range_start_index", segment_range_start_index)
         if source_media_workflow_id is not None:
-            pulumi.set(__self__, "source_media_workflow_id", source_media_workflow_id)
+            _setter("source_media_workflow_id", source_media_workflow_id)
         if source_media_workflow_version is not None:
-            pulumi.set(__self__, "source_media_workflow_version", source_media_workflow_version)
+            _setter("source_media_workflow_version", source_media_workflow_version)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter
@@ -774,6 +934,10 @@ class MediaAsset(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            MediaAssetArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -45,25 +45,82 @@ class SoftwareSourceArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "arch_type", arch_type)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
+        SoftwareSourceArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            arch_type=arch_type,
+            compartment_id=compartment_id,
+            display_name=display_name,
+            checksum_type=checksum_type,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            maintainer_email=maintainer_email,
+            maintainer_name=maintainer_name,
+            maintainer_phone=maintainer_phone,
+            parent_id=parent_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             arch_type: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             checksum_type: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             maintainer_email: Optional[pulumi.Input[str]] = None,
+             maintainer_name: Optional[pulumi.Input[str]] = None,
+             maintainer_phone: Optional[pulumi.Input[str]] = None,
+             parent_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if arch_type is None and 'archType' in kwargs:
+            arch_type = kwargs['archType']
+        if arch_type is None:
+            raise TypeError("Missing 'arch_type' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if checksum_type is None and 'checksumType' in kwargs:
+            checksum_type = kwargs['checksumType']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if maintainer_email is None and 'maintainerEmail' in kwargs:
+            maintainer_email = kwargs['maintainerEmail']
+        if maintainer_name is None and 'maintainerName' in kwargs:
+            maintainer_name = kwargs['maintainerName']
+        if maintainer_phone is None and 'maintainerPhone' in kwargs:
+            maintainer_phone = kwargs['maintainerPhone']
+        if parent_id is None and 'parentId' in kwargs:
+            parent_id = kwargs['parentId']
+
+        _setter("arch_type", arch_type)
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
         if checksum_type is not None:
-            pulumi.set(__self__, "checksum_type", checksum_type)
+            _setter("checksum_type", checksum_type)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if maintainer_email is not None:
-            pulumi.set(__self__, "maintainer_email", maintainer_email)
+            _setter("maintainer_email", maintainer_email)
         if maintainer_name is not None:
-            pulumi.set(__self__, "maintainer_name", maintainer_name)
+            _setter("maintainer_name", maintainer_name)
         if maintainer_phone is not None:
-            pulumi.set(__self__, "maintainer_phone", maintainer_phone)
+            _setter("maintainer_phone", maintainer_phone)
         if parent_id is not None:
-            pulumi.set(__self__, "parent_id", parent_id)
+            _setter("parent_id", parent_id)
 
     @property
     @pulumi.getter(name="archType")
@@ -254,48 +311,131 @@ class _SoftwareSourceState:
         :param pulumi.Input[str] status: status of the software source.
         :param pulumi.Input[str] url: URL for the repostiory
         """
+        _SoftwareSourceState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            arch_type=arch_type,
+            associated_managed_instances=associated_managed_instances,
+            checksum_type=checksum_type,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            gpg_key_fingerprint=gpg_key_fingerprint,
+            gpg_key_id=gpg_key_id,
+            gpg_key_url=gpg_key_url,
+            maintainer_email=maintainer_email,
+            maintainer_name=maintainer_name,
+            maintainer_phone=maintainer_phone,
+            packages=packages,
+            parent_id=parent_id,
+            parent_name=parent_name,
+            repo_type=repo_type,
+            state=state,
+            status=status,
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             arch_type: Optional[pulumi.Input[str]] = None,
+             associated_managed_instances: Optional[pulumi.Input[Sequence[pulumi.Input['SoftwareSourceAssociatedManagedInstanceArgs']]]] = None,
+             checksum_type: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             gpg_key_fingerprint: Optional[pulumi.Input[str]] = None,
+             gpg_key_id: Optional[pulumi.Input[str]] = None,
+             gpg_key_url: Optional[pulumi.Input[str]] = None,
+             maintainer_email: Optional[pulumi.Input[str]] = None,
+             maintainer_name: Optional[pulumi.Input[str]] = None,
+             maintainer_phone: Optional[pulumi.Input[str]] = None,
+             packages: Optional[pulumi.Input[int]] = None,
+             parent_id: Optional[pulumi.Input[str]] = None,
+             parent_name: Optional[pulumi.Input[str]] = None,
+             repo_type: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             url: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if arch_type is None and 'archType' in kwargs:
+            arch_type = kwargs['archType']
+        if associated_managed_instances is None and 'associatedManagedInstances' in kwargs:
+            associated_managed_instances = kwargs['associatedManagedInstances']
+        if checksum_type is None and 'checksumType' in kwargs:
+            checksum_type = kwargs['checksumType']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if gpg_key_fingerprint is None and 'gpgKeyFingerprint' in kwargs:
+            gpg_key_fingerprint = kwargs['gpgKeyFingerprint']
+        if gpg_key_id is None and 'gpgKeyId' in kwargs:
+            gpg_key_id = kwargs['gpgKeyId']
+        if gpg_key_url is None and 'gpgKeyUrl' in kwargs:
+            gpg_key_url = kwargs['gpgKeyUrl']
+        if maintainer_email is None and 'maintainerEmail' in kwargs:
+            maintainer_email = kwargs['maintainerEmail']
+        if maintainer_name is None and 'maintainerName' in kwargs:
+            maintainer_name = kwargs['maintainerName']
+        if maintainer_phone is None and 'maintainerPhone' in kwargs:
+            maintainer_phone = kwargs['maintainerPhone']
+        if parent_id is None and 'parentId' in kwargs:
+            parent_id = kwargs['parentId']
+        if parent_name is None and 'parentName' in kwargs:
+            parent_name = kwargs['parentName']
+        if repo_type is None and 'repoType' in kwargs:
+            repo_type = kwargs['repoType']
+
         if arch_type is not None:
-            pulumi.set(__self__, "arch_type", arch_type)
+            _setter("arch_type", arch_type)
         if associated_managed_instances is not None:
-            pulumi.set(__self__, "associated_managed_instances", associated_managed_instances)
+            _setter("associated_managed_instances", associated_managed_instances)
         if checksum_type is not None:
-            pulumi.set(__self__, "checksum_type", checksum_type)
+            _setter("checksum_type", checksum_type)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if gpg_key_fingerprint is not None:
-            pulumi.set(__self__, "gpg_key_fingerprint", gpg_key_fingerprint)
+            _setter("gpg_key_fingerprint", gpg_key_fingerprint)
         if gpg_key_id is not None:
-            pulumi.set(__self__, "gpg_key_id", gpg_key_id)
+            _setter("gpg_key_id", gpg_key_id)
         if gpg_key_url is not None:
-            pulumi.set(__self__, "gpg_key_url", gpg_key_url)
+            _setter("gpg_key_url", gpg_key_url)
         if maintainer_email is not None:
-            pulumi.set(__self__, "maintainer_email", maintainer_email)
+            _setter("maintainer_email", maintainer_email)
         if maintainer_name is not None:
-            pulumi.set(__self__, "maintainer_name", maintainer_name)
+            _setter("maintainer_name", maintainer_name)
         if maintainer_phone is not None:
-            pulumi.set(__self__, "maintainer_phone", maintainer_phone)
+            _setter("maintainer_phone", maintainer_phone)
         if packages is not None:
-            pulumi.set(__self__, "packages", packages)
+            _setter("packages", packages)
         if parent_id is not None:
-            pulumi.set(__self__, "parent_id", parent_id)
+            _setter("parent_id", parent_id)
         if parent_name is not None:
-            pulumi.set(__self__, "parent_name", parent_name)
+            _setter("parent_name", parent_name)
         if repo_type is not None:
-            pulumi.set(__self__, "repo_type", repo_type)
+            _setter("repo_type", repo_type)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if url is not None:
-            pulumi.set(__self__, "url", url)
+            _setter("url", url)
 
     @property
     @pulumi.getter(name="archType")
@@ -683,6 +823,10 @@ class SoftwareSource(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            SoftwareSourceArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

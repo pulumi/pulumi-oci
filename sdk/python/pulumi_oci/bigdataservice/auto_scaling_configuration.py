@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -43,16 +43,59 @@ class AutoScalingConfigurationArgs:
                
                An autoscaling configuration can have one of above supported policies.
         """
-        pulumi.set(__self__, "bds_instance_id", bds_instance_id)
-        pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "node_type", node_type)
+        AutoScalingConfigurationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bds_instance_id=bds_instance_id,
+            cluster_admin_password=cluster_admin_password,
+            is_enabled=is_enabled,
+            node_type=node_type,
+            display_name=display_name,
+            policy=policy,
+            policy_details=policy_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bds_instance_id: Optional[pulumi.Input[str]] = None,
+             cluster_admin_password: Optional[pulumi.Input[str]] = None,
+             is_enabled: Optional[pulumi.Input[bool]] = None,
+             node_type: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             policy: Optional[pulumi.Input['AutoScalingConfigurationPolicyArgs']] = None,
+             policy_details: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bds_instance_id is None and 'bdsInstanceId' in kwargs:
+            bds_instance_id = kwargs['bdsInstanceId']
+        if bds_instance_id is None:
+            raise TypeError("Missing 'bds_instance_id' argument")
+        if cluster_admin_password is None and 'clusterAdminPassword' in kwargs:
+            cluster_admin_password = kwargs['clusterAdminPassword']
+        if cluster_admin_password is None:
+            raise TypeError("Missing 'cluster_admin_password' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if node_type is None and 'nodeType' in kwargs:
+            node_type = kwargs['nodeType']
+        if node_type is None:
+            raise TypeError("Missing 'node_type' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if policy_details is None and 'policyDetails' in kwargs:
+            policy_details = kwargs['policyDetails']
+
+        _setter("bds_instance_id", bds_instance_id)
+        _setter("cluster_admin_password", cluster_admin_password)
+        _setter("is_enabled", is_enabled)
+        _setter("node_type", node_type)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if policy is not None:
-            pulumi.set(__self__, "policy", policy)
+            _setter("policy", policy)
         if policy_details is not None:
-            pulumi.set(__self__, "policy_details", policy_details)
+            _setter("policy_details", policy_details)
 
     @property
     @pulumi.getter(name="bdsInstanceId")
@@ -185,26 +228,71 @@ class _AutoScalingConfigurationState:
         :param pulumi.Input[str] time_created: The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
         """
+        _AutoScalingConfigurationState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bds_instance_id=bds_instance_id,
+            cluster_admin_password=cluster_admin_password,
+            display_name=display_name,
+            is_enabled=is_enabled,
+            node_type=node_type,
+            policy=policy,
+            policy_details=policy_details,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bds_instance_id: Optional[pulumi.Input[str]] = None,
+             cluster_admin_password: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             is_enabled: Optional[pulumi.Input[bool]] = None,
+             node_type: Optional[pulumi.Input[str]] = None,
+             policy: Optional[pulumi.Input['AutoScalingConfigurationPolicyArgs']] = None,
+             policy_details: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsArgs']] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bds_instance_id is None and 'bdsInstanceId' in kwargs:
+            bds_instance_id = kwargs['bdsInstanceId']
+        if cluster_admin_password is None and 'clusterAdminPassword' in kwargs:
+            cluster_admin_password = kwargs['clusterAdminPassword']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if node_type is None and 'nodeType' in kwargs:
+            node_type = kwargs['nodeType']
+        if policy_details is None and 'policyDetails' in kwargs:
+            policy_details = kwargs['policyDetails']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if bds_instance_id is not None:
-            pulumi.set(__self__, "bds_instance_id", bds_instance_id)
+            _setter("bds_instance_id", bds_instance_id)
         if cluster_admin_password is not None:
-            pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
+            _setter("cluster_admin_password", cluster_admin_password)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if node_type is not None:
-            pulumi.set(__self__, "node_type", node_type)
+            _setter("node_type", node_type)
         if policy is not None:
-            pulumi.set(__self__, "policy", policy)
+            _setter("policy", policy)
         if policy_details is not None:
-            pulumi.set(__self__, "policy_details", policy_details)
+            _setter("policy_details", policy_details)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="bdsInstanceId")
@@ -502,6 +590,10 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AutoScalingConfigurationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -536,7 +628,17 @@ class AutoScalingConfiguration(pulumi.CustomResource):
             if node_type is None and not opts.urn:
                 raise TypeError("Missing required property 'node_type'")
             __props__.__dict__["node_type"] = node_type
+            if policy is not None and not isinstance(policy, AutoScalingConfigurationPolicyArgs):
+                policy = policy or {}
+                def _setter(key, value):
+                    policy[key] = value
+                AutoScalingConfigurationPolicyArgs._configure(_setter, **policy)
             __props__.__dict__["policy"] = policy
+            if policy_details is not None and not isinstance(policy_details, AutoScalingConfigurationPolicyDetailsArgs):
+                policy_details = policy_details or {}
+                def _setter(key, value):
+                    policy_details[key] = value
+                AutoScalingConfigurationPolicyDetailsArgs._configure(_setter, **policy_details)
             __props__.__dict__["policy_details"] = policy_details
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None

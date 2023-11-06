@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -37,17 +37,60 @@ class ClusterNetworkArgs:
         :param pulumi.Input[str] display_name: The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "instance_pools", instance_pools)
-        pulumi.set(__self__, "placement_configuration", placement_configuration)
+        ClusterNetworkArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            instance_pools=instance_pools,
+            placement_configuration=placement_configuration,
+            cluster_configuration=cluster_configuration,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             instance_pools: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolArgs']]]] = None,
+             placement_configuration: Optional[pulumi.Input['ClusterNetworkPlacementConfigurationArgs']] = None,
+             cluster_configuration: Optional[pulumi.Input['ClusterNetworkClusterConfigurationArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if instance_pools is None and 'instancePools' in kwargs:
+            instance_pools = kwargs['instancePools']
+        if instance_pools is None:
+            raise TypeError("Missing 'instance_pools' argument")
+        if placement_configuration is None and 'placementConfiguration' in kwargs:
+            placement_configuration = kwargs['placementConfiguration']
+        if placement_configuration is None:
+            raise TypeError("Missing 'placement_configuration' argument")
+        if cluster_configuration is None and 'clusterConfiguration' in kwargs:
+            cluster_configuration = kwargs['clusterConfiguration']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
+        _setter("compartment_id", compartment_id)
+        _setter("instance_pools", instance_pools)
+        _setter("placement_configuration", placement_configuration)
         if cluster_configuration is not None:
-            pulumi.set(__self__, "cluster_configuration", cluster_configuration)
+            _setter("cluster_configuration", cluster_configuration)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -172,30 +215,85 @@ class _ClusterNetworkState:
         :param pulumi.Input[str] time_created: The date and time the resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The date and time the resource was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
+        _ClusterNetworkState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cluster_configuration=cluster_configuration,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            hpc_island_id=hpc_island_id,
+            instance_pools=instance_pools,
+            network_block_ids=network_block_ids,
+            placement_configuration=placement_configuration,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cluster_configuration: Optional[pulumi.Input['ClusterNetworkClusterConfigurationArgs']] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             hpc_island_id: Optional[pulumi.Input[str]] = None,
+             instance_pools: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolArgs']]]] = None,
+             network_block_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             placement_configuration: Optional[pulumi.Input['ClusterNetworkPlacementConfigurationArgs']] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if cluster_configuration is None and 'clusterConfiguration' in kwargs:
+            cluster_configuration = kwargs['clusterConfiguration']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if hpc_island_id is None and 'hpcIslandId' in kwargs:
+            hpc_island_id = kwargs['hpcIslandId']
+        if instance_pools is None and 'instancePools' in kwargs:
+            instance_pools = kwargs['instancePools']
+        if network_block_ids is None and 'networkBlockIds' in kwargs:
+            network_block_ids = kwargs['networkBlockIds']
+        if placement_configuration is None and 'placementConfiguration' in kwargs:
+            placement_configuration = kwargs['placementConfiguration']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if cluster_configuration is not None:
-            pulumi.set(__self__, "cluster_configuration", cluster_configuration)
+            _setter("cluster_configuration", cluster_configuration)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if hpc_island_id is not None:
-            pulumi.set(__self__, "hpc_island_id", hpc_island_id)
+            _setter("hpc_island_id", hpc_island_id)
         if instance_pools is not None:
-            pulumi.set(__self__, "instance_pools", instance_pools)
+            _setter("instance_pools", instance_pools)
         if network_block_ids is not None:
-            pulumi.set(__self__, "network_block_ids", network_block_ids)
+            _setter("network_block_ids", network_block_ids)
         if placement_configuration is not None:
-            pulumi.set(__self__, "placement_configuration", placement_configuration)
+            _setter("placement_configuration", placement_configuration)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="clusterConfiguration")
@@ -543,6 +641,10 @@ class ClusterNetwork(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ClusterNetworkArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -564,6 +666,11 @@ class ClusterNetwork(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ClusterNetworkArgs.__new__(ClusterNetworkArgs)
 
+            if cluster_configuration is not None and not isinstance(cluster_configuration, ClusterNetworkClusterConfigurationArgs):
+                cluster_configuration = cluster_configuration or {}
+                def _setter(key, value):
+                    cluster_configuration[key] = value
+                ClusterNetworkClusterConfigurationArgs._configure(_setter, **cluster_configuration)
             __props__.__dict__["cluster_configuration"] = cluster_configuration
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
@@ -574,6 +681,11 @@ class ClusterNetwork(pulumi.CustomResource):
             if instance_pools is None and not opts.urn:
                 raise TypeError("Missing required property 'instance_pools'")
             __props__.__dict__["instance_pools"] = instance_pools
+            if placement_configuration is not None and not isinstance(placement_configuration, ClusterNetworkPlacementConfigurationArgs):
+                placement_configuration = placement_configuration or {}
+                def _setter(key, value):
+                    placement_configuration[key] = value
+                ClusterNetworkPlacementConfigurationArgs._configure(_setter, **placement_configuration)
             if placement_configuration is None and not opts.urn:
                 raise TypeError("Missing required property 'placement_configuration'")
             __props__.__dict__["placement_configuration"] = placement_configuration

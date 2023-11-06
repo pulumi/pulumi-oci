@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -39,22 +39,77 @@ class SoftwareSourceArgs:
         :param pulumi.Input[bool] is_automatically_updated: (Updatable) Indicates whether service should automatically update the custom software source for the user.
         :param pulumi.Input[str] software_source_version: The version to assign to this custom software source.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "software_source_type", software_source_type)
-        pulumi.set(__self__, "vendor_software_sources", vendor_software_sources)
+        SoftwareSourceArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            software_source_type=software_source_type,
+            vendor_software_sources=vendor_software_sources,
+            custom_software_source_filter=custom_software_source_filter,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            is_automatically_updated=is_automatically_updated,
+            software_source_version=software_source_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             software_source_type: Optional[pulumi.Input[str]] = None,
+             vendor_software_sources: Optional[pulumi.Input[Sequence[pulumi.Input['SoftwareSourceVendorSoftwareSourceArgs']]]] = None,
+             custom_software_source_filter: Optional[pulumi.Input['SoftwareSourceCustomSoftwareSourceFilterArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_automatically_updated: Optional[pulumi.Input[bool]] = None,
+             software_source_version: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if software_source_type is None and 'softwareSourceType' in kwargs:
+            software_source_type = kwargs['softwareSourceType']
+        if software_source_type is None:
+            raise TypeError("Missing 'software_source_type' argument")
+        if vendor_software_sources is None and 'vendorSoftwareSources' in kwargs:
+            vendor_software_sources = kwargs['vendorSoftwareSources']
+        if vendor_software_sources is None:
+            raise TypeError("Missing 'vendor_software_sources' argument")
+        if custom_software_source_filter is None and 'customSoftwareSourceFilter' in kwargs:
+            custom_software_source_filter = kwargs['customSoftwareSourceFilter']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_automatically_updated is None and 'isAutomaticallyUpdated' in kwargs:
+            is_automatically_updated = kwargs['isAutomaticallyUpdated']
+        if software_source_version is None and 'softwareSourceVersion' in kwargs:
+            software_source_version = kwargs['softwareSourceVersion']
+
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
+        _setter("software_source_type", software_source_type)
+        _setter("vendor_software_sources", vendor_software_sources)
         if custom_software_source_filter is not None:
-            pulumi.set(__self__, "custom_software_source_filter", custom_software_source_filter)
+            _setter("custom_software_source_filter", custom_software_source_filter)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_automatically_updated is not None:
-            pulumi.set(__self__, "is_automatically_updated", is_automatically_updated)
+            _setter("is_automatically_updated", is_automatically_updated)
         if software_source_version is not None:
-            pulumi.set(__self__, "software_source_version", software_source_version)
+            _setter("software_source_version", software_source_version)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -231,54 +286,151 @@ class _SoftwareSourceState:
         :param pulumi.Input[str] vendor_name: Name of the vendor providing the software source.
         :param pulumi.Input[Sequence[pulumi.Input['SoftwareSourceVendorSoftwareSourceArgs']]] vendor_software_sources: (Updatable) List of vendor software sources.
         """
+        _SoftwareSourceState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            arch_type=arch_type,
+            availability=availability,
+            checksum_type=checksum_type,
+            compartment_id=compartment_id,
+            custom_software_source_filter=custom_software_source_filter,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            gpg_key_fingerprint=gpg_key_fingerprint,
+            gpg_key_id=gpg_key_id,
+            gpg_key_url=gpg_key_url,
+            is_automatically_updated=is_automatically_updated,
+            os_family=os_family,
+            package_count=package_count,
+            repo_id=repo_id,
+            software_source_type=software_source_type,
+            software_source_version=software_source_version,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            url=url,
+            vendor_name=vendor_name,
+            vendor_software_sources=vendor_software_sources,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             arch_type: Optional[pulumi.Input[str]] = None,
+             availability: Optional[pulumi.Input[str]] = None,
+             checksum_type: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             custom_software_source_filter: Optional[pulumi.Input['SoftwareSourceCustomSoftwareSourceFilterArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             gpg_key_fingerprint: Optional[pulumi.Input[str]] = None,
+             gpg_key_id: Optional[pulumi.Input[str]] = None,
+             gpg_key_url: Optional[pulumi.Input[str]] = None,
+             is_automatically_updated: Optional[pulumi.Input[bool]] = None,
+             os_family: Optional[pulumi.Input[str]] = None,
+             package_count: Optional[pulumi.Input[str]] = None,
+             repo_id: Optional[pulumi.Input[str]] = None,
+             software_source_type: Optional[pulumi.Input[str]] = None,
+             software_source_version: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             url: Optional[pulumi.Input[str]] = None,
+             vendor_name: Optional[pulumi.Input[str]] = None,
+             vendor_software_sources: Optional[pulumi.Input[Sequence[pulumi.Input['SoftwareSourceVendorSoftwareSourceArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if arch_type is None and 'archType' in kwargs:
+            arch_type = kwargs['archType']
+        if checksum_type is None and 'checksumType' in kwargs:
+            checksum_type = kwargs['checksumType']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if custom_software_source_filter is None and 'customSoftwareSourceFilter' in kwargs:
+            custom_software_source_filter = kwargs['customSoftwareSourceFilter']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if gpg_key_fingerprint is None and 'gpgKeyFingerprint' in kwargs:
+            gpg_key_fingerprint = kwargs['gpgKeyFingerprint']
+        if gpg_key_id is None and 'gpgKeyId' in kwargs:
+            gpg_key_id = kwargs['gpgKeyId']
+        if gpg_key_url is None and 'gpgKeyUrl' in kwargs:
+            gpg_key_url = kwargs['gpgKeyUrl']
+        if is_automatically_updated is None and 'isAutomaticallyUpdated' in kwargs:
+            is_automatically_updated = kwargs['isAutomaticallyUpdated']
+        if os_family is None and 'osFamily' in kwargs:
+            os_family = kwargs['osFamily']
+        if package_count is None and 'packageCount' in kwargs:
+            package_count = kwargs['packageCount']
+        if repo_id is None and 'repoId' in kwargs:
+            repo_id = kwargs['repoId']
+        if software_source_type is None and 'softwareSourceType' in kwargs:
+            software_source_type = kwargs['softwareSourceType']
+        if software_source_version is None and 'softwareSourceVersion' in kwargs:
+            software_source_version = kwargs['softwareSourceVersion']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if vendor_name is None and 'vendorName' in kwargs:
+            vendor_name = kwargs['vendorName']
+        if vendor_software_sources is None and 'vendorSoftwareSources' in kwargs:
+            vendor_software_sources = kwargs['vendorSoftwareSources']
+
         if arch_type is not None:
-            pulumi.set(__self__, "arch_type", arch_type)
+            _setter("arch_type", arch_type)
         if availability is not None:
-            pulumi.set(__self__, "availability", availability)
+            _setter("availability", availability)
         if checksum_type is not None:
-            pulumi.set(__self__, "checksum_type", checksum_type)
+            _setter("checksum_type", checksum_type)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if custom_software_source_filter is not None:
-            pulumi.set(__self__, "custom_software_source_filter", custom_software_source_filter)
+            _setter("custom_software_source_filter", custom_software_source_filter)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if gpg_key_fingerprint is not None:
-            pulumi.set(__self__, "gpg_key_fingerprint", gpg_key_fingerprint)
+            _setter("gpg_key_fingerprint", gpg_key_fingerprint)
         if gpg_key_id is not None:
-            pulumi.set(__self__, "gpg_key_id", gpg_key_id)
+            _setter("gpg_key_id", gpg_key_id)
         if gpg_key_url is not None:
-            pulumi.set(__self__, "gpg_key_url", gpg_key_url)
+            _setter("gpg_key_url", gpg_key_url)
         if is_automatically_updated is not None:
-            pulumi.set(__self__, "is_automatically_updated", is_automatically_updated)
+            _setter("is_automatically_updated", is_automatically_updated)
         if os_family is not None:
-            pulumi.set(__self__, "os_family", os_family)
+            _setter("os_family", os_family)
         if package_count is not None:
-            pulumi.set(__self__, "package_count", package_count)
+            _setter("package_count", package_count)
         if repo_id is not None:
-            pulumi.set(__self__, "repo_id", repo_id)
+            _setter("repo_id", repo_id)
         if software_source_type is not None:
-            pulumi.set(__self__, "software_source_type", software_source_type)
+            _setter("software_source_type", software_source_type)
         if software_source_version is not None:
-            pulumi.set(__self__, "software_source_version", software_source_version)
+            _setter("software_source_version", software_source_version)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if url is not None:
-            pulumi.set(__self__, "url", url)
+            _setter("url", url)
         if vendor_name is not None:
-            pulumi.set(__self__, "vendor_name", vendor_name)
+            _setter("vendor_name", vendor_name)
         if vendor_software_sources is not None:
-            pulumi.set(__self__, "vendor_software_sources", vendor_software_sources)
+            _setter("vendor_software_sources", vendor_software_sources)
 
     @property
     @pulumi.getter(name="archType")
@@ -726,6 +878,10 @@ class SoftwareSource(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            SoftwareSourceArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -753,6 +909,11 @@ class SoftwareSource(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            if custom_software_source_filter is not None and not isinstance(custom_software_source_filter, SoftwareSourceCustomSoftwareSourceFilterArgs):
+                custom_software_source_filter = custom_software_source_filter or {}
+                def _setter(key, value):
+                    custom_software_source_filter[key] = value
+                SoftwareSourceCustomSoftwareSourceFilterArgs._configure(_setter, **custom_software_source_filter)
             __props__.__dict__["custom_software_source_filter"] = custom_software_source_filter
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["description"] = description

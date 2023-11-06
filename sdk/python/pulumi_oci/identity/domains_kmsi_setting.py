@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -168,37 +168,110 @@ class DomainsKmsiSettingArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
-        pulumi.set(__self__, "kmsi_setting_id", kmsi_setting_id)
-        pulumi.set(__self__, "schemas", schemas)
+        DomainsKmsiSettingArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            idcs_endpoint=idcs_endpoint,
+            kmsi_setting_id=kmsi_setting_id,
+            schemas=schemas,
+            attribute_sets=attribute_sets,
+            attributes=attributes,
+            authorization=authorization,
+            external_id=external_id,
+            kmsi_feature_enabled=kmsi_feature_enabled,
+            kmsi_prompt_enabled=kmsi_prompt_enabled,
+            last_enabled_on=last_enabled_on,
+            last_used_validity_in_days=last_used_validity_in_days,
+            max_allowed_sessions=max_allowed_sessions,
+            ocid=ocid,
+            resource_type_schema_version=resource_type_schema_version,
+            tags=tags,
+            token_validity_in_days=token_validity_in_days,
+            tou_prompt_disabled=tou_prompt_disabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             idcs_endpoint: Optional[pulumi.Input[str]] = None,
+             kmsi_setting_id: Optional[pulumi.Input[str]] = None,
+             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             attributes: Optional[pulumi.Input[str]] = None,
+             authorization: Optional[pulumi.Input[str]] = None,
+             external_id: Optional[pulumi.Input[str]] = None,
+             kmsi_feature_enabled: Optional[pulumi.Input[bool]] = None,
+             kmsi_prompt_enabled: Optional[pulumi.Input[bool]] = None,
+             last_enabled_on: Optional[pulumi.Input[str]] = None,
+             last_used_validity_in_days: Optional[pulumi.Input[int]] = None,
+             max_allowed_sessions: Optional[pulumi.Input[int]] = None,
+             ocid: Optional[pulumi.Input[str]] = None,
+             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
+             tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsKmsiSettingTagArgs']]]] = None,
+             token_validity_in_days: Optional[pulumi.Input[int]] = None,
+             tou_prompt_disabled: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
+            idcs_endpoint = kwargs['idcsEndpoint']
+        if idcs_endpoint is None:
+            raise TypeError("Missing 'idcs_endpoint' argument")
+        if kmsi_setting_id is None and 'kmsiSettingId' in kwargs:
+            kmsi_setting_id = kwargs['kmsiSettingId']
+        if kmsi_setting_id is None:
+            raise TypeError("Missing 'kmsi_setting_id' argument")
+        if schemas is None:
+            raise TypeError("Missing 'schemas' argument")
+        if attribute_sets is None and 'attributeSets' in kwargs:
+            attribute_sets = kwargs['attributeSets']
+        if external_id is None and 'externalId' in kwargs:
+            external_id = kwargs['externalId']
+        if kmsi_feature_enabled is None and 'kmsiFeatureEnabled' in kwargs:
+            kmsi_feature_enabled = kwargs['kmsiFeatureEnabled']
+        if kmsi_prompt_enabled is None and 'kmsiPromptEnabled' in kwargs:
+            kmsi_prompt_enabled = kwargs['kmsiPromptEnabled']
+        if last_enabled_on is None and 'lastEnabledOn' in kwargs:
+            last_enabled_on = kwargs['lastEnabledOn']
+        if last_used_validity_in_days is None and 'lastUsedValidityInDays' in kwargs:
+            last_used_validity_in_days = kwargs['lastUsedValidityInDays']
+        if max_allowed_sessions is None and 'maxAllowedSessions' in kwargs:
+            max_allowed_sessions = kwargs['maxAllowedSessions']
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
+            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
+        if token_validity_in_days is None and 'tokenValidityInDays' in kwargs:
+            token_validity_in_days = kwargs['tokenValidityInDays']
+        if tou_prompt_disabled is None and 'touPromptDisabled' in kwargs:
+            tou_prompt_disabled = kwargs['touPromptDisabled']
+
+        _setter("idcs_endpoint", idcs_endpoint)
+        _setter("kmsi_setting_id", kmsi_setting_id)
+        _setter("schemas", schemas)
         if attribute_sets is not None:
-            pulumi.set(__self__, "attribute_sets", attribute_sets)
+            _setter("attribute_sets", attribute_sets)
         if attributes is not None:
-            pulumi.set(__self__, "attributes", attributes)
+            _setter("attributes", attributes)
         if authorization is not None:
-            pulumi.set(__self__, "authorization", authorization)
+            _setter("authorization", authorization)
         if external_id is not None:
-            pulumi.set(__self__, "external_id", external_id)
+            _setter("external_id", external_id)
         if kmsi_feature_enabled is not None:
-            pulumi.set(__self__, "kmsi_feature_enabled", kmsi_feature_enabled)
+            _setter("kmsi_feature_enabled", kmsi_feature_enabled)
         if kmsi_prompt_enabled is not None:
-            pulumi.set(__self__, "kmsi_prompt_enabled", kmsi_prompt_enabled)
+            _setter("kmsi_prompt_enabled", kmsi_prompt_enabled)
         if last_enabled_on is not None:
-            pulumi.set(__self__, "last_enabled_on", last_enabled_on)
+            _setter("last_enabled_on", last_enabled_on)
         if last_used_validity_in_days is not None:
-            pulumi.set(__self__, "last_used_validity_in_days", last_used_validity_in_days)
+            _setter("last_used_validity_in_days", last_used_validity_in_days)
         if max_allowed_sessions is not None:
-            pulumi.set(__self__, "max_allowed_sessions", max_allowed_sessions)
+            _setter("max_allowed_sessions", max_allowed_sessions)
         if ocid is not None:
-            pulumi.set(__self__, "ocid", ocid)
+            _setter("ocid", ocid)
         if resource_type_schema_version is not None:
-            pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
+            _setter("resource_type_schema_version", resource_type_schema_version)
         if tags is not None:
-            pulumi.set(__self__, "tags", tags)
+            _setter("tags", tags)
         if token_validity_in_days is not None:
-            pulumi.set(__self__, "token_validity_in_days", token_validity_in_days)
+            _setter("token_validity_in_days", token_validity_in_days)
         if tou_prompt_disabled is not None:
-            pulumi.set(__self__, "tou_prompt_disabled", tou_prompt_disabled)
+            _setter("tou_prompt_disabled", tou_prompt_disabled)
 
     @property
     @pulumi.getter(name="idcsEndpoint")
@@ -778,58 +851,159 @@ class _DomainsKmsiSettingState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _DomainsKmsiSettingState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            attribute_sets=attribute_sets,
+            attributes=attributes,
+            authorization=authorization,
+            compartment_ocid=compartment_ocid,
+            delete_in_progress=delete_in_progress,
+            domain_ocid=domain_ocid,
+            external_id=external_id,
+            idcs_created_bies=idcs_created_bies,
+            idcs_endpoint=idcs_endpoint,
+            idcs_last_modified_bies=idcs_last_modified_bies,
+            idcs_last_upgraded_in_release=idcs_last_upgraded_in_release,
+            idcs_prevented_operations=idcs_prevented_operations,
+            kmsi_feature_enabled=kmsi_feature_enabled,
+            kmsi_prompt_enabled=kmsi_prompt_enabled,
+            kmsi_setting_id=kmsi_setting_id,
+            last_enabled_on=last_enabled_on,
+            last_used_validity_in_days=last_used_validity_in_days,
+            max_allowed_sessions=max_allowed_sessions,
+            metas=metas,
+            ocid=ocid,
+            resource_type_schema_version=resource_type_schema_version,
+            schemas=schemas,
+            tags=tags,
+            tenancy_ocid=tenancy_ocid,
+            token_validity_in_days=token_validity_in_days,
+            tou_prompt_disabled=tou_prompt_disabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             attributes: Optional[pulumi.Input[str]] = None,
+             authorization: Optional[pulumi.Input[str]] = None,
+             compartment_ocid: Optional[pulumi.Input[str]] = None,
+             delete_in_progress: Optional[pulumi.Input[bool]] = None,
+             domain_ocid: Optional[pulumi.Input[str]] = None,
+             external_id: Optional[pulumi.Input[str]] = None,
+             idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsKmsiSettingIdcsCreatedByArgs']]]] = None,
+             idcs_endpoint: Optional[pulumi.Input[str]] = None,
+             idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsKmsiSettingIdcsLastModifiedByArgs']]]] = None,
+             idcs_last_upgraded_in_release: Optional[pulumi.Input[str]] = None,
+             idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             kmsi_feature_enabled: Optional[pulumi.Input[bool]] = None,
+             kmsi_prompt_enabled: Optional[pulumi.Input[bool]] = None,
+             kmsi_setting_id: Optional[pulumi.Input[str]] = None,
+             last_enabled_on: Optional[pulumi.Input[str]] = None,
+             last_used_validity_in_days: Optional[pulumi.Input[int]] = None,
+             max_allowed_sessions: Optional[pulumi.Input[int]] = None,
+             metas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsKmsiSettingMetaArgs']]]] = None,
+             ocid: Optional[pulumi.Input[str]] = None,
+             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
+             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsKmsiSettingTagArgs']]]] = None,
+             tenancy_ocid: Optional[pulumi.Input[str]] = None,
+             token_validity_in_days: Optional[pulumi.Input[int]] = None,
+             tou_prompt_disabled: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if attribute_sets is None and 'attributeSets' in kwargs:
+            attribute_sets = kwargs['attributeSets']
+        if compartment_ocid is None and 'compartmentOcid' in kwargs:
+            compartment_ocid = kwargs['compartmentOcid']
+        if delete_in_progress is None and 'deleteInProgress' in kwargs:
+            delete_in_progress = kwargs['deleteInProgress']
+        if domain_ocid is None and 'domainOcid' in kwargs:
+            domain_ocid = kwargs['domainOcid']
+        if external_id is None and 'externalId' in kwargs:
+            external_id = kwargs['externalId']
+        if idcs_created_bies is None and 'idcsCreatedBies' in kwargs:
+            idcs_created_bies = kwargs['idcsCreatedBies']
+        if idcs_endpoint is None and 'idcsEndpoint' in kwargs:
+            idcs_endpoint = kwargs['idcsEndpoint']
+        if idcs_last_modified_bies is None and 'idcsLastModifiedBies' in kwargs:
+            idcs_last_modified_bies = kwargs['idcsLastModifiedBies']
+        if idcs_last_upgraded_in_release is None and 'idcsLastUpgradedInRelease' in kwargs:
+            idcs_last_upgraded_in_release = kwargs['idcsLastUpgradedInRelease']
+        if idcs_prevented_operations is None and 'idcsPreventedOperations' in kwargs:
+            idcs_prevented_operations = kwargs['idcsPreventedOperations']
+        if kmsi_feature_enabled is None and 'kmsiFeatureEnabled' in kwargs:
+            kmsi_feature_enabled = kwargs['kmsiFeatureEnabled']
+        if kmsi_prompt_enabled is None and 'kmsiPromptEnabled' in kwargs:
+            kmsi_prompt_enabled = kwargs['kmsiPromptEnabled']
+        if kmsi_setting_id is None and 'kmsiSettingId' in kwargs:
+            kmsi_setting_id = kwargs['kmsiSettingId']
+        if last_enabled_on is None and 'lastEnabledOn' in kwargs:
+            last_enabled_on = kwargs['lastEnabledOn']
+        if last_used_validity_in_days is None and 'lastUsedValidityInDays' in kwargs:
+            last_used_validity_in_days = kwargs['lastUsedValidityInDays']
+        if max_allowed_sessions is None and 'maxAllowedSessions' in kwargs:
+            max_allowed_sessions = kwargs['maxAllowedSessions']
+        if resource_type_schema_version is None and 'resourceTypeSchemaVersion' in kwargs:
+            resource_type_schema_version = kwargs['resourceTypeSchemaVersion']
+        if tenancy_ocid is None and 'tenancyOcid' in kwargs:
+            tenancy_ocid = kwargs['tenancyOcid']
+        if token_validity_in_days is None and 'tokenValidityInDays' in kwargs:
+            token_validity_in_days = kwargs['tokenValidityInDays']
+        if tou_prompt_disabled is None and 'touPromptDisabled' in kwargs:
+            tou_prompt_disabled = kwargs['touPromptDisabled']
+
         if attribute_sets is not None:
-            pulumi.set(__self__, "attribute_sets", attribute_sets)
+            _setter("attribute_sets", attribute_sets)
         if attributes is not None:
-            pulumi.set(__self__, "attributes", attributes)
+            _setter("attributes", attributes)
         if authorization is not None:
-            pulumi.set(__self__, "authorization", authorization)
+            _setter("authorization", authorization)
         if compartment_ocid is not None:
-            pulumi.set(__self__, "compartment_ocid", compartment_ocid)
+            _setter("compartment_ocid", compartment_ocid)
         if delete_in_progress is not None:
-            pulumi.set(__self__, "delete_in_progress", delete_in_progress)
+            _setter("delete_in_progress", delete_in_progress)
         if domain_ocid is not None:
-            pulumi.set(__self__, "domain_ocid", domain_ocid)
+            _setter("domain_ocid", domain_ocid)
         if external_id is not None:
-            pulumi.set(__self__, "external_id", external_id)
+            _setter("external_id", external_id)
         if idcs_created_bies is not None:
-            pulumi.set(__self__, "idcs_created_bies", idcs_created_bies)
+            _setter("idcs_created_bies", idcs_created_bies)
         if idcs_endpoint is not None:
-            pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
+            _setter("idcs_endpoint", idcs_endpoint)
         if idcs_last_modified_bies is not None:
-            pulumi.set(__self__, "idcs_last_modified_bies", idcs_last_modified_bies)
+            _setter("idcs_last_modified_bies", idcs_last_modified_bies)
         if idcs_last_upgraded_in_release is not None:
-            pulumi.set(__self__, "idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
+            _setter("idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
         if idcs_prevented_operations is not None:
-            pulumi.set(__self__, "idcs_prevented_operations", idcs_prevented_operations)
+            _setter("idcs_prevented_operations", idcs_prevented_operations)
         if kmsi_feature_enabled is not None:
-            pulumi.set(__self__, "kmsi_feature_enabled", kmsi_feature_enabled)
+            _setter("kmsi_feature_enabled", kmsi_feature_enabled)
         if kmsi_prompt_enabled is not None:
-            pulumi.set(__self__, "kmsi_prompt_enabled", kmsi_prompt_enabled)
+            _setter("kmsi_prompt_enabled", kmsi_prompt_enabled)
         if kmsi_setting_id is not None:
-            pulumi.set(__self__, "kmsi_setting_id", kmsi_setting_id)
+            _setter("kmsi_setting_id", kmsi_setting_id)
         if last_enabled_on is not None:
-            pulumi.set(__self__, "last_enabled_on", last_enabled_on)
+            _setter("last_enabled_on", last_enabled_on)
         if last_used_validity_in_days is not None:
-            pulumi.set(__self__, "last_used_validity_in_days", last_used_validity_in_days)
+            _setter("last_used_validity_in_days", last_used_validity_in_days)
         if max_allowed_sessions is not None:
-            pulumi.set(__self__, "max_allowed_sessions", max_allowed_sessions)
+            _setter("max_allowed_sessions", max_allowed_sessions)
         if metas is not None:
-            pulumi.set(__self__, "metas", metas)
+            _setter("metas", metas)
         if ocid is not None:
-            pulumi.set(__self__, "ocid", ocid)
+            _setter("ocid", ocid)
         if resource_type_schema_version is not None:
-            pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
+            _setter("resource_type_schema_version", resource_type_schema_version)
         if schemas is not None:
-            pulumi.set(__self__, "schemas", schemas)
+            _setter("schemas", schemas)
         if tags is not None:
-            pulumi.set(__self__, "tags", tags)
+            _setter("tags", tags)
         if tenancy_ocid is not None:
-            pulumi.set(__self__, "tenancy_ocid", tenancy_ocid)
+            _setter("tenancy_ocid", tenancy_ocid)
         if token_validity_in_days is not None:
-            pulumi.set(__self__, "token_validity_in_days", token_validity_in_days)
+            _setter("token_validity_in_days", token_validity_in_days)
         if tou_prompt_disabled is not None:
-            pulumi.set(__self__, "tou_prompt_disabled", tou_prompt_disabled)
+            _setter("tou_prompt_disabled", tou_prompt_disabled)
 
     @property
     @pulumi.getter(name="attributeSets")
@@ -1544,6 +1718,10 @@ class DomainsKmsiSetting(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DomainsKmsiSettingArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

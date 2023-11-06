@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -93,123 +93,284 @@ class SddcArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
+        SddcArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            compute_availability_domain=compute_availability_domain,
+            esxi_hosts_count=esxi_hosts_count,
+            nsx_edge_uplink1vlan_id=nsx_edge_uplink1vlan_id,
+            nsx_edge_uplink2vlan_id=nsx_edge_uplink2vlan_id,
+            nsx_edge_vtep_vlan_id=nsx_edge_vtep_vlan_id,
+            nsx_vtep_vlan_id=nsx_vtep_vlan_id,
+            provisioning_subnet_id=provisioning_subnet_id,
+            ssh_authorized_keys=ssh_authorized_keys,
+            vmotion_vlan_id=vmotion_vlan_id,
+            vmware_software_version=vmware_software_version,
+            vsan_vlan_id=vsan_vlan_id,
+            vsphere_vlan_id=vsphere_vlan_id,
+            capacity_reservation_id=capacity_reservation_id,
+            datastores=datastores,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            hcx_action=hcx_action,
+            hcx_vlan_id=hcx_vlan_id,
+            initial_host_ocpu_count=initial_host_ocpu_count,
+            initial_host_shape_name=initial_host_shape_name,
+            initial_sku=initial_sku,
+            instance_display_name_prefix=instance_display_name_prefix,
+            is_hcx_enabled=is_hcx_enabled,
+            is_shielded_instance_enabled=is_shielded_instance_enabled,
+            is_single_host_sddc=is_single_host_sddc,
+            provisioning_vlan_id=provisioning_vlan_id,
+            refresh_hcx_license_status=refresh_hcx_license_status,
+            replication_vlan_id=replication_vlan_id,
+            reserving_hcx_on_premise_license_keys=reserving_hcx_on_premise_license_keys,
+            workload_network_cidr=workload_network_cidr,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             compute_availability_domain: Optional[pulumi.Input[str]] = None,
+             esxi_hosts_count: Optional[pulumi.Input[int]] = None,
+             nsx_edge_uplink1vlan_id: Optional[pulumi.Input[str]] = None,
+             nsx_edge_uplink2vlan_id: Optional[pulumi.Input[str]] = None,
+             nsx_edge_vtep_vlan_id: Optional[pulumi.Input[str]] = None,
+             nsx_vtep_vlan_id: Optional[pulumi.Input[str]] = None,
+             provisioning_subnet_id: Optional[pulumi.Input[str]] = None,
+             ssh_authorized_keys: Optional[pulumi.Input[str]] = None,
+             vmotion_vlan_id: Optional[pulumi.Input[str]] = None,
+             vmware_software_version: Optional[pulumi.Input[str]] = None,
+             vsan_vlan_id: Optional[pulumi.Input[str]] = None,
+             vsphere_vlan_id: Optional[pulumi.Input[str]] = None,
+             capacity_reservation_id: Optional[pulumi.Input[str]] = None,
+             datastores: Optional[pulumi.Input[Sequence[pulumi.Input['SddcDatastoreArgs']]]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             hcx_action: Optional[pulumi.Input[str]] = None,
+             hcx_vlan_id: Optional[pulumi.Input[str]] = None,
+             initial_host_ocpu_count: Optional[pulumi.Input[float]] = None,
+             initial_host_shape_name: Optional[pulumi.Input[str]] = None,
+             initial_sku: Optional[pulumi.Input[str]] = None,
+             instance_display_name_prefix: Optional[pulumi.Input[str]] = None,
+             is_hcx_enabled: Optional[pulumi.Input[bool]] = None,
+             is_shielded_instance_enabled: Optional[pulumi.Input[bool]] = None,
+             is_single_host_sddc: Optional[pulumi.Input[bool]] = None,
+             provisioning_vlan_id: Optional[pulumi.Input[str]] = None,
+             refresh_hcx_license_status: Optional[pulumi.Input[bool]] = None,
+             replication_vlan_id: Optional[pulumi.Input[str]] = None,
+             reserving_hcx_on_premise_license_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             workload_network_cidr: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if compute_availability_domain is None and 'computeAvailabilityDomain' in kwargs:
+            compute_availability_domain = kwargs['computeAvailabilityDomain']
+        if compute_availability_domain is None:
+            raise TypeError("Missing 'compute_availability_domain' argument")
+        if esxi_hosts_count is None and 'esxiHostsCount' in kwargs:
+            esxi_hosts_count = kwargs['esxiHostsCount']
+        if esxi_hosts_count is None:
+            raise TypeError("Missing 'esxi_hosts_count' argument")
+        if nsx_edge_uplink1vlan_id is None and 'nsxEdgeUplink1vlanId' in kwargs:
+            nsx_edge_uplink1vlan_id = kwargs['nsxEdgeUplink1vlanId']
+        if nsx_edge_uplink1vlan_id is None:
+            raise TypeError("Missing 'nsx_edge_uplink1vlan_id' argument")
+        if nsx_edge_uplink2vlan_id is None and 'nsxEdgeUplink2vlanId' in kwargs:
+            nsx_edge_uplink2vlan_id = kwargs['nsxEdgeUplink2vlanId']
+        if nsx_edge_uplink2vlan_id is None:
+            raise TypeError("Missing 'nsx_edge_uplink2vlan_id' argument")
+        if nsx_edge_vtep_vlan_id is None and 'nsxEdgeVtepVlanId' in kwargs:
+            nsx_edge_vtep_vlan_id = kwargs['nsxEdgeVtepVlanId']
+        if nsx_edge_vtep_vlan_id is None:
+            raise TypeError("Missing 'nsx_edge_vtep_vlan_id' argument")
+        if nsx_vtep_vlan_id is None and 'nsxVtepVlanId' in kwargs:
+            nsx_vtep_vlan_id = kwargs['nsxVtepVlanId']
+        if nsx_vtep_vlan_id is None:
+            raise TypeError("Missing 'nsx_vtep_vlan_id' argument")
+        if provisioning_subnet_id is None and 'provisioningSubnetId' in kwargs:
+            provisioning_subnet_id = kwargs['provisioningSubnetId']
+        if provisioning_subnet_id is None:
+            raise TypeError("Missing 'provisioning_subnet_id' argument")
+        if ssh_authorized_keys is None and 'sshAuthorizedKeys' in kwargs:
+            ssh_authorized_keys = kwargs['sshAuthorizedKeys']
+        if ssh_authorized_keys is None:
+            raise TypeError("Missing 'ssh_authorized_keys' argument")
+        if vmotion_vlan_id is None and 'vmotionVlanId' in kwargs:
+            vmotion_vlan_id = kwargs['vmotionVlanId']
+        if vmotion_vlan_id is None:
+            raise TypeError("Missing 'vmotion_vlan_id' argument")
+        if vmware_software_version is None and 'vmwareSoftwareVersion' in kwargs:
+            vmware_software_version = kwargs['vmwareSoftwareVersion']
+        if vmware_software_version is None:
+            raise TypeError("Missing 'vmware_software_version' argument")
+        if vsan_vlan_id is None and 'vsanVlanId' in kwargs:
+            vsan_vlan_id = kwargs['vsanVlanId']
+        if vsan_vlan_id is None:
+            raise TypeError("Missing 'vsan_vlan_id' argument")
+        if vsphere_vlan_id is None and 'vsphereVlanId' in kwargs:
+            vsphere_vlan_id = kwargs['vsphereVlanId']
+        if vsphere_vlan_id is None:
+            raise TypeError("Missing 'vsphere_vlan_id' argument")
+        if capacity_reservation_id is None and 'capacityReservationId' in kwargs:
+            capacity_reservation_id = kwargs['capacityReservationId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if hcx_action is None and 'hcxAction' in kwargs:
+            hcx_action = kwargs['hcxAction']
+        if hcx_vlan_id is None and 'hcxVlanId' in kwargs:
+            hcx_vlan_id = kwargs['hcxVlanId']
+        if initial_host_ocpu_count is None and 'initialHostOcpuCount' in kwargs:
+            initial_host_ocpu_count = kwargs['initialHostOcpuCount']
+        if initial_host_shape_name is None and 'initialHostShapeName' in kwargs:
+            initial_host_shape_name = kwargs['initialHostShapeName']
+        if initial_sku is None and 'initialSku' in kwargs:
+            initial_sku = kwargs['initialSku']
+        if instance_display_name_prefix is None and 'instanceDisplayNamePrefix' in kwargs:
+            instance_display_name_prefix = kwargs['instanceDisplayNamePrefix']
+        if is_hcx_enabled is None and 'isHcxEnabled' in kwargs:
+            is_hcx_enabled = kwargs['isHcxEnabled']
+        if is_shielded_instance_enabled is None and 'isShieldedInstanceEnabled' in kwargs:
+            is_shielded_instance_enabled = kwargs['isShieldedInstanceEnabled']
+        if is_single_host_sddc is None and 'isSingleHostSddc' in kwargs:
+            is_single_host_sddc = kwargs['isSingleHostSddc']
+        if provisioning_vlan_id is None and 'provisioningVlanId' in kwargs:
+            provisioning_vlan_id = kwargs['provisioningVlanId']
+        if refresh_hcx_license_status is None and 'refreshHcxLicenseStatus' in kwargs:
+            refresh_hcx_license_status = kwargs['refreshHcxLicenseStatus']
+        if replication_vlan_id is None and 'replicationVlanId' in kwargs:
+            replication_vlan_id = kwargs['replicationVlanId']
+        if reserving_hcx_on_premise_license_keys is None and 'reservingHcxOnPremiseLicenseKeys' in kwargs:
+            reserving_hcx_on_premise_license_keys = kwargs['reservingHcxOnPremiseLicenseKeys']
+        if workload_network_cidr is None and 'workloadNetworkCidr' in kwargs:
+            workload_network_cidr = kwargs['workloadNetworkCidr']
+
+        _setter("compartment_id", compartment_id)
         if compute_availability_domain is not None:
             warnings.warn("""The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""compute_availability_domain is deprecated: The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead.""")
-        pulumi.set(__self__, "compute_availability_domain", compute_availability_domain)
+        _setter("compute_availability_domain", compute_availability_domain)
         if esxi_hosts_count is not None:
             warnings.warn("""The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""esxi_hosts_count is deprecated: The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.""")
-        pulumi.set(__self__, "esxi_hosts_count", esxi_hosts_count)
+        _setter("esxi_hosts_count", esxi_hosts_count)
         if nsx_edge_uplink1vlan_id is not None:
             warnings.warn("""The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""nsx_edge_uplink1vlan_id is deprecated: The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
-        pulumi.set(__self__, "nsx_edge_uplink1vlan_id", nsx_edge_uplink1vlan_id)
+        _setter("nsx_edge_uplink1vlan_id", nsx_edge_uplink1vlan_id)
         if nsx_edge_uplink2vlan_id is not None:
             warnings.warn("""The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""nsx_edge_uplink2vlan_id is deprecated: The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
-        pulumi.set(__self__, "nsx_edge_uplink2vlan_id", nsx_edge_uplink2vlan_id)
+        _setter("nsx_edge_uplink2vlan_id", nsx_edge_uplink2vlan_id)
         if nsx_edge_vtep_vlan_id is not None:
             warnings.warn("""The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""nsx_edge_vtep_vlan_id is deprecated: The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
-        pulumi.set(__self__, "nsx_edge_vtep_vlan_id", nsx_edge_vtep_vlan_id)
+        _setter("nsx_edge_vtep_vlan_id", nsx_edge_vtep_vlan_id)
         if nsx_vtep_vlan_id is not None:
             warnings.warn("""The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""nsx_vtep_vlan_id is deprecated: The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
-        pulumi.set(__self__, "nsx_vtep_vlan_id", nsx_vtep_vlan_id)
+        _setter("nsx_vtep_vlan_id", nsx_vtep_vlan_id)
         if provisioning_subnet_id is not None:
             warnings.warn("""The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""provisioning_subnet_id is deprecated: The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead.""")
-        pulumi.set(__self__, "provisioning_subnet_id", provisioning_subnet_id)
-        pulumi.set(__self__, "ssh_authorized_keys", ssh_authorized_keys)
+        _setter("provisioning_subnet_id", provisioning_subnet_id)
+        _setter("ssh_authorized_keys", ssh_authorized_keys)
         if vmotion_vlan_id is not None:
             warnings.warn("""The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""vmotion_vlan_id is deprecated: The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
-        pulumi.set(__self__, "vmotion_vlan_id", vmotion_vlan_id)
-        pulumi.set(__self__, "vmware_software_version", vmware_software_version)
+        _setter("vmotion_vlan_id", vmotion_vlan_id)
+        _setter("vmware_software_version", vmware_software_version)
         if vsan_vlan_id is not None:
             warnings.warn("""The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""vsan_vlan_id is deprecated: The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
-        pulumi.set(__self__, "vsan_vlan_id", vsan_vlan_id)
+        _setter("vsan_vlan_id", vsan_vlan_id)
         if vsphere_vlan_id is not None:
             warnings.warn("""The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""vsphere_vlan_id is deprecated: The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
-        pulumi.set(__self__, "vsphere_vlan_id", vsphere_vlan_id)
+        _setter("vsphere_vlan_id", vsphere_vlan_id)
         if capacity_reservation_id is not None:
             warnings.warn("""The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""capacity_reservation_id is deprecated: The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead.""")
         if capacity_reservation_id is not None:
-            pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+            _setter("capacity_reservation_id", capacity_reservation_id)
         if datastores is not None:
             warnings.warn("""The 'datastores' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""datastores is deprecated: The 'datastores' field has been deprecated. Please use 'initial_configuration' instead.""")
         if datastores is not None:
-            pulumi.set(__self__, "datastores", datastores)
+            _setter("datastores", datastores)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if hcx_action is not None:
-            pulumi.set(__self__, "hcx_action", hcx_action)
+            _setter("hcx_action", hcx_action)
         if hcx_vlan_id is not None:
             warnings.warn("""The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""hcx_vlan_id is deprecated: The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
         if hcx_vlan_id is not None:
-            pulumi.set(__self__, "hcx_vlan_id", hcx_vlan_id)
+            _setter("hcx_vlan_id", hcx_vlan_id)
         if initial_host_ocpu_count is not None:
             warnings.warn("""The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""initial_host_ocpu_count is deprecated: The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead.""")
         if initial_host_ocpu_count is not None:
-            pulumi.set(__self__, "initial_host_ocpu_count", initial_host_ocpu_count)
+            _setter("initial_host_ocpu_count", initial_host_ocpu_count)
         if initial_host_shape_name is not None:
             warnings.warn("""The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""initial_host_shape_name is deprecated: The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead.""")
         if initial_host_shape_name is not None:
-            pulumi.set(__self__, "initial_host_shape_name", initial_host_shape_name)
+            _setter("initial_host_shape_name", initial_host_shape_name)
         if initial_sku is not None:
             warnings.warn("""The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""initial_sku is deprecated: The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead.""")
         if initial_sku is not None:
-            pulumi.set(__self__, "initial_sku", initial_sku)
+            _setter("initial_sku", initial_sku)
         if instance_display_name_prefix is not None:
             warnings.warn("""The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""instance_display_name_prefix is deprecated: The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead.""")
         if instance_display_name_prefix is not None:
-            pulumi.set(__self__, "instance_display_name_prefix", instance_display_name_prefix)
+            _setter("instance_display_name_prefix", instance_display_name_prefix)
         if is_hcx_enabled is not None:
             warnings.warn("""The 'is_hcx_enabled' field has been deprecated. Please use 'hcx_mode' instead.""", DeprecationWarning)
             pulumi.log.warn("""is_hcx_enabled is deprecated: The 'is_hcx_enabled' field has been deprecated. Please use 'hcx_mode' instead.""")
         if is_hcx_enabled is not None:
-            pulumi.set(__self__, "is_hcx_enabled", is_hcx_enabled)
+            _setter("is_hcx_enabled", is_hcx_enabled)
         if is_shielded_instance_enabled is not None:
             warnings.warn("""The 'is_shielded_instance_enabled' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""is_shielded_instance_enabled is deprecated: The 'is_shielded_instance_enabled' field has been deprecated. Please use 'initial_configuration' instead.""")
         if is_shielded_instance_enabled is not None:
-            pulumi.set(__self__, "is_shielded_instance_enabled", is_shielded_instance_enabled)
+            _setter("is_shielded_instance_enabled", is_shielded_instance_enabled)
         if is_single_host_sddc is not None:
-            pulumi.set(__self__, "is_single_host_sddc", is_single_host_sddc)
+            _setter("is_single_host_sddc", is_single_host_sddc)
         if provisioning_vlan_id is not None:
             warnings.warn("""The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""provisioning_vlan_id is deprecated: The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
         if provisioning_vlan_id is not None:
-            pulumi.set(__self__, "provisioning_vlan_id", provisioning_vlan_id)
+            _setter("provisioning_vlan_id", provisioning_vlan_id)
         if refresh_hcx_license_status is not None:
-            pulumi.set(__self__, "refresh_hcx_license_status", refresh_hcx_license_status)
+            _setter("refresh_hcx_license_status", refresh_hcx_license_status)
         if replication_vlan_id is not None:
             warnings.warn("""The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""replication_vlan_id is deprecated: The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
         if replication_vlan_id is not None:
-            pulumi.set(__self__, "replication_vlan_id", replication_vlan_id)
+            _setter("replication_vlan_id", replication_vlan_id)
         if reserving_hcx_on_premise_license_keys is not None:
-            pulumi.set(__self__, "reserving_hcx_on_premise_license_keys", reserving_hcx_on_premise_license_keys)
+            _setter("reserving_hcx_on_premise_license_keys", reserving_hcx_on_premise_license_keys)
         if workload_network_cidr is not None:
             warnings.warn("""The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""workload_network_cidr is deprecated: The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead.""")
         if workload_network_cidr is not None:
-            pulumi.set(__self__, "workload_network_cidr", workload_network_cidr)
+            _setter("workload_network_cidr", workload_network_cidr)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -804,218 +965,455 @@ class _SddcState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _SddcState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            actual_esxi_hosts_count=actual_esxi_hosts_count,
+            capacity_reservation_id=capacity_reservation_id,
+            compartment_id=compartment_id,
+            compute_availability_domain=compute_availability_domain,
+            datastores=datastores,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            esxi_hosts_count=esxi_hosts_count,
+            freeform_tags=freeform_tags,
+            hcx_action=hcx_action,
+            hcx_fqdn=hcx_fqdn,
+            hcx_initial_password=hcx_initial_password,
+            hcx_on_prem_key=hcx_on_prem_key,
+            hcx_on_prem_licenses=hcx_on_prem_licenses,
+            hcx_private_ip_id=hcx_private_ip_id,
+            hcx_vlan_id=hcx_vlan_id,
+            initial_host_ocpu_count=initial_host_ocpu_count,
+            initial_host_shape_name=initial_host_shape_name,
+            initial_sku=initial_sku,
+            instance_display_name_prefix=instance_display_name_prefix,
+            is_hcx_enabled=is_hcx_enabled,
+            is_hcx_enterprise_enabled=is_hcx_enterprise_enabled,
+            is_hcx_pending_downgrade=is_hcx_pending_downgrade,
+            is_shielded_instance_enabled=is_shielded_instance_enabled,
+            is_single_host_sddc=is_single_host_sddc,
+            nsx_edge_uplink1vlan_id=nsx_edge_uplink1vlan_id,
+            nsx_edge_uplink2vlan_id=nsx_edge_uplink2vlan_id,
+            nsx_edge_uplink_ip_id=nsx_edge_uplink_ip_id,
+            nsx_edge_vtep_vlan_id=nsx_edge_vtep_vlan_id,
+            nsx_manager_fqdn=nsx_manager_fqdn,
+            nsx_manager_initial_password=nsx_manager_initial_password,
+            nsx_manager_private_ip_id=nsx_manager_private_ip_id,
+            nsx_manager_username=nsx_manager_username,
+            nsx_overlay_segment_name=nsx_overlay_segment_name,
+            nsx_vtep_vlan_id=nsx_vtep_vlan_id,
+            provisioning_subnet_id=provisioning_subnet_id,
+            provisioning_vlan_id=provisioning_vlan_id,
+            refresh_hcx_license_status=refresh_hcx_license_status,
+            replication_vlan_id=replication_vlan_id,
+            reserving_hcx_on_premise_license_keys=reserving_hcx_on_premise_license_keys,
+            ssh_authorized_keys=ssh_authorized_keys,
+            state=state,
+            time_created=time_created,
+            time_hcx_billing_cycle_end=time_hcx_billing_cycle_end,
+            time_hcx_license_status_updated=time_hcx_license_status_updated,
+            time_updated=time_updated,
+            upgrade_licenses=upgrade_licenses,
+            vcenter_fqdn=vcenter_fqdn,
+            vcenter_initial_password=vcenter_initial_password,
+            vcenter_private_ip_id=vcenter_private_ip_id,
+            vcenter_username=vcenter_username,
+            vmotion_vlan_id=vmotion_vlan_id,
+            vmware_software_version=vmware_software_version,
+            vsan_vlan_id=vsan_vlan_id,
+            vsphere_upgrade_guide=vsphere_upgrade_guide,
+            vsphere_upgrade_objects=vsphere_upgrade_objects,
+            vsphere_vlan_id=vsphere_vlan_id,
+            workload_network_cidr=workload_network_cidr,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             actual_esxi_hosts_count: Optional[pulumi.Input[int]] = None,
+             capacity_reservation_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             compute_availability_domain: Optional[pulumi.Input[str]] = None,
+             datastores: Optional[pulumi.Input[Sequence[pulumi.Input['SddcDatastoreArgs']]]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             esxi_hosts_count: Optional[pulumi.Input[int]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             hcx_action: Optional[pulumi.Input[str]] = None,
+             hcx_fqdn: Optional[pulumi.Input[str]] = None,
+             hcx_initial_password: Optional[pulumi.Input[str]] = None,
+             hcx_on_prem_key: Optional[pulumi.Input[str]] = None,
+             hcx_on_prem_licenses: Optional[pulumi.Input[Sequence[pulumi.Input['SddcHcxOnPremLicenseArgs']]]] = None,
+             hcx_private_ip_id: Optional[pulumi.Input[str]] = None,
+             hcx_vlan_id: Optional[pulumi.Input[str]] = None,
+             initial_host_ocpu_count: Optional[pulumi.Input[float]] = None,
+             initial_host_shape_name: Optional[pulumi.Input[str]] = None,
+             initial_sku: Optional[pulumi.Input[str]] = None,
+             instance_display_name_prefix: Optional[pulumi.Input[str]] = None,
+             is_hcx_enabled: Optional[pulumi.Input[bool]] = None,
+             is_hcx_enterprise_enabled: Optional[pulumi.Input[bool]] = None,
+             is_hcx_pending_downgrade: Optional[pulumi.Input[bool]] = None,
+             is_shielded_instance_enabled: Optional[pulumi.Input[bool]] = None,
+             is_single_host_sddc: Optional[pulumi.Input[bool]] = None,
+             nsx_edge_uplink1vlan_id: Optional[pulumi.Input[str]] = None,
+             nsx_edge_uplink2vlan_id: Optional[pulumi.Input[str]] = None,
+             nsx_edge_uplink_ip_id: Optional[pulumi.Input[str]] = None,
+             nsx_edge_vtep_vlan_id: Optional[pulumi.Input[str]] = None,
+             nsx_manager_fqdn: Optional[pulumi.Input[str]] = None,
+             nsx_manager_initial_password: Optional[pulumi.Input[str]] = None,
+             nsx_manager_private_ip_id: Optional[pulumi.Input[str]] = None,
+             nsx_manager_username: Optional[pulumi.Input[str]] = None,
+             nsx_overlay_segment_name: Optional[pulumi.Input[str]] = None,
+             nsx_vtep_vlan_id: Optional[pulumi.Input[str]] = None,
+             provisioning_subnet_id: Optional[pulumi.Input[str]] = None,
+             provisioning_vlan_id: Optional[pulumi.Input[str]] = None,
+             refresh_hcx_license_status: Optional[pulumi.Input[bool]] = None,
+             replication_vlan_id: Optional[pulumi.Input[str]] = None,
+             reserving_hcx_on_premise_license_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             ssh_authorized_keys: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_hcx_billing_cycle_end: Optional[pulumi.Input[str]] = None,
+             time_hcx_license_status_updated: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             upgrade_licenses: Optional[pulumi.Input[Sequence[pulumi.Input['SddcUpgradeLicenseArgs']]]] = None,
+             vcenter_fqdn: Optional[pulumi.Input[str]] = None,
+             vcenter_initial_password: Optional[pulumi.Input[str]] = None,
+             vcenter_private_ip_id: Optional[pulumi.Input[str]] = None,
+             vcenter_username: Optional[pulumi.Input[str]] = None,
+             vmotion_vlan_id: Optional[pulumi.Input[str]] = None,
+             vmware_software_version: Optional[pulumi.Input[str]] = None,
+             vsan_vlan_id: Optional[pulumi.Input[str]] = None,
+             vsphere_upgrade_guide: Optional[pulumi.Input[str]] = None,
+             vsphere_upgrade_objects: Optional[pulumi.Input[Sequence[pulumi.Input['SddcVsphereUpgradeObjectArgs']]]] = None,
+             vsphere_vlan_id: Optional[pulumi.Input[str]] = None,
+             workload_network_cidr: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if actual_esxi_hosts_count is None and 'actualEsxiHostsCount' in kwargs:
+            actual_esxi_hosts_count = kwargs['actualEsxiHostsCount']
+        if capacity_reservation_id is None and 'capacityReservationId' in kwargs:
+            capacity_reservation_id = kwargs['capacityReservationId']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compute_availability_domain is None and 'computeAvailabilityDomain' in kwargs:
+            compute_availability_domain = kwargs['computeAvailabilityDomain']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if esxi_hosts_count is None and 'esxiHostsCount' in kwargs:
+            esxi_hosts_count = kwargs['esxiHostsCount']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if hcx_action is None and 'hcxAction' in kwargs:
+            hcx_action = kwargs['hcxAction']
+        if hcx_fqdn is None and 'hcxFqdn' in kwargs:
+            hcx_fqdn = kwargs['hcxFqdn']
+        if hcx_initial_password is None and 'hcxInitialPassword' in kwargs:
+            hcx_initial_password = kwargs['hcxInitialPassword']
+        if hcx_on_prem_key is None and 'hcxOnPremKey' in kwargs:
+            hcx_on_prem_key = kwargs['hcxOnPremKey']
+        if hcx_on_prem_licenses is None and 'hcxOnPremLicenses' in kwargs:
+            hcx_on_prem_licenses = kwargs['hcxOnPremLicenses']
+        if hcx_private_ip_id is None and 'hcxPrivateIpId' in kwargs:
+            hcx_private_ip_id = kwargs['hcxPrivateIpId']
+        if hcx_vlan_id is None and 'hcxVlanId' in kwargs:
+            hcx_vlan_id = kwargs['hcxVlanId']
+        if initial_host_ocpu_count is None and 'initialHostOcpuCount' in kwargs:
+            initial_host_ocpu_count = kwargs['initialHostOcpuCount']
+        if initial_host_shape_name is None and 'initialHostShapeName' in kwargs:
+            initial_host_shape_name = kwargs['initialHostShapeName']
+        if initial_sku is None and 'initialSku' in kwargs:
+            initial_sku = kwargs['initialSku']
+        if instance_display_name_prefix is None and 'instanceDisplayNamePrefix' in kwargs:
+            instance_display_name_prefix = kwargs['instanceDisplayNamePrefix']
+        if is_hcx_enabled is None and 'isHcxEnabled' in kwargs:
+            is_hcx_enabled = kwargs['isHcxEnabled']
+        if is_hcx_enterprise_enabled is None and 'isHcxEnterpriseEnabled' in kwargs:
+            is_hcx_enterprise_enabled = kwargs['isHcxEnterpriseEnabled']
+        if is_hcx_pending_downgrade is None and 'isHcxPendingDowngrade' in kwargs:
+            is_hcx_pending_downgrade = kwargs['isHcxPendingDowngrade']
+        if is_shielded_instance_enabled is None and 'isShieldedInstanceEnabled' in kwargs:
+            is_shielded_instance_enabled = kwargs['isShieldedInstanceEnabled']
+        if is_single_host_sddc is None and 'isSingleHostSddc' in kwargs:
+            is_single_host_sddc = kwargs['isSingleHostSddc']
+        if nsx_edge_uplink1vlan_id is None and 'nsxEdgeUplink1vlanId' in kwargs:
+            nsx_edge_uplink1vlan_id = kwargs['nsxEdgeUplink1vlanId']
+        if nsx_edge_uplink2vlan_id is None and 'nsxEdgeUplink2vlanId' in kwargs:
+            nsx_edge_uplink2vlan_id = kwargs['nsxEdgeUplink2vlanId']
+        if nsx_edge_uplink_ip_id is None and 'nsxEdgeUplinkIpId' in kwargs:
+            nsx_edge_uplink_ip_id = kwargs['nsxEdgeUplinkIpId']
+        if nsx_edge_vtep_vlan_id is None and 'nsxEdgeVtepVlanId' in kwargs:
+            nsx_edge_vtep_vlan_id = kwargs['nsxEdgeVtepVlanId']
+        if nsx_manager_fqdn is None and 'nsxManagerFqdn' in kwargs:
+            nsx_manager_fqdn = kwargs['nsxManagerFqdn']
+        if nsx_manager_initial_password is None and 'nsxManagerInitialPassword' in kwargs:
+            nsx_manager_initial_password = kwargs['nsxManagerInitialPassword']
+        if nsx_manager_private_ip_id is None and 'nsxManagerPrivateIpId' in kwargs:
+            nsx_manager_private_ip_id = kwargs['nsxManagerPrivateIpId']
+        if nsx_manager_username is None and 'nsxManagerUsername' in kwargs:
+            nsx_manager_username = kwargs['nsxManagerUsername']
+        if nsx_overlay_segment_name is None and 'nsxOverlaySegmentName' in kwargs:
+            nsx_overlay_segment_name = kwargs['nsxOverlaySegmentName']
+        if nsx_vtep_vlan_id is None and 'nsxVtepVlanId' in kwargs:
+            nsx_vtep_vlan_id = kwargs['nsxVtepVlanId']
+        if provisioning_subnet_id is None and 'provisioningSubnetId' in kwargs:
+            provisioning_subnet_id = kwargs['provisioningSubnetId']
+        if provisioning_vlan_id is None and 'provisioningVlanId' in kwargs:
+            provisioning_vlan_id = kwargs['provisioningVlanId']
+        if refresh_hcx_license_status is None and 'refreshHcxLicenseStatus' in kwargs:
+            refresh_hcx_license_status = kwargs['refreshHcxLicenseStatus']
+        if replication_vlan_id is None and 'replicationVlanId' in kwargs:
+            replication_vlan_id = kwargs['replicationVlanId']
+        if reserving_hcx_on_premise_license_keys is None and 'reservingHcxOnPremiseLicenseKeys' in kwargs:
+            reserving_hcx_on_premise_license_keys = kwargs['reservingHcxOnPremiseLicenseKeys']
+        if ssh_authorized_keys is None and 'sshAuthorizedKeys' in kwargs:
+            ssh_authorized_keys = kwargs['sshAuthorizedKeys']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_hcx_billing_cycle_end is None and 'timeHcxBillingCycleEnd' in kwargs:
+            time_hcx_billing_cycle_end = kwargs['timeHcxBillingCycleEnd']
+        if time_hcx_license_status_updated is None and 'timeHcxLicenseStatusUpdated' in kwargs:
+            time_hcx_license_status_updated = kwargs['timeHcxLicenseStatusUpdated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if upgrade_licenses is None and 'upgradeLicenses' in kwargs:
+            upgrade_licenses = kwargs['upgradeLicenses']
+        if vcenter_fqdn is None and 'vcenterFqdn' in kwargs:
+            vcenter_fqdn = kwargs['vcenterFqdn']
+        if vcenter_initial_password is None and 'vcenterInitialPassword' in kwargs:
+            vcenter_initial_password = kwargs['vcenterInitialPassword']
+        if vcenter_private_ip_id is None and 'vcenterPrivateIpId' in kwargs:
+            vcenter_private_ip_id = kwargs['vcenterPrivateIpId']
+        if vcenter_username is None and 'vcenterUsername' in kwargs:
+            vcenter_username = kwargs['vcenterUsername']
+        if vmotion_vlan_id is None and 'vmotionVlanId' in kwargs:
+            vmotion_vlan_id = kwargs['vmotionVlanId']
+        if vmware_software_version is None and 'vmwareSoftwareVersion' in kwargs:
+            vmware_software_version = kwargs['vmwareSoftwareVersion']
+        if vsan_vlan_id is None and 'vsanVlanId' in kwargs:
+            vsan_vlan_id = kwargs['vsanVlanId']
+        if vsphere_upgrade_guide is None and 'vsphereUpgradeGuide' in kwargs:
+            vsphere_upgrade_guide = kwargs['vsphereUpgradeGuide']
+        if vsphere_upgrade_objects is None and 'vsphereUpgradeObjects' in kwargs:
+            vsphere_upgrade_objects = kwargs['vsphereUpgradeObjects']
+        if vsphere_vlan_id is None and 'vsphereVlanId' in kwargs:
+            vsphere_vlan_id = kwargs['vsphereVlanId']
+        if workload_network_cidr is None and 'workloadNetworkCidr' in kwargs:
+            workload_network_cidr = kwargs['workloadNetworkCidr']
+
         if actual_esxi_hosts_count is not None:
             warnings.warn("""The 'actual_esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""actual_esxi_hosts_count is deprecated: The 'actual_esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.""")
         if actual_esxi_hosts_count is not None:
-            pulumi.set(__self__, "actual_esxi_hosts_count", actual_esxi_hosts_count)
+            _setter("actual_esxi_hosts_count", actual_esxi_hosts_count)
         if capacity_reservation_id is not None:
             warnings.warn("""The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""capacity_reservation_id is deprecated: The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead.""")
         if capacity_reservation_id is not None:
-            pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+            _setter("capacity_reservation_id", capacity_reservation_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if compute_availability_domain is not None:
             warnings.warn("""The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""compute_availability_domain is deprecated: The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead.""")
         if compute_availability_domain is not None:
-            pulumi.set(__self__, "compute_availability_domain", compute_availability_domain)
+            _setter("compute_availability_domain", compute_availability_domain)
         if datastores is not None:
             warnings.warn("""The 'datastores' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""datastores is deprecated: The 'datastores' field has been deprecated. Please use 'initial_configuration' instead.""")
         if datastores is not None:
-            pulumi.set(__self__, "datastores", datastores)
+            _setter("datastores", datastores)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if esxi_hosts_count is not None:
             warnings.warn("""The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""esxi_hosts_count is deprecated: The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.""")
         if esxi_hosts_count is not None:
-            pulumi.set(__self__, "esxi_hosts_count", esxi_hosts_count)
+            _setter("esxi_hosts_count", esxi_hosts_count)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if hcx_action is not None:
-            pulumi.set(__self__, "hcx_action", hcx_action)
+            _setter("hcx_action", hcx_action)
         if hcx_fqdn is not None:
-            pulumi.set(__self__, "hcx_fqdn", hcx_fqdn)
+            _setter("hcx_fqdn", hcx_fqdn)
         if hcx_initial_password is not None:
             warnings.warn("""The 'hcx_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.""", DeprecationWarning)
             pulumi.log.warn("""hcx_initial_password is deprecated: The 'hcx_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.""")
         if hcx_initial_password is not None:
-            pulumi.set(__self__, "hcx_initial_password", hcx_initial_password)
+            _setter("hcx_initial_password", hcx_initial_password)
         if hcx_on_prem_key is not None:
             warnings.warn("""The 'hcx_on_prem_key' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
             pulumi.log.warn("""hcx_on_prem_key is deprecated: The 'hcx_on_prem_key' field has been deprecated and may be removed in a future version. Do not use this field.""")
         if hcx_on_prem_key is not None:
-            pulumi.set(__self__, "hcx_on_prem_key", hcx_on_prem_key)
+            _setter("hcx_on_prem_key", hcx_on_prem_key)
         if hcx_on_prem_licenses is not None:
-            pulumi.set(__self__, "hcx_on_prem_licenses", hcx_on_prem_licenses)
+            _setter("hcx_on_prem_licenses", hcx_on_prem_licenses)
         if hcx_private_ip_id is not None:
-            pulumi.set(__self__, "hcx_private_ip_id", hcx_private_ip_id)
+            _setter("hcx_private_ip_id", hcx_private_ip_id)
         if hcx_vlan_id is not None:
             warnings.warn("""The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""hcx_vlan_id is deprecated: The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
         if hcx_vlan_id is not None:
-            pulumi.set(__self__, "hcx_vlan_id", hcx_vlan_id)
+            _setter("hcx_vlan_id", hcx_vlan_id)
         if initial_host_ocpu_count is not None:
             warnings.warn("""The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""initial_host_ocpu_count is deprecated: The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead.""")
         if initial_host_ocpu_count is not None:
-            pulumi.set(__self__, "initial_host_ocpu_count", initial_host_ocpu_count)
+            _setter("initial_host_ocpu_count", initial_host_ocpu_count)
         if initial_host_shape_name is not None:
             warnings.warn("""The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""initial_host_shape_name is deprecated: The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead.""")
         if initial_host_shape_name is not None:
-            pulumi.set(__self__, "initial_host_shape_name", initial_host_shape_name)
+            _setter("initial_host_shape_name", initial_host_shape_name)
         if initial_sku is not None:
             warnings.warn("""The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""initial_sku is deprecated: The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead.""")
         if initial_sku is not None:
-            pulumi.set(__self__, "initial_sku", initial_sku)
+            _setter("initial_sku", initial_sku)
         if instance_display_name_prefix is not None:
             warnings.warn("""The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""instance_display_name_prefix is deprecated: The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead.""")
         if instance_display_name_prefix is not None:
-            pulumi.set(__self__, "instance_display_name_prefix", instance_display_name_prefix)
+            _setter("instance_display_name_prefix", instance_display_name_prefix)
         if is_hcx_enabled is not None:
             warnings.warn("""The 'is_hcx_enabled' field has been deprecated. Please use 'hcx_mode' instead.""", DeprecationWarning)
             pulumi.log.warn("""is_hcx_enabled is deprecated: The 'is_hcx_enabled' field has been deprecated. Please use 'hcx_mode' instead.""")
         if is_hcx_enabled is not None:
-            pulumi.set(__self__, "is_hcx_enabled", is_hcx_enabled)
+            _setter("is_hcx_enabled", is_hcx_enabled)
         if is_hcx_enterprise_enabled is not None:
             warnings.warn("""The 'is_hcx_enabled' field has been deprecated. Please use 'actual_hcx_mode' instead.""", DeprecationWarning)
             pulumi.log.warn("""is_hcx_enterprise_enabled is deprecated: The 'is_hcx_enabled' field has been deprecated. Please use 'actual_hcx_mode' instead.""")
         if is_hcx_enterprise_enabled is not None:
-            pulumi.set(__self__, "is_hcx_enterprise_enabled", is_hcx_enterprise_enabled)
+            _setter("is_hcx_enterprise_enabled", is_hcx_enterprise_enabled)
         if is_hcx_pending_downgrade is not None:
-            pulumi.set(__self__, "is_hcx_pending_downgrade", is_hcx_pending_downgrade)
+            _setter("is_hcx_pending_downgrade", is_hcx_pending_downgrade)
         if is_shielded_instance_enabled is not None:
             warnings.warn("""The 'is_shielded_instance_enabled' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""is_shielded_instance_enabled is deprecated: The 'is_shielded_instance_enabled' field has been deprecated. Please use 'initial_configuration' instead.""")
         if is_shielded_instance_enabled is not None:
-            pulumi.set(__self__, "is_shielded_instance_enabled", is_shielded_instance_enabled)
+            _setter("is_shielded_instance_enabled", is_shielded_instance_enabled)
         if is_single_host_sddc is not None:
-            pulumi.set(__self__, "is_single_host_sddc", is_single_host_sddc)
+            _setter("is_single_host_sddc", is_single_host_sddc)
         if nsx_edge_uplink1vlan_id is not None:
             warnings.warn("""The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""nsx_edge_uplink1vlan_id is deprecated: The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
         if nsx_edge_uplink1vlan_id is not None:
-            pulumi.set(__self__, "nsx_edge_uplink1vlan_id", nsx_edge_uplink1vlan_id)
+            _setter("nsx_edge_uplink1vlan_id", nsx_edge_uplink1vlan_id)
         if nsx_edge_uplink2vlan_id is not None:
             warnings.warn("""The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""nsx_edge_uplink2vlan_id is deprecated: The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
         if nsx_edge_uplink2vlan_id is not None:
-            pulumi.set(__self__, "nsx_edge_uplink2vlan_id", nsx_edge_uplink2vlan_id)
+            _setter("nsx_edge_uplink2vlan_id", nsx_edge_uplink2vlan_id)
         if nsx_edge_uplink_ip_id is not None:
-            pulumi.set(__self__, "nsx_edge_uplink_ip_id", nsx_edge_uplink_ip_id)
+            _setter("nsx_edge_uplink_ip_id", nsx_edge_uplink_ip_id)
         if nsx_edge_vtep_vlan_id is not None:
             warnings.warn("""The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""nsx_edge_vtep_vlan_id is deprecated: The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
         if nsx_edge_vtep_vlan_id is not None:
-            pulumi.set(__self__, "nsx_edge_vtep_vlan_id", nsx_edge_vtep_vlan_id)
+            _setter("nsx_edge_vtep_vlan_id", nsx_edge_vtep_vlan_id)
         if nsx_manager_fqdn is not None:
-            pulumi.set(__self__, "nsx_manager_fqdn", nsx_manager_fqdn)
+            _setter("nsx_manager_fqdn", nsx_manager_fqdn)
         if nsx_manager_initial_password is not None:
             warnings.warn("""The 'nsx_manager_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.""", DeprecationWarning)
             pulumi.log.warn("""nsx_manager_initial_password is deprecated: The 'nsx_manager_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.""")
         if nsx_manager_initial_password is not None:
-            pulumi.set(__self__, "nsx_manager_initial_password", nsx_manager_initial_password)
+            _setter("nsx_manager_initial_password", nsx_manager_initial_password)
         if nsx_manager_private_ip_id is not None:
-            pulumi.set(__self__, "nsx_manager_private_ip_id", nsx_manager_private_ip_id)
+            _setter("nsx_manager_private_ip_id", nsx_manager_private_ip_id)
         if nsx_manager_username is not None:
-            pulumi.set(__self__, "nsx_manager_username", nsx_manager_username)
+            _setter("nsx_manager_username", nsx_manager_username)
         if nsx_overlay_segment_name is not None:
             warnings.warn("""The 'nsx_overlay_segment_name' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
             pulumi.log.warn("""nsx_overlay_segment_name is deprecated: The 'nsx_overlay_segment_name' field has been deprecated and may be removed in a future version. Do not use this field.""")
         if nsx_overlay_segment_name is not None:
-            pulumi.set(__self__, "nsx_overlay_segment_name", nsx_overlay_segment_name)
+            _setter("nsx_overlay_segment_name", nsx_overlay_segment_name)
         if nsx_vtep_vlan_id is not None:
             warnings.warn("""The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""nsx_vtep_vlan_id is deprecated: The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
         if nsx_vtep_vlan_id is not None:
-            pulumi.set(__self__, "nsx_vtep_vlan_id", nsx_vtep_vlan_id)
+            _setter("nsx_vtep_vlan_id", nsx_vtep_vlan_id)
         if provisioning_subnet_id is not None:
             warnings.warn("""The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""provisioning_subnet_id is deprecated: The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead.""")
         if provisioning_subnet_id is not None:
-            pulumi.set(__self__, "provisioning_subnet_id", provisioning_subnet_id)
+            _setter("provisioning_subnet_id", provisioning_subnet_id)
         if provisioning_vlan_id is not None:
             warnings.warn("""The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""provisioning_vlan_id is deprecated: The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
         if provisioning_vlan_id is not None:
-            pulumi.set(__self__, "provisioning_vlan_id", provisioning_vlan_id)
+            _setter("provisioning_vlan_id", provisioning_vlan_id)
         if refresh_hcx_license_status is not None:
-            pulumi.set(__self__, "refresh_hcx_license_status", refresh_hcx_license_status)
+            _setter("refresh_hcx_license_status", refresh_hcx_license_status)
         if replication_vlan_id is not None:
             warnings.warn("""The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""replication_vlan_id is deprecated: The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
         if replication_vlan_id is not None:
-            pulumi.set(__self__, "replication_vlan_id", replication_vlan_id)
+            _setter("replication_vlan_id", replication_vlan_id)
         if reserving_hcx_on_premise_license_keys is not None:
-            pulumi.set(__self__, "reserving_hcx_on_premise_license_keys", reserving_hcx_on_premise_license_keys)
+            _setter("reserving_hcx_on_premise_license_keys", reserving_hcx_on_premise_license_keys)
         if ssh_authorized_keys is not None:
-            pulumi.set(__self__, "ssh_authorized_keys", ssh_authorized_keys)
+            _setter("ssh_authorized_keys", ssh_authorized_keys)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_hcx_billing_cycle_end is not None:
-            pulumi.set(__self__, "time_hcx_billing_cycle_end", time_hcx_billing_cycle_end)
+            _setter("time_hcx_billing_cycle_end", time_hcx_billing_cycle_end)
         if time_hcx_license_status_updated is not None:
-            pulumi.set(__self__, "time_hcx_license_status_updated", time_hcx_license_status_updated)
+            _setter("time_hcx_license_status_updated", time_hcx_license_status_updated)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if upgrade_licenses is not None:
             warnings.warn("""The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.""", DeprecationWarning)
             pulumi.log.warn("""upgrade_licenses is deprecated: The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.""")
         if upgrade_licenses is not None:
-            pulumi.set(__self__, "upgrade_licenses", upgrade_licenses)
+            _setter("upgrade_licenses", upgrade_licenses)
         if vcenter_fqdn is not None:
-            pulumi.set(__self__, "vcenter_fqdn", vcenter_fqdn)
+            _setter("vcenter_fqdn", vcenter_fqdn)
         if vcenter_initial_password is not None:
             warnings.warn("""The 'vcenter_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.""", DeprecationWarning)
             pulumi.log.warn("""vcenter_initial_password is deprecated: The 'vcenter_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.""")
         if vcenter_initial_password is not None:
-            pulumi.set(__self__, "vcenter_initial_password", vcenter_initial_password)
+            _setter("vcenter_initial_password", vcenter_initial_password)
         if vcenter_private_ip_id is not None:
-            pulumi.set(__self__, "vcenter_private_ip_id", vcenter_private_ip_id)
+            _setter("vcenter_private_ip_id", vcenter_private_ip_id)
         if vcenter_username is not None:
-            pulumi.set(__self__, "vcenter_username", vcenter_username)
+            _setter("vcenter_username", vcenter_username)
         if vmotion_vlan_id is not None:
             warnings.warn("""The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""vmotion_vlan_id is deprecated: The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
         if vmotion_vlan_id is not None:
-            pulumi.set(__self__, "vmotion_vlan_id", vmotion_vlan_id)
+            _setter("vmotion_vlan_id", vmotion_vlan_id)
         if vmware_software_version is not None:
-            pulumi.set(__self__, "vmware_software_version", vmware_software_version)
+            _setter("vmware_software_version", vmware_software_version)
         if vsan_vlan_id is not None:
             warnings.warn("""The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""vsan_vlan_id is deprecated: The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
         if vsan_vlan_id is not None:
-            pulumi.set(__self__, "vsan_vlan_id", vsan_vlan_id)
+            _setter("vsan_vlan_id", vsan_vlan_id)
         if vsphere_upgrade_guide is not None:
             warnings.warn("""The 'vsphere_upgrade_guide' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
             pulumi.log.warn("""vsphere_upgrade_guide is deprecated: The 'vsphere_upgrade_guide' field has been deprecated and may be removed in a future version. Do not use this field.""")
         if vsphere_upgrade_guide is not None:
-            pulumi.set(__self__, "vsphere_upgrade_guide", vsphere_upgrade_guide)
+            _setter("vsphere_upgrade_guide", vsphere_upgrade_guide)
         if vsphere_upgrade_objects is not None:
             warnings.warn("""The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.""", DeprecationWarning)
             pulumi.log.warn("""vsphere_upgrade_objects is deprecated: The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.""")
         if vsphere_upgrade_objects is not None:
-            pulumi.set(__self__, "vsphere_upgrade_objects", vsphere_upgrade_objects)
+            _setter("vsphere_upgrade_objects", vsphere_upgrade_objects)
         if vsphere_vlan_id is not None:
             warnings.warn("""The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""vsphere_vlan_id is deprecated: The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.""")
         if vsphere_vlan_id is not None:
-            pulumi.set(__self__, "vsphere_vlan_id", vsphere_vlan_id)
+            _setter("vsphere_vlan_id", vsphere_vlan_id)
         if workload_network_cidr is not None:
             warnings.warn("""The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead.""", DeprecationWarning)
             pulumi.log.warn("""workload_network_cidr is deprecated: The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead.""")
         if workload_network_cidr is not None:
-            pulumi.set(__self__, "workload_network_cidr", workload_network_cidr)
+            _setter("workload_network_cidr", workload_network_cidr)
 
     @property
     @pulumi.getter(name="actualEsxiHostsCount")
@@ -2051,6 +2449,10 @@ class Sddc(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            SddcArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

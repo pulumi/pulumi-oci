@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -37,21 +37,68 @@ class ProfileArgs:
         :param pulumi.Input['ProfileTargetCompartmentsArgs'] target_compartments: (Updatable) Optional. The compartments specified in the profile override for a recommendation.
         :param pulumi.Input['ProfileTargetTagsArgs'] target_tags: (Updatable) Optional. The tags specified in the profile override for a recommendation.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "levels_configuration", levels_configuration)
+        ProfileArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            description=description,
+            levels_configuration=levels_configuration,
+            aggregation_interval_in_days=aggregation_interval_in_days,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            name=name,
+            target_compartments=target_compartments,
+            target_tags=target_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             levels_configuration: Optional[pulumi.Input['ProfileLevelsConfigurationArgs']] = None,
+             aggregation_interval_in_days: Optional[pulumi.Input[int]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             target_compartments: Optional[pulumi.Input['ProfileTargetCompartmentsArgs']] = None,
+             target_tags: Optional[pulumi.Input['ProfileTargetTagsArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if levels_configuration is None and 'levelsConfiguration' in kwargs:
+            levels_configuration = kwargs['levelsConfiguration']
+        if levels_configuration is None:
+            raise TypeError("Missing 'levels_configuration' argument")
+        if aggregation_interval_in_days is None and 'aggregationIntervalInDays' in kwargs:
+            aggregation_interval_in_days = kwargs['aggregationIntervalInDays']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if target_compartments is None and 'targetCompartments' in kwargs:
+            target_compartments = kwargs['targetCompartments']
+        if target_tags is None and 'targetTags' in kwargs:
+            target_tags = kwargs['targetTags']
+
+        _setter("compartment_id", compartment_id)
+        _setter("description", description)
+        _setter("levels_configuration", levels_configuration)
         if aggregation_interval_in_days is not None:
-            pulumi.set(__self__, "aggregation_interval_in_days", aggregation_interval_in_days)
+            _setter("aggregation_interval_in_days", aggregation_interval_in_days)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if target_compartments is not None:
-            pulumi.set(__self__, "target_compartments", target_compartments)
+            _setter("target_compartments", target_compartments)
         if target_tags is not None:
-            pulumi.set(__self__, "target_tags", target_tags)
+            _setter("target_tags", target_tags)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -192,30 +239,81 @@ class _ProfileState:
         :param pulumi.Input[str] time_created: The date and time the profile was created, in the format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the profile was last updated, in the format defined by RFC3339.
         """
+        _ProfileState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            aggregation_interval_in_days=aggregation_interval_in_days,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            levels_configuration=levels_configuration,
+            name=name,
+            state=state,
+            target_compartments=target_compartments,
+            target_tags=target_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             aggregation_interval_in_days: Optional[pulumi.Input[int]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             levels_configuration: Optional[pulumi.Input['ProfileLevelsConfigurationArgs']] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             target_compartments: Optional[pulumi.Input['ProfileTargetCompartmentsArgs']] = None,
+             target_tags: Optional[pulumi.Input['ProfileTargetTagsArgs']] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if aggregation_interval_in_days is None and 'aggregationIntervalInDays' in kwargs:
+            aggregation_interval_in_days = kwargs['aggregationIntervalInDays']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if levels_configuration is None and 'levelsConfiguration' in kwargs:
+            levels_configuration = kwargs['levelsConfiguration']
+        if target_compartments is None and 'targetCompartments' in kwargs:
+            target_compartments = kwargs['targetCompartments']
+        if target_tags is None and 'targetTags' in kwargs:
+            target_tags = kwargs['targetTags']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if aggregation_interval_in_days is not None:
-            pulumi.set(__self__, "aggregation_interval_in_days", aggregation_interval_in_days)
+            _setter("aggregation_interval_in_days", aggregation_interval_in_days)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if levels_configuration is not None:
-            pulumi.set(__self__, "levels_configuration", levels_configuration)
+            _setter("levels_configuration", levels_configuration)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if target_compartments is not None:
-            pulumi.set(__self__, "target_compartments", target_compartments)
+            _setter("target_compartments", target_compartments)
         if target_tags is not None:
-            pulumi.set(__self__, "target_tags", target_tags)
+            _setter("target_tags", target_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="aggregationIntervalInDays")
@@ -501,6 +599,10 @@ class Profile(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ProfileArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -533,11 +635,26 @@ class Profile(pulumi.CustomResource):
                 raise TypeError("Missing required property 'description'")
             __props__.__dict__["description"] = description
             __props__.__dict__["freeform_tags"] = freeform_tags
+            if levels_configuration is not None and not isinstance(levels_configuration, ProfileLevelsConfigurationArgs):
+                levels_configuration = levels_configuration or {}
+                def _setter(key, value):
+                    levels_configuration[key] = value
+                ProfileLevelsConfigurationArgs._configure(_setter, **levels_configuration)
             if levels_configuration is None and not opts.urn:
                 raise TypeError("Missing required property 'levels_configuration'")
             __props__.__dict__["levels_configuration"] = levels_configuration
             __props__.__dict__["name"] = name
+            if target_compartments is not None and not isinstance(target_compartments, ProfileTargetCompartmentsArgs):
+                target_compartments = target_compartments or {}
+                def _setter(key, value):
+                    target_compartments[key] = value
+                ProfileTargetCompartmentsArgs._configure(_setter, **target_compartments)
             __props__.__dict__["target_compartments"] = target_compartments
+            if target_tags is not None and not isinstance(target_tags, ProfileTargetTagsArgs):
+                target_tags = target_tags or {}
+                def _setter(key, value):
+                    target_tags[key] = value
+                ProfileTargetTagsArgs._configure(_setter, **target_tags)
             __props__.__dict__["target_tags"] = target_tags
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None

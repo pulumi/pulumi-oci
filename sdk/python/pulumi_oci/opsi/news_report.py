@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -43,20 +43,73 @@ class NewsReportArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "content_types", content_types)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "locale", locale)
-        pulumi.set(__self__, "news_frequency", news_frequency)
-        pulumi.set(__self__, "ons_topic_id", ons_topic_id)
+        NewsReportArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            content_types=content_types,
+            description=description,
+            locale=locale,
+            news_frequency=news_frequency,
+            ons_topic_id=ons_topic_id,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            name=name,
+            status=status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             content_types: Optional[pulumi.Input['NewsReportContentTypesArgs']] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             locale: Optional[pulumi.Input[str]] = None,
+             news_frequency: Optional[pulumi.Input[str]] = None,
+             ons_topic_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if content_types is None and 'contentTypes' in kwargs:
+            content_types = kwargs['contentTypes']
+        if content_types is None:
+            raise TypeError("Missing 'content_types' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if locale is None:
+            raise TypeError("Missing 'locale' argument")
+        if news_frequency is None and 'newsFrequency' in kwargs:
+            news_frequency = kwargs['newsFrequency']
+        if news_frequency is None:
+            raise TypeError("Missing 'news_frequency' argument")
+        if ons_topic_id is None and 'onsTopicId' in kwargs:
+            ons_topic_id = kwargs['onsTopicId']
+        if ons_topic_id is None:
+            raise TypeError("Missing 'ons_topic_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
+        _setter("compartment_id", compartment_id)
+        _setter("content_types", content_types)
+        _setter("description", description)
+        _setter("locale", locale)
+        _setter("news_frequency", news_frequency)
+        _setter("ons_topic_id", ons_topic_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -223,36 +276,95 @@ class _NewsReportState:
         :param pulumi.Input[str] time_created: The time the the news report was first enabled. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the news report was updated. An RFC3339 formatted datetime string.
         """
+        _NewsReportState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            content_types=content_types,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            locale=locale,
+            name=name,
+            news_frequency=news_frequency,
+            ons_topic_id=ons_topic_id,
+            state=state,
+            status=status,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             content_types: Optional[pulumi.Input['NewsReportContentTypesArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             locale: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             news_frequency: Optional[pulumi.Input[str]] = None,
+             ons_topic_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if content_types is None and 'contentTypes' in kwargs:
+            content_types = kwargs['contentTypes']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if news_frequency is None and 'newsFrequency' in kwargs:
+            news_frequency = kwargs['newsFrequency']
+        if ons_topic_id is None and 'onsTopicId' in kwargs:
+            ons_topic_id = kwargs['onsTopicId']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if content_types is not None:
-            pulumi.set(__self__, "content_types", content_types)
+            _setter("content_types", content_types)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if locale is not None:
-            pulumi.set(__self__, "locale", locale)
+            _setter("locale", locale)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if news_frequency is not None:
-            pulumi.set(__self__, "news_frequency", news_frequency)
+            _setter("news_frequency", news_frequency)
         if ons_topic_id is not None:
-            pulumi.set(__self__, "ons_topic_id", ons_topic_id)
+            _setter("ons_topic_id", ons_topic_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -562,6 +674,10 @@ class NewsReport(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            NewsReportArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -589,6 +705,11 @@ class NewsReport(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            if content_types is not None and not isinstance(content_types, NewsReportContentTypesArgs):
+                content_types = content_types or {}
+                def _setter(key, value):
+                    content_types[key] = value
+                NewsReportContentTypesArgs._configure(_setter, **content_types)
             if content_types is None and not opts.urn:
                 raise TypeError("Missing required property 'content_types'")
             __props__.__dict__["content_types"] = content_types

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -41,20 +41,65 @@ class FileSystemArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "compartment_id", compartment_id)
+        FileSystemArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            filesystem_snapshot_policy_id=filesystem_snapshot_policy_id,
+            freeform_tags=freeform_tags,
+            kms_key_id=kms_key_id,
+            source_snapshot_id=source_snapshot_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             filesystem_snapshot_policy_id: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             kms_key_id: Optional[pulumi.Input[str]] = None,
+             source_snapshot_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if availability_domain is None and 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if filesystem_snapshot_policy_id is None and 'filesystemSnapshotPolicyId' in kwargs:
+            filesystem_snapshot_policy_id = kwargs['filesystemSnapshotPolicyId']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if source_snapshot_id is None and 'sourceSnapshotId' in kwargs:
+            source_snapshot_id = kwargs['sourceSnapshotId']
+
+        _setter("availability_domain", availability_domain)
+        _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if filesystem_snapshot_policy_id is not None:
-            pulumi.set(__self__, "filesystem_snapshot_policy_id", filesystem_snapshot_policy_id)
+            _setter("filesystem_snapshot_policy_id", filesystem_snapshot_policy_id)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if kms_key_id is not None:
-            pulumi.set(__self__, "kms_key_id", kms_key_id)
+            _setter("kms_key_id", kms_key_id)
         if source_snapshot_id is not None:
-            pulumi.set(__self__, "source_snapshot_id", source_snapshot_id)
+            _setter("source_snapshot_id", source_snapshot_id)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -205,40 +250,115 @@ class _FileSystemState:
         :param pulumi.Input[str] state: The current state of the file system.
         :param pulumi.Input[str] time_created: The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
+        _FileSystemState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            filesystem_snapshot_policy_id=filesystem_snapshot_policy_id,
+            freeform_tags=freeform_tags,
+            is_clone_parent=is_clone_parent,
+            is_hydrated=is_hydrated,
+            is_targetable=is_targetable,
+            kms_key_id=kms_key_id,
+            lifecycle_details=lifecycle_details,
+            metered_bytes=metered_bytes,
+            replication_target_id=replication_target_id,
+            source_details=source_details,
+            source_snapshot_id=source_snapshot_id,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             filesystem_snapshot_policy_id: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_clone_parent: Optional[pulumi.Input[bool]] = None,
+             is_hydrated: Optional[pulumi.Input[bool]] = None,
+             is_targetable: Optional[pulumi.Input[bool]] = None,
+             kms_key_id: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             metered_bytes: Optional[pulumi.Input[str]] = None,
+             replication_target_id: Optional[pulumi.Input[str]] = None,
+             source_details: Optional[pulumi.Input[Sequence[pulumi.Input['FileSystemSourceDetailArgs']]]] = None,
+             source_snapshot_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if availability_domain is None and 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if filesystem_snapshot_policy_id is None and 'filesystemSnapshotPolicyId' in kwargs:
+            filesystem_snapshot_policy_id = kwargs['filesystemSnapshotPolicyId']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_clone_parent is None and 'isCloneParent' in kwargs:
+            is_clone_parent = kwargs['isCloneParent']
+        if is_hydrated is None and 'isHydrated' in kwargs:
+            is_hydrated = kwargs['isHydrated']
+        if is_targetable is None and 'isTargetable' in kwargs:
+            is_targetable = kwargs['isTargetable']
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if metered_bytes is None and 'meteredBytes' in kwargs:
+            metered_bytes = kwargs['meteredBytes']
+        if replication_target_id is None and 'replicationTargetId' in kwargs:
+            replication_target_id = kwargs['replicationTargetId']
+        if source_details is None and 'sourceDetails' in kwargs:
+            source_details = kwargs['sourceDetails']
+        if source_snapshot_id is None and 'sourceSnapshotId' in kwargs:
+            source_snapshot_id = kwargs['sourceSnapshotId']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if filesystem_snapshot_policy_id is not None:
-            pulumi.set(__self__, "filesystem_snapshot_policy_id", filesystem_snapshot_policy_id)
+            _setter("filesystem_snapshot_policy_id", filesystem_snapshot_policy_id)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_clone_parent is not None:
-            pulumi.set(__self__, "is_clone_parent", is_clone_parent)
+            _setter("is_clone_parent", is_clone_parent)
         if is_hydrated is not None:
-            pulumi.set(__self__, "is_hydrated", is_hydrated)
+            _setter("is_hydrated", is_hydrated)
         if is_targetable is not None:
-            pulumi.set(__self__, "is_targetable", is_targetable)
+            _setter("is_targetable", is_targetable)
         if kms_key_id is not None:
-            pulumi.set(__self__, "kms_key_id", kms_key_id)
+            _setter("kms_key_id", kms_key_id)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if metered_bytes is not None:
-            pulumi.set(__self__, "metered_bytes", metered_bytes)
+            _setter("metered_bytes", metered_bytes)
         if replication_target_id is not None:
-            pulumi.set(__self__, "replication_target_id", replication_target_id)
+            _setter("replication_target_id", replication_target_id)
         if source_details is not None:
-            pulumi.set(__self__, "source_details", source_details)
+            _setter("source_details", source_details)
         if source_snapshot_id is not None:
-            pulumi.set(__self__, "source_snapshot_id", source_snapshot_id)
+            _setter("source_snapshot_id", source_snapshot_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -622,6 +742,10 @@ class FileSystem(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            FileSystemArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

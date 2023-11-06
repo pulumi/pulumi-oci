@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -65,10 +65,33 @@ class AlarmSuppression(dict):
                
                Example: `Planned outage due to change IT-1234.`
         """
-        pulumi.set(__self__, "time_suppress_from", time_suppress_from)
-        pulumi.set(__self__, "time_suppress_until", time_suppress_until)
+        AlarmSuppression._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_suppress_from=time_suppress_from,
+            time_suppress_until=time_suppress_until,
+            description=description,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_suppress_from: Optional[str] = None,
+             time_suppress_until: Optional[str] = None,
+             description: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if time_suppress_from is None and 'timeSuppressFrom' in kwargs:
+            time_suppress_from = kwargs['timeSuppressFrom']
+        if time_suppress_from is None:
+            raise TypeError("Missing 'time_suppress_from' argument")
+        if time_suppress_until is None and 'timeSuppressUntil' in kwargs:
+            time_suppress_until = kwargs['timeSuppressUntil']
+        if time_suppress_until is None:
+            raise TypeError("Missing 'time_suppress_until' argument")
+
+        _setter("time_suppress_from", time_suppress_from)
+        _setter("time_suppress_until", time_suppress_until)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
 
     @property
     @pulumi.getter(name="timeSuppressFrom")
@@ -114,9 +137,32 @@ class GetAlarmHistoryCollectionEntryResult(dict):
         :param str timestamp: Timestamp for this alarm history entry. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
         :param str timestamp_triggered: Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing. Available for state transition entries only. Note: A three-minute lag for this value accounts for any late-arriving metrics.  Example: `2019-02-01T0:59:00.789Z`
         """
-        pulumi.set(__self__, "summary", summary)
-        pulumi.set(__self__, "timestamp", timestamp)
-        pulumi.set(__self__, "timestamp_triggered", timestamp_triggered)
+        GetAlarmHistoryCollectionEntryResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            summary=summary,
+            timestamp=timestamp,
+            timestamp_triggered=timestamp_triggered,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             summary: Optional[str] = None,
+             timestamp: Optional[str] = None,
+             timestamp_triggered: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if summary is None:
+            raise TypeError("Missing 'summary' argument")
+        if timestamp is None:
+            raise TypeError("Missing 'timestamp' argument")
+        if timestamp_triggered is None and 'timestampTriggered' in kwargs:
+            timestamp_triggered = kwargs['timestampTriggered']
+        if timestamp_triggered is None:
+            raise TypeError("Missing 'timestamp_triggered' argument")
+
+        _setter("summary", summary)
+        _setter("timestamp", timestamp)
+        _setter("timestamp_triggered", timestamp_triggered)
 
     @property
     @pulumi.getter
@@ -160,12 +206,49 @@ class GetAlarmStatusesAlarmStatusResult(dict):
         :param Sequence['GetAlarmStatusesAlarmStatusSuppressionArgs'] suppressions: The configuration details for suppressing an alarm.
         :param str timestamp_triggered: Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing. Note: A three-minute lag for this value accounts for any late-arriving metrics.  Example: `2019-02-01T01:02:29.600Z`
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "severity", severity)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "suppressions", suppressions)
-        pulumi.set(__self__, "timestamp_triggered", timestamp_triggered)
+        GetAlarmStatusesAlarmStatusResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+            severity=severity,
+            status=status,
+            suppressions=suppressions,
+            timestamp_triggered=timestamp_triggered,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             severity: Optional[str] = None,
+             status: Optional[str] = None,
+             suppressions: Optional[Sequence['outputs.GetAlarmStatusesAlarmStatusSuppressionResult']] = None,
+             timestamp_triggered: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if severity is None:
+            raise TypeError("Missing 'severity' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if suppressions is None:
+            raise TypeError("Missing 'suppressions' argument")
+        if timestamp_triggered is None and 'timestampTriggered' in kwargs:
+            timestamp_triggered = kwargs['timestampTriggered']
+        if timestamp_triggered is None:
+            raise TypeError("Missing 'timestamp_triggered' argument")
+
+        _setter("display_name", display_name)
+        _setter("id", id)
+        _setter("severity", severity)
+        _setter("status", status)
+        _setter("suppressions", suppressions)
+        _setter("timestamp_triggered", timestamp_triggered)
 
     @property
     @pulumi.getter(name="displayName")
@@ -227,9 +310,34 @@ class GetAlarmStatusesAlarmStatusSuppressionResult(dict):
         :param str time_suppress_from: The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
         :param str time_suppress_until: The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "time_suppress_from", time_suppress_from)
-        pulumi.set(__self__, "time_suppress_until", time_suppress_until)
+        GetAlarmStatusesAlarmStatusSuppressionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            time_suppress_from=time_suppress_from,
+            time_suppress_until=time_suppress_until,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             time_suppress_from: Optional[str] = None,
+             time_suppress_until: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if time_suppress_from is None and 'timeSuppressFrom' in kwargs:
+            time_suppress_from = kwargs['timeSuppressFrom']
+        if time_suppress_from is None:
+            raise TypeError("Missing 'time_suppress_from' argument")
+        if time_suppress_until is None and 'timeSuppressUntil' in kwargs:
+            time_suppress_until = kwargs['timeSuppressUntil']
+        if time_suppress_until is None:
+            raise TypeError("Missing 'time_suppress_until' argument")
+
+        _setter("description", description)
+        _setter("time_suppress_from", time_suppress_from)
+        _setter("time_suppress_until", time_suppress_until)
 
     @property
     @pulumi.getter
@@ -262,10 +370,29 @@ class GetAlarmStatusesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAlarmStatusesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -294,9 +421,34 @@ class GetAlarmSuppressionResult(dict):
         :param str time_suppress_from: The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
         :param str time_suppress_until: The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "time_suppress_from", time_suppress_from)
-        pulumi.set(__self__, "time_suppress_until", time_suppress_until)
+        GetAlarmSuppressionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            time_suppress_from=time_suppress_from,
+            time_suppress_until=time_suppress_until,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             time_suppress_from: Optional[str] = None,
+             time_suppress_until: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if time_suppress_from is None and 'timeSuppressFrom' in kwargs:
+            time_suppress_from = kwargs['timeSuppressFrom']
+        if time_suppress_from is None:
+            raise TypeError("Missing 'time_suppress_from' argument")
+        if time_suppress_until is None and 'timeSuppressUntil' in kwargs:
+            time_suppress_until = kwargs['timeSuppressUntil']
+        if time_suppress_until is None:
+            raise TypeError("Missing 'time_suppress_until' argument")
+
+        _setter("description", description)
+        _setter("time_suppress_from", time_suppress_from)
+        _setter("time_suppress_until", time_suppress_until)
 
     @property
     @pulumi.getter
@@ -374,29 +526,158 @@ class GetAlarmsAlarmResult(dict):
         :param str time_created: The date and time the alarm was created. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
         :param str time_updated: The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2019-02-03T01:02:29.600Z`
         """
-        pulumi.set(__self__, "body", body)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "destinations", destinations)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "is_notifications_per_metric_dimension_enabled", is_notifications_per_metric_dimension_enabled)
-        pulumi.set(__self__, "message_format", message_format)
-        pulumi.set(__self__, "metric_compartment_id", metric_compartment_id)
-        pulumi.set(__self__, "metric_compartment_id_in_subtree", metric_compartment_id_in_subtree)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "pending_duration", pending_duration)
-        pulumi.set(__self__, "query", query)
-        pulumi.set(__self__, "repeat_notification_duration", repeat_notification_duration)
-        pulumi.set(__self__, "resolution", resolution)
-        pulumi.set(__self__, "resource_group", resource_group)
-        pulumi.set(__self__, "severity", severity)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "suppressions", suppressions)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetAlarmsAlarmResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            body=body,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            destinations=destinations,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_enabled=is_enabled,
+            is_notifications_per_metric_dimension_enabled=is_notifications_per_metric_dimension_enabled,
+            message_format=message_format,
+            metric_compartment_id=metric_compartment_id,
+            metric_compartment_id_in_subtree=metric_compartment_id_in_subtree,
+            namespace=namespace,
+            pending_duration=pending_duration,
+            query=query,
+            repeat_notification_duration=repeat_notification_duration,
+            resolution=resolution,
+            resource_group=resource_group,
+            severity=severity,
+            state=state,
+            suppressions=suppressions,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             body: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             destinations: Optional[Sequence[str]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_enabled: Optional[bool] = None,
+             is_notifications_per_metric_dimension_enabled: Optional[bool] = None,
+             message_format: Optional[str] = None,
+             metric_compartment_id: Optional[str] = None,
+             metric_compartment_id_in_subtree: Optional[bool] = None,
+             namespace: Optional[str] = None,
+             pending_duration: Optional[str] = None,
+             query: Optional[str] = None,
+             repeat_notification_duration: Optional[str] = None,
+             resolution: Optional[str] = None,
+             resource_group: Optional[str] = None,
+             severity: Optional[str] = None,
+             state: Optional[str] = None,
+             suppressions: Optional[Sequence['outputs.GetAlarmsAlarmSuppressionResult']] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if body is None:
+            raise TypeError("Missing 'body' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if destinations is None:
+            raise TypeError("Missing 'destinations' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if is_notifications_per_metric_dimension_enabled is None and 'isNotificationsPerMetricDimensionEnabled' in kwargs:
+            is_notifications_per_metric_dimension_enabled = kwargs['isNotificationsPerMetricDimensionEnabled']
+        if is_notifications_per_metric_dimension_enabled is None:
+            raise TypeError("Missing 'is_notifications_per_metric_dimension_enabled' argument")
+        if message_format is None and 'messageFormat' in kwargs:
+            message_format = kwargs['messageFormat']
+        if message_format is None:
+            raise TypeError("Missing 'message_format' argument")
+        if metric_compartment_id is None and 'metricCompartmentId' in kwargs:
+            metric_compartment_id = kwargs['metricCompartmentId']
+        if metric_compartment_id is None:
+            raise TypeError("Missing 'metric_compartment_id' argument")
+        if metric_compartment_id_in_subtree is None and 'metricCompartmentIdInSubtree' in kwargs:
+            metric_compartment_id_in_subtree = kwargs['metricCompartmentIdInSubtree']
+        if metric_compartment_id_in_subtree is None:
+            raise TypeError("Missing 'metric_compartment_id_in_subtree' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if pending_duration is None and 'pendingDuration' in kwargs:
+            pending_duration = kwargs['pendingDuration']
+        if pending_duration is None:
+            raise TypeError("Missing 'pending_duration' argument")
+        if query is None:
+            raise TypeError("Missing 'query' argument")
+        if repeat_notification_duration is None and 'repeatNotificationDuration' in kwargs:
+            repeat_notification_duration = kwargs['repeatNotificationDuration']
+        if repeat_notification_duration is None:
+            raise TypeError("Missing 'repeat_notification_duration' argument")
+        if resolution is None:
+            raise TypeError("Missing 'resolution' argument")
+        if resource_group is None and 'resourceGroup' in kwargs:
+            resource_group = kwargs['resourceGroup']
+        if resource_group is None:
+            raise TypeError("Missing 'resource_group' argument")
+        if severity is None:
+            raise TypeError("Missing 'severity' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if suppressions is None:
+            raise TypeError("Missing 'suppressions' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+
+        _setter("body", body)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("destinations", destinations)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_enabled", is_enabled)
+        _setter("is_notifications_per_metric_dimension_enabled", is_notifications_per_metric_dimension_enabled)
+        _setter("message_format", message_format)
+        _setter("metric_compartment_id", metric_compartment_id)
+        _setter("metric_compartment_id_in_subtree", metric_compartment_id_in_subtree)
+        _setter("namespace", namespace)
+        _setter("pending_duration", pending_duration)
+        _setter("query", query)
+        _setter("repeat_notification_duration", repeat_notification_duration)
+        _setter("resolution", resolution)
+        _setter("resource_group", resource_group)
+        _setter("severity", severity)
+        _setter("state", state)
+        _setter("suppressions", suppressions)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter
@@ -594,9 +875,34 @@ class GetAlarmsAlarmSuppressionResult(dict):
         :param str time_suppress_from: The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
         :param str time_suppress_until: The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "time_suppress_from", time_suppress_from)
-        pulumi.set(__self__, "time_suppress_until", time_suppress_until)
+        GetAlarmsAlarmSuppressionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            time_suppress_from=time_suppress_from,
+            time_suppress_until=time_suppress_until,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             time_suppress_from: Optional[str] = None,
+             time_suppress_until: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if time_suppress_from is None and 'timeSuppressFrom' in kwargs:
+            time_suppress_from = kwargs['timeSuppressFrom']
+        if time_suppress_from is None:
+            raise TypeError("Missing 'time_suppress_from' argument")
+        if time_suppress_until is None and 'timeSuppressUntil' in kwargs:
+            time_suppress_until = kwargs['timeSuppressUntil']
+        if time_suppress_until is None:
+            raise TypeError("Missing 'time_suppress_until' argument")
+
+        _setter("description", description)
+        _setter("time_suppress_from", time_suppress_from)
+        _setter("time_suppress_until", time_suppress_until)
 
     @property
     @pulumi.getter
@@ -629,10 +935,29 @@ class GetAlarmsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAlarmsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -659,10 +984,29 @@ class GetMetricDataFilterResult(dict):
         """
         :param str name: The name of the metric.  Example: `CpuUtilization`
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMetricDataFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -718,18 +1062,87 @@ class GetMetricDataMetricDataResult(dict):
         :param str resource_group: Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
         :param str start_time: The beginning of the time range to use when searching for metric data points. Format is defined by RFC3339. The response includes metric data points for the startTime. Default value: the timestamp 3 hours before the call was sent.  Example: `2019-02-01T01:02:29.600Z`
         """
-        pulumi.set(__self__, "aggregated_datapoints", aggregated_datapoints)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "compartment_id_in_subtree", compartment_id_in_subtree)
-        pulumi.set(__self__, "dimensions", dimensions)
-        pulumi.set(__self__, "end_time", end_time)
-        pulumi.set(__self__, "metadata", metadata)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "query", query)
-        pulumi.set(__self__, "resolution", resolution)
-        pulumi.set(__self__, "resource_group", resource_group)
-        pulumi.set(__self__, "start_time", start_time)
+        GetMetricDataMetricDataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            aggregated_datapoints=aggregated_datapoints,
+            compartment_id=compartment_id,
+            compartment_id_in_subtree=compartment_id_in_subtree,
+            dimensions=dimensions,
+            end_time=end_time,
+            metadata=metadata,
+            name=name,
+            namespace=namespace,
+            query=query,
+            resolution=resolution,
+            resource_group=resource_group,
+            start_time=start_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             aggregated_datapoints: Optional[Sequence['outputs.GetMetricDataMetricDataAggregatedDatapointResult']] = None,
+             compartment_id: Optional[str] = None,
+             compartment_id_in_subtree: Optional[bool] = None,
+             dimensions: Optional[Mapping[str, Any]] = None,
+             end_time: Optional[str] = None,
+             metadata: Optional[Mapping[str, Any]] = None,
+             name: Optional[str] = None,
+             namespace: Optional[str] = None,
+             query: Optional[str] = None,
+             resolution: Optional[str] = None,
+             resource_group: Optional[str] = None,
+             start_time: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if aggregated_datapoints is None and 'aggregatedDatapoints' in kwargs:
+            aggregated_datapoints = kwargs['aggregatedDatapoints']
+        if aggregated_datapoints is None:
+            raise TypeError("Missing 'aggregated_datapoints' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if compartment_id_in_subtree is None and 'compartmentIdInSubtree' in kwargs:
+            compartment_id_in_subtree = kwargs['compartmentIdInSubtree']
+        if compartment_id_in_subtree is None:
+            raise TypeError("Missing 'compartment_id_in_subtree' argument")
+        if dimensions is None:
+            raise TypeError("Missing 'dimensions' argument")
+        if end_time is None and 'endTime' in kwargs:
+            end_time = kwargs['endTime']
+        if end_time is None:
+            raise TypeError("Missing 'end_time' argument")
+        if metadata is None:
+            raise TypeError("Missing 'metadata' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if query is None:
+            raise TypeError("Missing 'query' argument")
+        if resolution is None:
+            raise TypeError("Missing 'resolution' argument")
+        if resource_group is None and 'resourceGroup' in kwargs:
+            resource_group = kwargs['resourceGroup']
+        if resource_group is None:
+            raise TypeError("Missing 'resource_group' argument")
+        if start_time is None and 'startTime' in kwargs:
+            start_time = kwargs['startTime']
+        if start_time is None:
+            raise TypeError("Missing 'start_time' argument")
+
+        _setter("aggregated_datapoints", aggregated_datapoints)
+        _setter("compartment_id", compartment_id)
+        _setter("compartment_id_in_subtree", compartment_id_in_subtree)
+        _setter("dimensions", dimensions)
+        _setter("end_time", end_time)
+        _setter("metadata", metadata)
+        _setter("name", name)
+        _setter("namespace", namespace)
+        _setter("query", query)
+        _setter("resolution", resolution)
+        _setter("resource_group", resource_group)
+        _setter("start_time", start_time)
 
     @property
     @pulumi.getter(name="aggregatedDatapoints")
@@ -843,8 +1256,25 @@ class GetMetricDataMetricDataAggregatedDatapointResult(dict):
         :param str timestamp: The date and time associated with the value of this data point. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
         :param float value: Numeric value of the metric.  Example: `10.4`
         """
-        pulumi.set(__self__, "timestamp", timestamp)
-        pulumi.set(__self__, "value", value)
+        GetMetricDataMetricDataAggregatedDatapointResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            timestamp=timestamp,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             timestamp: Optional[str] = None,
+             value: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if timestamp is None:
+            raise TypeError("Missing 'timestamp' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("timestamp", timestamp)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -872,10 +1302,29 @@ class GetMetricsFilterResult(dict):
         """
         :param str name: The metric name to use when searching for metric definitions.  Example: `CpuUtilization`
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMetricsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -919,14 +1368,65 @@ class GetMetricsMetricResult(dict):
         :param str namespace: The source service or application to use when searching for metric definitions.  Example: `oci_computeagent`
         :param str resource_group: Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "compartment_id_in_subtree", compartment_id_in_subtree)
-        pulumi.set(__self__, "dimension_filters", dimension_filters)
-        pulumi.set(__self__, "dimensions", dimensions)
-        pulumi.set(__self__, "group_bies", group_bies)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "resource_group", resource_group)
+        GetMetricsMetricResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            compartment_id_in_subtree=compartment_id_in_subtree,
+            dimension_filters=dimension_filters,
+            dimensions=dimensions,
+            group_bies=group_bies,
+            name=name,
+            namespace=namespace,
+            resource_group=resource_group,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             compartment_id_in_subtree: Optional[bool] = None,
+             dimension_filters: Optional[Mapping[str, Any]] = None,
+             dimensions: Optional[Mapping[str, Any]] = None,
+             group_bies: Optional[Sequence[str]] = None,
+             name: Optional[str] = None,
+             namespace: Optional[str] = None,
+             resource_group: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if compartment_id_in_subtree is None and 'compartmentIdInSubtree' in kwargs:
+            compartment_id_in_subtree = kwargs['compartmentIdInSubtree']
+        if compartment_id_in_subtree is None:
+            raise TypeError("Missing 'compartment_id_in_subtree' argument")
+        if dimension_filters is None and 'dimensionFilters' in kwargs:
+            dimension_filters = kwargs['dimensionFilters']
+        if dimension_filters is None:
+            raise TypeError("Missing 'dimension_filters' argument")
+        if dimensions is None:
+            raise TypeError("Missing 'dimensions' argument")
+        if group_bies is None and 'groupBies' in kwargs:
+            group_bies = kwargs['groupBies']
+        if group_bies is None:
+            raise TypeError("Missing 'group_bies' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if resource_group is None and 'resourceGroup' in kwargs:
+            resource_group = kwargs['resourceGroup']
+        if resource_group is None:
+            raise TypeError("Missing 'resource_group' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("compartment_id_in_subtree", compartment_id_in_subtree)
+        _setter("dimension_filters", dimension_filters)
+        _setter("dimensions", dimensions)
+        _setter("group_bies", group_bies)
+        _setter("name", name)
+        _setter("namespace", namespace)
+        _setter("resource_group", resource_group)
 
     @property
     @pulumi.getter(name="compartmentId")

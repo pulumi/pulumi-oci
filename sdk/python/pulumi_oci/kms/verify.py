@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['VerifyArgs', 'Verify']
@@ -35,14 +35,59 @@ class VerifyArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] message_type: Denotes whether the value of the message parameter is a raw message or a message digest. The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
         """
-        pulumi.set(__self__, "crypto_endpoint", crypto_endpoint)
-        pulumi.set(__self__, "key_id", key_id)
-        pulumi.set(__self__, "key_version_id", key_version_id)
-        pulumi.set(__self__, "message", message)
-        pulumi.set(__self__, "signature", signature)
-        pulumi.set(__self__, "signing_algorithm", signing_algorithm)
+        VerifyArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            crypto_endpoint=crypto_endpoint,
+            key_id=key_id,
+            key_version_id=key_version_id,
+            message=message,
+            signature=signature,
+            signing_algorithm=signing_algorithm,
+            message_type=message_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             crypto_endpoint: Optional[pulumi.Input[str]] = None,
+             key_id: Optional[pulumi.Input[str]] = None,
+             key_version_id: Optional[pulumi.Input[str]] = None,
+             message: Optional[pulumi.Input[str]] = None,
+             signature: Optional[pulumi.Input[str]] = None,
+             signing_algorithm: Optional[pulumi.Input[str]] = None,
+             message_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if crypto_endpoint is None and 'cryptoEndpoint' in kwargs:
+            crypto_endpoint = kwargs['cryptoEndpoint']
+        if crypto_endpoint is None:
+            raise TypeError("Missing 'crypto_endpoint' argument")
+        if key_id is None and 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if key_id is None:
+            raise TypeError("Missing 'key_id' argument")
+        if key_version_id is None and 'keyVersionId' in kwargs:
+            key_version_id = kwargs['keyVersionId']
+        if key_version_id is None:
+            raise TypeError("Missing 'key_version_id' argument")
+        if message is None:
+            raise TypeError("Missing 'message' argument")
+        if signature is None:
+            raise TypeError("Missing 'signature' argument")
+        if signing_algorithm is None and 'signingAlgorithm' in kwargs:
+            signing_algorithm = kwargs['signingAlgorithm']
+        if signing_algorithm is None:
+            raise TypeError("Missing 'signing_algorithm' argument")
+        if message_type is None and 'messageType' in kwargs:
+            message_type = kwargs['messageType']
+
+        _setter("crypto_endpoint", crypto_endpoint)
+        _setter("key_id", key_id)
+        _setter("key_version_id", key_version_id)
+        _setter("message", message)
+        _setter("signature", signature)
+        _setter("signing_algorithm", signing_algorithm)
         if message_type is not None:
-            pulumi.set(__self__, "message_type", message_type)
+            _setter("message_type", message_type)
 
     @property
     @pulumi.getter(name="cryptoEndpoint")
@@ -159,22 +204,59 @@ class _VerifyState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _VerifyState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            crypto_endpoint=crypto_endpoint,
+            is_signature_valid=is_signature_valid,
+            key_id=key_id,
+            key_version_id=key_version_id,
+            message=message,
+            message_type=message_type,
+            signature=signature,
+            signing_algorithm=signing_algorithm,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             crypto_endpoint: Optional[pulumi.Input[str]] = None,
+             is_signature_valid: Optional[pulumi.Input[bool]] = None,
+             key_id: Optional[pulumi.Input[str]] = None,
+             key_version_id: Optional[pulumi.Input[str]] = None,
+             message: Optional[pulumi.Input[str]] = None,
+             message_type: Optional[pulumi.Input[str]] = None,
+             signature: Optional[pulumi.Input[str]] = None,
+             signing_algorithm: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if crypto_endpoint is None and 'cryptoEndpoint' in kwargs:
+            crypto_endpoint = kwargs['cryptoEndpoint']
+        if is_signature_valid is None and 'isSignatureValid' in kwargs:
+            is_signature_valid = kwargs['isSignatureValid']
+        if key_id is None and 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if key_version_id is None and 'keyVersionId' in kwargs:
+            key_version_id = kwargs['keyVersionId']
+        if message_type is None and 'messageType' in kwargs:
+            message_type = kwargs['messageType']
+        if signing_algorithm is None and 'signingAlgorithm' in kwargs:
+            signing_algorithm = kwargs['signingAlgorithm']
+
         if crypto_endpoint is not None:
-            pulumi.set(__self__, "crypto_endpoint", crypto_endpoint)
+            _setter("crypto_endpoint", crypto_endpoint)
         if is_signature_valid is not None:
-            pulumi.set(__self__, "is_signature_valid", is_signature_valid)
+            _setter("is_signature_valid", is_signature_valid)
         if key_id is not None:
-            pulumi.set(__self__, "key_id", key_id)
+            _setter("key_id", key_id)
         if key_version_id is not None:
-            pulumi.set(__self__, "key_version_id", key_version_id)
+            _setter("key_version_id", key_version_id)
         if message is not None:
-            pulumi.set(__self__, "message", message)
+            _setter("message", message)
         if message_type is not None:
-            pulumi.set(__self__, "message_type", message_type)
+            _setter("message_type", message_type)
         if signature is not None:
-            pulumi.set(__self__, "signature", signature)
+            _setter("signature", signature)
         if signing_algorithm is not None:
-            pulumi.set(__self__, "signing_algorithm", signing_algorithm)
+            _setter("signing_algorithm", signing_algorithm)
 
     @property
     @pulumi.getter(name="cryptoEndpoint")
@@ -384,6 +466,10 @@ class Verify(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            VerifyArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

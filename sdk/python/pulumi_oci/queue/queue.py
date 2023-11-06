@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['QueueArgs', 'Queue']
@@ -39,28 +39,89 @@ class QueueArgs:
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) The default polling timeout of the messages in the queue, in seconds.
         :param pulumi.Input[int] visibility_in_seconds: (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
+        QueueArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            channel_consumption_limit=channel_consumption_limit,
+            custom_encryption_key_id=custom_encryption_key_id,
+            dead_letter_queue_delivery_count=dead_letter_queue_delivery_count,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            purge_queue=purge_queue,
+            purge_type=purge_type,
+            retention_in_seconds=retention_in_seconds,
+            timeout_in_seconds=timeout_in_seconds,
+            visibility_in_seconds=visibility_in_seconds,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             channel_consumption_limit: Optional[pulumi.Input[int]] = None,
+             custom_encryption_key_id: Optional[pulumi.Input[str]] = None,
+             dead_letter_queue_delivery_count: Optional[pulumi.Input[int]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             purge_queue: Optional[pulumi.Input[bool]] = None,
+             purge_type: Optional[pulumi.Input[str]] = None,
+             retention_in_seconds: Optional[pulumi.Input[int]] = None,
+             timeout_in_seconds: Optional[pulumi.Input[int]] = None,
+             visibility_in_seconds: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if channel_consumption_limit is None and 'channelConsumptionLimit' in kwargs:
+            channel_consumption_limit = kwargs['channelConsumptionLimit']
+        if custom_encryption_key_id is None and 'customEncryptionKeyId' in kwargs:
+            custom_encryption_key_id = kwargs['customEncryptionKeyId']
+        if dead_letter_queue_delivery_count is None and 'deadLetterQueueDeliveryCount' in kwargs:
+            dead_letter_queue_delivery_count = kwargs['deadLetterQueueDeliveryCount']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if purge_queue is None and 'purgeQueue' in kwargs:
+            purge_queue = kwargs['purgeQueue']
+        if purge_type is None and 'purgeType' in kwargs:
+            purge_type = kwargs['purgeType']
+        if retention_in_seconds is None and 'retentionInSeconds' in kwargs:
+            retention_in_seconds = kwargs['retentionInSeconds']
+        if timeout_in_seconds is None and 'timeoutInSeconds' in kwargs:
+            timeout_in_seconds = kwargs['timeoutInSeconds']
+        if visibility_in_seconds is None and 'visibilityInSeconds' in kwargs:
+            visibility_in_seconds = kwargs['visibilityInSeconds']
+
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
         if channel_consumption_limit is not None:
-            pulumi.set(__self__, "channel_consumption_limit", channel_consumption_limit)
+            _setter("channel_consumption_limit", channel_consumption_limit)
         if custom_encryption_key_id is not None:
-            pulumi.set(__self__, "custom_encryption_key_id", custom_encryption_key_id)
+            _setter("custom_encryption_key_id", custom_encryption_key_id)
         if dead_letter_queue_delivery_count is not None:
-            pulumi.set(__self__, "dead_letter_queue_delivery_count", dead_letter_queue_delivery_count)
+            _setter("dead_letter_queue_delivery_count", dead_letter_queue_delivery_count)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if purge_queue is not None:
-            pulumi.set(__self__, "purge_queue", purge_queue)
+            _setter("purge_queue", purge_queue)
         if purge_type is not None:
-            pulumi.set(__self__, "purge_type", purge_type)
+            _setter("purge_type", purge_type)
         if retention_in_seconds is not None:
-            pulumi.set(__self__, "retention_in_seconds", retention_in_seconds)
+            _setter("retention_in_seconds", retention_in_seconds)
         if timeout_in_seconds is not None:
-            pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
+            _setter("timeout_in_seconds", timeout_in_seconds)
         if visibility_in_seconds is not None:
-            pulumi.set(__self__, "visibility_in_seconds", visibility_in_seconds)
+            _setter("visibility_in_seconds", visibility_in_seconds)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -241,42 +302,121 @@ class _QueueState:
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) The default polling timeout of the messages in the queue, in seconds.
         :param pulumi.Input[int] visibility_in_seconds: (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
         """
+        _QueueState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            channel_consumption_limit=channel_consumption_limit,
+            compartment_id=compartment_id,
+            custom_encryption_key_id=custom_encryption_key_id,
+            dead_letter_queue_delivery_count=dead_letter_queue_delivery_count,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            messages_endpoint=messages_endpoint,
+            purge_queue=purge_queue,
+            purge_type=purge_type,
+            retention_in_seconds=retention_in_seconds,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            timeout_in_seconds=timeout_in_seconds,
+            visibility_in_seconds=visibility_in_seconds,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             channel_consumption_limit: Optional[pulumi.Input[int]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             custom_encryption_key_id: Optional[pulumi.Input[str]] = None,
+             dead_letter_queue_delivery_count: Optional[pulumi.Input[int]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             messages_endpoint: Optional[pulumi.Input[str]] = None,
+             purge_queue: Optional[pulumi.Input[bool]] = None,
+             purge_type: Optional[pulumi.Input[str]] = None,
+             retention_in_seconds: Optional[pulumi.Input[int]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             timeout_in_seconds: Optional[pulumi.Input[int]] = None,
+             visibility_in_seconds: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if channel_consumption_limit is None and 'channelConsumptionLimit' in kwargs:
+            channel_consumption_limit = kwargs['channelConsumptionLimit']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if custom_encryption_key_id is None and 'customEncryptionKeyId' in kwargs:
+            custom_encryption_key_id = kwargs['customEncryptionKeyId']
+        if dead_letter_queue_delivery_count is None and 'deadLetterQueueDeliveryCount' in kwargs:
+            dead_letter_queue_delivery_count = kwargs['deadLetterQueueDeliveryCount']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if messages_endpoint is None and 'messagesEndpoint' in kwargs:
+            messages_endpoint = kwargs['messagesEndpoint']
+        if purge_queue is None and 'purgeQueue' in kwargs:
+            purge_queue = kwargs['purgeQueue']
+        if purge_type is None and 'purgeType' in kwargs:
+            purge_type = kwargs['purgeType']
+        if retention_in_seconds is None and 'retentionInSeconds' in kwargs:
+            retention_in_seconds = kwargs['retentionInSeconds']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if timeout_in_seconds is None and 'timeoutInSeconds' in kwargs:
+            timeout_in_seconds = kwargs['timeoutInSeconds']
+        if visibility_in_seconds is None and 'visibilityInSeconds' in kwargs:
+            visibility_in_seconds = kwargs['visibilityInSeconds']
+
         if channel_consumption_limit is not None:
-            pulumi.set(__self__, "channel_consumption_limit", channel_consumption_limit)
+            _setter("channel_consumption_limit", channel_consumption_limit)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if custom_encryption_key_id is not None:
-            pulumi.set(__self__, "custom_encryption_key_id", custom_encryption_key_id)
+            _setter("custom_encryption_key_id", custom_encryption_key_id)
         if dead_letter_queue_delivery_count is not None:
-            pulumi.set(__self__, "dead_letter_queue_delivery_count", dead_letter_queue_delivery_count)
+            _setter("dead_letter_queue_delivery_count", dead_letter_queue_delivery_count)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if messages_endpoint is not None:
-            pulumi.set(__self__, "messages_endpoint", messages_endpoint)
+            _setter("messages_endpoint", messages_endpoint)
         if purge_queue is not None:
-            pulumi.set(__self__, "purge_queue", purge_queue)
+            _setter("purge_queue", purge_queue)
         if purge_type is not None:
-            pulumi.set(__self__, "purge_type", purge_type)
+            _setter("purge_type", purge_type)
         if retention_in_seconds is not None:
-            pulumi.set(__self__, "retention_in_seconds", retention_in_seconds)
+            _setter("retention_in_seconds", retention_in_seconds)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if timeout_in_seconds is not None:
-            pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
+            _setter("timeout_in_seconds", timeout_in_seconds)
         if visibility_in_seconds is not None:
-            pulumi.set(__self__, "visibility_in_seconds", visibility_in_seconds)
+            _setter("visibility_in_seconds", visibility_in_seconds)
 
     @property
     @pulumi.getter(name="channelConsumptionLimit")
@@ -608,6 +748,10 @@ class Queue(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            QueueArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

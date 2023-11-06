@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -79,55 +79,176 @@ class ApplicationArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "driver_shape", driver_shape)
-        pulumi.set(__self__, "executor_shape", executor_shape)
-        pulumi.set(__self__, "language", language)
-        pulumi.set(__self__, "num_executors", num_executors)
-        pulumi.set(__self__, "spark_version", spark_version)
+        ApplicationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            driver_shape=driver_shape,
+            executor_shape=executor_shape,
+            language=language,
+            num_executors=num_executors,
+            spark_version=spark_version,
+            application_log_config=application_log_config,
+            archive_uri=archive_uri,
+            arguments=arguments,
+            class_name=class_name,
+            configuration=configuration,
+            defined_tags=defined_tags,
+            description=description,
+            driver_shape_config=driver_shape_config,
+            execute=execute,
+            executor_shape_config=executor_shape_config,
+            file_uri=file_uri,
+            freeform_tags=freeform_tags,
+            idle_timeout_in_minutes=idle_timeout_in_minutes,
+            logs_bucket_uri=logs_bucket_uri,
+            max_duration_in_minutes=max_duration_in_minutes,
+            metastore_id=metastore_id,
+            parameters=parameters,
+            pool_id=pool_id,
+            private_endpoint_id=private_endpoint_id,
+            type=type,
+            warehouse_bucket_uri=warehouse_bucket_uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             driver_shape: Optional[pulumi.Input[str]] = None,
+             executor_shape: Optional[pulumi.Input[str]] = None,
+             language: Optional[pulumi.Input[str]] = None,
+             num_executors: Optional[pulumi.Input[int]] = None,
+             spark_version: Optional[pulumi.Input[str]] = None,
+             application_log_config: Optional[pulumi.Input['ApplicationApplicationLogConfigArgs']] = None,
+             archive_uri: Optional[pulumi.Input[str]] = None,
+             arguments: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             class_name: Optional[pulumi.Input[str]] = None,
+             configuration: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             driver_shape_config: Optional[pulumi.Input['ApplicationDriverShapeConfigArgs']] = None,
+             execute: Optional[pulumi.Input[str]] = None,
+             executor_shape_config: Optional[pulumi.Input['ApplicationExecutorShapeConfigArgs']] = None,
+             file_uri: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             idle_timeout_in_minutes: Optional[pulumi.Input[str]] = None,
+             logs_bucket_uri: Optional[pulumi.Input[str]] = None,
+             max_duration_in_minutes: Optional[pulumi.Input[str]] = None,
+             metastore_id: Optional[pulumi.Input[str]] = None,
+             parameters: Optional[pulumi.Input[Sequence[pulumi.Input['ApplicationParameterArgs']]]] = None,
+             pool_id: Optional[pulumi.Input[str]] = None,
+             private_endpoint_id: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             warehouse_bucket_uri: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if driver_shape is None and 'driverShape' in kwargs:
+            driver_shape = kwargs['driverShape']
+        if driver_shape is None:
+            raise TypeError("Missing 'driver_shape' argument")
+        if executor_shape is None and 'executorShape' in kwargs:
+            executor_shape = kwargs['executorShape']
+        if executor_shape is None:
+            raise TypeError("Missing 'executor_shape' argument")
+        if language is None:
+            raise TypeError("Missing 'language' argument")
+        if num_executors is None and 'numExecutors' in kwargs:
+            num_executors = kwargs['numExecutors']
+        if num_executors is None:
+            raise TypeError("Missing 'num_executors' argument")
+        if spark_version is None and 'sparkVersion' in kwargs:
+            spark_version = kwargs['sparkVersion']
+        if spark_version is None:
+            raise TypeError("Missing 'spark_version' argument")
+        if application_log_config is None and 'applicationLogConfig' in kwargs:
+            application_log_config = kwargs['applicationLogConfig']
+        if archive_uri is None and 'archiveUri' in kwargs:
+            archive_uri = kwargs['archiveUri']
+        if class_name is None and 'className' in kwargs:
+            class_name = kwargs['className']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if driver_shape_config is None and 'driverShapeConfig' in kwargs:
+            driver_shape_config = kwargs['driverShapeConfig']
+        if executor_shape_config is None and 'executorShapeConfig' in kwargs:
+            executor_shape_config = kwargs['executorShapeConfig']
+        if file_uri is None and 'fileUri' in kwargs:
+            file_uri = kwargs['fileUri']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if idle_timeout_in_minutes is None and 'idleTimeoutInMinutes' in kwargs:
+            idle_timeout_in_minutes = kwargs['idleTimeoutInMinutes']
+        if logs_bucket_uri is None and 'logsBucketUri' in kwargs:
+            logs_bucket_uri = kwargs['logsBucketUri']
+        if max_duration_in_minutes is None and 'maxDurationInMinutes' in kwargs:
+            max_duration_in_minutes = kwargs['maxDurationInMinutes']
+        if metastore_id is None and 'metastoreId' in kwargs:
+            metastore_id = kwargs['metastoreId']
+        if pool_id is None and 'poolId' in kwargs:
+            pool_id = kwargs['poolId']
+        if private_endpoint_id is None and 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+        if warehouse_bucket_uri is None and 'warehouseBucketUri' in kwargs:
+            warehouse_bucket_uri = kwargs['warehouseBucketUri']
+
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
+        _setter("driver_shape", driver_shape)
+        _setter("executor_shape", executor_shape)
+        _setter("language", language)
+        _setter("num_executors", num_executors)
+        _setter("spark_version", spark_version)
         if application_log_config is not None:
-            pulumi.set(__self__, "application_log_config", application_log_config)
+            _setter("application_log_config", application_log_config)
         if archive_uri is not None:
-            pulumi.set(__self__, "archive_uri", archive_uri)
+            _setter("archive_uri", archive_uri)
         if arguments is not None:
-            pulumi.set(__self__, "arguments", arguments)
+            _setter("arguments", arguments)
         if class_name is not None:
-            pulumi.set(__self__, "class_name", class_name)
+            _setter("class_name", class_name)
         if configuration is not None:
-            pulumi.set(__self__, "configuration", configuration)
+            _setter("configuration", configuration)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if driver_shape_config is not None:
-            pulumi.set(__self__, "driver_shape_config", driver_shape_config)
+            _setter("driver_shape_config", driver_shape_config)
         if execute is not None:
-            pulumi.set(__self__, "execute", execute)
+            _setter("execute", execute)
         if executor_shape_config is not None:
-            pulumi.set(__self__, "executor_shape_config", executor_shape_config)
+            _setter("executor_shape_config", executor_shape_config)
         if file_uri is not None:
-            pulumi.set(__self__, "file_uri", file_uri)
+            _setter("file_uri", file_uri)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if idle_timeout_in_minutes is not None:
-            pulumi.set(__self__, "idle_timeout_in_minutes", idle_timeout_in_minutes)
+            _setter("idle_timeout_in_minutes", idle_timeout_in_minutes)
         if logs_bucket_uri is not None:
-            pulumi.set(__self__, "logs_bucket_uri", logs_bucket_uri)
+            _setter("logs_bucket_uri", logs_bucket_uri)
         if max_duration_in_minutes is not None:
-            pulumi.set(__self__, "max_duration_in_minutes", max_duration_in_minutes)
+            _setter("max_duration_in_minutes", max_duration_in_minutes)
         if metastore_id is not None:
-            pulumi.set(__self__, "metastore_id", metastore_id)
+            _setter("metastore_id", metastore_id)
         if parameters is not None:
-            pulumi.set(__self__, "parameters", parameters)
+            _setter("parameters", parameters)
         if pool_id is not None:
-            pulumi.set(__self__, "pool_id", pool_id)
+            _setter("pool_id", pool_id)
         if private_endpoint_id is not None:
-            pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+            _setter("private_endpoint_id", private_endpoint_id)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
         if warehouse_bucket_uri is not None:
-            pulumi.set(__self__, "warehouse_bucket_uri", warehouse_bucket_uri)
+            _setter("warehouse_bucket_uri", warehouse_bucket_uri)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -546,72 +667,197 @@ class _ApplicationState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _ApplicationState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            application_log_config=application_log_config,
+            archive_uri=archive_uri,
+            arguments=arguments,
+            class_name=class_name,
+            compartment_id=compartment_id,
+            configuration=configuration,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            driver_shape=driver_shape,
+            driver_shape_config=driver_shape_config,
+            execute=execute,
+            executor_shape=executor_shape,
+            executor_shape_config=executor_shape_config,
+            file_uri=file_uri,
+            freeform_tags=freeform_tags,
+            idle_timeout_in_minutes=idle_timeout_in_minutes,
+            language=language,
+            logs_bucket_uri=logs_bucket_uri,
+            max_duration_in_minutes=max_duration_in_minutes,
+            metastore_id=metastore_id,
+            num_executors=num_executors,
+            owner_principal_id=owner_principal_id,
+            owner_user_name=owner_user_name,
+            parameters=parameters,
+            pool_id=pool_id,
+            private_endpoint_id=private_endpoint_id,
+            spark_version=spark_version,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+            type=type,
+            warehouse_bucket_uri=warehouse_bucket_uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             application_log_config: Optional[pulumi.Input['ApplicationApplicationLogConfigArgs']] = None,
+             archive_uri: Optional[pulumi.Input[str]] = None,
+             arguments: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             class_name: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             configuration: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             driver_shape: Optional[pulumi.Input[str]] = None,
+             driver_shape_config: Optional[pulumi.Input['ApplicationDriverShapeConfigArgs']] = None,
+             execute: Optional[pulumi.Input[str]] = None,
+             executor_shape: Optional[pulumi.Input[str]] = None,
+             executor_shape_config: Optional[pulumi.Input['ApplicationExecutorShapeConfigArgs']] = None,
+             file_uri: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             idle_timeout_in_minutes: Optional[pulumi.Input[str]] = None,
+             language: Optional[pulumi.Input[str]] = None,
+             logs_bucket_uri: Optional[pulumi.Input[str]] = None,
+             max_duration_in_minutes: Optional[pulumi.Input[str]] = None,
+             metastore_id: Optional[pulumi.Input[str]] = None,
+             num_executors: Optional[pulumi.Input[int]] = None,
+             owner_principal_id: Optional[pulumi.Input[str]] = None,
+             owner_user_name: Optional[pulumi.Input[str]] = None,
+             parameters: Optional[pulumi.Input[Sequence[pulumi.Input['ApplicationParameterArgs']]]] = None,
+             pool_id: Optional[pulumi.Input[str]] = None,
+             private_endpoint_id: Optional[pulumi.Input[str]] = None,
+             spark_version: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             warehouse_bucket_uri: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if application_log_config is None and 'applicationLogConfig' in kwargs:
+            application_log_config = kwargs['applicationLogConfig']
+        if archive_uri is None and 'archiveUri' in kwargs:
+            archive_uri = kwargs['archiveUri']
+        if class_name is None and 'className' in kwargs:
+            class_name = kwargs['className']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if driver_shape is None and 'driverShape' in kwargs:
+            driver_shape = kwargs['driverShape']
+        if driver_shape_config is None and 'driverShapeConfig' in kwargs:
+            driver_shape_config = kwargs['driverShapeConfig']
+        if executor_shape is None and 'executorShape' in kwargs:
+            executor_shape = kwargs['executorShape']
+        if executor_shape_config is None and 'executorShapeConfig' in kwargs:
+            executor_shape_config = kwargs['executorShapeConfig']
+        if file_uri is None and 'fileUri' in kwargs:
+            file_uri = kwargs['fileUri']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if idle_timeout_in_minutes is None and 'idleTimeoutInMinutes' in kwargs:
+            idle_timeout_in_minutes = kwargs['idleTimeoutInMinutes']
+        if logs_bucket_uri is None and 'logsBucketUri' in kwargs:
+            logs_bucket_uri = kwargs['logsBucketUri']
+        if max_duration_in_minutes is None and 'maxDurationInMinutes' in kwargs:
+            max_duration_in_minutes = kwargs['maxDurationInMinutes']
+        if metastore_id is None and 'metastoreId' in kwargs:
+            metastore_id = kwargs['metastoreId']
+        if num_executors is None and 'numExecutors' in kwargs:
+            num_executors = kwargs['numExecutors']
+        if owner_principal_id is None and 'ownerPrincipalId' in kwargs:
+            owner_principal_id = kwargs['ownerPrincipalId']
+        if owner_user_name is None and 'ownerUserName' in kwargs:
+            owner_user_name = kwargs['ownerUserName']
+        if pool_id is None and 'poolId' in kwargs:
+            pool_id = kwargs['poolId']
+        if private_endpoint_id is None and 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+        if spark_version is None and 'sparkVersion' in kwargs:
+            spark_version = kwargs['sparkVersion']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if warehouse_bucket_uri is None and 'warehouseBucketUri' in kwargs:
+            warehouse_bucket_uri = kwargs['warehouseBucketUri']
+
         if application_log_config is not None:
-            pulumi.set(__self__, "application_log_config", application_log_config)
+            _setter("application_log_config", application_log_config)
         if archive_uri is not None:
-            pulumi.set(__self__, "archive_uri", archive_uri)
+            _setter("archive_uri", archive_uri)
         if arguments is not None:
-            pulumi.set(__self__, "arguments", arguments)
+            _setter("arguments", arguments)
         if class_name is not None:
-            pulumi.set(__self__, "class_name", class_name)
+            _setter("class_name", class_name)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if configuration is not None:
-            pulumi.set(__self__, "configuration", configuration)
+            _setter("configuration", configuration)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if driver_shape is not None:
-            pulumi.set(__self__, "driver_shape", driver_shape)
+            _setter("driver_shape", driver_shape)
         if driver_shape_config is not None:
-            pulumi.set(__self__, "driver_shape_config", driver_shape_config)
+            _setter("driver_shape_config", driver_shape_config)
         if execute is not None:
-            pulumi.set(__self__, "execute", execute)
+            _setter("execute", execute)
         if executor_shape is not None:
-            pulumi.set(__self__, "executor_shape", executor_shape)
+            _setter("executor_shape", executor_shape)
         if executor_shape_config is not None:
-            pulumi.set(__self__, "executor_shape_config", executor_shape_config)
+            _setter("executor_shape_config", executor_shape_config)
         if file_uri is not None:
-            pulumi.set(__self__, "file_uri", file_uri)
+            _setter("file_uri", file_uri)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if idle_timeout_in_minutes is not None:
-            pulumi.set(__self__, "idle_timeout_in_minutes", idle_timeout_in_minutes)
+            _setter("idle_timeout_in_minutes", idle_timeout_in_minutes)
         if language is not None:
-            pulumi.set(__self__, "language", language)
+            _setter("language", language)
         if logs_bucket_uri is not None:
-            pulumi.set(__self__, "logs_bucket_uri", logs_bucket_uri)
+            _setter("logs_bucket_uri", logs_bucket_uri)
         if max_duration_in_minutes is not None:
-            pulumi.set(__self__, "max_duration_in_minutes", max_duration_in_minutes)
+            _setter("max_duration_in_minutes", max_duration_in_minutes)
         if metastore_id is not None:
-            pulumi.set(__self__, "metastore_id", metastore_id)
+            _setter("metastore_id", metastore_id)
         if num_executors is not None:
-            pulumi.set(__self__, "num_executors", num_executors)
+            _setter("num_executors", num_executors)
         if owner_principal_id is not None:
-            pulumi.set(__self__, "owner_principal_id", owner_principal_id)
+            _setter("owner_principal_id", owner_principal_id)
         if owner_user_name is not None:
-            pulumi.set(__self__, "owner_user_name", owner_user_name)
+            _setter("owner_user_name", owner_user_name)
         if parameters is not None:
-            pulumi.set(__self__, "parameters", parameters)
+            _setter("parameters", parameters)
         if pool_id is not None:
-            pulumi.set(__self__, "pool_id", pool_id)
+            _setter("pool_id", pool_id)
         if private_endpoint_id is not None:
-            pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+            _setter("private_endpoint_id", private_endpoint_id)
         if spark_version is not None:
-            pulumi.set(__self__, "spark_version", spark_version)
+            _setter("spark_version", spark_version)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
         if warehouse_bucket_uri is not None:
-            pulumi.set(__self__, "warehouse_bucket_uri", warehouse_bucket_uri)
+            _setter("warehouse_bucket_uri", warehouse_bucket_uri)
 
     @property
     @pulumi.getter(name="applicationLogConfig")
@@ -1231,6 +1477,10 @@ class Application(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ApplicationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -1273,6 +1523,11 @@ class Application(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ApplicationArgs.__new__(ApplicationArgs)
 
+            if application_log_config is not None and not isinstance(application_log_config, ApplicationApplicationLogConfigArgs):
+                application_log_config = application_log_config or {}
+                def _setter(key, value):
+                    application_log_config[key] = value
+                ApplicationApplicationLogConfigArgs._configure(_setter, **application_log_config)
             __props__.__dict__["application_log_config"] = application_log_config
             __props__.__dict__["archive_uri"] = archive_uri
             __props__.__dict__["arguments"] = arguments
@@ -1289,11 +1544,21 @@ class Application(pulumi.CustomResource):
             if driver_shape is None and not opts.urn:
                 raise TypeError("Missing required property 'driver_shape'")
             __props__.__dict__["driver_shape"] = driver_shape
+            if driver_shape_config is not None and not isinstance(driver_shape_config, ApplicationDriverShapeConfigArgs):
+                driver_shape_config = driver_shape_config or {}
+                def _setter(key, value):
+                    driver_shape_config[key] = value
+                ApplicationDriverShapeConfigArgs._configure(_setter, **driver_shape_config)
             __props__.__dict__["driver_shape_config"] = driver_shape_config
             __props__.__dict__["execute"] = execute
             if executor_shape is None and not opts.urn:
                 raise TypeError("Missing required property 'executor_shape'")
             __props__.__dict__["executor_shape"] = executor_shape
+            if executor_shape_config is not None and not isinstance(executor_shape_config, ApplicationExecutorShapeConfigArgs):
+                executor_shape_config = executor_shape_config or {}
+                def _setter(key, value):
+                    executor_shape_config[key] = value
+                ApplicationExecutorShapeConfigArgs._configure(_setter, **executor_shape_config)
             __props__.__dict__["executor_shape_config"] = executor_shape_config
             __props__.__dict__["file_uri"] = file_uri
             __props__.__dict__["freeform_tags"] = freeform_tags

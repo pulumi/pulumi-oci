@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -39,16 +39,69 @@ class AgentArgs:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
-        pulumi.set(__self__, "agent_type", agent_type)
-        pulumi.set(__self__, "agent_version", agent_version)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "environment_id", environment_id)
-        pulumi.set(__self__, "os_version", os_version)
+        AgentArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            agent_type=agent_type,
+            agent_version=agent_version,
+            compartment_id=compartment_id,
+            display_name=display_name,
+            environment_id=environment_id,
+            os_version=os_version,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             agent_type: Optional[pulumi.Input[str]] = None,
+             agent_version: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             environment_id: Optional[pulumi.Input[str]] = None,
+             os_version: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if agent_type is None and 'agentType' in kwargs:
+            agent_type = kwargs['agentType']
+        if agent_type is None:
+            raise TypeError("Missing 'agent_type' argument")
+        if agent_version is None and 'agentVersion' in kwargs:
+            agent_version = kwargs['agentVersion']
+        if agent_version is None:
+            raise TypeError("Missing 'agent_version' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if environment_id is None and 'environmentId' in kwargs:
+            environment_id = kwargs['environmentId']
+        if environment_id is None:
+            raise TypeError("Missing 'environment_id' argument")
+        if os_version is None and 'osVersion' in kwargs:
+            os_version = kwargs['osVersion']
+        if os_version is None:
+            raise TypeError("Missing 'os_version' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
+        _setter("agent_type", agent_type)
+        _setter("agent_version", agent_version)
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
+        _setter("environment_id", environment_id)
+        _setter("os_version", os_version)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="agentType")
@@ -197,42 +250,121 @@ class _AgentState:
         :param pulumi.Input[str] time_last_sync_received: The time when the last heartbeat of the Agent was noted. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when the Agent was updated. An RFC3339 formatted datetime string.
         """
+        _AgentState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            agent_pub_key=agent_pub_key,
+            agent_type=agent_type,
+            agent_version=agent_version,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            environment_id=environment_id,
+            freeform_tags=freeform_tags,
+            heart_beat_status=heart_beat_status,
+            lifecycle_details=lifecycle_details,
+            os_version=os_version,
+            plugin_lists=plugin_lists,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_expire_agent_key_in_ms=time_expire_agent_key_in_ms,
+            time_last_sync_received=time_last_sync_received,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             agent_pub_key: Optional[pulumi.Input[str]] = None,
+             agent_type: Optional[pulumi.Input[str]] = None,
+             agent_version: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             environment_id: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             heart_beat_status: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             os_version: Optional[pulumi.Input[str]] = None,
+             plugin_lists: Optional[pulumi.Input[Sequence[pulumi.Input['AgentPluginListArgs']]]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_expire_agent_key_in_ms: Optional[pulumi.Input[str]] = None,
+             time_last_sync_received: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if agent_pub_key is None and 'agentPubKey' in kwargs:
+            agent_pub_key = kwargs['agentPubKey']
+        if agent_type is None and 'agentType' in kwargs:
+            agent_type = kwargs['agentType']
+        if agent_version is None and 'agentVersion' in kwargs:
+            agent_version = kwargs['agentVersion']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if environment_id is None and 'environmentId' in kwargs:
+            environment_id = kwargs['environmentId']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if heart_beat_status is None and 'heartBeatStatus' in kwargs:
+            heart_beat_status = kwargs['heartBeatStatus']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if os_version is None and 'osVersion' in kwargs:
+            os_version = kwargs['osVersion']
+        if plugin_lists is None and 'pluginLists' in kwargs:
+            plugin_lists = kwargs['pluginLists']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_expire_agent_key_in_ms is None and 'timeExpireAgentKeyInMs' in kwargs:
+            time_expire_agent_key_in_ms = kwargs['timeExpireAgentKeyInMs']
+        if time_last_sync_received is None and 'timeLastSyncReceived' in kwargs:
+            time_last_sync_received = kwargs['timeLastSyncReceived']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if agent_pub_key is not None:
-            pulumi.set(__self__, "agent_pub_key", agent_pub_key)
+            _setter("agent_pub_key", agent_pub_key)
         if agent_type is not None:
-            pulumi.set(__self__, "agent_type", agent_type)
+            _setter("agent_type", agent_type)
         if agent_version is not None:
-            pulumi.set(__self__, "agent_version", agent_version)
+            _setter("agent_version", agent_version)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if environment_id is not None:
-            pulumi.set(__self__, "environment_id", environment_id)
+            _setter("environment_id", environment_id)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if heart_beat_status is not None:
-            pulumi.set(__self__, "heart_beat_status", heart_beat_status)
+            _setter("heart_beat_status", heart_beat_status)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if os_version is not None:
-            pulumi.set(__self__, "os_version", os_version)
+            _setter("os_version", os_version)
         if plugin_lists is not None:
-            pulumi.set(__self__, "plugin_lists", plugin_lists)
+            _setter("plugin_lists", plugin_lists)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_expire_agent_key_in_ms is not None:
-            pulumi.set(__self__, "time_expire_agent_key_in_ms", time_expire_agent_key_in_ms)
+            _setter("time_expire_agent_key_in_ms", time_expire_agent_key_in_ms)
         if time_last_sync_received is not None:
-            pulumi.set(__self__, "time_last_sync_received", time_last_sync_received)
+            _setter("time_last_sync_received", time_last_sync_received)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="agentPubKey")
@@ -568,6 +700,10 @@ class Agent(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AgentArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

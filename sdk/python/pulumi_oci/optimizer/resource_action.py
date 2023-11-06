@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -31,10 +31,33 @@ class ResourceActionArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "resource_action_id", resource_action_id)
-        pulumi.set(__self__, "status", status)
+        ResourceActionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            resource_action_id=resource_action_id,
+            status=status,
+            time_status_end=time_status_end,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             resource_action_id: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             time_status_end: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if resource_action_id is None and 'resourceActionId' in kwargs:
+            resource_action_id = kwargs['resourceActionId']
+        if resource_action_id is None:
+            raise TypeError("Missing 'resource_action_id' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if time_status_end is None and 'timeStatusEnd' in kwargs:
+            time_status_end = kwargs['timeStatusEnd']
+
+        _setter("resource_action_id", resource_action_id)
+        _setter("status", status)
         if time_status_end is not None:
-            pulumi.set(__self__, "time_status_end", time_status_end)
+            _setter("time_status_end", time_status_end)
 
     @property
     @pulumi.getter(name="resourceActionId")
@@ -127,42 +150,113 @@ class _ResourceActionState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_updated: The date and time the resource action details were last updated, in the format defined by RFC3339.
         """
+        _ResourceActionState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            actions=actions,
+            category_id=category_id,
+            compartment_id=compartment_id,
+            compartment_name=compartment_name,
+            estimated_cost_saving=estimated_cost_saving,
+            extended_metadata=extended_metadata,
+            metadata=metadata,
+            name=name,
+            recommendation_id=recommendation_id,
+            resource_action_id=resource_action_id,
+            resource_id=resource_id,
+            resource_type=resource_type,
+            state=state,
+            status=status,
+            time_created=time_created,
+            time_status_begin=time_status_begin,
+            time_status_end=time_status_end,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             actions: Optional[pulumi.Input[Sequence[pulumi.Input['ResourceActionActionArgs']]]] = None,
+             category_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             compartment_name: Optional[pulumi.Input[str]] = None,
+             estimated_cost_saving: Optional[pulumi.Input[float]] = None,
+             extended_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             recommendation_id: Optional[pulumi.Input[str]] = None,
+             resource_action_id: Optional[pulumi.Input[str]] = None,
+             resource_id: Optional[pulumi.Input[str]] = None,
+             resource_type: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_status_begin: Optional[pulumi.Input[str]] = None,
+             time_status_end: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if category_id is None and 'categoryId' in kwargs:
+            category_id = kwargs['categoryId']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_name is None and 'compartmentName' in kwargs:
+            compartment_name = kwargs['compartmentName']
+        if estimated_cost_saving is None and 'estimatedCostSaving' in kwargs:
+            estimated_cost_saving = kwargs['estimatedCostSaving']
+        if extended_metadata is None and 'extendedMetadata' in kwargs:
+            extended_metadata = kwargs['extendedMetadata']
+        if recommendation_id is None and 'recommendationId' in kwargs:
+            recommendation_id = kwargs['recommendationId']
+        if resource_action_id is None and 'resourceActionId' in kwargs:
+            resource_action_id = kwargs['resourceActionId']
+        if resource_id is None and 'resourceId' in kwargs:
+            resource_id = kwargs['resourceId']
+        if resource_type is None and 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_status_begin is None and 'timeStatusBegin' in kwargs:
+            time_status_begin = kwargs['timeStatusBegin']
+        if time_status_end is None and 'timeStatusEnd' in kwargs:
+            time_status_end = kwargs['timeStatusEnd']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if actions is not None:
-            pulumi.set(__self__, "actions", actions)
+            _setter("actions", actions)
         if category_id is not None:
-            pulumi.set(__self__, "category_id", category_id)
+            _setter("category_id", category_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if compartment_name is not None:
-            pulumi.set(__self__, "compartment_name", compartment_name)
+            _setter("compartment_name", compartment_name)
         if estimated_cost_saving is not None:
-            pulumi.set(__self__, "estimated_cost_saving", estimated_cost_saving)
+            _setter("estimated_cost_saving", estimated_cost_saving)
         if extended_metadata is not None:
-            pulumi.set(__self__, "extended_metadata", extended_metadata)
+            _setter("extended_metadata", extended_metadata)
         if metadata is not None:
-            pulumi.set(__self__, "metadata", metadata)
+            _setter("metadata", metadata)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if recommendation_id is not None:
-            pulumi.set(__self__, "recommendation_id", recommendation_id)
+            _setter("recommendation_id", recommendation_id)
         if resource_action_id is not None:
-            pulumi.set(__self__, "resource_action_id", resource_action_id)
+            _setter("resource_action_id", resource_action_id)
         if resource_id is not None:
-            pulumi.set(__self__, "resource_id", resource_id)
+            _setter("resource_id", resource_id)
         if resource_type is not None:
-            pulumi.set(__self__, "resource_type", resource_type)
+            _setter("resource_type", resource_type)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_status_begin is not None:
-            pulumi.set(__self__, "time_status_begin", time_status_begin)
+            _setter("time_status_begin", time_status_begin)
         if time_status_end is not None:
-            pulumi.set(__self__, "time_status_end", time_status_end)
+            _setter("time_status_end", time_status_end)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter
@@ -460,6 +554,10 @@ class ResourceAction(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ResourceActionArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

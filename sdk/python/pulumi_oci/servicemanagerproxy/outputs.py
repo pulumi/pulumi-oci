@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -31,9 +31,34 @@ class GetServiceEnvironmentServiceDefinitionResult(dict):
         :param str short_display_name: Short display name of the service. For example, "Retail Order Management".
         :param str type: The service definition type. For example, a service definition type "RGBUOROMS"  would be for the service "Oracle Retail Order Management Cloud Service".
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "short_display_name", short_display_name)
-        pulumi.set(__self__, "type", type)
+        GetServiceEnvironmentServiceDefinitionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            short_display_name=short_display_name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             short_display_name: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if short_display_name is None and 'shortDisplayName' in kwargs:
+            short_display_name = kwargs['shortDisplayName']
+        if short_display_name is None:
+            raise TypeError("Missing 'short_display_name' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("display_name", display_name)
+        _setter("short_display_name", short_display_name)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="displayName")
@@ -71,9 +96,32 @@ class GetServiceEnvironmentServiceEnvironmentEndpointResult(dict):
         :param str environment_type: Service environment endpoint type.
         :param str url: Service environment instance URL.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "environment_type", environment_type)
-        pulumi.set(__self__, "url", url)
+        GetServiceEnvironmentServiceEnvironmentEndpointResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            environment_type=environment_type,
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             environment_type: Optional[str] = None,
+             url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if environment_type is None and 'environmentType' in kwargs:
+            environment_type = kwargs['environmentType']
+        if environment_type is None:
+            raise TypeError("Missing 'environment_type' argument")
+        if url is None:
+            raise TypeError("Missing 'url' argument")
+
+        _setter("description", description)
+        _setter("environment_type", environment_type)
+        _setter("url", url)
 
     @property
     @pulumi.getter
@@ -106,10 +154,29 @@ class GetServiceEnvironmentsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetServiceEnvironmentsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -131,7 +198,20 @@ class GetServiceEnvironmentsFilterResult(dict):
 class GetServiceEnvironmentsServiceEnvironmentCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetServiceEnvironmentsServiceEnvironmentCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -160,15 +240,74 @@ class GetServiceEnvironmentsServiceEnvironmentCollectionItemResult(dict):
         :param str status: Status of the entitlement registration for the service.
         :param str subscription_id: The unique subscription ID associated with the service environment ID.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "console_url", console_url)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "service_definitions", service_definitions)
-        pulumi.set(__self__, "service_environment_endpoints", service_environment_endpoints)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "subscription_id", subscription_id)
+        GetServiceEnvironmentsServiceEnvironmentCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            console_url=console_url,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            id=id,
+            service_definitions=service_definitions,
+            service_environment_endpoints=service_environment_endpoints,
+            status=status,
+            subscription_id=subscription_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             console_url: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             service_definitions: Optional[Sequence['outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionResult']] = None,
+             service_environment_endpoints: Optional[Sequence['outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointResult']] = None,
+             status: Optional[str] = None,
+             subscription_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if console_url is None and 'consoleUrl' in kwargs:
+            console_url = kwargs['consoleUrl']
+        if console_url is None:
+            raise TypeError("Missing 'console_url' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if service_definitions is None and 'serviceDefinitions' in kwargs:
+            service_definitions = kwargs['serviceDefinitions']
+        if service_definitions is None:
+            raise TypeError("Missing 'service_definitions' argument")
+        if service_environment_endpoints is None and 'serviceEnvironmentEndpoints' in kwargs:
+            service_environment_endpoints = kwargs['serviceEnvironmentEndpoints']
+        if service_environment_endpoints is None:
+            raise TypeError("Missing 'service_environment_endpoints' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if subscription_id is None and 'subscriptionId' in kwargs:
+            subscription_id = kwargs['subscriptionId']
+        if subscription_id is None:
+            raise TypeError("Missing 'subscription_id' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("console_url", console_url)
+        _setter("defined_tags", defined_tags)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("service_definitions", service_definitions)
+        _setter("service_environment_endpoints", service_environment_endpoints)
+        _setter("status", status)
+        _setter("subscription_id", subscription_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -248,9 +387,34 @@ class GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionRes
         :param str short_display_name: Short display name of the service. For example, "Retail Order Management".
         :param str type: The service definition type. For example, a service definition type "RGBUOROMS"  would be for the service "Oracle Retail Order Management Cloud Service".
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "short_display_name", short_display_name)
-        pulumi.set(__self__, "type", type)
+        GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            short_display_name=short_display_name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             short_display_name: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if short_display_name is None and 'shortDisplayName' in kwargs:
+            short_display_name = kwargs['shortDisplayName']
+        if short_display_name is None:
+            raise TypeError("Missing 'short_display_name' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("display_name", display_name)
+        _setter("short_display_name", short_display_name)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="displayName")
@@ -288,9 +452,32 @@ class GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEn
         :param str environment_type: Service environment endpoint type.
         :param str url: Service environment instance URL.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "environment_type", environment_type)
-        pulumi.set(__self__, "url", url)
+        GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            environment_type=environment_type,
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             environment_type: Optional[str] = None,
+             url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if environment_type is None and 'environmentType' in kwargs:
+            environment_type = kwargs['environmentType']
+        if environment_type is None:
+            raise TypeError("Missing 'environment_type' argument")
+        if url is None:
+            raise TypeError("Missing 'url' argument")
+
+        _setter("description", description)
+        _setter("environment_type", environment_type)
+        _setter("url", url)
 
     @property
     @pulumi.getter

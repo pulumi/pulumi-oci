@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -93,31 +93,184 @@ class GetContainerInstanceContainerResult(dict):
         :param str time_created: The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param str time_updated: The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
-        pulumi.set(__self__, "arguments", arguments)
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "commands", commands)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "container_id", container_id)
-        pulumi.set(__self__, "container_instance_id", container_instance_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "exit_code", exit_code)
-        pulumi.set(__self__, "fault_domain", fault_domain)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "health_checks", health_checks)
-        pulumi.set(__self__, "image_url", image_url)
-        pulumi.set(__self__, "is_resource_principal_disabled", is_resource_principal_disabled)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "resource_configs", resource_configs)
-        pulumi.set(__self__, "security_contexts", security_contexts)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_terminated", time_terminated)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "volume_mounts", volume_mounts)
-        pulumi.set(__self__, "working_directory", working_directory)
+        GetContainerInstanceContainerResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            arguments=arguments,
+            availability_domain=availability_domain,
+            commands=commands,
+            compartment_id=compartment_id,
+            container_id=container_id,
+            container_instance_id=container_instance_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            environment_variables=environment_variables,
+            exit_code=exit_code,
+            fault_domain=fault_domain,
+            freeform_tags=freeform_tags,
+            health_checks=health_checks,
+            image_url=image_url,
+            is_resource_principal_disabled=is_resource_principal_disabled,
+            lifecycle_details=lifecycle_details,
+            resource_configs=resource_configs,
+            security_contexts=security_contexts,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_terminated=time_terminated,
+            time_updated=time_updated,
+            volume_mounts=volume_mounts,
+            working_directory=working_directory,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             arguments: Optional[Sequence[str]] = None,
+             availability_domain: Optional[str] = None,
+             commands: Optional[Sequence[str]] = None,
+             compartment_id: Optional[str] = None,
+             container_id: Optional[str] = None,
+             container_instance_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             exit_code: Optional[int] = None,
+             fault_domain: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             health_checks: Optional[Sequence['outputs.GetContainerInstanceContainerHealthCheckResult']] = None,
+             image_url: Optional[str] = None,
+             is_resource_principal_disabled: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             resource_configs: Optional[Sequence['outputs.GetContainerInstanceContainerResourceConfigResult']] = None,
+             security_contexts: Optional[Sequence['outputs.GetContainerInstanceContainerSecurityContextResult']] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_terminated: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             volume_mounts: Optional[Sequence['outputs.GetContainerInstanceContainerVolumeMountResult']] = None,
+             working_directory: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if arguments is None:
+            raise TypeError("Missing 'arguments' argument")
+        if availability_domain is None and 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if commands is None:
+            raise TypeError("Missing 'commands' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if container_id is None and 'containerId' in kwargs:
+            container_id = kwargs['containerId']
+        if container_id is None:
+            raise TypeError("Missing 'container_id' argument")
+        if container_instance_id is None and 'containerInstanceId' in kwargs:
+            container_instance_id = kwargs['containerInstanceId']
+        if container_instance_id is None:
+            raise TypeError("Missing 'container_instance_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if environment_variables is None and 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if environment_variables is None:
+            raise TypeError("Missing 'environment_variables' argument")
+        if exit_code is None and 'exitCode' in kwargs:
+            exit_code = kwargs['exitCode']
+        if exit_code is None:
+            raise TypeError("Missing 'exit_code' argument")
+        if fault_domain is None and 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if fault_domain is None:
+            raise TypeError("Missing 'fault_domain' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if health_checks is None and 'healthChecks' in kwargs:
+            health_checks = kwargs['healthChecks']
+        if health_checks is None:
+            raise TypeError("Missing 'health_checks' argument")
+        if image_url is None and 'imageUrl' in kwargs:
+            image_url = kwargs['imageUrl']
+        if image_url is None:
+            raise TypeError("Missing 'image_url' argument")
+        if is_resource_principal_disabled is None and 'isResourcePrincipalDisabled' in kwargs:
+            is_resource_principal_disabled = kwargs['isResourcePrincipalDisabled']
+        if is_resource_principal_disabled is None:
+            raise TypeError("Missing 'is_resource_principal_disabled' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if resource_configs is None and 'resourceConfigs' in kwargs:
+            resource_configs = kwargs['resourceConfigs']
+        if resource_configs is None:
+            raise TypeError("Missing 'resource_configs' argument")
+        if security_contexts is None and 'securityContexts' in kwargs:
+            security_contexts = kwargs['securityContexts']
+        if security_contexts is None:
+            raise TypeError("Missing 'security_contexts' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_terminated is None and 'timeTerminated' in kwargs:
+            time_terminated = kwargs['timeTerminated']
+        if time_terminated is None:
+            raise TypeError("Missing 'time_terminated' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if volume_mounts is None and 'volumeMounts' in kwargs:
+            volume_mounts = kwargs['volumeMounts']
+        if volume_mounts is None:
+            raise TypeError("Missing 'volume_mounts' argument")
+        if working_directory is None and 'workingDirectory' in kwargs:
+            working_directory = kwargs['workingDirectory']
+        if working_directory is None:
+            raise TypeError("Missing 'working_directory' argument")
+
+        _setter("arguments", arguments)
+        _setter("availability_domain", availability_domain)
+        _setter("commands", commands)
+        _setter("compartment_id", compartment_id)
+        _setter("container_id", container_id)
+        _setter("container_instance_id", container_instance_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("environment_variables", environment_variables)
+        _setter("exit_code", exit_code)
+        _setter("fault_domain", fault_domain)
+        _setter("freeform_tags", freeform_tags)
+        _setter("health_checks", health_checks)
+        _setter("image_url", image_url)
+        _setter("is_resource_principal_disabled", is_resource_principal_disabled)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("resource_configs", resource_configs)
+        _setter("security_contexts", security_contexts)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_terminated", time_terminated)
+        _setter("time_updated", time_updated)
+        _setter("volume_mounts", volume_mounts)
+        _setter("working_directory", working_directory)
 
     @property
     @pulumi.getter
@@ -305,20 +458,101 @@ class GetContainerInstanceContainerHealthCheckResult(dict):
         :param str name: The name of the volume. This must be unique within a single container instance.
         :param str path: (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
         """
-        pulumi.set(__self__, "commands", commands)
-        pulumi.set(__self__, "failure_action", failure_action)
-        pulumi.set(__self__, "failure_threshold", failure_threshold)
-        pulumi.set(__self__, "headers", headers)
-        pulumi.set(__self__, "health_check_type", health_check_type)
-        pulumi.set(__self__, "initial_delay_in_seconds", initial_delay_in_seconds)
-        pulumi.set(__self__, "interval_in_seconds", interval_in_seconds)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "status_details", status_details)
-        pulumi.set(__self__, "success_threshold", success_threshold)
-        pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
+        GetContainerInstanceContainerHealthCheckResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            commands=commands,
+            failure_action=failure_action,
+            failure_threshold=failure_threshold,
+            headers=headers,
+            health_check_type=health_check_type,
+            initial_delay_in_seconds=initial_delay_in_seconds,
+            interval_in_seconds=interval_in_seconds,
+            name=name,
+            path=path,
+            port=port,
+            status=status,
+            status_details=status_details,
+            success_threshold=success_threshold,
+            timeout_in_seconds=timeout_in_seconds,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             commands: Optional[Sequence[str]] = None,
+             failure_action: Optional[str] = None,
+             failure_threshold: Optional[int] = None,
+             headers: Optional[Sequence['outputs.GetContainerInstanceContainerHealthCheckHeaderResult']] = None,
+             health_check_type: Optional[str] = None,
+             initial_delay_in_seconds: Optional[int] = None,
+             interval_in_seconds: Optional[int] = None,
+             name: Optional[str] = None,
+             path: Optional[str] = None,
+             port: Optional[int] = None,
+             status: Optional[str] = None,
+             status_details: Optional[str] = None,
+             success_threshold: Optional[int] = None,
+             timeout_in_seconds: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if commands is None:
+            raise TypeError("Missing 'commands' argument")
+        if failure_action is None and 'failureAction' in kwargs:
+            failure_action = kwargs['failureAction']
+        if failure_action is None:
+            raise TypeError("Missing 'failure_action' argument")
+        if failure_threshold is None and 'failureThreshold' in kwargs:
+            failure_threshold = kwargs['failureThreshold']
+        if failure_threshold is None:
+            raise TypeError("Missing 'failure_threshold' argument")
+        if headers is None:
+            raise TypeError("Missing 'headers' argument")
+        if health_check_type is None and 'healthCheckType' in kwargs:
+            health_check_type = kwargs['healthCheckType']
+        if health_check_type is None:
+            raise TypeError("Missing 'health_check_type' argument")
+        if initial_delay_in_seconds is None and 'initialDelayInSeconds' in kwargs:
+            initial_delay_in_seconds = kwargs['initialDelayInSeconds']
+        if initial_delay_in_seconds is None:
+            raise TypeError("Missing 'initial_delay_in_seconds' argument")
+        if interval_in_seconds is None and 'intervalInSeconds' in kwargs:
+            interval_in_seconds = kwargs['intervalInSeconds']
+        if interval_in_seconds is None:
+            raise TypeError("Missing 'interval_in_seconds' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if status_details is None and 'statusDetails' in kwargs:
+            status_details = kwargs['statusDetails']
+        if status_details is None:
+            raise TypeError("Missing 'status_details' argument")
+        if success_threshold is None and 'successThreshold' in kwargs:
+            success_threshold = kwargs['successThreshold']
+        if success_threshold is None:
+            raise TypeError("Missing 'success_threshold' argument")
+        if timeout_in_seconds is None and 'timeoutInSeconds' in kwargs:
+            timeout_in_seconds = kwargs['timeoutInSeconds']
+        if timeout_in_seconds is None:
+            raise TypeError("Missing 'timeout_in_seconds' argument")
+
+        _setter("commands", commands)
+        _setter("failure_action", failure_action)
+        _setter("failure_threshold", failure_threshold)
+        _setter("headers", headers)
+        _setter("health_check_type", health_check_type)
+        _setter("initial_delay_in_seconds", initial_delay_in_seconds)
+        _setter("interval_in_seconds", interval_in_seconds)
+        _setter("name", name)
+        _setter("path", path)
+        _setter("port", port)
+        _setter("status", status)
+        _setter("status_details", status_details)
+        _setter("success_threshold", success_threshold)
+        _setter("timeout_in_seconds", timeout_in_seconds)
 
     @property
     @pulumi.getter
@@ -405,8 +639,25 @@ class GetContainerInstanceContainerHealthCheckHeaderResult(dict):
         """
         :param str name: The name of the volume. This must be unique within a single container instance.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetContainerInstanceContainerHealthCheckHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -427,8 +678,29 @@ class GetContainerInstanceContainerResourceConfigResult(dict):
     def __init__(__self__, *,
                  memory_limit_in_gbs: float,
                  vcpus_limit: float):
-        pulumi.set(__self__, "memory_limit_in_gbs", memory_limit_in_gbs)
-        pulumi.set(__self__, "vcpus_limit", vcpus_limit)
+        GetContainerInstanceContainerResourceConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_limit_in_gbs=memory_limit_in_gbs,
+            vcpus_limit=vcpus_limit,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_limit_in_gbs: Optional[float] = None,
+             vcpus_limit: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_limit_in_gbs is None and 'memoryLimitInGbs' in kwargs:
+            memory_limit_in_gbs = kwargs['memoryLimitInGbs']
+        if memory_limit_in_gbs is None:
+            raise TypeError("Missing 'memory_limit_in_gbs' argument")
+        if vcpus_limit is None and 'vcpusLimit' in kwargs:
+            vcpus_limit = kwargs['vcpusLimit']
+        if vcpus_limit is None:
+            raise TypeError("Missing 'vcpus_limit' argument")
+
+        _setter("memory_limit_in_gbs", memory_limit_in_gbs)
+        _setter("vcpus_limit", vcpus_limit)
 
     @property
     @pulumi.getter(name="memoryLimitInGbs")
@@ -449,11 +721,50 @@ class GetContainerInstanceContainerSecurityContextResult(dict):
                  run_as_group: int,
                  run_as_user: int,
                  security_context_type: str):
-        pulumi.set(__self__, "is_non_root_user_check_enabled", is_non_root_user_check_enabled)
-        pulumi.set(__self__, "is_root_file_system_readonly", is_root_file_system_readonly)
-        pulumi.set(__self__, "run_as_group", run_as_group)
-        pulumi.set(__self__, "run_as_user", run_as_user)
-        pulumi.set(__self__, "security_context_type", security_context_type)
+        GetContainerInstanceContainerSecurityContextResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_non_root_user_check_enabled=is_non_root_user_check_enabled,
+            is_root_file_system_readonly=is_root_file_system_readonly,
+            run_as_group=run_as_group,
+            run_as_user=run_as_user,
+            security_context_type=security_context_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_non_root_user_check_enabled: Optional[bool] = None,
+             is_root_file_system_readonly: Optional[bool] = None,
+             run_as_group: Optional[int] = None,
+             run_as_user: Optional[int] = None,
+             security_context_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_non_root_user_check_enabled is None and 'isNonRootUserCheckEnabled' in kwargs:
+            is_non_root_user_check_enabled = kwargs['isNonRootUserCheckEnabled']
+        if is_non_root_user_check_enabled is None:
+            raise TypeError("Missing 'is_non_root_user_check_enabled' argument")
+        if is_root_file_system_readonly is None and 'isRootFileSystemReadonly' in kwargs:
+            is_root_file_system_readonly = kwargs['isRootFileSystemReadonly']
+        if is_root_file_system_readonly is None:
+            raise TypeError("Missing 'is_root_file_system_readonly' argument")
+        if run_as_group is None and 'runAsGroup' in kwargs:
+            run_as_group = kwargs['runAsGroup']
+        if run_as_group is None:
+            raise TypeError("Missing 'run_as_group' argument")
+        if run_as_user is None and 'runAsUser' in kwargs:
+            run_as_user = kwargs['runAsUser']
+        if run_as_user is None:
+            raise TypeError("Missing 'run_as_user' argument")
+        if security_context_type is None and 'securityContextType' in kwargs:
+            security_context_type = kwargs['securityContextType']
+        if security_context_type is None:
+            raise TypeError("Missing 'security_context_type' argument")
+
+        _setter("is_non_root_user_check_enabled", is_non_root_user_check_enabled)
+        _setter("is_root_file_system_readonly", is_root_file_system_readonly)
+        _setter("run_as_group", run_as_group)
+        _setter("run_as_user", run_as_user)
+        _setter("security_context_type", security_context_type)
 
     @property
     @pulumi.getter(name="isNonRootUserCheckEnabled")
@@ -489,11 +800,48 @@ class GetContainerInstanceContainerVolumeMountResult(dict):
                  partition: int,
                  sub_path: str,
                  volume_name: str):
-        pulumi.set(__self__, "is_read_only", is_read_only)
-        pulumi.set(__self__, "mount_path", mount_path)
-        pulumi.set(__self__, "partition", partition)
-        pulumi.set(__self__, "sub_path", sub_path)
-        pulumi.set(__self__, "volume_name", volume_name)
+        GetContainerInstanceContainerVolumeMountResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_read_only=is_read_only,
+            mount_path=mount_path,
+            partition=partition,
+            sub_path=sub_path,
+            volume_name=volume_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_read_only: Optional[bool] = None,
+             mount_path: Optional[str] = None,
+             partition: Optional[int] = None,
+             sub_path: Optional[str] = None,
+             volume_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_read_only is None and 'isReadOnly' in kwargs:
+            is_read_only = kwargs['isReadOnly']
+        if is_read_only is None:
+            raise TypeError("Missing 'is_read_only' argument")
+        if mount_path is None and 'mountPath' in kwargs:
+            mount_path = kwargs['mountPath']
+        if mount_path is None:
+            raise TypeError("Missing 'mount_path' argument")
+        if partition is None:
+            raise TypeError("Missing 'partition' argument")
+        if sub_path is None and 'subPath' in kwargs:
+            sub_path = kwargs['subPath']
+        if sub_path is None:
+            raise TypeError("Missing 'sub_path' argument")
+        if volume_name is None and 'volumeName' in kwargs:
+            volume_name = kwargs['volumeName']
+        if volume_name is None:
+            raise TypeError("Missing 'volume_name' argument")
+
+        _setter("is_read_only", is_read_only)
+        _setter("mount_path", mount_path)
+        _setter("partition", partition)
+        _setter("sub_path", sub_path)
+        _setter("volume_name", volume_name)
 
     @property
     @pulumi.getter(name="isReadOnly")
@@ -532,9 +880,30 @@ class GetContainerInstanceDnsConfigResult(dict):
         :param Sequence[str] options: Options allows certain internal resolver variables to be modified.
         :param Sequence[str] searches: Search list for hostname lookup.
         """
-        pulumi.set(__self__, "nameservers", nameservers)
-        pulumi.set(__self__, "options", options)
-        pulumi.set(__self__, "searches", searches)
+        GetContainerInstanceDnsConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            nameservers=nameservers,
+            options=options,
+            searches=searches,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             nameservers: Optional[Sequence[str]] = None,
+             options: Optional[Sequence[str]] = None,
+             searches: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if nameservers is None:
+            raise TypeError("Missing 'nameservers' argument")
+        if options is None:
+            raise TypeError("Missing 'options' argument")
+        if searches is None:
+            raise TypeError("Missing 'searches' argument")
+
+        _setter("nameservers", nameservers)
+        _setter("options", options)
+        _setter("searches", searches)
 
     @property
     @pulumi.getter
@@ -574,11 +943,46 @@ class GetContainerInstanceImagePullSecretResult(dict):
         :param str secret_id: The OCID of the secret for registry credentials.
         :param str secret_type: The type of ImagePullSecret.
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "registry_endpoint", registry_endpoint)
-        pulumi.set(__self__, "secret_id", secret_id)
-        pulumi.set(__self__, "secret_type", secret_type)
-        pulumi.set(__self__, "username", username)
+        GetContainerInstanceImagePullSecretResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            registry_endpoint=registry_endpoint,
+            secret_id=secret_id,
+            secret_type=secret_type,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: Optional[str] = None,
+             registry_endpoint: Optional[str] = None,
+             secret_id: Optional[str] = None,
+             secret_type: Optional[str] = None,
+             username: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if password is None:
+            raise TypeError("Missing 'password' argument")
+        if registry_endpoint is None and 'registryEndpoint' in kwargs:
+            registry_endpoint = kwargs['registryEndpoint']
+        if registry_endpoint is None:
+            raise TypeError("Missing 'registry_endpoint' argument")
+        if secret_id is None and 'secretId' in kwargs:
+            secret_id = kwargs['secretId']
+        if secret_id is None:
+            raise TypeError("Missing 'secret_id' argument")
+        if secret_type is None and 'secretType' in kwargs:
+            secret_type = kwargs['secretType']
+        if secret_type is None:
+            raise TypeError("Missing 'secret_type' argument")
+        if username is None:
+            raise TypeError("Missing 'username' argument")
+
+        _setter("password", password)
+        _setter("registry_endpoint", registry_endpoint)
+        _setter("secret_id", secret_id)
+        _setter("secret_type", secret_type)
+        _setter("username", username)
 
     @property
     @pulumi.getter
@@ -628,10 +1032,41 @@ class GetContainerInstanceShapeConfigResult(dict):
         :param float ocpus: The total number of OCPUs available to the container instance.
         :param str processor_description: A short description of the container instance's processor (CPU).
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "networking_bandwidth_in_gbps", networking_bandwidth_in_gbps)
-        pulumi.set(__self__, "ocpus", ocpus)
-        pulumi.set(__self__, "processor_description", processor_description)
+        GetContainerInstanceShapeConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            networking_bandwidth_in_gbps=networking_bandwidth_in_gbps,
+            ocpus=ocpus,
+            processor_description=processor_description,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             networking_bandwidth_in_gbps: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             processor_description: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if networking_bandwidth_in_gbps is None and 'networkingBandwidthInGbps' in kwargs:
+            networking_bandwidth_in_gbps = kwargs['networkingBandwidthInGbps']
+        if networking_bandwidth_in_gbps is None:
+            raise TypeError("Missing 'networking_bandwidth_in_gbps' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+        if processor_description is None and 'processorDescription' in kwargs:
+            processor_description = kwargs['processorDescription']
+        if processor_description is None:
+            raise TypeError("Missing 'processor_description' argument")
+
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("networking_bandwidth_in_gbps", networking_bandwidth_in_gbps)
+        _setter("ocpus", ocpus)
+        _setter("processor_description", processor_description)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -681,11 +1116,48 @@ class GetContainerInstanceShapeItemResult(dict):
         :param Sequence['GetContainerInstanceShapeItemOcpuOptionArgs'] ocpu_options: For a flexible shape, the number of OCPUs available for instances that use this shape.
         :param str processor_description: A short description of the Instance's processor (CPU).
         """
-        pulumi.set(__self__, "memory_options", memory_options)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "networking_bandwidth_options", networking_bandwidth_options)
-        pulumi.set(__self__, "ocpu_options", ocpu_options)
-        pulumi.set(__self__, "processor_description", processor_description)
+        GetContainerInstanceShapeItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_options=memory_options,
+            name=name,
+            networking_bandwidth_options=networking_bandwidth_options,
+            ocpu_options=ocpu_options,
+            processor_description=processor_description,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_options: Optional[Sequence['outputs.GetContainerInstanceShapeItemMemoryOptionResult']] = None,
+             name: Optional[str] = None,
+             networking_bandwidth_options: Optional[Sequence['outputs.GetContainerInstanceShapeItemNetworkingBandwidthOptionResult']] = None,
+             ocpu_options: Optional[Sequence['outputs.GetContainerInstanceShapeItemOcpuOptionResult']] = None,
+             processor_description: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_options is None and 'memoryOptions' in kwargs:
+            memory_options = kwargs['memoryOptions']
+        if memory_options is None:
+            raise TypeError("Missing 'memory_options' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if networking_bandwidth_options is None and 'networkingBandwidthOptions' in kwargs:
+            networking_bandwidth_options = kwargs['networkingBandwidthOptions']
+        if networking_bandwidth_options is None:
+            raise TypeError("Missing 'networking_bandwidth_options' argument")
+        if ocpu_options is None and 'ocpuOptions' in kwargs:
+            ocpu_options = kwargs['ocpuOptions']
+        if ocpu_options is None:
+            raise TypeError("Missing 'ocpu_options' argument")
+        if processor_description is None and 'processorDescription' in kwargs:
+            processor_description = kwargs['processorDescription']
+        if processor_description is None:
+            raise TypeError("Missing 'processor_description' argument")
+
+        _setter("memory_options", memory_options)
+        _setter("name", name)
+        _setter("networking_bandwidth_options", networking_bandwidth_options)
+        _setter("ocpu_options", ocpu_options)
+        _setter("processor_description", processor_description)
 
     @property
     @pulumi.getter(name="memoryOptions")
@@ -743,11 +1215,50 @@ class GetContainerInstanceShapeItemMemoryOptionResult(dict):
         :param float min_in_gbs: The minimum amount of memory, in gigabytes.
         :param float min_per_ocpu_in_gbs: The minimum amount of memory per OCPU available for this shape, in gigabytes.
         """
-        pulumi.set(__self__, "default_per_ocpu_in_gbs", default_per_ocpu_in_gbs)
-        pulumi.set(__self__, "max_in_gbs", max_in_gbs)
-        pulumi.set(__self__, "max_per_ocpu_in_gbs", max_per_ocpu_in_gbs)
-        pulumi.set(__self__, "min_in_gbs", min_in_gbs)
-        pulumi.set(__self__, "min_per_ocpu_in_gbs", min_per_ocpu_in_gbs)
+        GetContainerInstanceShapeItemMemoryOptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_per_ocpu_in_gbs=default_per_ocpu_in_gbs,
+            max_in_gbs=max_in_gbs,
+            max_per_ocpu_in_gbs=max_per_ocpu_in_gbs,
+            min_in_gbs=min_in_gbs,
+            min_per_ocpu_in_gbs=min_per_ocpu_in_gbs,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_per_ocpu_in_gbs: Optional[float] = None,
+             max_in_gbs: Optional[float] = None,
+             max_per_ocpu_in_gbs: Optional[float] = None,
+             min_in_gbs: Optional[float] = None,
+             min_per_ocpu_in_gbs: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if default_per_ocpu_in_gbs is None and 'defaultPerOcpuInGbs' in kwargs:
+            default_per_ocpu_in_gbs = kwargs['defaultPerOcpuInGbs']
+        if default_per_ocpu_in_gbs is None:
+            raise TypeError("Missing 'default_per_ocpu_in_gbs' argument")
+        if max_in_gbs is None and 'maxInGbs' in kwargs:
+            max_in_gbs = kwargs['maxInGbs']
+        if max_in_gbs is None:
+            raise TypeError("Missing 'max_in_gbs' argument")
+        if max_per_ocpu_in_gbs is None and 'maxPerOcpuInGbs' in kwargs:
+            max_per_ocpu_in_gbs = kwargs['maxPerOcpuInGbs']
+        if max_per_ocpu_in_gbs is None:
+            raise TypeError("Missing 'max_per_ocpu_in_gbs' argument")
+        if min_in_gbs is None and 'minInGbs' in kwargs:
+            min_in_gbs = kwargs['minInGbs']
+        if min_in_gbs is None:
+            raise TypeError("Missing 'min_in_gbs' argument")
+        if min_per_ocpu_in_gbs is None and 'minPerOcpuInGbs' in kwargs:
+            min_per_ocpu_in_gbs = kwargs['minPerOcpuInGbs']
+        if min_per_ocpu_in_gbs is None:
+            raise TypeError("Missing 'min_per_ocpu_in_gbs' argument")
+
+        _setter("default_per_ocpu_in_gbs", default_per_ocpu_in_gbs)
+        _setter("max_in_gbs", max_in_gbs)
+        _setter("max_per_ocpu_in_gbs", max_per_ocpu_in_gbs)
+        _setter("min_in_gbs", min_in_gbs)
+        _setter("min_per_ocpu_in_gbs", min_per_ocpu_in_gbs)
 
     @property
     @pulumi.getter(name="defaultPerOcpuInGbs")
@@ -801,9 +1312,36 @@ class GetContainerInstanceShapeItemNetworkingBandwidthOptionResult(dict):
         :param float max_in_gbps: The maximum amount of networking bandwidth, in gigabits per second.
         :param float min_in_gbps: The minimum amount of networking bandwidth, in gigabits per second.
         """
-        pulumi.set(__self__, "default_per_ocpu_in_gbps", default_per_ocpu_in_gbps)
-        pulumi.set(__self__, "max_in_gbps", max_in_gbps)
-        pulumi.set(__self__, "min_in_gbps", min_in_gbps)
+        GetContainerInstanceShapeItemNetworkingBandwidthOptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_per_ocpu_in_gbps=default_per_ocpu_in_gbps,
+            max_in_gbps=max_in_gbps,
+            min_in_gbps=min_in_gbps,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_per_ocpu_in_gbps: Optional[float] = None,
+             max_in_gbps: Optional[float] = None,
+             min_in_gbps: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if default_per_ocpu_in_gbps is None and 'defaultPerOcpuInGbps' in kwargs:
+            default_per_ocpu_in_gbps = kwargs['defaultPerOcpuInGbps']
+        if default_per_ocpu_in_gbps is None:
+            raise TypeError("Missing 'default_per_ocpu_in_gbps' argument")
+        if max_in_gbps is None and 'maxInGbps' in kwargs:
+            max_in_gbps = kwargs['maxInGbps']
+        if max_in_gbps is None:
+            raise TypeError("Missing 'max_in_gbps' argument")
+        if min_in_gbps is None and 'minInGbps' in kwargs:
+            min_in_gbps = kwargs['minInGbps']
+        if min_in_gbps is None:
+            raise TypeError("Missing 'min_in_gbps' argument")
+
+        _setter("default_per_ocpu_in_gbps", default_per_ocpu_in_gbps)
+        _setter("max_in_gbps", max_in_gbps)
+        _setter("min_in_gbps", min_in_gbps)
 
     @property
     @pulumi.getter(name="defaultPerOcpuInGbps")
@@ -839,8 +1377,25 @@ class GetContainerInstanceShapeItemOcpuOptionResult(dict):
         :param float max: The maximum number of OCPUs.
         :param float min: The minimum number of OCPUs.
         """
-        pulumi.set(__self__, "max", max)
-        pulumi.set(__self__, "min", min)
+        GetContainerInstanceShapeItemOcpuOptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            max=max,
+            min=min,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             max: Optional[float] = None,
+             min: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if max is None:
+            raise TypeError("Missing 'max' argument")
+        if min is None:
+            raise TypeError("Missing 'min' argument")
+
+        _setter("max", max)
+        _setter("min", min)
 
     @property
     @pulumi.getter
@@ -866,7 +1421,20 @@ class GetContainerInstanceShapesContainerInstanceShapeCollectionResult(dict):
         """
         :param Sequence['GetContainerInstanceShapesContainerInstanceShapeCollectionItemArgs'] items: A list of shapes.
         """
-        pulumi.set(__self__, "items", items)
+        GetContainerInstanceShapesContainerInstanceShapeCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -892,11 +1460,48 @@ class GetContainerInstanceShapesContainerInstanceShapeCollectionItemResult(dict)
         :param Sequence['GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionArgs'] ocpu_options: For a flexible shape, the number of OCPUs available for container instances that use this shape.
         :param str processor_description: A short description of the container instance's processor (CPU).
         """
-        pulumi.set(__self__, "memory_options", memory_options)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "networking_bandwidth_options", networking_bandwidth_options)
-        pulumi.set(__self__, "ocpu_options", ocpu_options)
-        pulumi.set(__self__, "processor_description", processor_description)
+        GetContainerInstanceShapesContainerInstanceShapeCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_options=memory_options,
+            name=name,
+            networking_bandwidth_options=networking_bandwidth_options,
+            ocpu_options=ocpu_options,
+            processor_description=processor_description,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_options: Optional[Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionResult']] = None,
+             name: Optional[str] = None,
+             networking_bandwidth_options: Optional[Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionResult']] = None,
+             ocpu_options: Optional[Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionResult']] = None,
+             processor_description: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_options is None and 'memoryOptions' in kwargs:
+            memory_options = kwargs['memoryOptions']
+        if memory_options is None:
+            raise TypeError("Missing 'memory_options' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if networking_bandwidth_options is None and 'networkingBandwidthOptions' in kwargs:
+            networking_bandwidth_options = kwargs['networkingBandwidthOptions']
+        if networking_bandwidth_options is None:
+            raise TypeError("Missing 'networking_bandwidth_options' argument")
+        if ocpu_options is None and 'ocpuOptions' in kwargs:
+            ocpu_options = kwargs['ocpuOptions']
+        if ocpu_options is None:
+            raise TypeError("Missing 'ocpu_options' argument")
+        if processor_description is None and 'processorDescription' in kwargs:
+            processor_description = kwargs['processorDescription']
+        if processor_description is None:
+            raise TypeError("Missing 'processor_description' argument")
+
+        _setter("memory_options", memory_options)
+        _setter("name", name)
+        _setter("networking_bandwidth_options", networking_bandwidth_options)
+        _setter("ocpu_options", ocpu_options)
+        _setter("processor_description", processor_description)
 
     @property
     @pulumi.getter(name="memoryOptions")
@@ -954,11 +1559,50 @@ class GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption
         :param float min_in_gbs: The minimum amount of memory (GB).
         :param float min_per_ocpu_in_gbs: The minimum amount of memory per OCPU available for this shape (GB).
         """
-        pulumi.set(__self__, "default_per_ocpu_in_gbs", default_per_ocpu_in_gbs)
-        pulumi.set(__self__, "max_in_gbs", max_in_gbs)
-        pulumi.set(__self__, "max_per_ocpu_in_gbs", max_per_ocpu_in_gbs)
-        pulumi.set(__self__, "min_in_gbs", min_in_gbs)
-        pulumi.set(__self__, "min_per_ocpu_in_gbs", min_per_ocpu_in_gbs)
+        GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_per_ocpu_in_gbs=default_per_ocpu_in_gbs,
+            max_in_gbs=max_in_gbs,
+            max_per_ocpu_in_gbs=max_per_ocpu_in_gbs,
+            min_in_gbs=min_in_gbs,
+            min_per_ocpu_in_gbs=min_per_ocpu_in_gbs,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_per_ocpu_in_gbs: Optional[float] = None,
+             max_in_gbs: Optional[float] = None,
+             max_per_ocpu_in_gbs: Optional[float] = None,
+             min_in_gbs: Optional[float] = None,
+             min_per_ocpu_in_gbs: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if default_per_ocpu_in_gbs is None and 'defaultPerOcpuInGbs' in kwargs:
+            default_per_ocpu_in_gbs = kwargs['defaultPerOcpuInGbs']
+        if default_per_ocpu_in_gbs is None:
+            raise TypeError("Missing 'default_per_ocpu_in_gbs' argument")
+        if max_in_gbs is None and 'maxInGbs' in kwargs:
+            max_in_gbs = kwargs['maxInGbs']
+        if max_in_gbs is None:
+            raise TypeError("Missing 'max_in_gbs' argument")
+        if max_per_ocpu_in_gbs is None and 'maxPerOcpuInGbs' in kwargs:
+            max_per_ocpu_in_gbs = kwargs['maxPerOcpuInGbs']
+        if max_per_ocpu_in_gbs is None:
+            raise TypeError("Missing 'max_per_ocpu_in_gbs' argument")
+        if min_in_gbs is None and 'minInGbs' in kwargs:
+            min_in_gbs = kwargs['minInGbs']
+        if min_in_gbs is None:
+            raise TypeError("Missing 'min_in_gbs' argument")
+        if min_per_ocpu_in_gbs is None and 'minPerOcpuInGbs' in kwargs:
+            min_per_ocpu_in_gbs = kwargs['minPerOcpuInGbs']
+        if min_per_ocpu_in_gbs is None:
+            raise TypeError("Missing 'min_per_ocpu_in_gbs' argument")
+
+        _setter("default_per_ocpu_in_gbs", default_per_ocpu_in_gbs)
+        _setter("max_in_gbs", max_in_gbs)
+        _setter("max_per_ocpu_in_gbs", max_per_ocpu_in_gbs)
+        _setter("min_in_gbs", min_in_gbs)
+        _setter("min_per_ocpu_in_gbs", min_per_ocpu_in_gbs)
 
     @property
     @pulumi.getter(name="defaultPerOcpuInGbs")
@@ -1012,9 +1656,36 @@ class GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBa
         :param float max_in_gbps: The maximum amount of networking bandwidth, in gigabits per second.
         :param float min_in_gbps: The minimum amount of networking bandwidth, in gigabits per second.
         """
-        pulumi.set(__self__, "default_per_ocpu_in_gbps", default_per_ocpu_in_gbps)
-        pulumi.set(__self__, "max_in_gbps", max_in_gbps)
-        pulumi.set(__self__, "min_in_gbps", min_in_gbps)
+        GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_per_ocpu_in_gbps=default_per_ocpu_in_gbps,
+            max_in_gbps=max_in_gbps,
+            min_in_gbps=min_in_gbps,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_per_ocpu_in_gbps: Optional[float] = None,
+             max_in_gbps: Optional[float] = None,
+             min_in_gbps: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if default_per_ocpu_in_gbps is None and 'defaultPerOcpuInGbps' in kwargs:
+            default_per_ocpu_in_gbps = kwargs['defaultPerOcpuInGbps']
+        if default_per_ocpu_in_gbps is None:
+            raise TypeError("Missing 'default_per_ocpu_in_gbps' argument")
+        if max_in_gbps is None and 'maxInGbps' in kwargs:
+            max_in_gbps = kwargs['maxInGbps']
+        if max_in_gbps is None:
+            raise TypeError("Missing 'max_in_gbps' argument")
+        if min_in_gbps is None and 'minInGbps' in kwargs:
+            min_in_gbps = kwargs['minInGbps']
+        if min_in_gbps is None:
+            raise TypeError("Missing 'min_in_gbps' argument")
+
+        _setter("default_per_ocpu_in_gbps", default_per_ocpu_in_gbps)
+        _setter("max_in_gbps", max_in_gbps)
+        _setter("min_in_gbps", min_in_gbps)
 
     @property
     @pulumi.getter(name="defaultPerOcpuInGbps")
@@ -1050,8 +1721,25 @@ class GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionRe
         :param float max: The maximum number of OCPUs.
         :param float min: The minimum number of OCPUs.
         """
-        pulumi.set(__self__, "max", max)
-        pulumi.set(__self__, "min", min)
+        GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            max=max,
+            min=min,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             max: Optional[float] = None,
+             min: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if max is None:
+            raise TypeError("Missing 'max' argument")
+        if min is None:
+            raise TypeError("Missing 'min' argument")
+
+        _setter("max", max)
+        _setter("min", min)
 
     @property
     @pulumi.getter
@@ -1079,10 +1767,29 @@ class GetContainerInstanceShapesFilterResult(dict):
         """
         :param str name: The name identifying the shape.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetContainerInstanceShapesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1122,16 +1829,85 @@ class GetContainerInstanceVnicResult(dict):
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str vnic_id: The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
         """
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "hostname_label", hostname_label)
-        pulumi.set(__self__, "is_public_ip_assigned", is_public_ip_assigned)
-        pulumi.set(__self__, "nsg_ids", nsg_ids)
-        pulumi.set(__self__, "private_ip", private_ip)
-        pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "vnic_id", vnic_id)
+        GetContainerInstanceVnicResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            hostname_label=hostname_label,
+            is_public_ip_assigned=is_public_ip_assigned,
+            nsg_ids=nsg_ids,
+            private_ip=private_ip,
+            skip_source_dest_check=skip_source_dest_check,
+            subnet_id=subnet_id,
+            vnic_id=vnic_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             hostname_label: Optional[str] = None,
+             is_public_ip_assigned: Optional[bool] = None,
+             nsg_ids: Optional[Sequence[str]] = None,
+             private_ip: Optional[str] = None,
+             skip_source_dest_check: Optional[bool] = None,
+             subnet_id: Optional[str] = None,
+             vnic_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if hostname_label is None and 'hostnameLabel' in kwargs:
+            hostname_label = kwargs['hostnameLabel']
+        if hostname_label is None:
+            raise TypeError("Missing 'hostname_label' argument")
+        if is_public_ip_assigned is None and 'isPublicIpAssigned' in kwargs:
+            is_public_ip_assigned = kwargs['isPublicIpAssigned']
+        if is_public_ip_assigned is None:
+            raise TypeError("Missing 'is_public_ip_assigned' argument")
+        if nsg_ids is None and 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if nsg_ids is None:
+            raise TypeError("Missing 'nsg_ids' argument")
+        if private_ip is None and 'privateIp' in kwargs:
+            private_ip = kwargs['privateIp']
+        if private_ip is None:
+            raise TypeError("Missing 'private_ip' argument")
+        if skip_source_dest_check is None and 'skipSourceDestCheck' in kwargs:
+            skip_source_dest_check = kwargs['skipSourceDestCheck']
+        if skip_source_dest_check is None:
+            raise TypeError("Missing 'skip_source_dest_check' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if vnic_id is None and 'vnicId' in kwargs:
+            vnic_id = kwargs['vnicId']
+        if vnic_id is None:
+            raise TypeError("Missing 'vnic_id' argument")
+
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("hostname_label", hostname_label)
+        _setter("is_public_ip_assigned", is_public_ip_assigned)
+        _setter("nsg_ids", nsg_ids)
+        _setter("private_ip", private_ip)
+        _setter("skip_source_dest_check", skip_source_dest_check)
+        _setter("subnet_id", subnet_id)
+        _setter("vnic_id", vnic_id)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -1209,10 +1985,39 @@ class GetContainerInstanceVolumeResult(dict):
         :param str name: The name of the volume. This must be unique within a single container instance.
         :param str volume_type: The type of volume.
         """
-        pulumi.set(__self__, "backing_store", backing_store)
-        pulumi.set(__self__, "configs", configs)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "volume_type", volume_type)
+        GetContainerInstanceVolumeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backing_store=backing_store,
+            configs=configs,
+            name=name,
+            volume_type=volume_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backing_store: Optional[str] = None,
+             configs: Optional[Sequence['outputs.GetContainerInstanceVolumeConfigResult']] = None,
+             name: Optional[str] = None,
+             volume_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if backing_store is None and 'backingStore' in kwargs:
+            backing_store = kwargs['backingStore']
+        if backing_store is None:
+            raise TypeError("Missing 'backing_store' argument")
+        if configs is None:
+            raise TypeError("Missing 'configs' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if volume_type is None and 'volumeType' in kwargs:
+            volume_type = kwargs['volumeType']
+        if volume_type is None:
+            raise TypeError("Missing 'volume_type' argument")
+
+        _setter("backing_store", backing_store)
+        _setter("configs", configs)
+        _setter("name", name)
+        _setter("volume_type", volume_type)
 
     @property
     @pulumi.getter(name="backingStore")
@@ -1258,9 +2063,32 @@ class GetContainerInstanceVolumeConfigResult(dict):
         :param str file_name: The name of the file. The fileName should be unique across the volume.
         :param str path: (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
         """
-        pulumi.set(__self__, "data", data)
-        pulumi.set(__self__, "file_name", file_name)
-        pulumi.set(__self__, "path", path)
+        GetContainerInstanceVolumeConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            data=data,
+            file_name=file_name,
+            path=path,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             data: Optional[str] = None,
+             file_name: Optional[str] = None,
+             path: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if data is None:
+            raise TypeError("Missing 'data' argument")
+        if file_name is None and 'fileName' in kwargs:
+            file_name = kwargs['fileName']
+        if file_name is None:
+            raise TypeError("Missing 'file_name' argument")
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+
+        _setter("data", data)
+        _setter("file_name", file_name)
+        _setter("path", path)
 
     @property
     @pulumi.getter
@@ -1291,7 +2119,20 @@ class GetContainerInstanceVolumeConfigResult(dict):
 class GetContainerInstancesContainerInstanceCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetContainerInstancesContainerInstanceCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1350,29 +2191,164 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
         :param int volume_count: The number of volumes that are attached to the container instance.
         :param Sequence['GetContainerInstancesContainerInstanceCollectionItemVolumeArgs'] volumes: A volume is a directory with data that is accessible across multiple containers in a container instance.
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "container_count", container_count)
-        pulumi.set(__self__, "container_restart_policy", container_restart_policy)
-        pulumi.set(__self__, "containers", containers)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "dns_configs", dns_configs)
-        pulumi.set(__self__, "fault_domain", fault_domain)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "graceful_shutdown_timeout_in_seconds", graceful_shutdown_timeout_in_seconds)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "image_pull_secrets", image_pull_secrets)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "shape_configs", shape_configs)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "vnics", vnics)
-        pulumi.set(__self__, "volume_count", volume_count)
-        pulumi.set(__self__, "volumes", volumes)
+        GetContainerInstancesContainerInstanceCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            compartment_id=compartment_id,
+            container_count=container_count,
+            container_restart_policy=container_restart_policy,
+            containers=containers,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            dns_configs=dns_configs,
+            fault_domain=fault_domain,
+            freeform_tags=freeform_tags,
+            graceful_shutdown_timeout_in_seconds=graceful_shutdown_timeout_in_seconds,
+            id=id,
+            image_pull_secrets=image_pull_secrets,
+            lifecycle_details=lifecycle_details,
+            shape=shape,
+            shape_configs=shape_configs,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            vnics=vnics,
+            volume_count=volume_count,
+            volumes=volumes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             container_count: Optional[int] = None,
+             container_restart_policy: Optional[str] = None,
+             containers: Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerResult']] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             dns_configs: Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemDnsConfigResult']] = None,
+             fault_domain: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             graceful_shutdown_timeout_in_seconds: Optional[str] = None,
+             id: Optional[str] = None,
+             image_pull_secrets: Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemImagePullSecretResult']] = None,
+             lifecycle_details: Optional[str] = None,
+             shape: Optional[str] = None,
+             shape_configs: Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemShapeConfigResult']] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             vnics: Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVnicResult']] = None,
+             volume_count: Optional[int] = None,
+             volumes: Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if availability_domain is None and 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if container_count is None and 'containerCount' in kwargs:
+            container_count = kwargs['containerCount']
+        if container_count is None:
+            raise TypeError("Missing 'container_count' argument")
+        if container_restart_policy is None and 'containerRestartPolicy' in kwargs:
+            container_restart_policy = kwargs['containerRestartPolicy']
+        if container_restart_policy is None:
+            raise TypeError("Missing 'container_restart_policy' argument")
+        if containers is None:
+            raise TypeError("Missing 'containers' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if dns_configs is None and 'dnsConfigs' in kwargs:
+            dns_configs = kwargs['dnsConfigs']
+        if dns_configs is None:
+            raise TypeError("Missing 'dns_configs' argument")
+        if fault_domain is None and 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if fault_domain is None:
+            raise TypeError("Missing 'fault_domain' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if graceful_shutdown_timeout_in_seconds is None and 'gracefulShutdownTimeoutInSeconds' in kwargs:
+            graceful_shutdown_timeout_in_seconds = kwargs['gracefulShutdownTimeoutInSeconds']
+        if graceful_shutdown_timeout_in_seconds is None:
+            raise TypeError("Missing 'graceful_shutdown_timeout_in_seconds' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if image_pull_secrets is None and 'imagePullSecrets' in kwargs:
+            image_pull_secrets = kwargs['imagePullSecrets']
+        if image_pull_secrets is None:
+            raise TypeError("Missing 'image_pull_secrets' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if shape_configs is None and 'shapeConfigs' in kwargs:
+            shape_configs = kwargs['shapeConfigs']
+        if shape_configs is None:
+            raise TypeError("Missing 'shape_configs' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if vnics is None:
+            raise TypeError("Missing 'vnics' argument")
+        if volume_count is None and 'volumeCount' in kwargs:
+            volume_count = kwargs['volumeCount']
+        if volume_count is None:
+            raise TypeError("Missing 'volume_count' argument")
+        if volumes is None:
+            raise TypeError("Missing 'volumes' argument")
+
+        _setter("availability_domain", availability_domain)
+        _setter("compartment_id", compartment_id)
+        _setter("container_count", container_count)
+        _setter("container_restart_policy", container_restart_policy)
+        _setter("containers", containers)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("dns_configs", dns_configs)
+        _setter("fault_domain", fault_domain)
+        _setter("freeform_tags", freeform_tags)
+        _setter("graceful_shutdown_timeout_in_seconds", graceful_shutdown_timeout_in_seconds)
+        _setter("id", id)
+        _setter("image_pull_secrets", image_pull_secrets)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("shape", shape)
+        _setter("shape_configs", shape_configs)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("vnics", vnics)
+        _setter("volume_count", volume_count)
+        _setter("volumes", volumes)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -1601,31 +2577,184 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerResult(dict):
         :param str time_created: The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param str time_updated: The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
-        pulumi.set(__self__, "arguments", arguments)
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "commands", commands)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "container_id", container_id)
-        pulumi.set(__self__, "container_instance_id", container_instance_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "exit_code", exit_code)
-        pulumi.set(__self__, "fault_domain", fault_domain)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "health_checks", health_checks)
-        pulumi.set(__self__, "image_url", image_url)
-        pulumi.set(__self__, "is_resource_principal_disabled", is_resource_principal_disabled)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "resource_configs", resource_configs)
-        pulumi.set(__self__, "security_contexts", security_contexts)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_terminated", time_terminated)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "volume_mounts", volume_mounts)
-        pulumi.set(__self__, "working_directory", working_directory)
+        GetContainerInstancesContainerInstanceCollectionItemContainerResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            arguments=arguments,
+            availability_domain=availability_domain,
+            commands=commands,
+            compartment_id=compartment_id,
+            container_id=container_id,
+            container_instance_id=container_instance_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            environment_variables=environment_variables,
+            exit_code=exit_code,
+            fault_domain=fault_domain,
+            freeform_tags=freeform_tags,
+            health_checks=health_checks,
+            image_url=image_url,
+            is_resource_principal_disabled=is_resource_principal_disabled,
+            lifecycle_details=lifecycle_details,
+            resource_configs=resource_configs,
+            security_contexts=security_contexts,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_terminated=time_terminated,
+            time_updated=time_updated,
+            volume_mounts=volume_mounts,
+            working_directory=working_directory,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             arguments: Optional[Sequence[str]] = None,
+             availability_domain: Optional[str] = None,
+             commands: Optional[Sequence[str]] = None,
+             compartment_id: Optional[str] = None,
+             container_id: Optional[str] = None,
+             container_instance_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             exit_code: Optional[int] = None,
+             fault_domain: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             health_checks: Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckResult']] = None,
+             image_url: Optional[str] = None,
+             is_resource_principal_disabled: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             resource_configs: Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigResult']] = None,
+             security_contexts: Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextResult']] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_terminated: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             volume_mounts: Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountResult']] = None,
+             working_directory: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if arguments is None:
+            raise TypeError("Missing 'arguments' argument")
+        if availability_domain is None and 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if commands is None:
+            raise TypeError("Missing 'commands' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if container_id is None and 'containerId' in kwargs:
+            container_id = kwargs['containerId']
+        if container_id is None:
+            raise TypeError("Missing 'container_id' argument")
+        if container_instance_id is None and 'containerInstanceId' in kwargs:
+            container_instance_id = kwargs['containerInstanceId']
+        if container_instance_id is None:
+            raise TypeError("Missing 'container_instance_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if environment_variables is None and 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if environment_variables is None:
+            raise TypeError("Missing 'environment_variables' argument")
+        if exit_code is None and 'exitCode' in kwargs:
+            exit_code = kwargs['exitCode']
+        if exit_code is None:
+            raise TypeError("Missing 'exit_code' argument")
+        if fault_domain is None and 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if fault_domain is None:
+            raise TypeError("Missing 'fault_domain' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if health_checks is None and 'healthChecks' in kwargs:
+            health_checks = kwargs['healthChecks']
+        if health_checks is None:
+            raise TypeError("Missing 'health_checks' argument")
+        if image_url is None and 'imageUrl' in kwargs:
+            image_url = kwargs['imageUrl']
+        if image_url is None:
+            raise TypeError("Missing 'image_url' argument")
+        if is_resource_principal_disabled is None and 'isResourcePrincipalDisabled' in kwargs:
+            is_resource_principal_disabled = kwargs['isResourcePrincipalDisabled']
+        if is_resource_principal_disabled is None:
+            raise TypeError("Missing 'is_resource_principal_disabled' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if resource_configs is None and 'resourceConfigs' in kwargs:
+            resource_configs = kwargs['resourceConfigs']
+        if resource_configs is None:
+            raise TypeError("Missing 'resource_configs' argument")
+        if security_contexts is None and 'securityContexts' in kwargs:
+            security_contexts = kwargs['securityContexts']
+        if security_contexts is None:
+            raise TypeError("Missing 'security_contexts' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_terminated is None and 'timeTerminated' in kwargs:
+            time_terminated = kwargs['timeTerminated']
+        if time_terminated is None:
+            raise TypeError("Missing 'time_terminated' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if volume_mounts is None and 'volumeMounts' in kwargs:
+            volume_mounts = kwargs['volumeMounts']
+        if volume_mounts is None:
+            raise TypeError("Missing 'volume_mounts' argument")
+        if working_directory is None and 'workingDirectory' in kwargs:
+            working_directory = kwargs['workingDirectory']
+        if working_directory is None:
+            raise TypeError("Missing 'working_directory' argument")
+
+        _setter("arguments", arguments)
+        _setter("availability_domain", availability_domain)
+        _setter("commands", commands)
+        _setter("compartment_id", compartment_id)
+        _setter("container_id", container_id)
+        _setter("container_instance_id", container_instance_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("environment_variables", environment_variables)
+        _setter("exit_code", exit_code)
+        _setter("fault_domain", fault_domain)
+        _setter("freeform_tags", freeform_tags)
+        _setter("health_checks", health_checks)
+        _setter("image_url", image_url)
+        _setter("is_resource_principal_disabled", is_resource_principal_disabled)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("resource_configs", resource_configs)
+        _setter("security_contexts", security_contexts)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_terminated", time_terminated)
+        _setter("time_updated", time_updated)
+        _setter("volume_mounts", volume_mounts)
+        _setter("working_directory", working_directory)
 
     @property
     @pulumi.getter
@@ -1810,20 +2939,101 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckRe
         :param str name: The name of the volume. This must be unique within a single container instance.
         :param str path: (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
         """
-        pulumi.set(__self__, "commands", commands)
-        pulumi.set(__self__, "failure_action", failure_action)
-        pulumi.set(__self__, "failure_threshold", failure_threshold)
-        pulumi.set(__self__, "headers", headers)
-        pulumi.set(__self__, "health_check_type", health_check_type)
-        pulumi.set(__self__, "initial_delay_in_seconds", initial_delay_in_seconds)
-        pulumi.set(__self__, "interval_in_seconds", interval_in_seconds)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "status_details", status_details)
-        pulumi.set(__self__, "success_threshold", success_threshold)
-        pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
+        GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            commands=commands,
+            failure_action=failure_action,
+            failure_threshold=failure_threshold,
+            headers=headers,
+            health_check_type=health_check_type,
+            initial_delay_in_seconds=initial_delay_in_seconds,
+            interval_in_seconds=interval_in_seconds,
+            name=name,
+            path=path,
+            port=port,
+            status=status,
+            status_details=status_details,
+            success_threshold=success_threshold,
+            timeout_in_seconds=timeout_in_seconds,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             commands: Optional[Sequence[str]] = None,
+             failure_action: Optional[str] = None,
+             failure_threshold: Optional[int] = None,
+             headers: Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderResult']] = None,
+             health_check_type: Optional[str] = None,
+             initial_delay_in_seconds: Optional[int] = None,
+             interval_in_seconds: Optional[int] = None,
+             name: Optional[str] = None,
+             path: Optional[str] = None,
+             port: Optional[int] = None,
+             status: Optional[str] = None,
+             status_details: Optional[str] = None,
+             success_threshold: Optional[int] = None,
+             timeout_in_seconds: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if commands is None:
+            raise TypeError("Missing 'commands' argument")
+        if failure_action is None and 'failureAction' in kwargs:
+            failure_action = kwargs['failureAction']
+        if failure_action is None:
+            raise TypeError("Missing 'failure_action' argument")
+        if failure_threshold is None and 'failureThreshold' in kwargs:
+            failure_threshold = kwargs['failureThreshold']
+        if failure_threshold is None:
+            raise TypeError("Missing 'failure_threshold' argument")
+        if headers is None:
+            raise TypeError("Missing 'headers' argument")
+        if health_check_type is None and 'healthCheckType' in kwargs:
+            health_check_type = kwargs['healthCheckType']
+        if health_check_type is None:
+            raise TypeError("Missing 'health_check_type' argument")
+        if initial_delay_in_seconds is None and 'initialDelayInSeconds' in kwargs:
+            initial_delay_in_seconds = kwargs['initialDelayInSeconds']
+        if initial_delay_in_seconds is None:
+            raise TypeError("Missing 'initial_delay_in_seconds' argument")
+        if interval_in_seconds is None and 'intervalInSeconds' in kwargs:
+            interval_in_seconds = kwargs['intervalInSeconds']
+        if interval_in_seconds is None:
+            raise TypeError("Missing 'interval_in_seconds' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if status_details is None and 'statusDetails' in kwargs:
+            status_details = kwargs['statusDetails']
+        if status_details is None:
+            raise TypeError("Missing 'status_details' argument")
+        if success_threshold is None and 'successThreshold' in kwargs:
+            success_threshold = kwargs['successThreshold']
+        if success_threshold is None:
+            raise TypeError("Missing 'success_threshold' argument")
+        if timeout_in_seconds is None and 'timeoutInSeconds' in kwargs:
+            timeout_in_seconds = kwargs['timeoutInSeconds']
+        if timeout_in_seconds is None:
+            raise TypeError("Missing 'timeout_in_seconds' argument")
+
+        _setter("commands", commands)
+        _setter("failure_action", failure_action)
+        _setter("failure_threshold", failure_threshold)
+        _setter("headers", headers)
+        _setter("health_check_type", health_check_type)
+        _setter("initial_delay_in_seconds", initial_delay_in_seconds)
+        _setter("interval_in_seconds", interval_in_seconds)
+        _setter("name", name)
+        _setter("path", path)
+        _setter("port", port)
+        _setter("status", status)
+        _setter("status_details", status_details)
+        _setter("success_threshold", success_threshold)
+        _setter("timeout_in_seconds", timeout_in_seconds)
 
     @property
     @pulumi.getter
@@ -1910,8 +3120,25 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHe
         """
         :param str name: The name of the volume. This must be unique within a single container instance.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -1932,8 +3159,29 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfi
     def __init__(__self__, *,
                  memory_limit_in_gbs: float,
                  vcpus_limit: float):
-        pulumi.set(__self__, "memory_limit_in_gbs", memory_limit_in_gbs)
-        pulumi.set(__self__, "vcpus_limit", vcpus_limit)
+        GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_limit_in_gbs=memory_limit_in_gbs,
+            vcpus_limit=vcpus_limit,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_limit_in_gbs: Optional[float] = None,
+             vcpus_limit: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_limit_in_gbs is None and 'memoryLimitInGbs' in kwargs:
+            memory_limit_in_gbs = kwargs['memoryLimitInGbs']
+        if memory_limit_in_gbs is None:
+            raise TypeError("Missing 'memory_limit_in_gbs' argument")
+        if vcpus_limit is None and 'vcpusLimit' in kwargs:
+            vcpus_limit = kwargs['vcpusLimit']
+        if vcpus_limit is None:
+            raise TypeError("Missing 'vcpus_limit' argument")
+
+        _setter("memory_limit_in_gbs", memory_limit_in_gbs)
+        _setter("vcpus_limit", vcpus_limit)
 
     @property
     @pulumi.getter(name="memoryLimitInGbs")
@@ -1954,11 +3202,50 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerSecurityConte
                  run_as_group: int,
                  run_as_user: int,
                  security_context_type: str):
-        pulumi.set(__self__, "is_non_root_user_check_enabled", is_non_root_user_check_enabled)
-        pulumi.set(__self__, "is_root_file_system_readonly", is_root_file_system_readonly)
-        pulumi.set(__self__, "run_as_group", run_as_group)
-        pulumi.set(__self__, "run_as_user", run_as_user)
-        pulumi.set(__self__, "security_context_type", security_context_type)
+        GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_non_root_user_check_enabled=is_non_root_user_check_enabled,
+            is_root_file_system_readonly=is_root_file_system_readonly,
+            run_as_group=run_as_group,
+            run_as_user=run_as_user,
+            security_context_type=security_context_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_non_root_user_check_enabled: Optional[bool] = None,
+             is_root_file_system_readonly: Optional[bool] = None,
+             run_as_group: Optional[int] = None,
+             run_as_user: Optional[int] = None,
+             security_context_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_non_root_user_check_enabled is None and 'isNonRootUserCheckEnabled' in kwargs:
+            is_non_root_user_check_enabled = kwargs['isNonRootUserCheckEnabled']
+        if is_non_root_user_check_enabled is None:
+            raise TypeError("Missing 'is_non_root_user_check_enabled' argument")
+        if is_root_file_system_readonly is None and 'isRootFileSystemReadonly' in kwargs:
+            is_root_file_system_readonly = kwargs['isRootFileSystemReadonly']
+        if is_root_file_system_readonly is None:
+            raise TypeError("Missing 'is_root_file_system_readonly' argument")
+        if run_as_group is None and 'runAsGroup' in kwargs:
+            run_as_group = kwargs['runAsGroup']
+        if run_as_group is None:
+            raise TypeError("Missing 'run_as_group' argument")
+        if run_as_user is None and 'runAsUser' in kwargs:
+            run_as_user = kwargs['runAsUser']
+        if run_as_user is None:
+            raise TypeError("Missing 'run_as_user' argument")
+        if security_context_type is None and 'securityContextType' in kwargs:
+            security_context_type = kwargs['securityContextType']
+        if security_context_type is None:
+            raise TypeError("Missing 'security_context_type' argument")
+
+        _setter("is_non_root_user_check_enabled", is_non_root_user_check_enabled)
+        _setter("is_root_file_system_readonly", is_root_file_system_readonly)
+        _setter("run_as_group", run_as_group)
+        _setter("run_as_user", run_as_user)
+        _setter("security_context_type", security_context_type)
 
     @property
     @pulumi.getter(name="isNonRootUserCheckEnabled")
@@ -1994,11 +3281,48 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountRe
                  partition: int,
                  sub_path: str,
                  volume_name: str):
-        pulumi.set(__self__, "is_read_only", is_read_only)
-        pulumi.set(__self__, "mount_path", mount_path)
-        pulumi.set(__self__, "partition", partition)
-        pulumi.set(__self__, "sub_path", sub_path)
-        pulumi.set(__self__, "volume_name", volume_name)
+        GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_read_only=is_read_only,
+            mount_path=mount_path,
+            partition=partition,
+            sub_path=sub_path,
+            volume_name=volume_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_read_only: Optional[bool] = None,
+             mount_path: Optional[str] = None,
+             partition: Optional[int] = None,
+             sub_path: Optional[str] = None,
+             volume_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_read_only is None and 'isReadOnly' in kwargs:
+            is_read_only = kwargs['isReadOnly']
+        if is_read_only is None:
+            raise TypeError("Missing 'is_read_only' argument")
+        if mount_path is None and 'mountPath' in kwargs:
+            mount_path = kwargs['mountPath']
+        if mount_path is None:
+            raise TypeError("Missing 'mount_path' argument")
+        if partition is None:
+            raise TypeError("Missing 'partition' argument")
+        if sub_path is None and 'subPath' in kwargs:
+            sub_path = kwargs['subPath']
+        if sub_path is None:
+            raise TypeError("Missing 'sub_path' argument")
+        if volume_name is None and 'volumeName' in kwargs:
+            volume_name = kwargs['volumeName']
+        if volume_name is None:
+            raise TypeError("Missing 'volume_name' argument")
+
+        _setter("is_read_only", is_read_only)
+        _setter("mount_path", mount_path)
+        _setter("partition", partition)
+        _setter("sub_path", sub_path)
+        _setter("volume_name", volume_name)
 
     @property
     @pulumi.getter(name="isReadOnly")
@@ -2037,9 +3361,30 @@ class GetContainerInstancesContainerInstanceCollectionItemDnsConfigResult(dict):
         :param Sequence[str] options: Options allows certain internal resolver variables to be modified.
         :param Sequence[str] searches: Search list for hostname lookup.
         """
-        pulumi.set(__self__, "nameservers", nameservers)
-        pulumi.set(__self__, "options", options)
-        pulumi.set(__self__, "searches", searches)
+        GetContainerInstancesContainerInstanceCollectionItemDnsConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            nameservers=nameservers,
+            options=options,
+            searches=searches,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             nameservers: Optional[Sequence[str]] = None,
+             options: Optional[Sequence[str]] = None,
+             searches: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if nameservers is None:
+            raise TypeError("Missing 'nameservers' argument")
+        if options is None:
+            raise TypeError("Missing 'options' argument")
+        if searches is None:
+            raise TypeError("Missing 'searches' argument")
+
+        _setter("nameservers", nameservers)
+        _setter("options", options)
+        _setter("searches", searches)
 
     @property
     @pulumi.getter
@@ -2079,11 +3424,46 @@ class GetContainerInstancesContainerInstanceCollectionItemImagePullSecretResult(
         :param str secret_id: The OCID of the secret for registry credentials.
         :param str secret_type: The type of ImagePullSecret.
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "registry_endpoint", registry_endpoint)
-        pulumi.set(__self__, "secret_id", secret_id)
-        pulumi.set(__self__, "secret_type", secret_type)
-        pulumi.set(__self__, "username", username)
+        GetContainerInstancesContainerInstanceCollectionItemImagePullSecretResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            registry_endpoint=registry_endpoint,
+            secret_id=secret_id,
+            secret_type=secret_type,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: Optional[str] = None,
+             registry_endpoint: Optional[str] = None,
+             secret_id: Optional[str] = None,
+             secret_type: Optional[str] = None,
+             username: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if password is None:
+            raise TypeError("Missing 'password' argument")
+        if registry_endpoint is None and 'registryEndpoint' in kwargs:
+            registry_endpoint = kwargs['registryEndpoint']
+        if registry_endpoint is None:
+            raise TypeError("Missing 'registry_endpoint' argument")
+        if secret_id is None and 'secretId' in kwargs:
+            secret_id = kwargs['secretId']
+        if secret_id is None:
+            raise TypeError("Missing 'secret_id' argument")
+        if secret_type is None and 'secretType' in kwargs:
+            secret_type = kwargs['secretType']
+        if secret_type is None:
+            raise TypeError("Missing 'secret_type' argument")
+        if username is None:
+            raise TypeError("Missing 'username' argument")
+
+        _setter("password", password)
+        _setter("registry_endpoint", registry_endpoint)
+        _setter("secret_id", secret_id)
+        _setter("secret_type", secret_type)
+        _setter("username", username)
 
     @property
     @pulumi.getter
@@ -2133,10 +3513,41 @@ class GetContainerInstancesContainerInstanceCollectionItemShapeConfigResult(dict
         :param float ocpus: The total number of OCPUs available to the container instance.
         :param str processor_description: A short description of the container instance's processor (CPU).
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "networking_bandwidth_in_gbps", networking_bandwidth_in_gbps)
-        pulumi.set(__self__, "ocpus", ocpus)
-        pulumi.set(__self__, "processor_description", processor_description)
+        GetContainerInstancesContainerInstanceCollectionItemShapeConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            networking_bandwidth_in_gbps=networking_bandwidth_in_gbps,
+            ocpus=ocpus,
+            processor_description=processor_description,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             networking_bandwidth_in_gbps: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             processor_description: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if networking_bandwidth_in_gbps is None and 'networkingBandwidthInGbps' in kwargs:
+            networking_bandwidth_in_gbps = kwargs['networkingBandwidthInGbps']
+        if networking_bandwidth_in_gbps is None:
+            raise TypeError("Missing 'networking_bandwidth_in_gbps' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+        if processor_description is None and 'processorDescription' in kwargs:
+            processor_description = kwargs['processorDescription']
+        if processor_description is None:
+            raise TypeError("Missing 'processor_description' argument")
+
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("networking_bandwidth_in_gbps", networking_bandwidth_in_gbps)
+        _setter("ocpus", ocpus)
+        _setter("processor_description", processor_description)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -2190,16 +3601,85 @@ class GetContainerInstancesContainerInstanceCollectionItemVnicResult(dict):
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str vnic_id: The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
         """
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "hostname_label", hostname_label)
-        pulumi.set(__self__, "is_public_ip_assigned", is_public_ip_assigned)
-        pulumi.set(__self__, "nsg_ids", nsg_ids)
-        pulumi.set(__self__, "private_ip", private_ip)
-        pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "vnic_id", vnic_id)
+        GetContainerInstancesContainerInstanceCollectionItemVnicResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            hostname_label=hostname_label,
+            is_public_ip_assigned=is_public_ip_assigned,
+            nsg_ids=nsg_ids,
+            private_ip=private_ip,
+            skip_source_dest_check=skip_source_dest_check,
+            subnet_id=subnet_id,
+            vnic_id=vnic_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             hostname_label: Optional[str] = None,
+             is_public_ip_assigned: Optional[bool] = None,
+             nsg_ids: Optional[Sequence[str]] = None,
+             private_ip: Optional[str] = None,
+             skip_source_dest_check: Optional[bool] = None,
+             subnet_id: Optional[str] = None,
+             vnic_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if hostname_label is None and 'hostnameLabel' in kwargs:
+            hostname_label = kwargs['hostnameLabel']
+        if hostname_label is None:
+            raise TypeError("Missing 'hostname_label' argument")
+        if is_public_ip_assigned is None and 'isPublicIpAssigned' in kwargs:
+            is_public_ip_assigned = kwargs['isPublicIpAssigned']
+        if is_public_ip_assigned is None:
+            raise TypeError("Missing 'is_public_ip_assigned' argument")
+        if nsg_ids is None and 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if nsg_ids is None:
+            raise TypeError("Missing 'nsg_ids' argument")
+        if private_ip is None and 'privateIp' in kwargs:
+            private_ip = kwargs['privateIp']
+        if private_ip is None:
+            raise TypeError("Missing 'private_ip' argument")
+        if skip_source_dest_check is None and 'skipSourceDestCheck' in kwargs:
+            skip_source_dest_check = kwargs['skipSourceDestCheck']
+        if skip_source_dest_check is None:
+            raise TypeError("Missing 'skip_source_dest_check' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if vnic_id is None and 'vnicId' in kwargs:
+            vnic_id = kwargs['vnicId']
+        if vnic_id is None:
+            raise TypeError("Missing 'vnic_id' argument")
+
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("hostname_label", hostname_label)
+        _setter("is_public_ip_assigned", is_public_ip_assigned)
+        _setter("nsg_ids", nsg_ids)
+        _setter("private_ip", private_ip)
+        _setter("skip_source_dest_check", skip_source_dest_check)
+        _setter("subnet_id", subnet_id)
+        _setter("vnic_id", vnic_id)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -2277,10 +3757,39 @@ class GetContainerInstancesContainerInstanceCollectionItemVolumeResult(dict):
         :param str name: The name of the volume. This must be unique within a single container instance.
         :param str volume_type: The type of volume.
         """
-        pulumi.set(__self__, "backing_store", backing_store)
-        pulumi.set(__self__, "configs", configs)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "volume_type", volume_type)
+        GetContainerInstancesContainerInstanceCollectionItemVolumeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backing_store=backing_store,
+            configs=configs,
+            name=name,
+            volume_type=volume_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backing_store: Optional[str] = None,
+             configs: Optional[Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeConfigResult']] = None,
+             name: Optional[str] = None,
+             volume_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if backing_store is None and 'backingStore' in kwargs:
+            backing_store = kwargs['backingStore']
+        if backing_store is None:
+            raise TypeError("Missing 'backing_store' argument")
+        if configs is None:
+            raise TypeError("Missing 'configs' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if volume_type is None and 'volumeType' in kwargs:
+            volume_type = kwargs['volumeType']
+        if volume_type is None:
+            raise TypeError("Missing 'volume_type' argument")
+
+        _setter("backing_store", backing_store)
+        _setter("configs", configs)
+        _setter("name", name)
+        _setter("volume_type", volume_type)
 
     @property
     @pulumi.getter(name="backingStore")
@@ -2326,9 +3835,32 @@ class GetContainerInstancesContainerInstanceCollectionItemVolumeConfigResult(dic
         :param str file_name: The name of the file. The fileName should be unique across the volume.
         :param str path: (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
         """
-        pulumi.set(__self__, "data", data)
-        pulumi.set(__self__, "file_name", file_name)
-        pulumi.set(__self__, "path", path)
+        GetContainerInstancesContainerInstanceCollectionItemVolumeConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            data=data,
+            file_name=file_name,
+            path=path,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             data: Optional[str] = None,
+             file_name: Optional[str] = None,
+             path: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if data is None:
+            raise TypeError("Missing 'data' argument")
+        if file_name is None and 'fileName' in kwargs:
+            file_name = kwargs['fileName']
+        if file_name is None:
+            raise TypeError("Missing 'file_name' argument")
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+
+        _setter("data", data)
+        _setter("file_name", file_name)
+        _setter("path", path)
 
     @property
     @pulumi.getter
@@ -2364,10 +3896,29 @@ class GetContainerInstancesFilterResult(dict):
         """
         :param str name: The name of the volume. This must be unique within a single container instance.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetContainerInstancesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

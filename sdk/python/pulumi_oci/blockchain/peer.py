@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -33,12 +33,43 @@ class PeerArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] alias: peer alias
         """
-        pulumi.set(__self__, "ad", ad)
-        pulumi.set(__self__, "blockchain_platform_id", blockchain_platform_id)
-        pulumi.set(__self__, "ocpu_allocation_param", ocpu_allocation_param)
-        pulumi.set(__self__, "role", role)
+        PeerArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ad=ad,
+            blockchain_platform_id=blockchain_platform_id,
+            ocpu_allocation_param=ocpu_allocation_param,
+            role=role,
+            alias=alias,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ad: Optional[pulumi.Input[str]] = None,
+             blockchain_platform_id: Optional[pulumi.Input[str]] = None,
+             ocpu_allocation_param: Optional[pulumi.Input['PeerOcpuAllocationParamArgs']] = None,
+             role: Optional[pulumi.Input[str]] = None,
+             alias: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if ad is None:
+            raise TypeError("Missing 'ad' argument")
+        if blockchain_platform_id is None and 'blockchainPlatformId' in kwargs:
+            blockchain_platform_id = kwargs['blockchainPlatformId']
+        if blockchain_platform_id is None:
+            raise TypeError("Missing 'blockchain_platform_id' argument")
+        if ocpu_allocation_param is None and 'ocpuAllocationParam' in kwargs:
+            ocpu_allocation_param = kwargs['ocpuAllocationParam']
+        if ocpu_allocation_param is None:
+            raise TypeError("Missing 'ocpu_allocation_param' argument")
+        if role is None:
+            raise TypeError("Missing 'role' argument")
+
+        _setter("ad", ad)
+        _setter("blockchain_platform_id", blockchain_platform_id)
+        _setter("ocpu_allocation_param", ocpu_allocation_param)
+        _setter("role", role)
         if alias is not None:
-            pulumi.set(__self__, "alias", alias)
+            _setter("alias", alias)
 
     @property
     @pulumi.getter
@@ -131,22 +162,53 @@ class _PeerState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the peer.
         """
+        _PeerState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ad=ad,
+            alias=alias,
+            blockchain_platform_id=blockchain_platform_id,
+            host=host,
+            ocpu_allocation_param=ocpu_allocation_param,
+            peer_key=peer_key,
+            role=role,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ad: Optional[pulumi.Input[str]] = None,
+             alias: Optional[pulumi.Input[str]] = None,
+             blockchain_platform_id: Optional[pulumi.Input[str]] = None,
+             host: Optional[pulumi.Input[str]] = None,
+             ocpu_allocation_param: Optional[pulumi.Input['PeerOcpuAllocationParamArgs']] = None,
+             peer_key: Optional[pulumi.Input[str]] = None,
+             role: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if blockchain_platform_id is None and 'blockchainPlatformId' in kwargs:
+            blockchain_platform_id = kwargs['blockchainPlatformId']
+        if ocpu_allocation_param is None and 'ocpuAllocationParam' in kwargs:
+            ocpu_allocation_param = kwargs['ocpuAllocationParam']
+        if peer_key is None and 'peerKey' in kwargs:
+            peer_key = kwargs['peerKey']
+
         if ad is not None:
-            pulumi.set(__self__, "ad", ad)
+            _setter("ad", ad)
         if alias is not None:
-            pulumi.set(__self__, "alias", alias)
+            _setter("alias", alias)
         if blockchain_platform_id is not None:
-            pulumi.set(__self__, "blockchain_platform_id", blockchain_platform_id)
+            _setter("blockchain_platform_id", blockchain_platform_id)
         if host is not None:
-            pulumi.set(__self__, "host", host)
+            _setter("host", host)
         if ocpu_allocation_param is not None:
-            pulumi.set(__self__, "ocpu_allocation_param", ocpu_allocation_param)
+            _setter("ocpu_allocation_param", ocpu_allocation_param)
         if peer_key is not None:
-            pulumi.set(__self__, "peer_key", peer_key)
+            _setter("peer_key", peer_key)
         if role is not None:
-            pulumi.set(__self__, "role", role)
+            _setter("role", role)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter
@@ -346,6 +408,10 @@ class Peer(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            PeerArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -372,6 +438,11 @@ class Peer(pulumi.CustomResource):
             if blockchain_platform_id is None and not opts.urn:
                 raise TypeError("Missing required property 'blockchain_platform_id'")
             __props__.__dict__["blockchain_platform_id"] = blockchain_platform_id
+            if ocpu_allocation_param is not None and not isinstance(ocpu_allocation_param, PeerOcpuAllocationParamArgs):
+                ocpu_allocation_param = ocpu_allocation_param or {}
+                def _setter(key, value):
+                    ocpu_allocation_param[key] = value
+                PeerOcpuAllocationParamArgs._configure(_setter, **ocpu_allocation_param)
             if ocpu_allocation_param is None and not opts.urn:
                 raise TypeError("Missing required property 'ocpu_allocation_param'")
             __props__.__dict__["ocpu_allocation_param"] = ocpu_allocation_param

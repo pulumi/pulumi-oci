@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['SslCipherSuiteArgs', 'SslCipherSuite']
@@ -35,10 +35,31 @@ class SslCipherSuiteArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "ciphers", ciphers)
-        pulumi.set(__self__, "load_balancer_id", load_balancer_id)
+        SslCipherSuiteArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ciphers=ciphers,
+            load_balancer_id=load_balancer_id,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ciphers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             load_balancer_id: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if ciphers is None:
+            raise TypeError("Missing 'ciphers' argument")
+        if load_balancer_id is None and 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+        if load_balancer_id is None:
+            raise TypeError("Missing 'load_balancer_id' argument")
+
+        _setter("ciphers", ciphers)
+        _setter("load_balancer_id", load_balancer_id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -112,14 +133,33 @@ class _SslCipherSuiteState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _SslCipherSuiteState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ciphers=ciphers,
+            load_balancer_id=load_balancer_id,
+            name=name,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ciphers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             load_balancer_id: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if load_balancer_id is None and 'loadBalancerId' in kwargs:
+            load_balancer_id = kwargs['loadBalancerId']
+
         if ciphers is not None:
-            pulumi.set(__self__, "ciphers", ciphers)
+            _setter("ciphers", ciphers)
         if load_balancer_id is not None:
-            pulumi.set(__self__, "load_balancer_id", load_balancer_id)
+            _setter("load_balancer_id", load_balancer_id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter
@@ -268,6 +308,10 @@ class SslCipherSuite(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            SslCipherSuiteArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

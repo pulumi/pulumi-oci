@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['TableReplicaInitArgs', 'TableReplica']
@@ -31,14 +31,45 @@ class TableReplicaInitArgs:
         :param pulumi.Input[int] max_read_units: Maximum sustained read throughput limit for the new replica table. If not specified, the local table's read limit is used.
         :param pulumi.Input[int] max_write_units: Maximum sustained write throughput limit for the new replica table. If not specified, the local table's write limit is used.
         """
-        pulumi.set(__self__, "region", region)
-        pulumi.set(__self__, "table_name_or_id", table_name_or_id)
+        TableReplicaInitArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            region=region,
+            table_name_or_id=table_name_or_id,
+            compartment_id=compartment_id,
+            max_read_units=max_read_units,
+            max_write_units=max_write_units,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             region: Optional[pulumi.Input[str]] = None,
+             table_name_or_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             max_read_units: Optional[pulumi.Input[int]] = None,
+             max_write_units: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if region is None:
+            raise TypeError("Missing 'region' argument")
+        if table_name_or_id is None and 'tableNameOrId' in kwargs:
+            table_name_or_id = kwargs['tableNameOrId']
+        if table_name_or_id is None:
+            raise TypeError("Missing 'table_name_or_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if max_read_units is None and 'maxReadUnits' in kwargs:
+            max_read_units = kwargs['maxReadUnits']
+        if max_write_units is None and 'maxWriteUnits' in kwargs:
+            max_write_units = kwargs['maxWriteUnits']
+
+        _setter("region", region)
+        _setter("table_name_or_id", table_name_or_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if max_read_units is not None:
-            pulumi.set(__self__, "max_read_units", max_read_units)
+            _setter("max_read_units", max_read_units)
         if max_write_units is not None:
-            pulumi.set(__self__, "max_write_units", max_write_units)
+            _setter("max_write_units", max_write_units)
 
     @property
     @pulumi.getter
@@ -125,16 +156,43 @@ class _TableReplicaState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _TableReplicaState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            max_read_units=max_read_units,
+            max_write_units=max_write_units,
+            region=region,
+            table_name_or_id=table_name_or_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             max_read_units: Optional[pulumi.Input[int]] = None,
+             max_write_units: Optional[pulumi.Input[int]] = None,
+             region: Optional[pulumi.Input[str]] = None,
+             table_name_or_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if max_read_units is None and 'maxReadUnits' in kwargs:
+            max_read_units = kwargs['maxReadUnits']
+        if max_write_units is None and 'maxWriteUnits' in kwargs:
+            max_write_units = kwargs['maxWriteUnits']
+        if table_name_or_id is None and 'tableNameOrId' in kwargs:
+            table_name_or_id = kwargs['tableNameOrId']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if max_read_units is not None:
-            pulumi.set(__self__, "max_read_units", max_read_units)
+            _setter("max_read_units", max_read_units)
         if max_write_units is not None:
-            pulumi.set(__self__, "max_write_units", max_write_units)
+            _setter("max_write_units", max_write_units)
         if region is not None:
-            pulumi.set(__self__, "region", region)
+            _setter("region", region)
         if table_name_or_id is not None:
-            pulumi.set(__self__, "table_name_or_id", table_name_or_id)
+            _setter("table_name_or_id", table_name_or_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -294,6 +352,10 @@ class TableReplica(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            TableReplicaInitArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

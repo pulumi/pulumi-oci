@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -146,10 +146,25 @@ class LifecycleEnvironmentManagedInstanceId(dict):
         :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param str id: The OCID of the software source.
         """
+        LifecycleEnvironmentManagedInstanceId._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -250,36 +265,107 @@ class LifecycleEnvironmentStage(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "rank", rank)
+        LifecycleEnvironmentStage._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            rank=rank,
+            arch_type=arch_type,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_environment_id=lifecycle_environment_id,
+            managed_instance_ids=managed_instance_ids,
+            os_family=os_family,
+            software_source_ids=software_source_ids,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_modified=time_modified,
+            vendor_name=vendor_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             rank: Optional[int] = None,
+             arch_type: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_environment_id: Optional[str] = None,
+             managed_instance_ids: Optional[Sequence['outputs.LifecycleEnvironmentStageManagedInstanceId']] = None,
+             os_family: Optional[str] = None,
+             software_source_ids: Optional[Sequence['outputs.LifecycleEnvironmentStageSoftwareSourceId']] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_modified: Optional[str] = None,
+             vendor_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if rank is None:
+            raise TypeError("Missing 'rank' argument")
+        if arch_type is None and 'archType' in kwargs:
+            arch_type = kwargs['archType']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if lifecycle_environment_id is None and 'lifecycleEnvironmentId' in kwargs:
+            lifecycle_environment_id = kwargs['lifecycleEnvironmentId']
+        if managed_instance_ids is None and 'managedInstanceIds' in kwargs:
+            managed_instance_ids = kwargs['managedInstanceIds']
+        if os_family is None and 'osFamily' in kwargs:
+            os_family = kwargs['osFamily']
+        if software_source_ids is None and 'softwareSourceIds' in kwargs:
+            software_source_ids = kwargs['softwareSourceIds']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_modified is None and 'timeModified' in kwargs:
+            time_modified = kwargs['timeModified']
+        if vendor_name is None and 'vendorName' in kwargs:
+            vendor_name = kwargs['vendorName']
+
+        _setter("display_name", display_name)
+        _setter("rank", rank)
         if arch_type is not None:
-            pulumi.set(__self__, "arch_type", arch_type)
+            _setter("arch_type", arch_type)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if lifecycle_environment_id is not None:
-            pulumi.set(__self__, "lifecycle_environment_id", lifecycle_environment_id)
+            _setter("lifecycle_environment_id", lifecycle_environment_id)
         if managed_instance_ids is not None:
-            pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
+            _setter("managed_instance_ids", managed_instance_ids)
         if os_family is not None:
-            pulumi.set(__self__, "os_family", os_family)
+            _setter("os_family", os_family)
         if software_source_ids is not None:
-            pulumi.set(__self__, "software_source_ids", software_source_ids)
+            _setter("software_source_ids", software_source_ids)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_modified is not None:
-            pulumi.set(__self__, "time_modified", time_modified)
+            _setter("time_modified", time_modified)
         if vendor_name is not None:
-            pulumi.set(__self__, "vendor_name", vendor_name)
+            _setter("vendor_name", vendor_name)
 
     @property
     @pulumi.getter(name="displayName")
@@ -440,10 +526,25 @@ class LifecycleEnvironmentStageManagedInstanceId(dict):
         :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param str id: The OCID of the software source.
         """
+        LifecycleEnvironmentStageManagedInstanceId._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -494,14 +595,35 @@ class LifecycleEnvironmentStageSoftwareSourceId(dict):
         :param str id: The OCID of the software source.
         :param str software_source_type: Type of the software source.
         """
+        LifecycleEnvironmentStageSoftwareSourceId._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            display_name=display_name,
+            id=id,
+            software_source_type=software_source_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             software_source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if software_source_type is None and 'softwareSourceType' in kwargs:
+            software_source_type = kwargs['softwareSourceType']
+
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if software_source_type is not None:
-            pulumi.set(__self__, "software_source_type", software_source_type)
+            _setter("software_source_type", software_source_type)
 
     @property
     @pulumi.getter
@@ -568,14 +690,35 @@ class ManagedInstanceGroupSoftwareSource(dict):
         :param str id: The OCID of the software source.
         :param str software_source_type: Type of the software source.
         """
+        ManagedInstanceGroupSoftwareSource._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            display_name=display_name,
+            id=id,
+            software_source_type=software_source_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             software_source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if software_source_type is None and 'softwareSourceType' in kwargs:
+            software_source_type = kwargs['softwareSourceType']
+
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if software_source_type is not None:
-            pulumi.set(__self__, "software_source_type", software_source_type)
+            _setter("software_source_type", software_source_type)
 
     @property
     @pulumi.getter
@@ -627,11 +770,34 @@ class ManagementStationMirror(dict):
         :param str sslport: (Updatable) Default sslport for the mirror
         :param str sslcert: (Updatable) Local path for the sslcert
         """
-        pulumi.set(__self__, "directory", directory)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "sslport", sslport)
+        ManagementStationMirror._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            directory=directory,
+            port=port,
+            sslport=sslport,
+            sslcert=sslcert,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             directory: Optional[str] = None,
+             port: Optional[str] = None,
+             sslport: Optional[str] = None,
+             sslcert: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if directory is None:
+            raise TypeError("Missing 'directory' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if sslport is None:
+            raise TypeError("Missing 'sslport' argument")
+
+        _setter("directory", directory)
+        _setter("port", port)
+        _setter("sslport", sslport)
         if sslcert is not None:
-            pulumi.set(__self__, "sslcert", sslcert)
+            _setter("sslcert", sslcert)
 
     @property
     @pulumi.getter
@@ -685,16 +851,35 @@ class ManagementStationMirrorSyncStatus(dict):
         :param int syncing: Total of mirrors in 'syncing' state
         :param int unsynced: Total of mirrors in 'failed' state
         """
+        ManagementStationMirrorSyncStatus._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            failed=failed,
+            queued=queued,
+            synced=synced,
+            syncing=syncing,
+            unsynced=unsynced,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             failed: Optional[int] = None,
+             queued: Optional[int] = None,
+             synced: Optional[int] = None,
+             syncing: Optional[int] = None,
+             unsynced: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if failed is not None:
-            pulumi.set(__self__, "failed", failed)
+            _setter("failed", failed)
         if queued is not None:
-            pulumi.set(__self__, "queued", queued)
+            _setter("queued", queued)
         if synced is not None:
-            pulumi.set(__self__, "synced", synced)
+            _setter("synced", synced)
         if syncing is not None:
-            pulumi.set(__self__, "syncing", syncing)
+            _setter("syncing", syncing)
         if unsynced is not None:
-            pulumi.set(__self__, "unsynced", unsynced)
+            _setter("unsynced", unsynced)
 
     @property
     @pulumi.getter
@@ -771,13 +956,34 @@ class ManagementStationProxy(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        ManagementStationProxy._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+            forward=forward,
+            hosts=hosts,
+            port=port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: Optional[bool] = None,
+             forward: Optional[str] = None,
+             hosts: Optional[Sequence[str]] = None,
+             port: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+
+        _setter("is_enabled", is_enabled)
         if forward is not None:
-            pulumi.set(__self__, "forward", forward)
+            _setter("forward", forward)
         if hosts is not None:
-            pulumi.set(__self__, "hosts", hosts)
+            _setter("hosts", hosts)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -842,10 +1048,25 @@ class ProfileLifecycleEnvironment(dict):
         :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param str id: The OCID of the software source.
         """
+        ProfileLifecycleEnvironment._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -890,10 +1111,25 @@ class ProfileLifecycleStage(dict):
         :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param str id: The OCID of the software source.
         """
+        ProfileLifecycleStage._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -938,10 +1174,25 @@ class ProfileManagedInstanceGroup(dict):
         :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param str id: The OCID of the software source.
         """
+        ProfileManagedInstanceGroup._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -992,14 +1243,35 @@ class ProfileSoftwareSource(dict):
         :param str id: The OCID of the software source.
         :param str software_source_type: Type of the software source.
         """
+        ProfileSoftwareSource._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            display_name=display_name,
+            id=id,
+            software_source_type=software_source_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             software_source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if software_source_type is None and 'softwareSourceType' in kwargs:
+            software_source_type = kwargs['softwareSourceType']
+
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if software_source_type is not None:
-            pulumi.set(__self__, "software_source_type", software_source_type)
+            _setter("software_source_type", software_source_type)
 
     @property
     @pulumi.getter
@@ -1066,12 +1338,33 @@ class SoftwareSourceCustomSoftwareSourceFilter(dict):
         :param Sequence['SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs'] package_filters: (Updatable) The list of package filters.
         :param Sequence['SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs'] package_group_filters: (Updatable) The list of group filters.
         """
+        SoftwareSourceCustomSoftwareSourceFilter._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            module_stream_profile_filters=module_stream_profile_filters,
+            package_filters=package_filters,
+            package_group_filters=package_group_filters,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             module_stream_profile_filters: Optional[Sequence['outputs.SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter']] = None,
+             package_filters: Optional[Sequence['outputs.SoftwareSourceCustomSoftwareSourceFilterPackageFilter']] = None,
+             package_group_filters: Optional[Sequence['outputs.SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if module_stream_profile_filters is None and 'moduleStreamProfileFilters' in kwargs:
+            module_stream_profile_filters = kwargs['moduleStreamProfileFilters']
+        if package_filters is None and 'packageFilters' in kwargs:
+            package_filters = kwargs['packageFilters']
+        if package_group_filters is None and 'packageGroupFilters' in kwargs:
+            package_group_filters = kwargs['packageGroupFilters']
+
         if module_stream_profile_filters is not None:
-            pulumi.set(__self__, "module_stream_profile_filters", module_stream_profile_filters)
+            _setter("module_stream_profile_filters", module_stream_profile_filters)
         if package_filters is not None:
-            pulumi.set(__self__, "package_filters", package_filters)
+            _setter("package_filters", package_filters)
         if package_group_filters is not None:
-            pulumi.set(__self__, "package_group_filters", package_group_filters)
+            _setter("package_group_filters", package_group_filters)
 
     @property
     @pulumi.getter(name="moduleStreamProfileFilters")
@@ -1134,12 +1427,41 @@ class SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter(dict):
         :param str profile_name: (Updatable) Profile name.
         :param str stream_name: (Updatable) Stream name.
         """
-        pulumi.set(__self__, "filter_type", filter_type)
-        pulumi.set(__self__, "module_name", module_name)
+        SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            filter_type=filter_type,
+            module_name=module_name,
+            profile_name=profile_name,
+            stream_name=stream_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             filter_type: Optional[str] = None,
+             module_name: Optional[str] = None,
+             profile_name: Optional[str] = None,
+             stream_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if filter_type is None and 'filterType' in kwargs:
+            filter_type = kwargs['filterType']
+        if filter_type is None:
+            raise TypeError("Missing 'filter_type' argument")
+        if module_name is None and 'moduleName' in kwargs:
+            module_name = kwargs['moduleName']
+        if module_name is None:
+            raise TypeError("Missing 'module_name' argument")
+        if profile_name is None and 'profileName' in kwargs:
+            profile_name = kwargs['profileName']
+        if stream_name is None and 'streamName' in kwargs:
+            stream_name = kwargs['streamName']
+
+        _setter("filter_type", filter_type)
+        _setter("module_name", module_name)
         if profile_name is not None:
-            pulumi.set(__self__, "profile_name", profile_name)
+            _setter("profile_name", profile_name)
         if stream_name is not None:
-            pulumi.set(__self__, "stream_name", stream_name)
+            _setter("stream_name", stream_name)
 
     @property
     @pulumi.getter(name="filterType")
@@ -1210,13 +1532,40 @@ class SoftwareSourceCustomSoftwareSourceFilterPackageFilter(dict):
         :param str package_name_pattern: (Updatable) The package name pattern.
         :param str package_version: (Updatable) The package version, which is denoted by 'version-release', or 'epoch:version-release'.
         """
-        pulumi.set(__self__, "filter_type", filter_type)
+        SoftwareSourceCustomSoftwareSourceFilterPackageFilter._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            filter_type=filter_type,
+            package_name=package_name,
+            package_name_pattern=package_name_pattern,
+            package_version=package_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             filter_type: Optional[str] = None,
+             package_name: Optional[str] = None,
+             package_name_pattern: Optional[str] = None,
+             package_version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if filter_type is None and 'filterType' in kwargs:
+            filter_type = kwargs['filterType']
+        if filter_type is None:
+            raise TypeError("Missing 'filter_type' argument")
+        if package_name is None and 'packageName' in kwargs:
+            package_name = kwargs['packageName']
+        if package_name_pattern is None and 'packageNamePattern' in kwargs:
+            package_name_pattern = kwargs['packageNamePattern']
+        if package_version is None and 'packageVersion' in kwargs:
+            package_version = kwargs['packageVersion']
+
+        _setter("filter_type", filter_type)
         if package_name is not None:
-            pulumi.set(__self__, "package_name", package_name)
+            _setter("package_name", package_name)
         if package_name_pattern is not None:
-            pulumi.set(__self__, "package_name_pattern", package_name_pattern)
+            _setter("package_name_pattern", package_name_pattern)
         if package_version is not None:
-            pulumi.set(__self__, "package_version", package_version)
+            _setter("package_version", package_version)
 
     @property
     @pulumi.getter(name="filterType")
@@ -1279,9 +1628,28 @@ class SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter(dict):
         :param str filter_type: (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
         :param Sequence[str] package_groups: (Updatable) List of package group names.
         """
-        pulumi.set(__self__, "filter_type", filter_type)
+        SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            filter_type=filter_type,
+            package_groups=package_groups,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             filter_type: Optional[str] = None,
+             package_groups: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if filter_type is None and 'filterType' in kwargs:
+            filter_type = kwargs['filterType']
+        if filter_type is None:
+            raise TypeError("Missing 'filter_type' argument")
+        if package_groups is None and 'packageGroups' in kwargs:
+            package_groups = kwargs['packageGroups']
+
+        _setter("filter_type", filter_type)
         if package_groups is not None:
-            pulumi.set(__self__, "package_groups", package_groups)
+            _setter("package_groups", package_groups)
 
     @property
     @pulumi.getter(name="filterType")
@@ -1330,8 +1698,27 @@ class SoftwareSourceVendorSoftwareSource(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+        SoftwareSourceVendorSoftwareSource._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+
+        _setter("display_name", display_name)
+        _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -1363,8 +1750,27 @@ class GetLifecycleEnvironmentManagedInstanceIdResult(dict):
         :param str display_name: Software source name.
         :param str id: The OCID of the software source.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+        GetLifecycleEnvironmentManagedInstanceIdResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+
+        _setter("display_name", display_name)
+        _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -1420,22 +1826,121 @@ class GetLifecycleEnvironmentStageResult(dict):
         :param str time_modified: The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
         :param str vendor_name: The software source vendor name.
         """
-        pulumi.set(__self__, "arch_type", arch_type)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_environment_id", lifecycle_environment_id)
-        pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
-        pulumi.set(__self__, "os_family", os_family)
-        pulumi.set(__self__, "rank", rank)
-        pulumi.set(__self__, "software_source_ids", software_source_ids)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_modified", time_modified)
-        pulumi.set(__self__, "vendor_name", vendor_name)
+        GetLifecycleEnvironmentStageResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            arch_type=arch_type,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_environment_id=lifecycle_environment_id,
+            managed_instance_ids=managed_instance_ids,
+            os_family=os_family,
+            rank=rank,
+            software_source_ids=software_source_ids,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_modified=time_modified,
+            vendor_name=vendor_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             arch_type: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_environment_id: Optional[str] = None,
+             managed_instance_ids: Optional[Sequence['outputs.GetLifecycleEnvironmentStageManagedInstanceIdResult']] = None,
+             os_family: Optional[str] = None,
+             rank: Optional[int] = None,
+             software_source_ids: Optional[Sequence['outputs.GetLifecycleEnvironmentStageSoftwareSourceIdResult']] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_modified: Optional[str] = None,
+             vendor_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if arch_type is None and 'archType' in kwargs:
+            arch_type = kwargs['archType']
+        if arch_type is None:
+            raise TypeError("Missing 'arch_type' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_environment_id is None and 'lifecycleEnvironmentId' in kwargs:
+            lifecycle_environment_id = kwargs['lifecycleEnvironmentId']
+        if lifecycle_environment_id is None:
+            raise TypeError("Missing 'lifecycle_environment_id' argument")
+        if managed_instance_ids is None and 'managedInstanceIds' in kwargs:
+            managed_instance_ids = kwargs['managedInstanceIds']
+        if managed_instance_ids is None:
+            raise TypeError("Missing 'managed_instance_ids' argument")
+        if os_family is None and 'osFamily' in kwargs:
+            os_family = kwargs['osFamily']
+        if os_family is None:
+            raise TypeError("Missing 'os_family' argument")
+        if rank is None:
+            raise TypeError("Missing 'rank' argument")
+        if software_source_ids is None and 'softwareSourceIds' in kwargs:
+            software_source_ids = kwargs['softwareSourceIds']
+        if software_source_ids is None:
+            raise TypeError("Missing 'software_source_ids' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_modified is None and 'timeModified' in kwargs:
+            time_modified = kwargs['timeModified']
+        if time_modified is None:
+            raise TypeError("Missing 'time_modified' argument")
+        if vendor_name is None and 'vendorName' in kwargs:
+            vendor_name = kwargs['vendorName']
+        if vendor_name is None:
+            raise TypeError("Missing 'vendor_name' argument")
+
+        _setter("arch_type", arch_type)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_environment_id", lifecycle_environment_id)
+        _setter("managed_instance_ids", managed_instance_ids)
+        _setter("os_family", os_family)
+        _setter("rank", rank)
+        _setter("software_source_ids", software_source_ids)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_modified", time_modified)
+        _setter("vendor_name", vendor_name)
 
     @property
     @pulumi.getter(name="archType")
@@ -1575,8 +2080,27 @@ class GetLifecycleEnvironmentStageManagedInstanceIdResult(dict):
         :param str display_name: Software source name.
         :param str id: The OCID of the software source.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+        GetLifecycleEnvironmentStageManagedInstanceIdResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+
+        _setter("display_name", display_name)
+        _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -1608,10 +2132,39 @@ class GetLifecycleEnvironmentStageSoftwareSourceIdResult(dict):
         :param str id: The OCID of the software source.
         :param str software_source_type: Type of the software source.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "software_source_type", software_source_type)
+        GetLifecycleEnvironmentStageSoftwareSourceIdResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            display_name=display_name,
+            id=id,
+            software_source_type=software_source_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             software_source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if software_source_type is None and 'softwareSourceType' in kwargs:
+            software_source_type = kwargs['softwareSourceType']
+        if software_source_type is None:
+            raise TypeError("Missing 'software_source_type' argument")
+
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("id", id)
+        _setter("software_source_type", software_source_type)
 
     @property
     @pulumi.getter
@@ -1652,10 +2205,29 @@ class GetLifecycleEnvironmentsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetLifecycleEnvironmentsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1677,7 +2249,20 @@ class GetLifecycleEnvironmentsFilterResult(dict):
 class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetLifecycleEnvironmentsLifecycleEnvironmentCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1720,21 +2305,112 @@ class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemResult(dict):
         :param str time_modified: The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
         :param str vendor_name: The software source vendor name.
         """
-        pulumi.set(__self__, "arch_type", arch_type)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
-        pulumi.set(__self__, "os_family", os_family)
-        pulumi.set(__self__, "stages", stages)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_modified", time_modified)
-        pulumi.set(__self__, "vendor_name", vendor_name)
+        GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            arch_type=arch_type,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            managed_instance_ids=managed_instance_ids,
+            os_family=os_family,
+            stages=stages,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_modified=time_modified,
+            vendor_name=vendor_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             arch_type: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             managed_instance_ids: Optional[Sequence['outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdResult']] = None,
+             os_family: Optional[str] = None,
+             stages: Optional[Sequence['outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageResult']] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_modified: Optional[str] = None,
+             vendor_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if arch_type is None and 'archType' in kwargs:
+            arch_type = kwargs['archType']
+        if arch_type is None:
+            raise TypeError("Missing 'arch_type' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if managed_instance_ids is None and 'managedInstanceIds' in kwargs:
+            managed_instance_ids = kwargs['managedInstanceIds']
+        if managed_instance_ids is None:
+            raise TypeError("Missing 'managed_instance_ids' argument")
+        if os_family is None and 'osFamily' in kwargs:
+            os_family = kwargs['osFamily']
+        if os_family is None:
+            raise TypeError("Missing 'os_family' argument")
+        if stages is None:
+            raise TypeError("Missing 'stages' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_modified is None and 'timeModified' in kwargs:
+            time_modified = kwargs['timeModified']
+        if time_modified is None:
+            raise TypeError("Missing 'time_modified' argument")
+        if vendor_name is None and 'vendorName' in kwargs:
+            vendor_name = kwargs['vendorName']
+        if vendor_name is None:
+            raise TypeError("Missing 'vendor_name' argument")
+
+        _setter("arch_type", arch_type)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("managed_instance_ids", managed_instance_ids)
+        _setter("os_family", os_family)
+        _setter("stages", stages)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_modified", time_modified)
+        _setter("vendor_name", vendor_name)
 
     @property
     @pulumi.getter(name="archType")
@@ -1866,8 +2542,27 @@ class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceI
         :param str display_name: A filter to return resources that match the given display names.
         :param str id: The OCID of the software source.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+        GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+
+        _setter("display_name", display_name)
+        _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -1923,22 +2618,121 @@ class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageResult(dict
         :param str time_modified: The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
         :param str vendor_name: The software source vendor name.
         """
-        pulumi.set(__self__, "arch_type", arch_type)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_environment_id", lifecycle_environment_id)
-        pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
-        pulumi.set(__self__, "os_family", os_family)
-        pulumi.set(__self__, "rank", rank)
-        pulumi.set(__self__, "software_source_ids", software_source_ids)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_modified", time_modified)
-        pulumi.set(__self__, "vendor_name", vendor_name)
+        GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            arch_type=arch_type,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_environment_id=lifecycle_environment_id,
+            managed_instance_ids=managed_instance_ids,
+            os_family=os_family,
+            rank=rank,
+            software_source_ids=software_source_ids,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_modified=time_modified,
+            vendor_name=vendor_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             arch_type: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_environment_id: Optional[str] = None,
+             managed_instance_ids: Optional[Sequence['outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdResult']] = None,
+             os_family: Optional[str] = None,
+             rank: Optional[int] = None,
+             software_source_ids: Optional[Sequence['outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdResult']] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_modified: Optional[str] = None,
+             vendor_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if arch_type is None and 'archType' in kwargs:
+            arch_type = kwargs['archType']
+        if arch_type is None:
+            raise TypeError("Missing 'arch_type' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_environment_id is None and 'lifecycleEnvironmentId' in kwargs:
+            lifecycle_environment_id = kwargs['lifecycleEnvironmentId']
+        if lifecycle_environment_id is None:
+            raise TypeError("Missing 'lifecycle_environment_id' argument")
+        if managed_instance_ids is None and 'managedInstanceIds' in kwargs:
+            managed_instance_ids = kwargs['managedInstanceIds']
+        if managed_instance_ids is None:
+            raise TypeError("Missing 'managed_instance_ids' argument")
+        if os_family is None and 'osFamily' in kwargs:
+            os_family = kwargs['osFamily']
+        if os_family is None:
+            raise TypeError("Missing 'os_family' argument")
+        if rank is None:
+            raise TypeError("Missing 'rank' argument")
+        if software_source_ids is None and 'softwareSourceIds' in kwargs:
+            software_source_ids = kwargs['softwareSourceIds']
+        if software_source_ids is None:
+            raise TypeError("Missing 'software_source_ids' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_modified is None and 'timeModified' in kwargs:
+            time_modified = kwargs['timeModified']
+        if time_modified is None:
+            raise TypeError("Missing 'time_modified' argument")
+        if vendor_name is None and 'vendorName' in kwargs:
+            vendor_name = kwargs['vendorName']
+        if vendor_name is None:
+            raise TypeError("Missing 'vendor_name' argument")
+
+        _setter("arch_type", arch_type)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_environment_id", lifecycle_environment_id)
+        _setter("managed_instance_ids", managed_instance_ids)
+        _setter("os_family", os_family)
+        _setter("rank", rank)
+        _setter("software_source_ids", software_source_ids)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_modified", time_modified)
+        _setter("vendor_name", vendor_name)
 
     @property
     @pulumi.getter(name="archType")
@@ -2078,8 +2872,27 @@ class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInst
         :param str display_name: A filter to return resources that match the given display names.
         :param str id: The OCID of the software source.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+        GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+
+        _setter("display_name", display_name)
+        _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -2111,10 +2924,39 @@ class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSou
         :param str id: The OCID of the software source.
         :param str software_source_type: Type of the software source.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "software_source_type", software_source_type)
+        GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            display_name=display_name,
+            id=id,
+            software_source_type=software_source_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             software_source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if software_source_type is None and 'softwareSourceType' in kwargs:
+            software_source_type = kwargs['softwareSourceType']
+        if software_source_type is None:
+            raise TypeError("Missing 'software_source_type' argument")
+
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("id", id)
+        _setter("software_source_type", software_source_type)
 
     @property
     @pulumi.getter
@@ -2158,8 +3000,27 @@ class GetLifecycleStageManagedInstanceIdResult(dict):
         :param str display_name: Software source name.
         :param str id: The OCID of the software source.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+        GetLifecycleStageManagedInstanceIdResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+
+        _setter("display_name", display_name)
+        _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -2191,10 +3052,39 @@ class GetLifecycleStageSoftwareSourceIdResult(dict):
         :param str id: The OCID of the software source.
         :param str software_source_type: Type of the software source.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "software_source_type", software_source_type)
+        GetLifecycleStageSoftwareSourceIdResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            display_name=display_name,
+            id=id,
+            software_source_type=software_source_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             software_source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if software_source_type is None and 'softwareSourceType' in kwargs:
+            software_source_type = kwargs['softwareSourceType']
+        if software_source_type is None:
+            raise TypeError("Missing 'software_source_type' argument")
+
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("id", id)
+        _setter("software_source_type", software_source_type)
 
     @property
     @pulumi.getter
@@ -2235,10 +3125,29 @@ class GetLifecycleStagesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetLifecycleStagesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2260,7 +3169,20 @@ class GetLifecycleStagesFilterResult(dict):
 class GetLifecycleStagesLifecycleStageCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetLifecycleStagesLifecycleStageCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetLifecycleStagesLifecycleStageCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetLifecycleStagesLifecycleStageCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2305,22 +3227,121 @@ class GetLifecycleStagesLifecycleStageCollectionItemResult(dict):
         :param str time_modified: The time the lifecycle stage was last modified. An RFC3339 formatted datetime string.
         :param str vendor_name: The software source vendor name.
         """
-        pulumi.set(__self__, "arch_type", arch_type)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_environment_id", lifecycle_environment_id)
-        pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
-        pulumi.set(__self__, "os_family", os_family)
-        pulumi.set(__self__, "rank", rank)
-        pulumi.set(__self__, "software_source_ids", software_source_ids)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_modified", time_modified)
-        pulumi.set(__self__, "vendor_name", vendor_name)
+        GetLifecycleStagesLifecycleStageCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            arch_type=arch_type,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_environment_id=lifecycle_environment_id,
+            managed_instance_ids=managed_instance_ids,
+            os_family=os_family,
+            rank=rank,
+            software_source_ids=software_source_ids,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_modified=time_modified,
+            vendor_name=vendor_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             arch_type: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_environment_id: Optional[str] = None,
+             managed_instance_ids: Optional[Sequence['outputs.GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdResult']] = None,
+             os_family: Optional[str] = None,
+             rank: Optional[int] = None,
+             software_source_ids: Optional[Sequence['outputs.GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdResult']] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_modified: Optional[str] = None,
+             vendor_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if arch_type is None and 'archType' in kwargs:
+            arch_type = kwargs['archType']
+        if arch_type is None:
+            raise TypeError("Missing 'arch_type' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_environment_id is None and 'lifecycleEnvironmentId' in kwargs:
+            lifecycle_environment_id = kwargs['lifecycleEnvironmentId']
+        if lifecycle_environment_id is None:
+            raise TypeError("Missing 'lifecycle_environment_id' argument")
+        if managed_instance_ids is None and 'managedInstanceIds' in kwargs:
+            managed_instance_ids = kwargs['managedInstanceIds']
+        if managed_instance_ids is None:
+            raise TypeError("Missing 'managed_instance_ids' argument")
+        if os_family is None and 'osFamily' in kwargs:
+            os_family = kwargs['osFamily']
+        if os_family is None:
+            raise TypeError("Missing 'os_family' argument")
+        if rank is None:
+            raise TypeError("Missing 'rank' argument")
+        if software_source_ids is None and 'softwareSourceIds' in kwargs:
+            software_source_ids = kwargs['softwareSourceIds']
+        if software_source_ids is None:
+            raise TypeError("Missing 'software_source_ids' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_modified is None and 'timeModified' in kwargs:
+            time_modified = kwargs['timeModified']
+        if time_modified is None:
+            raise TypeError("Missing 'time_modified' argument")
+        if vendor_name is None and 'vendorName' in kwargs:
+            vendor_name = kwargs['vendorName']
+        if vendor_name is None:
+            raise TypeError("Missing 'vendor_name' argument")
+
+        _setter("arch_type", arch_type)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_environment_id", lifecycle_environment_id)
+        _setter("managed_instance_ids", managed_instance_ids)
+        _setter("os_family", os_family)
+        _setter("rank", rank)
+        _setter("software_source_ids", software_source_ids)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_modified", time_modified)
+        _setter("vendor_name", vendor_name)
 
     @property
     @pulumi.getter(name="archType")
@@ -2460,8 +3481,27 @@ class GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdResult(dict
         :param str display_name: A filter to return resources that match the given display names.
         :param str id: The OCID of the software source.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+        GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+
+        _setter("display_name", display_name)
+        _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -2493,10 +3533,39 @@ class GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdResult(dict)
         :param str id: The OCID of the software source.
         :param str software_source_type: Type of the software source.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "software_source_type", software_source_type)
+        GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            display_name=display_name,
+            id=id,
+            software_source_type=software_source_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             software_source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if software_source_type is None and 'softwareSourceType' in kwargs:
+            software_source_type = kwargs['softwareSourceType']
+        if software_source_type is None:
+            raise TypeError("Missing 'software_source_type' argument")
+
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("id", id)
+        _setter("software_source_type", software_source_type)
 
     @property
     @pulumi.getter
@@ -2540,10 +3609,29 @@ class GetManagedInstanceGroupAvailableModulesFilterResult(dict):
         """
         :param str name: The resource name.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedInstanceGroupAvailableModulesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2571,7 +3659,20 @@ class GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModule
         """
         :param Sequence['GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemArgs'] items: List of module stream profile.
         """
-        pulumi.set(__self__, "items", items)
+        GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2591,8 +3692,27 @@ class GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModule
         :param str name: The resource name.
         :param str software_source_id: The OCID of the software source that provides this module.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "software_source_id", software_source_id)
+        GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            software_source_id=software_source_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             software_source_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if software_source_id is None and 'softwareSourceId' in kwargs:
+            software_source_id = kwargs['softwareSourceId']
+        if software_source_id is None:
+            raise TypeError("Missing 'software_source_id' argument")
+
+        _setter("name", name)
+        _setter("software_source_id", software_source_id)
 
     @property
     @pulumi.getter
@@ -2620,10 +3740,29 @@ class GetManagedInstanceGroupAvailablePackagesFilterResult(dict):
         """
         :param str name: Unique identifier for the package. NOTE - This is not an OCID.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedInstanceGroupAvailablePackagesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2651,7 +3790,20 @@ class GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePacka
         """
         :param Sequence['GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemArgs'] items: List of available packages.
         """
-        pulumi.set(__self__, "items", items)
+        GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2681,13 +3833,56 @@ class GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePacka
         :param str type: Type of the package.
         :param str version: Version of the installed package.
         """
-        pulumi.set(__self__, "architecture", architecture)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "is_latest", is_latest)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "software_sources", software_sources)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "version", version)
+        GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            architecture=architecture,
+            display_name=display_name,
+            is_latest=is_latest,
+            name=name,
+            software_sources=software_sources,
+            type=type,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             architecture: Optional[str] = None,
+             display_name: Optional[str] = None,
+             is_latest: Optional[bool] = None,
+             name: Optional[str] = None,
+             software_sources: Optional[Sequence['outputs.GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceResult']] = None,
+             type: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if architecture is None:
+            raise TypeError("Missing 'architecture' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if is_latest is None and 'isLatest' in kwargs:
+            is_latest = kwargs['isLatest']
+        if is_latest is None:
+            raise TypeError("Missing 'is_latest' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if software_sources is None and 'softwareSources' in kwargs:
+            software_sources = kwargs['softwareSources']
+        if software_sources is None:
+            raise TypeError("Missing 'software_sources' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
+
+        _setter("architecture", architecture)
+        _setter("display_name", display_name)
+        _setter("is_latest", is_latest)
+        _setter("name", name)
+        _setter("software_sources", software_sources)
+        _setter("type", type)
+        _setter("version", version)
 
     @property
     @pulumi.getter
@@ -2759,10 +3954,39 @@ class GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePacka
         :param str id: The OCID of the software source.
         :param str software_source_type: Type of the software source.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "software_source_type", software_source_type)
+        GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            display_name=display_name,
+            id=id,
+            software_source_type=software_source_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             software_source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if software_source_type is None and 'softwareSourceType' in kwargs:
+            software_source_type = kwargs['softwareSourceType']
+        if software_source_type is None:
+            raise TypeError("Missing 'software_source_type' argument")
+
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("id", id)
+        _setter("software_source_type", software_source_type)
 
     @property
     @pulumi.getter
@@ -2804,7 +4028,20 @@ class GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceColl
         """
         :param Sequence['GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArgs'] items: List of available software sources.
         """
-        pulumi.set(__self__, "items", items)
+        GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2826,9 +4063,34 @@ class GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceColl
         :param str display_name: A filter to return resources that match the given display names.
         :param str id: unique identifier that is immutable on creation.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+        GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
+        _setter("id", id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -2861,10 +4123,29 @@ class GetManagedInstanceGroupAvailableSoftwareSourcesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedInstanceGroupAvailableSoftwareSourcesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2895,10 +4176,39 @@ class GetManagedInstanceGroupSoftwareSourceResult(dict):
         :param str id: The OCID of the software source.
         :param str software_source_type: Type of the software source.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "software_source_type", software_source_type)
+        GetManagedInstanceGroupSoftwareSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            display_name=display_name,
+            id=id,
+            software_source_type=software_source_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             software_source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if software_source_type is None and 'softwareSourceType' in kwargs:
+            software_source_type = kwargs['softwareSourceType']
+        if software_source_type is None:
+            raise TypeError("Missing 'software_source_type' argument")
+
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("id", id)
+        _setter("software_source_type", software_source_type)
 
     @property
     @pulumi.getter
@@ -2939,10 +4249,29 @@ class GetManagedInstanceGroupsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedInstanceGroupsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2964,7 +4293,20 @@ class GetManagedInstanceGroupsFilterResult(dict):
 class GetManagedInstanceGroupsManagedInstanceGroupCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetManagedInstanceGroupsManagedInstanceGroupCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetManagedInstanceGroupsManagedInstanceGroupCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetManagedInstanceGroupsManagedInstanceGroupCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -3013,24 +4355,135 @@ class GetManagedInstanceGroupsManagedInstanceGroupCollectionItemResult(dict):
         :param str time_modified: The time the managed instance group was last modified. An RFC3339 formatted datetime string.
         :param str vendor_name: The software source vendor name.
         """
-        pulumi.set(__self__, "arch_type", arch_type)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "managed_instance_count", managed_instance_count)
-        pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
-        pulumi.set(__self__, "os_family", os_family)
-        pulumi.set(__self__, "pending_job_count", pending_job_count)
-        pulumi.set(__self__, "software_source_ids", software_source_ids)
-        pulumi.set(__self__, "software_sources", software_sources)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_modified", time_modified)
-        pulumi.set(__self__, "vendor_name", vendor_name)
+        GetManagedInstanceGroupsManagedInstanceGroupCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            arch_type=arch_type,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            managed_instance_count=managed_instance_count,
+            managed_instance_ids=managed_instance_ids,
+            os_family=os_family,
+            pending_job_count=pending_job_count,
+            software_source_ids=software_source_ids,
+            software_sources=software_sources,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_modified=time_modified,
+            vendor_name=vendor_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             arch_type: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             managed_instance_count: Optional[int] = None,
+             managed_instance_ids: Optional[Sequence[str]] = None,
+             os_family: Optional[str] = None,
+             pending_job_count: Optional[int] = None,
+             software_source_ids: Optional[Sequence[str]] = None,
+             software_sources: Optional[Sequence['outputs.GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceResult']] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_modified: Optional[str] = None,
+             vendor_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if arch_type is None and 'archType' in kwargs:
+            arch_type = kwargs['archType']
+        if arch_type is None:
+            raise TypeError("Missing 'arch_type' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if managed_instance_count is None and 'managedInstanceCount' in kwargs:
+            managed_instance_count = kwargs['managedInstanceCount']
+        if managed_instance_count is None:
+            raise TypeError("Missing 'managed_instance_count' argument")
+        if managed_instance_ids is None and 'managedInstanceIds' in kwargs:
+            managed_instance_ids = kwargs['managedInstanceIds']
+        if managed_instance_ids is None:
+            raise TypeError("Missing 'managed_instance_ids' argument")
+        if os_family is None and 'osFamily' in kwargs:
+            os_family = kwargs['osFamily']
+        if os_family is None:
+            raise TypeError("Missing 'os_family' argument")
+        if pending_job_count is None and 'pendingJobCount' in kwargs:
+            pending_job_count = kwargs['pendingJobCount']
+        if pending_job_count is None:
+            raise TypeError("Missing 'pending_job_count' argument")
+        if software_source_ids is None and 'softwareSourceIds' in kwargs:
+            software_source_ids = kwargs['softwareSourceIds']
+        if software_source_ids is None:
+            raise TypeError("Missing 'software_source_ids' argument")
+        if software_sources is None and 'softwareSources' in kwargs:
+            software_sources = kwargs['softwareSources']
+        if software_sources is None:
+            raise TypeError("Missing 'software_sources' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_modified is None and 'timeModified' in kwargs:
+            time_modified = kwargs['timeModified']
+        if time_modified is None:
+            raise TypeError("Missing 'time_modified' argument")
+        if vendor_name is None and 'vendorName' in kwargs:
+            vendor_name = kwargs['vendorName']
+        if vendor_name is None:
+            raise TypeError("Missing 'vendor_name' argument")
+
+        _setter("arch_type", arch_type)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("managed_instance_count", managed_instance_count)
+        _setter("managed_instance_ids", managed_instance_ids)
+        _setter("os_family", os_family)
+        _setter("pending_job_count", pending_job_count)
+        _setter("software_source_ids", software_source_ids)
+        _setter("software_sources", software_sources)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_modified", time_modified)
+        _setter("vendor_name", vendor_name)
 
     @property
     @pulumi.getter(name="archType")
@@ -3190,10 +4643,39 @@ class GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceRe
         :param str id: The OCID of the software source.
         :param str software_source_type: Type of the software source.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "software_source_type", software_source_type)
+        GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            display_name=display_name,
+            id=id,
+            software_source_type=software_source_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             software_source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if software_source_type is None and 'softwareSourceType' in kwargs:
+            software_source_type = kwargs['softwareSourceType']
+        if software_source_type is None:
+            raise TypeError("Missing 'software_source_type' argument")
+
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("id", id)
+        _setter("software_source_type", software_source_type)
 
     @property
     @pulumi.getter
@@ -3241,10 +4723,35 @@ class GetManagementStationMirrorResult(dict):
         :param str sslcert: Local path for the sslcert
         :param str sslport: Default sslport for the mirror
         """
-        pulumi.set(__self__, "directory", directory)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "sslcert", sslcert)
-        pulumi.set(__self__, "sslport", sslport)
+        GetManagementStationMirrorResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            directory=directory,
+            port=port,
+            sslcert=sslcert,
+            sslport=sslport,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             directory: Optional[str] = None,
+             port: Optional[str] = None,
+             sslcert: Optional[str] = None,
+             sslport: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if directory is None:
+            raise TypeError("Missing 'directory' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if sslcert is None:
+            raise TypeError("Missing 'sslcert' argument")
+        if sslport is None:
+            raise TypeError("Missing 'sslport' argument")
+
+        _setter("directory", directory)
+        _setter("port", port)
+        _setter("sslcert", sslcert)
+        _setter("sslport", sslport)
 
     @property
     @pulumi.getter
@@ -3294,11 +4801,40 @@ class GetManagementStationMirrorSyncStatusResult(dict):
         :param int syncing: Total of mirrors in 'syncing' state
         :param int unsynced: Total of mirrors in 'failed' state
         """
-        pulumi.set(__self__, "failed", failed)
-        pulumi.set(__self__, "queued", queued)
-        pulumi.set(__self__, "synced", synced)
-        pulumi.set(__self__, "syncing", syncing)
-        pulumi.set(__self__, "unsynced", unsynced)
+        GetManagementStationMirrorSyncStatusResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            failed=failed,
+            queued=queued,
+            synced=synced,
+            syncing=syncing,
+            unsynced=unsynced,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             failed: Optional[int] = None,
+             queued: Optional[int] = None,
+             synced: Optional[int] = None,
+             syncing: Optional[int] = None,
+             unsynced: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if failed is None:
+            raise TypeError("Missing 'failed' argument")
+        if queued is None:
+            raise TypeError("Missing 'queued' argument")
+        if synced is None:
+            raise TypeError("Missing 'synced' argument")
+        if syncing is None:
+            raise TypeError("Missing 'syncing' argument")
+        if unsynced is None:
+            raise TypeError("Missing 'unsynced' argument")
+
+        _setter("failed", failed)
+        _setter("queued", queued)
+        _setter("synced", synced)
+        _setter("syncing", syncing)
+        _setter("unsynced", unsynced)
 
     @property
     @pulumi.getter
@@ -3347,10 +4883,29 @@ class GetManagementStationMirrorsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagementStationMirrorsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3375,7 +4930,20 @@ class GetManagementStationMirrorsMirrorsCollectionResult(dict):
         """
         :param Sequence['GetManagementStationMirrorsMirrorsCollectionItemArgs'] items: List of mirrors
         """
-        pulumi.set(__self__, "items", items)
+        GetManagementStationMirrorsMirrorsCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetManagementStationMirrorsMirrorsCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -3409,15 +4977,68 @@ class GetManagementStationMirrorsMirrorsCollectionItemResult(dict):
         :param str time_last_synced: Timestamp of the last time the mirror was sync
         :param str type: Type of the mirror
         """
-        pulumi.set(__self__, "arch_type", arch_type)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "log", log)
-        pulumi.set(__self__, "os_family", os_family)
-        pulumi.set(__self__, "percentage", percentage)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_last_synced", time_last_synced)
-        pulumi.set(__self__, "type", type)
+        GetManagementStationMirrorsMirrorsCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            arch_type=arch_type,
+            display_name=display_name,
+            id=id,
+            log=log,
+            os_family=os_family,
+            percentage=percentage,
+            state=state,
+            time_last_synced=time_last_synced,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             arch_type: Optional[str] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             log: Optional[str] = None,
+             os_family: Optional[str] = None,
+             percentage: Optional[int] = None,
+             state: Optional[str] = None,
+             time_last_synced: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if arch_type is None and 'archType' in kwargs:
+            arch_type = kwargs['archType']
+        if arch_type is None:
+            raise TypeError("Missing 'arch_type' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if log is None:
+            raise TypeError("Missing 'log' argument")
+        if os_family is None and 'osFamily' in kwargs:
+            os_family = kwargs['osFamily']
+        if os_family is None:
+            raise TypeError("Missing 'os_family' argument")
+        if percentage is None:
+            raise TypeError("Missing 'percentage' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_last_synced is None and 'timeLastSynced' in kwargs:
+            time_last_synced = kwargs['timeLastSynced']
+        if time_last_synced is None:
+            raise TypeError("Missing 'time_last_synced' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("arch_type", arch_type)
+        _setter("display_name", display_name)
+        _setter("id", id)
+        _setter("log", log)
+        _setter("os_family", os_family)
+        _setter("percentage", percentage)
+        _setter("state", state)
+        _setter("time_last_synced", time_last_synced)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="archType")
@@ -3505,10 +5126,37 @@ class GetManagementStationProxyResult(dict):
         :param bool is_enabled: To enable or disable the proxy (default true)
         :param str port: Port that the proxy will use
         """
-        pulumi.set(__self__, "forward", forward)
-        pulumi.set(__self__, "hosts", hosts)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "port", port)
+        GetManagementStationProxyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            forward=forward,
+            hosts=hosts,
+            is_enabled=is_enabled,
+            port=port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             forward: Optional[str] = None,
+             hosts: Optional[Sequence[str]] = None,
+             is_enabled: Optional[bool] = None,
+             port: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if forward is None:
+            raise TypeError("Missing 'forward' argument")
+        if hosts is None:
+            raise TypeError("Missing 'hosts' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+
+        _setter("forward", forward)
+        _setter("hosts", hosts)
+        _setter("is_enabled", is_enabled)
+        _setter("port", port)
 
     @property
     @pulumi.getter
@@ -3549,10 +5197,29 @@ class GetManagementStationsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagementStationsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3574,7 +5241,20 @@ class GetManagementStationsFilterResult(dict):
 class GetManagementStationsManagementStationCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetManagementStationsManagementStationCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetManagementStationsManagementStationCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetManagementStationsManagementStationCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -3625,25 +5305,136 @@ class GetManagementStationsManagementStationCollectionItemResult(dict):
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param int total_mirrors: A decimal number representing the total of repos
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
-        pulumi.set(__self__, "mirror_capacity", mirror_capacity)
-        pulumi.set(__self__, "mirror_sync_statuses", mirror_sync_statuses)
-        pulumi.set(__self__, "mirrors", mirrors)
-        pulumi.set(__self__, "overall_percentage", overall_percentage)
-        pulumi.set(__self__, "overall_state", overall_state)
-        pulumi.set(__self__, "profile_id", profile_id)
-        pulumi.set(__self__, "proxies", proxies)
-        pulumi.set(__self__, "scheduled_job_id", scheduled_job_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "total_mirrors", total_mirrors)
+        GetManagementStationsManagementStationCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            hostname=hostname,
+            id=id,
+            managed_instance_id=managed_instance_id,
+            mirror_capacity=mirror_capacity,
+            mirror_sync_statuses=mirror_sync_statuses,
+            mirrors=mirrors,
+            overall_percentage=overall_percentage,
+            overall_state=overall_state,
+            profile_id=profile_id,
+            proxies=proxies,
+            scheduled_job_id=scheduled_job_id,
+            state=state,
+            system_tags=system_tags,
+            total_mirrors=total_mirrors,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             hostname: Optional[str] = None,
+             id: Optional[str] = None,
+             managed_instance_id: Optional[str] = None,
+             mirror_capacity: Optional[int] = None,
+             mirror_sync_statuses: Optional[Sequence['outputs.GetManagementStationsManagementStationCollectionItemMirrorSyncStatusResult']] = None,
+             mirrors: Optional[Sequence['outputs.GetManagementStationsManagementStationCollectionItemMirrorResult']] = None,
+             overall_percentage: Optional[int] = None,
+             overall_state: Optional[str] = None,
+             profile_id: Optional[str] = None,
+             proxies: Optional[Sequence['outputs.GetManagementStationsManagementStationCollectionItemProxyResult']] = None,
+             scheduled_job_id: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             total_mirrors: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if managed_instance_id is None and 'managedInstanceId' in kwargs:
+            managed_instance_id = kwargs['managedInstanceId']
+        if managed_instance_id is None:
+            raise TypeError("Missing 'managed_instance_id' argument")
+        if mirror_capacity is None and 'mirrorCapacity' in kwargs:
+            mirror_capacity = kwargs['mirrorCapacity']
+        if mirror_capacity is None:
+            raise TypeError("Missing 'mirror_capacity' argument")
+        if mirror_sync_statuses is None and 'mirrorSyncStatuses' in kwargs:
+            mirror_sync_statuses = kwargs['mirrorSyncStatuses']
+        if mirror_sync_statuses is None:
+            raise TypeError("Missing 'mirror_sync_statuses' argument")
+        if mirrors is None:
+            raise TypeError("Missing 'mirrors' argument")
+        if overall_percentage is None and 'overallPercentage' in kwargs:
+            overall_percentage = kwargs['overallPercentage']
+        if overall_percentage is None:
+            raise TypeError("Missing 'overall_percentage' argument")
+        if overall_state is None and 'overallState' in kwargs:
+            overall_state = kwargs['overallState']
+        if overall_state is None:
+            raise TypeError("Missing 'overall_state' argument")
+        if profile_id is None and 'profileId' in kwargs:
+            profile_id = kwargs['profileId']
+        if profile_id is None:
+            raise TypeError("Missing 'profile_id' argument")
+        if proxies is None:
+            raise TypeError("Missing 'proxies' argument")
+        if scheduled_job_id is None and 'scheduledJobId' in kwargs:
+            scheduled_job_id = kwargs['scheduledJobId']
+        if scheduled_job_id is None:
+            raise TypeError("Missing 'scheduled_job_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if total_mirrors is None and 'totalMirrors' in kwargs:
+            total_mirrors = kwargs['totalMirrors']
+        if total_mirrors is None:
+            raise TypeError("Missing 'total_mirrors' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("hostname", hostname)
+        _setter("id", id)
+        _setter("managed_instance_id", managed_instance_id)
+        _setter("mirror_capacity", mirror_capacity)
+        _setter("mirror_sync_statuses", mirror_sync_statuses)
+        _setter("mirrors", mirrors)
+        _setter("overall_percentage", overall_percentage)
+        _setter("overall_state", overall_state)
+        _setter("profile_id", profile_id)
+        _setter("proxies", proxies)
+        _setter("scheduled_job_id", scheduled_job_id)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("total_mirrors", total_mirrors)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -3811,10 +5602,35 @@ class GetManagementStationsManagementStationCollectionItemMirrorResult(dict):
         :param str sslcert: Local path for the sslcert
         :param str sslport: Default sslport for the mirror
         """
-        pulumi.set(__self__, "directory", directory)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "sslcert", sslcert)
-        pulumi.set(__self__, "sslport", sslport)
+        GetManagementStationsManagementStationCollectionItemMirrorResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            directory=directory,
+            port=port,
+            sslcert=sslcert,
+            sslport=sslport,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             directory: Optional[str] = None,
+             port: Optional[str] = None,
+             sslcert: Optional[str] = None,
+             sslport: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if directory is None:
+            raise TypeError("Missing 'directory' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if sslcert is None:
+            raise TypeError("Missing 'sslcert' argument")
+        if sslport is None:
+            raise TypeError("Missing 'sslport' argument")
+
+        _setter("directory", directory)
+        _setter("port", port)
+        _setter("sslcert", sslcert)
+        _setter("sslport", sslport)
 
     @property
     @pulumi.getter
@@ -3864,11 +5680,40 @@ class GetManagementStationsManagementStationCollectionItemMirrorSyncStatusResult
         :param int syncing: Total of mirrors in 'syncing' state
         :param int unsynced: Total of mirrors in 'failed' state
         """
-        pulumi.set(__self__, "failed", failed)
-        pulumi.set(__self__, "queued", queued)
-        pulumi.set(__self__, "synced", synced)
-        pulumi.set(__self__, "syncing", syncing)
-        pulumi.set(__self__, "unsynced", unsynced)
+        GetManagementStationsManagementStationCollectionItemMirrorSyncStatusResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            failed=failed,
+            queued=queued,
+            synced=synced,
+            syncing=syncing,
+            unsynced=unsynced,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             failed: Optional[int] = None,
+             queued: Optional[int] = None,
+             synced: Optional[int] = None,
+             syncing: Optional[int] = None,
+             unsynced: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if failed is None:
+            raise TypeError("Missing 'failed' argument")
+        if queued is None:
+            raise TypeError("Missing 'queued' argument")
+        if synced is None:
+            raise TypeError("Missing 'synced' argument")
+        if syncing is None:
+            raise TypeError("Missing 'syncing' argument")
+        if unsynced is None:
+            raise TypeError("Missing 'unsynced' argument")
+
+        _setter("failed", failed)
+        _setter("queued", queued)
+        _setter("synced", synced)
+        _setter("syncing", syncing)
+        _setter("unsynced", unsynced)
 
     @property
     @pulumi.getter
@@ -3924,10 +5769,37 @@ class GetManagementStationsManagementStationCollectionItemProxyResult(dict):
         :param bool is_enabled: To enable or disable the proxy (default true)
         :param str port: Port that the proxy will use
         """
-        pulumi.set(__self__, "forward", forward)
-        pulumi.set(__self__, "hosts", hosts)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "port", port)
+        GetManagementStationsManagementStationCollectionItemProxyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            forward=forward,
+            hosts=hosts,
+            is_enabled=is_enabled,
+            port=port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             forward: Optional[str] = None,
+             hosts: Optional[Sequence[str]] = None,
+             is_enabled: Optional[bool] = None,
+             port: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if forward is None:
+            raise TypeError("Missing 'forward' argument")
+        if hosts is None:
+            raise TypeError("Missing 'hosts' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+
+        _setter("forward", forward)
+        _setter("hosts", hosts)
+        _setter("is_enabled", is_enabled)
+        _setter("port", port)
 
     @property
     @pulumi.getter
@@ -3971,8 +5843,27 @@ class GetProfileLifecycleEnvironmentResult(dict):
         :param str display_name: Software source name.
         :param str id: The OCID of the software source.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+        GetProfileLifecycleEnvironmentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+
+        _setter("display_name", display_name)
+        _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -4000,8 +5891,27 @@ class GetProfileLifecycleStageResult(dict):
         :param str display_name: Software source name.
         :param str id: The OCID of the software source.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+        GetProfileLifecycleStageResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+
+        _setter("display_name", display_name)
+        _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -4029,8 +5939,27 @@ class GetProfileManagedInstanceGroupResult(dict):
         :param str display_name: Software source name.
         :param str id: The OCID of the software source.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+        GetProfileManagedInstanceGroupResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+
+        _setter("display_name", display_name)
+        _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -4062,10 +5991,39 @@ class GetProfileSoftwareSourceResult(dict):
         :param str id: The OCID of the software source.
         :param str software_source_type: Type of the software source.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "software_source_type", software_source_type)
+        GetProfileSoftwareSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            display_name=display_name,
+            id=id,
+            software_source_type=software_source_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             software_source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if software_source_type is None and 'softwareSourceType' in kwargs:
+            software_source_type = kwargs['softwareSourceType']
+        if software_source_type is None:
+            raise TypeError("Missing 'software_source_type' argument")
+
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("id", id)
+        _setter("software_source_type", software_source_type)
 
     @property
     @pulumi.getter
@@ -4106,10 +6064,29 @@ class GetProfilesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetProfilesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4131,7 +6108,20 @@ class GetProfilesFilterResult(dict):
 class GetProfilesProfileCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetProfilesProfileCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetProfilesProfileCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetProfilesProfileCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -4183,27 +6173,156 @@ class GetProfilesProfileCollectionItemResult(dict):
         :param str time_created: The time the the registration profile was created. An RFC3339 formatted datetime string.
         :param str vendor_name: A filter to return only profiles that match the given vendorName.
         """
-        pulumi.set(__self__, "arch_type", arch_type)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_environments", lifecycle_environments)
-        pulumi.set(__self__, "lifecycle_stage_id", lifecycle_stage_id)
-        pulumi.set(__self__, "lifecycle_stages", lifecycle_stages)
-        pulumi.set(__self__, "managed_instance_group_id", managed_instance_group_id)
-        pulumi.set(__self__, "managed_instance_groups", managed_instance_groups)
-        pulumi.set(__self__, "management_station_id", management_station_id)
-        pulumi.set(__self__, "os_family", os_family)
-        pulumi.set(__self__, "profile_type", profile_type)
-        pulumi.set(__self__, "software_source_ids", software_source_ids)
-        pulumi.set(__self__, "software_sources", software_sources)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "vendor_name", vendor_name)
+        GetProfilesProfileCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            arch_type=arch_type,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_environments=lifecycle_environments,
+            lifecycle_stage_id=lifecycle_stage_id,
+            lifecycle_stages=lifecycle_stages,
+            managed_instance_group_id=managed_instance_group_id,
+            managed_instance_groups=managed_instance_groups,
+            management_station_id=management_station_id,
+            os_family=os_family,
+            profile_type=profile_type,
+            software_source_ids=software_source_ids,
+            software_sources=software_sources,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            vendor_name=vendor_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             arch_type: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_environments: Optional[Sequence['outputs.GetProfilesProfileCollectionItemLifecycleEnvironmentResult']] = None,
+             lifecycle_stage_id: Optional[str] = None,
+             lifecycle_stages: Optional[Sequence['outputs.GetProfilesProfileCollectionItemLifecycleStageResult']] = None,
+             managed_instance_group_id: Optional[str] = None,
+             managed_instance_groups: Optional[Sequence['outputs.GetProfilesProfileCollectionItemManagedInstanceGroupResult']] = None,
+             management_station_id: Optional[str] = None,
+             os_family: Optional[str] = None,
+             profile_type: Optional[str] = None,
+             software_source_ids: Optional[Sequence[str]] = None,
+             software_sources: Optional[Sequence['outputs.GetProfilesProfileCollectionItemSoftwareSourceResult']] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             vendor_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if arch_type is None and 'archType' in kwargs:
+            arch_type = kwargs['archType']
+        if arch_type is None:
+            raise TypeError("Missing 'arch_type' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_environments is None and 'lifecycleEnvironments' in kwargs:
+            lifecycle_environments = kwargs['lifecycleEnvironments']
+        if lifecycle_environments is None:
+            raise TypeError("Missing 'lifecycle_environments' argument")
+        if lifecycle_stage_id is None and 'lifecycleStageId' in kwargs:
+            lifecycle_stage_id = kwargs['lifecycleStageId']
+        if lifecycle_stage_id is None:
+            raise TypeError("Missing 'lifecycle_stage_id' argument")
+        if lifecycle_stages is None and 'lifecycleStages' in kwargs:
+            lifecycle_stages = kwargs['lifecycleStages']
+        if lifecycle_stages is None:
+            raise TypeError("Missing 'lifecycle_stages' argument")
+        if managed_instance_group_id is None and 'managedInstanceGroupId' in kwargs:
+            managed_instance_group_id = kwargs['managedInstanceGroupId']
+        if managed_instance_group_id is None:
+            raise TypeError("Missing 'managed_instance_group_id' argument")
+        if managed_instance_groups is None and 'managedInstanceGroups' in kwargs:
+            managed_instance_groups = kwargs['managedInstanceGroups']
+        if managed_instance_groups is None:
+            raise TypeError("Missing 'managed_instance_groups' argument")
+        if management_station_id is None and 'managementStationId' in kwargs:
+            management_station_id = kwargs['managementStationId']
+        if management_station_id is None:
+            raise TypeError("Missing 'management_station_id' argument")
+        if os_family is None and 'osFamily' in kwargs:
+            os_family = kwargs['osFamily']
+        if os_family is None:
+            raise TypeError("Missing 'os_family' argument")
+        if profile_type is None and 'profileType' in kwargs:
+            profile_type = kwargs['profileType']
+        if profile_type is None:
+            raise TypeError("Missing 'profile_type' argument")
+        if software_source_ids is None and 'softwareSourceIds' in kwargs:
+            software_source_ids = kwargs['softwareSourceIds']
+        if software_source_ids is None:
+            raise TypeError("Missing 'software_source_ids' argument")
+        if software_sources is None and 'softwareSources' in kwargs:
+            software_sources = kwargs['softwareSources']
+        if software_sources is None:
+            raise TypeError("Missing 'software_sources' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if vendor_name is None and 'vendorName' in kwargs:
+            vendor_name = kwargs['vendorName']
+        if vendor_name is None:
+            raise TypeError("Missing 'vendor_name' argument")
+
+        _setter("arch_type", arch_type)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_environments", lifecycle_environments)
+        _setter("lifecycle_stage_id", lifecycle_stage_id)
+        _setter("lifecycle_stages", lifecycle_stages)
+        _setter("managed_instance_group_id", managed_instance_group_id)
+        _setter("managed_instance_groups", managed_instance_groups)
+        _setter("management_station_id", management_station_id)
+        _setter("os_family", os_family)
+        _setter("profile_type", profile_type)
+        _setter("software_source_ids", software_source_ids)
+        _setter("software_sources", software_sources)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("vendor_name", vendor_name)
 
     @property
     @pulumi.getter(name="archType")
@@ -4374,8 +6493,27 @@ class GetProfilesProfileCollectionItemLifecycleEnvironmentResult(dict):
         :param str display_name: A filter to return resources that match the given display names.
         :param str id: The OCID of the software source.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+        GetProfilesProfileCollectionItemLifecycleEnvironmentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+
+        _setter("display_name", display_name)
+        _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -4403,8 +6541,27 @@ class GetProfilesProfileCollectionItemLifecycleStageResult(dict):
         :param str display_name: A filter to return resources that match the given display names.
         :param str id: The OCID of the software source.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+        GetProfilesProfileCollectionItemLifecycleStageResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+
+        _setter("display_name", display_name)
+        _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -4432,8 +6589,27 @@ class GetProfilesProfileCollectionItemManagedInstanceGroupResult(dict):
         :param str display_name: A filter to return resources that match the given display names.
         :param str id: The OCID of the software source.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+        GetProfilesProfileCollectionItemManagedInstanceGroupResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+
+        _setter("display_name", display_name)
+        _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -4465,10 +6641,39 @@ class GetProfilesProfileCollectionItemSoftwareSourceResult(dict):
         :param str id: The OCID of the software source.
         :param str software_source_type: Type of the software source.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "software_source_type", software_source_type)
+        GetProfilesProfileCollectionItemSoftwareSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            display_name=display_name,
+            id=id,
+            software_source_type=software_source_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             software_source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if software_source_type is None and 'softwareSourceType' in kwargs:
+            software_source_type = kwargs['softwareSourceType']
+        if software_source_type is None:
+            raise TypeError("Missing 'software_source_type' argument")
+
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("id", id)
+        _setter("software_source_type", software_source_type)
 
     @property
     @pulumi.getter
@@ -4514,9 +6719,36 @@ class GetSoftwareSourceCustomSoftwareSourceFilterResult(dict):
         :param Sequence['GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs'] package_filters: The list of package filters.
         :param Sequence['GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs'] package_group_filters: The list of group filters.
         """
-        pulumi.set(__self__, "module_stream_profile_filters", module_stream_profile_filters)
-        pulumi.set(__self__, "package_filters", package_filters)
-        pulumi.set(__self__, "package_group_filters", package_group_filters)
+        GetSoftwareSourceCustomSoftwareSourceFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            module_stream_profile_filters=module_stream_profile_filters,
+            package_filters=package_filters,
+            package_group_filters=package_group_filters,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             module_stream_profile_filters: Optional[Sequence['outputs.GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterResult']] = None,
+             package_filters: Optional[Sequence['outputs.GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterResult']] = None,
+             package_group_filters: Optional[Sequence['outputs.GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if module_stream_profile_filters is None and 'moduleStreamProfileFilters' in kwargs:
+            module_stream_profile_filters = kwargs['moduleStreamProfileFilters']
+        if module_stream_profile_filters is None:
+            raise TypeError("Missing 'module_stream_profile_filters' argument")
+        if package_filters is None and 'packageFilters' in kwargs:
+            package_filters = kwargs['packageFilters']
+        if package_filters is None:
+            raise TypeError("Missing 'package_filters' argument")
+        if package_group_filters is None and 'packageGroupFilters' in kwargs:
+            package_group_filters = kwargs['packageGroupFilters']
+        if package_group_filters is None:
+            raise TypeError("Missing 'package_group_filters' argument")
+
+        _setter("module_stream_profile_filters", module_stream_profile_filters)
+        _setter("package_filters", package_filters)
+        _setter("package_group_filters", package_group_filters)
 
     @property
     @pulumi.getter(name="moduleStreamProfileFilters")
@@ -4556,10 +6788,43 @@ class GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterResult
         :param str profile_name: Profile name.
         :param str stream_name: Stream name.
         """
-        pulumi.set(__self__, "filter_type", filter_type)
-        pulumi.set(__self__, "module_name", module_name)
-        pulumi.set(__self__, "profile_name", profile_name)
-        pulumi.set(__self__, "stream_name", stream_name)
+        GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            filter_type=filter_type,
+            module_name=module_name,
+            profile_name=profile_name,
+            stream_name=stream_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             filter_type: Optional[str] = None,
+             module_name: Optional[str] = None,
+             profile_name: Optional[str] = None,
+             stream_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if filter_type is None and 'filterType' in kwargs:
+            filter_type = kwargs['filterType']
+        if filter_type is None:
+            raise TypeError("Missing 'filter_type' argument")
+        if module_name is None and 'moduleName' in kwargs:
+            module_name = kwargs['moduleName']
+        if module_name is None:
+            raise TypeError("Missing 'module_name' argument")
+        if profile_name is None and 'profileName' in kwargs:
+            profile_name = kwargs['profileName']
+        if profile_name is None:
+            raise TypeError("Missing 'profile_name' argument")
+        if stream_name is None and 'streamName' in kwargs:
+            stream_name = kwargs['streamName']
+        if stream_name is None:
+            raise TypeError("Missing 'stream_name' argument")
+
+        _setter("filter_type", filter_type)
+        _setter("module_name", module_name)
+        _setter("profile_name", profile_name)
+        _setter("stream_name", stream_name)
 
     @property
     @pulumi.getter(name="filterType")
@@ -4607,10 +6872,43 @@ class GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterResult(dict):
         :param str package_name_pattern: The package name pattern.
         :param str package_version: The package version, which is denoted by 'version-release', or 'epoch:version-release'.
         """
-        pulumi.set(__self__, "filter_type", filter_type)
-        pulumi.set(__self__, "package_name", package_name)
-        pulumi.set(__self__, "package_name_pattern", package_name_pattern)
-        pulumi.set(__self__, "package_version", package_version)
+        GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            filter_type=filter_type,
+            package_name=package_name,
+            package_name_pattern=package_name_pattern,
+            package_version=package_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             filter_type: Optional[str] = None,
+             package_name: Optional[str] = None,
+             package_name_pattern: Optional[str] = None,
+             package_version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if filter_type is None and 'filterType' in kwargs:
+            filter_type = kwargs['filterType']
+        if filter_type is None:
+            raise TypeError("Missing 'filter_type' argument")
+        if package_name is None and 'packageName' in kwargs:
+            package_name = kwargs['packageName']
+        if package_name is None:
+            raise TypeError("Missing 'package_name' argument")
+        if package_name_pattern is None and 'packageNamePattern' in kwargs:
+            package_name_pattern = kwargs['packageNamePattern']
+        if package_name_pattern is None:
+            raise TypeError("Missing 'package_name_pattern' argument")
+        if package_version is None and 'packageVersion' in kwargs:
+            package_version = kwargs['packageVersion']
+        if package_version is None:
+            raise TypeError("Missing 'package_version' argument")
+
+        _setter("filter_type", filter_type)
+        _setter("package_name", package_name)
+        _setter("package_name_pattern", package_name_pattern)
+        _setter("package_version", package_version)
 
     @property
     @pulumi.getter(name="filterType")
@@ -4654,8 +6952,29 @@ class GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterResult(dict):
         :param str filter_type: The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
         :param Sequence[str] package_groups: List of package group names.
         """
-        pulumi.set(__self__, "filter_type", filter_type)
-        pulumi.set(__self__, "package_groups", package_groups)
+        GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            filter_type=filter_type,
+            package_groups=package_groups,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             filter_type: Optional[str] = None,
+             package_groups: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if filter_type is None and 'filterType' in kwargs:
+            filter_type = kwargs['filterType']
+        if filter_type is None:
+            raise TypeError("Missing 'filter_type' argument")
+        if package_groups is None and 'packageGroups' in kwargs:
+            package_groups = kwargs['packageGroups']
+        if package_groups is None:
+            raise TypeError("Missing 'package_groups' argument")
+
+        _setter("filter_type", filter_type)
+        _setter("package_groups", package_groups)
 
     @property
     @pulumi.getter(name="filterType")
@@ -4683,10 +7002,29 @@ class GetSoftwareSourceModuleStreamProfilesFilterResult(dict):
         """
         :param str name: The name of the entity to be queried.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSoftwareSourceModuleStreamProfilesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4711,7 +7049,20 @@ class GetSoftwareSourceModuleStreamProfilesFilterResult(dict):
 class GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -4736,12 +7087,51 @@ class GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemResu
         :param Sequence[str] packages: A list of packages that constitute the profile.  Each element in the list is the name of a package.  The name is suitable to use as an argument to other OS Management Hub APIs that interact directly with packages.
         :param str stream_name: The name of the stream of the containing module.  This parameter is required if a profileName is specified.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "is_default", is_default)
-        pulumi.set(__self__, "module_name", module_name)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "packages", packages)
-        pulumi.set(__self__, "stream_name", stream_name)
+        GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            is_default=is_default,
+            module_name=module_name,
+            name=name,
+            packages=packages,
+            stream_name=stream_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             is_default: Optional[bool] = None,
+             module_name: Optional[str] = None,
+             name: Optional[str] = None,
+             packages: Optional[Sequence[str]] = None,
+             stream_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if is_default is None and 'isDefault' in kwargs:
+            is_default = kwargs['isDefault']
+        if is_default is None:
+            raise TypeError("Missing 'is_default' argument")
+        if module_name is None and 'moduleName' in kwargs:
+            module_name = kwargs['moduleName']
+        if module_name is None:
+            raise TypeError("Missing 'module_name' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if packages is None:
+            raise TypeError("Missing 'packages' argument")
+        if stream_name is None and 'streamName' in kwargs:
+            stream_name = kwargs['streamName']
+        if stream_name is None:
+            raise TypeError("Missing 'stream_name' argument")
+
+        _setter("description", description)
+        _setter("is_default", is_default)
+        _setter("module_name", module_name)
+        _setter("name", name)
+        _setter("packages", packages)
+        _setter("stream_name", stream_name)
 
     @property
     @pulumi.getter
@@ -4801,10 +7191,29 @@ class GetSoftwareSourceModuleStreamsFilterResult(dict):
         """
         :param str name: The name of the entity to be queried.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSoftwareSourceModuleStreamsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4829,7 +7238,20 @@ class GetSoftwareSourceModuleStreamsFilterResult(dict):
 class GetSoftwareSourceModuleStreamsModuleStreamCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetSoftwareSourceModuleStreamsModuleStreamCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetSoftwareSourceModuleStreamsModuleStreamCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetSoftwareSourceModuleStreamsModuleStreamCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -4860,15 +7282,70 @@ class GetSoftwareSourceModuleStreamsModuleStreamCollectionItemResult(dict):
         :param Sequence[str] profiles: A list of profiles that are part of the stream.  Each element in the list is the name of a profile.  The name is suitable to use as an argument to other OS Management Hub APIs that interact directly with module stream profiles.  However, it is not URL encoded.
         :param str software_source_id: The software source OCID.
         """
-        pulumi.set(__self__, "arch_type", arch_type)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "is_default", is_default)
-        pulumi.set(__self__, "is_latest", is_latest)
-        pulumi.set(__self__, "module_name", module_name)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "packages", packages)
-        pulumi.set(__self__, "profiles", profiles)
-        pulumi.set(__self__, "software_source_id", software_source_id)
+        GetSoftwareSourceModuleStreamsModuleStreamCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            arch_type=arch_type,
+            description=description,
+            is_default=is_default,
+            is_latest=is_latest,
+            module_name=module_name,
+            name=name,
+            packages=packages,
+            profiles=profiles,
+            software_source_id=software_source_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             arch_type: Optional[str] = None,
+             description: Optional[str] = None,
+             is_default: Optional[bool] = None,
+             is_latest: Optional[bool] = None,
+             module_name: Optional[str] = None,
+             name: Optional[str] = None,
+             packages: Optional[Sequence[str]] = None,
+             profiles: Optional[Sequence[str]] = None,
+             software_source_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if arch_type is None and 'archType' in kwargs:
+            arch_type = kwargs['archType']
+        if arch_type is None:
+            raise TypeError("Missing 'arch_type' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if is_default is None and 'isDefault' in kwargs:
+            is_default = kwargs['isDefault']
+        if is_default is None:
+            raise TypeError("Missing 'is_default' argument")
+        if is_latest is None and 'isLatest' in kwargs:
+            is_latest = kwargs['isLatest']
+        if is_latest is None:
+            raise TypeError("Missing 'is_latest' argument")
+        if module_name is None and 'moduleName' in kwargs:
+            module_name = kwargs['moduleName']
+        if module_name is None:
+            raise TypeError("Missing 'module_name' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if packages is None:
+            raise TypeError("Missing 'packages' argument")
+        if profiles is None:
+            raise TypeError("Missing 'profiles' argument")
+        if software_source_id is None and 'softwareSourceId' in kwargs:
+            software_source_id = kwargs['softwareSourceId']
+        if software_source_id is None:
+            raise TypeError("Missing 'software_source_id' argument")
+
+        _setter("arch_type", arch_type)
+        _setter("description", description)
+        _setter("is_default", is_default)
+        _setter("is_latest", is_latest)
+        _setter("module_name", module_name)
+        _setter("name", name)
+        _setter("packages", packages)
+        _setter("profiles", profiles)
+        _setter("software_source_id", software_source_id)
 
     @property
     @pulumi.getter(name="archType")
@@ -4952,10 +7429,29 @@ class GetSoftwareSourcePackageGroupsFilterResult(dict):
         """
         :param str name: The name of the entity to be queried.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSoftwareSourcePackageGroupsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4980,7 +7476,20 @@ class GetSoftwareSourcePackageGroupsFilterResult(dict):
 class GetSoftwareSourcePackageGroupsPackageGroupCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetSoftwareSourcePackageGroupsPackageGroupCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetSoftwareSourcePackageGroupsPackageGroupCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetSoftwareSourcePackageGroupsPackageGroupCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -5011,15 +7520,68 @@ class GetSoftwareSourcePackageGroupsPackageGroupCollectionItemResult(dict):
         :param Sequence[str] packages: The list of packages in the package group.
         :param Sequence[str] repositories: the IDs of the package group's repositories.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_order", display_order)
-        pulumi.set(__self__, "group_type", group_type)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_default", is_default)
-        pulumi.set(__self__, "is_user_visible", is_user_visible)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "packages", packages)
-        pulumi.set(__self__, "repositories", repositories)
+        GetSoftwareSourcePackageGroupsPackageGroupCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            display_order=display_order,
+            group_type=group_type,
+            id=id,
+            is_default=is_default,
+            is_user_visible=is_user_visible,
+            name=name,
+            packages=packages,
+            repositories=repositories,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             display_order: Optional[int] = None,
+             group_type: Optional[str] = None,
+             id: Optional[str] = None,
+             is_default: Optional[bool] = None,
+             is_user_visible: Optional[bool] = None,
+             name: Optional[str] = None,
+             packages: Optional[Sequence[str]] = None,
+             repositories: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_order is None and 'displayOrder' in kwargs:
+            display_order = kwargs['displayOrder']
+        if display_order is None:
+            raise TypeError("Missing 'display_order' argument")
+        if group_type is None and 'groupType' in kwargs:
+            group_type = kwargs['groupType']
+        if group_type is None:
+            raise TypeError("Missing 'group_type' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_default is None and 'isDefault' in kwargs:
+            is_default = kwargs['isDefault']
+        if is_default is None:
+            raise TypeError("Missing 'is_default' argument")
+        if is_user_visible is None and 'isUserVisible' in kwargs:
+            is_user_visible = kwargs['isUserVisible']
+        if is_user_visible is None:
+            raise TypeError("Missing 'is_user_visible' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if packages is None:
+            raise TypeError("Missing 'packages' argument")
+        if repositories is None:
+            raise TypeError("Missing 'repositories' argument")
+
+        _setter("description", description)
+        _setter("display_order", display_order)
+        _setter("group_type", group_type)
+        _setter("id", id)
+        _setter("is_default", is_default)
+        _setter("is_user_visible", is_user_visible)
+        _setter("name", name)
+        _setter("packages", packages)
+        _setter("repositories", repositories)
 
     @property
     @pulumi.getter
@@ -5105,9 +7667,34 @@ class GetSoftwareSourceSoftwarePackageDependencyResult(dict):
         :param str dependency_modifier: The modifier for the dependency.
         :param str dependency_type: The type of the dependency.
         """
-        pulumi.set(__self__, "dependency", dependency)
-        pulumi.set(__self__, "dependency_modifier", dependency_modifier)
-        pulumi.set(__self__, "dependency_type", dependency_type)
+        GetSoftwareSourceSoftwarePackageDependencyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dependency=dependency,
+            dependency_modifier=dependency_modifier,
+            dependency_type=dependency_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dependency: Optional[str] = None,
+             dependency_modifier: Optional[str] = None,
+             dependency_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if dependency is None:
+            raise TypeError("Missing 'dependency' argument")
+        if dependency_modifier is None and 'dependencyModifier' in kwargs:
+            dependency_modifier = kwargs['dependencyModifier']
+        if dependency_modifier is None:
+            raise TypeError("Missing 'dependency_modifier' argument")
+        if dependency_type is None and 'dependencyType' in kwargs:
+            dependency_type = kwargs['dependencyType']
+        if dependency_type is None:
+            raise TypeError("Missing 'dependency_type' argument")
+
+        _setter("dependency", dependency)
+        _setter("dependency_modifier", dependency_modifier)
+        _setter("dependency_type", dependency_type)
 
     @property
     @pulumi.getter
@@ -5151,12 +7738,51 @@ class GetSoftwareSourceSoftwarePackageFileResult(dict):
         :param str time_modified: The date and time of the last modification to this file, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         :param str type: Type of the package.
         """
-        pulumi.set(__self__, "checksum", checksum)
-        pulumi.set(__self__, "checksum_type", checksum_type)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
-        pulumi.set(__self__, "time_modified", time_modified)
-        pulumi.set(__self__, "type", type)
+        GetSoftwareSourceSoftwarePackageFileResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            checksum=checksum,
+            checksum_type=checksum_type,
+            path=path,
+            size_in_bytes=size_in_bytes,
+            time_modified=time_modified,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             checksum: Optional[str] = None,
+             checksum_type: Optional[str] = None,
+             path: Optional[str] = None,
+             size_in_bytes: Optional[str] = None,
+             time_modified: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if checksum is None:
+            raise TypeError("Missing 'checksum' argument")
+        if checksum_type is None and 'checksumType' in kwargs:
+            checksum_type = kwargs['checksumType']
+        if checksum_type is None:
+            raise TypeError("Missing 'checksum_type' argument")
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+        if size_in_bytes is None and 'sizeInBytes' in kwargs:
+            size_in_bytes = kwargs['sizeInBytes']
+        if size_in_bytes is None:
+            raise TypeError("Missing 'size_in_bytes' argument")
+        if time_modified is None and 'timeModified' in kwargs:
+            time_modified = kwargs['timeModified']
+        if time_modified is None:
+            raise TypeError("Missing 'time_modified' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("checksum", checksum)
+        _setter("checksum_type", checksum_type)
+        _setter("path", path)
+        _setter("size_in_bytes", size_in_bytes)
+        _setter("time_modified", time_modified)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -5220,10 +7846,39 @@ class GetSoftwareSourceSoftwarePackageSoftwareSourceResult(dict):
         :param str id: The OCID of the software source.
         :param str software_source_type: Type of the software source.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "software_source_type", software_source_type)
+        GetSoftwareSourceSoftwarePackageSoftwareSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            display_name=display_name,
+            id=id,
+            software_source_type=software_source_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             software_source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if software_source_type is None and 'softwareSourceType' in kwargs:
+            software_source_type = kwargs['softwareSourceType']
+        if software_source_type is None:
+            raise TypeError("Missing 'software_source_type' argument")
+
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("id", id)
+        _setter("software_source_type", software_source_type)
 
     @property
     @pulumi.getter
@@ -5267,10 +7922,29 @@ class GetSoftwareSourceSoftwarePackagesFilterResult(dict):
         """
         :param str name: Unique identifier for the package. NOTE - This is not an OCID.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSoftwareSourceSoftwarePackagesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5295,7 +7969,20 @@ class GetSoftwareSourceSoftwarePackagesFilterResult(dict):
 class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -5336,20 +8023,97 @@ class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemResult(dict)
         :param str type: Type of the package.
         :param str version: Version of the package.
         """
-        pulumi.set(__self__, "architecture", architecture)
-        pulumi.set(__self__, "checksum", checksum)
-        pulumi.set(__self__, "checksum_type", checksum_type)
-        pulumi.set(__self__, "dependencies", dependencies)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "files", files)
-        pulumi.set(__self__, "is_latest", is_latest)
-        pulumi.set(__self__, "last_modified_date", last_modified_date)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
-        pulumi.set(__self__, "software_sources", software_sources)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "version", version)
+        GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            architecture=architecture,
+            checksum=checksum,
+            checksum_type=checksum_type,
+            dependencies=dependencies,
+            description=description,
+            display_name=display_name,
+            files=files,
+            is_latest=is_latest,
+            last_modified_date=last_modified_date,
+            name=name,
+            size_in_bytes=size_in_bytes,
+            software_sources=software_sources,
+            type=type,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             architecture: Optional[str] = None,
+             checksum: Optional[str] = None,
+             checksum_type: Optional[str] = None,
+             dependencies: Optional[Sequence['outputs.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyResult']] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             files: Optional[Sequence['outputs.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileResult']] = None,
+             is_latest: Optional[bool] = None,
+             last_modified_date: Optional[str] = None,
+             name: Optional[str] = None,
+             size_in_bytes: Optional[str] = None,
+             software_sources: Optional[Sequence['outputs.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceResult']] = None,
+             type: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if architecture is None:
+            raise TypeError("Missing 'architecture' argument")
+        if checksum is None:
+            raise TypeError("Missing 'checksum' argument")
+        if checksum_type is None and 'checksumType' in kwargs:
+            checksum_type = kwargs['checksumType']
+        if checksum_type is None:
+            raise TypeError("Missing 'checksum_type' argument")
+        if dependencies is None:
+            raise TypeError("Missing 'dependencies' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if files is None:
+            raise TypeError("Missing 'files' argument")
+        if is_latest is None and 'isLatest' in kwargs:
+            is_latest = kwargs['isLatest']
+        if is_latest is None:
+            raise TypeError("Missing 'is_latest' argument")
+        if last_modified_date is None and 'lastModifiedDate' in kwargs:
+            last_modified_date = kwargs['lastModifiedDate']
+        if last_modified_date is None:
+            raise TypeError("Missing 'last_modified_date' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if size_in_bytes is None and 'sizeInBytes' in kwargs:
+            size_in_bytes = kwargs['sizeInBytes']
+        if size_in_bytes is None:
+            raise TypeError("Missing 'size_in_bytes' argument")
+        if software_sources is None and 'softwareSources' in kwargs:
+            software_sources = kwargs['softwareSources']
+        if software_sources is None:
+            raise TypeError("Missing 'software_sources' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
+
+        _setter("architecture", architecture)
+        _setter("checksum", checksum)
+        _setter("checksum_type", checksum_type)
+        _setter("dependencies", dependencies)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("files", files)
+        _setter("is_latest", is_latest)
+        _setter("last_modified_date", last_modified_date)
+        _setter("name", name)
+        _setter("size_in_bytes", size_in_bytes)
+        _setter("software_sources", software_sources)
+        _setter("type", type)
+        _setter("version", version)
 
     @property
     @pulumi.getter
@@ -5475,9 +8239,34 @@ class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyRe
         :param str dependency_modifier: The modifier for the dependency.
         :param str dependency_type: The type of the dependency.
         """
-        pulumi.set(__self__, "dependency", dependency)
-        pulumi.set(__self__, "dependency_modifier", dependency_modifier)
-        pulumi.set(__self__, "dependency_type", dependency_type)
+        GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dependency=dependency,
+            dependency_modifier=dependency_modifier,
+            dependency_type=dependency_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dependency: Optional[str] = None,
+             dependency_modifier: Optional[str] = None,
+             dependency_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if dependency is None:
+            raise TypeError("Missing 'dependency' argument")
+        if dependency_modifier is None and 'dependencyModifier' in kwargs:
+            dependency_modifier = kwargs['dependencyModifier']
+        if dependency_modifier is None:
+            raise TypeError("Missing 'dependency_modifier' argument")
+        if dependency_type is None and 'dependencyType' in kwargs:
+            dependency_type = kwargs['dependencyType']
+        if dependency_type is None:
+            raise TypeError("Missing 'dependency_type' argument")
+
+        _setter("dependency", dependency)
+        _setter("dependency_modifier", dependency_modifier)
+        _setter("dependency_type", dependency_type)
 
     @property
     @pulumi.getter
@@ -5521,12 +8310,51 @@ class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileResult(d
         :param str time_modified: The date and time of the last modification to this file, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         :param str type: Type of the package.
         """
-        pulumi.set(__self__, "checksum", checksum)
-        pulumi.set(__self__, "checksum_type", checksum_type)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
-        pulumi.set(__self__, "time_modified", time_modified)
-        pulumi.set(__self__, "type", type)
+        GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            checksum=checksum,
+            checksum_type=checksum_type,
+            path=path,
+            size_in_bytes=size_in_bytes,
+            time_modified=time_modified,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             checksum: Optional[str] = None,
+             checksum_type: Optional[str] = None,
+             path: Optional[str] = None,
+             size_in_bytes: Optional[str] = None,
+             time_modified: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if checksum is None:
+            raise TypeError("Missing 'checksum' argument")
+        if checksum_type is None and 'checksumType' in kwargs:
+            checksum_type = kwargs['checksumType']
+        if checksum_type is None:
+            raise TypeError("Missing 'checksum_type' argument")
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+        if size_in_bytes is None and 'sizeInBytes' in kwargs:
+            size_in_bytes = kwargs['sizeInBytes']
+        if size_in_bytes is None:
+            raise TypeError("Missing 'size_in_bytes' argument")
+        if time_modified is None and 'timeModified' in kwargs:
+            time_modified = kwargs['timeModified']
+        if time_modified is None:
+            raise TypeError("Missing 'time_modified' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("checksum", checksum)
+        _setter("checksum_type", checksum_type)
+        _setter("path", path)
+        _setter("size_in_bytes", size_in_bytes)
+        _setter("time_modified", time_modified)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -5590,10 +8418,39 @@ class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSour
         :param str id: The OCID of the software source.
         :param str software_source_type: Type of the software source.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "software_source_type", software_source_type)
+        GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            display_name=display_name,
+            id=id,
+            software_source_type=software_source_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             software_source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if software_source_type is None and 'softwareSourceType' in kwargs:
+            software_source_type = kwargs['softwareSourceType']
+        if software_source_type is None:
+            raise TypeError("Missing 'software_source_type' argument")
+
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("id", id)
+        _setter("software_source_type", software_source_type)
 
     @property
     @pulumi.getter
@@ -5637,8 +8494,27 @@ class GetSoftwareSourceVendorSoftwareSourceResult(dict):
         :param str display_name: User friendly name.
         :param str id: The OCID of the resource that is immutable on creation.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+        GetSoftwareSourceVendorSoftwareSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+
+        _setter("display_name", display_name)
+        _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -5666,10 +8542,29 @@ class GetSoftwareSourceVendorsFilterResult(dict):
         """
         :param str name: The name of the entity to be queried.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSoftwareSourceVendorsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5697,7 +8592,20 @@ class GetSoftwareSourceVendorsSoftwareSourceVendorCollectionResult(dict):
         """
         :param Sequence['GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemArgs'] items: List of SoftwareSourceVendor.
         """
-        pulumi.set(__self__, "items", items)
+        GetSoftwareSourceVendorsSoftwareSourceVendorCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -5719,9 +8627,34 @@ class GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemResult(dict):
         :param str name: The name of the entity to be queried.
         :param Sequence[str] os_families: List of corresponding osFamilies.
         """
-        pulumi.set(__self__, "arch_types", arch_types)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "os_families", os_families)
+        GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            arch_types=arch_types,
+            name=name,
+            os_families=os_families,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             arch_types: Optional[Sequence[str]] = None,
+             name: Optional[str] = None,
+             os_families: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if arch_types is None and 'archTypes' in kwargs:
+            arch_types = kwargs['archTypes']
+        if arch_types is None:
+            raise TypeError("Missing 'arch_types' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if os_families is None and 'osFamilies' in kwargs:
+            os_families = kwargs['osFamilies']
+        if os_families is None:
+            raise TypeError("Missing 'os_families' argument")
+
+        _setter("arch_types", arch_types)
+        _setter("name", name)
+        _setter("os_families", os_families)
 
     @property
     @pulumi.getter(name="archTypes")
@@ -5754,10 +8687,29 @@ class GetSoftwareSourcesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSoftwareSourcesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5779,7 +8731,20 @@ class GetSoftwareSourcesFilterResult(dict):
 class GetSoftwareSourcesSoftwareSourceCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetSoftwareSourcesSoftwareSourceCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -5842,31 +8807,180 @@ class GetSoftwareSourcesSoftwareSourceCollectionItemResult(dict):
         :param str vendor_name: A filter to return only profiles that match the given vendorName.
         :param Sequence['GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceArgs'] vendor_software_sources: List of vendor software sources.
         """
-        pulumi.set(__self__, "arch_type", arch_type)
-        pulumi.set(__self__, "availability", availability)
-        pulumi.set(__self__, "checksum_type", checksum_type)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "custom_software_source_filters", custom_software_source_filters)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "gpg_key_fingerprint", gpg_key_fingerprint)
-        pulumi.set(__self__, "gpg_key_id", gpg_key_id)
-        pulumi.set(__self__, "gpg_key_url", gpg_key_url)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_automatically_updated", is_automatically_updated)
-        pulumi.set(__self__, "os_family", os_family)
-        pulumi.set(__self__, "package_count", package_count)
-        pulumi.set(__self__, "repo_id", repo_id)
-        pulumi.set(__self__, "software_source_type", software_source_type)
-        pulumi.set(__self__, "software_source_version", software_source_version)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "url", url)
-        pulumi.set(__self__, "vendor_name", vendor_name)
-        pulumi.set(__self__, "vendor_software_sources", vendor_software_sources)
+        GetSoftwareSourcesSoftwareSourceCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            arch_type=arch_type,
+            availability=availability,
+            checksum_type=checksum_type,
+            compartment_id=compartment_id,
+            custom_software_source_filters=custom_software_source_filters,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            gpg_key_fingerprint=gpg_key_fingerprint,
+            gpg_key_id=gpg_key_id,
+            gpg_key_url=gpg_key_url,
+            id=id,
+            is_automatically_updated=is_automatically_updated,
+            os_family=os_family,
+            package_count=package_count,
+            repo_id=repo_id,
+            software_source_type=software_source_type,
+            software_source_version=software_source_version,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            url=url,
+            vendor_name=vendor_name,
+            vendor_software_sources=vendor_software_sources,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             arch_type: Optional[str] = None,
+             availability: Optional[str] = None,
+             checksum_type: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             custom_software_source_filters: Optional[Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterResult']] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             gpg_key_fingerprint: Optional[str] = None,
+             gpg_key_id: Optional[str] = None,
+             gpg_key_url: Optional[str] = None,
+             id: Optional[str] = None,
+             is_automatically_updated: Optional[bool] = None,
+             os_family: Optional[str] = None,
+             package_count: Optional[str] = None,
+             repo_id: Optional[str] = None,
+             software_source_type: Optional[str] = None,
+             software_source_version: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             url: Optional[str] = None,
+             vendor_name: Optional[str] = None,
+             vendor_software_sources: Optional[Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if arch_type is None and 'archType' in kwargs:
+            arch_type = kwargs['archType']
+        if arch_type is None:
+            raise TypeError("Missing 'arch_type' argument")
+        if availability is None:
+            raise TypeError("Missing 'availability' argument")
+        if checksum_type is None and 'checksumType' in kwargs:
+            checksum_type = kwargs['checksumType']
+        if checksum_type is None:
+            raise TypeError("Missing 'checksum_type' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if custom_software_source_filters is None and 'customSoftwareSourceFilters' in kwargs:
+            custom_software_source_filters = kwargs['customSoftwareSourceFilters']
+        if custom_software_source_filters is None:
+            raise TypeError("Missing 'custom_software_source_filters' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if gpg_key_fingerprint is None and 'gpgKeyFingerprint' in kwargs:
+            gpg_key_fingerprint = kwargs['gpgKeyFingerprint']
+        if gpg_key_fingerprint is None:
+            raise TypeError("Missing 'gpg_key_fingerprint' argument")
+        if gpg_key_id is None and 'gpgKeyId' in kwargs:
+            gpg_key_id = kwargs['gpgKeyId']
+        if gpg_key_id is None:
+            raise TypeError("Missing 'gpg_key_id' argument")
+        if gpg_key_url is None and 'gpgKeyUrl' in kwargs:
+            gpg_key_url = kwargs['gpgKeyUrl']
+        if gpg_key_url is None:
+            raise TypeError("Missing 'gpg_key_url' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_automatically_updated is None and 'isAutomaticallyUpdated' in kwargs:
+            is_automatically_updated = kwargs['isAutomaticallyUpdated']
+        if is_automatically_updated is None:
+            raise TypeError("Missing 'is_automatically_updated' argument")
+        if os_family is None and 'osFamily' in kwargs:
+            os_family = kwargs['osFamily']
+        if os_family is None:
+            raise TypeError("Missing 'os_family' argument")
+        if package_count is None and 'packageCount' in kwargs:
+            package_count = kwargs['packageCount']
+        if package_count is None:
+            raise TypeError("Missing 'package_count' argument")
+        if repo_id is None and 'repoId' in kwargs:
+            repo_id = kwargs['repoId']
+        if repo_id is None:
+            raise TypeError("Missing 'repo_id' argument")
+        if software_source_type is None and 'softwareSourceType' in kwargs:
+            software_source_type = kwargs['softwareSourceType']
+        if software_source_type is None:
+            raise TypeError("Missing 'software_source_type' argument")
+        if software_source_version is None and 'softwareSourceVersion' in kwargs:
+            software_source_version = kwargs['softwareSourceVersion']
+        if software_source_version is None:
+            raise TypeError("Missing 'software_source_version' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if url is None:
+            raise TypeError("Missing 'url' argument")
+        if vendor_name is None and 'vendorName' in kwargs:
+            vendor_name = kwargs['vendorName']
+        if vendor_name is None:
+            raise TypeError("Missing 'vendor_name' argument")
+        if vendor_software_sources is None and 'vendorSoftwareSources' in kwargs:
+            vendor_software_sources = kwargs['vendorSoftwareSources']
+        if vendor_software_sources is None:
+            raise TypeError("Missing 'vendor_software_sources' argument")
+
+        _setter("arch_type", arch_type)
+        _setter("availability", availability)
+        _setter("checksum_type", checksum_type)
+        _setter("compartment_id", compartment_id)
+        _setter("custom_software_source_filters", custom_software_source_filters)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("gpg_key_fingerprint", gpg_key_fingerprint)
+        _setter("gpg_key_id", gpg_key_id)
+        _setter("gpg_key_url", gpg_key_url)
+        _setter("id", id)
+        _setter("is_automatically_updated", is_automatically_updated)
+        _setter("os_family", os_family)
+        _setter("package_count", package_count)
+        _setter("repo_id", repo_id)
+        _setter("software_source_type", software_source_type)
+        _setter("software_source_version", software_source_version)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("url", url)
+        _setter("vendor_name", vendor_name)
+        _setter("vendor_software_sources", vendor_software_sources)
 
     @property
     @pulumi.getter(name="archType")
@@ -6080,9 +9194,36 @@ class GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterRe
         :param Sequence['GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterArgs'] package_filters: The list of package filters.
         :param Sequence['GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilterArgs'] package_group_filters: The list of group filters.
         """
-        pulumi.set(__self__, "module_stream_profile_filters", module_stream_profile_filters)
-        pulumi.set(__self__, "package_filters", package_filters)
-        pulumi.set(__self__, "package_group_filters", package_group_filters)
+        GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            module_stream_profile_filters=module_stream_profile_filters,
+            package_filters=package_filters,
+            package_group_filters=package_group_filters,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             module_stream_profile_filters: Optional[Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterResult']] = None,
+             package_filters: Optional[Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterResult']] = None,
+             package_group_filters: Optional[Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilterResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if module_stream_profile_filters is None and 'moduleStreamProfileFilters' in kwargs:
+            module_stream_profile_filters = kwargs['moduleStreamProfileFilters']
+        if module_stream_profile_filters is None:
+            raise TypeError("Missing 'module_stream_profile_filters' argument")
+        if package_filters is None and 'packageFilters' in kwargs:
+            package_filters = kwargs['packageFilters']
+        if package_filters is None:
+            raise TypeError("Missing 'package_filters' argument")
+        if package_group_filters is None and 'packageGroupFilters' in kwargs:
+            package_group_filters = kwargs['packageGroupFilters']
+        if package_group_filters is None:
+            raise TypeError("Missing 'package_group_filters' argument")
+
+        _setter("module_stream_profile_filters", module_stream_profile_filters)
+        _setter("package_filters", package_filters)
+        _setter("package_group_filters", package_group_filters)
 
     @property
     @pulumi.getter(name="moduleStreamProfileFilters")
@@ -6122,10 +9263,43 @@ class GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterMo
         :param str profile_name: Profile name.
         :param str stream_name: Stream name.
         """
-        pulumi.set(__self__, "filter_type", filter_type)
-        pulumi.set(__self__, "module_name", module_name)
-        pulumi.set(__self__, "profile_name", profile_name)
-        pulumi.set(__self__, "stream_name", stream_name)
+        GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            filter_type=filter_type,
+            module_name=module_name,
+            profile_name=profile_name,
+            stream_name=stream_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             filter_type: Optional[str] = None,
+             module_name: Optional[str] = None,
+             profile_name: Optional[str] = None,
+             stream_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if filter_type is None and 'filterType' in kwargs:
+            filter_type = kwargs['filterType']
+        if filter_type is None:
+            raise TypeError("Missing 'filter_type' argument")
+        if module_name is None and 'moduleName' in kwargs:
+            module_name = kwargs['moduleName']
+        if module_name is None:
+            raise TypeError("Missing 'module_name' argument")
+        if profile_name is None and 'profileName' in kwargs:
+            profile_name = kwargs['profileName']
+        if profile_name is None:
+            raise TypeError("Missing 'profile_name' argument")
+        if stream_name is None and 'streamName' in kwargs:
+            stream_name = kwargs['streamName']
+        if stream_name is None:
+            raise TypeError("Missing 'stream_name' argument")
+
+        _setter("filter_type", filter_type)
+        _setter("module_name", module_name)
+        _setter("profile_name", profile_name)
+        _setter("stream_name", stream_name)
 
     @property
     @pulumi.getter(name="filterType")
@@ -6173,10 +9347,43 @@ class GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPa
         :param str package_name_pattern: The package name pattern.
         :param str package_version: The package version, which is denoted by 'version-release', or 'epoch:version-release'.
         """
-        pulumi.set(__self__, "filter_type", filter_type)
-        pulumi.set(__self__, "package_name", package_name)
-        pulumi.set(__self__, "package_name_pattern", package_name_pattern)
-        pulumi.set(__self__, "package_version", package_version)
+        GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            filter_type=filter_type,
+            package_name=package_name,
+            package_name_pattern=package_name_pattern,
+            package_version=package_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             filter_type: Optional[str] = None,
+             package_name: Optional[str] = None,
+             package_name_pattern: Optional[str] = None,
+             package_version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if filter_type is None and 'filterType' in kwargs:
+            filter_type = kwargs['filterType']
+        if filter_type is None:
+            raise TypeError("Missing 'filter_type' argument")
+        if package_name is None and 'packageName' in kwargs:
+            package_name = kwargs['packageName']
+        if package_name is None:
+            raise TypeError("Missing 'package_name' argument")
+        if package_name_pattern is None and 'packageNamePattern' in kwargs:
+            package_name_pattern = kwargs['packageNamePattern']
+        if package_name_pattern is None:
+            raise TypeError("Missing 'package_name_pattern' argument")
+        if package_version is None and 'packageVersion' in kwargs:
+            package_version = kwargs['packageVersion']
+        if package_version is None:
+            raise TypeError("Missing 'package_version' argument")
+
+        _setter("filter_type", filter_type)
+        _setter("package_name", package_name)
+        _setter("package_name_pattern", package_name_pattern)
+        _setter("package_version", package_version)
 
     @property
     @pulumi.getter(name="filterType")
@@ -6220,8 +9427,29 @@ class GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPa
         :param str filter_type: The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
         :param Sequence[str] package_groups: List of package group names.
         """
-        pulumi.set(__self__, "filter_type", filter_type)
-        pulumi.set(__self__, "package_groups", package_groups)
+        GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            filter_type=filter_type,
+            package_groups=package_groups,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             filter_type: Optional[str] = None,
+             package_groups: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if filter_type is None and 'filterType' in kwargs:
+            filter_type = kwargs['filterType']
+        if filter_type is None:
+            raise TypeError("Missing 'filter_type' argument")
+        if package_groups is None and 'packageGroups' in kwargs:
+            package_groups = kwargs['packageGroups']
+        if package_groups is None:
+            raise TypeError("Missing 'package_groups' argument")
+
+        _setter("filter_type", filter_type)
+        _setter("package_groups", package_groups)
 
     @property
     @pulumi.getter(name="filterType")
@@ -6249,8 +9477,27 @@ class GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceResult(d
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
         :param str id: The OCID of the resource that is immutable on creation.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+        GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+
+        _setter("display_name", display_name)
+        _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")

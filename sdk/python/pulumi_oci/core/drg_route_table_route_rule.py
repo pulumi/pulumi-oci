@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['DrgRouteTableRouteRuleArgs', 'DrgRouteTableRouteRule']
@@ -34,10 +34,41 @@ class DrgRouteTableRouteRuleArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "destination", destination)
-        pulumi.set(__self__, "destination_type", destination_type)
-        pulumi.set(__self__, "drg_route_table_id", drg_route_table_id)
-        pulumi.set(__self__, "next_hop_drg_attachment_id", next_hop_drg_attachment_id)
+        DrgRouteTableRouteRuleArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            destination=destination,
+            destination_type=destination_type,
+            drg_route_table_id=drg_route_table_id,
+            next_hop_drg_attachment_id=next_hop_drg_attachment_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             destination: Optional[pulumi.Input[str]] = None,
+             destination_type: Optional[pulumi.Input[str]] = None,
+             drg_route_table_id: Optional[pulumi.Input[str]] = None,
+             next_hop_drg_attachment_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if destination is None:
+            raise TypeError("Missing 'destination' argument")
+        if destination_type is None and 'destinationType' in kwargs:
+            destination_type = kwargs['destinationType']
+        if destination_type is None:
+            raise TypeError("Missing 'destination_type' argument")
+        if drg_route_table_id is None and 'drgRouteTableId' in kwargs:
+            drg_route_table_id = kwargs['drgRouteTableId']
+        if drg_route_table_id is None:
+            raise TypeError("Missing 'drg_route_table_id' argument")
+        if next_hop_drg_attachment_id is None and 'nextHopDrgAttachmentId' in kwargs:
+            next_hop_drg_attachment_id = kwargs['nextHopDrgAttachmentId']
+        if next_hop_drg_attachment_id is None:
+            raise TypeError("Missing 'next_hop_drg_attachment_id' argument")
+
+        _setter("destination", destination)
+        _setter("destination_type", destination_type)
+        _setter("drg_route_table_id", drg_route_table_id)
+        _setter("next_hop_drg_attachment_id", next_hop_drg_attachment_id)
 
     @property
     @pulumi.getter
@@ -130,24 +161,65 @@ class _DrgRouteTableRouteRuleState:
         :param pulumi.Input[str] route_provenance: The earliest origin of a route. If a route is advertised to a DRG through an IPsec tunnel attachment, and is propagated to peered DRGs via RPC attachments, the route's provenance in the peered DRGs remains `IPSEC_TUNNEL`, because that is the earliest origin.
         :param pulumi.Input[str] route_type: You can specify static routes for the DRG route table using the API. The DRG learns dynamic routes from the DRG attachments using various routing protocols.
         """
+        _DrgRouteTableRouteRuleState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            attributes=attributes,
+            destination=destination,
+            destination_type=destination_type,
+            drg_route_table_id=drg_route_table_id,
+            is_blackhole=is_blackhole,
+            is_conflict=is_conflict,
+            next_hop_drg_attachment_id=next_hop_drg_attachment_id,
+            route_provenance=route_provenance,
+            route_type=route_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             attributes: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             destination: Optional[pulumi.Input[str]] = None,
+             destination_type: Optional[pulumi.Input[str]] = None,
+             drg_route_table_id: Optional[pulumi.Input[str]] = None,
+             is_blackhole: Optional[pulumi.Input[bool]] = None,
+             is_conflict: Optional[pulumi.Input[bool]] = None,
+             next_hop_drg_attachment_id: Optional[pulumi.Input[str]] = None,
+             route_provenance: Optional[pulumi.Input[str]] = None,
+             route_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if destination_type is None and 'destinationType' in kwargs:
+            destination_type = kwargs['destinationType']
+        if drg_route_table_id is None and 'drgRouteTableId' in kwargs:
+            drg_route_table_id = kwargs['drgRouteTableId']
+        if is_blackhole is None and 'isBlackhole' in kwargs:
+            is_blackhole = kwargs['isBlackhole']
+        if is_conflict is None and 'isConflict' in kwargs:
+            is_conflict = kwargs['isConflict']
+        if next_hop_drg_attachment_id is None and 'nextHopDrgAttachmentId' in kwargs:
+            next_hop_drg_attachment_id = kwargs['nextHopDrgAttachmentId']
+        if route_provenance is None and 'routeProvenance' in kwargs:
+            route_provenance = kwargs['routeProvenance']
+        if route_type is None and 'routeType' in kwargs:
+            route_type = kwargs['routeType']
+
         if attributes is not None:
-            pulumi.set(__self__, "attributes", attributes)
+            _setter("attributes", attributes)
         if destination is not None:
-            pulumi.set(__self__, "destination", destination)
+            _setter("destination", destination)
         if destination_type is not None:
-            pulumi.set(__self__, "destination_type", destination_type)
+            _setter("destination_type", destination_type)
         if drg_route_table_id is not None:
-            pulumi.set(__self__, "drg_route_table_id", drg_route_table_id)
+            _setter("drg_route_table_id", drg_route_table_id)
         if is_blackhole is not None:
-            pulumi.set(__self__, "is_blackhole", is_blackhole)
+            _setter("is_blackhole", is_blackhole)
         if is_conflict is not None:
-            pulumi.set(__self__, "is_conflict", is_conflict)
+            _setter("is_conflict", is_conflict)
         if next_hop_drg_attachment_id is not None:
-            pulumi.set(__self__, "next_hop_drg_attachment_id", next_hop_drg_attachment_id)
+            _setter("next_hop_drg_attachment_id", next_hop_drg_attachment_id)
         if route_provenance is not None:
-            pulumi.set(__self__, "route_provenance", route_provenance)
+            _setter("route_provenance", route_provenance)
         if route_type is not None:
-            pulumi.set(__self__, "route_type", route_type)
+            _setter("route_type", route_type)
 
     @property
     @pulumi.getter
@@ -361,6 +433,10 @@ class DrgRouteTableRouteRule(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DrgRouteTableRouteRuleArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

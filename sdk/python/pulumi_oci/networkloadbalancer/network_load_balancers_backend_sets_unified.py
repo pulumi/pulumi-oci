@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -41,17 +41,54 @@ class NetworkLoadBalancersBackendSetsUnifiedArgs:
                
                Example: `example_backend_set`
         """
-        pulumi.set(__self__, "health_checker", health_checker)
-        pulumi.set(__self__, "network_load_balancer_id", network_load_balancer_id)
-        pulumi.set(__self__, "policy", policy)
+        NetworkLoadBalancersBackendSetsUnifiedArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            health_checker=health_checker,
+            network_load_balancer_id=network_load_balancer_id,
+            policy=policy,
+            backends=backends,
+            ip_version=ip_version,
+            is_preserve_source=is_preserve_source,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             health_checker: Optional[pulumi.Input['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs']] = None,
+             network_load_balancer_id: Optional[pulumi.Input[str]] = None,
+             policy: Optional[pulumi.Input[str]] = None,
+             backends: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancersBackendSetsUnifiedBackendArgs']]]] = None,
+             ip_version: Optional[pulumi.Input[str]] = None,
+             is_preserve_source: Optional[pulumi.Input[bool]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if health_checker is None and 'healthChecker' in kwargs:
+            health_checker = kwargs['healthChecker']
+        if health_checker is None:
+            raise TypeError("Missing 'health_checker' argument")
+        if network_load_balancer_id is None and 'networkLoadBalancerId' in kwargs:
+            network_load_balancer_id = kwargs['networkLoadBalancerId']
+        if network_load_balancer_id is None:
+            raise TypeError("Missing 'network_load_balancer_id' argument")
+        if policy is None:
+            raise TypeError("Missing 'policy' argument")
+        if ip_version is None and 'ipVersion' in kwargs:
+            ip_version = kwargs['ipVersion']
+        if is_preserve_source is None and 'isPreserveSource' in kwargs:
+            is_preserve_source = kwargs['isPreserveSource']
+
+        _setter("health_checker", health_checker)
+        _setter("network_load_balancer_id", network_load_balancer_id)
+        _setter("policy", policy)
         if backends is not None:
-            pulumi.set(__self__, "backends", backends)
+            _setter("backends", backends)
         if ip_version is not None:
-            pulumi.set(__self__, "ip_version", ip_version)
+            _setter("ip_version", ip_version)
         if is_preserve_source is not None:
-            pulumi.set(__self__, "is_preserve_source", is_preserve_source)
+            _setter("is_preserve_source", is_preserve_source)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter(name="healthChecker")
@@ -174,20 +211,51 @@ class _NetworkLoadBalancersBackendSetsUnifiedState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _NetworkLoadBalancersBackendSetsUnifiedState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backends=backends,
+            health_checker=health_checker,
+            ip_version=ip_version,
+            is_preserve_source=is_preserve_source,
+            name=name,
+            network_load_balancer_id=network_load_balancer_id,
+            policy=policy,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backends: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancersBackendSetsUnifiedBackendArgs']]]] = None,
+             health_checker: Optional[pulumi.Input['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs']] = None,
+             ip_version: Optional[pulumi.Input[str]] = None,
+             is_preserve_source: Optional[pulumi.Input[bool]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             network_load_balancer_id: Optional[pulumi.Input[str]] = None,
+             policy: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if health_checker is None and 'healthChecker' in kwargs:
+            health_checker = kwargs['healthChecker']
+        if ip_version is None and 'ipVersion' in kwargs:
+            ip_version = kwargs['ipVersion']
+        if is_preserve_source is None and 'isPreserveSource' in kwargs:
+            is_preserve_source = kwargs['isPreserveSource']
+        if network_load_balancer_id is None and 'networkLoadBalancerId' in kwargs:
+            network_load_balancer_id = kwargs['networkLoadBalancerId']
+
         if backends is not None:
-            pulumi.set(__self__, "backends", backends)
+            _setter("backends", backends)
         if health_checker is not None:
-            pulumi.set(__self__, "health_checker", health_checker)
+            _setter("health_checker", health_checker)
         if ip_version is not None:
-            pulumi.set(__self__, "ip_version", ip_version)
+            _setter("ip_version", ip_version)
         if is_preserve_source is not None:
-            pulumi.set(__self__, "is_preserve_source", is_preserve_source)
+            _setter("is_preserve_source", is_preserve_source)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if network_load_balancer_id is not None:
-            pulumi.set(__self__, "network_load_balancer_id", network_load_balancer_id)
+            _setter("network_load_balancer_id", network_load_balancer_id)
         if policy is not None:
-            pulumi.set(__self__, "policy", policy)
+            _setter("policy", policy)
 
     @property
     @pulumi.getter
@@ -425,6 +493,10 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            NetworkLoadBalancersBackendSetsUnifiedArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -447,6 +519,11 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
             __props__ = NetworkLoadBalancersBackendSetsUnifiedArgs.__new__(NetworkLoadBalancersBackendSetsUnifiedArgs)
 
             __props__.__dict__["backends"] = backends
+            if health_checker is not None and not isinstance(health_checker, NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs):
+                health_checker = health_checker or {}
+                def _setter(key, value):
+                    health_checker[key] = value
+                NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs._configure(_setter, **health_checker)
             if health_checker is None and not opts.urn:
                 raise TypeError("Missing required property 'health_checker'")
             __props__.__dict__["health_checker"] = health_checker

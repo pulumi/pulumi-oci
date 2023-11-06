@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -41,22 +41,85 @@ class ProtectedDatabaseArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_redo_logs_shipped: (Updatable) The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "db_unique_name", db_unique_name)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "protection_policy_id", protection_policy_id)
-        pulumi.set(__self__, "recovery_service_subnets", recovery_service_subnets)
+        ProtectedDatabaseArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            db_unique_name=db_unique_name,
+            display_name=display_name,
+            password=password,
+            protection_policy_id=protection_policy_id,
+            recovery_service_subnets=recovery_service_subnets,
+            database_id=database_id,
+            database_size=database_size,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            is_redo_logs_shipped=is_redo_logs_shipped,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             db_unique_name: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             password: Optional[pulumi.Input[str]] = None,
+             protection_policy_id: Optional[pulumi.Input[str]] = None,
+             recovery_service_subnets: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectedDatabaseRecoveryServiceSubnetArgs']]]] = None,
+             database_id: Optional[pulumi.Input[str]] = None,
+             database_size: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_redo_logs_shipped: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if db_unique_name is None and 'dbUniqueName' in kwargs:
+            db_unique_name = kwargs['dbUniqueName']
+        if db_unique_name is None:
+            raise TypeError("Missing 'db_unique_name' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if password is None:
+            raise TypeError("Missing 'password' argument")
+        if protection_policy_id is None and 'protectionPolicyId' in kwargs:
+            protection_policy_id = kwargs['protectionPolicyId']
+        if protection_policy_id is None:
+            raise TypeError("Missing 'protection_policy_id' argument")
+        if recovery_service_subnets is None and 'recoveryServiceSubnets' in kwargs:
+            recovery_service_subnets = kwargs['recoveryServiceSubnets']
+        if recovery_service_subnets is None:
+            raise TypeError("Missing 'recovery_service_subnets' argument")
+        if database_id is None and 'databaseId' in kwargs:
+            database_id = kwargs['databaseId']
+        if database_size is None and 'databaseSize' in kwargs:
+            database_size = kwargs['databaseSize']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_redo_logs_shipped is None and 'isRedoLogsShipped' in kwargs:
+            is_redo_logs_shipped = kwargs['isRedoLogsShipped']
+
+        _setter("compartment_id", compartment_id)
+        _setter("db_unique_name", db_unique_name)
+        _setter("display_name", display_name)
+        _setter("password", password)
+        _setter("protection_policy_id", protection_policy_id)
+        _setter("recovery_service_subnets", recovery_service_subnets)
         if database_id is not None:
-            pulumi.set(__self__, "database_id", database_id)
+            _setter("database_id", database_id)
         if database_size is not None:
-            pulumi.set(__self__, "database_size", database_size)
+            _setter("database_size", database_size)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_redo_logs_shipped is not None:
-            pulumi.set(__self__, "is_redo_logs_shipped", is_redo_logs_shipped)
+            _setter("is_redo_logs_shipped", is_redo_logs_shipped)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -242,48 +305,133 @@ class _ProtectedDatabaseState:
         :param pulumi.Input[str] time_updated: An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
         :param pulumi.Input[str] vpc_user_name: The virtual private catalog (VPC) user credentials that authenticates the protected database to access Recovery Service.
         """
+        _ProtectedDatabaseState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            database_id=database_id,
+            database_size=database_size,
+            db_unique_name=db_unique_name,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            health=health,
+            health_details=health_details,
+            is_read_only_resource=is_read_only_resource,
+            is_redo_logs_shipped=is_redo_logs_shipped,
+            lifecycle_details=lifecycle_details,
+            metrics=metrics,
+            password=password,
+            protection_policy_id=protection_policy_id,
+            recovery_service_subnets=recovery_service_subnets,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            vpc_user_name=vpc_user_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             database_id: Optional[pulumi.Input[str]] = None,
+             database_size: Optional[pulumi.Input[str]] = None,
+             db_unique_name: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             health: Optional[pulumi.Input[str]] = None,
+             health_details: Optional[pulumi.Input[str]] = None,
+             is_read_only_resource: Optional[pulumi.Input[bool]] = None,
+             is_redo_logs_shipped: Optional[pulumi.Input[bool]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             metrics: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectedDatabaseMetricArgs']]]] = None,
+             password: Optional[pulumi.Input[str]] = None,
+             protection_policy_id: Optional[pulumi.Input[str]] = None,
+             recovery_service_subnets: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectedDatabaseRecoveryServiceSubnetArgs']]]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             vpc_user_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if database_id is None and 'databaseId' in kwargs:
+            database_id = kwargs['databaseId']
+        if database_size is None and 'databaseSize' in kwargs:
+            database_size = kwargs['databaseSize']
+        if db_unique_name is None and 'dbUniqueName' in kwargs:
+            db_unique_name = kwargs['dbUniqueName']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if health_details is None and 'healthDetails' in kwargs:
+            health_details = kwargs['healthDetails']
+        if is_read_only_resource is None and 'isReadOnlyResource' in kwargs:
+            is_read_only_resource = kwargs['isReadOnlyResource']
+        if is_redo_logs_shipped is None and 'isRedoLogsShipped' in kwargs:
+            is_redo_logs_shipped = kwargs['isRedoLogsShipped']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if protection_policy_id is None and 'protectionPolicyId' in kwargs:
+            protection_policy_id = kwargs['protectionPolicyId']
+        if recovery_service_subnets is None and 'recoveryServiceSubnets' in kwargs:
+            recovery_service_subnets = kwargs['recoveryServiceSubnets']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if vpc_user_name is None and 'vpcUserName' in kwargs:
+            vpc_user_name = kwargs['vpcUserName']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if database_id is not None:
-            pulumi.set(__self__, "database_id", database_id)
+            _setter("database_id", database_id)
         if database_size is not None:
-            pulumi.set(__self__, "database_size", database_size)
+            _setter("database_size", database_size)
         if db_unique_name is not None:
-            pulumi.set(__self__, "db_unique_name", db_unique_name)
+            _setter("db_unique_name", db_unique_name)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if health is not None:
-            pulumi.set(__self__, "health", health)
+            _setter("health", health)
         if health_details is not None:
-            pulumi.set(__self__, "health_details", health_details)
+            _setter("health_details", health_details)
         if is_read_only_resource is not None:
-            pulumi.set(__self__, "is_read_only_resource", is_read_only_resource)
+            _setter("is_read_only_resource", is_read_only_resource)
         if is_redo_logs_shipped is not None:
-            pulumi.set(__self__, "is_redo_logs_shipped", is_redo_logs_shipped)
+            _setter("is_redo_logs_shipped", is_redo_logs_shipped)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if metrics is not None:
-            pulumi.set(__self__, "metrics", metrics)
+            _setter("metrics", metrics)
         if password is not None:
-            pulumi.set(__self__, "password", password)
+            _setter("password", password)
         if protection_policy_id is not None:
-            pulumi.set(__self__, "protection_policy_id", protection_policy_id)
+            _setter("protection_policy_id", protection_policy_id)
         if recovery_service_subnets is not None:
-            pulumi.set(__self__, "recovery_service_subnets", recovery_service_subnets)
+            _setter("recovery_service_subnets", recovery_service_subnets)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if vpc_user_name is not None:
-            pulumi.set(__self__, "vpc_user_name", vpc_user_name)
+            _setter("vpc_user_name", vpc_user_name)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -666,6 +814,10 @@ class ProtectedDatabase(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ProtectedDatabaseArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

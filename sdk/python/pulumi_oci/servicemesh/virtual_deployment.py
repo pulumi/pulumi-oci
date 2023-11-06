@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -41,22 +41,65 @@ class VirtualDeploymentArgs:
         :param pulumi.Input[str] name: A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
         :param pulumi.Input['VirtualDeploymentServiceDiscoveryArgs'] service_discovery: (Updatable) Service Discovery configuration for virtual deployments.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "virtual_service_id", virtual_service_id)
+        VirtualDeploymentArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            virtual_service_id=virtual_service_id,
+            access_logging=access_logging,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            listeners=listeners,
+            name=name,
+            service_discovery=service_discovery,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             virtual_service_id: Optional[pulumi.Input[str]] = None,
+             access_logging: Optional[pulumi.Input['VirtualDeploymentAccessLoggingArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             listeners: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualDeploymentListenerArgs']]]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             service_discovery: Optional[pulumi.Input['VirtualDeploymentServiceDiscoveryArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if virtual_service_id is None and 'virtualServiceId' in kwargs:
+            virtual_service_id = kwargs['virtualServiceId']
+        if virtual_service_id is None:
+            raise TypeError("Missing 'virtual_service_id' argument")
+        if access_logging is None and 'accessLogging' in kwargs:
+            access_logging = kwargs['accessLogging']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if service_discovery is None and 'serviceDiscovery' in kwargs:
+            service_discovery = kwargs['serviceDiscovery']
+
+        _setter("compartment_id", compartment_id)
+        _setter("virtual_service_id", virtual_service_id)
         if access_logging is not None:
-            pulumi.set(__self__, "access_logging", access_logging)
+            _setter("access_logging", access_logging)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if listeners is not None:
-            pulumi.set(__self__, "listeners", listeners)
+            _setter("listeners", listeners)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if service_discovery is not None:
-            pulumi.set(__self__, "service_discovery", service_discovery)
+            _setter("service_discovery", service_discovery)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -209,34 +252,91 @@ class _VirtualDeploymentState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _VirtualDeploymentState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            access_logging=access_logging,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            listeners=listeners,
+            name=name,
+            service_discovery=service_discovery,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            virtual_service_id=virtual_service_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             access_logging: Optional[pulumi.Input['VirtualDeploymentAccessLoggingArgs']] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             listeners: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualDeploymentListenerArgs']]]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             service_discovery: Optional[pulumi.Input['VirtualDeploymentServiceDiscoveryArgs']] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             virtual_service_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if access_logging is None and 'accessLogging' in kwargs:
+            access_logging = kwargs['accessLogging']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if service_discovery is None and 'serviceDiscovery' in kwargs:
+            service_discovery = kwargs['serviceDiscovery']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if virtual_service_id is None and 'virtualServiceId' in kwargs:
+            virtual_service_id = kwargs['virtualServiceId']
+
         if access_logging is not None:
-            pulumi.set(__self__, "access_logging", access_logging)
+            _setter("access_logging", access_logging)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if listeners is not None:
-            pulumi.set(__self__, "listeners", listeners)
+            _setter("listeners", listeners)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if service_discovery is not None:
-            pulumi.set(__self__, "service_discovery", service_discovery)
+            _setter("service_discovery", service_discovery)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if virtual_service_id is not None:
-            pulumi.set(__self__, "virtual_service_id", virtual_service_id)
+            _setter("virtual_service_id", virtual_service_id)
 
     @property
     @pulumi.getter(name="accessLogging")
@@ -546,6 +646,10 @@ class VirtualDeployment(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            VirtualDeploymentArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -569,6 +673,11 @@ class VirtualDeployment(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = VirtualDeploymentArgs.__new__(VirtualDeploymentArgs)
 
+            if access_logging is not None and not isinstance(access_logging, VirtualDeploymentAccessLoggingArgs):
+                access_logging = access_logging or {}
+                def _setter(key, value):
+                    access_logging[key] = value
+                VirtualDeploymentAccessLoggingArgs._configure(_setter, **access_logging)
             __props__.__dict__["access_logging"] = access_logging
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
@@ -578,6 +687,11 @@ class VirtualDeployment(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["listeners"] = listeners
             __props__.__dict__["name"] = name
+            if service_discovery is not None and not isinstance(service_discovery, VirtualDeploymentServiceDiscoveryArgs):
+                service_discovery = service_discovery or {}
+                def _setter(key, value):
+                    service_discovery[key] = value
+                VirtualDeploymentServiceDiscoveryArgs._configure(_setter, **service_discovery)
             __props__.__dict__["service_discovery"] = service_discovery
             if virtual_service_id is None and not opts.urn:
                 raise TypeError("Missing required property 'virtual_service_id'")

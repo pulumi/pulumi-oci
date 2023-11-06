@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -29,10 +29,33 @@ class ExadataIormConfigArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "db_plans", db_plans)
-        pulumi.set(__self__, "db_system_id", db_system_id)
+        ExadataIormConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            db_plans=db_plans,
+            db_system_id=db_system_id,
+            objective=objective,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             db_plans: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataIormConfigDbPlanArgs']]]] = None,
+             db_system_id: Optional[pulumi.Input[str]] = None,
+             objective: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if db_plans is None and 'dbPlans' in kwargs:
+            db_plans = kwargs['dbPlans']
+        if db_plans is None:
+            raise TypeError("Missing 'db_plans' argument")
+        if db_system_id is None and 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if db_system_id is None:
+            raise TypeError("Missing 'db_system_id' argument")
+
+        _setter("db_plans", db_plans)
+        _setter("db_system_id", db_system_id)
         if objective is not None:
-            pulumi.set(__self__, "objective", objective)
+            _setter("objective", objective)
 
     @property
     @pulumi.getter(name="dbPlans")
@@ -95,16 +118,41 @@ class _ExadataIormConfigState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of IORM configuration for the Exadata DB system.
         """
+        _ExadataIormConfigState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            db_plans=db_plans,
+            db_system_id=db_system_id,
+            lifecycle_details=lifecycle_details,
+            objective=objective,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             db_plans: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataIormConfigDbPlanArgs']]]] = None,
+             db_system_id: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             objective: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if db_plans is None and 'dbPlans' in kwargs:
+            db_plans = kwargs['dbPlans']
+        if db_system_id is None and 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+
         if db_plans is not None:
-            pulumi.set(__self__, "db_plans", db_plans)
+            _setter("db_plans", db_plans)
         if db_system_id is not None:
-            pulumi.set(__self__, "db_system_id", db_system_id)
+            _setter("db_system_id", db_system_id)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if objective is not None:
-            pulumi.set(__self__, "objective", objective)
+            _setter("objective", objective)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter(name="dbPlans")
@@ -268,6 +316,10 @@ class ExadataIormConfig(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ExadataIormConfigArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

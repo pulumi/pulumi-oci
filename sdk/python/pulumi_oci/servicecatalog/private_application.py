@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -39,18 +39,67 @@ class PrivateApplicationArgs:
         :param pulumi.Input[str] logo_file_base64encoded: (Updatable) Base64-encoded logo to use as the private application icon. Template icon file requirements: PNG format, 50 KB maximum, 130 x 130 pixels.
         :param pulumi.Input[str] long_description: (Updatable) A long description of the private application.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "package_details", package_details)
-        pulumi.set(__self__, "short_description", short_description)
+        PrivateApplicationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            package_details=package_details,
+            short_description=short_description,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            logo_file_base64encoded=logo_file_base64encoded,
+            long_description=long_description,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             package_details: Optional[pulumi.Input['PrivateApplicationPackageDetailsArgs']] = None,
+             short_description: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             logo_file_base64encoded: Optional[pulumi.Input[str]] = None,
+             long_description: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if package_details is None and 'packageDetails' in kwargs:
+            package_details = kwargs['packageDetails']
+        if package_details is None:
+            raise TypeError("Missing 'package_details' argument")
+        if short_description is None and 'shortDescription' in kwargs:
+            short_description = kwargs['shortDescription']
+        if short_description is None:
+            raise TypeError("Missing 'short_description' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if logo_file_base64encoded is None and 'logoFileBase64encoded' in kwargs:
+            logo_file_base64encoded = kwargs['logoFileBase64encoded']
+        if long_description is None and 'longDescription' in kwargs:
+            long_description = kwargs['longDescription']
+
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
+        _setter("package_details", package_details)
+        _setter("short_description", short_description)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if logo_file_base64encoded is not None:
-            pulumi.set(__self__, "logo_file_base64encoded", logo_file_base64encoded)
+            _setter("logo_file_base64encoded", logo_file_base64encoded)
         if long_description is not None:
-            pulumi.set(__self__, "long_description", long_description)
+            _setter("long_description", long_description)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -189,32 +238,89 @@ class _PrivateApplicationState:
         :param pulumi.Input[str] time_created: The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The date and time the private application was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
         """
+        _PrivateApplicationState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            logo_file_base64encoded=logo_file_base64encoded,
+            logos=logos,
+            long_description=long_description,
+            package_details=package_details,
+            package_type=package_type,
+            short_description=short_description,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             logo_file_base64encoded: Optional[pulumi.Input[str]] = None,
+             logos: Optional[pulumi.Input[Sequence[pulumi.Input['PrivateApplicationLogoArgs']]]] = None,
+             long_description: Optional[pulumi.Input[str]] = None,
+             package_details: Optional[pulumi.Input['PrivateApplicationPackageDetailsArgs']] = None,
+             package_type: Optional[pulumi.Input[str]] = None,
+             short_description: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if logo_file_base64encoded is None and 'logoFileBase64encoded' in kwargs:
+            logo_file_base64encoded = kwargs['logoFileBase64encoded']
+        if long_description is None and 'longDescription' in kwargs:
+            long_description = kwargs['longDescription']
+        if package_details is None and 'packageDetails' in kwargs:
+            package_details = kwargs['packageDetails']
+        if package_type is None and 'packageType' in kwargs:
+            package_type = kwargs['packageType']
+        if short_description is None and 'shortDescription' in kwargs:
+            short_description = kwargs['shortDescription']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if logo_file_base64encoded is not None:
-            pulumi.set(__self__, "logo_file_base64encoded", logo_file_base64encoded)
+            _setter("logo_file_base64encoded", logo_file_base64encoded)
         if logos is not None:
-            pulumi.set(__self__, "logos", logos)
+            _setter("logos", logos)
         if long_description is not None:
-            pulumi.set(__self__, "long_description", long_description)
+            _setter("long_description", long_description)
         if package_details is not None:
-            pulumi.set(__self__, "package_details", package_details)
+            _setter("package_details", package_details)
         if package_type is not None:
-            pulumi.set(__self__, "package_type", package_type)
+            _setter("package_type", package_type)
         if short_description is not None:
-            pulumi.set(__self__, "short_description", short_description)
+            _setter("short_description", short_description)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -498,6 +604,10 @@ class PrivateApplication(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            PrivateApplicationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -530,6 +640,11 @@ class PrivateApplication(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["logo_file_base64encoded"] = logo_file_base64encoded
             __props__.__dict__["long_description"] = long_description
+            if package_details is not None and not isinstance(package_details, PrivateApplicationPackageDetailsArgs):
+                package_details = package_details or {}
+                def _setter(key, value):
+                    package_details[key] = value
+                PrivateApplicationPackageDetailsArgs._configure(_setter, **package_details)
             if package_details is None and not opts.urn:
                 raise TypeError("Missing required property 'package_details'")
             __props__.__dict__["package_details"] = package_details

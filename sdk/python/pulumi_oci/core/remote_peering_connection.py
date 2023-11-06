@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['RemotePeeringConnectionArgs', 'RemotePeeringConnection']
@@ -35,18 +35,59 @@ class RemotePeeringConnectionArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "drg_id", drg_id)
+        RemotePeeringConnectionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            drg_id=drg_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            peer_id=peer_id,
+            peer_region_name=peer_region_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             drg_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             peer_id: Optional[pulumi.Input[str]] = None,
+             peer_region_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if drg_id is None and 'drgId' in kwargs:
+            drg_id = kwargs['drgId']
+        if drg_id is None:
+            raise TypeError("Missing 'drg_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if peer_id is None and 'peerId' in kwargs:
+            peer_id = kwargs['peerId']
+        if peer_region_name is None and 'peerRegionName' in kwargs:
+            peer_region_name = kwargs['peerRegionName']
+
+        _setter("compartment_id", compartment_id)
+        _setter("drg_id", drg_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if peer_id is not None:
-            pulumi.set(__self__, "peer_id", peer_id)
+            _setter("peer_id", peer_id)
         if peer_region_name is not None:
-            pulumi.set(__self__, "peer_region_name", peer_region_name)
+            _setter("peer_region_name", peer_region_name)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -171,30 +212,85 @@ class _RemotePeeringConnectionState:
         :param pulumi.Input[str] state: The RPC's current lifecycle state.
         :param pulumi.Input[str] time_created: The date and time the RPC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
+        _RemotePeeringConnectionState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            drg_id=drg_id,
+            freeform_tags=freeform_tags,
+            is_cross_tenancy_peering=is_cross_tenancy_peering,
+            peer_id=peer_id,
+            peer_region_name=peer_region_name,
+            peer_tenancy_id=peer_tenancy_id,
+            peering_status=peering_status,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             drg_id: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_cross_tenancy_peering: Optional[pulumi.Input[bool]] = None,
+             peer_id: Optional[pulumi.Input[str]] = None,
+             peer_region_name: Optional[pulumi.Input[str]] = None,
+             peer_tenancy_id: Optional[pulumi.Input[str]] = None,
+             peering_status: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if drg_id is None and 'drgId' in kwargs:
+            drg_id = kwargs['drgId']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_cross_tenancy_peering is None and 'isCrossTenancyPeering' in kwargs:
+            is_cross_tenancy_peering = kwargs['isCrossTenancyPeering']
+        if peer_id is None and 'peerId' in kwargs:
+            peer_id = kwargs['peerId']
+        if peer_region_name is None and 'peerRegionName' in kwargs:
+            peer_region_name = kwargs['peerRegionName']
+        if peer_tenancy_id is None and 'peerTenancyId' in kwargs:
+            peer_tenancy_id = kwargs['peerTenancyId']
+        if peering_status is None and 'peeringStatus' in kwargs:
+            peering_status = kwargs['peeringStatus']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if drg_id is not None:
-            pulumi.set(__self__, "drg_id", drg_id)
+            _setter("drg_id", drg_id)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_cross_tenancy_peering is not None:
-            pulumi.set(__self__, "is_cross_tenancy_peering", is_cross_tenancy_peering)
+            _setter("is_cross_tenancy_peering", is_cross_tenancy_peering)
         if peer_id is not None:
-            pulumi.set(__self__, "peer_id", peer_id)
+            _setter("peer_id", peer_id)
         if peer_region_name is not None:
-            pulumi.set(__self__, "peer_region_name", peer_region_name)
+            _setter("peer_region_name", peer_region_name)
         if peer_tenancy_id is not None:
-            pulumi.set(__self__, "peer_tenancy_id", peer_tenancy_id)
+            _setter("peer_tenancy_id", peer_tenancy_id)
         if peering_status is not None:
-            pulumi.set(__self__, "peering_status", peering_status)
+            _setter("peering_status", peering_status)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -454,6 +550,10 @@ class RemotePeeringConnection(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            RemotePeeringConnectionArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

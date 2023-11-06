@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -45,13 +45,60 @@ class GetCommitmentsCommitmentResult(dict):
         :param str time_start: Commitment start date
         :param str used_amount: Commitment used amount
         """
-        pulumi.set(__self__, "available_amount", available_amount)
-        pulumi.set(__self__, "funded_allocation_value", funded_allocation_value)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "quantity", quantity)
-        pulumi.set(__self__, "time_end", time_end)
-        pulumi.set(__self__, "time_start", time_start)
-        pulumi.set(__self__, "used_amount", used_amount)
+        GetCommitmentsCommitmentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            available_amount=available_amount,
+            funded_allocation_value=funded_allocation_value,
+            id=id,
+            quantity=quantity,
+            time_end=time_end,
+            time_start=time_start,
+            used_amount=used_amount,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             available_amount: Optional[str] = None,
+             funded_allocation_value: Optional[str] = None,
+             id: Optional[str] = None,
+             quantity: Optional[str] = None,
+             time_end: Optional[str] = None,
+             time_start: Optional[str] = None,
+             used_amount: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if available_amount is None and 'availableAmount' in kwargs:
+            available_amount = kwargs['availableAmount']
+        if available_amount is None:
+            raise TypeError("Missing 'available_amount' argument")
+        if funded_allocation_value is None and 'fundedAllocationValue' in kwargs:
+            funded_allocation_value = kwargs['fundedAllocationValue']
+        if funded_allocation_value is None:
+            raise TypeError("Missing 'funded_allocation_value' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if quantity is None:
+            raise TypeError("Missing 'quantity' argument")
+        if time_end is None and 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if time_end is None:
+            raise TypeError("Missing 'time_end' argument")
+        if time_start is None and 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+        if time_start is None:
+            raise TypeError("Missing 'time_start' argument")
+        if used_amount is None and 'usedAmount' in kwargs:
+            used_amount = kwargs['usedAmount']
+        if used_amount is None:
+            raise TypeError("Missing 'used_amount' argument")
+
+        _setter("available_amount", available_amount)
+        _setter("funded_allocation_value", funded_allocation_value)
+        _setter("id", id)
+        _setter("quantity", quantity)
+        _setter("time_end", time_end)
+        _setter("time_start", time_start)
+        _setter("used_amount", used_amount)
 
     @property
     @pulumi.getter(name="availableAmount")
@@ -116,10 +163,29 @@ class GetCommitmentsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetCommitmentsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -146,10 +212,29 @@ class GetRatecardsFilterResult(dict):
         """
         :param str name: Product name
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetRatecardsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -193,15 +278,74 @@ class GetRatecardsRateCardResult(dict):
         :param str time_end: Rate card end date
         :param str time_start: Rate card start date
         """
-        pulumi.set(__self__, "currencies", currencies)
-        pulumi.set(__self__, "discretionary_discount_percentage", discretionary_discount_percentage)
-        pulumi.set(__self__, "is_tier", is_tier)
-        pulumi.set(__self__, "net_unit_price", net_unit_price)
-        pulumi.set(__self__, "overage_price", overage_price)
-        pulumi.set(__self__, "products", products)
-        pulumi.set(__self__, "rate_card_tiers", rate_card_tiers)
-        pulumi.set(__self__, "time_end", time_end)
-        pulumi.set(__self__, "time_start", time_start)
+        GetRatecardsRateCardResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            currencies=currencies,
+            discretionary_discount_percentage=discretionary_discount_percentage,
+            is_tier=is_tier,
+            net_unit_price=net_unit_price,
+            overage_price=overage_price,
+            products=products,
+            rate_card_tiers=rate_card_tiers,
+            time_end=time_end,
+            time_start=time_start,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             currencies: Optional[Sequence['outputs.GetRatecardsRateCardCurrencyResult']] = None,
+             discretionary_discount_percentage: Optional[str] = None,
+             is_tier: Optional[bool] = None,
+             net_unit_price: Optional[str] = None,
+             overage_price: Optional[str] = None,
+             products: Optional[Sequence['outputs.GetRatecardsRateCardProductResult']] = None,
+             rate_card_tiers: Optional[Sequence['outputs.GetRatecardsRateCardRateCardTierResult']] = None,
+             time_end: Optional[str] = None,
+             time_start: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if currencies is None:
+            raise TypeError("Missing 'currencies' argument")
+        if discretionary_discount_percentage is None and 'discretionaryDiscountPercentage' in kwargs:
+            discretionary_discount_percentage = kwargs['discretionaryDiscountPercentage']
+        if discretionary_discount_percentage is None:
+            raise TypeError("Missing 'discretionary_discount_percentage' argument")
+        if is_tier is None and 'isTier' in kwargs:
+            is_tier = kwargs['isTier']
+        if is_tier is None:
+            raise TypeError("Missing 'is_tier' argument")
+        if net_unit_price is None and 'netUnitPrice' in kwargs:
+            net_unit_price = kwargs['netUnitPrice']
+        if net_unit_price is None:
+            raise TypeError("Missing 'net_unit_price' argument")
+        if overage_price is None and 'overagePrice' in kwargs:
+            overage_price = kwargs['overagePrice']
+        if overage_price is None:
+            raise TypeError("Missing 'overage_price' argument")
+        if products is None:
+            raise TypeError("Missing 'products' argument")
+        if rate_card_tiers is None and 'rateCardTiers' in kwargs:
+            rate_card_tiers = kwargs['rateCardTiers']
+        if rate_card_tiers is None:
+            raise TypeError("Missing 'rate_card_tiers' argument")
+        if time_end is None and 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if time_end is None:
+            raise TypeError("Missing 'time_end' argument")
+        if time_start is None and 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+        if time_start is None:
+            raise TypeError("Missing 'time_start' argument")
+
+        _setter("currencies", currencies)
+        _setter("discretionary_discount_percentage", discretionary_discount_percentage)
+        _setter("is_tier", is_tier)
+        _setter("net_unit_price", net_unit_price)
+        _setter("overage_price", overage_price)
+        _setter("products", products)
+        _setter("rate_card_tiers", rate_card_tiers)
+        _setter("time_end", time_end)
+        _setter("time_start", time_start)
 
     @property
     @pulumi.getter
@@ -287,9 +431,34 @@ class GetRatecardsRateCardCurrencyResult(dict):
         :param str name: Product name
         :param str std_precision: Standard Precision of the Currency
         """
-        pulumi.set(__self__, "iso_code", iso_code)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "std_precision", std_precision)
+        GetRatecardsRateCardCurrencyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            iso_code=iso_code,
+            name=name,
+            std_precision=std_precision,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             iso_code: Optional[str] = None,
+             name: Optional[str] = None,
+             std_precision: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if iso_code is None and 'isoCode' in kwargs:
+            iso_code = kwargs['isoCode']
+        if iso_code is None:
+            raise TypeError("Missing 'iso_code' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if std_precision is None and 'stdPrecision' in kwargs:
+            std_precision = kwargs['stdPrecision']
+        if std_precision is None:
+            raise TypeError("Missing 'std_precision' argument")
+
+        _setter("iso_code", iso_code)
+        _setter("name", name)
+        _setter("std_precision", std_precision)
 
     @property
     @pulumi.getter(name="isoCode")
@@ -333,12 +502,55 @@ class GetRatecardsRateCardProductResult(dict):
         :param str ucm_rate_card_part_type: Rate card part type of Product
         :param str unit_of_measure: Unit of measure
         """
-        pulumi.set(__self__, "billing_category", billing_category)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "part_number", part_number)
-        pulumi.set(__self__, "product_category", product_category)
-        pulumi.set(__self__, "ucm_rate_card_part_type", ucm_rate_card_part_type)
-        pulumi.set(__self__, "unit_of_measure", unit_of_measure)
+        GetRatecardsRateCardProductResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            billing_category=billing_category,
+            name=name,
+            part_number=part_number,
+            product_category=product_category,
+            ucm_rate_card_part_type=ucm_rate_card_part_type,
+            unit_of_measure=unit_of_measure,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             billing_category: Optional[str] = None,
+             name: Optional[str] = None,
+             part_number: Optional[str] = None,
+             product_category: Optional[str] = None,
+             ucm_rate_card_part_type: Optional[str] = None,
+             unit_of_measure: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if billing_category is None and 'billingCategory' in kwargs:
+            billing_category = kwargs['billingCategory']
+        if billing_category is None:
+            raise TypeError("Missing 'billing_category' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if part_number is None and 'partNumber' in kwargs:
+            part_number = kwargs['partNumber']
+        if part_number is None:
+            raise TypeError("Missing 'part_number' argument")
+        if product_category is None and 'productCategory' in kwargs:
+            product_category = kwargs['productCategory']
+        if product_category is None:
+            raise TypeError("Missing 'product_category' argument")
+        if ucm_rate_card_part_type is None and 'ucmRateCardPartType' in kwargs:
+            ucm_rate_card_part_type = kwargs['ucmRateCardPartType']
+        if ucm_rate_card_part_type is None:
+            raise TypeError("Missing 'ucm_rate_card_part_type' argument")
+        if unit_of_measure is None and 'unitOfMeasure' in kwargs:
+            unit_of_measure = kwargs['unitOfMeasure']
+        if unit_of_measure is None:
+            raise TypeError("Missing 'unit_of_measure' argument")
+
+        _setter("billing_category", billing_category)
+        _setter("name", name)
+        _setter("part_number", part_number)
+        _setter("product_category", product_category)
+        _setter("ucm_rate_card_part_type", ucm_rate_card_part_type)
+        _setter("unit_of_measure", unit_of_measure)
 
     @property
     @pulumi.getter(name="billingCategory")
@@ -400,9 +612,36 @@ class GetRatecardsRateCardRateCardTierResult(dict):
         :param str overage_price: Rate card tier overage price
         :param str up_to_quantity: Rate card tier quantity range
         """
-        pulumi.set(__self__, "net_unit_price", net_unit_price)
-        pulumi.set(__self__, "overage_price", overage_price)
-        pulumi.set(__self__, "up_to_quantity", up_to_quantity)
+        GetRatecardsRateCardRateCardTierResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            net_unit_price=net_unit_price,
+            overage_price=overage_price,
+            up_to_quantity=up_to_quantity,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             net_unit_price: Optional[str] = None,
+             overage_price: Optional[str] = None,
+             up_to_quantity: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if net_unit_price is None and 'netUnitPrice' in kwargs:
+            net_unit_price = kwargs['netUnitPrice']
+        if net_unit_price is None:
+            raise TypeError("Missing 'net_unit_price' argument")
+        if overage_price is None and 'overagePrice' in kwargs:
+            overage_price = kwargs['overagePrice']
+        if overage_price is None:
+            raise TypeError("Missing 'overage_price' argument")
+        if up_to_quantity is None and 'upToQuantity' in kwargs:
+            up_to_quantity = kwargs['upToQuantity']
+        if up_to_quantity is None:
+            raise TypeError("Missing 'up_to_quantity' argument")
+
+        _setter("net_unit_price", net_unit_price)
+        _setter("overage_price", overage_price)
+        _setter("up_to_quantity", up_to_quantity)
 
     @property
     @pulumi.getter(name="netUnitPrice")
@@ -438,10 +677,29 @@ class GetSubscriptionsFilterResult(dict):
         """
         :param str name: Product name
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSubscriptionsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -479,12 +737,53 @@ class GetSubscriptionsSubscriptionResult(dict):
         :param str time_end: Represents the date when the last service of the subscription ends
         :param str time_start: Represents the date when the first service of the subscription was activated
         """
-        pulumi.set(__self__, "currencies", currencies)
-        pulumi.set(__self__, "service_name", service_name)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "subscribed_services", subscribed_services)
-        pulumi.set(__self__, "time_end", time_end)
-        pulumi.set(__self__, "time_start", time_start)
+        GetSubscriptionsSubscriptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            currencies=currencies,
+            service_name=service_name,
+            status=status,
+            subscribed_services=subscribed_services,
+            time_end=time_end,
+            time_start=time_start,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             currencies: Optional[Sequence['outputs.GetSubscriptionsSubscriptionCurrencyResult']] = None,
+             service_name: Optional[str] = None,
+             status: Optional[str] = None,
+             subscribed_services: Optional[Sequence['outputs.GetSubscriptionsSubscriptionSubscribedServiceResult']] = None,
+             time_end: Optional[str] = None,
+             time_start: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if currencies is None:
+            raise TypeError("Missing 'currencies' argument")
+        if service_name is None and 'serviceName' in kwargs:
+            service_name = kwargs['serviceName']
+        if service_name is None:
+            raise TypeError("Missing 'service_name' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if subscribed_services is None and 'subscribedServices' in kwargs:
+            subscribed_services = kwargs['subscribedServices']
+        if subscribed_services is None:
+            raise TypeError("Missing 'subscribed_services' argument")
+        if time_end is None and 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if time_end is None:
+            raise TypeError("Missing 'time_end' argument")
+        if time_start is None and 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+        if time_start is None:
+            raise TypeError("Missing 'time_start' argument")
+
+        _setter("currencies", currencies)
+        _setter("service_name", service_name)
+        _setter("status", status)
+        _setter("subscribed_services", subscribed_services)
+        _setter("time_end", time_end)
+        _setter("time_start", time_start)
 
     @property
     @pulumi.getter
@@ -546,9 +845,34 @@ class GetSubscriptionsSubscriptionCurrencyResult(dict):
         :param str name: Product name
         :param str std_precision: Standard Precision of the Currency
         """
-        pulumi.set(__self__, "iso_code", iso_code)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "std_precision", std_precision)
+        GetSubscriptionsSubscriptionCurrencyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            iso_code=iso_code,
+            name=name,
+            std_precision=std_precision,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             iso_code: Optional[str] = None,
+             name: Optional[str] = None,
+             std_precision: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if iso_code is None and 'isoCode' in kwargs:
+            iso_code = kwargs['isoCode']
+        if iso_code is None:
+            raise TypeError("Missing 'iso_code' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if std_precision is None and 'stdPrecision' in kwargs:
+            std_precision = kwargs['stdPrecision']
+        if std_precision is None:
+            raise TypeError("Missing 'std_precision' argument")
+
+        _setter("iso_code", iso_code)
+        _setter("name", name)
+        _setter("std_precision", std_precision)
 
     @property
     @pulumi.getter(name="isoCode")
@@ -624,28 +948,159 @@ class GetSubscriptionsSubscriptionSubscribedServiceResult(dict):
         :param str time_start: Represents the date when the first service of the subscription was activated
         :param str total_value: Subscribed service total value
         """
-        pulumi.set(__self__, "booking_opty_number", booking_opty_number)
-        pulumi.set(__self__, "commitment_services", commitment_services)
-        pulumi.set(__self__, "csi", csi)
-        pulumi.set(__self__, "data_center_region", data_center_region)
-        pulumi.set(__self__, "funded_allocation_value", funded_allocation_value)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_intent_to_pay", is_intent_to_pay)
-        pulumi.set(__self__, "net_unit_price", net_unit_price)
-        pulumi.set(__self__, "operation_type", operation_type)
-        pulumi.set(__self__, "order_number", order_number)
-        pulumi.set(__self__, "partner_transaction_type", partner_transaction_type)
-        pulumi.set(__self__, "pricing_model", pricing_model)
-        pulumi.set(__self__, "products", products)
-        pulumi.set(__self__, "program_type", program_type)
-        pulumi.set(__self__, "promo_type", promo_type)
-        pulumi.set(__self__, "quantity", quantity)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "term_value", term_value)
-        pulumi.set(__self__, "term_value_uom", term_value_uom)
-        pulumi.set(__self__, "time_end", time_end)
-        pulumi.set(__self__, "time_start", time_start)
-        pulumi.set(__self__, "total_value", total_value)
+        GetSubscriptionsSubscriptionSubscribedServiceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            booking_opty_number=booking_opty_number,
+            commitment_services=commitment_services,
+            csi=csi,
+            data_center_region=data_center_region,
+            funded_allocation_value=funded_allocation_value,
+            id=id,
+            is_intent_to_pay=is_intent_to_pay,
+            net_unit_price=net_unit_price,
+            operation_type=operation_type,
+            order_number=order_number,
+            partner_transaction_type=partner_transaction_type,
+            pricing_model=pricing_model,
+            products=products,
+            program_type=program_type,
+            promo_type=promo_type,
+            quantity=quantity,
+            status=status,
+            term_value=term_value,
+            term_value_uom=term_value_uom,
+            time_end=time_end,
+            time_start=time_start,
+            total_value=total_value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             booking_opty_number: Optional[str] = None,
+             commitment_services: Optional[Sequence['outputs.GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceResult']] = None,
+             csi: Optional[str] = None,
+             data_center_region: Optional[str] = None,
+             funded_allocation_value: Optional[str] = None,
+             id: Optional[str] = None,
+             is_intent_to_pay: Optional[bool] = None,
+             net_unit_price: Optional[str] = None,
+             operation_type: Optional[str] = None,
+             order_number: Optional[str] = None,
+             partner_transaction_type: Optional[str] = None,
+             pricing_model: Optional[str] = None,
+             products: Optional[Sequence['outputs.GetSubscriptionsSubscriptionSubscribedServiceProductResult']] = None,
+             program_type: Optional[str] = None,
+             promo_type: Optional[str] = None,
+             quantity: Optional[str] = None,
+             status: Optional[str] = None,
+             term_value: Optional[str] = None,
+             term_value_uom: Optional[str] = None,
+             time_end: Optional[str] = None,
+             time_start: Optional[str] = None,
+             total_value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if booking_opty_number is None and 'bookingOptyNumber' in kwargs:
+            booking_opty_number = kwargs['bookingOptyNumber']
+        if booking_opty_number is None:
+            raise TypeError("Missing 'booking_opty_number' argument")
+        if commitment_services is None and 'commitmentServices' in kwargs:
+            commitment_services = kwargs['commitmentServices']
+        if commitment_services is None:
+            raise TypeError("Missing 'commitment_services' argument")
+        if csi is None:
+            raise TypeError("Missing 'csi' argument")
+        if data_center_region is None and 'dataCenterRegion' in kwargs:
+            data_center_region = kwargs['dataCenterRegion']
+        if data_center_region is None:
+            raise TypeError("Missing 'data_center_region' argument")
+        if funded_allocation_value is None and 'fundedAllocationValue' in kwargs:
+            funded_allocation_value = kwargs['fundedAllocationValue']
+        if funded_allocation_value is None:
+            raise TypeError("Missing 'funded_allocation_value' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_intent_to_pay is None and 'isIntentToPay' in kwargs:
+            is_intent_to_pay = kwargs['isIntentToPay']
+        if is_intent_to_pay is None:
+            raise TypeError("Missing 'is_intent_to_pay' argument")
+        if net_unit_price is None and 'netUnitPrice' in kwargs:
+            net_unit_price = kwargs['netUnitPrice']
+        if net_unit_price is None:
+            raise TypeError("Missing 'net_unit_price' argument")
+        if operation_type is None and 'operationType' in kwargs:
+            operation_type = kwargs['operationType']
+        if operation_type is None:
+            raise TypeError("Missing 'operation_type' argument")
+        if order_number is None and 'orderNumber' in kwargs:
+            order_number = kwargs['orderNumber']
+        if order_number is None:
+            raise TypeError("Missing 'order_number' argument")
+        if partner_transaction_type is None and 'partnerTransactionType' in kwargs:
+            partner_transaction_type = kwargs['partnerTransactionType']
+        if partner_transaction_type is None:
+            raise TypeError("Missing 'partner_transaction_type' argument")
+        if pricing_model is None and 'pricingModel' in kwargs:
+            pricing_model = kwargs['pricingModel']
+        if pricing_model is None:
+            raise TypeError("Missing 'pricing_model' argument")
+        if products is None:
+            raise TypeError("Missing 'products' argument")
+        if program_type is None and 'programType' in kwargs:
+            program_type = kwargs['programType']
+        if program_type is None:
+            raise TypeError("Missing 'program_type' argument")
+        if promo_type is None and 'promoType' in kwargs:
+            promo_type = kwargs['promoType']
+        if promo_type is None:
+            raise TypeError("Missing 'promo_type' argument")
+        if quantity is None:
+            raise TypeError("Missing 'quantity' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if term_value is None and 'termValue' in kwargs:
+            term_value = kwargs['termValue']
+        if term_value is None:
+            raise TypeError("Missing 'term_value' argument")
+        if term_value_uom is None and 'termValueUom' in kwargs:
+            term_value_uom = kwargs['termValueUom']
+        if term_value_uom is None:
+            raise TypeError("Missing 'term_value_uom' argument")
+        if time_end is None and 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if time_end is None:
+            raise TypeError("Missing 'time_end' argument")
+        if time_start is None and 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+        if time_start is None:
+            raise TypeError("Missing 'time_start' argument")
+        if total_value is None and 'totalValue' in kwargs:
+            total_value = kwargs['totalValue']
+        if total_value is None:
+            raise TypeError("Missing 'total_value' argument")
+
+        _setter("booking_opty_number", booking_opty_number)
+        _setter("commitment_services", commitment_services)
+        _setter("csi", csi)
+        _setter("data_center_region", data_center_region)
+        _setter("funded_allocation_value", funded_allocation_value)
+        _setter("id", id)
+        _setter("is_intent_to_pay", is_intent_to_pay)
+        _setter("net_unit_price", net_unit_price)
+        _setter("operation_type", operation_type)
+        _setter("order_number", order_number)
+        _setter("partner_transaction_type", partner_transaction_type)
+        _setter("pricing_model", pricing_model)
+        _setter("products", products)
+        _setter("program_type", program_type)
+        _setter("promo_type", promo_type)
+        _setter("quantity", quantity)
+        _setter("status", status)
+        _setter("term_value", term_value)
+        _setter("term_value_uom", term_value_uom)
+        _setter("time_end", time_end)
+        _setter("time_start", time_start)
+        _setter("total_value", total_value)
 
     @property
     @pulumi.getter(name="bookingOptyNumber")
@@ -841,12 +1296,55 @@ class GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceResult(dict)
         :param str time_end: Represents the date when the last service of the subscription ends
         :param str time_start: Represents the date when the first service of the subscription was activated
         """
-        pulumi.set(__self__, "available_amount", available_amount)
-        pulumi.set(__self__, "funded_allocation_value", funded_allocation_value)
-        pulumi.set(__self__, "line_net_amount", line_net_amount)
-        pulumi.set(__self__, "quantity", quantity)
-        pulumi.set(__self__, "time_end", time_end)
-        pulumi.set(__self__, "time_start", time_start)
+        GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            available_amount=available_amount,
+            funded_allocation_value=funded_allocation_value,
+            line_net_amount=line_net_amount,
+            quantity=quantity,
+            time_end=time_end,
+            time_start=time_start,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             available_amount: Optional[str] = None,
+             funded_allocation_value: Optional[str] = None,
+             line_net_amount: Optional[str] = None,
+             quantity: Optional[str] = None,
+             time_end: Optional[str] = None,
+             time_start: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if available_amount is None and 'availableAmount' in kwargs:
+            available_amount = kwargs['availableAmount']
+        if available_amount is None:
+            raise TypeError("Missing 'available_amount' argument")
+        if funded_allocation_value is None and 'fundedAllocationValue' in kwargs:
+            funded_allocation_value = kwargs['fundedAllocationValue']
+        if funded_allocation_value is None:
+            raise TypeError("Missing 'funded_allocation_value' argument")
+        if line_net_amount is None and 'lineNetAmount' in kwargs:
+            line_net_amount = kwargs['lineNetAmount']
+        if line_net_amount is None:
+            raise TypeError("Missing 'line_net_amount' argument")
+        if quantity is None:
+            raise TypeError("Missing 'quantity' argument")
+        if time_end is None and 'timeEnd' in kwargs:
+            time_end = kwargs['timeEnd']
+        if time_end is None:
+            raise TypeError("Missing 'time_end' argument")
+        if time_start is None and 'timeStart' in kwargs:
+            time_start = kwargs['timeStart']
+        if time_start is None:
+            raise TypeError("Missing 'time_start' argument")
+
+        _setter("available_amount", available_amount)
+        _setter("funded_allocation_value", funded_allocation_value)
+        _setter("line_net_amount", line_net_amount)
+        _setter("quantity", quantity)
+        _setter("time_end", time_end)
+        _setter("time_start", time_start)
 
     @property
     @pulumi.getter(name="availableAmount")
@@ -910,10 +1408,41 @@ class GetSubscriptionsSubscriptionSubscribedServiceProductResult(dict):
         :param str provisioning_group: Product provisioning group
         :param str unit_of_measure: Unit of measure
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "part_number", part_number)
-        pulumi.set(__self__, "provisioning_group", provisioning_group)
-        pulumi.set(__self__, "unit_of_measure", unit_of_measure)
+        GetSubscriptionsSubscriptionSubscribedServiceProductResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            part_number=part_number,
+            provisioning_group=provisioning_group,
+            unit_of_measure=unit_of_measure,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             part_number: Optional[str] = None,
+             provisioning_group: Optional[str] = None,
+             unit_of_measure: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if part_number is None and 'partNumber' in kwargs:
+            part_number = kwargs['partNumber']
+        if part_number is None:
+            raise TypeError("Missing 'part_number' argument")
+        if provisioning_group is None and 'provisioningGroup' in kwargs:
+            provisioning_group = kwargs['provisioningGroup']
+        if provisioning_group is None:
+            raise TypeError("Missing 'provisioning_group' argument")
+        if unit_of_measure is None and 'unitOfMeasure' in kwargs:
+            unit_of_measure = kwargs['unitOfMeasure']
+        if unit_of_measure is None:
+            raise TypeError("Missing 'unit_of_measure' argument")
+
+        _setter("name", name)
+        _setter("part_number", part_number)
+        _setter("provisioning_group", provisioning_group)
+        _setter("unit_of_measure", unit_of_measure)
 
     @property
     @pulumi.getter

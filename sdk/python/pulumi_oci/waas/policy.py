@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -39,24 +39,73 @@ class PolicyArgs:
         :param pulumi.Input['PolicyPolicyConfigArgs'] policy_config: (Updatable) The configuration details for the WAAS policy.
         :param pulumi.Input['PolicyWafConfigArgs'] waf_config: (Updatable) The Web Application Firewall configuration for the WAAS policy creation.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "domain", domain)
+        PolicyArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            domain=domain,
+            additional_domains=additional_domains,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            origin_groups=origin_groups,
+            origins=origins,
+            policy_config=policy_config,
+            waf_config=waf_config,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             domain: Optional[pulumi.Input[str]] = None,
+             additional_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             origin_groups: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyOriginGroupArgs']]]] = None,
+             origins: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyOriginArgs']]]] = None,
+             policy_config: Optional[pulumi.Input['PolicyPolicyConfigArgs']] = None,
+             waf_config: Optional[pulumi.Input['PolicyWafConfigArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if domain is None:
+            raise TypeError("Missing 'domain' argument")
+        if additional_domains is None and 'additionalDomains' in kwargs:
+            additional_domains = kwargs['additionalDomains']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if origin_groups is None and 'originGroups' in kwargs:
+            origin_groups = kwargs['originGroups']
+        if policy_config is None and 'policyConfig' in kwargs:
+            policy_config = kwargs['policyConfig']
+        if waf_config is None and 'wafConfig' in kwargs:
+            waf_config = kwargs['wafConfig']
+
+        _setter("compartment_id", compartment_id)
+        _setter("domain", domain)
         if additional_domains is not None:
-            pulumi.set(__self__, "additional_domains", additional_domains)
+            _setter("additional_domains", additional_domains)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if origin_groups is not None:
-            pulumi.set(__self__, "origin_groups", origin_groups)
+            _setter("origin_groups", origin_groups)
         if origins is not None:
-            pulumi.set(__self__, "origins", origins)
+            _setter("origins", origins)
         if policy_config is not None:
-            pulumi.set(__self__, "policy_config", policy_config)
+            _setter("policy_config", policy_config)
         if waf_config is not None:
-            pulumi.set(__self__, "waf_config", waf_config)
+            _setter("waf_config", waf_config)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -211,32 +260,85 @@ class _PolicyState:
         :param pulumi.Input[str] time_created: The date and time the policy was created, expressed in RFC 3339 timestamp format.
         :param pulumi.Input['PolicyWafConfigArgs'] waf_config: (Updatable) The Web Application Firewall configuration for the WAAS policy creation.
         """
+        _PolicyState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            additional_domains=additional_domains,
+            cname=cname,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            domain=domain,
+            freeform_tags=freeform_tags,
+            origin_groups=origin_groups,
+            origins=origins,
+            policy_config=policy_config,
+            state=state,
+            time_created=time_created,
+            waf_config=waf_config,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             additional_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             cname: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             domain: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             origin_groups: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyOriginGroupArgs']]]] = None,
+             origins: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyOriginArgs']]]] = None,
+             policy_config: Optional[pulumi.Input['PolicyPolicyConfigArgs']] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             waf_config: Optional[pulumi.Input['PolicyWafConfigArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if additional_domains is None and 'additionalDomains' in kwargs:
+            additional_domains = kwargs['additionalDomains']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if origin_groups is None and 'originGroups' in kwargs:
+            origin_groups = kwargs['originGroups']
+        if policy_config is None and 'policyConfig' in kwargs:
+            policy_config = kwargs['policyConfig']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if waf_config is None and 'wafConfig' in kwargs:
+            waf_config = kwargs['wafConfig']
+
         if additional_domains is not None:
-            pulumi.set(__self__, "additional_domains", additional_domains)
+            _setter("additional_domains", additional_domains)
         if cname is not None:
-            pulumi.set(__self__, "cname", cname)
+            _setter("cname", cname)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if domain is not None:
-            pulumi.set(__self__, "domain", domain)
+            _setter("domain", domain)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if origin_groups is not None:
-            pulumi.set(__self__, "origin_groups", origin_groups)
+            _setter("origin_groups", origin_groups)
         if origins is not None:
-            pulumi.set(__self__, "origins", origins)
+            _setter("origins", origins)
         if policy_config is not None:
-            pulumi.set(__self__, "policy_config", policy_config)
+            _setter("policy_config", policy_config)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if waf_config is not None:
-            pulumi.set(__self__, "waf_config", waf_config)
+            _setter("waf_config", waf_config)
 
     @property
     @pulumi.getter(name="additionalDomains")
@@ -490,6 +592,10 @@ class Policy(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            PolicyArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -526,7 +632,17 @@ class Policy(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["origin_groups"] = origin_groups
             __props__.__dict__["origins"] = origins
+            if policy_config is not None and not isinstance(policy_config, PolicyPolicyConfigArgs):
+                policy_config = policy_config or {}
+                def _setter(key, value):
+                    policy_config[key] = value
+                PolicyPolicyConfigArgs._configure(_setter, **policy_config)
             __props__.__dict__["policy_config"] = policy_config
+            if waf_config is not None and not isinstance(waf_config, PolicyWafConfigArgs):
+                waf_config = waf_config or {}
+                def _setter(key, value):
+                    waf_config[key] = value
+                PolicyWafConfigArgs._configure(_setter, **waf_config)
             __props__.__dict__["waf_config"] = waf_config
             __props__.__dict__["cname"] = None
             __props__.__dict__["state"] = None

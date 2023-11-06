@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['PurgeCacheArgs', 'PurgeCache']
@@ -25,9 +25,26 @@ class PurgeCacheArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[str]]] resources: A resource to purge, specified by either a hostless absolute path starting with a single slash (Example: `/path/to/resource`) or by a relative path in which the first component will be interpreted as a domain protected by the WAAS policy (Example: `example.com/path/to/resource`).
         """
-        pulumi.set(__self__, "waas_policy_id", waas_policy_id)
+        PurgeCacheArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            waas_policy_id=waas_policy_id,
+            resources=resources,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             waas_policy_id: Optional[pulumi.Input[str]] = None,
+             resources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if waas_policy_id is None and 'waasPolicyId' in kwargs:
+            waas_policy_id = kwargs['waasPolicyId']
+        if waas_policy_id is None:
+            raise TypeError("Missing 'waas_policy_id' argument")
+
+        _setter("waas_policy_id", waas_policy_id)
         if resources is not None:
-            pulumi.set(__self__, "resources", resources)
+            _setter("resources", resources)
 
     @property
     @pulumi.getter(name="waasPolicyId")
@@ -72,10 +89,25 @@ class _PurgeCacheState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _PurgeCacheState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            resources=resources,
+            waas_policy_id=waas_policy_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             resources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             waas_policy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if waas_policy_id is None and 'waasPolicyId' in kwargs:
+            waas_policy_id = kwargs['waasPolicyId']
+
         if resources is not None:
-            pulumi.set(__self__, "resources", resources)
+            _setter("resources", resources)
         if waas_policy_id is not None:
-            pulumi.set(__self__, "waas_policy_id", waas_policy_id)
+            _setter("waas_policy_id", waas_policy_id)
 
     @property
     @pulumi.getter
@@ -181,6 +213,10 @@ class PurgeCache(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            PurgeCacheArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -89,36 +89,123 @@ class AlarmArgs:
         :param pulumi.Input[str] resource_group: (Updatable) Resource group that you want to match. A null value returns only metric data that has no resource groups. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($). Avoid entering confidential information.  Example: `frontend-fleet`
         :param pulumi.Input['AlarmSuppressionArgs'] suppression: (Updatable) The configuration details for suppressing an alarm.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "destinations", destinations)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "metric_compartment_id", metric_compartment_id)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "query", query)
-        pulumi.set(__self__, "severity", severity)
+        AlarmArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            destinations=destinations,
+            display_name=display_name,
+            is_enabled=is_enabled,
+            metric_compartment_id=metric_compartment_id,
+            namespace=namespace,
+            query=query,
+            severity=severity,
+            body=body,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            is_notifications_per_metric_dimension_enabled=is_notifications_per_metric_dimension_enabled,
+            message_format=message_format,
+            metric_compartment_id_in_subtree=metric_compartment_id_in_subtree,
+            pending_duration=pending_duration,
+            repeat_notification_duration=repeat_notification_duration,
+            resolution=resolution,
+            resource_group=resource_group,
+            suppression=suppression,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             destinations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             is_enabled: Optional[pulumi.Input[bool]] = None,
+             metric_compartment_id: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             query: Optional[pulumi.Input[str]] = None,
+             severity: Optional[pulumi.Input[str]] = None,
+             body: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_notifications_per_metric_dimension_enabled: Optional[pulumi.Input[bool]] = None,
+             message_format: Optional[pulumi.Input[str]] = None,
+             metric_compartment_id_in_subtree: Optional[pulumi.Input[bool]] = None,
+             pending_duration: Optional[pulumi.Input[str]] = None,
+             repeat_notification_duration: Optional[pulumi.Input[str]] = None,
+             resolution: Optional[pulumi.Input[str]] = None,
+             resource_group: Optional[pulumi.Input[str]] = None,
+             suppression: Optional[pulumi.Input['AlarmSuppressionArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if destinations is None:
+            raise TypeError("Missing 'destinations' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if metric_compartment_id is None and 'metricCompartmentId' in kwargs:
+            metric_compartment_id = kwargs['metricCompartmentId']
+        if metric_compartment_id is None:
+            raise TypeError("Missing 'metric_compartment_id' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if query is None:
+            raise TypeError("Missing 'query' argument")
+        if severity is None:
+            raise TypeError("Missing 'severity' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_notifications_per_metric_dimension_enabled is None and 'isNotificationsPerMetricDimensionEnabled' in kwargs:
+            is_notifications_per_metric_dimension_enabled = kwargs['isNotificationsPerMetricDimensionEnabled']
+        if message_format is None and 'messageFormat' in kwargs:
+            message_format = kwargs['messageFormat']
+        if metric_compartment_id_in_subtree is None and 'metricCompartmentIdInSubtree' in kwargs:
+            metric_compartment_id_in_subtree = kwargs['metricCompartmentIdInSubtree']
+        if pending_duration is None and 'pendingDuration' in kwargs:
+            pending_duration = kwargs['pendingDuration']
+        if repeat_notification_duration is None and 'repeatNotificationDuration' in kwargs:
+            repeat_notification_duration = kwargs['repeatNotificationDuration']
+        if resource_group is None and 'resourceGroup' in kwargs:
+            resource_group = kwargs['resourceGroup']
+
+        _setter("compartment_id", compartment_id)
+        _setter("destinations", destinations)
+        _setter("display_name", display_name)
+        _setter("is_enabled", is_enabled)
+        _setter("metric_compartment_id", metric_compartment_id)
+        _setter("namespace", namespace)
+        _setter("query", query)
+        _setter("severity", severity)
         if body is not None:
-            pulumi.set(__self__, "body", body)
+            _setter("body", body)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_notifications_per_metric_dimension_enabled is not None:
-            pulumi.set(__self__, "is_notifications_per_metric_dimension_enabled", is_notifications_per_metric_dimension_enabled)
+            _setter("is_notifications_per_metric_dimension_enabled", is_notifications_per_metric_dimension_enabled)
         if message_format is not None:
-            pulumi.set(__self__, "message_format", message_format)
+            _setter("message_format", message_format)
         if metric_compartment_id_in_subtree is not None:
-            pulumi.set(__self__, "metric_compartment_id_in_subtree", metric_compartment_id_in_subtree)
+            _setter("metric_compartment_id_in_subtree", metric_compartment_id_in_subtree)
         if pending_duration is not None:
-            pulumi.set(__self__, "pending_duration", pending_duration)
+            _setter("pending_duration", pending_duration)
         if repeat_notification_duration is not None:
-            pulumi.set(__self__, "repeat_notification_duration", repeat_notification_duration)
+            _setter("repeat_notification_duration", repeat_notification_duration)
         if resolution is not None:
-            pulumi.set(__self__, "resolution", resolution)
+            _setter("resolution", resolution)
         if resource_group is not None:
-            pulumi.set(__self__, "resource_group", resource_group)
+            _setter("resource_group", resource_group)
         if suppression is not None:
-            pulumi.set(__self__, "suppression", suppression)
+            _setter("suppression", suppression)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -463,50 +550,131 @@ class _AlarmState:
         :param pulumi.Input[str] time_created: The date and time the alarm was created. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
         :param pulumi.Input[str] time_updated: The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2019-02-03T01:02:29.600Z`
         """
+        _AlarmState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            body=body,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            destinations=destinations,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            is_enabled=is_enabled,
+            is_notifications_per_metric_dimension_enabled=is_notifications_per_metric_dimension_enabled,
+            message_format=message_format,
+            metric_compartment_id=metric_compartment_id,
+            metric_compartment_id_in_subtree=metric_compartment_id_in_subtree,
+            namespace=namespace,
+            pending_duration=pending_duration,
+            query=query,
+            repeat_notification_duration=repeat_notification_duration,
+            resolution=resolution,
+            resource_group=resource_group,
+            severity=severity,
+            state=state,
+            suppression=suppression,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             body: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             destinations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_enabled: Optional[pulumi.Input[bool]] = None,
+             is_notifications_per_metric_dimension_enabled: Optional[pulumi.Input[bool]] = None,
+             message_format: Optional[pulumi.Input[str]] = None,
+             metric_compartment_id: Optional[pulumi.Input[str]] = None,
+             metric_compartment_id_in_subtree: Optional[pulumi.Input[bool]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             pending_duration: Optional[pulumi.Input[str]] = None,
+             query: Optional[pulumi.Input[str]] = None,
+             repeat_notification_duration: Optional[pulumi.Input[str]] = None,
+             resolution: Optional[pulumi.Input[str]] = None,
+             resource_group: Optional[pulumi.Input[str]] = None,
+             severity: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             suppression: Optional[pulumi.Input['AlarmSuppressionArgs']] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_notifications_per_metric_dimension_enabled is None and 'isNotificationsPerMetricDimensionEnabled' in kwargs:
+            is_notifications_per_metric_dimension_enabled = kwargs['isNotificationsPerMetricDimensionEnabled']
+        if message_format is None and 'messageFormat' in kwargs:
+            message_format = kwargs['messageFormat']
+        if metric_compartment_id is None and 'metricCompartmentId' in kwargs:
+            metric_compartment_id = kwargs['metricCompartmentId']
+        if metric_compartment_id_in_subtree is None and 'metricCompartmentIdInSubtree' in kwargs:
+            metric_compartment_id_in_subtree = kwargs['metricCompartmentIdInSubtree']
+        if pending_duration is None and 'pendingDuration' in kwargs:
+            pending_duration = kwargs['pendingDuration']
+        if repeat_notification_duration is None and 'repeatNotificationDuration' in kwargs:
+            repeat_notification_duration = kwargs['repeatNotificationDuration']
+        if resource_group is None and 'resourceGroup' in kwargs:
+            resource_group = kwargs['resourceGroup']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if body is not None:
-            pulumi.set(__self__, "body", body)
+            _setter("body", body)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if destinations is not None:
-            pulumi.set(__self__, "destinations", destinations)
+            _setter("destinations", destinations)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if is_notifications_per_metric_dimension_enabled is not None:
-            pulumi.set(__self__, "is_notifications_per_metric_dimension_enabled", is_notifications_per_metric_dimension_enabled)
+            _setter("is_notifications_per_metric_dimension_enabled", is_notifications_per_metric_dimension_enabled)
         if message_format is not None:
-            pulumi.set(__self__, "message_format", message_format)
+            _setter("message_format", message_format)
         if metric_compartment_id is not None:
-            pulumi.set(__self__, "metric_compartment_id", metric_compartment_id)
+            _setter("metric_compartment_id", metric_compartment_id)
         if metric_compartment_id_in_subtree is not None:
-            pulumi.set(__self__, "metric_compartment_id_in_subtree", metric_compartment_id_in_subtree)
+            _setter("metric_compartment_id_in_subtree", metric_compartment_id_in_subtree)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if pending_duration is not None:
-            pulumi.set(__self__, "pending_duration", pending_duration)
+            _setter("pending_duration", pending_duration)
         if query is not None:
-            pulumi.set(__self__, "query", query)
+            _setter("query", query)
         if repeat_notification_duration is not None:
-            pulumi.set(__self__, "repeat_notification_duration", repeat_notification_duration)
+            _setter("repeat_notification_duration", repeat_notification_duration)
         if resolution is not None:
-            pulumi.set(__self__, "resolution", resolution)
+            _setter("resolution", resolution)
         if resource_group is not None:
-            pulumi.set(__self__, "resource_group", resource_group)
+            _setter("resource_group", resource_group)
         if severity is not None:
-            pulumi.set(__self__, "severity", severity)
+            _setter("severity", severity)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if suppression is not None:
-            pulumi.set(__self__, "suppression", suppression)
+            _setter("suppression", suppression)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter
@@ -1014,6 +1182,10 @@ class Alarm(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AlarmArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -1081,6 +1253,11 @@ class Alarm(pulumi.CustomResource):
             if severity is None and not opts.urn:
                 raise TypeError("Missing required property 'severity'")
             __props__.__dict__["severity"] = severity
+            if suppression is not None and not isinstance(suppression, AlarmSuppressionArgs):
+                suppression = suppression or {}
+                def _setter(key, value):
+                    suppression[key] = value
+                AlarmSuppressionArgs._configure(_setter, **suppression)
             __props__.__dict__["suppression"] = suppression
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None

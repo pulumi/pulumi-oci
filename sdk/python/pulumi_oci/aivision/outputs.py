@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -68,15 +68,42 @@ class ModelTestingDataset(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "dataset_type", dataset_type)
+        ModelTestingDataset._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dataset_type=dataset_type,
+            bucket=bucket,
+            dataset_id=dataset_id,
+            namespace_name=namespace_name,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dataset_type: Optional[str] = None,
+             bucket: Optional[str] = None,
+             dataset_id: Optional[str] = None,
+             namespace_name: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if dataset_type is None and 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if dataset_type is None:
+            raise TypeError("Missing 'dataset_type' argument")
+        if dataset_id is None and 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if namespace_name is None and 'namespaceName' in kwargs:
+            namespace_name = kwargs['namespaceName']
+
+        _setter("dataset_type", dataset_type)
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if dataset_id is not None:
-            pulumi.set(__self__, "dataset_id", dataset_id)
+            _setter("dataset_id", dataset_id)
         if namespace_name is not None:
-            pulumi.set(__self__, "namespace_name", namespace_name)
+            _setter("namespace_name", namespace_name)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
 
     @property
     @pulumi.getter(name="datasetType")
@@ -163,15 +190,42 @@ class ModelTrainingDataset(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "dataset_type", dataset_type)
+        ModelTrainingDataset._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dataset_type=dataset_type,
+            bucket=bucket,
+            dataset_id=dataset_id,
+            namespace_name=namespace_name,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dataset_type: Optional[str] = None,
+             bucket: Optional[str] = None,
+             dataset_id: Optional[str] = None,
+             namespace_name: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if dataset_type is None and 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if dataset_type is None:
+            raise TypeError("Missing 'dataset_type' argument")
+        if dataset_id is None and 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if namespace_name is None and 'namespaceName' in kwargs:
+            namespace_name = kwargs['namespaceName']
+
+        _setter("dataset_type", dataset_type)
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if dataset_id is not None:
-            pulumi.set(__self__, "dataset_id", dataset_id)
+            _setter("dataset_id", dataset_id)
         if namespace_name is not None:
-            pulumi.set(__self__, "namespace_name", namespace_name)
+            _setter("namespace_name", namespace_name)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
 
     @property
     @pulumi.getter(name="datasetType")
@@ -258,15 +312,42 @@ class ModelValidationDataset(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "dataset_type", dataset_type)
+        ModelValidationDataset._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dataset_type=dataset_type,
+            bucket=bucket,
+            dataset_id=dataset_id,
+            namespace_name=namespace_name,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dataset_type: Optional[str] = None,
+             bucket: Optional[str] = None,
+             dataset_id: Optional[str] = None,
+             namespace_name: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if dataset_type is None and 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if dataset_type is None:
+            raise TypeError("Missing 'dataset_type' argument")
+        if dataset_id is None and 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if namespace_name is None and 'namespaceName' in kwargs:
+            namespace_name = kwargs['namespaceName']
+
+        _setter("dataset_type", dataset_type)
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if dataset_id is not None:
-            pulumi.set(__self__, "dataset_id", dataset_id)
+            _setter("dataset_id", dataset_id)
         if namespace_name is not None:
-            pulumi.set(__self__, "namespace_name", namespace_name)
+            _setter("namespace_name", namespace_name)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
 
     @property
     @pulumi.getter(name="datasetType")
@@ -328,11 +409,46 @@ class GetModelTestingDatasetResult(dict):
         :param str namespace_name: The namespace name of the ObjectStorage bucket that contains the input data file.
         :param str object: The object name of the input data file.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "dataset_id", dataset_id)
-        pulumi.set(__self__, "dataset_type", dataset_type)
-        pulumi.set(__self__, "namespace_name", namespace_name)
-        pulumi.set(__self__, "object", object)
+        GetModelTestingDatasetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            dataset_id=dataset_id,
+            dataset_type=dataset_type,
+            namespace_name=namespace_name,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[str] = None,
+             dataset_id: Optional[str] = None,
+             dataset_type: Optional[str] = None,
+             namespace_name: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if dataset_id is None and 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if dataset_id is None:
+            raise TypeError("Missing 'dataset_id' argument")
+        if dataset_type is None and 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if dataset_type is None:
+            raise TypeError("Missing 'dataset_type' argument")
+        if namespace_name is None and 'namespaceName' in kwargs:
+            namespace_name = kwargs['namespaceName']
+        if namespace_name is None:
+            raise TypeError("Missing 'namespace_name' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
+
+        _setter("bucket", bucket)
+        _setter("dataset_id", dataset_id)
+        _setter("dataset_type", dataset_type)
+        _setter("namespace_name", namespace_name)
+        _setter("object", object)
 
     @property
     @pulumi.getter
@@ -390,11 +506,46 @@ class GetModelTrainingDatasetResult(dict):
         :param str namespace_name: The namespace name of the ObjectStorage bucket that contains the input data file.
         :param str object: The object name of the input data file.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "dataset_id", dataset_id)
-        pulumi.set(__self__, "dataset_type", dataset_type)
-        pulumi.set(__self__, "namespace_name", namespace_name)
-        pulumi.set(__self__, "object", object)
+        GetModelTrainingDatasetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            dataset_id=dataset_id,
+            dataset_type=dataset_type,
+            namespace_name=namespace_name,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[str] = None,
+             dataset_id: Optional[str] = None,
+             dataset_type: Optional[str] = None,
+             namespace_name: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if dataset_id is None and 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if dataset_id is None:
+            raise TypeError("Missing 'dataset_id' argument")
+        if dataset_type is None and 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if dataset_type is None:
+            raise TypeError("Missing 'dataset_type' argument")
+        if namespace_name is None and 'namespaceName' in kwargs:
+            namespace_name = kwargs['namespaceName']
+        if namespace_name is None:
+            raise TypeError("Missing 'namespace_name' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
+
+        _setter("bucket", bucket)
+        _setter("dataset_id", dataset_id)
+        _setter("dataset_type", dataset_type)
+        _setter("namespace_name", namespace_name)
+        _setter("object", object)
 
     @property
     @pulumi.getter
@@ -452,11 +603,46 @@ class GetModelValidationDatasetResult(dict):
         :param str namespace_name: The namespace name of the ObjectStorage bucket that contains the input data file.
         :param str object: The object name of the input data file.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "dataset_id", dataset_id)
-        pulumi.set(__self__, "dataset_type", dataset_type)
-        pulumi.set(__self__, "namespace_name", namespace_name)
-        pulumi.set(__self__, "object", object)
+        GetModelValidationDatasetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            dataset_id=dataset_id,
+            dataset_type=dataset_type,
+            namespace_name=namespace_name,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[str] = None,
+             dataset_id: Optional[str] = None,
+             dataset_type: Optional[str] = None,
+             namespace_name: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if dataset_id is None and 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if dataset_id is None:
+            raise TypeError("Missing 'dataset_id' argument")
+        if dataset_type is None and 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if dataset_type is None:
+            raise TypeError("Missing 'dataset_type' argument")
+        if namespace_name is None and 'namespaceName' in kwargs:
+            namespace_name = kwargs['namespaceName']
+        if namespace_name is None:
+            raise TypeError("Missing 'namespace_name' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
+
+        _setter("bucket", bucket)
+        _setter("dataset_id", dataset_id)
+        _setter("dataset_type", dataset_type)
+        _setter("namespace_name", namespace_name)
+        _setter("object", object)
 
     @property
     @pulumi.getter
@@ -505,10 +691,29 @@ class GetModelsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetModelsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -530,7 +735,20 @@ class GetModelsFilterResult(dict):
 class GetModelsModelCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetModelsModelCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetModelsModelCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetModelsModelCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -597,33 +815,192 @@ class GetModelsModelCollectionItemResult(dict):
         :param Sequence['GetModelsModelCollectionItemTrainingDatasetArgs'] training_datasets: The base entity for a Dataset, which is the input for Model creation.
         :param Sequence['GetModelsModelCollectionItemValidationDatasetArgs'] validation_datasets: The base entity for a Dataset, which is the input for Model creation.
         """
-        pulumi.set(__self__, "average_precision", average_precision)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "confidence_threshold", confidence_threshold)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_quick_mode", is_quick_mode)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "max_training_duration_in_hours", max_training_duration_in_hours)
-        pulumi.set(__self__, "metrics", metrics)
-        pulumi.set(__self__, "model_type", model_type)
-        pulumi.set(__self__, "model_version", model_version)
-        pulumi.set(__self__, "precision", precision)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "recall", recall)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "test_image_count", test_image_count)
-        pulumi.set(__self__, "testing_datasets", testing_datasets)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "total_image_count", total_image_count)
-        pulumi.set(__self__, "trained_duration_in_hours", trained_duration_in_hours)
-        pulumi.set(__self__, "training_datasets", training_datasets)
-        pulumi.set(__self__, "validation_datasets", validation_datasets)
+        GetModelsModelCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            average_precision=average_precision,
+            compartment_id=compartment_id,
+            confidence_threshold=confidence_threshold,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_quick_mode=is_quick_mode,
+            lifecycle_details=lifecycle_details,
+            max_training_duration_in_hours=max_training_duration_in_hours,
+            metrics=metrics,
+            model_type=model_type,
+            model_version=model_version,
+            precision=precision,
+            project_id=project_id,
+            recall=recall,
+            state=state,
+            system_tags=system_tags,
+            test_image_count=test_image_count,
+            testing_datasets=testing_datasets,
+            time_created=time_created,
+            time_updated=time_updated,
+            total_image_count=total_image_count,
+            trained_duration_in_hours=trained_duration_in_hours,
+            training_datasets=training_datasets,
+            validation_datasets=validation_datasets,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             average_precision: Optional[float] = None,
+             compartment_id: Optional[str] = None,
+             confidence_threshold: Optional[float] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_quick_mode: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             max_training_duration_in_hours: Optional[float] = None,
+             metrics: Optional[str] = None,
+             model_type: Optional[str] = None,
+             model_version: Optional[str] = None,
+             precision: Optional[float] = None,
+             project_id: Optional[str] = None,
+             recall: Optional[float] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             test_image_count: Optional[int] = None,
+             testing_datasets: Optional[Sequence['outputs.GetModelsModelCollectionItemTestingDatasetResult']] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             total_image_count: Optional[int] = None,
+             trained_duration_in_hours: Optional[float] = None,
+             training_datasets: Optional[Sequence['outputs.GetModelsModelCollectionItemTrainingDatasetResult']] = None,
+             validation_datasets: Optional[Sequence['outputs.GetModelsModelCollectionItemValidationDatasetResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if average_precision is None and 'averagePrecision' in kwargs:
+            average_precision = kwargs['averagePrecision']
+        if average_precision is None:
+            raise TypeError("Missing 'average_precision' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if confidence_threshold is None and 'confidenceThreshold' in kwargs:
+            confidence_threshold = kwargs['confidenceThreshold']
+        if confidence_threshold is None:
+            raise TypeError("Missing 'confidence_threshold' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_quick_mode is None and 'isQuickMode' in kwargs:
+            is_quick_mode = kwargs['isQuickMode']
+        if is_quick_mode is None:
+            raise TypeError("Missing 'is_quick_mode' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if max_training_duration_in_hours is None and 'maxTrainingDurationInHours' in kwargs:
+            max_training_duration_in_hours = kwargs['maxTrainingDurationInHours']
+        if max_training_duration_in_hours is None:
+            raise TypeError("Missing 'max_training_duration_in_hours' argument")
+        if metrics is None:
+            raise TypeError("Missing 'metrics' argument")
+        if model_type is None and 'modelType' in kwargs:
+            model_type = kwargs['modelType']
+        if model_type is None:
+            raise TypeError("Missing 'model_type' argument")
+        if model_version is None and 'modelVersion' in kwargs:
+            model_version = kwargs['modelVersion']
+        if model_version is None:
+            raise TypeError("Missing 'model_version' argument")
+        if precision is None:
+            raise TypeError("Missing 'precision' argument")
+        if project_id is None and 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if recall is None:
+            raise TypeError("Missing 'recall' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if test_image_count is None and 'testImageCount' in kwargs:
+            test_image_count = kwargs['testImageCount']
+        if test_image_count is None:
+            raise TypeError("Missing 'test_image_count' argument")
+        if testing_datasets is None and 'testingDatasets' in kwargs:
+            testing_datasets = kwargs['testingDatasets']
+        if testing_datasets is None:
+            raise TypeError("Missing 'testing_datasets' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if total_image_count is None and 'totalImageCount' in kwargs:
+            total_image_count = kwargs['totalImageCount']
+        if total_image_count is None:
+            raise TypeError("Missing 'total_image_count' argument")
+        if trained_duration_in_hours is None and 'trainedDurationInHours' in kwargs:
+            trained_duration_in_hours = kwargs['trainedDurationInHours']
+        if trained_duration_in_hours is None:
+            raise TypeError("Missing 'trained_duration_in_hours' argument")
+        if training_datasets is None and 'trainingDatasets' in kwargs:
+            training_datasets = kwargs['trainingDatasets']
+        if training_datasets is None:
+            raise TypeError("Missing 'training_datasets' argument")
+        if validation_datasets is None and 'validationDatasets' in kwargs:
+            validation_datasets = kwargs['validationDatasets']
+        if validation_datasets is None:
+            raise TypeError("Missing 'validation_datasets' argument")
+
+        _setter("average_precision", average_precision)
+        _setter("compartment_id", compartment_id)
+        _setter("confidence_threshold", confidence_threshold)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_quick_mode", is_quick_mode)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("max_training_duration_in_hours", max_training_duration_in_hours)
+        _setter("metrics", metrics)
+        _setter("model_type", model_type)
+        _setter("model_version", model_version)
+        _setter("precision", precision)
+        _setter("project_id", project_id)
+        _setter("recall", recall)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("test_image_count", test_image_count)
+        _setter("testing_datasets", testing_datasets)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("total_image_count", total_image_count)
+        _setter("trained_duration_in_hours", trained_duration_in_hours)
+        _setter("training_datasets", training_datasets)
+        _setter("validation_datasets", validation_datasets)
 
     @property
     @pulumi.getter(name="averagePrecision")
@@ -856,11 +1233,46 @@ class GetModelsModelCollectionItemTestingDatasetResult(dict):
         :param str dataset_type: Type of the Dataset.
         :param str object: The object name of the input data file.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "dataset_id", dataset_id)
-        pulumi.set(__self__, "dataset_type", dataset_type)
-        pulumi.set(__self__, "namespace_name", namespace_name)
-        pulumi.set(__self__, "object", object)
+        GetModelsModelCollectionItemTestingDatasetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            dataset_id=dataset_id,
+            dataset_type=dataset_type,
+            namespace_name=namespace_name,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[str] = None,
+             dataset_id: Optional[str] = None,
+             dataset_type: Optional[str] = None,
+             namespace_name: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if dataset_id is None and 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if dataset_id is None:
+            raise TypeError("Missing 'dataset_id' argument")
+        if dataset_type is None and 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if dataset_type is None:
+            raise TypeError("Missing 'dataset_type' argument")
+        if namespace_name is None and 'namespaceName' in kwargs:
+            namespace_name = kwargs['namespaceName']
+        if namespace_name is None:
+            raise TypeError("Missing 'namespace_name' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
+
+        _setter("bucket", bucket)
+        _setter("dataset_id", dataset_id)
+        _setter("dataset_type", dataset_type)
+        _setter("namespace_name", namespace_name)
+        _setter("object", object)
 
     @property
     @pulumi.getter
@@ -914,11 +1326,46 @@ class GetModelsModelCollectionItemTrainingDatasetResult(dict):
         :param str dataset_type: Type of the Dataset.
         :param str object: The object name of the input data file.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "dataset_id", dataset_id)
-        pulumi.set(__self__, "dataset_type", dataset_type)
-        pulumi.set(__self__, "namespace_name", namespace_name)
-        pulumi.set(__self__, "object", object)
+        GetModelsModelCollectionItemTrainingDatasetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            dataset_id=dataset_id,
+            dataset_type=dataset_type,
+            namespace_name=namespace_name,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[str] = None,
+             dataset_id: Optional[str] = None,
+             dataset_type: Optional[str] = None,
+             namespace_name: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if dataset_id is None and 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if dataset_id is None:
+            raise TypeError("Missing 'dataset_id' argument")
+        if dataset_type is None and 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if dataset_type is None:
+            raise TypeError("Missing 'dataset_type' argument")
+        if namespace_name is None and 'namespaceName' in kwargs:
+            namespace_name = kwargs['namespaceName']
+        if namespace_name is None:
+            raise TypeError("Missing 'namespace_name' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
+
+        _setter("bucket", bucket)
+        _setter("dataset_id", dataset_id)
+        _setter("dataset_type", dataset_type)
+        _setter("namespace_name", namespace_name)
+        _setter("object", object)
 
     @property
     @pulumi.getter
@@ -972,11 +1419,46 @@ class GetModelsModelCollectionItemValidationDatasetResult(dict):
         :param str dataset_type: Type of the Dataset.
         :param str object: The object name of the input data file.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "dataset_id", dataset_id)
-        pulumi.set(__self__, "dataset_type", dataset_type)
-        pulumi.set(__self__, "namespace_name", namespace_name)
-        pulumi.set(__self__, "object", object)
+        GetModelsModelCollectionItemValidationDatasetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            dataset_id=dataset_id,
+            dataset_type=dataset_type,
+            namespace_name=namespace_name,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[str] = None,
+             dataset_id: Optional[str] = None,
+             dataset_type: Optional[str] = None,
+             namespace_name: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if dataset_id is None and 'datasetId' in kwargs:
+            dataset_id = kwargs['datasetId']
+        if dataset_id is None:
+            raise TypeError("Missing 'dataset_id' argument")
+        if dataset_type is None and 'datasetType' in kwargs:
+            dataset_type = kwargs['datasetType']
+        if dataset_type is None:
+            raise TypeError("Missing 'dataset_type' argument")
+        if namespace_name is None and 'namespaceName' in kwargs:
+            namespace_name = kwargs['namespaceName']
+        if namespace_name is None:
+            raise TypeError("Missing 'namespace_name' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
+
+        _setter("bucket", bucket)
+        _setter("dataset_id", dataset_id)
+        _setter("dataset_type", dataset_type)
+        _setter("namespace_name", namespace_name)
+        _setter("object", object)
 
     @property
     @pulumi.getter
@@ -1022,10 +1504,29 @@ class GetProjectsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetProjectsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1047,7 +1548,20 @@ class GetProjectsFilterResult(dict):
 class GetProjectsProjectCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetProjectsProjectCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetProjectsProjectCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetProjectsProjectCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1082,17 +1596,86 @@ class GetProjectsProjectCollectionItemResult(dict):
         :param str time_created: The time the Project was created. An RFC3339 formatted datetime string
         :param str time_updated: The time the Project was updated. An RFC3339 formatted datetime string
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetProjectsProjectCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")

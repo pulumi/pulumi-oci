@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -41,24 +41,73 @@ class BackupDestinationArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "type", type)
+        BackupDestinationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            type=type,
+            connection_string=connection_string,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            local_mount_point_path=local_mount_point_path,
+            mount_type_details=mount_type_details,
+            vpc_users=vpc_users,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             connection_string: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             local_mount_point_path: Optional[pulumi.Input[str]] = None,
+             mount_type_details: Optional[pulumi.Input['BackupDestinationMountTypeDetailsArgs']] = None,
+             vpc_users: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if connection_string is None and 'connectionString' in kwargs:
+            connection_string = kwargs['connectionString']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if local_mount_point_path is None and 'localMountPointPath' in kwargs:
+            local_mount_point_path = kwargs['localMountPointPath']
+        if mount_type_details is None and 'mountTypeDetails' in kwargs:
+            mount_type_details = kwargs['mountTypeDetails']
+        if vpc_users is None and 'vpcUsers' in kwargs:
+            vpc_users = kwargs['vpcUsers']
+
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
+        _setter("type", type)
         if connection_string is not None:
-            pulumi.set(__self__, "connection_string", connection_string)
+            _setter("connection_string", connection_string)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if local_mount_point_path is not None:
             warnings.warn("""The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.""", DeprecationWarning)
             pulumi.log.warn("""local_mount_point_path is deprecated: The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.""")
         if local_mount_point_path is not None:
-            pulumi.set(__self__, "local_mount_point_path", local_mount_point_path)
+            _setter("local_mount_point_path", local_mount_point_path)
         if mount_type_details is not None:
-            pulumi.set(__self__, "mount_type_details", mount_type_details)
+            _setter("mount_type_details", mount_type_details)
         if vpc_users is not None:
-            pulumi.set(__self__, "vpc_users", vpc_users)
+            _setter("vpc_users", vpc_users)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -218,41 +267,110 @@ class _BackupDestinationState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _BackupDestinationState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            associated_databases=associated_databases,
+            compartment_id=compartment_id,
+            connection_string=connection_string,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            local_mount_point_path=local_mount_point_path,
+            mount_type_details=mount_type_details,
+            nfs_mount_type=nfs_mount_type,
+            nfs_server_export=nfs_server_export,
+            nfs_servers=nfs_servers,
+            state=state,
+            time_created=time_created,
+            type=type,
+            vpc_users=vpc_users,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             associated_databases: Optional[pulumi.Input[Sequence[pulumi.Input['BackupDestinationAssociatedDatabaseArgs']]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             connection_string: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             local_mount_point_path: Optional[pulumi.Input[str]] = None,
+             mount_type_details: Optional[pulumi.Input['BackupDestinationMountTypeDetailsArgs']] = None,
+             nfs_mount_type: Optional[pulumi.Input[str]] = None,
+             nfs_server_export: Optional[pulumi.Input[str]] = None,
+             nfs_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             vpc_users: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if associated_databases is None and 'associatedDatabases' in kwargs:
+            associated_databases = kwargs['associatedDatabases']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if connection_string is None and 'connectionString' in kwargs:
+            connection_string = kwargs['connectionString']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if local_mount_point_path is None and 'localMountPointPath' in kwargs:
+            local_mount_point_path = kwargs['localMountPointPath']
+        if mount_type_details is None and 'mountTypeDetails' in kwargs:
+            mount_type_details = kwargs['mountTypeDetails']
+        if nfs_mount_type is None and 'nfsMountType' in kwargs:
+            nfs_mount_type = kwargs['nfsMountType']
+        if nfs_server_export is None and 'nfsServerExport' in kwargs:
+            nfs_server_export = kwargs['nfsServerExport']
+        if nfs_servers is None and 'nfsServers' in kwargs:
+            nfs_servers = kwargs['nfsServers']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if vpc_users is None and 'vpcUsers' in kwargs:
+            vpc_users = kwargs['vpcUsers']
+
         if associated_databases is not None:
-            pulumi.set(__self__, "associated_databases", associated_databases)
+            _setter("associated_databases", associated_databases)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if connection_string is not None:
-            pulumi.set(__self__, "connection_string", connection_string)
+            _setter("connection_string", connection_string)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if local_mount_point_path is not None:
             warnings.warn("""The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.""", DeprecationWarning)
             pulumi.log.warn("""local_mount_point_path is deprecated: The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.""")
         if local_mount_point_path is not None:
-            pulumi.set(__self__, "local_mount_point_path", local_mount_point_path)
+            _setter("local_mount_point_path", local_mount_point_path)
         if mount_type_details is not None:
-            pulumi.set(__self__, "mount_type_details", mount_type_details)
+            _setter("mount_type_details", mount_type_details)
         if nfs_mount_type is not None:
-            pulumi.set(__self__, "nfs_mount_type", nfs_mount_type)
+            _setter("nfs_mount_type", nfs_mount_type)
         if nfs_server_export is not None:
-            pulumi.set(__self__, "nfs_server_export", nfs_server_export)
+            _setter("nfs_server_export", nfs_server_export)
         if nfs_servers is not None:
-            pulumi.set(__self__, "nfs_servers", nfs_servers)
+            _setter("nfs_servers", nfs_servers)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
         if vpc_users is not None:
-            pulumi.set(__self__, "vpc_users", vpc_users)
+            _setter("vpc_users", vpc_users)
 
     @property
     @pulumi.getter(name="associatedDatabases")
@@ -577,6 +695,10 @@ class BackupDestination(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            BackupDestinationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -610,6 +732,11 @@ class BackupDestination(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["local_mount_point_path"] = local_mount_point_path
+            if mount_type_details is not None and not isinstance(mount_type_details, BackupDestinationMountTypeDetailsArgs):
+                mount_type_details = mount_type_details or {}
+                def _setter(key, value):
+                    mount_type_details[key] = value
+                BackupDestinationMountTypeDetailsArgs._configure(_setter, **mount_type_details)
             __props__.__dict__["mount_type_details"] = mount_type_details
             if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")

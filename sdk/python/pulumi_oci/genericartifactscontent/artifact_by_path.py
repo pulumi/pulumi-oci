@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['ArtifactByPathArgs', 'ArtifactByPath']
@@ -31,13 +31,42 @@ class ArtifactByPathArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] source: A path to a file on the local system to be uploaded as the artifact. Cannot be defined if `content` is defined.
         """
-        pulumi.set(__self__, "artifact_path", artifact_path)
-        pulumi.set(__self__, "repository_id", repository_id)
-        pulumi.set(__self__, "version", version)
+        ArtifactByPathArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            artifact_path=artifact_path,
+            repository_id=repository_id,
+            version=version,
+            content=content,
+            source=source,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             artifact_path: Optional[pulumi.Input[str]] = None,
+             repository_id: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[str]] = None,
+             content: Optional[pulumi.Input[str]] = None,
+             source: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if artifact_path is None and 'artifactPath' in kwargs:
+            artifact_path = kwargs['artifactPath']
+        if artifact_path is None:
+            raise TypeError("Missing 'artifact_path' argument")
+        if repository_id is None and 'repositoryId' in kwargs:
+            repository_id = kwargs['repositoryId']
+        if repository_id is None:
+            raise TypeError("Missing 'repository_id' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
+
+        _setter("artifact_path", artifact_path)
+        _setter("repository_id", repository_id)
+        _setter("version", version)
         if content is not None:
-            pulumi.set(__self__, "content", content)
+            _setter("content", content)
         if source is not None:
-            pulumi.set(__self__, "source", source)
+            _setter("source", source)
 
     @property
     @pulumi.getter(name="artifactPath")
@@ -141,34 +170,89 @@ class _ArtifactByPathState:
         :param pulumi.Input[str] time_created: An RFC 3339 timestamp indicating when the repository was created.
         :param pulumi.Input[str] version: A user-defined string to describe the artifact version. Example: `1.1.0` or `1.2-beta-2`
         """
+        _ArtifactByPathState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            artifact_id=artifact_id,
+            artifact_path=artifact_path,
+            compartment_id=compartment_id,
+            content=content,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            repository_id=repository_id,
+            sha256=sha256,
+            size_in_bytes=size_in_bytes,
+            source=source,
+            state=state,
+            time_created=time_created,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             artifact_id: Optional[pulumi.Input[str]] = None,
+             artifact_path: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             content: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             repository_id: Optional[pulumi.Input[str]] = None,
+             sha256: Optional[pulumi.Input[str]] = None,
+             size_in_bytes: Optional[pulumi.Input[str]] = None,
+             source: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if artifact_id is None and 'artifactId' in kwargs:
+            artifact_id = kwargs['artifactId']
+        if artifact_path is None and 'artifactPath' in kwargs:
+            artifact_path = kwargs['artifactPath']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if repository_id is None and 'repositoryId' in kwargs:
+            repository_id = kwargs['repositoryId']
+        if size_in_bytes is None and 'sizeInBytes' in kwargs:
+            size_in_bytes = kwargs['sizeInBytes']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if artifact_id is not None:
-            pulumi.set(__self__, "artifact_id", artifact_id)
+            _setter("artifact_id", artifact_id)
         if artifact_path is not None:
-            pulumi.set(__self__, "artifact_path", artifact_path)
+            _setter("artifact_path", artifact_path)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if content is not None:
-            pulumi.set(__self__, "content", content)
+            _setter("content", content)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if repository_id is not None:
-            pulumi.set(__self__, "repository_id", repository_id)
+            _setter("repository_id", repository_id)
         if sha256 is not None:
-            pulumi.set(__self__, "sha256", sha256)
+            _setter("sha256", sha256)
         if size_in_bytes is not None:
-            pulumi.set(__self__, "size_in_bytes", size_in_bytes)
+            _setter("size_in_bytes", size_in_bytes)
         if source is not None:
-            pulumi.set(__self__, "source", source)
+            _setter("source", source)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if version is not None:
-            pulumi.set(__self__, "version", version)
+            _setter("version", version)
 
     @property
     @pulumi.getter(name="artifactId")
@@ -421,6 +505,10 @@ class ArtifactByPath(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ArtifactByPathArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

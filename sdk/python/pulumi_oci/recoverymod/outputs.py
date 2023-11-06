@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -76,20 +76,57 @@ class ProtectedDatabaseMetric(dict):
         :param float retention_period_in_days: The maximum number of days to retain backups for a protected database.
         :param float unprotected_window_in_seconds: This is the time window when there is data loss exposure. The point after which recovery is impossible unless additional redo is available.  This is the time we received the last backup or last redo-log shipped.
         """
+        ProtectedDatabaseMetric._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backup_space_estimate_in_gbs=backup_space_estimate_in_gbs,
+            backup_space_used_in_gbs=backup_space_used_in_gbs,
+            current_retention_period_in_seconds=current_retention_period_in_seconds,
+            db_size_in_gbs=db_size_in_gbs,
+            is_redo_logs_enabled=is_redo_logs_enabled,
+            retention_period_in_days=retention_period_in_days,
+            unprotected_window_in_seconds=unprotected_window_in_seconds,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backup_space_estimate_in_gbs: Optional[float] = None,
+             backup_space_used_in_gbs: Optional[float] = None,
+             current_retention_period_in_seconds: Optional[float] = None,
+             db_size_in_gbs: Optional[float] = None,
+             is_redo_logs_enabled: Optional[bool] = None,
+             retention_period_in_days: Optional[float] = None,
+             unprotected_window_in_seconds: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if backup_space_estimate_in_gbs is None and 'backupSpaceEstimateInGbs' in kwargs:
+            backup_space_estimate_in_gbs = kwargs['backupSpaceEstimateInGbs']
+        if backup_space_used_in_gbs is None and 'backupSpaceUsedInGbs' in kwargs:
+            backup_space_used_in_gbs = kwargs['backupSpaceUsedInGbs']
+        if current_retention_period_in_seconds is None and 'currentRetentionPeriodInSeconds' in kwargs:
+            current_retention_period_in_seconds = kwargs['currentRetentionPeriodInSeconds']
+        if db_size_in_gbs is None and 'dbSizeInGbs' in kwargs:
+            db_size_in_gbs = kwargs['dbSizeInGbs']
+        if is_redo_logs_enabled is None and 'isRedoLogsEnabled' in kwargs:
+            is_redo_logs_enabled = kwargs['isRedoLogsEnabled']
+        if retention_period_in_days is None and 'retentionPeriodInDays' in kwargs:
+            retention_period_in_days = kwargs['retentionPeriodInDays']
+        if unprotected_window_in_seconds is None and 'unprotectedWindowInSeconds' in kwargs:
+            unprotected_window_in_seconds = kwargs['unprotectedWindowInSeconds']
+
         if backup_space_estimate_in_gbs is not None:
-            pulumi.set(__self__, "backup_space_estimate_in_gbs", backup_space_estimate_in_gbs)
+            _setter("backup_space_estimate_in_gbs", backup_space_estimate_in_gbs)
         if backup_space_used_in_gbs is not None:
-            pulumi.set(__self__, "backup_space_used_in_gbs", backup_space_used_in_gbs)
+            _setter("backup_space_used_in_gbs", backup_space_used_in_gbs)
         if current_retention_period_in_seconds is not None:
-            pulumi.set(__self__, "current_retention_period_in_seconds", current_retention_period_in_seconds)
+            _setter("current_retention_period_in_seconds", current_retention_period_in_seconds)
         if db_size_in_gbs is not None:
-            pulumi.set(__self__, "db_size_in_gbs", db_size_in_gbs)
+            _setter("db_size_in_gbs", db_size_in_gbs)
         if is_redo_logs_enabled is not None:
-            pulumi.set(__self__, "is_redo_logs_enabled", is_redo_logs_enabled)
+            _setter("is_redo_logs_enabled", is_redo_logs_enabled)
         if retention_period_in_days is not None:
-            pulumi.set(__self__, "retention_period_in_days", retention_period_in_days)
+            _setter("retention_period_in_days", retention_period_in_days)
         if unprotected_window_in_seconds is not None:
-            pulumi.set(__self__, "unprotected_window_in_seconds", unprotected_window_in_seconds)
+            _setter("unprotected_window_in_seconds", unprotected_window_in_seconds)
 
     @property
     @pulumi.getter(name="backupSpaceEstimateInGbs")
@@ -178,9 +215,26 @@ class ProtectedDatabaseRecoveryServiceSubnet(dict):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str state: The current state of the Protected Database.
         """
-        pulumi.set(__self__, "recovery_service_subnet_id", recovery_service_subnet_id)
+        ProtectedDatabaseRecoveryServiceSubnet._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            recovery_service_subnet_id=recovery_service_subnet_id,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             recovery_service_subnet_id: Optional[str] = None,
+             state: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if recovery_service_subnet_id is None and 'recoveryServiceSubnetId' in kwargs:
+            recovery_service_subnet_id = kwargs['recoveryServiceSubnetId']
+        if recovery_service_subnet_id is None:
+            raise TypeError("Missing 'recovery_service_subnet_id' argument")
+
+        _setter("recovery_service_subnet_id", recovery_service_subnet_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter(name="recoveryServiceSubnetId")
@@ -222,13 +276,64 @@ class GetProtectedDatabaseMetricResult(dict):
         :param float retention_period_in_days: The maximum number of days to retain backups for a protected database.
         :param float unprotected_window_in_seconds: This is the time window when there is data loss exposure. The point after which recovery is impossible unless additional redo is available.  This is the time we received the last backup or last redo-log shipped.
         """
-        pulumi.set(__self__, "backup_space_estimate_in_gbs", backup_space_estimate_in_gbs)
-        pulumi.set(__self__, "backup_space_used_in_gbs", backup_space_used_in_gbs)
-        pulumi.set(__self__, "current_retention_period_in_seconds", current_retention_period_in_seconds)
-        pulumi.set(__self__, "db_size_in_gbs", db_size_in_gbs)
-        pulumi.set(__self__, "is_redo_logs_enabled", is_redo_logs_enabled)
-        pulumi.set(__self__, "retention_period_in_days", retention_period_in_days)
-        pulumi.set(__self__, "unprotected_window_in_seconds", unprotected_window_in_seconds)
+        GetProtectedDatabaseMetricResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backup_space_estimate_in_gbs=backup_space_estimate_in_gbs,
+            backup_space_used_in_gbs=backup_space_used_in_gbs,
+            current_retention_period_in_seconds=current_retention_period_in_seconds,
+            db_size_in_gbs=db_size_in_gbs,
+            is_redo_logs_enabled=is_redo_logs_enabled,
+            retention_period_in_days=retention_period_in_days,
+            unprotected_window_in_seconds=unprotected_window_in_seconds,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backup_space_estimate_in_gbs: Optional[float] = None,
+             backup_space_used_in_gbs: Optional[float] = None,
+             current_retention_period_in_seconds: Optional[float] = None,
+             db_size_in_gbs: Optional[float] = None,
+             is_redo_logs_enabled: Optional[bool] = None,
+             retention_period_in_days: Optional[float] = None,
+             unprotected_window_in_seconds: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if backup_space_estimate_in_gbs is None and 'backupSpaceEstimateInGbs' in kwargs:
+            backup_space_estimate_in_gbs = kwargs['backupSpaceEstimateInGbs']
+        if backup_space_estimate_in_gbs is None:
+            raise TypeError("Missing 'backup_space_estimate_in_gbs' argument")
+        if backup_space_used_in_gbs is None and 'backupSpaceUsedInGbs' in kwargs:
+            backup_space_used_in_gbs = kwargs['backupSpaceUsedInGbs']
+        if backup_space_used_in_gbs is None:
+            raise TypeError("Missing 'backup_space_used_in_gbs' argument")
+        if current_retention_period_in_seconds is None and 'currentRetentionPeriodInSeconds' in kwargs:
+            current_retention_period_in_seconds = kwargs['currentRetentionPeriodInSeconds']
+        if current_retention_period_in_seconds is None:
+            raise TypeError("Missing 'current_retention_period_in_seconds' argument")
+        if db_size_in_gbs is None and 'dbSizeInGbs' in kwargs:
+            db_size_in_gbs = kwargs['dbSizeInGbs']
+        if db_size_in_gbs is None:
+            raise TypeError("Missing 'db_size_in_gbs' argument")
+        if is_redo_logs_enabled is None and 'isRedoLogsEnabled' in kwargs:
+            is_redo_logs_enabled = kwargs['isRedoLogsEnabled']
+        if is_redo_logs_enabled is None:
+            raise TypeError("Missing 'is_redo_logs_enabled' argument")
+        if retention_period_in_days is None and 'retentionPeriodInDays' in kwargs:
+            retention_period_in_days = kwargs['retentionPeriodInDays']
+        if retention_period_in_days is None:
+            raise TypeError("Missing 'retention_period_in_days' argument")
+        if unprotected_window_in_seconds is None and 'unprotectedWindowInSeconds' in kwargs:
+            unprotected_window_in_seconds = kwargs['unprotectedWindowInSeconds']
+        if unprotected_window_in_seconds is None:
+            raise TypeError("Missing 'unprotected_window_in_seconds' argument")
+
+        _setter("backup_space_estimate_in_gbs", backup_space_estimate_in_gbs)
+        _setter("backup_space_used_in_gbs", backup_space_used_in_gbs)
+        _setter("current_retention_period_in_seconds", current_retention_period_in_seconds)
+        _setter("db_size_in_gbs", db_size_in_gbs)
+        _setter("is_redo_logs_enabled", is_redo_logs_enabled)
+        _setter("retention_period_in_days", retention_period_in_days)
+        _setter("unprotected_window_in_seconds", unprotected_window_in_seconds)
 
     @property
     @pulumi.getter(name="backupSpaceEstimateInGbs")
@@ -296,8 +401,27 @@ class GetProtectedDatabaseRecoveryServiceSubnetResult(dict):
         :param str recovery_service_subnet_id: Recovery Service Subnet Identifier.
         :param str state: The current state of the Protected Database.
         """
-        pulumi.set(__self__, "recovery_service_subnet_id", recovery_service_subnet_id)
-        pulumi.set(__self__, "state", state)
+        GetProtectedDatabaseRecoveryServiceSubnetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            recovery_service_subnet_id=recovery_service_subnet_id,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             recovery_service_subnet_id: Optional[str] = None,
+             state: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if recovery_service_subnet_id is None and 'recoveryServiceSubnetId' in kwargs:
+            recovery_service_subnet_id = kwargs['recoveryServiceSubnetId']
+        if recovery_service_subnet_id is None:
+            raise TypeError("Missing 'recovery_service_subnet_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+
+        _setter("recovery_service_subnet_id", recovery_service_subnet_id)
+        _setter("state", state)
 
     @property
     @pulumi.getter(name="recoveryServiceSubnetId")
@@ -322,10 +446,29 @@ class GetProtectedDatabasesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetProtectedDatabasesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -347,7 +490,20 @@ class GetProtectedDatabasesFilterResult(dict):
 class GetProtectedDatabasesProtectedDatabaseCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetProtectedDatabasesProtectedDatabaseCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetProtectedDatabasesProtectedDatabaseCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetProtectedDatabasesProtectedDatabaseCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -406,28 +562,159 @@ class GetProtectedDatabasesProtectedDatabaseCollectionItemResult(dict):
         :param str time_updated: An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
         :param str vpc_user_name: The virtual private catalog (VPC) user credentials that authenticates the protected database to access Recovery Service.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "database_id", database_id)
-        pulumi.set(__self__, "database_size", database_size)
-        pulumi.set(__self__, "db_unique_name", db_unique_name)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "health", health)
-        pulumi.set(__self__, "health_details", health_details)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_read_only_resource", is_read_only_resource)
-        pulumi.set(__self__, "is_redo_logs_shipped", is_redo_logs_shipped)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "metrics", metrics)
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "protection_policy_id", protection_policy_id)
-        pulumi.set(__self__, "recovery_service_subnets", recovery_service_subnets)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "vpc_user_name", vpc_user_name)
+        GetProtectedDatabasesProtectedDatabaseCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            database_id=database_id,
+            database_size=database_size,
+            db_unique_name=db_unique_name,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            health=health,
+            health_details=health_details,
+            id=id,
+            is_read_only_resource=is_read_only_resource,
+            is_redo_logs_shipped=is_redo_logs_shipped,
+            lifecycle_details=lifecycle_details,
+            metrics=metrics,
+            password=password,
+            protection_policy_id=protection_policy_id,
+            recovery_service_subnets=recovery_service_subnets,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            vpc_user_name=vpc_user_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             database_id: Optional[str] = None,
+             database_size: Optional[str] = None,
+             db_unique_name: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             health: Optional[str] = None,
+             health_details: Optional[str] = None,
+             id: Optional[str] = None,
+             is_read_only_resource: Optional[bool] = None,
+             is_redo_logs_shipped: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             metrics: Optional[Sequence['outputs.GetProtectedDatabasesProtectedDatabaseCollectionItemMetricResult']] = None,
+             password: Optional[str] = None,
+             protection_policy_id: Optional[str] = None,
+             recovery_service_subnets: Optional[Sequence['outputs.GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetResult']] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             vpc_user_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if database_id is None and 'databaseId' in kwargs:
+            database_id = kwargs['databaseId']
+        if database_id is None:
+            raise TypeError("Missing 'database_id' argument")
+        if database_size is None and 'databaseSize' in kwargs:
+            database_size = kwargs['databaseSize']
+        if database_size is None:
+            raise TypeError("Missing 'database_size' argument")
+        if db_unique_name is None and 'dbUniqueName' in kwargs:
+            db_unique_name = kwargs['dbUniqueName']
+        if db_unique_name is None:
+            raise TypeError("Missing 'db_unique_name' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if health is None:
+            raise TypeError("Missing 'health' argument")
+        if health_details is None and 'healthDetails' in kwargs:
+            health_details = kwargs['healthDetails']
+        if health_details is None:
+            raise TypeError("Missing 'health_details' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_read_only_resource is None and 'isReadOnlyResource' in kwargs:
+            is_read_only_resource = kwargs['isReadOnlyResource']
+        if is_read_only_resource is None:
+            raise TypeError("Missing 'is_read_only_resource' argument")
+        if is_redo_logs_shipped is None and 'isRedoLogsShipped' in kwargs:
+            is_redo_logs_shipped = kwargs['isRedoLogsShipped']
+        if is_redo_logs_shipped is None:
+            raise TypeError("Missing 'is_redo_logs_shipped' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if metrics is None:
+            raise TypeError("Missing 'metrics' argument")
+        if password is None:
+            raise TypeError("Missing 'password' argument")
+        if protection_policy_id is None and 'protectionPolicyId' in kwargs:
+            protection_policy_id = kwargs['protectionPolicyId']
+        if protection_policy_id is None:
+            raise TypeError("Missing 'protection_policy_id' argument")
+        if recovery_service_subnets is None and 'recoveryServiceSubnets' in kwargs:
+            recovery_service_subnets = kwargs['recoveryServiceSubnets']
+        if recovery_service_subnets is None:
+            raise TypeError("Missing 'recovery_service_subnets' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if vpc_user_name is None and 'vpcUserName' in kwargs:
+            vpc_user_name = kwargs['vpcUserName']
+        if vpc_user_name is None:
+            raise TypeError("Missing 'vpc_user_name' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("database_id", database_id)
+        _setter("database_size", database_size)
+        _setter("db_unique_name", db_unique_name)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("health", health)
+        _setter("health_details", health_details)
+        _setter("id", id)
+        _setter("is_read_only_resource", is_read_only_resource)
+        _setter("is_redo_logs_shipped", is_redo_logs_shipped)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("metrics", metrics)
+        _setter("password", password)
+        _setter("protection_policy_id", protection_policy_id)
+        _setter("recovery_service_subnets", recovery_service_subnets)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("vpc_user_name", vpc_user_name)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -625,13 +912,64 @@ class GetProtectedDatabasesProtectedDatabaseCollectionItemMetricResult(dict):
         :param float retention_period_in_days: The maximum number of days to retain backups for a protected database.
         :param float unprotected_window_in_seconds: This is the time window when there is data loss exposure. The point after which recovery is impossible unless additional redo is available.  This is the time we received the last backup or last redo-log shipped.
         """
-        pulumi.set(__self__, "backup_space_estimate_in_gbs", backup_space_estimate_in_gbs)
-        pulumi.set(__self__, "backup_space_used_in_gbs", backup_space_used_in_gbs)
-        pulumi.set(__self__, "current_retention_period_in_seconds", current_retention_period_in_seconds)
-        pulumi.set(__self__, "db_size_in_gbs", db_size_in_gbs)
-        pulumi.set(__self__, "is_redo_logs_enabled", is_redo_logs_enabled)
-        pulumi.set(__self__, "retention_period_in_days", retention_period_in_days)
-        pulumi.set(__self__, "unprotected_window_in_seconds", unprotected_window_in_seconds)
+        GetProtectedDatabasesProtectedDatabaseCollectionItemMetricResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backup_space_estimate_in_gbs=backup_space_estimate_in_gbs,
+            backup_space_used_in_gbs=backup_space_used_in_gbs,
+            current_retention_period_in_seconds=current_retention_period_in_seconds,
+            db_size_in_gbs=db_size_in_gbs,
+            is_redo_logs_enabled=is_redo_logs_enabled,
+            retention_period_in_days=retention_period_in_days,
+            unprotected_window_in_seconds=unprotected_window_in_seconds,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backup_space_estimate_in_gbs: Optional[float] = None,
+             backup_space_used_in_gbs: Optional[float] = None,
+             current_retention_period_in_seconds: Optional[float] = None,
+             db_size_in_gbs: Optional[float] = None,
+             is_redo_logs_enabled: Optional[bool] = None,
+             retention_period_in_days: Optional[float] = None,
+             unprotected_window_in_seconds: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if backup_space_estimate_in_gbs is None and 'backupSpaceEstimateInGbs' in kwargs:
+            backup_space_estimate_in_gbs = kwargs['backupSpaceEstimateInGbs']
+        if backup_space_estimate_in_gbs is None:
+            raise TypeError("Missing 'backup_space_estimate_in_gbs' argument")
+        if backup_space_used_in_gbs is None and 'backupSpaceUsedInGbs' in kwargs:
+            backup_space_used_in_gbs = kwargs['backupSpaceUsedInGbs']
+        if backup_space_used_in_gbs is None:
+            raise TypeError("Missing 'backup_space_used_in_gbs' argument")
+        if current_retention_period_in_seconds is None and 'currentRetentionPeriodInSeconds' in kwargs:
+            current_retention_period_in_seconds = kwargs['currentRetentionPeriodInSeconds']
+        if current_retention_period_in_seconds is None:
+            raise TypeError("Missing 'current_retention_period_in_seconds' argument")
+        if db_size_in_gbs is None and 'dbSizeInGbs' in kwargs:
+            db_size_in_gbs = kwargs['dbSizeInGbs']
+        if db_size_in_gbs is None:
+            raise TypeError("Missing 'db_size_in_gbs' argument")
+        if is_redo_logs_enabled is None and 'isRedoLogsEnabled' in kwargs:
+            is_redo_logs_enabled = kwargs['isRedoLogsEnabled']
+        if is_redo_logs_enabled is None:
+            raise TypeError("Missing 'is_redo_logs_enabled' argument")
+        if retention_period_in_days is None and 'retentionPeriodInDays' in kwargs:
+            retention_period_in_days = kwargs['retentionPeriodInDays']
+        if retention_period_in_days is None:
+            raise TypeError("Missing 'retention_period_in_days' argument")
+        if unprotected_window_in_seconds is None and 'unprotectedWindowInSeconds' in kwargs:
+            unprotected_window_in_seconds = kwargs['unprotectedWindowInSeconds']
+        if unprotected_window_in_seconds is None:
+            raise TypeError("Missing 'unprotected_window_in_seconds' argument")
+
+        _setter("backup_space_estimate_in_gbs", backup_space_estimate_in_gbs)
+        _setter("backup_space_used_in_gbs", backup_space_used_in_gbs)
+        _setter("current_retention_period_in_seconds", current_retention_period_in_seconds)
+        _setter("db_size_in_gbs", db_size_in_gbs)
+        _setter("is_redo_logs_enabled", is_redo_logs_enabled)
+        _setter("retention_period_in_days", retention_period_in_days)
+        _setter("unprotected_window_in_seconds", unprotected_window_in_seconds)
 
     @property
     @pulumi.getter(name="backupSpaceEstimateInGbs")
@@ -699,8 +1037,27 @@ class GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetR
         :param str recovery_service_subnet_id: The recovery service subnet OCID.
         :param str state: A filter to return only the resources that match the specified lifecycle state.
         """
-        pulumi.set(__self__, "recovery_service_subnet_id", recovery_service_subnet_id)
-        pulumi.set(__self__, "state", state)
+        GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            recovery_service_subnet_id=recovery_service_subnet_id,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             recovery_service_subnet_id: Optional[str] = None,
+             state: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if recovery_service_subnet_id is None and 'recoveryServiceSubnetId' in kwargs:
+            recovery_service_subnet_id = kwargs['recoveryServiceSubnetId']
+        if recovery_service_subnet_id is None:
+            raise TypeError("Missing 'recovery_service_subnet_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+
+        _setter("recovery_service_subnet_id", recovery_service_subnet_id)
+        _setter("state", state)
 
     @property
     @pulumi.getter(name="recoveryServiceSubnetId")
@@ -725,10 +1082,29 @@ class GetProtectionPoliciesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetProtectionPoliciesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -750,7 +1126,20 @@ class GetProtectionPoliciesFilterResult(dict):
 class GetProtectionPoliciesProtectionPolicyCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetProtectionPoliciesProtectionPolicyCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetProtectionPoliciesProtectionPolicyCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetProtectionPoliciesProtectionPolicyCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -787,18 +1176,95 @@ class GetProtectionPoliciesProtectionPolicyCollectionItemResult(dict):
         :param str time_created: An RFC3339 formatted datetime string that indicates the created time for the protection policy. For example: '2020-05-22T21:10:29.600Z'.
         :param str time_updated: An RFC3339 formatted datetime string that indicates the updated time for the protection policy. For example: '2020-05-22T21:10:29.600Z'.
         """
-        pulumi.set(__self__, "backup_retention_period_in_days", backup_retention_period_in_days)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_predefined_policy", is_predefined_policy)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetProtectionPoliciesProtectionPolicyCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backup_retention_period_in_days=backup_retention_period_in_days,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_predefined_policy=is_predefined_policy,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backup_retention_period_in_days: Optional[int] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_predefined_policy: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if backup_retention_period_in_days is None and 'backupRetentionPeriodInDays' in kwargs:
+            backup_retention_period_in_days = kwargs['backupRetentionPeriodInDays']
+        if backup_retention_period_in_days is None:
+            raise TypeError("Missing 'backup_retention_period_in_days' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_predefined_policy is None and 'isPredefinedPolicy' in kwargs:
+            is_predefined_policy = kwargs['isPredefinedPolicy']
+        if is_predefined_policy is None:
+            raise TypeError("Missing 'is_predefined_policy' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+
+        _setter("backup_retention_period_in_days", backup_retention_period_in_days)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_predefined_policy", is_predefined_policy)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="backupRetentionPeriodInDays")
@@ -903,10 +1369,29 @@ class GetRecoveryServiceSubnetsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetRecoveryServiceSubnetsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -928,7 +1413,20 @@ class GetRecoveryServiceSubnetsFilterResult(dict):
 class GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -971,18 +1469,95 @@ class GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemResult(dict):
         :param str time_updated: An RFC3339 formatted datetime string that indicates the last updated time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
         :param str vcn_id: The OCID of the virtual cloud network (VCN) associated with the recovery service subnet.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "vcn_id", vcn_id)
+        GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            subnet_id=subnet_id,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            vcn_id=vcn_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             state: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             vcn_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if vcn_id is None and 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+        if vcn_id is None:
+            raise TypeError("Missing 'vcn_id' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("state", state)
+        _setter("subnet_id", subnet_id)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="compartmentId")

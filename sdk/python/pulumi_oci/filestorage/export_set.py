@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['ExportSetArgs', 'ExportSet']
@@ -28,13 +28,40 @@ class ExportSetArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "mount_target_id", mount_target_id)
+        ExportSetArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            mount_target_id=mount_target_id,
+            display_name=display_name,
+            max_fs_stat_bytes=max_fs_stat_bytes,
+            max_fs_stat_files=max_fs_stat_files,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             mount_target_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             max_fs_stat_bytes: Optional[pulumi.Input[str]] = None,
+             max_fs_stat_files: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if mount_target_id is None and 'mountTargetId' in kwargs:
+            mount_target_id = kwargs['mountTargetId']
+        if mount_target_id is None:
+            raise TypeError("Missing 'mount_target_id' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if max_fs_stat_bytes is None and 'maxFsStatBytes' in kwargs:
+            max_fs_stat_bytes = kwargs['maxFsStatBytes']
+        if max_fs_stat_files is None and 'maxFsStatFiles' in kwargs:
+            max_fs_stat_files = kwargs['maxFsStatFiles']
+
+        _setter("mount_target_id", mount_target_id)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if max_fs_stat_bytes is not None:
-            pulumi.set(__self__, "max_fs_stat_bytes", max_fs_stat_bytes)
+            _setter("max_fs_stat_bytes", max_fs_stat_bytes)
         if max_fs_stat_files is not None:
-            pulumi.set(__self__, "max_fs_stat_files", max_fs_stat_files)
+            _setter("max_fs_stat_files", max_fs_stat_files)
 
     @property
     @pulumi.getter(name="mountTargetId")
@@ -115,24 +142,67 @@ class _ExportSetState:
         :param pulumi.Input[str] time_created: The date and time the export set was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual cloud network (VCN) the export set is in.
         """
+        _ExportSetState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            compartment_id=compartment_id,
+            display_name=display_name,
+            max_fs_stat_bytes=max_fs_stat_bytes,
+            max_fs_stat_files=max_fs_stat_files,
+            mount_target_id=mount_target_id,
+            state=state,
+            time_created=time_created,
+            vcn_id=vcn_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             max_fs_stat_bytes: Optional[pulumi.Input[str]] = None,
+             max_fs_stat_files: Optional[pulumi.Input[str]] = None,
+             mount_target_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             vcn_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if availability_domain is None and 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if max_fs_stat_bytes is None and 'maxFsStatBytes' in kwargs:
+            max_fs_stat_bytes = kwargs['maxFsStatBytes']
+        if max_fs_stat_files is None and 'maxFsStatFiles' in kwargs:
+            max_fs_stat_files = kwargs['maxFsStatFiles']
+        if mount_target_id is None and 'mountTargetId' in kwargs:
+            mount_target_id = kwargs['mountTargetId']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if vcn_id is None and 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if max_fs_stat_bytes is not None:
-            pulumi.set(__self__, "max_fs_stat_bytes", max_fs_stat_bytes)
+            _setter("max_fs_stat_bytes", max_fs_stat_bytes)
         if max_fs_stat_files is not None:
-            pulumi.set(__self__, "max_fs_stat_files", max_fs_stat_files)
+            _setter("max_fs_stat_files", max_fs_stat_files)
         if mount_target_id is not None:
-            pulumi.set(__self__, "mount_target_id", mount_target_id)
+            _setter("mount_target_id", mount_target_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if vcn_id is not None:
-            pulumi.set(__self__, "vcn_id", vcn_id)
+            _setter("vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -326,6 +396,10 @@ class ExportSet(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ExportSetArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

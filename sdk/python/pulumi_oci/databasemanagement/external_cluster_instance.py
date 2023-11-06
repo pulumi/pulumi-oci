@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['ExternalClusterInstanceArgs', 'ExternalClusterInstance']
@@ -25,9 +25,28 @@ class ExternalClusterInstanceArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "external_cluster_instance_id", external_cluster_instance_id)
+        ExternalClusterInstanceArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            external_cluster_instance_id=external_cluster_instance_id,
+            external_connector_id=external_connector_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             external_cluster_instance_id: Optional[pulumi.Input[str]] = None,
+             external_connector_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if external_cluster_instance_id is None and 'externalClusterInstanceId' in kwargs:
+            external_cluster_instance_id = kwargs['externalClusterInstanceId']
+        if external_cluster_instance_id is None:
+            raise TypeError("Missing 'external_cluster_instance_id' argument")
+        if external_connector_id is None and 'externalConnectorId' in kwargs:
+            external_connector_id = kwargs['externalConnectorId']
+
+        _setter("external_cluster_instance_id", external_cluster_instance_id)
         if external_connector_id is not None:
-            pulumi.set(__self__, "external_connector_id", external_connector_id)
+            _setter("external_connector_id", external_connector_id)
 
     @property
     @pulumi.getter(name="externalClusterInstanceId")
@@ -100,38 +119,109 @@ class _ExternalClusterInstanceState:
         :param pulumi.Input[str] time_created: The date and time the external cluster instance was created.
         :param pulumi.Input[str] time_updated: The date and time the external cluster instance was last updated.
         """
+        _ExternalClusterInstanceState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            adr_home_directory=adr_home_directory,
+            compartment_id=compartment_id,
+            component_name=component_name,
+            crs_base_directory=crs_base_directory,
+            display_name=display_name,
+            external_cluster_id=external_cluster_id,
+            external_cluster_instance_id=external_cluster_instance_id,
+            external_connector_id=external_connector_id,
+            external_db_node_id=external_db_node_id,
+            external_db_system_id=external_db_system_id,
+            host_name=host_name,
+            lifecycle_details=lifecycle_details,
+            node_role=node_role,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             adr_home_directory: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             component_name: Optional[pulumi.Input[str]] = None,
+             crs_base_directory: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             external_cluster_id: Optional[pulumi.Input[str]] = None,
+             external_cluster_instance_id: Optional[pulumi.Input[str]] = None,
+             external_connector_id: Optional[pulumi.Input[str]] = None,
+             external_db_node_id: Optional[pulumi.Input[str]] = None,
+             external_db_system_id: Optional[pulumi.Input[str]] = None,
+             host_name: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             node_role: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if adr_home_directory is None and 'adrHomeDirectory' in kwargs:
+            adr_home_directory = kwargs['adrHomeDirectory']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if component_name is None and 'componentName' in kwargs:
+            component_name = kwargs['componentName']
+        if crs_base_directory is None and 'crsBaseDirectory' in kwargs:
+            crs_base_directory = kwargs['crsBaseDirectory']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if external_cluster_id is None and 'externalClusterId' in kwargs:
+            external_cluster_id = kwargs['externalClusterId']
+        if external_cluster_instance_id is None and 'externalClusterInstanceId' in kwargs:
+            external_cluster_instance_id = kwargs['externalClusterInstanceId']
+        if external_connector_id is None and 'externalConnectorId' in kwargs:
+            external_connector_id = kwargs['externalConnectorId']
+        if external_db_node_id is None and 'externalDbNodeId' in kwargs:
+            external_db_node_id = kwargs['externalDbNodeId']
+        if external_db_system_id is None and 'externalDbSystemId' in kwargs:
+            external_db_system_id = kwargs['externalDbSystemId']
+        if host_name is None and 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if node_role is None and 'nodeRole' in kwargs:
+            node_role = kwargs['nodeRole']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if adr_home_directory is not None:
-            pulumi.set(__self__, "adr_home_directory", adr_home_directory)
+            _setter("adr_home_directory", adr_home_directory)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if component_name is not None:
-            pulumi.set(__self__, "component_name", component_name)
+            _setter("component_name", component_name)
         if crs_base_directory is not None:
-            pulumi.set(__self__, "crs_base_directory", crs_base_directory)
+            _setter("crs_base_directory", crs_base_directory)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if external_cluster_id is not None:
-            pulumi.set(__self__, "external_cluster_id", external_cluster_id)
+            _setter("external_cluster_id", external_cluster_id)
         if external_cluster_instance_id is not None:
-            pulumi.set(__self__, "external_cluster_instance_id", external_cluster_instance_id)
+            _setter("external_cluster_instance_id", external_cluster_instance_id)
         if external_connector_id is not None:
-            pulumi.set(__self__, "external_connector_id", external_connector_id)
+            _setter("external_connector_id", external_connector_id)
         if external_db_node_id is not None:
-            pulumi.set(__self__, "external_db_node_id", external_db_node_id)
+            _setter("external_db_node_id", external_db_node_id)
         if external_db_system_id is not None:
-            pulumi.set(__self__, "external_db_system_id", external_db_system_id)
+            _setter("external_db_system_id", external_db_system_id)
         if host_name is not None:
-            pulumi.set(__self__, "host_name", host_name)
+            _setter("host_name", host_name)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if node_role is not None:
-            pulumi.set(__self__, "node_role", node_role)
+            _setter("node_role", node_role)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="adrHomeDirectory")
@@ -389,6 +479,10 @@ class ExternalClusterInstance(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ExternalClusterInstanceArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

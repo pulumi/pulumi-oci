@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -49,29 +49,94 @@ class ProfileArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "profile_type", profile_type)
+        ProfileArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            profile_type=profile_type,
+            arch_type=arch_type,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            lifecycle_stage_id=lifecycle_stage_id,
+            managed_instance_group_id=managed_instance_group_id,
+            management_station_id=management_station_id,
+            os_family=os_family,
+            software_source_ids=software_source_ids,
+            vendor_name=vendor_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             profile_type: Optional[pulumi.Input[str]] = None,
+             arch_type: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             lifecycle_stage_id: Optional[pulumi.Input[str]] = None,
+             managed_instance_group_id: Optional[pulumi.Input[str]] = None,
+             management_station_id: Optional[pulumi.Input[str]] = None,
+             os_family: Optional[pulumi.Input[str]] = None,
+             software_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             vendor_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if profile_type is None and 'profileType' in kwargs:
+            profile_type = kwargs['profileType']
+        if profile_type is None:
+            raise TypeError("Missing 'profile_type' argument")
+        if arch_type is None and 'archType' in kwargs:
+            arch_type = kwargs['archType']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if lifecycle_stage_id is None and 'lifecycleStageId' in kwargs:
+            lifecycle_stage_id = kwargs['lifecycleStageId']
+        if managed_instance_group_id is None and 'managedInstanceGroupId' in kwargs:
+            managed_instance_group_id = kwargs['managedInstanceGroupId']
+        if management_station_id is None and 'managementStationId' in kwargs:
+            management_station_id = kwargs['managementStationId']
+        if os_family is None and 'osFamily' in kwargs:
+            os_family = kwargs['osFamily']
+        if software_source_ids is None and 'softwareSourceIds' in kwargs:
+            software_source_ids = kwargs['softwareSourceIds']
+        if vendor_name is None and 'vendorName' in kwargs:
+            vendor_name = kwargs['vendorName']
+
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
+        _setter("profile_type", profile_type)
         if arch_type is not None:
-            pulumi.set(__self__, "arch_type", arch_type)
+            _setter("arch_type", arch_type)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if lifecycle_stage_id is not None:
-            pulumi.set(__self__, "lifecycle_stage_id", lifecycle_stage_id)
+            _setter("lifecycle_stage_id", lifecycle_stage_id)
         if managed_instance_group_id is not None:
-            pulumi.set(__self__, "managed_instance_group_id", managed_instance_group_id)
+            _setter("managed_instance_group_id", managed_instance_group_id)
         if management_station_id is not None:
-            pulumi.set(__self__, "management_station_id", management_station_id)
+            _setter("management_station_id", management_station_id)
         if os_family is not None:
-            pulumi.set(__self__, "os_family", os_family)
+            _setter("os_family", os_family)
         if software_source_ids is not None:
-            pulumi.set(__self__, "software_source_ids", software_source_ids)
+            _setter("software_source_ids", software_source_ids)
         if vendor_name is not None:
-            pulumi.set(__self__, "vendor_name", vendor_name)
+            _setter("vendor_name", vendor_name)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -284,46 +349,131 @@ class _ProfileState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _ProfileState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            arch_type=arch_type,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            lifecycle_environments=lifecycle_environments,
+            lifecycle_stage_id=lifecycle_stage_id,
+            lifecycle_stages=lifecycle_stages,
+            managed_instance_group_id=managed_instance_group_id,
+            managed_instance_groups=managed_instance_groups,
+            management_station_id=management_station_id,
+            os_family=os_family,
+            profile_type=profile_type,
+            software_source_ids=software_source_ids,
+            software_sources=software_sources,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            vendor_name=vendor_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             arch_type: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             lifecycle_environments: Optional[pulumi.Input[Sequence[pulumi.Input['ProfileLifecycleEnvironmentArgs']]]] = None,
+             lifecycle_stage_id: Optional[pulumi.Input[str]] = None,
+             lifecycle_stages: Optional[pulumi.Input[Sequence[pulumi.Input['ProfileLifecycleStageArgs']]]] = None,
+             managed_instance_group_id: Optional[pulumi.Input[str]] = None,
+             managed_instance_groups: Optional[pulumi.Input[Sequence[pulumi.Input['ProfileManagedInstanceGroupArgs']]]] = None,
+             management_station_id: Optional[pulumi.Input[str]] = None,
+             os_family: Optional[pulumi.Input[str]] = None,
+             profile_type: Optional[pulumi.Input[str]] = None,
+             software_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             software_sources: Optional[pulumi.Input[Sequence[pulumi.Input['ProfileSoftwareSourceArgs']]]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             vendor_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if arch_type is None and 'archType' in kwargs:
+            arch_type = kwargs['archType']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if lifecycle_environments is None and 'lifecycleEnvironments' in kwargs:
+            lifecycle_environments = kwargs['lifecycleEnvironments']
+        if lifecycle_stage_id is None and 'lifecycleStageId' in kwargs:
+            lifecycle_stage_id = kwargs['lifecycleStageId']
+        if lifecycle_stages is None and 'lifecycleStages' in kwargs:
+            lifecycle_stages = kwargs['lifecycleStages']
+        if managed_instance_group_id is None and 'managedInstanceGroupId' in kwargs:
+            managed_instance_group_id = kwargs['managedInstanceGroupId']
+        if managed_instance_groups is None and 'managedInstanceGroups' in kwargs:
+            managed_instance_groups = kwargs['managedInstanceGroups']
+        if management_station_id is None and 'managementStationId' in kwargs:
+            management_station_id = kwargs['managementStationId']
+        if os_family is None and 'osFamily' in kwargs:
+            os_family = kwargs['osFamily']
+        if profile_type is None and 'profileType' in kwargs:
+            profile_type = kwargs['profileType']
+        if software_source_ids is None and 'softwareSourceIds' in kwargs:
+            software_source_ids = kwargs['softwareSourceIds']
+        if software_sources is None and 'softwareSources' in kwargs:
+            software_sources = kwargs['softwareSources']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if vendor_name is None and 'vendorName' in kwargs:
+            vendor_name = kwargs['vendorName']
+
         if arch_type is not None:
-            pulumi.set(__self__, "arch_type", arch_type)
+            _setter("arch_type", arch_type)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if lifecycle_environments is not None:
-            pulumi.set(__self__, "lifecycle_environments", lifecycle_environments)
+            _setter("lifecycle_environments", lifecycle_environments)
         if lifecycle_stage_id is not None:
-            pulumi.set(__self__, "lifecycle_stage_id", lifecycle_stage_id)
+            _setter("lifecycle_stage_id", lifecycle_stage_id)
         if lifecycle_stages is not None:
-            pulumi.set(__self__, "lifecycle_stages", lifecycle_stages)
+            _setter("lifecycle_stages", lifecycle_stages)
         if managed_instance_group_id is not None:
-            pulumi.set(__self__, "managed_instance_group_id", managed_instance_group_id)
+            _setter("managed_instance_group_id", managed_instance_group_id)
         if managed_instance_groups is not None:
-            pulumi.set(__self__, "managed_instance_groups", managed_instance_groups)
+            _setter("managed_instance_groups", managed_instance_groups)
         if management_station_id is not None:
-            pulumi.set(__self__, "management_station_id", management_station_id)
+            _setter("management_station_id", management_station_id)
         if os_family is not None:
-            pulumi.set(__self__, "os_family", os_family)
+            _setter("os_family", os_family)
         if profile_type is not None:
-            pulumi.set(__self__, "profile_type", profile_type)
+            _setter("profile_type", profile_type)
         if software_source_ids is not None:
-            pulumi.set(__self__, "software_source_ids", software_source_ids)
+            _setter("software_source_ids", software_source_ids)
         if software_sources is not None:
-            pulumi.set(__self__, "software_sources", software_sources)
+            _setter("software_sources", software_sources)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if vendor_name is not None:
-            pulumi.set(__self__, "vendor_name", vendor_name)
+            _setter("vendor_name", vendor_name)
 
     @property
     @pulumi.getter(name="archType")
@@ -707,6 +857,10 @@ class Profile(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ProfileArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

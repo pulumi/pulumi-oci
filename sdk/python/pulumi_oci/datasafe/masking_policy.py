@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -51,32 +51,97 @@ class MaskingPolicyArgs:
         :param pulumi.Input[str] pre_masking_script: (Updatable) A pre-masking script, which can contain SQL and PL/SQL statements. It's executed before  the core masking script generated using the masking policy. It's usually used to perform any preparation or prerequisite work before masking data.
         :param pulumi.Input[str] recompile: (Updatable) Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
         """
-        pulumi.set(__self__, "column_sources", column_sources)
-        pulumi.set(__self__, "compartment_id", compartment_id)
+        MaskingPolicyArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_sources=column_sources,
+            compartment_id=compartment_id,
+            add_masking_columns_from_sdm_trigger=add_masking_columns_from_sdm_trigger,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            is_drop_temp_tables_enabled=is_drop_temp_tables_enabled,
+            is_redo_logging_enabled=is_redo_logging_enabled,
+            is_refresh_stats_enabled=is_refresh_stats_enabled,
+            parallel_degree=parallel_degree,
+            post_masking_script=post_masking_script,
+            pre_masking_script=pre_masking_script,
+            recompile=recompile,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_sources: Optional[pulumi.Input[Sequence[pulumi.Input['MaskingPolicyColumnSourceArgs']]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             add_masking_columns_from_sdm_trigger: Optional[pulumi.Input[int]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_drop_temp_tables_enabled: Optional[pulumi.Input[bool]] = None,
+             is_redo_logging_enabled: Optional[pulumi.Input[bool]] = None,
+             is_refresh_stats_enabled: Optional[pulumi.Input[bool]] = None,
+             parallel_degree: Optional[pulumi.Input[str]] = None,
+             post_masking_script: Optional[pulumi.Input[str]] = None,
+             pre_masking_script: Optional[pulumi.Input[str]] = None,
+             recompile: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if column_sources is None and 'columnSources' in kwargs:
+            column_sources = kwargs['columnSources']
+        if column_sources is None:
+            raise TypeError("Missing 'column_sources' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if add_masking_columns_from_sdm_trigger is None and 'addMaskingColumnsFromSdmTrigger' in kwargs:
+            add_masking_columns_from_sdm_trigger = kwargs['addMaskingColumnsFromSdmTrigger']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_drop_temp_tables_enabled is None and 'isDropTempTablesEnabled' in kwargs:
+            is_drop_temp_tables_enabled = kwargs['isDropTempTablesEnabled']
+        if is_redo_logging_enabled is None and 'isRedoLoggingEnabled' in kwargs:
+            is_redo_logging_enabled = kwargs['isRedoLoggingEnabled']
+        if is_refresh_stats_enabled is None and 'isRefreshStatsEnabled' in kwargs:
+            is_refresh_stats_enabled = kwargs['isRefreshStatsEnabled']
+        if parallel_degree is None and 'parallelDegree' in kwargs:
+            parallel_degree = kwargs['parallelDegree']
+        if post_masking_script is None and 'postMaskingScript' in kwargs:
+            post_masking_script = kwargs['postMaskingScript']
+        if pre_masking_script is None and 'preMaskingScript' in kwargs:
+            pre_masking_script = kwargs['preMaskingScript']
+
+        _setter("column_sources", column_sources)
+        _setter("compartment_id", compartment_id)
         if add_masking_columns_from_sdm_trigger is not None:
-            pulumi.set(__self__, "add_masking_columns_from_sdm_trigger", add_masking_columns_from_sdm_trigger)
+            _setter("add_masking_columns_from_sdm_trigger", add_masking_columns_from_sdm_trigger)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_drop_temp_tables_enabled is not None:
-            pulumi.set(__self__, "is_drop_temp_tables_enabled", is_drop_temp_tables_enabled)
+            _setter("is_drop_temp_tables_enabled", is_drop_temp_tables_enabled)
         if is_redo_logging_enabled is not None:
-            pulumi.set(__self__, "is_redo_logging_enabled", is_redo_logging_enabled)
+            _setter("is_redo_logging_enabled", is_redo_logging_enabled)
         if is_refresh_stats_enabled is not None:
-            pulumi.set(__self__, "is_refresh_stats_enabled", is_refresh_stats_enabled)
+            _setter("is_refresh_stats_enabled", is_refresh_stats_enabled)
         if parallel_degree is not None:
-            pulumi.set(__self__, "parallel_degree", parallel_degree)
+            _setter("parallel_degree", parallel_degree)
         if post_masking_script is not None:
-            pulumi.set(__self__, "post_masking_script", post_masking_script)
+            _setter("post_masking_script", post_masking_script)
         if pre_masking_script is not None:
-            pulumi.set(__self__, "pre_masking_script", pre_masking_script)
+            _setter("pre_masking_script", pre_masking_script)
         if recompile is not None:
-            pulumi.set(__self__, "recompile", recompile)
+            _setter("recompile", recompile)
 
     @property
     @pulumi.getter(name="columnSources")
@@ -295,40 +360,111 @@ class _MaskingPolicyState:
         :param pulumi.Input[str] time_created: The date and time the masking policy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_updated: The date and time the masking policy was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
         """
+        _MaskingPolicyState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            add_masking_columns_from_sdm_trigger=add_masking_columns_from_sdm_trigger,
+            column_sources=column_sources,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            is_drop_temp_tables_enabled=is_drop_temp_tables_enabled,
+            is_redo_logging_enabled=is_redo_logging_enabled,
+            is_refresh_stats_enabled=is_refresh_stats_enabled,
+            parallel_degree=parallel_degree,
+            post_masking_script=post_masking_script,
+            pre_masking_script=pre_masking_script,
+            recompile=recompile,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             add_masking_columns_from_sdm_trigger: Optional[pulumi.Input[int]] = None,
+             column_sources: Optional[pulumi.Input[Sequence[pulumi.Input['MaskingPolicyColumnSourceArgs']]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_drop_temp_tables_enabled: Optional[pulumi.Input[bool]] = None,
+             is_redo_logging_enabled: Optional[pulumi.Input[bool]] = None,
+             is_refresh_stats_enabled: Optional[pulumi.Input[bool]] = None,
+             parallel_degree: Optional[pulumi.Input[str]] = None,
+             post_masking_script: Optional[pulumi.Input[str]] = None,
+             pre_masking_script: Optional[pulumi.Input[str]] = None,
+             recompile: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if add_masking_columns_from_sdm_trigger is None and 'addMaskingColumnsFromSdmTrigger' in kwargs:
+            add_masking_columns_from_sdm_trigger = kwargs['addMaskingColumnsFromSdmTrigger']
+        if column_sources is None and 'columnSources' in kwargs:
+            column_sources = kwargs['columnSources']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_drop_temp_tables_enabled is None and 'isDropTempTablesEnabled' in kwargs:
+            is_drop_temp_tables_enabled = kwargs['isDropTempTablesEnabled']
+        if is_redo_logging_enabled is None and 'isRedoLoggingEnabled' in kwargs:
+            is_redo_logging_enabled = kwargs['isRedoLoggingEnabled']
+        if is_refresh_stats_enabled is None and 'isRefreshStatsEnabled' in kwargs:
+            is_refresh_stats_enabled = kwargs['isRefreshStatsEnabled']
+        if parallel_degree is None and 'parallelDegree' in kwargs:
+            parallel_degree = kwargs['parallelDegree']
+        if post_masking_script is None and 'postMaskingScript' in kwargs:
+            post_masking_script = kwargs['postMaskingScript']
+        if pre_masking_script is None and 'preMaskingScript' in kwargs:
+            pre_masking_script = kwargs['preMaskingScript']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if add_masking_columns_from_sdm_trigger is not None:
-            pulumi.set(__self__, "add_masking_columns_from_sdm_trigger", add_masking_columns_from_sdm_trigger)
+            _setter("add_masking_columns_from_sdm_trigger", add_masking_columns_from_sdm_trigger)
         if column_sources is not None:
-            pulumi.set(__self__, "column_sources", column_sources)
+            _setter("column_sources", column_sources)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_drop_temp_tables_enabled is not None:
-            pulumi.set(__self__, "is_drop_temp_tables_enabled", is_drop_temp_tables_enabled)
+            _setter("is_drop_temp_tables_enabled", is_drop_temp_tables_enabled)
         if is_redo_logging_enabled is not None:
-            pulumi.set(__self__, "is_redo_logging_enabled", is_redo_logging_enabled)
+            _setter("is_redo_logging_enabled", is_redo_logging_enabled)
         if is_refresh_stats_enabled is not None:
-            pulumi.set(__self__, "is_refresh_stats_enabled", is_refresh_stats_enabled)
+            _setter("is_refresh_stats_enabled", is_refresh_stats_enabled)
         if parallel_degree is not None:
-            pulumi.set(__self__, "parallel_degree", parallel_degree)
+            _setter("parallel_degree", parallel_degree)
         if post_masking_script is not None:
-            pulumi.set(__self__, "post_masking_script", post_masking_script)
+            _setter("post_masking_script", post_masking_script)
         if pre_masking_script is not None:
-            pulumi.set(__self__, "pre_masking_script", pre_masking_script)
+            _setter("pre_masking_script", pre_masking_script)
         if recompile is not None:
-            pulumi.set(__self__, "recompile", recompile)
+            _setter("recompile", recompile)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="addMaskingColumnsFromSdmTrigger")
@@ -714,6 +850,10 @@ class MaskingPolicy(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            MaskingPolicyArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

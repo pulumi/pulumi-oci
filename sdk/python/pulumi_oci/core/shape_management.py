@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['ShapeManagementArgs', 'ShapeManagement']
@@ -23,9 +23,36 @@ class ShapeManagementArgs:
         :param pulumi.Input[str] image_id: The OCID of the Image to which the shape should be added.
         :param pulumi.Input[str] shape_name: The compatible shape that is to be added to the compatible shapes list for the image.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "image_id", image_id)
-        pulumi.set(__self__, "shape_name", shape_name)
+        ShapeManagementArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            image_id=image_id,
+            shape_name=shape_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             image_id: Optional[pulumi.Input[str]] = None,
+             shape_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if image_id is None and 'imageId' in kwargs:
+            image_id = kwargs['imageId']
+        if image_id is None:
+            raise TypeError("Missing 'image_id' argument")
+        if shape_name is None and 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("image_id", image_id)
+        _setter("shape_name", shape_name)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -76,12 +103,33 @@ class _ShapeManagementState:
         :param pulumi.Input[str] image_id: The OCID of the Image to which the shape should be added.
         :param pulumi.Input[str] shape_name: The compatible shape that is to be added to the compatible shapes list for the image.
         """
+        _ShapeManagementState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            image_id=image_id,
+            shape_name=shape_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             image_id: Optional[pulumi.Input[str]] = None,
+             shape_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if image_id is None and 'imageId' in kwargs:
+            image_id = kwargs['imageId']
+        if shape_name is None and 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if image_id is not None:
-            pulumi.set(__self__, "image_id", image_id)
+            _setter("image_id", image_id)
         if shape_name is not None:
-            pulumi.set(__self__, "shape_name", shape_name)
+            _setter("shape_name", shape_name)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -161,6 +209,10 @@ class ShapeManagement(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ShapeManagementArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

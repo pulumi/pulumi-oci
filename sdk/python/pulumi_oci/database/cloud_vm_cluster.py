@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -94,57 +94,200 @@ class CloudVmClusterArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "backup_subnet_id", backup_subnet_id)
-        pulumi.set(__self__, "cloud_exadata_infrastructure_id", cloud_exadata_infrastructure_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "cpu_core_count", cpu_core_count)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "gi_version", gi_version)
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "ssh_public_keys", ssh_public_keys)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        CloudVmClusterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backup_subnet_id=backup_subnet_id,
+            cloud_exadata_infrastructure_id=cloud_exadata_infrastructure_id,
+            compartment_id=compartment_id,
+            cpu_core_count=cpu_core_count,
+            display_name=display_name,
+            gi_version=gi_version,
+            hostname=hostname,
+            ssh_public_keys=ssh_public_keys,
+            subnet_id=subnet_id,
+            backup_network_nsg_ids=backup_network_nsg_ids,
+            cluster_name=cluster_name,
+            create_async=create_async,
+            data_collection_options=data_collection_options,
+            data_storage_percentage=data_storage_percentage,
+            data_storage_size_in_tbs=data_storage_size_in_tbs,
+            db_node_storage_size_in_gbs=db_node_storage_size_in_gbs,
+            db_servers=db_servers,
+            defined_tags=defined_tags,
+            domain=domain,
+            freeform_tags=freeform_tags,
+            is_local_backup_enabled=is_local_backup_enabled,
+            is_sparse_diskgroup_enabled=is_sparse_diskgroup_enabled,
+            license_model=license_model,
+            memory_size_in_gbs=memory_size_in_gbs,
+            nsg_ids=nsg_ids,
+            ocpu_count=ocpu_count,
+            private_zone_id=private_zone_id,
+            scan_listener_port_tcp=scan_listener_port_tcp,
+            scan_listener_port_tcp_ssl=scan_listener_port_tcp_ssl,
+            time_zone=time_zone,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backup_subnet_id: Optional[pulumi.Input[str]] = None,
+             cloud_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             cpu_core_count: Optional[pulumi.Input[int]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             gi_version: Optional[pulumi.Input[str]] = None,
+             hostname: Optional[pulumi.Input[str]] = None,
+             ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             cluster_name: Optional[pulumi.Input[str]] = None,
+             create_async: Optional[pulumi.Input[bool]] = None,
+             data_collection_options: Optional[pulumi.Input['CloudVmClusterDataCollectionOptionsArgs']] = None,
+             data_storage_percentage: Optional[pulumi.Input[int]] = None,
+             data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
+             db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
+             db_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             domain: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_local_backup_enabled: Optional[pulumi.Input[bool]] = None,
+             is_sparse_diskgroup_enabled: Optional[pulumi.Input[bool]] = None,
+             license_model: Optional[pulumi.Input[str]] = None,
+             memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
+             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             ocpu_count: Optional[pulumi.Input[float]] = None,
+             private_zone_id: Optional[pulumi.Input[str]] = None,
+             scan_listener_port_tcp: Optional[pulumi.Input[int]] = None,
+             scan_listener_port_tcp_ssl: Optional[pulumi.Input[int]] = None,
+             time_zone: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if backup_subnet_id is None and 'backupSubnetId' in kwargs:
+            backup_subnet_id = kwargs['backupSubnetId']
+        if backup_subnet_id is None:
+            raise TypeError("Missing 'backup_subnet_id' argument")
+        if cloud_exadata_infrastructure_id is None and 'cloudExadataInfrastructureId' in kwargs:
+            cloud_exadata_infrastructure_id = kwargs['cloudExadataInfrastructureId']
+        if cloud_exadata_infrastructure_id is None:
+            raise TypeError("Missing 'cloud_exadata_infrastructure_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if cpu_core_count is None and 'cpuCoreCount' in kwargs:
+            cpu_core_count = kwargs['cpuCoreCount']
+        if cpu_core_count is None:
+            raise TypeError("Missing 'cpu_core_count' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if gi_version is None and 'giVersion' in kwargs:
+            gi_version = kwargs['giVersion']
+        if gi_version is None:
+            raise TypeError("Missing 'gi_version' argument")
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if ssh_public_keys is None and 'sshPublicKeys' in kwargs:
+            ssh_public_keys = kwargs['sshPublicKeys']
+        if ssh_public_keys is None:
+            raise TypeError("Missing 'ssh_public_keys' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if backup_network_nsg_ids is None and 'backupNetworkNsgIds' in kwargs:
+            backup_network_nsg_ids = kwargs['backupNetworkNsgIds']
+        if cluster_name is None and 'clusterName' in kwargs:
+            cluster_name = kwargs['clusterName']
+        if create_async is None and 'createAsync' in kwargs:
+            create_async = kwargs['createAsync']
+        if data_collection_options is None and 'dataCollectionOptions' in kwargs:
+            data_collection_options = kwargs['dataCollectionOptions']
+        if data_storage_percentage is None and 'dataStoragePercentage' in kwargs:
+            data_storage_percentage = kwargs['dataStoragePercentage']
+        if data_storage_size_in_tbs is None and 'dataStorageSizeInTbs' in kwargs:
+            data_storage_size_in_tbs = kwargs['dataStorageSizeInTbs']
+        if db_node_storage_size_in_gbs is None and 'dbNodeStorageSizeInGbs' in kwargs:
+            db_node_storage_size_in_gbs = kwargs['dbNodeStorageSizeInGbs']
+        if db_servers is None and 'dbServers' in kwargs:
+            db_servers = kwargs['dbServers']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_local_backup_enabled is None and 'isLocalBackupEnabled' in kwargs:
+            is_local_backup_enabled = kwargs['isLocalBackupEnabled']
+        if is_sparse_diskgroup_enabled is None and 'isSparseDiskgroupEnabled' in kwargs:
+            is_sparse_diskgroup_enabled = kwargs['isSparseDiskgroupEnabled']
+        if license_model is None and 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+        if memory_size_in_gbs is None and 'memorySizeInGbs' in kwargs:
+            memory_size_in_gbs = kwargs['memorySizeInGbs']
+        if nsg_ids is None and 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if ocpu_count is None and 'ocpuCount' in kwargs:
+            ocpu_count = kwargs['ocpuCount']
+        if private_zone_id is None and 'privateZoneId' in kwargs:
+            private_zone_id = kwargs['privateZoneId']
+        if scan_listener_port_tcp is None and 'scanListenerPortTcp' in kwargs:
+            scan_listener_port_tcp = kwargs['scanListenerPortTcp']
+        if scan_listener_port_tcp_ssl is None and 'scanListenerPortTcpSsl' in kwargs:
+            scan_listener_port_tcp_ssl = kwargs['scanListenerPortTcpSsl']
+        if time_zone is None and 'timeZone' in kwargs:
+            time_zone = kwargs['timeZone']
+
+        _setter("backup_subnet_id", backup_subnet_id)
+        _setter("cloud_exadata_infrastructure_id", cloud_exadata_infrastructure_id)
+        _setter("compartment_id", compartment_id)
+        _setter("cpu_core_count", cpu_core_count)
+        _setter("display_name", display_name)
+        _setter("gi_version", gi_version)
+        _setter("hostname", hostname)
+        _setter("ssh_public_keys", ssh_public_keys)
+        _setter("subnet_id", subnet_id)
         if backup_network_nsg_ids is not None:
-            pulumi.set(__self__, "backup_network_nsg_ids", backup_network_nsg_ids)
+            _setter("backup_network_nsg_ids", backup_network_nsg_ids)
         if cluster_name is not None:
-            pulumi.set(__self__, "cluster_name", cluster_name)
+            _setter("cluster_name", cluster_name)
         if create_async is not None:
-            pulumi.set(__self__, "create_async", create_async)
+            _setter("create_async", create_async)
         if data_collection_options is not None:
-            pulumi.set(__self__, "data_collection_options", data_collection_options)
+            _setter("data_collection_options", data_collection_options)
         if data_storage_percentage is not None:
-            pulumi.set(__self__, "data_storage_percentage", data_storage_percentage)
+            _setter("data_storage_percentage", data_storage_percentage)
         if data_storage_size_in_tbs is not None:
-            pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
+            _setter("data_storage_size_in_tbs", data_storage_size_in_tbs)
         if db_node_storage_size_in_gbs is not None:
-            pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
+            _setter("db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
         if db_servers is not None:
-            pulumi.set(__self__, "db_servers", db_servers)
+            _setter("db_servers", db_servers)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if domain is not None:
-            pulumi.set(__self__, "domain", domain)
+            _setter("domain", domain)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_local_backup_enabled is not None:
-            pulumi.set(__self__, "is_local_backup_enabled", is_local_backup_enabled)
+            _setter("is_local_backup_enabled", is_local_backup_enabled)
         if is_sparse_diskgroup_enabled is not None:
-            pulumi.set(__self__, "is_sparse_diskgroup_enabled", is_sparse_diskgroup_enabled)
+            _setter("is_sparse_diskgroup_enabled", is_sparse_diskgroup_enabled)
         if license_model is not None:
-            pulumi.set(__self__, "license_model", license_model)
+            _setter("license_model", license_model)
         if memory_size_in_gbs is not None:
-            pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
+            _setter("memory_size_in_gbs", memory_size_in_gbs)
         if nsg_ids is not None:
-            pulumi.set(__self__, "nsg_ids", nsg_ids)
+            _setter("nsg_ids", nsg_ids)
         if ocpu_count is not None:
-            pulumi.set(__self__, "ocpu_count", ocpu_count)
+            _setter("ocpu_count", ocpu_count)
         if private_zone_id is not None:
-            pulumi.set(__self__, "private_zone_id", private_zone_id)
+            _setter("private_zone_id", private_zone_id)
         if scan_listener_port_tcp is not None:
-            pulumi.set(__self__, "scan_listener_port_tcp", scan_listener_port_tcp)
+            _setter("scan_listener_port_tcp", scan_listener_port_tcp)
         if scan_listener_port_tcp_ssl is not None:
-            pulumi.set(__self__, "scan_listener_port_tcp_ssl", scan_listener_port_tcp_ssl)
+            _setter("scan_listener_port_tcp_ssl", scan_listener_port_tcp_ssl)
         if time_zone is not None:
-            pulumi.set(__self__, "time_zone", time_zone)
+            _setter("time_zone", time_zone)
 
     @property
     @pulumi.getter(name="backupSubnetId")
@@ -635,100 +778,289 @@ class _CloudVmClusterState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
         :param pulumi.Input[str] zone_id: The OCID of the zone the cloud VM cluster is associated with.
         """
+        _CloudVmClusterState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            backup_network_nsg_ids=backup_network_nsg_ids,
+            backup_subnet_id=backup_subnet_id,
+            cloud_exadata_infrastructure_id=cloud_exadata_infrastructure_id,
+            cluster_name=cluster_name,
+            compartment_id=compartment_id,
+            cpu_core_count=cpu_core_count,
+            create_async=create_async,
+            data_collection_options=data_collection_options,
+            data_storage_percentage=data_storage_percentage,
+            data_storage_size_in_tbs=data_storage_size_in_tbs,
+            db_node_storage_size_in_gbs=db_node_storage_size_in_gbs,
+            db_servers=db_servers,
+            defined_tags=defined_tags,
+            disk_redundancy=disk_redundancy,
+            display_name=display_name,
+            domain=domain,
+            freeform_tags=freeform_tags,
+            gi_version=gi_version,
+            hostname=hostname,
+            iorm_config_caches=iorm_config_caches,
+            is_local_backup_enabled=is_local_backup_enabled,
+            is_sparse_diskgroup_enabled=is_sparse_diskgroup_enabled,
+            last_update_history_entry_id=last_update_history_entry_id,
+            license_model=license_model,
+            lifecycle_details=lifecycle_details,
+            listener_port=listener_port,
+            memory_size_in_gbs=memory_size_in_gbs,
+            node_count=node_count,
+            nsg_ids=nsg_ids,
+            ocpu_count=ocpu_count,
+            private_zone_id=private_zone_id,
+            scan_dns_name=scan_dns_name,
+            scan_dns_record_id=scan_dns_record_id,
+            scan_ip_ids=scan_ip_ids,
+            scan_listener_port_tcp=scan_listener_port_tcp,
+            scan_listener_port_tcp_ssl=scan_listener_port_tcp_ssl,
+            shape=shape,
+            ssh_public_keys=ssh_public_keys,
+            state=state,
+            storage_size_in_gbs=storage_size_in_gbs,
+            subnet_id=subnet_id,
+            system_version=system_version,
+            time_created=time_created,
+            time_zone=time_zone,
+            vip_ids=vip_ids,
+            zone_id=zone_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             backup_subnet_id: Optional[pulumi.Input[str]] = None,
+             cloud_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
+             cluster_name: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             cpu_core_count: Optional[pulumi.Input[int]] = None,
+             create_async: Optional[pulumi.Input[bool]] = None,
+             data_collection_options: Optional[pulumi.Input['CloudVmClusterDataCollectionOptionsArgs']] = None,
+             data_storage_percentage: Optional[pulumi.Input[int]] = None,
+             data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
+             db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
+             db_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             disk_redundancy: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             domain: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             gi_version: Optional[pulumi.Input[str]] = None,
+             hostname: Optional[pulumi.Input[str]] = None,
+             iorm_config_caches: Optional[pulumi.Input[Sequence[pulumi.Input['CloudVmClusterIormConfigCachArgs']]]] = None,
+             is_local_backup_enabled: Optional[pulumi.Input[bool]] = None,
+             is_sparse_diskgroup_enabled: Optional[pulumi.Input[bool]] = None,
+             last_update_history_entry_id: Optional[pulumi.Input[str]] = None,
+             license_model: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             listener_port: Optional[pulumi.Input[str]] = None,
+             memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
+             node_count: Optional[pulumi.Input[int]] = None,
+             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             ocpu_count: Optional[pulumi.Input[float]] = None,
+             private_zone_id: Optional[pulumi.Input[str]] = None,
+             scan_dns_name: Optional[pulumi.Input[str]] = None,
+             scan_dns_record_id: Optional[pulumi.Input[str]] = None,
+             scan_ip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             scan_listener_port_tcp: Optional[pulumi.Input[int]] = None,
+             scan_listener_port_tcp_ssl: Optional[pulumi.Input[int]] = None,
+             shape: Optional[pulumi.Input[str]] = None,
+             ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             system_version: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_zone: Optional[pulumi.Input[str]] = None,
+             vip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             zone_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if availability_domain is None and 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if backup_network_nsg_ids is None and 'backupNetworkNsgIds' in kwargs:
+            backup_network_nsg_ids = kwargs['backupNetworkNsgIds']
+        if backup_subnet_id is None and 'backupSubnetId' in kwargs:
+            backup_subnet_id = kwargs['backupSubnetId']
+        if cloud_exadata_infrastructure_id is None and 'cloudExadataInfrastructureId' in kwargs:
+            cloud_exadata_infrastructure_id = kwargs['cloudExadataInfrastructureId']
+        if cluster_name is None and 'clusterName' in kwargs:
+            cluster_name = kwargs['clusterName']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if cpu_core_count is None and 'cpuCoreCount' in kwargs:
+            cpu_core_count = kwargs['cpuCoreCount']
+        if create_async is None and 'createAsync' in kwargs:
+            create_async = kwargs['createAsync']
+        if data_collection_options is None and 'dataCollectionOptions' in kwargs:
+            data_collection_options = kwargs['dataCollectionOptions']
+        if data_storage_percentage is None and 'dataStoragePercentage' in kwargs:
+            data_storage_percentage = kwargs['dataStoragePercentage']
+        if data_storage_size_in_tbs is None and 'dataStorageSizeInTbs' in kwargs:
+            data_storage_size_in_tbs = kwargs['dataStorageSizeInTbs']
+        if db_node_storage_size_in_gbs is None and 'dbNodeStorageSizeInGbs' in kwargs:
+            db_node_storage_size_in_gbs = kwargs['dbNodeStorageSizeInGbs']
+        if db_servers is None and 'dbServers' in kwargs:
+            db_servers = kwargs['dbServers']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if disk_redundancy is None and 'diskRedundancy' in kwargs:
+            disk_redundancy = kwargs['diskRedundancy']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if gi_version is None and 'giVersion' in kwargs:
+            gi_version = kwargs['giVersion']
+        if iorm_config_caches is None and 'iormConfigCaches' in kwargs:
+            iorm_config_caches = kwargs['iormConfigCaches']
+        if is_local_backup_enabled is None and 'isLocalBackupEnabled' in kwargs:
+            is_local_backup_enabled = kwargs['isLocalBackupEnabled']
+        if is_sparse_diskgroup_enabled is None and 'isSparseDiskgroupEnabled' in kwargs:
+            is_sparse_diskgroup_enabled = kwargs['isSparseDiskgroupEnabled']
+        if last_update_history_entry_id is None and 'lastUpdateHistoryEntryId' in kwargs:
+            last_update_history_entry_id = kwargs['lastUpdateHistoryEntryId']
+        if license_model is None and 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if listener_port is None and 'listenerPort' in kwargs:
+            listener_port = kwargs['listenerPort']
+        if memory_size_in_gbs is None and 'memorySizeInGbs' in kwargs:
+            memory_size_in_gbs = kwargs['memorySizeInGbs']
+        if node_count is None and 'nodeCount' in kwargs:
+            node_count = kwargs['nodeCount']
+        if nsg_ids is None and 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if ocpu_count is None and 'ocpuCount' in kwargs:
+            ocpu_count = kwargs['ocpuCount']
+        if private_zone_id is None and 'privateZoneId' in kwargs:
+            private_zone_id = kwargs['privateZoneId']
+        if scan_dns_name is None and 'scanDnsName' in kwargs:
+            scan_dns_name = kwargs['scanDnsName']
+        if scan_dns_record_id is None and 'scanDnsRecordId' in kwargs:
+            scan_dns_record_id = kwargs['scanDnsRecordId']
+        if scan_ip_ids is None and 'scanIpIds' in kwargs:
+            scan_ip_ids = kwargs['scanIpIds']
+        if scan_listener_port_tcp is None and 'scanListenerPortTcp' in kwargs:
+            scan_listener_port_tcp = kwargs['scanListenerPortTcp']
+        if scan_listener_port_tcp_ssl is None and 'scanListenerPortTcpSsl' in kwargs:
+            scan_listener_port_tcp_ssl = kwargs['scanListenerPortTcpSsl']
+        if ssh_public_keys is None and 'sshPublicKeys' in kwargs:
+            ssh_public_keys = kwargs['sshPublicKeys']
+        if storage_size_in_gbs is None and 'storageSizeInGbs' in kwargs:
+            storage_size_in_gbs = kwargs['storageSizeInGbs']
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if system_version is None and 'systemVersion' in kwargs:
+            system_version = kwargs['systemVersion']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_zone is None and 'timeZone' in kwargs:
+            time_zone = kwargs['timeZone']
+        if vip_ids is None and 'vipIds' in kwargs:
+            vip_ids = kwargs['vipIds']
+        if zone_id is None and 'zoneId' in kwargs:
+            zone_id = kwargs['zoneId']
+
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if backup_network_nsg_ids is not None:
-            pulumi.set(__self__, "backup_network_nsg_ids", backup_network_nsg_ids)
+            _setter("backup_network_nsg_ids", backup_network_nsg_ids)
         if backup_subnet_id is not None:
-            pulumi.set(__self__, "backup_subnet_id", backup_subnet_id)
+            _setter("backup_subnet_id", backup_subnet_id)
         if cloud_exadata_infrastructure_id is not None:
-            pulumi.set(__self__, "cloud_exadata_infrastructure_id", cloud_exadata_infrastructure_id)
+            _setter("cloud_exadata_infrastructure_id", cloud_exadata_infrastructure_id)
         if cluster_name is not None:
-            pulumi.set(__self__, "cluster_name", cluster_name)
+            _setter("cluster_name", cluster_name)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if cpu_core_count is not None:
-            pulumi.set(__self__, "cpu_core_count", cpu_core_count)
+            _setter("cpu_core_count", cpu_core_count)
         if create_async is not None:
-            pulumi.set(__self__, "create_async", create_async)
+            _setter("create_async", create_async)
         if data_collection_options is not None:
-            pulumi.set(__self__, "data_collection_options", data_collection_options)
+            _setter("data_collection_options", data_collection_options)
         if data_storage_percentage is not None:
-            pulumi.set(__self__, "data_storage_percentage", data_storage_percentage)
+            _setter("data_storage_percentage", data_storage_percentage)
         if data_storage_size_in_tbs is not None:
-            pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
+            _setter("data_storage_size_in_tbs", data_storage_size_in_tbs)
         if db_node_storage_size_in_gbs is not None:
-            pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
+            _setter("db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
         if db_servers is not None:
-            pulumi.set(__self__, "db_servers", db_servers)
+            _setter("db_servers", db_servers)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if disk_redundancy is not None:
-            pulumi.set(__self__, "disk_redundancy", disk_redundancy)
+            _setter("disk_redundancy", disk_redundancy)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if domain is not None:
-            pulumi.set(__self__, "domain", domain)
+            _setter("domain", domain)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if gi_version is not None:
-            pulumi.set(__self__, "gi_version", gi_version)
+            _setter("gi_version", gi_version)
         if hostname is not None:
-            pulumi.set(__self__, "hostname", hostname)
+            _setter("hostname", hostname)
         if iorm_config_caches is not None:
-            pulumi.set(__self__, "iorm_config_caches", iorm_config_caches)
+            _setter("iorm_config_caches", iorm_config_caches)
         if is_local_backup_enabled is not None:
-            pulumi.set(__self__, "is_local_backup_enabled", is_local_backup_enabled)
+            _setter("is_local_backup_enabled", is_local_backup_enabled)
         if is_sparse_diskgroup_enabled is not None:
-            pulumi.set(__self__, "is_sparse_diskgroup_enabled", is_sparse_diskgroup_enabled)
+            _setter("is_sparse_diskgroup_enabled", is_sparse_diskgroup_enabled)
         if last_update_history_entry_id is not None:
-            pulumi.set(__self__, "last_update_history_entry_id", last_update_history_entry_id)
+            _setter("last_update_history_entry_id", last_update_history_entry_id)
         if license_model is not None:
-            pulumi.set(__self__, "license_model", license_model)
+            _setter("license_model", license_model)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if listener_port is not None:
-            pulumi.set(__self__, "listener_port", listener_port)
+            _setter("listener_port", listener_port)
         if memory_size_in_gbs is not None:
-            pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
+            _setter("memory_size_in_gbs", memory_size_in_gbs)
         if node_count is not None:
-            pulumi.set(__self__, "node_count", node_count)
+            _setter("node_count", node_count)
         if nsg_ids is not None:
-            pulumi.set(__self__, "nsg_ids", nsg_ids)
+            _setter("nsg_ids", nsg_ids)
         if ocpu_count is not None:
-            pulumi.set(__self__, "ocpu_count", ocpu_count)
+            _setter("ocpu_count", ocpu_count)
         if private_zone_id is not None:
-            pulumi.set(__self__, "private_zone_id", private_zone_id)
+            _setter("private_zone_id", private_zone_id)
         if scan_dns_name is not None:
-            pulumi.set(__self__, "scan_dns_name", scan_dns_name)
+            _setter("scan_dns_name", scan_dns_name)
         if scan_dns_record_id is not None:
-            pulumi.set(__self__, "scan_dns_record_id", scan_dns_record_id)
+            _setter("scan_dns_record_id", scan_dns_record_id)
         if scan_ip_ids is not None:
-            pulumi.set(__self__, "scan_ip_ids", scan_ip_ids)
+            _setter("scan_ip_ids", scan_ip_ids)
         if scan_listener_port_tcp is not None:
-            pulumi.set(__self__, "scan_listener_port_tcp", scan_listener_port_tcp)
+            _setter("scan_listener_port_tcp", scan_listener_port_tcp)
         if scan_listener_port_tcp_ssl is not None:
-            pulumi.set(__self__, "scan_listener_port_tcp_ssl", scan_listener_port_tcp_ssl)
+            _setter("scan_listener_port_tcp_ssl", scan_listener_port_tcp_ssl)
         if shape is not None:
-            pulumi.set(__self__, "shape", shape)
+            _setter("shape", shape)
         if ssh_public_keys is not None:
-            pulumi.set(__self__, "ssh_public_keys", ssh_public_keys)
+            _setter("ssh_public_keys", ssh_public_keys)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if storage_size_in_gbs is not None:
-            pulumi.set(__self__, "storage_size_in_gbs", storage_size_in_gbs)
+            _setter("storage_size_in_gbs", storage_size_in_gbs)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
         if system_version is not None:
-            pulumi.set(__self__, "system_version", system_version)
+            _setter("system_version", system_version)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_zone is not None:
-            pulumi.set(__self__, "time_zone", time_zone)
+            _setter("time_zone", time_zone)
         if vip_ids is not None:
-            pulumi.set(__self__, "vip_ids", vip_ids)
+            _setter("vip_ids", vip_ids)
         if zone_id is not None:
-            pulumi.set(__self__, "zone_id", zone_id)
+            _setter("zone_id", zone_id)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -1522,6 +1854,10 @@ class CloudVmCluster(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            CloudVmClusterArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -1581,6 +1917,11 @@ class CloudVmCluster(pulumi.CustomResource):
                 raise TypeError("Missing required property 'cpu_core_count'")
             __props__.__dict__["cpu_core_count"] = cpu_core_count
             __props__.__dict__["create_async"] = create_async
+            if data_collection_options is not None and not isinstance(data_collection_options, CloudVmClusterDataCollectionOptionsArgs):
+                data_collection_options = data_collection_options or {}
+                def _setter(key, value):
+                    data_collection_options[key] = value
+                CloudVmClusterDataCollectionOptionsArgs._configure(_setter, **data_collection_options)
             __props__.__dict__["data_collection_options"] = data_collection_options
             __props__.__dict__["data_storage_percentage"] = data_storage_percentage
             __props__.__dict__["data_storage_size_in_tbs"] = data_storage_size_in_tbs

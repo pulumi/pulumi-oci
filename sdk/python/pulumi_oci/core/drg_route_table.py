@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['DrgRouteTableArgs', 'DrgRouteTable']
@@ -35,19 +35,58 @@ class DrgRouteTableArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "drg_id", drg_id)
+        DrgRouteTableArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            drg_id=drg_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            import_drg_route_distribution_id=import_drg_route_distribution_id,
+            is_ecmp_enabled=is_ecmp_enabled,
+            remove_import_trigger=remove_import_trigger,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             drg_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             import_drg_route_distribution_id: Optional[pulumi.Input[str]] = None,
+             is_ecmp_enabled: Optional[pulumi.Input[bool]] = None,
+             remove_import_trigger: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if drg_id is None and 'drgId' in kwargs:
+            drg_id = kwargs['drgId']
+        if drg_id is None:
+            raise TypeError("Missing 'drg_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if import_drg_route_distribution_id is None and 'importDrgRouteDistributionId' in kwargs:
+            import_drg_route_distribution_id = kwargs['importDrgRouteDistributionId']
+        if is_ecmp_enabled is None and 'isEcmpEnabled' in kwargs:
+            is_ecmp_enabled = kwargs['isEcmpEnabled']
+        if remove_import_trigger is None and 'removeImportTrigger' in kwargs:
+            remove_import_trigger = kwargs['removeImportTrigger']
+
+        _setter("drg_id", drg_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if import_drg_route_distribution_id is not None:
-            pulumi.set(__self__, "import_drg_route_distribution_id", import_drg_route_distribution_id)
+            _setter("import_drg_route_distribution_id", import_drg_route_distribution_id)
         if is_ecmp_enabled is not None:
-            pulumi.set(__self__, "is_ecmp_enabled", is_ecmp_enabled)
+            _setter("is_ecmp_enabled", is_ecmp_enabled)
         if remove_import_trigger is not None:
-            pulumi.set(__self__, "remove_import_trigger", remove_import_trigger)
+            _setter("remove_import_trigger", remove_import_trigger)
 
     @property
     @pulumi.getter(name="drgId")
@@ -168,26 +207,73 @@ class _DrgRouteTableState:
         :param pulumi.Input[str] state: The DRG route table's current state.
         :param pulumi.Input[str] time_created: The date and time the DRG route table was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
+        _DrgRouteTableState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            drg_id=drg_id,
+            freeform_tags=freeform_tags,
+            import_drg_route_distribution_id=import_drg_route_distribution_id,
+            is_ecmp_enabled=is_ecmp_enabled,
+            remove_import_trigger=remove_import_trigger,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             drg_id: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             import_drg_route_distribution_id: Optional[pulumi.Input[str]] = None,
+             is_ecmp_enabled: Optional[pulumi.Input[bool]] = None,
+             remove_import_trigger: Optional[pulumi.Input[bool]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if drg_id is None and 'drgId' in kwargs:
+            drg_id = kwargs['drgId']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if import_drg_route_distribution_id is None and 'importDrgRouteDistributionId' in kwargs:
+            import_drg_route_distribution_id = kwargs['importDrgRouteDistributionId']
+        if is_ecmp_enabled is None and 'isEcmpEnabled' in kwargs:
+            is_ecmp_enabled = kwargs['isEcmpEnabled']
+        if remove_import_trigger is None and 'removeImportTrigger' in kwargs:
+            remove_import_trigger = kwargs['removeImportTrigger']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if drg_id is not None:
-            pulumi.set(__self__, "drg_id", drg_id)
+            _setter("drg_id", drg_id)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if import_drg_route_distribution_id is not None:
-            pulumi.set(__self__, "import_drg_route_distribution_id", import_drg_route_distribution_id)
+            _setter("import_drg_route_distribution_id", import_drg_route_distribution_id)
         if is_ecmp_enabled is not None:
-            pulumi.set(__self__, "is_ecmp_enabled", is_ecmp_enabled)
+            _setter("is_ecmp_enabled", is_ecmp_enabled)
         if remove_import_trigger is not None:
-            pulumi.set(__self__, "remove_import_trigger", remove_import_trigger)
+            _setter("remove_import_trigger", remove_import_trigger)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -423,6 +509,10 @@ class DrgRouteTable(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DrgRouteTableArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['AddSdmColumnsArgs', 'AddSdmColumns']
@@ -18,7 +18,22 @@ class AddSdmColumnsArgs:
         """
         The set of arguments for constructing a AddSdmColumns resource.
         """
-        pulumi.set(__self__, "masking_policy_id", masking_policy_id)
+        AddSdmColumnsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            masking_policy_id=masking_policy_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             masking_policy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if masking_policy_id is None and 'maskingPolicyId' in kwargs:
+            masking_policy_id = kwargs['maskingPolicyId']
+        if masking_policy_id is None:
+            raise TypeError("Missing 'masking_policy_id' argument")
+
+        _setter("masking_policy_id", masking_policy_id)
 
     @property
     @pulumi.getter(name="maskingPolicyId")
@@ -37,8 +52,21 @@ class _AddSdmColumnsState:
         """
         Input properties used for looking up and filtering AddSdmColumns resources.
         """
+        _AddSdmColumnsState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            masking_policy_id=masking_policy_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             masking_policy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if masking_policy_id is None and 'maskingPolicyId' in kwargs:
+            masking_policy_id = kwargs['maskingPolicyId']
+
         if masking_policy_id is not None:
-            pulumi.set(__self__, "masking_policy_id", masking_policy_id)
+            _setter("masking_policy_id", masking_policy_id)
 
     @property
     @pulumi.getter(name="maskingPolicyId")
@@ -80,6 +108,10 @@ class AddSdmColumns(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AddSdmColumnsArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

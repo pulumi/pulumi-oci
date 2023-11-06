@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -61,47 +61,136 @@ class NodePoolArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "cluster_id", cluster_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "node_shape", node_shape)
+        NodePoolArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cluster_id=cluster_id,
+            compartment_id=compartment_id,
+            node_shape=node_shape,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            initial_node_labels=initial_node_labels,
+            kubernetes_version=kubernetes_version,
+            name=name,
+            node_config_details=node_config_details,
+            node_eviction_node_pool_settings=node_eviction_node_pool_settings,
+            node_image_id=node_image_id,
+            node_image_name=node_image_name,
+            node_metadata=node_metadata,
+            node_pool_cycling_details=node_pool_cycling_details,
+            node_shape_config=node_shape_config,
+            node_source_details=node_source_details,
+            quantity_per_subnet=quantity_per_subnet,
+            ssh_public_key=ssh_public_key,
+            subnet_ids=subnet_ids,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cluster_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             node_shape: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             initial_node_labels: Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolInitialNodeLabelArgs']]]] = None,
+             kubernetes_version: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             node_config_details: Optional[pulumi.Input['NodePoolNodeConfigDetailsArgs']] = None,
+             node_eviction_node_pool_settings: Optional[pulumi.Input['NodePoolNodeEvictionNodePoolSettingsArgs']] = None,
+             node_image_id: Optional[pulumi.Input[str]] = None,
+             node_image_name: Optional[pulumi.Input[str]] = None,
+             node_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             node_pool_cycling_details: Optional[pulumi.Input['NodePoolNodePoolCyclingDetailsArgs']] = None,
+             node_shape_config: Optional[pulumi.Input['NodePoolNodeShapeConfigArgs']] = None,
+             node_source_details: Optional[pulumi.Input['NodePoolNodeSourceDetailsArgs']] = None,
+             quantity_per_subnet: Optional[pulumi.Input[int]] = None,
+             ssh_public_key: Optional[pulumi.Input[str]] = None,
+             subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if cluster_id is None and 'clusterId' in kwargs:
+            cluster_id = kwargs['clusterId']
+        if cluster_id is None:
+            raise TypeError("Missing 'cluster_id' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if node_shape is None and 'nodeShape' in kwargs:
+            node_shape = kwargs['nodeShape']
+        if node_shape is None:
+            raise TypeError("Missing 'node_shape' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if initial_node_labels is None and 'initialNodeLabels' in kwargs:
+            initial_node_labels = kwargs['initialNodeLabels']
+        if kubernetes_version is None and 'kubernetesVersion' in kwargs:
+            kubernetes_version = kwargs['kubernetesVersion']
+        if node_config_details is None and 'nodeConfigDetails' in kwargs:
+            node_config_details = kwargs['nodeConfigDetails']
+        if node_eviction_node_pool_settings is None and 'nodeEvictionNodePoolSettings' in kwargs:
+            node_eviction_node_pool_settings = kwargs['nodeEvictionNodePoolSettings']
+        if node_image_id is None and 'nodeImageId' in kwargs:
+            node_image_id = kwargs['nodeImageId']
+        if node_image_name is None and 'nodeImageName' in kwargs:
+            node_image_name = kwargs['nodeImageName']
+        if node_metadata is None and 'nodeMetadata' in kwargs:
+            node_metadata = kwargs['nodeMetadata']
+        if node_pool_cycling_details is None and 'nodePoolCyclingDetails' in kwargs:
+            node_pool_cycling_details = kwargs['nodePoolCyclingDetails']
+        if node_shape_config is None and 'nodeShapeConfig' in kwargs:
+            node_shape_config = kwargs['nodeShapeConfig']
+        if node_source_details is None and 'nodeSourceDetails' in kwargs:
+            node_source_details = kwargs['nodeSourceDetails']
+        if quantity_per_subnet is None and 'quantityPerSubnet' in kwargs:
+            quantity_per_subnet = kwargs['quantityPerSubnet']
+        if ssh_public_key is None and 'sshPublicKey' in kwargs:
+            ssh_public_key = kwargs['sshPublicKey']
+        if subnet_ids is None and 'subnetIds' in kwargs:
+            subnet_ids = kwargs['subnetIds']
+
+        _setter("cluster_id", cluster_id)
+        _setter("compartment_id", compartment_id)
+        _setter("node_shape", node_shape)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if initial_node_labels is not None:
-            pulumi.set(__self__, "initial_node_labels", initial_node_labels)
+            _setter("initial_node_labels", initial_node_labels)
         if kubernetes_version is not None:
-            pulumi.set(__self__, "kubernetes_version", kubernetes_version)
+            _setter("kubernetes_version", kubernetes_version)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if node_config_details is not None:
-            pulumi.set(__self__, "node_config_details", node_config_details)
+            _setter("node_config_details", node_config_details)
         if node_eviction_node_pool_settings is not None:
-            pulumi.set(__self__, "node_eviction_node_pool_settings", node_eviction_node_pool_settings)
+            _setter("node_eviction_node_pool_settings", node_eviction_node_pool_settings)
         if node_image_id is not None:
             warnings.warn("""The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""", DeprecationWarning)
             pulumi.log.warn("""node_image_id is deprecated: The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""")
         if node_image_id is not None:
-            pulumi.set(__self__, "node_image_id", node_image_id)
+            _setter("node_image_id", node_image_id)
         if node_image_name is not None:
             warnings.warn("""The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""", DeprecationWarning)
             pulumi.log.warn("""node_image_name is deprecated: The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""")
         if node_image_name is not None:
-            pulumi.set(__self__, "node_image_name", node_image_name)
+            _setter("node_image_name", node_image_name)
         if node_metadata is not None:
-            pulumi.set(__self__, "node_metadata", node_metadata)
+            _setter("node_metadata", node_metadata)
         if node_pool_cycling_details is not None:
-            pulumi.set(__self__, "node_pool_cycling_details", node_pool_cycling_details)
+            _setter("node_pool_cycling_details", node_pool_cycling_details)
         if node_shape_config is not None:
-            pulumi.set(__self__, "node_shape_config", node_shape_config)
+            _setter("node_shape_config", node_shape_config)
         if node_source_details is not None:
-            pulumi.set(__self__, "node_source_details", node_source_details)
+            _setter("node_source_details", node_source_details)
         if quantity_per_subnet is not None:
-            pulumi.set(__self__, "quantity_per_subnet", quantity_per_subnet)
+            _setter("quantity_per_subnet", quantity_per_subnet)
         if ssh_public_key is not None:
-            pulumi.set(__self__, "ssh_public_key", ssh_public_key)
+            _setter("ssh_public_key", ssh_public_key)
         if subnet_ids is not None:
-            pulumi.set(__self__, "subnet_ids", subnet_ids)
+            _setter("subnet_ids", subnet_ids)
 
     @property
     @pulumi.getter(name="clusterId")
@@ -398,58 +487,153 @@ class _NodePoolState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _NodePoolState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cluster_id=cluster_id,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            initial_node_labels=initial_node_labels,
+            kubernetes_version=kubernetes_version,
+            lifecycle_details=lifecycle_details,
+            name=name,
+            node_config_details=node_config_details,
+            node_eviction_node_pool_settings=node_eviction_node_pool_settings,
+            node_image_id=node_image_id,
+            node_image_name=node_image_name,
+            node_metadata=node_metadata,
+            node_pool_cycling_details=node_pool_cycling_details,
+            node_shape=node_shape,
+            node_shape_config=node_shape_config,
+            node_source_details=node_source_details,
+            node_sources=node_sources,
+            nodes=nodes,
+            quantity_per_subnet=quantity_per_subnet,
+            ssh_public_key=ssh_public_key,
+            state=state,
+            subnet_ids=subnet_ids,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cluster_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             initial_node_labels: Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolInitialNodeLabelArgs']]]] = None,
+             kubernetes_version: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             node_config_details: Optional[pulumi.Input['NodePoolNodeConfigDetailsArgs']] = None,
+             node_eviction_node_pool_settings: Optional[pulumi.Input['NodePoolNodeEvictionNodePoolSettingsArgs']] = None,
+             node_image_id: Optional[pulumi.Input[str]] = None,
+             node_image_name: Optional[pulumi.Input[str]] = None,
+             node_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             node_pool_cycling_details: Optional[pulumi.Input['NodePoolNodePoolCyclingDetailsArgs']] = None,
+             node_shape: Optional[pulumi.Input[str]] = None,
+             node_shape_config: Optional[pulumi.Input['NodePoolNodeShapeConfigArgs']] = None,
+             node_source_details: Optional[pulumi.Input['NodePoolNodeSourceDetailsArgs']] = None,
+             node_sources: Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolNodeSourceArgs']]]] = None,
+             nodes: Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolNodeArgs']]]] = None,
+             quantity_per_subnet: Optional[pulumi.Input[int]] = None,
+             ssh_public_key: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if cluster_id is None and 'clusterId' in kwargs:
+            cluster_id = kwargs['clusterId']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if initial_node_labels is None and 'initialNodeLabels' in kwargs:
+            initial_node_labels = kwargs['initialNodeLabels']
+        if kubernetes_version is None and 'kubernetesVersion' in kwargs:
+            kubernetes_version = kwargs['kubernetesVersion']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if node_config_details is None and 'nodeConfigDetails' in kwargs:
+            node_config_details = kwargs['nodeConfigDetails']
+        if node_eviction_node_pool_settings is None and 'nodeEvictionNodePoolSettings' in kwargs:
+            node_eviction_node_pool_settings = kwargs['nodeEvictionNodePoolSettings']
+        if node_image_id is None and 'nodeImageId' in kwargs:
+            node_image_id = kwargs['nodeImageId']
+        if node_image_name is None and 'nodeImageName' in kwargs:
+            node_image_name = kwargs['nodeImageName']
+        if node_metadata is None and 'nodeMetadata' in kwargs:
+            node_metadata = kwargs['nodeMetadata']
+        if node_pool_cycling_details is None and 'nodePoolCyclingDetails' in kwargs:
+            node_pool_cycling_details = kwargs['nodePoolCyclingDetails']
+        if node_shape is None and 'nodeShape' in kwargs:
+            node_shape = kwargs['nodeShape']
+        if node_shape_config is None and 'nodeShapeConfig' in kwargs:
+            node_shape_config = kwargs['nodeShapeConfig']
+        if node_source_details is None and 'nodeSourceDetails' in kwargs:
+            node_source_details = kwargs['nodeSourceDetails']
+        if node_sources is None and 'nodeSources' in kwargs:
+            node_sources = kwargs['nodeSources']
+        if quantity_per_subnet is None and 'quantityPerSubnet' in kwargs:
+            quantity_per_subnet = kwargs['quantityPerSubnet']
+        if ssh_public_key is None and 'sshPublicKey' in kwargs:
+            ssh_public_key = kwargs['sshPublicKey']
+        if subnet_ids is None and 'subnetIds' in kwargs:
+            subnet_ids = kwargs['subnetIds']
+
         if cluster_id is not None:
-            pulumi.set(__self__, "cluster_id", cluster_id)
+            _setter("cluster_id", cluster_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if initial_node_labels is not None:
-            pulumi.set(__self__, "initial_node_labels", initial_node_labels)
+            _setter("initial_node_labels", initial_node_labels)
         if kubernetes_version is not None:
-            pulumi.set(__self__, "kubernetes_version", kubernetes_version)
+            _setter("kubernetes_version", kubernetes_version)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if node_config_details is not None:
-            pulumi.set(__self__, "node_config_details", node_config_details)
+            _setter("node_config_details", node_config_details)
         if node_eviction_node_pool_settings is not None:
-            pulumi.set(__self__, "node_eviction_node_pool_settings", node_eviction_node_pool_settings)
+            _setter("node_eviction_node_pool_settings", node_eviction_node_pool_settings)
         if node_image_id is not None:
             warnings.warn("""The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""", DeprecationWarning)
             pulumi.log.warn("""node_image_id is deprecated: The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""")
         if node_image_id is not None:
-            pulumi.set(__self__, "node_image_id", node_image_id)
+            _setter("node_image_id", node_image_id)
         if node_image_name is not None:
             warnings.warn("""The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""", DeprecationWarning)
             pulumi.log.warn("""node_image_name is deprecated: The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""")
         if node_image_name is not None:
-            pulumi.set(__self__, "node_image_name", node_image_name)
+            _setter("node_image_name", node_image_name)
         if node_metadata is not None:
-            pulumi.set(__self__, "node_metadata", node_metadata)
+            _setter("node_metadata", node_metadata)
         if node_pool_cycling_details is not None:
-            pulumi.set(__self__, "node_pool_cycling_details", node_pool_cycling_details)
+            _setter("node_pool_cycling_details", node_pool_cycling_details)
         if node_shape is not None:
-            pulumi.set(__self__, "node_shape", node_shape)
+            _setter("node_shape", node_shape)
         if node_shape_config is not None:
-            pulumi.set(__self__, "node_shape_config", node_shape_config)
+            _setter("node_shape_config", node_shape_config)
         if node_source_details is not None:
-            pulumi.set(__self__, "node_source_details", node_source_details)
+            _setter("node_source_details", node_source_details)
         if node_sources is not None:
-            pulumi.set(__self__, "node_sources", node_sources)
+            _setter("node_sources", node_sources)
         if nodes is not None:
-            pulumi.set(__self__, "nodes", nodes)
+            _setter("nodes", nodes)
         if quantity_per_subnet is not None:
-            pulumi.set(__self__, "quantity_per_subnet", quantity_per_subnet)
+            _setter("quantity_per_subnet", quantity_per_subnet)
         if ssh_public_key is not None:
-            pulumi.set(__self__, "ssh_public_key", ssh_public_key)
+            _setter("ssh_public_key", ssh_public_key)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if subnet_ids is not None:
-            pulumi.set(__self__, "subnet_ids", subnet_ids)
+            _setter("subnet_ids", subnet_ids)
 
     @property
     @pulumi.getter(name="clusterId")
@@ -983,6 +1167,10 @@ class NodePool(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            NodePoolArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -1027,16 +1215,41 @@ class NodePool(pulumi.CustomResource):
             __props__.__dict__["initial_node_labels"] = initial_node_labels
             __props__.__dict__["kubernetes_version"] = kubernetes_version
             __props__.__dict__["name"] = name
+            if node_config_details is not None and not isinstance(node_config_details, NodePoolNodeConfigDetailsArgs):
+                node_config_details = node_config_details or {}
+                def _setter(key, value):
+                    node_config_details[key] = value
+                NodePoolNodeConfigDetailsArgs._configure(_setter, **node_config_details)
             __props__.__dict__["node_config_details"] = node_config_details
+            if node_eviction_node_pool_settings is not None and not isinstance(node_eviction_node_pool_settings, NodePoolNodeEvictionNodePoolSettingsArgs):
+                node_eviction_node_pool_settings = node_eviction_node_pool_settings or {}
+                def _setter(key, value):
+                    node_eviction_node_pool_settings[key] = value
+                NodePoolNodeEvictionNodePoolSettingsArgs._configure(_setter, **node_eviction_node_pool_settings)
             __props__.__dict__["node_eviction_node_pool_settings"] = node_eviction_node_pool_settings
             __props__.__dict__["node_image_id"] = node_image_id
             __props__.__dict__["node_image_name"] = node_image_name
             __props__.__dict__["node_metadata"] = node_metadata
+            if node_pool_cycling_details is not None and not isinstance(node_pool_cycling_details, NodePoolNodePoolCyclingDetailsArgs):
+                node_pool_cycling_details = node_pool_cycling_details or {}
+                def _setter(key, value):
+                    node_pool_cycling_details[key] = value
+                NodePoolNodePoolCyclingDetailsArgs._configure(_setter, **node_pool_cycling_details)
             __props__.__dict__["node_pool_cycling_details"] = node_pool_cycling_details
             if node_shape is None and not opts.urn:
                 raise TypeError("Missing required property 'node_shape'")
             __props__.__dict__["node_shape"] = node_shape
+            if node_shape_config is not None and not isinstance(node_shape_config, NodePoolNodeShapeConfigArgs):
+                node_shape_config = node_shape_config or {}
+                def _setter(key, value):
+                    node_shape_config[key] = value
+                NodePoolNodeShapeConfigArgs._configure(_setter, **node_shape_config)
             __props__.__dict__["node_shape_config"] = node_shape_config
+            if node_source_details is not None and not isinstance(node_source_details, NodePoolNodeSourceDetailsArgs):
+                node_source_details = node_source_details or {}
+                def _setter(key, value):
+                    node_source_details[key] = value
+                NodePoolNodeSourceDetailsArgs._configure(_setter, **node_source_details)
             __props__.__dict__["node_source_details"] = node_source_details
             __props__.__dict__["quantity_per_subnet"] = quantity_per_subnet
             __props__.__dict__["ssh_public_key"] = ssh_public_key

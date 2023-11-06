@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -40,17 +40,50 @@ class BucketRetentionRuleArgs:
         :param pulumi.Input[str] time_modified: The date and time that the retention rule was modified as per [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_rule_locked: (Updatable) The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) after which this rule is locked and can only be deleted by deleting the bucket. Once a rule is locked, only increases in the duration are allowed and no other properties can be changed. This property cannot be updated for rules that are in a locked state. Specifying it when a duration is not specified is considered an error.
         """
-        pulumi.set(__self__, "display_name", display_name)
+        BucketRetentionRuleArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            duration=duration,
+            retention_rule_id=retention_rule_id,
+            time_created=time_created,
+            time_modified=time_modified,
+            time_rule_locked=time_rule_locked,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[pulumi.Input[str]] = None,
+             duration: Optional[pulumi.Input['BucketRetentionRuleDurationArgs']] = None,
+             retention_rule_id: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_modified: Optional[pulumi.Input[str]] = None,
+             time_rule_locked: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if retention_rule_id is None and 'retentionRuleId' in kwargs:
+            retention_rule_id = kwargs['retentionRuleId']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_modified is None and 'timeModified' in kwargs:
+            time_modified = kwargs['timeModified']
+        if time_rule_locked is None and 'timeRuleLocked' in kwargs:
+            time_rule_locked = kwargs['timeRuleLocked']
+
+        _setter("display_name", display_name)
         if duration is not None:
-            pulumi.set(__self__, "duration", duration)
+            _setter("duration", duration)
         if retention_rule_id is not None:
-            pulumi.set(__self__, "retention_rule_id", retention_rule_id)
+            _setter("retention_rule_id", retention_rule_id)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_modified is not None:
-            pulumi.set(__self__, "time_modified", time_modified)
+            _setter("time_modified", time_modified)
         if time_rule_locked is not None:
-            pulumi.set(__self__, "time_rule_locked", time_rule_locked)
+            _setter("time_rule_locked", time_rule_locked)
 
     @property
     @pulumi.getter(name="displayName")
@@ -134,8 +167,29 @@ class BucketRetentionRuleDurationArgs:
         :param pulumi.Input[str] time_amount: (Updatable) The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified timestamp.
         :param pulumi.Input[str] time_unit: (Updatable) The unit that should be used to interpret timeAmount.
         """
-        pulumi.set(__self__, "time_amount", time_amount)
-        pulumi.set(__self__, "time_unit", time_unit)
+        BucketRetentionRuleDurationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_amount=time_amount,
+            time_unit=time_unit,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_amount: Optional[pulumi.Input[str]] = None,
+             time_unit: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if time_amount is None and 'timeAmount' in kwargs:
+            time_amount = kwargs['timeAmount']
+        if time_amount is None:
+            raise TypeError("Missing 'time_amount' argument")
+        if time_unit is None and 'timeUnit' in kwargs:
+            time_unit = kwargs['timeUnit']
+        if time_unit is None:
+            raise TypeError("Missing 'time_unit' argument")
+
+        _setter("time_amount", time_amount)
+        _setter("time_unit", time_unit)
 
     @property
     @pulumi.getter(name="timeAmount")
@@ -185,15 +239,56 @@ class ObjectLifecyclePolicyRuleArgs:
         :param pulumi.Input['ObjectLifecyclePolicyRuleObjectNameFilterArgs'] object_name_filter: (Updatable) A filter that compares object names to a set of prefixes or patterns to determine if a rule applies to a given object. The filter can contain include glob patterns, exclude glob patterns and inclusion prefixes. The inclusion prefixes property is kept for backward compatibility. It is recommended to use inclusion patterns instead of prefixes. Exclusions take precedence over inclusions.
         :param pulumi.Input[str] target: (Updatable) The target of the object lifecycle policy rule. The values of target can be either "objects", "multipart-uploads" or "previous-object-versions". This field when declared as "objects" is used to specify ARCHIVE, INFREQUENT_ACCESS or DELETE rule for objects. This field when declared as "previous-object-versions" is used to specify ARCHIVE, INFREQUENT_ACCESS or DELETE rule for previous versions of existing objects. This field when declared as "multipart-uploads" is used to specify the ABORT (only) rule for uncommitted multipart-uploads.
         """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "time_amount", time_amount)
-        pulumi.set(__self__, "time_unit", time_unit)
+        ObjectLifecyclePolicyRuleArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            is_enabled=is_enabled,
+            name=name,
+            time_amount=time_amount,
+            time_unit=time_unit,
+            object_name_filter=object_name_filter,
+            target=target,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: Optional[pulumi.Input[str]] = None,
+             is_enabled: Optional[pulumi.Input[bool]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             time_amount: Optional[pulumi.Input[str]] = None,
+             time_unit: Optional[pulumi.Input[str]] = None,
+             object_name_filter: Optional[pulumi.Input['ObjectLifecyclePolicyRuleObjectNameFilterArgs']] = None,
+             target: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if action is None:
+            raise TypeError("Missing 'action' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if time_amount is None and 'timeAmount' in kwargs:
+            time_amount = kwargs['timeAmount']
+        if time_amount is None:
+            raise TypeError("Missing 'time_amount' argument")
+        if time_unit is None and 'timeUnit' in kwargs:
+            time_unit = kwargs['timeUnit']
+        if time_unit is None:
+            raise TypeError("Missing 'time_unit' argument")
+        if object_name_filter is None and 'objectNameFilter' in kwargs:
+            object_name_filter = kwargs['objectNameFilter']
+
+        _setter("action", action)
+        _setter("is_enabled", is_enabled)
+        _setter("name", name)
+        _setter("time_amount", time_amount)
+        _setter("time_unit", time_unit)
         if object_name_filter is not None:
-            pulumi.set(__self__, "object_name_filter", object_name_filter)
+            _setter("object_name_filter", object_name_filter)
         if target is not None:
-            pulumi.set(__self__, "target", target)
+            _setter("target", target)
 
     @property
     @pulumi.getter
@@ -305,12 +400,33 @@ class ObjectLifecyclePolicyRuleObjectNameFilterArgs:
                *           Matches any string of characters. ?           Matches any single character . [...]       Matches a group of characters. A group of characters can be: A set of characters, for example: [Zafg9@]. This matches any character in the brackets. A range of characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a '-' in the range, make it the first or last character.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] inclusion_prefixes: (Updatable) An array of object name prefixes that the rule will apply to. An empty array means to include all objects.
         """
+        ObjectLifecyclePolicyRuleObjectNameFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            exclusion_patterns=exclusion_patterns,
+            inclusion_patterns=inclusion_patterns,
+            inclusion_prefixes=inclusion_prefixes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             exclusion_patterns: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             inclusion_patterns: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             inclusion_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if exclusion_patterns is None and 'exclusionPatterns' in kwargs:
+            exclusion_patterns = kwargs['exclusionPatterns']
+        if inclusion_patterns is None and 'inclusionPatterns' in kwargs:
+            inclusion_patterns = kwargs['inclusionPatterns']
+        if inclusion_prefixes is None and 'inclusionPrefixes' in kwargs:
+            inclusion_prefixes = kwargs['inclusionPrefixes']
+
         if exclusion_patterns is not None:
-            pulumi.set(__self__, "exclusion_patterns", exclusion_patterns)
+            _setter("exclusion_patterns", exclusion_patterns)
         if inclusion_patterns is not None:
-            pulumi.set(__self__, "inclusion_patterns", inclusion_patterns)
+            _setter("inclusion_patterns", inclusion_patterns)
         if inclusion_prefixes is not None:
-            pulumi.set(__self__, "inclusion_prefixes", inclusion_prefixes)
+            _setter("inclusion_prefixes", inclusion_prefixes)
 
     @property
     @pulumi.getter(name="exclusionPatterns")
@@ -384,18 +500,59 @@ class StorageObjectSourceUriDetailsArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "region", region)
+        StorageObjectSourceUriDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            object=object,
+            region=region,
+            destination_object_if_match_etag=destination_object_if_match_etag,
+            destination_object_if_none_match_etag=destination_object_if_none_match_etag,
+            source_object_if_match_etag=source_object_if_match_etag,
+            source_version_id=source_version_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             object: Optional[pulumi.Input[str]] = None,
+             region: Optional[pulumi.Input[str]] = None,
+             destination_object_if_match_etag: Optional[pulumi.Input[str]] = None,
+             destination_object_if_none_match_etag: Optional[pulumi.Input[str]] = None,
+             source_object_if_match_etag: Optional[pulumi.Input[str]] = None,
+             source_version_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if object is None:
+            raise TypeError("Missing 'object' argument")
+        if region is None:
+            raise TypeError("Missing 'region' argument")
+        if destination_object_if_match_etag is None and 'destinationObjectIfMatchEtag' in kwargs:
+            destination_object_if_match_etag = kwargs['destinationObjectIfMatchEtag']
+        if destination_object_if_none_match_etag is None and 'destinationObjectIfNoneMatchEtag' in kwargs:
+            destination_object_if_none_match_etag = kwargs['destinationObjectIfNoneMatchEtag']
+        if source_object_if_match_etag is None and 'sourceObjectIfMatchEtag' in kwargs:
+            source_object_if_match_etag = kwargs['sourceObjectIfMatchEtag']
+        if source_version_id is None and 'sourceVersionId' in kwargs:
+            source_version_id = kwargs['sourceVersionId']
+
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
+        _setter("object", object)
+        _setter("region", region)
         if destination_object_if_match_etag is not None:
-            pulumi.set(__self__, "destination_object_if_match_etag", destination_object_if_match_etag)
+            _setter("destination_object_if_match_etag", destination_object_if_match_etag)
         if destination_object_if_none_match_etag is not None:
-            pulumi.set(__self__, "destination_object_if_none_match_etag", destination_object_if_none_match_etag)
+            _setter("destination_object_if_none_match_etag", destination_object_if_none_match_etag)
         if source_object_if_match_etag is not None:
-            pulumi.set(__self__, "source_object_if_match_etag", source_object_if_match_etag)
+            _setter("source_object_if_match_etag", source_object_if_match_etag)
         if source_version_id is not None:
-            pulumi.set(__self__, "source_version_id", source_version_id)
+            _setter("source_version_id", source_version_id)
 
     @property
     @pulumi.getter
@@ -507,10 +664,29 @@ class GetBucketSummariesFilterArgs:
         """
         :param str name: The name of the bucket. Avoid entering confidential information. Example: my-new-bucket1
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetBucketSummariesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -552,10 +728,29 @@ class GetObjectVersionsFilterArgs:
         """
         :param str name: The name of the object. Avoid entering confidential information. Example: test/object1.log
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetObjectVersionsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -597,10 +792,29 @@ class GetObjectsFilterArgs:
         """
         :param str name: The name of the object.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetObjectsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -642,10 +856,29 @@ class GetPreauthrequestsFilterArgs:
         """
         :param str name: The user-provided name of the pre-authenticated request.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetPreauthrequestsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -687,10 +920,29 @@ class GetReplicationPoliciesFilterArgs:
         """
         :param str name: The name of the policy.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetReplicationPoliciesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -729,10 +981,29 @@ class GetReplicationSourcesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetReplicationSourcesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -43,24 +43,75 @@ class NotebookSessionArgs:
         :param pulumi.Input[Sequence[pulumi.Input['NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs']]] notebook_session_storage_mount_configuration_details_lists: (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
         :param pulumi.Input[str] state: The state of the notebook session.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "project_id", project_id)
+        NotebookSessionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            project_id=project_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            notebook_session_config_details=notebook_session_config_details,
+            notebook_session_configuration_details=notebook_session_configuration_details,
+            notebook_session_runtime_config_details=notebook_session_runtime_config_details,
+            notebook_session_storage_mount_configuration_details_lists=notebook_session_storage_mount_configuration_details_lists,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             project_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             notebook_session_config_details: Optional[pulumi.Input['NotebookSessionNotebookSessionConfigDetailsArgs']] = None,
+             notebook_session_configuration_details: Optional[pulumi.Input['NotebookSessionNotebookSessionConfigurationDetailsArgs']] = None,
+             notebook_session_runtime_config_details: Optional[pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsArgs']] = None,
+             notebook_session_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input['NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs']]]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if project_id is None and 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if notebook_session_config_details is None and 'notebookSessionConfigDetails' in kwargs:
+            notebook_session_config_details = kwargs['notebookSessionConfigDetails']
+        if notebook_session_configuration_details is None and 'notebookSessionConfigurationDetails' in kwargs:
+            notebook_session_configuration_details = kwargs['notebookSessionConfigurationDetails']
+        if notebook_session_runtime_config_details is None and 'notebookSessionRuntimeConfigDetails' in kwargs:
+            notebook_session_runtime_config_details = kwargs['notebookSessionRuntimeConfigDetails']
+        if notebook_session_storage_mount_configuration_details_lists is None and 'notebookSessionStorageMountConfigurationDetailsLists' in kwargs:
+            notebook_session_storage_mount_configuration_details_lists = kwargs['notebookSessionStorageMountConfigurationDetailsLists']
+
+        _setter("compartment_id", compartment_id)
+        _setter("project_id", project_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if notebook_session_config_details is not None:
-            pulumi.set(__self__, "notebook_session_config_details", notebook_session_config_details)
+            _setter("notebook_session_config_details", notebook_session_config_details)
         if notebook_session_configuration_details is not None:
-            pulumi.set(__self__, "notebook_session_configuration_details", notebook_session_configuration_details)
+            _setter("notebook_session_configuration_details", notebook_session_configuration_details)
         if notebook_session_runtime_config_details is not None:
-            pulumi.set(__self__, "notebook_session_runtime_config_details", notebook_session_runtime_config_details)
+            _setter("notebook_session_runtime_config_details", notebook_session_runtime_config_details)
         if notebook_session_storage_mount_configuration_details_lists is not None:
-            pulumi.set(__self__, "notebook_session_storage_mount_configuration_details_lists", notebook_session_storage_mount_configuration_details_lists)
+            _setter("notebook_session_storage_mount_configuration_details_lists", notebook_session_storage_mount_configuration_details_lists)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -225,34 +276,97 @@ class _NotebookSessionState:
         :param pulumi.Input[str] state: The state of the notebook session.
         :param pulumi.Input[str] time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         """
+        _NotebookSessionState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            created_by=created_by,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            notebook_session_config_details=notebook_session_config_details,
+            notebook_session_configuration_details=notebook_session_configuration_details,
+            notebook_session_runtime_config_details=notebook_session_runtime_config_details,
+            notebook_session_storage_mount_configuration_details_lists=notebook_session_storage_mount_configuration_details_lists,
+            notebook_session_url=notebook_session_url,
+            project_id=project_id,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             created_by: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             notebook_session_config_details: Optional[pulumi.Input['NotebookSessionNotebookSessionConfigDetailsArgs']] = None,
+             notebook_session_configuration_details: Optional[pulumi.Input['NotebookSessionNotebookSessionConfigurationDetailsArgs']] = None,
+             notebook_session_runtime_config_details: Optional[pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsArgs']] = None,
+             notebook_session_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input['NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs']]]] = None,
+             notebook_session_url: Optional[pulumi.Input[str]] = None,
+             project_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if created_by is None and 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if notebook_session_config_details is None and 'notebookSessionConfigDetails' in kwargs:
+            notebook_session_config_details = kwargs['notebookSessionConfigDetails']
+        if notebook_session_configuration_details is None and 'notebookSessionConfigurationDetails' in kwargs:
+            notebook_session_configuration_details = kwargs['notebookSessionConfigurationDetails']
+        if notebook_session_runtime_config_details is None and 'notebookSessionRuntimeConfigDetails' in kwargs:
+            notebook_session_runtime_config_details = kwargs['notebookSessionRuntimeConfigDetails']
+        if notebook_session_storage_mount_configuration_details_lists is None and 'notebookSessionStorageMountConfigurationDetailsLists' in kwargs:
+            notebook_session_storage_mount_configuration_details_lists = kwargs['notebookSessionStorageMountConfigurationDetailsLists']
+        if notebook_session_url is None and 'notebookSessionUrl' in kwargs:
+            notebook_session_url = kwargs['notebookSessionUrl']
+        if project_id is None and 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if created_by is not None:
-            pulumi.set(__self__, "created_by", created_by)
+            _setter("created_by", created_by)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if notebook_session_config_details is not None:
-            pulumi.set(__self__, "notebook_session_config_details", notebook_session_config_details)
+            _setter("notebook_session_config_details", notebook_session_config_details)
         if notebook_session_configuration_details is not None:
-            pulumi.set(__self__, "notebook_session_configuration_details", notebook_session_configuration_details)
+            _setter("notebook_session_configuration_details", notebook_session_configuration_details)
         if notebook_session_runtime_config_details is not None:
-            pulumi.set(__self__, "notebook_session_runtime_config_details", notebook_session_runtime_config_details)
+            _setter("notebook_session_runtime_config_details", notebook_session_runtime_config_details)
         if notebook_session_storage_mount_configuration_details_lists is not None:
-            pulumi.set(__self__, "notebook_session_storage_mount_configuration_details_lists", notebook_session_storage_mount_configuration_details_lists)
+            _setter("notebook_session_storage_mount_configuration_details_lists", notebook_session_storage_mount_configuration_details_lists)
         if notebook_session_url is not None:
-            pulumi.set(__self__, "notebook_session_url", notebook_session_url)
+            _setter("notebook_session_url", notebook_session_url)
         if project_id is not None:
-            pulumi.set(__self__, "project_id", project_id)
+            _setter("project_id", project_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -614,6 +728,10 @@ class NotebookSession(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            NotebookSessionArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -644,8 +762,23 @@ class NotebookSession(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            if notebook_session_config_details is not None and not isinstance(notebook_session_config_details, NotebookSessionNotebookSessionConfigDetailsArgs):
+                notebook_session_config_details = notebook_session_config_details or {}
+                def _setter(key, value):
+                    notebook_session_config_details[key] = value
+                NotebookSessionNotebookSessionConfigDetailsArgs._configure(_setter, **notebook_session_config_details)
             __props__.__dict__["notebook_session_config_details"] = notebook_session_config_details
+            if notebook_session_configuration_details is not None and not isinstance(notebook_session_configuration_details, NotebookSessionNotebookSessionConfigurationDetailsArgs):
+                notebook_session_configuration_details = notebook_session_configuration_details or {}
+                def _setter(key, value):
+                    notebook_session_configuration_details[key] = value
+                NotebookSessionNotebookSessionConfigurationDetailsArgs._configure(_setter, **notebook_session_configuration_details)
             __props__.__dict__["notebook_session_configuration_details"] = notebook_session_configuration_details
+            if notebook_session_runtime_config_details is not None and not isinstance(notebook_session_runtime_config_details, NotebookSessionNotebookSessionRuntimeConfigDetailsArgs):
+                notebook_session_runtime_config_details = notebook_session_runtime_config_details or {}
+                def _setter(key, value):
+                    notebook_session_runtime_config_details[key] = value
+                NotebookSessionNotebookSessionRuntimeConfigDetailsArgs._configure(_setter, **notebook_session_runtime_config_details)
             __props__.__dict__["notebook_session_runtime_config_details"] = notebook_session_runtime_config_details
             __props__.__dict__["notebook_session_storage_mount_configuration_details_lists"] = notebook_session_storage_mount_configuration_details_lists
             if project_id is None and not opts.urn:

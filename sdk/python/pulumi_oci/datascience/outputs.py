@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -215,13 +215,40 @@ class JobJobConfigurationDetails(dict):
         :param Mapping[str, Any] environment_variables: Environment variables to set for the job.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
         """
-        pulumi.set(__self__, "job_type", job_type)
+        JobJobConfigurationDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            job_type=job_type,
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             job_type: Optional[str] = None,
+             command_line_arguments: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             maximum_runtime_in_minutes: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if job_type is None and 'jobType' in kwargs:
+            job_type = kwargs['jobType']
+        if job_type is None:
+            raise TypeError("Missing 'job_type' argument")
+        if command_line_arguments is None and 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if environment_variables is None and 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if maximum_runtime_in_minutes is None and 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+
+        _setter("job_type", job_type)
         if command_line_arguments is not None:
-            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+            _setter("command_line_arguments", command_line_arguments)
         if environment_variables is not None:
-            pulumi.set(__self__, "environment_variables", environment_variables)
+            _setter("environment_variables", environment_variables)
         if maximum_runtime_in_minutes is not None:
-            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+            _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="jobType")
@@ -296,13 +323,48 @@ class JobJobInfrastructureConfigurationDetails(dict):
         :param 'JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs' job_shape_config_details: (Updatable) Details for the job run shape configuration. Specify only when a flex shape is selected.
         :param str subnet_id: (Updatable) The subnet to create a secondary vnic in to attach to the instance running the job
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
-        pulumi.set(__self__, "shape_name", shape_name)
+        JobJobInfrastructureConfigurationDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            job_infrastructure_type=job_infrastructure_type,
+            shape_name=shape_name,
+            job_shape_config_details=job_shape_config_details,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: Optional[int] = None,
+             job_infrastructure_type: Optional[str] = None,
+             shape_name: Optional[str] = None,
+             job_shape_config_details: Optional['outputs.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails'] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if block_storage_size_in_gbs is None and 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if block_storage_size_in_gbs is None:
+            raise TypeError("Missing 'block_storage_size_in_gbs' argument")
+        if job_infrastructure_type is None and 'jobInfrastructureType' in kwargs:
+            job_infrastructure_type = kwargs['jobInfrastructureType']
+        if job_infrastructure_type is None:
+            raise TypeError("Missing 'job_infrastructure_type' argument")
+        if shape_name is None and 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+        if job_shape_config_details is None and 'jobShapeConfigDetails' in kwargs:
+            job_shape_config_details = kwargs['jobShapeConfigDetails']
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("job_infrastructure_type", job_infrastructure_type)
+        _setter("shape_name", shape_name)
         if job_shape_config_details is not None:
-            pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+            _setter("job_shape_config_details", job_shape_config_details)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -371,10 +433,25 @@ class JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails(dict):
         :param float memory_in_gbs: (Updatable) The total amount of memory available to the job run instance, in gigabytes.
         :param float ocpus: (Updatable) The total number of OCPUs available to the job run instance.
         """
+        JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            pulumi.set(__self__, "ocpus", ocpus)
+            _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -429,14 +506,39 @@ class JobJobLogConfigurationDetails(dict):
         :param str log_group_id: The log group id for where log objects are for job runs.
         :param str log_id: The log id the job run will push logs too.
         """
+        JobJobLogConfigurationDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_auto_log_creation=enable_auto_log_creation,
+            enable_logging=enable_logging,
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_auto_log_creation: Optional[bool] = None,
+             enable_logging: Optional[bool] = None,
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if enable_auto_log_creation is None and 'enableAutoLogCreation' in kwargs:
+            enable_auto_log_creation = kwargs['enableAutoLogCreation']
+        if enable_logging is None and 'enableLogging' in kwargs:
+            enable_logging = kwargs['enableLogging']
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         if enable_auto_log_creation is not None:
-            pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+            _setter("enable_auto_log_creation", enable_auto_log_creation)
         if enable_logging is not None:
-            pulumi.set(__self__, "enable_logging", enable_logging)
+            _setter("enable_logging", enable_logging)
         if log_group_id is not None:
-            pulumi.set(__self__, "log_group_id", log_group_id)
+            _setter("log_group_id", log_group_id)
         if log_id is not None:
-            pulumi.set(__self__, "log_id", log_id)
+            _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
@@ -517,20 +619,59 @@ class JobJobStorageMountConfigurationDetailsList(dict):
         :param str namespace: (Updatable) The object storage namespace
         :param str prefix: (Updatable) Prefix in the bucket to mount
         """
-        pulumi.set(__self__, "destination_directory_name", destination_directory_name)
-        pulumi.set(__self__, "storage_type", storage_type)
+        JobJobStorageMountConfigurationDetailsList._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            destination_directory_name=destination_directory_name,
+            storage_type=storage_type,
+            bucket=bucket,
+            destination_path=destination_path,
+            export_id=export_id,
+            mount_target_id=mount_target_id,
+            namespace=namespace,
+            prefix=prefix,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             destination_directory_name: Optional[str] = None,
+             storage_type: Optional[str] = None,
+             bucket: Optional[str] = None,
+             destination_path: Optional[str] = None,
+             export_id: Optional[str] = None,
+             mount_target_id: Optional[str] = None,
+             namespace: Optional[str] = None,
+             prefix: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if destination_directory_name is None and 'destinationDirectoryName' in kwargs:
+            destination_directory_name = kwargs['destinationDirectoryName']
+        if destination_directory_name is None:
+            raise TypeError("Missing 'destination_directory_name' argument")
+        if storage_type is None and 'storageType' in kwargs:
+            storage_type = kwargs['storageType']
+        if storage_type is None:
+            raise TypeError("Missing 'storage_type' argument")
+        if destination_path is None and 'destinationPath' in kwargs:
+            destination_path = kwargs['destinationPath']
+        if export_id is None and 'exportId' in kwargs:
+            export_id = kwargs['exportId']
+        if mount_target_id is None and 'mountTargetId' in kwargs:
+            mount_target_id = kwargs['mountTargetId']
+
+        _setter("destination_directory_name", destination_directory_name)
+        _setter("storage_type", storage_type)
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if destination_path is not None:
-            pulumi.set(__self__, "destination_path", destination_path)
+            _setter("destination_path", destination_path)
         if export_id is not None:
-            pulumi.set(__self__, "export_id", export_id)
+            _setter("export_id", export_id)
         if mount_target_id is not None:
-            pulumi.set(__self__, "mount_target_id", mount_target_id)
+            _setter("mount_target_id", mount_target_id)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if prefix is not None:
-            pulumi.set(__self__, "prefix", prefix)
+            _setter("prefix", prefix)
 
     @property
     @pulumi.getter(name="destinationDirectoryName")
@@ -633,13 +774,40 @@ class JobRunJobConfigurationOverrideDetails(dict):
         :param Mapping[str, Any] environment_variables: Environment variables to set for the job.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
         """
-        pulumi.set(__self__, "job_type", job_type)
+        JobRunJobConfigurationOverrideDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            job_type=job_type,
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             job_type: Optional[str] = None,
+             command_line_arguments: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             maximum_runtime_in_minutes: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if job_type is None and 'jobType' in kwargs:
+            job_type = kwargs['jobType']
+        if job_type is None:
+            raise TypeError("Missing 'job_type' argument")
+        if command_line_arguments is None and 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if environment_variables is None and 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if maximum_runtime_in_minutes is None and 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+
+        _setter("job_type", job_type)
         if command_line_arguments is not None:
-            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+            _setter("command_line_arguments", command_line_arguments)
         if environment_variables is not None:
-            pulumi.set(__self__, "environment_variables", environment_variables)
+            _setter("environment_variables", environment_variables)
         if maximum_runtime_in_minutes is not None:
-            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+            _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="jobType")
@@ -714,16 +882,45 @@ class JobRunJobInfrastructureConfigurationDetail(dict):
         :param str shape_name: The shape used to launch the job run instances.
         :param str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
         """
+        JobRunJobInfrastructureConfigurationDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            job_infrastructure_type=job_infrastructure_type,
+            job_shape_config_details=job_shape_config_details,
+            shape_name=shape_name,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: Optional[int] = None,
+             job_infrastructure_type: Optional[str] = None,
+             job_shape_config_details: Optional[Sequence['outputs.JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail']] = None,
+             shape_name: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if block_storage_size_in_gbs is None and 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if job_infrastructure_type is None and 'jobInfrastructureType' in kwargs:
+            job_infrastructure_type = kwargs['jobInfrastructureType']
+        if job_shape_config_details is None and 'jobShapeConfigDetails' in kwargs:
+            job_shape_config_details = kwargs['jobShapeConfigDetails']
+        if shape_name is None and 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         if block_storage_size_in_gbs is not None:
-            pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+            _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
         if job_infrastructure_type is not None:
-            pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
+            _setter("job_infrastructure_type", job_infrastructure_type)
         if job_shape_config_details is not None:
-            pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+            _setter("job_shape_config_details", job_shape_config_details)
         if shape_name is not None:
-            pulumi.set(__self__, "shape_name", shape_name)
+            _setter("shape_name", shape_name)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -792,10 +989,25 @@ class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail(dict):
         :param float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
         :param float ocpus: The total number of OCPUs available to the job run instance.
         """
+        JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            pulumi.set(__self__, "ocpus", ocpus)
+            _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -850,14 +1062,39 @@ class JobRunJobLogConfigurationOverrideDetails(dict):
         :param str log_group_id: The log group id for where log objects are for job runs.
         :param str log_id: The log id the job run will push logs too.
         """
+        JobRunJobLogConfigurationOverrideDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_auto_log_creation=enable_auto_log_creation,
+            enable_logging=enable_logging,
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_auto_log_creation: Optional[bool] = None,
+             enable_logging: Optional[bool] = None,
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if enable_auto_log_creation is None and 'enableAutoLogCreation' in kwargs:
+            enable_auto_log_creation = kwargs['enableAutoLogCreation']
+        if enable_logging is None and 'enableLogging' in kwargs:
+            enable_logging = kwargs['enableLogging']
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         if enable_auto_log_creation is not None:
-            pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+            _setter("enable_auto_log_creation", enable_auto_log_creation)
         if enable_logging is not None:
-            pulumi.set(__self__, "enable_logging", enable_logging)
+            _setter("enable_logging", enable_logging)
         if log_group_id is not None:
-            pulumi.set(__self__, "log_group_id", log_group_id)
+            _setter("log_group_id", log_group_id)
         if log_id is not None:
-            pulumi.set(__self__, "log_id", log_id)
+            _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
@@ -938,22 +1175,57 @@ class JobRunJobStorageMountConfigurationDetailsList(dict):
         :param str prefix: Prefix in the bucket to mount
         :param str storage_type: The type of storage.
         """
+        JobRunJobStorageMountConfigurationDetailsList._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            destination_directory_name=destination_directory_name,
+            destination_path=destination_path,
+            export_id=export_id,
+            mount_target_id=mount_target_id,
+            namespace=namespace,
+            prefix=prefix,
+            storage_type=storage_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[str] = None,
+             destination_directory_name: Optional[str] = None,
+             destination_path: Optional[str] = None,
+             export_id: Optional[str] = None,
+             mount_target_id: Optional[str] = None,
+             namespace: Optional[str] = None,
+             prefix: Optional[str] = None,
+             storage_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if destination_directory_name is None and 'destinationDirectoryName' in kwargs:
+            destination_directory_name = kwargs['destinationDirectoryName']
+        if destination_path is None and 'destinationPath' in kwargs:
+            destination_path = kwargs['destinationPath']
+        if export_id is None and 'exportId' in kwargs:
+            export_id = kwargs['exportId']
+        if mount_target_id is None and 'mountTargetId' in kwargs:
+            mount_target_id = kwargs['mountTargetId']
+        if storage_type is None and 'storageType' in kwargs:
+            storage_type = kwargs['storageType']
+
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if destination_directory_name is not None:
-            pulumi.set(__self__, "destination_directory_name", destination_directory_name)
+            _setter("destination_directory_name", destination_directory_name)
         if destination_path is not None:
-            pulumi.set(__self__, "destination_path", destination_path)
+            _setter("destination_path", destination_path)
         if export_id is not None:
-            pulumi.set(__self__, "export_id", export_id)
+            _setter("export_id", export_id)
         if mount_target_id is not None:
-            pulumi.set(__self__, "mount_target_id", mount_target_id)
+            _setter("mount_target_id", mount_target_id)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if prefix is not None:
-            pulumi.set(__self__, "prefix", prefix)
+            _setter("prefix", prefix)
         if storage_type is not None:
-            pulumi.set(__self__, "storage_type", storage_type)
+            _setter("storage_type", storage_type)
 
     @property
     @pulumi.getter
@@ -1048,10 +1320,27 @@ class JobRunLogDetail(dict):
         :param str log_group_id: The log group id for where log objects are for job runs.
         :param str log_id: The log id the job run will push logs too.
         """
+        JobRunLogDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         if log_group_id is not None:
-            pulumi.set(__self__, "log_group_id", log_group_id)
+            _setter("log_group_id", log_group_id)
         if log_id is not None:
-            pulumi.set(__self__, "log_id", log_id)
+            _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -1091,14 +1380,31 @@ class ModelCustomMetadataList(dict):
                
                Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
         """
+        ModelCustomMetadataList._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            category=category,
+            description=description,
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             category: Optional[str] = None,
+             description: Optional[str] = None,
+             key: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if category is not None:
-            pulumi.set(__self__, "category", category)
+            _setter("category", category)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter
@@ -1162,14 +1468,31 @@ class ModelDefinedMetadataList(dict):
                
                Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
         """
+        ModelDefinedMetadataList._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            category=category,
+            description=description,
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             category: Optional[str] = None,
+             description: Optional[str] = None,
+             key: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if category is not None:
-            pulumi.set(__self__, "category", category)
+            _setter("category", category)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter
@@ -1221,10 +1544,23 @@ class ModelDeploymentCategoryLogDetails(dict):
         :param 'ModelDeploymentCategoryLogDetailsAccessArgs' access: (Updatable) The log details.
         :param 'ModelDeploymentCategoryLogDetailsPredictArgs' predict: (Updatable) The log details.
         """
+        ModelDeploymentCategoryLogDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            access=access,
+            predict=predict,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             access: Optional['outputs.ModelDeploymentCategoryLogDetailsAccess'] = None,
+             predict: Optional['outputs.ModelDeploymentCategoryLogDetailsPredict'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if access is not None:
-            pulumi.set(__self__, "access", access)
+            _setter("access", access)
         if predict is not None:
-            pulumi.set(__self__, "predict", predict)
+            _setter("predict", predict)
 
     @property
     @pulumi.getter
@@ -1271,8 +1607,29 @@ class ModelDeploymentCategoryLogDetailsAccess(dict):
         :param str log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
         :param str log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        ModelDeploymentCategoryLogDetailsAccess._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
+
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -1319,8 +1676,29 @@ class ModelDeploymentCategoryLogDetailsPredict(dict):
         :param str log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
         :param str log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        ModelDeploymentCategoryLogDetailsPredict._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
+
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -1371,10 +1749,35 @@ class ModelDeploymentModelDeploymentConfigurationDetails(dict):
         :param 'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs' model_configuration_details: (Updatable) The model configuration details.
         :param 'ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs' environment_configuration_details: (Updatable) The configuration to carry the environment details thats used in Model Deployment creation
         """
-        pulumi.set(__self__, "deployment_type", deployment_type)
-        pulumi.set(__self__, "model_configuration_details", model_configuration_details)
+        ModelDeploymentModelDeploymentConfigurationDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            deployment_type=deployment_type,
+            model_configuration_details=model_configuration_details,
+            environment_configuration_details=environment_configuration_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             deployment_type: Optional[str] = None,
+             model_configuration_details: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails'] = None,
+             environment_configuration_details: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if deployment_type is None and 'deploymentType' in kwargs:
+            deployment_type = kwargs['deploymentType']
+        if deployment_type is None:
+            raise TypeError("Missing 'deployment_type' argument")
+        if model_configuration_details is None and 'modelConfigurationDetails' in kwargs:
+            model_configuration_details = kwargs['modelConfigurationDetails']
+        if model_configuration_details is None:
+            raise TypeError("Missing 'model_configuration_details' argument")
+        if environment_configuration_details is None and 'environmentConfigurationDetails' in kwargs:
+            environment_configuration_details = kwargs['environmentConfigurationDetails']
+
+        _setter("deployment_type", deployment_type)
+        _setter("model_configuration_details", model_configuration_details)
         if environment_configuration_details is not None:
-            pulumi.set(__self__, "environment_configuration_details", environment_configuration_details)
+            _setter("environment_configuration_details", environment_configuration_details)
 
     @property
     @pulumi.getter(name="deploymentType")
@@ -1447,21 +1850,58 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
         :param str image_digest: (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
         :param int server_port: (Updatable) The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
         """
-        pulumi.set(__self__, "environment_configuration_type", environment_configuration_type)
+        ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            environment_configuration_type=environment_configuration_type,
+            cmds=cmds,
+            entrypoints=entrypoints,
+            environment_variables=environment_variables,
+            health_check_port=health_check_port,
+            image=image,
+            image_digest=image_digest,
+            server_port=server_port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             environment_configuration_type: Optional[str] = None,
+             cmds: Optional[Sequence[str]] = None,
+             entrypoints: Optional[Sequence[str]] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             health_check_port: Optional[int] = None,
+             image: Optional[str] = None,
+             image_digest: Optional[str] = None,
+             server_port: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if environment_configuration_type is None and 'environmentConfigurationType' in kwargs:
+            environment_configuration_type = kwargs['environmentConfigurationType']
+        if environment_configuration_type is None:
+            raise TypeError("Missing 'environment_configuration_type' argument")
+        if environment_variables is None and 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if health_check_port is None and 'healthCheckPort' in kwargs:
+            health_check_port = kwargs['healthCheckPort']
+        if image_digest is None and 'imageDigest' in kwargs:
+            image_digest = kwargs['imageDigest']
+        if server_port is None and 'serverPort' in kwargs:
+            server_port = kwargs['serverPort']
+
+        _setter("environment_configuration_type", environment_configuration_type)
         if cmds is not None:
-            pulumi.set(__self__, "cmds", cmds)
+            _setter("cmds", cmds)
         if entrypoints is not None:
-            pulumi.set(__self__, "entrypoints", entrypoints)
+            _setter("entrypoints", entrypoints)
         if environment_variables is not None:
-            pulumi.set(__self__, "environment_variables", environment_variables)
+            _setter("environment_variables", environment_variables)
         if health_check_port is not None:
-            pulumi.set(__self__, "health_check_port", health_check_port)
+            _setter("health_check_port", health_check_port)
         if image is not None:
-            pulumi.set(__self__, "image", image)
+            _setter("image", image)
         if image_digest is not None:
-            pulumi.set(__self__, "image_digest", image_digest)
+            _setter("image_digest", image_digest)
         if server_port is not None:
-            pulumi.set(__self__, "server_port", server_port)
+            _setter("server_port", server_port)
 
     @property
     @pulumi.getter(name="environmentConfigurationType")
@@ -1564,12 +2004,41 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         :param int bandwidth_mbps: (Updatable) The minimum network bandwidth for the model deployment.
         :param 'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs' scaling_policy: (Updatable) The scaling policy to apply to each model of the deployment.
         """
-        pulumi.set(__self__, "instance_configuration", instance_configuration)
-        pulumi.set(__self__, "model_id", model_id)
+        ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            instance_configuration=instance_configuration,
+            model_id=model_id,
+            bandwidth_mbps=bandwidth_mbps,
+            scaling_policy=scaling_policy,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             instance_configuration: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration'] = None,
+             model_id: Optional[str] = None,
+             bandwidth_mbps: Optional[int] = None,
+             scaling_policy: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if instance_configuration is None and 'instanceConfiguration' in kwargs:
+            instance_configuration = kwargs['instanceConfiguration']
+        if instance_configuration is None:
+            raise TypeError("Missing 'instance_configuration' argument")
+        if model_id is None and 'modelId' in kwargs:
+            model_id = kwargs['modelId']
+        if model_id is None:
+            raise TypeError("Missing 'model_id' argument")
+        if bandwidth_mbps is None and 'bandwidthMbps' in kwargs:
+            bandwidth_mbps = kwargs['bandwidthMbps']
+        if scaling_policy is None and 'scalingPolicy' in kwargs:
+            scaling_policy = kwargs['scalingPolicy']
+
+        _setter("instance_configuration", instance_configuration)
+        _setter("model_id", model_id)
         if bandwidth_mbps is not None:
-            pulumi.set(__self__, "bandwidth_mbps", bandwidth_mbps)
+            _setter("bandwidth_mbps", bandwidth_mbps)
         if scaling_policy is not None:
-            pulumi.set(__self__, "scaling_policy", scaling_policy)
+            _setter("scaling_policy", scaling_policy)
 
     @property
     @pulumi.getter(name="instanceConfiguration")
@@ -1632,9 +2101,28 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         :param str instance_shape_name: (Updatable) The shape used to launch the model deployment instances.
         :param 'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs' model_deployment_instance_shape_config_details: (Updatable) Details for the model-deployment instance shape configuration.
         """
-        pulumi.set(__self__, "instance_shape_name", instance_shape_name)
+        ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            instance_shape_name=instance_shape_name,
+            model_deployment_instance_shape_config_details=model_deployment_instance_shape_config_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             instance_shape_name: Optional[str] = None,
+             model_deployment_instance_shape_config_details: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if instance_shape_name is None and 'instanceShapeName' in kwargs:
+            instance_shape_name = kwargs['instanceShapeName']
+        if instance_shape_name is None:
+            raise TypeError("Missing 'instance_shape_name' argument")
+        if model_deployment_instance_shape_config_details is None and 'modelDeploymentInstanceShapeConfigDetails' in kwargs:
+            model_deployment_instance_shape_config_details = kwargs['modelDeploymentInstanceShapeConfigDetails']
+
+        _setter("instance_shape_name", instance_shape_name)
         if model_deployment_instance_shape_config_details is not None:
-            pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
+            _setter("model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
 
     @property
     @pulumi.getter(name="instanceShapeName")
@@ -1679,10 +2167,25 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         :param float memory_in_gbs: (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
         :param float ocpus: (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
         """
+        ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            pulumi.set(__self__, "ocpus", ocpus)
+            _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -1729,8 +2232,29 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         :param int instance_count: (Updatable) The number of instances for the model deployment.
         :param str policy_type: (Updatable) The type of scaling policy.
         """
-        pulumi.set(__self__, "instance_count", instance_count)
-        pulumi.set(__self__, "policy_type", policy_type)
+        ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            instance_count=instance_count,
+            policy_type=policy_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             instance_count: Optional[int] = None,
+             policy_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if instance_count is None and 'instanceCount' in kwargs:
+            instance_count = kwargs['instanceCount']
+        if instance_count is None:
+            raise TypeError("Missing 'instance_count' argument")
+        if policy_type is None and 'policyType' in kwargs:
+            policy_type = kwargs['policyType']
+        if policy_type is None:
+            raise TypeError("Missing 'policy_type' argument")
+
+        _setter("instance_count", instance_count)
+        _setter("policy_type", policy_type)
 
     @property
     @pulumi.getter(name="instanceCount")
@@ -1787,15 +2311,44 @@ class NotebookSessionNotebookSessionConfigDetails(dict):
         :param str private_endpoint_id: (Updatable) The OCID of a Data Science private endpoint.
         :param str subnet_id: (Updatable) A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
         """
-        pulumi.set(__self__, "shape", shape)
+        NotebookSessionNotebookSessionConfigDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            shape=shape,
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            notebook_session_shape_config_details=notebook_session_shape_config_details,
+            private_endpoint_id=private_endpoint_id,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             shape: Optional[str] = None,
+             block_storage_size_in_gbs: Optional[int] = None,
+             notebook_session_shape_config_details: Optional['outputs.NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails'] = None,
+             private_endpoint_id: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if block_storage_size_in_gbs is None and 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if notebook_session_shape_config_details is None and 'notebookSessionShapeConfigDetails' in kwargs:
+            notebook_session_shape_config_details = kwargs['notebookSessionShapeConfigDetails']
+        if private_endpoint_id is None and 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
+        _setter("shape", shape)
         if block_storage_size_in_gbs is not None:
-            pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+            _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
         if notebook_session_shape_config_details is not None:
-            pulumi.set(__self__, "notebook_session_shape_config_details", notebook_session_shape_config_details)
+            _setter("notebook_session_shape_config_details", notebook_session_shape_config_details)
         if private_endpoint_id is not None:
-            pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+            _setter("private_endpoint_id", private_endpoint_id)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter
@@ -1864,10 +2417,25 @@ class NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetai
         :param float memory_in_gbs: (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
         :param float ocpus: (Updatable) The total number of OCPUs available to the notebook session instance.
         """
+        NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            pulumi.set(__self__, "ocpus", ocpus)
+            _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -1924,14 +2492,45 @@ class NotebookSessionNotebookSessionConfigurationDetails(dict):
         :param 'NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs' notebook_session_shape_config_details: (Updatable) Details for the notebook session shape configuration.
         :param str private_endpoint_id: (Updatable) The OCID of a Data Science private endpoint.
         """
-        pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        NotebookSessionNotebookSessionConfigurationDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            shape=shape,
+            subnet_id=subnet_id,
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            notebook_session_shape_config_details=notebook_session_shape_config_details,
+            private_endpoint_id=private_endpoint_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             shape: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             block_storage_size_in_gbs: Optional[int] = None,
+             notebook_session_shape_config_details: Optional['outputs.NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetails'] = None,
+             private_endpoint_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if block_storage_size_in_gbs is None and 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if notebook_session_shape_config_details is None and 'notebookSessionShapeConfigDetails' in kwargs:
+            notebook_session_shape_config_details = kwargs['notebookSessionShapeConfigDetails']
+        if private_endpoint_id is None and 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+
+        _setter("shape", shape)
+        _setter("subnet_id", subnet_id)
         if block_storage_size_in_gbs is not None:
-            pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+            _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
         if notebook_session_shape_config_details is not None:
-            pulumi.set(__self__, "notebook_session_shape_config_details", notebook_session_shape_config_details)
+            _setter("notebook_session_shape_config_details", notebook_session_shape_config_details)
         if private_endpoint_id is not None:
-            pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+            _setter("private_endpoint_id", private_endpoint_id)
 
     @property
     @pulumi.getter
@@ -2000,10 +2599,25 @@ class NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConf
         :param float memory_in_gbs: (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
         :param float ocpus: (Updatable) The total number of OCPUs available to the notebook session instance.
         """
+        NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            pulumi.set(__self__, "ocpus", ocpus)
+            _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -2050,10 +2664,27 @@ class NotebookSessionNotebookSessionRuntimeConfigDetails(dict):
         :param Mapping[str, Any] custom_environment_variables: (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
         :param 'NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs' notebook_session_git_config_details: (Updatable) Git configuration Details.
         """
+        NotebookSessionNotebookSessionRuntimeConfigDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            custom_environment_variables=custom_environment_variables,
+            notebook_session_git_config_details=notebook_session_git_config_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             custom_environment_variables: Optional[Mapping[str, Any]] = None,
+             notebook_session_git_config_details: Optional['outputs.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if custom_environment_variables is None and 'customEnvironmentVariables' in kwargs:
+            custom_environment_variables = kwargs['customEnvironmentVariables']
+        if notebook_session_git_config_details is None and 'notebookSessionGitConfigDetails' in kwargs:
+            notebook_session_git_config_details = kwargs['notebookSessionGitConfigDetails']
+
         if custom_environment_variables is not None:
-            pulumi.set(__self__, "custom_environment_variables", custom_environment_variables)
+            _setter("custom_environment_variables", custom_environment_variables)
         if notebook_session_git_config_details is not None:
-            pulumi.set(__self__, "notebook_session_git_config_details", notebook_session_git_config_details)
+            _setter("notebook_session_git_config_details", notebook_session_git_config_details)
 
     @property
     @pulumi.getter(name="customEnvironmentVariables")
@@ -2096,8 +2727,21 @@ class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfig
         """
         :param Sequence['NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs'] notebook_session_git_repo_config_collections: (Updatable) A collection of Git repository configurations.
         """
+        NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            notebook_session_git_repo_config_collections=notebook_session_git_repo_config_collections,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             notebook_session_git_repo_config_collections: Optional[Sequence['outputs.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if notebook_session_git_repo_config_collections is None and 'notebookSessionGitRepoConfigCollections' in kwargs:
+            notebook_session_git_repo_config_collections = kwargs['notebookSessionGitRepoConfigCollections']
+
         if notebook_session_git_repo_config_collections is not None:
-            pulumi.set(__self__, "notebook_session_git_repo_config_collections", notebook_session_git_repo_config_collections)
+            _setter("notebook_session_git_repo_config_collections", notebook_session_git_repo_config_collections)
 
     @property
     @pulumi.getter(name="notebookSessionGitRepoConfigCollections")
@@ -2115,7 +2759,20 @@ class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfig
         """
         :param str url: (Updatable) The repository URL
         """
-        pulumi.set(__self__, "url", url)
+        NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if url is None:
+            raise TypeError("Missing 'url' argument")
+
+        _setter("url", url)
 
     @property
     @pulumi.getter
@@ -2172,20 +2829,59 @@ class NotebookSessionNotebookSessionStorageMountConfigurationDetailsList(dict):
         :param str namespace: (Updatable) The object storage namespace
         :param str prefix: (Updatable) Prefix in the bucket to mount
         """
-        pulumi.set(__self__, "destination_directory_name", destination_directory_name)
-        pulumi.set(__self__, "storage_type", storage_type)
+        NotebookSessionNotebookSessionStorageMountConfigurationDetailsList._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            destination_directory_name=destination_directory_name,
+            storage_type=storage_type,
+            bucket=bucket,
+            destination_path=destination_path,
+            export_id=export_id,
+            mount_target_id=mount_target_id,
+            namespace=namespace,
+            prefix=prefix,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             destination_directory_name: Optional[str] = None,
+             storage_type: Optional[str] = None,
+             bucket: Optional[str] = None,
+             destination_path: Optional[str] = None,
+             export_id: Optional[str] = None,
+             mount_target_id: Optional[str] = None,
+             namespace: Optional[str] = None,
+             prefix: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if destination_directory_name is None and 'destinationDirectoryName' in kwargs:
+            destination_directory_name = kwargs['destinationDirectoryName']
+        if destination_directory_name is None:
+            raise TypeError("Missing 'destination_directory_name' argument")
+        if storage_type is None and 'storageType' in kwargs:
+            storage_type = kwargs['storageType']
+        if storage_type is None:
+            raise TypeError("Missing 'storage_type' argument")
+        if destination_path is None and 'destinationPath' in kwargs:
+            destination_path = kwargs['destinationPath']
+        if export_id is None and 'exportId' in kwargs:
+            export_id = kwargs['exportId']
+        if mount_target_id is None and 'mountTargetId' in kwargs:
+            mount_target_id = kwargs['mountTargetId']
+
+        _setter("destination_directory_name", destination_directory_name)
+        _setter("storage_type", storage_type)
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if destination_path is not None:
-            pulumi.set(__self__, "destination_path", destination_path)
+            _setter("destination_path", destination_path)
         if export_id is not None:
-            pulumi.set(__self__, "export_id", export_id)
+            _setter("export_id", export_id)
         if mount_target_id is not None:
-            pulumi.set(__self__, "mount_target_id", mount_target_id)
+            _setter("mount_target_id", mount_target_id)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if prefix is not None:
-            pulumi.set(__self__, "prefix", prefix)
+            _setter("prefix", prefix)
 
     @property
     @pulumi.getter(name="destinationDirectoryName")
@@ -2286,13 +2982,38 @@ class PipelineConfigurationDetails(dict):
         :param Mapping[str, Any] environment_variables: (Updatable) Environment variables to set for step.
         :param str maximum_runtime_in_minutes: (Updatable) A time bound for the execution of the step.
         """
-        pulumi.set(__self__, "type", type)
+        PipelineConfigurationDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             command_line_arguments: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             maximum_runtime_in_minutes: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if command_line_arguments is None and 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if environment_variables is None and 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if maximum_runtime_in_minutes is None and 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+
+        _setter("type", type)
         if command_line_arguments is not None:
-            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+            _setter("command_line_arguments", command_line_arguments)
         if environment_variables is not None:
-            pulumi.set(__self__, "environment_variables", environment_variables)
+            _setter("environment_variables", environment_variables)
         if maximum_runtime_in_minutes is not None:
-            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+            _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter
@@ -2359,10 +3080,35 @@ class PipelineInfrastructureConfigurationDetails(dict):
         :param str shape_name: The shape used to launch the instance for all step runs in the pipeline.
         :param 'PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs' shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "shape_name", shape_name)
+        PipelineInfrastructureConfigurationDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            shape_name=shape_name,
+            shape_config_details=shape_config_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: Optional[int] = None,
+             shape_name: Optional[str] = None,
+             shape_config_details: Optional['outputs.PipelineInfrastructureConfigurationDetailsShapeConfigDetails'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if block_storage_size_in_gbs is None and 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if block_storage_size_in_gbs is None:
+            raise TypeError("Missing 'block_storage_size_in_gbs' argument")
+        if shape_name is None and 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+        if shape_config_details is None and 'shapeConfigDetails' in kwargs:
+            shape_config_details = kwargs['shapeConfigDetails']
+
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("shape_name", shape_name)
         if shape_config_details is not None:
-            pulumi.set(__self__, "shape_config_details", shape_config_details)
+            _setter("shape_config_details", shape_config_details)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -2415,10 +3161,25 @@ class PipelineInfrastructureConfigurationDetailsShapeConfigDetails(dict):
         :param float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         :param float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
+        PipelineInfrastructureConfigurationDetailsShapeConfigDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            pulumi.set(__self__, "ocpus", ocpus)
+            _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -2473,14 +3234,39 @@ class PipelineLogConfigurationDetails(dict):
         :param str log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
         :param str log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
         """
+        PipelineLogConfigurationDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_auto_log_creation=enable_auto_log_creation,
+            enable_logging=enable_logging,
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_auto_log_creation: Optional[bool] = None,
+             enable_logging: Optional[bool] = None,
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if enable_auto_log_creation is None and 'enableAutoLogCreation' in kwargs:
+            enable_auto_log_creation = kwargs['enableAutoLogCreation']
+        if enable_logging is None and 'enableLogging' in kwargs:
+            enable_logging = kwargs['enableLogging']
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         if enable_auto_log_creation is not None:
-            pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+            _setter("enable_auto_log_creation", enable_auto_log_creation)
         if enable_logging is not None:
-            pulumi.set(__self__, "enable_logging", enable_logging)
+            _setter("enable_logging", enable_logging)
         if log_group_id is not None:
-            pulumi.set(__self__, "log_group_id", log_group_id)
+            _setter("log_group_id", log_group_id)
         if log_id is not None:
-            pulumi.set(__self__, "log_id", log_id)
+            _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
@@ -2549,14 +3335,37 @@ class PipelineRunConfigurationDetail(dict):
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         :param str type: The type of pipeline.
         """
+        PipelineRunConfigurationDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             maximum_runtime_in_minutes: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if command_line_arguments is None and 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if environment_variables is None and 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if maximum_runtime_in_minutes is None and 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+
         if command_line_arguments is not None:
-            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+            _setter("command_line_arguments", command_line_arguments)
         if environment_variables is not None:
-            pulumi.set(__self__, "environment_variables", environment_variables)
+            _setter("environment_variables", environment_variables)
         if maximum_runtime_in_minutes is not None:
-            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+            _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -2625,13 +3434,38 @@ class PipelineRunConfigurationOverrideDetails(dict):
         :param Mapping[str, Any] environment_variables: Environment variables to set for step.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         """
-        pulumi.set(__self__, "type", type)
+        PipelineRunConfigurationOverrideDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             command_line_arguments: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             maximum_runtime_in_minutes: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if command_line_arguments is None and 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if environment_variables is None and 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if maximum_runtime_in_minutes is None and 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+
+        _setter("type", type)
         if command_line_arguments is not None:
-            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+            _setter("command_line_arguments", command_line_arguments)
         if environment_variables is not None:
-            pulumi.set(__self__, "environment_variables", environment_variables)
+            _setter("environment_variables", environment_variables)
         if maximum_runtime_in_minutes is not None:
-            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+            _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter
@@ -2702,14 +3536,39 @@ class PipelineRunLogConfigurationOverrideDetails(dict):
         :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
         :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
         """
+        PipelineRunLogConfigurationOverrideDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_auto_log_creation=enable_auto_log_creation,
+            enable_logging=enable_logging,
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_auto_log_creation: Optional[bool] = None,
+             enable_logging: Optional[bool] = None,
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if enable_auto_log_creation is None and 'enableAutoLogCreation' in kwargs:
+            enable_auto_log_creation = kwargs['enableAutoLogCreation']
+        if enable_logging is None and 'enableLogging' in kwargs:
+            enable_logging = kwargs['enableLogging']
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         if enable_auto_log_creation is not None:
-            pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+            _setter("enable_auto_log_creation", enable_auto_log_creation)
         if enable_logging is not None:
-            pulumi.set(__self__, "enable_logging", enable_logging)
+            _setter("enable_logging", enable_logging)
         if log_group_id is not None:
-            pulumi.set(__self__, "log_group_id", log_group_id)
+            _setter("log_group_id", log_group_id)
         if log_id is not None:
-            pulumi.set(__self__, "log_id", log_id)
+            _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
@@ -2772,10 +3631,27 @@ class PipelineRunLogDetail(dict):
         :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
         :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
         """
+        PipelineRunLogDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+
         if log_group_id is not None:
-            pulumi.set(__self__, "log_group_id", log_group_id)
+            _setter("log_group_id", log_group_id)
         if log_id is not None:
-            pulumi.set(__self__, "log_id", log_id)
+            _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -2822,8 +3698,29 @@ class PipelineRunStepOverrideDetail(dict):
         :param 'PipelineRunStepOverrideDetailStepConfigurationDetailsArgs' step_configuration_details: The configuration details of a step.
         :param str step_name: The name of the step.
         """
-        pulumi.set(__self__, "step_configuration_details", step_configuration_details)
-        pulumi.set(__self__, "step_name", step_name)
+        PipelineRunStepOverrideDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            step_configuration_details=step_configuration_details,
+            step_name=step_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             step_configuration_details: Optional['outputs.PipelineRunStepOverrideDetailStepConfigurationDetails'] = None,
+             step_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if step_configuration_details is None and 'stepConfigurationDetails' in kwargs:
+            step_configuration_details = kwargs['stepConfigurationDetails']
+        if step_configuration_details is None:
+            raise TypeError("Missing 'step_configuration_details' argument")
+        if step_name is None and 'stepName' in kwargs:
+            step_name = kwargs['stepName']
+        if step_name is None:
+            raise TypeError("Missing 'step_name' argument")
+
+        _setter("step_configuration_details", step_configuration_details)
+        _setter("step_name", step_name)
 
     @property
     @pulumi.getter(name="stepConfigurationDetails")
@@ -2874,12 +3771,33 @@ class PipelineRunStepOverrideDetailStepConfigurationDetails(dict):
         :param Mapping[str, Any] environment_variables: Environment variables to set for step.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         """
+        PipelineRunStepOverrideDetailStepConfigurationDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             maximum_runtime_in_minutes: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if command_line_arguments is None and 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if environment_variables is None and 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if maximum_runtime_in_minutes is None and 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+
         if command_line_arguments is not None:
-            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+            _setter("command_line_arguments", command_line_arguments)
         if environment_variables is not None:
-            pulumi.set(__self__, "environment_variables", environment_variables)
+            _setter("environment_variables", environment_variables)
         if maximum_runtime_in_minutes is not None:
-            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+            _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -2952,20 +3870,55 @@ class PipelineRunStepRun(dict):
         :param str time_finished: The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_started: The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
+        PipelineRunStepRun._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            job_run_id=job_run_id,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            step_name=step_name,
+            step_type=step_type,
+            time_finished=time_finished,
+            time_started=time_started,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             job_run_id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             state: Optional[str] = None,
+             step_name: Optional[str] = None,
+             step_type: Optional[str] = None,
+             time_finished: Optional[str] = None,
+             time_started: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if job_run_id is None and 'jobRunId' in kwargs:
+            job_run_id = kwargs['jobRunId']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if step_name is None and 'stepName' in kwargs:
+            step_name = kwargs['stepName']
+        if step_type is None and 'stepType' in kwargs:
+            step_type = kwargs['stepType']
+        if time_finished is None and 'timeFinished' in kwargs:
+            time_finished = kwargs['timeFinished']
+        if time_started is None and 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+
         if job_run_id is not None:
-            pulumi.set(__self__, "job_run_id", job_run_id)
+            _setter("job_run_id", job_run_id)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if step_name is not None:
-            pulumi.set(__self__, "step_name", step_name)
+            _setter("step_name", step_name)
         if step_type is not None:
-            pulumi.set(__self__, "step_type", step_type)
+            _setter("step_type", step_type)
         if time_finished is not None:
-            pulumi.set(__self__, "time_finished", time_finished)
+            _setter("time_finished", time_finished)
         if time_started is not None:
-            pulumi.set(__self__, "time_started", time_started)
+            _setter("time_started", time_started)
 
     @property
     @pulumi.getter(name="jobRunId")
@@ -3063,15 +4016,54 @@ class PipelineStepArtifact(dict):
         """
         :param str step_name: (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
         """
-        pulumi.set(__self__, "artifact_content_length", artifact_content_length)
-        pulumi.set(__self__, "pipeline_step_artifact", pipeline_step_artifact)
-        pulumi.set(__self__, "step_name", step_name)
+        PipelineStepArtifact._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            artifact_content_length=artifact_content_length,
+            pipeline_step_artifact=pipeline_step_artifact,
+            step_name=step_name,
+            artifact_content_disposition=artifact_content_disposition,
+            artifact_content_md5=artifact_content_md5,
+            artifact_last_modified=artifact_last_modified,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             artifact_content_length: Optional[str] = None,
+             pipeline_step_artifact: Optional[str] = None,
+             step_name: Optional[str] = None,
+             artifact_content_disposition: Optional[str] = None,
+             artifact_content_md5: Optional[str] = None,
+             artifact_last_modified: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if artifact_content_length is None and 'artifactContentLength' in kwargs:
+            artifact_content_length = kwargs['artifactContentLength']
+        if artifact_content_length is None:
+            raise TypeError("Missing 'artifact_content_length' argument")
+        if pipeline_step_artifact is None and 'pipelineStepArtifact' in kwargs:
+            pipeline_step_artifact = kwargs['pipelineStepArtifact']
+        if pipeline_step_artifact is None:
+            raise TypeError("Missing 'pipeline_step_artifact' argument")
+        if step_name is None and 'stepName' in kwargs:
+            step_name = kwargs['stepName']
+        if step_name is None:
+            raise TypeError("Missing 'step_name' argument")
+        if artifact_content_disposition is None and 'artifactContentDisposition' in kwargs:
+            artifact_content_disposition = kwargs['artifactContentDisposition']
+        if artifact_content_md5 is None and 'artifactContentMd5' in kwargs:
+            artifact_content_md5 = kwargs['artifactContentMd5']
+        if artifact_last_modified is None and 'artifactLastModified' in kwargs:
+            artifact_last_modified = kwargs['artifactLastModified']
+
+        _setter("artifact_content_length", artifact_content_length)
+        _setter("pipeline_step_artifact", pipeline_step_artifact)
+        _setter("step_name", step_name)
         if artifact_content_disposition is not None:
-            pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
+            _setter("artifact_content_disposition", artifact_content_disposition)
         if artifact_content_md5 is not None:
-            pulumi.set(__self__, "artifact_content_md5", artifact_content_md5)
+            _setter("artifact_content_md5", artifact_content_md5)
         if artifact_last_modified is not None:
-            pulumi.set(__self__, "artifact_last_modified", artifact_last_modified)
+            _setter("artifact_last_modified", artifact_last_modified)
 
     @property
     @pulumi.getter(name="artifactContentLength")
@@ -3161,20 +4153,63 @@ class PipelineStepDetail(dict):
         :param 'PipelineStepDetailStepConfigurationDetailsArgs' step_configuration_details: (Updatable) The configuration details of a step.
         :param 'PipelineStepDetailStepInfrastructureConfigurationDetailsArgs' step_infrastructure_configuration_details: The infrastructure configuration details of a pipeline or a step.
         """
-        pulumi.set(__self__, "step_name", step_name)
-        pulumi.set(__self__, "step_type", step_type)
+        PipelineStepDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            step_name=step_name,
+            step_type=step_type,
+            depends_ons=depends_ons,
+            description=description,
+            is_artifact_uploaded=is_artifact_uploaded,
+            job_id=job_id,
+            step_configuration_details=step_configuration_details,
+            step_infrastructure_configuration_details=step_infrastructure_configuration_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             step_name: Optional[str] = None,
+             step_type: Optional[str] = None,
+             depends_ons: Optional[Sequence[str]] = None,
+             description: Optional[str] = None,
+             is_artifact_uploaded: Optional[bool] = None,
+             job_id: Optional[str] = None,
+             step_configuration_details: Optional['outputs.PipelineStepDetailStepConfigurationDetails'] = None,
+             step_infrastructure_configuration_details: Optional['outputs.PipelineStepDetailStepInfrastructureConfigurationDetails'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if step_name is None and 'stepName' in kwargs:
+            step_name = kwargs['stepName']
+        if step_name is None:
+            raise TypeError("Missing 'step_name' argument")
+        if step_type is None and 'stepType' in kwargs:
+            step_type = kwargs['stepType']
+        if step_type is None:
+            raise TypeError("Missing 'step_type' argument")
+        if depends_ons is None and 'dependsOns' in kwargs:
+            depends_ons = kwargs['dependsOns']
+        if is_artifact_uploaded is None and 'isArtifactUploaded' in kwargs:
+            is_artifact_uploaded = kwargs['isArtifactUploaded']
+        if job_id is None and 'jobId' in kwargs:
+            job_id = kwargs['jobId']
+        if step_configuration_details is None and 'stepConfigurationDetails' in kwargs:
+            step_configuration_details = kwargs['stepConfigurationDetails']
+        if step_infrastructure_configuration_details is None and 'stepInfrastructureConfigurationDetails' in kwargs:
+            step_infrastructure_configuration_details = kwargs['stepInfrastructureConfigurationDetails']
+
+        _setter("step_name", step_name)
+        _setter("step_type", step_type)
         if depends_ons is not None:
-            pulumi.set(__self__, "depends_ons", depends_ons)
+            _setter("depends_ons", depends_ons)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if is_artifact_uploaded is not None:
-            pulumi.set(__self__, "is_artifact_uploaded", is_artifact_uploaded)
+            _setter("is_artifact_uploaded", is_artifact_uploaded)
         if job_id is not None:
-            pulumi.set(__self__, "job_id", job_id)
+            _setter("job_id", job_id)
         if step_configuration_details is not None:
-            pulumi.set(__self__, "step_configuration_details", step_configuration_details)
+            _setter("step_configuration_details", step_configuration_details)
         if step_infrastructure_configuration_details is not None:
-            pulumi.set(__self__, "step_infrastructure_configuration_details", step_infrastructure_configuration_details)
+            _setter("step_infrastructure_configuration_details", step_infrastructure_configuration_details)
 
     @property
     @pulumi.getter(name="stepName")
@@ -3277,12 +4312,33 @@ class PipelineStepDetailStepConfigurationDetails(dict):
         :param Mapping[str, Any] environment_variables: (Updatable) Environment variables to set for step.
         :param str maximum_runtime_in_minutes: (Updatable) A time bound for the execution of the step.
         """
+        PipelineStepDetailStepConfigurationDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             maximum_runtime_in_minutes: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if command_line_arguments is None and 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if environment_variables is None and 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if maximum_runtime_in_minutes is None and 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+
         if command_line_arguments is not None:
-            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+            _setter("command_line_arguments", command_line_arguments)
         if environment_variables is not None:
-            pulumi.set(__self__, "environment_variables", environment_variables)
+            _setter("environment_variables", environment_variables)
         if maximum_runtime_in_minutes is not None:
-            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+            _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -3341,10 +4397,35 @@ class PipelineStepDetailStepInfrastructureConfigurationDetails(dict):
         :param str shape_name: The shape used to launch the instance for all step runs in the pipeline.
         :param 'PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs' shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "shape_name", shape_name)
+        PipelineStepDetailStepInfrastructureConfigurationDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            shape_name=shape_name,
+            shape_config_details=shape_config_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: Optional[int] = None,
+             shape_name: Optional[str] = None,
+             shape_config_details: Optional['outputs.PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if block_storage_size_in_gbs is None and 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if block_storage_size_in_gbs is None:
+            raise TypeError("Missing 'block_storage_size_in_gbs' argument")
+        if shape_name is None and 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+        if shape_config_details is None and 'shapeConfigDetails' in kwargs:
+            shape_config_details = kwargs['shapeConfigDetails']
+
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("shape_name", shape_name)
         if shape_config_details is not None:
-            pulumi.set(__self__, "shape_config_details", shape_config_details)
+            _setter("shape_config_details", shape_config_details)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -3397,10 +4478,25 @@ class PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails
         :param float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         :param float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
+        PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            pulumi.set(__self__, "ocpus", ocpus)
+            _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -3436,12 +4532,55 @@ class GetFastLaunchJobConfigsFastLaunchJobConfigResult(dict):
         :param str shape_name: The name of the fast launch job shape.
         :param str shape_series: The family that the compute shape belongs to.
         """
-        pulumi.set(__self__, "core_count", core_count)
-        pulumi.set(__self__, "managed_egress_support", managed_egress_support)
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "shape_series", shape_series)
+        GetFastLaunchJobConfigsFastLaunchJobConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            core_count=core_count,
+            managed_egress_support=managed_egress_support,
+            memory_in_gbs=memory_in_gbs,
+            name=name,
+            shape_name=shape_name,
+            shape_series=shape_series,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             core_count: Optional[int] = None,
+             managed_egress_support: Optional[str] = None,
+             memory_in_gbs: Optional[int] = None,
+             name: Optional[str] = None,
+             shape_name: Optional[str] = None,
+             shape_series: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if core_count is None and 'coreCount' in kwargs:
+            core_count = kwargs['coreCount']
+        if core_count is None:
+            raise TypeError("Missing 'core_count' argument")
+        if managed_egress_support is None and 'managedEgressSupport' in kwargs:
+            managed_egress_support = kwargs['managedEgressSupport']
+        if managed_egress_support is None:
+            raise TypeError("Missing 'managed_egress_support' argument")
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if shape_name is None and 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+        if shape_series is None and 'shapeSeries' in kwargs:
+            shape_series = kwargs['shapeSeries']
+        if shape_series is None:
+            raise TypeError("Missing 'shape_series' argument")
+
+        _setter("core_count", core_count)
+        _setter("managed_egress_support", managed_egress_support)
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("name", name)
+        _setter("shape_name", shape_name)
+        _setter("shape_series", shape_series)
 
     @property
     @pulumi.getter(name="coreCount")
@@ -3501,10 +4640,29 @@ class GetFastLaunchJobConfigsFilterResult(dict):
         """
         :param str name: The name of the fast launch job config
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetFastLaunchJobConfigsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3538,10 +4696,43 @@ class GetJobJobConfigurationDetailResult(dict):
         :param str job_type: The type of job.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
         """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "job_type", job_type)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        GetJobJobConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            job_type=job_type,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             job_type: Optional[str] = None,
+             maximum_runtime_in_minutes: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if command_line_arguments is None and 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if command_line_arguments is None:
+            raise TypeError("Missing 'command_line_arguments' argument")
+        if environment_variables is None and 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if environment_variables is None:
+            raise TypeError("Missing 'environment_variables' argument")
+        if job_type is None and 'jobType' in kwargs:
+            job_type = kwargs['jobType']
+        if job_type is None:
+            raise TypeError("Missing 'job_type' argument")
+        if maximum_runtime_in_minutes is None and 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+        if maximum_runtime_in_minutes is None:
+            raise TypeError("Missing 'maximum_runtime_in_minutes' argument")
+
+        _setter("command_line_arguments", command_line_arguments)
+        _setter("environment_variables", environment_variables)
+        _setter("job_type", job_type)
+        _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -3591,11 +4782,50 @@ class GetJobJobInfrastructureConfigurationDetailResult(dict):
         :param str shape_name: The shape used to launch the job run instances.
         :param str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
-        pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        GetJobJobInfrastructureConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            job_infrastructure_type=job_infrastructure_type,
+            job_shape_config_details=job_shape_config_details,
+            shape_name=shape_name,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: Optional[int] = None,
+             job_infrastructure_type: Optional[str] = None,
+             job_shape_config_details: Optional[Sequence['outputs.GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult']] = None,
+             shape_name: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if block_storage_size_in_gbs is None and 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if block_storage_size_in_gbs is None:
+            raise TypeError("Missing 'block_storage_size_in_gbs' argument")
+        if job_infrastructure_type is None and 'jobInfrastructureType' in kwargs:
+            job_infrastructure_type = kwargs['jobInfrastructureType']
+        if job_infrastructure_type is None:
+            raise TypeError("Missing 'job_infrastructure_type' argument")
+        if job_shape_config_details is None and 'jobShapeConfigDetails' in kwargs:
+            job_shape_config_details = kwargs['jobShapeConfigDetails']
+        if job_shape_config_details is None:
+            raise TypeError("Missing 'job_shape_config_details' argument")
+        if shape_name is None and 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("job_infrastructure_type", job_infrastructure_type)
+        _setter("job_shape_config_details", job_shape_config_details)
+        _setter("shape_name", shape_name)
+        _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -3647,8 +4877,27 @@ class GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(dict)
         :param float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
         :param float ocpus: The total number of OCPUs available to the job run instance.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -3680,10 +4929,43 @@ class GetJobJobLogConfigurationDetailResult(dict):
         :param str log_group_id: The log group id for where log objects are for job runs.
         :param str log_id: The log id the job run will push logs too.
         """
-        pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
-        pulumi.set(__self__, "enable_logging", enable_logging)
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetJobJobLogConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_auto_log_creation=enable_auto_log_creation,
+            enable_logging=enable_logging,
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_auto_log_creation: Optional[bool] = None,
+             enable_logging: Optional[bool] = None,
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if enable_auto_log_creation is None and 'enableAutoLogCreation' in kwargs:
+            enable_auto_log_creation = kwargs['enableAutoLogCreation']
+        if enable_auto_log_creation is None:
+            raise TypeError("Missing 'enable_auto_log_creation' argument")
+        if enable_logging is None and 'enableLogging' in kwargs:
+            enable_logging = kwargs['enableLogging']
+        if enable_logging is None:
+            raise TypeError("Missing 'enable_logging' argument")
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
+
+        _setter("enable_auto_log_creation", enable_auto_log_creation)
+        _setter("enable_logging", enable_logging)
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
@@ -3739,14 +5021,65 @@ class GetJobJobStorageMountConfigurationDetailsListResult(dict):
         :param str prefix: Prefix in the bucket to mount
         :param str storage_type: The type of storage.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "destination_directory_name", destination_directory_name)
-        pulumi.set(__self__, "destination_path", destination_path)
-        pulumi.set(__self__, "export_id", export_id)
-        pulumi.set(__self__, "mount_target_id", mount_target_id)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "prefix", prefix)
-        pulumi.set(__self__, "storage_type", storage_type)
+        GetJobJobStorageMountConfigurationDetailsListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            destination_directory_name=destination_directory_name,
+            destination_path=destination_path,
+            export_id=export_id,
+            mount_target_id=mount_target_id,
+            namespace=namespace,
+            prefix=prefix,
+            storage_type=storage_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[str] = None,
+             destination_directory_name: Optional[str] = None,
+             destination_path: Optional[str] = None,
+             export_id: Optional[str] = None,
+             mount_target_id: Optional[str] = None,
+             namespace: Optional[str] = None,
+             prefix: Optional[str] = None,
+             storage_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if destination_directory_name is None and 'destinationDirectoryName' in kwargs:
+            destination_directory_name = kwargs['destinationDirectoryName']
+        if destination_directory_name is None:
+            raise TypeError("Missing 'destination_directory_name' argument")
+        if destination_path is None and 'destinationPath' in kwargs:
+            destination_path = kwargs['destinationPath']
+        if destination_path is None:
+            raise TypeError("Missing 'destination_path' argument")
+        if export_id is None and 'exportId' in kwargs:
+            export_id = kwargs['exportId']
+        if export_id is None:
+            raise TypeError("Missing 'export_id' argument")
+        if mount_target_id is None and 'mountTargetId' in kwargs:
+            mount_target_id = kwargs['mountTargetId']
+        if mount_target_id is None:
+            raise TypeError("Missing 'mount_target_id' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if prefix is None:
+            raise TypeError("Missing 'prefix' argument")
+        if storage_type is None and 'storageType' in kwargs:
+            storage_type = kwargs['storageType']
+        if storage_type is None:
+            raise TypeError("Missing 'storage_type' argument")
+
+        _setter("bucket", bucket)
+        _setter("destination_directory_name", destination_directory_name)
+        _setter("destination_path", destination_path)
+        _setter("export_id", export_id)
+        _setter("mount_target_id", mount_target_id)
+        _setter("namespace", namespace)
+        _setter("prefix", prefix)
+        _setter("storage_type", storage_type)
 
     @property
     @pulumi.getter
@@ -3826,10 +5159,43 @@ class GetJobRunJobConfigurationOverrideDetailResult(dict):
         :param str job_type: The type of job.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
         """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "job_type", job_type)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        GetJobRunJobConfigurationOverrideDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            job_type=job_type,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             job_type: Optional[str] = None,
+             maximum_runtime_in_minutes: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if command_line_arguments is None and 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if command_line_arguments is None:
+            raise TypeError("Missing 'command_line_arguments' argument")
+        if environment_variables is None and 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if environment_variables is None:
+            raise TypeError("Missing 'environment_variables' argument")
+        if job_type is None and 'jobType' in kwargs:
+            job_type = kwargs['jobType']
+        if job_type is None:
+            raise TypeError("Missing 'job_type' argument")
+        if maximum_runtime_in_minutes is None and 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+        if maximum_runtime_in_minutes is None:
+            raise TypeError("Missing 'maximum_runtime_in_minutes' argument")
+
+        _setter("command_line_arguments", command_line_arguments)
+        _setter("environment_variables", environment_variables)
+        _setter("job_type", job_type)
+        _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -3879,11 +5245,50 @@ class GetJobRunJobInfrastructureConfigurationDetailResult(dict):
         :param str shape_name: The shape used to launch the job run instances.
         :param str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
-        pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        GetJobRunJobInfrastructureConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            job_infrastructure_type=job_infrastructure_type,
+            job_shape_config_details=job_shape_config_details,
+            shape_name=shape_name,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: Optional[int] = None,
+             job_infrastructure_type: Optional[str] = None,
+             job_shape_config_details: Optional[Sequence['outputs.GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult']] = None,
+             shape_name: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if block_storage_size_in_gbs is None and 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if block_storage_size_in_gbs is None:
+            raise TypeError("Missing 'block_storage_size_in_gbs' argument")
+        if job_infrastructure_type is None and 'jobInfrastructureType' in kwargs:
+            job_infrastructure_type = kwargs['jobInfrastructureType']
+        if job_infrastructure_type is None:
+            raise TypeError("Missing 'job_infrastructure_type' argument")
+        if job_shape_config_details is None and 'jobShapeConfigDetails' in kwargs:
+            job_shape_config_details = kwargs['jobShapeConfigDetails']
+        if job_shape_config_details is None:
+            raise TypeError("Missing 'job_shape_config_details' argument")
+        if shape_name is None and 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("job_infrastructure_type", job_infrastructure_type)
+        _setter("job_shape_config_details", job_shape_config_details)
+        _setter("shape_name", shape_name)
+        _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -3935,8 +5340,27 @@ class GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(di
         :param float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
         :param float ocpus: The total number of OCPUs available to the job run instance.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -3968,10 +5392,43 @@ class GetJobRunJobLogConfigurationOverrideDetailResult(dict):
         :param str log_group_id: The log group id for where log objects will be for job runs.
         :param str log_id: The log id of the log object the job run logs will be shipped to.
         """
-        pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
-        pulumi.set(__self__, "enable_logging", enable_logging)
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetJobRunJobLogConfigurationOverrideDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_auto_log_creation=enable_auto_log_creation,
+            enable_logging=enable_logging,
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_auto_log_creation: Optional[bool] = None,
+             enable_logging: Optional[bool] = None,
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if enable_auto_log_creation is None and 'enableAutoLogCreation' in kwargs:
+            enable_auto_log_creation = kwargs['enableAutoLogCreation']
+        if enable_auto_log_creation is None:
+            raise TypeError("Missing 'enable_auto_log_creation' argument")
+        if enable_logging is None and 'enableLogging' in kwargs:
+            enable_logging = kwargs['enableLogging']
+        if enable_logging is None:
+            raise TypeError("Missing 'enable_logging' argument")
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
+
+        _setter("enable_auto_log_creation", enable_auto_log_creation)
+        _setter("enable_logging", enable_logging)
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
@@ -4027,14 +5484,65 @@ class GetJobRunJobStorageMountConfigurationDetailsListResult(dict):
         :param str prefix: Prefix in the bucket to mount
         :param str storage_type: The type of storage.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "destination_directory_name", destination_directory_name)
-        pulumi.set(__self__, "destination_path", destination_path)
-        pulumi.set(__self__, "export_id", export_id)
-        pulumi.set(__self__, "mount_target_id", mount_target_id)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "prefix", prefix)
-        pulumi.set(__self__, "storage_type", storage_type)
+        GetJobRunJobStorageMountConfigurationDetailsListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            destination_directory_name=destination_directory_name,
+            destination_path=destination_path,
+            export_id=export_id,
+            mount_target_id=mount_target_id,
+            namespace=namespace,
+            prefix=prefix,
+            storage_type=storage_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[str] = None,
+             destination_directory_name: Optional[str] = None,
+             destination_path: Optional[str] = None,
+             export_id: Optional[str] = None,
+             mount_target_id: Optional[str] = None,
+             namespace: Optional[str] = None,
+             prefix: Optional[str] = None,
+             storage_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if destination_directory_name is None and 'destinationDirectoryName' in kwargs:
+            destination_directory_name = kwargs['destinationDirectoryName']
+        if destination_directory_name is None:
+            raise TypeError("Missing 'destination_directory_name' argument")
+        if destination_path is None and 'destinationPath' in kwargs:
+            destination_path = kwargs['destinationPath']
+        if destination_path is None:
+            raise TypeError("Missing 'destination_path' argument")
+        if export_id is None and 'exportId' in kwargs:
+            export_id = kwargs['exportId']
+        if export_id is None:
+            raise TypeError("Missing 'export_id' argument")
+        if mount_target_id is None and 'mountTargetId' in kwargs:
+            mount_target_id = kwargs['mountTargetId']
+        if mount_target_id is None:
+            raise TypeError("Missing 'mount_target_id' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if prefix is None:
+            raise TypeError("Missing 'prefix' argument")
+        if storage_type is None and 'storageType' in kwargs:
+            storage_type = kwargs['storageType']
+        if storage_type is None:
+            raise TypeError("Missing 'storage_type' argument")
+
+        _setter("bucket", bucket)
+        _setter("destination_directory_name", destination_directory_name)
+        _setter("destination_path", destination_path)
+        _setter("export_id", export_id)
+        _setter("mount_target_id", mount_target_id)
+        _setter("namespace", namespace)
+        _setter("prefix", prefix)
+        _setter("storage_type", storage_type)
 
     @property
     @pulumi.getter
@@ -4110,8 +5618,29 @@ class GetJobRunLogDetailResult(dict):
         :param str log_group_id: The log group id for where log objects will be for job runs.
         :param str log_id: The log id of the log object the job run logs will be shipped to.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetJobRunLogDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
+
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -4136,10 +5665,29 @@ class GetJobRunsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetJobRunsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4199,25 +5747,142 @@ class GetJobRunsJobRunResult(dict):
         :param str time_finished: The date and time the job run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_started: The date and time the job run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        pulumi.set(__self__, "asynchronous", asynchronous)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "job_configuration_override_details", job_configuration_override_details)
-        pulumi.set(__self__, "job_id", job_id)
-        pulumi.set(__self__, "job_infrastructure_configuration_details", job_infrastructure_configuration_details)
-        pulumi.set(__self__, "job_log_configuration_override_details", job_log_configuration_override_details)
-        pulumi.set(__self__, "job_storage_mount_configuration_details_lists", job_storage_mount_configuration_details_lists)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "log_details", log_details)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_accepted", time_accepted)
-        pulumi.set(__self__, "time_finished", time_finished)
-        pulumi.set(__self__, "time_started", time_started)
+        GetJobRunsJobRunResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            asynchronous=asynchronous,
+            compartment_id=compartment_id,
+            created_by=created_by,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            job_configuration_override_details=job_configuration_override_details,
+            job_id=job_id,
+            job_infrastructure_configuration_details=job_infrastructure_configuration_details,
+            job_log_configuration_override_details=job_log_configuration_override_details,
+            job_storage_mount_configuration_details_lists=job_storage_mount_configuration_details_lists,
+            lifecycle_details=lifecycle_details,
+            log_details=log_details,
+            project_id=project_id,
+            state=state,
+            time_accepted=time_accepted,
+            time_finished=time_finished,
+            time_started=time_started,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             asynchronous: Optional[bool] = None,
+             compartment_id: Optional[str] = None,
+             created_by: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             job_configuration_override_details: Optional[Sequence['outputs.GetJobRunsJobRunJobConfigurationOverrideDetailResult']] = None,
+             job_id: Optional[str] = None,
+             job_infrastructure_configuration_details: Optional[Sequence['outputs.GetJobRunsJobRunJobInfrastructureConfigurationDetailResult']] = None,
+             job_log_configuration_override_details: Optional[Sequence['outputs.GetJobRunsJobRunJobLogConfigurationOverrideDetailResult']] = None,
+             job_storage_mount_configuration_details_lists: Optional[Sequence['outputs.GetJobRunsJobRunJobStorageMountConfigurationDetailsListResult']] = None,
+             lifecycle_details: Optional[str] = None,
+             log_details: Optional[Sequence['outputs.GetJobRunsJobRunLogDetailResult']] = None,
+             project_id: Optional[str] = None,
+             state: Optional[str] = None,
+             time_accepted: Optional[str] = None,
+             time_finished: Optional[str] = None,
+             time_started: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if asynchronous is None:
+            raise TypeError("Missing 'asynchronous' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if created_by is None and 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if created_by is None:
+            raise TypeError("Missing 'created_by' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if job_configuration_override_details is None and 'jobConfigurationOverrideDetails' in kwargs:
+            job_configuration_override_details = kwargs['jobConfigurationOverrideDetails']
+        if job_configuration_override_details is None:
+            raise TypeError("Missing 'job_configuration_override_details' argument")
+        if job_id is None and 'jobId' in kwargs:
+            job_id = kwargs['jobId']
+        if job_id is None:
+            raise TypeError("Missing 'job_id' argument")
+        if job_infrastructure_configuration_details is None and 'jobInfrastructureConfigurationDetails' in kwargs:
+            job_infrastructure_configuration_details = kwargs['jobInfrastructureConfigurationDetails']
+        if job_infrastructure_configuration_details is None:
+            raise TypeError("Missing 'job_infrastructure_configuration_details' argument")
+        if job_log_configuration_override_details is None and 'jobLogConfigurationOverrideDetails' in kwargs:
+            job_log_configuration_override_details = kwargs['jobLogConfigurationOverrideDetails']
+        if job_log_configuration_override_details is None:
+            raise TypeError("Missing 'job_log_configuration_override_details' argument")
+        if job_storage_mount_configuration_details_lists is None and 'jobStorageMountConfigurationDetailsLists' in kwargs:
+            job_storage_mount_configuration_details_lists = kwargs['jobStorageMountConfigurationDetailsLists']
+        if job_storage_mount_configuration_details_lists is None:
+            raise TypeError("Missing 'job_storage_mount_configuration_details_lists' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if log_details is None and 'logDetails' in kwargs:
+            log_details = kwargs['logDetails']
+        if log_details is None:
+            raise TypeError("Missing 'log_details' argument")
+        if project_id is None and 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_accepted is None and 'timeAccepted' in kwargs:
+            time_accepted = kwargs['timeAccepted']
+        if time_accepted is None:
+            raise TypeError("Missing 'time_accepted' argument")
+        if time_finished is None and 'timeFinished' in kwargs:
+            time_finished = kwargs['timeFinished']
+        if time_finished is None:
+            raise TypeError("Missing 'time_finished' argument")
+        if time_started is None and 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+        if time_started is None:
+            raise TypeError("Missing 'time_started' argument")
+
+        _setter("asynchronous", asynchronous)
+        _setter("compartment_id", compartment_id)
+        _setter("created_by", created_by)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("job_configuration_override_details", job_configuration_override_details)
+        _setter("job_id", job_id)
+        _setter("job_infrastructure_configuration_details", job_infrastructure_configuration_details)
+        _setter("job_log_configuration_override_details", job_log_configuration_override_details)
+        _setter("job_storage_mount_configuration_details_lists", job_storage_mount_configuration_details_lists)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("log_details", log_details)
+        _setter("project_id", project_id)
+        _setter("state", state)
+        _setter("time_accepted", time_accepted)
+        _setter("time_finished", time_finished)
+        _setter("time_started", time_started)
 
     @property
     @pulumi.getter
@@ -4382,10 +6047,43 @@ class GetJobRunsJobRunJobConfigurationOverrideDetailResult(dict):
         :param str job_type: The type of job.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
         """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "job_type", job_type)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        GetJobRunsJobRunJobConfigurationOverrideDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            job_type=job_type,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             job_type: Optional[str] = None,
+             maximum_runtime_in_minutes: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if command_line_arguments is None and 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if command_line_arguments is None:
+            raise TypeError("Missing 'command_line_arguments' argument")
+        if environment_variables is None and 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if environment_variables is None:
+            raise TypeError("Missing 'environment_variables' argument")
+        if job_type is None and 'jobType' in kwargs:
+            job_type = kwargs['jobType']
+        if job_type is None:
+            raise TypeError("Missing 'job_type' argument")
+        if maximum_runtime_in_minutes is None and 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+        if maximum_runtime_in_minutes is None:
+            raise TypeError("Missing 'maximum_runtime_in_minutes' argument")
+
+        _setter("command_line_arguments", command_line_arguments)
+        _setter("environment_variables", environment_variables)
+        _setter("job_type", job_type)
+        _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -4435,11 +6133,50 @@ class GetJobRunsJobRunJobInfrastructureConfigurationDetailResult(dict):
         :param str shape_name: The shape used to launch the job run instances.
         :param str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
-        pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        GetJobRunsJobRunJobInfrastructureConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            job_infrastructure_type=job_infrastructure_type,
+            job_shape_config_details=job_shape_config_details,
+            shape_name=shape_name,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: Optional[int] = None,
+             job_infrastructure_type: Optional[str] = None,
+             job_shape_config_details: Optional[Sequence['outputs.GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult']] = None,
+             shape_name: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if block_storage_size_in_gbs is None and 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if block_storage_size_in_gbs is None:
+            raise TypeError("Missing 'block_storage_size_in_gbs' argument")
+        if job_infrastructure_type is None and 'jobInfrastructureType' in kwargs:
+            job_infrastructure_type = kwargs['jobInfrastructureType']
+        if job_infrastructure_type is None:
+            raise TypeError("Missing 'job_infrastructure_type' argument")
+        if job_shape_config_details is None and 'jobShapeConfigDetails' in kwargs:
+            job_shape_config_details = kwargs['jobShapeConfigDetails']
+        if job_shape_config_details is None:
+            raise TypeError("Missing 'job_shape_config_details' argument")
+        if shape_name is None and 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("job_infrastructure_type", job_infrastructure_type)
+        _setter("job_shape_config_details", job_shape_config_details)
+        _setter("shape_name", shape_name)
+        _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -4491,8 +6228,27 @@ class GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailRe
         :param float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
         :param float ocpus: The total number of OCPUs available to the job run instance.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -4524,10 +6280,43 @@ class GetJobRunsJobRunJobLogConfigurationOverrideDetailResult(dict):
         :param str log_group_id: The log group id for where log objects will be for job runs.
         :param str log_id: The log id of the log object the job run logs will be shipped to.
         """
-        pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
-        pulumi.set(__self__, "enable_logging", enable_logging)
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetJobRunsJobRunJobLogConfigurationOverrideDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_auto_log_creation=enable_auto_log_creation,
+            enable_logging=enable_logging,
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_auto_log_creation: Optional[bool] = None,
+             enable_logging: Optional[bool] = None,
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if enable_auto_log_creation is None and 'enableAutoLogCreation' in kwargs:
+            enable_auto_log_creation = kwargs['enableAutoLogCreation']
+        if enable_auto_log_creation is None:
+            raise TypeError("Missing 'enable_auto_log_creation' argument")
+        if enable_logging is None and 'enableLogging' in kwargs:
+            enable_logging = kwargs['enableLogging']
+        if enable_logging is None:
+            raise TypeError("Missing 'enable_logging' argument")
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
+
+        _setter("enable_auto_log_creation", enable_auto_log_creation)
+        _setter("enable_logging", enable_logging)
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
@@ -4583,14 +6372,65 @@ class GetJobRunsJobRunJobStorageMountConfigurationDetailsListResult(dict):
         :param str prefix: Prefix in the bucket to mount
         :param str storage_type: The type of storage.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "destination_directory_name", destination_directory_name)
-        pulumi.set(__self__, "destination_path", destination_path)
-        pulumi.set(__self__, "export_id", export_id)
-        pulumi.set(__self__, "mount_target_id", mount_target_id)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "prefix", prefix)
-        pulumi.set(__self__, "storage_type", storage_type)
+        GetJobRunsJobRunJobStorageMountConfigurationDetailsListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            destination_directory_name=destination_directory_name,
+            destination_path=destination_path,
+            export_id=export_id,
+            mount_target_id=mount_target_id,
+            namespace=namespace,
+            prefix=prefix,
+            storage_type=storage_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[str] = None,
+             destination_directory_name: Optional[str] = None,
+             destination_path: Optional[str] = None,
+             export_id: Optional[str] = None,
+             mount_target_id: Optional[str] = None,
+             namespace: Optional[str] = None,
+             prefix: Optional[str] = None,
+             storage_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if destination_directory_name is None and 'destinationDirectoryName' in kwargs:
+            destination_directory_name = kwargs['destinationDirectoryName']
+        if destination_directory_name is None:
+            raise TypeError("Missing 'destination_directory_name' argument")
+        if destination_path is None and 'destinationPath' in kwargs:
+            destination_path = kwargs['destinationPath']
+        if destination_path is None:
+            raise TypeError("Missing 'destination_path' argument")
+        if export_id is None and 'exportId' in kwargs:
+            export_id = kwargs['exportId']
+        if export_id is None:
+            raise TypeError("Missing 'export_id' argument")
+        if mount_target_id is None and 'mountTargetId' in kwargs:
+            mount_target_id = kwargs['mountTargetId']
+        if mount_target_id is None:
+            raise TypeError("Missing 'mount_target_id' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if prefix is None:
+            raise TypeError("Missing 'prefix' argument")
+        if storage_type is None and 'storageType' in kwargs:
+            storage_type = kwargs['storageType']
+        if storage_type is None:
+            raise TypeError("Missing 'storage_type' argument")
+
+        _setter("bucket", bucket)
+        _setter("destination_directory_name", destination_directory_name)
+        _setter("destination_path", destination_path)
+        _setter("export_id", export_id)
+        _setter("mount_target_id", mount_target_id)
+        _setter("namespace", namespace)
+        _setter("prefix", prefix)
+        _setter("storage_type", storage_type)
 
     @property
     @pulumi.getter
@@ -4666,8 +6506,29 @@ class GetJobRunsJobRunLogDetailResult(dict):
         :param str log_group_id: The log group id for where log objects will be for job runs.
         :param str log_id: The log id of the log object the job run logs will be shipped to.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetJobRunsJobRunLogDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
+
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -4695,10 +6556,29 @@ class GetJobShapesFilterResult(dict):
         """
         :param str name: The name of the job shape.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetJobShapesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4732,10 +6612,41 @@ class GetJobShapesJobShapeResult(dict):
         :param str name: The name of the job shape.
         :param str shape_series: The family that the compute shape belongs to.
         """
-        pulumi.set(__self__, "core_count", core_count)
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "shape_series", shape_series)
+        GetJobShapesJobShapeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            core_count=core_count,
+            memory_in_gbs=memory_in_gbs,
+            name=name,
+            shape_series=shape_series,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             core_count: Optional[int] = None,
+             memory_in_gbs: Optional[int] = None,
+             name: Optional[str] = None,
+             shape_series: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if core_count is None and 'coreCount' in kwargs:
+            core_count = kwargs['coreCount']
+        if core_count is None:
+            raise TypeError("Missing 'core_count' argument")
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if shape_series is None and 'shapeSeries' in kwargs:
+            shape_series = kwargs['shapeSeries']
+        if shape_series is None:
+            raise TypeError("Missing 'shape_series' argument")
+
+        _setter("core_count", core_count)
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("name", name)
+        _setter("shape_series", shape_series)
 
     @property
     @pulumi.getter(name="coreCount")
@@ -4776,10 +6687,29 @@ class GetJobsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetJobsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4839,28 +6769,163 @@ class GetJobsJobResult(dict):
         :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
         :param str time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
         """
-        pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
-        pulumi.set(__self__, "artifact_content_length", artifact_content_length)
-        pulumi.set(__self__, "artifact_content_md5", artifact_content_md5)
-        pulumi.set(__self__, "artifact_last_modified", artifact_last_modified)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "delete_related_job_runs", delete_related_job_runs)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "empty_artifact", empty_artifact)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "job_artifact", job_artifact)
-        pulumi.set(__self__, "job_configuration_details", job_configuration_details)
-        pulumi.set(__self__, "job_infrastructure_configuration_details", job_infrastructure_configuration_details)
-        pulumi.set(__self__, "job_log_configuration_details", job_log_configuration_details)
-        pulumi.set(__self__, "job_storage_mount_configuration_details_lists", job_storage_mount_configuration_details_lists)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+        GetJobsJobResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            artifact_content_disposition=artifact_content_disposition,
+            artifact_content_length=artifact_content_length,
+            artifact_content_md5=artifact_content_md5,
+            artifact_last_modified=artifact_last_modified,
+            compartment_id=compartment_id,
+            created_by=created_by,
+            defined_tags=defined_tags,
+            delete_related_job_runs=delete_related_job_runs,
+            description=description,
+            display_name=display_name,
+            empty_artifact=empty_artifact,
+            freeform_tags=freeform_tags,
+            id=id,
+            job_artifact=job_artifact,
+            job_configuration_details=job_configuration_details,
+            job_infrastructure_configuration_details=job_infrastructure_configuration_details,
+            job_log_configuration_details=job_log_configuration_details,
+            job_storage_mount_configuration_details_lists=job_storage_mount_configuration_details_lists,
+            lifecycle_details=lifecycle_details,
+            project_id=project_id,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             artifact_content_disposition: Optional[str] = None,
+             artifact_content_length: Optional[str] = None,
+             artifact_content_md5: Optional[str] = None,
+             artifact_last_modified: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             created_by: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             delete_related_job_runs: Optional[bool] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             empty_artifact: Optional[bool] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             job_artifact: Optional[str] = None,
+             job_configuration_details: Optional[Sequence['outputs.GetJobsJobJobConfigurationDetailResult']] = None,
+             job_infrastructure_configuration_details: Optional[Sequence['outputs.GetJobsJobJobInfrastructureConfigurationDetailResult']] = None,
+             job_log_configuration_details: Optional[Sequence['outputs.GetJobsJobJobLogConfigurationDetailResult']] = None,
+             job_storage_mount_configuration_details_lists: Optional[Sequence['outputs.GetJobsJobJobStorageMountConfigurationDetailsListResult']] = None,
+             lifecycle_details: Optional[str] = None,
+             project_id: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if artifact_content_disposition is None and 'artifactContentDisposition' in kwargs:
+            artifact_content_disposition = kwargs['artifactContentDisposition']
+        if artifact_content_disposition is None:
+            raise TypeError("Missing 'artifact_content_disposition' argument")
+        if artifact_content_length is None and 'artifactContentLength' in kwargs:
+            artifact_content_length = kwargs['artifactContentLength']
+        if artifact_content_length is None:
+            raise TypeError("Missing 'artifact_content_length' argument")
+        if artifact_content_md5 is None and 'artifactContentMd5' in kwargs:
+            artifact_content_md5 = kwargs['artifactContentMd5']
+        if artifact_content_md5 is None:
+            raise TypeError("Missing 'artifact_content_md5' argument")
+        if artifact_last_modified is None and 'artifactLastModified' in kwargs:
+            artifact_last_modified = kwargs['artifactLastModified']
+        if artifact_last_modified is None:
+            raise TypeError("Missing 'artifact_last_modified' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if created_by is None and 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if created_by is None:
+            raise TypeError("Missing 'created_by' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if delete_related_job_runs is None and 'deleteRelatedJobRuns' in kwargs:
+            delete_related_job_runs = kwargs['deleteRelatedJobRuns']
+        if delete_related_job_runs is None:
+            raise TypeError("Missing 'delete_related_job_runs' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if empty_artifact is None and 'emptyArtifact' in kwargs:
+            empty_artifact = kwargs['emptyArtifact']
+        if empty_artifact is None:
+            raise TypeError("Missing 'empty_artifact' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if job_artifact is None and 'jobArtifact' in kwargs:
+            job_artifact = kwargs['jobArtifact']
+        if job_artifact is None:
+            raise TypeError("Missing 'job_artifact' argument")
+        if job_configuration_details is None and 'jobConfigurationDetails' in kwargs:
+            job_configuration_details = kwargs['jobConfigurationDetails']
+        if job_configuration_details is None:
+            raise TypeError("Missing 'job_configuration_details' argument")
+        if job_infrastructure_configuration_details is None and 'jobInfrastructureConfigurationDetails' in kwargs:
+            job_infrastructure_configuration_details = kwargs['jobInfrastructureConfigurationDetails']
+        if job_infrastructure_configuration_details is None:
+            raise TypeError("Missing 'job_infrastructure_configuration_details' argument")
+        if job_log_configuration_details is None and 'jobLogConfigurationDetails' in kwargs:
+            job_log_configuration_details = kwargs['jobLogConfigurationDetails']
+        if job_log_configuration_details is None:
+            raise TypeError("Missing 'job_log_configuration_details' argument")
+        if job_storage_mount_configuration_details_lists is None and 'jobStorageMountConfigurationDetailsLists' in kwargs:
+            job_storage_mount_configuration_details_lists = kwargs['jobStorageMountConfigurationDetailsLists']
+        if job_storage_mount_configuration_details_lists is None:
+            raise TypeError("Missing 'job_storage_mount_configuration_details_lists' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if project_id is None and 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+
+        _setter("artifact_content_disposition", artifact_content_disposition)
+        _setter("artifact_content_length", artifact_content_length)
+        _setter("artifact_content_md5", artifact_content_md5)
+        _setter("artifact_last_modified", artifact_last_modified)
+        _setter("compartment_id", compartment_id)
+        _setter("created_by", created_by)
+        _setter("defined_tags", defined_tags)
+        _setter("delete_related_job_runs", delete_related_job_runs)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("empty_artifact", empty_artifact)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("job_artifact", job_artifact)
+        _setter("job_configuration_details", job_configuration_details)
+        _setter("job_infrastructure_configuration_details", job_infrastructure_configuration_details)
+        _setter("job_log_configuration_details", job_log_configuration_details)
+        _setter("job_storage_mount_configuration_details_lists", job_storage_mount_configuration_details_lists)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("project_id", project_id)
+        _setter("state", state)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="artifactContentDisposition")
@@ -5031,10 +7096,43 @@ class GetJobsJobJobConfigurationDetailResult(dict):
         :param str job_type: The type of job.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
         """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "job_type", job_type)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        GetJobsJobJobConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            job_type=job_type,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             job_type: Optional[str] = None,
+             maximum_runtime_in_minutes: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if command_line_arguments is None and 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if command_line_arguments is None:
+            raise TypeError("Missing 'command_line_arguments' argument")
+        if environment_variables is None and 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if environment_variables is None:
+            raise TypeError("Missing 'environment_variables' argument")
+        if job_type is None and 'jobType' in kwargs:
+            job_type = kwargs['jobType']
+        if job_type is None:
+            raise TypeError("Missing 'job_type' argument")
+        if maximum_runtime_in_minutes is None and 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+        if maximum_runtime_in_minutes is None:
+            raise TypeError("Missing 'maximum_runtime_in_minutes' argument")
+
+        _setter("command_line_arguments", command_line_arguments)
+        _setter("environment_variables", environment_variables)
+        _setter("job_type", job_type)
+        _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -5084,11 +7182,50 @@ class GetJobsJobJobInfrastructureConfigurationDetailResult(dict):
         :param str shape_name: The shape used to launch the job run instances.
         :param str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
-        pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        GetJobsJobJobInfrastructureConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            job_infrastructure_type=job_infrastructure_type,
+            job_shape_config_details=job_shape_config_details,
+            shape_name=shape_name,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: Optional[int] = None,
+             job_infrastructure_type: Optional[str] = None,
+             job_shape_config_details: Optional[Sequence['outputs.GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult']] = None,
+             shape_name: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if block_storage_size_in_gbs is None and 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if block_storage_size_in_gbs is None:
+            raise TypeError("Missing 'block_storage_size_in_gbs' argument")
+        if job_infrastructure_type is None and 'jobInfrastructureType' in kwargs:
+            job_infrastructure_type = kwargs['jobInfrastructureType']
+        if job_infrastructure_type is None:
+            raise TypeError("Missing 'job_infrastructure_type' argument")
+        if job_shape_config_details is None and 'jobShapeConfigDetails' in kwargs:
+            job_shape_config_details = kwargs['jobShapeConfigDetails']
+        if job_shape_config_details is None:
+            raise TypeError("Missing 'job_shape_config_details' argument")
+        if shape_name is None and 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("job_infrastructure_type", job_infrastructure_type)
+        _setter("job_shape_config_details", job_shape_config_details)
+        _setter("shape_name", shape_name)
+        _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -5140,8 +7277,27 @@ class GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(d
         :param float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
         :param float ocpus: The total number of OCPUs available to the job run instance.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -5173,10 +7329,43 @@ class GetJobsJobJobLogConfigurationDetailResult(dict):
         :param str log_group_id: The log group id for where log objects are for job runs.
         :param str log_id: The log id the job run will push logs too.
         """
-        pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
-        pulumi.set(__self__, "enable_logging", enable_logging)
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetJobsJobJobLogConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_auto_log_creation=enable_auto_log_creation,
+            enable_logging=enable_logging,
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_auto_log_creation: Optional[bool] = None,
+             enable_logging: Optional[bool] = None,
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if enable_auto_log_creation is None and 'enableAutoLogCreation' in kwargs:
+            enable_auto_log_creation = kwargs['enableAutoLogCreation']
+        if enable_auto_log_creation is None:
+            raise TypeError("Missing 'enable_auto_log_creation' argument")
+        if enable_logging is None and 'enableLogging' in kwargs:
+            enable_logging = kwargs['enableLogging']
+        if enable_logging is None:
+            raise TypeError("Missing 'enable_logging' argument")
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
+
+        _setter("enable_auto_log_creation", enable_auto_log_creation)
+        _setter("enable_logging", enable_logging)
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
@@ -5232,14 +7421,65 @@ class GetJobsJobJobStorageMountConfigurationDetailsListResult(dict):
         :param str prefix: Prefix in the bucket to mount
         :param str storage_type: The type of storage.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "destination_directory_name", destination_directory_name)
-        pulumi.set(__self__, "destination_path", destination_path)
-        pulumi.set(__self__, "export_id", export_id)
-        pulumi.set(__self__, "mount_target_id", mount_target_id)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "prefix", prefix)
-        pulumi.set(__self__, "storage_type", storage_type)
+        GetJobsJobJobStorageMountConfigurationDetailsListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            destination_directory_name=destination_directory_name,
+            destination_path=destination_path,
+            export_id=export_id,
+            mount_target_id=mount_target_id,
+            namespace=namespace,
+            prefix=prefix,
+            storage_type=storage_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[str] = None,
+             destination_directory_name: Optional[str] = None,
+             destination_path: Optional[str] = None,
+             export_id: Optional[str] = None,
+             mount_target_id: Optional[str] = None,
+             namespace: Optional[str] = None,
+             prefix: Optional[str] = None,
+             storage_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if destination_directory_name is None and 'destinationDirectoryName' in kwargs:
+            destination_directory_name = kwargs['destinationDirectoryName']
+        if destination_directory_name is None:
+            raise TypeError("Missing 'destination_directory_name' argument")
+        if destination_path is None and 'destinationPath' in kwargs:
+            destination_path = kwargs['destinationPath']
+        if destination_path is None:
+            raise TypeError("Missing 'destination_path' argument")
+        if export_id is None and 'exportId' in kwargs:
+            export_id = kwargs['exportId']
+        if export_id is None:
+            raise TypeError("Missing 'export_id' argument")
+        if mount_target_id is None and 'mountTargetId' in kwargs:
+            mount_target_id = kwargs['mountTargetId']
+        if mount_target_id is None:
+            raise TypeError("Missing 'mount_target_id' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if prefix is None:
+            raise TypeError("Missing 'prefix' argument")
+        if storage_type is None and 'storageType' in kwargs:
+            storage_type = kwargs['storageType']
+        if storage_type is None:
+            raise TypeError("Missing 'storage_type' argument")
+
+        _setter("bucket", bucket)
+        _setter("destination_directory_name", destination_directory_name)
+        _setter("destination_path", destination_path)
+        _setter("export_id", export_id)
+        _setter("mount_target_id", mount_target_id)
+        _setter("namespace", namespace)
+        _setter("prefix", prefix)
+        _setter("storage_type", storage_type)
 
     @property
     @pulumi.getter
@@ -5325,10 +7565,35 @@ class GetModelCustomMetadataListResult(dict):
                * testartifactresults
         :param str value: Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
         """
-        pulumi.set(__self__, "category", category)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "value", value)
+        GetModelCustomMetadataListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            category=category,
+            description=description,
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             category: Optional[str] = None,
+             description: Optional[str] = None,
+             key: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if category is None:
+            raise TypeError("Missing 'category' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("category", category)
+        _setter("description", description)
+        _setter("key", key)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -5388,10 +7653,35 @@ class GetModelDefinedMetadataListResult(dict):
                * testartifactresults
         :param str value: Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
         """
-        pulumi.set(__self__, "category", category)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "value", value)
+        GetModelDefinedMetadataListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            category=category,
+            description=description,
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             category: Optional[str] = None,
+             description: Optional[str] = None,
+             key: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if category is None:
+            raise TypeError("Missing 'category' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("category", category)
+        _setter("description", description)
+        _setter("key", key)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -5441,8 +7731,25 @@ class GetModelDeploymentCategoryLogDetailResult(dict):
         :param Sequence['GetModelDeploymentCategoryLogDetailAccessArgs'] accesses: The log details.
         :param Sequence['GetModelDeploymentCategoryLogDetailPredictArgs'] predicts: The log details.
         """
-        pulumi.set(__self__, "accesses", accesses)
-        pulumi.set(__self__, "predicts", predicts)
+        GetModelDeploymentCategoryLogDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            accesses=accesses,
+            predicts=predicts,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             accesses: Optional[Sequence['outputs.GetModelDeploymentCategoryLogDetailAccessResult']] = None,
+             predicts: Optional[Sequence['outputs.GetModelDeploymentCategoryLogDetailPredictResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if accesses is None:
+            raise TypeError("Missing 'accesses' argument")
+        if predicts is None:
+            raise TypeError("Missing 'predicts' argument")
+
+        _setter("accesses", accesses)
+        _setter("predicts", predicts)
 
     @property
     @pulumi.getter
@@ -5470,8 +7777,29 @@ class GetModelDeploymentCategoryLogDetailAccessResult(dict):
         :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
         :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetModelDeploymentCategoryLogDetailAccessResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
+
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -5499,8 +7827,29 @@ class GetModelDeploymentCategoryLogDetailPredictResult(dict):
         :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
         :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetModelDeploymentCategoryLogDetailPredictResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
+
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -5530,9 +7879,36 @@ class GetModelDeploymentModelDeploymentConfigurationDetailResult(dict):
         :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArgs'] environment_configuration_details: The configuration to carry the environment details thats used in Model Deployment creation
         :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArgs'] model_configuration_details: The model configuration details.
         """
-        pulumi.set(__self__, "deployment_type", deployment_type)
-        pulumi.set(__self__, "environment_configuration_details", environment_configuration_details)
-        pulumi.set(__self__, "model_configuration_details", model_configuration_details)
+        GetModelDeploymentModelDeploymentConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            deployment_type=deployment_type,
+            environment_configuration_details=environment_configuration_details,
+            model_configuration_details=model_configuration_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             deployment_type: Optional[str] = None,
+             environment_configuration_details: Optional[Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailResult']] = None,
+             model_configuration_details: Optional[Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if deployment_type is None and 'deploymentType' in kwargs:
+            deployment_type = kwargs['deploymentType']
+        if deployment_type is None:
+            raise TypeError("Missing 'deployment_type' argument")
+        if environment_configuration_details is None and 'environmentConfigurationDetails' in kwargs:
+            environment_configuration_details = kwargs['environmentConfigurationDetails']
+        if environment_configuration_details is None:
+            raise TypeError("Missing 'environment_configuration_details' argument")
+        if model_configuration_details is None and 'modelConfigurationDetails' in kwargs:
+            model_configuration_details = kwargs['modelConfigurationDetails']
+        if model_configuration_details is None:
+            raise TypeError("Missing 'model_configuration_details' argument")
+
+        _setter("deployment_type", deployment_type)
+        _setter("environment_configuration_details", environment_configuration_details)
+        _setter("model_configuration_details", model_configuration_details)
 
     @property
     @pulumi.getter(name="deploymentType")
@@ -5580,14 +7956,65 @@ class GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurati
         :param str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
         :param int server_port: The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
         """
-        pulumi.set(__self__, "cmds", cmds)
-        pulumi.set(__self__, "entrypoints", entrypoints)
-        pulumi.set(__self__, "environment_configuration_type", environment_configuration_type)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "health_check_port", health_check_port)
-        pulumi.set(__self__, "image", image)
-        pulumi.set(__self__, "image_digest", image_digest)
-        pulumi.set(__self__, "server_port", server_port)
+        GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cmds=cmds,
+            entrypoints=entrypoints,
+            environment_configuration_type=environment_configuration_type,
+            environment_variables=environment_variables,
+            health_check_port=health_check_port,
+            image=image,
+            image_digest=image_digest,
+            server_port=server_port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cmds: Optional[Sequence[str]] = None,
+             entrypoints: Optional[Sequence[str]] = None,
+             environment_configuration_type: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             health_check_port: Optional[int] = None,
+             image: Optional[str] = None,
+             image_digest: Optional[str] = None,
+             server_port: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if cmds is None:
+            raise TypeError("Missing 'cmds' argument")
+        if entrypoints is None:
+            raise TypeError("Missing 'entrypoints' argument")
+        if environment_configuration_type is None and 'environmentConfigurationType' in kwargs:
+            environment_configuration_type = kwargs['environmentConfigurationType']
+        if environment_configuration_type is None:
+            raise TypeError("Missing 'environment_configuration_type' argument")
+        if environment_variables is None and 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if environment_variables is None:
+            raise TypeError("Missing 'environment_variables' argument")
+        if health_check_port is None and 'healthCheckPort' in kwargs:
+            health_check_port = kwargs['healthCheckPort']
+        if health_check_port is None:
+            raise TypeError("Missing 'health_check_port' argument")
+        if image is None:
+            raise TypeError("Missing 'image' argument")
+        if image_digest is None and 'imageDigest' in kwargs:
+            image_digest = kwargs['imageDigest']
+        if image_digest is None:
+            raise TypeError("Missing 'image_digest' argument")
+        if server_port is None and 'serverPort' in kwargs:
+            server_port = kwargs['serverPort']
+        if server_port is None:
+            raise TypeError("Missing 'server_port' argument")
+
+        _setter("cmds", cmds)
+        _setter("entrypoints", entrypoints)
+        _setter("environment_configuration_type", environment_configuration_type)
+        _setter("environment_variables", environment_variables)
+        _setter("health_check_port", health_check_port)
+        _setter("image", image)
+        _setter("image_digest", image_digest)
+        _setter("server_port", server_port)
 
     @property
     @pulumi.getter
@@ -5667,10 +8094,43 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
         :param str model_id: The OCID of the model you want to deploy.
         :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArgs'] scaling_policies: The scaling policy to apply to each model of the deployment.
         """
-        pulumi.set(__self__, "bandwidth_mbps", bandwidth_mbps)
-        pulumi.set(__self__, "instance_configurations", instance_configurations)
-        pulumi.set(__self__, "model_id", model_id)
-        pulumi.set(__self__, "scaling_policies", scaling_policies)
+        GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bandwidth_mbps=bandwidth_mbps,
+            instance_configurations=instance_configurations,
+            model_id=model_id,
+            scaling_policies=scaling_policies,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bandwidth_mbps: Optional[int] = None,
+             instance_configurations: Optional[Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult']] = None,
+             model_id: Optional[str] = None,
+             scaling_policies: Optional[Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bandwidth_mbps is None and 'bandwidthMbps' in kwargs:
+            bandwidth_mbps = kwargs['bandwidthMbps']
+        if bandwidth_mbps is None:
+            raise TypeError("Missing 'bandwidth_mbps' argument")
+        if instance_configurations is None and 'instanceConfigurations' in kwargs:
+            instance_configurations = kwargs['instanceConfigurations']
+        if instance_configurations is None:
+            raise TypeError("Missing 'instance_configurations' argument")
+        if model_id is None and 'modelId' in kwargs:
+            model_id = kwargs['modelId']
+        if model_id is None:
+            raise TypeError("Missing 'model_id' argument")
+        if scaling_policies is None and 'scalingPolicies' in kwargs:
+            scaling_policies = kwargs['scalingPolicies']
+        if scaling_policies is None:
+            raise TypeError("Missing 'scaling_policies' argument")
+
+        _setter("bandwidth_mbps", bandwidth_mbps)
+        _setter("instance_configurations", instance_configurations)
+        _setter("model_id", model_id)
+        _setter("scaling_policies", scaling_policies)
 
     @property
     @pulumi.getter(name="bandwidthMbps")
@@ -5714,8 +8174,29 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
         :param str instance_shape_name: The shape used to launch the model deployment instances.
         :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs'] model_deployment_instance_shape_config_details: Details for the model-deployment instance shape configuration.
         """
-        pulumi.set(__self__, "instance_shape_name", instance_shape_name)
-        pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
+        GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            instance_shape_name=instance_shape_name,
+            model_deployment_instance_shape_config_details=model_deployment_instance_shape_config_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             instance_shape_name: Optional[str] = None,
+             model_deployment_instance_shape_config_details: Optional[Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if instance_shape_name is None and 'instanceShapeName' in kwargs:
+            instance_shape_name = kwargs['instanceShapeName']
+        if instance_shape_name is None:
+            raise TypeError("Missing 'instance_shape_name' argument")
+        if model_deployment_instance_shape_config_details is None and 'modelDeploymentInstanceShapeConfigDetails' in kwargs:
+            model_deployment_instance_shape_config_details = kwargs['modelDeploymentInstanceShapeConfigDetails']
+        if model_deployment_instance_shape_config_details is None:
+            raise TypeError("Missing 'model_deployment_instance_shape_config_details' argument")
+
+        _setter("instance_shape_name", instance_shape_name)
+        _setter("model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
 
     @property
     @pulumi.getter(name="instanceShapeName")
@@ -5743,8 +8224,27 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
         :param float memory_in_gbs: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
         :param float ocpus: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -5772,8 +8272,29 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
         :param int instance_count: The number of instances for the model deployment.
         :param str policy_type: The type of scaling policy.
         """
-        pulumi.set(__self__, "instance_count", instance_count)
-        pulumi.set(__self__, "policy_type", policy_type)
+        GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            instance_count=instance_count,
+            policy_type=policy_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             instance_count: Optional[int] = None,
+             policy_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if instance_count is None and 'instanceCount' in kwargs:
+            instance_count = kwargs['instanceCount']
+        if instance_count is None:
+            raise TypeError("Missing 'instance_count' argument")
+        if policy_type is None and 'policyType' in kwargs:
+            policy_type = kwargs['policyType']
+        if policy_type is None:
+            raise TypeError("Missing 'policy_type' argument")
+
+        _setter("instance_count", instance_count)
+        _setter("policy_type", policy_type)
 
     @property
     @pulumi.getter(name="instanceCount")
@@ -5801,10 +8322,29 @@ class GetModelDeploymentShapesFilterResult(dict):
         """
         :param str name: The name of the model deployment shape.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetModelDeploymentShapesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5838,10 +8378,41 @@ class GetModelDeploymentShapesModelDeploymentShapeResult(dict):
         :param str name: The name of the model deployment shape.
         :param str shape_series: The family that the compute shape belongs to.
         """
-        pulumi.set(__self__, "core_count", core_count)
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "shape_series", shape_series)
+        GetModelDeploymentShapesModelDeploymentShapeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            core_count=core_count,
+            memory_in_gbs=memory_in_gbs,
+            name=name,
+            shape_series=shape_series,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             core_count: Optional[int] = None,
+             memory_in_gbs: Optional[int] = None,
+             name: Optional[str] = None,
+             shape_series: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if core_count is None and 'coreCount' in kwargs:
+            core_count = kwargs['coreCount']
+        if core_count is None:
+            raise TypeError("Missing 'core_count' argument")
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if shape_series is None and 'shapeSeries' in kwargs:
+            shape_series = kwargs['shapeSeries']
+        if shape_series is None:
+            raise TypeError("Missing 'shape_series' argument")
+
+        _setter("core_count", core_count)
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("name", name)
+        _setter("shape_series", shape_series)
 
     @property
     @pulumi.getter(name="coreCount")
@@ -5882,10 +8453,29 @@ class GetModelDeploymentsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetModelDeploymentsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5936,20 +8526,107 @@ class GetModelDeploymentsModelDeploymentResult(dict):
         :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
         :param str time_created: The date and time the resource was created, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         """
-        pulumi.set(__self__, "category_log_details", category_log_details)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "model_deployment_configuration_details", model_deployment_configuration_details)
-        pulumi.set(__self__, "model_deployment_url", model_deployment_url)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+        GetModelDeploymentsModelDeploymentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            category_log_details=category_log_details,
+            compartment_id=compartment_id,
+            created_by=created_by,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            model_deployment_configuration_details=model_deployment_configuration_details,
+            model_deployment_url=model_deployment_url,
+            project_id=project_id,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             category_log_details: Optional[Sequence['outputs.GetModelDeploymentsModelDeploymentCategoryLogDetailResult']] = None,
+             compartment_id: Optional[str] = None,
+             created_by: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             model_deployment_configuration_details: Optional[Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailResult']] = None,
+             model_deployment_url: Optional[str] = None,
+             project_id: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if category_log_details is None and 'categoryLogDetails' in kwargs:
+            category_log_details = kwargs['categoryLogDetails']
+        if category_log_details is None:
+            raise TypeError("Missing 'category_log_details' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if created_by is None and 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if created_by is None:
+            raise TypeError("Missing 'created_by' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if model_deployment_configuration_details is None and 'modelDeploymentConfigurationDetails' in kwargs:
+            model_deployment_configuration_details = kwargs['modelDeploymentConfigurationDetails']
+        if model_deployment_configuration_details is None:
+            raise TypeError("Missing 'model_deployment_configuration_details' argument")
+        if model_deployment_url is None and 'modelDeploymentUrl' in kwargs:
+            model_deployment_url = kwargs['modelDeploymentUrl']
+        if model_deployment_url is None:
+            raise TypeError("Missing 'model_deployment_url' argument")
+        if project_id is None and 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+
+        _setter("category_log_details", category_log_details)
+        _setter("compartment_id", compartment_id)
+        _setter("created_by", created_by)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("model_deployment_configuration_details", model_deployment_configuration_details)
+        _setter("model_deployment_url", model_deployment_url)
+        _setter("project_id", project_id)
+        _setter("state", state)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="categoryLogDetails")
@@ -6073,8 +8750,25 @@ class GetModelDeploymentsModelDeploymentCategoryLogDetailResult(dict):
         :param Sequence['GetModelDeploymentsModelDeploymentCategoryLogDetailAccessArgs'] accesses: The log details.
         :param Sequence['GetModelDeploymentsModelDeploymentCategoryLogDetailPredictArgs'] predicts: The log details.
         """
-        pulumi.set(__self__, "accesses", accesses)
-        pulumi.set(__self__, "predicts", predicts)
+        GetModelDeploymentsModelDeploymentCategoryLogDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            accesses=accesses,
+            predicts=predicts,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             accesses: Optional[Sequence['outputs.GetModelDeploymentsModelDeploymentCategoryLogDetailAccessResult']] = None,
+             predicts: Optional[Sequence['outputs.GetModelDeploymentsModelDeploymentCategoryLogDetailPredictResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if accesses is None:
+            raise TypeError("Missing 'accesses' argument")
+        if predicts is None:
+            raise TypeError("Missing 'predicts' argument")
+
+        _setter("accesses", accesses)
+        _setter("predicts", predicts)
 
     @property
     @pulumi.getter
@@ -6102,8 +8796,29 @@ class GetModelDeploymentsModelDeploymentCategoryLogDetailAccessResult(dict):
         :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
         :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetModelDeploymentsModelDeploymentCategoryLogDetailAccessResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
+
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -6131,8 +8846,29 @@ class GetModelDeploymentsModelDeploymentCategoryLogDetailPredictResult(dict):
         :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
         :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetModelDeploymentsModelDeploymentCategoryLogDetailPredictResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
+
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -6162,9 +8898,36 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailResult
         :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArgs'] environment_configuration_details: The configuration to carry the environment details thats used in Model Deployment creation
         :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArgs'] model_configuration_details: The model configuration details.
         """
-        pulumi.set(__self__, "deployment_type", deployment_type)
-        pulumi.set(__self__, "environment_configuration_details", environment_configuration_details)
-        pulumi.set(__self__, "model_configuration_details", model_configuration_details)
+        GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            deployment_type=deployment_type,
+            environment_configuration_details=environment_configuration_details,
+            model_configuration_details=model_configuration_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             deployment_type: Optional[str] = None,
+             environment_configuration_details: Optional[Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailResult']] = None,
+             model_configuration_details: Optional[Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if deployment_type is None and 'deploymentType' in kwargs:
+            deployment_type = kwargs['deploymentType']
+        if deployment_type is None:
+            raise TypeError("Missing 'deployment_type' argument")
+        if environment_configuration_details is None and 'environmentConfigurationDetails' in kwargs:
+            environment_configuration_details = kwargs['environmentConfigurationDetails']
+        if environment_configuration_details is None:
+            raise TypeError("Missing 'environment_configuration_details' argument")
+        if model_configuration_details is None and 'modelConfigurationDetails' in kwargs:
+            model_configuration_details = kwargs['modelConfigurationDetails']
+        if model_configuration_details is None:
+            raise TypeError("Missing 'model_configuration_details' argument")
+
+        _setter("deployment_type", deployment_type)
+        _setter("environment_configuration_details", environment_configuration_details)
+        _setter("model_configuration_details", model_configuration_details)
 
     @property
     @pulumi.getter(name="deploymentType")
@@ -6212,14 +8975,65 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnviro
         :param str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
         :param int server_port: The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
         """
-        pulumi.set(__self__, "cmds", cmds)
-        pulumi.set(__self__, "entrypoints", entrypoints)
-        pulumi.set(__self__, "environment_configuration_type", environment_configuration_type)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "health_check_port", health_check_port)
-        pulumi.set(__self__, "image", image)
-        pulumi.set(__self__, "image_digest", image_digest)
-        pulumi.set(__self__, "server_port", server_port)
+        GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cmds=cmds,
+            entrypoints=entrypoints,
+            environment_configuration_type=environment_configuration_type,
+            environment_variables=environment_variables,
+            health_check_port=health_check_port,
+            image=image,
+            image_digest=image_digest,
+            server_port=server_port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cmds: Optional[Sequence[str]] = None,
+             entrypoints: Optional[Sequence[str]] = None,
+             environment_configuration_type: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             health_check_port: Optional[int] = None,
+             image: Optional[str] = None,
+             image_digest: Optional[str] = None,
+             server_port: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if cmds is None:
+            raise TypeError("Missing 'cmds' argument")
+        if entrypoints is None:
+            raise TypeError("Missing 'entrypoints' argument")
+        if environment_configuration_type is None and 'environmentConfigurationType' in kwargs:
+            environment_configuration_type = kwargs['environmentConfigurationType']
+        if environment_configuration_type is None:
+            raise TypeError("Missing 'environment_configuration_type' argument")
+        if environment_variables is None and 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if environment_variables is None:
+            raise TypeError("Missing 'environment_variables' argument")
+        if health_check_port is None and 'healthCheckPort' in kwargs:
+            health_check_port = kwargs['healthCheckPort']
+        if health_check_port is None:
+            raise TypeError("Missing 'health_check_port' argument")
+        if image is None:
+            raise TypeError("Missing 'image' argument")
+        if image_digest is None and 'imageDigest' in kwargs:
+            image_digest = kwargs['imageDigest']
+        if image_digest is None:
+            raise TypeError("Missing 'image_digest' argument")
+        if server_port is None and 'serverPort' in kwargs:
+            server_port = kwargs['serverPort']
+        if server_port is None:
+            raise TypeError("Missing 'server_port' argument")
+
+        _setter("cmds", cmds)
+        _setter("entrypoints", entrypoints)
+        _setter("environment_configuration_type", environment_configuration_type)
+        _setter("environment_variables", environment_variables)
+        _setter("health_check_port", health_check_port)
+        _setter("image", image)
+        _setter("image_digest", image_digest)
+        _setter("server_port", server_port)
 
     @property
     @pulumi.getter
@@ -6299,10 +9113,43 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
         :param str model_id: The OCID of the model you want to deploy.
         :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArgs'] scaling_policies: The scaling policy to apply to each model of the deployment.
         """
-        pulumi.set(__self__, "bandwidth_mbps", bandwidth_mbps)
-        pulumi.set(__self__, "instance_configurations", instance_configurations)
-        pulumi.set(__self__, "model_id", model_id)
-        pulumi.set(__self__, "scaling_policies", scaling_policies)
+        GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bandwidth_mbps=bandwidth_mbps,
+            instance_configurations=instance_configurations,
+            model_id=model_id,
+            scaling_policies=scaling_policies,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bandwidth_mbps: Optional[int] = None,
+             instance_configurations: Optional[Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult']] = None,
+             model_id: Optional[str] = None,
+             scaling_policies: Optional[Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bandwidth_mbps is None and 'bandwidthMbps' in kwargs:
+            bandwidth_mbps = kwargs['bandwidthMbps']
+        if bandwidth_mbps is None:
+            raise TypeError("Missing 'bandwidth_mbps' argument")
+        if instance_configurations is None and 'instanceConfigurations' in kwargs:
+            instance_configurations = kwargs['instanceConfigurations']
+        if instance_configurations is None:
+            raise TypeError("Missing 'instance_configurations' argument")
+        if model_id is None and 'modelId' in kwargs:
+            model_id = kwargs['modelId']
+        if model_id is None:
+            raise TypeError("Missing 'model_id' argument")
+        if scaling_policies is None and 'scalingPolicies' in kwargs:
+            scaling_policies = kwargs['scalingPolicies']
+        if scaling_policies is None:
+            raise TypeError("Missing 'scaling_policies' argument")
+
+        _setter("bandwidth_mbps", bandwidth_mbps)
+        _setter("instance_configurations", instance_configurations)
+        _setter("model_id", model_id)
+        _setter("scaling_policies", scaling_policies)
 
     @property
     @pulumi.getter(name="bandwidthMbps")
@@ -6346,8 +9193,29 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
         :param str instance_shape_name: The shape used to launch the model deployment instances.
         :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs'] model_deployment_instance_shape_config_details: Details for the model-deployment instance shape configuration.
         """
-        pulumi.set(__self__, "instance_shape_name", instance_shape_name)
-        pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
+        GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            instance_shape_name=instance_shape_name,
+            model_deployment_instance_shape_config_details=model_deployment_instance_shape_config_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             instance_shape_name: Optional[str] = None,
+             model_deployment_instance_shape_config_details: Optional[Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if instance_shape_name is None and 'instanceShapeName' in kwargs:
+            instance_shape_name = kwargs['instanceShapeName']
+        if instance_shape_name is None:
+            raise TypeError("Missing 'instance_shape_name' argument")
+        if model_deployment_instance_shape_config_details is None and 'modelDeploymentInstanceShapeConfigDetails' in kwargs:
+            model_deployment_instance_shape_config_details = kwargs['modelDeploymentInstanceShapeConfigDetails']
+        if model_deployment_instance_shape_config_details is None:
+            raise TypeError("Missing 'model_deployment_instance_shape_config_details' argument")
+
+        _setter("instance_shape_name", instance_shape_name)
+        _setter("model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
 
     @property
     @pulumi.getter(name="instanceShapeName")
@@ -6375,8 +9243,27 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
         :param float memory_in_gbs: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
         :param float ocpus: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -6404,8 +9291,29 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
         :param int instance_count: The number of instances for the model deployment.
         :param str policy_type: The type of scaling policy.
         """
-        pulumi.set(__self__, "instance_count", instance_count)
-        pulumi.set(__self__, "policy_type", policy_type)
+        GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            instance_count=instance_count,
+            policy_type=policy_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             instance_count: Optional[int] = None,
+             policy_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if instance_count is None and 'instanceCount' in kwargs:
+            instance_count = kwargs['instanceCount']
+        if instance_count is None:
+            raise TypeError("Missing 'instance_count' argument")
+        if policy_type is None and 'policyType' in kwargs:
+            policy_type = kwargs['policyType']
+        if policy_type is None:
+            raise TypeError("Missing 'policy_type' argument")
+
+        _setter("instance_count", instance_count)
+        _setter("policy_type", policy_type)
 
     @property
     @pulumi.getter(name="instanceCount")
@@ -6433,10 +9341,29 @@ class GetModelVersionSetsFilterResult(dict):
         """
         :param str name: A filter to return only resources that match the entire name given.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetModelVersionSetsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -6484,17 +9411,84 @@ class GetModelVersionSetsModelVersionSetResult(dict):
         :param str time_created: The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         :param str time_updated: The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetModelVersionSetsModelVersionSetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            created_by=created_by,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            id=id,
+            name=name,
+            project_id=project_id,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             created_by: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             project_id: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if created_by is None and 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if created_by is None:
+            raise TypeError("Missing 'created_by' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if project_id is None and 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("created_by", created_by)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("name", name)
+        _setter("project_id", project_id)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -6591,10 +9585,29 @@ class GetModelsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetModelsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -6651,26 +9664,149 @@ class GetModelsModelResult(dict):
         :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
         :param str time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         """
-        pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
-        pulumi.set(__self__, "artifact_content_length", artifact_content_length)
-        pulumi.set(__self__, "artifact_content_md5", artifact_content_md5)
-        pulumi.set(__self__, "artifact_last_modified", artifact_last_modified)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "custom_metadata_lists", custom_metadata_lists)
-        pulumi.set(__self__, "defined_metadata_lists", defined_metadata_lists)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "empty_model", empty_model)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "input_schema", input_schema)
-        pulumi.set(__self__, "model_artifact", model_artifact)
-        pulumi.set(__self__, "output_schema", output_schema)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+        GetModelsModelResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            artifact_content_disposition=artifact_content_disposition,
+            artifact_content_length=artifact_content_length,
+            artifact_content_md5=artifact_content_md5,
+            artifact_last_modified=artifact_last_modified,
+            compartment_id=compartment_id,
+            created_by=created_by,
+            custom_metadata_lists=custom_metadata_lists,
+            defined_metadata_lists=defined_metadata_lists,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            empty_model=empty_model,
+            freeform_tags=freeform_tags,
+            id=id,
+            input_schema=input_schema,
+            model_artifact=model_artifact,
+            output_schema=output_schema,
+            project_id=project_id,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             artifact_content_disposition: Optional[str] = None,
+             artifact_content_length: Optional[str] = None,
+             artifact_content_md5: Optional[str] = None,
+             artifact_last_modified: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             created_by: Optional[str] = None,
+             custom_metadata_lists: Optional[Sequence['outputs.GetModelsModelCustomMetadataListResult']] = None,
+             defined_metadata_lists: Optional[Sequence['outputs.GetModelsModelDefinedMetadataListResult']] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             empty_model: Optional[bool] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             input_schema: Optional[str] = None,
+             model_artifact: Optional[str] = None,
+             output_schema: Optional[str] = None,
+             project_id: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if artifact_content_disposition is None and 'artifactContentDisposition' in kwargs:
+            artifact_content_disposition = kwargs['artifactContentDisposition']
+        if artifact_content_disposition is None:
+            raise TypeError("Missing 'artifact_content_disposition' argument")
+        if artifact_content_length is None and 'artifactContentLength' in kwargs:
+            artifact_content_length = kwargs['artifactContentLength']
+        if artifact_content_length is None:
+            raise TypeError("Missing 'artifact_content_length' argument")
+        if artifact_content_md5 is None and 'artifactContentMd5' in kwargs:
+            artifact_content_md5 = kwargs['artifactContentMd5']
+        if artifact_content_md5 is None:
+            raise TypeError("Missing 'artifact_content_md5' argument")
+        if artifact_last_modified is None and 'artifactLastModified' in kwargs:
+            artifact_last_modified = kwargs['artifactLastModified']
+        if artifact_last_modified is None:
+            raise TypeError("Missing 'artifact_last_modified' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if created_by is None and 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if created_by is None:
+            raise TypeError("Missing 'created_by' argument")
+        if custom_metadata_lists is None and 'customMetadataLists' in kwargs:
+            custom_metadata_lists = kwargs['customMetadataLists']
+        if custom_metadata_lists is None:
+            raise TypeError("Missing 'custom_metadata_lists' argument")
+        if defined_metadata_lists is None and 'definedMetadataLists' in kwargs:
+            defined_metadata_lists = kwargs['definedMetadataLists']
+        if defined_metadata_lists is None:
+            raise TypeError("Missing 'defined_metadata_lists' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if empty_model is None and 'emptyModel' in kwargs:
+            empty_model = kwargs['emptyModel']
+        if empty_model is None:
+            raise TypeError("Missing 'empty_model' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if input_schema is None and 'inputSchema' in kwargs:
+            input_schema = kwargs['inputSchema']
+        if input_schema is None:
+            raise TypeError("Missing 'input_schema' argument")
+        if model_artifact is None and 'modelArtifact' in kwargs:
+            model_artifact = kwargs['modelArtifact']
+        if model_artifact is None:
+            raise TypeError("Missing 'model_artifact' argument")
+        if output_schema is None and 'outputSchema' in kwargs:
+            output_schema = kwargs['outputSchema']
+        if output_schema is None:
+            raise TypeError("Missing 'output_schema' argument")
+        if project_id is None and 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+
+        _setter("artifact_content_disposition", artifact_content_disposition)
+        _setter("artifact_content_length", artifact_content_length)
+        _setter("artifact_content_md5", artifact_content_md5)
+        _setter("artifact_last_modified", artifact_last_modified)
+        _setter("compartment_id", compartment_id)
+        _setter("created_by", created_by)
+        _setter("custom_metadata_lists", custom_metadata_lists)
+        _setter("defined_metadata_lists", defined_metadata_lists)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("empty_model", empty_model)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("input_schema", input_schema)
+        _setter("model_artifact", model_artifact)
+        _setter("output_schema", output_schema)
+        _setter("project_id", project_id)
+        _setter("state", state)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="artifactContentDisposition")
@@ -6834,10 +9970,35 @@ class GetModelsModelCustomMetadataListResult(dict):
                * testartifactresults
         :param str value: Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
         """
-        pulumi.set(__self__, "category", category)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "value", value)
+        GetModelsModelCustomMetadataListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            category=category,
+            description=description,
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             category: Optional[str] = None,
+             description: Optional[str] = None,
+             key: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if category is None:
+            raise TypeError("Missing 'category' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("category", category)
+        _setter("description", description)
+        _setter("key", key)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -6897,10 +10058,35 @@ class GetModelsModelDefinedMetadataListResult(dict):
                * testartifactresults
         :param str value: Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
         """
-        pulumi.set(__self__, "category", category)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "value", value)
+        GetModelsModelDefinedMetadataListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            category=category,
+            description=description,
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             category: Optional[str] = None,
+             description: Optional[str] = None,
+             key: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if category is None:
+            raise TypeError("Missing 'category' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if key is None:
+            raise TypeError("Missing 'key' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("category", category)
+        _setter("description", description)
+        _setter("key", key)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -6956,11 +10142,48 @@ class GetNotebookSessionNotebookSessionConfigDetailResult(dict):
         :param str shape: The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
         :param str subnet_id: A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "notebook_session_shape_config_details", notebook_session_shape_config_details)
-        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
-        pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        GetNotebookSessionNotebookSessionConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            notebook_session_shape_config_details=notebook_session_shape_config_details,
+            private_endpoint_id=private_endpoint_id,
+            shape=shape,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: Optional[int] = None,
+             notebook_session_shape_config_details: Optional[Sequence['outputs.GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailResult']] = None,
+             private_endpoint_id: Optional[str] = None,
+             shape: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if block_storage_size_in_gbs is None and 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if block_storage_size_in_gbs is None:
+            raise TypeError("Missing 'block_storage_size_in_gbs' argument")
+        if notebook_session_shape_config_details is None and 'notebookSessionShapeConfigDetails' in kwargs:
+            notebook_session_shape_config_details = kwargs['notebookSessionShapeConfigDetails']
+        if notebook_session_shape_config_details is None:
+            raise TypeError("Missing 'notebook_session_shape_config_details' argument")
+        if private_endpoint_id is None and 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+        if private_endpoint_id is None:
+            raise TypeError("Missing 'private_endpoint_id' argument")
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("notebook_session_shape_config_details", notebook_session_shape_config_details)
+        _setter("private_endpoint_id", private_endpoint_id)
+        _setter("shape", shape)
+        _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -7012,8 +10235,27 @@ class GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDet
         :param float memory_in_gbs: The total amount of memory available to the notebook session instance, in gigabytes.
         :param float ocpus: The total number of OCPUs available to the notebook session instance.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -7047,11 +10289,48 @@ class GetNotebookSessionNotebookSessionConfigurationDetailResult(dict):
         :param str shape: The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
         :param str subnet_id: A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "notebook_session_shape_config_details", notebook_session_shape_config_details)
-        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
-        pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        GetNotebookSessionNotebookSessionConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            notebook_session_shape_config_details=notebook_session_shape_config_details,
+            private_endpoint_id=private_endpoint_id,
+            shape=shape,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: Optional[int] = None,
+             notebook_session_shape_config_details: Optional[Sequence['outputs.GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailResult']] = None,
+             private_endpoint_id: Optional[str] = None,
+             shape: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if block_storage_size_in_gbs is None and 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if block_storage_size_in_gbs is None:
+            raise TypeError("Missing 'block_storage_size_in_gbs' argument")
+        if notebook_session_shape_config_details is None and 'notebookSessionShapeConfigDetails' in kwargs:
+            notebook_session_shape_config_details = kwargs['notebookSessionShapeConfigDetails']
+        if notebook_session_shape_config_details is None:
+            raise TypeError("Missing 'notebook_session_shape_config_details' argument")
+        if private_endpoint_id is None and 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+        if private_endpoint_id is None:
+            raise TypeError("Missing 'private_endpoint_id' argument")
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("notebook_session_shape_config_details", notebook_session_shape_config_details)
+        _setter("private_endpoint_id", private_endpoint_id)
+        _setter("shape", shape)
+        _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -7103,8 +10382,27 @@ class GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeCo
         :param float memory_in_gbs: The total amount of memory available to the notebook session instance, in gigabytes.
         :param float ocpus: The total number of OCPUs available to the notebook session instance.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -7132,8 +10430,29 @@ class GetNotebookSessionNotebookSessionRuntimeConfigDetailResult(dict):
         :param Mapping[str, Any] custom_environment_variables: Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
         :param Sequence['GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs'] notebook_session_git_config_details: Git configuration Details.
         """
-        pulumi.set(__self__, "custom_environment_variables", custom_environment_variables)
-        pulumi.set(__self__, "notebook_session_git_config_details", notebook_session_git_config_details)
+        GetNotebookSessionNotebookSessionRuntimeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            custom_environment_variables=custom_environment_variables,
+            notebook_session_git_config_details=notebook_session_git_config_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             custom_environment_variables: Optional[Mapping[str, Any]] = None,
+             notebook_session_git_config_details: Optional[Sequence['outputs.GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if custom_environment_variables is None and 'customEnvironmentVariables' in kwargs:
+            custom_environment_variables = kwargs['customEnvironmentVariables']
+        if custom_environment_variables is None:
+            raise TypeError("Missing 'custom_environment_variables' argument")
+        if notebook_session_git_config_details is None and 'notebookSessionGitConfigDetails' in kwargs:
+            notebook_session_git_config_details = kwargs['notebookSessionGitConfigDetails']
+        if notebook_session_git_config_details is None:
+            raise TypeError("Missing 'notebook_session_git_config_details' argument")
+
+        _setter("custom_environment_variables", custom_environment_variables)
+        _setter("notebook_session_git_config_details", notebook_session_git_config_details)
 
     @property
     @pulumi.getter(name="customEnvironmentVariables")
@@ -7159,7 +10478,22 @@ class GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConf
         """
         :param Sequence['GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs'] notebook_session_git_repo_config_collections: A collection of Git repository configurations.
         """
-        pulumi.set(__self__, "notebook_session_git_repo_config_collections", notebook_session_git_repo_config_collections)
+        GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            notebook_session_git_repo_config_collections=notebook_session_git_repo_config_collections,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             notebook_session_git_repo_config_collections: Optional[Sequence['outputs.GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if notebook_session_git_repo_config_collections is None and 'notebookSessionGitRepoConfigCollections' in kwargs:
+            notebook_session_git_repo_config_collections = kwargs['notebookSessionGitRepoConfigCollections']
+        if notebook_session_git_repo_config_collections is None:
+            raise TypeError("Missing 'notebook_session_git_repo_config_collections' argument")
+
+        _setter("notebook_session_git_repo_config_collections", notebook_session_git_repo_config_collections)
 
     @property
     @pulumi.getter(name="notebookSessionGitRepoConfigCollections")
@@ -7177,7 +10511,20 @@ class GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConf
         """
         :param str url: The repository URL
         """
-        pulumi.set(__self__, "url", url)
+        GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if url is None:
+            raise TypeError("Missing 'url' argument")
+
+        _setter("url", url)
 
     @property
     @pulumi.getter
@@ -7209,14 +10556,65 @@ class GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListResul
         :param str prefix: Prefix in the bucket to mount
         :param str storage_type: The type of storage.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "destination_directory_name", destination_directory_name)
-        pulumi.set(__self__, "destination_path", destination_path)
-        pulumi.set(__self__, "export_id", export_id)
-        pulumi.set(__self__, "mount_target_id", mount_target_id)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "prefix", prefix)
-        pulumi.set(__self__, "storage_type", storage_type)
+        GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            destination_directory_name=destination_directory_name,
+            destination_path=destination_path,
+            export_id=export_id,
+            mount_target_id=mount_target_id,
+            namespace=namespace,
+            prefix=prefix,
+            storage_type=storage_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[str] = None,
+             destination_directory_name: Optional[str] = None,
+             destination_path: Optional[str] = None,
+             export_id: Optional[str] = None,
+             mount_target_id: Optional[str] = None,
+             namespace: Optional[str] = None,
+             prefix: Optional[str] = None,
+             storage_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if destination_directory_name is None and 'destinationDirectoryName' in kwargs:
+            destination_directory_name = kwargs['destinationDirectoryName']
+        if destination_directory_name is None:
+            raise TypeError("Missing 'destination_directory_name' argument")
+        if destination_path is None and 'destinationPath' in kwargs:
+            destination_path = kwargs['destinationPath']
+        if destination_path is None:
+            raise TypeError("Missing 'destination_path' argument")
+        if export_id is None and 'exportId' in kwargs:
+            export_id = kwargs['exportId']
+        if export_id is None:
+            raise TypeError("Missing 'export_id' argument")
+        if mount_target_id is None and 'mountTargetId' in kwargs:
+            mount_target_id = kwargs['mountTargetId']
+        if mount_target_id is None:
+            raise TypeError("Missing 'mount_target_id' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if prefix is None:
+            raise TypeError("Missing 'prefix' argument")
+        if storage_type is None and 'storageType' in kwargs:
+            storage_type = kwargs['storageType']
+        if storage_type is None:
+            raise TypeError("Missing 'storage_type' argument")
+
+        _setter("bucket", bucket)
+        _setter("destination_directory_name", destination_directory_name)
+        _setter("destination_path", destination_path)
+        _setter("export_id", export_id)
+        _setter("mount_target_id", mount_target_id)
+        _setter("namespace", namespace)
+        _setter("prefix", prefix)
+        _setter("storage_type", storage_type)
 
     @property
     @pulumi.getter
@@ -7292,10 +10690,29 @@ class GetNotebookSessionShapesFilterResult(dict):
         """
         :param str name: The name of the notebook session shape.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetNotebookSessionShapesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -7329,10 +10746,41 @@ class GetNotebookSessionShapesNotebookSessionShapeResult(dict):
         :param str name: The name of the notebook session shape.
         :param str shape_series: The family that the compute shape belongs to.
         """
-        pulumi.set(__self__, "core_count", core_count)
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "shape_series", shape_series)
+        GetNotebookSessionShapesNotebookSessionShapeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            core_count=core_count,
+            memory_in_gbs=memory_in_gbs,
+            name=name,
+            shape_series=shape_series,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             core_count: Optional[int] = None,
+             memory_in_gbs: Optional[int] = None,
+             name: Optional[str] = None,
+             shape_series: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if core_count is None and 'coreCount' in kwargs:
+            core_count = kwargs['coreCount']
+        if core_count is None:
+            raise TypeError("Missing 'core_count' argument")
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if shape_series is None and 'shapeSeries' in kwargs:
+            shape_series = kwargs['shapeSeries']
+        if shape_series is None:
+            raise TypeError("Missing 'shape_series' argument")
+
+        _setter("core_count", core_count)
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("name", name)
+        _setter("shape_series", shape_series)
 
     @property
     @pulumi.getter(name="coreCount")
@@ -7373,10 +10821,29 @@ class GetNotebookSessionsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetNotebookSessionsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -7429,21 +10896,116 @@ class GetNotebookSessionsNotebookSessionResult(dict):
         :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
         :param str time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "notebook_session_config_details", notebook_session_config_details)
-        pulumi.set(__self__, "notebook_session_configuration_details", notebook_session_configuration_details)
-        pulumi.set(__self__, "notebook_session_runtime_config_details", notebook_session_runtime_config_details)
-        pulumi.set(__self__, "notebook_session_storage_mount_configuration_details_lists", notebook_session_storage_mount_configuration_details_lists)
-        pulumi.set(__self__, "notebook_session_url", notebook_session_url)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+        GetNotebookSessionsNotebookSessionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            created_by=created_by,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            notebook_session_config_details=notebook_session_config_details,
+            notebook_session_configuration_details=notebook_session_configuration_details,
+            notebook_session_runtime_config_details=notebook_session_runtime_config_details,
+            notebook_session_storage_mount_configuration_details_lists=notebook_session_storage_mount_configuration_details_lists,
+            notebook_session_url=notebook_session_url,
+            project_id=project_id,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             created_by: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             notebook_session_config_details: Optional[Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailResult']] = None,
+             notebook_session_configuration_details: Optional[Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailResult']] = None,
+             notebook_session_runtime_config_details: Optional[Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailResult']] = None,
+             notebook_session_storage_mount_configuration_details_lists: Optional[Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListResult']] = None,
+             notebook_session_url: Optional[str] = None,
+             project_id: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if created_by is None and 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if created_by is None:
+            raise TypeError("Missing 'created_by' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if notebook_session_config_details is None and 'notebookSessionConfigDetails' in kwargs:
+            notebook_session_config_details = kwargs['notebookSessionConfigDetails']
+        if notebook_session_config_details is None:
+            raise TypeError("Missing 'notebook_session_config_details' argument")
+        if notebook_session_configuration_details is None and 'notebookSessionConfigurationDetails' in kwargs:
+            notebook_session_configuration_details = kwargs['notebookSessionConfigurationDetails']
+        if notebook_session_configuration_details is None:
+            raise TypeError("Missing 'notebook_session_configuration_details' argument")
+        if notebook_session_runtime_config_details is None and 'notebookSessionRuntimeConfigDetails' in kwargs:
+            notebook_session_runtime_config_details = kwargs['notebookSessionRuntimeConfigDetails']
+        if notebook_session_runtime_config_details is None:
+            raise TypeError("Missing 'notebook_session_runtime_config_details' argument")
+        if notebook_session_storage_mount_configuration_details_lists is None and 'notebookSessionStorageMountConfigurationDetailsLists' in kwargs:
+            notebook_session_storage_mount_configuration_details_lists = kwargs['notebookSessionStorageMountConfigurationDetailsLists']
+        if notebook_session_storage_mount_configuration_details_lists is None:
+            raise TypeError("Missing 'notebook_session_storage_mount_configuration_details_lists' argument")
+        if notebook_session_url is None and 'notebookSessionUrl' in kwargs:
+            notebook_session_url = kwargs['notebookSessionUrl']
+        if notebook_session_url is None:
+            raise TypeError("Missing 'notebook_session_url' argument")
+        if project_id is None and 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("created_by", created_by)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("notebook_session_config_details", notebook_session_config_details)
+        _setter("notebook_session_configuration_details", notebook_session_configuration_details)
+        _setter("notebook_session_runtime_config_details", notebook_session_runtime_config_details)
+        _setter("notebook_session_storage_mount_configuration_details_lists", notebook_session_storage_mount_configuration_details_lists)
+        _setter("notebook_session_url", notebook_session_url)
+        _setter("project_id", project_id)
+        _setter("state", state)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -7581,11 +11143,48 @@ class GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailResult(dict):
         :param str shape: The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
         :param str subnet_id: A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "notebook_session_shape_config_details", notebook_session_shape_config_details)
-        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
-        pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            notebook_session_shape_config_details=notebook_session_shape_config_details,
+            private_endpoint_id=private_endpoint_id,
+            shape=shape,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: Optional[int] = None,
+             notebook_session_shape_config_details: Optional[Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailResult']] = None,
+             private_endpoint_id: Optional[str] = None,
+             shape: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if block_storage_size_in_gbs is None and 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if block_storage_size_in_gbs is None:
+            raise TypeError("Missing 'block_storage_size_in_gbs' argument")
+        if notebook_session_shape_config_details is None and 'notebookSessionShapeConfigDetails' in kwargs:
+            notebook_session_shape_config_details = kwargs['notebookSessionShapeConfigDetails']
+        if notebook_session_shape_config_details is None:
+            raise TypeError("Missing 'notebook_session_shape_config_details' argument")
+        if private_endpoint_id is None and 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+        if private_endpoint_id is None:
+            raise TypeError("Missing 'private_endpoint_id' argument")
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("notebook_session_shape_config_details", notebook_session_shape_config_details)
+        _setter("private_endpoint_id", private_endpoint_id)
+        _setter("shape", shape)
+        _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -7637,8 +11236,27 @@ class GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessi
         :param float memory_in_gbs: The total amount of memory available to the notebook session instance, in gigabytes.
         :param float ocpus: The total number of OCPUs available to the notebook session instance.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -7672,11 +11290,48 @@ class GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailResult
         :param str shape: The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
         :param str subnet_id: A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "notebook_session_shape_config_details", notebook_session_shape_config_details)
-        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
-        pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            notebook_session_shape_config_details=notebook_session_shape_config_details,
+            private_endpoint_id=private_endpoint_id,
+            shape=shape,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: Optional[int] = None,
+             notebook_session_shape_config_details: Optional[Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailResult']] = None,
+             private_endpoint_id: Optional[str] = None,
+             shape: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if block_storage_size_in_gbs is None and 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if block_storage_size_in_gbs is None:
+            raise TypeError("Missing 'block_storage_size_in_gbs' argument")
+        if notebook_session_shape_config_details is None and 'notebookSessionShapeConfigDetails' in kwargs:
+            notebook_session_shape_config_details = kwargs['notebookSessionShapeConfigDetails']
+        if notebook_session_shape_config_details is None:
+            raise TypeError("Missing 'notebook_session_shape_config_details' argument")
+        if private_endpoint_id is None and 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+        if private_endpoint_id is None:
+            raise TypeError("Missing 'private_endpoint_id' argument")
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("notebook_session_shape_config_details", notebook_session_shape_config_details)
+        _setter("private_endpoint_id", private_endpoint_id)
+        _setter("shape", shape)
+        _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -7728,8 +11383,27 @@ class GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebo
         :param float memory_in_gbs: The total amount of memory available to the notebook session instance, in gigabytes.
         :param float ocpus: The total number of OCPUs available to the notebook session instance.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -7757,8 +11431,29 @@ class GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailResult
         :param Mapping[str, Any] custom_environment_variables: Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
         :param Sequence['GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs'] notebook_session_git_config_details: Git configuration Details.
         """
-        pulumi.set(__self__, "custom_environment_variables", custom_environment_variables)
-        pulumi.set(__self__, "notebook_session_git_config_details", notebook_session_git_config_details)
+        GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            custom_environment_variables=custom_environment_variables,
+            notebook_session_git_config_details=notebook_session_git_config_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             custom_environment_variables: Optional[Mapping[str, Any]] = None,
+             notebook_session_git_config_details: Optional[Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if custom_environment_variables is None and 'customEnvironmentVariables' in kwargs:
+            custom_environment_variables = kwargs['customEnvironmentVariables']
+        if custom_environment_variables is None:
+            raise TypeError("Missing 'custom_environment_variables' argument")
+        if notebook_session_git_config_details is None and 'notebookSessionGitConfigDetails' in kwargs:
+            notebook_session_git_config_details = kwargs['notebookSessionGitConfigDetails']
+        if notebook_session_git_config_details is None:
+            raise TypeError("Missing 'notebook_session_git_config_details' argument")
+
+        _setter("custom_environment_variables", custom_environment_variables)
+        _setter("notebook_session_git_config_details", notebook_session_git_config_details)
 
     @property
     @pulumi.getter(name="customEnvironmentVariables")
@@ -7784,7 +11479,22 @@ class GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebo
         """
         :param Sequence['GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs'] notebook_session_git_repo_config_collections: A collection of Git repository configurations.
         """
-        pulumi.set(__self__, "notebook_session_git_repo_config_collections", notebook_session_git_repo_config_collections)
+        GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            notebook_session_git_repo_config_collections=notebook_session_git_repo_config_collections,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             notebook_session_git_repo_config_collections: Optional[Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if notebook_session_git_repo_config_collections is None and 'notebookSessionGitRepoConfigCollections' in kwargs:
+            notebook_session_git_repo_config_collections = kwargs['notebookSessionGitRepoConfigCollections']
+        if notebook_session_git_repo_config_collections is None:
+            raise TypeError("Missing 'notebook_session_git_repo_config_collections' argument")
+
+        _setter("notebook_session_git_repo_config_collections", notebook_session_git_repo_config_collections)
 
     @property
     @pulumi.getter(name="notebookSessionGitRepoConfigCollections")
@@ -7802,7 +11512,20 @@ class GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebo
         """
         :param str url: The repository URL
         """
-        pulumi.set(__self__, "url", url)
+        GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if url is None:
+            raise TypeError("Missing 'url' argument")
+
+        _setter("url", url)
 
     @property
     @pulumi.getter
@@ -7834,14 +11557,65 @@ class GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfiguration
         :param str prefix: Prefix in the bucket to mount
         :param str storage_type: The type of storage.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "destination_directory_name", destination_directory_name)
-        pulumi.set(__self__, "destination_path", destination_path)
-        pulumi.set(__self__, "export_id", export_id)
-        pulumi.set(__self__, "mount_target_id", mount_target_id)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "prefix", prefix)
-        pulumi.set(__self__, "storage_type", storage_type)
+        GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            destination_directory_name=destination_directory_name,
+            destination_path=destination_path,
+            export_id=export_id,
+            mount_target_id=mount_target_id,
+            namespace=namespace,
+            prefix=prefix,
+            storage_type=storage_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[str] = None,
+             destination_directory_name: Optional[str] = None,
+             destination_path: Optional[str] = None,
+             export_id: Optional[str] = None,
+             mount_target_id: Optional[str] = None,
+             namespace: Optional[str] = None,
+             prefix: Optional[str] = None,
+             storage_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if destination_directory_name is None and 'destinationDirectoryName' in kwargs:
+            destination_directory_name = kwargs['destinationDirectoryName']
+        if destination_directory_name is None:
+            raise TypeError("Missing 'destination_directory_name' argument")
+        if destination_path is None and 'destinationPath' in kwargs:
+            destination_path = kwargs['destinationPath']
+        if destination_path is None:
+            raise TypeError("Missing 'destination_path' argument")
+        if export_id is None and 'exportId' in kwargs:
+            export_id = kwargs['exportId']
+        if export_id is None:
+            raise TypeError("Missing 'export_id' argument")
+        if mount_target_id is None and 'mountTargetId' in kwargs:
+            mount_target_id = kwargs['mountTargetId']
+        if mount_target_id is None:
+            raise TypeError("Missing 'mount_target_id' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+        if prefix is None:
+            raise TypeError("Missing 'prefix' argument")
+        if storage_type is None and 'storageType' in kwargs:
+            storage_type = kwargs['storageType']
+        if storage_type is None:
+            raise TypeError("Missing 'storage_type' argument")
+
+        _setter("bucket", bucket)
+        _setter("destination_directory_name", destination_directory_name)
+        _setter("destination_path", destination_path)
+        _setter("export_id", export_id)
+        _setter("mount_target_id", mount_target_id)
+        _setter("namespace", namespace)
+        _setter("prefix", prefix)
+        _setter("storage_type", storage_type)
 
     @property
     @pulumi.getter
@@ -7921,10 +11695,41 @@ class GetPipelineConfigurationDetailResult(dict):
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         :param str type: The type of pipeline.
         """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
-        pulumi.set(__self__, "type", type)
+        GetPipelineConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             maximum_runtime_in_minutes: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if command_line_arguments is None and 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if command_line_arguments is None:
+            raise TypeError("Missing 'command_line_arguments' argument")
+        if environment_variables is None and 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if environment_variables is None:
+            raise TypeError("Missing 'environment_variables' argument")
+        if maximum_runtime_in_minutes is None and 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+        if maximum_runtime_in_minutes is None:
+            raise TypeError("Missing 'maximum_runtime_in_minutes' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("command_line_arguments", command_line_arguments)
+        _setter("environment_variables", environment_variables)
+        _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -7970,9 +11775,36 @@ class GetPipelineInfrastructureConfigurationDetailResult(dict):
         :param Sequence['GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArgs'] shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
         :param str shape_name: The shape used to launch the instance for all step runs in the pipeline.
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "shape_config_details", shape_config_details)
-        pulumi.set(__self__, "shape_name", shape_name)
+        GetPipelineInfrastructureConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            shape_config_details=shape_config_details,
+            shape_name=shape_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: Optional[int] = None,
+             shape_config_details: Optional[Sequence['outputs.GetPipelineInfrastructureConfigurationDetailShapeConfigDetailResult']] = None,
+             shape_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if block_storage_size_in_gbs is None and 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if block_storage_size_in_gbs is None:
+            raise TypeError("Missing 'block_storage_size_in_gbs' argument")
+        if shape_config_details is None and 'shapeConfigDetails' in kwargs:
+            shape_config_details = kwargs['shapeConfigDetails']
+        if shape_config_details is None:
+            raise TypeError("Missing 'shape_config_details' argument")
+        if shape_name is None and 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("shape_config_details", shape_config_details)
+        _setter("shape_name", shape_name)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -8008,8 +11840,27 @@ class GetPipelineInfrastructureConfigurationDetailShapeConfigDetailResult(dict):
         :param float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         :param float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetPipelineInfrastructureConfigurationDetailShapeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -8041,10 +11892,43 @@ class GetPipelineLogConfigurationDetailResult(dict):
         :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
         :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
         """
-        pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
-        pulumi.set(__self__, "enable_logging", enable_logging)
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetPipelineLogConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_auto_log_creation=enable_auto_log_creation,
+            enable_logging=enable_logging,
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_auto_log_creation: Optional[bool] = None,
+             enable_logging: Optional[bool] = None,
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if enable_auto_log_creation is None and 'enableAutoLogCreation' in kwargs:
+            enable_auto_log_creation = kwargs['enableAutoLogCreation']
+        if enable_auto_log_creation is None:
+            raise TypeError("Missing 'enable_auto_log_creation' argument")
+        if enable_logging is None and 'enableLogging' in kwargs:
+            enable_logging = kwargs['enableLogging']
+        if enable_logging is None:
+            raise TypeError("Missing 'enable_logging' argument")
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
+
+        _setter("enable_auto_log_creation", enable_auto_log_creation)
+        _setter("enable_logging", enable_logging)
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
@@ -8092,10 +11976,41 @@ class GetPipelineRunConfigurationDetailResult(dict):
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         :param str type: The type of pipeline.
         """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
-        pulumi.set(__self__, "type", type)
+        GetPipelineRunConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             maximum_runtime_in_minutes: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if command_line_arguments is None and 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if command_line_arguments is None:
+            raise TypeError("Missing 'command_line_arguments' argument")
+        if environment_variables is None and 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if environment_variables is None:
+            raise TypeError("Missing 'environment_variables' argument")
+        if maximum_runtime_in_minutes is None and 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+        if maximum_runtime_in_minutes is None:
+            raise TypeError("Missing 'maximum_runtime_in_minutes' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("command_line_arguments", command_line_arguments)
+        _setter("environment_variables", environment_variables)
+        _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -8143,10 +12058,41 @@ class GetPipelineRunConfigurationOverrideDetailResult(dict):
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         :param str type: The type of pipeline.
         """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
-        pulumi.set(__self__, "type", type)
+        GetPipelineRunConfigurationOverrideDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             maximum_runtime_in_minutes: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if command_line_arguments is None and 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if command_line_arguments is None:
+            raise TypeError("Missing 'command_line_arguments' argument")
+        if environment_variables is None and 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if environment_variables is None:
+            raise TypeError("Missing 'environment_variables' argument")
+        if maximum_runtime_in_minutes is None and 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+        if maximum_runtime_in_minutes is None:
+            raise TypeError("Missing 'maximum_runtime_in_minutes' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("command_line_arguments", command_line_arguments)
+        _setter("environment_variables", environment_variables)
+        _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -8194,10 +12140,43 @@ class GetPipelineRunLogConfigurationOverrideDetailResult(dict):
         :param str log_group_id: The log group id for where log objects will be for pipeline runs.
         :param str log_id: The log id of the log object the pipeline run logs will be shipped to.
         """
-        pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
-        pulumi.set(__self__, "enable_logging", enable_logging)
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetPipelineRunLogConfigurationOverrideDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_auto_log_creation=enable_auto_log_creation,
+            enable_logging=enable_logging,
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_auto_log_creation: Optional[bool] = None,
+             enable_logging: Optional[bool] = None,
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if enable_auto_log_creation is None and 'enableAutoLogCreation' in kwargs:
+            enable_auto_log_creation = kwargs['enableAutoLogCreation']
+        if enable_auto_log_creation is None:
+            raise TypeError("Missing 'enable_auto_log_creation' argument")
+        if enable_logging is None and 'enableLogging' in kwargs:
+            enable_logging = kwargs['enableLogging']
+        if enable_logging is None:
+            raise TypeError("Missing 'enable_logging' argument")
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
+
+        _setter("enable_auto_log_creation", enable_auto_log_creation)
+        _setter("enable_logging", enable_logging)
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
@@ -8241,8 +12220,29 @@ class GetPipelineRunLogDetailResult(dict):
         :param str log_group_id: The log group id for where log objects will be for pipeline runs.
         :param str log_id: The log id of the log object the pipeline run logs will be shipped to.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetPipelineRunLogDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
+
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -8270,8 +12270,29 @@ class GetPipelineRunStepOverrideDetailResult(dict):
         :param Sequence['GetPipelineRunStepOverrideDetailStepConfigurationDetailArgs'] step_configuration_details: The configuration details of a step.
         :param str step_name: The name of the step.
         """
-        pulumi.set(__self__, "step_configuration_details", step_configuration_details)
-        pulumi.set(__self__, "step_name", step_name)
+        GetPipelineRunStepOverrideDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            step_configuration_details=step_configuration_details,
+            step_name=step_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             step_configuration_details: Optional[Sequence['outputs.GetPipelineRunStepOverrideDetailStepConfigurationDetailResult']] = None,
+             step_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if step_configuration_details is None and 'stepConfigurationDetails' in kwargs:
+            step_configuration_details = kwargs['stepConfigurationDetails']
+        if step_configuration_details is None:
+            raise TypeError("Missing 'step_configuration_details' argument")
+        if step_name is None and 'stepName' in kwargs:
+            step_name = kwargs['stepName']
+        if step_name is None:
+            raise TypeError("Missing 'step_name' argument")
+
+        _setter("step_configuration_details", step_configuration_details)
+        _setter("step_name", step_name)
 
     @property
     @pulumi.getter(name="stepConfigurationDetails")
@@ -8301,9 +12322,36 @@ class GetPipelineRunStepOverrideDetailStepConfigurationDetailResult(dict):
         :param Mapping[str, Any] environment_variables: Environment variables to set for step.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        GetPipelineRunStepOverrideDetailStepConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             maximum_runtime_in_minutes: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if command_line_arguments is None and 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if command_line_arguments is None:
+            raise TypeError("Missing 'command_line_arguments' argument")
+        if environment_variables is None and 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if environment_variables is None:
+            raise TypeError("Missing 'environment_variables' argument")
+        if maximum_runtime_in_minutes is None and 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+        if maximum_runtime_in_minutes is None:
+            raise TypeError("Missing 'maximum_runtime_in_minutes' argument")
+
+        _setter("command_line_arguments", command_line_arguments)
+        _setter("environment_variables", environment_variables)
+        _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -8349,13 +12397,62 @@ class GetPipelineRunStepRunResult(dict):
         :param str time_finished: The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_started: The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        pulumi.set(__self__, "job_run_id", job_run_id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "step_name", step_name)
-        pulumi.set(__self__, "step_type", step_type)
-        pulumi.set(__self__, "time_finished", time_finished)
-        pulumi.set(__self__, "time_started", time_started)
+        GetPipelineRunStepRunResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            job_run_id=job_run_id,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            step_name=step_name,
+            step_type=step_type,
+            time_finished=time_finished,
+            time_started=time_started,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             job_run_id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             state: Optional[str] = None,
+             step_name: Optional[str] = None,
+             step_type: Optional[str] = None,
+             time_finished: Optional[str] = None,
+             time_started: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if job_run_id is None and 'jobRunId' in kwargs:
+            job_run_id = kwargs['jobRunId']
+        if job_run_id is None:
+            raise TypeError("Missing 'job_run_id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if step_name is None and 'stepName' in kwargs:
+            step_name = kwargs['stepName']
+        if step_name is None:
+            raise TypeError("Missing 'step_name' argument")
+        if step_type is None and 'stepType' in kwargs:
+            step_type = kwargs['stepType']
+        if step_type is None:
+            raise TypeError("Missing 'step_type' argument")
+        if time_finished is None and 'timeFinished' in kwargs:
+            time_finished = kwargs['timeFinished']
+        if time_finished is None:
+            raise TypeError("Missing 'time_finished' argument")
+        if time_started is None and 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+        if time_started is None:
+            raise TypeError("Missing 'time_started' argument")
+
+        _setter("job_run_id", job_run_id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("state", state)
+        _setter("step_name", step_name)
+        _setter("step_type", step_type)
+        _setter("time_finished", time_finished)
+        _setter("time_started", time_started)
 
     @property
     @pulumi.getter(name="jobRunId")
@@ -8420,10 +12517,29 @@ class GetPipelineRunsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetPipelineRunsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -8489,28 +12605,165 @@ class GetPipelineRunsPipelineRunResult(dict):
         :param str time_started: The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_updated: The date and time the pipeline run was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "configuration_details", configuration_details)
-        pulumi.set(__self__, "configuration_override_details", configuration_override_details)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "delete_related_job_runs", delete_related_job_runs)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "log_configuration_override_details", log_configuration_override_details)
-        pulumi.set(__self__, "log_details", log_details)
-        pulumi.set(__self__, "pipeline_id", pipeline_id)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "step_override_details", step_override_details)
-        pulumi.set(__self__, "step_runs", step_runs)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_accepted", time_accepted)
-        pulumi.set(__self__, "time_finished", time_finished)
-        pulumi.set(__self__, "time_started", time_started)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetPipelineRunsPipelineRunResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            configuration_details=configuration_details,
+            configuration_override_details=configuration_override_details,
+            created_by=created_by,
+            defined_tags=defined_tags,
+            delete_related_job_runs=delete_related_job_runs,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            log_configuration_override_details=log_configuration_override_details,
+            log_details=log_details,
+            pipeline_id=pipeline_id,
+            project_id=project_id,
+            state=state,
+            step_override_details=step_override_details,
+            step_runs=step_runs,
+            system_tags=system_tags,
+            time_accepted=time_accepted,
+            time_finished=time_finished,
+            time_started=time_started,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             configuration_details: Optional[Sequence['outputs.GetPipelineRunsPipelineRunConfigurationDetailResult']] = None,
+             configuration_override_details: Optional[Sequence['outputs.GetPipelineRunsPipelineRunConfigurationOverrideDetailResult']] = None,
+             created_by: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             delete_related_job_runs: Optional[bool] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             log_configuration_override_details: Optional[Sequence['outputs.GetPipelineRunsPipelineRunLogConfigurationOverrideDetailResult']] = None,
+             log_details: Optional[Sequence['outputs.GetPipelineRunsPipelineRunLogDetailResult']] = None,
+             pipeline_id: Optional[str] = None,
+             project_id: Optional[str] = None,
+             state: Optional[str] = None,
+             step_override_details: Optional[Sequence['outputs.GetPipelineRunsPipelineRunStepOverrideDetailResult']] = None,
+             step_runs: Optional[Sequence['outputs.GetPipelineRunsPipelineRunStepRunResult']] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_accepted: Optional[str] = None,
+             time_finished: Optional[str] = None,
+             time_started: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if configuration_details is None and 'configurationDetails' in kwargs:
+            configuration_details = kwargs['configurationDetails']
+        if configuration_details is None:
+            raise TypeError("Missing 'configuration_details' argument")
+        if configuration_override_details is None and 'configurationOverrideDetails' in kwargs:
+            configuration_override_details = kwargs['configurationOverrideDetails']
+        if configuration_override_details is None:
+            raise TypeError("Missing 'configuration_override_details' argument")
+        if created_by is None and 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if created_by is None:
+            raise TypeError("Missing 'created_by' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if delete_related_job_runs is None and 'deleteRelatedJobRuns' in kwargs:
+            delete_related_job_runs = kwargs['deleteRelatedJobRuns']
+        if delete_related_job_runs is None:
+            raise TypeError("Missing 'delete_related_job_runs' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if log_configuration_override_details is None and 'logConfigurationOverrideDetails' in kwargs:
+            log_configuration_override_details = kwargs['logConfigurationOverrideDetails']
+        if log_configuration_override_details is None:
+            raise TypeError("Missing 'log_configuration_override_details' argument")
+        if log_details is None and 'logDetails' in kwargs:
+            log_details = kwargs['logDetails']
+        if log_details is None:
+            raise TypeError("Missing 'log_details' argument")
+        if pipeline_id is None and 'pipelineId' in kwargs:
+            pipeline_id = kwargs['pipelineId']
+        if pipeline_id is None:
+            raise TypeError("Missing 'pipeline_id' argument")
+        if project_id is None and 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if step_override_details is None and 'stepOverrideDetails' in kwargs:
+            step_override_details = kwargs['stepOverrideDetails']
+        if step_override_details is None:
+            raise TypeError("Missing 'step_override_details' argument")
+        if step_runs is None and 'stepRuns' in kwargs:
+            step_runs = kwargs['stepRuns']
+        if step_runs is None:
+            raise TypeError("Missing 'step_runs' argument")
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_accepted is None and 'timeAccepted' in kwargs:
+            time_accepted = kwargs['timeAccepted']
+        if time_accepted is None:
+            raise TypeError("Missing 'time_accepted' argument")
+        if time_finished is None and 'timeFinished' in kwargs:
+            time_finished = kwargs['timeFinished']
+        if time_finished is None:
+            raise TypeError("Missing 'time_finished' argument")
+        if time_started is None and 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+        if time_started is None:
+            raise TypeError("Missing 'time_started' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("configuration_details", configuration_details)
+        _setter("configuration_override_details", configuration_override_details)
+        _setter("created_by", created_by)
+        _setter("defined_tags", defined_tags)
+        _setter("delete_related_job_runs", delete_related_job_runs)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("log_configuration_override_details", log_configuration_override_details)
+        _setter("log_details", log_details)
+        _setter("pipeline_id", pipeline_id)
+        _setter("project_id", project_id)
+        _setter("state", state)
+        _setter("step_override_details", step_override_details)
+        _setter("step_runs", step_runs)
+        _setter("system_tags", system_tags)
+        _setter("time_accepted", time_accepted)
+        _setter("time_finished", time_finished)
+        _setter("time_started", time_started)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -8699,10 +12952,41 @@ class GetPipelineRunsPipelineRunConfigurationDetailResult(dict):
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         :param str type: The type of pipeline.
         """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
-        pulumi.set(__self__, "type", type)
+        GetPipelineRunsPipelineRunConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             maximum_runtime_in_minutes: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if command_line_arguments is None and 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if command_line_arguments is None:
+            raise TypeError("Missing 'command_line_arguments' argument")
+        if environment_variables is None and 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if environment_variables is None:
+            raise TypeError("Missing 'environment_variables' argument")
+        if maximum_runtime_in_minutes is None and 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+        if maximum_runtime_in_minutes is None:
+            raise TypeError("Missing 'maximum_runtime_in_minutes' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("command_line_arguments", command_line_arguments)
+        _setter("environment_variables", environment_variables)
+        _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -8750,10 +13034,41 @@ class GetPipelineRunsPipelineRunConfigurationOverrideDetailResult(dict):
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         :param str type: The type of pipeline.
         """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
-        pulumi.set(__self__, "type", type)
+        GetPipelineRunsPipelineRunConfigurationOverrideDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             maximum_runtime_in_minutes: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if command_line_arguments is None and 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if command_line_arguments is None:
+            raise TypeError("Missing 'command_line_arguments' argument")
+        if environment_variables is None and 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if environment_variables is None:
+            raise TypeError("Missing 'environment_variables' argument")
+        if maximum_runtime_in_minutes is None and 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+        if maximum_runtime_in_minutes is None:
+            raise TypeError("Missing 'maximum_runtime_in_minutes' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("command_line_arguments", command_line_arguments)
+        _setter("environment_variables", environment_variables)
+        _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -8801,10 +13116,43 @@ class GetPipelineRunsPipelineRunLogConfigurationOverrideDetailResult(dict):
         :param str log_group_id: The log group id for where log objects will be for pipeline runs.
         :param str log_id: The log id of the log object the pipeline run logs will be shipped to.
         """
-        pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
-        pulumi.set(__self__, "enable_logging", enable_logging)
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetPipelineRunsPipelineRunLogConfigurationOverrideDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_auto_log_creation=enable_auto_log_creation,
+            enable_logging=enable_logging,
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_auto_log_creation: Optional[bool] = None,
+             enable_logging: Optional[bool] = None,
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if enable_auto_log_creation is None and 'enableAutoLogCreation' in kwargs:
+            enable_auto_log_creation = kwargs['enableAutoLogCreation']
+        if enable_auto_log_creation is None:
+            raise TypeError("Missing 'enable_auto_log_creation' argument")
+        if enable_logging is None and 'enableLogging' in kwargs:
+            enable_logging = kwargs['enableLogging']
+        if enable_logging is None:
+            raise TypeError("Missing 'enable_logging' argument")
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
+
+        _setter("enable_auto_log_creation", enable_auto_log_creation)
+        _setter("enable_logging", enable_logging)
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
@@ -8848,8 +13196,29 @@ class GetPipelineRunsPipelineRunLogDetailResult(dict):
         :param str log_group_id: The log group id for where log objects will be for pipeline runs.
         :param str log_id: The log id of the log object the pipeline run logs will be shipped to.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetPipelineRunsPipelineRunLogDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
+
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -8877,8 +13246,29 @@ class GetPipelineRunsPipelineRunStepOverrideDetailResult(dict):
         :param Sequence['GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailArgs'] step_configuration_details: The configuration details of a step.
         :param str step_name: The name of the step.
         """
-        pulumi.set(__self__, "step_configuration_details", step_configuration_details)
-        pulumi.set(__self__, "step_name", step_name)
+        GetPipelineRunsPipelineRunStepOverrideDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            step_configuration_details=step_configuration_details,
+            step_name=step_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             step_configuration_details: Optional[Sequence['outputs.GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailResult']] = None,
+             step_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if step_configuration_details is None and 'stepConfigurationDetails' in kwargs:
+            step_configuration_details = kwargs['stepConfigurationDetails']
+        if step_configuration_details is None:
+            raise TypeError("Missing 'step_configuration_details' argument")
+        if step_name is None and 'stepName' in kwargs:
+            step_name = kwargs['stepName']
+        if step_name is None:
+            raise TypeError("Missing 'step_name' argument")
+
+        _setter("step_configuration_details", step_configuration_details)
+        _setter("step_name", step_name)
 
     @property
     @pulumi.getter(name="stepConfigurationDetails")
@@ -8908,9 +13298,36 @@ class GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailResult(
         :param Mapping[str, Any] environment_variables: Environment variables to set for step.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             maximum_runtime_in_minutes: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if command_line_arguments is None and 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if command_line_arguments is None:
+            raise TypeError("Missing 'command_line_arguments' argument")
+        if environment_variables is None and 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if environment_variables is None:
+            raise TypeError("Missing 'environment_variables' argument")
+        if maximum_runtime_in_minutes is None and 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+        if maximum_runtime_in_minutes is None:
+            raise TypeError("Missing 'maximum_runtime_in_minutes' argument")
+
+        _setter("command_line_arguments", command_line_arguments)
+        _setter("environment_variables", environment_variables)
+        _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -8956,13 +13373,62 @@ class GetPipelineRunsPipelineRunStepRunResult(dict):
         :param str time_finished: The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_started: The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        pulumi.set(__self__, "job_run_id", job_run_id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "step_name", step_name)
-        pulumi.set(__self__, "step_type", step_type)
-        pulumi.set(__self__, "time_finished", time_finished)
-        pulumi.set(__self__, "time_started", time_started)
+        GetPipelineRunsPipelineRunStepRunResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            job_run_id=job_run_id,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            step_name=step_name,
+            step_type=step_type,
+            time_finished=time_finished,
+            time_started=time_started,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             job_run_id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             state: Optional[str] = None,
+             step_name: Optional[str] = None,
+             step_type: Optional[str] = None,
+             time_finished: Optional[str] = None,
+             time_started: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if job_run_id is None and 'jobRunId' in kwargs:
+            job_run_id = kwargs['jobRunId']
+        if job_run_id is None:
+            raise TypeError("Missing 'job_run_id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if step_name is None and 'stepName' in kwargs:
+            step_name = kwargs['stepName']
+        if step_name is None:
+            raise TypeError("Missing 'step_name' argument")
+        if step_type is None and 'stepType' in kwargs:
+            step_type = kwargs['stepType']
+        if step_type is None:
+            raise TypeError("Missing 'step_type' argument")
+        if time_finished is None and 'timeFinished' in kwargs:
+            time_finished = kwargs['timeFinished']
+        if time_finished is None:
+            raise TypeError("Missing 'time_finished' argument")
+        if time_started is None and 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+        if time_started is None:
+            raise TypeError("Missing 'time_started' argument")
+
+        _setter("job_run_id", job_run_id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("state", state)
+        _setter("step_name", step_name)
+        _setter("step_type", step_type)
+        _setter("time_finished", time_finished)
+        _setter("time_started", time_started)
 
     @property
     @pulumi.getter(name="jobRunId")
@@ -9033,12 +13499,57 @@ class GetPipelineStepArtifactResult(dict):
         """
         :param str step_name: The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
         """
-        pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
-        pulumi.set(__self__, "artifact_content_length", artifact_content_length)
-        pulumi.set(__self__, "artifact_content_md5", artifact_content_md5)
-        pulumi.set(__self__, "artifact_last_modified", artifact_last_modified)
-        pulumi.set(__self__, "pipeline_step_artifact", pipeline_step_artifact)
-        pulumi.set(__self__, "step_name", step_name)
+        GetPipelineStepArtifactResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            artifact_content_disposition=artifact_content_disposition,
+            artifact_content_length=artifact_content_length,
+            artifact_content_md5=artifact_content_md5,
+            artifact_last_modified=artifact_last_modified,
+            pipeline_step_artifact=pipeline_step_artifact,
+            step_name=step_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             artifact_content_disposition: Optional[str] = None,
+             artifact_content_length: Optional[str] = None,
+             artifact_content_md5: Optional[str] = None,
+             artifact_last_modified: Optional[str] = None,
+             pipeline_step_artifact: Optional[str] = None,
+             step_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if artifact_content_disposition is None and 'artifactContentDisposition' in kwargs:
+            artifact_content_disposition = kwargs['artifactContentDisposition']
+        if artifact_content_disposition is None:
+            raise TypeError("Missing 'artifact_content_disposition' argument")
+        if artifact_content_length is None and 'artifactContentLength' in kwargs:
+            artifact_content_length = kwargs['artifactContentLength']
+        if artifact_content_length is None:
+            raise TypeError("Missing 'artifact_content_length' argument")
+        if artifact_content_md5 is None and 'artifactContentMd5' in kwargs:
+            artifact_content_md5 = kwargs['artifactContentMd5']
+        if artifact_content_md5 is None:
+            raise TypeError("Missing 'artifact_content_md5' argument")
+        if artifact_last_modified is None and 'artifactLastModified' in kwargs:
+            artifact_last_modified = kwargs['artifactLastModified']
+        if artifact_last_modified is None:
+            raise TypeError("Missing 'artifact_last_modified' argument")
+        if pipeline_step_artifact is None and 'pipelineStepArtifact' in kwargs:
+            pipeline_step_artifact = kwargs['pipelineStepArtifact']
+        if pipeline_step_artifact is None:
+            raise TypeError("Missing 'pipeline_step_artifact' argument")
+        if step_name is None and 'stepName' in kwargs:
+            step_name = kwargs['stepName']
+        if step_name is None:
+            raise TypeError("Missing 'step_name' argument")
+
+        _setter("artifact_content_disposition", artifact_content_disposition)
+        _setter("artifact_content_length", artifact_content_length)
+        _setter("artifact_content_md5", artifact_content_md5)
+        _setter("artifact_last_modified", artifact_last_modified)
+        _setter("pipeline_step_artifact", pipeline_step_artifact)
+        _setter("step_name", step_name)
 
     @property
     @pulumi.getter(name="artifactContentDisposition")
@@ -9095,14 +13606,69 @@ class GetPipelineStepDetailResult(dict):
         :param str step_name: The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
         :param str step_type: The type of step.
         """
-        pulumi.set(__self__, "depends_ons", depends_ons)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "is_artifact_uploaded", is_artifact_uploaded)
-        pulumi.set(__self__, "job_id", job_id)
-        pulumi.set(__self__, "step_configuration_details", step_configuration_details)
-        pulumi.set(__self__, "step_infrastructure_configuration_details", step_infrastructure_configuration_details)
-        pulumi.set(__self__, "step_name", step_name)
-        pulumi.set(__self__, "step_type", step_type)
+        GetPipelineStepDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            depends_ons=depends_ons,
+            description=description,
+            is_artifact_uploaded=is_artifact_uploaded,
+            job_id=job_id,
+            step_configuration_details=step_configuration_details,
+            step_infrastructure_configuration_details=step_infrastructure_configuration_details,
+            step_name=step_name,
+            step_type=step_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             depends_ons: Optional[Sequence[str]] = None,
+             description: Optional[str] = None,
+             is_artifact_uploaded: Optional[bool] = None,
+             job_id: Optional[str] = None,
+             step_configuration_details: Optional[Sequence['outputs.GetPipelineStepDetailStepConfigurationDetailResult']] = None,
+             step_infrastructure_configuration_details: Optional[Sequence['outputs.GetPipelineStepDetailStepInfrastructureConfigurationDetailResult']] = None,
+             step_name: Optional[str] = None,
+             step_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if depends_ons is None and 'dependsOns' in kwargs:
+            depends_ons = kwargs['dependsOns']
+        if depends_ons is None:
+            raise TypeError("Missing 'depends_ons' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if is_artifact_uploaded is None and 'isArtifactUploaded' in kwargs:
+            is_artifact_uploaded = kwargs['isArtifactUploaded']
+        if is_artifact_uploaded is None:
+            raise TypeError("Missing 'is_artifact_uploaded' argument")
+        if job_id is None and 'jobId' in kwargs:
+            job_id = kwargs['jobId']
+        if job_id is None:
+            raise TypeError("Missing 'job_id' argument")
+        if step_configuration_details is None and 'stepConfigurationDetails' in kwargs:
+            step_configuration_details = kwargs['stepConfigurationDetails']
+        if step_configuration_details is None:
+            raise TypeError("Missing 'step_configuration_details' argument")
+        if step_infrastructure_configuration_details is None and 'stepInfrastructureConfigurationDetails' in kwargs:
+            step_infrastructure_configuration_details = kwargs['stepInfrastructureConfigurationDetails']
+        if step_infrastructure_configuration_details is None:
+            raise TypeError("Missing 'step_infrastructure_configuration_details' argument")
+        if step_name is None and 'stepName' in kwargs:
+            step_name = kwargs['stepName']
+        if step_name is None:
+            raise TypeError("Missing 'step_name' argument")
+        if step_type is None and 'stepType' in kwargs:
+            step_type = kwargs['stepType']
+        if step_type is None:
+            raise TypeError("Missing 'step_type' argument")
+
+        _setter("depends_ons", depends_ons)
+        _setter("description", description)
+        _setter("is_artifact_uploaded", is_artifact_uploaded)
+        _setter("job_id", job_id)
+        _setter("step_configuration_details", step_configuration_details)
+        _setter("step_infrastructure_configuration_details", step_infrastructure_configuration_details)
+        _setter("step_name", step_name)
+        _setter("step_type", step_type)
 
     @property
     @pulumi.getter(name="dependsOns")
@@ -9180,9 +13746,36 @@ class GetPipelineStepDetailStepConfigurationDetailResult(dict):
         :param Mapping[str, Any] environment_variables: Environment variables to set for step.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        GetPipelineStepDetailStepConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             maximum_runtime_in_minutes: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if command_line_arguments is None and 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if command_line_arguments is None:
+            raise TypeError("Missing 'command_line_arguments' argument")
+        if environment_variables is None and 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if environment_variables is None:
+            raise TypeError("Missing 'environment_variables' argument")
+        if maximum_runtime_in_minutes is None and 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+        if maximum_runtime_in_minutes is None:
+            raise TypeError("Missing 'maximum_runtime_in_minutes' argument")
+
+        _setter("command_line_arguments", command_line_arguments)
+        _setter("environment_variables", environment_variables)
+        _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -9220,9 +13813,36 @@ class GetPipelineStepDetailStepInfrastructureConfigurationDetailResult(dict):
         :param Sequence['GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs'] shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
         :param str shape_name: The shape used to launch the instance for all step runs in the pipeline.
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "shape_config_details", shape_config_details)
-        pulumi.set(__self__, "shape_name", shape_name)
+        GetPipelineStepDetailStepInfrastructureConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            shape_config_details=shape_config_details,
+            shape_name=shape_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: Optional[int] = None,
+             shape_config_details: Optional[Sequence['outputs.GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult']] = None,
+             shape_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if block_storage_size_in_gbs is None and 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if block_storage_size_in_gbs is None:
+            raise TypeError("Missing 'block_storage_size_in_gbs' argument")
+        if shape_config_details is None and 'shapeConfigDetails' in kwargs:
+            shape_config_details = kwargs['shapeConfigDetails']
+        if shape_config_details is None:
+            raise TypeError("Missing 'shape_config_details' argument")
+        if shape_name is None and 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("shape_config_details", shape_config_details)
+        _setter("shape_name", shape_name)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -9258,8 +13878,27 @@ class GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetai
         :param float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         :param float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -9284,10 +13923,29 @@ class GetPipelinesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetPipelinesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -9346,25 +14004,142 @@ class GetPipelinesPipelineResult(dict):
         :param str time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
         :param str time_updated: The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "configuration_details", configuration_details)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "delete_related_pipeline_runs", delete_related_pipeline_runs)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "infrastructure_configuration_details", infrastructure_configuration_details)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "log_configuration_details", log_configuration_details)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "step_artifacts", step_artifacts)
-        pulumi.set(__self__, "step_details", step_details)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetPipelinesPipelineResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            configuration_details=configuration_details,
+            created_by=created_by,
+            defined_tags=defined_tags,
+            delete_related_pipeline_runs=delete_related_pipeline_runs,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            infrastructure_configuration_details=infrastructure_configuration_details,
+            lifecycle_details=lifecycle_details,
+            log_configuration_details=log_configuration_details,
+            project_id=project_id,
+            state=state,
+            step_artifacts=step_artifacts,
+            step_details=step_details,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             configuration_details: Optional[Sequence['outputs.GetPipelinesPipelineConfigurationDetailResult']] = None,
+             created_by: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             delete_related_pipeline_runs: Optional[bool] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             infrastructure_configuration_details: Optional[Sequence['outputs.GetPipelinesPipelineInfrastructureConfigurationDetailResult']] = None,
+             lifecycle_details: Optional[str] = None,
+             log_configuration_details: Optional[Sequence['outputs.GetPipelinesPipelineLogConfigurationDetailResult']] = None,
+             project_id: Optional[str] = None,
+             state: Optional[str] = None,
+             step_artifacts: Optional[Sequence['outputs.GetPipelinesPipelineStepArtifactResult']] = None,
+             step_details: Optional[Sequence['outputs.GetPipelinesPipelineStepDetailResult']] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if configuration_details is None and 'configurationDetails' in kwargs:
+            configuration_details = kwargs['configurationDetails']
+        if configuration_details is None:
+            raise TypeError("Missing 'configuration_details' argument")
+        if created_by is None and 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if created_by is None:
+            raise TypeError("Missing 'created_by' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if delete_related_pipeline_runs is None and 'deleteRelatedPipelineRuns' in kwargs:
+            delete_related_pipeline_runs = kwargs['deleteRelatedPipelineRuns']
+        if delete_related_pipeline_runs is None:
+            raise TypeError("Missing 'delete_related_pipeline_runs' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if infrastructure_configuration_details is None and 'infrastructureConfigurationDetails' in kwargs:
+            infrastructure_configuration_details = kwargs['infrastructureConfigurationDetails']
+        if infrastructure_configuration_details is None:
+            raise TypeError("Missing 'infrastructure_configuration_details' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if log_configuration_details is None and 'logConfigurationDetails' in kwargs:
+            log_configuration_details = kwargs['logConfigurationDetails']
+        if log_configuration_details is None:
+            raise TypeError("Missing 'log_configuration_details' argument")
+        if project_id is None and 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if project_id is None:
+            raise TypeError("Missing 'project_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if step_artifacts is None and 'stepArtifacts' in kwargs:
+            step_artifacts = kwargs['stepArtifacts']
+        if step_artifacts is None:
+            raise TypeError("Missing 'step_artifacts' argument")
+        if step_details is None and 'stepDetails' in kwargs:
+            step_details = kwargs['stepDetails']
+        if step_details is None:
+            raise TypeError("Missing 'step_details' argument")
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("configuration_details", configuration_details)
+        _setter("created_by", created_by)
+        _setter("defined_tags", defined_tags)
+        _setter("delete_related_pipeline_runs", delete_related_pipeline_runs)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("infrastructure_configuration_details", infrastructure_configuration_details)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("log_configuration_details", log_configuration_details)
+        _setter("project_id", project_id)
+        _setter("state", state)
+        _setter("step_artifacts", step_artifacts)
+        _setter("step_details", step_details)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -9526,10 +14301,41 @@ class GetPipelinesPipelineConfigurationDetailResult(dict):
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         :param str type: The type of pipeline.
         """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
-        pulumi.set(__self__, "type", type)
+        GetPipelinesPipelineConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             maximum_runtime_in_minutes: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if command_line_arguments is None and 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if command_line_arguments is None:
+            raise TypeError("Missing 'command_line_arguments' argument")
+        if environment_variables is None and 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if environment_variables is None:
+            raise TypeError("Missing 'environment_variables' argument")
+        if maximum_runtime_in_minutes is None and 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+        if maximum_runtime_in_minutes is None:
+            raise TypeError("Missing 'maximum_runtime_in_minutes' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("command_line_arguments", command_line_arguments)
+        _setter("environment_variables", environment_variables)
+        _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -9575,9 +14381,36 @@ class GetPipelinesPipelineInfrastructureConfigurationDetailResult(dict):
         :param Sequence['GetPipelinesPipelineInfrastructureConfigurationDetailShapeConfigDetailArgs'] shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
         :param str shape_name: The shape used to launch the instance for all step runs in the pipeline.
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "shape_config_details", shape_config_details)
-        pulumi.set(__self__, "shape_name", shape_name)
+        GetPipelinesPipelineInfrastructureConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            shape_config_details=shape_config_details,
+            shape_name=shape_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: Optional[int] = None,
+             shape_config_details: Optional[Sequence['outputs.GetPipelinesPipelineInfrastructureConfigurationDetailShapeConfigDetailResult']] = None,
+             shape_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if block_storage_size_in_gbs is None and 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if block_storage_size_in_gbs is None:
+            raise TypeError("Missing 'block_storage_size_in_gbs' argument")
+        if shape_config_details is None and 'shapeConfigDetails' in kwargs:
+            shape_config_details = kwargs['shapeConfigDetails']
+        if shape_config_details is None:
+            raise TypeError("Missing 'shape_config_details' argument")
+        if shape_name is None and 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("shape_config_details", shape_config_details)
+        _setter("shape_name", shape_name)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -9613,8 +14446,27 @@ class GetPipelinesPipelineInfrastructureConfigurationDetailShapeConfigDetailResu
         :param float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         :param float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetPipelinesPipelineInfrastructureConfigurationDetailShapeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -9646,10 +14498,43 @@ class GetPipelinesPipelineLogConfigurationDetailResult(dict):
         :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
         :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
         """
-        pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
-        pulumi.set(__self__, "enable_logging", enable_logging)
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetPipelinesPipelineLogConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_auto_log_creation=enable_auto_log_creation,
+            enable_logging=enable_logging,
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_auto_log_creation: Optional[bool] = None,
+             enable_logging: Optional[bool] = None,
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if enable_auto_log_creation is None and 'enableAutoLogCreation' in kwargs:
+            enable_auto_log_creation = kwargs['enableAutoLogCreation']
+        if enable_auto_log_creation is None:
+            raise TypeError("Missing 'enable_auto_log_creation' argument")
+        if enable_logging is None and 'enableLogging' in kwargs:
+            enable_logging = kwargs['enableLogging']
+        if enable_logging is None:
+            raise TypeError("Missing 'enable_logging' argument")
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
+
+        _setter("enable_auto_log_creation", enable_auto_log_creation)
+        _setter("enable_logging", enable_logging)
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
@@ -9696,12 +14581,57 @@ class GetPipelinesPipelineStepArtifactResult(dict):
         """
         :param str step_name: The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
         """
-        pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
-        pulumi.set(__self__, "artifact_content_length", artifact_content_length)
-        pulumi.set(__self__, "artifact_content_md5", artifact_content_md5)
-        pulumi.set(__self__, "artifact_last_modified", artifact_last_modified)
-        pulumi.set(__self__, "pipeline_step_artifact", pipeline_step_artifact)
-        pulumi.set(__self__, "step_name", step_name)
+        GetPipelinesPipelineStepArtifactResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            artifact_content_disposition=artifact_content_disposition,
+            artifact_content_length=artifact_content_length,
+            artifact_content_md5=artifact_content_md5,
+            artifact_last_modified=artifact_last_modified,
+            pipeline_step_artifact=pipeline_step_artifact,
+            step_name=step_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             artifact_content_disposition: Optional[str] = None,
+             artifact_content_length: Optional[str] = None,
+             artifact_content_md5: Optional[str] = None,
+             artifact_last_modified: Optional[str] = None,
+             pipeline_step_artifact: Optional[str] = None,
+             step_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if artifact_content_disposition is None and 'artifactContentDisposition' in kwargs:
+            artifact_content_disposition = kwargs['artifactContentDisposition']
+        if artifact_content_disposition is None:
+            raise TypeError("Missing 'artifact_content_disposition' argument")
+        if artifact_content_length is None and 'artifactContentLength' in kwargs:
+            artifact_content_length = kwargs['artifactContentLength']
+        if artifact_content_length is None:
+            raise TypeError("Missing 'artifact_content_length' argument")
+        if artifact_content_md5 is None and 'artifactContentMd5' in kwargs:
+            artifact_content_md5 = kwargs['artifactContentMd5']
+        if artifact_content_md5 is None:
+            raise TypeError("Missing 'artifact_content_md5' argument")
+        if artifact_last_modified is None and 'artifactLastModified' in kwargs:
+            artifact_last_modified = kwargs['artifactLastModified']
+        if artifact_last_modified is None:
+            raise TypeError("Missing 'artifact_last_modified' argument")
+        if pipeline_step_artifact is None and 'pipelineStepArtifact' in kwargs:
+            pipeline_step_artifact = kwargs['pipelineStepArtifact']
+        if pipeline_step_artifact is None:
+            raise TypeError("Missing 'pipeline_step_artifact' argument")
+        if step_name is None and 'stepName' in kwargs:
+            step_name = kwargs['stepName']
+        if step_name is None:
+            raise TypeError("Missing 'step_name' argument")
+
+        _setter("artifact_content_disposition", artifact_content_disposition)
+        _setter("artifact_content_length", artifact_content_length)
+        _setter("artifact_content_md5", artifact_content_md5)
+        _setter("artifact_last_modified", artifact_last_modified)
+        _setter("pipeline_step_artifact", pipeline_step_artifact)
+        _setter("step_name", step_name)
 
     @property
     @pulumi.getter(name="artifactContentDisposition")
@@ -9758,14 +14688,69 @@ class GetPipelinesPipelineStepDetailResult(dict):
         :param str step_name: The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
         :param str step_type: The type of step.
         """
-        pulumi.set(__self__, "depends_ons", depends_ons)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "is_artifact_uploaded", is_artifact_uploaded)
-        pulumi.set(__self__, "job_id", job_id)
-        pulumi.set(__self__, "step_configuration_details", step_configuration_details)
-        pulumi.set(__self__, "step_infrastructure_configuration_details", step_infrastructure_configuration_details)
-        pulumi.set(__self__, "step_name", step_name)
-        pulumi.set(__self__, "step_type", step_type)
+        GetPipelinesPipelineStepDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            depends_ons=depends_ons,
+            description=description,
+            is_artifact_uploaded=is_artifact_uploaded,
+            job_id=job_id,
+            step_configuration_details=step_configuration_details,
+            step_infrastructure_configuration_details=step_infrastructure_configuration_details,
+            step_name=step_name,
+            step_type=step_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             depends_ons: Optional[Sequence[str]] = None,
+             description: Optional[str] = None,
+             is_artifact_uploaded: Optional[bool] = None,
+             job_id: Optional[str] = None,
+             step_configuration_details: Optional[Sequence['outputs.GetPipelinesPipelineStepDetailStepConfigurationDetailResult']] = None,
+             step_infrastructure_configuration_details: Optional[Sequence['outputs.GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailResult']] = None,
+             step_name: Optional[str] = None,
+             step_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if depends_ons is None and 'dependsOns' in kwargs:
+            depends_ons = kwargs['dependsOns']
+        if depends_ons is None:
+            raise TypeError("Missing 'depends_ons' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if is_artifact_uploaded is None and 'isArtifactUploaded' in kwargs:
+            is_artifact_uploaded = kwargs['isArtifactUploaded']
+        if is_artifact_uploaded is None:
+            raise TypeError("Missing 'is_artifact_uploaded' argument")
+        if job_id is None and 'jobId' in kwargs:
+            job_id = kwargs['jobId']
+        if job_id is None:
+            raise TypeError("Missing 'job_id' argument")
+        if step_configuration_details is None and 'stepConfigurationDetails' in kwargs:
+            step_configuration_details = kwargs['stepConfigurationDetails']
+        if step_configuration_details is None:
+            raise TypeError("Missing 'step_configuration_details' argument")
+        if step_infrastructure_configuration_details is None and 'stepInfrastructureConfigurationDetails' in kwargs:
+            step_infrastructure_configuration_details = kwargs['stepInfrastructureConfigurationDetails']
+        if step_infrastructure_configuration_details is None:
+            raise TypeError("Missing 'step_infrastructure_configuration_details' argument")
+        if step_name is None and 'stepName' in kwargs:
+            step_name = kwargs['stepName']
+        if step_name is None:
+            raise TypeError("Missing 'step_name' argument")
+        if step_type is None and 'stepType' in kwargs:
+            step_type = kwargs['stepType']
+        if step_type is None:
+            raise TypeError("Missing 'step_type' argument")
+
+        _setter("depends_ons", depends_ons)
+        _setter("description", description)
+        _setter("is_artifact_uploaded", is_artifact_uploaded)
+        _setter("job_id", job_id)
+        _setter("step_configuration_details", step_configuration_details)
+        _setter("step_infrastructure_configuration_details", step_infrastructure_configuration_details)
+        _setter("step_name", step_name)
+        _setter("step_type", step_type)
 
     @property
     @pulumi.getter(name="dependsOns")
@@ -9843,9 +14828,36 @@ class GetPipelinesPipelineStepDetailStepConfigurationDetailResult(dict):
         :param Mapping[str, Any] environment_variables: Environment variables to set for step.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        GetPipelinesPipelineStepDetailStepConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             maximum_runtime_in_minutes: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if command_line_arguments is None and 'commandLineArguments' in kwargs:
+            command_line_arguments = kwargs['commandLineArguments']
+        if command_line_arguments is None:
+            raise TypeError("Missing 'command_line_arguments' argument")
+        if environment_variables is None and 'environmentVariables' in kwargs:
+            environment_variables = kwargs['environmentVariables']
+        if environment_variables is None:
+            raise TypeError("Missing 'environment_variables' argument")
+        if maximum_runtime_in_minutes is None and 'maximumRuntimeInMinutes' in kwargs:
+            maximum_runtime_in_minutes = kwargs['maximumRuntimeInMinutes']
+        if maximum_runtime_in_minutes is None:
+            raise TypeError("Missing 'maximum_runtime_in_minutes' argument")
+
+        _setter("command_line_arguments", command_line_arguments)
+        _setter("environment_variables", environment_variables)
+        _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -9883,9 +14895,36 @@ class GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailResult(
         :param Sequence['GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs'] shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
         :param str shape_name: The shape used to launch the instance for all step runs in the pipeline.
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "shape_config_details", shape_config_details)
-        pulumi.set(__self__, "shape_name", shape_name)
+        GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            shape_config_details=shape_config_details,
+            shape_name=shape_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: Optional[int] = None,
+             shape_config_details: Optional[Sequence['outputs.GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult']] = None,
+             shape_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if block_storage_size_in_gbs is None and 'blockStorageSizeInGbs' in kwargs:
+            block_storage_size_in_gbs = kwargs['blockStorageSizeInGbs']
+        if block_storage_size_in_gbs is None:
+            raise TypeError("Missing 'block_storage_size_in_gbs' argument")
+        if shape_config_details is None and 'shapeConfigDetails' in kwargs:
+            shape_config_details = kwargs['shapeConfigDetails']
+        if shape_config_details is None:
+            raise TypeError("Missing 'shape_config_details' argument")
+        if shape_name is None and 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("shape_config_details", shape_config_details)
+        _setter("shape_name", shape_name)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -9921,8 +14960,27 @@ class GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeCo
         :param float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         :param float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -9977,22 +15035,119 @@ class GetPrivateEndpointsDataSciencePrivateEndpointResult(dict):
         :param str time_created: The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         :param str time_updated: The date and time that the Data Science private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "data_science_resource_type", data_science_resource_type)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "fqdn", fqdn)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "nsg_ids", nsg_ids)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "sub_domain", sub_domain)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetPrivateEndpointsDataSciencePrivateEndpointResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            created_by=created_by,
+            data_science_resource_type=data_science_resource_type,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            fqdn=fqdn,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            nsg_ids=nsg_ids,
+            state=state,
+            sub_domain=sub_domain,
+            subnet_id=subnet_id,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             created_by: Optional[str] = None,
+             data_science_resource_type: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             fqdn: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             nsg_ids: Optional[Sequence[str]] = None,
+             state: Optional[str] = None,
+             sub_domain: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if created_by is None and 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if created_by is None:
+            raise TypeError("Missing 'created_by' argument")
+        if data_science_resource_type is None and 'dataScienceResourceType' in kwargs:
+            data_science_resource_type = kwargs['dataScienceResourceType']
+        if data_science_resource_type is None:
+            raise TypeError("Missing 'data_science_resource_type' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if fqdn is None:
+            raise TypeError("Missing 'fqdn' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if nsg_ids is None and 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if nsg_ids is None:
+            raise TypeError("Missing 'nsg_ids' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if sub_domain is None and 'subDomain' in kwargs:
+            sub_domain = kwargs['subDomain']
+        if sub_domain is None:
+            raise TypeError("Missing 'sub_domain' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("created_by", created_by)
+        _setter("data_science_resource_type", data_science_resource_type)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("fqdn", fqdn)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("nsg_ids", nsg_ids)
+        _setter("state", state)
+        _setter("sub_domain", sub_domain)
+        _setter("subnet_id", subnet_id)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -10126,10 +15281,29 @@ class GetPrivateEndpointsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetPrivateEndpointsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -10153,10 +15327,29 @@ class GetProjectsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetProjectsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -10197,15 +15390,72 @@ class GetProjectsProjectResult(dict):
         :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
         :param str time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+        GetProjectsProjectResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            created_by=created_by,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             created_by: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if created_by is None and 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if created_by is None:
+            raise TypeError("Missing 'created_by' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("created_by", created_by)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("state", state)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")

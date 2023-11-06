@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -25,10 +25,31 @@ class NetworkFirewallPolicyUrlListArgs:
         :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListUrlArgs']]] urls: (Updatable) List of urls.
         :param pulumi.Input[str] name: Unique name to identify the group of urls to be used in the policy rules.
         """
-        pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
-        pulumi.set(__self__, "urls", urls)
+        NetworkFirewallPolicyUrlListArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            network_firewall_policy_id=network_firewall_policy_id,
+            urls=urls,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
+             urls: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListUrlArgs']]]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
+            network_firewall_policy_id = kwargs['networkFirewallPolicyId']
+        if network_firewall_policy_id is None:
+            raise TypeError("Missing 'network_firewall_policy_id' argument")
+        if urls is None:
+            raise TypeError("Missing 'urls' argument")
+
+        _setter("network_firewall_policy_id", network_firewall_policy_id)
+        _setter("urls", urls)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter(name="networkFirewallPolicyId")
@@ -83,16 +104,41 @@ class _NetworkFirewallPolicyUrlListState:
         :param pulumi.Input[int] total_urls: Total count of URLs in the URL List
         :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListUrlArgs']]] urls: (Updatable) List of urls.
         """
+        _NetworkFirewallPolicyUrlListState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            network_firewall_policy_id=network_firewall_policy_id,
+            parent_resource_id=parent_resource_id,
+            total_urls=total_urls,
+            urls=urls,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
+             parent_resource_id: Optional[pulumi.Input[str]] = None,
+             total_urls: Optional[pulumi.Input[int]] = None,
+             urls: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListUrlArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if network_firewall_policy_id is None and 'networkFirewallPolicyId' in kwargs:
+            network_firewall_policy_id = kwargs['networkFirewallPolicyId']
+        if parent_resource_id is None and 'parentResourceId' in kwargs:
+            parent_resource_id = kwargs['parentResourceId']
+        if total_urls is None and 'totalUrls' in kwargs:
+            total_urls = kwargs['totalUrls']
+
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if network_firewall_policy_id is not None:
-            pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
+            _setter("network_firewall_policy_id", network_firewall_policy_id)
         if parent_resource_id is not None:
-            pulumi.set(__self__, "parent_resource_id", parent_resource_id)
+            _setter("parent_resource_id", parent_resource_id)
         if total_urls is not None:
-            pulumi.set(__self__, "total_urls", total_urls)
+            _setter("total_urls", total_urls)
         if urls is not None:
-            pulumi.set(__self__, "urls", urls)
+            _setter("urls", urls)
 
     @property
     @pulumi.getter
@@ -240,6 +286,10 @@ class NetworkFirewallPolicyUrlList(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            NetworkFirewallPolicyUrlListArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

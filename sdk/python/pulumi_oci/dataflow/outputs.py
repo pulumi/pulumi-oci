@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -119,8 +119,29 @@ class ApplicationApplicationLogConfig(dict):
         :param str log_group_id: (Updatable) The log group id for where log objects will be for Data Flow Runs.
         :param str log_id: (Updatable) The log id of the log object the Application Logs of Data Flow Run will be shipped to.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        ApplicationApplicationLogConfig._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
+
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -165,10 +186,25 @@ class ApplicationDriverShapeConfig(dict):
         :param float memory_in_gbs: (Updatable) The amount of memory used for the driver or executors.
         :param float ocpus: (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         """
+        ApplicationDriverShapeConfig._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            pulumi.set(__self__, "ocpus", ocpus)
+            _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -213,10 +249,25 @@ class ApplicationExecutorShapeConfig(dict):
         :param float memory_in_gbs: (Updatable) The amount of memory used for the driver or executors.
         :param float ocpus: (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         """
+        ApplicationExecutorShapeConfig._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            pulumi.set(__self__, "ocpus", ocpus)
+            _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -244,8 +295,25 @@ class ApplicationParameter(dict):
         :param str name: (Updatable) The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
         :param str value: (Updatable) The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        ApplicationParameter._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -292,8 +360,29 @@ class InvokeRunApplicationLogConfig(dict):
         :param str log_group_id: The log group id for where log objects will be for Data Flow Runs.
         :param str log_id: The log id of the log object the Application Logs of Data Flow Run will be shipped to.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        InvokeRunApplicationLogConfig._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
+
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -338,10 +427,25 @@ class InvokeRunDriverShapeConfig(dict):
         :param float memory_in_gbs: The amount of memory used for the driver or executors.
         :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         """
+        InvokeRunDriverShapeConfig._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            pulumi.set(__self__, "ocpus", ocpus)
+            _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -386,10 +490,25 @@ class InvokeRunExecutorShapeConfig(dict):
         :param float memory_in_gbs: The amount of memory used for the driver or executors.
         :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         """
+        InvokeRunExecutorShapeConfig._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            pulumi.set(__self__, "ocpus", ocpus)
+            _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -417,8 +536,25 @@ class InvokeRunParameter(dict):
         :param str name: The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
         :param str value: The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        InvokeRunParameter._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -467,14 +603,33 @@ class PoolConfiguration(dict):
         :param str shape: (Updatable) The compute shape of the resources you would like to provision.
         :param 'PoolConfigurationShapeConfigArgs' shape_config: (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
         """
+        PoolConfiguration._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            max=max,
+            min=min,
+            shape=shape,
+            shape_config=shape_config,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             max: Optional[int] = None,
+             min: Optional[int] = None,
+             shape: Optional[str] = None,
+             shape_config: Optional['outputs.PoolConfigurationShapeConfig'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if shape_config is None and 'shapeConfig' in kwargs:
+            shape_config = kwargs['shapeConfig']
+
         if max is not None:
-            pulumi.set(__self__, "max", max)
+            _setter("max", max)
         if min is not None:
-            pulumi.set(__self__, "min", min)
+            _setter("min", min)
         if shape is not None:
-            pulumi.set(__self__, "shape", shape)
+            _setter("shape", shape)
         if shape_config is not None:
-            pulumi.set(__self__, "shape_config", shape_config)
+            _setter("shape_config", shape_config)
 
     @property
     @pulumi.getter
@@ -535,10 +690,25 @@ class PoolConfigurationShapeConfig(dict):
         :param float memory_in_gbs: (Updatable) The amount of memory used for the driver or executors.
         :param float ocpus: (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         """
+        PoolConfigurationShapeConfig._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            pulumi.set(__self__, "ocpus", ocpus)
+            _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -601,18 +771,51 @@ class PoolPoolMetric(dict):
         :param str time_last_stopped: The last time this pool was stopped.
         :param str time_last_used: The last time a run used this pool.
         """
+        PoolPoolMetric._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            active_runs_count=active_runs_count,
+            actively_used_node_counts=actively_used_node_counts,
+            time_last_metrics_updated=time_last_metrics_updated,
+            time_last_started=time_last_started,
+            time_last_stopped=time_last_stopped,
+            time_last_used=time_last_used,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             active_runs_count: Optional[str] = None,
+             actively_used_node_counts: Optional[Sequence['outputs.PoolPoolMetricActivelyUsedNodeCount']] = None,
+             time_last_metrics_updated: Optional[str] = None,
+             time_last_started: Optional[str] = None,
+             time_last_stopped: Optional[str] = None,
+             time_last_used: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if active_runs_count is None and 'activeRunsCount' in kwargs:
+            active_runs_count = kwargs['activeRunsCount']
+        if actively_used_node_counts is None and 'activelyUsedNodeCounts' in kwargs:
+            actively_used_node_counts = kwargs['activelyUsedNodeCounts']
+        if time_last_metrics_updated is None and 'timeLastMetricsUpdated' in kwargs:
+            time_last_metrics_updated = kwargs['timeLastMetricsUpdated']
+        if time_last_started is None and 'timeLastStarted' in kwargs:
+            time_last_started = kwargs['timeLastStarted']
+        if time_last_stopped is None and 'timeLastStopped' in kwargs:
+            time_last_stopped = kwargs['timeLastStopped']
+        if time_last_used is None and 'timeLastUsed' in kwargs:
+            time_last_used = kwargs['timeLastUsed']
+
         if active_runs_count is not None:
-            pulumi.set(__self__, "active_runs_count", active_runs_count)
+            _setter("active_runs_count", active_runs_count)
         if actively_used_node_counts is not None:
-            pulumi.set(__self__, "actively_used_node_counts", actively_used_node_counts)
+            _setter("actively_used_node_counts", actively_used_node_counts)
         if time_last_metrics_updated is not None:
-            pulumi.set(__self__, "time_last_metrics_updated", time_last_metrics_updated)
+            _setter("time_last_metrics_updated", time_last_metrics_updated)
         if time_last_started is not None:
-            pulumi.set(__self__, "time_last_started", time_last_started)
+            _setter("time_last_started", time_last_started)
         if time_last_stopped is not None:
-            pulumi.set(__self__, "time_last_stopped", time_last_stopped)
+            _setter("time_last_stopped", time_last_stopped)
         if time_last_used is not None:
-            pulumi.set(__self__, "time_last_used", time_last_used)
+            _setter("time_last_used", time_last_used)
 
     @property
     @pulumi.getter(name="activeRunsCount")
@@ -691,10 +894,27 @@ class PoolPoolMetricActivelyUsedNodeCount(dict):
         :param str logical_shape: The compute shape of the nodes that the count is for.
         :param int pool_count: The node count of this compute shape.
         """
+        PoolPoolMetricActivelyUsedNodeCount._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            logical_shape=logical_shape,
+            pool_count=pool_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             logical_shape: Optional[str] = None,
+             pool_count: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if logical_shape is None and 'logicalShape' in kwargs:
+            logical_shape = kwargs['logicalShape']
+        if pool_count is None and 'poolCount' in kwargs:
+            pool_count = kwargs['poolCount']
+
         if logical_shape is not None:
-            pulumi.set(__self__, "logical_shape", logical_shape)
+            _setter("logical_shape", logical_shape)
         if pool_count is not None:
-            pulumi.set(__self__, "pool_count", pool_count)
+            _setter("pool_count", pool_count)
 
     @property
     @pulumi.getter(name="logicalShape")
@@ -745,12 +965,33 @@ class PoolSchedule(dict):
         :param int start_time: (Updatable) Hour of the day to start or stop pool.
         :param int stop_time: (Updatable) Hour of the day to stop the pool.
         """
+        PoolSchedule._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            day_of_week=day_of_week,
+            start_time=start_time,
+            stop_time=stop_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             day_of_week: Optional[str] = None,
+             start_time: Optional[int] = None,
+             stop_time: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if day_of_week is None and 'dayOfWeek' in kwargs:
+            day_of_week = kwargs['dayOfWeek']
+        if start_time is None and 'startTime' in kwargs:
+            start_time = kwargs['startTime']
+        if stop_time is None and 'stopTime' in kwargs:
+            stop_time = kwargs['stopTime']
+
         if day_of_week is not None:
-            pulumi.set(__self__, "day_of_week", day_of_week)
+            _setter("day_of_week", day_of_week)
         if start_time is not None:
-            pulumi.set(__self__, "start_time", start_time)
+            _setter("start_time", start_time)
         if stop_time is not None:
-            pulumi.set(__self__, "stop_time", stop_time)
+            _setter("stop_time", stop_time)
 
     @property
     @pulumi.getter(name="dayOfWeek")
@@ -786,10 +1027,23 @@ class PrivateEndpointScanDetail(dict):
         :param str fqdn: (Updatable) A fully-qualified domain name (FQDN).
         :param str port: (Updatable) The port number of the FQDN
         """
+        PrivateEndpointScanDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            fqdn=fqdn,
+            port=port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             fqdn: Optional[str] = None,
+             port: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if fqdn is not None:
-            pulumi.set(__self__, "fqdn", fqdn)
+            _setter("fqdn", fqdn)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
 
     @property
     @pulumi.getter
@@ -842,16 +1096,39 @@ class RunStatementOutput(dict):
         :param str status: Status of the statement output.
         :param Sequence[str] tracebacks: The traceback of the statement output.
         """
+        RunStatementOutput._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            datas=datas,
+            error_name=error_name,
+            error_value=error_value,
+            status=status,
+            tracebacks=tracebacks,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             datas: Optional[Sequence['outputs.RunStatementOutputData']] = None,
+             error_name: Optional[str] = None,
+             error_value: Optional[str] = None,
+             status: Optional[str] = None,
+             tracebacks: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if error_name is None and 'errorName' in kwargs:
+            error_name = kwargs['errorName']
+        if error_value is None and 'errorValue' in kwargs:
+            error_value = kwargs['errorValue']
+
         if datas is not None:
-            pulumi.set(__self__, "datas", datas)
+            _setter("datas", datas)
         if error_name is not None:
-            pulumi.set(__self__, "error_name", error_name)
+            _setter("error_name", error_name)
         if error_value is not None:
-            pulumi.set(__self__, "error_value", error_value)
+            _setter("error_value", error_value)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if tracebacks is not None:
-            pulumi.set(__self__, "tracebacks", tracebacks)
+            _setter("tracebacks", tracebacks)
 
     @property
     @pulumi.getter
@@ -903,10 +1180,23 @@ class RunStatementOutputData(dict):
         :param str type: The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
         :param str value: The statement code execution output in html format.
         """
+        RunStatementOutputData._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter
@@ -951,10 +1241,25 @@ class SqlEndpointDriverShapeConfig(dict):
         :param float memory_in_gbs: The amount of memory used for the driver or executors.
         :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         """
+        SqlEndpointDriverShapeConfig._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            pulumi.set(__self__, "ocpus", ocpus)
+            _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -999,10 +1304,25 @@ class SqlEndpointExecutorShapeConfig(dict):
         :param float memory_in_gbs: The amount of memory used for the driver or executors.
         :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         """
+        SqlEndpointExecutorShapeConfig._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            pulumi.set(__self__, "ocpus", ocpus)
+            _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -1069,19 +1389,58 @@ class SqlEndpointNetworkConfiguration(dict):
         :param str subnet_id: The VCN Subnet OCID.
         :param str vcn_id: The VCN OCID.
         """
-        pulumi.set(__self__, "network_type", network_type)
+        SqlEndpointNetworkConfiguration._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            network_type=network_type,
+            access_control_rules=access_control_rules,
+            host_name_prefix=host_name_prefix,
+            private_endpoint_ip=private_endpoint_ip,
+            public_endpoint_ip=public_endpoint_ip,
+            subnet_id=subnet_id,
+            vcn_id=vcn_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             network_type: Optional[str] = None,
+             access_control_rules: Optional[Sequence['outputs.SqlEndpointNetworkConfigurationAccessControlRule']] = None,
+             host_name_prefix: Optional[str] = None,
+             private_endpoint_ip: Optional[str] = None,
+             public_endpoint_ip: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             vcn_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if network_type is None and 'networkType' in kwargs:
+            network_type = kwargs['networkType']
+        if network_type is None:
+            raise TypeError("Missing 'network_type' argument")
+        if access_control_rules is None and 'accessControlRules' in kwargs:
+            access_control_rules = kwargs['accessControlRules']
+        if host_name_prefix is None and 'hostNamePrefix' in kwargs:
+            host_name_prefix = kwargs['hostNamePrefix']
+        if private_endpoint_ip is None and 'privateEndpointIp' in kwargs:
+            private_endpoint_ip = kwargs['privateEndpointIp']
+        if public_endpoint_ip is None and 'publicEndpointIp' in kwargs:
+            public_endpoint_ip = kwargs['publicEndpointIp']
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if vcn_id is None and 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+
+        _setter("network_type", network_type)
         if access_control_rules is not None:
-            pulumi.set(__self__, "access_control_rules", access_control_rules)
+            _setter("access_control_rules", access_control_rules)
         if host_name_prefix is not None:
-            pulumi.set(__self__, "host_name_prefix", host_name_prefix)
+            _setter("host_name_prefix", host_name_prefix)
         if private_endpoint_ip is not None:
-            pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
+            _setter("private_endpoint_ip", private_endpoint_ip)
         if public_endpoint_ip is not None:
-            pulumi.set(__self__, "public_endpoint_ip", public_endpoint_ip)
+            _setter("public_endpoint_ip", public_endpoint_ip)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
         if vcn_id is not None:
-            pulumi.set(__self__, "vcn_id", vcn_id)
+            _setter("vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="networkType")
@@ -1170,12 +1529,31 @@ class SqlEndpointNetworkConfigurationAccessControlRule(dict):
         :param str value: The associated value of the selected IP notation.
         :param str vcn_ips: A comma-separated IP or CIDR address for VCN OCID IP notation selection.
         """
+        SqlEndpointNetworkConfigurationAccessControlRule._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ip_notation=ip_notation,
+            value=value,
+            vcn_ips=vcn_ips,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ip_notation: Optional[str] = None,
+             value: Optional[str] = None,
+             vcn_ips: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if ip_notation is None and 'ipNotation' in kwargs:
+            ip_notation = kwargs['ipNotation']
+        if vcn_ips is None and 'vcnIps' in kwargs:
+            vcn_ips = kwargs['vcnIps']
+
         if ip_notation is not None:
-            pulumi.set(__self__, "ip_notation", ip_notation)
+            _setter("ip_notation", ip_notation)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
         if vcn_ips is not None:
-            pulumi.set(__self__, "vcn_ips", vcn_ips)
+            _setter("vcn_ips", vcn_ips)
 
     @property
     @pulumi.getter(name="ipNotation")
@@ -1211,8 +1589,29 @@ class GetApplicationApplicationLogConfigResult(dict):
         :param str log_group_id: The log group id for where log objects will be for Data Flow Runs.
         :param str log_id: The log id of the log object the Application Logs of Data Flow Run will be shipped to.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetApplicationApplicationLogConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
+
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -1240,8 +1639,27 @@ class GetApplicationDriverShapeConfigResult(dict):
         :param float memory_in_gbs: The amount of memory used for the driver or executors.
         :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetApplicationDriverShapeConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -1269,8 +1687,27 @@ class GetApplicationExecutorShapeConfigResult(dict):
         :param float memory_in_gbs: The amount of memory used for the driver or executors.
         :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetApplicationExecutorShapeConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -1298,8 +1735,25 @@ class GetApplicationParameterResult(dict):
         :param str name: The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
         :param str value: The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetApplicationParameterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -1391,40 +1845,235 @@ class GetApplicationsApplicationResult(dict):
         :param str type: The Spark application processing type.
         :param str warehouse_bucket_uri: An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         """
-        pulumi.set(__self__, "application_log_configs", application_log_configs)
-        pulumi.set(__self__, "archive_uri", archive_uri)
-        pulumi.set(__self__, "arguments", arguments)
-        pulumi.set(__self__, "class_name", class_name)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "configuration", configuration)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "driver_shape", driver_shape)
-        pulumi.set(__self__, "driver_shape_configs", driver_shape_configs)
-        pulumi.set(__self__, "execute", execute)
-        pulumi.set(__self__, "executor_shape", executor_shape)
-        pulumi.set(__self__, "executor_shape_configs", executor_shape_configs)
-        pulumi.set(__self__, "file_uri", file_uri)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "idle_timeout_in_minutes", idle_timeout_in_minutes)
-        pulumi.set(__self__, "language", language)
-        pulumi.set(__self__, "logs_bucket_uri", logs_bucket_uri)
-        pulumi.set(__self__, "max_duration_in_minutes", max_duration_in_minutes)
-        pulumi.set(__self__, "metastore_id", metastore_id)
-        pulumi.set(__self__, "num_executors", num_executors)
-        pulumi.set(__self__, "owner_principal_id", owner_principal_id)
-        pulumi.set(__self__, "owner_user_name", owner_user_name)
-        pulumi.set(__self__, "parameters", parameters)
-        pulumi.set(__self__, "pool_id", pool_id)
-        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
-        pulumi.set(__self__, "spark_version", spark_version)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "warehouse_bucket_uri", warehouse_bucket_uri)
+        GetApplicationsApplicationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            application_log_configs=application_log_configs,
+            archive_uri=archive_uri,
+            arguments=arguments,
+            class_name=class_name,
+            compartment_id=compartment_id,
+            configuration=configuration,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            driver_shape=driver_shape,
+            driver_shape_configs=driver_shape_configs,
+            execute=execute,
+            executor_shape=executor_shape,
+            executor_shape_configs=executor_shape_configs,
+            file_uri=file_uri,
+            freeform_tags=freeform_tags,
+            id=id,
+            idle_timeout_in_minutes=idle_timeout_in_minutes,
+            language=language,
+            logs_bucket_uri=logs_bucket_uri,
+            max_duration_in_minutes=max_duration_in_minutes,
+            metastore_id=metastore_id,
+            num_executors=num_executors,
+            owner_principal_id=owner_principal_id,
+            owner_user_name=owner_user_name,
+            parameters=parameters,
+            pool_id=pool_id,
+            private_endpoint_id=private_endpoint_id,
+            spark_version=spark_version,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+            type=type,
+            warehouse_bucket_uri=warehouse_bucket_uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             application_log_configs: Optional[Sequence['outputs.GetApplicationsApplicationApplicationLogConfigResult']] = None,
+             archive_uri: Optional[str] = None,
+             arguments: Optional[Sequence[str]] = None,
+             class_name: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             configuration: Optional[Mapping[str, Any]] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             driver_shape: Optional[str] = None,
+             driver_shape_configs: Optional[Sequence['outputs.GetApplicationsApplicationDriverShapeConfigResult']] = None,
+             execute: Optional[str] = None,
+             executor_shape: Optional[str] = None,
+             executor_shape_configs: Optional[Sequence['outputs.GetApplicationsApplicationExecutorShapeConfigResult']] = None,
+             file_uri: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             idle_timeout_in_minutes: Optional[str] = None,
+             language: Optional[str] = None,
+             logs_bucket_uri: Optional[str] = None,
+             max_duration_in_minutes: Optional[str] = None,
+             metastore_id: Optional[str] = None,
+             num_executors: Optional[int] = None,
+             owner_principal_id: Optional[str] = None,
+             owner_user_name: Optional[str] = None,
+             parameters: Optional[Sequence['outputs.GetApplicationsApplicationParameterResult']] = None,
+             pool_id: Optional[str] = None,
+             private_endpoint_id: Optional[str] = None,
+             spark_version: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             type: Optional[str] = None,
+             warehouse_bucket_uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if application_log_configs is None and 'applicationLogConfigs' in kwargs:
+            application_log_configs = kwargs['applicationLogConfigs']
+        if application_log_configs is None:
+            raise TypeError("Missing 'application_log_configs' argument")
+        if archive_uri is None and 'archiveUri' in kwargs:
+            archive_uri = kwargs['archiveUri']
+        if archive_uri is None:
+            raise TypeError("Missing 'archive_uri' argument")
+        if arguments is None:
+            raise TypeError("Missing 'arguments' argument")
+        if class_name is None and 'className' in kwargs:
+            class_name = kwargs['className']
+        if class_name is None:
+            raise TypeError("Missing 'class_name' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if configuration is None:
+            raise TypeError("Missing 'configuration' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if driver_shape is None and 'driverShape' in kwargs:
+            driver_shape = kwargs['driverShape']
+        if driver_shape is None:
+            raise TypeError("Missing 'driver_shape' argument")
+        if driver_shape_configs is None and 'driverShapeConfigs' in kwargs:
+            driver_shape_configs = kwargs['driverShapeConfigs']
+        if driver_shape_configs is None:
+            raise TypeError("Missing 'driver_shape_configs' argument")
+        if execute is None:
+            raise TypeError("Missing 'execute' argument")
+        if executor_shape is None and 'executorShape' in kwargs:
+            executor_shape = kwargs['executorShape']
+        if executor_shape is None:
+            raise TypeError("Missing 'executor_shape' argument")
+        if executor_shape_configs is None and 'executorShapeConfigs' in kwargs:
+            executor_shape_configs = kwargs['executorShapeConfigs']
+        if executor_shape_configs is None:
+            raise TypeError("Missing 'executor_shape_configs' argument")
+        if file_uri is None and 'fileUri' in kwargs:
+            file_uri = kwargs['fileUri']
+        if file_uri is None:
+            raise TypeError("Missing 'file_uri' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if idle_timeout_in_minutes is None and 'idleTimeoutInMinutes' in kwargs:
+            idle_timeout_in_minutes = kwargs['idleTimeoutInMinutes']
+        if idle_timeout_in_minutes is None:
+            raise TypeError("Missing 'idle_timeout_in_minutes' argument")
+        if language is None:
+            raise TypeError("Missing 'language' argument")
+        if logs_bucket_uri is None and 'logsBucketUri' in kwargs:
+            logs_bucket_uri = kwargs['logsBucketUri']
+        if logs_bucket_uri is None:
+            raise TypeError("Missing 'logs_bucket_uri' argument")
+        if max_duration_in_minutes is None and 'maxDurationInMinutes' in kwargs:
+            max_duration_in_minutes = kwargs['maxDurationInMinutes']
+        if max_duration_in_minutes is None:
+            raise TypeError("Missing 'max_duration_in_minutes' argument")
+        if metastore_id is None and 'metastoreId' in kwargs:
+            metastore_id = kwargs['metastoreId']
+        if metastore_id is None:
+            raise TypeError("Missing 'metastore_id' argument")
+        if num_executors is None and 'numExecutors' in kwargs:
+            num_executors = kwargs['numExecutors']
+        if num_executors is None:
+            raise TypeError("Missing 'num_executors' argument")
+        if owner_principal_id is None and 'ownerPrincipalId' in kwargs:
+            owner_principal_id = kwargs['ownerPrincipalId']
+        if owner_principal_id is None:
+            raise TypeError("Missing 'owner_principal_id' argument")
+        if owner_user_name is None and 'ownerUserName' in kwargs:
+            owner_user_name = kwargs['ownerUserName']
+        if owner_user_name is None:
+            raise TypeError("Missing 'owner_user_name' argument")
+        if parameters is None:
+            raise TypeError("Missing 'parameters' argument")
+        if pool_id is None and 'poolId' in kwargs:
+            pool_id = kwargs['poolId']
+        if pool_id is None:
+            raise TypeError("Missing 'pool_id' argument")
+        if private_endpoint_id is None and 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+        if private_endpoint_id is None:
+            raise TypeError("Missing 'private_endpoint_id' argument")
+        if spark_version is None and 'sparkVersion' in kwargs:
+            spark_version = kwargs['sparkVersion']
+        if spark_version is None:
+            raise TypeError("Missing 'spark_version' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if warehouse_bucket_uri is None and 'warehouseBucketUri' in kwargs:
+            warehouse_bucket_uri = kwargs['warehouseBucketUri']
+        if warehouse_bucket_uri is None:
+            raise TypeError("Missing 'warehouse_bucket_uri' argument")
+
+        _setter("application_log_configs", application_log_configs)
+        _setter("archive_uri", archive_uri)
+        _setter("arguments", arguments)
+        _setter("class_name", class_name)
+        _setter("compartment_id", compartment_id)
+        _setter("configuration", configuration)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("driver_shape", driver_shape)
+        _setter("driver_shape_configs", driver_shape_configs)
+        _setter("execute", execute)
+        _setter("executor_shape", executor_shape)
+        _setter("executor_shape_configs", executor_shape_configs)
+        _setter("file_uri", file_uri)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("idle_timeout_in_minutes", idle_timeout_in_minutes)
+        _setter("language", language)
+        _setter("logs_bucket_uri", logs_bucket_uri)
+        _setter("max_duration_in_minutes", max_duration_in_minutes)
+        _setter("metastore_id", metastore_id)
+        _setter("num_executors", num_executors)
+        _setter("owner_principal_id", owner_principal_id)
+        _setter("owner_user_name", owner_user_name)
+        _setter("parameters", parameters)
+        _setter("pool_id", pool_id)
+        _setter("private_endpoint_id", private_endpoint_id)
+        _setter("spark_version", spark_version)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("type", type)
+        _setter("warehouse_bucket_uri", warehouse_bucket_uri)
 
     @property
     @pulumi.getter(name="applicationLogConfigs")
@@ -1708,8 +2357,29 @@ class GetApplicationsApplicationApplicationLogConfigResult(dict):
         :param str log_group_id: The log group id for where log objects will be for Data Flow Runs.
         :param str log_id: The log id of the log object the Application Logs of Data Flow Run will be shipped to.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetApplicationsApplicationApplicationLogConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
+
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -1737,8 +2407,27 @@ class GetApplicationsApplicationDriverShapeConfigResult(dict):
         :param float memory_in_gbs: The amount of memory used for the driver or executors.
         :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetApplicationsApplicationDriverShapeConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -1766,8 +2455,27 @@ class GetApplicationsApplicationExecutorShapeConfigResult(dict):
         :param float memory_in_gbs: The amount of memory used for the driver or executors.
         :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetApplicationsApplicationExecutorShapeConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -1795,8 +2503,25 @@ class GetApplicationsApplicationParameterResult(dict):
         :param str name: The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
         :param str value: The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetApplicationsApplicationParameterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -1824,10 +2549,29 @@ class GetApplicationsFilterResult(dict):
         """
         :param str name: The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetApplicationsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1857,8 +2601,29 @@ class GetInvokeRunApplicationLogConfigResult(dict):
         :param str log_group_id: The log group id for where log objects will be for Data Flow Runs.
         :param str log_id: The log id of the log object the Application Logs of Data Flow Run will be shipped to.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetInvokeRunApplicationLogConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
+
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -1886,8 +2651,27 @@ class GetInvokeRunDriverShapeConfigResult(dict):
         :param float memory_in_gbs: The amount of memory used for the driver or executors.
         :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetInvokeRunDriverShapeConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -1915,8 +2699,27 @@ class GetInvokeRunExecutorShapeConfigResult(dict):
         :param float memory_in_gbs: The amount of memory used for the driver or executors.
         :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetInvokeRunExecutorShapeConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -1944,8 +2747,25 @@ class GetInvokeRunParameterResult(dict):
         :param str name: The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
         :param str value: The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetInvokeRunParameterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -1973,10 +2793,29 @@ class GetInvokeRunsFilterResult(dict):
         """
         :param str name: The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetInvokeRunsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2091,51 +2930,312 @@ class GetInvokeRunsRunResult(dict):
         :param str type: The Spark application processing type.
         :param str warehouse_bucket_uri: An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         """
-        pulumi.set(__self__, "application_id", application_id)
-        pulumi.set(__self__, "application_log_configs", application_log_configs)
-        pulumi.set(__self__, "archive_uri", archive_uri)
-        pulumi.set(__self__, "arguments", arguments)
-        pulumi.set(__self__, "asynchronous", asynchronous)
-        pulumi.set(__self__, "class_name", class_name)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "configuration", configuration)
-        pulumi.set(__self__, "data_read_in_bytes", data_read_in_bytes)
-        pulumi.set(__self__, "data_written_in_bytes", data_written_in_bytes)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "driver_shape", driver_shape)
-        pulumi.set(__self__, "driver_shape_configs", driver_shape_configs)
-        pulumi.set(__self__, "execute", execute)
-        pulumi.set(__self__, "executor_shape", executor_shape)
-        pulumi.set(__self__, "executor_shape_configs", executor_shape_configs)
-        pulumi.set(__self__, "file_uri", file_uri)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "idle_timeout_in_minutes", idle_timeout_in_minutes)
-        pulumi.set(__self__, "language", language)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "logs_bucket_uri", logs_bucket_uri)
-        pulumi.set(__self__, "max_duration_in_minutes", max_duration_in_minutes)
-        pulumi.set(__self__, "metastore_id", metastore_id)
-        pulumi.set(__self__, "num_executors", num_executors)
-        pulumi.set(__self__, "opc_request_id", opc_request_id)
-        pulumi.set(__self__, "owner_principal_id", owner_principal_id)
-        pulumi.set(__self__, "owner_user_name", owner_user_name)
-        pulumi.set(__self__, "parameters", parameters)
-        pulumi.set(__self__, "pool_id", pool_id)
-        pulumi.set(__self__, "private_endpoint_dns_zones", private_endpoint_dns_zones)
-        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
-        pulumi.set(__self__, "private_endpoint_max_host_count", private_endpoint_max_host_count)
-        pulumi.set(__self__, "private_endpoint_nsg_ids", private_endpoint_nsg_ids)
-        pulumi.set(__self__, "private_endpoint_subnet_id", private_endpoint_subnet_id)
-        pulumi.set(__self__, "run_duration_in_milliseconds", run_duration_in_milliseconds)
-        pulumi.set(__self__, "spark_version", spark_version)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "total_ocpu", total_ocpu)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "warehouse_bucket_uri", warehouse_bucket_uri)
+        GetInvokeRunsRunResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            application_id=application_id,
+            application_log_configs=application_log_configs,
+            archive_uri=archive_uri,
+            arguments=arguments,
+            asynchronous=asynchronous,
+            class_name=class_name,
+            compartment_id=compartment_id,
+            configuration=configuration,
+            data_read_in_bytes=data_read_in_bytes,
+            data_written_in_bytes=data_written_in_bytes,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            driver_shape=driver_shape,
+            driver_shape_configs=driver_shape_configs,
+            execute=execute,
+            executor_shape=executor_shape,
+            executor_shape_configs=executor_shape_configs,
+            file_uri=file_uri,
+            freeform_tags=freeform_tags,
+            id=id,
+            idle_timeout_in_minutes=idle_timeout_in_minutes,
+            language=language,
+            lifecycle_details=lifecycle_details,
+            logs_bucket_uri=logs_bucket_uri,
+            max_duration_in_minutes=max_duration_in_minutes,
+            metastore_id=metastore_id,
+            num_executors=num_executors,
+            opc_request_id=opc_request_id,
+            owner_principal_id=owner_principal_id,
+            owner_user_name=owner_user_name,
+            parameters=parameters,
+            pool_id=pool_id,
+            private_endpoint_dns_zones=private_endpoint_dns_zones,
+            private_endpoint_id=private_endpoint_id,
+            private_endpoint_max_host_count=private_endpoint_max_host_count,
+            private_endpoint_nsg_ids=private_endpoint_nsg_ids,
+            private_endpoint_subnet_id=private_endpoint_subnet_id,
+            run_duration_in_milliseconds=run_duration_in_milliseconds,
+            spark_version=spark_version,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+            total_ocpu=total_ocpu,
+            type=type,
+            warehouse_bucket_uri=warehouse_bucket_uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             application_id: Optional[str] = None,
+             application_log_configs: Optional[Sequence['outputs.GetInvokeRunsRunApplicationLogConfigResult']] = None,
+             archive_uri: Optional[str] = None,
+             arguments: Optional[Sequence[str]] = None,
+             asynchronous: Optional[bool] = None,
+             class_name: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             configuration: Optional[Mapping[str, Any]] = None,
+             data_read_in_bytes: Optional[str] = None,
+             data_written_in_bytes: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             driver_shape: Optional[str] = None,
+             driver_shape_configs: Optional[Sequence['outputs.GetInvokeRunsRunDriverShapeConfigResult']] = None,
+             execute: Optional[str] = None,
+             executor_shape: Optional[str] = None,
+             executor_shape_configs: Optional[Sequence['outputs.GetInvokeRunsRunExecutorShapeConfigResult']] = None,
+             file_uri: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             idle_timeout_in_minutes: Optional[str] = None,
+             language: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             logs_bucket_uri: Optional[str] = None,
+             max_duration_in_minutes: Optional[str] = None,
+             metastore_id: Optional[str] = None,
+             num_executors: Optional[int] = None,
+             opc_request_id: Optional[str] = None,
+             owner_principal_id: Optional[str] = None,
+             owner_user_name: Optional[str] = None,
+             parameters: Optional[Sequence['outputs.GetInvokeRunsRunParameterResult']] = None,
+             pool_id: Optional[str] = None,
+             private_endpoint_dns_zones: Optional[Sequence[str]] = None,
+             private_endpoint_id: Optional[str] = None,
+             private_endpoint_max_host_count: Optional[int] = None,
+             private_endpoint_nsg_ids: Optional[Sequence[str]] = None,
+             private_endpoint_subnet_id: Optional[str] = None,
+             run_duration_in_milliseconds: Optional[str] = None,
+             spark_version: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             total_ocpu: Optional[int] = None,
+             type: Optional[str] = None,
+             warehouse_bucket_uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if application_id is None and 'applicationId' in kwargs:
+            application_id = kwargs['applicationId']
+        if application_id is None:
+            raise TypeError("Missing 'application_id' argument")
+        if application_log_configs is None and 'applicationLogConfigs' in kwargs:
+            application_log_configs = kwargs['applicationLogConfigs']
+        if application_log_configs is None:
+            raise TypeError("Missing 'application_log_configs' argument")
+        if archive_uri is None and 'archiveUri' in kwargs:
+            archive_uri = kwargs['archiveUri']
+        if archive_uri is None:
+            raise TypeError("Missing 'archive_uri' argument")
+        if arguments is None:
+            raise TypeError("Missing 'arguments' argument")
+        if asynchronous is None:
+            raise TypeError("Missing 'asynchronous' argument")
+        if class_name is None and 'className' in kwargs:
+            class_name = kwargs['className']
+        if class_name is None:
+            raise TypeError("Missing 'class_name' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if configuration is None:
+            raise TypeError("Missing 'configuration' argument")
+        if data_read_in_bytes is None and 'dataReadInBytes' in kwargs:
+            data_read_in_bytes = kwargs['dataReadInBytes']
+        if data_read_in_bytes is None:
+            raise TypeError("Missing 'data_read_in_bytes' argument")
+        if data_written_in_bytes is None and 'dataWrittenInBytes' in kwargs:
+            data_written_in_bytes = kwargs['dataWrittenInBytes']
+        if data_written_in_bytes is None:
+            raise TypeError("Missing 'data_written_in_bytes' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if driver_shape is None and 'driverShape' in kwargs:
+            driver_shape = kwargs['driverShape']
+        if driver_shape is None:
+            raise TypeError("Missing 'driver_shape' argument")
+        if driver_shape_configs is None and 'driverShapeConfigs' in kwargs:
+            driver_shape_configs = kwargs['driverShapeConfigs']
+        if driver_shape_configs is None:
+            raise TypeError("Missing 'driver_shape_configs' argument")
+        if execute is None:
+            raise TypeError("Missing 'execute' argument")
+        if executor_shape is None and 'executorShape' in kwargs:
+            executor_shape = kwargs['executorShape']
+        if executor_shape is None:
+            raise TypeError("Missing 'executor_shape' argument")
+        if executor_shape_configs is None and 'executorShapeConfigs' in kwargs:
+            executor_shape_configs = kwargs['executorShapeConfigs']
+        if executor_shape_configs is None:
+            raise TypeError("Missing 'executor_shape_configs' argument")
+        if file_uri is None and 'fileUri' in kwargs:
+            file_uri = kwargs['fileUri']
+        if file_uri is None:
+            raise TypeError("Missing 'file_uri' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if idle_timeout_in_minutes is None and 'idleTimeoutInMinutes' in kwargs:
+            idle_timeout_in_minutes = kwargs['idleTimeoutInMinutes']
+        if idle_timeout_in_minutes is None:
+            raise TypeError("Missing 'idle_timeout_in_minutes' argument")
+        if language is None:
+            raise TypeError("Missing 'language' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if logs_bucket_uri is None and 'logsBucketUri' in kwargs:
+            logs_bucket_uri = kwargs['logsBucketUri']
+        if logs_bucket_uri is None:
+            raise TypeError("Missing 'logs_bucket_uri' argument")
+        if max_duration_in_minutes is None and 'maxDurationInMinutes' in kwargs:
+            max_duration_in_minutes = kwargs['maxDurationInMinutes']
+        if max_duration_in_minutes is None:
+            raise TypeError("Missing 'max_duration_in_minutes' argument")
+        if metastore_id is None and 'metastoreId' in kwargs:
+            metastore_id = kwargs['metastoreId']
+        if metastore_id is None:
+            raise TypeError("Missing 'metastore_id' argument")
+        if num_executors is None and 'numExecutors' in kwargs:
+            num_executors = kwargs['numExecutors']
+        if num_executors is None:
+            raise TypeError("Missing 'num_executors' argument")
+        if opc_request_id is None and 'opcRequestId' in kwargs:
+            opc_request_id = kwargs['opcRequestId']
+        if opc_request_id is None:
+            raise TypeError("Missing 'opc_request_id' argument")
+        if owner_principal_id is None and 'ownerPrincipalId' in kwargs:
+            owner_principal_id = kwargs['ownerPrincipalId']
+        if owner_principal_id is None:
+            raise TypeError("Missing 'owner_principal_id' argument")
+        if owner_user_name is None and 'ownerUserName' in kwargs:
+            owner_user_name = kwargs['ownerUserName']
+        if owner_user_name is None:
+            raise TypeError("Missing 'owner_user_name' argument")
+        if parameters is None:
+            raise TypeError("Missing 'parameters' argument")
+        if pool_id is None and 'poolId' in kwargs:
+            pool_id = kwargs['poolId']
+        if pool_id is None:
+            raise TypeError("Missing 'pool_id' argument")
+        if private_endpoint_dns_zones is None and 'privateEndpointDnsZones' in kwargs:
+            private_endpoint_dns_zones = kwargs['privateEndpointDnsZones']
+        if private_endpoint_dns_zones is None:
+            raise TypeError("Missing 'private_endpoint_dns_zones' argument")
+        if private_endpoint_id is None and 'privateEndpointId' in kwargs:
+            private_endpoint_id = kwargs['privateEndpointId']
+        if private_endpoint_id is None:
+            raise TypeError("Missing 'private_endpoint_id' argument")
+        if private_endpoint_max_host_count is None and 'privateEndpointMaxHostCount' in kwargs:
+            private_endpoint_max_host_count = kwargs['privateEndpointMaxHostCount']
+        if private_endpoint_max_host_count is None:
+            raise TypeError("Missing 'private_endpoint_max_host_count' argument")
+        if private_endpoint_nsg_ids is None and 'privateEndpointNsgIds' in kwargs:
+            private_endpoint_nsg_ids = kwargs['privateEndpointNsgIds']
+        if private_endpoint_nsg_ids is None:
+            raise TypeError("Missing 'private_endpoint_nsg_ids' argument")
+        if private_endpoint_subnet_id is None and 'privateEndpointSubnetId' in kwargs:
+            private_endpoint_subnet_id = kwargs['privateEndpointSubnetId']
+        if private_endpoint_subnet_id is None:
+            raise TypeError("Missing 'private_endpoint_subnet_id' argument")
+        if run_duration_in_milliseconds is None and 'runDurationInMilliseconds' in kwargs:
+            run_duration_in_milliseconds = kwargs['runDurationInMilliseconds']
+        if run_duration_in_milliseconds is None:
+            raise TypeError("Missing 'run_duration_in_milliseconds' argument")
+        if spark_version is None and 'sparkVersion' in kwargs:
+            spark_version = kwargs['sparkVersion']
+        if spark_version is None:
+            raise TypeError("Missing 'spark_version' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if total_ocpu is None and 'totalOcpu' in kwargs:
+            total_ocpu = kwargs['totalOcpu']
+        if total_ocpu is None:
+            raise TypeError("Missing 'total_ocpu' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if warehouse_bucket_uri is None and 'warehouseBucketUri' in kwargs:
+            warehouse_bucket_uri = kwargs['warehouseBucketUri']
+        if warehouse_bucket_uri is None:
+            raise TypeError("Missing 'warehouse_bucket_uri' argument")
+
+        _setter("application_id", application_id)
+        _setter("application_log_configs", application_log_configs)
+        _setter("archive_uri", archive_uri)
+        _setter("arguments", arguments)
+        _setter("asynchronous", asynchronous)
+        _setter("class_name", class_name)
+        _setter("compartment_id", compartment_id)
+        _setter("configuration", configuration)
+        _setter("data_read_in_bytes", data_read_in_bytes)
+        _setter("data_written_in_bytes", data_written_in_bytes)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("driver_shape", driver_shape)
+        _setter("driver_shape_configs", driver_shape_configs)
+        _setter("execute", execute)
+        _setter("executor_shape", executor_shape)
+        _setter("executor_shape_configs", executor_shape_configs)
+        _setter("file_uri", file_uri)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("idle_timeout_in_minutes", idle_timeout_in_minutes)
+        _setter("language", language)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("logs_bucket_uri", logs_bucket_uri)
+        _setter("max_duration_in_minutes", max_duration_in_minutes)
+        _setter("metastore_id", metastore_id)
+        _setter("num_executors", num_executors)
+        _setter("opc_request_id", opc_request_id)
+        _setter("owner_principal_id", owner_principal_id)
+        _setter("owner_user_name", owner_user_name)
+        _setter("parameters", parameters)
+        _setter("pool_id", pool_id)
+        _setter("private_endpoint_dns_zones", private_endpoint_dns_zones)
+        _setter("private_endpoint_id", private_endpoint_id)
+        _setter("private_endpoint_max_host_count", private_endpoint_max_host_count)
+        _setter("private_endpoint_nsg_ids", private_endpoint_nsg_ids)
+        _setter("private_endpoint_subnet_id", private_endpoint_subnet_id)
+        _setter("run_duration_in_milliseconds", run_duration_in_milliseconds)
+        _setter("spark_version", spark_version)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("total_ocpu", total_ocpu)
+        _setter("type", type)
+        _setter("warehouse_bucket_uri", warehouse_bucket_uri)
 
     @property
     @pulumi.getter(name="applicationId")
@@ -2504,8 +3604,29 @@ class GetInvokeRunsRunApplicationLogConfigResult(dict):
         :param str log_group_id: The log group id for where log objects will be for Data Flow Runs.
         :param str log_id: The log id of the log object the Application Logs of Data Flow Run will be shipped to.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetInvokeRunsRunApplicationLogConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if log_group_id is None and 'logGroupId' in kwargs:
+            log_group_id = kwargs['logGroupId']
+        if log_group_id is None:
+            raise TypeError("Missing 'log_group_id' argument")
+        if log_id is None and 'logId' in kwargs:
+            log_id = kwargs['logId']
+        if log_id is None:
+            raise TypeError("Missing 'log_id' argument")
+
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -2533,8 +3654,27 @@ class GetInvokeRunsRunDriverShapeConfigResult(dict):
         :param float memory_in_gbs: The amount of memory used for the driver or executors.
         :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetInvokeRunsRunDriverShapeConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -2562,8 +3702,27 @@ class GetInvokeRunsRunExecutorShapeConfigResult(dict):
         :param float memory_in_gbs: The amount of memory used for the driver or executors.
         :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetInvokeRunsRunExecutorShapeConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -2591,8 +3750,25 @@ class GetInvokeRunsRunParameterResult(dict):
         :param str name: The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
         :param str value: The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetInvokeRunsRunParameterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -2624,10 +3800,37 @@ class GetPoolConfigurationResult(dict):
         :param str shape: The compute shape of the resources you would like to provision.
         :param Sequence['GetPoolConfigurationShapeConfigArgs'] shape_configs: This is used to configure the shape of the driver or executor if a flexible shape is used.
         """
-        pulumi.set(__self__, "max", max)
-        pulumi.set(__self__, "min", min)
-        pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "shape_configs", shape_configs)
+        GetPoolConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            max=max,
+            min=min,
+            shape=shape,
+            shape_configs=shape_configs,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             max: Optional[int] = None,
+             min: Optional[int] = None,
+             shape: Optional[str] = None,
+             shape_configs: Optional[Sequence['outputs.GetPoolConfigurationShapeConfigResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if max is None:
+            raise TypeError("Missing 'max' argument")
+        if min is None:
+            raise TypeError("Missing 'min' argument")
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if shape_configs is None and 'shapeConfigs' in kwargs:
+            shape_configs = kwargs['shapeConfigs']
+        if shape_configs is None:
+            raise TypeError("Missing 'shape_configs' argument")
+
+        _setter("max", max)
+        _setter("min", min)
+        _setter("shape", shape)
+        _setter("shape_configs", shape_configs)
 
     @property
     @pulumi.getter
@@ -2671,8 +3874,27 @@ class GetPoolConfigurationShapeConfigResult(dict):
         :param float memory_in_gbs: The amount of memory used for the driver or executors.
         :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetPoolConfigurationShapeConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -2708,12 +3930,57 @@ class GetPoolPoolMetricResult(dict):
         :param str time_last_stopped: The last time this pool was stopped.
         :param str time_last_used: The last time a run used this pool.
         """
-        pulumi.set(__self__, "active_runs_count", active_runs_count)
-        pulumi.set(__self__, "actively_used_node_counts", actively_used_node_counts)
-        pulumi.set(__self__, "time_last_metrics_updated", time_last_metrics_updated)
-        pulumi.set(__self__, "time_last_started", time_last_started)
-        pulumi.set(__self__, "time_last_stopped", time_last_stopped)
-        pulumi.set(__self__, "time_last_used", time_last_used)
+        GetPoolPoolMetricResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            active_runs_count=active_runs_count,
+            actively_used_node_counts=actively_used_node_counts,
+            time_last_metrics_updated=time_last_metrics_updated,
+            time_last_started=time_last_started,
+            time_last_stopped=time_last_stopped,
+            time_last_used=time_last_used,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             active_runs_count: Optional[str] = None,
+             actively_used_node_counts: Optional[Sequence['outputs.GetPoolPoolMetricActivelyUsedNodeCountResult']] = None,
+             time_last_metrics_updated: Optional[str] = None,
+             time_last_started: Optional[str] = None,
+             time_last_stopped: Optional[str] = None,
+             time_last_used: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if active_runs_count is None and 'activeRunsCount' in kwargs:
+            active_runs_count = kwargs['activeRunsCount']
+        if active_runs_count is None:
+            raise TypeError("Missing 'active_runs_count' argument")
+        if actively_used_node_counts is None and 'activelyUsedNodeCounts' in kwargs:
+            actively_used_node_counts = kwargs['activelyUsedNodeCounts']
+        if actively_used_node_counts is None:
+            raise TypeError("Missing 'actively_used_node_counts' argument")
+        if time_last_metrics_updated is None and 'timeLastMetricsUpdated' in kwargs:
+            time_last_metrics_updated = kwargs['timeLastMetricsUpdated']
+        if time_last_metrics_updated is None:
+            raise TypeError("Missing 'time_last_metrics_updated' argument")
+        if time_last_started is None and 'timeLastStarted' in kwargs:
+            time_last_started = kwargs['timeLastStarted']
+        if time_last_started is None:
+            raise TypeError("Missing 'time_last_started' argument")
+        if time_last_stopped is None and 'timeLastStopped' in kwargs:
+            time_last_stopped = kwargs['timeLastStopped']
+        if time_last_stopped is None:
+            raise TypeError("Missing 'time_last_stopped' argument")
+        if time_last_used is None and 'timeLastUsed' in kwargs:
+            time_last_used = kwargs['timeLastUsed']
+        if time_last_used is None:
+            raise TypeError("Missing 'time_last_used' argument")
+
+        _setter("active_runs_count", active_runs_count)
+        _setter("actively_used_node_counts", actively_used_node_counts)
+        _setter("time_last_metrics_updated", time_last_metrics_updated)
+        _setter("time_last_started", time_last_started)
+        _setter("time_last_stopped", time_last_stopped)
+        _setter("time_last_used", time_last_used)
 
     @property
     @pulumi.getter(name="activeRunsCount")
@@ -2773,8 +4040,29 @@ class GetPoolPoolMetricActivelyUsedNodeCountResult(dict):
         :param str logical_shape: The compute shape of the nodes that the count is for.
         :param int pool_count: The node count of this compute shape.
         """
-        pulumi.set(__self__, "logical_shape", logical_shape)
-        pulumi.set(__self__, "pool_count", pool_count)
+        GetPoolPoolMetricActivelyUsedNodeCountResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            logical_shape=logical_shape,
+            pool_count=pool_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             logical_shape: Optional[str] = None,
+             pool_count: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if logical_shape is None and 'logicalShape' in kwargs:
+            logical_shape = kwargs['logicalShape']
+        if logical_shape is None:
+            raise TypeError("Missing 'logical_shape' argument")
+        if pool_count is None and 'poolCount' in kwargs:
+            pool_count = kwargs['poolCount']
+        if pool_count is None:
+            raise TypeError("Missing 'pool_count' argument")
+
+        _setter("logical_shape", logical_shape)
+        _setter("pool_count", pool_count)
 
     @property
     @pulumi.getter(name="logicalShape")
@@ -2804,9 +4092,36 @@ class GetPoolScheduleResult(dict):
         :param int start_time: Hour of the day to start or stop pool.
         :param int stop_time: Hour of the day to stop the pool.
         """
-        pulumi.set(__self__, "day_of_week", day_of_week)
-        pulumi.set(__self__, "start_time", start_time)
-        pulumi.set(__self__, "stop_time", stop_time)
+        GetPoolScheduleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            day_of_week=day_of_week,
+            start_time=start_time,
+            stop_time=stop_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             day_of_week: Optional[str] = None,
+             start_time: Optional[int] = None,
+             stop_time: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if day_of_week is None and 'dayOfWeek' in kwargs:
+            day_of_week = kwargs['dayOfWeek']
+        if day_of_week is None:
+            raise TypeError("Missing 'day_of_week' argument")
+        if start_time is None and 'startTime' in kwargs:
+            start_time = kwargs['startTime']
+        if start_time is None:
+            raise TypeError("Missing 'start_time' argument")
+        if stop_time is None and 'stopTime' in kwargs:
+            stop_time = kwargs['stopTime']
+        if stop_time is None:
+            raise TypeError("Missing 'stop_time' argument")
+
+        _setter("day_of_week", day_of_week)
+        _setter("start_time", start_time)
+        _setter("stop_time", stop_time)
 
     @property
     @pulumi.getter(name="dayOfWeek")
@@ -2839,10 +4154,29 @@ class GetPoolsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetPoolsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2864,7 +4198,20 @@ class GetPoolsFilterResult(dict):
 class GetPoolsPoolCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetPoolsPoolCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetPoolsPoolCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetPoolsPoolCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2909,22 +4256,117 @@ class GetPoolsPoolCollectionItemResult(dict):
         :param str time_created: The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         :param str time_updated: The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "configurations", configurations)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "idle_timeout_in_minutes", idle_timeout_in_minutes)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "owner_principal_id", owner_principal_id)
-        pulumi.set(__self__, "owner_user_name", owner_user_name)
-        pulumi.set(__self__, "pool_metrics", pool_metrics)
-        pulumi.set(__self__, "schedules", schedules)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetPoolsPoolCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            configurations=configurations,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            idle_timeout_in_minutes=idle_timeout_in_minutes,
+            lifecycle_details=lifecycle_details,
+            owner_principal_id=owner_principal_id,
+            owner_user_name=owner_user_name,
+            pool_metrics=pool_metrics,
+            schedules=schedules,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             configurations: Optional[Sequence['outputs.GetPoolsPoolCollectionItemConfigurationResult']] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             idle_timeout_in_minutes: Optional[int] = None,
+             lifecycle_details: Optional[str] = None,
+             owner_principal_id: Optional[str] = None,
+             owner_user_name: Optional[str] = None,
+             pool_metrics: Optional[Sequence['outputs.GetPoolsPoolCollectionItemPoolMetricResult']] = None,
+             schedules: Optional[Sequence['outputs.GetPoolsPoolCollectionItemScheduleResult']] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if configurations is None:
+            raise TypeError("Missing 'configurations' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if idle_timeout_in_minutes is None and 'idleTimeoutInMinutes' in kwargs:
+            idle_timeout_in_minutes = kwargs['idleTimeoutInMinutes']
+        if idle_timeout_in_minutes is None:
+            raise TypeError("Missing 'idle_timeout_in_minutes' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if owner_principal_id is None and 'ownerPrincipalId' in kwargs:
+            owner_principal_id = kwargs['ownerPrincipalId']
+        if owner_principal_id is None:
+            raise TypeError("Missing 'owner_principal_id' argument")
+        if owner_user_name is None and 'ownerUserName' in kwargs:
+            owner_user_name = kwargs['ownerUserName']
+        if owner_user_name is None:
+            raise TypeError("Missing 'owner_user_name' argument")
+        if pool_metrics is None and 'poolMetrics' in kwargs:
+            pool_metrics = kwargs['poolMetrics']
+        if pool_metrics is None:
+            raise TypeError("Missing 'pool_metrics' argument")
+        if schedules is None:
+            raise TypeError("Missing 'schedules' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("configurations", configurations)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("idle_timeout_in_minutes", idle_timeout_in_minutes)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("owner_principal_id", owner_principal_id)
+        _setter("owner_user_name", owner_user_name)
+        _setter("pool_metrics", pool_metrics)
+        _setter("schedules", schedules)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -3068,10 +4510,37 @@ class GetPoolsPoolCollectionItemConfigurationResult(dict):
         :param str shape: The compute shape of the resources you would like to provision.
         :param Sequence['GetPoolsPoolCollectionItemConfigurationShapeConfigArgs'] shape_configs: This is used to configure the shape of the driver or executor if a flexible shape is used.
         """
-        pulumi.set(__self__, "max", max)
-        pulumi.set(__self__, "min", min)
-        pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "shape_configs", shape_configs)
+        GetPoolsPoolCollectionItemConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            max=max,
+            min=min,
+            shape=shape,
+            shape_configs=shape_configs,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             max: Optional[int] = None,
+             min: Optional[int] = None,
+             shape: Optional[str] = None,
+             shape_configs: Optional[Sequence['outputs.GetPoolsPoolCollectionItemConfigurationShapeConfigResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if max is None:
+            raise TypeError("Missing 'max' argument")
+        if min is None:
+            raise TypeError("Missing 'min' argument")
+        if shape is None:
+            raise TypeError("Missing 'shape' argument")
+        if shape_configs is None and 'shapeConfigs' in kwargs:
+            shape_configs = kwargs['shapeConfigs']
+        if shape_configs is None:
+            raise TypeError("Missing 'shape_configs' argument")
+
+        _setter("max", max)
+        _setter("min", min)
+        _setter("shape", shape)
+        _setter("shape_configs", shape_configs)
 
     @property
     @pulumi.getter
@@ -3115,8 +4584,27 @@ class GetPoolsPoolCollectionItemConfigurationShapeConfigResult(dict):
         :param float memory_in_gbs: The amount of memory used for the driver or executors.
         :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetPoolsPoolCollectionItemConfigurationShapeConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -3152,12 +4640,57 @@ class GetPoolsPoolCollectionItemPoolMetricResult(dict):
         :param str time_last_stopped: The last time this pool was stopped.
         :param str time_last_used: The last time a run used this pool.
         """
-        pulumi.set(__self__, "active_runs_count", active_runs_count)
-        pulumi.set(__self__, "actively_used_node_counts", actively_used_node_counts)
-        pulumi.set(__self__, "time_last_metrics_updated", time_last_metrics_updated)
-        pulumi.set(__self__, "time_last_started", time_last_started)
-        pulumi.set(__self__, "time_last_stopped", time_last_stopped)
-        pulumi.set(__self__, "time_last_used", time_last_used)
+        GetPoolsPoolCollectionItemPoolMetricResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            active_runs_count=active_runs_count,
+            actively_used_node_counts=actively_used_node_counts,
+            time_last_metrics_updated=time_last_metrics_updated,
+            time_last_started=time_last_started,
+            time_last_stopped=time_last_stopped,
+            time_last_used=time_last_used,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             active_runs_count: Optional[str] = None,
+             actively_used_node_counts: Optional[Sequence['outputs.GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountResult']] = None,
+             time_last_metrics_updated: Optional[str] = None,
+             time_last_started: Optional[str] = None,
+             time_last_stopped: Optional[str] = None,
+             time_last_used: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if active_runs_count is None and 'activeRunsCount' in kwargs:
+            active_runs_count = kwargs['activeRunsCount']
+        if active_runs_count is None:
+            raise TypeError("Missing 'active_runs_count' argument")
+        if actively_used_node_counts is None and 'activelyUsedNodeCounts' in kwargs:
+            actively_used_node_counts = kwargs['activelyUsedNodeCounts']
+        if actively_used_node_counts is None:
+            raise TypeError("Missing 'actively_used_node_counts' argument")
+        if time_last_metrics_updated is None and 'timeLastMetricsUpdated' in kwargs:
+            time_last_metrics_updated = kwargs['timeLastMetricsUpdated']
+        if time_last_metrics_updated is None:
+            raise TypeError("Missing 'time_last_metrics_updated' argument")
+        if time_last_started is None and 'timeLastStarted' in kwargs:
+            time_last_started = kwargs['timeLastStarted']
+        if time_last_started is None:
+            raise TypeError("Missing 'time_last_started' argument")
+        if time_last_stopped is None and 'timeLastStopped' in kwargs:
+            time_last_stopped = kwargs['timeLastStopped']
+        if time_last_stopped is None:
+            raise TypeError("Missing 'time_last_stopped' argument")
+        if time_last_used is None and 'timeLastUsed' in kwargs:
+            time_last_used = kwargs['timeLastUsed']
+        if time_last_used is None:
+            raise TypeError("Missing 'time_last_used' argument")
+
+        _setter("active_runs_count", active_runs_count)
+        _setter("actively_used_node_counts", actively_used_node_counts)
+        _setter("time_last_metrics_updated", time_last_metrics_updated)
+        _setter("time_last_started", time_last_started)
+        _setter("time_last_stopped", time_last_stopped)
+        _setter("time_last_used", time_last_used)
 
     @property
     @pulumi.getter(name="activeRunsCount")
@@ -3217,8 +4750,29 @@ class GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountResult(dict):
         :param str logical_shape: The compute shape of the nodes that the count is for.
         :param int pool_count: The node count of this compute shape.
         """
-        pulumi.set(__self__, "logical_shape", logical_shape)
-        pulumi.set(__self__, "pool_count", pool_count)
+        GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            logical_shape=logical_shape,
+            pool_count=pool_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             logical_shape: Optional[str] = None,
+             pool_count: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if logical_shape is None and 'logicalShape' in kwargs:
+            logical_shape = kwargs['logicalShape']
+        if logical_shape is None:
+            raise TypeError("Missing 'logical_shape' argument")
+        if pool_count is None and 'poolCount' in kwargs:
+            pool_count = kwargs['poolCount']
+        if pool_count is None:
+            raise TypeError("Missing 'pool_count' argument")
+
+        _setter("logical_shape", logical_shape)
+        _setter("pool_count", pool_count)
 
     @property
     @pulumi.getter(name="logicalShape")
@@ -3248,9 +4802,36 @@ class GetPoolsPoolCollectionItemScheduleResult(dict):
         :param int start_time: Hour of the day to start or stop pool.
         :param int stop_time: Hour of the day to stop the pool.
         """
-        pulumi.set(__self__, "day_of_week", day_of_week)
-        pulumi.set(__self__, "start_time", start_time)
-        pulumi.set(__self__, "stop_time", stop_time)
+        GetPoolsPoolCollectionItemScheduleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            day_of_week=day_of_week,
+            start_time=start_time,
+            stop_time=stop_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             day_of_week: Optional[str] = None,
+             start_time: Optional[int] = None,
+             stop_time: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if day_of_week is None and 'dayOfWeek' in kwargs:
+            day_of_week = kwargs['dayOfWeek']
+        if day_of_week is None:
+            raise TypeError("Missing 'day_of_week' argument")
+        if start_time is None and 'startTime' in kwargs:
+            start_time = kwargs['startTime']
+        if start_time is None:
+            raise TypeError("Missing 'start_time' argument")
+        if stop_time is None and 'stopTime' in kwargs:
+            stop_time = kwargs['stopTime']
+        if stop_time is None:
+            raise TypeError("Missing 'stop_time' argument")
+
+        _setter("day_of_week", day_of_week)
+        _setter("start_time", start_time)
+        _setter("stop_time", stop_time)
 
     @property
     @pulumi.getter(name="dayOfWeek")
@@ -3286,8 +4867,25 @@ class GetPrivateEndpointScanDetailResult(dict):
         :param str fqdn: A fully-qualified domain name (FQDN).
         :param str port: The port number of the FQDN
         """
-        pulumi.set(__self__, "fqdn", fqdn)
-        pulumi.set(__self__, "port", port)
+        GetPrivateEndpointScanDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            fqdn=fqdn,
+            port=port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             fqdn: Optional[str] = None,
+             port: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if fqdn is None:
+            raise TypeError("Missing 'fqdn' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+
+        _setter("fqdn", fqdn)
+        _setter("port", port)
 
     @property
     @pulumi.getter
@@ -3312,10 +4910,29 @@ class GetPrivateEndpointsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetPrivateEndpointsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3337,7 +4954,20 @@ class GetPrivateEndpointsFilterResult(dict):
 class GetPrivateEndpointsPrivateEndpointCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetPrivateEndpointsPrivateEndpointCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetPrivateEndpointsPrivateEndpointCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetPrivateEndpointsPrivateEndpointCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -3384,23 +5014,128 @@ class GetPrivateEndpointsPrivateEndpointCollectionItemResult(dict):
         :param str time_created: The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         :param str time_updated: The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "dns_zones", dns_zones)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "max_host_count", max_host_count)
-        pulumi.set(__self__, "nsg_ids", nsg_ids)
-        pulumi.set(__self__, "owner_principal_id", owner_principal_id)
-        pulumi.set(__self__, "owner_user_name", owner_user_name)
-        pulumi.set(__self__, "scan_details", scan_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetPrivateEndpointsPrivateEndpointCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            dns_zones=dns_zones,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            max_host_count=max_host_count,
+            nsg_ids=nsg_ids,
+            owner_principal_id=owner_principal_id,
+            owner_user_name=owner_user_name,
+            scan_details=scan_details,
+            state=state,
+            subnet_id=subnet_id,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             dns_zones: Optional[Sequence[str]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             max_host_count: Optional[int] = None,
+             nsg_ids: Optional[Sequence[str]] = None,
+             owner_principal_id: Optional[str] = None,
+             owner_user_name: Optional[str] = None,
+             scan_details: Optional[Sequence['outputs.GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailResult']] = None,
+             state: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if dns_zones is None and 'dnsZones' in kwargs:
+            dns_zones = kwargs['dnsZones']
+        if dns_zones is None:
+            raise TypeError("Missing 'dns_zones' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if max_host_count is None and 'maxHostCount' in kwargs:
+            max_host_count = kwargs['maxHostCount']
+        if max_host_count is None:
+            raise TypeError("Missing 'max_host_count' argument")
+        if nsg_ids is None and 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if nsg_ids is None:
+            raise TypeError("Missing 'nsg_ids' argument")
+        if owner_principal_id is None and 'ownerPrincipalId' in kwargs:
+            owner_principal_id = kwargs['ownerPrincipalId']
+        if owner_principal_id is None:
+            raise TypeError("Missing 'owner_principal_id' argument")
+        if owner_user_name is None and 'ownerUserName' in kwargs:
+            owner_user_name = kwargs['ownerUserName']
+        if owner_user_name is None:
+            raise TypeError("Missing 'owner_user_name' argument")
+        if scan_details is None and 'scanDetails' in kwargs:
+            scan_details = kwargs['scanDetails']
+        if scan_details is None:
+            raise TypeError("Missing 'scan_details' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("dns_zones", dns_zones)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("max_host_count", max_host_count)
+        _setter("nsg_ids", nsg_ids)
+        _setter("owner_principal_id", owner_principal_id)
+        _setter("owner_user_name", owner_user_name)
+        _setter("scan_details", scan_details)
+        _setter("state", state)
+        _setter("subnet_id", subnet_id)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -3548,8 +5283,25 @@ class GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailResult(dict):
         :param str fqdn: A fully-qualified domain name (FQDN).
         :param str port: The port number of the FQDN
         """
-        pulumi.set(__self__, "fqdn", fqdn)
-        pulumi.set(__self__, "port", port)
+        GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            fqdn=fqdn,
+            port=port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             fqdn: Optional[str] = None,
+             port: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if fqdn is None:
+            raise TypeError("Missing 'fqdn' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+
+        _setter("fqdn", fqdn)
+        _setter("port", port)
 
     @property
     @pulumi.getter
@@ -3574,10 +5326,29 @@ class GetRunLogsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetRunLogsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3607,12 +5378,51 @@ class GetRunLogsRunLogResult(dict):
         """
         :param str run_id: The unique ID for the run
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "run_id", run_id)
-        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
-        pulumi.set(__self__, "source", source)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "type", type)
+        GetRunLogsRunLogResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            run_id=run_id,
+            size_in_bytes=size_in_bytes,
+            source=source,
+            time_created=time_created,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             run_id: Optional[str] = None,
+             size_in_bytes: Optional[str] = None,
+             source: Optional[str] = None,
+             time_created: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if run_id is None and 'runId' in kwargs:
+            run_id = kwargs['runId']
+        if run_id is None:
+            raise TypeError("Missing 'run_id' argument")
+        if size_in_bytes is None and 'sizeInBytes' in kwargs:
+            size_in_bytes = kwargs['sizeInBytes']
+        if size_in_bytes is None:
+            raise TypeError("Missing 'size_in_bytes' argument")
+        if source is None:
+            raise TypeError("Missing 'source' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+
+        _setter("name", name)
+        _setter("run_id", run_id)
+        _setter("size_in_bytes", size_in_bytes)
+        _setter("source", source)
+        _setter("time_created", time_created)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -3663,11 +5473,44 @@ class GetRunStatementOutputResult(dict):
         :param str status: Status of the statement output.
         :param Sequence[str] tracebacks: The traceback of the statement output.
         """
-        pulumi.set(__self__, "datas", datas)
-        pulumi.set(__self__, "error_name", error_name)
-        pulumi.set(__self__, "error_value", error_value)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "tracebacks", tracebacks)
+        GetRunStatementOutputResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            datas=datas,
+            error_name=error_name,
+            error_value=error_value,
+            status=status,
+            tracebacks=tracebacks,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             datas: Optional[Sequence['outputs.GetRunStatementOutputDataResult']] = None,
+             error_name: Optional[str] = None,
+             error_value: Optional[str] = None,
+             status: Optional[str] = None,
+             tracebacks: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if datas is None:
+            raise TypeError("Missing 'datas' argument")
+        if error_name is None and 'errorName' in kwargs:
+            error_name = kwargs['errorName']
+        if error_name is None:
+            raise TypeError("Missing 'error_name' argument")
+        if error_value is None and 'errorValue' in kwargs:
+            error_value = kwargs['errorValue']
+        if error_value is None:
+            raise TypeError("Missing 'error_value' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if tracebacks is None:
+            raise TypeError("Missing 'tracebacks' argument")
+
+        _setter("datas", datas)
+        _setter("error_name", error_name)
+        _setter("error_value", error_value)
+        _setter("status", status)
+        _setter("tracebacks", tracebacks)
 
     @property
     @pulumi.getter
@@ -3719,8 +5562,25 @@ class GetRunStatementOutputDataResult(dict):
         :param str type: The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
         :param str value: The statement code execution output in html format.
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "value", value)
+        GetRunStatementOutputDataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("type", type)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -3745,10 +5605,29 @@ class GetRunStatementsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetRunStatementsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3770,7 +5649,20 @@ class GetRunStatementsFilterResult(dict):
 class GetRunStatementsStatementCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetRunStatementsStatementCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetRunStatementsStatementCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetRunStatementsStatementCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -3799,14 +5691,61 @@ class GetRunStatementsStatementCollectionItemResult(dict):
         :param str time_completed: The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
         :param str time_created: The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
-        pulumi.set(__self__, "code", code)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "outputs", outputs)
-        pulumi.set(__self__, "progress", progress)
-        pulumi.set(__self__, "run_id", run_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_completed", time_completed)
-        pulumi.set(__self__, "time_created", time_created)
+        GetRunStatementsStatementCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            code=code,
+            id=id,
+            outputs=outputs,
+            progress=progress,
+            run_id=run_id,
+            state=state,
+            time_completed=time_completed,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             code: Optional[str] = None,
+             id: Optional[str] = None,
+             outputs: Optional[Sequence['outputs.GetRunStatementsStatementCollectionItemOutputResult']] = None,
+             progress: Optional[float] = None,
+             run_id: Optional[str] = None,
+             state: Optional[str] = None,
+             time_completed: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if code is None:
+            raise TypeError("Missing 'code' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if outputs is None:
+            raise TypeError("Missing 'outputs' argument")
+        if progress is None:
+            raise TypeError("Missing 'progress' argument")
+        if run_id is None and 'runId' in kwargs:
+            run_id = kwargs['runId']
+        if run_id is None:
+            raise TypeError("Missing 'run_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_completed is None and 'timeCompleted' in kwargs:
+            time_completed = kwargs['timeCompleted']
+        if time_completed is None:
+            raise TypeError("Missing 'time_completed' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+
+        _setter("code", code)
+        _setter("id", id)
+        _setter("outputs", outputs)
+        _setter("progress", progress)
+        _setter("run_id", run_id)
+        _setter("state", state)
+        _setter("time_completed", time_completed)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter
@@ -3888,11 +5827,44 @@ class GetRunStatementsStatementCollectionItemOutputResult(dict):
         :param str status: Status of the statement output.
         :param Sequence[str] tracebacks: The traceback of the statement output.
         """
-        pulumi.set(__self__, "datas", datas)
-        pulumi.set(__self__, "error_name", error_name)
-        pulumi.set(__self__, "error_value", error_value)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "tracebacks", tracebacks)
+        GetRunStatementsStatementCollectionItemOutputResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            datas=datas,
+            error_name=error_name,
+            error_value=error_value,
+            status=status,
+            tracebacks=tracebacks,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             datas: Optional[Sequence['outputs.GetRunStatementsStatementCollectionItemOutputDataResult']] = None,
+             error_name: Optional[str] = None,
+             error_value: Optional[str] = None,
+             status: Optional[str] = None,
+             tracebacks: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if datas is None:
+            raise TypeError("Missing 'datas' argument")
+        if error_name is None and 'errorName' in kwargs:
+            error_name = kwargs['errorName']
+        if error_name is None:
+            raise TypeError("Missing 'error_name' argument")
+        if error_value is None and 'errorValue' in kwargs:
+            error_value = kwargs['errorValue']
+        if error_value is None:
+            raise TypeError("Missing 'error_value' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if tracebacks is None:
+            raise TypeError("Missing 'tracebacks' argument")
+
+        _setter("datas", datas)
+        _setter("error_name", error_name)
+        _setter("error_value", error_value)
+        _setter("status", status)
+        _setter("tracebacks", tracebacks)
 
     @property
     @pulumi.getter
@@ -3944,8 +5916,25 @@ class GetRunStatementsStatementCollectionItemOutputDataResult(dict):
         :param str type: The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
         :param str value: The statement code execution output in html format.
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "value", value)
+        GetRunStatementsStatementCollectionItemOutputDataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("type", type)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -3973,8 +5962,27 @@ class GetSqlEndpointDriverShapeConfigResult(dict):
         :param float memory_in_gbs: The amount of memory used for the driver or executors.
         :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetSqlEndpointDriverShapeConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -4002,8 +6010,27 @@ class GetSqlEndpointExecutorShapeConfigResult(dict):
         :param float memory_in_gbs: The amount of memory used for the driver or executors.
         :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetSqlEndpointExecutorShapeConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -4041,13 +6068,64 @@ class GetSqlEndpointNetworkConfigurationResult(dict):
         :param str subnet_id: The VCN Subnet OCID.
         :param str vcn_id: The VCN OCID.
         """
-        pulumi.set(__self__, "access_control_rules", access_control_rules)
-        pulumi.set(__self__, "host_name_prefix", host_name_prefix)
-        pulumi.set(__self__, "network_type", network_type)
-        pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
-        pulumi.set(__self__, "public_endpoint_ip", public_endpoint_ip)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "vcn_id", vcn_id)
+        GetSqlEndpointNetworkConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            access_control_rules=access_control_rules,
+            host_name_prefix=host_name_prefix,
+            network_type=network_type,
+            private_endpoint_ip=private_endpoint_ip,
+            public_endpoint_ip=public_endpoint_ip,
+            subnet_id=subnet_id,
+            vcn_id=vcn_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             access_control_rules: Optional[Sequence['outputs.GetSqlEndpointNetworkConfigurationAccessControlRuleResult']] = None,
+             host_name_prefix: Optional[str] = None,
+             network_type: Optional[str] = None,
+             private_endpoint_ip: Optional[str] = None,
+             public_endpoint_ip: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             vcn_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if access_control_rules is None and 'accessControlRules' in kwargs:
+            access_control_rules = kwargs['accessControlRules']
+        if access_control_rules is None:
+            raise TypeError("Missing 'access_control_rules' argument")
+        if host_name_prefix is None and 'hostNamePrefix' in kwargs:
+            host_name_prefix = kwargs['hostNamePrefix']
+        if host_name_prefix is None:
+            raise TypeError("Missing 'host_name_prefix' argument")
+        if network_type is None and 'networkType' in kwargs:
+            network_type = kwargs['networkType']
+        if network_type is None:
+            raise TypeError("Missing 'network_type' argument")
+        if private_endpoint_ip is None and 'privateEndpointIp' in kwargs:
+            private_endpoint_ip = kwargs['privateEndpointIp']
+        if private_endpoint_ip is None:
+            raise TypeError("Missing 'private_endpoint_ip' argument")
+        if public_endpoint_ip is None and 'publicEndpointIp' in kwargs:
+            public_endpoint_ip = kwargs['publicEndpointIp']
+        if public_endpoint_ip is None:
+            raise TypeError("Missing 'public_endpoint_ip' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if vcn_id is None and 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+        if vcn_id is None:
+            raise TypeError("Missing 'vcn_id' argument")
+
+        _setter("access_control_rules", access_control_rules)
+        _setter("host_name_prefix", host_name_prefix)
+        _setter("network_type", network_type)
+        _setter("private_endpoint_ip", private_endpoint_ip)
+        _setter("public_endpoint_ip", public_endpoint_ip)
+        _setter("subnet_id", subnet_id)
+        _setter("vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="accessControlRules")
@@ -4117,9 +6195,34 @@ class GetSqlEndpointNetworkConfigurationAccessControlRuleResult(dict):
         :param str value: The associated value of the selected IP notation.
         :param str vcn_ips: A comma-separated IP or CIDR address for VCN OCID IP notation selection.
         """
-        pulumi.set(__self__, "ip_notation", ip_notation)
-        pulumi.set(__self__, "value", value)
-        pulumi.set(__self__, "vcn_ips", vcn_ips)
+        GetSqlEndpointNetworkConfigurationAccessControlRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ip_notation=ip_notation,
+            value=value,
+            vcn_ips=vcn_ips,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ip_notation: Optional[str] = None,
+             value: Optional[str] = None,
+             vcn_ips: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if ip_notation is None and 'ipNotation' in kwargs:
+            ip_notation = kwargs['ipNotation']
+        if ip_notation is None:
+            raise TypeError("Missing 'ip_notation' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+        if vcn_ips is None and 'vcnIps' in kwargs:
+            vcn_ips = kwargs['vcnIps']
+        if vcn_ips is None:
+            raise TypeError("Missing 'vcn_ips' argument")
+
+        _setter("ip_notation", ip_notation)
+        _setter("value", value)
+        _setter("vcn_ips", vcn_ips)
 
     @property
     @pulumi.getter(name="ipNotation")
@@ -4152,10 +6255,29 @@ class GetSqlEndpointsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSqlEndpointsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4177,7 +6299,20 @@ class GetSqlEndpointsFilterResult(dict):
 class GetSqlEndpointsSqlEndpointCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetSqlEndpointsSqlEndpointCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if items is None:
+            raise TypeError("Missing 'items' argument")
+
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -4240,31 +6375,184 @@ class GetSqlEndpointsSqlEndpointCollectionItemResult(dict):
         :param str time_updated: The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
         :param str warehouse_bucket_uri: The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "driver_shape", driver_shape)
-        pulumi.set(__self__, "driver_shape_configs", driver_shape_configs)
-        pulumi.set(__self__, "executor_shape", executor_shape)
-        pulumi.set(__self__, "executor_shape_configs", executor_shape_configs)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "jdbc_endpoint_url", jdbc_endpoint_url)
-        pulumi.set(__self__, "lake_id", lake_id)
-        pulumi.set(__self__, "last_accepted_request_token", last_accepted_request_token)
-        pulumi.set(__self__, "max_executor_count", max_executor_count)
-        pulumi.set(__self__, "metastore_id", metastore_id)
-        pulumi.set(__self__, "min_executor_count", min_executor_count)
-        pulumi.set(__self__, "network_configurations", network_configurations)
-        pulumi.set(__self__, "spark_advanced_configurations", spark_advanced_configurations)
-        pulumi.set(__self__, "sql_endpoint_version", sql_endpoint_version)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "state_message", state_message)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "warehouse_bucket_uri", warehouse_bucket_uri)
+        GetSqlEndpointsSqlEndpointCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            driver_shape=driver_shape,
+            driver_shape_configs=driver_shape_configs,
+            executor_shape=executor_shape,
+            executor_shape_configs=executor_shape_configs,
+            freeform_tags=freeform_tags,
+            id=id,
+            jdbc_endpoint_url=jdbc_endpoint_url,
+            lake_id=lake_id,
+            last_accepted_request_token=last_accepted_request_token,
+            max_executor_count=max_executor_count,
+            metastore_id=metastore_id,
+            min_executor_count=min_executor_count,
+            network_configurations=network_configurations,
+            spark_advanced_configurations=spark_advanced_configurations,
+            sql_endpoint_version=sql_endpoint_version,
+            state=state,
+            state_message=state_message,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            warehouse_bucket_uri=warehouse_bucket_uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             driver_shape: Optional[str] = None,
+             driver_shape_configs: Optional[Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigResult']] = None,
+             executor_shape: Optional[str] = None,
+             executor_shape_configs: Optional[Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigResult']] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             jdbc_endpoint_url: Optional[str] = None,
+             lake_id: Optional[str] = None,
+             last_accepted_request_token: Optional[str] = None,
+             max_executor_count: Optional[int] = None,
+             metastore_id: Optional[str] = None,
+             min_executor_count: Optional[int] = None,
+             network_configurations: Optional[Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationResult']] = None,
+             spark_advanced_configurations: Optional[Mapping[str, Any]] = None,
+             sql_endpoint_version: Optional[str] = None,
+             state: Optional[str] = None,
+             state_message: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             warehouse_bucket_uri: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if driver_shape is None and 'driverShape' in kwargs:
+            driver_shape = kwargs['driverShape']
+        if driver_shape is None:
+            raise TypeError("Missing 'driver_shape' argument")
+        if driver_shape_configs is None and 'driverShapeConfigs' in kwargs:
+            driver_shape_configs = kwargs['driverShapeConfigs']
+        if driver_shape_configs is None:
+            raise TypeError("Missing 'driver_shape_configs' argument")
+        if executor_shape is None and 'executorShape' in kwargs:
+            executor_shape = kwargs['executorShape']
+        if executor_shape is None:
+            raise TypeError("Missing 'executor_shape' argument")
+        if executor_shape_configs is None and 'executorShapeConfigs' in kwargs:
+            executor_shape_configs = kwargs['executorShapeConfigs']
+        if executor_shape_configs is None:
+            raise TypeError("Missing 'executor_shape_configs' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if jdbc_endpoint_url is None and 'jdbcEndpointUrl' in kwargs:
+            jdbc_endpoint_url = kwargs['jdbcEndpointUrl']
+        if jdbc_endpoint_url is None:
+            raise TypeError("Missing 'jdbc_endpoint_url' argument")
+        if lake_id is None and 'lakeId' in kwargs:
+            lake_id = kwargs['lakeId']
+        if lake_id is None:
+            raise TypeError("Missing 'lake_id' argument")
+        if last_accepted_request_token is None and 'lastAcceptedRequestToken' in kwargs:
+            last_accepted_request_token = kwargs['lastAcceptedRequestToken']
+        if last_accepted_request_token is None:
+            raise TypeError("Missing 'last_accepted_request_token' argument")
+        if max_executor_count is None and 'maxExecutorCount' in kwargs:
+            max_executor_count = kwargs['maxExecutorCount']
+        if max_executor_count is None:
+            raise TypeError("Missing 'max_executor_count' argument")
+        if metastore_id is None and 'metastoreId' in kwargs:
+            metastore_id = kwargs['metastoreId']
+        if metastore_id is None:
+            raise TypeError("Missing 'metastore_id' argument")
+        if min_executor_count is None and 'minExecutorCount' in kwargs:
+            min_executor_count = kwargs['minExecutorCount']
+        if min_executor_count is None:
+            raise TypeError("Missing 'min_executor_count' argument")
+        if network_configurations is None and 'networkConfigurations' in kwargs:
+            network_configurations = kwargs['networkConfigurations']
+        if network_configurations is None:
+            raise TypeError("Missing 'network_configurations' argument")
+        if spark_advanced_configurations is None and 'sparkAdvancedConfigurations' in kwargs:
+            spark_advanced_configurations = kwargs['sparkAdvancedConfigurations']
+        if spark_advanced_configurations is None:
+            raise TypeError("Missing 'spark_advanced_configurations' argument")
+        if sql_endpoint_version is None and 'sqlEndpointVersion' in kwargs:
+            sql_endpoint_version = kwargs['sqlEndpointVersion']
+        if sql_endpoint_version is None:
+            raise TypeError("Missing 'sql_endpoint_version' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if state_message is None and 'stateMessage' in kwargs:
+            state_message = kwargs['stateMessage']
+        if state_message is None:
+            raise TypeError("Missing 'state_message' argument")
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if system_tags is None:
+            raise TypeError("Missing 'system_tags' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if warehouse_bucket_uri is None and 'warehouseBucketUri' in kwargs:
+            warehouse_bucket_uri = kwargs['warehouseBucketUri']
+        if warehouse_bucket_uri is None:
+            raise TypeError("Missing 'warehouse_bucket_uri' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("driver_shape", driver_shape)
+        _setter("driver_shape_configs", driver_shape_configs)
+        _setter("executor_shape", executor_shape)
+        _setter("executor_shape_configs", executor_shape_configs)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("jdbc_endpoint_url", jdbc_endpoint_url)
+        _setter("lake_id", lake_id)
+        _setter("last_accepted_request_token", last_accepted_request_token)
+        _setter("max_executor_count", max_executor_count)
+        _setter("metastore_id", metastore_id)
+        _setter("min_executor_count", min_executor_count)
+        _setter("network_configurations", network_configurations)
+        _setter("spark_advanced_configurations", spark_advanced_configurations)
+        _setter("sql_endpoint_version", sql_endpoint_version)
+        _setter("state", state)
+        _setter("state_message", state_message)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("warehouse_bucket_uri", warehouse_bucket_uri)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -4476,8 +6764,27 @@ class GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigResult(dict):
         :param float memory_in_gbs: The amount of memory used for the driver or executors.
         :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -4505,8 +6812,27 @@ class GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigResult(dict):
         :param float memory_in_gbs: The amount of memory used for the driver or executors.
         :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if memory_in_gbs is None and 'memoryInGbs' in kwargs:
+            memory_in_gbs = kwargs['memoryInGbs']
+        if memory_in_gbs is None:
+            raise TypeError("Missing 'memory_in_gbs' argument")
+        if ocpus is None:
+            raise TypeError("Missing 'ocpus' argument")
+
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -4544,13 +6870,64 @@ class GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationResult(dict):
         :param str subnet_id: The VCN Subnet OCID.
         :param str vcn_id: The VCN OCID.
         """
-        pulumi.set(__self__, "access_control_rules", access_control_rules)
-        pulumi.set(__self__, "host_name_prefix", host_name_prefix)
-        pulumi.set(__self__, "network_type", network_type)
-        pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
-        pulumi.set(__self__, "public_endpoint_ip", public_endpoint_ip)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "vcn_id", vcn_id)
+        GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            access_control_rules=access_control_rules,
+            host_name_prefix=host_name_prefix,
+            network_type=network_type,
+            private_endpoint_ip=private_endpoint_ip,
+            public_endpoint_ip=public_endpoint_ip,
+            subnet_id=subnet_id,
+            vcn_id=vcn_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             access_control_rules: Optional[Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleResult']] = None,
+             host_name_prefix: Optional[str] = None,
+             network_type: Optional[str] = None,
+             private_endpoint_ip: Optional[str] = None,
+             public_endpoint_ip: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             vcn_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if access_control_rules is None and 'accessControlRules' in kwargs:
+            access_control_rules = kwargs['accessControlRules']
+        if access_control_rules is None:
+            raise TypeError("Missing 'access_control_rules' argument")
+        if host_name_prefix is None and 'hostNamePrefix' in kwargs:
+            host_name_prefix = kwargs['hostNamePrefix']
+        if host_name_prefix is None:
+            raise TypeError("Missing 'host_name_prefix' argument")
+        if network_type is None and 'networkType' in kwargs:
+            network_type = kwargs['networkType']
+        if network_type is None:
+            raise TypeError("Missing 'network_type' argument")
+        if private_endpoint_ip is None and 'privateEndpointIp' in kwargs:
+            private_endpoint_ip = kwargs['privateEndpointIp']
+        if private_endpoint_ip is None:
+            raise TypeError("Missing 'private_endpoint_ip' argument")
+        if public_endpoint_ip is None and 'publicEndpointIp' in kwargs:
+            public_endpoint_ip = kwargs['publicEndpointIp']
+        if public_endpoint_ip is None:
+            raise TypeError("Missing 'public_endpoint_ip' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if vcn_id is None and 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+        if vcn_id is None:
+            raise TypeError("Missing 'vcn_id' argument")
+
+        _setter("access_control_rules", access_control_rules)
+        _setter("host_name_prefix", host_name_prefix)
+        _setter("network_type", network_type)
+        _setter("private_endpoint_ip", private_endpoint_ip)
+        _setter("public_endpoint_ip", public_endpoint_ip)
+        _setter("subnet_id", subnet_id)
+        _setter("vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="accessControlRules")
@@ -4620,9 +6997,34 @@ class GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlR
         :param str value: The associated value of the selected IP notation.
         :param str vcn_ips: A comma-separated IP or CIDR address for VCN OCID IP notation selection.
         """
-        pulumi.set(__self__, "ip_notation", ip_notation)
-        pulumi.set(__self__, "value", value)
-        pulumi.set(__self__, "vcn_ips", vcn_ips)
+        GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ip_notation=ip_notation,
+            value=value,
+            vcn_ips=vcn_ips,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ip_notation: Optional[str] = None,
+             value: Optional[str] = None,
+             vcn_ips: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if ip_notation is None and 'ipNotation' in kwargs:
+            ip_notation = kwargs['ipNotation']
+        if ip_notation is None:
+            raise TypeError("Missing 'ip_notation' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+        if vcn_ips is None and 'vcnIps' in kwargs:
+            vcn_ips = kwargs['vcnIps']
+        if vcn_ips is None:
+            raise TypeError("Missing 'vcn_ips' argument")
+
+        _setter("ip_notation", ip_notation)
+        _setter("value", value)
+        _setter("vcn_ips", vcn_ips)
 
     @property
     @pulumi.getter(name="ipNotation")

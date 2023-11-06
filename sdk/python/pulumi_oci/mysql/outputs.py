@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -161,17 +161,60 @@ class ChannelSource(dict):
         :param int port: (Updatable) The port the source MySQL instance listens on.
         :param 'ChannelSourceSslCaCertificateArgs' ssl_ca_certificate: (Updatable) The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
         """
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "source_type", source_type)
-        pulumi.set(__self__, "ssl_mode", ssl_mode)
-        pulumi.set(__self__, "username", username)
+        ChannelSource._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+            password=password,
+            source_type=source_type,
+            ssl_mode=ssl_mode,
+            username=username,
+            anonymous_transactions_handling=anonymous_transactions_handling,
+            port=port,
+            ssl_ca_certificate=ssl_ca_certificate,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: Optional[str] = None,
+             password: Optional[str] = None,
+             source_type: Optional[str] = None,
+             ssl_mode: Optional[str] = None,
+             username: Optional[str] = None,
+             anonymous_transactions_handling: Optional['outputs.ChannelSourceAnonymousTransactionsHandling'] = None,
+             port: Optional[int] = None,
+             ssl_ca_certificate: Optional['outputs.ChannelSourceSslCaCertificate'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if password is None:
+            raise TypeError("Missing 'password' argument")
+        if source_type is None and 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
+        if ssl_mode is None and 'sslMode' in kwargs:
+            ssl_mode = kwargs['sslMode']
+        if ssl_mode is None:
+            raise TypeError("Missing 'ssl_mode' argument")
+        if username is None:
+            raise TypeError("Missing 'username' argument")
+        if anonymous_transactions_handling is None and 'anonymousTransactionsHandling' in kwargs:
+            anonymous_transactions_handling = kwargs['anonymousTransactionsHandling']
+        if ssl_ca_certificate is None and 'sslCaCertificate' in kwargs:
+            ssl_ca_certificate = kwargs['sslCaCertificate']
+
+        _setter("hostname", hostname)
+        _setter("password", password)
+        _setter("source_type", source_type)
+        _setter("ssl_mode", ssl_mode)
+        _setter("username", username)
         if anonymous_transactions_handling is not None:
-            pulumi.set(__self__, "anonymous_transactions_handling", anonymous_transactions_handling)
+            _setter("anonymous_transactions_handling", anonymous_transactions_handling)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if ssl_ca_certificate is not None:
-            pulumi.set(__self__, "ssl_ca_certificate", ssl_ca_certificate)
+            _setter("ssl_ca_certificate", ssl_ca_certificate)
 
     @property
     @pulumi.getter
@@ -270,13 +313,36 @@ class ChannelSourceAnonymousTransactionsHandling(dict):
         :param str last_configured_log_offset: (Updatable) Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
         :param str uuid: (Updatable) The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
         """
-        pulumi.set(__self__, "policy", policy)
+        ChannelSourceAnonymousTransactionsHandling._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            policy=policy,
+            last_configured_log_filename=last_configured_log_filename,
+            last_configured_log_offset=last_configured_log_offset,
+            uuid=uuid,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             policy: Optional[str] = None,
+             last_configured_log_filename: Optional[str] = None,
+             last_configured_log_offset: Optional[str] = None,
+             uuid: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if policy is None:
+            raise TypeError("Missing 'policy' argument")
+        if last_configured_log_filename is None and 'lastConfiguredLogFilename' in kwargs:
+            last_configured_log_filename = kwargs['lastConfiguredLogFilename']
+        if last_configured_log_offset is None and 'lastConfiguredLogOffset' in kwargs:
+            last_configured_log_offset = kwargs['lastConfiguredLogOffset']
+
+        _setter("policy", policy)
         if last_configured_log_filename is not None:
-            pulumi.set(__self__, "last_configured_log_filename", last_configured_log_filename)
+            _setter("last_configured_log_filename", last_configured_log_filename)
         if last_configured_log_offset is not None:
-            pulumi.set(__self__, "last_configured_log_offset", last_configured_log_offset)
+            _setter("last_configured_log_offset", last_configured_log_offset)
         if uuid is not None:
-            pulumi.set(__self__, "uuid", uuid)
+            _setter("uuid", uuid)
 
     @property
     @pulumi.getter
@@ -337,8 +403,27 @@ class ChannelSourceSslCaCertificate(dict):
         :param str certificate_type: (Updatable) The type of CA certificate.
         :param str contents: (Updatable) The string containing the CA certificate in PEM format.
         """
-        pulumi.set(__self__, "certificate_type", certificate_type)
-        pulumi.set(__self__, "contents", contents)
+        ChannelSourceSslCaCertificate._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_type=certificate_type,
+            contents=contents,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_type: Optional[str] = None,
+             contents: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if certificate_type is None and 'certificateType' in kwargs:
+            certificate_type = kwargs['certificateType']
+        if certificate_type is None:
+            raise TypeError("Missing 'certificate_type' argument")
+        if contents is None:
+            raise TypeError("Missing 'contents' argument")
+
+        _setter("certificate_type", certificate_type)
+        _setter("contents", contents)
 
     @property
     @pulumi.getter(name="certificateType")
@@ -407,18 +492,57 @@ class ChannelTarget(dict):
         :param Sequence['ChannelTargetFilterArgs'] filters: (Updatable) Replication filter rules to be applied at the DB System Channel target.
         :param str tables_without_primary_key_handling: (Updatable) Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key. The default value is set to ALLOW.
         """
-        pulumi.set(__self__, "db_system_id", db_system_id)
-        pulumi.set(__self__, "target_type", target_type)
+        ChannelTarget._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            db_system_id=db_system_id,
+            target_type=target_type,
+            applier_username=applier_username,
+            channel_name=channel_name,
+            delay_in_seconds=delay_in_seconds,
+            filters=filters,
+            tables_without_primary_key_handling=tables_without_primary_key_handling,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             db_system_id: Optional[str] = None,
+             target_type: Optional[str] = None,
+             applier_username: Optional[str] = None,
+             channel_name: Optional[str] = None,
+             delay_in_seconds: Optional[int] = None,
+             filters: Optional[Sequence['outputs.ChannelTargetFilter']] = None,
+             tables_without_primary_key_handling: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if db_system_id is None and 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if db_system_id is None:
+            raise TypeError("Missing 'db_system_id' argument")
+        if target_type is None and 'targetType' in kwargs:
+            target_type = kwargs['targetType']
+        if target_type is None:
+            raise TypeError("Missing 'target_type' argument")
+        if applier_username is None and 'applierUsername' in kwargs:
+            applier_username = kwargs['applierUsername']
+        if channel_name is None and 'channelName' in kwargs:
+            channel_name = kwargs['channelName']
+        if delay_in_seconds is None and 'delayInSeconds' in kwargs:
+            delay_in_seconds = kwargs['delayInSeconds']
+        if tables_without_primary_key_handling is None and 'tablesWithoutPrimaryKeyHandling' in kwargs:
+            tables_without_primary_key_handling = kwargs['tablesWithoutPrimaryKeyHandling']
+
+        _setter("db_system_id", db_system_id)
+        _setter("target_type", target_type)
         if applier_username is not None:
-            pulumi.set(__self__, "applier_username", applier_username)
+            _setter("applier_username", applier_username)
         if channel_name is not None:
-            pulumi.set(__self__, "channel_name", channel_name)
+            _setter("channel_name", channel_name)
         if delay_in_seconds is not None:
-            pulumi.set(__self__, "delay_in_seconds", delay_in_seconds)
+            _setter("delay_in_seconds", delay_in_seconds)
         if filters is not None:
-            pulumi.set(__self__, "filters", filters)
+            _setter("filters", filters)
         if tables_without_primary_key_handling is not None:
-            pulumi.set(__self__, "tables_without_primary_key_handling", tables_without_primary_key_handling)
+            _setter("tables_without_primary_key_handling", tables_without_primary_key_handling)
 
     @property
     @pulumi.getter(name="dbSystemId")
@@ -492,8 +616,25 @@ class ChannelTargetFilter(dict):
                For details on each type, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html)
         :param str value: (Updatable) The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "value", value)
+        ChannelTargetFilter._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("type", type)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -551,14 +692,37 @@ class HeatWaveClusterClusterNode(dict):
         :param str time_created: The date and time the HeatWave cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param str time_updated: The time the HeatWave cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
+        HeatWaveClusterClusterNode._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            node_id=node_id,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             node_id: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if node_id is None and 'nodeId' in kwargs:
+            node_id = kwargs['nodeId']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if node_id is not None:
-            pulumi.set(__self__, "node_id", node_id)
+            _setter("node_id", node_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="nodeId")
@@ -706,56 +870,155 @@ class MysqlBackupDbSystemSnapshot(dict):
         :param str shape_name: The shape of the DB System instance used for backup.
         :param str subnet_id: The OCID of the subnet the DB System is associated with.
         """
+        MysqlBackupDbSystemSnapshot._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            admin_username=admin_username,
+            availability_domain=availability_domain,
+            backup_policies=backup_policies,
+            compartment_id=compartment_id,
+            configuration_id=configuration_id,
+            crash_recovery=crash_recovery,
+            data_storage_size_in_gb=data_storage_size_in_gb,
+            database_management=database_management,
+            defined_tags=defined_tags,
+            deletion_policies=deletion_policies,
+            description=description,
+            display_name=display_name,
+            endpoints=endpoints,
+            fault_domain=fault_domain,
+            freeform_tags=freeform_tags,
+            hostname_label=hostname_label,
+            id=id,
+            ip_address=ip_address,
+            is_highly_available=is_highly_available,
+            maintenances=maintenances,
+            mysql_version=mysql_version,
+            port=port,
+            port_x=port_x,
+            shape_name=shape_name,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             admin_username: Optional[str] = None,
+             availability_domain: Optional[str] = None,
+             backup_policies: Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotBackupPolicy']] = None,
+             compartment_id: Optional[str] = None,
+             configuration_id: Optional[str] = None,
+             crash_recovery: Optional[str] = None,
+             data_storage_size_in_gb: Optional[int] = None,
+             database_management: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             deletion_policies: Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotDeletionPolicy']] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             endpoints: Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotEndpoint']] = None,
+             fault_domain: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             hostname_label: Optional[str] = None,
+             id: Optional[str] = None,
+             ip_address: Optional[str] = None,
+             is_highly_available: Optional[bool] = None,
+             maintenances: Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotMaintenance']] = None,
+             mysql_version: Optional[str] = None,
+             port: Optional[int] = None,
+             port_x: Optional[int] = None,
+             shape_name: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if admin_username is None and 'adminUsername' in kwargs:
+            admin_username = kwargs['adminUsername']
+        if availability_domain is None and 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if backup_policies is None and 'backupPolicies' in kwargs:
+            backup_policies = kwargs['backupPolicies']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if configuration_id is None and 'configurationId' in kwargs:
+            configuration_id = kwargs['configurationId']
+        if crash_recovery is None and 'crashRecovery' in kwargs:
+            crash_recovery = kwargs['crashRecovery']
+        if data_storage_size_in_gb is None and 'dataStorageSizeInGb' in kwargs:
+            data_storage_size_in_gb = kwargs['dataStorageSizeInGb']
+        if database_management is None and 'databaseManagement' in kwargs:
+            database_management = kwargs['databaseManagement']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if deletion_policies is None and 'deletionPolicies' in kwargs:
+            deletion_policies = kwargs['deletionPolicies']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if fault_domain is None and 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if hostname_label is None and 'hostnameLabel' in kwargs:
+            hostname_label = kwargs['hostnameLabel']
+        if ip_address is None and 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if is_highly_available is None and 'isHighlyAvailable' in kwargs:
+            is_highly_available = kwargs['isHighlyAvailable']
+        if mysql_version is None and 'mysqlVersion' in kwargs:
+            mysql_version = kwargs['mysqlVersion']
+        if port_x is None and 'portX' in kwargs:
+            port_x = kwargs['portX']
+        if shape_name is None and 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+
         if admin_username is not None:
-            pulumi.set(__self__, "admin_username", admin_username)
+            _setter("admin_username", admin_username)
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if backup_policies is not None:
-            pulumi.set(__self__, "backup_policies", backup_policies)
+            _setter("backup_policies", backup_policies)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if configuration_id is not None:
-            pulumi.set(__self__, "configuration_id", configuration_id)
+            _setter("configuration_id", configuration_id)
         if crash_recovery is not None:
-            pulumi.set(__self__, "crash_recovery", crash_recovery)
+            _setter("crash_recovery", crash_recovery)
         if data_storage_size_in_gb is not None:
-            pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+            _setter("data_storage_size_in_gb", data_storage_size_in_gb)
         if database_management is not None:
-            pulumi.set(__self__, "database_management", database_management)
+            _setter("database_management", database_management)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if deletion_policies is not None:
-            pulumi.set(__self__, "deletion_policies", deletion_policies)
+            _setter("deletion_policies", deletion_policies)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if endpoints is not None:
-            pulumi.set(__self__, "endpoints", endpoints)
+            _setter("endpoints", endpoints)
         if fault_domain is not None:
-            pulumi.set(__self__, "fault_domain", fault_domain)
+            _setter("fault_domain", fault_domain)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if hostname_label is not None:
-            pulumi.set(__self__, "hostname_label", hostname_label)
+            _setter("hostname_label", hostname_label)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if ip_address is not None:
-            pulumi.set(__self__, "ip_address", ip_address)
+            _setter("ip_address", ip_address)
         if is_highly_available is not None:
-            pulumi.set(__self__, "is_highly_available", is_highly_available)
+            _setter("is_highly_available", is_highly_available)
         if maintenances is not None:
-            pulumi.set(__self__, "maintenances", maintenances)
+            _setter("maintenances", maintenances)
         if mysql_version is not None:
-            pulumi.set(__self__, "mysql_version", mysql_version)
+            _setter("mysql_version", mysql_version)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if port_x is not None:
-            pulumi.set(__self__, "port_x", port_x)
+            _setter("port_x", port_x)
         if shape_name is not None:
-            pulumi.set(__self__, "shape_name", shape_name)
+            _setter("shape_name", shape_name)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="adminUsername")
@@ -1006,18 +1269,51 @@ class MysqlBackupDbSystemSnapshotBackupPolicy(dict):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str window_start_time: The start time of the maintenance window.
         """
+        MysqlBackupDbSystemSnapshotBackupPolicy._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            is_enabled=is_enabled,
+            pitr_policies=pitr_policies,
+            retention_in_days=retention_in_days,
+            window_start_time=window_start_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             is_enabled: Optional[bool] = None,
+             pitr_policies: Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy']] = None,
+             retention_in_days: Optional[int] = None,
+             window_start_time: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if pitr_policies is None and 'pitrPolicies' in kwargs:
+            pitr_policies = kwargs['pitrPolicies']
+        if retention_in_days is None and 'retentionInDays' in kwargs:
+            retention_in_days = kwargs['retentionInDays']
+        if window_start_time is None and 'windowStartTime' in kwargs:
+            window_start_time = kwargs['windowStartTime']
+
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if pitr_policies is not None:
-            pulumi.set(__self__, "pitr_policies", pitr_policies)
+            _setter("pitr_policies", pitr_policies)
         if retention_in_days is not None:
-            pulumi.set(__self__, "retention_in_days", retention_in_days)
+            _setter("retention_in_days", retention_in_days)
         if window_start_time is not None:
-            pulumi.set(__self__, "window_start_time", window_start_time)
+            _setter("window_start_time", window_start_time)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -1096,8 +1392,21 @@ class MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy(dict):
         """
         :param bool is_enabled: Specifies if PITR is enabled or disabled.
         """
+        MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -1140,12 +1449,33 @@ class MysqlBackupDbSystemSnapshotDeletionPolicy(dict):
         :param str final_backup: Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
         :param bool is_delete_protected: Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
         """
+        MysqlBackupDbSystemSnapshotDeletionPolicy._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            automatic_backup_retention=automatic_backup_retention,
+            final_backup=final_backup,
+            is_delete_protected=is_delete_protected,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             automatic_backup_retention: Optional[str] = None,
+             final_backup: Optional[str] = None,
+             is_delete_protected: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if automatic_backup_retention is None and 'automaticBackupRetention' in kwargs:
+            automatic_backup_retention = kwargs['automaticBackupRetention']
+        if final_backup is None and 'finalBackup' in kwargs:
+            final_backup = kwargs['finalBackup']
+        if is_delete_protected is None and 'isDeleteProtected' in kwargs:
+            is_delete_protected = kwargs['isDeleteProtected']
+
         if automatic_backup_retention is not None:
-            pulumi.set(__self__, "automatic_backup_retention", automatic_backup_retention)
+            _setter("automatic_backup_retention", automatic_backup_retention)
         if final_backup is not None:
-            pulumi.set(__self__, "final_backup", final_backup)
+            _setter("final_backup", final_backup)
         if is_delete_protected is not None:
-            pulumi.set(__self__, "is_delete_protected", is_delete_protected)
+            _setter("is_delete_protected", is_delete_protected)
 
     @property
     @pulumi.getter(name="automaticBackupRetention")
@@ -1220,24 +1550,61 @@ class MysqlBackupDbSystemSnapshotEndpoint(dict):
         :param str status: The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
         :param str status_details: Additional information about the current endpoint status.
         """
+        MysqlBackupDbSystemSnapshotEndpoint._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+            ip_address=ip_address,
+            modes=modes,
+            port=port,
+            port_x=port_x,
+            resource_id=resource_id,
+            resource_type=resource_type,
+            status=status,
+            status_details=status_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: Optional[str] = None,
+             ip_address: Optional[str] = None,
+             modes: Optional[Sequence[str]] = None,
+             port: Optional[int] = None,
+             port_x: Optional[int] = None,
+             resource_id: Optional[str] = None,
+             resource_type: Optional[str] = None,
+             status: Optional[str] = None,
+             status_details: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if ip_address is None and 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if port_x is None and 'portX' in kwargs:
+            port_x = kwargs['portX']
+        if resource_id is None and 'resourceId' in kwargs:
+            resource_id = kwargs['resourceId']
+        if resource_type is None and 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if status_details is None and 'statusDetails' in kwargs:
+            status_details = kwargs['statusDetails']
+
         if hostname is not None:
-            pulumi.set(__self__, "hostname", hostname)
+            _setter("hostname", hostname)
         if ip_address is not None:
-            pulumi.set(__self__, "ip_address", ip_address)
+            _setter("ip_address", ip_address)
         if modes is not None:
-            pulumi.set(__self__, "modes", modes)
+            _setter("modes", modes)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if port_x is not None:
-            pulumi.set(__self__, "port_x", port_x)
+            _setter("port_x", port_x)
         if resource_id is not None:
-            pulumi.set(__self__, "resource_id", resource_id)
+            _setter("resource_id", resource_id)
         if resource_type is not None:
-            pulumi.set(__self__, "resource_type", resource_type)
+            _setter("resource_type", resource_type)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if status_details is not None:
-            pulumi.set(__self__, "status_details", status_details)
+            _setter("status_details", status_details)
 
     @property
     @pulumi.getter
@@ -1336,8 +1703,21 @@ class MysqlBackupDbSystemSnapshotMaintenance(dict):
         """
         :param str window_start_time: The start time of the maintenance window.
         """
+        MysqlBackupDbSystemSnapshotMaintenance._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            window_start_time=window_start_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             window_start_time: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if window_start_time is None and 'windowStartTime' in kwargs:
+            window_start_time = kwargs['windowStartTime']
+
         if window_start_time is not None:
-            pulumi.set(__self__, "window_start_time", window_start_time)
+            _setter("window_start_time", window_start_time)
 
     @property
     @pulumi.getter(name="windowStartTime")
@@ -1378,8 +1758,21 @@ class MysqlConfigurationInitVariables(dict):
                * CASE_SENSITIVE - (default) Table and schema name comparisons are case-sensitive and stored as specified. (lower_case_table_names=0)
                * CASE_INSENSITIVE_LOWERCASE - Table and schema name comparisons are not case-sensitive and stored in lowercase. (lower_case_table_names=1)
         """
+        MysqlConfigurationInitVariables._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            lower_case_table_names=lower_case_table_names,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             lower_case_table_names: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if lower_case_table_names is None and 'lowerCaseTableNames' in kwargs:
+            lower_case_table_names = kwargs['lowerCaseTableNames']
+
         if lower_case_table_names is not None:
-            pulumi.set(__self__, "lower_case_table_names", lower_case_table_names)
+            _setter("lower_case_table_names", lower_case_table_names)
 
     @property
     @pulumi.getter(name="lowerCaseTableNames")
@@ -1822,164 +2215,487 @@ class MysqlConfigurationVariables(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        MysqlConfigurationVariables._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            autocommit=autocommit,
+            big_tables=big_tables,
+            binlog_expire_logs_seconds=binlog_expire_logs_seconds,
+            binlog_row_metadata=binlog_row_metadata,
+            binlog_row_value_options=binlog_row_value_options,
+            binlog_transaction_compression=binlog_transaction_compression,
+            completion_type=completion_type,
+            connect_timeout=connect_timeout,
+            connection_memory_chunk_size=connection_memory_chunk_size,
+            connection_memory_limit=connection_memory_limit,
+            cte_max_recursion_depth=cte_max_recursion_depth,
+            default_authentication_plugin=default_authentication_plugin,
+            foreign_key_checks=foreign_key_checks,
+            generated_random_password_length=generated_random_password_length,
+            global_connection_memory_limit=global_connection_memory_limit,
+            global_connection_memory_tracking=global_connection_memory_tracking,
+            group_replication_consistency=group_replication_consistency,
+            information_schema_stats_expiry=information_schema_stats_expiry,
+            innodb_buffer_pool_dump_pct=innodb_buffer_pool_dump_pct,
+            innodb_buffer_pool_instances=innodb_buffer_pool_instances,
+            innodb_buffer_pool_size=innodb_buffer_pool_size,
+            innodb_ddl_buffer_size=innodb_ddl_buffer_size,
+            innodb_ddl_threads=innodb_ddl_threads,
+            innodb_ft_enable_stopword=innodb_ft_enable_stopword,
+            innodb_ft_max_token_size=innodb_ft_max_token_size,
+            innodb_ft_min_token_size=innodb_ft_min_token_size,
+            innodb_ft_num_word_optimize=innodb_ft_num_word_optimize,
+            innodb_ft_result_cache_limit=innodb_ft_result_cache_limit,
+            innodb_ft_server_stopword_table=innodb_ft_server_stopword_table,
+            innodb_lock_wait_timeout=innodb_lock_wait_timeout,
+            innodb_log_writer_threads=innodb_log_writer_threads,
+            innodb_max_purge_lag=innodb_max_purge_lag,
+            innodb_max_purge_lag_delay=innodb_max_purge_lag_delay,
+            innodb_stats_persistent_sample_pages=innodb_stats_persistent_sample_pages,
+            innodb_stats_transient_sample_pages=innodb_stats_transient_sample_pages,
+            interactive_timeout=interactive_timeout,
+            local_infile=local_infile,
+            mandatory_roles=mandatory_roles,
+            max_allowed_packet=max_allowed_packet,
+            max_binlog_cache_size=max_binlog_cache_size,
+            max_connect_errors=max_connect_errors,
+            max_connections=max_connections,
+            max_execution_time=max_execution_time,
+            max_heap_table_size=max_heap_table_size,
+            max_prepared_stmt_count=max_prepared_stmt_count,
+            mysql_firewall_mode=mysql_firewall_mode,
+            mysql_zstd_default_compression_level=mysql_zstd_default_compression_level,
+            mysqlx_connect_timeout=mysqlx_connect_timeout,
+            mysqlx_deflate_default_compression_level=mysqlx_deflate_default_compression_level,
+            mysqlx_deflate_max_client_compression_level=mysqlx_deflate_max_client_compression_level,
+            mysqlx_document_id_unique_prefix=mysqlx_document_id_unique_prefix,
+            mysqlx_enable_hello_notice=mysqlx_enable_hello_notice,
+            mysqlx_idle_worker_thread_timeout=mysqlx_idle_worker_thread_timeout,
+            mysqlx_interactive_timeout=mysqlx_interactive_timeout,
+            mysqlx_lz4default_compression_level=mysqlx_lz4default_compression_level,
+            mysqlx_lz4max_client_compression_level=mysqlx_lz4max_client_compression_level,
+            mysqlx_max_allowed_packet=mysqlx_max_allowed_packet,
+            mysqlx_min_worker_threads=mysqlx_min_worker_threads,
+            mysqlx_read_timeout=mysqlx_read_timeout,
+            mysqlx_wait_timeout=mysqlx_wait_timeout,
+            mysqlx_write_timeout=mysqlx_write_timeout,
+            mysqlx_zstd_default_compression_level=mysqlx_zstd_default_compression_level,
+            mysqlx_zstd_max_client_compression_level=mysqlx_zstd_max_client_compression_level,
+            net_read_timeout=net_read_timeout,
+            net_write_timeout=net_write_timeout,
+            parser_max_mem_size=parser_max_mem_size,
+            query_alloc_block_size=query_alloc_block_size,
+            query_prealloc_size=query_prealloc_size,
+            regexp_time_limit=regexp_time_limit,
+            sort_buffer_size=sort_buffer_size,
+            sql_mode=sql_mode,
+            sql_require_primary_key=sql_require_primary_key,
+            sql_warnings=sql_warnings,
+            thread_pool_dedicated_listeners=thread_pool_dedicated_listeners,
+            thread_pool_max_transactions_limit=thread_pool_max_transactions_limit,
+            time_zone=time_zone,
+            tmp_table_size=tmp_table_size,
+            transaction_isolation=transaction_isolation,
+            wait_timeout=wait_timeout,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             autocommit: Optional[bool] = None,
+             big_tables: Optional[bool] = None,
+             binlog_expire_logs_seconds: Optional[int] = None,
+             binlog_row_metadata: Optional[str] = None,
+             binlog_row_value_options: Optional[str] = None,
+             binlog_transaction_compression: Optional[bool] = None,
+             completion_type: Optional[str] = None,
+             connect_timeout: Optional[int] = None,
+             connection_memory_chunk_size: Optional[int] = None,
+             connection_memory_limit: Optional[str] = None,
+             cte_max_recursion_depth: Optional[str] = None,
+             default_authentication_plugin: Optional[str] = None,
+             foreign_key_checks: Optional[bool] = None,
+             generated_random_password_length: Optional[int] = None,
+             global_connection_memory_limit: Optional[str] = None,
+             global_connection_memory_tracking: Optional[bool] = None,
+             group_replication_consistency: Optional[str] = None,
+             information_schema_stats_expiry: Optional[int] = None,
+             innodb_buffer_pool_dump_pct: Optional[int] = None,
+             innodb_buffer_pool_instances: Optional[int] = None,
+             innodb_buffer_pool_size: Optional[str] = None,
+             innodb_ddl_buffer_size: Optional[str] = None,
+             innodb_ddl_threads: Optional[int] = None,
+             innodb_ft_enable_stopword: Optional[bool] = None,
+             innodb_ft_max_token_size: Optional[int] = None,
+             innodb_ft_min_token_size: Optional[int] = None,
+             innodb_ft_num_word_optimize: Optional[int] = None,
+             innodb_ft_result_cache_limit: Optional[str] = None,
+             innodb_ft_server_stopword_table: Optional[str] = None,
+             innodb_lock_wait_timeout: Optional[int] = None,
+             innodb_log_writer_threads: Optional[bool] = None,
+             innodb_max_purge_lag: Optional[str] = None,
+             innodb_max_purge_lag_delay: Optional[int] = None,
+             innodb_stats_persistent_sample_pages: Optional[str] = None,
+             innodb_stats_transient_sample_pages: Optional[str] = None,
+             interactive_timeout: Optional[int] = None,
+             local_infile: Optional[bool] = None,
+             mandatory_roles: Optional[str] = None,
+             max_allowed_packet: Optional[int] = None,
+             max_binlog_cache_size: Optional[str] = None,
+             max_connect_errors: Optional[str] = None,
+             max_connections: Optional[int] = None,
+             max_execution_time: Optional[str] = None,
+             max_heap_table_size: Optional[str] = None,
+             max_prepared_stmt_count: Optional[int] = None,
+             mysql_firewall_mode: Optional[bool] = None,
+             mysql_zstd_default_compression_level: Optional[int] = None,
+             mysqlx_connect_timeout: Optional[int] = None,
+             mysqlx_deflate_default_compression_level: Optional[int] = None,
+             mysqlx_deflate_max_client_compression_level: Optional[int] = None,
+             mysqlx_document_id_unique_prefix: Optional[int] = None,
+             mysqlx_enable_hello_notice: Optional[bool] = None,
+             mysqlx_idle_worker_thread_timeout: Optional[int] = None,
+             mysqlx_interactive_timeout: Optional[int] = None,
+             mysqlx_lz4default_compression_level: Optional[int] = None,
+             mysqlx_lz4max_client_compression_level: Optional[int] = None,
+             mysqlx_max_allowed_packet: Optional[int] = None,
+             mysqlx_min_worker_threads: Optional[int] = None,
+             mysqlx_read_timeout: Optional[int] = None,
+             mysqlx_wait_timeout: Optional[int] = None,
+             mysqlx_write_timeout: Optional[int] = None,
+             mysqlx_zstd_default_compression_level: Optional[int] = None,
+             mysqlx_zstd_max_client_compression_level: Optional[int] = None,
+             net_read_timeout: Optional[int] = None,
+             net_write_timeout: Optional[int] = None,
+             parser_max_mem_size: Optional[str] = None,
+             query_alloc_block_size: Optional[str] = None,
+             query_prealloc_size: Optional[str] = None,
+             regexp_time_limit: Optional[int] = None,
+             sort_buffer_size: Optional[str] = None,
+             sql_mode: Optional[str] = None,
+             sql_require_primary_key: Optional[bool] = None,
+             sql_warnings: Optional[bool] = None,
+             thread_pool_dedicated_listeners: Optional[bool] = None,
+             thread_pool_max_transactions_limit: Optional[int] = None,
+             time_zone: Optional[str] = None,
+             tmp_table_size: Optional[str] = None,
+             transaction_isolation: Optional[str] = None,
+             wait_timeout: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if big_tables is None and 'bigTables' in kwargs:
+            big_tables = kwargs['bigTables']
+        if binlog_expire_logs_seconds is None and 'binlogExpireLogsSeconds' in kwargs:
+            binlog_expire_logs_seconds = kwargs['binlogExpireLogsSeconds']
+        if binlog_row_metadata is None and 'binlogRowMetadata' in kwargs:
+            binlog_row_metadata = kwargs['binlogRowMetadata']
+        if binlog_row_value_options is None and 'binlogRowValueOptions' in kwargs:
+            binlog_row_value_options = kwargs['binlogRowValueOptions']
+        if binlog_transaction_compression is None and 'binlogTransactionCompression' in kwargs:
+            binlog_transaction_compression = kwargs['binlogTransactionCompression']
+        if completion_type is None and 'completionType' in kwargs:
+            completion_type = kwargs['completionType']
+        if connect_timeout is None and 'connectTimeout' in kwargs:
+            connect_timeout = kwargs['connectTimeout']
+        if connection_memory_chunk_size is None and 'connectionMemoryChunkSize' in kwargs:
+            connection_memory_chunk_size = kwargs['connectionMemoryChunkSize']
+        if connection_memory_limit is None and 'connectionMemoryLimit' in kwargs:
+            connection_memory_limit = kwargs['connectionMemoryLimit']
+        if cte_max_recursion_depth is None and 'cteMaxRecursionDepth' in kwargs:
+            cte_max_recursion_depth = kwargs['cteMaxRecursionDepth']
+        if default_authentication_plugin is None and 'defaultAuthenticationPlugin' in kwargs:
+            default_authentication_plugin = kwargs['defaultAuthenticationPlugin']
+        if foreign_key_checks is None and 'foreignKeyChecks' in kwargs:
+            foreign_key_checks = kwargs['foreignKeyChecks']
+        if generated_random_password_length is None and 'generatedRandomPasswordLength' in kwargs:
+            generated_random_password_length = kwargs['generatedRandomPasswordLength']
+        if global_connection_memory_limit is None and 'globalConnectionMemoryLimit' in kwargs:
+            global_connection_memory_limit = kwargs['globalConnectionMemoryLimit']
+        if global_connection_memory_tracking is None and 'globalConnectionMemoryTracking' in kwargs:
+            global_connection_memory_tracking = kwargs['globalConnectionMemoryTracking']
+        if group_replication_consistency is None and 'groupReplicationConsistency' in kwargs:
+            group_replication_consistency = kwargs['groupReplicationConsistency']
+        if information_schema_stats_expiry is None and 'informationSchemaStatsExpiry' in kwargs:
+            information_schema_stats_expiry = kwargs['informationSchemaStatsExpiry']
+        if innodb_buffer_pool_dump_pct is None and 'innodbBufferPoolDumpPct' in kwargs:
+            innodb_buffer_pool_dump_pct = kwargs['innodbBufferPoolDumpPct']
+        if innodb_buffer_pool_instances is None and 'innodbBufferPoolInstances' in kwargs:
+            innodb_buffer_pool_instances = kwargs['innodbBufferPoolInstances']
+        if innodb_buffer_pool_size is None and 'innodbBufferPoolSize' in kwargs:
+            innodb_buffer_pool_size = kwargs['innodbBufferPoolSize']
+        if innodb_ddl_buffer_size is None and 'innodbDdlBufferSize' in kwargs:
+            innodb_ddl_buffer_size = kwargs['innodbDdlBufferSize']
+        if innodb_ddl_threads is None and 'innodbDdlThreads' in kwargs:
+            innodb_ddl_threads = kwargs['innodbDdlThreads']
+        if innodb_ft_enable_stopword is None and 'innodbFtEnableStopword' in kwargs:
+            innodb_ft_enable_stopword = kwargs['innodbFtEnableStopword']
+        if innodb_ft_max_token_size is None and 'innodbFtMaxTokenSize' in kwargs:
+            innodb_ft_max_token_size = kwargs['innodbFtMaxTokenSize']
+        if innodb_ft_min_token_size is None and 'innodbFtMinTokenSize' in kwargs:
+            innodb_ft_min_token_size = kwargs['innodbFtMinTokenSize']
+        if innodb_ft_num_word_optimize is None and 'innodbFtNumWordOptimize' in kwargs:
+            innodb_ft_num_word_optimize = kwargs['innodbFtNumWordOptimize']
+        if innodb_ft_result_cache_limit is None and 'innodbFtResultCacheLimit' in kwargs:
+            innodb_ft_result_cache_limit = kwargs['innodbFtResultCacheLimit']
+        if innodb_ft_server_stopword_table is None and 'innodbFtServerStopwordTable' in kwargs:
+            innodb_ft_server_stopword_table = kwargs['innodbFtServerStopwordTable']
+        if innodb_lock_wait_timeout is None and 'innodbLockWaitTimeout' in kwargs:
+            innodb_lock_wait_timeout = kwargs['innodbLockWaitTimeout']
+        if innodb_log_writer_threads is None and 'innodbLogWriterThreads' in kwargs:
+            innodb_log_writer_threads = kwargs['innodbLogWriterThreads']
+        if innodb_max_purge_lag is None and 'innodbMaxPurgeLag' in kwargs:
+            innodb_max_purge_lag = kwargs['innodbMaxPurgeLag']
+        if innodb_max_purge_lag_delay is None and 'innodbMaxPurgeLagDelay' in kwargs:
+            innodb_max_purge_lag_delay = kwargs['innodbMaxPurgeLagDelay']
+        if innodb_stats_persistent_sample_pages is None and 'innodbStatsPersistentSamplePages' in kwargs:
+            innodb_stats_persistent_sample_pages = kwargs['innodbStatsPersistentSamplePages']
+        if innodb_stats_transient_sample_pages is None and 'innodbStatsTransientSamplePages' in kwargs:
+            innodb_stats_transient_sample_pages = kwargs['innodbStatsTransientSamplePages']
+        if interactive_timeout is None and 'interactiveTimeout' in kwargs:
+            interactive_timeout = kwargs['interactiveTimeout']
+        if local_infile is None and 'localInfile' in kwargs:
+            local_infile = kwargs['localInfile']
+        if mandatory_roles is None and 'mandatoryRoles' in kwargs:
+            mandatory_roles = kwargs['mandatoryRoles']
+        if max_allowed_packet is None and 'maxAllowedPacket' in kwargs:
+            max_allowed_packet = kwargs['maxAllowedPacket']
+        if max_binlog_cache_size is None and 'maxBinlogCacheSize' in kwargs:
+            max_binlog_cache_size = kwargs['maxBinlogCacheSize']
+        if max_connect_errors is None and 'maxConnectErrors' in kwargs:
+            max_connect_errors = kwargs['maxConnectErrors']
+        if max_connections is None and 'maxConnections' in kwargs:
+            max_connections = kwargs['maxConnections']
+        if max_execution_time is None and 'maxExecutionTime' in kwargs:
+            max_execution_time = kwargs['maxExecutionTime']
+        if max_heap_table_size is None and 'maxHeapTableSize' in kwargs:
+            max_heap_table_size = kwargs['maxHeapTableSize']
+        if max_prepared_stmt_count is None and 'maxPreparedStmtCount' in kwargs:
+            max_prepared_stmt_count = kwargs['maxPreparedStmtCount']
+        if mysql_firewall_mode is None and 'mysqlFirewallMode' in kwargs:
+            mysql_firewall_mode = kwargs['mysqlFirewallMode']
+        if mysql_zstd_default_compression_level is None and 'mysqlZstdDefaultCompressionLevel' in kwargs:
+            mysql_zstd_default_compression_level = kwargs['mysqlZstdDefaultCompressionLevel']
+        if mysqlx_connect_timeout is None and 'mysqlxConnectTimeout' in kwargs:
+            mysqlx_connect_timeout = kwargs['mysqlxConnectTimeout']
+        if mysqlx_deflate_default_compression_level is None and 'mysqlxDeflateDefaultCompressionLevel' in kwargs:
+            mysqlx_deflate_default_compression_level = kwargs['mysqlxDeflateDefaultCompressionLevel']
+        if mysqlx_deflate_max_client_compression_level is None and 'mysqlxDeflateMaxClientCompressionLevel' in kwargs:
+            mysqlx_deflate_max_client_compression_level = kwargs['mysqlxDeflateMaxClientCompressionLevel']
+        if mysqlx_document_id_unique_prefix is None and 'mysqlxDocumentIdUniquePrefix' in kwargs:
+            mysqlx_document_id_unique_prefix = kwargs['mysqlxDocumentIdUniquePrefix']
+        if mysqlx_enable_hello_notice is None and 'mysqlxEnableHelloNotice' in kwargs:
+            mysqlx_enable_hello_notice = kwargs['mysqlxEnableHelloNotice']
+        if mysqlx_idle_worker_thread_timeout is None and 'mysqlxIdleWorkerThreadTimeout' in kwargs:
+            mysqlx_idle_worker_thread_timeout = kwargs['mysqlxIdleWorkerThreadTimeout']
+        if mysqlx_interactive_timeout is None and 'mysqlxInteractiveTimeout' in kwargs:
+            mysqlx_interactive_timeout = kwargs['mysqlxInteractiveTimeout']
+        if mysqlx_lz4default_compression_level is None and 'mysqlxLz4defaultCompressionLevel' in kwargs:
+            mysqlx_lz4default_compression_level = kwargs['mysqlxLz4defaultCompressionLevel']
+        if mysqlx_lz4max_client_compression_level is None and 'mysqlxLz4maxClientCompressionLevel' in kwargs:
+            mysqlx_lz4max_client_compression_level = kwargs['mysqlxLz4maxClientCompressionLevel']
+        if mysqlx_max_allowed_packet is None and 'mysqlxMaxAllowedPacket' in kwargs:
+            mysqlx_max_allowed_packet = kwargs['mysqlxMaxAllowedPacket']
+        if mysqlx_min_worker_threads is None and 'mysqlxMinWorkerThreads' in kwargs:
+            mysqlx_min_worker_threads = kwargs['mysqlxMinWorkerThreads']
+        if mysqlx_read_timeout is None and 'mysqlxReadTimeout' in kwargs:
+            mysqlx_read_timeout = kwargs['mysqlxReadTimeout']
+        if mysqlx_wait_timeout is None and 'mysqlxWaitTimeout' in kwargs:
+            mysqlx_wait_timeout = kwargs['mysqlxWaitTimeout']
+        if mysqlx_write_timeout is None and 'mysqlxWriteTimeout' in kwargs:
+            mysqlx_write_timeout = kwargs['mysqlxWriteTimeout']
+        if mysqlx_zstd_default_compression_level is None and 'mysqlxZstdDefaultCompressionLevel' in kwargs:
+            mysqlx_zstd_default_compression_level = kwargs['mysqlxZstdDefaultCompressionLevel']
+        if mysqlx_zstd_max_client_compression_level is None and 'mysqlxZstdMaxClientCompressionLevel' in kwargs:
+            mysqlx_zstd_max_client_compression_level = kwargs['mysqlxZstdMaxClientCompressionLevel']
+        if net_read_timeout is None and 'netReadTimeout' in kwargs:
+            net_read_timeout = kwargs['netReadTimeout']
+        if net_write_timeout is None and 'netWriteTimeout' in kwargs:
+            net_write_timeout = kwargs['netWriteTimeout']
+        if parser_max_mem_size is None and 'parserMaxMemSize' in kwargs:
+            parser_max_mem_size = kwargs['parserMaxMemSize']
+        if query_alloc_block_size is None and 'queryAllocBlockSize' in kwargs:
+            query_alloc_block_size = kwargs['queryAllocBlockSize']
+        if query_prealloc_size is None and 'queryPreallocSize' in kwargs:
+            query_prealloc_size = kwargs['queryPreallocSize']
+        if regexp_time_limit is None and 'regexpTimeLimit' in kwargs:
+            regexp_time_limit = kwargs['regexpTimeLimit']
+        if sort_buffer_size is None and 'sortBufferSize' in kwargs:
+            sort_buffer_size = kwargs['sortBufferSize']
+        if sql_mode is None and 'sqlMode' in kwargs:
+            sql_mode = kwargs['sqlMode']
+        if sql_require_primary_key is None and 'sqlRequirePrimaryKey' in kwargs:
+            sql_require_primary_key = kwargs['sqlRequirePrimaryKey']
+        if sql_warnings is None and 'sqlWarnings' in kwargs:
+            sql_warnings = kwargs['sqlWarnings']
+        if thread_pool_dedicated_listeners is None and 'threadPoolDedicatedListeners' in kwargs:
+            thread_pool_dedicated_listeners = kwargs['threadPoolDedicatedListeners']
+        if thread_pool_max_transactions_limit is None and 'threadPoolMaxTransactionsLimit' in kwargs:
+            thread_pool_max_transactions_limit = kwargs['threadPoolMaxTransactionsLimit']
+        if time_zone is None and 'timeZone' in kwargs:
+            time_zone = kwargs['timeZone']
+        if tmp_table_size is None and 'tmpTableSize' in kwargs:
+            tmp_table_size = kwargs['tmpTableSize']
+        if transaction_isolation is None and 'transactionIsolation' in kwargs:
+            transaction_isolation = kwargs['transactionIsolation']
+        if wait_timeout is None and 'waitTimeout' in kwargs:
+            wait_timeout = kwargs['waitTimeout']
+
         if autocommit is not None:
-            pulumi.set(__self__, "autocommit", autocommit)
+            _setter("autocommit", autocommit)
         if big_tables is not None:
-            pulumi.set(__self__, "big_tables", big_tables)
+            _setter("big_tables", big_tables)
         if binlog_expire_logs_seconds is not None:
-            pulumi.set(__self__, "binlog_expire_logs_seconds", binlog_expire_logs_seconds)
+            _setter("binlog_expire_logs_seconds", binlog_expire_logs_seconds)
         if binlog_row_metadata is not None:
-            pulumi.set(__self__, "binlog_row_metadata", binlog_row_metadata)
+            _setter("binlog_row_metadata", binlog_row_metadata)
         if binlog_row_value_options is not None:
-            pulumi.set(__self__, "binlog_row_value_options", binlog_row_value_options)
+            _setter("binlog_row_value_options", binlog_row_value_options)
         if binlog_transaction_compression is not None:
-            pulumi.set(__self__, "binlog_transaction_compression", binlog_transaction_compression)
+            _setter("binlog_transaction_compression", binlog_transaction_compression)
         if completion_type is not None:
-            pulumi.set(__self__, "completion_type", completion_type)
+            _setter("completion_type", completion_type)
         if connect_timeout is not None:
-            pulumi.set(__self__, "connect_timeout", connect_timeout)
+            _setter("connect_timeout", connect_timeout)
         if connection_memory_chunk_size is not None:
-            pulumi.set(__self__, "connection_memory_chunk_size", connection_memory_chunk_size)
+            _setter("connection_memory_chunk_size", connection_memory_chunk_size)
         if connection_memory_limit is not None:
-            pulumi.set(__self__, "connection_memory_limit", connection_memory_limit)
+            _setter("connection_memory_limit", connection_memory_limit)
         if cte_max_recursion_depth is not None:
-            pulumi.set(__self__, "cte_max_recursion_depth", cte_max_recursion_depth)
+            _setter("cte_max_recursion_depth", cte_max_recursion_depth)
         if default_authentication_plugin is not None:
-            pulumi.set(__self__, "default_authentication_plugin", default_authentication_plugin)
+            _setter("default_authentication_plugin", default_authentication_plugin)
         if foreign_key_checks is not None:
-            pulumi.set(__self__, "foreign_key_checks", foreign_key_checks)
+            _setter("foreign_key_checks", foreign_key_checks)
         if generated_random_password_length is not None:
-            pulumi.set(__self__, "generated_random_password_length", generated_random_password_length)
+            _setter("generated_random_password_length", generated_random_password_length)
         if global_connection_memory_limit is not None:
-            pulumi.set(__self__, "global_connection_memory_limit", global_connection_memory_limit)
+            _setter("global_connection_memory_limit", global_connection_memory_limit)
         if global_connection_memory_tracking is not None:
-            pulumi.set(__self__, "global_connection_memory_tracking", global_connection_memory_tracking)
+            _setter("global_connection_memory_tracking", global_connection_memory_tracking)
         if group_replication_consistency is not None:
-            pulumi.set(__self__, "group_replication_consistency", group_replication_consistency)
+            _setter("group_replication_consistency", group_replication_consistency)
         if information_schema_stats_expiry is not None:
-            pulumi.set(__self__, "information_schema_stats_expiry", information_schema_stats_expiry)
+            _setter("information_schema_stats_expiry", information_schema_stats_expiry)
         if innodb_buffer_pool_dump_pct is not None:
-            pulumi.set(__self__, "innodb_buffer_pool_dump_pct", innodb_buffer_pool_dump_pct)
+            _setter("innodb_buffer_pool_dump_pct", innodb_buffer_pool_dump_pct)
         if innodb_buffer_pool_instances is not None:
-            pulumi.set(__self__, "innodb_buffer_pool_instances", innodb_buffer_pool_instances)
+            _setter("innodb_buffer_pool_instances", innodb_buffer_pool_instances)
         if innodb_buffer_pool_size is not None:
-            pulumi.set(__self__, "innodb_buffer_pool_size", innodb_buffer_pool_size)
+            _setter("innodb_buffer_pool_size", innodb_buffer_pool_size)
         if innodb_ddl_buffer_size is not None:
-            pulumi.set(__self__, "innodb_ddl_buffer_size", innodb_ddl_buffer_size)
+            _setter("innodb_ddl_buffer_size", innodb_ddl_buffer_size)
         if innodb_ddl_threads is not None:
-            pulumi.set(__self__, "innodb_ddl_threads", innodb_ddl_threads)
+            _setter("innodb_ddl_threads", innodb_ddl_threads)
         if innodb_ft_enable_stopword is not None:
-            pulumi.set(__self__, "innodb_ft_enable_stopword", innodb_ft_enable_stopword)
+            _setter("innodb_ft_enable_stopword", innodb_ft_enable_stopword)
         if innodb_ft_max_token_size is not None:
-            pulumi.set(__self__, "innodb_ft_max_token_size", innodb_ft_max_token_size)
+            _setter("innodb_ft_max_token_size", innodb_ft_max_token_size)
         if innodb_ft_min_token_size is not None:
-            pulumi.set(__self__, "innodb_ft_min_token_size", innodb_ft_min_token_size)
+            _setter("innodb_ft_min_token_size", innodb_ft_min_token_size)
         if innodb_ft_num_word_optimize is not None:
-            pulumi.set(__self__, "innodb_ft_num_word_optimize", innodb_ft_num_word_optimize)
+            _setter("innodb_ft_num_word_optimize", innodb_ft_num_word_optimize)
         if innodb_ft_result_cache_limit is not None:
-            pulumi.set(__self__, "innodb_ft_result_cache_limit", innodb_ft_result_cache_limit)
+            _setter("innodb_ft_result_cache_limit", innodb_ft_result_cache_limit)
         if innodb_ft_server_stopword_table is not None:
-            pulumi.set(__self__, "innodb_ft_server_stopword_table", innodb_ft_server_stopword_table)
+            _setter("innodb_ft_server_stopword_table", innodb_ft_server_stopword_table)
         if innodb_lock_wait_timeout is not None:
-            pulumi.set(__self__, "innodb_lock_wait_timeout", innodb_lock_wait_timeout)
+            _setter("innodb_lock_wait_timeout", innodb_lock_wait_timeout)
         if innodb_log_writer_threads is not None:
-            pulumi.set(__self__, "innodb_log_writer_threads", innodb_log_writer_threads)
+            _setter("innodb_log_writer_threads", innodb_log_writer_threads)
         if innodb_max_purge_lag is not None:
-            pulumi.set(__self__, "innodb_max_purge_lag", innodb_max_purge_lag)
+            _setter("innodb_max_purge_lag", innodb_max_purge_lag)
         if innodb_max_purge_lag_delay is not None:
-            pulumi.set(__self__, "innodb_max_purge_lag_delay", innodb_max_purge_lag_delay)
+            _setter("innodb_max_purge_lag_delay", innodb_max_purge_lag_delay)
         if innodb_stats_persistent_sample_pages is not None:
-            pulumi.set(__self__, "innodb_stats_persistent_sample_pages", innodb_stats_persistent_sample_pages)
+            _setter("innodb_stats_persistent_sample_pages", innodb_stats_persistent_sample_pages)
         if innodb_stats_transient_sample_pages is not None:
-            pulumi.set(__self__, "innodb_stats_transient_sample_pages", innodb_stats_transient_sample_pages)
+            _setter("innodb_stats_transient_sample_pages", innodb_stats_transient_sample_pages)
         if interactive_timeout is not None:
-            pulumi.set(__self__, "interactive_timeout", interactive_timeout)
+            _setter("interactive_timeout", interactive_timeout)
         if local_infile is not None:
-            pulumi.set(__self__, "local_infile", local_infile)
+            _setter("local_infile", local_infile)
         if mandatory_roles is not None:
-            pulumi.set(__self__, "mandatory_roles", mandatory_roles)
+            _setter("mandatory_roles", mandatory_roles)
         if max_allowed_packet is not None:
-            pulumi.set(__self__, "max_allowed_packet", max_allowed_packet)
+            _setter("max_allowed_packet", max_allowed_packet)
         if max_binlog_cache_size is not None:
-            pulumi.set(__self__, "max_binlog_cache_size", max_binlog_cache_size)
+            _setter("max_binlog_cache_size", max_binlog_cache_size)
         if max_connect_errors is not None:
-            pulumi.set(__self__, "max_connect_errors", max_connect_errors)
+            _setter("max_connect_errors", max_connect_errors)
         if max_connections is not None:
-            pulumi.set(__self__, "max_connections", max_connections)
+            _setter("max_connections", max_connections)
         if max_execution_time is not None:
-            pulumi.set(__self__, "max_execution_time", max_execution_time)
+            _setter("max_execution_time", max_execution_time)
         if max_heap_table_size is not None:
-            pulumi.set(__self__, "max_heap_table_size", max_heap_table_size)
+            _setter("max_heap_table_size", max_heap_table_size)
         if max_prepared_stmt_count is not None:
-            pulumi.set(__self__, "max_prepared_stmt_count", max_prepared_stmt_count)
+            _setter("max_prepared_stmt_count", max_prepared_stmt_count)
         if mysql_firewall_mode is not None:
-            pulumi.set(__self__, "mysql_firewall_mode", mysql_firewall_mode)
+            _setter("mysql_firewall_mode", mysql_firewall_mode)
         if mysql_zstd_default_compression_level is not None:
-            pulumi.set(__self__, "mysql_zstd_default_compression_level", mysql_zstd_default_compression_level)
+            _setter("mysql_zstd_default_compression_level", mysql_zstd_default_compression_level)
         if mysqlx_connect_timeout is not None:
-            pulumi.set(__self__, "mysqlx_connect_timeout", mysqlx_connect_timeout)
+            _setter("mysqlx_connect_timeout", mysqlx_connect_timeout)
         if mysqlx_deflate_default_compression_level is not None:
-            pulumi.set(__self__, "mysqlx_deflate_default_compression_level", mysqlx_deflate_default_compression_level)
+            _setter("mysqlx_deflate_default_compression_level", mysqlx_deflate_default_compression_level)
         if mysqlx_deflate_max_client_compression_level is not None:
-            pulumi.set(__self__, "mysqlx_deflate_max_client_compression_level", mysqlx_deflate_max_client_compression_level)
+            _setter("mysqlx_deflate_max_client_compression_level", mysqlx_deflate_max_client_compression_level)
         if mysqlx_document_id_unique_prefix is not None:
-            pulumi.set(__self__, "mysqlx_document_id_unique_prefix", mysqlx_document_id_unique_prefix)
+            _setter("mysqlx_document_id_unique_prefix", mysqlx_document_id_unique_prefix)
         if mysqlx_enable_hello_notice is not None:
-            pulumi.set(__self__, "mysqlx_enable_hello_notice", mysqlx_enable_hello_notice)
+            _setter("mysqlx_enable_hello_notice", mysqlx_enable_hello_notice)
         if mysqlx_idle_worker_thread_timeout is not None:
-            pulumi.set(__self__, "mysqlx_idle_worker_thread_timeout", mysqlx_idle_worker_thread_timeout)
+            _setter("mysqlx_idle_worker_thread_timeout", mysqlx_idle_worker_thread_timeout)
         if mysqlx_interactive_timeout is not None:
-            pulumi.set(__self__, "mysqlx_interactive_timeout", mysqlx_interactive_timeout)
+            _setter("mysqlx_interactive_timeout", mysqlx_interactive_timeout)
         if mysqlx_lz4default_compression_level is not None:
-            pulumi.set(__self__, "mysqlx_lz4default_compression_level", mysqlx_lz4default_compression_level)
+            _setter("mysqlx_lz4default_compression_level", mysqlx_lz4default_compression_level)
         if mysqlx_lz4max_client_compression_level is not None:
-            pulumi.set(__self__, "mysqlx_lz4max_client_compression_level", mysqlx_lz4max_client_compression_level)
+            _setter("mysqlx_lz4max_client_compression_level", mysqlx_lz4max_client_compression_level)
         if mysqlx_max_allowed_packet is not None:
-            pulumi.set(__self__, "mysqlx_max_allowed_packet", mysqlx_max_allowed_packet)
+            _setter("mysqlx_max_allowed_packet", mysqlx_max_allowed_packet)
         if mysqlx_min_worker_threads is not None:
-            pulumi.set(__self__, "mysqlx_min_worker_threads", mysqlx_min_worker_threads)
+            _setter("mysqlx_min_worker_threads", mysqlx_min_worker_threads)
         if mysqlx_read_timeout is not None:
-            pulumi.set(__self__, "mysqlx_read_timeout", mysqlx_read_timeout)
+            _setter("mysqlx_read_timeout", mysqlx_read_timeout)
         if mysqlx_wait_timeout is not None:
-            pulumi.set(__self__, "mysqlx_wait_timeout", mysqlx_wait_timeout)
+            _setter("mysqlx_wait_timeout", mysqlx_wait_timeout)
         if mysqlx_write_timeout is not None:
-            pulumi.set(__self__, "mysqlx_write_timeout", mysqlx_write_timeout)
+            _setter("mysqlx_write_timeout", mysqlx_write_timeout)
         if mysqlx_zstd_default_compression_level is not None:
-            pulumi.set(__self__, "mysqlx_zstd_default_compression_level", mysqlx_zstd_default_compression_level)
+            _setter("mysqlx_zstd_default_compression_level", mysqlx_zstd_default_compression_level)
         if mysqlx_zstd_max_client_compression_level is not None:
-            pulumi.set(__self__, "mysqlx_zstd_max_client_compression_level", mysqlx_zstd_max_client_compression_level)
+            _setter("mysqlx_zstd_max_client_compression_level", mysqlx_zstd_max_client_compression_level)
         if net_read_timeout is not None:
-            pulumi.set(__self__, "net_read_timeout", net_read_timeout)
+            _setter("net_read_timeout", net_read_timeout)
         if net_write_timeout is not None:
-            pulumi.set(__self__, "net_write_timeout", net_write_timeout)
+            _setter("net_write_timeout", net_write_timeout)
         if parser_max_mem_size is not None:
-            pulumi.set(__self__, "parser_max_mem_size", parser_max_mem_size)
+            _setter("parser_max_mem_size", parser_max_mem_size)
         if query_alloc_block_size is not None:
-            pulumi.set(__self__, "query_alloc_block_size", query_alloc_block_size)
+            _setter("query_alloc_block_size", query_alloc_block_size)
         if query_prealloc_size is not None:
-            pulumi.set(__self__, "query_prealloc_size", query_prealloc_size)
+            _setter("query_prealloc_size", query_prealloc_size)
         if regexp_time_limit is not None:
-            pulumi.set(__self__, "regexp_time_limit", regexp_time_limit)
+            _setter("regexp_time_limit", regexp_time_limit)
         if sort_buffer_size is not None:
-            pulumi.set(__self__, "sort_buffer_size", sort_buffer_size)
+            _setter("sort_buffer_size", sort_buffer_size)
         if sql_mode is not None:
-            pulumi.set(__self__, "sql_mode", sql_mode)
+            _setter("sql_mode", sql_mode)
         if sql_require_primary_key is not None:
-            pulumi.set(__self__, "sql_require_primary_key", sql_require_primary_key)
+            _setter("sql_require_primary_key", sql_require_primary_key)
         if sql_warnings is not None:
-            pulumi.set(__self__, "sql_warnings", sql_warnings)
+            _setter("sql_warnings", sql_warnings)
         if thread_pool_dedicated_listeners is not None:
-            pulumi.set(__self__, "thread_pool_dedicated_listeners", thread_pool_dedicated_listeners)
+            _setter("thread_pool_dedicated_listeners", thread_pool_dedicated_listeners)
         if thread_pool_max_transactions_limit is not None:
-            pulumi.set(__self__, "thread_pool_max_transactions_limit", thread_pool_max_transactions_limit)
+            _setter("thread_pool_max_transactions_limit", thread_pool_max_transactions_limit)
         if time_zone is not None:
-            pulumi.set(__self__, "time_zone", time_zone)
+            _setter("time_zone", time_zone)
         if tmp_table_size is not None:
-            pulumi.set(__self__, "tmp_table_size", tmp_table_size)
+            _setter("tmp_table_size", tmp_table_size)
         if transaction_isolation is not None:
-            pulumi.set(__self__, "transaction_isolation", transaction_isolation)
+            _setter("transaction_isolation", transaction_isolation)
         if wait_timeout is not None:
-            pulumi.set(__self__, "wait_timeout", wait_timeout)
+            _setter("wait_timeout", wait_timeout)
 
     @property
     @pulumi.getter
@@ -2779,18 +3495,51 @@ class MysqlDbSystemBackupPolicy(dict):
                
                If you set the read replica maintenance window to "" or if not specified, the read replica is set same as the DB system maintenance window.
         """
+        MysqlDbSystemBackupPolicy._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            is_enabled=is_enabled,
+            pitr_policy=pitr_policy,
+            retention_in_days=retention_in_days,
+            window_start_time=window_start_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             is_enabled: Optional[bool] = None,
+             pitr_policy: Optional['outputs.MysqlDbSystemBackupPolicyPitrPolicy'] = None,
+             retention_in_days: Optional[int] = None,
+             window_start_time: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if pitr_policy is None and 'pitrPolicy' in kwargs:
+            pitr_policy = kwargs['pitrPolicy']
+        if retention_in_days is None and 'retentionInDays' in kwargs:
+            retention_in_days = kwargs['retentionInDays']
+        if window_start_time is None and 'windowStartTime' in kwargs:
+            window_start_time = kwargs['windowStartTime']
+
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if pitr_policy is not None:
-            pulumi.set(__self__, "pitr_policy", pitr_policy)
+            _setter("pitr_policy", pitr_policy)
         if retention_in_days is not None:
-            pulumi.set(__self__, "retention_in_days", retention_in_days)
+            _setter("retention_in_days", retention_in_days)
         if window_start_time is not None:
-            pulumi.set(__self__, "window_start_time", window_start_time)
+            _setter("window_start_time", window_start_time)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -2873,8 +3622,21 @@ class MysqlDbSystemBackupPolicyPitrPolicy(dict):
         """
         :param bool is_enabled: (Updatable) Specifies if PITR is enabled or disabled.
         """
+        MysqlDbSystemBackupPolicyPitrPolicy._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -2945,30 +3707,79 @@ class MysqlDbSystemChannel(dict):
         :param str time_created: The date and time the DB System was created.
         :param str time_updated: The time the DB System was last updated.
         """
+        MysqlDbSystemChannel._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_enabled=is_enabled,
+            lifecycle_details=lifecycle_details,
+            sources=sources,
+            state=state,
+            targets=targets,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_enabled: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             sources: Optional[Sequence['outputs.MysqlDbSystemChannelSource']] = None,
+             state: Optional[str] = None,
+             targets: Optional[Sequence['outputs.MysqlDbSystemChannelTarget']] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if sources is not None:
-            pulumi.set(__self__, "sources", sources)
+            _setter("sources", sources)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if targets is not None:
-            pulumi.set(__self__, "targets", targets)
+            _setter("targets", targets)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -3109,20 +3920,51 @@ class MysqlDbSystemChannelSource(dict):
         :param str ssl_mode: The SSL mode of the Channel.
         :param str username: The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
         """
+        MysqlDbSystemChannelSource._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            anonymous_transactions_handlings=anonymous_transactions_handlings,
+            hostname=hostname,
+            port=port,
+            source_type=source_type,
+            ssl_ca_certificates=ssl_ca_certificates,
+            ssl_mode=ssl_mode,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             anonymous_transactions_handlings: Optional[Sequence['outputs.MysqlDbSystemChannelSourceAnonymousTransactionsHandling']] = None,
+             hostname: Optional[str] = None,
+             port: Optional[int] = None,
+             source_type: Optional[str] = None,
+             ssl_ca_certificates: Optional[Sequence['outputs.MysqlDbSystemChannelSourceSslCaCertificate']] = None,
+             ssl_mode: Optional[str] = None,
+             username: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if anonymous_transactions_handlings is None and 'anonymousTransactionsHandlings' in kwargs:
+            anonymous_transactions_handlings = kwargs['anonymousTransactionsHandlings']
+        if source_type is None and 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if ssl_ca_certificates is None and 'sslCaCertificates' in kwargs:
+            ssl_ca_certificates = kwargs['sslCaCertificates']
+        if ssl_mode is None and 'sslMode' in kwargs:
+            ssl_mode = kwargs['sslMode']
+
         if anonymous_transactions_handlings is not None:
-            pulumi.set(__self__, "anonymous_transactions_handlings", anonymous_transactions_handlings)
+            _setter("anonymous_transactions_handlings", anonymous_transactions_handlings)
         if hostname is not None:
-            pulumi.set(__self__, "hostname", hostname)
+            _setter("hostname", hostname)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if source_type is not None:
-            pulumi.set(__self__, "source_type", source_type)
+            _setter("source_type", source_type)
         if ssl_ca_certificates is not None:
-            pulumi.set(__self__, "ssl_ca_certificates", ssl_ca_certificates)
+            _setter("ssl_ca_certificates", ssl_ca_certificates)
         if ssl_mode is not None:
-            pulumi.set(__self__, "ssl_mode", ssl_mode)
+            _setter("ssl_mode", ssl_mode)
         if username is not None:
-            pulumi.set(__self__, "username", username)
+            _setter("username", username)
 
     @property
     @pulumi.getter(name="anonymousTransactionsHandlings")
@@ -3213,14 +4055,35 @@ class MysqlDbSystemChannelSourceAnonymousTransactionsHandling(dict):
         :param str policy: Specifies how the replication channel handles anonymous transactions.
         :param str uuid: The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
         """
+        MysqlDbSystemChannelSourceAnonymousTransactionsHandling._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            last_configured_log_filename=last_configured_log_filename,
+            last_configured_log_offset=last_configured_log_offset,
+            policy=policy,
+            uuid=uuid,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             last_configured_log_filename: Optional[str] = None,
+             last_configured_log_offset: Optional[str] = None,
+             policy: Optional[str] = None,
+             uuid: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if last_configured_log_filename is None and 'lastConfiguredLogFilename' in kwargs:
+            last_configured_log_filename = kwargs['lastConfiguredLogFilename']
+        if last_configured_log_offset is None and 'lastConfiguredLogOffset' in kwargs:
+            last_configured_log_offset = kwargs['lastConfiguredLogOffset']
+
         if last_configured_log_filename is not None:
-            pulumi.set(__self__, "last_configured_log_filename", last_configured_log_filename)
+            _setter("last_configured_log_filename", last_configured_log_filename)
         if last_configured_log_offset is not None:
-            pulumi.set(__self__, "last_configured_log_offset", last_configured_log_offset)
+            _setter("last_configured_log_offset", last_configured_log_offset)
         if policy is not None:
-            pulumi.set(__self__, "policy", policy)
+            _setter("policy", policy)
         if uuid is not None:
-            pulumi.set(__self__, "uuid", uuid)
+            _setter("uuid", uuid)
 
     @property
     @pulumi.getter(name="lastConfiguredLogFilename")
@@ -3281,10 +4144,25 @@ class MysqlDbSystemChannelSourceSslCaCertificate(dict):
         :param str certificate_type: The type of CA certificate.
         :param str contents: The string containing the CA certificate in PEM format.
         """
+        MysqlDbSystemChannelSourceSslCaCertificate._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_type=certificate_type,
+            contents=contents,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_type: Optional[str] = None,
+             contents: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if certificate_type is None and 'certificateType' in kwargs:
+            certificate_type = kwargs['certificateType']
+
         if certificate_type is not None:
-            pulumi.set(__self__, "certificate_type", certificate_type)
+            _setter("certificate_type", certificate_type)
         if contents is not None:
-            pulumi.set(__self__, "contents", contents)
+            _setter("contents", contents)
 
     @property
     @pulumi.getter(name="certificateType")
@@ -3349,20 +4227,55 @@ class MysqlDbSystemChannelTarget(dict):
         :param str tables_without_primary_key_handling: Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
         :param str target_type: The specific target identifier.
         """
+        MysqlDbSystemChannelTarget._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            applier_username=applier_username,
+            channel_name=channel_name,
+            db_system_id=db_system_id,
+            delay_in_seconds=delay_in_seconds,
+            filters=filters,
+            tables_without_primary_key_handling=tables_without_primary_key_handling,
+            target_type=target_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             applier_username: Optional[str] = None,
+             channel_name: Optional[str] = None,
+             db_system_id: Optional[str] = None,
+             delay_in_seconds: Optional[int] = None,
+             filters: Optional[Sequence['outputs.MysqlDbSystemChannelTargetFilter']] = None,
+             tables_without_primary_key_handling: Optional[str] = None,
+             target_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if applier_username is None and 'applierUsername' in kwargs:
+            applier_username = kwargs['applierUsername']
+        if channel_name is None and 'channelName' in kwargs:
+            channel_name = kwargs['channelName']
+        if db_system_id is None and 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if delay_in_seconds is None and 'delayInSeconds' in kwargs:
+            delay_in_seconds = kwargs['delayInSeconds']
+        if tables_without_primary_key_handling is None and 'tablesWithoutPrimaryKeyHandling' in kwargs:
+            tables_without_primary_key_handling = kwargs['tablesWithoutPrimaryKeyHandling']
+        if target_type is None and 'targetType' in kwargs:
+            target_type = kwargs['targetType']
+
         if applier_username is not None:
-            pulumi.set(__self__, "applier_username", applier_username)
+            _setter("applier_username", applier_username)
         if channel_name is not None:
-            pulumi.set(__self__, "channel_name", channel_name)
+            _setter("channel_name", channel_name)
         if db_system_id is not None:
-            pulumi.set(__self__, "db_system_id", db_system_id)
+            _setter("db_system_id", db_system_id)
         if delay_in_seconds is not None:
-            pulumi.set(__self__, "delay_in_seconds", delay_in_seconds)
+            _setter("delay_in_seconds", delay_in_seconds)
         if filters is not None:
-            pulumi.set(__self__, "filters", filters)
+            _setter("filters", filters)
         if tables_without_primary_key_handling is not None:
-            pulumi.set(__self__, "tables_without_primary_key_handling", tables_without_primary_key_handling)
+            _setter("tables_without_primary_key_handling", tables_without_primary_key_handling)
         if target_type is not None:
-            pulumi.set(__self__, "target_type", target_type)
+            _setter("target_type", target_type)
 
     @property
     @pulumi.getter(name="applierUsername")
@@ -3430,10 +4343,23 @@ class MysqlDbSystemChannelTargetFilter(dict):
         :param str type: The type of the filter rule.
         :param str value: The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
         """
+        MysqlDbSystemChannelTargetFilter._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter
@@ -3488,10 +4414,27 @@ class MysqlDbSystemCurrentPlacement(dict):
                
                For a standalone DB System, this defines the fault domain in which the DB System is placed.
         """
+        MysqlDbSystemCurrentPlacement._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            fault_domain=fault_domain,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: Optional[str] = None,
+             fault_domain: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if availability_domain is None and 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if fault_domain is None and 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if fault_domain is not None:
-            pulumi.set(__self__, "fault_domain", fault_domain)
+            _setter("fault_domain", fault_domain)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -3550,12 +4493,33 @@ class MysqlDbSystemDeletionPolicy(dict):
         :param str final_backup: (Updatable) Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
         :param bool is_delete_protected: (Updatable) Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
         """
+        MysqlDbSystemDeletionPolicy._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            automatic_backup_retention=automatic_backup_retention,
+            final_backup=final_backup,
+            is_delete_protected=is_delete_protected,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             automatic_backup_retention: Optional[str] = None,
+             final_backup: Optional[str] = None,
+             is_delete_protected: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if automatic_backup_retention is None and 'automaticBackupRetention' in kwargs:
+            automatic_backup_retention = kwargs['automaticBackupRetention']
+        if final_backup is None and 'finalBackup' in kwargs:
+            final_backup = kwargs['finalBackup']
+        if is_delete_protected is None and 'isDeleteProtected' in kwargs:
+            is_delete_protected = kwargs['isDeleteProtected']
+
         if automatic_backup_retention is not None:
-            pulumi.set(__self__, "automatic_backup_retention", automatic_backup_retention)
+            _setter("automatic_backup_retention", automatic_backup_retention)
         if final_backup is not None:
-            pulumi.set(__self__, "final_backup", final_backup)
+            _setter("final_backup", final_backup)
         if is_delete_protected is not None:
-            pulumi.set(__self__, "is_delete_protected", is_delete_protected)
+            _setter("is_delete_protected", is_delete_protected)
 
     @property
     @pulumi.getter(name="automaticBackupRetention")
@@ -3630,24 +4594,61 @@ class MysqlDbSystemEndpoint(dict):
         :param str status: The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
         :param str status_details: Additional information about the current endpoint status.
         """
+        MysqlDbSystemEndpoint._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+            ip_address=ip_address,
+            modes=modes,
+            port=port,
+            port_x=port_x,
+            resource_id=resource_id,
+            resource_type=resource_type,
+            status=status,
+            status_details=status_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: Optional[str] = None,
+             ip_address: Optional[str] = None,
+             modes: Optional[Sequence[str]] = None,
+             port: Optional[int] = None,
+             port_x: Optional[int] = None,
+             resource_id: Optional[str] = None,
+             resource_type: Optional[str] = None,
+             status: Optional[str] = None,
+             status_details: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if ip_address is None and 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if port_x is None and 'portX' in kwargs:
+            port_x = kwargs['portX']
+        if resource_id is None and 'resourceId' in kwargs:
+            resource_id = kwargs['resourceId']
+        if resource_type is None and 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if status_details is None and 'statusDetails' in kwargs:
+            status_details = kwargs['statusDetails']
+
         if hostname is not None:
-            pulumi.set(__self__, "hostname", hostname)
+            _setter("hostname", hostname)
         if ip_address is not None:
-            pulumi.set(__self__, "ip_address", ip_address)
+            _setter("ip_address", ip_address)
         if modes is not None:
-            pulumi.set(__self__, "modes", modes)
+            _setter("modes", modes)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if port_x is not None:
-            pulumi.set(__self__, "port_x", port_x)
+            _setter("port_x", port_x)
         if resource_id is not None:
-            pulumi.set(__self__, "resource_id", resource_id)
+            _setter("resource_id", resource_id)
         if resource_type is not None:
-            pulumi.set(__self__, "resource_type", resource_type)
+            _setter("resource_type", resource_type)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if status_details is not None:
-            pulumi.set(__self__, "status_details", status_details)
+            _setter("status_details", status_details)
 
     @property
     @pulumi.getter
@@ -3765,18 +4766,49 @@ class MysqlDbSystemHeatWaveCluster(dict):
         :param str time_created: The date and time the DB System was created.
         :param str time_updated: The time the DB System was last updated.
         """
+        MysqlDbSystemHeatWaveCluster._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cluster_size=cluster_size,
+            is_lakehouse_enabled=is_lakehouse_enabled,
+            shape_name=shape_name,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cluster_size: Optional[int] = None,
+             is_lakehouse_enabled: Optional[bool] = None,
+             shape_name: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if cluster_size is None and 'clusterSize' in kwargs:
+            cluster_size = kwargs['clusterSize']
+        if is_lakehouse_enabled is None and 'isLakehouseEnabled' in kwargs:
+            is_lakehouse_enabled = kwargs['isLakehouseEnabled']
+        if shape_name is None and 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if cluster_size is not None:
-            pulumi.set(__self__, "cluster_size", cluster_size)
+            _setter("cluster_size", cluster_size)
         if is_lakehouse_enabled is not None:
-            pulumi.set(__self__, "is_lakehouse_enabled", is_lakehouse_enabled)
+            _setter("is_lakehouse_enabled", is_lakehouse_enabled)
         if shape_name is not None:
-            pulumi.set(__self__, "shape_name", shape_name)
+            _setter("shape_name", shape_name)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="clusterSize")
@@ -3860,7 +4892,22 @@ class MysqlDbSystemMaintenance(dict):
                
                If you set the read replica maintenance window to "" or if not specified, the read replica is set same as the DB system maintenance window.
         """
-        pulumi.set(__self__, "window_start_time", window_start_time)
+        MysqlDbSystemMaintenance._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            window_start_time=window_start_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             window_start_time: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if window_start_time is None and 'windowStartTime' in kwargs:
+            window_start_time = kwargs['windowStartTime']
+        if window_start_time is None:
+            raise TypeError("Missing 'window_start_time' argument")
+
+        _setter("window_start_time", window_start_time)
 
     @property
     @pulumi.getter(name="windowStartTime")
@@ -3907,10 +4954,27 @@ class MysqlDbSystemPointInTimeRecoveryDetail(dict):
         :param str time_earliest_recovery_point: Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param str time_latest_recovery_point: Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
+        MysqlDbSystemPointInTimeRecoveryDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_earliest_recovery_point=time_earliest_recovery_point,
+            time_latest_recovery_point=time_latest_recovery_point,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_earliest_recovery_point: Optional[str] = None,
+             time_latest_recovery_point: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if time_earliest_recovery_point is None and 'timeEarliestRecoveryPoint' in kwargs:
+            time_earliest_recovery_point = kwargs['timeEarliestRecoveryPoint']
+        if time_latest_recovery_point is None and 'timeLatestRecoveryPoint' in kwargs:
+            time_latest_recovery_point = kwargs['timeLatestRecoveryPoint']
+
         if time_earliest_recovery_point is not None:
-            pulumi.set(__self__, "time_earliest_recovery_point", time_earliest_recovery_point)
+            _setter("time_earliest_recovery_point", time_earliest_recovery_point)
         if time_latest_recovery_point is not None:
-            pulumi.set(__self__, "time_latest_recovery_point", time_latest_recovery_point)
+            _setter("time_latest_recovery_point", time_latest_recovery_point)
 
     @property
     @pulumi.getter(name="timeEarliestRecoveryPoint")
@@ -3969,15 +5033,46 @@ class MysqlDbSystemSource(dict):
         :param str recovery_point: The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
         :param str source_url: The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object from the Object Storage. Check [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) for information related to PAR creation. Please create PAR with "Permit object reads" access type and "Enable Object Listing" permission when using a bucket/prefix PAR. Please create PAR with "Permit object reads" access type when using a @.manifest.json object PAR.
         """
-        pulumi.set(__self__, "source_type", source_type)
+        MysqlDbSystemSource._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            source_type=source_type,
+            backup_id=backup_id,
+            db_system_id=db_system_id,
+            recovery_point=recovery_point,
+            source_url=source_url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             source_type: Optional[str] = None,
+             backup_id: Optional[str] = None,
+             db_system_id: Optional[str] = None,
+             recovery_point: Optional[str] = None,
+             source_url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if source_type is None and 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
+        if backup_id is None and 'backupId' in kwargs:
+            backup_id = kwargs['backupId']
+        if db_system_id is None and 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if recovery_point is None and 'recoveryPoint' in kwargs:
+            recovery_point = kwargs['recoveryPoint']
+        if source_url is None and 'sourceUrl' in kwargs:
+            source_url = kwargs['sourceUrl']
+
+        _setter("source_type", source_type)
         if backup_id is not None:
-            pulumi.set(__self__, "backup_id", backup_id)
+            _setter("backup_id", backup_id)
         if db_system_id is not None:
-            pulumi.set(__self__, "db_system_id", db_system_id)
+            _setter("db_system_id", db_system_id)
         if recovery_point is not None:
-            pulumi.set(__self__, "recovery_point", recovery_point)
+            _setter("recovery_point", recovery_point)
         if source_url is not None:
-            pulumi.set(__self__, "source_url", source_url)
+            _setter("source_url", source_url)
 
     @property
     @pulumi.getter(name="sourceType")
@@ -4056,12 +5151,33 @@ class ReplicaReplicaOverrides(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        ReplicaReplicaOverrides._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            configuration_id=configuration_id,
+            mysql_version=mysql_version,
+            shape_name=shape_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             configuration_id: Optional[str] = None,
+             mysql_version: Optional[str] = None,
+             shape_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if configuration_id is None and 'configurationId' in kwargs:
+            configuration_id = kwargs['configurationId']
+        if mysql_version is None and 'mysqlVersion' in kwargs:
+            mysql_version = kwargs['mysqlVersion']
+        if shape_name is None and 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+
         if configuration_id is not None:
-            pulumi.set(__self__, "configuration_id", configuration_id)
+            _setter("configuration_id", configuration_id)
         if mysql_version is not None:
-            pulumi.set(__self__, "mysql_version", mysql_version)
+            _setter("mysql_version", mysql_version)
         if shape_name is not None:
-            pulumi.set(__self__, "shape_name", shape_name)
+            _setter("shape_name", shape_name)
 
     @property
     @pulumi.getter(name="configurationId")
@@ -4112,14 +5228,63 @@ class GetChannelSourceResult(dict):
         :param str ssl_mode: The SSL mode of the Channel.
         :param str username: The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
         """
-        pulumi.set(__self__, "anonymous_transactions_handlings", anonymous_transactions_handlings)
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "source_type", source_type)
-        pulumi.set(__self__, "ssl_ca_certificates", ssl_ca_certificates)
-        pulumi.set(__self__, "ssl_mode", ssl_mode)
-        pulumi.set(__self__, "username", username)
+        GetChannelSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            anonymous_transactions_handlings=anonymous_transactions_handlings,
+            hostname=hostname,
+            password=password,
+            port=port,
+            source_type=source_type,
+            ssl_ca_certificates=ssl_ca_certificates,
+            ssl_mode=ssl_mode,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             anonymous_transactions_handlings: Optional[Sequence['outputs.GetChannelSourceAnonymousTransactionsHandlingResult']] = None,
+             hostname: Optional[str] = None,
+             password: Optional[str] = None,
+             port: Optional[int] = None,
+             source_type: Optional[str] = None,
+             ssl_ca_certificates: Optional[Sequence['outputs.GetChannelSourceSslCaCertificateResult']] = None,
+             ssl_mode: Optional[str] = None,
+             username: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if anonymous_transactions_handlings is None and 'anonymousTransactionsHandlings' in kwargs:
+            anonymous_transactions_handlings = kwargs['anonymousTransactionsHandlings']
+        if anonymous_transactions_handlings is None:
+            raise TypeError("Missing 'anonymous_transactions_handlings' argument")
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if password is None:
+            raise TypeError("Missing 'password' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if source_type is None and 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
+        if ssl_ca_certificates is None and 'sslCaCertificates' in kwargs:
+            ssl_ca_certificates = kwargs['sslCaCertificates']
+        if ssl_ca_certificates is None:
+            raise TypeError("Missing 'ssl_ca_certificates' argument")
+        if ssl_mode is None and 'sslMode' in kwargs:
+            ssl_mode = kwargs['sslMode']
+        if ssl_mode is None:
+            raise TypeError("Missing 'ssl_mode' argument")
+        if username is None:
+            raise TypeError("Missing 'username' argument")
+
+        _setter("anonymous_transactions_handlings", anonymous_transactions_handlings)
+        _setter("hostname", hostname)
+        _setter("password", password)
+        _setter("port", port)
+        _setter("source_type", source_type)
+        _setter("ssl_ca_certificates", ssl_ca_certificates)
+        _setter("ssl_mode", ssl_mode)
+        _setter("username", username)
 
     @property
     @pulumi.getter(name="anonymousTransactionsHandlings")
@@ -4196,10 +5361,39 @@ class GetChannelSourceAnonymousTransactionsHandlingResult(dict):
         :param str policy: Specifies how the replication channel handles anonymous transactions.
         :param str uuid: The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
         """
-        pulumi.set(__self__, "last_configured_log_filename", last_configured_log_filename)
-        pulumi.set(__self__, "last_configured_log_offset", last_configured_log_offset)
-        pulumi.set(__self__, "policy", policy)
-        pulumi.set(__self__, "uuid", uuid)
+        GetChannelSourceAnonymousTransactionsHandlingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            last_configured_log_filename=last_configured_log_filename,
+            last_configured_log_offset=last_configured_log_offset,
+            policy=policy,
+            uuid=uuid,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             last_configured_log_filename: Optional[str] = None,
+             last_configured_log_offset: Optional[str] = None,
+             policy: Optional[str] = None,
+             uuid: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if last_configured_log_filename is None and 'lastConfiguredLogFilename' in kwargs:
+            last_configured_log_filename = kwargs['lastConfiguredLogFilename']
+        if last_configured_log_filename is None:
+            raise TypeError("Missing 'last_configured_log_filename' argument")
+        if last_configured_log_offset is None and 'lastConfiguredLogOffset' in kwargs:
+            last_configured_log_offset = kwargs['lastConfiguredLogOffset']
+        if last_configured_log_offset is None:
+            raise TypeError("Missing 'last_configured_log_offset' argument")
+        if policy is None:
+            raise TypeError("Missing 'policy' argument")
+        if uuid is None:
+            raise TypeError("Missing 'uuid' argument")
+
+        _setter("last_configured_log_filename", last_configured_log_filename)
+        _setter("last_configured_log_offset", last_configured_log_offset)
+        _setter("policy", policy)
+        _setter("uuid", uuid)
 
     @property
     @pulumi.getter(name="lastConfiguredLogFilename")
@@ -4243,8 +5437,27 @@ class GetChannelSourceSslCaCertificateResult(dict):
         :param str certificate_type: The type of CA certificate.
         :param str contents: The string containing the CA certificate in PEM format.
         """
-        pulumi.set(__self__, "certificate_type", certificate_type)
-        pulumi.set(__self__, "contents", contents)
+        GetChannelSourceSslCaCertificateResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_type=certificate_type,
+            contents=contents,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_type: Optional[str] = None,
+             contents: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if certificate_type is None and 'certificateType' in kwargs:
+            certificate_type = kwargs['certificateType']
+        if certificate_type is None:
+            raise TypeError("Missing 'certificate_type' argument")
+        if contents is None:
+            raise TypeError("Missing 'contents' argument")
+
+        _setter("certificate_type", certificate_type)
+        _setter("contents", contents)
 
     @property
     @pulumi.getter(name="certificateType")
@@ -4282,13 +5495,62 @@ class GetChannelTargetResult(dict):
         :param str tables_without_primary_key_handling: Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
         :param str target_type: The specific target identifier.
         """
-        pulumi.set(__self__, "applier_username", applier_username)
-        pulumi.set(__self__, "channel_name", channel_name)
-        pulumi.set(__self__, "db_system_id", db_system_id)
-        pulumi.set(__self__, "delay_in_seconds", delay_in_seconds)
-        pulumi.set(__self__, "filters", filters)
-        pulumi.set(__self__, "tables_without_primary_key_handling", tables_without_primary_key_handling)
-        pulumi.set(__self__, "target_type", target_type)
+        GetChannelTargetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            applier_username=applier_username,
+            channel_name=channel_name,
+            db_system_id=db_system_id,
+            delay_in_seconds=delay_in_seconds,
+            filters=filters,
+            tables_without_primary_key_handling=tables_without_primary_key_handling,
+            target_type=target_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             applier_username: Optional[str] = None,
+             channel_name: Optional[str] = None,
+             db_system_id: Optional[str] = None,
+             delay_in_seconds: Optional[int] = None,
+             filters: Optional[Sequence['outputs.GetChannelTargetFilterResult']] = None,
+             tables_without_primary_key_handling: Optional[str] = None,
+             target_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if applier_username is None and 'applierUsername' in kwargs:
+            applier_username = kwargs['applierUsername']
+        if applier_username is None:
+            raise TypeError("Missing 'applier_username' argument")
+        if channel_name is None and 'channelName' in kwargs:
+            channel_name = kwargs['channelName']
+        if channel_name is None:
+            raise TypeError("Missing 'channel_name' argument")
+        if db_system_id is None and 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if db_system_id is None:
+            raise TypeError("Missing 'db_system_id' argument")
+        if delay_in_seconds is None and 'delayInSeconds' in kwargs:
+            delay_in_seconds = kwargs['delayInSeconds']
+        if delay_in_seconds is None:
+            raise TypeError("Missing 'delay_in_seconds' argument")
+        if filters is None:
+            raise TypeError("Missing 'filters' argument")
+        if tables_without_primary_key_handling is None and 'tablesWithoutPrimaryKeyHandling' in kwargs:
+            tables_without_primary_key_handling = kwargs['tablesWithoutPrimaryKeyHandling']
+        if tables_without_primary_key_handling is None:
+            raise TypeError("Missing 'tables_without_primary_key_handling' argument")
+        if target_type is None and 'targetType' in kwargs:
+            target_type = kwargs['targetType']
+        if target_type is None:
+            raise TypeError("Missing 'target_type' argument")
+
+        _setter("applier_username", applier_username)
+        _setter("channel_name", channel_name)
+        _setter("db_system_id", db_system_id)
+        _setter("delay_in_seconds", delay_in_seconds)
+        _setter("filters", filters)
+        _setter("tables_without_primary_key_handling", tables_without_primary_key_handling)
+        _setter("target_type", target_type)
 
     @property
     @pulumi.getter(name="applierUsername")
@@ -4356,8 +5618,25 @@ class GetChannelTargetFilterResult(dict):
         :param str type: The type of the filter rule.
         :param str value: The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "value", value)
+        GetChannelTargetFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("type", type)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -4407,19 +5686,96 @@ class GetChannelsChannelResult(dict):
         :param str time_created: The date and time the Channel was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param str time_updated: The time the Channel was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "sources", sources)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "targets", targets)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetChannelsChannelResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_enabled=is_enabled,
+            lifecycle_details=lifecycle_details,
+            sources=sources,
+            state=state,
+            targets=targets,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_enabled: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             sources: Optional[Sequence['outputs.GetChannelsChannelSourceResult']] = None,
+             state: Optional[str] = None,
+             targets: Optional[Sequence['outputs.GetChannelsChannelTargetResult']] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if sources is None:
+            raise TypeError("Missing 'sources' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if targets is None:
+            raise TypeError("Missing 'targets' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_enabled", is_enabled)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("sources", sources)
+        _setter("state", state)
+        _setter("targets", targets)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -4546,14 +5902,63 @@ class GetChannelsChannelSourceResult(dict):
         :param str ssl_mode: The SSL mode of the Channel.
         :param str username: The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
         """
-        pulumi.set(__self__, "anonymous_transactions_handlings", anonymous_transactions_handlings)
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "source_type", source_type)
-        pulumi.set(__self__, "ssl_ca_certificates", ssl_ca_certificates)
-        pulumi.set(__self__, "ssl_mode", ssl_mode)
-        pulumi.set(__self__, "username", username)
+        GetChannelsChannelSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            anonymous_transactions_handlings=anonymous_transactions_handlings,
+            hostname=hostname,
+            password=password,
+            port=port,
+            source_type=source_type,
+            ssl_ca_certificates=ssl_ca_certificates,
+            ssl_mode=ssl_mode,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             anonymous_transactions_handlings: Optional[Sequence['outputs.GetChannelsChannelSourceAnonymousTransactionsHandlingResult']] = None,
+             hostname: Optional[str] = None,
+             password: Optional[str] = None,
+             port: Optional[int] = None,
+             source_type: Optional[str] = None,
+             ssl_ca_certificates: Optional[Sequence['outputs.GetChannelsChannelSourceSslCaCertificateResult']] = None,
+             ssl_mode: Optional[str] = None,
+             username: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if anonymous_transactions_handlings is None and 'anonymousTransactionsHandlings' in kwargs:
+            anonymous_transactions_handlings = kwargs['anonymousTransactionsHandlings']
+        if anonymous_transactions_handlings is None:
+            raise TypeError("Missing 'anonymous_transactions_handlings' argument")
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if password is None:
+            raise TypeError("Missing 'password' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if source_type is None and 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
+        if ssl_ca_certificates is None and 'sslCaCertificates' in kwargs:
+            ssl_ca_certificates = kwargs['sslCaCertificates']
+        if ssl_ca_certificates is None:
+            raise TypeError("Missing 'ssl_ca_certificates' argument")
+        if ssl_mode is None and 'sslMode' in kwargs:
+            ssl_mode = kwargs['sslMode']
+        if ssl_mode is None:
+            raise TypeError("Missing 'ssl_mode' argument")
+        if username is None:
+            raise TypeError("Missing 'username' argument")
+
+        _setter("anonymous_transactions_handlings", anonymous_transactions_handlings)
+        _setter("hostname", hostname)
+        _setter("password", password)
+        _setter("port", port)
+        _setter("source_type", source_type)
+        _setter("ssl_ca_certificates", ssl_ca_certificates)
+        _setter("ssl_mode", ssl_mode)
+        _setter("username", username)
 
     @property
     @pulumi.getter(name="anonymousTransactionsHandlings")
@@ -4630,10 +6035,39 @@ class GetChannelsChannelSourceAnonymousTransactionsHandlingResult(dict):
         :param str policy: Specifies how the replication channel handles anonymous transactions.
         :param str uuid: The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
         """
-        pulumi.set(__self__, "last_configured_log_filename", last_configured_log_filename)
-        pulumi.set(__self__, "last_configured_log_offset", last_configured_log_offset)
-        pulumi.set(__self__, "policy", policy)
-        pulumi.set(__self__, "uuid", uuid)
+        GetChannelsChannelSourceAnonymousTransactionsHandlingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            last_configured_log_filename=last_configured_log_filename,
+            last_configured_log_offset=last_configured_log_offset,
+            policy=policy,
+            uuid=uuid,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             last_configured_log_filename: Optional[str] = None,
+             last_configured_log_offset: Optional[str] = None,
+             policy: Optional[str] = None,
+             uuid: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if last_configured_log_filename is None and 'lastConfiguredLogFilename' in kwargs:
+            last_configured_log_filename = kwargs['lastConfiguredLogFilename']
+        if last_configured_log_filename is None:
+            raise TypeError("Missing 'last_configured_log_filename' argument")
+        if last_configured_log_offset is None and 'lastConfiguredLogOffset' in kwargs:
+            last_configured_log_offset = kwargs['lastConfiguredLogOffset']
+        if last_configured_log_offset is None:
+            raise TypeError("Missing 'last_configured_log_offset' argument")
+        if policy is None:
+            raise TypeError("Missing 'policy' argument")
+        if uuid is None:
+            raise TypeError("Missing 'uuid' argument")
+
+        _setter("last_configured_log_filename", last_configured_log_filename)
+        _setter("last_configured_log_offset", last_configured_log_offset)
+        _setter("policy", policy)
+        _setter("uuid", uuid)
 
     @property
     @pulumi.getter(name="lastConfiguredLogFilename")
@@ -4677,8 +6111,27 @@ class GetChannelsChannelSourceSslCaCertificateResult(dict):
         :param str certificate_type: The type of CA certificate.
         :param str contents: The string containing the CA certificate in PEM format.
         """
-        pulumi.set(__self__, "certificate_type", certificate_type)
-        pulumi.set(__self__, "contents", contents)
+        GetChannelsChannelSourceSslCaCertificateResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_type=certificate_type,
+            contents=contents,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_type: Optional[str] = None,
+             contents: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if certificate_type is None and 'certificateType' in kwargs:
+            certificate_type = kwargs['certificateType']
+        if certificate_type is None:
+            raise TypeError("Missing 'certificate_type' argument")
+        if contents is None:
+            raise TypeError("Missing 'contents' argument")
+
+        _setter("certificate_type", certificate_type)
+        _setter("contents", contents)
 
     @property
     @pulumi.getter(name="certificateType")
@@ -4716,13 +6169,62 @@ class GetChannelsChannelTargetResult(dict):
         :param str tables_without_primary_key_handling: Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
         :param str target_type: The specific target identifier.
         """
-        pulumi.set(__self__, "applier_username", applier_username)
-        pulumi.set(__self__, "channel_name", channel_name)
-        pulumi.set(__self__, "db_system_id", db_system_id)
-        pulumi.set(__self__, "delay_in_seconds", delay_in_seconds)
-        pulumi.set(__self__, "filters", filters)
-        pulumi.set(__self__, "tables_without_primary_key_handling", tables_without_primary_key_handling)
-        pulumi.set(__self__, "target_type", target_type)
+        GetChannelsChannelTargetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            applier_username=applier_username,
+            channel_name=channel_name,
+            db_system_id=db_system_id,
+            delay_in_seconds=delay_in_seconds,
+            filters=filters,
+            tables_without_primary_key_handling=tables_without_primary_key_handling,
+            target_type=target_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             applier_username: Optional[str] = None,
+             channel_name: Optional[str] = None,
+             db_system_id: Optional[str] = None,
+             delay_in_seconds: Optional[int] = None,
+             filters: Optional[Sequence['outputs.GetChannelsChannelTargetFilterResult']] = None,
+             tables_without_primary_key_handling: Optional[str] = None,
+             target_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if applier_username is None and 'applierUsername' in kwargs:
+            applier_username = kwargs['applierUsername']
+        if applier_username is None:
+            raise TypeError("Missing 'applier_username' argument")
+        if channel_name is None and 'channelName' in kwargs:
+            channel_name = kwargs['channelName']
+        if channel_name is None:
+            raise TypeError("Missing 'channel_name' argument")
+        if db_system_id is None and 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if db_system_id is None:
+            raise TypeError("Missing 'db_system_id' argument")
+        if delay_in_seconds is None and 'delayInSeconds' in kwargs:
+            delay_in_seconds = kwargs['delayInSeconds']
+        if delay_in_seconds is None:
+            raise TypeError("Missing 'delay_in_seconds' argument")
+        if filters is None:
+            raise TypeError("Missing 'filters' argument")
+        if tables_without_primary_key_handling is None and 'tablesWithoutPrimaryKeyHandling' in kwargs:
+            tables_without_primary_key_handling = kwargs['tablesWithoutPrimaryKeyHandling']
+        if tables_without_primary_key_handling is None:
+            raise TypeError("Missing 'tables_without_primary_key_handling' argument")
+        if target_type is None and 'targetType' in kwargs:
+            target_type = kwargs['targetType']
+        if target_type is None:
+            raise TypeError("Missing 'target_type' argument")
+
+        _setter("applier_username", applier_username)
+        _setter("channel_name", channel_name)
+        _setter("db_system_id", db_system_id)
+        _setter("delay_in_seconds", delay_in_seconds)
+        _setter("filters", filters)
+        _setter("tables_without_primary_key_handling", tables_without_primary_key_handling)
+        _setter("target_type", target_type)
 
     @property
     @pulumi.getter(name="applierUsername")
@@ -4790,8 +6292,25 @@ class GetChannelsChannelTargetFilterResult(dict):
         :param str type: The type of the filter rule.
         :param str value: The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "value", value)
+        GetChannelsChannelTargetFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("type", type)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -4816,10 +6335,29 @@ class GetChannelsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetChannelsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4850,10 +6388,41 @@ class GetHeatWaveClusterClusterNodeResult(dict):
         :param str time_created: The date and time the HeatWave cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param str time_updated: The time the HeatWave cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
-        pulumi.set(__self__, "node_id", node_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetHeatWaveClusterClusterNodeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            node_id=node_id,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             node_id: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if node_id is None and 'nodeId' in kwargs:
+            node_id = kwargs['nodeId']
+        if node_id is None:
+            raise TypeError("Missing 'node_id' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+
+        _setter("node_id", node_id)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="nodeId")
@@ -4943,31 +6512,180 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
         :param str shape_name: The shape of the DB System instance used for backup.
         :param str subnet_id: The OCID of the subnet the DB System is associated with.
         """
-        pulumi.set(__self__, "admin_username", admin_username)
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "backup_policies", backup_policies)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "configuration_id", configuration_id)
-        pulumi.set(__self__, "crash_recovery", crash_recovery)
-        pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
-        pulumi.set(__self__, "database_management", database_management)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "deletion_policies", deletion_policies)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "endpoints", endpoints)
-        pulumi.set(__self__, "fault_domain", fault_domain)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "hostname_label", hostname_label)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "is_highly_available", is_highly_available)
-        pulumi.set(__self__, "maintenances", maintenances)
-        pulumi.set(__self__, "mysql_version", mysql_version)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "port_x", port_x)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        GetMysqlBackupDbSystemSnapshotResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            admin_username=admin_username,
+            availability_domain=availability_domain,
+            backup_policies=backup_policies,
+            compartment_id=compartment_id,
+            configuration_id=configuration_id,
+            crash_recovery=crash_recovery,
+            data_storage_size_in_gb=data_storage_size_in_gb,
+            database_management=database_management,
+            defined_tags=defined_tags,
+            deletion_policies=deletion_policies,
+            description=description,
+            display_name=display_name,
+            endpoints=endpoints,
+            fault_domain=fault_domain,
+            freeform_tags=freeform_tags,
+            hostname_label=hostname_label,
+            id=id,
+            ip_address=ip_address,
+            is_highly_available=is_highly_available,
+            maintenances=maintenances,
+            mysql_version=mysql_version,
+            port=port,
+            port_x=port_x,
+            shape_name=shape_name,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             admin_username: Optional[str] = None,
+             availability_domain: Optional[str] = None,
+             backup_policies: Optional[Sequence['outputs.GetMysqlBackupDbSystemSnapshotBackupPolicyResult']] = None,
+             compartment_id: Optional[str] = None,
+             configuration_id: Optional[str] = None,
+             crash_recovery: Optional[str] = None,
+             data_storage_size_in_gb: Optional[int] = None,
+             database_management: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             deletion_policies: Optional[Sequence['outputs.GetMysqlBackupDbSystemSnapshotDeletionPolicyResult']] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             endpoints: Optional[Sequence['outputs.GetMysqlBackupDbSystemSnapshotEndpointResult']] = None,
+             fault_domain: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             hostname_label: Optional[str] = None,
+             id: Optional[str] = None,
+             ip_address: Optional[str] = None,
+             is_highly_available: Optional[bool] = None,
+             maintenances: Optional[Sequence['outputs.GetMysqlBackupDbSystemSnapshotMaintenanceResult']] = None,
+             mysql_version: Optional[str] = None,
+             port: Optional[int] = None,
+             port_x: Optional[int] = None,
+             shape_name: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if admin_username is None and 'adminUsername' in kwargs:
+            admin_username = kwargs['adminUsername']
+        if admin_username is None:
+            raise TypeError("Missing 'admin_username' argument")
+        if availability_domain is None and 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if backup_policies is None and 'backupPolicies' in kwargs:
+            backup_policies = kwargs['backupPolicies']
+        if backup_policies is None:
+            raise TypeError("Missing 'backup_policies' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if configuration_id is None and 'configurationId' in kwargs:
+            configuration_id = kwargs['configurationId']
+        if configuration_id is None:
+            raise TypeError("Missing 'configuration_id' argument")
+        if crash_recovery is None and 'crashRecovery' in kwargs:
+            crash_recovery = kwargs['crashRecovery']
+        if crash_recovery is None:
+            raise TypeError("Missing 'crash_recovery' argument")
+        if data_storage_size_in_gb is None and 'dataStorageSizeInGb' in kwargs:
+            data_storage_size_in_gb = kwargs['dataStorageSizeInGb']
+        if data_storage_size_in_gb is None:
+            raise TypeError("Missing 'data_storage_size_in_gb' argument")
+        if database_management is None and 'databaseManagement' in kwargs:
+            database_management = kwargs['databaseManagement']
+        if database_management is None:
+            raise TypeError("Missing 'database_management' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if deletion_policies is None and 'deletionPolicies' in kwargs:
+            deletion_policies = kwargs['deletionPolicies']
+        if deletion_policies is None:
+            raise TypeError("Missing 'deletion_policies' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if endpoints is None:
+            raise TypeError("Missing 'endpoints' argument")
+        if fault_domain is None and 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if fault_domain is None:
+            raise TypeError("Missing 'fault_domain' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if hostname_label is None and 'hostnameLabel' in kwargs:
+            hostname_label = kwargs['hostnameLabel']
+        if hostname_label is None:
+            raise TypeError("Missing 'hostname_label' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if ip_address is None and 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if ip_address is None:
+            raise TypeError("Missing 'ip_address' argument")
+        if is_highly_available is None and 'isHighlyAvailable' in kwargs:
+            is_highly_available = kwargs['isHighlyAvailable']
+        if is_highly_available is None:
+            raise TypeError("Missing 'is_highly_available' argument")
+        if maintenances is None:
+            raise TypeError("Missing 'maintenances' argument")
+        if mysql_version is None and 'mysqlVersion' in kwargs:
+            mysql_version = kwargs['mysqlVersion']
+        if mysql_version is None:
+            raise TypeError("Missing 'mysql_version' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if port_x is None and 'portX' in kwargs:
+            port_x = kwargs['portX']
+        if port_x is None:
+            raise TypeError("Missing 'port_x' argument")
+        if shape_name is None and 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+
+        _setter("admin_username", admin_username)
+        _setter("availability_domain", availability_domain)
+        _setter("backup_policies", backup_policies)
+        _setter("compartment_id", compartment_id)
+        _setter("configuration_id", configuration_id)
+        _setter("crash_recovery", crash_recovery)
+        _setter("data_storage_size_in_gb", data_storage_size_in_gb)
+        _setter("database_management", database_management)
+        _setter("defined_tags", defined_tags)
+        _setter("deletion_policies", deletion_policies)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("endpoints", endpoints)
+        _setter("fault_domain", fault_domain)
+        _setter("freeform_tags", freeform_tags)
+        _setter("hostname_label", hostname_label)
+        _setter("id", id)
+        _setter("ip_address", ip_address)
+        _setter("is_highly_available", is_highly_available)
+        _setter("maintenances", maintenances)
+        _setter("mysql_version", mysql_version)
+        _setter("port", port)
+        _setter("port_x", port_x)
+        _setter("shape_name", shape_name)
+        _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="adminUsername")
@@ -5187,12 +6905,57 @@ class GetMysqlBackupDbSystemSnapshotBackupPolicyResult(dict):
         :param int retention_in_days: Number of days to retain this backup.
         :param str window_start_time: The start time of the maintenance window.
         """
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "pitr_policies", pitr_policies)
-        pulumi.set(__self__, "retention_in_days", retention_in_days)
-        pulumi.set(__self__, "window_start_time", window_start_time)
+        GetMysqlBackupDbSystemSnapshotBackupPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            is_enabled=is_enabled,
+            pitr_policies=pitr_policies,
+            retention_in_days=retention_in_days,
+            window_start_time=window_start_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             is_enabled: Optional[bool] = None,
+             pitr_policies: Optional[Sequence['outputs.GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyResult']] = None,
+             retention_in_days: Optional[int] = None,
+             window_start_time: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if pitr_policies is None and 'pitrPolicies' in kwargs:
+            pitr_policies = kwargs['pitrPolicies']
+        if pitr_policies is None:
+            raise TypeError("Missing 'pitr_policies' argument")
+        if retention_in_days is None and 'retentionInDays' in kwargs:
+            retention_in_days = kwargs['retentionInDays']
+        if retention_in_days is None:
+            raise TypeError("Missing 'retention_in_days' argument")
+        if window_start_time is None and 'windowStartTime' in kwargs:
+            window_start_time = kwargs['windowStartTime']
+        if window_start_time is None:
+            raise TypeError("Missing 'window_start_time' argument")
+
+        _setter("defined_tags", defined_tags)
+        _setter("freeform_tags", freeform_tags)
+        _setter("is_enabled", is_enabled)
+        _setter("pitr_policies", pitr_policies)
+        _setter("retention_in_days", retention_in_days)
+        _setter("window_start_time", window_start_time)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -5250,7 +7013,22 @@ class GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyResult(dict):
         """
         :param bool is_enabled: Specifies if PITR is enabled or disabled.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+
+        _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -5272,9 +7050,36 @@ class GetMysqlBackupDbSystemSnapshotDeletionPolicyResult(dict):
         :param str final_backup: Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
         :param bool is_delete_protected: Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
         """
-        pulumi.set(__self__, "automatic_backup_retention", automatic_backup_retention)
-        pulumi.set(__self__, "final_backup", final_backup)
-        pulumi.set(__self__, "is_delete_protected", is_delete_protected)
+        GetMysqlBackupDbSystemSnapshotDeletionPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            automatic_backup_retention=automatic_backup_retention,
+            final_backup=final_backup,
+            is_delete_protected=is_delete_protected,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             automatic_backup_retention: Optional[str] = None,
+             final_backup: Optional[str] = None,
+             is_delete_protected: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if automatic_backup_retention is None and 'automaticBackupRetention' in kwargs:
+            automatic_backup_retention = kwargs['automaticBackupRetention']
+        if automatic_backup_retention is None:
+            raise TypeError("Missing 'automatic_backup_retention' argument")
+        if final_backup is None and 'finalBackup' in kwargs:
+            final_backup = kwargs['finalBackup']
+        if final_backup is None:
+            raise TypeError("Missing 'final_backup' argument")
+        if is_delete_protected is None and 'isDeleteProtected' in kwargs:
+            is_delete_protected = kwargs['isDeleteProtected']
+        if is_delete_protected is None:
+            raise TypeError("Missing 'is_delete_protected' argument")
+
+        _setter("automatic_backup_retention", automatic_backup_retention)
+        _setter("final_backup", final_backup)
+        _setter("is_delete_protected", is_delete_protected)
 
     @property
     @pulumi.getter(name="automaticBackupRetention")
@@ -5324,15 +7129,70 @@ class GetMysqlBackupDbSystemSnapshotEndpointResult(dict):
         :param str status: The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
         :param str status_details: Additional information about the current endpoint status.
         """
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "modes", modes)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "port_x", port_x)
-        pulumi.set(__self__, "resource_id", resource_id)
-        pulumi.set(__self__, "resource_type", resource_type)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "status_details", status_details)
+        GetMysqlBackupDbSystemSnapshotEndpointResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+            ip_address=ip_address,
+            modes=modes,
+            port=port,
+            port_x=port_x,
+            resource_id=resource_id,
+            resource_type=resource_type,
+            status=status,
+            status_details=status_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: Optional[str] = None,
+             ip_address: Optional[str] = None,
+             modes: Optional[Sequence[str]] = None,
+             port: Optional[int] = None,
+             port_x: Optional[int] = None,
+             resource_id: Optional[str] = None,
+             resource_type: Optional[str] = None,
+             status: Optional[str] = None,
+             status_details: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if ip_address is None and 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if ip_address is None:
+            raise TypeError("Missing 'ip_address' argument")
+        if modes is None:
+            raise TypeError("Missing 'modes' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if port_x is None and 'portX' in kwargs:
+            port_x = kwargs['portX']
+        if port_x is None:
+            raise TypeError("Missing 'port_x' argument")
+        if resource_id is None and 'resourceId' in kwargs:
+            resource_id = kwargs['resourceId']
+        if resource_id is None:
+            raise TypeError("Missing 'resource_id' argument")
+        if resource_type is None and 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if resource_type is None:
+            raise TypeError("Missing 'resource_type' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if status_details is None and 'statusDetails' in kwargs:
+            status_details = kwargs['statusDetails']
+        if status_details is None:
+            raise TypeError("Missing 'status_details' argument")
+
+        _setter("hostname", hostname)
+        _setter("ip_address", ip_address)
+        _setter("modes", modes)
+        _setter("port", port)
+        _setter("port_x", port_x)
+        _setter("resource_id", resource_id)
+        _setter("resource_type", resource_type)
+        _setter("status", status)
+        _setter("status_details", status_details)
 
     @property
     @pulumi.getter
@@ -5414,7 +7274,22 @@ class GetMysqlBackupDbSystemSnapshotMaintenanceResult(dict):
         """
         :param str window_start_time: The start time of the maintenance window.
         """
-        pulumi.set(__self__, "window_start_time", window_start_time)
+        GetMysqlBackupDbSystemSnapshotMaintenanceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            window_start_time=window_start_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             window_start_time: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if window_start_time is None and 'windowStartTime' in kwargs:
+            window_start_time = kwargs['windowStartTime']
+        if window_start_time is None:
+            raise TypeError("Missing 'window_start_time' argument")
+
+        _setter("window_start_time", window_start_time)
 
     @property
     @pulumi.getter(name="windowStartTime")
@@ -5468,25 +7343,142 @@ class GetMysqlBackupsBackupResult(dict):
         :param str time_created: The time the backup record was created.
         :param str time_updated: The time at which the backup was updated.
         """
-        pulumi.set(__self__, "backup_size_in_gbs", backup_size_in_gbs)
-        pulumi.set(__self__, "backup_type", backup_type)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "creation_type", creation_type)
-        pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
-        pulumi.set(__self__, "db_system_id", db_system_id)
-        pulumi.set(__self__, "db_system_snapshots", db_system_snapshots)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "mysql_version", mysql_version)
-        pulumi.set(__self__, "retention_in_days", retention_in_days)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetMysqlBackupsBackupResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backup_size_in_gbs=backup_size_in_gbs,
+            backup_type=backup_type,
+            compartment_id=compartment_id,
+            creation_type=creation_type,
+            data_storage_size_in_gb=data_storage_size_in_gb,
+            db_system_id=db_system_id,
+            db_system_snapshots=db_system_snapshots,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            mysql_version=mysql_version,
+            retention_in_days=retention_in_days,
+            shape_name=shape_name,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backup_size_in_gbs: Optional[int] = None,
+             backup_type: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             creation_type: Optional[str] = None,
+             data_storage_size_in_gb: Optional[int] = None,
+             db_system_id: Optional[str] = None,
+             db_system_snapshots: Optional[Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotResult']] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             mysql_version: Optional[str] = None,
+             retention_in_days: Optional[int] = None,
+             shape_name: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if backup_size_in_gbs is None and 'backupSizeInGbs' in kwargs:
+            backup_size_in_gbs = kwargs['backupSizeInGbs']
+        if backup_size_in_gbs is None:
+            raise TypeError("Missing 'backup_size_in_gbs' argument")
+        if backup_type is None and 'backupType' in kwargs:
+            backup_type = kwargs['backupType']
+        if backup_type is None:
+            raise TypeError("Missing 'backup_type' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if creation_type is None and 'creationType' in kwargs:
+            creation_type = kwargs['creationType']
+        if creation_type is None:
+            raise TypeError("Missing 'creation_type' argument")
+        if data_storage_size_in_gb is None and 'dataStorageSizeInGb' in kwargs:
+            data_storage_size_in_gb = kwargs['dataStorageSizeInGb']
+        if data_storage_size_in_gb is None:
+            raise TypeError("Missing 'data_storage_size_in_gb' argument")
+        if db_system_id is None and 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if db_system_id is None:
+            raise TypeError("Missing 'db_system_id' argument")
+        if db_system_snapshots is None and 'dbSystemSnapshots' in kwargs:
+            db_system_snapshots = kwargs['dbSystemSnapshots']
+        if db_system_snapshots is None:
+            raise TypeError("Missing 'db_system_snapshots' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if mysql_version is None and 'mysqlVersion' in kwargs:
+            mysql_version = kwargs['mysqlVersion']
+        if mysql_version is None:
+            raise TypeError("Missing 'mysql_version' argument")
+        if retention_in_days is None and 'retentionInDays' in kwargs:
+            retention_in_days = kwargs['retentionInDays']
+        if retention_in_days is None:
+            raise TypeError("Missing 'retention_in_days' argument")
+        if shape_name is None and 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+
+        _setter("backup_size_in_gbs", backup_size_in_gbs)
+        _setter("backup_type", backup_type)
+        _setter("compartment_id", compartment_id)
+        _setter("creation_type", creation_type)
+        _setter("data_storage_size_in_gb", data_storage_size_in_gb)
+        _setter("db_system_id", db_system_id)
+        _setter("db_system_snapshots", db_system_snapshots)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("mysql_version", mysql_version)
+        _setter("retention_in_days", retention_in_days)
+        _setter("shape_name", shape_name)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="backupSizeInGbs")
@@ -5696,31 +7688,180 @@ class GetMysqlBackupsBackupDbSystemSnapshotResult(dict):
         :param str shape_name: The shape of the DB System instance used for backup.
         :param str subnet_id: The OCID of the subnet the DB System is associated with.
         """
-        pulumi.set(__self__, "admin_username", admin_username)
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "backup_policies", backup_policies)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "configuration_id", configuration_id)
-        pulumi.set(__self__, "crash_recovery", crash_recovery)
-        pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
-        pulumi.set(__self__, "database_management", database_management)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "deletion_policies", deletion_policies)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "endpoints", endpoints)
-        pulumi.set(__self__, "fault_domain", fault_domain)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "hostname_label", hostname_label)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "is_highly_available", is_highly_available)
-        pulumi.set(__self__, "maintenances", maintenances)
-        pulumi.set(__self__, "mysql_version", mysql_version)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "port_x", port_x)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        GetMysqlBackupsBackupDbSystemSnapshotResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            admin_username=admin_username,
+            availability_domain=availability_domain,
+            backup_policies=backup_policies,
+            compartment_id=compartment_id,
+            configuration_id=configuration_id,
+            crash_recovery=crash_recovery,
+            data_storage_size_in_gb=data_storage_size_in_gb,
+            database_management=database_management,
+            defined_tags=defined_tags,
+            deletion_policies=deletion_policies,
+            description=description,
+            display_name=display_name,
+            endpoints=endpoints,
+            fault_domain=fault_domain,
+            freeform_tags=freeform_tags,
+            hostname_label=hostname_label,
+            id=id,
+            ip_address=ip_address,
+            is_highly_available=is_highly_available,
+            maintenances=maintenances,
+            mysql_version=mysql_version,
+            port=port,
+            port_x=port_x,
+            shape_name=shape_name,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             admin_username: Optional[str] = None,
+             availability_domain: Optional[str] = None,
+             backup_policies: Optional[Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyResult']] = None,
+             compartment_id: Optional[str] = None,
+             configuration_id: Optional[str] = None,
+             crash_recovery: Optional[str] = None,
+             data_storage_size_in_gb: Optional[int] = None,
+             database_management: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             deletion_policies: Optional[Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyResult']] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             endpoints: Optional[Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotEndpointResult']] = None,
+             fault_domain: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             hostname_label: Optional[str] = None,
+             id: Optional[str] = None,
+             ip_address: Optional[str] = None,
+             is_highly_available: Optional[bool] = None,
+             maintenances: Optional[Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotMaintenanceResult']] = None,
+             mysql_version: Optional[str] = None,
+             port: Optional[int] = None,
+             port_x: Optional[int] = None,
+             shape_name: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if admin_username is None and 'adminUsername' in kwargs:
+            admin_username = kwargs['adminUsername']
+        if admin_username is None:
+            raise TypeError("Missing 'admin_username' argument")
+        if availability_domain is None and 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if backup_policies is None and 'backupPolicies' in kwargs:
+            backup_policies = kwargs['backupPolicies']
+        if backup_policies is None:
+            raise TypeError("Missing 'backup_policies' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if configuration_id is None and 'configurationId' in kwargs:
+            configuration_id = kwargs['configurationId']
+        if configuration_id is None:
+            raise TypeError("Missing 'configuration_id' argument")
+        if crash_recovery is None and 'crashRecovery' in kwargs:
+            crash_recovery = kwargs['crashRecovery']
+        if crash_recovery is None:
+            raise TypeError("Missing 'crash_recovery' argument")
+        if data_storage_size_in_gb is None and 'dataStorageSizeInGb' in kwargs:
+            data_storage_size_in_gb = kwargs['dataStorageSizeInGb']
+        if data_storage_size_in_gb is None:
+            raise TypeError("Missing 'data_storage_size_in_gb' argument")
+        if database_management is None and 'databaseManagement' in kwargs:
+            database_management = kwargs['databaseManagement']
+        if database_management is None:
+            raise TypeError("Missing 'database_management' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if deletion_policies is None and 'deletionPolicies' in kwargs:
+            deletion_policies = kwargs['deletionPolicies']
+        if deletion_policies is None:
+            raise TypeError("Missing 'deletion_policies' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if endpoints is None:
+            raise TypeError("Missing 'endpoints' argument")
+        if fault_domain is None and 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if fault_domain is None:
+            raise TypeError("Missing 'fault_domain' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if hostname_label is None and 'hostnameLabel' in kwargs:
+            hostname_label = kwargs['hostnameLabel']
+        if hostname_label is None:
+            raise TypeError("Missing 'hostname_label' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if ip_address is None and 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if ip_address is None:
+            raise TypeError("Missing 'ip_address' argument")
+        if is_highly_available is None and 'isHighlyAvailable' in kwargs:
+            is_highly_available = kwargs['isHighlyAvailable']
+        if is_highly_available is None:
+            raise TypeError("Missing 'is_highly_available' argument")
+        if maintenances is None:
+            raise TypeError("Missing 'maintenances' argument")
+        if mysql_version is None and 'mysqlVersion' in kwargs:
+            mysql_version = kwargs['mysqlVersion']
+        if mysql_version is None:
+            raise TypeError("Missing 'mysql_version' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if port_x is None and 'portX' in kwargs:
+            port_x = kwargs['portX']
+        if port_x is None:
+            raise TypeError("Missing 'port_x' argument")
+        if shape_name is None and 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+
+        _setter("admin_username", admin_username)
+        _setter("availability_domain", availability_domain)
+        _setter("backup_policies", backup_policies)
+        _setter("compartment_id", compartment_id)
+        _setter("configuration_id", configuration_id)
+        _setter("crash_recovery", crash_recovery)
+        _setter("data_storage_size_in_gb", data_storage_size_in_gb)
+        _setter("database_management", database_management)
+        _setter("defined_tags", defined_tags)
+        _setter("deletion_policies", deletion_policies)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("endpoints", endpoints)
+        _setter("fault_domain", fault_domain)
+        _setter("freeform_tags", freeform_tags)
+        _setter("hostname_label", hostname_label)
+        _setter("id", id)
+        _setter("ip_address", ip_address)
+        _setter("is_highly_available", is_highly_available)
+        _setter("maintenances", maintenances)
+        _setter("mysql_version", mysql_version)
+        _setter("port", port)
+        _setter("port_x", port_x)
+        _setter("shape_name", shape_name)
+        _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="adminUsername")
@@ -5940,12 +8081,57 @@ class GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyResult(dict):
         :param int retention_in_days: Number of days to retain this backup.
         :param str window_start_time: The start time of the maintenance window.
         """
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "pitr_policies", pitr_policies)
-        pulumi.set(__self__, "retention_in_days", retention_in_days)
-        pulumi.set(__self__, "window_start_time", window_start_time)
+        GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            is_enabled=is_enabled,
+            pitr_policies=pitr_policies,
+            retention_in_days=retention_in_days,
+            window_start_time=window_start_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             is_enabled: Optional[bool] = None,
+             pitr_policies: Optional[Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyResult']] = None,
+             retention_in_days: Optional[int] = None,
+             window_start_time: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if pitr_policies is None and 'pitrPolicies' in kwargs:
+            pitr_policies = kwargs['pitrPolicies']
+        if pitr_policies is None:
+            raise TypeError("Missing 'pitr_policies' argument")
+        if retention_in_days is None and 'retentionInDays' in kwargs:
+            retention_in_days = kwargs['retentionInDays']
+        if retention_in_days is None:
+            raise TypeError("Missing 'retention_in_days' argument")
+        if window_start_time is None and 'windowStartTime' in kwargs:
+            window_start_time = kwargs['windowStartTime']
+        if window_start_time is None:
+            raise TypeError("Missing 'window_start_time' argument")
+
+        _setter("defined_tags", defined_tags)
+        _setter("freeform_tags", freeform_tags)
+        _setter("is_enabled", is_enabled)
+        _setter("pitr_policies", pitr_policies)
+        _setter("retention_in_days", retention_in_days)
+        _setter("window_start_time", window_start_time)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -6003,7 +8189,22 @@ class GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyResult(dict):
         """
         :param bool is_enabled: Specifies if PITR is enabled or disabled.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+
+        _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -6025,9 +8226,36 @@ class GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyResult(dict):
         :param str final_backup: Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
         :param bool is_delete_protected: Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
         """
-        pulumi.set(__self__, "automatic_backup_retention", automatic_backup_retention)
-        pulumi.set(__self__, "final_backup", final_backup)
-        pulumi.set(__self__, "is_delete_protected", is_delete_protected)
+        GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            automatic_backup_retention=automatic_backup_retention,
+            final_backup=final_backup,
+            is_delete_protected=is_delete_protected,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             automatic_backup_retention: Optional[str] = None,
+             final_backup: Optional[str] = None,
+             is_delete_protected: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if automatic_backup_retention is None and 'automaticBackupRetention' in kwargs:
+            automatic_backup_retention = kwargs['automaticBackupRetention']
+        if automatic_backup_retention is None:
+            raise TypeError("Missing 'automatic_backup_retention' argument")
+        if final_backup is None and 'finalBackup' in kwargs:
+            final_backup = kwargs['finalBackup']
+        if final_backup is None:
+            raise TypeError("Missing 'final_backup' argument")
+        if is_delete_protected is None and 'isDeleteProtected' in kwargs:
+            is_delete_protected = kwargs['isDeleteProtected']
+        if is_delete_protected is None:
+            raise TypeError("Missing 'is_delete_protected' argument")
+
+        _setter("automatic_backup_retention", automatic_backup_retention)
+        _setter("final_backup", final_backup)
+        _setter("is_delete_protected", is_delete_protected)
 
     @property
     @pulumi.getter(name="automaticBackupRetention")
@@ -6077,15 +8305,70 @@ class GetMysqlBackupsBackupDbSystemSnapshotEndpointResult(dict):
         :param str status: The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
         :param str status_details: Additional information about the current endpoint status.
         """
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "modes", modes)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "port_x", port_x)
-        pulumi.set(__self__, "resource_id", resource_id)
-        pulumi.set(__self__, "resource_type", resource_type)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "status_details", status_details)
+        GetMysqlBackupsBackupDbSystemSnapshotEndpointResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+            ip_address=ip_address,
+            modes=modes,
+            port=port,
+            port_x=port_x,
+            resource_id=resource_id,
+            resource_type=resource_type,
+            status=status,
+            status_details=status_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: Optional[str] = None,
+             ip_address: Optional[str] = None,
+             modes: Optional[Sequence[str]] = None,
+             port: Optional[int] = None,
+             port_x: Optional[int] = None,
+             resource_id: Optional[str] = None,
+             resource_type: Optional[str] = None,
+             status: Optional[str] = None,
+             status_details: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if ip_address is None and 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if ip_address is None:
+            raise TypeError("Missing 'ip_address' argument")
+        if modes is None:
+            raise TypeError("Missing 'modes' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if port_x is None and 'portX' in kwargs:
+            port_x = kwargs['portX']
+        if port_x is None:
+            raise TypeError("Missing 'port_x' argument")
+        if resource_id is None and 'resourceId' in kwargs:
+            resource_id = kwargs['resourceId']
+        if resource_id is None:
+            raise TypeError("Missing 'resource_id' argument")
+        if resource_type is None and 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if resource_type is None:
+            raise TypeError("Missing 'resource_type' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if status_details is None and 'statusDetails' in kwargs:
+            status_details = kwargs['statusDetails']
+        if status_details is None:
+            raise TypeError("Missing 'status_details' argument")
+
+        _setter("hostname", hostname)
+        _setter("ip_address", ip_address)
+        _setter("modes", modes)
+        _setter("port", port)
+        _setter("port_x", port_x)
+        _setter("resource_id", resource_id)
+        _setter("resource_type", resource_type)
+        _setter("status", status)
+        _setter("status_details", status_details)
 
     @property
     @pulumi.getter
@@ -6167,7 +8450,22 @@ class GetMysqlBackupsBackupDbSystemSnapshotMaintenanceResult(dict):
         """
         :param str window_start_time: The start time of the maintenance window.
         """
-        pulumi.set(__self__, "window_start_time", window_start_time)
+        GetMysqlBackupsBackupDbSystemSnapshotMaintenanceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            window_start_time=window_start_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             window_start_time: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if window_start_time is None and 'windowStartTime' in kwargs:
+            window_start_time = kwargs['windowStartTime']
+        if window_start_time is None:
+            raise TypeError("Missing 'window_start_time' argument")
+
+        _setter("window_start_time", window_start_time)
 
     @property
     @pulumi.getter(name="windowStartTime")
@@ -6184,10 +8482,29 @@ class GetMysqlBackupsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMysqlBackupsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -6212,7 +8529,22 @@ class GetMysqlConfigurationInitVariableResult(dict):
         """
         :param str lower_case_table_names: Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
         """
-        pulumi.set(__self__, "lower_case_table_names", lower_case_table_names)
+        GetMysqlConfigurationInitVariableResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            lower_case_table_names=lower_case_table_names,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             lower_case_table_names: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if lower_case_table_names is None and 'lowerCaseTableNames' in kwargs:
+            lower_case_table_names = kwargs['lowerCaseTableNames']
+        if lower_case_table_names is None:
+            raise TypeError("Missing 'lower_case_table_names' argument")
+
+        _setter("lower_case_table_names", lower_case_table_names)
 
     @property
     @pulumi.getter(name="lowerCaseTableNames")
@@ -6390,85 +8722,566 @@ class GetMysqlConfigurationVariableResult(dict):
         :param str transaction_isolation: ("transaction_isolation")
         :param int wait_timeout: The number of seconds the server waits for activity on a noninteractive connection before closing it.
         """
-        pulumi.set(__self__, "autocommit", autocommit)
-        pulumi.set(__self__, "big_tables", big_tables)
-        pulumi.set(__self__, "binlog_expire_logs_seconds", binlog_expire_logs_seconds)
-        pulumi.set(__self__, "binlog_row_metadata", binlog_row_metadata)
-        pulumi.set(__self__, "binlog_row_value_options", binlog_row_value_options)
-        pulumi.set(__self__, "binlog_transaction_compression", binlog_transaction_compression)
-        pulumi.set(__self__, "completion_type", completion_type)
-        pulumi.set(__self__, "connect_timeout", connect_timeout)
-        pulumi.set(__self__, "connection_memory_chunk_size", connection_memory_chunk_size)
-        pulumi.set(__self__, "connection_memory_limit", connection_memory_limit)
-        pulumi.set(__self__, "cte_max_recursion_depth", cte_max_recursion_depth)
-        pulumi.set(__self__, "default_authentication_plugin", default_authentication_plugin)
-        pulumi.set(__self__, "foreign_key_checks", foreign_key_checks)
-        pulumi.set(__self__, "generated_random_password_length", generated_random_password_length)
-        pulumi.set(__self__, "global_connection_memory_limit", global_connection_memory_limit)
-        pulumi.set(__self__, "global_connection_memory_tracking", global_connection_memory_tracking)
-        pulumi.set(__self__, "group_replication_consistency", group_replication_consistency)
-        pulumi.set(__self__, "information_schema_stats_expiry", information_schema_stats_expiry)
-        pulumi.set(__self__, "innodb_buffer_pool_dump_pct", innodb_buffer_pool_dump_pct)
-        pulumi.set(__self__, "innodb_buffer_pool_instances", innodb_buffer_pool_instances)
-        pulumi.set(__self__, "innodb_buffer_pool_size", innodb_buffer_pool_size)
-        pulumi.set(__self__, "innodb_ddl_buffer_size", innodb_ddl_buffer_size)
-        pulumi.set(__self__, "innodb_ddl_threads", innodb_ddl_threads)
-        pulumi.set(__self__, "innodb_ft_enable_stopword", innodb_ft_enable_stopword)
-        pulumi.set(__self__, "innodb_ft_max_token_size", innodb_ft_max_token_size)
-        pulumi.set(__self__, "innodb_ft_min_token_size", innodb_ft_min_token_size)
-        pulumi.set(__self__, "innodb_ft_num_word_optimize", innodb_ft_num_word_optimize)
-        pulumi.set(__self__, "innodb_ft_result_cache_limit", innodb_ft_result_cache_limit)
-        pulumi.set(__self__, "innodb_ft_server_stopword_table", innodb_ft_server_stopword_table)
-        pulumi.set(__self__, "innodb_lock_wait_timeout", innodb_lock_wait_timeout)
-        pulumi.set(__self__, "innodb_log_writer_threads", innodb_log_writer_threads)
-        pulumi.set(__self__, "innodb_max_purge_lag", innodb_max_purge_lag)
-        pulumi.set(__self__, "innodb_max_purge_lag_delay", innodb_max_purge_lag_delay)
-        pulumi.set(__self__, "innodb_stats_persistent_sample_pages", innodb_stats_persistent_sample_pages)
-        pulumi.set(__self__, "innodb_stats_transient_sample_pages", innodb_stats_transient_sample_pages)
-        pulumi.set(__self__, "interactive_timeout", interactive_timeout)
-        pulumi.set(__self__, "local_infile", local_infile)
-        pulumi.set(__self__, "mandatory_roles", mandatory_roles)
-        pulumi.set(__self__, "max_allowed_packet", max_allowed_packet)
-        pulumi.set(__self__, "max_binlog_cache_size", max_binlog_cache_size)
-        pulumi.set(__self__, "max_connect_errors", max_connect_errors)
-        pulumi.set(__self__, "max_connections", max_connections)
-        pulumi.set(__self__, "max_execution_time", max_execution_time)
-        pulumi.set(__self__, "max_heap_table_size", max_heap_table_size)
-        pulumi.set(__self__, "max_prepared_stmt_count", max_prepared_stmt_count)
-        pulumi.set(__self__, "mysql_firewall_mode", mysql_firewall_mode)
-        pulumi.set(__self__, "mysql_zstd_default_compression_level", mysql_zstd_default_compression_level)
-        pulumi.set(__self__, "mysqlx_connect_timeout", mysqlx_connect_timeout)
-        pulumi.set(__self__, "mysqlx_deflate_default_compression_level", mysqlx_deflate_default_compression_level)
-        pulumi.set(__self__, "mysqlx_deflate_max_client_compression_level", mysqlx_deflate_max_client_compression_level)
-        pulumi.set(__self__, "mysqlx_document_id_unique_prefix", mysqlx_document_id_unique_prefix)
-        pulumi.set(__self__, "mysqlx_enable_hello_notice", mysqlx_enable_hello_notice)
-        pulumi.set(__self__, "mysqlx_idle_worker_thread_timeout", mysqlx_idle_worker_thread_timeout)
-        pulumi.set(__self__, "mysqlx_interactive_timeout", mysqlx_interactive_timeout)
-        pulumi.set(__self__, "mysqlx_lz4default_compression_level", mysqlx_lz4default_compression_level)
-        pulumi.set(__self__, "mysqlx_lz4max_client_compression_level", mysqlx_lz4max_client_compression_level)
-        pulumi.set(__self__, "mysqlx_max_allowed_packet", mysqlx_max_allowed_packet)
-        pulumi.set(__self__, "mysqlx_min_worker_threads", mysqlx_min_worker_threads)
-        pulumi.set(__self__, "mysqlx_read_timeout", mysqlx_read_timeout)
-        pulumi.set(__self__, "mysqlx_wait_timeout", mysqlx_wait_timeout)
-        pulumi.set(__self__, "mysqlx_write_timeout", mysqlx_write_timeout)
-        pulumi.set(__self__, "mysqlx_zstd_default_compression_level", mysqlx_zstd_default_compression_level)
-        pulumi.set(__self__, "mysqlx_zstd_max_client_compression_level", mysqlx_zstd_max_client_compression_level)
-        pulumi.set(__self__, "net_read_timeout", net_read_timeout)
-        pulumi.set(__self__, "net_write_timeout", net_write_timeout)
-        pulumi.set(__self__, "parser_max_mem_size", parser_max_mem_size)
-        pulumi.set(__self__, "query_alloc_block_size", query_alloc_block_size)
-        pulumi.set(__self__, "query_prealloc_size", query_prealloc_size)
-        pulumi.set(__self__, "regexp_time_limit", regexp_time_limit)
-        pulumi.set(__self__, "sort_buffer_size", sort_buffer_size)
-        pulumi.set(__self__, "sql_mode", sql_mode)
-        pulumi.set(__self__, "sql_require_primary_key", sql_require_primary_key)
-        pulumi.set(__self__, "sql_warnings", sql_warnings)
-        pulumi.set(__self__, "thread_pool_dedicated_listeners", thread_pool_dedicated_listeners)
-        pulumi.set(__self__, "thread_pool_max_transactions_limit", thread_pool_max_transactions_limit)
-        pulumi.set(__self__, "time_zone", time_zone)
-        pulumi.set(__self__, "tmp_table_size", tmp_table_size)
-        pulumi.set(__self__, "transaction_isolation", transaction_isolation)
-        pulumi.set(__self__, "wait_timeout", wait_timeout)
+        GetMysqlConfigurationVariableResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            autocommit=autocommit,
+            big_tables=big_tables,
+            binlog_expire_logs_seconds=binlog_expire_logs_seconds,
+            binlog_row_metadata=binlog_row_metadata,
+            binlog_row_value_options=binlog_row_value_options,
+            binlog_transaction_compression=binlog_transaction_compression,
+            completion_type=completion_type,
+            connect_timeout=connect_timeout,
+            connection_memory_chunk_size=connection_memory_chunk_size,
+            connection_memory_limit=connection_memory_limit,
+            cte_max_recursion_depth=cte_max_recursion_depth,
+            default_authentication_plugin=default_authentication_plugin,
+            foreign_key_checks=foreign_key_checks,
+            generated_random_password_length=generated_random_password_length,
+            global_connection_memory_limit=global_connection_memory_limit,
+            global_connection_memory_tracking=global_connection_memory_tracking,
+            group_replication_consistency=group_replication_consistency,
+            information_schema_stats_expiry=information_schema_stats_expiry,
+            innodb_buffer_pool_dump_pct=innodb_buffer_pool_dump_pct,
+            innodb_buffer_pool_instances=innodb_buffer_pool_instances,
+            innodb_buffer_pool_size=innodb_buffer_pool_size,
+            innodb_ddl_buffer_size=innodb_ddl_buffer_size,
+            innodb_ddl_threads=innodb_ddl_threads,
+            innodb_ft_enable_stopword=innodb_ft_enable_stopword,
+            innodb_ft_max_token_size=innodb_ft_max_token_size,
+            innodb_ft_min_token_size=innodb_ft_min_token_size,
+            innodb_ft_num_word_optimize=innodb_ft_num_word_optimize,
+            innodb_ft_result_cache_limit=innodb_ft_result_cache_limit,
+            innodb_ft_server_stopword_table=innodb_ft_server_stopword_table,
+            innodb_lock_wait_timeout=innodb_lock_wait_timeout,
+            innodb_log_writer_threads=innodb_log_writer_threads,
+            innodb_max_purge_lag=innodb_max_purge_lag,
+            innodb_max_purge_lag_delay=innodb_max_purge_lag_delay,
+            innodb_stats_persistent_sample_pages=innodb_stats_persistent_sample_pages,
+            innodb_stats_transient_sample_pages=innodb_stats_transient_sample_pages,
+            interactive_timeout=interactive_timeout,
+            local_infile=local_infile,
+            mandatory_roles=mandatory_roles,
+            max_allowed_packet=max_allowed_packet,
+            max_binlog_cache_size=max_binlog_cache_size,
+            max_connect_errors=max_connect_errors,
+            max_connections=max_connections,
+            max_execution_time=max_execution_time,
+            max_heap_table_size=max_heap_table_size,
+            max_prepared_stmt_count=max_prepared_stmt_count,
+            mysql_firewall_mode=mysql_firewall_mode,
+            mysql_zstd_default_compression_level=mysql_zstd_default_compression_level,
+            mysqlx_connect_timeout=mysqlx_connect_timeout,
+            mysqlx_deflate_default_compression_level=mysqlx_deflate_default_compression_level,
+            mysqlx_deflate_max_client_compression_level=mysqlx_deflate_max_client_compression_level,
+            mysqlx_document_id_unique_prefix=mysqlx_document_id_unique_prefix,
+            mysqlx_enable_hello_notice=mysqlx_enable_hello_notice,
+            mysqlx_idle_worker_thread_timeout=mysqlx_idle_worker_thread_timeout,
+            mysqlx_interactive_timeout=mysqlx_interactive_timeout,
+            mysqlx_lz4default_compression_level=mysqlx_lz4default_compression_level,
+            mysqlx_lz4max_client_compression_level=mysqlx_lz4max_client_compression_level,
+            mysqlx_max_allowed_packet=mysqlx_max_allowed_packet,
+            mysqlx_min_worker_threads=mysqlx_min_worker_threads,
+            mysqlx_read_timeout=mysqlx_read_timeout,
+            mysqlx_wait_timeout=mysqlx_wait_timeout,
+            mysqlx_write_timeout=mysqlx_write_timeout,
+            mysqlx_zstd_default_compression_level=mysqlx_zstd_default_compression_level,
+            mysqlx_zstd_max_client_compression_level=mysqlx_zstd_max_client_compression_level,
+            net_read_timeout=net_read_timeout,
+            net_write_timeout=net_write_timeout,
+            parser_max_mem_size=parser_max_mem_size,
+            query_alloc_block_size=query_alloc_block_size,
+            query_prealloc_size=query_prealloc_size,
+            regexp_time_limit=regexp_time_limit,
+            sort_buffer_size=sort_buffer_size,
+            sql_mode=sql_mode,
+            sql_require_primary_key=sql_require_primary_key,
+            sql_warnings=sql_warnings,
+            thread_pool_dedicated_listeners=thread_pool_dedicated_listeners,
+            thread_pool_max_transactions_limit=thread_pool_max_transactions_limit,
+            time_zone=time_zone,
+            tmp_table_size=tmp_table_size,
+            transaction_isolation=transaction_isolation,
+            wait_timeout=wait_timeout,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             autocommit: Optional[bool] = None,
+             big_tables: Optional[bool] = None,
+             binlog_expire_logs_seconds: Optional[int] = None,
+             binlog_row_metadata: Optional[str] = None,
+             binlog_row_value_options: Optional[str] = None,
+             binlog_transaction_compression: Optional[bool] = None,
+             completion_type: Optional[str] = None,
+             connect_timeout: Optional[int] = None,
+             connection_memory_chunk_size: Optional[int] = None,
+             connection_memory_limit: Optional[str] = None,
+             cte_max_recursion_depth: Optional[str] = None,
+             default_authentication_plugin: Optional[str] = None,
+             foreign_key_checks: Optional[bool] = None,
+             generated_random_password_length: Optional[int] = None,
+             global_connection_memory_limit: Optional[str] = None,
+             global_connection_memory_tracking: Optional[bool] = None,
+             group_replication_consistency: Optional[str] = None,
+             information_schema_stats_expiry: Optional[int] = None,
+             innodb_buffer_pool_dump_pct: Optional[int] = None,
+             innodb_buffer_pool_instances: Optional[int] = None,
+             innodb_buffer_pool_size: Optional[str] = None,
+             innodb_ddl_buffer_size: Optional[str] = None,
+             innodb_ddl_threads: Optional[int] = None,
+             innodb_ft_enable_stopword: Optional[bool] = None,
+             innodb_ft_max_token_size: Optional[int] = None,
+             innodb_ft_min_token_size: Optional[int] = None,
+             innodb_ft_num_word_optimize: Optional[int] = None,
+             innodb_ft_result_cache_limit: Optional[str] = None,
+             innodb_ft_server_stopword_table: Optional[str] = None,
+             innodb_lock_wait_timeout: Optional[int] = None,
+             innodb_log_writer_threads: Optional[bool] = None,
+             innodb_max_purge_lag: Optional[str] = None,
+             innodb_max_purge_lag_delay: Optional[int] = None,
+             innodb_stats_persistent_sample_pages: Optional[str] = None,
+             innodb_stats_transient_sample_pages: Optional[str] = None,
+             interactive_timeout: Optional[int] = None,
+             local_infile: Optional[bool] = None,
+             mandatory_roles: Optional[str] = None,
+             max_allowed_packet: Optional[int] = None,
+             max_binlog_cache_size: Optional[str] = None,
+             max_connect_errors: Optional[str] = None,
+             max_connections: Optional[int] = None,
+             max_execution_time: Optional[str] = None,
+             max_heap_table_size: Optional[str] = None,
+             max_prepared_stmt_count: Optional[int] = None,
+             mysql_firewall_mode: Optional[bool] = None,
+             mysql_zstd_default_compression_level: Optional[int] = None,
+             mysqlx_connect_timeout: Optional[int] = None,
+             mysqlx_deflate_default_compression_level: Optional[int] = None,
+             mysqlx_deflate_max_client_compression_level: Optional[int] = None,
+             mysqlx_document_id_unique_prefix: Optional[int] = None,
+             mysqlx_enable_hello_notice: Optional[bool] = None,
+             mysqlx_idle_worker_thread_timeout: Optional[int] = None,
+             mysqlx_interactive_timeout: Optional[int] = None,
+             mysqlx_lz4default_compression_level: Optional[int] = None,
+             mysqlx_lz4max_client_compression_level: Optional[int] = None,
+             mysqlx_max_allowed_packet: Optional[int] = None,
+             mysqlx_min_worker_threads: Optional[int] = None,
+             mysqlx_read_timeout: Optional[int] = None,
+             mysqlx_wait_timeout: Optional[int] = None,
+             mysqlx_write_timeout: Optional[int] = None,
+             mysqlx_zstd_default_compression_level: Optional[int] = None,
+             mysqlx_zstd_max_client_compression_level: Optional[int] = None,
+             net_read_timeout: Optional[int] = None,
+             net_write_timeout: Optional[int] = None,
+             parser_max_mem_size: Optional[str] = None,
+             query_alloc_block_size: Optional[str] = None,
+             query_prealloc_size: Optional[str] = None,
+             regexp_time_limit: Optional[int] = None,
+             sort_buffer_size: Optional[str] = None,
+             sql_mode: Optional[str] = None,
+             sql_require_primary_key: Optional[bool] = None,
+             sql_warnings: Optional[bool] = None,
+             thread_pool_dedicated_listeners: Optional[bool] = None,
+             thread_pool_max_transactions_limit: Optional[int] = None,
+             time_zone: Optional[str] = None,
+             tmp_table_size: Optional[str] = None,
+             transaction_isolation: Optional[str] = None,
+             wait_timeout: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if autocommit is None:
+            raise TypeError("Missing 'autocommit' argument")
+        if big_tables is None and 'bigTables' in kwargs:
+            big_tables = kwargs['bigTables']
+        if big_tables is None:
+            raise TypeError("Missing 'big_tables' argument")
+        if binlog_expire_logs_seconds is None and 'binlogExpireLogsSeconds' in kwargs:
+            binlog_expire_logs_seconds = kwargs['binlogExpireLogsSeconds']
+        if binlog_expire_logs_seconds is None:
+            raise TypeError("Missing 'binlog_expire_logs_seconds' argument")
+        if binlog_row_metadata is None and 'binlogRowMetadata' in kwargs:
+            binlog_row_metadata = kwargs['binlogRowMetadata']
+        if binlog_row_metadata is None:
+            raise TypeError("Missing 'binlog_row_metadata' argument")
+        if binlog_row_value_options is None and 'binlogRowValueOptions' in kwargs:
+            binlog_row_value_options = kwargs['binlogRowValueOptions']
+        if binlog_row_value_options is None:
+            raise TypeError("Missing 'binlog_row_value_options' argument")
+        if binlog_transaction_compression is None and 'binlogTransactionCompression' in kwargs:
+            binlog_transaction_compression = kwargs['binlogTransactionCompression']
+        if binlog_transaction_compression is None:
+            raise TypeError("Missing 'binlog_transaction_compression' argument")
+        if completion_type is None and 'completionType' in kwargs:
+            completion_type = kwargs['completionType']
+        if completion_type is None:
+            raise TypeError("Missing 'completion_type' argument")
+        if connect_timeout is None and 'connectTimeout' in kwargs:
+            connect_timeout = kwargs['connectTimeout']
+        if connect_timeout is None:
+            raise TypeError("Missing 'connect_timeout' argument")
+        if connection_memory_chunk_size is None and 'connectionMemoryChunkSize' in kwargs:
+            connection_memory_chunk_size = kwargs['connectionMemoryChunkSize']
+        if connection_memory_chunk_size is None:
+            raise TypeError("Missing 'connection_memory_chunk_size' argument")
+        if connection_memory_limit is None and 'connectionMemoryLimit' in kwargs:
+            connection_memory_limit = kwargs['connectionMemoryLimit']
+        if connection_memory_limit is None:
+            raise TypeError("Missing 'connection_memory_limit' argument")
+        if cte_max_recursion_depth is None and 'cteMaxRecursionDepth' in kwargs:
+            cte_max_recursion_depth = kwargs['cteMaxRecursionDepth']
+        if cte_max_recursion_depth is None:
+            raise TypeError("Missing 'cte_max_recursion_depth' argument")
+        if default_authentication_plugin is None and 'defaultAuthenticationPlugin' in kwargs:
+            default_authentication_plugin = kwargs['defaultAuthenticationPlugin']
+        if default_authentication_plugin is None:
+            raise TypeError("Missing 'default_authentication_plugin' argument")
+        if foreign_key_checks is None and 'foreignKeyChecks' in kwargs:
+            foreign_key_checks = kwargs['foreignKeyChecks']
+        if foreign_key_checks is None:
+            raise TypeError("Missing 'foreign_key_checks' argument")
+        if generated_random_password_length is None and 'generatedRandomPasswordLength' in kwargs:
+            generated_random_password_length = kwargs['generatedRandomPasswordLength']
+        if generated_random_password_length is None:
+            raise TypeError("Missing 'generated_random_password_length' argument")
+        if global_connection_memory_limit is None and 'globalConnectionMemoryLimit' in kwargs:
+            global_connection_memory_limit = kwargs['globalConnectionMemoryLimit']
+        if global_connection_memory_limit is None:
+            raise TypeError("Missing 'global_connection_memory_limit' argument")
+        if global_connection_memory_tracking is None and 'globalConnectionMemoryTracking' in kwargs:
+            global_connection_memory_tracking = kwargs['globalConnectionMemoryTracking']
+        if global_connection_memory_tracking is None:
+            raise TypeError("Missing 'global_connection_memory_tracking' argument")
+        if group_replication_consistency is None and 'groupReplicationConsistency' in kwargs:
+            group_replication_consistency = kwargs['groupReplicationConsistency']
+        if group_replication_consistency is None:
+            raise TypeError("Missing 'group_replication_consistency' argument")
+        if information_schema_stats_expiry is None and 'informationSchemaStatsExpiry' in kwargs:
+            information_schema_stats_expiry = kwargs['informationSchemaStatsExpiry']
+        if information_schema_stats_expiry is None:
+            raise TypeError("Missing 'information_schema_stats_expiry' argument")
+        if innodb_buffer_pool_dump_pct is None and 'innodbBufferPoolDumpPct' in kwargs:
+            innodb_buffer_pool_dump_pct = kwargs['innodbBufferPoolDumpPct']
+        if innodb_buffer_pool_dump_pct is None:
+            raise TypeError("Missing 'innodb_buffer_pool_dump_pct' argument")
+        if innodb_buffer_pool_instances is None and 'innodbBufferPoolInstances' in kwargs:
+            innodb_buffer_pool_instances = kwargs['innodbBufferPoolInstances']
+        if innodb_buffer_pool_instances is None:
+            raise TypeError("Missing 'innodb_buffer_pool_instances' argument")
+        if innodb_buffer_pool_size is None and 'innodbBufferPoolSize' in kwargs:
+            innodb_buffer_pool_size = kwargs['innodbBufferPoolSize']
+        if innodb_buffer_pool_size is None:
+            raise TypeError("Missing 'innodb_buffer_pool_size' argument")
+        if innodb_ddl_buffer_size is None and 'innodbDdlBufferSize' in kwargs:
+            innodb_ddl_buffer_size = kwargs['innodbDdlBufferSize']
+        if innodb_ddl_buffer_size is None:
+            raise TypeError("Missing 'innodb_ddl_buffer_size' argument")
+        if innodb_ddl_threads is None and 'innodbDdlThreads' in kwargs:
+            innodb_ddl_threads = kwargs['innodbDdlThreads']
+        if innodb_ddl_threads is None:
+            raise TypeError("Missing 'innodb_ddl_threads' argument")
+        if innodb_ft_enable_stopword is None and 'innodbFtEnableStopword' in kwargs:
+            innodb_ft_enable_stopword = kwargs['innodbFtEnableStopword']
+        if innodb_ft_enable_stopword is None:
+            raise TypeError("Missing 'innodb_ft_enable_stopword' argument")
+        if innodb_ft_max_token_size is None and 'innodbFtMaxTokenSize' in kwargs:
+            innodb_ft_max_token_size = kwargs['innodbFtMaxTokenSize']
+        if innodb_ft_max_token_size is None:
+            raise TypeError("Missing 'innodb_ft_max_token_size' argument")
+        if innodb_ft_min_token_size is None and 'innodbFtMinTokenSize' in kwargs:
+            innodb_ft_min_token_size = kwargs['innodbFtMinTokenSize']
+        if innodb_ft_min_token_size is None:
+            raise TypeError("Missing 'innodb_ft_min_token_size' argument")
+        if innodb_ft_num_word_optimize is None and 'innodbFtNumWordOptimize' in kwargs:
+            innodb_ft_num_word_optimize = kwargs['innodbFtNumWordOptimize']
+        if innodb_ft_num_word_optimize is None:
+            raise TypeError("Missing 'innodb_ft_num_word_optimize' argument")
+        if innodb_ft_result_cache_limit is None and 'innodbFtResultCacheLimit' in kwargs:
+            innodb_ft_result_cache_limit = kwargs['innodbFtResultCacheLimit']
+        if innodb_ft_result_cache_limit is None:
+            raise TypeError("Missing 'innodb_ft_result_cache_limit' argument")
+        if innodb_ft_server_stopword_table is None and 'innodbFtServerStopwordTable' in kwargs:
+            innodb_ft_server_stopword_table = kwargs['innodbFtServerStopwordTable']
+        if innodb_ft_server_stopword_table is None:
+            raise TypeError("Missing 'innodb_ft_server_stopword_table' argument")
+        if innodb_lock_wait_timeout is None and 'innodbLockWaitTimeout' in kwargs:
+            innodb_lock_wait_timeout = kwargs['innodbLockWaitTimeout']
+        if innodb_lock_wait_timeout is None:
+            raise TypeError("Missing 'innodb_lock_wait_timeout' argument")
+        if innodb_log_writer_threads is None and 'innodbLogWriterThreads' in kwargs:
+            innodb_log_writer_threads = kwargs['innodbLogWriterThreads']
+        if innodb_log_writer_threads is None:
+            raise TypeError("Missing 'innodb_log_writer_threads' argument")
+        if innodb_max_purge_lag is None and 'innodbMaxPurgeLag' in kwargs:
+            innodb_max_purge_lag = kwargs['innodbMaxPurgeLag']
+        if innodb_max_purge_lag is None:
+            raise TypeError("Missing 'innodb_max_purge_lag' argument")
+        if innodb_max_purge_lag_delay is None and 'innodbMaxPurgeLagDelay' in kwargs:
+            innodb_max_purge_lag_delay = kwargs['innodbMaxPurgeLagDelay']
+        if innodb_max_purge_lag_delay is None:
+            raise TypeError("Missing 'innodb_max_purge_lag_delay' argument")
+        if innodb_stats_persistent_sample_pages is None and 'innodbStatsPersistentSamplePages' in kwargs:
+            innodb_stats_persistent_sample_pages = kwargs['innodbStatsPersistentSamplePages']
+        if innodb_stats_persistent_sample_pages is None:
+            raise TypeError("Missing 'innodb_stats_persistent_sample_pages' argument")
+        if innodb_stats_transient_sample_pages is None and 'innodbStatsTransientSamplePages' in kwargs:
+            innodb_stats_transient_sample_pages = kwargs['innodbStatsTransientSamplePages']
+        if innodb_stats_transient_sample_pages is None:
+            raise TypeError("Missing 'innodb_stats_transient_sample_pages' argument")
+        if interactive_timeout is None and 'interactiveTimeout' in kwargs:
+            interactive_timeout = kwargs['interactiveTimeout']
+        if interactive_timeout is None:
+            raise TypeError("Missing 'interactive_timeout' argument")
+        if local_infile is None and 'localInfile' in kwargs:
+            local_infile = kwargs['localInfile']
+        if local_infile is None:
+            raise TypeError("Missing 'local_infile' argument")
+        if mandatory_roles is None and 'mandatoryRoles' in kwargs:
+            mandatory_roles = kwargs['mandatoryRoles']
+        if mandatory_roles is None:
+            raise TypeError("Missing 'mandatory_roles' argument")
+        if max_allowed_packet is None and 'maxAllowedPacket' in kwargs:
+            max_allowed_packet = kwargs['maxAllowedPacket']
+        if max_allowed_packet is None:
+            raise TypeError("Missing 'max_allowed_packet' argument")
+        if max_binlog_cache_size is None and 'maxBinlogCacheSize' in kwargs:
+            max_binlog_cache_size = kwargs['maxBinlogCacheSize']
+        if max_binlog_cache_size is None:
+            raise TypeError("Missing 'max_binlog_cache_size' argument")
+        if max_connect_errors is None and 'maxConnectErrors' in kwargs:
+            max_connect_errors = kwargs['maxConnectErrors']
+        if max_connect_errors is None:
+            raise TypeError("Missing 'max_connect_errors' argument")
+        if max_connections is None and 'maxConnections' in kwargs:
+            max_connections = kwargs['maxConnections']
+        if max_connections is None:
+            raise TypeError("Missing 'max_connections' argument")
+        if max_execution_time is None and 'maxExecutionTime' in kwargs:
+            max_execution_time = kwargs['maxExecutionTime']
+        if max_execution_time is None:
+            raise TypeError("Missing 'max_execution_time' argument")
+        if max_heap_table_size is None and 'maxHeapTableSize' in kwargs:
+            max_heap_table_size = kwargs['maxHeapTableSize']
+        if max_heap_table_size is None:
+            raise TypeError("Missing 'max_heap_table_size' argument")
+        if max_prepared_stmt_count is None and 'maxPreparedStmtCount' in kwargs:
+            max_prepared_stmt_count = kwargs['maxPreparedStmtCount']
+        if max_prepared_stmt_count is None:
+            raise TypeError("Missing 'max_prepared_stmt_count' argument")
+        if mysql_firewall_mode is None and 'mysqlFirewallMode' in kwargs:
+            mysql_firewall_mode = kwargs['mysqlFirewallMode']
+        if mysql_firewall_mode is None:
+            raise TypeError("Missing 'mysql_firewall_mode' argument")
+        if mysql_zstd_default_compression_level is None and 'mysqlZstdDefaultCompressionLevel' in kwargs:
+            mysql_zstd_default_compression_level = kwargs['mysqlZstdDefaultCompressionLevel']
+        if mysql_zstd_default_compression_level is None:
+            raise TypeError("Missing 'mysql_zstd_default_compression_level' argument")
+        if mysqlx_connect_timeout is None and 'mysqlxConnectTimeout' in kwargs:
+            mysqlx_connect_timeout = kwargs['mysqlxConnectTimeout']
+        if mysqlx_connect_timeout is None:
+            raise TypeError("Missing 'mysqlx_connect_timeout' argument")
+        if mysqlx_deflate_default_compression_level is None and 'mysqlxDeflateDefaultCompressionLevel' in kwargs:
+            mysqlx_deflate_default_compression_level = kwargs['mysqlxDeflateDefaultCompressionLevel']
+        if mysqlx_deflate_default_compression_level is None:
+            raise TypeError("Missing 'mysqlx_deflate_default_compression_level' argument")
+        if mysqlx_deflate_max_client_compression_level is None and 'mysqlxDeflateMaxClientCompressionLevel' in kwargs:
+            mysqlx_deflate_max_client_compression_level = kwargs['mysqlxDeflateMaxClientCompressionLevel']
+        if mysqlx_deflate_max_client_compression_level is None:
+            raise TypeError("Missing 'mysqlx_deflate_max_client_compression_level' argument")
+        if mysqlx_document_id_unique_prefix is None and 'mysqlxDocumentIdUniquePrefix' in kwargs:
+            mysqlx_document_id_unique_prefix = kwargs['mysqlxDocumentIdUniquePrefix']
+        if mysqlx_document_id_unique_prefix is None:
+            raise TypeError("Missing 'mysqlx_document_id_unique_prefix' argument")
+        if mysqlx_enable_hello_notice is None and 'mysqlxEnableHelloNotice' in kwargs:
+            mysqlx_enable_hello_notice = kwargs['mysqlxEnableHelloNotice']
+        if mysqlx_enable_hello_notice is None:
+            raise TypeError("Missing 'mysqlx_enable_hello_notice' argument")
+        if mysqlx_idle_worker_thread_timeout is None and 'mysqlxIdleWorkerThreadTimeout' in kwargs:
+            mysqlx_idle_worker_thread_timeout = kwargs['mysqlxIdleWorkerThreadTimeout']
+        if mysqlx_idle_worker_thread_timeout is None:
+            raise TypeError("Missing 'mysqlx_idle_worker_thread_timeout' argument")
+        if mysqlx_interactive_timeout is None and 'mysqlxInteractiveTimeout' in kwargs:
+            mysqlx_interactive_timeout = kwargs['mysqlxInteractiveTimeout']
+        if mysqlx_interactive_timeout is None:
+            raise TypeError("Missing 'mysqlx_interactive_timeout' argument")
+        if mysqlx_lz4default_compression_level is None and 'mysqlxLz4defaultCompressionLevel' in kwargs:
+            mysqlx_lz4default_compression_level = kwargs['mysqlxLz4defaultCompressionLevel']
+        if mysqlx_lz4default_compression_level is None:
+            raise TypeError("Missing 'mysqlx_lz4default_compression_level' argument")
+        if mysqlx_lz4max_client_compression_level is None and 'mysqlxLz4maxClientCompressionLevel' in kwargs:
+            mysqlx_lz4max_client_compression_level = kwargs['mysqlxLz4maxClientCompressionLevel']
+        if mysqlx_lz4max_client_compression_level is None:
+            raise TypeError("Missing 'mysqlx_lz4max_client_compression_level' argument")
+        if mysqlx_max_allowed_packet is None and 'mysqlxMaxAllowedPacket' in kwargs:
+            mysqlx_max_allowed_packet = kwargs['mysqlxMaxAllowedPacket']
+        if mysqlx_max_allowed_packet is None:
+            raise TypeError("Missing 'mysqlx_max_allowed_packet' argument")
+        if mysqlx_min_worker_threads is None and 'mysqlxMinWorkerThreads' in kwargs:
+            mysqlx_min_worker_threads = kwargs['mysqlxMinWorkerThreads']
+        if mysqlx_min_worker_threads is None:
+            raise TypeError("Missing 'mysqlx_min_worker_threads' argument")
+        if mysqlx_read_timeout is None and 'mysqlxReadTimeout' in kwargs:
+            mysqlx_read_timeout = kwargs['mysqlxReadTimeout']
+        if mysqlx_read_timeout is None:
+            raise TypeError("Missing 'mysqlx_read_timeout' argument")
+        if mysqlx_wait_timeout is None and 'mysqlxWaitTimeout' in kwargs:
+            mysqlx_wait_timeout = kwargs['mysqlxWaitTimeout']
+        if mysqlx_wait_timeout is None:
+            raise TypeError("Missing 'mysqlx_wait_timeout' argument")
+        if mysqlx_write_timeout is None and 'mysqlxWriteTimeout' in kwargs:
+            mysqlx_write_timeout = kwargs['mysqlxWriteTimeout']
+        if mysqlx_write_timeout is None:
+            raise TypeError("Missing 'mysqlx_write_timeout' argument")
+        if mysqlx_zstd_default_compression_level is None and 'mysqlxZstdDefaultCompressionLevel' in kwargs:
+            mysqlx_zstd_default_compression_level = kwargs['mysqlxZstdDefaultCompressionLevel']
+        if mysqlx_zstd_default_compression_level is None:
+            raise TypeError("Missing 'mysqlx_zstd_default_compression_level' argument")
+        if mysqlx_zstd_max_client_compression_level is None and 'mysqlxZstdMaxClientCompressionLevel' in kwargs:
+            mysqlx_zstd_max_client_compression_level = kwargs['mysqlxZstdMaxClientCompressionLevel']
+        if mysqlx_zstd_max_client_compression_level is None:
+            raise TypeError("Missing 'mysqlx_zstd_max_client_compression_level' argument")
+        if net_read_timeout is None and 'netReadTimeout' in kwargs:
+            net_read_timeout = kwargs['netReadTimeout']
+        if net_read_timeout is None:
+            raise TypeError("Missing 'net_read_timeout' argument")
+        if net_write_timeout is None and 'netWriteTimeout' in kwargs:
+            net_write_timeout = kwargs['netWriteTimeout']
+        if net_write_timeout is None:
+            raise TypeError("Missing 'net_write_timeout' argument")
+        if parser_max_mem_size is None and 'parserMaxMemSize' in kwargs:
+            parser_max_mem_size = kwargs['parserMaxMemSize']
+        if parser_max_mem_size is None:
+            raise TypeError("Missing 'parser_max_mem_size' argument")
+        if query_alloc_block_size is None and 'queryAllocBlockSize' in kwargs:
+            query_alloc_block_size = kwargs['queryAllocBlockSize']
+        if query_alloc_block_size is None:
+            raise TypeError("Missing 'query_alloc_block_size' argument")
+        if query_prealloc_size is None and 'queryPreallocSize' in kwargs:
+            query_prealloc_size = kwargs['queryPreallocSize']
+        if query_prealloc_size is None:
+            raise TypeError("Missing 'query_prealloc_size' argument")
+        if regexp_time_limit is None and 'regexpTimeLimit' in kwargs:
+            regexp_time_limit = kwargs['regexpTimeLimit']
+        if regexp_time_limit is None:
+            raise TypeError("Missing 'regexp_time_limit' argument")
+        if sort_buffer_size is None and 'sortBufferSize' in kwargs:
+            sort_buffer_size = kwargs['sortBufferSize']
+        if sort_buffer_size is None:
+            raise TypeError("Missing 'sort_buffer_size' argument")
+        if sql_mode is None and 'sqlMode' in kwargs:
+            sql_mode = kwargs['sqlMode']
+        if sql_mode is None:
+            raise TypeError("Missing 'sql_mode' argument")
+        if sql_require_primary_key is None and 'sqlRequirePrimaryKey' in kwargs:
+            sql_require_primary_key = kwargs['sqlRequirePrimaryKey']
+        if sql_require_primary_key is None:
+            raise TypeError("Missing 'sql_require_primary_key' argument")
+        if sql_warnings is None and 'sqlWarnings' in kwargs:
+            sql_warnings = kwargs['sqlWarnings']
+        if sql_warnings is None:
+            raise TypeError("Missing 'sql_warnings' argument")
+        if thread_pool_dedicated_listeners is None and 'threadPoolDedicatedListeners' in kwargs:
+            thread_pool_dedicated_listeners = kwargs['threadPoolDedicatedListeners']
+        if thread_pool_dedicated_listeners is None:
+            raise TypeError("Missing 'thread_pool_dedicated_listeners' argument")
+        if thread_pool_max_transactions_limit is None and 'threadPoolMaxTransactionsLimit' in kwargs:
+            thread_pool_max_transactions_limit = kwargs['threadPoolMaxTransactionsLimit']
+        if thread_pool_max_transactions_limit is None:
+            raise TypeError("Missing 'thread_pool_max_transactions_limit' argument")
+        if time_zone is None and 'timeZone' in kwargs:
+            time_zone = kwargs['timeZone']
+        if time_zone is None:
+            raise TypeError("Missing 'time_zone' argument")
+        if tmp_table_size is None and 'tmpTableSize' in kwargs:
+            tmp_table_size = kwargs['tmpTableSize']
+        if tmp_table_size is None:
+            raise TypeError("Missing 'tmp_table_size' argument")
+        if transaction_isolation is None and 'transactionIsolation' in kwargs:
+            transaction_isolation = kwargs['transactionIsolation']
+        if transaction_isolation is None:
+            raise TypeError("Missing 'transaction_isolation' argument")
+        if wait_timeout is None and 'waitTimeout' in kwargs:
+            wait_timeout = kwargs['waitTimeout']
+        if wait_timeout is None:
+            raise TypeError("Missing 'wait_timeout' argument")
+
+        _setter("autocommit", autocommit)
+        _setter("big_tables", big_tables)
+        _setter("binlog_expire_logs_seconds", binlog_expire_logs_seconds)
+        _setter("binlog_row_metadata", binlog_row_metadata)
+        _setter("binlog_row_value_options", binlog_row_value_options)
+        _setter("binlog_transaction_compression", binlog_transaction_compression)
+        _setter("completion_type", completion_type)
+        _setter("connect_timeout", connect_timeout)
+        _setter("connection_memory_chunk_size", connection_memory_chunk_size)
+        _setter("connection_memory_limit", connection_memory_limit)
+        _setter("cte_max_recursion_depth", cte_max_recursion_depth)
+        _setter("default_authentication_plugin", default_authentication_plugin)
+        _setter("foreign_key_checks", foreign_key_checks)
+        _setter("generated_random_password_length", generated_random_password_length)
+        _setter("global_connection_memory_limit", global_connection_memory_limit)
+        _setter("global_connection_memory_tracking", global_connection_memory_tracking)
+        _setter("group_replication_consistency", group_replication_consistency)
+        _setter("information_schema_stats_expiry", information_schema_stats_expiry)
+        _setter("innodb_buffer_pool_dump_pct", innodb_buffer_pool_dump_pct)
+        _setter("innodb_buffer_pool_instances", innodb_buffer_pool_instances)
+        _setter("innodb_buffer_pool_size", innodb_buffer_pool_size)
+        _setter("innodb_ddl_buffer_size", innodb_ddl_buffer_size)
+        _setter("innodb_ddl_threads", innodb_ddl_threads)
+        _setter("innodb_ft_enable_stopword", innodb_ft_enable_stopword)
+        _setter("innodb_ft_max_token_size", innodb_ft_max_token_size)
+        _setter("innodb_ft_min_token_size", innodb_ft_min_token_size)
+        _setter("innodb_ft_num_word_optimize", innodb_ft_num_word_optimize)
+        _setter("innodb_ft_result_cache_limit", innodb_ft_result_cache_limit)
+        _setter("innodb_ft_server_stopword_table", innodb_ft_server_stopword_table)
+        _setter("innodb_lock_wait_timeout", innodb_lock_wait_timeout)
+        _setter("innodb_log_writer_threads", innodb_log_writer_threads)
+        _setter("innodb_max_purge_lag", innodb_max_purge_lag)
+        _setter("innodb_max_purge_lag_delay", innodb_max_purge_lag_delay)
+        _setter("innodb_stats_persistent_sample_pages", innodb_stats_persistent_sample_pages)
+        _setter("innodb_stats_transient_sample_pages", innodb_stats_transient_sample_pages)
+        _setter("interactive_timeout", interactive_timeout)
+        _setter("local_infile", local_infile)
+        _setter("mandatory_roles", mandatory_roles)
+        _setter("max_allowed_packet", max_allowed_packet)
+        _setter("max_binlog_cache_size", max_binlog_cache_size)
+        _setter("max_connect_errors", max_connect_errors)
+        _setter("max_connections", max_connections)
+        _setter("max_execution_time", max_execution_time)
+        _setter("max_heap_table_size", max_heap_table_size)
+        _setter("max_prepared_stmt_count", max_prepared_stmt_count)
+        _setter("mysql_firewall_mode", mysql_firewall_mode)
+        _setter("mysql_zstd_default_compression_level", mysql_zstd_default_compression_level)
+        _setter("mysqlx_connect_timeout", mysqlx_connect_timeout)
+        _setter("mysqlx_deflate_default_compression_level", mysqlx_deflate_default_compression_level)
+        _setter("mysqlx_deflate_max_client_compression_level", mysqlx_deflate_max_client_compression_level)
+        _setter("mysqlx_document_id_unique_prefix", mysqlx_document_id_unique_prefix)
+        _setter("mysqlx_enable_hello_notice", mysqlx_enable_hello_notice)
+        _setter("mysqlx_idle_worker_thread_timeout", mysqlx_idle_worker_thread_timeout)
+        _setter("mysqlx_interactive_timeout", mysqlx_interactive_timeout)
+        _setter("mysqlx_lz4default_compression_level", mysqlx_lz4default_compression_level)
+        _setter("mysqlx_lz4max_client_compression_level", mysqlx_lz4max_client_compression_level)
+        _setter("mysqlx_max_allowed_packet", mysqlx_max_allowed_packet)
+        _setter("mysqlx_min_worker_threads", mysqlx_min_worker_threads)
+        _setter("mysqlx_read_timeout", mysqlx_read_timeout)
+        _setter("mysqlx_wait_timeout", mysqlx_wait_timeout)
+        _setter("mysqlx_write_timeout", mysqlx_write_timeout)
+        _setter("mysqlx_zstd_default_compression_level", mysqlx_zstd_default_compression_level)
+        _setter("mysqlx_zstd_max_client_compression_level", mysqlx_zstd_max_client_compression_level)
+        _setter("net_read_timeout", net_read_timeout)
+        _setter("net_write_timeout", net_write_timeout)
+        _setter("parser_max_mem_size", parser_max_mem_size)
+        _setter("query_alloc_block_size", query_alloc_block_size)
+        _setter("query_prealloc_size", query_prealloc_size)
+        _setter("regexp_time_limit", regexp_time_limit)
+        _setter("sort_buffer_size", sort_buffer_size)
+        _setter("sql_mode", sql_mode)
+        _setter("sql_require_primary_key", sql_require_primary_key)
+        _setter("sql_warnings", sql_warnings)
+        _setter("thread_pool_dedicated_listeners", thread_pool_dedicated_listeners)
+        _setter("thread_pool_max_transactions_limit", thread_pool_max_transactions_limit)
+        _setter("time_zone", time_zone)
+        _setter("tmp_table_size", tmp_table_size)
+        _setter("transaction_isolation", transaction_isolation)
+        _setter("wait_timeout", wait_timeout)
 
     @property
     @pulumi.getter
@@ -7161,20 +9974,103 @@ class GetMysqlConfigurationsConfigurationResult(dict):
         :param str type: The requested Configuration types.
         :param Sequence['GetMysqlConfigurationsConfigurationVariableArgs'] variables: User-defined service variables.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "init_variables", init_variables)
-        pulumi.set(__self__, "parent_configuration_id", parent_configuration_id)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "variables", variables)
+        GetMysqlConfigurationsConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            init_variables=init_variables,
+            parent_configuration_id=parent_configuration_id,
+            shape_name=shape_name,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+            type=type,
+            variables=variables,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             init_variables: Optional[Sequence['outputs.GetMysqlConfigurationsConfigurationInitVariableResult']] = None,
+             parent_configuration_id: Optional[str] = None,
+             shape_name: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             type: Optional[str] = None,
+             variables: Optional[Sequence['outputs.GetMysqlConfigurationsConfigurationVariableResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if init_variables is None and 'initVariables' in kwargs:
+            init_variables = kwargs['initVariables']
+        if init_variables is None:
+            raise TypeError("Missing 'init_variables' argument")
+        if parent_configuration_id is None and 'parentConfigurationId' in kwargs:
+            parent_configuration_id = kwargs['parentConfigurationId']
+        if parent_configuration_id is None:
+            raise TypeError("Missing 'parent_configuration_id' argument")
+        if shape_name is None and 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if variables is None:
+            raise TypeError("Missing 'variables' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("init_variables", init_variables)
+        _setter("parent_configuration_id", parent_configuration_id)
+        _setter("shape_name", shape_name)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("type", type)
+        _setter("variables", variables)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -7296,7 +10192,22 @@ class GetMysqlConfigurationsConfigurationInitVariableResult(dict):
         """
         :param str lower_case_table_names: Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
         """
-        pulumi.set(__self__, "lower_case_table_names", lower_case_table_names)
+        GetMysqlConfigurationsConfigurationInitVariableResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            lower_case_table_names=lower_case_table_names,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             lower_case_table_names: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if lower_case_table_names is None and 'lowerCaseTableNames' in kwargs:
+            lower_case_table_names = kwargs['lowerCaseTableNames']
+        if lower_case_table_names is None:
+            raise TypeError("Missing 'lower_case_table_names' argument")
+
+        _setter("lower_case_table_names", lower_case_table_names)
 
     @property
     @pulumi.getter(name="lowerCaseTableNames")
@@ -7474,85 +10385,566 @@ class GetMysqlConfigurationsConfigurationVariableResult(dict):
         :param str transaction_isolation: ("transaction_isolation")
         :param int wait_timeout: The number of seconds the server waits for activity on a noninteractive connection before closing it.
         """
-        pulumi.set(__self__, "autocommit", autocommit)
-        pulumi.set(__self__, "big_tables", big_tables)
-        pulumi.set(__self__, "binlog_expire_logs_seconds", binlog_expire_logs_seconds)
-        pulumi.set(__self__, "binlog_row_metadata", binlog_row_metadata)
-        pulumi.set(__self__, "binlog_row_value_options", binlog_row_value_options)
-        pulumi.set(__self__, "binlog_transaction_compression", binlog_transaction_compression)
-        pulumi.set(__self__, "completion_type", completion_type)
-        pulumi.set(__self__, "connect_timeout", connect_timeout)
-        pulumi.set(__self__, "connection_memory_chunk_size", connection_memory_chunk_size)
-        pulumi.set(__self__, "connection_memory_limit", connection_memory_limit)
-        pulumi.set(__self__, "cte_max_recursion_depth", cte_max_recursion_depth)
-        pulumi.set(__self__, "default_authentication_plugin", default_authentication_plugin)
-        pulumi.set(__self__, "foreign_key_checks", foreign_key_checks)
-        pulumi.set(__self__, "generated_random_password_length", generated_random_password_length)
-        pulumi.set(__self__, "global_connection_memory_limit", global_connection_memory_limit)
-        pulumi.set(__self__, "global_connection_memory_tracking", global_connection_memory_tracking)
-        pulumi.set(__self__, "group_replication_consistency", group_replication_consistency)
-        pulumi.set(__self__, "information_schema_stats_expiry", information_schema_stats_expiry)
-        pulumi.set(__self__, "innodb_buffer_pool_dump_pct", innodb_buffer_pool_dump_pct)
-        pulumi.set(__self__, "innodb_buffer_pool_instances", innodb_buffer_pool_instances)
-        pulumi.set(__self__, "innodb_buffer_pool_size", innodb_buffer_pool_size)
-        pulumi.set(__self__, "innodb_ddl_buffer_size", innodb_ddl_buffer_size)
-        pulumi.set(__self__, "innodb_ddl_threads", innodb_ddl_threads)
-        pulumi.set(__self__, "innodb_ft_enable_stopword", innodb_ft_enable_stopword)
-        pulumi.set(__self__, "innodb_ft_max_token_size", innodb_ft_max_token_size)
-        pulumi.set(__self__, "innodb_ft_min_token_size", innodb_ft_min_token_size)
-        pulumi.set(__self__, "innodb_ft_num_word_optimize", innodb_ft_num_word_optimize)
-        pulumi.set(__self__, "innodb_ft_result_cache_limit", innodb_ft_result_cache_limit)
-        pulumi.set(__self__, "innodb_ft_server_stopword_table", innodb_ft_server_stopword_table)
-        pulumi.set(__self__, "innodb_lock_wait_timeout", innodb_lock_wait_timeout)
-        pulumi.set(__self__, "innodb_log_writer_threads", innodb_log_writer_threads)
-        pulumi.set(__self__, "innodb_max_purge_lag", innodb_max_purge_lag)
-        pulumi.set(__self__, "innodb_max_purge_lag_delay", innodb_max_purge_lag_delay)
-        pulumi.set(__self__, "innodb_stats_persistent_sample_pages", innodb_stats_persistent_sample_pages)
-        pulumi.set(__self__, "innodb_stats_transient_sample_pages", innodb_stats_transient_sample_pages)
-        pulumi.set(__self__, "interactive_timeout", interactive_timeout)
-        pulumi.set(__self__, "local_infile", local_infile)
-        pulumi.set(__self__, "mandatory_roles", mandatory_roles)
-        pulumi.set(__self__, "max_allowed_packet", max_allowed_packet)
-        pulumi.set(__self__, "max_binlog_cache_size", max_binlog_cache_size)
-        pulumi.set(__self__, "max_connect_errors", max_connect_errors)
-        pulumi.set(__self__, "max_connections", max_connections)
-        pulumi.set(__self__, "max_execution_time", max_execution_time)
-        pulumi.set(__self__, "max_heap_table_size", max_heap_table_size)
-        pulumi.set(__self__, "max_prepared_stmt_count", max_prepared_stmt_count)
-        pulumi.set(__self__, "mysql_firewall_mode", mysql_firewall_mode)
-        pulumi.set(__self__, "mysql_zstd_default_compression_level", mysql_zstd_default_compression_level)
-        pulumi.set(__self__, "mysqlx_connect_timeout", mysqlx_connect_timeout)
-        pulumi.set(__self__, "mysqlx_deflate_default_compression_level", mysqlx_deflate_default_compression_level)
-        pulumi.set(__self__, "mysqlx_deflate_max_client_compression_level", mysqlx_deflate_max_client_compression_level)
-        pulumi.set(__self__, "mysqlx_document_id_unique_prefix", mysqlx_document_id_unique_prefix)
-        pulumi.set(__self__, "mysqlx_enable_hello_notice", mysqlx_enable_hello_notice)
-        pulumi.set(__self__, "mysqlx_idle_worker_thread_timeout", mysqlx_idle_worker_thread_timeout)
-        pulumi.set(__self__, "mysqlx_interactive_timeout", mysqlx_interactive_timeout)
-        pulumi.set(__self__, "mysqlx_lz4default_compression_level", mysqlx_lz4default_compression_level)
-        pulumi.set(__self__, "mysqlx_lz4max_client_compression_level", mysqlx_lz4max_client_compression_level)
-        pulumi.set(__self__, "mysqlx_max_allowed_packet", mysqlx_max_allowed_packet)
-        pulumi.set(__self__, "mysqlx_min_worker_threads", mysqlx_min_worker_threads)
-        pulumi.set(__self__, "mysqlx_read_timeout", mysqlx_read_timeout)
-        pulumi.set(__self__, "mysqlx_wait_timeout", mysqlx_wait_timeout)
-        pulumi.set(__self__, "mysqlx_write_timeout", mysqlx_write_timeout)
-        pulumi.set(__self__, "mysqlx_zstd_default_compression_level", mysqlx_zstd_default_compression_level)
-        pulumi.set(__self__, "mysqlx_zstd_max_client_compression_level", mysqlx_zstd_max_client_compression_level)
-        pulumi.set(__self__, "net_read_timeout", net_read_timeout)
-        pulumi.set(__self__, "net_write_timeout", net_write_timeout)
-        pulumi.set(__self__, "parser_max_mem_size", parser_max_mem_size)
-        pulumi.set(__self__, "query_alloc_block_size", query_alloc_block_size)
-        pulumi.set(__self__, "query_prealloc_size", query_prealloc_size)
-        pulumi.set(__self__, "regexp_time_limit", regexp_time_limit)
-        pulumi.set(__self__, "sort_buffer_size", sort_buffer_size)
-        pulumi.set(__self__, "sql_mode", sql_mode)
-        pulumi.set(__self__, "sql_require_primary_key", sql_require_primary_key)
-        pulumi.set(__self__, "sql_warnings", sql_warnings)
-        pulumi.set(__self__, "thread_pool_dedicated_listeners", thread_pool_dedicated_listeners)
-        pulumi.set(__self__, "thread_pool_max_transactions_limit", thread_pool_max_transactions_limit)
-        pulumi.set(__self__, "time_zone", time_zone)
-        pulumi.set(__self__, "tmp_table_size", tmp_table_size)
-        pulumi.set(__self__, "transaction_isolation", transaction_isolation)
-        pulumi.set(__self__, "wait_timeout", wait_timeout)
+        GetMysqlConfigurationsConfigurationVariableResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            autocommit=autocommit,
+            big_tables=big_tables,
+            binlog_expire_logs_seconds=binlog_expire_logs_seconds,
+            binlog_row_metadata=binlog_row_metadata,
+            binlog_row_value_options=binlog_row_value_options,
+            binlog_transaction_compression=binlog_transaction_compression,
+            completion_type=completion_type,
+            connect_timeout=connect_timeout,
+            connection_memory_chunk_size=connection_memory_chunk_size,
+            connection_memory_limit=connection_memory_limit,
+            cte_max_recursion_depth=cte_max_recursion_depth,
+            default_authentication_plugin=default_authentication_plugin,
+            foreign_key_checks=foreign_key_checks,
+            generated_random_password_length=generated_random_password_length,
+            global_connection_memory_limit=global_connection_memory_limit,
+            global_connection_memory_tracking=global_connection_memory_tracking,
+            group_replication_consistency=group_replication_consistency,
+            information_schema_stats_expiry=information_schema_stats_expiry,
+            innodb_buffer_pool_dump_pct=innodb_buffer_pool_dump_pct,
+            innodb_buffer_pool_instances=innodb_buffer_pool_instances,
+            innodb_buffer_pool_size=innodb_buffer_pool_size,
+            innodb_ddl_buffer_size=innodb_ddl_buffer_size,
+            innodb_ddl_threads=innodb_ddl_threads,
+            innodb_ft_enable_stopword=innodb_ft_enable_stopword,
+            innodb_ft_max_token_size=innodb_ft_max_token_size,
+            innodb_ft_min_token_size=innodb_ft_min_token_size,
+            innodb_ft_num_word_optimize=innodb_ft_num_word_optimize,
+            innodb_ft_result_cache_limit=innodb_ft_result_cache_limit,
+            innodb_ft_server_stopword_table=innodb_ft_server_stopword_table,
+            innodb_lock_wait_timeout=innodb_lock_wait_timeout,
+            innodb_log_writer_threads=innodb_log_writer_threads,
+            innodb_max_purge_lag=innodb_max_purge_lag,
+            innodb_max_purge_lag_delay=innodb_max_purge_lag_delay,
+            innodb_stats_persistent_sample_pages=innodb_stats_persistent_sample_pages,
+            innodb_stats_transient_sample_pages=innodb_stats_transient_sample_pages,
+            interactive_timeout=interactive_timeout,
+            local_infile=local_infile,
+            mandatory_roles=mandatory_roles,
+            max_allowed_packet=max_allowed_packet,
+            max_binlog_cache_size=max_binlog_cache_size,
+            max_connect_errors=max_connect_errors,
+            max_connections=max_connections,
+            max_execution_time=max_execution_time,
+            max_heap_table_size=max_heap_table_size,
+            max_prepared_stmt_count=max_prepared_stmt_count,
+            mysql_firewall_mode=mysql_firewall_mode,
+            mysql_zstd_default_compression_level=mysql_zstd_default_compression_level,
+            mysqlx_connect_timeout=mysqlx_connect_timeout,
+            mysqlx_deflate_default_compression_level=mysqlx_deflate_default_compression_level,
+            mysqlx_deflate_max_client_compression_level=mysqlx_deflate_max_client_compression_level,
+            mysqlx_document_id_unique_prefix=mysqlx_document_id_unique_prefix,
+            mysqlx_enable_hello_notice=mysqlx_enable_hello_notice,
+            mysqlx_idle_worker_thread_timeout=mysqlx_idle_worker_thread_timeout,
+            mysqlx_interactive_timeout=mysqlx_interactive_timeout,
+            mysqlx_lz4default_compression_level=mysqlx_lz4default_compression_level,
+            mysqlx_lz4max_client_compression_level=mysqlx_lz4max_client_compression_level,
+            mysqlx_max_allowed_packet=mysqlx_max_allowed_packet,
+            mysqlx_min_worker_threads=mysqlx_min_worker_threads,
+            mysqlx_read_timeout=mysqlx_read_timeout,
+            mysqlx_wait_timeout=mysqlx_wait_timeout,
+            mysqlx_write_timeout=mysqlx_write_timeout,
+            mysqlx_zstd_default_compression_level=mysqlx_zstd_default_compression_level,
+            mysqlx_zstd_max_client_compression_level=mysqlx_zstd_max_client_compression_level,
+            net_read_timeout=net_read_timeout,
+            net_write_timeout=net_write_timeout,
+            parser_max_mem_size=parser_max_mem_size,
+            query_alloc_block_size=query_alloc_block_size,
+            query_prealloc_size=query_prealloc_size,
+            regexp_time_limit=regexp_time_limit,
+            sort_buffer_size=sort_buffer_size,
+            sql_mode=sql_mode,
+            sql_require_primary_key=sql_require_primary_key,
+            sql_warnings=sql_warnings,
+            thread_pool_dedicated_listeners=thread_pool_dedicated_listeners,
+            thread_pool_max_transactions_limit=thread_pool_max_transactions_limit,
+            time_zone=time_zone,
+            tmp_table_size=tmp_table_size,
+            transaction_isolation=transaction_isolation,
+            wait_timeout=wait_timeout,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             autocommit: Optional[bool] = None,
+             big_tables: Optional[bool] = None,
+             binlog_expire_logs_seconds: Optional[int] = None,
+             binlog_row_metadata: Optional[str] = None,
+             binlog_row_value_options: Optional[str] = None,
+             binlog_transaction_compression: Optional[bool] = None,
+             completion_type: Optional[str] = None,
+             connect_timeout: Optional[int] = None,
+             connection_memory_chunk_size: Optional[int] = None,
+             connection_memory_limit: Optional[str] = None,
+             cte_max_recursion_depth: Optional[str] = None,
+             default_authentication_plugin: Optional[str] = None,
+             foreign_key_checks: Optional[bool] = None,
+             generated_random_password_length: Optional[int] = None,
+             global_connection_memory_limit: Optional[str] = None,
+             global_connection_memory_tracking: Optional[bool] = None,
+             group_replication_consistency: Optional[str] = None,
+             information_schema_stats_expiry: Optional[int] = None,
+             innodb_buffer_pool_dump_pct: Optional[int] = None,
+             innodb_buffer_pool_instances: Optional[int] = None,
+             innodb_buffer_pool_size: Optional[str] = None,
+             innodb_ddl_buffer_size: Optional[str] = None,
+             innodb_ddl_threads: Optional[int] = None,
+             innodb_ft_enable_stopword: Optional[bool] = None,
+             innodb_ft_max_token_size: Optional[int] = None,
+             innodb_ft_min_token_size: Optional[int] = None,
+             innodb_ft_num_word_optimize: Optional[int] = None,
+             innodb_ft_result_cache_limit: Optional[str] = None,
+             innodb_ft_server_stopword_table: Optional[str] = None,
+             innodb_lock_wait_timeout: Optional[int] = None,
+             innodb_log_writer_threads: Optional[bool] = None,
+             innodb_max_purge_lag: Optional[str] = None,
+             innodb_max_purge_lag_delay: Optional[int] = None,
+             innodb_stats_persistent_sample_pages: Optional[str] = None,
+             innodb_stats_transient_sample_pages: Optional[str] = None,
+             interactive_timeout: Optional[int] = None,
+             local_infile: Optional[bool] = None,
+             mandatory_roles: Optional[str] = None,
+             max_allowed_packet: Optional[int] = None,
+             max_binlog_cache_size: Optional[str] = None,
+             max_connect_errors: Optional[str] = None,
+             max_connections: Optional[int] = None,
+             max_execution_time: Optional[str] = None,
+             max_heap_table_size: Optional[str] = None,
+             max_prepared_stmt_count: Optional[int] = None,
+             mysql_firewall_mode: Optional[bool] = None,
+             mysql_zstd_default_compression_level: Optional[int] = None,
+             mysqlx_connect_timeout: Optional[int] = None,
+             mysqlx_deflate_default_compression_level: Optional[int] = None,
+             mysqlx_deflate_max_client_compression_level: Optional[int] = None,
+             mysqlx_document_id_unique_prefix: Optional[int] = None,
+             mysqlx_enable_hello_notice: Optional[bool] = None,
+             mysqlx_idle_worker_thread_timeout: Optional[int] = None,
+             mysqlx_interactive_timeout: Optional[int] = None,
+             mysqlx_lz4default_compression_level: Optional[int] = None,
+             mysqlx_lz4max_client_compression_level: Optional[int] = None,
+             mysqlx_max_allowed_packet: Optional[int] = None,
+             mysqlx_min_worker_threads: Optional[int] = None,
+             mysqlx_read_timeout: Optional[int] = None,
+             mysqlx_wait_timeout: Optional[int] = None,
+             mysqlx_write_timeout: Optional[int] = None,
+             mysqlx_zstd_default_compression_level: Optional[int] = None,
+             mysqlx_zstd_max_client_compression_level: Optional[int] = None,
+             net_read_timeout: Optional[int] = None,
+             net_write_timeout: Optional[int] = None,
+             parser_max_mem_size: Optional[str] = None,
+             query_alloc_block_size: Optional[str] = None,
+             query_prealloc_size: Optional[str] = None,
+             regexp_time_limit: Optional[int] = None,
+             sort_buffer_size: Optional[str] = None,
+             sql_mode: Optional[str] = None,
+             sql_require_primary_key: Optional[bool] = None,
+             sql_warnings: Optional[bool] = None,
+             thread_pool_dedicated_listeners: Optional[bool] = None,
+             thread_pool_max_transactions_limit: Optional[int] = None,
+             time_zone: Optional[str] = None,
+             tmp_table_size: Optional[str] = None,
+             transaction_isolation: Optional[str] = None,
+             wait_timeout: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if autocommit is None:
+            raise TypeError("Missing 'autocommit' argument")
+        if big_tables is None and 'bigTables' in kwargs:
+            big_tables = kwargs['bigTables']
+        if big_tables is None:
+            raise TypeError("Missing 'big_tables' argument")
+        if binlog_expire_logs_seconds is None and 'binlogExpireLogsSeconds' in kwargs:
+            binlog_expire_logs_seconds = kwargs['binlogExpireLogsSeconds']
+        if binlog_expire_logs_seconds is None:
+            raise TypeError("Missing 'binlog_expire_logs_seconds' argument")
+        if binlog_row_metadata is None and 'binlogRowMetadata' in kwargs:
+            binlog_row_metadata = kwargs['binlogRowMetadata']
+        if binlog_row_metadata is None:
+            raise TypeError("Missing 'binlog_row_metadata' argument")
+        if binlog_row_value_options is None and 'binlogRowValueOptions' in kwargs:
+            binlog_row_value_options = kwargs['binlogRowValueOptions']
+        if binlog_row_value_options is None:
+            raise TypeError("Missing 'binlog_row_value_options' argument")
+        if binlog_transaction_compression is None and 'binlogTransactionCompression' in kwargs:
+            binlog_transaction_compression = kwargs['binlogTransactionCompression']
+        if binlog_transaction_compression is None:
+            raise TypeError("Missing 'binlog_transaction_compression' argument")
+        if completion_type is None and 'completionType' in kwargs:
+            completion_type = kwargs['completionType']
+        if completion_type is None:
+            raise TypeError("Missing 'completion_type' argument")
+        if connect_timeout is None and 'connectTimeout' in kwargs:
+            connect_timeout = kwargs['connectTimeout']
+        if connect_timeout is None:
+            raise TypeError("Missing 'connect_timeout' argument")
+        if connection_memory_chunk_size is None and 'connectionMemoryChunkSize' in kwargs:
+            connection_memory_chunk_size = kwargs['connectionMemoryChunkSize']
+        if connection_memory_chunk_size is None:
+            raise TypeError("Missing 'connection_memory_chunk_size' argument")
+        if connection_memory_limit is None and 'connectionMemoryLimit' in kwargs:
+            connection_memory_limit = kwargs['connectionMemoryLimit']
+        if connection_memory_limit is None:
+            raise TypeError("Missing 'connection_memory_limit' argument")
+        if cte_max_recursion_depth is None and 'cteMaxRecursionDepth' in kwargs:
+            cte_max_recursion_depth = kwargs['cteMaxRecursionDepth']
+        if cte_max_recursion_depth is None:
+            raise TypeError("Missing 'cte_max_recursion_depth' argument")
+        if default_authentication_plugin is None and 'defaultAuthenticationPlugin' in kwargs:
+            default_authentication_plugin = kwargs['defaultAuthenticationPlugin']
+        if default_authentication_plugin is None:
+            raise TypeError("Missing 'default_authentication_plugin' argument")
+        if foreign_key_checks is None and 'foreignKeyChecks' in kwargs:
+            foreign_key_checks = kwargs['foreignKeyChecks']
+        if foreign_key_checks is None:
+            raise TypeError("Missing 'foreign_key_checks' argument")
+        if generated_random_password_length is None and 'generatedRandomPasswordLength' in kwargs:
+            generated_random_password_length = kwargs['generatedRandomPasswordLength']
+        if generated_random_password_length is None:
+            raise TypeError("Missing 'generated_random_password_length' argument")
+        if global_connection_memory_limit is None and 'globalConnectionMemoryLimit' in kwargs:
+            global_connection_memory_limit = kwargs['globalConnectionMemoryLimit']
+        if global_connection_memory_limit is None:
+            raise TypeError("Missing 'global_connection_memory_limit' argument")
+        if global_connection_memory_tracking is None and 'globalConnectionMemoryTracking' in kwargs:
+            global_connection_memory_tracking = kwargs['globalConnectionMemoryTracking']
+        if global_connection_memory_tracking is None:
+            raise TypeError("Missing 'global_connection_memory_tracking' argument")
+        if group_replication_consistency is None and 'groupReplicationConsistency' in kwargs:
+            group_replication_consistency = kwargs['groupReplicationConsistency']
+        if group_replication_consistency is None:
+            raise TypeError("Missing 'group_replication_consistency' argument")
+        if information_schema_stats_expiry is None and 'informationSchemaStatsExpiry' in kwargs:
+            information_schema_stats_expiry = kwargs['informationSchemaStatsExpiry']
+        if information_schema_stats_expiry is None:
+            raise TypeError("Missing 'information_schema_stats_expiry' argument")
+        if innodb_buffer_pool_dump_pct is None and 'innodbBufferPoolDumpPct' in kwargs:
+            innodb_buffer_pool_dump_pct = kwargs['innodbBufferPoolDumpPct']
+        if innodb_buffer_pool_dump_pct is None:
+            raise TypeError("Missing 'innodb_buffer_pool_dump_pct' argument")
+        if innodb_buffer_pool_instances is None and 'innodbBufferPoolInstances' in kwargs:
+            innodb_buffer_pool_instances = kwargs['innodbBufferPoolInstances']
+        if innodb_buffer_pool_instances is None:
+            raise TypeError("Missing 'innodb_buffer_pool_instances' argument")
+        if innodb_buffer_pool_size is None and 'innodbBufferPoolSize' in kwargs:
+            innodb_buffer_pool_size = kwargs['innodbBufferPoolSize']
+        if innodb_buffer_pool_size is None:
+            raise TypeError("Missing 'innodb_buffer_pool_size' argument")
+        if innodb_ddl_buffer_size is None and 'innodbDdlBufferSize' in kwargs:
+            innodb_ddl_buffer_size = kwargs['innodbDdlBufferSize']
+        if innodb_ddl_buffer_size is None:
+            raise TypeError("Missing 'innodb_ddl_buffer_size' argument")
+        if innodb_ddl_threads is None and 'innodbDdlThreads' in kwargs:
+            innodb_ddl_threads = kwargs['innodbDdlThreads']
+        if innodb_ddl_threads is None:
+            raise TypeError("Missing 'innodb_ddl_threads' argument")
+        if innodb_ft_enable_stopword is None and 'innodbFtEnableStopword' in kwargs:
+            innodb_ft_enable_stopword = kwargs['innodbFtEnableStopword']
+        if innodb_ft_enable_stopword is None:
+            raise TypeError("Missing 'innodb_ft_enable_stopword' argument")
+        if innodb_ft_max_token_size is None and 'innodbFtMaxTokenSize' in kwargs:
+            innodb_ft_max_token_size = kwargs['innodbFtMaxTokenSize']
+        if innodb_ft_max_token_size is None:
+            raise TypeError("Missing 'innodb_ft_max_token_size' argument")
+        if innodb_ft_min_token_size is None and 'innodbFtMinTokenSize' in kwargs:
+            innodb_ft_min_token_size = kwargs['innodbFtMinTokenSize']
+        if innodb_ft_min_token_size is None:
+            raise TypeError("Missing 'innodb_ft_min_token_size' argument")
+        if innodb_ft_num_word_optimize is None and 'innodbFtNumWordOptimize' in kwargs:
+            innodb_ft_num_word_optimize = kwargs['innodbFtNumWordOptimize']
+        if innodb_ft_num_word_optimize is None:
+            raise TypeError("Missing 'innodb_ft_num_word_optimize' argument")
+        if innodb_ft_result_cache_limit is None and 'innodbFtResultCacheLimit' in kwargs:
+            innodb_ft_result_cache_limit = kwargs['innodbFtResultCacheLimit']
+        if innodb_ft_result_cache_limit is None:
+            raise TypeError("Missing 'innodb_ft_result_cache_limit' argument")
+        if innodb_ft_server_stopword_table is None and 'innodbFtServerStopwordTable' in kwargs:
+            innodb_ft_server_stopword_table = kwargs['innodbFtServerStopwordTable']
+        if innodb_ft_server_stopword_table is None:
+            raise TypeError("Missing 'innodb_ft_server_stopword_table' argument")
+        if innodb_lock_wait_timeout is None and 'innodbLockWaitTimeout' in kwargs:
+            innodb_lock_wait_timeout = kwargs['innodbLockWaitTimeout']
+        if innodb_lock_wait_timeout is None:
+            raise TypeError("Missing 'innodb_lock_wait_timeout' argument")
+        if innodb_log_writer_threads is None and 'innodbLogWriterThreads' in kwargs:
+            innodb_log_writer_threads = kwargs['innodbLogWriterThreads']
+        if innodb_log_writer_threads is None:
+            raise TypeError("Missing 'innodb_log_writer_threads' argument")
+        if innodb_max_purge_lag is None and 'innodbMaxPurgeLag' in kwargs:
+            innodb_max_purge_lag = kwargs['innodbMaxPurgeLag']
+        if innodb_max_purge_lag is None:
+            raise TypeError("Missing 'innodb_max_purge_lag' argument")
+        if innodb_max_purge_lag_delay is None and 'innodbMaxPurgeLagDelay' in kwargs:
+            innodb_max_purge_lag_delay = kwargs['innodbMaxPurgeLagDelay']
+        if innodb_max_purge_lag_delay is None:
+            raise TypeError("Missing 'innodb_max_purge_lag_delay' argument")
+        if innodb_stats_persistent_sample_pages is None and 'innodbStatsPersistentSamplePages' in kwargs:
+            innodb_stats_persistent_sample_pages = kwargs['innodbStatsPersistentSamplePages']
+        if innodb_stats_persistent_sample_pages is None:
+            raise TypeError("Missing 'innodb_stats_persistent_sample_pages' argument")
+        if innodb_stats_transient_sample_pages is None and 'innodbStatsTransientSamplePages' in kwargs:
+            innodb_stats_transient_sample_pages = kwargs['innodbStatsTransientSamplePages']
+        if innodb_stats_transient_sample_pages is None:
+            raise TypeError("Missing 'innodb_stats_transient_sample_pages' argument")
+        if interactive_timeout is None and 'interactiveTimeout' in kwargs:
+            interactive_timeout = kwargs['interactiveTimeout']
+        if interactive_timeout is None:
+            raise TypeError("Missing 'interactive_timeout' argument")
+        if local_infile is None and 'localInfile' in kwargs:
+            local_infile = kwargs['localInfile']
+        if local_infile is None:
+            raise TypeError("Missing 'local_infile' argument")
+        if mandatory_roles is None and 'mandatoryRoles' in kwargs:
+            mandatory_roles = kwargs['mandatoryRoles']
+        if mandatory_roles is None:
+            raise TypeError("Missing 'mandatory_roles' argument")
+        if max_allowed_packet is None and 'maxAllowedPacket' in kwargs:
+            max_allowed_packet = kwargs['maxAllowedPacket']
+        if max_allowed_packet is None:
+            raise TypeError("Missing 'max_allowed_packet' argument")
+        if max_binlog_cache_size is None and 'maxBinlogCacheSize' in kwargs:
+            max_binlog_cache_size = kwargs['maxBinlogCacheSize']
+        if max_binlog_cache_size is None:
+            raise TypeError("Missing 'max_binlog_cache_size' argument")
+        if max_connect_errors is None and 'maxConnectErrors' in kwargs:
+            max_connect_errors = kwargs['maxConnectErrors']
+        if max_connect_errors is None:
+            raise TypeError("Missing 'max_connect_errors' argument")
+        if max_connections is None and 'maxConnections' in kwargs:
+            max_connections = kwargs['maxConnections']
+        if max_connections is None:
+            raise TypeError("Missing 'max_connections' argument")
+        if max_execution_time is None and 'maxExecutionTime' in kwargs:
+            max_execution_time = kwargs['maxExecutionTime']
+        if max_execution_time is None:
+            raise TypeError("Missing 'max_execution_time' argument")
+        if max_heap_table_size is None and 'maxHeapTableSize' in kwargs:
+            max_heap_table_size = kwargs['maxHeapTableSize']
+        if max_heap_table_size is None:
+            raise TypeError("Missing 'max_heap_table_size' argument")
+        if max_prepared_stmt_count is None and 'maxPreparedStmtCount' in kwargs:
+            max_prepared_stmt_count = kwargs['maxPreparedStmtCount']
+        if max_prepared_stmt_count is None:
+            raise TypeError("Missing 'max_prepared_stmt_count' argument")
+        if mysql_firewall_mode is None and 'mysqlFirewallMode' in kwargs:
+            mysql_firewall_mode = kwargs['mysqlFirewallMode']
+        if mysql_firewall_mode is None:
+            raise TypeError("Missing 'mysql_firewall_mode' argument")
+        if mysql_zstd_default_compression_level is None and 'mysqlZstdDefaultCompressionLevel' in kwargs:
+            mysql_zstd_default_compression_level = kwargs['mysqlZstdDefaultCompressionLevel']
+        if mysql_zstd_default_compression_level is None:
+            raise TypeError("Missing 'mysql_zstd_default_compression_level' argument")
+        if mysqlx_connect_timeout is None and 'mysqlxConnectTimeout' in kwargs:
+            mysqlx_connect_timeout = kwargs['mysqlxConnectTimeout']
+        if mysqlx_connect_timeout is None:
+            raise TypeError("Missing 'mysqlx_connect_timeout' argument")
+        if mysqlx_deflate_default_compression_level is None and 'mysqlxDeflateDefaultCompressionLevel' in kwargs:
+            mysqlx_deflate_default_compression_level = kwargs['mysqlxDeflateDefaultCompressionLevel']
+        if mysqlx_deflate_default_compression_level is None:
+            raise TypeError("Missing 'mysqlx_deflate_default_compression_level' argument")
+        if mysqlx_deflate_max_client_compression_level is None and 'mysqlxDeflateMaxClientCompressionLevel' in kwargs:
+            mysqlx_deflate_max_client_compression_level = kwargs['mysqlxDeflateMaxClientCompressionLevel']
+        if mysqlx_deflate_max_client_compression_level is None:
+            raise TypeError("Missing 'mysqlx_deflate_max_client_compression_level' argument")
+        if mysqlx_document_id_unique_prefix is None and 'mysqlxDocumentIdUniquePrefix' in kwargs:
+            mysqlx_document_id_unique_prefix = kwargs['mysqlxDocumentIdUniquePrefix']
+        if mysqlx_document_id_unique_prefix is None:
+            raise TypeError("Missing 'mysqlx_document_id_unique_prefix' argument")
+        if mysqlx_enable_hello_notice is None and 'mysqlxEnableHelloNotice' in kwargs:
+            mysqlx_enable_hello_notice = kwargs['mysqlxEnableHelloNotice']
+        if mysqlx_enable_hello_notice is None:
+            raise TypeError("Missing 'mysqlx_enable_hello_notice' argument")
+        if mysqlx_idle_worker_thread_timeout is None and 'mysqlxIdleWorkerThreadTimeout' in kwargs:
+            mysqlx_idle_worker_thread_timeout = kwargs['mysqlxIdleWorkerThreadTimeout']
+        if mysqlx_idle_worker_thread_timeout is None:
+            raise TypeError("Missing 'mysqlx_idle_worker_thread_timeout' argument")
+        if mysqlx_interactive_timeout is None and 'mysqlxInteractiveTimeout' in kwargs:
+            mysqlx_interactive_timeout = kwargs['mysqlxInteractiveTimeout']
+        if mysqlx_interactive_timeout is None:
+            raise TypeError("Missing 'mysqlx_interactive_timeout' argument")
+        if mysqlx_lz4default_compression_level is None and 'mysqlxLz4defaultCompressionLevel' in kwargs:
+            mysqlx_lz4default_compression_level = kwargs['mysqlxLz4defaultCompressionLevel']
+        if mysqlx_lz4default_compression_level is None:
+            raise TypeError("Missing 'mysqlx_lz4default_compression_level' argument")
+        if mysqlx_lz4max_client_compression_level is None and 'mysqlxLz4maxClientCompressionLevel' in kwargs:
+            mysqlx_lz4max_client_compression_level = kwargs['mysqlxLz4maxClientCompressionLevel']
+        if mysqlx_lz4max_client_compression_level is None:
+            raise TypeError("Missing 'mysqlx_lz4max_client_compression_level' argument")
+        if mysqlx_max_allowed_packet is None and 'mysqlxMaxAllowedPacket' in kwargs:
+            mysqlx_max_allowed_packet = kwargs['mysqlxMaxAllowedPacket']
+        if mysqlx_max_allowed_packet is None:
+            raise TypeError("Missing 'mysqlx_max_allowed_packet' argument")
+        if mysqlx_min_worker_threads is None and 'mysqlxMinWorkerThreads' in kwargs:
+            mysqlx_min_worker_threads = kwargs['mysqlxMinWorkerThreads']
+        if mysqlx_min_worker_threads is None:
+            raise TypeError("Missing 'mysqlx_min_worker_threads' argument")
+        if mysqlx_read_timeout is None and 'mysqlxReadTimeout' in kwargs:
+            mysqlx_read_timeout = kwargs['mysqlxReadTimeout']
+        if mysqlx_read_timeout is None:
+            raise TypeError("Missing 'mysqlx_read_timeout' argument")
+        if mysqlx_wait_timeout is None and 'mysqlxWaitTimeout' in kwargs:
+            mysqlx_wait_timeout = kwargs['mysqlxWaitTimeout']
+        if mysqlx_wait_timeout is None:
+            raise TypeError("Missing 'mysqlx_wait_timeout' argument")
+        if mysqlx_write_timeout is None and 'mysqlxWriteTimeout' in kwargs:
+            mysqlx_write_timeout = kwargs['mysqlxWriteTimeout']
+        if mysqlx_write_timeout is None:
+            raise TypeError("Missing 'mysqlx_write_timeout' argument")
+        if mysqlx_zstd_default_compression_level is None and 'mysqlxZstdDefaultCompressionLevel' in kwargs:
+            mysqlx_zstd_default_compression_level = kwargs['mysqlxZstdDefaultCompressionLevel']
+        if mysqlx_zstd_default_compression_level is None:
+            raise TypeError("Missing 'mysqlx_zstd_default_compression_level' argument")
+        if mysqlx_zstd_max_client_compression_level is None and 'mysqlxZstdMaxClientCompressionLevel' in kwargs:
+            mysqlx_zstd_max_client_compression_level = kwargs['mysqlxZstdMaxClientCompressionLevel']
+        if mysqlx_zstd_max_client_compression_level is None:
+            raise TypeError("Missing 'mysqlx_zstd_max_client_compression_level' argument")
+        if net_read_timeout is None and 'netReadTimeout' in kwargs:
+            net_read_timeout = kwargs['netReadTimeout']
+        if net_read_timeout is None:
+            raise TypeError("Missing 'net_read_timeout' argument")
+        if net_write_timeout is None and 'netWriteTimeout' in kwargs:
+            net_write_timeout = kwargs['netWriteTimeout']
+        if net_write_timeout is None:
+            raise TypeError("Missing 'net_write_timeout' argument")
+        if parser_max_mem_size is None and 'parserMaxMemSize' in kwargs:
+            parser_max_mem_size = kwargs['parserMaxMemSize']
+        if parser_max_mem_size is None:
+            raise TypeError("Missing 'parser_max_mem_size' argument")
+        if query_alloc_block_size is None and 'queryAllocBlockSize' in kwargs:
+            query_alloc_block_size = kwargs['queryAllocBlockSize']
+        if query_alloc_block_size is None:
+            raise TypeError("Missing 'query_alloc_block_size' argument")
+        if query_prealloc_size is None and 'queryPreallocSize' in kwargs:
+            query_prealloc_size = kwargs['queryPreallocSize']
+        if query_prealloc_size is None:
+            raise TypeError("Missing 'query_prealloc_size' argument")
+        if regexp_time_limit is None and 'regexpTimeLimit' in kwargs:
+            regexp_time_limit = kwargs['regexpTimeLimit']
+        if regexp_time_limit is None:
+            raise TypeError("Missing 'regexp_time_limit' argument")
+        if sort_buffer_size is None and 'sortBufferSize' in kwargs:
+            sort_buffer_size = kwargs['sortBufferSize']
+        if sort_buffer_size is None:
+            raise TypeError("Missing 'sort_buffer_size' argument")
+        if sql_mode is None and 'sqlMode' in kwargs:
+            sql_mode = kwargs['sqlMode']
+        if sql_mode is None:
+            raise TypeError("Missing 'sql_mode' argument")
+        if sql_require_primary_key is None and 'sqlRequirePrimaryKey' in kwargs:
+            sql_require_primary_key = kwargs['sqlRequirePrimaryKey']
+        if sql_require_primary_key is None:
+            raise TypeError("Missing 'sql_require_primary_key' argument")
+        if sql_warnings is None and 'sqlWarnings' in kwargs:
+            sql_warnings = kwargs['sqlWarnings']
+        if sql_warnings is None:
+            raise TypeError("Missing 'sql_warnings' argument")
+        if thread_pool_dedicated_listeners is None and 'threadPoolDedicatedListeners' in kwargs:
+            thread_pool_dedicated_listeners = kwargs['threadPoolDedicatedListeners']
+        if thread_pool_dedicated_listeners is None:
+            raise TypeError("Missing 'thread_pool_dedicated_listeners' argument")
+        if thread_pool_max_transactions_limit is None and 'threadPoolMaxTransactionsLimit' in kwargs:
+            thread_pool_max_transactions_limit = kwargs['threadPoolMaxTransactionsLimit']
+        if thread_pool_max_transactions_limit is None:
+            raise TypeError("Missing 'thread_pool_max_transactions_limit' argument")
+        if time_zone is None and 'timeZone' in kwargs:
+            time_zone = kwargs['timeZone']
+        if time_zone is None:
+            raise TypeError("Missing 'time_zone' argument")
+        if tmp_table_size is None and 'tmpTableSize' in kwargs:
+            tmp_table_size = kwargs['tmpTableSize']
+        if tmp_table_size is None:
+            raise TypeError("Missing 'tmp_table_size' argument")
+        if transaction_isolation is None and 'transactionIsolation' in kwargs:
+            transaction_isolation = kwargs['transactionIsolation']
+        if transaction_isolation is None:
+            raise TypeError("Missing 'transaction_isolation' argument")
+        if wait_timeout is None and 'waitTimeout' in kwargs:
+            wait_timeout = kwargs['waitTimeout']
+        if wait_timeout is None:
+            raise TypeError("Missing 'wait_timeout' argument")
+
+        _setter("autocommit", autocommit)
+        _setter("big_tables", big_tables)
+        _setter("binlog_expire_logs_seconds", binlog_expire_logs_seconds)
+        _setter("binlog_row_metadata", binlog_row_metadata)
+        _setter("binlog_row_value_options", binlog_row_value_options)
+        _setter("binlog_transaction_compression", binlog_transaction_compression)
+        _setter("completion_type", completion_type)
+        _setter("connect_timeout", connect_timeout)
+        _setter("connection_memory_chunk_size", connection_memory_chunk_size)
+        _setter("connection_memory_limit", connection_memory_limit)
+        _setter("cte_max_recursion_depth", cte_max_recursion_depth)
+        _setter("default_authentication_plugin", default_authentication_plugin)
+        _setter("foreign_key_checks", foreign_key_checks)
+        _setter("generated_random_password_length", generated_random_password_length)
+        _setter("global_connection_memory_limit", global_connection_memory_limit)
+        _setter("global_connection_memory_tracking", global_connection_memory_tracking)
+        _setter("group_replication_consistency", group_replication_consistency)
+        _setter("information_schema_stats_expiry", information_schema_stats_expiry)
+        _setter("innodb_buffer_pool_dump_pct", innodb_buffer_pool_dump_pct)
+        _setter("innodb_buffer_pool_instances", innodb_buffer_pool_instances)
+        _setter("innodb_buffer_pool_size", innodb_buffer_pool_size)
+        _setter("innodb_ddl_buffer_size", innodb_ddl_buffer_size)
+        _setter("innodb_ddl_threads", innodb_ddl_threads)
+        _setter("innodb_ft_enable_stopword", innodb_ft_enable_stopword)
+        _setter("innodb_ft_max_token_size", innodb_ft_max_token_size)
+        _setter("innodb_ft_min_token_size", innodb_ft_min_token_size)
+        _setter("innodb_ft_num_word_optimize", innodb_ft_num_word_optimize)
+        _setter("innodb_ft_result_cache_limit", innodb_ft_result_cache_limit)
+        _setter("innodb_ft_server_stopword_table", innodb_ft_server_stopword_table)
+        _setter("innodb_lock_wait_timeout", innodb_lock_wait_timeout)
+        _setter("innodb_log_writer_threads", innodb_log_writer_threads)
+        _setter("innodb_max_purge_lag", innodb_max_purge_lag)
+        _setter("innodb_max_purge_lag_delay", innodb_max_purge_lag_delay)
+        _setter("innodb_stats_persistent_sample_pages", innodb_stats_persistent_sample_pages)
+        _setter("innodb_stats_transient_sample_pages", innodb_stats_transient_sample_pages)
+        _setter("interactive_timeout", interactive_timeout)
+        _setter("local_infile", local_infile)
+        _setter("mandatory_roles", mandatory_roles)
+        _setter("max_allowed_packet", max_allowed_packet)
+        _setter("max_binlog_cache_size", max_binlog_cache_size)
+        _setter("max_connect_errors", max_connect_errors)
+        _setter("max_connections", max_connections)
+        _setter("max_execution_time", max_execution_time)
+        _setter("max_heap_table_size", max_heap_table_size)
+        _setter("max_prepared_stmt_count", max_prepared_stmt_count)
+        _setter("mysql_firewall_mode", mysql_firewall_mode)
+        _setter("mysql_zstd_default_compression_level", mysql_zstd_default_compression_level)
+        _setter("mysqlx_connect_timeout", mysqlx_connect_timeout)
+        _setter("mysqlx_deflate_default_compression_level", mysqlx_deflate_default_compression_level)
+        _setter("mysqlx_deflate_max_client_compression_level", mysqlx_deflate_max_client_compression_level)
+        _setter("mysqlx_document_id_unique_prefix", mysqlx_document_id_unique_prefix)
+        _setter("mysqlx_enable_hello_notice", mysqlx_enable_hello_notice)
+        _setter("mysqlx_idle_worker_thread_timeout", mysqlx_idle_worker_thread_timeout)
+        _setter("mysqlx_interactive_timeout", mysqlx_interactive_timeout)
+        _setter("mysqlx_lz4default_compression_level", mysqlx_lz4default_compression_level)
+        _setter("mysqlx_lz4max_client_compression_level", mysqlx_lz4max_client_compression_level)
+        _setter("mysqlx_max_allowed_packet", mysqlx_max_allowed_packet)
+        _setter("mysqlx_min_worker_threads", mysqlx_min_worker_threads)
+        _setter("mysqlx_read_timeout", mysqlx_read_timeout)
+        _setter("mysqlx_wait_timeout", mysqlx_wait_timeout)
+        _setter("mysqlx_write_timeout", mysqlx_write_timeout)
+        _setter("mysqlx_zstd_default_compression_level", mysqlx_zstd_default_compression_level)
+        _setter("mysqlx_zstd_max_client_compression_level", mysqlx_zstd_max_client_compression_level)
+        _setter("net_read_timeout", net_read_timeout)
+        _setter("net_write_timeout", net_write_timeout)
+        _setter("parser_max_mem_size", parser_max_mem_size)
+        _setter("query_alloc_block_size", query_alloc_block_size)
+        _setter("query_prealloc_size", query_prealloc_size)
+        _setter("regexp_time_limit", regexp_time_limit)
+        _setter("sort_buffer_size", sort_buffer_size)
+        _setter("sql_mode", sql_mode)
+        _setter("sql_require_primary_key", sql_require_primary_key)
+        _setter("sql_warnings", sql_warnings)
+        _setter("thread_pool_dedicated_listeners", thread_pool_dedicated_listeners)
+        _setter("thread_pool_max_transactions_limit", thread_pool_max_transactions_limit)
+        _setter("time_zone", time_zone)
+        _setter("tmp_table_size", tmp_table_size)
+        _setter("transaction_isolation", transaction_isolation)
+        _setter("wait_timeout", wait_timeout)
 
     @property
     @pulumi.getter
@@ -8218,10 +11610,29 @@ class GetMysqlConfigurationsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMysqlConfigurationsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -8256,12 +11667,57 @@ class GetMysqlDbSystemBackupPolicyResult(dict):
         :param int retention_in_days: The number of days automated backups are retained.
         :param str window_start_time: The start time of the maintenance window.
         """
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "pitr_policies", pitr_policies)
-        pulumi.set(__self__, "retention_in_days", retention_in_days)
-        pulumi.set(__self__, "window_start_time", window_start_time)
+        GetMysqlDbSystemBackupPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            is_enabled=is_enabled,
+            pitr_policies=pitr_policies,
+            retention_in_days=retention_in_days,
+            window_start_time=window_start_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             is_enabled: Optional[bool] = None,
+             pitr_policies: Optional[Sequence['outputs.GetMysqlDbSystemBackupPolicyPitrPolicyResult']] = None,
+             retention_in_days: Optional[int] = None,
+             window_start_time: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if pitr_policies is None and 'pitrPolicies' in kwargs:
+            pitr_policies = kwargs['pitrPolicies']
+        if pitr_policies is None:
+            raise TypeError("Missing 'pitr_policies' argument")
+        if retention_in_days is None and 'retentionInDays' in kwargs:
+            retention_in_days = kwargs['retentionInDays']
+        if retention_in_days is None:
+            raise TypeError("Missing 'retention_in_days' argument")
+        if window_start_time is None and 'windowStartTime' in kwargs:
+            window_start_time = kwargs['windowStartTime']
+        if window_start_time is None:
+            raise TypeError("Missing 'window_start_time' argument")
+
+        _setter("defined_tags", defined_tags)
+        _setter("freeform_tags", freeform_tags)
+        _setter("is_enabled", is_enabled)
+        _setter("pitr_policies", pitr_policies)
+        _setter("retention_in_days", retention_in_days)
+        _setter("window_start_time", window_start_time)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -8319,7 +11775,22 @@ class GetMysqlDbSystemBackupPolicyPitrPolicyResult(dict):
         """
         :param bool is_enabled: Whether the Channel has been enabled by the user.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        GetMysqlDbSystemBackupPolicyPitrPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+
+        _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -8359,18 +11830,91 @@ class GetMysqlDbSystemChannelResult(dict):
         :param str time_created: The date and time the DB System was created.
         :param str time_updated: The time the DB System was last updated.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "sources", sources)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "targets", targets)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetMysqlDbSystemChannelResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_enabled=is_enabled,
+            lifecycle_details=lifecycle_details,
+            sources=sources,
+            state=state,
+            targets=targets,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_enabled: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             sources: Optional[Sequence['outputs.GetMysqlDbSystemChannelSourceResult']] = None,
+             state: Optional[str] = None,
+             targets: Optional[Sequence['outputs.GetMysqlDbSystemChannelTargetResult']] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if sources is None:
+            raise TypeError("Missing 'sources' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if targets is None:
+            raise TypeError("Missing 'targets' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_enabled", is_enabled)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("sources", sources)
+        _setter("state", state)
+        _setter("targets", targets)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -8488,13 +12032,58 @@ class GetMysqlDbSystemChannelSourceResult(dict):
         :param str ssl_mode: The SSL mode of the Channel.
         :param str username: The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
         """
-        pulumi.set(__self__, "anonymous_transactions_handlings", anonymous_transactions_handlings)
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "source_type", source_type)
-        pulumi.set(__self__, "ssl_ca_certificates", ssl_ca_certificates)
-        pulumi.set(__self__, "ssl_mode", ssl_mode)
-        pulumi.set(__self__, "username", username)
+        GetMysqlDbSystemChannelSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            anonymous_transactions_handlings=anonymous_transactions_handlings,
+            hostname=hostname,
+            port=port,
+            source_type=source_type,
+            ssl_ca_certificates=ssl_ca_certificates,
+            ssl_mode=ssl_mode,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             anonymous_transactions_handlings: Optional[Sequence['outputs.GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingResult']] = None,
+             hostname: Optional[str] = None,
+             port: Optional[int] = None,
+             source_type: Optional[str] = None,
+             ssl_ca_certificates: Optional[Sequence['outputs.GetMysqlDbSystemChannelSourceSslCaCertificateResult']] = None,
+             ssl_mode: Optional[str] = None,
+             username: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if anonymous_transactions_handlings is None and 'anonymousTransactionsHandlings' in kwargs:
+            anonymous_transactions_handlings = kwargs['anonymousTransactionsHandlings']
+        if anonymous_transactions_handlings is None:
+            raise TypeError("Missing 'anonymous_transactions_handlings' argument")
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if source_type is None and 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
+        if ssl_ca_certificates is None and 'sslCaCertificates' in kwargs:
+            ssl_ca_certificates = kwargs['sslCaCertificates']
+        if ssl_ca_certificates is None:
+            raise TypeError("Missing 'ssl_ca_certificates' argument")
+        if ssl_mode is None and 'sslMode' in kwargs:
+            ssl_mode = kwargs['sslMode']
+        if ssl_mode is None:
+            raise TypeError("Missing 'ssl_mode' argument")
+        if username is None:
+            raise TypeError("Missing 'username' argument")
+
+        _setter("anonymous_transactions_handlings", anonymous_transactions_handlings)
+        _setter("hostname", hostname)
+        _setter("port", port)
+        _setter("source_type", source_type)
+        _setter("ssl_ca_certificates", ssl_ca_certificates)
+        _setter("ssl_mode", ssl_mode)
+        _setter("username", username)
 
     @property
     @pulumi.getter(name="anonymousTransactionsHandlings")
@@ -8566,10 +12155,39 @@ class GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingResult(dict):
         :param str policy: Specifies how the replication channel handles anonymous transactions.
         :param str uuid: The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
         """
-        pulumi.set(__self__, "last_configured_log_filename", last_configured_log_filename)
-        pulumi.set(__self__, "last_configured_log_offset", last_configured_log_offset)
-        pulumi.set(__self__, "policy", policy)
-        pulumi.set(__self__, "uuid", uuid)
+        GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            last_configured_log_filename=last_configured_log_filename,
+            last_configured_log_offset=last_configured_log_offset,
+            policy=policy,
+            uuid=uuid,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             last_configured_log_filename: Optional[str] = None,
+             last_configured_log_offset: Optional[str] = None,
+             policy: Optional[str] = None,
+             uuid: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if last_configured_log_filename is None and 'lastConfiguredLogFilename' in kwargs:
+            last_configured_log_filename = kwargs['lastConfiguredLogFilename']
+        if last_configured_log_filename is None:
+            raise TypeError("Missing 'last_configured_log_filename' argument")
+        if last_configured_log_offset is None and 'lastConfiguredLogOffset' in kwargs:
+            last_configured_log_offset = kwargs['lastConfiguredLogOffset']
+        if last_configured_log_offset is None:
+            raise TypeError("Missing 'last_configured_log_offset' argument")
+        if policy is None:
+            raise TypeError("Missing 'policy' argument")
+        if uuid is None:
+            raise TypeError("Missing 'uuid' argument")
+
+        _setter("last_configured_log_filename", last_configured_log_filename)
+        _setter("last_configured_log_offset", last_configured_log_offset)
+        _setter("policy", policy)
+        _setter("uuid", uuid)
 
     @property
     @pulumi.getter(name="lastConfiguredLogFilename")
@@ -8613,8 +12231,27 @@ class GetMysqlDbSystemChannelSourceSslCaCertificateResult(dict):
         :param str certificate_type: The type of CA certificate.
         :param str contents: The string containing the CA certificate in PEM format.
         """
-        pulumi.set(__self__, "certificate_type", certificate_type)
-        pulumi.set(__self__, "contents", contents)
+        GetMysqlDbSystemChannelSourceSslCaCertificateResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_type=certificate_type,
+            contents=contents,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_type: Optional[str] = None,
+             contents: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if certificate_type is None and 'certificateType' in kwargs:
+            certificate_type = kwargs['certificateType']
+        if certificate_type is None:
+            raise TypeError("Missing 'certificate_type' argument")
+        if contents is None:
+            raise TypeError("Missing 'contents' argument")
+
+        _setter("certificate_type", certificate_type)
+        _setter("contents", contents)
 
     @property
     @pulumi.getter(name="certificateType")
@@ -8652,13 +12289,62 @@ class GetMysqlDbSystemChannelTargetResult(dict):
         :param str tables_without_primary_key_handling: Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
         :param str target_type: The specific target identifier.
         """
-        pulumi.set(__self__, "applier_username", applier_username)
-        pulumi.set(__self__, "channel_name", channel_name)
-        pulumi.set(__self__, "db_system_id", db_system_id)
-        pulumi.set(__self__, "delay_in_seconds", delay_in_seconds)
-        pulumi.set(__self__, "filters", filters)
-        pulumi.set(__self__, "tables_without_primary_key_handling", tables_without_primary_key_handling)
-        pulumi.set(__self__, "target_type", target_type)
+        GetMysqlDbSystemChannelTargetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            applier_username=applier_username,
+            channel_name=channel_name,
+            db_system_id=db_system_id,
+            delay_in_seconds=delay_in_seconds,
+            filters=filters,
+            tables_without_primary_key_handling=tables_without_primary_key_handling,
+            target_type=target_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             applier_username: Optional[str] = None,
+             channel_name: Optional[str] = None,
+             db_system_id: Optional[str] = None,
+             delay_in_seconds: Optional[int] = None,
+             filters: Optional[Sequence['outputs.GetMysqlDbSystemChannelTargetFilterResult']] = None,
+             tables_without_primary_key_handling: Optional[str] = None,
+             target_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if applier_username is None and 'applierUsername' in kwargs:
+            applier_username = kwargs['applierUsername']
+        if applier_username is None:
+            raise TypeError("Missing 'applier_username' argument")
+        if channel_name is None and 'channelName' in kwargs:
+            channel_name = kwargs['channelName']
+        if channel_name is None:
+            raise TypeError("Missing 'channel_name' argument")
+        if db_system_id is None and 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if db_system_id is None:
+            raise TypeError("Missing 'db_system_id' argument")
+        if delay_in_seconds is None and 'delayInSeconds' in kwargs:
+            delay_in_seconds = kwargs['delayInSeconds']
+        if delay_in_seconds is None:
+            raise TypeError("Missing 'delay_in_seconds' argument")
+        if filters is None:
+            raise TypeError("Missing 'filters' argument")
+        if tables_without_primary_key_handling is None and 'tablesWithoutPrimaryKeyHandling' in kwargs:
+            tables_without_primary_key_handling = kwargs['tablesWithoutPrimaryKeyHandling']
+        if tables_without_primary_key_handling is None:
+            raise TypeError("Missing 'tables_without_primary_key_handling' argument")
+        if target_type is None and 'targetType' in kwargs:
+            target_type = kwargs['targetType']
+        if target_type is None:
+            raise TypeError("Missing 'target_type' argument")
+
+        _setter("applier_username", applier_username)
+        _setter("channel_name", channel_name)
+        _setter("db_system_id", db_system_id)
+        _setter("delay_in_seconds", delay_in_seconds)
+        _setter("filters", filters)
+        _setter("tables_without_primary_key_handling", tables_without_primary_key_handling)
+        _setter("target_type", target_type)
 
     @property
     @pulumi.getter(name="applierUsername")
@@ -8726,8 +12412,25 @@ class GetMysqlDbSystemChannelTargetFilterResult(dict):
         :param str type: The type of the filter rule.
         :param str value: The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "value", value)
+        GetMysqlDbSystemChannelTargetFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("type", type)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -8755,8 +12458,29 @@ class GetMysqlDbSystemCurrentPlacementResult(dict):
         :param str availability_domain: The availability domain in which the DB System is placed.
         :param str fault_domain: The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "fault_domain", fault_domain)
+        GetMysqlDbSystemCurrentPlacementResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            fault_domain=fault_domain,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: Optional[str] = None,
+             fault_domain: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if availability_domain is None and 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if fault_domain is None and 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if fault_domain is None:
+            raise TypeError("Missing 'fault_domain' argument")
+
+        _setter("availability_domain", availability_domain)
+        _setter("fault_domain", fault_domain)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -8786,9 +12510,36 @@ class GetMysqlDbSystemDeletionPolicyResult(dict):
         :param str final_backup: Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
         :param bool is_delete_protected: Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
         """
-        pulumi.set(__self__, "automatic_backup_retention", automatic_backup_retention)
-        pulumi.set(__self__, "final_backup", final_backup)
-        pulumi.set(__self__, "is_delete_protected", is_delete_protected)
+        GetMysqlDbSystemDeletionPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            automatic_backup_retention=automatic_backup_retention,
+            final_backup=final_backup,
+            is_delete_protected=is_delete_protected,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             automatic_backup_retention: Optional[str] = None,
+             final_backup: Optional[str] = None,
+             is_delete_protected: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if automatic_backup_retention is None and 'automaticBackupRetention' in kwargs:
+            automatic_backup_retention = kwargs['automaticBackupRetention']
+        if automatic_backup_retention is None:
+            raise TypeError("Missing 'automatic_backup_retention' argument")
+        if final_backup is None and 'finalBackup' in kwargs:
+            final_backup = kwargs['finalBackup']
+        if final_backup is None:
+            raise TypeError("Missing 'final_backup' argument")
+        if is_delete_protected is None and 'isDeleteProtected' in kwargs:
+            is_delete_protected = kwargs['isDeleteProtected']
+        if is_delete_protected is None:
+            raise TypeError("Missing 'is_delete_protected' argument")
+
+        _setter("automatic_backup_retention", automatic_backup_retention)
+        _setter("final_backup", final_backup)
+        _setter("is_delete_protected", is_delete_protected)
 
     @property
     @pulumi.getter(name="automaticBackupRetention")
@@ -8838,15 +12589,70 @@ class GetMysqlDbSystemEndpointResult(dict):
         :param str status: The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
         :param str status_details: Additional information about the current endpoint status.
         """
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "modes", modes)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "port_x", port_x)
-        pulumi.set(__self__, "resource_id", resource_id)
-        pulumi.set(__self__, "resource_type", resource_type)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "status_details", status_details)
+        GetMysqlDbSystemEndpointResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+            ip_address=ip_address,
+            modes=modes,
+            port=port,
+            port_x=port_x,
+            resource_id=resource_id,
+            resource_type=resource_type,
+            status=status,
+            status_details=status_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: Optional[str] = None,
+             ip_address: Optional[str] = None,
+             modes: Optional[Sequence[str]] = None,
+             port: Optional[int] = None,
+             port_x: Optional[int] = None,
+             resource_id: Optional[str] = None,
+             resource_type: Optional[str] = None,
+             status: Optional[str] = None,
+             status_details: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if ip_address is None and 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if ip_address is None:
+            raise TypeError("Missing 'ip_address' argument")
+        if modes is None:
+            raise TypeError("Missing 'modes' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if port_x is None and 'portX' in kwargs:
+            port_x = kwargs['portX']
+        if port_x is None:
+            raise TypeError("Missing 'port_x' argument")
+        if resource_id is None and 'resourceId' in kwargs:
+            resource_id = kwargs['resourceId']
+        if resource_id is None:
+            raise TypeError("Missing 'resource_id' argument")
+        if resource_type is None and 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if resource_type is None:
+            raise TypeError("Missing 'resource_type' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if status_details is None and 'statusDetails' in kwargs:
+            status_details = kwargs['statusDetails']
+        if status_details is None:
+            raise TypeError("Missing 'status_details' argument")
+
+        _setter("hostname", hostname)
+        _setter("ip_address", ip_address)
+        _setter("modes", modes)
+        _setter("port", port)
+        _setter("port_x", port_x)
+        _setter("resource_id", resource_id)
+        _setter("resource_type", resource_type)
+        _setter("status", status)
+        _setter("status_details", status_details)
 
     @property
     @pulumi.getter
@@ -8938,12 +12744,55 @@ class GetMysqlDbSystemHeatWaveClusterResult(dict):
         :param str time_created: The date and time the DB System was created.
         :param str time_updated: The time the DB System was last updated.
         """
-        pulumi.set(__self__, "cluster_size", cluster_size)
-        pulumi.set(__self__, "is_lakehouse_enabled", is_lakehouse_enabled)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetMysqlDbSystemHeatWaveClusterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cluster_size=cluster_size,
+            is_lakehouse_enabled=is_lakehouse_enabled,
+            shape_name=shape_name,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cluster_size: Optional[int] = None,
+             is_lakehouse_enabled: Optional[bool] = None,
+             shape_name: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if cluster_size is None and 'clusterSize' in kwargs:
+            cluster_size = kwargs['clusterSize']
+        if cluster_size is None:
+            raise TypeError("Missing 'cluster_size' argument")
+        if is_lakehouse_enabled is None and 'isLakehouseEnabled' in kwargs:
+            is_lakehouse_enabled = kwargs['isLakehouseEnabled']
+        if is_lakehouse_enabled is None:
+            raise TypeError("Missing 'is_lakehouse_enabled' argument")
+        if shape_name is None and 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+
+        _setter("cluster_size", cluster_size)
+        _setter("is_lakehouse_enabled", is_lakehouse_enabled)
+        _setter("shape_name", shape_name)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="clusterSize")
@@ -9001,7 +12850,22 @@ class GetMysqlDbSystemMaintenanceResult(dict):
         """
         :param str window_start_time: The start time of the maintenance window.
         """
-        pulumi.set(__self__, "window_start_time", window_start_time)
+        GetMysqlDbSystemMaintenanceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            window_start_time=window_start_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             window_start_time: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if window_start_time is None and 'windowStartTime' in kwargs:
+            window_start_time = kwargs['windowStartTime']
+        if window_start_time is None:
+            raise TypeError("Missing 'window_start_time' argument")
+
+        _setter("window_start_time", window_start_time)
 
     @property
     @pulumi.getter(name="windowStartTime")
@@ -9021,8 +12885,29 @@ class GetMysqlDbSystemPointInTimeRecoveryDetailResult(dict):
         :param str time_earliest_recovery_point: Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param str time_latest_recovery_point: Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
-        pulumi.set(__self__, "time_earliest_recovery_point", time_earliest_recovery_point)
-        pulumi.set(__self__, "time_latest_recovery_point", time_latest_recovery_point)
+        GetMysqlDbSystemPointInTimeRecoveryDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_earliest_recovery_point=time_earliest_recovery_point,
+            time_latest_recovery_point=time_latest_recovery_point,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_earliest_recovery_point: Optional[str] = None,
+             time_latest_recovery_point: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if time_earliest_recovery_point is None and 'timeEarliestRecoveryPoint' in kwargs:
+            time_earliest_recovery_point = kwargs['timeEarliestRecoveryPoint']
+        if time_earliest_recovery_point is None:
+            raise TypeError("Missing 'time_earliest_recovery_point' argument")
+        if time_latest_recovery_point is None and 'timeLatestRecoveryPoint' in kwargs:
+            time_latest_recovery_point = kwargs['timeLatestRecoveryPoint']
+        if time_latest_recovery_point is None:
+            raise TypeError("Missing 'time_latest_recovery_point' argument")
+
+        _setter("time_earliest_recovery_point", time_earliest_recovery_point)
+        _setter("time_latest_recovery_point", time_latest_recovery_point)
 
     @property
     @pulumi.getter(name="timeEarliestRecoveryPoint")
@@ -9055,11 +12940,50 @@ class GetMysqlDbSystemSourceResult(dict):
         :param str recovery_point: The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
         :param str source_type: The specific source identifier.
         """
-        pulumi.set(__self__, "backup_id", backup_id)
-        pulumi.set(__self__, "db_system_id", db_system_id)
-        pulumi.set(__self__, "recovery_point", recovery_point)
-        pulumi.set(__self__, "source_type", source_type)
-        pulumi.set(__self__, "source_url", source_url)
+        GetMysqlDbSystemSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backup_id=backup_id,
+            db_system_id=db_system_id,
+            recovery_point=recovery_point,
+            source_type=source_type,
+            source_url=source_url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backup_id: Optional[str] = None,
+             db_system_id: Optional[str] = None,
+             recovery_point: Optional[str] = None,
+             source_type: Optional[str] = None,
+             source_url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if backup_id is None and 'backupId' in kwargs:
+            backup_id = kwargs['backupId']
+        if backup_id is None:
+            raise TypeError("Missing 'backup_id' argument")
+        if db_system_id is None and 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if db_system_id is None:
+            raise TypeError("Missing 'db_system_id' argument")
+        if recovery_point is None and 'recoveryPoint' in kwargs:
+            recovery_point = kwargs['recoveryPoint']
+        if recovery_point is None:
+            raise TypeError("Missing 'recovery_point' argument")
+        if source_type is None and 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
+        if source_url is None and 'sourceUrl' in kwargs:
+            source_url = kwargs['sourceUrl']
+        if source_url is None:
+            raise TypeError("Missing 'source_url' argument")
+
+        _setter("backup_id", backup_id)
+        _setter("db_system_id", db_system_id)
+        _setter("recovery_point", recovery_point)
+        _setter("source_type", source_type)
+        _setter("source_url", source_url)
 
     @property
     @pulumi.getter(name="backupId")
@@ -9175,43 +13099,258 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         :param str time_created: The date and time the DB System was created.
         :param str time_updated: The time the DB System was last updated.
         """
-        pulumi.set(__self__, "admin_password", admin_password)
-        pulumi.set(__self__, "admin_username", admin_username)
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "backup_policies", backup_policies)
-        pulumi.set(__self__, "channels", channels)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "configuration_id", configuration_id)
-        pulumi.set(__self__, "crash_recovery", crash_recovery)
-        pulumi.set(__self__, "current_placements", current_placements)
-        pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
-        pulumi.set(__self__, "database_management", database_management)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "deletion_policies", deletion_policies)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "endpoints", endpoints)
-        pulumi.set(__self__, "fault_domain", fault_domain)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "heat_wave_clusters", heat_wave_clusters)
-        pulumi.set(__self__, "hostname_label", hostname_label)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "is_heat_wave_cluster_attached", is_heat_wave_cluster_attached)
-        pulumi.set(__self__, "is_highly_available", is_highly_available)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "maintenances", maintenances)
-        pulumi.set(__self__, "mysql_version", mysql_version)
-        pulumi.set(__self__, "point_in_time_recovery_details", point_in_time_recovery_details)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "port_x", port_x)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "shutdown_type", shutdown_type)
-        pulumi.set(__self__, "sources", sources)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetMysqlDbSystemsDbSystemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            admin_password=admin_password,
+            admin_username=admin_username,
+            availability_domain=availability_domain,
+            backup_policies=backup_policies,
+            channels=channels,
+            compartment_id=compartment_id,
+            configuration_id=configuration_id,
+            crash_recovery=crash_recovery,
+            current_placements=current_placements,
+            data_storage_size_in_gb=data_storage_size_in_gb,
+            database_management=database_management,
+            defined_tags=defined_tags,
+            deletion_policies=deletion_policies,
+            description=description,
+            display_name=display_name,
+            endpoints=endpoints,
+            fault_domain=fault_domain,
+            freeform_tags=freeform_tags,
+            heat_wave_clusters=heat_wave_clusters,
+            hostname_label=hostname_label,
+            id=id,
+            ip_address=ip_address,
+            is_heat_wave_cluster_attached=is_heat_wave_cluster_attached,
+            is_highly_available=is_highly_available,
+            lifecycle_details=lifecycle_details,
+            maintenances=maintenances,
+            mysql_version=mysql_version,
+            point_in_time_recovery_details=point_in_time_recovery_details,
+            port=port,
+            port_x=port_x,
+            shape_name=shape_name,
+            shutdown_type=shutdown_type,
+            sources=sources,
+            state=state,
+            subnet_id=subnet_id,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             admin_password: Optional[str] = None,
+             admin_username: Optional[str] = None,
+             availability_domain: Optional[str] = None,
+             backup_policies: Optional[Sequence['outputs.GetMysqlDbSystemsDbSystemBackupPolicyResult']] = None,
+             channels: Optional[Sequence['outputs.GetMysqlDbSystemsDbSystemChannelResult']] = None,
+             compartment_id: Optional[str] = None,
+             configuration_id: Optional[str] = None,
+             crash_recovery: Optional[str] = None,
+             current_placements: Optional[Sequence['outputs.GetMysqlDbSystemsDbSystemCurrentPlacementResult']] = None,
+             data_storage_size_in_gb: Optional[int] = None,
+             database_management: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             deletion_policies: Optional[Sequence['outputs.GetMysqlDbSystemsDbSystemDeletionPolicyResult']] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             endpoints: Optional[Sequence['outputs.GetMysqlDbSystemsDbSystemEndpointResult']] = None,
+             fault_domain: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             heat_wave_clusters: Optional[Sequence['outputs.GetMysqlDbSystemsDbSystemHeatWaveClusterResult']] = None,
+             hostname_label: Optional[str] = None,
+             id: Optional[str] = None,
+             ip_address: Optional[str] = None,
+             is_heat_wave_cluster_attached: Optional[bool] = None,
+             is_highly_available: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             maintenances: Optional[Sequence['outputs.GetMysqlDbSystemsDbSystemMaintenanceResult']] = None,
+             mysql_version: Optional[str] = None,
+             point_in_time_recovery_details: Optional[Sequence['outputs.GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailResult']] = None,
+             port: Optional[int] = None,
+             port_x: Optional[int] = None,
+             shape_name: Optional[str] = None,
+             shutdown_type: Optional[str] = None,
+             sources: Optional[Sequence['outputs.GetMysqlDbSystemsDbSystemSourceResult']] = None,
+             state: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if admin_password is None and 'adminPassword' in kwargs:
+            admin_password = kwargs['adminPassword']
+        if admin_password is None:
+            raise TypeError("Missing 'admin_password' argument")
+        if admin_username is None and 'adminUsername' in kwargs:
+            admin_username = kwargs['adminUsername']
+        if admin_username is None:
+            raise TypeError("Missing 'admin_username' argument")
+        if availability_domain is None and 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if backup_policies is None and 'backupPolicies' in kwargs:
+            backup_policies = kwargs['backupPolicies']
+        if backup_policies is None:
+            raise TypeError("Missing 'backup_policies' argument")
+        if channels is None:
+            raise TypeError("Missing 'channels' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if configuration_id is None and 'configurationId' in kwargs:
+            configuration_id = kwargs['configurationId']
+        if configuration_id is None:
+            raise TypeError("Missing 'configuration_id' argument")
+        if crash_recovery is None and 'crashRecovery' in kwargs:
+            crash_recovery = kwargs['crashRecovery']
+        if crash_recovery is None:
+            raise TypeError("Missing 'crash_recovery' argument")
+        if current_placements is None and 'currentPlacements' in kwargs:
+            current_placements = kwargs['currentPlacements']
+        if current_placements is None:
+            raise TypeError("Missing 'current_placements' argument")
+        if data_storage_size_in_gb is None and 'dataStorageSizeInGb' in kwargs:
+            data_storage_size_in_gb = kwargs['dataStorageSizeInGb']
+        if data_storage_size_in_gb is None:
+            raise TypeError("Missing 'data_storage_size_in_gb' argument")
+        if database_management is None and 'databaseManagement' in kwargs:
+            database_management = kwargs['databaseManagement']
+        if database_management is None:
+            raise TypeError("Missing 'database_management' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if deletion_policies is None and 'deletionPolicies' in kwargs:
+            deletion_policies = kwargs['deletionPolicies']
+        if deletion_policies is None:
+            raise TypeError("Missing 'deletion_policies' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if endpoints is None:
+            raise TypeError("Missing 'endpoints' argument")
+        if fault_domain is None and 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if fault_domain is None:
+            raise TypeError("Missing 'fault_domain' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if heat_wave_clusters is None and 'heatWaveClusters' in kwargs:
+            heat_wave_clusters = kwargs['heatWaveClusters']
+        if heat_wave_clusters is None:
+            raise TypeError("Missing 'heat_wave_clusters' argument")
+        if hostname_label is None and 'hostnameLabel' in kwargs:
+            hostname_label = kwargs['hostnameLabel']
+        if hostname_label is None:
+            raise TypeError("Missing 'hostname_label' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if ip_address is None and 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if ip_address is None:
+            raise TypeError("Missing 'ip_address' argument")
+        if is_heat_wave_cluster_attached is None and 'isHeatWaveClusterAttached' in kwargs:
+            is_heat_wave_cluster_attached = kwargs['isHeatWaveClusterAttached']
+        if is_heat_wave_cluster_attached is None:
+            raise TypeError("Missing 'is_heat_wave_cluster_attached' argument")
+        if is_highly_available is None and 'isHighlyAvailable' in kwargs:
+            is_highly_available = kwargs['isHighlyAvailable']
+        if is_highly_available is None:
+            raise TypeError("Missing 'is_highly_available' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if maintenances is None:
+            raise TypeError("Missing 'maintenances' argument")
+        if mysql_version is None and 'mysqlVersion' in kwargs:
+            mysql_version = kwargs['mysqlVersion']
+        if mysql_version is None:
+            raise TypeError("Missing 'mysql_version' argument")
+        if point_in_time_recovery_details is None and 'pointInTimeRecoveryDetails' in kwargs:
+            point_in_time_recovery_details = kwargs['pointInTimeRecoveryDetails']
+        if point_in_time_recovery_details is None:
+            raise TypeError("Missing 'point_in_time_recovery_details' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if port_x is None and 'portX' in kwargs:
+            port_x = kwargs['portX']
+        if port_x is None:
+            raise TypeError("Missing 'port_x' argument")
+        if shape_name is None and 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+        if shutdown_type is None and 'shutdownType' in kwargs:
+            shutdown_type = kwargs['shutdownType']
+        if shutdown_type is None:
+            raise TypeError("Missing 'shutdown_type' argument")
+        if sources is None:
+            raise TypeError("Missing 'sources' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+
+        _setter("admin_password", admin_password)
+        _setter("admin_username", admin_username)
+        _setter("availability_domain", availability_domain)
+        _setter("backup_policies", backup_policies)
+        _setter("channels", channels)
+        _setter("compartment_id", compartment_id)
+        _setter("configuration_id", configuration_id)
+        _setter("crash_recovery", crash_recovery)
+        _setter("current_placements", current_placements)
+        _setter("data_storage_size_in_gb", data_storage_size_in_gb)
+        _setter("database_management", database_management)
+        _setter("defined_tags", defined_tags)
+        _setter("deletion_policies", deletion_policies)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("endpoints", endpoints)
+        _setter("fault_domain", fault_domain)
+        _setter("freeform_tags", freeform_tags)
+        _setter("heat_wave_clusters", heat_wave_clusters)
+        _setter("hostname_label", hostname_label)
+        _setter("id", id)
+        _setter("ip_address", ip_address)
+        _setter("is_heat_wave_cluster_attached", is_heat_wave_cluster_attached)
+        _setter("is_highly_available", is_highly_available)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("maintenances", maintenances)
+        _setter("mysql_version", mysql_version)
+        _setter("point_in_time_recovery_details", point_in_time_recovery_details)
+        _setter("port", port)
+        _setter("port_x", port_x)
+        _setter("shape_name", shape_name)
+        _setter("shutdown_type", shutdown_type)
+        _setter("sources", sources)
+        _setter("state", state)
+        _setter("subnet_id", subnet_id)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="adminPassword")
@@ -9518,12 +13657,57 @@ class GetMysqlDbSystemsDbSystemBackupPolicyResult(dict):
         :param int retention_in_days: The number of days automated backups are retained.
         :param str window_start_time: The start time of the maintenance window.
         """
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "pitr_policies", pitr_policies)
-        pulumi.set(__self__, "retention_in_days", retention_in_days)
-        pulumi.set(__self__, "window_start_time", window_start_time)
+        GetMysqlDbSystemsDbSystemBackupPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            is_enabled=is_enabled,
+            pitr_policies=pitr_policies,
+            retention_in_days=retention_in_days,
+            window_start_time=window_start_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             is_enabled: Optional[bool] = None,
+             pitr_policies: Optional[Sequence['outputs.GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyResult']] = None,
+             retention_in_days: Optional[int] = None,
+             window_start_time: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if pitr_policies is None and 'pitrPolicies' in kwargs:
+            pitr_policies = kwargs['pitrPolicies']
+        if pitr_policies is None:
+            raise TypeError("Missing 'pitr_policies' argument")
+        if retention_in_days is None and 'retentionInDays' in kwargs:
+            retention_in_days = kwargs['retentionInDays']
+        if retention_in_days is None:
+            raise TypeError("Missing 'retention_in_days' argument")
+        if window_start_time is None and 'windowStartTime' in kwargs:
+            window_start_time = kwargs['windowStartTime']
+        if window_start_time is None:
+            raise TypeError("Missing 'window_start_time' argument")
+
+        _setter("defined_tags", defined_tags)
+        _setter("freeform_tags", freeform_tags)
+        _setter("is_enabled", is_enabled)
+        _setter("pitr_policies", pitr_policies)
+        _setter("retention_in_days", retention_in_days)
+        _setter("window_start_time", window_start_time)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -9581,7 +13765,22 @@ class GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyResult(dict):
         """
         :param bool is_enabled: Whether the Channel has been enabled by the user.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+
+        _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -9621,18 +13820,91 @@ class GetMysqlDbSystemsDbSystemChannelResult(dict):
         :param str time_created: The date and time the DB System was created.
         :param str time_updated: The time the DB System was last updated.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "sources", sources)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "targets", targets)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetMysqlDbSystemsDbSystemChannelResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_enabled=is_enabled,
+            lifecycle_details=lifecycle_details,
+            sources=sources,
+            state=state,
+            targets=targets,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_enabled: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             sources: Optional[Sequence['outputs.GetMysqlDbSystemsDbSystemChannelSourceResult']] = None,
+             state: Optional[str] = None,
+             targets: Optional[Sequence['outputs.GetMysqlDbSystemsDbSystemChannelTargetResult']] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if is_enabled is None:
+            raise TypeError("Missing 'is_enabled' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if sources is None:
+            raise TypeError("Missing 'sources' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if targets is None:
+            raise TypeError("Missing 'targets' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_enabled", is_enabled)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("sources", sources)
+        _setter("state", state)
+        _setter("targets", targets)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -9750,13 +14022,58 @@ class GetMysqlDbSystemsDbSystemChannelSourceResult(dict):
         :param str ssl_mode: The SSL mode of the Channel.
         :param str username: The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
         """
-        pulumi.set(__self__, "anonymous_transactions_handlings", anonymous_transactions_handlings)
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "source_type", source_type)
-        pulumi.set(__self__, "ssl_ca_certificates", ssl_ca_certificates)
-        pulumi.set(__self__, "ssl_mode", ssl_mode)
-        pulumi.set(__self__, "username", username)
+        GetMysqlDbSystemsDbSystemChannelSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            anonymous_transactions_handlings=anonymous_transactions_handlings,
+            hostname=hostname,
+            port=port,
+            source_type=source_type,
+            ssl_ca_certificates=ssl_ca_certificates,
+            ssl_mode=ssl_mode,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             anonymous_transactions_handlings: Optional[Sequence['outputs.GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingResult']] = None,
+             hostname: Optional[str] = None,
+             port: Optional[int] = None,
+             source_type: Optional[str] = None,
+             ssl_ca_certificates: Optional[Sequence['outputs.GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateResult']] = None,
+             ssl_mode: Optional[str] = None,
+             username: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if anonymous_transactions_handlings is None and 'anonymousTransactionsHandlings' in kwargs:
+            anonymous_transactions_handlings = kwargs['anonymousTransactionsHandlings']
+        if anonymous_transactions_handlings is None:
+            raise TypeError("Missing 'anonymous_transactions_handlings' argument")
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if source_type is None and 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
+        if ssl_ca_certificates is None and 'sslCaCertificates' in kwargs:
+            ssl_ca_certificates = kwargs['sslCaCertificates']
+        if ssl_ca_certificates is None:
+            raise TypeError("Missing 'ssl_ca_certificates' argument")
+        if ssl_mode is None and 'sslMode' in kwargs:
+            ssl_mode = kwargs['sslMode']
+        if ssl_mode is None:
+            raise TypeError("Missing 'ssl_mode' argument")
+        if username is None:
+            raise TypeError("Missing 'username' argument")
+
+        _setter("anonymous_transactions_handlings", anonymous_transactions_handlings)
+        _setter("hostname", hostname)
+        _setter("port", port)
+        _setter("source_type", source_type)
+        _setter("ssl_ca_certificates", ssl_ca_certificates)
+        _setter("ssl_mode", ssl_mode)
+        _setter("username", username)
 
     @property
     @pulumi.getter(name="anonymousTransactionsHandlings")
@@ -9828,10 +14145,39 @@ class GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingResult(
         :param str policy: Specifies how the replication channel handles anonymous transactions.
         :param str uuid: The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
         """
-        pulumi.set(__self__, "last_configured_log_filename", last_configured_log_filename)
-        pulumi.set(__self__, "last_configured_log_offset", last_configured_log_offset)
-        pulumi.set(__self__, "policy", policy)
-        pulumi.set(__self__, "uuid", uuid)
+        GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            last_configured_log_filename=last_configured_log_filename,
+            last_configured_log_offset=last_configured_log_offset,
+            policy=policy,
+            uuid=uuid,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             last_configured_log_filename: Optional[str] = None,
+             last_configured_log_offset: Optional[str] = None,
+             policy: Optional[str] = None,
+             uuid: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if last_configured_log_filename is None and 'lastConfiguredLogFilename' in kwargs:
+            last_configured_log_filename = kwargs['lastConfiguredLogFilename']
+        if last_configured_log_filename is None:
+            raise TypeError("Missing 'last_configured_log_filename' argument")
+        if last_configured_log_offset is None and 'lastConfiguredLogOffset' in kwargs:
+            last_configured_log_offset = kwargs['lastConfiguredLogOffset']
+        if last_configured_log_offset is None:
+            raise TypeError("Missing 'last_configured_log_offset' argument")
+        if policy is None:
+            raise TypeError("Missing 'policy' argument")
+        if uuid is None:
+            raise TypeError("Missing 'uuid' argument")
+
+        _setter("last_configured_log_filename", last_configured_log_filename)
+        _setter("last_configured_log_offset", last_configured_log_offset)
+        _setter("policy", policy)
+        _setter("uuid", uuid)
 
     @property
     @pulumi.getter(name="lastConfiguredLogFilename")
@@ -9875,8 +14221,27 @@ class GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateResult(dict):
         :param str certificate_type: The type of CA certificate.
         :param str contents: The string containing the CA certificate in PEM format.
         """
-        pulumi.set(__self__, "certificate_type", certificate_type)
-        pulumi.set(__self__, "contents", contents)
+        GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_type=certificate_type,
+            contents=contents,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_type: Optional[str] = None,
+             contents: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if certificate_type is None and 'certificateType' in kwargs:
+            certificate_type = kwargs['certificateType']
+        if certificate_type is None:
+            raise TypeError("Missing 'certificate_type' argument")
+        if contents is None:
+            raise TypeError("Missing 'contents' argument")
+
+        _setter("certificate_type", certificate_type)
+        _setter("contents", contents)
 
     @property
     @pulumi.getter(name="certificateType")
@@ -9914,13 +14279,62 @@ class GetMysqlDbSystemsDbSystemChannelTargetResult(dict):
         :param str tables_without_primary_key_handling: Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
         :param str target_type: The specific target identifier.
         """
-        pulumi.set(__self__, "applier_username", applier_username)
-        pulumi.set(__self__, "channel_name", channel_name)
-        pulumi.set(__self__, "db_system_id", db_system_id)
-        pulumi.set(__self__, "delay_in_seconds", delay_in_seconds)
-        pulumi.set(__self__, "filters", filters)
-        pulumi.set(__self__, "tables_without_primary_key_handling", tables_without_primary_key_handling)
-        pulumi.set(__self__, "target_type", target_type)
+        GetMysqlDbSystemsDbSystemChannelTargetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            applier_username=applier_username,
+            channel_name=channel_name,
+            db_system_id=db_system_id,
+            delay_in_seconds=delay_in_seconds,
+            filters=filters,
+            tables_without_primary_key_handling=tables_without_primary_key_handling,
+            target_type=target_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             applier_username: Optional[str] = None,
+             channel_name: Optional[str] = None,
+             db_system_id: Optional[str] = None,
+             delay_in_seconds: Optional[int] = None,
+             filters: Optional[Sequence['outputs.GetMysqlDbSystemsDbSystemChannelTargetFilterResult']] = None,
+             tables_without_primary_key_handling: Optional[str] = None,
+             target_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if applier_username is None and 'applierUsername' in kwargs:
+            applier_username = kwargs['applierUsername']
+        if applier_username is None:
+            raise TypeError("Missing 'applier_username' argument")
+        if channel_name is None and 'channelName' in kwargs:
+            channel_name = kwargs['channelName']
+        if channel_name is None:
+            raise TypeError("Missing 'channel_name' argument")
+        if db_system_id is None and 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if db_system_id is None:
+            raise TypeError("Missing 'db_system_id' argument")
+        if delay_in_seconds is None and 'delayInSeconds' in kwargs:
+            delay_in_seconds = kwargs['delayInSeconds']
+        if delay_in_seconds is None:
+            raise TypeError("Missing 'delay_in_seconds' argument")
+        if filters is None:
+            raise TypeError("Missing 'filters' argument")
+        if tables_without_primary_key_handling is None and 'tablesWithoutPrimaryKeyHandling' in kwargs:
+            tables_without_primary_key_handling = kwargs['tablesWithoutPrimaryKeyHandling']
+        if tables_without_primary_key_handling is None:
+            raise TypeError("Missing 'tables_without_primary_key_handling' argument")
+        if target_type is None and 'targetType' in kwargs:
+            target_type = kwargs['targetType']
+        if target_type is None:
+            raise TypeError("Missing 'target_type' argument")
+
+        _setter("applier_username", applier_username)
+        _setter("channel_name", channel_name)
+        _setter("db_system_id", db_system_id)
+        _setter("delay_in_seconds", delay_in_seconds)
+        _setter("filters", filters)
+        _setter("tables_without_primary_key_handling", tables_without_primary_key_handling)
+        _setter("target_type", target_type)
 
     @property
     @pulumi.getter(name="applierUsername")
@@ -9988,8 +14402,25 @@ class GetMysqlDbSystemsDbSystemChannelTargetFilterResult(dict):
         :param str type: The type of the filter rule.
         :param str value: The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "value", value)
+        GetMysqlDbSystemsDbSystemChannelTargetFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if value is None:
+            raise TypeError("Missing 'value' argument")
+
+        _setter("type", type)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -10017,8 +14448,29 @@ class GetMysqlDbSystemsDbSystemCurrentPlacementResult(dict):
         :param str availability_domain: The availability domain in which the DB System is placed.
         :param str fault_domain: The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "fault_domain", fault_domain)
+        GetMysqlDbSystemsDbSystemCurrentPlacementResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            fault_domain=fault_domain,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: Optional[str] = None,
+             fault_domain: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if availability_domain is None and 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if fault_domain is None and 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if fault_domain is None:
+            raise TypeError("Missing 'fault_domain' argument")
+
+        _setter("availability_domain", availability_domain)
+        _setter("fault_domain", fault_domain)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -10048,9 +14500,36 @@ class GetMysqlDbSystemsDbSystemDeletionPolicyResult(dict):
         :param str final_backup: Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
         :param bool is_delete_protected: Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
         """
-        pulumi.set(__self__, "automatic_backup_retention", automatic_backup_retention)
-        pulumi.set(__self__, "final_backup", final_backup)
-        pulumi.set(__self__, "is_delete_protected", is_delete_protected)
+        GetMysqlDbSystemsDbSystemDeletionPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            automatic_backup_retention=automatic_backup_retention,
+            final_backup=final_backup,
+            is_delete_protected=is_delete_protected,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             automatic_backup_retention: Optional[str] = None,
+             final_backup: Optional[str] = None,
+             is_delete_protected: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if automatic_backup_retention is None and 'automaticBackupRetention' in kwargs:
+            automatic_backup_retention = kwargs['automaticBackupRetention']
+        if automatic_backup_retention is None:
+            raise TypeError("Missing 'automatic_backup_retention' argument")
+        if final_backup is None and 'finalBackup' in kwargs:
+            final_backup = kwargs['finalBackup']
+        if final_backup is None:
+            raise TypeError("Missing 'final_backup' argument")
+        if is_delete_protected is None and 'isDeleteProtected' in kwargs:
+            is_delete_protected = kwargs['isDeleteProtected']
+        if is_delete_protected is None:
+            raise TypeError("Missing 'is_delete_protected' argument")
+
+        _setter("automatic_backup_retention", automatic_backup_retention)
+        _setter("final_backup", final_backup)
+        _setter("is_delete_protected", is_delete_protected)
 
     @property
     @pulumi.getter(name="automaticBackupRetention")
@@ -10100,15 +14579,70 @@ class GetMysqlDbSystemsDbSystemEndpointResult(dict):
         :param str status: The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
         :param str status_details: Additional information about the current endpoint status.
         """
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "modes", modes)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "port_x", port_x)
-        pulumi.set(__self__, "resource_id", resource_id)
-        pulumi.set(__self__, "resource_type", resource_type)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "status_details", status_details)
+        GetMysqlDbSystemsDbSystemEndpointResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+            ip_address=ip_address,
+            modes=modes,
+            port=port,
+            port_x=port_x,
+            resource_id=resource_id,
+            resource_type=resource_type,
+            status=status,
+            status_details=status_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: Optional[str] = None,
+             ip_address: Optional[str] = None,
+             modes: Optional[Sequence[str]] = None,
+             port: Optional[int] = None,
+             port_x: Optional[int] = None,
+             resource_id: Optional[str] = None,
+             resource_type: Optional[str] = None,
+             status: Optional[str] = None,
+             status_details: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if ip_address is None and 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if ip_address is None:
+            raise TypeError("Missing 'ip_address' argument")
+        if modes is None:
+            raise TypeError("Missing 'modes' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if port_x is None and 'portX' in kwargs:
+            port_x = kwargs['portX']
+        if port_x is None:
+            raise TypeError("Missing 'port_x' argument")
+        if resource_id is None and 'resourceId' in kwargs:
+            resource_id = kwargs['resourceId']
+        if resource_id is None:
+            raise TypeError("Missing 'resource_id' argument")
+        if resource_type is None and 'resourceType' in kwargs:
+            resource_type = kwargs['resourceType']
+        if resource_type is None:
+            raise TypeError("Missing 'resource_type' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if status_details is None and 'statusDetails' in kwargs:
+            status_details = kwargs['statusDetails']
+        if status_details is None:
+            raise TypeError("Missing 'status_details' argument")
+
+        _setter("hostname", hostname)
+        _setter("ip_address", ip_address)
+        _setter("modes", modes)
+        _setter("port", port)
+        _setter("port_x", port_x)
+        _setter("resource_id", resource_id)
+        _setter("resource_type", resource_type)
+        _setter("status", status)
+        _setter("status_details", status_details)
 
     @property
     @pulumi.getter
@@ -10200,12 +14734,55 @@ class GetMysqlDbSystemsDbSystemHeatWaveClusterResult(dict):
         :param str time_created: The date and time the DB System was created.
         :param str time_updated: The time the DB System was last updated.
         """
-        pulumi.set(__self__, "cluster_size", cluster_size)
-        pulumi.set(__self__, "is_lakehouse_enabled", is_lakehouse_enabled)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetMysqlDbSystemsDbSystemHeatWaveClusterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cluster_size=cluster_size,
+            is_lakehouse_enabled=is_lakehouse_enabled,
+            shape_name=shape_name,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cluster_size: Optional[int] = None,
+             is_lakehouse_enabled: Optional[bool] = None,
+             shape_name: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if cluster_size is None and 'clusterSize' in kwargs:
+            cluster_size = kwargs['clusterSize']
+        if cluster_size is None:
+            raise TypeError("Missing 'cluster_size' argument")
+        if is_lakehouse_enabled is None and 'isLakehouseEnabled' in kwargs:
+            is_lakehouse_enabled = kwargs['isLakehouseEnabled']
+        if is_lakehouse_enabled is None:
+            raise TypeError("Missing 'is_lakehouse_enabled' argument")
+        if shape_name is None and 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+
+        _setter("cluster_size", cluster_size)
+        _setter("is_lakehouse_enabled", is_lakehouse_enabled)
+        _setter("shape_name", shape_name)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="clusterSize")
@@ -10263,7 +14840,22 @@ class GetMysqlDbSystemsDbSystemMaintenanceResult(dict):
         """
         :param str window_start_time: The start time of the maintenance window.
         """
-        pulumi.set(__self__, "window_start_time", window_start_time)
+        GetMysqlDbSystemsDbSystemMaintenanceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            window_start_time=window_start_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             window_start_time: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if window_start_time is None and 'windowStartTime' in kwargs:
+            window_start_time = kwargs['windowStartTime']
+        if window_start_time is None:
+            raise TypeError("Missing 'window_start_time' argument")
+
+        _setter("window_start_time", window_start_time)
 
     @property
     @pulumi.getter(name="windowStartTime")
@@ -10283,8 +14875,29 @@ class GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailResult(dict):
         :param str time_earliest_recovery_point: Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param str time_latest_recovery_point: Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
-        pulumi.set(__self__, "time_earliest_recovery_point", time_earliest_recovery_point)
-        pulumi.set(__self__, "time_latest_recovery_point", time_latest_recovery_point)
+        GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_earliest_recovery_point=time_earliest_recovery_point,
+            time_latest_recovery_point=time_latest_recovery_point,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_earliest_recovery_point: Optional[str] = None,
+             time_latest_recovery_point: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if time_earliest_recovery_point is None and 'timeEarliestRecoveryPoint' in kwargs:
+            time_earliest_recovery_point = kwargs['timeEarliestRecoveryPoint']
+        if time_earliest_recovery_point is None:
+            raise TypeError("Missing 'time_earliest_recovery_point' argument")
+        if time_latest_recovery_point is None and 'timeLatestRecoveryPoint' in kwargs:
+            time_latest_recovery_point = kwargs['timeLatestRecoveryPoint']
+        if time_latest_recovery_point is None:
+            raise TypeError("Missing 'time_latest_recovery_point' argument")
+
+        _setter("time_earliest_recovery_point", time_earliest_recovery_point)
+        _setter("time_latest_recovery_point", time_latest_recovery_point)
 
     @property
     @pulumi.getter(name="timeEarliestRecoveryPoint")
@@ -10317,11 +14930,50 @@ class GetMysqlDbSystemsDbSystemSourceResult(dict):
         :param str recovery_point: The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
         :param str source_type: The specific source identifier.
         """
-        pulumi.set(__self__, "backup_id", backup_id)
-        pulumi.set(__self__, "db_system_id", db_system_id)
-        pulumi.set(__self__, "recovery_point", recovery_point)
-        pulumi.set(__self__, "source_type", source_type)
-        pulumi.set(__self__, "source_url", source_url)
+        GetMysqlDbSystemsDbSystemSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backup_id=backup_id,
+            db_system_id=db_system_id,
+            recovery_point=recovery_point,
+            source_type=source_type,
+            source_url=source_url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backup_id: Optional[str] = None,
+             db_system_id: Optional[str] = None,
+             recovery_point: Optional[str] = None,
+             source_type: Optional[str] = None,
+             source_url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if backup_id is None and 'backupId' in kwargs:
+            backup_id = kwargs['backupId']
+        if backup_id is None:
+            raise TypeError("Missing 'backup_id' argument")
+        if db_system_id is None and 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if db_system_id is None:
+            raise TypeError("Missing 'db_system_id' argument")
+        if recovery_point is None and 'recoveryPoint' in kwargs:
+            recovery_point = kwargs['recoveryPoint']
+        if recovery_point is None:
+            raise TypeError("Missing 'recovery_point' argument")
+        if source_type is None and 'sourceType' in kwargs:
+            source_type = kwargs['sourceType']
+        if source_type is None:
+            raise TypeError("Missing 'source_type' argument")
+        if source_url is None and 'sourceUrl' in kwargs:
+            source_url = kwargs['sourceUrl']
+        if source_url is None:
+            raise TypeError("Missing 'source_url' argument")
+
+        _setter("backup_id", backup_id)
+        _setter("db_system_id", db_system_id)
+        _setter("recovery_point", recovery_point)
+        _setter("source_type", source_type)
+        _setter("source_url", source_url)
 
     @property
     @pulumi.getter(name="backupId")
@@ -10367,10 +15019,29 @@ class GetMysqlDbSystemsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMysqlDbSystemsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -10394,10 +15065,29 @@ class GetMysqlVersionFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMysqlVersionFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -10424,8 +15114,27 @@ class GetMysqlVersionVersionResult(dict):
         :param str version_family: A descriptive summary of a group of versions.
         :param Sequence['GetMysqlVersionVersionVersionArgs'] versions: The list of supported MySQL Versions.
         """
-        pulumi.set(__self__, "version_family", version_family)
-        pulumi.set(__self__, "versions", versions)
+        GetMysqlVersionVersionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            version_family=version_family,
+            versions=versions,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             version_family: Optional[str] = None,
+             versions: Optional[Sequence['outputs.GetMysqlVersionVersionVersionResult']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if version_family is None and 'versionFamily' in kwargs:
+            version_family = kwargs['versionFamily']
+        if version_family is None:
+            raise TypeError("Missing 'version_family' argument")
+        if versions is None:
+            raise TypeError("Missing 'versions' argument")
+
+        _setter("version_family", version_family)
+        _setter("versions", versions)
 
     @property
     @pulumi.getter(name="versionFamily")
@@ -10453,8 +15162,25 @@ class GetMysqlVersionVersionVersionResult(dict):
         :param str description: A link to a page describing the version.
         :param str version: The specific version identifier
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "version", version)
+        GetMysqlVersionVersionVersionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
+
+        _setter("description", description)
+        _setter("version", version)
 
     @property
     @pulumi.getter
@@ -10484,9 +15210,36 @@ class GetReplicaReplicaOverrideResult(dict):
         :param str mysql_version: The MySQL version to be used by the read replica.
         :param str shape_name: The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         """
-        pulumi.set(__self__, "configuration_id", configuration_id)
-        pulumi.set(__self__, "mysql_version", mysql_version)
-        pulumi.set(__self__, "shape_name", shape_name)
+        GetReplicaReplicaOverrideResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            configuration_id=configuration_id,
+            mysql_version=mysql_version,
+            shape_name=shape_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             configuration_id: Optional[str] = None,
+             mysql_version: Optional[str] = None,
+             shape_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if configuration_id is None and 'configurationId' in kwargs:
+            configuration_id = kwargs['configurationId']
+        if configuration_id is None:
+            raise TypeError("Missing 'configuration_id' argument")
+        if mysql_version is None and 'mysqlVersion' in kwargs:
+            mysql_version = kwargs['mysqlVersion']
+        if mysql_version is None:
+            raise TypeError("Missing 'mysql_version' argument")
+        if shape_name is None and 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+
+        _setter("configuration_id", configuration_id)
+        _setter("mysql_version", mysql_version)
+        _setter("shape_name", shape_name)
 
     @property
     @pulumi.getter(name="configurationId")
@@ -10519,10 +15272,29 @@ class GetReplicasFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetReplicasFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -10587,27 +15359,154 @@ class GetReplicasReplicaResult(dict):
         :param str time_created: The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param str time_updated: The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "configuration_id", configuration_id)
-        pulumi.set(__self__, "db_system_id", db_system_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "fault_domain", fault_domain)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "is_delete_protected", is_delete_protected)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "mysql_version", mysql_version)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "port_x", port_x)
-        pulumi.set(__self__, "replica_overrides", replica_overrides)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetReplicasReplicaResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            compartment_id=compartment_id,
+            configuration_id=configuration_id,
+            db_system_id=db_system_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            fault_domain=fault_domain,
+            freeform_tags=freeform_tags,
+            id=id,
+            ip_address=ip_address,
+            is_delete_protected=is_delete_protected,
+            lifecycle_details=lifecycle_details,
+            mysql_version=mysql_version,
+            port=port,
+            port_x=port_x,
+            replica_overrides=replica_overrides,
+            shape_name=shape_name,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             configuration_id: Optional[str] = None,
+             db_system_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             fault_domain: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             ip_address: Optional[str] = None,
+             is_delete_protected: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             mysql_version: Optional[str] = None,
+             port: Optional[int] = None,
+             port_x: Optional[int] = None,
+             replica_overrides: Optional[Sequence['outputs.GetReplicasReplicaReplicaOverrideResult']] = None,
+             shape_name: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if availability_domain is None and 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if availability_domain is None:
+            raise TypeError("Missing 'availability_domain' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if configuration_id is None and 'configurationId' in kwargs:
+            configuration_id = kwargs['configurationId']
+        if configuration_id is None:
+            raise TypeError("Missing 'configuration_id' argument")
+        if db_system_id is None and 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if db_system_id is None:
+            raise TypeError("Missing 'db_system_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if fault_domain is None and 'faultDomain' in kwargs:
+            fault_domain = kwargs['faultDomain']
+        if fault_domain is None:
+            raise TypeError("Missing 'fault_domain' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if ip_address is None and 'ipAddress' in kwargs:
+            ip_address = kwargs['ipAddress']
+        if ip_address is None:
+            raise TypeError("Missing 'ip_address' argument")
+        if is_delete_protected is None and 'isDeleteProtected' in kwargs:
+            is_delete_protected = kwargs['isDeleteProtected']
+        if is_delete_protected is None:
+            raise TypeError("Missing 'is_delete_protected' argument")
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if lifecycle_details is None:
+            raise TypeError("Missing 'lifecycle_details' argument")
+        if mysql_version is None and 'mysqlVersion' in kwargs:
+            mysql_version = kwargs['mysqlVersion']
+        if mysql_version is None:
+            raise TypeError("Missing 'mysql_version' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if port_x is None and 'portX' in kwargs:
+            port_x = kwargs['portX']
+        if port_x is None:
+            raise TypeError("Missing 'port_x' argument")
+        if replica_overrides is None and 'replicaOverrides' in kwargs:
+            replica_overrides = kwargs['replicaOverrides']
+        if replica_overrides is None:
+            raise TypeError("Missing 'replica_overrides' argument")
+        if shape_name is None and 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+
+        _setter("availability_domain", availability_domain)
+        _setter("compartment_id", compartment_id)
+        _setter("configuration_id", configuration_id)
+        _setter("db_system_id", db_system_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("fault_domain", fault_domain)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("ip_address", ip_address)
+        _setter("is_delete_protected", is_delete_protected)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("mysql_version", mysql_version)
+        _setter("port", port)
+        _setter("port_x", port_x)
+        _setter("replica_overrides", replica_overrides)
+        _setter("shape_name", shape_name)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -10789,9 +15688,36 @@ class GetReplicasReplicaReplicaOverrideResult(dict):
         :param str mysql_version: The MySQL version to be used by the read replica.
         :param str shape_name: The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         """
-        pulumi.set(__self__, "configuration_id", configuration_id)
-        pulumi.set(__self__, "mysql_version", mysql_version)
-        pulumi.set(__self__, "shape_name", shape_name)
+        GetReplicasReplicaReplicaOverrideResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            configuration_id=configuration_id,
+            mysql_version=mysql_version,
+            shape_name=shape_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             configuration_id: Optional[str] = None,
+             mysql_version: Optional[str] = None,
+             shape_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if configuration_id is None and 'configurationId' in kwargs:
+            configuration_id = kwargs['configurationId']
+        if configuration_id is None:
+            raise TypeError("Missing 'configuration_id' argument")
+        if mysql_version is None and 'mysqlVersion' in kwargs:
+            mysql_version = kwargs['mysqlVersion']
+        if mysql_version is None:
+            raise TypeError("Missing 'mysql_version' argument")
+        if shape_name is None and 'shapeName' in kwargs:
+            shape_name = kwargs['shapeName']
+        if shape_name is None:
+            raise TypeError("Missing 'shape_name' argument")
+
+        _setter("configuration_id", configuration_id)
+        _setter("mysql_version", mysql_version)
+        _setter("shape_name", shape_name)
 
     @property
     @pulumi.getter(name="configurationId")
@@ -10827,10 +15753,29 @@ class GetShapesFilterResult(dict):
         """
         :param str name: Name
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetShapesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -10864,10 +15809,41 @@ class GetShapesShapeResult(dict):
         :param int memory_size_in_gbs: The amount of RAM the Instance provides. This is an IEC base-2 number.
         :param str name: Name
         """
-        pulumi.set(__self__, "cpu_core_count", cpu_core_count)
-        pulumi.set(__self__, "is_supported_fors", is_supported_fors)
-        pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
-        pulumi.set(__self__, "name", name)
+        GetShapesShapeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cpu_core_count=cpu_core_count,
+            is_supported_fors=is_supported_fors,
+            memory_size_in_gbs=memory_size_in_gbs,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cpu_core_count: Optional[int] = None,
+             is_supported_fors: Optional[Sequence[str]] = None,
+             memory_size_in_gbs: Optional[int] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if cpu_core_count is None and 'cpuCoreCount' in kwargs:
+            cpu_core_count = kwargs['cpuCoreCount']
+        if cpu_core_count is None:
+            raise TypeError("Missing 'cpu_core_count' argument")
+        if is_supported_fors is None and 'isSupportedFors' in kwargs:
+            is_supported_fors = kwargs['isSupportedFors']
+        if is_supported_fors is None:
+            raise TypeError("Missing 'is_supported_fors' argument")
+        if memory_size_in_gbs is None and 'memorySizeInGbs' in kwargs:
+            memory_size_in_gbs = kwargs['memorySizeInGbs']
+        if memory_size_in_gbs is None:
+            raise TypeError("Missing 'memory_size_in_gbs' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("cpu_core_count", cpu_core_count)
+        _setter("is_supported_fors", is_supported_fors)
+        _setter("memory_size_in_gbs", memory_size_in_gbs)
+        _setter("name", name)
 
     @property
     @pulumi.getter(name="cpuCoreCount")

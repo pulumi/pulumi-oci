@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -229,10 +229,27 @@ class AutonomousContainerDatabaseBackupConfigArgs:
         :param pulumi.Input['AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs'] backup_destination_details: Backup destination details.
         :param pulumi.Input[int] recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         """
+        AutonomousContainerDatabaseBackupConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backup_destination_details=backup_destination_details,
+            recovery_window_in_days=recovery_window_in_days,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backup_destination_details: Optional[pulumi.Input['AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs']] = None,
+             recovery_window_in_days: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if backup_destination_details is None and 'backupDestinationDetails' in kwargs:
+            backup_destination_details = kwargs['backupDestinationDetails']
+        if recovery_window_in_days is None and 'recoveryWindowInDays' in kwargs:
+            recovery_window_in_days = kwargs['recoveryWindowInDays']
+
         if backup_destination_details is not None:
-            pulumi.set(__self__, "backup_destination_details", backup_destination_details)
+            _setter("backup_destination_details", backup_destination_details)
         if recovery_window_in_days is not None:
-            pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
+            _setter("recovery_window_in_days", recovery_window_in_days)
 
     @property
     @pulumi.getter(name="backupDestinationDetails")
@@ -274,15 +291,42 @@ class AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs:
         :param pulumi.Input[str] vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param pulumi.Input[str] vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
-        pulumi.set(__self__, "type", type)
+        AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            id=id,
+            internet_proxy=internet_proxy,
+            vpc_password=vpc_password,
+            vpc_user=vpc_user,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[pulumi.Input[str]] = None,
+             id: Optional[pulumi.Input[str]] = None,
+             internet_proxy: Optional[pulumi.Input[str]] = None,
+             vpc_password: Optional[pulumi.Input[str]] = None,
+             vpc_user: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if internet_proxy is None and 'internetProxy' in kwargs:
+            internet_proxy = kwargs['internetProxy']
+        if vpc_password is None and 'vpcPassword' in kwargs:
+            vpc_password = kwargs['vpcPassword']
+        if vpc_user is None and 'vpcUser' in kwargs:
+            vpc_user = kwargs['vpcUser']
+
+        _setter("type", type)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if internet_proxy is not None:
-            pulumi.set(__self__, "internet_proxy", internet_proxy)
+            _setter("internet_proxy", internet_proxy)
         if vpc_password is not None:
-            pulumi.set(__self__, "vpc_password", vpc_password)
+            _setter("vpc_password", vpc_password)
         if vpc_user is not None:
-            pulumi.set(__self__, "vpc_user", vpc_user)
+            _setter("vpc_user", vpc_user)
 
     @property
     @pulumi.getter
@@ -358,14 +402,37 @@ class AutonomousContainerDatabaseKeyHistoryEntryArgs:
         :param pulumi.Input[str] time_activated: The date and time the kms key activated.
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
+        AutonomousContainerDatabaseKeyHistoryEntryArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+            kms_key_version_id=kms_key_version_id,
+            time_activated=time_activated,
+            vault_id=vault_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: Optional[pulumi.Input[str]] = None,
+             kms_key_version_id: Optional[pulumi.Input[str]] = None,
+             time_activated: Optional[pulumi.Input[str]] = None,
+             vault_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if kms_key_version_id is None and 'kmsKeyVersionId' in kwargs:
+            kms_key_version_id = kwargs['kmsKeyVersionId']
+        if time_activated is None and 'timeActivated' in kwargs:
+            time_activated = kwargs['timeActivated']
+        if vault_id is None and 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if kms_key_version_id is not None:
-            pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
+            _setter("kms_key_version_id", kms_key_version_id)
         if time_activated is not None:
-            pulumi.set(__self__, "time_activated", time_activated)
+            _setter("time_activated", time_activated)
         if vault_id is not None:
-            pulumi.set(__self__, "vault_id", vault_id)
+            _setter("vault_id", vault_id)
 
     @property
     @pulumi.getter
@@ -444,26 +511,71 @@ class AutonomousContainerDatabaseMaintenanceWindowArgs:
         :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
+        AutonomousContainerDatabaseMaintenanceWindowArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            custom_action_timeout_in_mins=custom_action_timeout_in_mins,
+            days_of_weeks=days_of_weeks,
+            hours_of_days=hours_of_days,
+            is_custom_action_timeout_enabled=is_custom_action_timeout_enabled,
+            is_monthly_patching_enabled=is_monthly_patching_enabled,
+            lead_time_in_weeks=lead_time_in_weeks,
+            months=months,
+            patching_mode=patching_mode,
+            preference=preference,
+            weeks_of_months=weeks_of_months,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
+             days_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgs']]]] = None,
+             hours_of_days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
+             is_monthly_patching_enabled: Optional[pulumi.Input[bool]] = None,
+             lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
+             months: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowMonthArgs']]]] = None,
+             patching_mode: Optional[pulumi.Input[str]] = None,
+             preference: Optional[pulumi.Input[str]] = None,
+             weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if custom_action_timeout_in_mins is None and 'customActionTimeoutInMins' in kwargs:
+            custom_action_timeout_in_mins = kwargs['customActionTimeoutInMins']
+        if days_of_weeks is None and 'daysOfWeeks' in kwargs:
+            days_of_weeks = kwargs['daysOfWeeks']
+        if hours_of_days is None and 'hoursOfDays' in kwargs:
+            hours_of_days = kwargs['hoursOfDays']
+        if is_custom_action_timeout_enabled is None and 'isCustomActionTimeoutEnabled' in kwargs:
+            is_custom_action_timeout_enabled = kwargs['isCustomActionTimeoutEnabled']
+        if is_monthly_patching_enabled is None and 'isMonthlyPatchingEnabled' in kwargs:
+            is_monthly_patching_enabled = kwargs['isMonthlyPatchingEnabled']
+        if lead_time_in_weeks is None and 'leadTimeInWeeks' in kwargs:
+            lead_time_in_weeks = kwargs['leadTimeInWeeks']
+        if patching_mode is None and 'patchingMode' in kwargs:
+            patching_mode = kwargs['patchingMode']
+        if weeks_of_months is None and 'weeksOfMonths' in kwargs:
+            weeks_of_months = kwargs['weeksOfMonths']
+
         if custom_action_timeout_in_mins is not None:
-            pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+            _setter("custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
-            pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+            _setter("days_of_weeks", days_of_weeks)
         if hours_of_days is not None:
-            pulumi.set(__self__, "hours_of_days", hours_of_days)
+            _setter("hours_of_days", hours_of_days)
         if is_custom_action_timeout_enabled is not None:
-            pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+            _setter("is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
         if is_monthly_patching_enabled is not None:
-            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
+            _setter("is_monthly_patching_enabled", is_monthly_patching_enabled)
         if lead_time_in_weeks is not None:
-            pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
+            _setter("lead_time_in_weeks", lead_time_in_weeks)
         if months is not None:
-            pulumi.set(__self__, "months", months)
+            _setter("months", months)
         if patching_mode is not None:
-            pulumi.set(__self__, "patching_mode", patching_mode)
+            _setter("patching_mode", patching_mode)
         if preference is not None:
-            pulumi.set(__self__, "preference", preference)
+            _setter("preference", preference)
         if weeks_of_months is not None:
-            pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+            _setter("weeks_of_months", weeks_of_months)
 
     @property
     @pulumi.getter(name="customActionTimeoutInMins")
@@ -596,8 +708,19 @@ class AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgs:
         """
         :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
         """
+        AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -640,26 +763,71 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsArgs:
         :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
+        AutonomousContainerDatabaseMaintenanceWindowDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            custom_action_timeout_in_mins=custom_action_timeout_in_mins,
+            days_of_weeks=days_of_weeks,
+            hours_of_days=hours_of_days,
+            is_custom_action_timeout_enabled=is_custom_action_timeout_enabled,
+            is_monthly_patching_enabled=is_monthly_patching_enabled,
+            lead_time_in_weeks=lead_time_in_weeks,
+            months=months,
+            patching_mode=patching_mode,
+            preference=preference,
+            weeks_of_months=weeks_of_months,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
+             days_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs']]]] = None,
+             hours_of_days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
+             is_monthly_patching_enabled: Optional[pulumi.Input[bool]] = None,
+             lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
+             months: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs']]]] = None,
+             patching_mode: Optional[pulumi.Input[str]] = None,
+             preference: Optional[pulumi.Input[str]] = None,
+             weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if custom_action_timeout_in_mins is None and 'customActionTimeoutInMins' in kwargs:
+            custom_action_timeout_in_mins = kwargs['customActionTimeoutInMins']
+        if days_of_weeks is None and 'daysOfWeeks' in kwargs:
+            days_of_weeks = kwargs['daysOfWeeks']
+        if hours_of_days is None and 'hoursOfDays' in kwargs:
+            hours_of_days = kwargs['hoursOfDays']
+        if is_custom_action_timeout_enabled is None and 'isCustomActionTimeoutEnabled' in kwargs:
+            is_custom_action_timeout_enabled = kwargs['isCustomActionTimeoutEnabled']
+        if is_monthly_patching_enabled is None and 'isMonthlyPatchingEnabled' in kwargs:
+            is_monthly_patching_enabled = kwargs['isMonthlyPatchingEnabled']
+        if lead_time_in_weeks is None and 'leadTimeInWeeks' in kwargs:
+            lead_time_in_weeks = kwargs['leadTimeInWeeks']
+        if patching_mode is None and 'patchingMode' in kwargs:
+            patching_mode = kwargs['patchingMode']
+        if weeks_of_months is None and 'weeksOfMonths' in kwargs:
+            weeks_of_months = kwargs['weeksOfMonths']
+
         if custom_action_timeout_in_mins is not None:
-            pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+            _setter("custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
-            pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+            _setter("days_of_weeks", days_of_weeks)
         if hours_of_days is not None:
-            pulumi.set(__self__, "hours_of_days", hours_of_days)
+            _setter("hours_of_days", hours_of_days)
         if is_custom_action_timeout_enabled is not None:
-            pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+            _setter("is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
         if is_monthly_patching_enabled is not None:
-            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
+            _setter("is_monthly_patching_enabled", is_monthly_patching_enabled)
         if lead_time_in_weeks is not None:
-            pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
+            _setter("lead_time_in_weeks", lead_time_in_weeks)
         if months is not None:
-            pulumi.set(__self__, "months", months)
+            _setter("months", months)
         if patching_mode is not None:
-            pulumi.set(__self__, "patching_mode", patching_mode)
+            _setter("patching_mode", patching_mode)
         if preference is not None:
-            pulumi.set(__self__, "preference", preference)
+            _setter("preference", preference)
         if weeks_of_months is not None:
-            pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+            _setter("weeks_of_months", weeks_of_months)
 
     @property
     @pulumi.getter(name="customActionTimeoutInMins")
@@ -792,7 +960,20 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs:
         """
         :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
         """
-        pulumi.set(__self__, "name", name)
+        AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -814,7 +995,20 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs:
         """
         :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
         """
-        pulumi.set(__self__, "name", name)
+        AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -836,8 +1030,19 @@ class AutonomousContainerDatabaseMaintenanceWindowMonthArgs:
         """
         :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
         """
+        AutonomousContainerDatabaseMaintenanceWindowMonthArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -861,10 +1066,27 @@ class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs']]] backup_destination_details: Backup destination details.
         :param pulumi.Input[int] recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         """
+        AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backup_destination_details=backup_destination_details,
+            recovery_window_in_days=recovery_window_in_days,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backup_destination_details: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs']]]] = None,
+             recovery_window_in_days: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if backup_destination_details is None and 'backupDestinationDetails' in kwargs:
+            backup_destination_details = kwargs['backupDestinationDetails']
+        if recovery_window_in_days is None and 'recoveryWindowInDays' in kwargs:
+            recovery_window_in_days = kwargs['recoveryWindowInDays']
+
         if backup_destination_details is not None:
-            pulumi.set(__self__, "backup_destination_details", backup_destination_details)
+            _setter("backup_destination_details", backup_destination_details)
         if recovery_window_in_days is not None:
-            pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
+            _setter("recovery_window_in_days", recovery_window_in_days)
 
     @property
     @pulumi.getter(name="backupDestinationDetails")
@@ -906,15 +1128,42 @@ class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBack
         :param pulumi.Input[str] vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param pulumi.Input[str] vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
-        pulumi.set(__self__, "type", type)
+        AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            id=id,
+            internet_proxy=internet_proxy,
+            vpc_password=vpc_password,
+            vpc_user=vpc_user,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[pulumi.Input[str]] = None,
+             id: Optional[pulumi.Input[str]] = None,
+             internet_proxy: Optional[pulumi.Input[str]] = None,
+             vpc_password: Optional[pulumi.Input[str]] = None,
+             vpc_user: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if internet_proxy is None and 'internetProxy' in kwargs:
+            internet_proxy = kwargs['internetProxy']
+        if vpc_password is None and 'vpcPassword' in kwargs:
+            vpc_password = kwargs['vpcPassword']
+        if vpc_user is None and 'vpcUser' in kwargs:
+            vpc_user = kwargs['vpcUser']
+
+        _setter("type", type)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if internet_proxy is not None:
-            pulumi.set(__self__, "internet_proxy", internet_proxy)
+            _setter("internet_proxy", internet_proxy)
         if vpc_password is not None:
-            pulumi.set(__self__, "vpc_password", vpc_password)
+            _setter("vpc_password", vpc_password)
         if vpc_user is not None:
-            pulumi.set(__self__, "vpc_user", vpc_user)
+            _setter("vpc_user", vpc_user)
 
     @property
     @pulumi.getter
@@ -986,10 +1235,27 @@ class AutonomousDatabaseApexDetailArgs:
         :param pulumi.Input[str] apex_version: The Oracle APEX Application Development version.
         :param pulumi.Input[str] ords_version: The Oracle REST Data Services (ORDS) version.
         """
+        AutonomousDatabaseApexDetailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            apex_version=apex_version,
+            ords_version=ords_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             apex_version: Optional[pulumi.Input[str]] = None,
+             ords_version: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if apex_version is None and 'apexVersion' in kwargs:
+            apex_version = kwargs['apexVersion']
+        if ords_version is None and 'ordsVersion' in kwargs:
+            ords_version = kwargs['ordsVersion']
+
         if apex_version is not None:
-            pulumi.set(__self__, "apex_version", apex_version)
+            _setter("apex_version", apex_version)
         if ords_version is not None:
-            pulumi.set(__self__, "ords_version", ords_version)
+            _setter("ords_version", ords_version)
 
     @property
     @pulumi.getter(name="apexVersion")
@@ -1031,15 +1297,42 @@ class AutonomousDatabaseBackupBackupDestinationDetailsArgs:
         :param pulumi.Input[str] vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param pulumi.Input[str] vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
-        pulumi.set(__self__, "type", type)
+        AutonomousDatabaseBackupBackupDestinationDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            id=id,
+            internet_proxy=internet_proxy,
+            vpc_password=vpc_password,
+            vpc_user=vpc_user,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[pulumi.Input[str]] = None,
+             id: Optional[pulumi.Input[str]] = None,
+             internet_proxy: Optional[pulumi.Input[str]] = None,
+             vpc_password: Optional[pulumi.Input[str]] = None,
+             vpc_user: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if internet_proxy is None and 'internetProxy' in kwargs:
+            internet_proxy = kwargs['internetProxy']
+        if vpc_password is None and 'vpcPassword' in kwargs:
+            vpc_password = kwargs['vpcPassword']
+        if vpc_user is None and 'vpcUser' in kwargs:
+            vpc_user = kwargs['vpcUser']
+
+        _setter("type", type)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if internet_proxy is not None:
-            pulumi.set(__self__, "internet_proxy", internet_proxy)
+            _setter("internet_proxy", internet_proxy)
         if vpc_password is not None:
-            pulumi.set(__self__, "vpc_password", vpc_password)
+            _setter("vpc_password", vpc_password)
         if vpc_user is not None:
-            pulumi.set(__self__, "vpc_user", vpc_user)
+            _setter("vpc_user", vpc_user)
 
     @property
     @pulumi.getter
@@ -1111,10 +1404,27 @@ class AutonomousDatabaseBackupConfigArgs:
         :param pulumi.Input[str] manual_backup_bucket_name: Name of [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
         :param pulumi.Input[str] manual_backup_type: The manual backup destination type.
         """
+        AutonomousDatabaseBackupConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            manual_backup_bucket_name=manual_backup_bucket_name,
+            manual_backup_type=manual_backup_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             manual_backup_bucket_name: Optional[pulumi.Input[str]] = None,
+             manual_backup_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if manual_backup_bucket_name is None and 'manualBackupBucketName' in kwargs:
+            manual_backup_bucket_name = kwargs['manualBackupBucketName']
+        if manual_backup_type is None and 'manualBackupType' in kwargs:
+            manual_backup_type = kwargs['manualBackupType']
+
         if manual_backup_bucket_name is not None:
-            pulumi.set(__self__, "manual_backup_bucket_name", manual_backup_bucket_name)
+            _setter("manual_backup_bucket_name", manual_backup_bucket_name)
         if manual_backup_type is not None:
-            pulumi.set(__self__, "manual_backup_type", manual_backup_type)
+            _setter("manual_backup_type", manual_backup_type)
 
     @property
     @pulumi.getter(name="manualBackupBucketName")
@@ -1158,18 +1468,41 @@ class AutonomousDatabaseConnectionStringArgs:
         :param pulumi.Input[str] medium: The Medium database service provides a lower level of resources to each SQL statement potentially resulting a lower level of performance, but supports more concurrent SQL statements.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseConnectionStringProfileArgs']]] profiles: A list of connection string profiles to allow clients to group, filter and select connection string values based on structured metadata.
         """
+        AutonomousDatabaseConnectionStringArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            all_connection_strings=all_connection_strings,
+            dedicated=dedicated,
+            high=high,
+            low=low,
+            medium=medium,
+            profiles=profiles,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             all_connection_strings: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             dedicated: Optional[pulumi.Input[str]] = None,
+             high: Optional[pulumi.Input[str]] = None,
+             low: Optional[pulumi.Input[str]] = None,
+             medium: Optional[pulumi.Input[str]] = None,
+             profiles: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseConnectionStringProfileArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if all_connection_strings is None and 'allConnectionStrings' in kwargs:
+            all_connection_strings = kwargs['allConnectionStrings']
+
         if all_connection_strings is not None:
-            pulumi.set(__self__, "all_connection_strings", all_connection_strings)
+            _setter("all_connection_strings", all_connection_strings)
         if dedicated is not None:
-            pulumi.set(__self__, "dedicated", dedicated)
+            _setter("dedicated", dedicated)
         if high is not None:
-            pulumi.set(__self__, "high", high)
+            _setter("high", high)
         if low is not None:
-            pulumi.set(__self__, "low", low)
+            _setter("low", low)
         if medium is not None:
-            pulumi.set(__self__, "medium", medium)
+            _setter("medium", medium)
         if profiles is not None:
-            pulumi.set(__self__, "profiles", profiles)
+            _setter("profiles", profiles)
 
     @property
     @pulumi.getter(name="allConnectionStrings")
@@ -1265,22 +1598,59 @@ class AutonomousDatabaseConnectionStringProfileArgs:
         :param pulumi.Input[str] tls_authentication: Specifies whether the TLS handshake is using one-way (`SERVER`) or mutual (`MUTUAL`) authentication.
         :param pulumi.Input[str] value: Connection string value.
         """
+        AutonomousDatabaseConnectionStringProfileArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            consumer_group=consumer_group,
+            display_name=display_name,
+            host_format=host_format,
+            protocol=protocol,
+            session_mode=session_mode,
+            syntax_format=syntax_format,
+            tls_authentication=tls_authentication,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             consumer_group: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             host_format: Optional[pulumi.Input[str]] = None,
+             protocol: Optional[pulumi.Input[str]] = None,
+             session_mode: Optional[pulumi.Input[str]] = None,
+             syntax_format: Optional[pulumi.Input[str]] = None,
+             tls_authentication: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if consumer_group is None and 'consumerGroup' in kwargs:
+            consumer_group = kwargs['consumerGroup']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if host_format is None and 'hostFormat' in kwargs:
+            host_format = kwargs['hostFormat']
+        if session_mode is None and 'sessionMode' in kwargs:
+            session_mode = kwargs['sessionMode']
+        if syntax_format is None and 'syntaxFormat' in kwargs:
+            syntax_format = kwargs['syntaxFormat']
+        if tls_authentication is None and 'tlsAuthentication' in kwargs:
+            tls_authentication = kwargs['tlsAuthentication']
+
         if consumer_group is not None:
-            pulumi.set(__self__, "consumer_group", consumer_group)
+            _setter("consumer_group", consumer_group)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if host_format is not None:
-            pulumi.set(__self__, "host_format", host_format)
+            _setter("host_format", host_format)
         if protocol is not None:
-            pulumi.set(__self__, "protocol", protocol)
+            _setter("protocol", protocol)
         if session_mode is not None:
-            pulumi.set(__self__, "session_mode", session_mode)
+            _setter("session_mode", session_mode)
         if syntax_format is not None:
-            pulumi.set(__self__, "syntax_format", syntax_format)
+            _setter("syntax_format", syntax_format)
         if tls_authentication is not None:
-            pulumi.set(__self__, "tls_authentication", tls_authentication)
+            _setter("tls_authentication", tls_authentication)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter(name="consumerGroup")
@@ -1392,14 +1762,39 @@ class AutonomousDatabaseConnectionUrlArgs:
         :param pulumi.Input[str] machine_learning_user_management_url: Oracle Machine Learning user management URL.
         :param pulumi.Input[str] sql_dev_web_url: Oracle SQL Developer Web URL.
         """
+        AutonomousDatabaseConnectionUrlArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            apex_url=apex_url,
+            graph_studio_url=graph_studio_url,
+            machine_learning_user_management_url=machine_learning_user_management_url,
+            sql_dev_web_url=sql_dev_web_url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             apex_url: Optional[pulumi.Input[str]] = None,
+             graph_studio_url: Optional[pulumi.Input[str]] = None,
+             machine_learning_user_management_url: Optional[pulumi.Input[str]] = None,
+             sql_dev_web_url: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if apex_url is None and 'apexUrl' in kwargs:
+            apex_url = kwargs['apexUrl']
+        if graph_studio_url is None and 'graphStudioUrl' in kwargs:
+            graph_studio_url = kwargs['graphStudioUrl']
+        if machine_learning_user_management_url is None and 'machineLearningUserManagementUrl' in kwargs:
+            machine_learning_user_management_url = kwargs['machineLearningUserManagementUrl']
+        if sql_dev_web_url is None and 'sqlDevWebUrl' in kwargs:
+            sql_dev_web_url = kwargs['sqlDevWebUrl']
+
         if apex_url is not None:
-            pulumi.set(__self__, "apex_url", apex_url)
+            _setter("apex_url", apex_url)
         if graph_studio_url is not None:
-            pulumi.set(__self__, "graph_studio_url", graph_studio_url)
+            _setter("graph_studio_url", graph_studio_url)
         if machine_learning_user_management_url is not None:
-            pulumi.set(__self__, "machine_learning_user_management_url", machine_learning_user_management_url)
+            _setter("machine_learning_user_management_url", machine_learning_user_management_url)
         if sql_dev_web_url is not None:
-            pulumi.set(__self__, "sql_dev_web_url", sql_dev_web_url)
+            _setter("sql_dev_web_url", sql_dev_web_url)
 
     @property
     @pulumi.getter(name="apexUrl")
@@ -1457,8 +1852,19 @@ class AutonomousDatabaseCustomerContactArgs:
         """
         :param pulumi.Input[str] email: (Updatable) The email address used by Oracle to send notifications regarding databases and infrastructure.
         """
+        AutonomousDatabaseCustomerContactArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            email=email,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             email: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if email is not None:
-            pulumi.set(__self__, "email", email)
+            _setter("email", email)
 
     @property
     @pulumi.getter
@@ -1486,14 +1892,37 @@ class AutonomousDatabaseKeyHistoryEntryArgs:
         :param pulumi.Input[str] time_activated: The date and time the kms key activated.
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
+        AutonomousDatabaseKeyHistoryEntryArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+            kms_key_version_id=kms_key_version_id,
+            time_activated=time_activated,
+            vault_id=vault_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: Optional[pulumi.Input[str]] = None,
+             kms_key_version_id: Optional[pulumi.Input[str]] = None,
+             time_activated: Optional[pulumi.Input[str]] = None,
+             vault_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if kms_key_version_id is None and 'kmsKeyVersionId' in kwargs:
+            kms_key_version_id = kwargs['kmsKeyVersionId']
+        if time_activated is None and 'timeActivated' in kwargs:
+            time_activated = kwargs['timeActivated']
+        if vault_id is None and 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if kms_key_version_id is not None:
-            pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
+            _setter("kms_key_version_id", kms_key_version_id)
         if time_activated is not None:
-            pulumi.set(__self__, "time_activated", time_activated)
+            _setter("time_activated", time_activated)
         if vault_id is not None:
-            pulumi.set(__self__, "vault_id", vault_id)
+            _setter("vault_id", vault_id)
 
     @property
     @pulumi.getter
@@ -1559,16 +1988,43 @@ class AutonomousDatabaseLocalStandbyDbArgs:
         :param pulumi.Input[str] time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         :param pulumi.Input[str] time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         """
+        AutonomousDatabaseLocalStandbyDbArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            lag_time_in_seconds=lag_time_in_seconds,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            time_data_guard_role_changed=time_data_guard_role_changed,
+            time_disaster_recovery_role_changed=time_disaster_recovery_role_changed,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             lag_time_in_seconds: Optional[pulumi.Input[int]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_data_guard_role_changed: Optional[pulumi.Input[str]] = None,
+             time_disaster_recovery_role_changed: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if lag_time_in_seconds is None and 'lagTimeInSeconds' in kwargs:
+            lag_time_in_seconds = kwargs['lagTimeInSeconds']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if time_data_guard_role_changed is None and 'timeDataGuardRoleChanged' in kwargs:
+            time_data_guard_role_changed = kwargs['timeDataGuardRoleChanged']
+        if time_disaster_recovery_role_changed is None and 'timeDisasterRecoveryRoleChanged' in kwargs:
+            time_disaster_recovery_role_changed = kwargs['timeDisasterRecoveryRoleChanged']
+
         if lag_time_in_seconds is not None:
-            pulumi.set(__self__, "lag_time_in_seconds", lag_time_in_seconds)
+            _setter("lag_time_in_seconds", lag_time_in_seconds)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_data_guard_role_changed is not None:
-            pulumi.set(__self__, "time_data_guard_role_changed", time_data_guard_role_changed)
+            _setter("time_data_guard_role_changed", time_data_guard_role_changed)
         if time_disaster_recovery_role_changed is not None:
-            pulumi.set(__self__, "time_disaster_recovery_role_changed", time_disaster_recovery_role_changed)
+            _setter("time_disaster_recovery_role_changed", time_disaster_recovery_role_changed)
 
     @property
     @pulumi.getter(name="lagTimeInSeconds")
@@ -1644,14 +2100,39 @@ class AutonomousDatabaseLongTermBackupScheduleArgs:
         :param pulumi.Input[int] retention_period_in_days: Retention period, in days, for long-term backups
         :param pulumi.Input[str] time_of_backup: The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
         """
+        AutonomousDatabaseLongTermBackupScheduleArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_disabled=is_disabled,
+            repeat_cadence=repeat_cadence,
+            retention_period_in_days=retention_period_in_days,
+            time_of_backup=time_of_backup,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_disabled: Optional[pulumi.Input[bool]] = None,
+             repeat_cadence: Optional[pulumi.Input[str]] = None,
+             retention_period_in_days: Optional[pulumi.Input[int]] = None,
+             time_of_backup: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_disabled is None and 'isDisabled' in kwargs:
+            is_disabled = kwargs['isDisabled']
+        if repeat_cadence is None and 'repeatCadence' in kwargs:
+            repeat_cadence = kwargs['repeatCadence']
+        if retention_period_in_days is None and 'retentionPeriodInDays' in kwargs:
+            retention_period_in_days = kwargs['retentionPeriodInDays']
+        if time_of_backup is None and 'timeOfBackup' in kwargs:
+            time_of_backup = kwargs['timeOfBackup']
+
         if is_disabled is not None:
-            pulumi.set(__self__, "is_disabled", is_disabled)
+            _setter("is_disabled", is_disabled)
         if repeat_cadence is not None:
-            pulumi.set(__self__, "repeat_cadence", repeat_cadence)
+            _setter("repeat_cadence", repeat_cadence)
         if retention_period_in_days is not None:
-            pulumi.set(__self__, "retention_period_in_days", retention_period_in_days)
+            _setter("retention_period_in_days", retention_period_in_days)
         if time_of_backup is not None:
-            pulumi.set(__self__, "time_of_backup", time_of_backup)
+            _setter("time_of_backup", time_of_backup)
 
     @property
     @pulumi.getter(name="isDisabled")
@@ -1709,8 +2190,21 @@ class AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs:
         """
         :param pulumi.Input[str] disaster_recovery_type: Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         """
+        AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            disaster_recovery_type=disaster_recovery_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             disaster_recovery_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if disaster_recovery_type is None and 'disasterRecoveryType' in kwargs:
+            disaster_recovery_type = kwargs['disasterRecoveryType']
+
         if disaster_recovery_type is not None:
-            pulumi.set(__self__, "disaster_recovery_type", disaster_recovery_type)
+            _setter("disaster_recovery_type", disaster_recovery_type)
 
     @property
     @pulumi.getter(name="disasterRecoveryType")
@@ -1733,10 +2227,27 @@ class AutonomousDatabaseResourcePoolSummaryArgs:
         """
         :param pulumi.Input[bool] is_disabled: Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
         """
+        AutonomousDatabaseResourcePoolSummaryArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_disabled=is_disabled,
+            pool_size=pool_size,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_disabled: Optional[pulumi.Input[bool]] = None,
+             pool_size: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_disabled is None and 'isDisabled' in kwargs:
+            is_disabled = kwargs['isDisabled']
+        if pool_size is None and 'poolSize' in kwargs:
+            pool_size = kwargs['poolSize']
+
         if is_disabled is not None:
-            pulumi.set(__self__, "is_disabled", is_disabled)
+            _setter("is_disabled", is_disabled)
         if pool_size is not None:
-            pulumi.set(__self__, "pool_size", pool_size)
+            _setter("pool_size", pool_size)
 
     @property
     @pulumi.getter(name="isDisabled")
@@ -1771,11 +2282,34 @@ class AutonomousDatabaseScheduledOperationArgs:
         :param pulumi.Input[str] scheduled_start_time: (Updatable) auto start time. value must be of ISO-8601 format "HH:mm"
         :param pulumi.Input[str] scheduled_stop_time: (Updatable) auto stop time. value must be of ISO-8601 format "HH:mm"
         """
-        pulumi.set(__self__, "day_of_week", day_of_week)
+        AutonomousDatabaseScheduledOperationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            day_of_week=day_of_week,
+            scheduled_start_time=scheduled_start_time,
+            scheduled_stop_time=scheduled_stop_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             day_of_week: Optional[pulumi.Input['AutonomousDatabaseScheduledOperationDayOfWeekArgs']] = None,
+             scheduled_start_time: Optional[pulumi.Input[str]] = None,
+             scheduled_stop_time: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if day_of_week is None and 'dayOfWeek' in kwargs:
+            day_of_week = kwargs['dayOfWeek']
+        if day_of_week is None:
+            raise TypeError("Missing 'day_of_week' argument")
+        if scheduled_start_time is None and 'scheduledStartTime' in kwargs:
+            scheduled_start_time = kwargs['scheduledStartTime']
+        if scheduled_stop_time is None and 'scheduledStopTime' in kwargs:
+            scheduled_stop_time = kwargs['scheduledStopTime']
+
+        _setter("day_of_week", day_of_week)
         if scheduled_start_time is not None:
-            pulumi.set(__self__, "scheduled_start_time", scheduled_start_time)
+            _setter("scheduled_start_time", scheduled_start_time)
         if scheduled_stop_time is not None:
-            pulumi.set(__self__, "scheduled_stop_time", scheduled_stop_time)
+            _setter("scheduled_stop_time", scheduled_stop_time)
 
     @property
     @pulumi.getter(name="dayOfWeek")
@@ -1821,7 +2355,20 @@ class AutonomousDatabaseScheduledOperationDayOfWeekArgs:
         """
         :param pulumi.Input[str] name: (Updatable) Name of the day of the week.
         """
-        pulumi.set(__self__, "name", name)
+        AutonomousDatabaseScheduledOperationDayOfWeekArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -1851,16 +2398,43 @@ class AutonomousDatabaseStandbyDbArgs:
         :param pulumi.Input[str] time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         :param pulumi.Input[str] time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         """
+        AutonomousDatabaseStandbyDbArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            lag_time_in_seconds=lag_time_in_seconds,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            time_data_guard_role_changed=time_data_guard_role_changed,
+            time_disaster_recovery_role_changed=time_disaster_recovery_role_changed,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             lag_time_in_seconds: Optional[pulumi.Input[int]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_data_guard_role_changed: Optional[pulumi.Input[str]] = None,
+             time_disaster_recovery_role_changed: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if lag_time_in_seconds is None and 'lagTimeInSeconds' in kwargs:
+            lag_time_in_seconds = kwargs['lagTimeInSeconds']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if time_data_guard_role_changed is None and 'timeDataGuardRoleChanged' in kwargs:
+            time_data_guard_role_changed = kwargs['timeDataGuardRoleChanged']
+        if time_disaster_recovery_role_changed is None and 'timeDisasterRecoveryRoleChanged' in kwargs:
+            time_disaster_recovery_role_changed = kwargs['timeDisasterRecoveryRoleChanged']
+
         if lag_time_in_seconds is not None:
-            pulumi.set(__self__, "lag_time_in_seconds", lag_time_in_seconds)
+            _setter("lag_time_in_seconds", lag_time_in_seconds)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_data_guard_role_changed is not None:
-            pulumi.set(__self__, "time_data_guard_role_changed", time_data_guard_role_changed)
+            _setter("time_data_guard_role_changed", time_data_guard_role_changed)
         if time_disaster_recovery_role_changed is not None:
-            pulumi.set(__self__, "time_disaster_recovery_role_changed", time_disaster_recovery_role_changed)
+            _setter("time_disaster_recovery_role_changed", time_disaster_recovery_role_changed)
 
     @property
     @pulumi.getter(name="lagTimeInSeconds")
@@ -1951,26 +2525,71 @@ class AutonomousExadataInfrastructureMaintenanceWindowArgs:
         :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
+        AutonomousExadataInfrastructureMaintenanceWindowArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            custom_action_timeout_in_mins=custom_action_timeout_in_mins,
+            days_of_weeks=days_of_weeks,
+            hours_of_days=hours_of_days,
+            is_custom_action_timeout_enabled=is_custom_action_timeout_enabled,
+            is_monthly_patching_enabled=is_monthly_patching_enabled,
+            lead_time_in_weeks=lead_time_in_weeks,
+            months=months,
+            patching_mode=patching_mode,
+            preference=preference,
+            weeks_of_months=weeks_of_months,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
+             days_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgs']]]] = None,
+             hours_of_days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
+             is_monthly_patching_enabled: Optional[pulumi.Input[bool]] = None,
+             lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
+             months: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowMonthArgs']]]] = None,
+             patching_mode: Optional[pulumi.Input[str]] = None,
+             preference: Optional[pulumi.Input[str]] = None,
+             weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if custom_action_timeout_in_mins is None and 'customActionTimeoutInMins' in kwargs:
+            custom_action_timeout_in_mins = kwargs['customActionTimeoutInMins']
+        if days_of_weeks is None and 'daysOfWeeks' in kwargs:
+            days_of_weeks = kwargs['daysOfWeeks']
+        if hours_of_days is None and 'hoursOfDays' in kwargs:
+            hours_of_days = kwargs['hoursOfDays']
+        if is_custom_action_timeout_enabled is None and 'isCustomActionTimeoutEnabled' in kwargs:
+            is_custom_action_timeout_enabled = kwargs['isCustomActionTimeoutEnabled']
+        if is_monthly_patching_enabled is None and 'isMonthlyPatchingEnabled' in kwargs:
+            is_monthly_patching_enabled = kwargs['isMonthlyPatchingEnabled']
+        if lead_time_in_weeks is None and 'leadTimeInWeeks' in kwargs:
+            lead_time_in_weeks = kwargs['leadTimeInWeeks']
+        if patching_mode is None and 'patchingMode' in kwargs:
+            patching_mode = kwargs['patchingMode']
+        if weeks_of_months is None and 'weeksOfMonths' in kwargs:
+            weeks_of_months = kwargs['weeksOfMonths']
+
         if custom_action_timeout_in_mins is not None:
-            pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+            _setter("custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
-            pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+            _setter("days_of_weeks", days_of_weeks)
         if hours_of_days is not None:
-            pulumi.set(__self__, "hours_of_days", hours_of_days)
+            _setter("hours_of_days", hours_of_days)
         if is_custom_action_timeout_enabled is not None:
-            pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+            _setter("is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
         if is_monthly_patching_enabled is not None:
-            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
+            _setter("is_monthly_patching_enabled", is_monthly_patching_enabled)
         if lead_time_in_weeks is not None:
-            pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
+            _setter("lead_time_in_weeks", lead_time_in_weeks)
         if months is not None:
-            pulumi.set(__self__, "months", months)
+            _setter("months", months)
         if patching_mode is not None:
-            pulumi.set(__self__, "patching_mode", patching_mode)
+            _setter("patching_mode", patching_mode)
         if preference is not None:
-            pulumi.set(__self__, "preference", preference)
+            _setter("preference", preference)
         if weeks_of_months is not None:
-            pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+            _setter("weeks_of_months", weeks_of_months)
 
     @property
     @pulumi.getter(name="customActionTimeoutInMins")
@@ -2103,8 +2722,19 @@ class AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgs:
         """
         :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
         """
+        AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -2147,26 +2777,71 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs:
         :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
+        AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            custom_action_timeout_in_mins=custom_action_timeout_in_mins,
+            days_of_weeks=days_of_weeks,
+            hours_of_days=hours_of_days,
+            is_custom_action_timeout_enabled=is_custom_action_timeout_enabled,
+            is_monthly_patching_enabled=is_monthly_patching_enabled,
+            lead_time_in_weeks=lead_time_in_weeks,
+            months=months,
+            patching_mode=patching_mode,
+            preference=preference,
+            weeks_of_months=weeks_of_months,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
+             days_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs']]]] = None,
+             hours_of_days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
+             is_monthly_patching_enabled: Optional[pulumi.Input[bool]] = None,
+             lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
+             months: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs']]]] = None,
+             patching_mode: Optional[pulumi.Input[str]] = None,
+             preference: Optional[pulumi.Input[str]] = None,
+             weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if custom_action_timeout_in_mins is None and 'customActionTimeoutInMins' in kwargs:
+            custom_action_timeout_in_mins = kwargs['customActionTimeoutInMins']
+        if days_of_weeks is None and 'daysOfWeeks' in kwargs:
+            days_of_weeks = kwargs['daysOfWeeks']
+        if hours_of_days is None and 'hoursOfDays' in kwargs:
+            hours_of_days = kwargs['hoursOfDays']
+        if is_custom_action_timeout_enabled is None and 'isCustomActionTimeoutEnabled' in kwargs:
+            is_custom_action_timeout_enabled = kwargs['isCustomActionTimeoutEnabled']
+        if is_monthly_patching_enabled is None and 'isMonthlyPatchingEnabled' in kwargs:
+            is_monthly_patching_enabled = kwargs['isMonthlyPatchingEnabled']
+        if lead_time_in_weeks is None and 'leadTimeInWeeks' in kwargs:
+            lead_time_in_weeks = kwargs['leadTimeInWeeks']
+        if patching_mode is None and 'patchingMode' in kwargs:
+            patching_mode = kwargs['patchingMode']
+        if weeks_of_months is None and 'weeksOfMonths' in kwargs:
+            weeks_of_months = kwargs['weeksOfMonths']
+
         if custom_action_timeout_in_mins is not None:
-            pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+            _setter("custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
-            pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+            _setter("days_of_weeks", days_of_weeks)
         if hours_of_days is not None:
-            pulumi.set(__self__, "hours_of_days", hours_of_days)
+            _setter("hours_of_days", hours_of_days)
         if is_custom_action_timeout_enabled is not None:
-            pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+            _setter("is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
         if is_monthly_patching_enabled is not None:
-            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
+            _setter("is_monthly_patching_enabled", is_monthly_patching_enabled)
         if lead_time_in_weeks is not None:
-            pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
+            _setter("lead_time_in_weeks", lead_time_in_weeks)
         if months is not None:
-            pulumi.set(__self__, "months", months)
+            _setter("months", months)
         if patching_mode is not None:
-            pulumi.set(__self__, "patching_mode", patching_mode)
+            _setter("patching_mode", patching_mode)
         if preference is not None:
-            pulumi.set(__self__, "preference", preference)
+            _setter("preference", preference)
         if weeks_of_months is not None:
-            pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+            _setter("weeks_of_months", weeks_of_months)
 
     @property
     @pulumi.getter(name="customActionTimeoutInMins")
@@ -2299,7 +2974,20 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs:
         """
         :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
         """
-        pulumi.set(__self__, "name", name)
+        AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -2321,7 +3009,20 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs:
         """
         :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
         """
-        pulumi.set(__self__, "name", name)
+        AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -2343,8 +3044,19 @@ class AutonomousExadataInfrastructureMaintenanceWindowMonthArgs:
         """
         :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
         """
+        AutonomousExadataInfrastructureMaintenanceWindowMonthArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -2384,26 +3096,71 @@ class AutonomousVmClusterMaintenanceWindowArgs:
         :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
+        AutonomousVmClusterMaintenanceWindowArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            custom_action_timeout_in_mins=custom_action_timeout_in_mins,
+            days_of_weeks=days_of_weeks,
+            hours_of_days=hours_of_days,
+            is_custom_action_timeout_enabled=is_custom_action_timeout_enabled,
+            is_monthly_patching_enabled=is_monthly_patching_enabled,
+            lead_time_in_weeks=lead_time_in_weeks,
+            months=months,
+            patching_mode=patching_mode,
+            preference=preference,
+            weeks_of_months=weeks_of_months,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
+             days_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDaysOfWeekArgs']]]] = None,
+             hours_of_days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
+             is_monthly_patching_enabled: Optional[pulumi.Input[bool]] = None,
+             lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
+             months: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowMonthArgs']]]] = None,
+             patching_mode: Optional[pulumi.Input[str]] = None,
+             preference: Optional[pulumi.Input[str]] = None,
+             weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if custom_action_timeout_in_mins is None and 'customActionTimeoutInMins' in kwargs:
+            custom_action_timeout_in_mins = kwargs['customActionTimeoutInMins']
+        if days_of_weeks is None and 'daysOfWeeks' in kwargs:
+            days_of_weeks = kwargs['daysOfWeeks']
+        if hours_of_days is None and 'hoursOfDays' in kwargs:
+            hours_of_days = kwargs['hoursOfDays']
+        if is_custom_action_timeout_enabled is None and 'isCustomActionTimeoutEnabled' in kwargs:
+            is_custom_action_timeout_enabled = kwargs['isCustomActionTimeoutEnabled']
+        if is_monthly_patching_enabled is None and 'isMonthlyPatchingEnabled' in kwargs:
+            is_monthly_patching_enabled = kwargs['isMonthlyPatchingEnabled']
+        if lead_time_in_weeks is None and 'leadTimeInWeeks' in kwargs:
+            lead_time_in_weeks = kwargs['leadTimeInWeeks']
+        if patching_mode is None and 'patchingMode' in kwargs:
+            patching_mode = kwargs['patchingMode']
+        if weeks_of_months is None and 'weeksOfMonths' in kwargs:
+            weeks_of_months = kwargs['weeksOfMonths']
+
         if custom_action_timeout_in_mins is not None:
-            pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+            _setter("custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
-            pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+            _setter("days_of_weeks", days_of_weeks)
         if hours_of_days is not None:
-            pulumi.set(__self__, "hours_of_days", hours_of_days)
+            _setter("hours_of_days", hours_of_days)
         if is_custom_action_timeout_enabled is not None:
-            pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+            _setter("is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
         if is_monthly_patching_enabled is not None:
-            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
+            _setter("is_monthly_patching_enabled", is_monthly_patching_enabled)
         if lead_time_in_weeks is not None:
-            pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
+            _setter("lead_time_in_weeks", lead_time_in_weeks)
         if months is not None:
-            pulumi.set(__self__, "months", months)
+            _setter("months", months)
         if patching_mode is not None:
-            pulumi.set(__self__, "patching_mode", patching_mode)
+            _setter("patching_mode", patching_mode)
         if preference is not None:
-            pulumi.set(__self__, "preference", preference)
+            _setter("preference", preference)
         if weeks_of_months is not None:
-            pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+            _setter("weeks_of_months", weeks_of_months)
 
     @property
     @pulumi.getter(name="customActionTimeoutInMins")
@@ -2527,8 +3284,19 @@ class AutonomousVmClusterMaintenanceWindowDaysOfWeekArgs:
         """
         :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
         """
+        AutonomousVmClusterMaintenanceWindowDaysOfWeekArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -2568,26 +3336,71 @@ class AutonomousVmClusterMaintenanceWindowDetailArgs:
         :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
+        AutonomousVmClusterMaintenanceWindowDetailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            custom_action_timeout_in_mins=custom_action_timeout_in_mins,
+            days_of_weeks=days_of_weeks,
+            hours_of_days=hours_of_days,
+            is_custom_action_timeout_enabled=is_custom_action_timeout_enabled,
+            is_monthly_patching_enabled=is_monthly_patching_enabled,
+            lead_time_in_weeks=lead_time_in_weeks,
+            months=months,
+            patching_mode=patching_mode,
+            preference=preference,
+            weeks_of_months=weeks_of_months,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
+             days_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs']]]] = None,
+             hours_of_days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
+             is_monthly_patching_enabled: Optional[pulumi.Input[bool]] = None,
+             lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
+             months: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDetailMonthArgs']]]] = None,
+             patching_mode: Optional[pulumi.Input[str]] = None,
+             preference: Optional[pulumi.Input[str]] = None,
+             weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if custom_action_timeout_in_mins is None and 'customActionTimeoutInMins' in kwargs:
+            custom_action_timeout_in_mins = kwargs['customActionTimeoutInMins']
+        if days_of_weeks is None and 'daysOfWeeks' in kwargs:
+            days_of_weeks = kwargs['daysOfWeeks']
+        if hours_of_days is None and 'hoursOfDays' in kwargs:
+            hours_of_days = kwargs['hoursOfDays']
+        if is_custom_action_timeout_enabled is None and 'isCustomActionTimeoutEnabled' in kwargs:
+            is_custom_action_timeout_enabled = kwargs['isCustomActionTimeoutEnabled']
+        if is_monthly_patching_enabled is None and 'isMonthlyPatchingEnabled' in kwargs:
+            is_monthly_patching_enabled = kwargs['isMonthlyPatchingEnabled']
+        if lead_time_in_weeks is None and 'leadTimeInWeeks' in kwargs:
+            lead_time_in_weeks = kwargs['leadTimeInWeeks']
+        if patching_mode is None and 'patchingMode' in kwargs:
+            patching_mode = kwargs['patchingMode']
+        if weeks_of_months is None and 'weeksOfMonths' in kwargs:
+            weeks_of_months = kwargs['weeksOfMonths']
+
         if custom_action_timeout_in_mins is not None:
-            pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+            _setter("custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
-            pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+            _setter("days_of_weeks", days_of_weeks)
         if hours_of_days is not None:
-            pulumi.set(__self__, "hours_of_days", hours_of_days)
+            _setter("hours_of_days", hours_of_days)
         if is_custom_action_timeout_enabled is not None:
-            pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+            _setter("is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
         if is_monthly_patching_enabled is not None:
-            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
+            _setter("is_monthly_patching_enabled", is_monthly_patching_enabled)
         if lead_time_in_weeks is not None:
-            pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
+            _setter("lead_time_in_weeks", lead_time_in_weeks)
         if months is not None:
-            pulumi.set(__self__, "months", months)
+            _setter("months", months)
         if patching_mode is not None:
-            pulumi.set(__self__, "patching_mode", patching_mode)
+            _setter("patching_mode", patching_mode)
         if preference is not None:
-            pulumi.set(__self__, "preference", preference)
+            _setter("preference", preference)
         if weeks_of_months is not None:
-            pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+            _setter("weeks_of_months", weeks_of_months)
 
     @property
     @pulumi.getter(name="customActionTimeoutInMins")
@@ -2711,7 +3524,20 @@ class AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs:
         """
         :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
         """
-        pulumi.set(__self__, "name", name)
+        AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -2733,7 +3559,20 @@ class AutonomousVmClusterMaintenanceWindowDetailMonthArgs:
         """
         :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
         """
-        pulumi.set(__self__, "name", name)
+        AutonomousVmClusterMaintenanceWindowDetailMonthArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -2755,8 +3594,19 @@ class AutonomousVmClusterMaintenanceWindowMonthArgs:
         """
         :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
         """
+        AutonomousVmClusterMaintenanceWindowMonthArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -2780,10 +3630,25 @@ class BackupDestinationAssociatedDatabaseArgs:
         :param pulumi.Input[str] db_name: The display name of the database that is associated with the backup destination.
         :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         """
+        BackupDestinationAssociatedDatabaseArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            db_name=db_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             db_name: Optional[pulumi.Input[str]] = None,
+             id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if db_name is None and 'dbName' in kwargs:
+            db_name = kwargs['dbName']
+
         if db_name is not None:
-            pulumi.set(__self__, "db_name", db_name)
+            _setter("db_name", db_name)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
 
     @property
     @pulumi.getter(name="dbName")
@@ -2823,13 +3688,40 @@ class BackupDestinationMountTypeDetailsArgs:
         :param pulumi.Input[str] nfs_server_export: Specifies the directory on which to mount the file system
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nfs_servers: IP addresses for NFS Auto mount.
         """
-        pulumi.set(__self__, "mount_type", mount_type)
+        BackupDestinationMountTypeDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            mount_type=mount_type,
+            local_mount_point_path=local_mount_point_path,
+            nfs_server_export=nfs_server_export,
+            nfs_servers=nfs_servers,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             mount_type: Optional[pulumi.Input[str]] = None,
+             local_mount_point_path: Optional[pulumi.Input[str]] = None,
+             nfs_server_export: Optional[pulumi.Input[str]] = None,
+             nfs_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if mount_type is None and 'mountType' in kwargs:
+            mount_type = kwargs['mountType']
+        if mount_type is None:
+            raise TypeError("Missing 'mount_type' argument")
+        if local_mount_point_path is None and 'localMountPointPath' in kwargs:
+            local_mount_point_path = kwargs['localMountPointPath']
+        if nfs_server_export is None and 'nfsServerExport' in kwargs:
+            nfs_server_export = kwargs['nfsServerExport']
+        if nfs_servers is None and 'nfsServers' in kwargs:
+            nfs_servers = kwargs['nfsServers']
+
+        _setter("mount_type", mount_type)
         if local_mount_point_path is not None:
-            pulumi.set(__self__, "local_mount_point_path", local_mount_point_path)
+            _setter("local_mount_point_path", local_mount_point_path)
         if nfs_server_export is not None:
-            pulumi.set(__self__, "nfs_server_export", nfs_server_export)
+            _setter("nfs_server_export", nfs_server_export)
         if nfs_servers is not None:
-            pulumi.set(__self__, "nfs_servers", nfs_servers)
+            _setter("nfs_servers", nfs_servers)
 
     @property
     @pulumi.getter(name="mountType")
@@ -2908,26 +3800,71 @@ class CloudAutonomousVmClusterMaintenanceWindowArgs:
         :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
+        CloudAutonomousVmClusterMaintenanceWindowArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            custom_action_timeout_in_mins=custom_action_timeout_in_mins,
+            days_of_weeks=days_of_weeks,
+            hours_of_days=hours_of_days,
+            is_custom_action_timeout_enabled=is_custom_action_timeout_enabled,
+            is_monthly_patching_enabled=is_monthly_patching_enabled,
+            lead_time_in_weeks=lead_time_in_weeks,
+            months=months,
+            patching_mode=patching_mode,
+            preference=preference,
+            weeks_of_months=weeks_of_months,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
+             days_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs']]]] = None,
+             hours_of_days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
+             is_monthly_patching_enabled: Optional[pulumi.Input[bool]] = None,
+             lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
+             months: Optional[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowMonthArgs']]]] = None,
+             patching_mode: Optional[pulumi.Input[str]] = None,
+             preference: Optional[pulumi.Input[str]] = None,
+             weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if custom_action_timeout_in_mins is None and 'customActionTimeoutInMins' in kwargs:
+            custom_action_timeout_in_mins = kwargs['customActionTimeoutInMins']
+        if days_of_weeks is None and 'daysOfWeeks' in kwargs:
+            days_of_weeks = kwargs['daysOfWeeks']
+        if hours_of_days is None and 'hoursOfDays' in kwargs:
+            hours_of_days = kwargs['hoursOfDays']
+        if is_custom_action_timeout_enabled is None and 'isCustomActionTimeoutEnabled' in kwargs:
+            is_custom_action_timeout_enabled = kwargs['isCustomActionTimeoutEnabled']
+        if is_monthly_patching_enabled is None and 'isMonthlyPatchingEnabled' in kwargs:
+            is_monthly_patching_enabled = kwargs['isMonthlyPatchingEnabled']
+        if lead_time_in_weeks is None and 'leadTimeInWeeks' in kwargs:
+            lead_time_in_weeks = kwargs['leadTimeInWeeks']
+        if patching_mode is None and 'patchingMode' in kwargs:
+            patching_mode = kwargs['patchingMode']
+        if weeks_of_months is None and 'weeksOfMonths' in kwargs:
+            weeks_of_months = kwargs['weeksOfMonths']
+
         if custom_action_timeout_in_mins is not None:
-            pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+            _setter("custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
-            pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+            _setter("days_of_weeks", days_of_weeks)
         if hours_of_days is not None:
-            pulumi.set(__self__, "hours_of_days", hours_of_days)
+            _setter("hours_of_days", hours_of_days)
         if is_custom_action_timeout_enabled is not None:
-            pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+            _setter("is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
         if is_monthly_patching_enabled is not None:
-            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
+            _setter("is_monthly_patching_enabled", is_monthly_patching_enabled)
         if lead_time_in_weeks is not None:
-            pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
+            _setter("lead_time_in_weeks", lead_time_in_weeks)
         if months is not None:
-            pulumi.set(__self__, "months", months)
+            _setter("months", months)
         if patching_mode is not None:
-            pulumi.set(__self__, "patching_mode", patching_mode)
+            _setter("patching_mode", patching_mode)
         if preference is not None:
-            pulumi.set(__self__, "preference", preference)
+            _setter("preference", preference)
         if weeks_of_months is not None:
-            pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+            _setter("weeks_of_months", weeks_of_months)
 
     @property
     @pulumi.getter(name="customActionTimeoutInMins")
@@ -3060,8 +3997,19 @@ class CloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs:
         """
         :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
         """
+        CloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -3104,26 +4052,71 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsArgs:
         :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
+        CloudAutonomousVmClusterMaintenanceWindowDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            custom_action_timeout_in_mins=custom_action_timeout_in_mins,
+            days_of_weeks=days_of_weeks,
+            hours_of_days=hours_of_days,
+            is_custom_action_timeout_enabled=is_custom_action_timeout_enabled,
+            is_monthly_patching_enabled=is_monthly_patching_enabled,
+            lead_time_in_weeks=lead_time_in_weeks,
+            months=months,
+            patching_mode=patching_mode,
+            preference=preference,
+            weeks_of_months=weeks_of_months,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
+             days_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArgs']]]] = None,
+             hours_of_days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
+             is_monthly_patching_enabled: Optional[pulumi.Input[bool]] = None,
+             lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
+             months: Optional[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDetailsMonthArgs']]]] = None,
+             patching_mode: Optional[pulumi.Input[str]] = None,
+             preference: Optional[pulumi.Input[str]] = None,
+             weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if custom_action_timeout_in_mins is None and 'customActionTimeoutInMins' in kwargs:
+            custom_action_timeout_in_mins = kwargs['customActionTimeoutInMins']
+        if days_of_weeks is None and 'daysOfWeeks' in kwargs:
+            days_of_weeks = kwargs['daysOfWeeks']
+        if hours_of_days is None and 'hoursOfDays' in kwargs:
+            hours_of_days = kwargs['hoursOfDays']
+        if is_custom_action_timeout_enabled is None and 'isCustomActionTimeoutEnabled' in kwargs:
+            is_custom_action_timeout_enabled = kwargs['isCustomActionTimeoutEnabled']
+        if is_monthly_patching_enabled is None and 'isMonthlyPatchingEnabled' in kwargs:
+            is_monthly_patching_enabled = kwargs['isMonthlyPatchingEnabled']
+        if lead_time_in_weeks is None and 'leadTimeInWeeks' in kwargs:
+            lead_time_in_weeks = kwargs['leadTimeInWeeks']
+        if patching_mode is None and 'patchingMode' in kwargs:
+            patching_mode = kwargs['patchingMode']
+        if weeks_of_months is None and 'weeksOfMonths' in kwargs:
+            weeks_of_months = kwargs['weeksOfMonths']
+
         if custom_action_timeout_in_mins is not None:
-            pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+            _setter("custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
-            pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+            _setter("days_of_weeks", days_of_weeks)
         if hours_of_days is not None:
-            pulumi.set(__self__, "hours_of_days", hours_of_days)
+            _setter("hours_of_days", hours_of_days)
         if is_custom_action_timeout_enabled is not None:
-            pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+            _setter("is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
         if is_monthly_patching_enabled is not None:
-            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
+            _setter("is_monthly_patching_enabled", is_monthly_patching_enabled)
         if lead_time_in_weeks is not None:
-            pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
+            _setter("lead_time_in_weeks", lead_time_in_weeks)
         if months is not None:
-            pulumi.set(__self__, "months", months)
+            _setter("months", months)
         if patching_mode is not None:
-            pulumi.set(__self__, "patching_mode", patching_mode)
+            _setter("patching_mode", patching_mode)
         if preference is not None:
-            pulumi.set(__self__, "preference", preference)
+            _setter("preference", preference)
         if weeks_of_months is not None:
-            pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+            _setter("weeks_of_months", weeks_of_months)
 
     @property
     @pulumi.getter(name="customActionTimeoutInMins")
@@ -3256,7 +4249,20 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArgs:
         """
         :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
         """
-        pulumi.set(__self__, "name", name)
+        CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -3278,7 +4284,20 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsMonthArgs:
         """
         :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
         """
-        pulumi.set(__self__, "name", name)
+        CloudAutonomousVmClusterMaintenanceWindowDetailsMonthArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -3300,8 +4319,19 @@ class CloudAutonomousVmClusterMaintenanceWindowMonthArgs:
         """
         :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
         """
+        CloudAutonomousVmClusterMaintenanceWindowMonthArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -3325,8 +4355,29 @@ class CloudDatabaseManagementCredentialdetailsArgs:
         :param pulumi.Input[str] password_secret_id: Specific database username's password [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] user_name: Database username
         """
-        pulumi.set(__self__, "password_secret_id", password_secret_id)
-        pulumi.set(__self__, "user_name", user_name)
+        CloudDatabaseManagementCredentialdetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password_secret_id=password_secret_id,
+            user_name=user_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password_secret_id: Optional[pulumi.Input[str]] = None,
+             user_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if password_secret_id is None and 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if password_secret_id is None:
+            raise TypeError("Missing 'password_secret_id' argument")
+        if user_name is None and 'userName' in kwargs:
+            user_name = kwargs['userName']
+        if user_name is None:
+            raise TypeError("Missing 'user_name' argument")
+
+        _setter("password_secret_id", password_secret_id)
+        _setter("user_name", user_name)
 
     @property
     @pulumi.getter(name="passwordSecretId")
@@ -3360,8 +4411,19 @@ class CloudExadataInfrastructureCustomerContactArgs:
         """
         :param pulumi.Input[str] email: (Updatable) The email address used by Oracle to send notifications regarding databases and infrastructure.
         """
+        CloudExadataInfrastructureCustomerContactArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            email=email,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             email: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if email is not None:
-            pulumi.set(__self__, "email", email)
+            _setter("email", email)
 
     @property
     @pulumi.getter
@@ -3404,26 +4466,71 @@ class CloudExadataInfrastructureMaintenanceWindowArgs:
         :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
+        CloudExadataInfrastructureMaintenanceWindowArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            custom_action_timeout_in_mins=custom_action_timeout_in_mins,
+            days_of_weeks=days_of_weeks,
+            hours_of_days=hours_of_days,
+            is_custom_action_timeout_enabled=is_custom_action_timeout_enabled,
+            is_monthly_patching_enabled=is_monthly_patching_enabled,
+            lead_time_in_weeks=lead_time_in_weeks,
+            months=months,
+            patching_mode=patching_mode,
+            preference=preference,
+            weeks_of_months=weeks_of_months,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
+             days_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs']]]] = None,
+             hours_of_days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
+             is_monthly_patching_enabled: Optional[pulumi.Input[bool]] = None,
+             lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
+             months: Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureMaintenanceWindowMonthArgs']]]] = None,
+             patching_mode: Optional[pulumi.Input[str]] = None,
+             preference: Optional[pulumi.Input[str]] = None,
+             weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if custom_action_timeout_in_mins is None and 'customActionTimeoutInMins' in kwargs:
+            custom_action_timeout_in_mins = kwargs['customActionTimeoutInMins']
+        if days_of_weeks is None and 'daysOfWeeks' in kwargs:
+            days_of_weeks = kwargs['daysOfWeeks']
+        if hours_of_days is None and 'hoursOfDays' in kwargs:
+            hours_of_days = kwargs['hoursOfDays']
+        if is_custom_action_timeout_enabled is None and 'isCustomActionTimeoutEnabled' in kwargs:
+            is_custom_action_timeout_enabled = kwargs['isCustomActionTimeoutEnabled']
+        if is_monthly_patching_enabled is None and 'isMonthlyPatchingEnabled' in kwargs:
+            is_monthly_patching_enabled = kwargs['isMonthlyPatchingEnabled']
+        if lead_time_in_weeks is None and 'leadTimeInWeeks' in kwargs:
+            lead_time_in_weeks = kwargs['leadTimeInWeeks']
+        if patching_mode is None and 'patchingMode' in kwargs:
+            patching_mode = kwargs['patchingMode']
+        if weeks_of_months is None and 'weeksOfMonths' in kwargs:
+            weeks_of_months = kwargs['weeksOfMonths']
+
         if custom_action_timeout_in_mins is not None:
-            pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+            _setter("custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
-            pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+            _setter("days_of_weeks", days_of_weeks)
         if hours_of_days is not None:
-            pulumi.set(__self__, "hours_of_days", hours_of_days)
+            _setter("hours_of_days", hours_of_days)
         if is_custom_action_timeout_enabled is not None:
-            pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+            _setter("is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
         if is_monthly_patching_enabled is not None:
-            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
+            _setter("is_monthly_patching_enabled", is_monthly_patching_enabled)
         if lead_time_in_weeks is not None:
-            pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
+            _setter("lead_time_in_weeks", lead_time_in_weeks)
         if months is not None:
-            pulumi.set(__self__, "months", months)
+            _setter("months", months)
         if patching_mode is not None:
-            pulumi.set(__self__, "patching_mode", patching_mode)
+            _setter("patching_mode", patching_mode)
         if preference is not None:
-            pulumi.set(__self__, "preference", preference)
+            _setter("preference", preference)
         if weeks_of_months is not None:
-            pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+            _setter("weeks_of_months", weeks_of_months)
 
     @property
     @pulumi.getter(name="customActionTimeoutInMins")
@@ -3556,7 +4663,20 @@ class CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs:
         """
         :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
         """
-        pulumi.set(__self__, "name", name)
+        CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -3578,7 +4698,20 @@ class CloudExadataInfrastructureMaintenanceWindowMonthArgs:
         """
         :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
         """
-        pulumi.set(__self__, "name", name)
+        CloudExadataInfrastructureMaintenanceWindowMonthArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -3604,12 +4737,33 @@ class CloudVmClusterDataCollectionOptionsArgs:
         :param pulumi.Input[bool] is_health_monitoring_enabled: (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
         :param pulumi.Input[bool] is_incident_logs_enabled: (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
         """
+        CloudVmClusterDataCollectionOptionsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_diagnostics_events_enabled=is_diagnostics_events_enabled,
+            is_health_monitoring_enabled=is_health_monitoring_enabled,
+            is_incident_logs_enabled=is_incident_logs_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_diagnostics_events_enabled: Optional[pulumi.Input[bool]] = None,
+             is_health_monitoring_enabled: Optional[pulumi.Input[bool]] = None,
+             is_incident_logs_enabled: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_diagnostics_events_enabled is None and 'isDiagnosticsEventsEnabled' in kwargs:
+            is_diagnostics_events_enabled = kwargs['isDiagnosticsEventsEnabled']
+        if is_health_monitoring_enabled is None and 'isHealthMonitoringEnabled' in kwargs:
+            is_health_monitoring_enabled = kwargs['isHealthMonitoringEnabled']
+        if is_incident_logs_enabled is None and 'isIncidentLogsEnabled' in kwargs:
+            is_incident_logs_enabled = kwargs['isIncidentLogsEnabled']
+
         if is_diagnostics_events_enabled is not None:
-            pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
+            _setter("is_diagnostics_events_enabled", is_diagnostics_events_enabled)
         if is_health_monitoring_enabled is not None:
-            pulumi.set(__self__, "is_health_monitoring_enabled", is_health_monitoring_enabled)
+            _setter("is_health_monitoring_enabled", is_health_monitoring_enabled)
         if is_incident_logs_enabled is not None:
-            pulumi.set(__self__, "is_incident_logs_enabled", is_incident_logs_enabled)
+            _setter("is_incident_logs_enabled", is_incident_logs_enabled)
 
     @property
     @pulumi.getter(name="isDiagnosticsEventsEnabled")
@@ -3661,14 +4815,35 @@ class CloudVmClusterIormConfigCachArgs:
         :param pulumi.Input[str] objective: The current value for the IORM objective. The default is `AUTO`.
         :param pulumi.Input[str] state: The current state of the cloud VM cluster.
         """
+        CloudVmClusterIormConfigCachArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            db_plans=db_plans,
+            lifecycle_details=lifecycle_details,
+            objective=objective,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             db_plans: Optional[pulumi.Input[Sequence[pulumi.Input['CloudVmClusterIormConfigCachDbPlanArgs']]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             objective: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if db_plans is None and 'dbPlans' in kwargs:
+            db_plans = kwargs['dbPlans']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+
         if db_plans is not None:
-            pulumi.set(__self__, "db_plans", db_plans)
+            _setter("db_plans", db_plans)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if objective is not None:
-            pulumi.set(__self__, "objective", objective)
+            _setter("objective", objective)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter(name="dbPlans")
@@ -3730,12 +4905,31 @@ class CloudVmClusterIormConfigCachDbPlanArgs:
         :param pulumi.Input[str] flash_cache_limit: The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
         :param pulumi.Input[int] share: The relative priority of this database.
         """
+        CloudVmClusterIormConfigCachDbPlanArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            db_name=db_name,
+            flash_cache_limit=flash_cache_limit,
+            share=share,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             db_name: Optional[pulumi.Input[str]] = None,
+             flash_cache_limit: Optional[pulumi.Input[str]] = None,
+             share: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if db_name is None and 'dbName' in kwargs:
+            db_name = kwargs['dbName']
+        if flash_cache_limit is None and 'flashCacheLimit' in kwargs:
+            flash_cache_limit = kwargs['flashCacheLimit']
+
         if db_name is not None:
-            pulumi.set(__self__, "db_name", db_name)
+            _setter("db_name", db_name)
         if flash_cache_limit is not None:
-            pulumi.set(__self__, "flash_cache_limit", flash_cache_limit)
+            _setter("flash_cache_limit", flash_cache_limit)
         if share is not None:
-            pulumi.set(__self__, "share", share)
+            _setter("share", share)
 
     @property
     @pulumi.getter(name="dbName")
@@ -3785,10 +4979,33 @@ class CloudVmClusterIormConfigDbPlanArgs:
         :param pulumi.Input[int] share: (Updatable) The relative priority of this database.
         :param pulumi.Input[str] flash_cache_limit: The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
         """
-        pulumi.set(__self__, "db_name", db_name)
-        pulumi.set(__self__, "share", share)
+        CloudVmClusterIormConfigDbPlanArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            db_name=db_name,
+            share=share,
+            flash_cache_limit=flash_cache_limit,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             db_name: Optional[pulumi.Input[str]] = None,
+             share: Optional[pulumi.Input[int]] = None,
+             flash_cache_limit: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if db_name is None and 'dbName' in kwargs:
+            db_name = kwargs['dbName']
+        if db_name is None:
+            raise TypeError("Missing 'db_name' argument")
+        if share is None:
+            raise TypeError("Missing 'share' argument")
+        if flash_cache_limit is None and 'flashCacheLimit' in kwargs:
+            flash_cache_limit = kwargs['flashCacheLimit']
+
+        _setter("db_name", db_name)
+        _setter("share", share)
         if flash_cache_limit is not None:
-            pulumi.set(__self__, "flash_cache_limit", flash_cache_limit)
+            _setter("flash_cache_limit", flash_cache_limit)
 
     @property
     @pulumi.getter(name="dbName")
@@ -3838,12 +5055,33 @@ class DataGuardAssociationDataCollectionOptionsArgs:
         :param pulumi.Input[bool] is_health_monitoring_enabled: Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
         :param pulumi.Input[bool] is_incident_logs_enabled: Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
         """
+        DataGuardAssociationDataCollectionOptionsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_diagnostics_events_enabled=is_diagnostics_events_enabled,
+            is_health_monitoring_enabled=is_health_monitoring_enabled,
+            is_incident_logs_enabled=is_incident_logs_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_diagnostics_events_enabled: Optional[pulumi.Input[bool]] = None,
+             is_health_monitoring_enabled: Optional[pulumi.Input[bool]] = None,
+             is_incident_logs_enabled: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_diagnostics_events_enabled is None and 'isDiagnosticsEventsEnabled' in kwargs:
+            is_diagnostics_events_enabled = kwargs['isDiagnosticsEventsEnabled']
+        if is_health_monitoring_enabled is None and 'isHealthMonitoringEnabled' in kwargs:
+            is_health_monitoring_enabled = kwargs['isHealthMonitoringEnabled']
+        if is_incident_logs_enabled is None and 'isIncidentLogsEnabled' in kwargs:
+            is_incident_logs_enabled = kwargs['isIncidentLogsEnabled']
+
         if is_diagnostics_events_enabled is not None:
-            pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
+            _setter("is_diagnostics_events_enabled", is_diagnostics_events_enabled)
         if is_health_monitoring_enabled is not None:
-            pulumi.set(__self__, "is_health_monitoring_enabled", is_health_monitoring_enabled)
+            _setter("is_health_monitoring_enabled", is_health_monitoring_enabled)
         if is_incident_logs_enabled is not None:
-            pulumi.set(__self__, "is_incident_logs_enabled", is_incident_logs_enabled)
+            _setter("is_incident_logs_enabled", is_incident_logs_enabled)
 
     @property
     @pulumi.getter(name="isDiagnosticsEventsEnabled")
@@ -3893,12 +5131,33 @@ class DatabaseConnectionStringArgs:
         :param pulumi.Input[str] cdb_default: Host name based CDB Connection String.
         :param pulumi.Input[str] cdb_ip_default: IP based CDB Connection String.
         """
+        DatabaseConnectionStringArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            all_connection_strings=all_connection_strings,
+            cdb_default=cdb_default,
+            cdb_ip_default=cdb_ip_default,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             all_connection_strings: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             cdb_default: Optional[pulumi.Input[str]] = None,
+             cdb_ip_default: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if all_connection_strings is None and 'allConnectionStrings' in kwargs:
+            all_connection_strings = kwargs['allConnectionStrings']
+        if cdb_default is None and 'cdbDefault' in kwargs:
+            cdb_default = kwargs['cdbDefault']
+        if cdb_ip_default is None and 'cdbIpDefault' in kwargs:
+            cdb_ip_default = kwargs['cdbIpDefault']
+
         if all_connection_strings is not None:
-            pulumi.set(__self__, "all_connection_strings", all_connection_strings)
+            _setter("all_connection_strings", all_connection_strings)
         if cdb_default is not None:
-            pulumi.set(__self__, "cdb_default", cdb_default)
+            _setter("cdb_default", cdb_default)
         if cdb_ip_default is not None:
-            pulumi.set(__self__, "cdb_ip_default", cdb_ip_default)
+            _setter("cdb_ip_default", cdb_ip_default)
 
     @property
     @pulumi.getter(name="allConnectionStrings")
@@ -3984,42 +5243,131 @@ class DatabaseDatabaseArgs:
         :param pulumi.Input[str] tde_wallet_password: The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
-        pulumi.set(__self__, "admin_password", admin_password)
-        pulumi.set(__self__, "db_name", db_name)
+        DatabaseDatabaseArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            admin_password=admin_password,
+            db_name=db_name,
+            backup_id=backup_id,
+            backup_tde_password=backup_tde_password,
+            character_set=character_set,
+            database_software_image_id=database_software_image_id,
+            db_backup_config=db_backup_config,
+            db_unique_name=db_unique_name,
+            db_workload=db_workload,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            kms_key_id=kms_key_id,
+            kms_key_version_id=kms_key_version_id,
+            ncharacter_set=ncharacter_set,
+            pdb_name=pdb_name,
+            pluggable_databases=pluggable_databases,
+            sid_prefix=sid_prefix,
+            tde_wallet_password=tde_wallet_password,
+            vault_id=vault_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             admin_password: Optional[pulumi.Input[str]] = None,
+             db_name: Optional[pulumi.Input[str]] = None,
+             backup_id: Optional[pulumi.Input[str]] = None,
+             backup_tde_password: Optional[pulumi.Input[str]] = None,
+             character_set: Optional[pulumi.Input[str]] = None,
+             database_software_image_id: Optional[pulumi.Input[str]] = None,
+             db_backup_config: Optional[pulumi.Input['DatabaseDatabaseDbBackupConfigArgs']] = None,
+             db_unique_name: Optional[pulumi.Input[str]] = None,
+             db_workload: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             kms_key_id: Optional[pulumi.Input[str]] = None,
+             kms_key_version_id: Optional[pulumi.Input[str]] = None,
+             ncharacter_set: Optional[pulumi.Input[str]] = None,
+             pdb_name: Optional[pulumi.Input[str]] = None,
+             pluggable_databases: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             sid_prefix: Optional[pulumi.Input[str]] = None,
+             tde_wallet_password: Optional[pulumi.Input[str]] = None,
+             vault_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if admin_password is None and 'adminPassword' in kwargs:
+            admin_password = kwargs['adminPassword']
+        if admin_password is None:
+            raise TypeError("Missing 'admin_password' argument")
+        if db_name is None and 'dbName' in kwargs:
+            db_name = kwargs['dbName']
+        if db_name is None:
+            raise TypeError("Missing 'db_name' argument")
+        if backup_id is None and 'backupId' in kwargs:
+            backup_id = kwargs['backupId']
+        if backup_tde_password is None and 'backupTdePassword' in kwargs:
+            backup_tde_password = kwargs['backupTdePassword']
+        if character_set is None and 'characterSet' in kwargs:
+            character_set = kwargs['characterSet']
+        if database_software_image_id is None and 'databaseSoftwareImageId' in kwargs:
+            database_software_image_id = kwargs['databaseSoftwareImageId']
+        if db_backup_config is None and 'dbBackupConfig' in kwargs:
+            db_backup_config = kwargs['dbBackupConfig']
+        if db_unique_name is None and 'dbUniqueName' in kwargs:
+            db_unique_name = kwargs['dbUniqueName']
+        if db_workload is None and 'dbWorkload' in kwargs:
+            db_workload = kwargs['dbWorkload']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if kms_key_version_id is None and 'kmsKeyVersionId' in kwargs:
+            kms_key_version_id = kwargs['kmsKeyVersionId']
+        if ncharacter_set is None and 'ncharacterSet' in kwargs:
+            ncharacter_set = kwargs['ncharacterSet']
+        if pdb_name is None and 'pdbName' in kwargs:
+            pdb_name = kwargs['pdbName']
+        if pluggable_databases is None and 'pluggableDatabases' in kwargs:
+            pluggable_databases = kwargs['pluggableDatabases']
+        if sid_prefix is None and 'sidPrefix' in kwargs:
+            sid_prefix = kwargs['sidPrefix']
+        if tde_wallet_password is None and 'tdeWalletPassword' in kwargs:
+            tde_wallet_password = kwargs['tdeWalletPassword']
+        if vault_id is None and 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+
+        _setter("admin_password", admin_password)
+        _setter("db_name", db_name)
         if backup_id is not None:
-            pulumi.set(__self__, "backup_id", backup_id)
+            _setter("backup_id", backup_id)
         if backup_tde_password is not None:
-            pulumi.set(__self__, "backup_tde_password", backup_tde_password)
+            _setter("backup_tde_password", backup_tde_password)
         if character_set is not None:
-            pulumi.set(__self__, "character_set", character_set)
+            _setter("character_set", character_set)
         if database_software_image_id is not None:
-            pulumi.set(__self__, "database_software_image_id", database_software_image_id)
+            _setter("database_software_image_id", database_software_image_id)
         if db_backup_config is not None:
-            pulumi.set(__self__, "db_backup_config", db_backup_config)
+            _setter("db_backup_config", db_backup_config)
         if db_unique_name is not None:
-            pulumi.set(__self__, "db_unique_name", db_unique_name)
+            _setter("db_unique_name", db_unique_name)
         if db_workload is not None:
-            pulumi.set(__self__, "db_workload", db_workload)
+            _setter("db_workload", db_workload)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if kms_key_id is not None:
-            pulumi.set(__self__, "kms_key_id", kms_key_id)
+            _setter("kms_key_id", kms_key_id)
         if kms_key_version_id is not None:
-            pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
+            _setter("kms_key_version_id", kms_key_version_id)
         if ncharacter_set is not None:
-            pulumi.set(__self__, "ncharacter_set", ncharacter_set)
+            _setter("ncharacter_set", ncharacter_set)
         if pdb_name is not None:
-            pulumi.set(__self__, "pdb_name", pdb_name)
+            _setter("pdb_name", pdb_name)
         if pluggable_databases is not None:
-            pulumi.set(__self__, "pluggable_databases", pluggable_databases)
+            _setter("pluggable_databases", pluggable_databases)
         if sid_prefix is not None:
-            pulumi.set(__self__, "sid_prefix", sid_prefix)
+            _setter("sid_prefix", sid_prefix)
         if tde_wallet_password is not None:
-            pulumi.set(__self__, "tde_wallet_password", tde_wallet_password)
+            _setter("tde_wallet_password", tde_wallet_password)
         if vault_id is not None:
-            pulumi.set(__self__, "vault_id", vault_id)
+            _setter("vault_id", vault_id)
 
     @property
     @pulumi.getter(name="adminPassword")
@@ -4275,22 +5623,63 @@ class DatabaseDatabaseDbBackupConfigArgs:
         :param pulumi.Input[int] recovery_window_in_days: (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         :param pulumi.Input[bool] run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
         """
+        DatabaseDatabaseDbBackupConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auto_backup_enabled=auto_backup_enabled,
+            auto_backup_window=auto_backup_window,
+            auto_full_backup_day=auto_full_backup_day,
+            auto_full_backup_window=auto_full_backup_window,
+            backup_deletion_policy=backup_deletion_policy,
+            backup_destination_details=backup_destination_details,
+            recovery_window_in_days=recovery_window_in_days,
+            run_immediate_full_backup=run_immediate_full_backup,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auto_backup_enabled: Optional[pulumi.Input[bool]] = None,
+             auto_backup_window: Optional[pulumi.Input[str]] = None,
+             auto_full_backup_day: Optional[pulumi.Input[str]] = None,
+             auto_full_backup_window: Optional[pulumi.Input[str]] = None,
+             backup_deletion_policy: Optional[pulumi.Input[str]] = None,
+             backup_destination_details: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs']]]] = None,
+             recovery_window_in_days: Optional[pulumi.Input[int]] = None,
+             run_immediate_full_backup: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if auto_backup_enabled is None and 'autoBackupEnabled' in kwargs:
+            auto_backup_enabled = kwargs['autoBackupEnabled']
+        if auto_backup_window is None and 'autoBackupWindow' in kwargs:
+            auto_backup_window = kwargs['autoBackupWindow']
+        if auto_full_backup_day is None and 'autoFullBackupDay' in kwargs:
+            auto_full_backup_day = kwargs['autoFullBackupDay']
+        if auto_full_backup_window is None and 'autoFullBackupWindow' in kwargs:
+            auto_full_backup_window = kwargs['autoFullBackupWindow']
+        if backup_deletion_policy is None and 'backupDeletionPolicy' in kwargs:
+            backup_deletion_policy = kwargs['backupDeletionPolicy']
+        if backup_destination_details is None and 'backupDestinationDetails' in kwargs:
+            backup_destination_details = kwargs['backupDestinationDetails']
+        if recovery_window_in_days is None and 'recoveryWindowInDays' in kwargs:
+            recovery_window_in_days = kwargs['recoveryWindowInDays']
+        if run_immediate_full_backup is None and 'runImmediateFullBackup' in kwargs:
+            run_immediate_full_backup = kwargs['runImmediateFullBackup']
+
         if auto_backup_enabled is not None:
-            pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
+            _setter("auto_backup_enabled", auto_backup_enabled)
         if auto_backup_window is not None:
-            pulumi.set(__self__, "auto_backup_window", auto_backup_window)
+            _setter("auto_backup_window", auto_backup_window)
         if auto_full_backup_day is not None:
-            pulumi.set(__self__, "auto_full_backup_day", auto_full_backup_day)
+            _setter("auto_full_backup_day", auto_full_backup_day)
         if auto_full_backup_window is not None:
-            pulumi.set(__self__, "auto_full_backup_window", auto_full_backup_window)
+            _setter("auto_full_backup_window", auto_full_backup_window)
         if backup_deletion_policy is not None:
-            pulumi.set(__self__, "backup_deletion_policy", backup_deletion_policy)
+            _setter("backup_deletion_policy", backup_deletion_policy)
         if backup_destination_details is not None:
-            pulumi.set(__self__, "backup_destination_details", backup_destination_details)
+            _setter("backup_destination_details", backup_destination_details)
         if recovery_window_in_days is not None:
-            pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
+            _setter("recovery_window_in_days", recovery_window_in_days)
         if run_immediate_full_backup is not None:
-            pulumi.set(__self__, "run_immediate_full_backup", run_immediate_full_backup)
+            _setter("run_immediate_full_backup", run_immediate_full_backup)
 
     @property
     @pulumi.getter(name="autoBackupEnabled")
@@ -4401,14 +5790,35 @@ class DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs:
         :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         :param pulumi.Input[str] type: Type of the database backup destination.
         """
+        DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dbrs_policy_id=dbrs_policy_id,
+            id=id,
+            type=type,
+            vpc_user=vpc_user,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dbrs_policy_id: Optional[pulumi.Input[str]] = None,
+             id: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             vpc_user: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if dbrs_policy_id is None and 'dbrsPolicyId' in kwargs:
+            dbrs_policy_id = kwargs['dbrsPolicyId']
+        if vpc_user is None and 'vpcUser' in kwargs:
+            vpc_user = kwargs['vpcUser']
+
         if dbrs_policy_id is not None:
-            pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
+            _setter("dbrs_policy_id", dbrs_policy_id)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
         if vpc_user is not None:
-            pulumi.set(__self__, "vpc_user", vpc_user)
+            _setter("vpc_user", vpc_user)
 
     @property
     @pulumi.getter(name="dbrsPolicyId")
@@ -4465,10 +5875,27 @@ class DatabaseDatabaseManagementConfigArgs:
         :param pulumi.Input[str] management_status: The status of the Database Management service.
         :param pulumi.Input[str] management_type: The Database Management type.
         """
+        DatabaseDatabaseManagementConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            management_status=management_status,
+            management_type=management_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             management_status: Optional[pulumi.Input[str]] = None,
+             management_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if management_status is None and 'managementStatus' in kwargs:
+            management_status = kwargs['managementStatus']
+        if management_type is None and 'managementType' in kwargs:
+            management_type = kwargs['managementType']
+
         if management_status is not None:
-            pulumi.set(__self__, "management_status", management_status)
+            _setter("management_status", management_status)
         if management_type is not None:
-            pulumi.set(__self__, "management_type", management_type)
+            _setter("management_type", management_type)
 
     @property
     @pulumi.getter(name="managementStatus")
@@ -4516,22 +5943,63 @@ class DatabaseDbBackupConfigArgs:
         :param pulumi.Input[int] recovery_window_in_days: (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         :param pulumi.Input[bool] run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
         """
+        DatabaseDbBackupConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auto_backup_enabled=auto_backup_enabled,
+            auto_backup_window=auto_backup_window,
+            auto_full_backup_day=auto_full_backup_day,
+            auto_full_backup_window=auto_full_backup_window,
+            backup_deletion_policy=backup_deletion_policy,
+            backup_destination_details=backup_destination_details,
+            recovery_window_in_days=recovery_window_in_days,
+            run_immediate_full_backup=run_immediate_full_backup,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auto_backup_enabled: Optional[pulumi.Input[bool]] = None,
+             auto_backup_window: Optional[pulumi.Input[str]] = None,
+             auto_full_backup_day: Optional[pulumi.Input[str]] = None,
+             auto_full_backup_window: Optional[pulumi.Input[str]] = None,
+             backup_deletion_policy: Optional[pulumi.Input[str]] = None,
+             backup_destination_details: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseDbBackupConfigBackupDestinationDetailArgs']]]] = None,
+             recovery_window_in_days: Optional[pulumi.Input[int]] = None,
+             run_immediate_full_backup: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if auto_backup_enabled is None and 'autoBackupEnabled' in kwargs:
+            auto_backup_enabled = kwargs['autoBackupEnabled']
+        if auto_backup_window is None and 'autoBackupWindow' in kwargs:
+            auto_backup_window = kwargs['autoBackupWindow']
+        if auto_full_backup_day is None and 'autoFullBackupDay' in kwargs:
+            auto_full_backup_day = kwargs['autoFullBackupDay']
+        if auto_full_backup_window is None and 'autoFullBackupWindow' in kwargs:
+            auto_full_backup_window = kwargs['autoFullBackupWindow']
+        if backup_deletion_policy is None and 'backupDeletionPolicy' in kwargs:
+            backup_deletion_policy = kwargs['backupDeletionPolicy']
+        if backup_destination_details is None and 'backupDestinationDetails' in kwargs:
+            backup_destination_details = kwargs['backupDestinationDetails']
+        if recovery_window_in_days is None and 'recoveryWindowInDays' in kwargs:
+            recovery_window_in_days = kwargs['recoveryWindowInDays']
+        if run_immediate_full_backup is None and 'runImmediateFullBackup' in kwargs:
+            run_immediate_full_backup = kwargs['runImmediateFullBackup']
+
         if auto_backup_enabled is not None:
-            pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
+            _setter("auto_backup_enabled", auto_backup_enabled)
         if auto_backup_window is not None:
-            pulumi.set(__self__, "auto_backup_window", auto_backup_window)
+            _setter("auto_backup_window", auto_backup_window)
         if auto_full_backup_day is not None:
-            pulumi.set(__self__, "auto_full_backup_day", auto_full_backup_day)
+            _setter("auto_full_backup_day", auto_full_backup_day)
         if auto_full_backup_window is not None:
-            pulumi.set(__self__, "auto_full_backup_window", auto_full_backup_window)
+            _setter("auto_full_backup_window", auto_full_backup_window)
         if backup_deletion_policy is not None:
-            pulumi.set(__self__, "backup_deletion_policy", backup_deletion_policy)
+            _setter("backup_deletion_policy", backup_deletion_policy)
         if backup_destination_details is not None:
-            pulumi.set(__self__, "backup_destination_details", backup_destination_details)
+            _setter("backup_destination_details", backup_destination_details)
         if recovery_window_in_days is not None:
-            pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
+            _setter("recovery_window_in_days", recovery_window_in_days)
         if run_immediate_full_backup is not None:
-            pulumi.set(__self__, "run_immediate_full_backup", run_immediate_full_backup)
+            _setter("run_immediate_full_backup", run_immediate_full_backup)
 
     @property
     @pulumi.getter(name="autoBackupEnabled")
@@ -4642,14 +6110,35 @@ class DatabaseDbBackupConfigBackupDestinationDetailArgs:
         :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         :param pulumi.Input[str] type: Type of the database backup destination.
         """
+        DatabaseDbBackupConfigBackupDestinationDetailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dbrs_policy_id=dbrs_policy_id,
+            id=id,
+            type=type,
+            vpc_user=vpc_user,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dbrs_policy_id: Optional[pulumi.Input[str]] = None,
+             id: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             vpc_user: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if dbrs_policy_id is None and 'dbrsPolicyId' in kwargs:
+            dbrs_policy_id = kwargs['dbrsPolicyId']
+        if vpc_user is None and 'vpcUser' in kwargs:
+            vpc_user = kwargs['vpcUser']
+
         if dbrs_policy_id is not None:
-            pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
+            _setter("dbrs_policy_id", dbrs_policy_id)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
         if vpc_user is not None:
-            pulumi.set(__self__, "vpc_user", vpc_user)
+            _setter("vpc_user", vpc_user)
 
     @property
     @pulumi.getter(name="dbrsPolicyId")
@@ -4708,12 +6197,33 @@ class DatabaseUpgradeConnectionStringArgs:
         :param pulumi.Input[str] cdb_default: Host name based CDB Connection String.
         :param pulumi.Input[str] cdb_ip_default: IP based CDB Connection String.
         """
+        DatabaseUpgradeConnectionStringArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            all_connection_strings=all_connection_strings,
+            cdb_default=cdb_default,
+            cdb_ip_default=cdb_ip_default,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             all_connection_strings: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             cdb_default: Optional[pulumi.Input[str]] = None,
+             cdb_ip_default: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if all_connection_strings is None and 'allConnectionStrings' in kwargs:
+            all_connection_strings = kwargs['allConnectionStrings']
+        if cdb_default is None and 'cdbDefault' in kwargs:
+            cdb_default = kwargs['cdbDefault']
+        if cdb_ip_default is None and 'cdbIpDefault' in kwargs:
+            cdb_ip_default = kwargs['cdbIpDefault']
+
         if all_connection_strings is not None:
-            pulumi.set(__self__, "all_connection_strings", all_connection_strings)
+            _setter("all_connection_strings", all_connection_strings)
         if cdb_default is not None:
-            pulumi.set(__self__, "cdb_default", cdb_default)
+            _setter("cdb_default", cdb_default)
         if cdb_ip_default is not None:
-            pulumi.set(__self__, "cdb_ip_default", cdb_ip_default)
+            _setter("cdb_ip_default", cdb_ip_default)
 
     @property
     @pulumi.getter(name="allConnectionStrings")
@@ -4773,14 +6283,35 @@ class DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            database_software_image_id=database_software_image_id,
+            db_version=db_version,
+            options=options,
+            source=source,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             database_software_image_id: Optional[pulumi.Input[str]] = None,
+             db_version: Optional[pulumi.Input[str]] = None,
+             options: Optional[pulumi.Input[str]] = None,
+             source: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if database_software_image_id is None and 'databaseSoftwareImageId' in kwargs:
+            database_software_image_id = kwargs['databaseSoftwareImageId']
+        if db_version is None and 'dbVersion' in kwargs:
+            db_version = kwargs['dbVersion']
+
         if database_software_image_id is not None:
-            pulumi.set(__self__, "database_software_image_id", database_software_image_id)
+            _setter("database_software_image_id", database_software_image_id)
         if db_version is not None:
-            pulumi.set(__self__, "db_version", db_version)
+            _setter("db_version", db_version)
         if options is not None:
-            pulumi.set(__self__, "options", options)
+            _setter("options", options)
         if source is not None:
-            pulumi.set(__self__, "source", source)
+            _setter("source", source)
 
     @property
     @pulumi.getter(name="databaseSoftwareImageId")
@@ -4860,22 +6391,63 @@ class DatabaseUpgradeDbBackupConfigArgs:
         :param pulumi.Input[int] recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         :param pulumi.Input[bool] run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
         """
+        DatabaseUpgradeDbBackupConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auto_backup_enabled=auto_backup_enabled,
+            auto_backup_window=auto_backup_window,
+            auto_full_backup_day=auto_full_backup_day,
+            auto_full_backup_window=auto_full_backup_window,
+            backup_deletion_policy=backup_deletion_policy,
+            backup_destination_details=backup_destination_details,
+            recovery_window_in_days=recovery_window_in_days,
+            run_immediate_full_backup=run_immediate_full_backup,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auto_backup_enabled: Optional[pulumi.Input[bool]] = None,
+             auto_backup_window: Optional[pulumi.Input[str]] = None,
+             auto_full_backup_day: Optional[pulumi.Input[str]] = None,
+             auto_full_backup_window: Optional[pulumi.Input[str]] = None,
+             backup_deletion_policy: Optional[pulumi.Input[str]] = None,
+             backup_destination_details: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs']]]] = None,
+             recovery_window_in_days: Optional[pulumi.Input[int]] = None,
+             run_immediate_full_backup: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if auto_backup_enabled is None and 'autoBackupEnabled' in kwargs:
+            auto_backup_enabled = kwargs['autoBackupEnabled']
+        if auto_backup_window is None and 'autoBackupWindow' in kwargs:
+            auto_backup_window = kwargs['autoBackupWindow']
+        if auto_full_backup_day is None and 'autoFullBackupDay' in kwargs:
+            auto_full_backup_day = kwargs['autoFullBackupDay']
+        if auto_full_backup_window is None and 'autoFullBackupWindow' in kwargs:
+            auto_full_backup_window = kwargs['autoFullBackupWindow']
+        if backup_deletion_policy is None and 'backupDeletionPolicy' in kwargs:
+            backup_deletion_policy = kwargs['backupDeletionPolicy']
+        if backup_destination_details is None and 'backupDestinationDetails' in kwargs:
+            backup_destination_details = kwargs['backupDestinationDetails']
+        if recovery_window_in_days is None and 'recoveryWindowInDays' in kwargs:
+            recovery_window_in_days = kwargs['recoveryWindowInDays']
+        if run_immediate_full_backup is None and 'runImmediateFullBackup' in kwargs:
+            run_immediate_full_backup = kwargs['runImmediateFullBackup']
+
         if auto_backup_enabled is not None:
-            pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
+            _setter("auto_backup_enabled", auto_backup_enabled)
         if auto_backup_window is not None:
-            pulumi.set(__self__, "auto_backup_window", auto_backup_window)
+            _setter("auto_backup_window", auto_backup_window)
         if auto_full_backup_day is not None:
-            pulumi.set(__self__, "auto_full_backup_day", auto_full_backup_day)
+            _setter("auto_full_backup_day", auto_full_backup_day)
         if auto_full_backup_window is not None:
-            pulumi.set(__self__, "auto_full_backup_window", auto_full_backup_window)
+            _setter("auto_full_backup_window", auto_full_backup_window)
         if backup_deletion_policy is not None:
-            pulumi.set(__self__, "backup_deletion_policy", backup_deletion_policy)
+            _setter("backup_deletion_policy", backup_deletion_policy)
         if backup_destination_details is not None:
-            pulumi.set(__self__, "backup_destination_details", backup_destination_details)
+            _setter("backup_destination_details", backup_destination_details)
         if recovery_window_in_days is not None:
-            pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
+            _setter("recovery_window_in_days", recovery_window_in_days)
         if run_immediate_full_backup is not None:
-            pulumi.set(__self__, "run_immediate_full_backup", run_immediate_full_backup)
+            _setter("run_immediate_full_backup", run_immediate_full_backup)
 
     @property
     @pulumi.getter(name="autoBackupEnabled")
@@ -4991,18 +6563,47 @@ class DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs:
         :param pulumi.Input[str] vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param pulumi.Input[str] vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
+        DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dbrs_policy_id=dbrs_policy_id,
+            id=id,
+            internet_proxy=internet_proxy,
+            type=type,
+            vpc_password=vpc_password,
+            vpc_user=vpc_user,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dbrs_policy_id: Optional[pulumi.Input[str]] = None,
+             id: Optional[pulumi.Input[str]] = None,
+             internet_proxy: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             vpc_password: Optional[pulumi.Input[str]] = None,
+             vpc_user: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if dbrs_policy_id is None and 'dbrsPolicyId' in kwargs:
+            dbrs_policy_id = kwargs['dbrsPolicyId']
+        if internet_proxy is None and 'internetProxy' in kwargs:
+            internet_proxy = kwargs['internetProxy']
+        if vpc_password is None and 'vpcPassword' in kwargs:
+            vpc_password = kwargs['vpcPassword']
+        if vpc_user is None and 'vpcUser' in kwargs:
+            vpc_user = kwargs['vpcUser']
+
         if dbrs_policy_id is not None:
-            pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
+            _setter("dbrs_policy_id", dbrs_policy_id)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if internet_proxy is not None:
-            pulumi.set(__self__, "internet_proxy", internet_proxy)
+            _setter("internet_proxy", internet_proxy)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
         if vpc_password is not None:
-            pulumi.set(__self__, "vpc_password", vpc_password)
+            _setter("vpc_password", vpc_password)
         if vpc_user is not None:
-            pulumi.set(__self__, "vpc_user", vpc_user)
+            _setter("vpc_user", vpc_user)
 
     @property
     @pulumi.getter(name="dbrsPolicyId")
@@ -5138,59 +6739,174 @@ class DbHomeDatabaseArgs:
         :param pulumi.Input[str] time_stamp_for_point_in_time_recovery: The point in time of the original database from which the new database is created. If not specifed, the latest backup is used to create the database.
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
-        pulumi.set(__self__, "admin_password", admin_password)
+        DbHomeDatabaseArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            admin_password=admin_password,
+            backup_id=backup_id,
+            backup_tde_password=backup_tde_password,
+            character_set=character_set,
+            connection_strings=connection_strings,
+            database_id=database_id,
+            database_software_image_id=database_software_image_id,
+            db_backup_config=db_backup_config,
+            db_name=db_name,
+            db_unique_name=db_unique_name,
+            db_workload=db_workload,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            id=id,
+            kms_key_id=kms_key_id,
+            kms_key_version_id=kms_key_version_id,
+            lifecycle_details=lifecycle_details,
+            ncharacter_set=ncharacter_set,
+            one_off_patches=one_off_patches,
+            pdb_name=pdb_name,
+            pluggable_databases=pluggable_databases,
+            sid_prefix=sid_prefix,
+            state=state,
+            tde_wallet_password=tde_wallet_password,
+            time_created=time_created,
+            time_stamp_for_point_in_time_recovery=time_stamp_for_point_in_time_recovery,
+            vault_id=vault_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             admin_password: Optional[pulumi.Input[str]] = None,
+             backup_id: Optional[pulumi.Input[str]] = None,
+             backup_tde_password: Optional[pulumi.Input[str]] = None,
+             character_set: Optional[pulumi.Input[str]] = None,
+             connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['DbHomeDatabaseConnectionStringArgs']]]] = None,
+             database_id: Optional[pulumi.Input[str]] = None,
+             database_software_image_id: Optional[pulumi.Input[str]] = None,
+             db_backup_config: Optional[pulumi.Input['DbHomeDatabaseDbBackupConfigArgs']] = None,
+             db_name: Optional[pulumi.Input[str]] = None,
+             db_unique_name: Optional[pulumi.Input[str]] = None,
+             db_workload: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             id: Optional[pulumi.Input[str]] = None,
+             kms_key_id: Optional[pulumi.Input[str]] = None,
+             kms_key_version_id: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             ncharacter_set: Optional[pulumi.Input[str]] = None,
+             one_off_patches: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             pdb_name: Optional[pulumi.Input[str]] = None,
+             pluggable_databases: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             sid_prefix: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             tde_wallet_password: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_stamp_for_point_in_time_recovery: Optional[pulumi.Input[str]] = None,
+             vault_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if admin_password is None and 'adminPassword' in kwargs:
+            admin_password = kwargs['adminPassword']
+        if admin_password is None:
+            raise TypeError("Missing 'admin_password' argument")
+        if backup_id is None and 'backupId' in kwargs:
+            backup_id = kwargs['backupId']
+        if backup_tde_password is None and 'backupTdePassword' in kwargs:
+            backup_tde_password = kwargs['backupTdePassword']
+        if character_set is None and 'characterSet' in kwargs:
+            character_set = kwargs['characterSet']
+        if connection_strings is None and 'connectionStrings' in kwargs:
+            connection_strings = kwargs['connectionStrings']
+        if database_id is None and 'databaseId' in kwargs:
+            database_id = kwargs['databaseId']
+        if database_software_image_id is None and 'databaseSoftwareImageId' in kwargs:
+            database_software_image_id = kwargs['databaseSoftwareImageId']
+        if db_backup_config is None and 'dbBackupConfig' in kwargs:
+            db_backup_config = kwargs['dbBackupConfig']
+        if db_name is None and 'dbName' in kwargs:
+            db_name = kwargs['dbName']
+        if db_unique_name is None and 'dbUniqueName' in kwargs:
+            db_unique_name = kwargs['dbUniqueName']
+        if db_workload is None and 'dbWorkload' in kwargs:
+            db_workload = kwargs['dbWorkload']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if kms_key_version_id is None and 'kmsKeyVersionId' in kwargs:
+            kms_key_version_id = kwargs['kmsKeyVersionId']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if ncharacter_set is None and 'ncharacterSet' in kwargs:
+            ncharacter_set = kwargs['ncharacterSet']
+        if one_off_patches is None and 'oneOffPatches' in kwargs:
+            one_off_patches = kwargs['oneOffPatches']
+        if pdb_name is None and 'pdbName' in kwargs:
+            pdb_name = kwargs['pdbName']
+        if pluggable_databases is None and 'pluggableDatabases' in kwargs:
+            pluggable_databases = kwargs['pluggableDatabases']
+        if sid_prefix is None and 'sidPrefix' in kwargs:
+            sid_prefix = kwargs['sidPrefix']
+        if tde_wallet_password is None and 'tdeWalletPassword' in kwargs:
+            tde_wallet_password = kwargs['tdeWalletPassword']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_stamp_for_point_in_time_recovery is None and 'timeStampForPointInTimeRecovery' in kwargs:
+            time_stamp_for_point_in_time_recovery = kwargs['timeStampForPointInTimeRecovery']
+        if vault_id is None and 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+
+        _setter("admin_password", admin_password)
         if backup_id is not None:
-            pulumi.set(__self__, "backup_id", backup_id)
+            _setter("backup_id", backup_id)
         if backup_tde_password is not None:
-            pulumi.set(__self__, "backup_tde_password", backup_tde_password)
+            _setter("backup_tde_password", backup_tde_password)
         if character_set is not None:
-            pulumi.set(__self__, "character_set", character_set)
+            _setter("character_set", character_set)
         if connection_strings is not None:
-            pulumi.set(__self__, "connection_strings", connection_strings)
+            _setter("connection_strings", connection_strings)
         if database_id is not None:
-            pulumi.set(__self__, "database_id", database_id)
+            _setter("database_id", database_id)
         if database_software_image_id is not None:
-            pulumi.set(__self__, "database_software_image_id", database_software_image_id)
+            _setter("database_software_image_id", database_software_image_id)
         if db_backup_config is not None:
-            pulumi.set(__self__, "db_backup_config", db_backup_config)
+            _setter("db_backup_config", db_backup_config)
         if db_name is not None:
-            pulumi.set(__self__, "db_name", db_name)
+            _setter("db_name", db_name)
         if db_unique_name is not None:
-            pulumi.set(__self__, "db_unique_name", db_unique_name)
+            _setter("db_unique_name", db_unique_name)
         if db_workload is not None:
-            pulumi.set(__self__, "db_workload", db_workload)
+            _setter("db_workload", db_workload)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if kms_key_id is not None:
-            pulumi.set(__self__, "kms_key_id", kms_key_id)
+            _setter("kms_key_id", kms_key_id)
         if kms_key_version_id is not None:
-            pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
+            _setter("kms_key_version_id", kms_key_version_id)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if ncharacter_set is not None:
-            pulumi.set(__self__, "ncharacter_set", ncharacter_set)
+            _setter("ncharacter_set", ncharacter_set)
         if one_off_patches is not None:
-            pulumi.set(__self__, "one_off_patches", one_off_patches)
+            _setter("one_off_patches", one_off_patches)
         if pdb_name is not None:
-            pulumi.set(__self__, "pdb_name", pdb_name)
+            _setter("pdb_name", pdb_name)
         if pluggable_databases is not None:
-            pulumi.set(__self__, "pluggable_databases", pluggable_databases)
+            _setter("pluggable_databases", pluggable_databases)
         if sid_prefix is not None:
-            pulumi.set(__self__, "sid_prefix", sid_prefix)
+            _setter("sid_prefix", sid_prefix)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if tde_wallet_password is not None:
-            pulumi.set(__self__, "tde_wallet_password", tde_wallet_password)
+            _setter("tde_wallet_password", tde_wallet_password)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_stamp_for_point_in_time_recovery is not None:
-            pulumi.set(__self__, "time_stamp_for_point_in_time_recovery", time_stamp_for_point_in_time_recovery)
+            _setter("time_stamp_for_point_in_time_recovery", time_stamp_for_point_in_time_recovery)
         if vault_id is not None:
-            pulumi.set(__self__, "vault_id", vault_id)
+            _setter("vault_id", vault_id)
 
     @property
     @pulumi.getter(name="adminPassword")
@@ -5521,12 +7237,33 @@ class DbHomeDatabaseConnectionStringArgs:
                  all_connection_strings: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  cdb_default: Optional[pulumi.Input[str]] = None,
                  cdb_ip_default: Optional[pulumi.Input[str]] = None):
+        DbHomeDatabaseConnectionStringArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            all_connection_strings=all_connection_strings,
+            cdb_default=cdb_default,
+            cdb_ip_default=cdb_ip_default,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             all_connection_strings: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             cdb_default: Optional[pulumi.Input[str]] = None,
+             cdb_ip_default: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if all_connection_strings is None and 'allConnectionStrings' in kwargs:
+            all_connection_strings = kwargs['allConnectionStrings']
+        if cdb_default is None and 'cdbDefault' in kwargs:
+            cdb_default = kwargs['cdbDefault']
+        if cdb_ip_default is None and 'cdbIpDefault' in kwargs:
+            cdb_ip_default = kwargs['cdbIpDefault']
+
         if all_connection_strings is not None:
-            pulumi.set(__self__, "all_connection_strings", all_connection_strings)
+            _setter("all_connection_strings", all_connection_strings)
         if cdb_default is not None:
-            pulumi.set(__self__, "cdb_default", cdb_default)
+            _setter("cdb_default", cdb_default)
         if cdb_ip_default is not None:
-            pulumi.set(__self__, "cdb_ip_default", cdb_ip_default)
+            _setter("cdb_ip_default", cdb_ip_default)
 
     @property
     @pulumi.getter(name="allConnectionStrings")
@@ -5577,22 +7314,63 @@ class DbHomeDatabaseDbBackupConfigArgs:
         :param pulumi.Input[int] recovery_window_in_days: (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         :param pulumi.Input[bool] run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
         """
+        DbHomeDatabaseDbBackupConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auto_backup_enabled=auto_backup_enabled,
+            auto_backup_window=auto_backup_window,
+            auto_full_backup_day=auto_full_backup_day,
+            auto_full_backup_window=auto_full_backup_window,
+            backup_deletion_policy=backup_deletion_policy,
+            backup_destination_details=backup_destination_details,
+            recovery_window_in_days=recovery_window_in_days,
+            run_immediate_full_backup=run_immediate_full_backup,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auto_backup_enabled: Optional[pulumi.Input[bool]] = None,
+             auto_backup_window: Optional[pulumi.Input[str]] = None,
+             auto_full_backup_day: Optional[pulumi.Input[str]] = None,
+             auto_full_backup_window: Optional[pulumi.Input[str]] = None,
+             backup_deletion_policy: Optional[pulumi.Input[str]] = None,
+             backup_destination_details: Optional[pulumi.Input[Sequence[pulumi.Input['DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs']]]] = None,
+             recovery_window_in_days: Optional[pulumi.Input[int]] = None,
+             run_immediate_full_backup: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if auto_backup_enabled is None and 'autoBackupEnabled' in kwargs:
+            auto_backup_enabled = kwargs['autoBackupEnabled']
+        if auto_backup_window is None and 'autoBackupWindow' in kwargs:
+            auto_backup_window = kwargs['autoBackupWindow']
+        if auto_full_backup_day is None and 'autoFullBackupDay' in kwargs:
+            auto_full_backup_day = kwargs['autoFullBackupDay']
+        if auto_full_backup_window is None and 'autoFullBackupWindow' in kwargs:
+            auto_full_backup_window = kwargs['autoFullBackupWindow']
+        if backup_deletion_policy is None and 'backupDeletionPolicy' in kwargs:
+            backup_deletion_policy = kwargs['backupDeletionPolicy']
+        if backup_destination_details is None and 'backupDestinationDetails' in kwargs:
+            backup_destination_details = kwargs['backupDestinationDetails']
+        if recovery_window_in_days is None and 'recoveryWindowInDays' in kwargs:
+            recovery_window_in_days = kwargs['recoveryWindowInDays']
+        if run_immediate_full_backup is None and 'runImmediateFullBackup' in kwargs:
+            run_immediate_full_backup = kwargs['runImmediateFullBackup']
+
         if auto_backup_enabled is not None:
-            pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
+            _setter("auto_backup_enabled", auto_backup_enabled)
         if auto_backup_window is not None:
-            pulumi.set(__self__, "auto_backup_window", auto_backup_window)
+            _setter("auto_backup_window", auto_backup_window)
         if auto_full_backup_day is not None:
-            pulumi.set(__self__, "auto_full_backup_day", auto_full_backup_day)
+            _setter("auto_full_backup_day", auto_full_backup_day)
         if auto_full_backup_window is not None:
-            pulumi.set(__self__, "auto_full_backup_window", auto_full_backup_window)
+            _setter("auto_full_backup_window", auto_full_backup_window)
         if backup_deletion_policy is not None:
-            pulumi.set(__self__, "backup_deletion_policy", backup_deletion_policy)
+            _setter("backup_deletion_policy", backup_deletion_policy)
         if backup_destination_details is not None:
-            pulumi.set(__self__, "backup_destination_details", backup_destination_details)
+            _setter("backup_destination_details", backup_destination_details)
         if recovery_window_in_days is not None:
-            pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
+            _setter("recovery_window_in_days", recovery_window_in_days)
         if run_immediate_full_backup is not None:
-            pulumi.set(__self__, "run_immediate_full_backup", run_immediate_full_backup)
+            _setter("run_immediate_full_backup", run_immediate_full_backup)
 
     @property
     @pulumi.getter(name="autoBackupEnabled")
@@ -5702,12 +7480,29 @@ class DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
         :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         :param pulumi.Input[str] type: Type of the database backup destination. Supported values: `NFS`.
         """
+        DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dbrs_policy_id=dbrs_policy_id,
+            id=id,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dbrs_policy_id: Optional[pulumi.Input[str]] = None,
+             id: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if dbrs_policy_id is None and 'dbrsPolicyId' in kwargs:
+            dbrs_policy_id = kwargs['dbrsPolicyId']
+
         if dbrs_policy_id is not None:
-            pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
+            _setter("dbrs_policy_id", dbrs_policy_id)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="dbrsPolicyId")
@@ -5757,12 +7552,33 @@ class DbSystemDataCollectionOptionsArgs:
         :param pulumi.Input[bool] is_health_monitoring_enabled: (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
         :param pulumi.Input[bool] is_incident_logs_enabled: (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
         """
+        DbSystemDataCollectionOptionsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_diagnostics_events_enabled=is_diagnostics_events_enabled,
+            is_health_monitoring_enabled=is_health_monitoring_enabled,
+            is_incident_logs_enabled=is_incident_logs_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_diagnostics_events_enabled: Optional[pulumi.Input[bool]] = None,
+             is_health_monitoring_enabled: Optional[pulumi.Input[bool]] = None,
+             is_incident_logs_enabled: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_diagnostics_events_enabled is None and 'isDiagnosticsEventsEnabled' in kwargs:
+            is_diagnostics_events_enabled = kwargs['isDiagnosticsEventsEnabled']
+        if is_health_monitoring_enabled is None and 'isHealthMonitoringEnabled' in kwargs:
+            is_health_monitoring_enabled = kwargs['isHealthMonitoringEnabled']
+        if is_incident_logs_enabled is None and 'isIncidentLogsEnabled' in kwargs:
+            is_incident_logs_enabled = kwargs['isIncidentLogsEnabled']
+
         if is_diagnostics_events_enabled is not None:
-            pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
+            _setter("is_diagnostics_events_enabled", is_diagnostics_events_enabled)
         if is_health_monitoring_enabled is not None:
-            pulumi.set(__self__, "is_health_monitoring_enabled", is_health_monitoring_enabled)
+            _setter("is_health_monitoring_enabled", is_health_monitoring_enabled)
         if is_incident_logs_enabled is not None:
-            pulumi.set(__self__, "is_incident_logs_enabled", is_incident_logs_enabled)
+            _setter("is_incident_logs_enabled", is_incident_logs_enabled)
 
     @property
     @pulumi.getter(name="isDiagnosticsEventsEnabled")
@@ -5834,31 +7650,88 @@ class DbSystemDbHomeArgs:
         :param pulumi.Input[str] state: The current state of the DB system.
         :param pulumi.Input[str] time_created: The date and time the DB system was created.
         """
-        pulumi.set(__self__, "database", database)
+        DbSystemDbHomeArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            database=database,
+            create_async=create_async,
+            database_software_image_id=database_software_image_id,
+            db_home_location=db_home_location,
+            db_version=db_version,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            last_patch_history_entry_id=last_patch_history_entry_id,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             database: Optional[pulumi.Input['DbSystemDbHomeDatabaseArgs']] = None,
+             create_async: Optional[pulumi.Input[bool]] = None,
+             database_software_image_id: Optional[pulumi.Input[str]] = None,
+             db_home_location: Optional[pulumi.Input[str]] = None,
+             db_version: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             id: Optional[pulumi.Input[str]] = None,
+             last_patch_history_entry_id: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if database is None:
+            raise TypeError("Missing 'database' argument")
+        if create_async is None and 'createAsync' in kwargs:
+            create_async = kwargs['createAsync']
+        if database_software_image_id is None and 'databaseSoftwareImageId' in kwargs:
+            database_software_image_id = kwargs['databaseSoftwareImageId']
+        if db_home_location is None and 'dbHomeLocation' in kwargs:
+            db_home_location = kwargs['dbHomeLocation']
+        if db_version is None and 'dbVersion' in kwargs:
+            db_version = kwargs['dbVersion']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if last_patch_history_entry_id is None and 'lastPatchHistoryEntryId' in kwargs:
+            last_patch_history_entry_id = kwargs['lastPatchHistoryEntryId']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+
+        _setter("database", database)
         if create_async is not None:
-            pulumi.set(__self__, "create_async", create_async)
+            _setter("create_async", create_async)
         if database_software_image_id is not None:
-            pulumi.set(__self__, "database_software_image_id", database_software_image_id)
+            _setter("database_software_image_id", database_software_image_id)
         if db_home_location is not None:
-            pulumi.set(__self__, "db_home_location", db_home_location)
+            _setter("db_home_location", db_home_location)
         if db_version is not None:
-            pulumi.set(__self__, "db_version", db_version)
+            _setter("db_version", db_version)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if last_patch_history_entry_id is not None:
-            pulumi.set(__self__, "last_patch_history_entry_id", last_patch_history_entry_id)
+            _setter("last_patch_history_entry_id", last_patch_history_entry_id)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
 
     @property
     @pulumi.getter
@@ -6074,57 +7947,168 @@ class DbSystemDbHomeDatabaseArgs:
         :param pulumi.Input[str] time_stamp_for_point_in_time_recovery: The point in time of the original database from which the new database is created. If not specifed, the latest backup is used to create the database.
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
-        pulumi.set(__self__, "admin_password", admin_password)
+        DbSystemDbHomeDatabaseArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            admin_password=admin_password,
+            backup_id=backup_id,
+            backup_tde_password=backup_tde_password,
+            character_set=character_set,
+            connection_strings=connection_strings,
+            database_id=database_id,
+            database_software_image_id=database_software_image_id,
+            db_backup_config=db_backup_config,
+            db_domain=db_domain,
+            db_name=db_name,
+            db_unique_name=db_unique_name,
+            db_workload=db_workload,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            id=id,
+            kms_key_id=kms_key_id,
+            kms_key_version_id=kms_key_version_id,
+            lifecycle_details=lifecycle_details,
+            ncharacter_set=ncharacter_set,
+            pdb_name=pdb_name,
+            pluggable_databases=pluggable_databases,
+            state=state,
+            tde_wallet_password=tde_wallet_password,
+            time_created=time_created,
+            time_stamp_for_point_in_time_recovery=time_stamp_for_point_in_time_recovery,
+            vault_id=vault_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             admin_password: Optional[pulumi.Input[str]] = None,
+             backup_id: Optional[pulumi.Input[str]] = None,
+             backup_tde_password: Optional[pulumi.Input[str]] = None,
+             character_set: Optional[pulumi.Input[str]] = None,
+             connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemDbHomeDatabaseConnectionStringArgs']]]] = None,
+             database_id: Optional[pulumi.Input[str]] = None,
+             database_software_image_id: Optional[pulumi.Input[str]] = None,
+             db_backup_config: Optional[pulumi.Input['DbSystemDbHomeDatabaseDbBackupConfigArgs']] = None,
+             db_domain: Optional[pulumi.Input[str]] = None,
+             db_name: Optional[pulumi.Input[str]] = None,
+             db_unique_name: Optional[pulumi.Input[str]] = None,
+             db_workload: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             id: Optional[pulumi.Input[str]] = None,
+             kms_key_id: Optional[pulumi.Input[str]] = None,
+             kms_key_version_id: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             ncharacter_set: Optional[pulumi.Input[str]] = None,
+             pdb_name: Optional[pulumi.Input[str]] = None,
+             pluggable_databases: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             tde_wallet_password: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_stamp_for_point_in_time_recovery: Optional[pulumi.Input[str]] = None,
+             vault_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if admin_password is None and 'adminPassword' in kwargs:
+            admin_password = kwargs['adminPassword']
+        if admin_password is None:
+            raise TypeError("Missing 'admin_password' argument")
+        if backup_id is None and 'backupId' in kwargs:
+            backup_id = kwargs['backupId']
+        if backup_tde_password is None and 'backupTdePassword' in kwargs:
+            backup_tde_password = kwargs['backupTdePassword']
+        if character_set is None and 'characterSet' in kwargs:
+            character_set = kwargs['characterSet']
+        if connection_strings is None and 'connectionStrings' in kwargs:
+            connection_strings = kwargs['connectionStrings']
+        if database_id is None and 'databaseId' in kwargs:
+            database_id = kwargs['databaseId']
+        if database_software_image_id is None and 'databaseSoftwareImageId' in kwargs:
+            database_software_image_id = kwargs['databaseSoftwareImageId']
+        if db_backup_config is None and 'dbBackupConfig' in kwargs:
+            db_backup_config = kwargs['dbBackupConfig']
+        if db_domain is None and 'dbDomain' in kwargs:
+            db_domain = kwargs['dbDomain']
+        if db_name is None and 'dbName' in kwargs:
+            db_name = kwargs['dbName']
+        if db_unique_name is None and 'dbUniqueName' in kwargs:
+            db_unique_name = kwargs['dbUniqueName']
+        if db_workload is None and 'dbWorkload' in kwargs:
+            db_workload = kwargs['dbWorkload']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if kms_key_version_id is None and 'kmsKeyVersionId' in kwargs:
+            kms_key_version_id = kwargs['kmsKeyVersionId']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if ncharacter_set is None and 'ncharacterSet' in kwargs:
+            ncharacter_set = kwargs['ncharacterSet']
+        if pdb_name is None and 'pdbName' in kwargs:
+            pdb_name = kwargs['pdbName']
+        if pluggable_databases is None and 'pluggableDatabases' in kwargs:
+            pluggable_databases = kwargs['pluggableDatabases']
+        if tde_wallet_password is None and 'tdeWalletPassword' in kwargs:
+            tde_wallet_password = kwargs['tdeWalletPassword']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_stamp_for_point_in_time_recovery is None and 'timeStampForPointInTimeRecovery' in kwargs:
+            time_stamp_for_point_in_time_recovery = kwargs['timeStampForPointInTimeRecovery']
+        if vault_id is None and 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+
+        _setter("admin_password", admin_password)
         if backup_id is not None:
-            pulumi.set(__self__, "backup_id", backup_id)
+            _setter("backup_id", backup_id)
         if backup_tde_password is not None:
-            pulumi.set(__self__, "backup_tde_password", backup_tde_password)
+            _setter("backup_tde_password", backup_tde_password)
         if character_set is not None:
-            pulumi.set(__self__, "character_set", character_set)
+            _setter("character_set", character_set)
         if connection_strings is not None:
-            pulumi.set(__self__, "connection_strings", connection_strings)
+            _setter("connection_strings", connection_strings)
         if database_id is not None:
-            pulumi.set(__self__, "database_id", database_id)
+            _setter("database_id", database_id)
         if database_software_image_id is not None:
-            pulumi.set(__self__, "database_software_image_id", database_software_image_id)
+            _setter("database_software_image_id", database_software_image_id)
         if db_backup_config is not None:
-            pulumi.set(__self__, "db_backup_config", db_backup_config)
+            _setter("db_backup_config", db_backup_config)
         if db_domain is not None:
-            pulumi.set(__self__, "db_domain", db_domain)
+            _setter("db_domain", db_domain)
         if db_name is not None:
-            pulumi.set(__self__, "db_name", db_name)
+            _setter("db_name", db_name)
         if db_unique_name is not None:
-            pulumi.set(__self__, "db_unique_name", db_unique_name)
+            _setter("db_unique_name", db_unique_name)
         if db_workload is not None:
-            pulumi.set(__self__, "db_workload", db_workload)
+            _setter("db_workload", db_workload)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if kms_key_id is not None:
-            pulumi.set(__self__, "kms_key_id", kms_key_id)
+            _setter("kms_key_id", kms_key_id)
         if kms_key_version_id is not None:
-            pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
+            _setter("kms_key_version_id", kms_key_version_id)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if ncharacter_set is not None:
-            pulumi.set(__self__, "ncharacter_set", ncharacter_set)
+            _setter("ncharacter_set", ncharacter_set)
         if pdb_name is not None:
-            pulumi.set(__self__, "pdb_name", pdb_name)
+            _setter("pdb_name", pdb_name)
         if pluggable_databases is not None:
-            pulumi.set(__self__, "pluggable_databases", pluggable_databases)
+            _setter("pluggable_databases", pluggable_databases)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if tde_wallet_password is not None:
-            pulumi.set(__self__, "tde_wallet_password", tde_wallet_password)
+            _setter("tde_wallet_password", tde_wallet_password)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_stamp_for_point_in_time_recovery is not None:
-            pulumi.set(__self__, "time_stamp_for_point_in_time_recovery", time_stamp_for_point_in_time_recovery)
+            _setter("time_stamp_for_point_in_time_recovery", time_stamp_for_point_in_time_recovery)
         if vault_id is not None:
-            pulumi.set(__self__, "vault_id", vault_id)
+            _setter("vault_id", vault_id)
 
     @property
     @pulumi.getter(name="adminPassword")
@@ -6443,12 +8427,33 @@ class DbSystemDbHomeDatabaseConnectionStringArgs:
                  all_connection_strings: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  cdb_default: Optional[pulumi.Input[str]] = None,
                  cdb_ip_default: Optional[pulumi.Input[str]] = None):
+        DbSystemDbHomeDatabaseConnectionStringArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            all_connection_strings=all_connection_strings,
+            cdb_default=cdb_default,
+            cdb_ip_default=cdb_ip_default,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             all_connection_strings: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             cdb_default: Optional[pulumi.Input[str]] = None,
+             cdb_ip_default: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if all_connection_strings is None and 'allConnectionStrings' in kwargs:
+            all_connection_strings = kwargs['allConnectionStrings']
+        if cdb_default is None and 'cdbDefault' in kwargs:
+            cdb_default = kwargs['cdbDefault']
+        if cdb_ip_default is None and 'cdbIpDefault' in kwargs:
+            cdb_ip_default = kwargs['cdbIpDefault']
+
         if all_connection_strings is not None:
-            pulumi.set(__self__, "all_connection_strings", all_connection_strings)
+            _setter("all_connection_strings", all_connection_strings)
         if cdb_default is not None:
-            pulumi.set(__self__, "cdb_default", cdb_default)
+            _setter("cdb_default", cdb_default)
         if cdb_ip_default is not None:
-            pulumi.set(__self__, "cdb_ip_default", cdb_ip_default)
+            _setter("cdb_ip_default", cdb_ip_default)
 
     @property
     @pulumi.getter(name="allConnectionStrings")
@@ -6499,22 +8504,63 @@ class DbSystemDbHomeDatabaseDbBackupConfigArgs:
         :param pulumi.Input[int] recovery_window_in_days: (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         :param pulumi.Input[bool] run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
         """
+        DbSystemDbHomeDatabaseDbBackupConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auto_backup_enabled=auto_backup_enabled,
+            auto_backup_window=auto_backup_window,
+            auto_full_backup_day=auto_full_backup_day,
+            auto_full_backup_window=auto_full_backup_window,
+            backup_deletion_policy=backup_deletion_policy,
+            backup_destination_details=backup_destination_details,
+            recovery_window_in_days=recovery_window_in_days,
+            run_immediate_full_backup=run_immediate_full_backup,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auto_backup_enabled: Optional[pulumi.Input[bool]] = None,
+             auto_backup_window: Optional[pulumi.Input[str]] = None,
+             auto_full_backup_day: Optional[pulumi.Input[str]] = None,
+             auto_full_backup_window: Optional[pulumi.Input[str]] = None,
+             backup_deletion_policy: Optional[pulumi.Input[str]] = None,
+             backup_destination_details: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs']]]] = None,
+             recovery_window_in_days: Optional[pulumi.Input[int]] = None,
+             run_immediate_full_backup: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if auto_backup_enabled is None and 'autoBackupEnabled' in kwargs:
+            auto_backup_enabled = kwargs['autoBackupEnabled']
+        if auto_backup_window is None and 'autoBackupWindow' in kwargs:
+            auto_backup_window = kwargs['autoBackupWindow']
+        if auto_full_backup_day is None and 'autoFullBackupDay' in kwargs:
+            auto_full_backup_day = kwargs['autoFullBackupDay']
+        if auto_full_backup_window is None and 'autoFullBackupWindow' in kwargs:
+            auto_full_backup_window = kwargs['autoFullBackupWindow']
+        if backup_deletion_policy is None and 'backupDeletionPolicy' in kwargs:
+            backup_deletion_policy = kwargs['backupDeletionPolicy']
+        if backup_destination_details is None and 'backupDestinationDetails' in kwargs:
+            backup_destination_details = kwargs['backupDestinationDetails']
+        if recovery_window_in_days is None and 'recoveryWindowInDays' in kwargs:
+            recovery_window_in_days = kwargs['recoveryWindowInDays']
+        if run_immediate_full_backup is None and 'runImmediateFullBackup' in kwargs:
+            run_immediate_full_backup = kwargs['runImmediateFullBackup']
+
         if auto_backup_enabled is not None:
-            pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
+            _setter("auto_backup_enabled", auto_backup_enabled)
         if auto_backup_window is not None:
-            pulumi.set(__self__, "auto_backup_window", auto_backup_window)
+            _setter("auto_backup_window", auto_backup_window)
         if auto_full_backup_day is not None:
-            pulumi.set(__self__, "auto_full_backup_day", auto_full_backup_day)
+            _setter("auto_full_backup_day", auto_full_backup_day)
         if auto_full_backup_window is not None:
-            pulumi.set(__self__, "auto_full_backup_window", auto_full_backup_window)
+            _setter("auto_full_backup_window", auto_full_backup_window)
         if backup_deletion_policy is not None:
-            pulumi.set(__self__, "backup_deletion_policy", backup_deletion_policy)
+            _setter("backup_deletion_policy", backup_deletion_policy)
         if backup_destination_details is not None:
-            pulumi.set(__self__, "backup_destination_details", backup_destination_details)
+            _setter("backup_destination_details", backup_destination_details)
         if recovery_window_in_days is not None:
-            pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
+            _setter("recovery_window_in_days", recovery_window_in_days)
         if run_immediate_full_backup is not None:
-            pulumi.set(__self__, "run_immediate_full_backup", run_immediate_full_backup)
+            _setter("run_immediate_full_backup", run_immediate_full_backup)
 
     @property
     @pulumi.getter(name="autoBackupEnabled")
@@ -6624,12 +8670,29 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
         :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         :param pulumi.Input[str] type: Type of the database backup destination.
         """
+        DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dbrs_policy_id=dbrs_policy_id,
+            id=id,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dbrs_policy_id: Optional[pulumi.Input[str]] = None,
+             id: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if dbrs_policy_id is None and 'dbrsPolicyId' in kwargs:
+            dbrs_policy_id = kwargs['dbrsPolicyId']
+
         if dbrs_policy_id is not None:
-            pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
+            _setter("dbrs_policy_id", dbrs_policy_id)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="dbrsPolicyId")
@@ -6675,8 +8738,21 @@ class DbSystemDbSystemOptionsArgs:
         """
         :param pulumi.Input[str] storage_management: The storage option used in DB system. ASM - Automatic storage management LVM - Logical Volume management
         """
+        DbSystemDbSystemOptionsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            storage_management=storage_management,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             storage_management: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if storage_management is None and 'storageManagement' in kwargs:
+            storage_management = kwargs['storageManagement']
+
         if storage_management is not None:
-            pulumi.set(__self__, "storage_management", storage_management)
+            _setter("storage_management", storage_management)
 
     @property
     @pulumi.getter(name="storageManagement")
@@ -6705,16 +8781,41 @@ class DbSystemIormConfigCachArgs:
         :param pulumi.Input[str] objective: The current value for the IORM objective. The default is `AUTO`.
         :param pulumi.Input[str] state: The current state of the DB system.
         """
+        DbSystemIormConfigCachArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            db_plans=db_plans,
+            db_system_id=db_system_id,
+            lifecycle_details=lifecycle_details,
+            objective=objective,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             db_plans: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemIormConfigCachDbPlanArgs']]]] = None,
+             db_system_id: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             objective: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if db_plans is None and 'dbPlans' in kwargs:
+            db_plans = kwargs['dbPlans']
+        if db_system_id is None and 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+
         if db_plans is not None:
-            pulumi.set(__self__, "db_plans", db_plans)
+            _setter("db_plans", db_plans)
         if db_system_id is not None:
-            pulumi.set(__self__, "db_system_id", db_system_id)
+            _setter("db_system_id", db_system_id)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if objective is not None:
-            pulumi.set(__self__, "objective", objective)
+            _setter("objective", objective)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter(name="dbPlans")
@@ -6785,12 +8886,31 @@ class DbSystemIormConfigCachDbPlanArgs:
         :param pulumi.Input[str] flash_cache_limit: The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
         :param pulumi.Input[int] share: The relative priority of this database.
         """
+        DbSystemIormConfigCachDbPlanArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            db_name=db_name,
+            flash_cache_limit=flash_cache_limit,
+            share=share,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             db_name: Optional[pulumi.Input[str]] = None,
+             flash_cache_limit: Optional[pulumi.Input[str]] = None,
+             share: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if db_name is None and 'dbName' in kwargs:
+            db_name = kwargs['dbName']
+        if flash_cache_limit is None and 'flashCacheLimit' in kwargs:
+            flash_cache_limit = kwargs['flashCacheLimit']
+
         if db_name is not None:
-            pulumi.set(__self__, "db_name", db_name)
+            _setter("db_name", db_name)
         if flash_cache_limit is not None:
-            pulumi.set(__self__, "flash_cache_limit", flash_cache_limit)
+            _setter("flash_cache_limit", flash_cache_limit)
         if share is not None:
-            pulumi.set(__self__, "share", share)
+            _setter("share", share)
 
     @property
     @pulumi.getter(name="dbName")
@@ -6857,26 +8977,71 @@ class DbSystemMaintenanceWindowArgs:
         :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
+        DbSystemMaintenanceWindowArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            custom_action_timeout_in_mins=custom_action_timeout_in_mins,
+            days_of_weeks=days_of_weeks,
+            hours_of_days=hours_of_days,
+            is_custom_action_timeout_enabled=is_custom_action_timeout_enabled,
+            is_monthly_patching_enabled=is_monthly_patching_enabled,
+            lead_time_in_weeks=lead_time_in_weeks,
+            months=months,
+            patching_mode=patching_mode,
+            preference=preference,
+            weeks_of_months=weeks_of_months,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
+             days_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowDaysOfWeekArgs']]]] = None,
+             hours_of_days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
+             is_monthly_patching_enabled: Optional[pulumi.Input[bool]] = None,
+             lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
+             months: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowMonthArgs']]]] = None,
+             patching_mode: Optional[pulumi.Input[str]] = None,
+             preference: Optional[pulumi.Input[str]] = None,
+             weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if custom_action_timeout_in_mins is None and 'customActionTimeoutInMins' in kwargs:
+            custom_action_timeout_in_mins = kwargs['customActionTimeoutInMins']
+        if days_of_weeks is None and 'daysOfWeeks' in kwargs:
+            days_of_weeks = kwargs['daysOfWeeks']
+        if hours_of_days is None and 'hoursOfDays' in kwargs:
+            hours_of_days = kwargs['hoursOfDays']
+        if is_custom_action_timeout_enabled is None and 'isCustomActionTimeoutEnabled' in kwargs:
+            is_custom_action_timeout_enabled = kwargs['isCustomActionTimeoutEnabled']
+        if is_monthly_patching_enabled is None and 'isMonthlyPatchingEnabled' in kwargs:
+            is_monthly_patching_enabled = kwargs['isMonthlyPatchingEnabled']
+        if lead_time_in_weeks is None and 'leadTimeInWeeks' in kwargs:
+            lead_time_in_weeks = kwargs['leadTimeInWeeks']
+        if patching_mode is None and 'patchingMode' in kwargs:
+            patching_mode = kwargs['patchingMode']
+        if weeks_of_months is None and 'weeksOfMonths' in kwargs:
+            weeks_of_months = kwargs['weeksOfMonths']
+
         if custom_action_timeout_in_mins is not None:
-            pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+            _setter("custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
-            pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+            _setter("days_of_weeks", days_of_weeks)
         if hours_of_days is not None:
-            pulumi.set(__self__, "hours_of_days", hours_of_days)
+            _setter("hours_of_days", hours_of_days)
         if is_custom_action_timeout_enabled is not None:
-            pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+            _setter("is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
         if is_monthly_patching_enabled is not None:
-            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
+            _setter("is_monthly_patching_enabled", is_monthly_patching_enabled)
         if lead_time_in_weeks is not None:
-            pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
+            _setter("lead_time_in_weeks", lead_time_in_weeks)
         if months is not None:
-            pulumi.set(__self__, "months", months)
+            _setter("months", months)
         if patching_mode is not None:
-            pulumi.set(__self__, "patching_mode", patching_mode)
+            _setter("patching_mode", patching_mode)
         if preference is not None:
-            pulumi.set(__self__, "preference", preference)
+            _setter("preference", preference)
         if weeks_of_months is not None:
-            pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+            _setter("weeks_of_months", weeks_of_months)
 
     @property
     @pulumi.getter(name="customActionTimeoutInMins")
@@ -7009,8 +9174,19 @@ class DbSystemMaintenanceWindowDaysOfWeekArgs:
         """
         :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
         """
+        DbSystemMaintenanceWindowDaysOfWeekArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -7053,26 +9229,71 @@ class DbSystemMaintenanceWindowDetailsArgs:
         :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
+        DbSystemMaintenanceWindowDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            custom_action_timeout_in_mins=custom_action_timeout_in_mins,
+            days_of_weeks=days_of_weeks,
+            hours_of_days=hours_of_days,
+            is_custom_action_timeout_enabled=is_custom_action_timeout_enabled,
+            is_monthly_patching_enabled=is_monthly_patching_enabled,
+            lead_time_in_weeks=lead_time_in_weeks,
+            months=months,
+            patching_mode=patching_mode,
+            preference=preference,
+            weeks_of_months=weeks_of_months,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
+             days_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowDetailsDaysOfWeekArgs']]]] = None,
+             hours_of_days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
+             is_monthly_patching_enabled: Optional[pulumi.Input[bool]] = None,
+             lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
+             months: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowDetailsMonthArgs']]]] = None,
+             patching_mode: Optional[pulumi.Input[str]] = None,
+             preference: Optional[pulumi.Input[str]] = None,
+             weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if custom_action_timeout_in_mins is None and 'customActionTimeoutInMins' in kwargs:
+            custom_action_timeout_in_mins = kwargs['customActionTimeoutInMins']
+        if days_of_weeks is None and 'daysOfWeeks' in kwargs:
+            days_of_weeks = kwargs['daysOfWeeks']
+        if hours_of_days is None and 'hoursOfDays' in kwargs:
+            hours_of_days = kwargs['hoursOfDays']
+        if is_custom_action_timeout_enabled is None and 'isCustomActionTimeoutEnabled' in kwargs:
+            is_custom_action_timeout_enabled = kwargs['isCustomActionTimeoutEnabled']
+        if is_monthly_patching_enabled is None and 'isMonthlyPatchingEnabled' in kwargs:
+            is_monthly_patching_enabled = kwargs['isMonthlyPatchingEnabled']
+        if lead_time_in_weeks is None and 'leadTimeInWeeks' in kwargs:
+            lead_time_in_weeks = kwargs['leadTimeInWeeks']
+        if patching_mode is None and 'patchingMode' in kwargs:
+            patching_mode = kwargs['patchingMode']
+        if weeks_of_months is None and 'weeksOfMonths' in kwargs:
+            weeks_of_months = kwargs['weeksOfMonths']
+
         if custom_action_timeout_in_mins is not None:
-            pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+            _setter("custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
-            pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+            _setter("days_of_weeks", days_of_weeks)
         if hours_of_days is not None:
-            pulumi.set(__self__, "hours_of_days", hours_of_days)
+            _setter("hours_of_days", hours_of_days)
         if is_custom_action_timeout_enabled is not None:
-            pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+            _setter("is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
         if is_monthly_patching_enabled is not None:
-            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
+            _setter("is_monthly_patching_enabled", is_monthly_patching_enabled)
         if lead_time_in_weeks is not None:
-            pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
+            _setter("lead_time_in_weeks", lead_time_in_weeks)
         if months is not None:
-            pulumi.set(__self__, "months", months)
+            _setter("months", months)
         if patching_mode is not None:
-            pulumi.set(__self__, "patching_mode", patching_mode)
+            _setter("patching_mode", patching_mode)
         if preference is not None:
-            pulumi.set(__self__, "preference", preference)
+            _setter("preference", preference)
         if weeks_of_months is not None:
-            pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+            _setter("weeks_of_months", weeks_of_months)
 
     @property
     @pulumi.getter(name="customActionTimeoutInMins")
@@ -7205,8 +9426,19 @@ class DbSystemMaintenanceWindowDetailsDaysOfWeekArgs:
         """
         :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
         """
+        DbSystemMaintenanceWindowDetailsDaysOfWeekArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -7228,8 +9460,19 @@ class DbSystemMaintenanceWindowDetailsMonthArgs:
         """
         :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
         """
+        DbSystemMaintenanceWindowDetailsMonthArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -7251,8 +9494,19 @@ class DbSystemMaintenanceWindowMonthArgs:
         """
         :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
         """
+        DbSystemMaintenanceWindowMonthArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -7274,8 +9528,21 @@ class DbSystemsUpgradeDbSystemOptionArgs:
         """
         :param pulumi.Input[str] storage_management: The storage option used in DB system. ASM - Automatic storage management LVM - Logical Volume management
         """
+        DbSystemsUpgradeDbSystemOptionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            storage_management=storage_management,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             storage_management: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if storage_management is None and 'storageManagement' in kwargs:
+            storage_management = kwargs['storageManagement']
+
         if storage_management is not None:
-            pulumi.set(__self__, "storage_management", storage_management)
+            _setter("storage_management", storage_management)
 
     @property
     @pulumi.getter(name="storageManagement")
@@ -7303,14 +9570,35 @@ class DbSystemsUpgradeIormConfigCachArgs:
         :param pulumi.Input[str] objective: The current value for the IORM objective. The default is `AUTO`.
         :param pulumi.Input[str] state: The current state of the DB system.
         """
+        DbSystemsUpgradeIormConfigCachArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            db_plans=db_plans,
+            lifecycle_details=lifecycle_details,
+            objective=objective,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             db_plans: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeIormConfigCachDbPlanArgs']]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             objective: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if db_plans is None and 'dbPlans' in kwargs:
+            db_plans = kwargs['dbPlans']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+
         if db_plans is not None:
-            pulumi.set(__self__, "db_plans", db_plans)
+            _setter("db_plans", db_plans)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if objective is not None:
-            pulumi.set(__self__, "objective", objective)
+            _setter("objective", objective)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter(name="dbPlans")
@@ -7372,12 +9660,31 @@ class DbSystemsUpgradeIormConfigCachDbPlanArgs:
         :param pulumi.Input[str] flash_cache_limit: The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
         :param pulumi.Input[int] share: The relative priority of this database.
         """
+        DbSystemsUpgradeIormConfigCachDbPlanArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            db_name=db_name,
+            flash_cache_limit=flash_cache_limit,
+            share=share,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             db_name: Optional[pulumi.Input[str]] = None,
+             flash_cache_limit: Optional[pulumi.Input[str]] = None,
+             share: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if db_name is None and 'dbName' in kwargs:
+            db_name = kwargs['dbName']
+        if flash_cache_limit is None and 'flashCacheLimit' in kwargs:
+            flash_cache_limit = kwargs['flashCacheLimit']
+
         if db_name is not None:
-            pulumi.set(__self__, "db_name", db_name)
+            _setter("db_name", db_name)
         if flash_cache_limit is not None:
-            pulumi.set(__self__, "flash_cache_limit", flash_cache_limit)
+            _setter("flash_cache_limit", flash_cache_limit)
         if share is not None:
-            pulumi.set(__self__, "share", share)
+            _setter("share", share)
 
     @property
     @pulumi.getter(name="dbName")
@@ -7434,18 +9741,47 @@ class DbSystemsUpgradeMaintenanceWindowArgs:
         :param pulumi.Input[str] preference: The maintenance window scheduling preference.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
+        DbSystemsUpgradeMaintenanceWindowArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            days_of_weeks=days_of_weeks,
+            hours_of_days=hours_of_days,
+            lead_time_in_weeks=lead_time_in_weeks,
+            months=months,
+            preference=preference,
+            weeks_of_months=weeks_of_months,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             days_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs']]]] = None,
+             hours_of_days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
+             months: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeMaintenanceWindowMonthArgs']]]] = None,
+             preference: Optional[pulumi.Input[str]] = None,
+             weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if days_of_weeks is None and 'daysOfWeeks' in kwargs:
+            days_of_weeks = kwargs['daysOfWeeks']
+        if hours_of_days is None and 'hoursOfDays' in kwargs:
+            hours_of_days = kwargs['hoursOfDays']
+        if lead_time_in_weeks is None and 'leadTimeInWeeks' in kwargs:
+            lead_time_in_weeks = kwargs['leadTimeInWeeks']
+        if weeks_of_months is None and 'weeksOfMonths' in kwargs:
+            weeks_of_months = kwargs['weeksOfMonths']
+
         if days_of_weeks is not None:
-            pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+            _setter("days_of_weeks", days_of_weeks)
         if hours_of_days is not None:
-            pulumi.set(__self__, "hours_of_days", hours_of_days)
+            _setter("hours_of_days", hours_of_days)
         if lead_time_in_weeks is not None:
-            pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
+            _setter("lead_time_in_weeks", lead_time_in_weeks)
         if months is not None:
-            pulumi.set(__self__, "months", months)
+            _setter("months", months)
         if preference is not None:
-            pulumi.set(__self__, "preference", preference)
+            _setter("preference", preference)
         if weeks_of_months is not None:
-            pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+            _setter("weeks_of_months", weeks_of_months)
 
     @property
     @pulumi.getter(name="daysOfWeeks")
@@ -7528,8 +9864,19 @@ class DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs:
         """
         :param pulumi.Input[str] name: Name of the month of the year.
         """
+        DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -7551,8 +9898,19 @@ class DbSystemsUpgradeMaintenanceWindowMonthArgs:
         """
         :param pulumi.Input[str] name: Name of the month of the year.
         """
+        DbSystemsUpgradeMaintenanceWindowMonthArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -7582,16 +9940,41 @@ class ExadataInfrastructureComputeContactArgs:
         :param pulumi.Input[str] name: Name of the month of the year.
         :param pulumi.Input[str] phone_number: The phone number for the Exadata Infrastructure contact.
         """
+        ExadataInfrastructureComputeContactArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            email=email,
+            is_contact_mos_validated=is_contact_mos_validated,
+            is_primary=is_primary,
+            name=name,
+            phone_number=phone_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             email: Optional[pulumi.Input[str]] = None,
+             is_contact_mos_validated: Optional[pulumi.Input[bool]] = None,
+             is_primary: Optional[pulumi.Input[bool]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             phone_number: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_contact_mos_validated is None and 'isContactMosValidated' in kwargs:
+            is_contact_mos_validated = kwargs['isContactMosValidated']
+        if is_primary is None and 'isPrimary' in kwargs:
+            is_primary = kwargs['isPrimary']
+        if phone_number is None and 'phoneNumber' in kwargs:
+            phone_number = kwargs['phoneNumber']
+
         if email is not None:
-            pulumi.set(__self__, "email", email)
+            _setter("email", email)
         if is_contact_mos_validated is not None:
-            pulumi.set(__self__, "is_contact_mos_validated", is_contact_mos_validated)
+            _setter("is_contact_mos_validated", is_contact_mos_validated)
         if is_primary is not None:
-            pulumi.set(__self__, "is_primary", is_primary)
+            _setter("is_primary", is_primary)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if phone_number is not None:
-            pulumi.set(__self__, "phone_number", phone_number)
+            _setter("phone_number", phone_number)
 
     @property
     @pulumi.getter
@@ -7680,26 +10063,71 @@ class ExadataInfrastructureComputeMaintenanceWindowArgs:
         :param pulumi.Input[str] preference: The maintenance window scheduling preference.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
+        ExadataInfrastructureComputeMaintenanceWindowArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            custom_action_timeout_in_mins=custom_action_timeout_in_mins,
+            days_of_weeks=days_of_weeks,
+            hours_of_days=hours_of_days,
+            is_custom_action_timeout_enabled=is_custom_action_timeout_enabled,
+            is_monthly_patching_enabled=is_monthly_patching_enabled,
+            lead_time_in_weeks=lead_time_in_weeks,
+            months=months,
+            patching_mode=patching_mode,
+            preference=preference,
+            weeks_of_months=weeks_of_months,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
+             days_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureComputeMaintenanceWindowDaysOfWeekArgs']]]] = None,
+             hours_of_days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
+             is_monthly_patching_enabled: Optional[pulumi.Input[bool]] = None,
+             lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
+             months: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureComputeMaintenanceWindowMonthArgs']]]] = None,
+             patching_mode: Optional[pulumi.Input[str]] = None,
+             preference: Optional[pulumi.Input[str]] = None,
+             weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if custom_action_timeout_in_mins is None and 'customActionTimeoutInMins' in kwargs:
+            custom_action_timeout_in_mins = kwargs['customActionTimeoutInMins']
+        if days_of_weeks is None and 'daysOfWeeks' in kwargs:
+            days_of_weeks = kwargs['daysOfWeeks']
+        if hours_of_days is None and 'hoursOfDays' in kwargs:
+            hours_of_days = kwargs['hoursOfDays']
+        if is_custom_action_timeout_enabled is None and 'isCustomActionTimeoutEnabled' in kwargs:
+            is_custom_action_timeout_enabled = kwargs['isCustomActionTimeoutEnabled']
+        if is_monthly_patching_enabled is None and 'isMonthlyPatchingEnabled' in kwargs:
+            is_monthly_patching_enabled = kwargs['isMonthlyPatchingEnabled']
+        if lead_time_in_weeks is None and 'leadTimeInWeeks' in kwargs:
+            lead_time_in_weeks = kwargs['leadTimeInWeeks']
+        if patching_mode is None and 'patchingMode' in kwargs:
+            patching_mode = kwargs['patchingMode']
+        if weeks_of_months is None and 'weeksOfMonths' in kwargs:
+            weeks_of_months = kwargs['weeksOfMonths']
+
         if custom_action_timeout_in_mins is not None:
-            pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+            _setter("custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
-            pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+            _setter("days_of_weeks", days_of_weeks)
         if hours_of_days is not None:
-            pulumi.set(__self__, "hours_of_days", hours_of_days)
+            _setter("hours_of_days", hours_of_days)
         if is_custom_action_timeout_enabled is not None:
-            pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+            _setter("is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
         if is_monthly_patching_enabled is not None:
-            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
+            _setter("is_monthly_patching_enabled", is_monthly_patching_enabled)
         if lead_time_in_weeks is not None:
-            pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
+            _setter("lead_time_in_weeks", lead_time_in_weeks)
         if months is not None:
-            pulumi.set(__self__, "months", months)
+            _setter("months", months)
         if patching_mode is not None:
-            pulumi.set(__self__, "patching_mode", patching_mode)
+            _setter("patching_mode", patching_mode)
         if preference is not None:
-            pulumi.set(__self__, "preference", preference)
+            _setter("preference", preference)
         if weeks_of_months is not None:
-            pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+            _setter("weeks_of_months", weeks_of_months)
 
     @property
     @pulumi.getter(name="customActionTimeoutInMins")
@@ -7830,8 +10258,19 @@ class ExadataInfrastructureComputeMaintenanceWindowDaysOfWeekArgs:
         """
         :param pulumi.Input[str] name: Name of the month of the year.
         """
+        ExadataInfrastructureComputeMaintenanceWindowDaysOfWeekArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -7853,8 +10292,19 @@ class ExadataInfrastructureComputeMaintenanceWindowMonthArgs:
         """
         :param pulumi.Input[str] name: Name of the month of the year.
         """
+        ExadataInfrastructureComputeMaintenanceWindowMonthArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -7884,13 +10334,44 @@ class ExadataInfrastructureContactArgs:
         :param pulumi.Input[bool] is_contact_mos_validated: (Updatable) If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
         :param pulumi.Input[str] phone_number: (Updatable) The phone number for the Exadata Infrastructure contact.
         """
-        pulumi.set(__self__, "email", email)
-        pulumi.set(__self__, "is_primary", is_primary)
-        pulumi.set(__self__, "name", name)
+        ExadataInfrastructureContactArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            email=email,
+            is_primary=is_primary,
+            name=name,
+            is_contact_mos_validated=is_contact_mos_validated,
+            phone_number=phone_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             email: Optional[pulumi.Input[str]] = None,
+             is_primary: Optional[pulumi.Input[bool]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             is_contact_mos_validated: Optional[pulumi.Input[bool]] = None,
+             phone_number: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if email is None:
+            raise TypeError("Missing 'email' argument")
+        if is_primary is None and 'isPrimary' in kwargs:
+            is_primary = kwargs['isPrimary']
+        if is_primary is None:
+            raise TypeError("Missing 'is_primary' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if is_contact_mos_validated is None and 'isContactMosValidated' in kwargs:
+            is_contact_mos_validated = kwargs['isContactMosValidated']
+        if phone_number is None and 'phoneNumber' in kwargs:
+            phone_number = kwargs['phoneNumber']
+
+        _setter("email", email)
+        _setter("is_primary", is_primary)
+        _setter("name", name)
         if is_contact_mos_validated is not None:
-            pulumi.set(__self__, "is_contact_mos_validated", is_contact_mos_validated)
+            _setter("is_contact_mos_validated", is_contact_mos_validated)
         if phone_number is not None:
-            pulumi.set(__self__, "phone_number", phone_number)
+            _setter("phone_number", phone_number)
 
     @property
     @pulumi.getter
@@ -7981,26 +10462,71 @@ class ExadataInfrastructureMaintenanceWindowArgs:
         :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
+        ExadataInfrastructureMaintenanceWindowArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            custom_action_timeout_in_mins=custom_action_timeout_in_mins,
+            days_of_weeks=days_of_weeks,
+            hours_of_days=hours_of_days,
+            is_custom_action_timeout_enabled=is_custom_action_timeout_enabled,
+            is_monthly_patching_enabled=is_monthly_patching_enabled,
+            lead_time_in_weeks=lead_time_in_weeks,
+            months=months,
+            patching_mode=patching_mode,
+            preference=preference,
+            weeks_of_months=weeks_of_months,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
+             days_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs']]]] = None,
+             hours_of_days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
+             is_monthly_patching_enabled: Optional[pulumi.Input[bool]] = None,
+             lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
+             months: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureMaintenanceWindowMonthArgs']]]] = None,
+             patching_mode: Optional[pulumi.Input[str]] = None,
+             preference: Optional[pulumi.Input[str]] = None,
+             weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if custom_action_timeout_in_mins is None and 'customActionTimeoutInMins' in kwargs:
+            custom_action_timeout_in_mins = kwargs['customActionTimeoutInMins']
+        if days_of_weeks is None and 'daysOfWeeks' in kwargs:
+            days_of_weeks = kwargs['daysOfWeeks']
+        if hours_of_days is None and 'hoursOfDays' in kwargs:
+            hours_of_days = kwargs['hoursOfDays']
+        if is_custom_action_timeout_enabled is None and 'isCustomActionTimeoutEnabled' in kwargs:
+            is_custom_action_timeout_enabled = kwargs['isCustomActionTimeoutEnabled']
+        if is_monthly_patching_enabled is None and 'isMonthlyPatchingEnabled' in kwargs:
+            is_monthly_patching_enabled = kwargs['isMonthlyPatchingEnabled']
+        if lead_time_in_weeks is None and 'leadTimeInWeeks' in kwargs:
+            lead_time_in_weeks = kwargs['leadTimeInWeeks']
+        if patching_mode is None and 'patchingMode' in kwargs:
+            patching_mode = kwargs['patchingMode']
+        if weeks_of_months is None and 'weeksOfMonths' in kwargs:
+            weeks_of_months = kwargs['weeksOfMonths']
+
         if custom_action_timeout_in_mins is not None:
-            pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+            _setter("custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if days_of_weeks is not None:
-            pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+            _setter("days_of_weeks", days_of_weeks)
         if hours_of_days is not None:
-            pulumi.set(__self__, "hours_of_days", hours_of_days)
+            _setter("hours_of_days", hours_of_days)
         if is_custom_action_timeout_enabled is not None:
-            pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+            _setter("is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
         if is_monthly_patching_enabled is not None:
-            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
+            _setter("is_monthly_patching_enabled", is_monthly_patching_enabled)
         if lead_time_in_weeks is not None:
-            pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
+            _setter("lead_time_in_weeks", lead_time_in_weeks)
         if months is not None:
-            pulumi.set(__self__, "months", months)
+            _setter("months", months)
         if patching_mode is not None:
-            pulumi.set(__self__, "patching_mode", patching_mode)
+            _setter("patching_mode", patching_mode)
         if preference is not None:
-            pulumi.set(__self__, "preference", preference)
+            _setter("preference", preference)
         if weeks_of_months is not None:
-            pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+            _setter("weeks_of_months", weeks_of_months)
 
     @property
     @pulumi.getter(name="customActionTimeoutInMins")
@@ -8133,7 +10659,20 @@ class ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs:
         """
         :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
         """
-        pulumi.set(__self__, "name", name)
+        ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -8155,7 +10694,20 @@ class ExadataInfrastructureMaintenanceWindowMonthArgs:
         """
         :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
         """
-        pulumi.set(__self__, "name", name)
+        ExadataInfrastructureMaintenanceWindowMonthArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -8181,12 +10733,33 @@ class ExadataInfrastructureNetworkBondingModeDetailsArgs:
         :param pulumi.Input[str] client_network_bonding_mode: (Updatable) The network bonding mode for the Exadata infrastructure.
         :param pulumi.Input[str] dr_network_bonding_mode: (Updatable) The network bonding mode for the Exadata infrastructure.
         """
+        ExadataInfrastructureNetworkBondingModeDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backup_network_bonding_mode=backup_network_bonding_mode,
+            client_network_bonding_mode=client_network_bonding_mode,
+            dr_network_bonding_mode=dr_network_bonding_mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backup_network_bonding_mode: Optional[pulumi.Input[str]] = None,
+             client_network_bonding_mode: Optional[pulumi.Input[str]] = None,
+             dr_network_bonding_mode: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if backup_network_bonding_mode is None and 'backupNetworkBondingMode' in kwargs:
+            backup_network_bonding_mode = kwargs['backupNetworkBondingMode']
+        if client_network_bonding_mode is None and 'clientNetworkBondingMode' in kwargs:
+            client_network_bonding_mode = kwargs['clientNetworkBondingMode']
+        if dr_network_bonding_mode is None and 'drNetworkBondingMode' in kwargs:
+            dr_network_bonding_mode = kwargs['drNetworkBondingMode']
+
         if backup_network_bonding_mode is not None:
-            pulumi.set(__self__, "backup_network_bonding_mode", backup_network_bonding_mode)
+            _setter("backup_network_bonding_mode", backup_network_bonding_mode)
         if client_network_bonding_mode is not None:
-            pulumi.set(__self__, "client_network_bonding_mode", client_network_bonding_mode)
+            _setter("client_network_bonding_mode", client_network_bonding_mode)
         if dr_network_bonding_mode is not None:
-            pulumi.set(__self__, "dr_network_bonding_mode", dr_network_bonding_mode)
+            _setter("dr_network_bonding_mode", dr_network_bonding_mode)
 
     @property
     @pulumi.getter(name="backupNetworkBondingMode")
@@ -8233,13 +10806,44 @@ class ExadataInfrastructureStorageContactArgs:
                  name: pulumi.Input[str],
                  is_contact_mos_validated: Optional[pulumi.Input[bool]] = None,
                  phone_number: Optional[pulumi.Input[str]] = None):
-        pulumi.set(__self__, "email", email)
-        pulumi.set(__self__, "is_primary", is_primary)
-        pulumi.set(__self__, "name", name)
+        ExadataInfrastructureStorageContactArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            email=email,
+            is_primary=is_primary,
+            name=name,
+            is_contact_mos_validated=is_contact_mos_validated,
+            phone_number=phone_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             email: Optional[pulumi.Input[str]] = None,
+             is_primary: Optional[pulumi.Input[bool]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             is_contact_mos_validated: Optional[pulumi.Input[bool]] = None,
+             phone_number: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if email is None:
+            raise TypeError("Missing 'email' argument")
+        if is_primary is None and 'isPrimary' in kwargs:
+            is_primary = kwargs['isPrimary']
+        if is_primary is None:
+            raise TypeError("Missing 'is_primary' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if is_contact_mos_validated is None and 'isContactMosValidated' in kwargs:
+            is_contact_mos_validated = kwargs['isContactMosValidated']
+        if phone_number is None and 'phoneNumber' in kwargs:
+            phone_number = kwargs['phoneNumber']
+
+        _setter("email", email)
+        _setter("is_primary", is_primary)
+        _setter("name", name)
         if is_contact_mos_validated is not None:
-            pulumi.set(__self__, "is_contact_mos_validated", is_contact_mos_validated)
+            _setter("is_contact_mos_validated", is_contact_mos_validated)
         if phone_number is not None:
-            pulumi.set(__self__, "phone_number", phone_number)
+            _setter("phone_number", phone_number)
 
     @property
     @pulumi.getter
@@ -8296,17 +10900,48 @@ class ExadataInfrastructureStorageMaintenanceWindowArgs:
                  lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
                  months: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureStorageMaintenanceWindowMonthArgs']]]] = None,
                  weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
-        pulumi.set(__self__, "preference", preference)
+        ExadataInfrastructureStorageMaintenanceWindowArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            preference=preference,
+            days_of_weeks=days_of_weeks,
+            hours_of_days=hours_of_days,
+            lead_time_in_weeks=lead_time_in_weeks,
+            months=months,
+            weeks_of_months=weeks_of_months,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             preference: Optional[pulumi.Input[str]] = None,
+             days_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArgs']]]] = None,
+             hours_of_days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
+             months: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureStorageMaintenanceWindowMonthArgs']]]] = None,
+             weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if preference is None:
+            raise TypeError("Missing 'preference' argument")
+        if days_of_weeks is None and 'daysOfWeeks' in kwargs:
+            days_of_weeks = kwargs['daysOfWeeks']
+        if hours_of_days is None and 'hoursOfDays' in kwargs:
+            hours_of_days = kwargs['hoursOfDays']
+        if lead_time_in_weeks is None and 'leadTimeInWeeks' in kwargs:
+            lead_time_in_weeks = kwargs['leadTimeInWeeks']
+        if weeks_of_months is None and 'weeksOfMonths' in kwargs:
+            weeks_of_months = kwargs['weeksOfMonths']
+
+        _setter("preference", preference)
         if days_of_weeks is not None:
-            pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+            _setter("days_of_weeks", days_of_weeks)
         if hours_of_days is not None:
-            pulumi.set(__self__, "hours_of_days", hours_of_days)
+            _setter("hours_of_days", hours_of_days)
         if lead_time_in_weeks is not None:
-            pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
+            _setter("lead_time_in_weeks", lead_time_in_weeks)
         if months is not None:
-            pulumi.set(__self__, "months", months)
+            _setter("months", months)
         if weeks_of_months is not None:
-            pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+            _setter("weeks_of_months", weeks_of_months)
 
     @property
     @pulumi.getter
@@ -8367,7 +11002,20 @@ class ExadataInfrastructureStorageMaintenanceWindowArgs:
 class ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str]):
-        pulumi.set(__self__, "name", name)
+        ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -8383,7 +11031,20 @@ class ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArgs:
 class ExadataInfrastructureStorageMaintenanceWindowMonthArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str]):
-        pulumi.set(__self__, "name", name)
+        ExadataInfrastructureStorageMaintenanceWindowMonthArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -8406,10 +11067,33 @@ class ExadataIormConfigDbPlanArgs:
         :param pulumi.Input[int] share: (Updatable) The relative priority of this database.
         :param pulumi.Input[str] flash_cache_limit: The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
         """
-        pulumi.set(__self__, "db_name", db_name)
-        pulumi.set(__self__, "share", share)
+        ExadataIormConfigDbPlanArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            db_name=db_name,
+            share=share,
+            flash_cache_limit=flash_cache_limit,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             db_name: Optional[pulumi.Input[str]] = None,
+             share: Optional[pulumi.Input[int]] = None,
+             flash_cache_limit: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if db_name is None and 'dbName' in kwargs:
+            db_name = kwargs['dbName']
+        if db_name is None:
+            raise TypeError("Missing 'db_name' argument")
+        if share is None:
+            raise TypeError("Missing 'share' argument")
+        if flash_cache_limit is None and 'flashCacheLimit' in kwargs:
+            flash_cache_limit = kwargs['flashCacheLimit']
+
+        _setter("db_name", db_name)
+        _setter("share", share)
         if flash_cache_limit is not None:
-            pulumi.set(__self__, "flash_cache_limit", flash_cache_limit)
+            _setter("flash_cache_limit", flash_cache_limit)
 
     @property
     @pulumi.getter(name="dbName")
@@ -8459,12 +11143,33 @@ class ExternalContainerDatabaseDatabaseManagementConfigArgs:
         :param pulumi.Input[str] database_management_status: The status of the Database Management service.
         :param pulumi.Input[str] license_model: The Oracle license model that applies to the external database.
         """
+        ExternalContainerDatabaseDatabaseManagementConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            database_management_connection_id=database_management_connection_id,
+            database_management_status=database_management_status,
+            license_model=license_model,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             database_management_connection_id: Optional[pulumi.Input[str]] = None,
+             database_management_status: Optional[pulumi.Input[str]] = None,
+             license_model: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if database_management_connection_id is None and 'databaseManagementConnectionId' in kwargs:
+            database_management_connection_id = kwargs['databaseManagementConnectionId']
+        if database_management_status is None and 'databaseManagementStatus' in kwargs:
+            database_management_status = kwargs['databaseManagementStatus']
+        if license_model is None and 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+
         if database_management_connection_id is not None:
-            pulumi.set(__self__, "database_management_connection_id", database_management_connection_id)
+            _setter("database_management_connection_id", database_management_connection_id)
         if database_management_status is not None:
-            pulumi.set(__self__, "database_management_status", database_management_status)
+            _setter("database_management_status", database_management_status)
         if license_model is not None:
-            pulumi.set(__self__, "license_model", license_model)
+            _setter("license_model", license_model)
 
     @property
     @pulumi.getter(name="databaseManagementConnectionId")
@@ -8512,10 +11217,27 @@ class ExternalContainerDatabaseStackMonitoringConfigArgs:
         :param pulumi.Input[str] stack_monitoring_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         :param pulumi.Input[str] stack_monitoring_status: The status of Stack Monitoring.
         """
+        ExternalContainerDatabaseStackMonitoringConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            stack_monitoring_connector_id=stack_monitoring_connector_id,
+            stack_monitoring_status=stack_monitoring_status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             stack_monitoring_connector_id: Optional[pulumi.Input[str]] = None,
+             stack_monitoring_status: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if stack_monitoring_connector_id is None and 'stackMonitoringConnectorId' in kwargs:
+            stack_monitoring_connector_id = kwargs['stackMonitoringConnectorId']
+        if stack_monitoring_status is None and 'stackMonitoringStatus' in kwargs:
+            stack_monitoring_status = kwargs['stackMonitoringStatus']
+
         if stack_monitoring_connector_id is not None:
-            pulumi.set(__self__, "stack_monitoring_connector_id", stack_monitoring_connector_id)
+            _setter("stack_monitoring_connector_id", stack_monitoring_connector_id)
         if stack_monitoring_status is not None:
-            pulumi.set(__self__, "stack_monitoring_status", stack_monitoring_status)
+            _setter("stack_monitoring_status", stack_monitoring_status)
 
     @property
     @pulumi.getter(name="stackMonitoringConnectorId")
@@ -8561,18 +11283,45 @@ class ExternalDatabaseConnectorConnectionCredentialsArgs:
         :param pulumi.Input[str] ssl_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param pulumi.Input[str] username: (Updatable) The username that will be used to connect to the database.
         """
+        ExternalDatabaseConnectorConnectionCredentialsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credential_name=credential_name,
+            credential_type=credential_type,
+            password=password,
+            role=role,
+            ssl_secret_id=ssl_secret_id,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credential_name: Optional[pulumi.Input[str]] = None,
+             credential_type: Optional[pulumi.Input[str]] = None,
+             password: Optional[pulumi.Input[str]] = None,
+             role: Optional[pulumi.Input[str]] = None,
+             ssl_secret_id: Optional[pulumi.Input[str]] = None,
+             username: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if credential_name is None and 'credentialName' in kwargs:
+            credential_name = kwargs['credentialName']
+        if credential_type is None and 'credentialType' in kwargs:
+            credential_type = kwargs['credentialType']
+        if ssl_secret_id is None and 'sslSecretId' in kwargs:
+            ssl_secret_id = kwargs['sslSecretId']
+
         if credential_name is not None:
-            pulumi.set(__self__, "credential_name", credential_name)
+            _setter("credential_name", credential_name)
         if credential_type is not None:
-            pulumi.set(__self__, "credential_type", credential_type)
+            _setter("credential_type", credential_type)
         if password is not None:
-            pulumi.set(__self__, "password", password)
+            _setter("password", password)
         if role is not None:
-            pulumi.set(__self__, "role", role)
+            _setter("role", role)
         if ssl_secret_id is not None:
-            pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+            _setter("ssl_secret_id", ssl_secret_id)
         if username is not None:
-            pulumi.set(__self__, "username", username)
+            _setter("username", username)
 
     @property
     @pulumi.getter(name="credentialName")
@@ -8662,10 +11411,35 @@ class ExternalDatabaseConnectorConnectionStringArgs:
         :param pulumi.Input[str] protocol: (Updatable) The protocol used to connect to the database.
         :param pulumi.Input[str] service: (Updatable) The name of the service alias used to connect to the database.
         """
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "service", service)
+        ExternalDatabaseConnectorConnectionStringArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+            port=port,
+            protocol=protocol,
+            service=service,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: Optional[pulumi.Input[str]] = None,
+             port: Optional[pulumi.Input[int]] = None,
+             protocol: Optional[pulumi.Input[str]] = None,
+             service: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if port is None:
+            raise TypeError("Missing 'port' argument")
+        if protocol is None:
+            raise TypeError("Missing 'protocol' argument")
+        if service is None:
+            raise TypeError("Missing 'service' argument")
+
+        _setter("hostname", hostname)
+        _setter("port", port)
+        _setter("protocol", protocol)
+        _setter("service", service)
 
     @property
     @pulumi.getter
@@ -8727,12 +11501,33 @@ class ExternalNonContainerDatabaseDatabaseManagementConfigArgs:
         :param pulumi.Input[str] database_management_status: The status of the Database Management service.
         :param pulumi.Input[str] license_model: The Oracle license model that applies to the external database.
         """
+        ExternalNonContainerDatabaseDatabaseManagementConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            database_management_connection_id=database_management_connection_id,
+            database_management_status=database_management_status,
+            license_model=license_model,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             database_management_connection_id: Optional[pulumi.Input[str]] = None,
+             database_management_status: Optional[pulumi.Input[str]] = None,
+             license_model: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if database_management_connection_id is None and 'databaseManagementConnectionId' in kwargs:
+            database_management_connection_id = kwargs['databaseManagementConnectionId']
+        if database_management_status is None and 'databaseManagementStatus' in kwargs:
+            database_management_status = kwargs['databaseManagementStatus']
+        if license_model is None and 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+
         if database_management_connection_id is not None:
-            pulumi.set(__self__, "database_management_connection_id", database_management_connection_id)
+            _setter("database_management_connection_id", database_management_connection_id)
         if database_management_status is not None:
-            pulumi.set(__self__, "database_management_status", database_management_status)
+            _setter("database_management_status", database_management_status)
         if license_model is not None:
-            pulumi.set(__self__, "license_model", license_model)
+            _setter("license_model", license_model)
 
     @property
     @pulumi.getter(name="databaseManagementConnectionId")
@@ -8780,10 +11575,27 @@ class ExternalNonContainerDatabaseOperationsInsightsConfigArgs:
         :param pulumi.Input[str] operations_insights_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         :param pulumi.Input[str] operations_insights_status: The status of Operations Insights
         """
+        ExternalNonContainerDatabaseOperationsInsightsConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            operations_insights_connector_id=operations_insights_connector_id,
+            operations_insights_status=operations_insights_status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             operations_insights_connector_id: Optional[pulumi.Input[str]] = None,
+             operations_insights_status: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if operations_insights_connector_id is None and 'operationsInsightsConnectorId' in kwargs:
+            operations_insights_connector_id = kwargs['operationsInsightsConnectorId']
+        if operations_insights_status is None and 'operationsInsightsStatus' in kwargs:
+            operations_insights_status = kwargs['operationsInsightsStatus']
+
         if operations_insights_connector_id is not None:
-            pulumi.set(__self__, "operations_insights_connector_id", operations_insights_connector_id)
+            _setter("operations_insights_connector_id", operations_insights_connector_id)
         if operations_insights_status is not None:
-            pulumi.set(__self__, "operations_insights_status", operations_insights_status)
+            _setter("operations_insights_status", operations_insights_status)
 
     @property
     @pulumi.getter(name="operationsInsightsConnectorId")
@@ -8819,10 +11631,27 @@ class ExternalNonContainerDatabaseStackMonitoringConfigArgs:
         :param pulumi.Input[str] stack_monitoring_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         :param pulumi.Input[str] stack_monitoring_status: The status of Stack Monitoring.
         """
+        ExternalNonContainerDatabaseStackMonitoringConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            stack_monitoring_connector_id=stack_monitoring_connector_id,
+            stack_monitoring_status=stack_monitoring_status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             stack_monitoring_connector_id: Optional[pulumi.Input[str]] = None,
+             stack_monitoring_status: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if stack_monitoring_connector_id is None and 'stackMonitoringConnectorId' in kwargs:
+            stack_monitoring_connector_id = kwargs['stackMonitoringConnectorId']
+        if stack_monitoring_status is None and 'stackMonitoringStatus' in kwargs:
+            stack_monitoring_status = kwargs['stackMonitoringStatus']
+
         if stack_monitoring_connector_id is not None:
-            pulumi.set(__self__, "stack_monitoring_connector_id", stack_monitoring_connector_id)
+            _setter("stack_monitoring_connector_id", stack_monitoring_connector_id)
         if stack_monitoring_status is not None:
-            pulumi.set(__self__, "stack_monitoring_status", stack_monitoring_status)
+            _setter("stack_monitoring_status", stack_monitoring_status)
 
     @property
     @pulumi.getter(name="stackMonitoringConnectorId")
@@ -8860,12 +11689,33 @@ class ExternalPluggableDatabaseDatabaseManagementConfigArgs:
         :param pulumi.Input[str] database_management_status: The status of the Database Management service.
         :param pulumi.Input[str] license_model: The Oracle license model that applies to the external database.
         """
+        ExternalPluggableDatabaseDatabaseManagementConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            database_management_connection_id=database_management_connection_id,
+            database_management_status=database_management_status,
+            license_model=license_model,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             database_management_connection_id: Optional[pulumi.Input[str]] = None,
+             database_management_status: Optional[pulumi.Input[str]] = None,
+             license_model: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if database_management_connection_id is None and 'databaseManagementConnectionId' in kwargs:
+            database_management_connection_id = kwargs['databaseManagementConnectionId']
+        if database_management_status is None and 'databaseManagementStatus' in kwargs:
+            database_management_status = kwargs['databaseManagementStatus']
+        if license_model is None and 'licenseModel' in kwargs:
+            license_model = kwargs['licenseModel']
+
         if database_management_connection_id is not None:
-            pulumi.set(__self__, "database_management_connection_id", database_management_connection_id)
+            _setter("database_management_connection_id", database_management_connection_id)
         if database_management_status is not None:
-            pulumi.set(__self__, "database_management_status", database_management_status)
+            _setter("database_management_status", database_management_status)
         if license_model is not None:
-            pulumi.set(__self__, "license_model", license_model)
+            _setter("license_model", license_model)
 
     @property
     @pulumi.getter(name="databaseManagementConnectionId")
@@ -8913,10 +11763,27 @@ class ExternalPluggableDatabaseOperationsInsightsConfigArgs:
         :param pulumi.Input[str] operations_insights_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         :param pulumi.Input[str] operations_insights_status: The status of Operations Insights
         """
+        ExternalPluggableDatabaseOperationsInsightsConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            operations_insights_connector_id=operations_insights_connector_id,
+            operations_insights_status=operations_insights_status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             operations_insights_connector_id: Optional[pulumi.Input[str]] = None,
+             operations_insights_status: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if operations_insights_connector_id is None and 'operationsInsightsConnectorId' in kwargs:
+            operations_insights_connector_id = kwargs['operationsInsightsConnectorId']
+        if operations_insights_status is None and 'operationsInsightsStatus' in kwargs:
+            operations_insights_status = kwargs['operationsInsightsStatus']
+
         if operations_insights_connector_id is not None:
-            pulumi.set(__self__, "operations_insights_connector_id", operations_insights_connector_id)
+            _setter("operations_insights_connector_id", operations_insights_connector_id)
         if operations_insights_status is not None:
-            pulumi.set(__self__, "operations_insights_status", operations_insights_status)
+            _setter("operations_insights_status", operations_insights_status)
 
     @property
     @pulumi.getter(name="operationsInsightsConnectorId")
@@ -8952,10 +11819,27 @@ class ExternalPluggableDatabaseStackMonitoringConfigArgs:
         :param pulumi.Input[str] stack_monitoring_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         :param pulumi.Input[str] stack_monitoring_status: The status of Stack Monitoring.
         """
+        ExternalPluggableDatabaseStackMonitoringConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            stack_monitoring_connector_id=stack_monitoring_connector_id,
+            stack_monitoring_status=stack_monitoring_status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             stack_monitoring_connector_id: Optional[pulumi.Input[str]] = None,
+             stack_monitoring_status: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if stack_monitoring_connector_id is None and 'stackMonitoringConnectorId' in kwargs:
+            stack_monitoring_connector_id = kwargs['stackMonitoringConnectorId']
+        if stack_monitoring_status is None and 'stackMonitoringStatus' in kwargs:
+            stack_monitoring_status = kwargs['stackMonitoringStatus']
+
         if stack_monitoring_connector_id is not None:
-            pulumi.set(__self__, "stack_monitoring_connector_id", stack_monitoring_connector_id)
+            _setter("stack_monitoring_connector_id", stack_monitoring_connector_id)
         if stack_monitoring_status is not None:
-            pulumi.set(__self__, "stack_monitoring_status", stack_monitoring_status)
+            _setter("stack_monitoring_status", stack_monitoring_status)
 
     @property
     @pulumi.getter(name="stackMonitoringConnectorId")
@@ -8991,10 +11875,25 @@ class KeyStoreAssociatedDatabaseArgs:
         :param pulumi.Input[str] db_name: The name of the database that is associated with the key store.
         :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         """
+        KeyStoreAssociatedDatabaseArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            db_name=db_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             db_name: Optional[pulumi.Input[str]] = None,
+             id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if db_name is None and 'dbName' in kwargs:
+            db_name = kwargs['dbName']
+
         if db_name is not None:
-            pulumi.set(__self__, "db_name", db_name)
+            _setter("db_name", db_name)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
 
     @property
     @pulumi.getter(name="dbName")
@@ -9040,11 +11939,48 @@ class KeyStoreTypeDetailsArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "admin_username", admin_username)
-        pulumi.set(__self__, "connection_ips", connection_ips)
-        pulumi.set(__self__, "secret_id", secret_id)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "vault_id", vault_id)
+        KeyStoreTypeDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            admin_username=admin_username,
+            connection_ips=connection_ips,
+            secret_id=secret_id,
+            type=type,
+            vault_id=vault_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             admin_username: Optional[pulumi.Input[str]] = None,
+             connection_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             secret_id: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             vault_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if admin_username is None and 'adminUsername' in kwargs:
+            admin_username = kwargs['adminUsername']
+        if admin_username is None:
+            raise TypeError("Missing 'admin_username' argument")
+        if connection_ips is None and 'connectionIps' in kwargs:
+            connection_ips = kwargs['connectionIps']
+        if connection_ips is None:
+            raise TypeError("Missing 'connection_ips' argument")
+        if secret_id is None and 'secretId' in kwargs:
+            secret_id = kwargs['secretId']
+        if secret_id is None:
+            raise TypeError("Missing 'secret_id' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if vault_id is None and 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+        if vault_id is None:
+            raise TypeError("Missing 'vault_id' argument")
+
+        _setter("admin_username", admin_username)
+        _setter("connection_ips", connection_ips)
+        _setter("secret_id", secret_id)
+        _setter("type", type)
+        _setter("vault_id", vault_id)
 
     @property
     @pulumi.getter(name="adminUsername")
@@ -9124,14 +12060,39 @@ class MaintenanceRunEstimatedPatchingTimeArgs:
         :param pulumi.Input[int] estimated_storage_server_patching_time: The estimated time required in minutes for storage server patching.
         :param pulumi.Input[int] total_estimated_patching_time: The estimated total time required in minutes for all patching operations.
         """
+        MaintenanceRunEstimatedPatchingTimeArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            estimated_db_server_patching_time=estimated_db_server_patching_time,
+            estimated_network_switches_patching_time=estimated_network_switches_patching_time,
+            estimated_storage_server_patching_time=estimated_storage_server_patching_time,
+            total_estimated_patching_time=total_estimated_patching_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             estimated_db_server_patching_time: Optional[pulumi.Input[int]] = None,
+             estimated_network_switches_patching_time: Optional[pulumi.Input[int]] = None,
+             estimated_storage_server_patching_time: Optional[pulumi.Input[int]] = None,
+             total_estimated_patching_time: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if estimated_db_server_patching_time is None and 'estimatedDbServerPatchingTime' in kwargs:
+            estimated_db_server_patching_time = kwargs['estimatedDbServerPatchingTime']
+        if estimated_network_switches_patching_time is None and 'estimatedNetworkSwitchesPatchingTime' in kwargs:
+            estimated_network_switches_patching_time = kwargs['estimatedNetworkSwitchesPatchingTime']
+        if estimated_storage_server_patching_time is None and 'estimatedStorageServerPatchingTime' in kwargs:
+            estimated_storage_server_patching_time = kwargs['estimatedStorageServerPatchingTime']
+        if total_estimated_patching_time is None and 'totalEstimatedPatchingTime' in kwargs:
+            total_estimated_patching_time = kwargs['totalEstimatedPatchingTime']
+
         if estimated_db_server_patching_time is not None:
-            pulumi.set(__self__, "estimated_db_server_patching_time", estimated_db_server_patching_time)
+            _setter("estimated_db_server_patching_time", estimated_db_server_patching_time)
         if estimated_network_switches_patching_time is not None:
-            pulumi.set(__self__, "estimated_network_switches_patching_time", estimated_network_switches_patching_time)
+            _setter("estimated_network_switches_patching_time", estimated_network_switches_patching_time)
         if estimated_storage_server_patching_time is not None:
-            pulumi.set(__self__, "estimated_storage_server_patching_time", estimated_storage_server_patching_time)
+            _setter("estimated_storage_server_patching_time", estimated_storage_server_patching_time)
         if total_estimated_patching_time is not None:
-            pulumi.set(__self__, "total_estimated_patching_time", total_estimated_patching_time)
+            _setter("total_estimated_patching_time", total_estimated_patching_time)
 
     @property
     @pulumi.getter(name="estimatedDbServerPatchingTime")
@@ -9193,12 +12154,33 @@ class PluggableDatabaseConnectionStringArgs:
         :param pulumi.Input[str] pdb_default: A host name-based PDB connection string.
         :param pulumi.Input[str] pdb_ip_default: An IP-based PDB connection string.
         """
+        PluggableDatabaseConnectionStringArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            all_connection_strings=all_connection_strings,
+            pdb_default=pdb_default,
+            pdb_ip_default=pdb_ip_default,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             all_connection_strings: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             pdb_default: Optional[pulumi.Input[str]] = None,
+             pdb_ip_default: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if all_connection_strings is None and 'allConnectionStrings' in kwargs:
+            all_connection_strings = kwargs['allConnectionStrings']
+        if pdb_default is None and 'pdbDefault' in kwargs:
+            pdb_default = kwargs['pdbDefault']
+        if pdb_ip_default is None and 'pdbIpDefault' in kwargs:
+            pdb_ip_default = kwargs['pdbIpDefault']
+
         if all_connection_strings is not None:
-            pulumi.set(__self__, "all_connection_strings", all_connection_strings)
+            _setter("all_connection_strings", all_connection_strings)
         if pdb_default is not None:
-            pulumi.set(__self__, "pdb_default", pdb_default)
+            _setter("pdb_default", pdb_default)
         if pdb_ip_default is not None:
-            pulumi.set(__self__, "pdb_ip_default", pdb_ip_default)
+            _setter("pdb_ip_default", pdb_ip_default)
 
     @property
     @pulumi.getter(name="allConnectionStrings")
@@ -9254,13 +12236,40 @@ class PluggableDatabaseManagementsManagementConnectionStringArgs:
         :param pulumi.Input[str] pdb_default: A host name-based PDB connection string.
         :param pulumi.Input[str] pdb_ip_default: An IP-based PDB connection string.
         """
-        pulumi.set(__self__, "enable_pluggabledatabasemanagement", enable_pluggabledatabasemanagement)
+        PluggableDatabaseManagementsManagementConnectionStringArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_pluggabledatabasemanagement=enable_pluggabledatabasemanagement,
+            all_connection_strings=all_connection_strings,
+            pdb_default=pdb_default,
+            pdb_ip_default=pdb_ip_default,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_pluggabledatabasemanagement: Optional[pulumi.Input[bool]] = None,
+             all_connection_strings: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             pdb_default: Optional[pulumi.Input[str]] = None,
+             pdb_ip_default: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if enable_pluggabledatabasemanagement is None and 'enablePluggabledatabasemanagement' in kwargs:
+            enable_pluggabledatabasemanagement = kwargs['enablePluggabledatabasemanagement']
+        if enable_pluggabledatabasemanagement is None:
+            raise TypeError("Missing 'enable_pluggabledatabasemanagement' argument")
+        if all_connection_strings is None and 'allConnectionStrings' in kwargs:
+            all_connection_strings = kwargs['allConnectionStrings']
+        if pdb_default is None and 'pdbDefault' in kwargs:
+            pdb_default = kwargs['pdbDefault']
+        if pdb_ip_default is None and 'pdbIpDefault' in kwargs:
+            pdb_ip_default = kwargs['pdbIpDefault']
+
+        _setter("enable_pluggabledatabasemanagement", enable_pluggabledatabasemanagement)
         if all_connection_strings is not None:
-            pulumi.set(__self__, "all_connection_strings", all_connection_strings)
+            _setter("all_connection_strings", all_connection_strings)
         if pdb_default is not None:
-            pulumi.set(__self__, "pdb_default", pdb_default)
+            _setter("pdb_default", pdb_default)
         if pdb_ip_default is not None:
-            pulumi.set(__self__, "pdb_ip_default", pdb_ip_default)
+            _setter("pdb_ip_default", pdb_ip_default)
 
     @property
     @pulumi.getter(name="enablePluggabledatabasemanagement")
@@ -9324,8 +12333,29 @@ class PluggableDatabaseManagementsManagementCredentialDetailsArgs:
         :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param pulumi.Input[str] user_name: The name of the Oracle Database user that will be used to connect to the database.
         """
-        pulumi.set(__self__, "password_secret_id", password_secret_id)
-        pulumi.set(__self__, "user_name", user_name)
+        PluggableDatabaseManagementsManagementCredentialDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password_secret_id=password_secret_id,
+            user_name=user_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password_secret_id: Optional[pulumi.Input[str]] = None,
+             user_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if password_secret_id is None and 'passwordSecretId' in kwargs:
+            password_secret_id = kwargs['passwordSecretId']
+        if password_secret_id is None:
+            raise TypeError("Missing 'password_secret_id' argument")
+        if user_name is None and 'userName' in kwargs:
+            user_name = kwargs['userName']
+        if user_name is None:
+            raise TypeError("Missing 'user_name' argument")
+
+        _setter("password_secret_id", password_secret_id)
+        _setter("user_name", user_name)
 
     @property
     @pulumi.getter(name="passwordSecretId")
@@ -9365,9 +12395,28 @@ class PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArg
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] management_status: The status of the Pluggable Database Management service.
         """
-        pulumi.set(__self__, "enable_pluggabledatabasemanagement", enable_pluggabledatabasemanagement)
+        PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_pluggabledatabasemanagement=enable_pluggabledatabasemanagement,
+            management_status=management_status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_pluggabledatabasemanagement: Optional[pulumi.Input[bool]] = None,
+             management_status: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if enable_pluggabledatabasemanagement is None and 'enablePluggabledatabasemanagement' in kwargs:
+            enable_pluggabledatabasemanagement = kwargs['enablePluggabledatabasemanagement']
+        if enable_pluggabledatabasemanagement is None:
+            raise TypeError("Missing 'enable_pluggabledatabasemanagement' argument")
+        if management_status is None and 'managementStatus' in kwargs:
+            management_status = kwargs['managementStatus']
+
+        _setter("enable_pluggabledatabasemanagement", enable_pluggabledatabasemanagement)
         if management_status is not None:
-            pulumi.set(__self__, "management_status", management_status)
+            _setter("management_status", management_status)
 
     @property
     @pulumi.getter(name="enablePluggabledatabasemanagement")
@@ -9415,16 +12464,53 @@ class PluggableDatabasePdbCreationTypeDetailsArgs:
         :param pulumi.Input['PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetailsArgs'] refreshable_clone_details: Parameters for creating Pluggable Database Refreshable Clone. **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         :param pulumi.Input[str] source_container_database_admin_password: The DB system administrator password of the source Container Database.
         """
-        pulumi.set(__self__, "creation_type", creation_type)
-        pulumi.set(__self__, "source_pluggable_database_id", source_pluggable_database_id)
+        PluggableDatabasePdbCreationTypeDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            creation_type=creation_type,
+            source_pluggable_database_id=source_pluggable_database_id,
+            dblink_user_password=dblink_user_password,
+            dblink_username=dblink_username,
+            refreshable_clone_details=refreshable_clone_details,
+            source_container_database_admin_password=source_container_database_admin_password,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             creation_type: Optional[pulumi.Input[str]] = None,
+             source_pluggable_database_id: Optional[pulumi.Input[str]] = None,
+             dblink_user_password: Optional[pulumi.Input[str]] = None,
+             dblink_username: Optional[pulumi.Input[str]] = None,
+             refreshable_clone_details: Optional[pulumi.Input['PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetailsArgs']] = None,
+             source_container_database_admin_password: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if creation_type is None and 'creationType' in kwargs:
+            creation_type = kwargs['creationType']
+        if creation_type is None:
+            raise TypeError("Missing 'creation_type' argument")
+        if source_pluggable_database_id is None and 'sourcePluggableDatabaseId' in kwargs:
+            source_pluggable_database_id = kwargs['sourcePluggableDatabaseId']
+        if source_pluggable_database_id is None:
+            raise TypeError("Missing 'source_pluggable_database_id' argument")
+        if dblink_user_password is None and 'dblinkUserPassword' in kwargs:
+            dblink_user_password = kwargs['dblinkUserPassword']
+        if dblink_username is None and 'dblinkUsername' in kwargs:
+            dblink_username = kwargs['dblinkUsername']
+        if refreshable_clone_details is None and 'refreshableCloneDetails' in kwargs:
+            refreshable_clone_details = kwargs['refreshableCloneDetails']
+        if source_container_database_admin_password is None and 'sourceContainerDatabaseAdminPassword' in kwargs:
+            source_container_database_admin_password = kwargs['sourceContainerDatabaseAdminPassword']
+
+        _setter("creation_type", creation_type)
+        _setter("source_pluggable_database_id", source_pluggable_database_id)
         if dblink_user_password is not None:
-            pulumi.set(__self__, "dblink_user_password", dblink_user_password)
+            _setter("dblink_user_password", dblink_user_password)
         if dblink_username is not None:
-            pulumi.set(__self__, "dblink_username", dblink_username)
+            _setter("dblink_username", dblink_username)
         if refreshable_clone_details is not None:
-            pulumi.set(__self__, "refreshable_clone_details", refreshable_clone_details)
+            _setter("refreshable_clone_details", refreshable_clone_details)
         if source_container_database_admin_password is not None:
-            pulumi.set(__self__, "source_container_database_admin_password", source_container_database_admin_password)
+            _setter("source_container_database_admin_password", source_container_database_admin_password)
 
     @property
     @pulumi.getter(name="creationType")
@@ -9506,8 +12592,21 @@ class PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetailsArgs:
         """
         :param pulumi.Input[bool] is_refreshable_clone: Indicates whether Pluggable Database is a refreshable clone.
         """
+        PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_refreshable_clone=is_refreshable_clone,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_refreshable_clone: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_refreshable_clone is None and 'isRefreshableClone' in kwargs:
+            is_refreshable_clone = kwargs['isRefreshableClone']
+
         if is_refreshable_clone is not None:
-            pulumi.set(__self__, "is_refreshable_clone", is_refreshable_clone)
+            _setter("is_refreshable_clone", is_refreshable_clone)
 
     @property
     @pulumi.getter(name="isRefreshableClone")
@@ -9531,10 +12630,27 @@ class PluggableDatabasePdbNodeLevelDetailArgs:
         :param pulumi.Input[str] node_name: The Node name of the Database Instance.
         :param pulumi.Input[str] open_mode: The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
         """
+        PluggableDatabasePdbNodeLevelDetailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            node_name=node_name,
+            open_mode=open_mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             node_name: Optional[pulumi.Input[str]] = None,
+             open_mode: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if node_name is None and 'nodeName' in kwargs:
+            node_name = kwargs['nodeName']
+        if open_mode is None and 'openMode' in kwargs:
+            open_mode = kwargs['openMode']
+
         if node_name is not None:
-            pulumi.set(__self__, "node_name", node_name)
+            _setter("node_name", node_name)
         if open_mode is not None:
-            pulumi.set(__self__, "open_mode", open_mode)
+            _setter("open_mode", open_mode)
 
     @property
     @pulumi.getter(name="nodeName")
@@ -9568,8 +12684,21 @@ class PluggableDatabasePluggableDatabaseManagementConfigArgs:
         """
         :param pulumi.Input[str] management_status: The status of the Pluggable Database Management service.
         """
+        PluggableDatabasePluggableDatabaseManagementConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            management_status=management_status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             management_status: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if management_status is None and 'managementStatus' in kwargs:
+            management_status = kwargs['managementStatus']
+
         if management_status is not None:
-            pulumi.set(__self__, "management_status", management_status)
+            _setter("management_status", management_status)
 
     @property
     @pulumi.getter(name="managementStatus")
@@ -9591,8 +12720,21 @@ class PluggableDatabaseRefreshableCloneConfigArgs:
         """
         :param pulumi.Input[bool] is_refreshable_clone: Indicates whether Pluggable Database is a refreshable clone.
         """
+        PluggableDatabaseRefreshableCloneConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_refreshable_clone=is_refreshable_clone,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_refreshable_clone: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_refreshable_clone is None and 'isRefreshableClone' in kwargs:
+            is_refreshable_clone = kwargs['isRefreshableClone']
+
         if is_refreshable_clone is not None:
-            pulumi.set(__self__, "is_refreshable_clone", is_refreshable_clone)
+            _setter("is_refreshable_clone", is_refreshable_clone)
 
     @property
     @pulumi.getter(name="isRefreshableClone")
@@ -9618,12 +12760,33 @@ class PluggableDatabasesLocalCloneConnectionStringArgs:
         :param pulumi.Input[str] pdb_default: A host name-based PDB connection string.
         :param pulumi.Input[str] pdb_ip_default: An IP-based PDB connection string.
         """
+        PluggableDatabasesLocalCloneConnectionStringArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            all_connection_strings=all_connection_strings,
+            pdb_default=pdb_default,
+            pdb_ip_default=pdb_ip_default,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             all_connection_strings: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             pdb_default: Optional[pulumi.Input[str]] = None,
+             pdb_ip_default: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if all_connection_strings is None and 'allConnectionStrings' in kwargs:
+            all_connection_strings = kwargs['allConnectionStrings']
+        if pdb_default is None and 'pdbDefault' in kwargs:
+            pdb_default = kwargs['pdbDefault']
+        if pdb_ip_default is None and 'pdbIpDefault' in kwargs:
+            pdb_ip_default = kwargs['pdbIpDefault']
+
         if all_connection_strings is not None:
-            pulumi.set(__self__, "all_connection_strings", all_connection_strings)
+            _setter("all_connection_strings", all_connection_strings)
         if pdb_default is not None:
-            pulumi.set(__self__, "pdb_default", pdb_default)
+            _setter("pdb_default", pdb_default)
         if pdb_ip_default is not None:
-            pulumi.set(__self__, "pdb_ip_default", pdb_ip_default)
+            _setter("pdb_ip_default", pdb_ip_default)
 
     @property
     @pulumi.getter(name="allConnectionStrings")
@@ -9671,10 +12834,27 @@ class PluggableDatabasesLocalClonePdbNodeLevelDetailArgs:
         :param pulumi.Input[str] node_name: The Node name of the Database Instance.
         :param pulumi.Input[str] open_mode: The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
         """
+        PluggableDatabasesLocalClonePdbNodeLevelDetailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            node_name=node_name,
+            open_mode=open_mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             node_name: Optional[pulumi.Input[str]] = None,
+             open_mode: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if node_name is None and 'nodeName' in kwargs:
+            node_name = kwargs['nodeName']
+        if open_mode is None and 'openMode' in kwargs:
+            open_mode = kwargs['openMode']
+
         if node_name is not None:
-            pulumi.set(__self__, "node_name", node_name)
+            _setter("node_name", node_name)
         if open_mode is not None:
-            pulumi.set(__self__, "open_mode", open_mode)
+            _setter("open_mode", open_mode)
 
     @property
     @pulumi.getter(name="nodeName")
@@ -9708,8 +12888,21 @@ class PluggableDatabasesLocalClonePluggableDatabaseManagementConfigArgs:
         """
         :param pulumi.Input[str] management_status: The status of the Pluggable Database Management service.
         """
+        PluggableDatabasesLocalClonePluggableDatabaseManagementConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            management_status=management_status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             management_status: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if management_status is None and 'managementStatus' in kwargs:
+            management_status = kwargs['managementStatus']
+
         if management_status is not None:
-            pulumi.set(__self__, "management_status", management_status)
+            _setter("management_status", management_status)
 
     @property
     @pulumi.getter(name="managementStatus")
@@ -9731,8 +12924,21 @@ class PluggableDatabasesLocalCloneRefreshableCloneConfigArgs:
         """
         :param pulumi.Input[bool] is_refreshable_clone: Indicates whether the Pluggable Database is a refreshable clone.
         """
+        PluggableDatabasesLocalCloneRefreshableCloneConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_refreshable_clone=is_refreshable_clone,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_refreshable_clone: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_refreshable_clone is None and 'isRefreshableClone' in kwargs:
+            is_refreshable_clone = kwargs['isRefreshableClone']
+
         if is_refreshable_clone is not None:
-            pulumi.set(__self__, "is_refreshable_clone", is_refreshable_clone)
+            _setter("is_refreshable_clone", is_refreshable_clone)
 
     @property
     @pulumi.getter(name="isRefreshableClone")
@@ -9758,12 +12964,33 @@ class PluggableDatabasesRemoteCloneConnectionStringArgs:
         :param pulumi.Input[str] pdb_default: A host name-based PDB connection string.
         :param pulumi.Input[str] pdb_ip_default: An IP-based PDB connection string.
         """
+        PluggableDatabasesRemoteCloneConnectionStringArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            all_connection_strings=all_connection_strings,
+            pdb_default=pdb_default,
+            pdb_ip_default=pdb_ip_default,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             all_connection_strings: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             pdb_default: Optional[pulumi.Input[str]] = None,
+             pdb_ip_default: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if all_connection_strings is None and 'allConnectionStrings' in kwargs:
+            all_connection_strings = kwargs['allConnectionStrings']
+        if pdb_default is None and 'pdbDefault' in kwargs:
+            pdb_default = kwargs['pdbDefault']
+        if pdb_ip_default is None and 'pdbIpDefault' in kwargs:
+            pdb_ip_default = kwargs['pdbIpDefault']
+
         if all_connection_strings is not None:
-            pulumi.set(__self__, "all_connection_strings", all_connection_strings)
+            _setter("all_connection_strings", all_connection_strings)
         if pdb_default is not None:
-            pulumi.set(__self__, "pdb_default", pdb_default)
+            _setter("pdb_default", pdb_default)
         if pdb_ip_default is not None:
-            pulumi.set(__self__, "pdb_ip_default", pdb_ip_default)
+            _setter("pdb_ip_default", pdb_ip_default)
 
     @property
     @pulumi.getter(name="allConnectionStrings")
@@ -9811,10 +13038,27 @@ class PluggableDatabasesRemoteClonePdbNodeLevelDetailArgs:
         :param pulumi.Input[str] node_name: The Node name of the Database Instance.
         :param pulumi.Input[str] open_mode: The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
         """
+        PluggableDatabasesRemoteClonePdbNodeLevelDetailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            node_name=node_name,
+            open_mode=open_mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             node_name: Optional[pulumi.Input[str]] = None,
+             open_mode: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if node_name is None and 'nodeName' in kwargs:
+            node_name = kwargs['nodeName']
+        if open_mode is None and 'openMode' in kwargs:
+            open_mode = kwargs['openMode']
+
         if node_name is not None:
-            pulumi.set(__self__, "node_name", node_name)
+            _setter("node_name", node_name)
         if open_mode is not None:
-            pulumi.set(__self__, "open_mode", open_mode)
+            _setter("open_mode", open_mode)
 
     @property
     @pulumi.getter(name="nodeName")
@@ -9848,8 +13092,21 @@ class PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArgs:
         """
         :param pulumi.Input[str] management_status: The status of the Pluggable Database Management service.
         """
+        PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            management_status=management_status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             management_status: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if management_status is None and 'managementStatus' in kwargs:
+            management_status = kwargs['managementStatus']
+
         if management_status is not None:
-            pulumi.set(__self__, "management_status", management_status)
+            _setter("management_status", management_status)
 
     @property
     @pulumi.getter(name="managementStatus")
@@ -9871,8 +13128,21 @@ class PluggableDatabasesRemoteCloneRefreshableCloneConfigArgs:
         """
         :param pulumi.Input[bool] is_refreshable_clone: Indicates whether the Pluggable Database is a refreshable clone.
         """
+        PluggableDatabasesRemoteCloneRefreshableCloneConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_refreshable_clone=is_refreshable_clone,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_refreshable_clone: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_refreshable_clone is None and 'isRefreshableClone' in kwargs:
+            is_refreshable_clone = kwargs['isRefreshableClone']
+
         if is_refreshable_clone is not None:
-            pulumi.set(__self__, "is_refreshable_clone", is_refreshable_clone)
+            _setter("is_refreshable_clone", is_refreshable_clone)
 
     @property
     @pulumi.getter(name="isRefreshableClone")
@@ -9898,12 +13168,33 @@ class VmClusterAddVirtualNetworkDataCollectionOptionArgs:
         :param pulumi.Input[bool] is_health_monitoring_enabled: Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
         :param pulumi.Input[bool] is_incident_logs_enabled: Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
         """
+        VmClusterAddVirtualNetworkDataCollectionOptionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_diagnostics_events_enabled=is_diagnostics_events_enabled,
+            is_health_monitoring_enabled=is_health_monitoring_enabled,
+            is_incident_logs_enabled=is_incident_logs_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_diagnostics_events_enabled: Optional[pulumi.Input[bool]] = None,
+             is_health_monitoring_enabled: Optional[pulumi.Input[bool]] = None,
+             is_incident_logs_enabled: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_diagnostics_events_enabled is None and 'isDiagnosticsEventsEnabled' in kwargs:
+            is_diagnostics_events_enabled = kwargs['isDiagnosticsEventsEnabled']
+        if is_health_monitoring_enabled is None and 'isHealthMonitoringEnabled' in kwargs:
+            is_health_monitoring_enabled = kwargs['isHealthMonitoringEnabled']
+        if is_incident_logs_enabled is None and 'isIncidentLogsEnabled' in kwargs:
+            is_incident_logs_enabled = kwargs['isIncidentLogsEnabled']
+
         if is_diagnostics_events_enabled is not None:
-            pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
+            _setter("is_diagnostics_events_enabled", is_diagnostics_events_enabled)
         if is_health_monitoring_enabled is not None:
-            pulumi.set(__self__, "is_health_monitoring_enabled", is_health_monitoring_enabled)
+            _setter("is_health_monitoring_enabled", is_health_monitoring_enabled)
         if is_incident_logs_enabled is not None:
-            pulumi.set(__self__, "is_incident_logs_enabled", is_incident_logs_enabled)
+            _setter("is_incident_logs_enabled", is_incident_logs_enabled)
 
     @property
     @pulumi.getter(name="isDiagnosticsEventsEnabled")
@@ -9949,7 +13240,22 @@ class VmClusterAddVirtualNetworkDbServerArgs:
         """
         :param pulumi.Input[str] db_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exacc Db server.
         """
-        pulumi.set(__self__, "db_server_id", db_server_id)
+        VmClusterAddVirtualNetworkDbServerArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            db_server_id=db_server_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             db_server_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if db_server_id is None and 'dbServerId' in kwargs:
+            db_server_id = kwargs['dbServerId']
+        if db_server_id is None:
+            raise TypeError("Missing 'db_server_id' argument")
+
+        _setter("db_server_id", db_server_id)
 
     @property
     @pulumi.getter(name="dbServerId")
@@ -9975,12 +13281,33 @@ class VmClusterDataCollectionOptionsArgs:
         :param pulumi.Input[bool] is_health_monitoring_enabled: (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
         :param pulumi.Input[bool] is_incident_logs_enabled: (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
         """
+        VmClusterDataCollectionOptionsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_diagnostics_events_enabled=is_diagnostics_events_enabled,
+            is_health_monitoring_enabled=is_health_monitoring_enabled,
+            is_incident_logs_enabled=is_incident_logs_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_diagnostics_events_enabled: Optional[pulumi.Input[bool]] = None,
+             is_health_monitoring_enabled: Optional[pulumi.Input[bool]] = None,
+             is_incident_logs_enabled: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_diagnostics_events_enabled is None and 'isDiagnosticsEventsEnabled' in kwargs:
+            is_diagnostics_events_enabled = kwargs['isDiagnosticsEventsEnabled']
+        if is_health_monitoring_enabled is None and 'isHealthMonitoringEnabled' in kwargs:
+            is_health_monitoring_enabled = kwargs['isHealthMonitoringEnabled']
+        if is_incident_logs_enabled is None and 'isIncidentLogsEnabled' in kwargs:
+            is_incident_logs_enabled = kwargs['isIncidentLogsEnabled']
+
         if is_diagnostics_events_enabled is not None:
-            pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
+            _setter("is_diagnostics_events_enabled", is_diagnostics_events_enabled)
         if is_health_monitoring_enabled is not None:
-            pulumi.set(__self__, "is_health_monitoring_enabled", is_health_monitoring_enabled)
+            _setter("is_health_monitoring_enabled", is_health_monitoring_enabled)
         if is_incident_logs_enabled is not None:
-            pulumi.set(__self__, "is_incident_logs_enabled", is_incident_logs_enabled)
+            _setter("is_incident_logs_enabled", is_incident_logs_enabled)
 
     @property
     @pulumi.getter(name="isDiagnosticsEventsEnabled")
@@ -10030,9 +13357,32 @@ class VmClusterNetworkDrScanArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ips: (Updatable) The list of SCAN IP addresses. Three addresses should be provided.
         :param pulumi.Input[int] scan_listener_port_tcp: (Updatable) The SCAN TCPIP port. Default is 1521.
         """
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "ips", ips)
-        pulumi.set(__self__, "scan_listener_port_tcp", scan_listener_port_tcp)
+        VmClusterNetworkDrScanArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+            ips=ips,
+            scan_listener_port_tcp=scan_listener_port_tcp,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: Optional[pulumi.Input[str]] = None,
+             ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             scan_listener_port_tcp: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if ips is None:
+            raise TypeError("Missing 'ips' argument")
+        if scan_listener_port_tcp is None and 'scanListenerPortTcp' in kwargs:
+            scan_listener_port_tcp = kwargs['scanListenerPortTcp']
+        if scan_listener_port_tcp is None:
+            raise TypeError("Missing 'scan_listener_port_tcp' argument")
+
+        _setter("hostname", hostname)
+        _setter("ips", ips)
+        _setter("scan_listener_port_tcp", scan_listener_port_tcp)
 
     @property
     @pulumi.getter
@@ -10086,14 +13436,41 @@ class VmClusterNetworkScanArgs:
         :param pulumi.Input[int] scan_listener_port_tcp: (Updatable) The SCAN TCPIP port. Default is 1521.
         :param pulumi.Input[int] scan_listener_port_tcp_ssl: (Updatable) The SCAN TCPIP SSL port. Default is 2484.
         """
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "ips", ips)
+        VmClusterNetworkScanArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+            ips=ips,
+            port=port,
+            scan_listener_port_tcp=scan_listener_port_tcp,
+            scan_listener_port_tcp_ssl=scan_listener_port_tcp_ssl,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: Optional[pulumi.Input[str]] = None,
+             ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             port: Optional[pulumi.Input[int]] = None,
+             scan_listener_port_tcp: Optional[pulumi.Input[int]] = None,
+             scan_listener_port_tcp_ssl: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if ips is None:
+            raise TypeError("Missing 'ips' argument")
+        if scan_listener_port_tcp is None and 'scanListenerPortTcp' in kwargs:
+            scan_listener_port_tcp = kwargs['scanListenerPortTcp']
+        if scan_listener_port_tcp_ssl is None and 'scanListenerPortTcpSsl' in kwargs:
+            scan_listener_port_tcp_ssl = kwargs['scanListenerPortTcpSsl']
+
+        _setter("hostname", hostname)
+        _setter("ips", ips)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if scan_listener_port_tcp is not None:
-            pulumi.set(__self__, "scan_listener_port_tcp", scan_listener_port_tcp)
+            _setter("scan_listener_port_tcp", scan_listener_port_tcp)
         if scan_listener_port_tcp_ssl is not None:
-            pulumi.set(__self__, "scan_listener_port_tcp_ssl", scan_listener_port_tcp_ssl)
+            _setter("scan_listener_port_tcp_ssl", scan_listener_port_tcp_ssl)
 
     @property
     @pulumi.getter
@@ -10177,16 +13554,47 @@ class VmClusterNetworkVmNetworkArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "network_type", network_type)
-        pulumi.set(__self__, "nodes", nodes)
+        VmClusterNetworkVmNetworkArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            network_type=network_type,
+            nodes=nodes,
+            domain_name=domain_name,
+            gateway=gateway,
+            netmask=netmask,
+            vlan_id=vlan_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             network_type: Optional[pulumi.Input[str]] = None,
+             nodes: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkNodeArgs']]]] = None,
+             domain_name: Optional[pulumi.Input[str]] = None,
+             gateway: Optional[pulumi.Input[str]] = None,
+             netmask: Optional[pulumi.Input[str]] = None,
+             vlan_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if network_type is None and 'networkType' in kwargs:
+            network_type = kwargs['networkType']
+        if network_type is None:
+            raise TypeError("Missing 'network_type' argument")
+        if nodes is None:
+            raise TypeError("Missing 'nodes' argument")
+        if domain_name is None and 'domainName' in kwargs:
+            domain_name = kwargs['domainName']
+        if vlan_id is None and 'vlanId' in kwargs:
+            vlan_id = kwargs['vlanId']
+
+        _setter("network_type", network_type)
+        _setter("nodes", nodes)
         if domain_name is not None:
-            pulumi.set(__self__, "domain_name", domain_name)
+            _setter("domain_name", domain_name)
         if gateway is not None:
-            pulumi.set(__self__, "gateway", gateway)
+            _setter("gateway", gateway)
         if netmask is not None:
-            pulumi.set(__self__, "netmask", netmask)
+            _setter("netmask", netmask)
         if vlan_id is not None:
-            pulumi.set(__self__, "vlan_id", vlan_id)
+            _setter("vlan_id", vlan_id)
 
     @property
     @pulumi.getter(name="networkType")
@@ -10282,16 +13690,45 @@ class VmClusterNetworkVmNetworkNodeArgs:
         :param pulumi.Input[str] vip: (Updatable) The node virtual IP (VIP) address.
         :param pulumi.Input[str] vip_hostname: (Updatable) The node virtual IP (VIP) host name.
         """
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "ip", ip)
+        VmClusterNetworkVmNetworkNodeArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+            ip=ip,
+            db_server_id=db_server_id,
+            state=state,
+            vip=vip,
+            vip_hostname=vip_hostname,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: Optional[pulumi.Input[str]] = None,
+             ip: Optional[pulumi.Input[str]] = None,
+             db_server_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             vip: Optional[pulumi.Input[str]] = None,
+             vip_hostname: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if ip is None:
+            raise TypeError("Missing 'ip' argument")
+        if db_server_id is None and 'dbServerId' in kwargs:
+            db_server_id = kwargs['dbServerId']
+        if vip_hostname is None and 'vipHostname' in kwargs:
+            vip_hostname = kwargs['vipHostname']
+
+        _setter("hostname", hostname)
+        _setter("ip", ip)
         if db_server_id is not None:
-            pulumi.set(__self__, "db_server_id", db_server_id)
+            _setter("db_server_id", db_server_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if vip is not None:
-            pulumi.set(__self__, "vip", vip)
+            _setter("vip", vip)
         if vip_hostname is not None:
-            pulumi.set(__self__, "vip_hostname", vip_hostname)
+            _setter("vip_hostname", vip_hostname)
 
     @property
     @pulumi.getter
@@ -10377,12 +13814,33 @@ class VmClusterRemoveVirtualMachineDataCollectionOptionArgs:
         :param pulumi.Input[bool] is_health_monitoring_enabled: Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
         :param pulumi.Input[bool] is_incident_logs_enabled: Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
         """
+        VmClusterRemoveVirtualMachineDataCollectionOptionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_diagnostics_events_enabled=is_diagnostics_events_enabled,
+            is_health_monitoring_enabled=is_health_monitoring_enabled,
+            is_incident_logs_enabled=is_incident_logs_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_diagnostics_events_enabled: Optional[pulumi.Input[bool]] = None,
+             is_health_monitoring_enabled: Optional[pulumi.Input[bool]] = None,
+             is_incident_logs_enabled: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_diagnostics_events_enabled is None and 'isDiagnosticsEventsEnabled' in kwargs:
+            is_diagnostics_events_enabled = kwargs['isDiagnosticsEventsEnabled']
+        if is_health_monitoring_enabled is None and 'isHealthMonitoringEnabled' in kwargs:
+            is_health_monitoring_enabled = kwargs['isHealthMonitoringEnabled']
+        if is_incident_logs_enabled is None and 'isIncidentLogsEnabled' in kwargs:
+            is_incident_logs_enabled = kwargs['isIncidentLogsEnabled']
+
         if is_diagnostics_events_enabled is not None:
-            pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
+            _setter("is_diagnostics_events_enabled", is_diagnostics_events_enabled)
         if is_health_monitoring_enabled is not None:
-            pulumi.set(__self__, "is_health_monitoring_enabled", is_health_monitoring_enabled)
+            _setter("is_health_monitoring_enabled", is_health_monitoring_enabled)
         if is_incident_logs_enabled is not None:
-            pulumi.set(__self__, "is_incident_logs_enabled", is_incident_logs_enabled)
+            _setter("is_incident_logs_enabled", is_incident_logs_enabled)
 
     @property
     @pulumi.getter(name="isDiagnosticsEventsEnabled")
@@ -10428,7 +13886,22 @@ class VmClusterRemoveVirtualMachineDbServerArgs:
         """
         :param pulumi.Input[str] db_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exacc Db server.
         """
-        pulumi.set(__self__, "db_server_id", db_server_id)
+        VmClusterRemoveVirtualMachineDbServerArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            db_server_id=db_server_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             db_server_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if db_server_id is None and 'dbServerId' in kwargs:
+            db_server_id = kwargs['dbServerId']
+        if db_server_id is None:
+            raise TypeError("Missing 'db_server_id' argument")
+
+        _setter("db_server_id", db_server_id)
 
     @property
     @pulumi.getter(name="dbServerId")
@@ -10449,10 +13922,29 @@ class GetApplicationVipsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetApplicationVipsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -10491,10 +13983,29 @@ class GetAutonomousCharacterSetsFilterArgs:
         """
         :param str name: A valid Oracle character set.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAutonomousCharacterSetsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -10533,10 +14044,29 @@ class GetAutonomousContainerDatabaseDataguardAssociationsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAutonomousContainerDatabaseDataguardAssociationsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -10572,10 +14102,29 @@ class GetAutonomousContainerDatabaseVersionsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAutonomousContainerDatabaseVersionsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -10614,10 +14163,29 @@ class GetAutonomousContainerDatabasesFilterArgs:
         """
         :param str name: Name of the month of the year.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAutonomousContainerDatabasesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -10656,10 +14224,29 @@ class GetAutonomousContainerPatchesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAutonomousContainerPatchesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -10695,10 +14282,29 @@ class GetAutonomousDatabaseBackupsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAutonomousDatabaseBackupsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -10734,10 +14340,29 @@ class GetAutonomousDatabaseDataguardAssociationsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAutonomousDatabaseDataguardAssociationsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -10773,10 +14398,29 @@ class GetAutonomousDatabaseRefreshableClonesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAutonomousDatabaseRefreshableClonesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -10815,10 +14459,29 @@ class GetAutonomousDatabasesClonesFilterArgs:
         """
         :param str name: Name of the day of the week.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAutonomousDatabasesClonesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -10860,10 +14523,29 @@ class GetAutonomousDatabasesFilterArgs:
         """
         :param str name: Name of the day of the week.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAutonomousDatabasesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -10902,10 +14584,29 @@ class GetAutonomousDbPreviewVersionsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAutonomousDbPreviewVersionsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -10941,10 +14642,29 @@ class GetAutonomousDbVersionsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAutonomousDbVersionsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -10983,10 +14703,29 @@ class GetAutonomousExadataInfrastructureShapesFilterArgs:
         """
         :param str name: The name of the shape used for the Autonomous Exadata Infrastructure.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAutonomousExadataInfrastructureShapesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -11028,10 +14767,29 @@ class GetAutonomousExadataInfrastructuresFilterArgs:
         """
         :param str name: Name of the month of the year.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAutonomousExadataInfrastructuresFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -11070,10 +14828,29 @@ class GetAutonomousVirtualMachinesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAutonomousVirtualMachinesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -11109,10 +14886,29 @@ class GetAutonomousVmClusterAcdResourceUsagesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAutonomousVmClusterAcdResourceUsagesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -11151,10 +14947,29 @@ class GetAutonomousVmClustersFilterArgs:
         """
         :param str name: Name of the month of the year.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAutonomousVmClustersFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -11193,10 +15008,29 @@ class GetBackupDestinationsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetBackupDestinationsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -11232,10 +15066,29 @@ class GetBackupsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetBackupsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -11271,10 +15124,29 @@ class GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -11313,10 +15185,29 @@ class GetCloudAutonomousVmClustersFilterArgs:
         """
         :param str name: Name of the month of the year.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetCloudAutonomousVmClustersFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -11358,10 +15249,29 @@ class GetCloudExadataInfrastructuresFilterArgs:
         """
         :param str name: Name of the month of the year.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetCloudExadataInfrastructuresFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -11400,10 +15310,29 @@ class GetCloudVmClustersFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetCloudVmClustersFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -11439,10 +15368,29 @@ class GetDataGuardAssociationsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDataGuardAssociationsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -11478,10 +15426,29 @@ class GetDatabaseMaintenanceRunHistoriesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDatabaseMaintenanceRunHistoriesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -11517,10 +15484,29 @@ class GetDatabasePdbConversionHistoryEntriesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDatabasePdbConversionHistoryEntriesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -11556,10 +15542,29 @@ class GetDatabaseSoftwareImagesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDatabaseSoftwareImagesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -11595,10 +15600,29 @@ class GetDatabaseUpgradeHistoryEntriesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDatabaseUpgradeHistoryEntriesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -11634,10 +15658,29 @@ class GetDatabasesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDatabasesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -11673,10 +15716,29 @@ class GetDbHomePatchHistoryEntriesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDbHomePatchHistoryEntriesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -11712,10 +15774,29 @@ class GetDbHomePatchesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDbHomePatchesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -11751,10 +15832,29 @@ class GetDbHomesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDbHomesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -11790,10 +15890,29 @@ class GetDbNodeConsoleConnectionsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDbNodeConsoleConnectionsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -11829,10 +15948,29 @@ class GetDbNodesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDbNodesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -11868,10 +16006,29 @@ class GetDbServersFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDbServersFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -11907,10 +16064,29 @@ class GetDbSystemComputePerformancesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDbSystemComputePerformancesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -11946,10 +16122,29 @@ class GetDbSystemHistoryEntriesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDbSystemHistoryEntriesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -11985,10 +16180,29 @@ class GetDbSystemPatchesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDbSystemPatchesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -12027,10 +16241,29 @@ class GetDbSystemShapesFilterArgs:
         """
         :param str name: The name of the shape used for the DB system.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDbSystemShapesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -12069,10 +16302,29 @@ class GetDbSystemStoragePerformancesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDbSystemStoragePerformancesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -12111,10 +16363,29 @@ class GetDbSystemsFilterArgs:
         """
         :param str name: Name of the month of the year.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDbSystemsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -12153,10 +16424,29 @@ class GetDbSystemsUpgradeHistoryEntriesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDbSystemsUpgradeHistoryEntriesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -12192,10 +16482,29 @@ class GetDbVersionsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDbVersionsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -12234,10 +16543,29 @@ class GetExadataInfrastructuresFilterArgs:
         """
         :param str name: Name of the month of the year.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetExadataInfrastructuresFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -12276,10 +16604,29 @@ class GetExternalContainerDatabasesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetExternalContainerDatabasesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -12315,10 +16662,29 @@ class GetExternalDatabaseConnectorsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetExternalDatabaseConnectorsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -12354,10 +16720,29 @@ class GetExternalNonContainerDatabasesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetExternalNonContainerDatabasesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -12393,10 +16778,29 @@ class GetExternalPluggableDatabasesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetExternalPluggableDatabasesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -12435,10 +16839,29 @@ class GetFlexComponentsFilterArgs:
         """
         :param str name: A filter to return only resources that match the entire name given. The match is not case sensitive.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetFlexComponentsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -12477,10 +16900,29 @@ class GetGiVersionsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetGiVersionsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -12516,10 +16958,29 @@ class GetKeyStoresFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetKeyStoresFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -12555,10 +17016,29 @@ class GetMaintenanceRunsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMaintenanceRunsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -12594,10 +17074,29 @@ class GetManagedPreferredCredentialsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedPreferredCredentialsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -12633,10 +17132,29 @@ class GetOneoffPatchesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetOneoffPatchesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -12672,10 +17190,29 @@ class GetPluggableDatabasesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetPluggableDatabasesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -12711,10 +17248,29 @@ class GetVmClusterNetworksFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetVmClusterNetworksFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -12750,10 +17306,29 @@ class GetVmClusterPatchHistoryEntriesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetVmClusterPatchHistoryEntriesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -12789,10 +17364,29 @@ class GetVmClusterPatchesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetVmClusterPatchesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -12841,13 +17435,54 @@ class GetVmClusterRecommendedNetworkNetworkArgs:
         :param str prefix: The network domain name.
         :param str vlan_id: The network VLAN ID.
         """
-        pulumi.set(__self__, "cidr", cidr)
-        pulumi.set(__self__, "domain", domain)
-        pulumi.set(__self__, "gateway", gateway)
-        pulumi.set(__self__, "netmask", netmask)
-        pulumi.set(__self__, "network_type", network_type)
-        pulumi.set(__self__, "prefix", prefix)
-        pulumi.set(__self__, "vlan_id", vlan_id)
+        GetVmClusterRecommendedNetworkNetworkArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cidr=cidr,
+            domain=domain,
+            gateway=gateway,
+            netmask=netmask,
+            network_type=network_type,
+            prefix=prefix,
+            vlan_id=vlan_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cidr: Optional[str] = None,
+             domain: Optional[str] = None,
+             gateway: Optional[str] = None,
+             netmask: Optional[str] = None,
+             network_type: Optional[str] = None,
+             prefix: Optional[str] = None,
+             vlan_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if cidr is None:
+            raise TypeError("Missing 'cidr' argument")
+        if domain is None:
+            raise TypeError("Missing 'domain' argument")
+        if gateway is None:
+            raise TypeError("Missing 'gateway' argument")
+        if netmask is None:
+            raise TypeError("Missing 'netmask' argument")
+        if network_type is None and 'networkType' in kwargs:
+            network_type = kwargs['networkType']
+        if network_type is None:
+            raise TypeError("Missing 'network_type' argument")
+        if prefix is None:
+            raise TypeError("Missing 'prefix' argument")
+        if vlan_id is None and 'vlanId' in kwargs:
+            vlan_id = kwargs['vlanId']
+        if vlan_id is None:
+            raise TypeError("Missing 'vlan_id' argument")
+
+        _setter("cidr", cidr)
+        _setter("domain", domain)
+        _setter("gateway", gateway)
+        _setter("netmask", netmask)
+        _setter("network_type", network_type)
+        _setter("prefix", prefix)
+        _setter("vlan_id", vlan_id)
 
     @property
     @pulumi.getter
@@ -12940,10 +17575,29 @@ class GetVmClusterUpdateHistoryEntriesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetVmClusterUpdateHistoryEntriesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -12979,10 +17633,29 @@ class GetVmClusterUpdatesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetVmClusterUpdatesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -13018,10 +17691,29 @@ class GetVmClustersFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetVmClustersFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

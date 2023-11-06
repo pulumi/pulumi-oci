@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -55,39 +55,122 @@ class BuildPipelineStageArgs:
         :param pulumi.Input[int] stage_execution_timeout_in_seconds: (Updatable) Timeout for the build stage execution. Specify value in seconds.
         :param pulumi.Input['BuildPipelineStageWaitCriteriaArgs'] wait_criteria: (Updatable) Specifies wait criteria for the Wait stage.
         """
-        pulumi.set(__self__, "build_pipeline_id", build_pipeline_id)
-        pulumi.set(__self__, "build_pipeline_stage_predecessor_collection", build_pipeline_stage_predecessor_collection)
-        pulumi.set(__self__, "build_pipeline_stage_type", build_pipeline_stage_type)
+        BuildPipelineStageArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            build_pipeline_id=build_pipeline_id,
+            build_pipeline_stage_predecessor_collection=build_pipeline_stage_predecessor_collection,
+            build_pipeline_stage_type=build_pipeline_stage_type,
+            build_runner_shape_config=build_runner_shape_config,
+            build_source_collection=build_source_collection,
+            build_spec_file=build_spec_file,
+            defined_tags=defined_tags,
+            deliver_artifact_collection=deliver_artifact_collection,
+            deploy_pipeline_id=deploy_pipeline_id,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            image=image,
+            is_pass_all_parameters_enabled=is_pass_all_parameters_enabled,
+            primary_build_source=primary_build_source,
+            private_access_config=private_access_config,
+            stage_execution_timeout_in_seconds=stage_execution_timeout_in_seconds,
+            wait_criteria=wait_criteria,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             build_pipeline_id: Optional[pulumi.Input[str]] = None,
+             build_pipeline_stage_predecessor_collection: Optional[pulumi.Input['BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs']] = None,
+             build_pipeline_stage_type: Optional[pulumi.Input[str]] = None,
+             build_runner_shape_config: Optional[pulumi.Input['BuildPipelineStageBuildRunnerShapeConfigArgs']] = None,
+             build_source_collection: Optional[pulumi.Input['BuildPipelineStageBuildSourceCollectionArgs']] = None,
+             build_spec_file: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             deliver_artifact_collection: Optional[pulumi.Input['BuildPipelineStageDeliverArtifactCollectionArgs']] = None,
+             deploy_pipeline_id: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             image: Optional[pulumi.Input[str]] = None,
+             is_pass_all_parameters_enabled: Optional[pulumi.Input[bool]] = None,
+             primary_build_source: Optional[pulumi.Input[str]] = None,
+             private_access_config: Optional[pulumi.Input['BuildPipelineStagePrivateAccessConfigArgs']] = None,
+             stage_execution_timeout_in_seconds: Optional[pulumi.Input[int]] = None,
+             wait_criteria: Optional[pulumi.Input['BuildPipelineStageWaitCriteriaArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if build_pipeline_id is None and 'buildPipelineId' in kwargs:
+            build_pipeline_id = kwargs['buildPipelineId']
+        if build_pipeline_id is None:
+            raise TypeError("Missing 'build_pipeline_id' argument")
+        if build_pipeline_stage_predecessor_collection is None and 'buildPipelineStagePredecessorCollection' in kwargs:
+            build_pipeline_stage_predecessor_collection = kwargs['buildPipelineStagePredecessorCollection']
+        if build_pipeline_stage_predecessor_collection is None:
+            raise TypeError("Missing 'build_pipeline_stage_predecessor_collection' argument")
+        if build_pipeline_stage_type is None and 'buildPipelineStageType' in kwargs:
+            build_pipeline_stage_type = kwargs['buildPipelineStageType']
+        if build_pipeline_stage_type is None:
+            raise TypeError("Missing 'build_pipeline_stage_type' argument")
+        if build_runner_shape_config is None and 'buildRunnerShapeConfig' in kwargs:
+            build_runner_shape_config = kwargs['buildRunnerShapeConfig']
+        if build_source_collection is None and 'buildSourceCollection' in kwargs:
+            build_source_collection = kwargs['buildSourceCollection']
+        if build_spec_file is None and 'buildSpecFile' in kwargs:
+            build_spec_file = kwargs['buildSpecFile']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if deliver_artifact_collection is None and 'deliverArtifactCollection' in kwargs:
+            deliver_artifact_collection = kwargs['deliverArtifactCollection']
+        if deploy_pipeline_id is None and 'deployPipelineId' in kwargs:
+            deploy_pipeline_id = kwargs['deployPipelineId']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_pass_all_parameters_enabled is None and 'isPassAllParametersEnabled' in kwargs:
+            is_pass_all_parameters_enabled = kwargs['isPassAllParametersEnabled']
+        if primary_build_source is None and 'primaryBuildSource' in kwargs:
+            primary_build_source = kwargs['primaryBuildSource']
+        if private_access_config is None and 'privateAccessConfig' in kwargs:
+            private_access_config = kwargs['privateAccessConfig']
+        if stage_execution_timeout_in_seconds is None and 'stageExecutionTimeoutInSeconds' in kwargs:
+            stage_execution_timeout_in_seconds = kwargs['stageExecutionTimeoutInSeconds']
+        if wait_criteria is None and 'waitCriteria' in kwargs:
+            wait_criteria = kwargs['waitCriteria']
+
+        _setter("build_pipeline_id", build_pipeline_id)
+        _setter("build_pipeline_stage_predecessor_collection", build_pipeline_stage_predecessor_collection)
+        _setter("build_pipeline_stage_type", build_pipeline_stage_type)
         if build_runner_shape_config is not None:
-            pulumi.set(__self__, "build_runner_shape_config", build_runner_shape_config)
+            _setter("build_runner_shape_config", build_runner_shape_config)
         if build_source_collection is not None:
-            pulumi.set(__self__, "build_source_collection", build_source_collection)
+            _setter("build_source_collection", build_source_collection)
         if build_spec_file is not None:
-            pulumi.set(__self__, "build_spec_file", build_spec_file)
+            _setter("build_spec_file", build_spec_file)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if deliver_artifact_collection is not None:
-            pulumi.set(__self__, "deliver_artifact_collection", deliver_artifact_collection)
+            _setter("deliver_artifact_collection", deliver_artifact_collection)
         if deploy_pipeline_id is not None:
-            pulumi.set(__self__, "deploy_pipeline_id", deploy_pipeline_id)
+            _setter("deploy_pipeline_id", deploy_pipeline_id)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if image is not None:
-            pulumi.set(__self__, "image", image)
+            _setter("image", image)
         if is_pass_all_parameters_enabled is not None:
-            pulumi.set(__self__, "is_pass_all_parameters_enabled", is_pass_all_parameters_enabled)
+            _setter("is_pass_all_parameters_enabled", is_pass_all_parameters_enabled)
         if primary_build_source is not None:
-            pulumi.set(__self__, "primary_build_source", primary_build_source)
+            _setter("primary_build_source", primary_build_source)
         if private_access_config is not None:
-            pulumi.set(__self__, "private_access_config", private_access_config)
+            _setter("private_access_config", private_access_config)
         if stage_execution_timeout_in_seconds is not None:
-            pulumi.set(__self__, "stage_execution_timeout_in_seconds", stage_execution_timeout_in_seconds)
+            _setter("stage_execution_timeout_in_seconds", stage_execution_timeout_in_seconds)
         if wait_criteria is not None:
-            pulumi.set(__self__, "wait_criteria", wait_criteria)
+            _setter("wait_criteria", wait_criteria)
 
     @property
     @pulumi.getter(name="buildPipelineId")
@@ -362,56 +445,159 @@ class _BuildPipelineStageState:
         :param pulumi.Input[str] time_updated: The time the stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input['BuildPipelineStageWaitCriteriaArgs'] wait_criteria: (Updatable) Specifies wait criteria for the Wait stage.
         """
+        _BuildPipelineStageState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            build_pipeline_id=build_pipeline_id,
+            build_pipeline_stage_predecessor_collection=build_pipeline_stage_predecessor_collection,
+            build_pipeline_stage_type=build_pipeline_stage_type,
+            build_runner_shape_config=build_runner_shape_config,
+            build_source_collection=build_source_collection,
+            build_spec_file=build_spec_file,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            deliver_artifact_collection=deliver_artifact_collection,
+            deploy_pipeline_id=deploy_pipeline_id,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            image=image,
+            is_pass_all_parameters_enabled=is_pass_all_parameters_enabled,
+            lifecycle_details=lifecycle_details,
+            primary_build_source=primary_build_source,
+            private_access_config=private_access_config,
+            project_id=project_id,
+            stage_execution_timeout_in_seconds=stage_execution_timeout_in_seconds,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            wait_criteria=wait_criteria,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             build_pipeline_id: Optional[pulumi.Input[str]] = None,
+             build_pipeline_stage_predecessor_collection: Optional[pulumi.Input['BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs']] = None,
+             build_pipeline_stage_type: Optional[pulumi.Input[str]] = None,
+             build_runner_shape_config: Optional[pulumi.Input['BuildPipelineStageBuildRunnerShapeConfigArgs']] = None,
+             build_source_collection: Optional[pulumi.Input['BuildPipelineStageBuildSourceCollectionArgs']] = None,
+             build_spec_file: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             deliver_artifact_collection: Optional[pulumi.Input['BuildPipelineStageDeliverArtifactCollectionArgs']] = None,
+             deploy_pipeline_id: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             image: Optional[pulumi.Input[str]] = None,
+             is_pass_all_parameters_enabled: Optional[pulumi.Input[bool]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             primary_build_source: Optional[pulumi.Input[str]] = None,
+             private_access_config: Optional[pulumi.Input['BuildPipelineStagePrivateAccessConfigArgs']] = None,
+             project_id: Optional[pulumi.Input[str]] = None,
+             stage_execution_timeout_in_seconds: Optional[pulumi.Input[int]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             wait_criteria: Optional[pulumi.Input['BuildPipelineStageWaitCriteriaArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if build_pipeline_id is None and 'buildPipelineId' in kwargs:
+            build_pipeline_id = kwargs['buildPipelineId']
+        if build_pipeline_stage_predecessor_collection is None and 'buildPipelineStagePredecessorCollection' in kwargs:
+            build_pipeline_stage_predecessor_collection = kwargs['buildPipelineStagePredecessorCollection']
+        if build_pipeline_stage_type is None and 'buildPipelineStageType' in kwargs:
+            build_pipeline_stage_type = kwargs['buildPipelineStageType']
+        if build_runner_shape_config is None and 'buildRunnerShapeConfig' in kwargs:
+            build_runner_shape_config = kwargs['buildRunnerShapeConfig']
+        if build_source_collection is None and 'buildSourceCollection' in kwargs:
+            build_source_collection = kwargs['buildSourceCollection']
+        if build_spec_file is None and 'buildSpecFile' in kwargs:
+            build_spec_file = kwargs['buildSpecFile']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if deliver_artifact_collection is None and 'deliverArtifactCollection' in kwargs:
+            deliver_artifact_collection = kwargs['deliverArtifactCollection']
+        if deploy_pipeline_id is None and 'deployPipelineId' in kwargs:
+            deploy_pipeline_id = kwargs['deployPipelineId']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_pass_all_parameters_enabled is None and 'isPassAllParametersEnabled' in kwargs:
+            is_pass_all_parameters_enabled = kwargs['isPassAllParametersEnabled']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if primary_build_source is None and 'primaryBuildSource' in kwargs:
+            primary_build_source = kwargs['primaryBuildSource']
+        if private_access_config is None and 'privateAccessConfig' in kwargs:
+            private_access_config = kwargs['privateAccessConfig']
+        if project_id is None and 'projectId' in kwargs:
+            project_id = kwargs['projectId']
+        if stage_execution_timeout_in_seconds is None and 'stageExecutionTimeoutInSeconds' in kwargs:
+            stage_execution_timeout_in_seconds = kwargs['stageExecutionTimeoutInSeconds']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if wait_criteria is None and 'waitCriteria' in kwargs:
+            wait_criteria = kwargs['waitCriteria']
+
         if build_pipeline_id is not None:
-            pulumi.set(__self__, "build_pipeline_id", build_pipeline_id)
+            _setter("build_pipeline_id", build_pipeline_id)
         if build_pipeline_stage_predecessor_collection is not None:
-            pulumi.set(__self__, "build_pipeline_stage_predecessor_collection", build_pipeline_stage_predecessor_collection)
+            _setter("build_pipeline_stage_predecessor_collection", build_pipeline_stage_predecessor_collection)
         if build_pipeline_stage_type is not None:
-            pulumi.set(__self__, "build_pipeline_stage_type", build_pipeline_stage_type)
+            _setter("build_pipeline_stage_type", build_pipeline_stage_type)
         if build_runner_shape_config is not None:
-            pulumi.set(__self__, "build_runner_shape_config", build_runner_shape_config)
+            _setter("build_runner_shape_config", build_runner_shape_config)
         if build_source_collection is not None:
-            pulumi.set(__self__, "build_source_collection", build_source_collection)
+            _setter("build_source_collection", build_source_collection)
         if build_spec_file is not None:
-            pulumi.set(__self__, "build_spec_file", build_spec_file)
+            _setter("build_spec_file", build_spec_file)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if deliver_artifact_collection is not None:
-            pulumi.set(__self__, "deliver_artifact_collection", deliver_artifact_collection)
+            _setter("deliver_artifact_collection", deliver_artifact_collection)
         if deploy_pipeline_id is not None:
-            pulumi.set(__self__, "deploy_pipeline_id", deploy_pipeline_id)
+            _setter("deploy_pipeline_id", deploy_pipeline_id)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if image is not None:
-            pulumi.set(__self__, "image", image)
+            _setter("image", image)
         if is_pass_all_parameters_enabled is not None:
-            pulumi.set(__self__, "is_pass_all_parameters_enabled", is_pass_all_parameters_enabled)
+            _setter("is_pass_all_parameters_enabled", is_pass_all_parameters_enabled)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if primary_build_source is not None:
-            pulumi.set(__self__, "primary_build_source", primary_build_source)
+            _setter("primary_build_source", primary_build_source)
         if private_access_config is not None:
-            pulumi.set(__self__, "private_access_config", private_access_config)
+            _setter("private_access_config", private_access_config)
         if project_id is not None:
-            pulumi.set(__self__, "project_id", project_id)
+            _setter("project_id", project_id)
         if stage_execution_timeout_in_seconds is not None:
-            pulumi.set(__self__, "stage_execution_timeout_in_seconds", stage_execution_timeout_in_seconds)
+            _setter("stage_execution_timeout_in_seconds", stage_execution_timeout_in_seconds)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if wait_criteria is not None:
-            pulumi.set(__self__, "wait_criteria", wait_criteria)
+            _setter("wait_criteria", wait_criteria)
 
     @property
     @pulumi.getter(name="buildPipelineId")
@@ -921,6 +1107,10 @@ class BuildPipelineStage(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            BuildPipelineStageArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -956,16 +1146,36 @@ class BuildPipelineStage(pulumi.CustomResource):
             if build_pipeline_id is None and not opts.urn:
                 raise TypeError("Missing required property 'build_pipeline_id'")
             __props__.__dict__["build_pipeline_id"] = build_pipeline_id
+            if build_pipeline_stage_predecessor_collection is not None and not isinstance(build_pipeline_stage_predecessor_collection, BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs):
+                build_pipeline_stage_predecessor_collection = build_pipeline_stage_predecessor_collection or {}
+                def _setter(key, value):
+                    build_pipeline_stage_predecessor_collection[key] = value
+                BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs._configure(_setter, **build_pipeline_stage_predecessor_collection)
             if build_pipeline_stage_predecessor_collection is None and not opts.urn:
                 raise TypeError("Missing required property 'build_pipeline_stage_predecessor_collection'")
             __props__.__dict__["build_pipeline_stage_predecessor_collection"] = build_pipeline_stage_predecessor_collection
             if build_pipeline_stage_type is None and not opts.urn:
                 raise TypeError("Missing required property 'build_pipeline_stage_type'")
             __props__.__dict__["build_pipeline_stage_type"] = build_pipeline_stage_type
+            if build_runner_shape_config is not None and not isinstance(build_runner_shape_config, BuildPipelineStageBuildRunnerShapeConfigArgs):
+                build_runner_shape_config = build_runner_shape_config or {}
+                def _setter(key, value):
+                    build_runner_shape_config[key] = value
+                BuildPipelineStageBuildRunnerShapeConfigArgs._configure(_setter, **build_runner_shape_config)
             __props__.__dict__["build_runner_shape_config"] = build_runner_shape_config
+            if build_source_collection is not None and not isinstance(build_source_collection, BuildPipelineStageBuildSourceCollectionArgs):
+                build_source_collection = build_source_collection or {}
+                def _setter(key, value):
+                    build_source_collection[key] = value
+                BuildPipelineStageBuildSourceCollectionArgs._configure(_setter, **build_source_collection)
             __props__.__dict__["build_source_collection"] = build_source_collection
             __props__.__dict__["build_spec_file"] = build_spec_file
             __props__.__dict__["defined_tags"] = defined_tags
+            if deliver_artifact_collection is not None and not isinstance(deliver_artifact_collection, BuildPipelineStageDeliverArtifactCollectionArgs):
+                deliver_artifact_collection = deliver_artifact_collection or {}
+                def _setter(key, value):
+                    deliver_artifact_collection[key] = value
+                BuildPipelineStageDeliverArtifactCollectionArgs._configure(_setter, **deliver_artifact_collection)
             __props__.__dict__["deliver_artifact_collection"] = deliver_artifact_collection
             __props__.__dict__["deploy_pipeline_id"] = deploy_pipeline_id
             __props__.__dict__["description"] = description
@@ -974,8 +1184,18 @@ class BuildPipelineStage(pulumi.CustomResource):
             __props__.__dict__["image"] = image
             __props__.__dict__["is_pass_all_parameters_enabled"] = is_pass_all_parameters_enabled
             __props__.__dict__["primary_build_source"] = primary_build_source
+            if private_access_config is not None and not isinstance(private_access_config, BuildPipelineStagePrivateAccessConfigArgs):
+                private_access_config = private_access_config or {}
+                def _setter(key, value):
+                    private_access_config[key] = value
+                BuildPipelineStagePrivateAccessConfigArgs._configure(_setter, **private_access_config)
             __props__.__dict__["private_access_config"] = private_access_config
             __props__.__dict__["stage_execution_timeout_in_seconds"] = stage_execution_timeout_in_seconds
+            if wait_criteria is not None and not isinstance(wait_criteria, BuildPipelineStageWaitCriteriaArgs):
+                wait_criteria = wait_criteria or {}
+                def _setter(key, value):
+                    wait_criteria[key] = value
+                BuildPipelineStageWaitCriteriaArgs._configure(_setter, **wait_criteria)
             __props__.__dict__["wait_criteria"] = wait_criteria
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["lifecycle_details"] = None

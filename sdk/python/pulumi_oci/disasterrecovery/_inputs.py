@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -47,11 +47,34 @@ class DrPlanExecutionExecutionOptionsArgs:
         :param pulumi.Input[bool] are_prechecks_enabled: A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
         :param pulumi.Input[bool] are_warnings_ignored: A flag indicating whether warnings should be ignored during the switchover precheck.  Example: `true`
         """
-        pulumi.set(__self__, "plan_execution_type", plan_execution_type)
+        DrPlanExecutionExecutionOptionsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            plan_execution_type=plan_execution_type,
+            are_prechecks_enabled=are_prechecks_enabled,
+            are_warnings_ignored=are_warnings_ignored,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             plan_execution_type: Optional[pulumi.Input[str]] = None,
+             are_prechecks_enabled: Optional[pulumi.Input[bool]] = None,
+             are_warnings_ignored: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if plan_execution_type is None and 'planExecutionType' in kwargs:
+            plan_execution_type = kwargs['planExecutionType']
+        if plan_execution_type is None:
+            raise TypeError("Missing 'plan_execution_type' argument")
+        if are_prechecks_enabled is None and 'arePrechecksEnabled' in kwargs:
+            are_prechecks_enabled = kwargs['arePrechecksEnabled']
+        if are_warnings_ignored is None and 'areWarningsIgnored' in kwargs:
+            are_warnings_ignored = kwargs['areWarningsIgnored']
+
+        _setter("plan_execution_type", plan_execution_type)
         if are_prechecks_enabled is not None:
-            pulumi.set(__self__, "are_prechecks_enabled", are_prechecks_enabled)
+            _setter("are_prechecks_enabled", are_prechecks_enabled)
         if are_warnings_ignored is not None:
-            pulumi.set(__self__, "are_warnings_ignored", are_warnings_ignored)
+            _setter("are_warnings_ignored", are_warnings_ignored)
 
     @property
     @pulumi.getter(name="planExecutionType")
@@ -113,24 +136,65 @@ class DrPlanExecutionGroupExecutionArgs:
         :param pulumi.Input[str] time_started: The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param pulumi.Input[str] type: The group type.  Example: `BUILT_IN`
         """
+        DrPlanExecutionGroupExecutionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            execution_duration_in_sec=execution_duration_in_sec,
+            group_id=group_id,
+            status=status,
+            status_details=status_details,
+            step_executions=step_executions,
+            time_ended=time_ended,
+            time_started=time_started,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[pulumi.Input[str]] = None,
+             execution_duration_in_sec: Optional[pulumi.Input[int]] = None,
+             group_id: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             status_details: Optional[pulumi.Input[str]] = None,
+             step_executions: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionGroupExecutionStepExecutionArgs']]]] = None,
+             time_ended: Optional[pulumi.Input[str]] = None,
+             time_started: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if execution_duration_in_sec is None and 'executionDurationInSec' in kwargs:
+            execution_duration_in_sec = kwargs['executionDurationInSec']
+        if group_id is None and 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if status_details is None and 'statusDetails' in kwargs:
+            status_details = kwargs['statusDetails']
+        if step_executions is None and 'stepExecutions' in kwargs:
+            step_executions = kwargs['stepExecutions']
+        if time_ended is None and 'timeEnded' in kwargs:
+            time_ended = kwargs['timeEnded']
+        if time_started is None and 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if execution_duration_in_sec is not None:
-            pulumi.set(__self__, "execution_duration_in_sec", execution_duration_in_sec)
+            _setter("execution_duration_in_sec", execution_duration_in_sec)
         if group_id is not None:
-            pulumi.set(__self__, "group_id", group_id)
+            _setter("group_id", group_id)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if status_details is not None:
-            pulumi.set(__self__, "status_details", status_details)
+            _setter("status_details", status_details)
         if step_executions is not None:
-            pulumi.set(__self__, "step_executions", step_executions)
+            _setter("step_executions", step_executions)
         if time_ended is not None:
-            pulumi.set(__self__, "time_ended", time_ended)
+            _setter("time_ended", time_ended)
         if time_started is not None:
-            pulumi.set(__self__, "time_started", time_started)
+            _setter("time_started", time_started)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="displayName")
@@ -266,26 +330,71 @@ class DrPlanExecutionGroupExecutionStepExecutionArgs:
         :param pulumi.Input[str] time_started: The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param pulumi.Input[str] type: The group type.  Example: `BUILT_IN`
         """
+        DrPlanExecutionGroupExecutionStepExecutionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            execution_duration_in_sec=execution_duration_in_sec,
+            group_id=group_id,
+            log_locations=log_locations,
+            status=status,
+            status_details=status_details,
+            step_id=step_id,
+            time_ended=time_ended,
+            time_started=time_started,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[pulumi.Input[str]] = None,
+             execution_duration_in_sec: Optional[pulumi.Input[int]] = None,
+             group_id: Optional[pulumi.Input[str]] = None,
+             log_locations: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs']]]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             status_details: Optional[pulumi.Input[str]] = None,
+             step_id: Optional[pulumi.Input[str]] = None,
+             time_ended: Optional[pulumi.Input[str]] = None,
+             time_started: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if execution_duration_in_sec is None and 'executionDurationInSec' in kwargs:
+            execution_duration_in_sec = kwargs['executionDurationInSec']
+        if group_id is None and 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if log_locations is None and 'logLocations' in kwargs:
+            log_locations = kwargs['logLocations']
+        if status_details is None and 'statusDetails' in kwargs:
+            status_details = kwargs['statusDetails']
+        if step_id is None and 'stepId' in kwargs:
+            step_id = kwargs['stepId']
+        if time_ended is None and 'timeEnded' in kwargs:
+            time_ended = kwargs['timeEnded']
+        if time_started is None and 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if execution_duration_in_sec is not None:
-            pulumi.set(__self__, "execution_duration_in_sec", execution_duration_in_sec)
+            _setter("execution_duration_in_sec", execution_duration_in_sec)
         if group_id is not None:
-            pulumi.set(__self__, "group_id", group_id)
+            _setter("group_id", group_id)
         if log_locations is not None:
-            pulumi.set(__self__, "log_locations", log_locations)
+            _setter("log_locations", log_locations)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if status_details is not None:
-            pulumi.set(__self__, "status_details", status_details)
+            _setter("status_details", status_details)
         if step_id is not None:
-            pulumi.set(__self__, "step_id", step_id)
+            _setter("step_id", step_id)
         if time_ended is not None:
-            pulumi.set(__self__, "time_ended", time_ended)
+            _setter("time_ended", time_ended)
         if time_started is not None:
-            pulumi.set(__self__, "time_started", time_started)
+            _setter("time_started", time_started)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="displayName")
@@ -419,12 +528,27 @@ class DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs:
         :param pulumi.Input[str] namespace: The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
         :param pulumi.Input[str] object: The object name inside the object storage bucket.  Example: `switchover_plan_executions`
         """
+        DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             object: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
 
     @property
     @pulumi.getter
@@ -474,12 +598,27 @@ class DrPlanExecutionLogLocationArgs:
         :param pulumi.Input[str] namespace: The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
         :param pulumi.Input[str] object: The object name inside the object storage bucket.  Example: `switchover_plan_executions`
         """
+        DrPlanExecutionLogLocationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             object: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
 
     @property
     @pulumi.getter
@@ -535,14 +674,33 @@ class DrPlanPlanGroupArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        DrPlanPlanGroupArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+            steps=steps,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[pulumi.Input[str]] = None,
+             id: Optional[pulumi.Input[str]] = None,
+             steps: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepArgs']]]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if steps is not None:
-            pulumi.set(__self__, "steps", steps)
+            _setter("steps", steps)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="displayName")
@@ -624,24 +782,63 @@ class DrPlanPlanGroupStepArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepUserDefinedStepArgs']]] user_defined_steps: The details for a user-defined step in a DR plan.
         """
+        DrPlanPlanGroupStepArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            error_mode=error_mode,
+            group_id=group_id,
+            id=id,
+            is_enabled=is_enabled,
+            member_id=member_id,
+            timeout=timeout,
+            type=type,
+            user_defined_steps=user_defined_steps,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[pulumi.Input[str]] = None,
+             error_mode: Optional[pulumi.Input[str]] = None,
+             group_id: Optional[pulumi.Input[str]] = None,
+             id: Optional[pulumi.Input[str]] = None,
+             is_enabled: Optional[pulumi.Input[bool]] = None,
+             member_id: Optional[pulumi.Input[str]] = None,
+             timeout: Optional[pulumi.Input[int]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             user_defined_steps: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepUserDefinedStepArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if error_mode is None and 'errorMode' in kwargs:
+            error_mode = kwargs['errorMode']
+        if group_id is None and 'groupId' in kwargs:
+            group_id = kwargs['groupId']
+        if is_enabled is None and 'isEnabled' in kwargs:
+            is_enabled = kwargs['isEnabled']
+        if member_id is None and 'memberId' in kwargs:
+            member_id = kwargs['memberId']
+        if user_defined_steps is None and 'userDefinedSteps' in kwargs:
+            user_defined_steps = kwargs['userDefinedSteps']
+
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if error_mode is not None:
-            pulumi.set(__self__, "error_mode", error_mode)
+            _setter("error_mode", error_mode)
         if group_id is not None:
-            pulumi.set(__self__, "group_id", group_id)
+            _setter("group_id", group_id)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if member_id is not None:
-            pulumi.set(__self__, "member_id", member_id)
+            _setter("member_id", member_id)
         if timeout is not None:
-            pulumi.set(__self__, "timeout", timeout)
+            _setter("timeout", timeout)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
         if user_defined_steps is not None:
-            pulumi.set(__self__, "user_defined_steps", user_defined_steps)
+            _setter("user_defined_steps", user_defined_steps)
 
     @property
     @pulumi.getter(name="displayName")
@@ -779,24 +976,69 @@ class DrPlanPlanGroupStepUserDefinedStepArgs:
         :param pulumi.Input[str] script_command: The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
         :param pulumi.Input[str] step_type: The type of the user-defined step.
         """
+        DrPlanPlanGroupStepUserDefinedStepArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            function_id=function_id,
+            function_region=function_region,
+            object_storage_script_locations=object_storage_script_locations,
+            request_body=request_body,
+            run_as_user=run_as_user,
+            run_on_instance_id=run_on_instance_id,
+            run_on_instance_region=run_on_instance_region,
+            script_command=script_command,
+            step_type=step_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             function_id: Optional[pulumi.Input[str]] = None,
+             function_region: Optional[pulumi.Input[str]] = None,
+             object_storage_script_locations: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs']]]] = None,
+             request_body: Optional[pulumi.Input[str]] = None,
+             run_as_user: Optional[pulumi.Input[str]] = None,
+             run_on_instance_id: Optional[pulumi.Input[str]] = None,
+             run_on_instance_region: Optional[pulumi.Input[str]] = None,
+             script_command: Optional[pulumi.Input[str]] = None,
+             step_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if function_id is None and 'functionId' in kwargs:
+            function_id = kwargs['functionId']
+        if function_region is None and 'functionRegion' in kwargs:
+            function_region = kwargs['functionRegion']
+        if object_storage_script_locations is None and 'objectStorageScriptLocations' in kwargs:
+            object_storage_script_locations = kwargs['objectStorageScriptLocations']
+        if request_body is None and 'requestBody' in kwargs:
+            request_body = kwargs['requestBody']
+        if run_as_user is None and 'runAsUser' in kwargs:
+            run_as_user = kwargs['runAsUser']
+        if run_on_instance_id is None and 'runOnInstanceId' in kwargs:
+            run_on_instance_id = kwargs['runOnInstanceId']
+        if run_on_instance_region is None and 'runOnInstanceRegion' in kwargs:
+            run_on_instance_region = kwargs['runOnInstanceRegion']
+        if script_command is None and 'scriptCommand' in kwargs:
+            script_command = kwargs['scriptCommand']
+        if step_type is None and 'stepType' in kwargs:
+            step_type = kwargs['stepType']
+
         if function_id is not None:
-            pulumi.set(__self__, "function_id", function_id)
+            _setter("function_id", function_id)
         if function_region is not None:
-            pulumi.set(__self__, "function_region", function_region)
+            _setter("function_region", function_region)
         if object_storage_script_locations is not None:
-            pulumi.set(__self__, "object_storage_script_locations", object_storage_script_locations)
+            _setter("object_storage_script_locations", object_storage_script_locations)
         if request_body is not None:
-            pulumi.set(__self__, "request_body", request_body)
+            _setter("request_body", request_body)
         if run_as_user is not None:
-            pulumi.set(__self__, "run_as_user", run_as_user)
+            _setter("run_as_user", run_as_user)
         if run_on_instance_id is not None:
-            pulumi.set(__self__, "run_on_instance_id", run_on_instance_id)
+            _setter("run_on_instance_id", run_on_instance_id)
         if run_on_instance_region is not None:
-            pulumi.set(__self__, "run_on_instance_region", run_on_instance_region)
+            _setter("run_on_instance_region", run_on_instance_region)
         if script_command is not None:
-            pulumi.set(__self__, "script_command", script_command)
+            _setter("script_command", script_command)
         if step_type is not None:
-            pulumi.set(__self__, "step_type", step_type)
+            _setter("step_type", step_type)
 
     @property
     @pulumi.getter(name="functionId")
@@ -918,12 +1160,27 @@ class DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs:
         :param pulumi.Input[str] namespace: The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
         :param pulumi.Input[str] object: The object name inside the object storage bucket.  Example: `validate_app_start.sh`
         """
+        DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             object: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
 
     @property
     @pulumi.getter
@@ -973,11 +1230,32 @@ class DrProtectionGroupAssociationArgs:
         :param pulumi.Input[str] peer_id: The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         :param pulumi.Input[str] peer_region: The region of the peer DR protection group.  Example: `us-ashburn-1`
         """
-        pulumi.set(__self__, "role", role)
+        DrProtectionGroupAssociationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            role=role,
+            peer_id=peer_id,
+            peer_region=peer_region,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             role: Optional[pulumi.Input[str]] = None,
+             peer_id: Optional[pulumi.Input[str]] = None,
+             peer_region: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if role is None:
+            raise TypeError("Missing 'role' argument")
+        if peer_id is None and 'peerId' in kwargs:
+            peer_id = kwargs['peerId']
+        if peer_region is None and 'peerRegion' in kwargs:
+            peer_region = kwargs['peerRegion']
+
+        _setter("role", role)
         if peer_id is not None:
-            pulumi.set(__self__, "peer_id", peer_id)
+            _setter("peer_id", peer_id)
         if peer_region is not None:
-            pulumi.set(__self__, "peer_region", peer_region)
+            _setter("peer_region", peer_region)
 
     @property
     @pulumi.getter
@@ -1027,10 +1305,29 @@ class DrProtectionGroupLogLocationArgs:
         :param pulumi.Input[str] namespace: (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
         :param pulumi.Input[str] object: The object name inside the object storage bucket.  Example: `switchover_plan_executions`
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
+        DrProtectionGroupLogLocationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             object: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if namespace is None:
+            raise TypeError("Missing 'namespace' argument")
+
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
 
     @property
     @pulumi.getter
@@ -1110,40 +1407,125 @@ class DrProtectionGroupMemberArgs:
         :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVnicMappingArgs']]] vnic_mapping: (Updatable) A list of compute instance VNIC mappings.
         :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVnicMappingArgs']]] vnic_mappings: (Updatable) A list of compute instance VNIC mappings.
         """
-        pulumi.set(__self__, "member_id", member_id)
-        pulumi.set(__self__, "member_type", member_type)
+        DrProtectionGroupMemberArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            member_id=member_id,
+            member_type=member_type,
+            backend_set_mappings=backend_set_mappings,
+            block_volume_operations=block_volume_operations,
+            destination_availability_domain=destination_availability_domain,
+            destination_capacity_reservation_id=destination_capacity_reservation_id,
+            destination_compartment_id=destination_compartment_id,
+            destination_dedicated_vm_host_id=destination_dedicated_vm_host_id,
+            destination_load_balancer_id=destination_load_balancer_id,
+            destination_network_load_balancer_id=destination_network_load_balancer_id,
+            export_mappings=export_mappings,
+            file_system_operations=file_system_operations,
+            is_movable=is_movable,
+            is_retain_fault_domain=is_retain_fault_domain,
+            is_start_stop_enabled=is_start_stop_enabled,
+            password_vault_secret_id=password_vault_secret_id,
+            vnic_mapping=vnic_mapping,
+            vnic_mappings=vnic_mappings,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             member_id: Optional[pulumi.Input[str]] = None,
+             member_type: Optional[pulumi.Input[str]] = None,
+             backend_set_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberBackendSetMappingArgs']]]] = None,
+             block_volume_operations: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationArgs']]]] = None,
+             destination_availability_domain: Optional[pulumi.Input[str]] = None,
+             destination_capacity_reservation_id: Optional[pulumi.Input[str]] = None,
+             destination_compartment_id: Optional[pulumi.Input[str]] = None,
+             destination_dedicated_vm_host_id: Optional[pulumi.Input[str]] = None,
+             destination_load_balancer_id: Optional[pulumi.Input[str]] = None,
+             destination_network_load_balancer_id: Optional[pulumi.Input[str]] = None,
+             export_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberExportMappingArgs']]]] = None,
+             file_system_operations: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberFileSystemOperationArgs']]]] = None,
+             is_movable: Optional[pulumi.Input[bool]] = None,
+             is_retain_fault_domain: Optional[pulumi.Input[bool]] = None,
+             is_start_stop_enabled: Optional[pulumi.Input[bool]] = None,
+             password_vault_secret_id: Optional[pulumi.Input[str]] = None,
+             vnic_mapping: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVnicMappingArgs']]]] = None,
+             vnic_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVnicMappingArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if member_id is None and 'memberId' in kwargs:
+            member_id = kwargs['memberId']
+        if member_id is None:
+            raise TypeError("Missing 'member_id' argument")
+        if member_type is None and 'memberType' in kwargs:
+            member_type = kwargs['memberType']
+        if member_type is None:
+            raise TypeError("Missing 'member_type' argument")
+        if backend_set_mappings is None and 'backendSetMappings' in kwargs:
+            backend_set_mappings = kwargs['backendSetMappings']
+        if block_volume_operations is None and 'blockVolumeOperations' in kwargs:
+            block_volume_operations = kwargs['blockVolumeOperations']
+        if destination_availability_domain is None and 'destinationAvailabilityDomain' in kwargs:
+            destination_availability_domain = kwargs['destinationAvailabilityDomain']
+        if destination_capacity_reservation_id is None and 'destinationCapacityReservationId' in kwargs:
+            destination_capacity_reservation_id = kwargs['destinationCapacityReservationId']
+        if destination_compartment_id is None and 'destinationCompartmentId' in kwargs:
+            destination_compartment_id = kwargs['destinationCompartmentId']
+        if destination_dedicated_vm_host_id is None and 'destinationDedicatedVmHostId' in kwargs:
+            destination_dedicated_vm_host_id = kwargs['destinationDedicatedVmHostId']
+        if destination_load_balancer_id is None and 'destinationLoadBalancerId' in kwargs:
+            destination_load_balancer_id = kwargs['destinationLoadBalancerId']
+        if destination_network_load_balancer_id is None and 'destinationNetworkLoadBalancerId' in kwargs:
+            destination_network_load_balancer_id = kwargs['destinationNetworkLoadBalancerId']
+        if export_mappings is None and 'exportMappings' in kwargs:
+            export_mappings = kwargs['exportMappings']
+        if file_system_operations is None and 'fileSystemOperations' in kwargs:
+            file_system_operations = kwargs['fileSystemOperations']
+        if is_movable is None and 'isMovable' in kwargs:
+            is_movable = kwargs['isMovable']
+        if is_retain_fault_domain is None and 'isRetainFaultDomain' in kwargs:
+            is_retain_fault_domain = kwargs['isRetainFaultDomain']
+        if is_start_stop_enabled is None and 'isStartStopEnabled' in kwargs:
+            is_start_stop_enabled = kwargs['isStartStopEnabled']
+        if password_vault_secret_id is None and 'passwordVaultSecretId' in kwargs:
+            password_vault_secret_id = kwargs['passwordVaultSecretId']
+        if vnic_mapping is None and 'vnicMapping' in kwargs:
+            vnic_mapping = kwargs['vnicMapping']
+        if vnic_mappings is None and 'vnicMappings' in kwargs:
+            vnic_mappings = kwargs['vnicMappings']
+
+        _setter("member_id", member_id)
+        _setter("member_type", member_type)
         if backend_set_mappings is not None:
-            pulumi.set(__self__, "backend_set_mappings", backend_set_mappings)
+            _setter("backend_set_mappings", backend_set_mappings)
         if block_volume_operations is not None:
-            pulumi.set(__self__, "block_volume_operations", block_volume_operations)
+            _setter("block_volume_operations", block_volume_operations)
         if destination_availability_domain is not None:
-            pulumi.set(__self__, "destination_availability_domain", destination_availability_domain)
+            _setter("destination_availability_domain", destination_availability_domain)
         if destination_capacity_reservation_id is not None:
-            pulumi.set(__self__, "destination_capacity_reservation_id", destination_capacity_reservation_id)
+            _setter("destination_capacity_reservation_id", destination_capacity_reservation_id)
         if destination_compartment_id is not None:
-            pulumi.set(__self__, "destination_compartment_id", destination_compartment_id)
+            _setter("destination_compartment_id", destination_compartment_id)
         if destination_dedicated_vm_host_id is not None:
-            pulumi.set(__self__, "destination_dedicated_vm_host_id", destination_dedicated_vm_host_id)
+            _setter("destination_dedicated_vm_host_id", destination_dedicated_vm_host_id)
         if destination_load_balancer_id is not None:
-            pulumi.set(__self__, "destination_load_balancer_id", destination_load_balancer_id)
+            _setter("destination_load_balancer_id", destination_load_balancer_id)
         if destination_network_load_balancer_id is not None:
-            pulumi.set(__self__, "destination_network_load_balancer_id", destination_network_load_balancer_id)
+            _setter("destination_network_load_balancer_id", destination_network_load_balancer_id)
         if export_mappings is not None:
-            pulumi.set(__self__, "export_mappings", export_mappings)
+            _setter("export_mappings", export_mappings)
         if file_system_operations is not None:
-            pulumi.set(__self__, "file_system_operations", file_system_operations)
+            _setter("file_system_operations", file_system_operations)
         if is_movable is not None:
-            pulumi.set(__self__, "is_movable", is_movable)
+            _setter("is_movable", is_movable)
         if is_retain_fault_domain is not None:
-            pulumi.set(__self__, "is_retain_fault_domain", is_retain_fault_domain)
+            _setter("is_retain_fault_domain", is_retain_fault_domain)
         if is_start_stop_enabled is not None:
-            pulumi.set(__self__, "is_start_stop_enabled", is_start_stop_enabled)
+            _setter("is_start_stop_enabled", is_start_stop_enabled)
         if password_vault_secret_id is not None:
-            pulumi.set(__self__, "password_vault_secret_id", password_vault_secret_id)
+            _setter("password_vault_secret_id", password_vault_secret_id)
         if vnic_mapping is not None:
-            pulumi.set(__self__, "vnic_mapping", vnic_mapping)
+            _setter("vnic_mapping", vnic_mapping)
         if vnic_mappings is not None:
-            pulumi.set(__self__, "vnic_mappings", vnic_mappings)
+            _setter("vnic_mappings", vnic_mappings)
 
     @property
     @pulumi.getter(name="memberId")
@@ -1373,12 +1755,33 @@ class DrProtectionGroupMemberBackendSetMappingArgs:
         :param pulumi.Input[bool] is_backend_set_for_non_movable: (Updatable) This flag specifies if this backend set is used for traffic for non-movable compute instances. Backend sets that point to non-movable instances are only enabled or disabled during DR, their contents are not altered. For non-movable instances this flag should be set to 'true'. Backend sets that point to movable instances are emptied and their contents are transferred to the  destination region load balancer.  For movable instances this flag should be set to 'false'.   Example: `true`
         :param pulumi.Input[str] source_backend_set_name: (Updatable) The name of the source backend set.  Example: `Source-BackendSet-1`
         """
+        DrProtectionGroupMemberBackendSetMappingArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            destination_backend_set_name=destination_backend_set_name,
+            is_backend_set_for_non_movable=is_backend_set_for_non_movable,
+            source_backend_set_name=source_backend_set_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             destination_backend_set_name: Optional[pulumi.Input[str]] = None,
+             is_backend_set_for_non_movable: Optional[pulumi.Input[bool]] = None,
+             source_backend_set_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if destination_backend_set_name is None and 'destinationBackendSetName' in kwargs:
+            destination_backend_set_name = kwargs['destinationBackendSetName']
+        if is_backend_set_for_non_movable is None and 'isBackendSetForNonMovable' in kwargs:
+            is_backend_set_for_non_movable = kwargs['isBackendSetForNonMovable']
+        if source_backend_set_name is None and 'sourceBackendSetName' in kwargs:
+            source_backend_set_name = kwargs['sourceBackendSetName']
+
         if destination_backend_set_name is not None:
-            pulumi.set(__self__, "destination_backend_set_name", destination_backend_set_name)
+            _setter("destination_backend_set_name", destination_backend_set_name)
         if is_backend_set_for_non_movable is not None:
-            pulumi.set(__self__, "is_backend_set_for_non_movable", is_backend_set_for_non_movable)
+            _setter("is_backend_set_for_non_movable", is_backend_set_for_non_movable)
         if source_backend_set_name is not None:
-            pulumi.set(__self__, "source_backend_set_name", source_backend_set_name)
+            _setter("source_backend_set_name", source_backend_set_name)
 
     @property
     @pulumi.getter(name="destinationBackendSetName")
@@ -1428,12 +1831,33 @@ class DrProtectionGroupMemberBlockVolumeOperationArgs:
         :param pulumi.Input[str] block_volume_id: (Updatable) The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
         :param pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs'] mount_details: (Updatable) The details for creating a file system mount.
         """
+        DrProtectionGroupMemberBlockVolumeOperationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            attachment_details=attachment_details,
+            block_volume_id=block_volume_id,
+            mount_details=mount_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             attachment_details: Optional[pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs']] = None,
+             block_volume_id: Optional[pulumi.Input[str]] = None,
+             mount_details: Optional[pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if attachment_details is None and 'attachmentDetails' in kwargs:
+            attachment_details = kwargs['attachmentDetails']
+        if block_volume_id is None and 'blockVolumeId' in kwargs:
+            block_volume_id = kwargs['blockVolumeId']
+        if mount_details is None and 'mountDetails' in kwargs:
+            mount_details = kwargs['mountDetails']
+
         if attachment_details is not None:
-            pulumi.set(__self__, "attachment_details", attachment_details)
+            _setter("attachment_details", attachment_details)
         if block_volume_id is not None:
-            pulumi.set(__self__, "block_volume_id", block_volume_id)
+            _setter("block_volume_id", block_volume_id)
         if mount_details is not None:
-            pulumi.set(__self__, "mount_details", mount_details)
+            _setter("mount_details", mount_details)
 
     @property
     @pulumi.getter(name="attachmentDetails")
@@ -1479,8 +1903,21 @@ class DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs:
         """
         :param pulumi.Input[str] volume_attachment_reference_instance_id: (Updatable) The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
         """
+        DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            volume_attachment_reference_instance_id=volume_attachment_reference_instance_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             volume_attachment_reference_instance_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if volume_attachment_reference_instance_id is None and 'volumeAttachmentReferenceInstanceId' in kwargs:
+            volume_attachment_reference_instance_id = kwargs['volumeAttachmentReferenceInstanceId']
+
         if volume_attachment_reference_instance_id is not None:
-            pulumi.set(__self__, "volume_attachment_reference_instance_id", volume_attachment_reference_instance_id)
+            _setter("volume_attachment_reference_instance_id", volume_attachment_reference_instance_id)
 
     @property
     @pulumi.getter(name="volumeAttachmentReferenceInstanceId")
@@ -1502,8 +1939,21 @@ class DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs:
         """
         :param pulumi.Input[str] mount_point: (Updatable) The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
         """
+        DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            mount_point=mount_point,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             mount_point: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if mount_point is None and 'mountPoint' in kwargs:
+            mount_point = kwargs['mountPoint']
+
         if mount_point is not None:
-            pulumi.set(__self__, "mount_point", mount_point)
+            _setter("mount_point", mount_point)
 
     @property
     @pulumi.getter(name="mountPoint")
@@ -1527,10 +1977,27 @@ class DrProtectionGroupMemberExportMappingArgs:
         :param pulumi.Input[str] destination_mount_target_id: (Updatable) The OCID of the destination mount target in the destination region which is used to export the file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
         :param pulumi.Input[str] export_id: (Updatable) The OCID of the export path in the primary region used to mount or unmount the file system.  Example: `ocid1.export.oc1..uniqueID`
         """
+        DrProtectionGroupMemberExportMappingArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            destination_mount_target_id=destination_mount_target_id,
+            export_id=export_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             destination_mount_target_id: Optional[pulumi.Input[str]] = None,
+             export_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if destination_mount_target_id is None and 'destinationMountTargetId' in kwargs:
+            destination_mount_target_id = kwargs['destinationMountTargetId']
+        if export_id is None and 'exportId' in kwargs:
+            export_id = kwargs['exportId']
+
         if destination_mount_target_id is not None:
-            pulumi.set(__self__, "destination_mount_target_id", destination_mount_target_id)
+            _setter("destination_mount_target_id", destination_mount_target_id)
         if export_id is not None:
-            pulumi.set(__self__, "export_id", export_id)
+            _setter("export_id", export_id)
 
     @property
     @pulumi.getter(name="destinationMountTargetId")
@@ -1572,16 +2039,45 @@ class DrProtectionGroupMemberFileSystemOperationArgs:
         :param pulumi.Input[str] mount_target_id: (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
         :param pulumi.Input['DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs'] unmount_details: (Updatable) The details for creating a file system unmount.
         """
+        DrProtectionGroupMemberFileSystemOperationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            export_path=export_path,
+            mount_details=mount_details,
+            mount_point=mount_point,
+            mount_target_id=mount_target_id,
+            unmount_details=unmount_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             export_path: Optional[pulumi.Input[str]] = None,
+             mount_details: Optional[pulumi.Input['DrProtectionGroupMemberFileSystemOperationMountDetailsArgs']] = None,
+             mount_point: Optional[pulumi.Input[str]] = None,
+             mount_target_id: Optional[pulumi.Input[str]] = None,
+             unmount_details: Optional[pulumi.Input['DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if export_path is None and 'exportPath' in kwargs:
+            export_path = kwargs['exportPath']
+        if mount_details is None and 'mountDetails' in kwargs:
+            mount_details = kwargs['mountDetails']
+        if mount_point is None and 'mountPoint' in kwargs:
+            mount_point = kwargs['mountPoint']
+        if mount_target_id is None and 'mountTargetId' in kwargs:
+            mount_target_id = kwargs['mountTargetId']
+        if unmount_details is None and 'unmountDetails' in kwargs:
+            unmount_details = kwargs['unmountDetails']
+
         if export_path is not None:
-            pulumi.set(__self__, "export_path", export_path)
+            _setter("export_path", export_path)
         if mount_details is not None:
-            pulumi.set(__self__, "mount_details", mount_details)
+            _setter("mount_details", mount_details)
         if mount_point is not None:
-            pulumi.set(__self__, "mount_point", mount_point)
+            _setter("mount_point", mount_point)
         if mount_target_id is not None:
-            pulumi.set(__self__, "mount_target_id", mount_target_id)
+            _setter("mount_target_id", mount_target_id)
         if unmount_details is not None:
-            pulumi.set(__self__, "unmount_details", unmount_details)
+            _setter("unmount_details", unmount_details)
 
     @property
     @pulumi.getter(name="exportPath")
@@ -1651,8 +2147,21 @@ class DrProtectionGroupMemberFileSystemOperationMountDetailsArgs:
         """
         :param pulumi.Input[str] mount_target_id: (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
         """
+        DrProtectionGroupMemberFileSystemOperationMountDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            mount_target_id=mount_target_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             mount_target_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if mount_target_id is None and 'mountTargetId' in kwargs:
+            mount_target_id = kwargs['mountTargetId']
+
         if mount_target_id is not None:
-            pulumi.set(__self__, "mount_target_id", mount_target_id)
+            _setter("mount_target_id", mount_target_id)
 
     @property
     @pulumi.getter(name="mountTargetId")
@@ -1674,8 +2183,21 @@ class DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs:
         """
         :param pulumi.Input[str] mount_target_id: (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
         """
+        DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            mount_target_id=mount_target_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             mount_target_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if mount_target_id is None and 'mountTargetId' in kwargs:
+            mount_target_id = kwargs['mountTargetId']
+
         if mount_target_id is not None:
-            pulumi.set(__self__, "mount_target_id", mount_target_id)
+            _setter("mount_target_id", mount_target_id)
 
     @property
     @pulumi.getter(name="mountTargetId")
@@ -1705,16 +2227,45 @@ class DrProtectionGroupMemberVnicMappingArgs:
         :param pulumi.Input[str] destination_subnet_id: (Updatable) The OCID of the destination subnet to which the source VNIC should connect.          Example: `ocid1.subnet.oc1..uniqueID`
         :param pulumi.Input[str] source_vnic_id: (Updatable) The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
         """
+        DrProtectionGroupMemberVnicMappingArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            destination_nsg_id_lists=destination_nsg_id_lists,
+            destination_primary_private_ip_address=destination_primary_private_ip_address,
+            destination_primary_private_ip_hostname_label=destination_primary_private_ip_hostname_label,
+            destination_subnet_id=destination_subnet_id,
+            source_vnic_id=source_vnic_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             destination_nsg_id_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             destination_primary_private_ip_address: Optional[pulumi.Input[str]] = None,
+             destination_primary_private_ip_hostname_label: Optional[pulumi.Input[str]] = None,
+             destination_subnet_id: Optional[pulumi.Input[str]] = None,
+             source_vnic_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if destination_nsg_id_lists is None and 'destinationNsgIdLists' in kwargs:
+            destination_nsg_id_lists = kwargs['destinationNsgIdLists']
+        if destination_primary_private_ip_address is None and 'destinationPrimaryPrivateIpAddress' in kwargs:
+            destination_primary_private_ip_address = kwargs['destinationPrimaryPrivateIpAddress']
+        if destination_primary_private_ip_hostname_label is None and 'destinationPrimaryPrivateIpHostnameLabel' in kwargs:
+            destination_primary_private_ip_hostname_label = kwargs['destinationPrimaryPrivateIpHostnameLabel']
+        if destination_subnet_id is None and 'destinationSubnetId' in kwargs:
+            destination_subnet_id = kwargs['destinationSubnetId']
+        if source_vnic_id is None and 'sourceVnicId' in kwargs:
+            source_vnic_id = kwargs['sourceVnicId']
+
         if destination_nsg_id_lists is not None:
-            pulumi.set(__self__, "destination_nsg_id_lists", destination_nsg_id_lists)
+            _setter("destination_nsg_id_lists", destination_nsg_id_lists)
         if destination_primary_private_ip_address is not None:
-            pulumi.set(__self__, "destination_primary_private_ip_address", destination_primary_private_ip_address)
+            _setter("destination_primary_private_ip_address", destination_primary_private_ip_address)
         if destination_primary_private_ip_hostname_label is not None:
-            pulumi.set(__self__, "destination_primary_private_ip_hostname_label", destination_primary_private_ip_hostname_label)
+            _setter("destination_primary_private_ip_hostname_label", destination_primary_private_ip_hostname_label)
         if destination_subnet_id is not None:
-            pulumi.set(__self__, "destination_subnet_id", destination_subnet_id)
+            _setter("destination_subnet_id", destination_subnet_id)
         if source_vnic_id is not None:
-            pulumi.set(__self__, "source_vnic_id", source_vnic_id)
+            _setter("source_vnic_id", source_vnic_id)
 
     @property
     @pulumi.getter(name="destinationNsgIdLists")
@@ -1783,10 +2334,29 @@ class GetDrPlanExecutionsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDrPlanExecutionsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1822,10 +2392,29 @@ class GetDrPlansFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDrPlansFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1861,10 +2450,29 @@ class GetDrProtectionGroupsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDrProtectionGroupsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

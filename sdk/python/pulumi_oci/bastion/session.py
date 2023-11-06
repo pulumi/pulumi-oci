@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -31,15 +31,54 @@ class SessionArgs:
         :param pulumi.Input[str] key_type: The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
         :param pulumi.Input[int] session_ttl_in_seconds: The amount of time the session can remain active.
         """
-        pulumi.set(__self__, "bastion_id", bastion_id)
-        pulumi.set(__self__, "key_details", key_details)
-        pulumi.set(__self__, "target_resource_details", target_resource_details)
+        SessionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bastion_id=bastion_id,
+            key_details=key_details,
+            target_resource_details=target_resource_details,
+            display_name=display_name,
+            key_type=key_type,
+            session_ttl_in_seconds=session_ttl_in_seconds,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bastion_id: Optional[pulumi.Input[str]] = None,
+             key_details: Optional[pulumi.Input['SessionKeyDetailsArgs']] = None,
+             target_resource_details: Optional[pulumi.Input['SessionTargetResourceDetailsArgs']] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             key_type: Optional[pulumi.Input[str]] = None,
+             session_ttl_in_seconds: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bastion_id is None and 'bastionId' in kwargs:
+            bastion_id = kwargs['bastionId']
+        if bastion_id is None:
+            raise TypeError("Missing 'bastion_id' argument")
+        if key_details is None and 'keyDetails' in kwargs:
+            key_details = kwargs['keyDetails']
+        if key_details is None:
+            raise TypeError("Missing 'key_details' argument")
+        if target_resource_details is None and 'targetResourceDetails' in kwargs:
+            target_resource_details = kwargs['targetResourceDetails']
+        if target_resource_details is None:
+            raise TypeError("Missing 'target_resource_details' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if key_type is None and 'keyType' in kwargs:
+            key_type = kwargs['keyType']
+        if session_ttl_in_seconds is None and 'sessionTtlInSeconds' in kwargs:
+            session_ttl_in_seconds = kwargs['sessionTtlInSeconds']
+
+        _setter("bastion_id", bastion_id)
+        _setter("key_details", key_details)
+        _setter("target_resource_details", target_resource_details)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if key_type is not None:
-            pulumi.set(__self__, "key_type", key_type)
+            _setter("key_type", key_type)
         if session_ttl_in_seconds is not None:
-            pulumi.set(__self__, "session_ttl_in_seconds", session_ttl_in_seconds)
+            _setter("session_ttl_in_seconds", session_ttl_in_seconds)
 
     @property
     @pulumi.getter(name="bastionId")
@@ -148,34 +187,97 @@ class _SessionState:
         :param pulumi.Input[str] time_created: The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         """
+        _SessionState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bastion_id=bastion_id,
+            bastion_name=bastion_name,
+            bastion_public_host_key_info=bastion_public_host_key_info,
+            bastion_user_name=bastion_user_name,
+            display_name=display_name,
+            key_details=key_details,
+            key_type=key_type,
+            lifecycle_details=lifecycle_details,
+            session_ttl_in_seconds=session_ttl_in_seconds,
+            ssh_metadata=ssh_metadata,
+            state=state,
+            target_resource_details=target_resource_details,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bastion_id: Optional[pulumi.Input[str]] = None,
+             bastion_name: Optional[pulumi.Input[str]] = None,
+             bastion_public_host_key_info: Optional[pulumi.Input[str]] = None,
+             bastion_user_name: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             key_details: Optional[pulumi.Input['SessionKeyDetailsArgs']] = None,
+             key_type: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             session_ttl_in_seconds: Optional[pulumi.Input[int]] = None,
+             ssh_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             target_resource_details: Optional[pulumi.Input['SessionTargetResourceDetailsArgs']] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bastion_id is None and 'bastionId' in kwargs:
+            bastion_id = kwargs['bastionId']
+        if bastion_name is None and 'bastionName' in kwargs:
+            bastion_name = kwargs['bastionName']
+        if bastion_public_host_key_info is None and 'bastionPublicHostKeyInfo' in kwargs:
+            bastion_public_host_key_info = kwargs['bastionPublicHostKeyInfo']
+        if bastion_user_name is None and 'bastionUserName' in kwargs:
+            bastion_user_name = kwargs['bastionUserName']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if key_details is None and 'keyDetails' in kwargs:
+            key_details = kwargs['keyDetails']
+        if key_type is None and 'keyType' in kwargs:
+            key_type = kwargs['keyType']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if session_ttl_in_seconds is None and 'sessionTtlInSeconds' in kwargs:
+            session_ttl_in_seconds = kwargs['sessionTtlInSeconds']
+        if ssh_metadata is None and 'sshMetadata' in kwargs:
+            ssh_metadata = kwargs['sshMetadata']
+        if target_resource_details is None and 'targetResourceDetails' in kwargs:
+            target_resource_details = kwargs['targetResourceDetails']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if bastion_id is not None:
-            pulumi.set(__self__, "bastion_id", bastion_id)
+            _setter("bastion_id", bastion_id)
         if bastion_name is not None:
-            pulumi.set(__self__, "bastion_name", bastion_name)
+            _setter("bastion_name", bastion_name)
         if bastion_public_host_key_info is not None:
-            pulumi.set(__self__, "bastion_public_host_key_info", bastion_public_host_key_info)
+            _setter("bastion_public_host_key_info", bastion_public_host_key_info)
         if bastion_user_name is not None:
-            pulumi.set(__self__, "bastion_user_name", bastion_user_name)
+            _setter("bastion_user_name", bastion_user_name)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if key_details is not None:
-            pulumi.set(__self__, "key_details", key_details)
+            _setter("key_details", key_details)
         if key_type is not None:
-            pulumi.set(__self__, "key_type", key_type)
+            _setter("key_type", key_type)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if session_ttl_in_seconds is not None:
-            pulumi.set(__self__, "session_ttl_in_seconds", session_ttl_in_seconds)
+            _setter("session_ttl_in_seconds", session_ttl_in_seconds)
         if ssh_metadata is not None:
-            pulumi.set(__self__, "ssh_metadata", ssh_metadata)
+            _setter("ssh_metadata", ssh_metadata)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if target_resource_details is not None:
-            pulumi.set(__self__, "target_resource_details", target_resource_details)
+            _setter("target_resource_details", target_resource_details)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="bastionId")
@@ -457,6 +559,10 @@ class Session(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            SessionArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -481,11 +587,21 @@ class Session(pulumi.CustomResource):
                 raise TypeError("Missing required property 'bastion_id'")
             __props__.__dict__["bastion_id"] = bastion_id
             __props__.__dict__["display_name"] = display_name
+            if key_details is not None and not isinstance(key_details, SessionKeyDetailsArgs):
+                key_details = key_details or {}
+                def _setter(key, value):
+                    key_details[key] = value
+                SessionKeyDetailsArgs._configure(_setter, **key_details)
             if key_details is None and not opts.urn:
                 raise TypeError("Missing required property 'key_details'")
             __props__.__dict__["key_details"] = key_details
             __props__.__dict__["key_type"] = key_type
             __props__.__dict__["session_ttl_in_seconds"] = session_ttl_in_seconds
+            if target_resource_details is not None and not isinstance(target_resource_details, SessionTargetResourceDetailsArgs):
+                target_resource_details = target_resource_details or {}
+                def _setter(key, value):
+                    target_resource_details[key] = value
+                SessionTargetResourceDetailsArgs._configure(_setter, **target_resource_details)
             if target_resource_details is None and not opts.urn:
                 raise TypeError("Missing required property 'target_resource_details'")
             __props__.__dict__["target_resource_details"] = target_resource_details

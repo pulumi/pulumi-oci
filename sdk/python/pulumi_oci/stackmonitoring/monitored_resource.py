@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -59,40 +59,113 @@ class MonitoredResourceArgs:
         :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]] properties: (Updatable) List of monitored resource properties.
         :param pulumi.Input[str] resource_time_zone: (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "type", type)
+        MonitoredResourceArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            type=type,
+            additional_aliases=additional_aliases,
+            additional_credentials=additional_credentials,
+            aliases=aliases,
+            credentials=credentials,
+            database_connection_details=database_connection_details,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            external_id=external_id,
+            external_resource_id=external_resource_id,
+            freeform_tags=freeform_tags,
+            host_name=host_name,
+            license=license,
+            management_agent_id=management_agent_id,
+            name=name,
+            properties=properties,
+            resource_time_zone=resource_time_zone,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             additional_aliases: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalAliasArgs']]]] = None,
+             additional_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalCredentialArgs']]]] = None,
+             aliases: Optional[pulumi.Input['MonitoredResourceAliasesArgs']] = None,
+             credentials: Optional[pulumi.Input['MonitoredResourceCredentialsArgs']] = None,
+             database_connection_details: Optional[pulumi.Input['MonitoredResourceDatabaseConnectionDetailsArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             external_id: Optional[pulumi.Input[str]] = None,
+             external_resource_id: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             host_name: Optional[pulumi.Input[str]] = None,
+             license: Optional[pulumi.Input[str]] = None,
+             management_agent_id: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             properties: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]]] = None,
+             resource_time_zone: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if additional_aliases is None and 'additionalAliases' in kwargs:
+            additional_aliases = kwargs['additionalAliases']
+        if additional_credentials is None and 'additionalCredentials' in kwargs:
+            additional_credentials = kwargs['additionalCredentials']
+        if database_connection_details is None and 'databaseConnectionDetails' in kwargs:
+            database_connection_details = kwargs['databaseConnectionDetails']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if external_id is None and 'externalId' in kwargs:
+            external_id = kwargs['externalId']
+        if external_resource_id is None and 'externalResourceId' in kwargs:
+            external_resource_id = kwargs['externalResourceId']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if host_name is None and 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if management_agent_id is None and 'managementAgentId' in kwargs:
+            management_agent_id = kwargs['managementAgentId']
+        if resource_time_zone is None and 'resourceTimeZone' in kwargs:
+            resource_time_zone = kwargs['resourceTimeZone']
+
+        _setter("compartment_id", compartment_id)
+        _setter("type", type)
         if additional_aliases is not None:
-            pulumi.set(__self__, "additional_aliases", additional_aliases)
+            _setter("additional_aliases", additional_aliases)
         if additional_credentials is not None:
-            pulumi.set(__self__, "additional_credentials", additional_credentials)
+            _setter("additional_credentials", additional_credentials)
         if aliases is not None:
-            pulumi.set(__self__, "aliases", aliases)
+            _setter("aliases", aliases)
         if credentials is not None:
-            pulumi.set(__self__, "credentials", credentials)
+            _setter("credentials", credentials)
         if database_connection_details is not None:
-            pulumi.set(__self__, "database_connection_details", database_connection_details)
+            _setter("database_connection_details", database_connection_details)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if external_id is not None:
-            pulumi.set(__self__, "external_id", external_id)
+            _setter("external_id", external_id)
         if external_resource_id is not None:
-            pulumi.set(__self__, "external_resource_id", external_resource_id)
+            _setter("external_resource_id", external_resource_id)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if host_name is not None:
-            pulumi.set(__self__, "host_name", host_name)
+            _setter("host_name", host_name)
         if license is not None:
-            pulumi.set(__self__, "license", license)
+            _setter("license", license)
         if management_agent_id is not None:
-            pulumi.set(__self__, "management_agent_id", management_agent_id)
+            _setter("management_agent_id", management_agent_id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if properties is not None:
-            pulumi.set(__self__, "properties", properties)
+            _setter("properties", properties)
         if resource_time_zone is not None:
-            pulumi.set(__self__, "resource_time_zone", resource_time_zone)
+            _setter("resource_time_zone", resource_time_zone)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -371,52 +444,139 @@ class _MonitoredResourceState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _MonitoredResourceState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            additional_aliases=additional_aliases,
+            additional_credentials=additional_credentials,
+            aliases=aliases,
+            compartment_id=compartment_id,
+            credentials=credentials,
+            database_connection_details=database_connection_details,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            external_id=external_id,
+            external_resource_id=external_resource_id,
+            freeform_tags=freeform_tags,
+            host_name=host_name,
+            license=license,
+            management_agent_id=management_agent_id,
+            name=name,
+            properties=properties,
+            resource_time_zone=resource_time_zone,
+            state=state,
+            system_tags=system_tags,
+            tenant_id=tenant_id,
+            time_created=time_created,
+            time_updated=time_updated,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             additional_aliases: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalAliasArgs']]]] = None,
+             additional_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalCredentialArgs']]]] = None,
+             aliases: Optional[pulumi.Input['MonitoredResourceAliasesArgs']] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             credentials: Optional[pulumi.Input['MonitoredResourceCredentialsArgs']] = None,
+             database_connection_details: Optional[pulumi.Input['MonitoredResourceDatabaseConnectionDetailsArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             external_id: Optional[pulumi.Input[str]] = None,
+             external_resource_id: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             host_name: Optional[pulumi.Input[str]] = None,
+             license: Optional[pulumi.Input[str]] = None,
+             management_agent_id: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             properties: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]]] = None,
+             resource_time_zone: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             tenant_id: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if additional_aliases is None and 'additionalAliases' in kwargs:
+            additional_aliases = kwargs['additionalAliases']
+        if additional_credentials is None and 'additionalCredentials' in kwargs:
+            additional_credentials = kwargs['additionalCredentials']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if database_connection_details is None and 'databaseConnectionDetails' in kwargs:
+            database_connection_details = kwargs['databaseConnectionDetails']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if external_id is None and 'externalId' in kwargs:
+            external_id = kwargs['externalId']
+        if external_resource_id is None and 'externalResourceId' in kwargs:
+            external_resource_id = kwargs['externalResourceId']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if host_name is None and 'hostName' in kwargs:
+            host_name = kwargs['hostName']
+        if management_agent_id is None and 'managementAgentId' in kwargs:
+            management_agent_id = kwargs['managementAgentId']
+        if resource_time_zone is None and 'resourceTimeZone' in kwargs:
+            resource_time_zone = kwargs['resourceTimeZone']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if tenant_id is None and 'tenantId' in kwargs:
+            tenant_id = kwargs['tenantId']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if additional_aliases is not None:
-            pulumi.set(__self__, "additional_aliases", additional_aliases)
+            _setter("additional_aliases", additional_aliases)
         if additional_credentials is not None:
-            pulumi.set(__self__, "additional_credentials", additional_credentials)
+            _setter("additional_credentials", additional_credentials)
         if aliases is not None:
-            pulumi.set(__self__, "aliases", aliases)
+            _setter("aliases", aliases)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if credentials is not None:
-            pulumi.set(__self__, "credentials", credentials)
+            _setter("credentials", credentials)
         if database_connection_details is not None:
-            pulumi.set(__self__, "database_connection_details", database_connection_details)
+            _setter("database_connection_details", database_connection_details)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if external_id is not None:
-            pulumi.set(__self__, "external_id", external_id)
+            _setter("external_id", external_id)
         if external_resource_id is not None:
-            pulumi.set(__self__, "external_resource_id", external_resource_id)
+            _setter("external_resource_id", external_resource_id)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if host_name is not None:
-            pulumi.set(__self__, "host_name", host_name)
+            _setter("host_name", host_name)
         if license is not None:
-            pulumi.set(__self__, "license", license)
+            _setter("license", license)
         if management_agent_id is not None:
-            pulumi.set(__self__, "management_agent_id", management_agent_id)
+            _setter("management_agent_id", management_agent_id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if properties is not None:
-            pulumi.set(__self__, "properties", properties)
+            _setter("properties", properties)
         if resource_time_zone is not None:
-            pulumi.set(__self__, "resource_time_zone", resource_time_zone)
+            _setter("resource_time_zone", resource_time_zone)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if tenant_id is not None:
-            pulumi.set(__self__, "tenant_id", tenant_id)
+            _setter("tenant_id", tenant_id)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="additionalAliases")
@@ -952,6 +1112,10 @@ class MonitoredResource(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            MonitoredResourceArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -986,11 +1150,26 @@ class MonitoredResource(pulumi.CustomResource):
 
             __props__.__dict__["additional_aliases"] = additional_aliases
             __props__.__dict__["additional_credentials"] = additional_credentials
+            if aliases is not None and not isinstance(aliases, MonitoredResourceAliasesArgs):
+                aliases = aliases or {}
+                def _setter(key, value):
+                    aliases[key] = value
+                MonitoredResourceAliasesArgs._configure(_setter, **aliases)
             __props__.__dict__["aliases"] = aliases
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            if credentials is not None and not isinstance(credentials, MonitoredResourceCredentialsArgs):
+                credentials = credentials or {}
+                def _setter(key, value):
+                    credentials[key] = value
+                MonitoredResourceCredentialsArgs._configure(_setter, **credentials)
             __props__.__dict__["credentials"] = credentials
+            if database_connection_details is not None and not isinstance(database_connection_details, MonitoredResourceDatabaseConnectionDetailsArgs):
+                database_connection_details = database_connection_details or {}
+                def _setter(key, value):
+                    database_connection_details[key] = value
+                MonitoredResourceDatabaseConnectionDetailsArgs._configure(_setter, **database_connection_details)
             __props__.__dict__["database_connection_details"] = database_connection_details
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name

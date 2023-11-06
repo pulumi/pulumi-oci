@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -33,15 +33,46 @@ class AutonomousDatabaseBackupArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
+        AutonomousDatabaseBackupArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            autonomous_database_id=autonomous_database_id,
+            backup_destination_details=backup_destination_details,
+            display_name=display_name,
+            is_long_term_backup=is_long_term_backup,
+            retention_period_in_days=retention_period_in_days,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             autonomous_database_id: Optional[pulumi.Input[str]] = None,
+             backup_destination_details: Optional[pulumi.Input['AutonomousDatabaseBackupBackupDestinationDetailsArgs']] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             is_long_term_backup: Optional[pulumi.Input[bool]] = None,
+             retention_period_in_days: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if autonomous_database_id is None and 'autonomousDatabaseId' in kwargs:
+            autonomous_database_id = kwargs['autonomousDatabaseId']
+        if autonomous_database_id is None:
+            raise TypeError("Missing 'autonomous_database_id' argument")
+        if backup_destination_details is None and 'backupDestinationDetails' in kwargs:
+            backup_destination_details = kwargs['backupDestinationDetails']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if is_long_term_backup is None and 'isLongTermBackup' in kwargs:
+            is_long_term_backup = kwargs['isLongTermBackup']
+        if retention_period_in_days is None and 'retentionPeriodInDays' in kwargs:
+            retention_period_in_days = kwargs['retentionPeriodInDays']
+
+        _setter("autonomous_database_id", autonomous_database_id)
         if backup_destination_details is not None:
-            pulumi.set(__self__, "backup_destination_details", backup_destination_details)
+            _setter("backup_destination_details", backup_destination_details)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if is_long_term_backup is not None:
-            pulumi.set(__self__, "is_long_term_backup", is_long_term_backup)
+            _setter("is_long_term_backup", is_long_term_backup)
         if retention_period_in_days is not None:
-            pulumi.set(__self__, "retention_period_in_days", retention_period_in_days)
+            _setter("retention_period_in_days", retention_period_in_days)
 
     @property
     @pulumi.getter(name="autonomousDatabaseId")
@@ -162,50 +193,143 @@ class _AutonomousDatabaseBackupState:
         :param pulumi.Input[str] type: The type of backup.
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
+        _AutonomousDatabaseBackupState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            autonomous_database_id=autonomous_database_id,
+            backup_destination_details=backup_destination_details,
+            compartment_id=compartment_id,
+            database_size_in_tbs=database_size_in_tbs,
+            db_version=db_version,
+            display_name=display_name,
+            is_automatic=is_automatic,
+            is_long_term_backup=is_long_term_backup,
+            is_restorable=is_restorable,
+            key_store_id=key_store_id,
+            key_store_wallet_name=key_store_wallet_name,
+            kms_key_id=kms_key_id,
+            kms_key_version_id=kms_key_version_id,
+            lifecycle_details=lifecycle_details,
+            retention_period_in_days=retention_period_in_days,
+            size_in_tbs=size_in_tbs,
+            state=state,
+            time_available_till=time_available_till,
+            time_ended=time_ended,
+            time_started=time_started,
+            type=type,
+            vault_id=vault_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             autonomous_database_id: Optional[pulumi.Input[str]] = None,
+             backup_destination_details: Optional[pulumi.Input['AutonomousDatabaseBackupBackupDestinationDetailsArgs']] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             database_size_in_tbs: Optional[pulumi.Input[float]] = None,
+             db_version: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             is_automatic: Optional[pulumi.Input[bool]] = None,
+             is_long_term_backup: Optional[pulumi.Input[bool]] = None,
+             is_restorable: Optional[pulumi.Input[bool]] = None,
+             key_store_id: Optional[pulumi.Input[str]] = None,
+             key_store_wallet_name: Optional[pulumi.Input[str]] = None,
+             kms_key_id: Optional[pulumi.Input[str]] = None,
+             kms_key_version_id: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             retention_period_in_days: Optional[pulumi.Input[int]] = None,
+             size_in_tbs: Optional[pulumi.Input[float]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_available_till: Optional[pulumi.Input[str]] = None,
+             time_ended: Optional[pulumi.Input[str]] = None,
+             time_started: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             vault_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if autonomous_database_id is None and 'autonomousDatabaseId' in kwargs:
+            autonomous_database_id = kwargs['autonomousDatabaseId']
+        if backup_destination_details is None and 'backupDestinationDetails' in kwargs:
+            backup_destination_details = kwargs['backupDestinationDetails']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if database_size_in_tbs is None and 'databaseSizeInTbs' in kwargs:
+            database_size_in_tbs = kwargs['databaseSizeInTbs']
+        if db_version is None and 'dbVersion' in kwargs:
+            db_version = kwargs['dbVersion']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if is_automatic is None and 'isAutomatic' in kwargs:
+            is_automatic = kwargs['isAutomatic']
+        if is_long_term_backup is None and 'isLongTermBackup' in kwargs:
+            is_long_term_backup = kwargs['isLongTermBackup']
+        if is_restorable is None and 'isRestorable' in kwargs:
+            is_restorable = kwargs['isRestorable']
+        if key_store_id is None and 'keyStoreId' in kwargs:
+            key_store_id = kwargs['keyStoreId']
+        if key_store_wallet_name is None and 'keyStoreWalletName' in kwargs:
+            key_store_wallet_name = kwargs['keyStoreWalletName']
+        if kms_key_id is None and 'kmsKeyId' in kwargs:
+            kms_key_id = kwargs['kmsKeyId']
+        if kms_key_version_id is None and 'kmsKeyVersionId' in kwargs:
+            kms_key_version_id = kwargs['kmsKeyVersionId']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if retention_period_in_days is None and 'retentionPeriodInDays' in kwargs:
+            retention_period_in_days = kwargs['retentionPeriodInDays']
+        if size_in_tbs is None and 'sizeInTbs' in kwargs:
+            size_in_tbs = kwargs['sizeInTbs']
+        if time_available_till is None and 'timeAvailableTill' in kwargs:
+            time_available_till = kwargs['timeAvailableTill']
+        if time_ended is None and 'timeEnded' in kwargs:
+            time_ended = kwargs['timeEnded']
+        if time_started is None and 'timeStarted' in kwargs:
+            time_started = kwargs['timeStarted']
+        if vault_id is None and 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+
         if autonomous_database_id is not None:
-            pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
+            _setter("autonomous_database_id", autonomous_database_id)
         if backup_destination_details is not None:
-            pulumi.set(__self__, "backup_destination_details", backup_destination_details)
+            _setter("backup_destination_details", backup_destination_details)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if database_size_in_tbs is not None:
-            pulumi.set(__self__, "database_size_in_tbs", database_size_in_tbs)
+            _setter("database_size_in_tbs", database_size_in_tbs)
         if db_version is not None:
-            pulumi.set(__self__, "db_version", db_version)
+            _setter("db_version", db_version)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if is_automatic is not None:
-            pulumi.set(__self__, "is_automatic", is_automatic)
+            _setter("is_automatic", is_automatic)
         if is_long_term_backup is not None:
-            pulumi.set(__self__, "is_long_term_backup", is_long_term_backup)
+            _setter("is_long_term_backup", is_long_term_backup)
         if is_restorable is not None:
-            pulumi.set(__self__, "is_restorable", is_restorable)
+            _setter("is_restorable", is_restorable)
         if key_store_id is not None:
-            pulumi.set(__self__, "key_store_id", key_store_id)
+            _setter("key_store_id", key_store_id)
         if key_store_wallet_name is not None:
-            pulumi.set(__self__, "key_store_wallet_name", key_store_wallet_name)
+            _setter("key_store_wallet_name", key_store_wallet_name)
         if kms_key_id is not None:
-            pulumi.set(__self__, "kms_key_id", kms_key_id)
+            _setter("kms_key_id", kms_key_id)
         if kms_key_version_id is not None:
-            pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
+            _setter("kms_key_version_id", kms_key_version_id)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if retention_period_in_days is not None:
-            pulumi.set(__self__, "retention_period_in_days", retention_period_in_days)
+            _setter("retention_period_in_days", retention_period_in_days)
         if size_in_tbs is not None:
-            pulumi.set(__self__, "size_in_tbs", size_in_tbs)
+            _setter("size_in_tbs", size_in_tbs)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_available_till is not None:
-            pulumi.set(__self__, "time_available_till", time_available_till)
+            _setter("time_available_till", time_available_till)
         if time_ended is not None:
-            pulumi.set(__self__, "time_ended", time_ended)
+            _setter("time_ended", time_ended)
         if time_started is not None:
-            pulumi.set(__self__, "time_started", time_started)
+            _setter("time_started", time_started)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
         if vault_id is not None:
-            pulumi.set(__self__, "vault_id", vault_id)
+            _setter("vault_id", vault_id)
 
     @property
     @pulumi.getter(name="autonomousDatabaseId")
@@ -567,6 +691,10 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AutonomousDatabaseBackupArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -589,6 +717,11 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
             if autonomous_database_id is None and not opts.urn:
                 raise TypeError("Missing required property 'autonomous_database_id'")
             __props__.__dict__["autonomous_database_id"] = autonomous_database_id
+            if backup_destination_details is not None and not isinstance(backup_destination_details, AutonomousDatabaseBackupBackupDestinationDetailsArgs):
+                backup_destination_details = backup_destination_details or {}
+                def _setter(key, value):
+                    backup_destination_details[key] = value
+                AutonomousDatabaseBackupBackupDestinationDetailsArgs._configure(_setter, **backup_destination_details)
             __props__.__dict__["backup_destination_details"] = backup_destination_details
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["is_long_term_backup"] = is_long_term_backup

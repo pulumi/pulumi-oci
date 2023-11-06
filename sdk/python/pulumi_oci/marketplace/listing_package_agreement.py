@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['ListingPackageAgreementArgs', 'ListingPackageAgreement']
@@ -25,11 +25,42 @@ class ListingPackageAgreementArgs:
         :param pulumi.Input[str] package_version: The version of the package. Package versions are unique within a listing.
         :param pulumi.Input[str] compartment_id: The unique identifier for the compartment, required in gov regions.
         """
-        pulumi.set(__self__, "agreement_id", agreement_id)
-        pulumi.set(__self__, "listing_id", listing_id)
-        pulumi.set(__self__, "package_version", package_version)
+        ListingPackageAgreementArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            agreement_id=agreement_id,
+            listing_id=listing_id,
+            package_version=package_version,
+            compartment_id=compartment_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             agreement_id: Optional[pulumi.Input[str]] = None,
+             listing_id: Optional[pulumi.Input[str]] = None,
+             package_version: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if agreement_id is None and 'agreementId' in kwargs:
+            agreement_id = kwargs['agreementId']
+        if agreement_id is None:
+            raise TypeError("Missing 'agreement_id' argument")
+        if listing_id is None and 'listingId' in kwargs:
+            listing_id = kwargs['listingId']
+        if listing_id is None:
+            raise TypeError("Missing 'listing_id' argument")
+        if package_version is None and 'packageVersion' in kwargs:
+            package_version = kwargs['packageVersion']
+        if package_version is None:
+            raise TypeError("Missing 'package_version' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+
+        _setter("agreement_id", agreement_id)
+        _setter("listing_id", listing_id)
+        _setter("package_version", package_version)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
 
     @property
     @pulumi.getter(name="agreementId")
@@ -102,22 +133,57 @@ class _ListingPackageAgreementState:
         :param pulumi.Input[str] prompt: Textual prompt to read and accept the agreement.
         :param pulumi.Input[str] signature: A time-based signature that can be used to accept an agreement or remove a previously accepted agreement from the list that Marketplace checks before a deployment.
         """
+        _ListingPackageAgreementState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            agreement_id=agreement_id,
+            author=author,
+            compartment_id=compartment_id,
+            content_url=content_url,
+            listing_id=listing_id,
+            package_version=package_version,
+            prompt=prompt,
+            signature=signature,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             agreement_id: Optional[pulumi.Input[str]] = None,
+             author: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             content_url: Optional[pulumi.Input[str]] = None,
+             listing_id: Optional[pulumi.Input[str]] = None,
+             package_version: Optional[pulumi.Input[str]] = None,
+             prompt: Optional[pulumi.Input[str]] = None,
+             signature: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if agreement_id is None and 'agreementId' in kwargs:
+            agreement_id = kwargs['agreementId']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if content_url is None and 'contentUrl' in kwargs:
+            content_url = kwargs['contentUrl']
+        if listing_id is None and 'listingId' in kwargs:
+            listing_id = kwargs['listingId']
+        if package_version is None and 'packageVersion' in kwargs:
+            package_version = kwargs['packageVersion']
+
         if agreement_id is not None:
-            pulumi.set(__self__, "agreement_id", agreement_id)
+            _setter("agreement_id", agreement_id)
         if author is not None:
-            pulumi.set(__self__, "author", author)
+            _setter("author", author)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if content_url is not None:
-            pulumi.set(__self__, "content_url", content_url)
+            _setter("content_url", content_url)
         if listing_id is not None:
-            pulumi.set(__self__, "listing_id", listing_id)
+            _setter("listing_id", listing_id)
         if package_version is not None:
-            pulumi.set(__self__, "package_version", package_version)
+            _setter("package_version", package_version)
         if prompt is not None:
-            pulumi.set(__self__, "prompt", prompt)
+            _setter("prompt", prompt)
         if signature is not None:
-            pulumi.set(__self__, "signature", signature)
+            _setter("signature", signature)
 
     @property
     @pulumi.getter(name="agreementId")
@@ -295,6 +361,10 @@ class ListingPackageAgreement(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ListingPackageAgreementArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

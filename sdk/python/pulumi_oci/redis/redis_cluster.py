@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -39,16 +39,69 @@ class RedisClusterArgs:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "node_count", node_count)
-        pulumi.set(__self__, "node_memory_in_gbs", node_memory_in_gbs)
-        pulumi.set(__self__, "software_version", software_version)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        RedisClusterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            node_count=node_count,
+            node_memory_in_gbs=node_memory_in_gbs,
+            software_version=software_version,
+            subnet_id=subnet_id,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             node_count: Optional[pulumi.Input[int]] = None,
+             node_memory_in_gbs: Optional[pulumi.Input[float]] = None,
+             software_version: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if node_count is None and 'nodeCount' in kwargs:
+            node_count = kwargs['nodeCount']
+        if node_count is None:
+            raise TypeError("Missing 'node_count' argument")
+        if node_memory_in_gbs is None and 'nodeMemoryInGbs' in kwargs:
+            node_memory_in_gbs = kwargs['nodeMemoryInGbs']
+        if node_memory_in_gbs is None:
+            raise TypeError("Missing 'node_memory_in_gbs' argument")
+        if software_version is None and 'softwareVersion' in kwargs:
+            software_version = kwargs['softwareVersion']
+        if software_version is None:
+            raise TypeError("Missing 'software_version' argument")
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if subnet_id is None:
+            raise TypeError("Missing 'subnet_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
+        _setter("node_count", node_count)
+        _setter("node_memory_in_gbs", node_memory_in_gbs)
+        _setter("software_version", software_version)
+        _setter("subnet_id", subnet_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -197,42 +250,121 @@ class _RedisClusterState:
         :param pulumi.Input[str] time_created: The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         :param pulumi.Input[str] time_updated: The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         """
+        _RedisClusterState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            node_collections=node_collections,
+            node_count=node_count,
+            node_memory_in_gbs=node_memory_in_gbs,
+            primary_endpoint_ip_address=primary_endpoint_ip_address,
+            primary_fqdn=primary_fqdn,
+            replicas_endpoint_ip_address=replicas_endpoint_ip_address,
+            replicas_fqdn=replicas_fqdn,
+            software_version=software_version,
+            state=state,
+            subnet_id=subnet_id,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             node_collections: Optional[pulumi.Input[Sequence[pulumi.Input['RedisClusterNodeCollectionArgs']]]] = None,
+             node_count: Optional[pulumi.Input[int]] = None,
+             node_memory_in_gbs: Optional[pulumi.Input[float]] = None,
+             primary_endpoint_ip_address: Optional[pulumi.Input[str]] = None,
+             primary_fqdn: Optional[pulumi.Input[str]] = None,
+             replicas_endpoint_ip_address: Optional[pulumi.Input[str]] = None,
+             replicas_fqdn: Optional[pulumi.Input[str]] = None,
+             software_version: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if node_collections is None and 'nodeCollections' in kwargs:
+            node_collections = kwargs['nodeCollections']
+        if node_count is None and 'nodeCount' in kwargs:
+            node_count = kwargs['nodeCount']
+        if node_memory_in_gbs is None and 'nodeMemoryInGbs' in kwargs:
+            node_memory_in_gbs = kwargs['nodeMemoryInGbs']
+        if primary_endpoint_ip_address is None and 'primaryEndpointIpAddress' in kwargs:
+            primary_endpoint_ip_address = kwargs['primaryEndpointIpAddress']
+        if primary_fqdn is None and 'primaryFqdn' in kwargs:
+            primary_fqdn = kwargs['primaryFqdn']
+        if replicas_endpoint_ip_address is None and 'replicasEndpointIpAddress' in kwargs:
+            replicas_endpoint_ip_address = kwargs['replicasEndpointIpAddress']
+        if replicas_fqdn is None and 'replicasFqdn' in kwargs:
+            replicas_fqdn = kwargs['replicasFqdn']
+        if software_version is None and 'softwareVersion' in kwargs:
+            software_version = kwargs['softwareVersion']
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if node_collections is not None:
-            pulumi.set(__self__, "node_collections", node_collections)
+            _setter("node_collections", node_collections)
         if node_count is not None:
-            pulumi.set(__self__, "node_count", node_count)
+            _setter("node_count", node_count)
         if node_memory_in_gbs is not None:
-            pulumi.set(__self__, "node_memory_in_gbs", node_memory_in_gbs)
+            _setter("node_memory_in_gbs", node_memory_in_gbs)
         if primary_endpoint_ip_address is not None:
-            pulumi.set(__self__, "primary_endpoint_ip_address", primary_endpoint_ip_address)
+            _setter("primary_endpoint_ip_address", primary_endpoint_ip_address)
         if primary_fqdn is not None:
-            pulumi.set(__self__, "primary_fqdn", primary_fqdn)
+            _setter("primary_fqdn", primary_fqdn)
         if replicas_endpoint_ip_address is not None:
-            pulumi.set(__self__, "replicas_endpoint_ip_address", replicas_endpoint_ip_address)
+            _setter("replicas_endpoint_ip_address", replicas_endpoint_ip_address)
         if replicas_fqdn is not None:
-            pulumi.set(__self__, "replicas_fqdn", replicas_fqdn)
+            _setter("replicas_fqdn", replicas_fqdn)
         if software_version is not None:
-            pulumi.set(__self__, "software_version", software_version)
+            _setter("software_version", software_version)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -568,6 +700,10 @@ class RedisCluster(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            RedisClusterArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

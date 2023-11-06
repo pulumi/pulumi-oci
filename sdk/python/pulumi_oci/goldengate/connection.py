@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -154,134 +154,397 @@ class ConnectionArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "connection_type", connection_type)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "technology_type", technology_type)
+        ConnectionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            connection_type=connection_type,
+            display_name=display_name,
+            technology_type=technology_type,
+            access_key_id=access_key_id,
+            account_key=account_key,
+            account_name=account_name,
+            additional_attributes=additional_attributes,
+            authentication_type=authentication_type,
+            azure_tenant_id=azure_tenant_id,
+            bootstrap_servers=bootstrap_servers,
+            client_id=client_id,
+            client_secret=client_secret,
+            connection_factory=connection_factory,
+            connection_string=connection_string,
+            connection_url=connection_url,
+            consumer_properties=consumer_properties,
+            core_site_xml=core_site_xml,
+            database_id=database_id,
+            database_name=database_name,
+            db_system_id=db_system_id,
+            defined_tags=defined_tags,
+            deployment_id=deployment_id,
+            description=description,
+            endpoint=endpoint,
+            freeform_tags=freeform_tags,
+            host=host,
+            jndi_connection_factory=jndi_connection_factory,
+            jndi_initial_context_factory=jndi_initial_context_factory,
+            jndi_provider_url=jndi_provider_url,
+            jndi_security_credentials=jndi_security_credentials,
+            jndi_security_principal=jndi_security_principal,
+            key_id=key_id,
+            key_store=key_store,
+            key_store_password=key_store_password,
+            nsg_ids=nsg_ids,
+            password=password,
+            port=port,
+            private_ip=private_ip,
+            private_key_file=private_key_file,
+            private_key_passphrase=private_key_passphrase,
+            producer_properties=producer_properties,
+            public_key_fingerprint=public_key_fingerprint,
+            region=region,
+            sas_token=sas_token,
+            secret_access_key=secret_access_key,
+            security_protocol=security_protocol,
+            session_mode=session_mode,
+            should_use_jndi=should_use_jndi,
+            should_validate_server_certificate=should_validate_server_certificate,
+            ssl_ca=ssl_ca,
+            ssl_cert=ssl_cert,
+            ssl_crl=ssl_crl,
+            ssl_key=ssl_key,
+            ssl_key_password=ssl_key_password,
+            ssl_mode=ssl_mode,
+            stream_pool_id=stream_pool_id,
+            subnet_id=subnet_id,
+            tenancy_id=tenancy_id,
+            trust_store=trust_store,
+            trust_store_password=trust_store_password,
+            url=url,
+            user_id=user_id,
+            username=username,
+            vault_id=vault_id,
+            wallet=wallet,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             connection_type: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             technology_type: Optional[pulumi.Input[str]] = None,
+             access_key_id: Optional[pulumi.Input[str]] = None,
+             account_key: Optional[pulumi.Input[str]] = None,
+             account_name: Optional[pulumi.Input[str]] = None,
+             additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]] = None,
+             authentication_type: Optional[pulumi.Input[str]] = None,
+             azure_tenant_id: Optional[pulumi.Input[str]] = None,
+             bootstrap_servers: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionBootstrapServerArgs']]]] = None,
+             client_id: Optional[pulumi.Input[str]] = None,
+             client_secret: Optional[pulumi.Input[str]] = None,
+             connection_factory: Optional[pulumi.Input[str]] = None,
+             connection_string: Optional[pulumi.Input[str]] = None,
+             connection_url: Optional[pulumi.Input[str]] = None,
+             consumer_properties: Optional[pulumi.Input[str]] = None,
+             core_site_xml: Optional[pulumi.Input[str]] = None,
+             database_id: Optional[pulumi.Input[str]] = None,
+             database_name: Optional[pulumi.Input[str]] = None,
+             db_system_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             deployment_id: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             endpoint: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             host: Optional[pulumi.Input[str]] = None,
+             jndi_connection_factory: Optional[pulumi.Input[str]] = None,
+             jndi_initial_context_factory: Optional[pulumi.Input[str]] = None,
+             jndi_provider_url: Optional[pulumi.Input[str]] = None,
+             jndi_security_credentials: Optional[pulumi.Input[str]] = None,
+             jndi_security_principal: Optional[pulumi.Input[str]] = None,
+             key_id: Optional[pulumi.Input[str]] = None,
+             key_store: Optional[pulumi.Input[str]] = None,
+             key_store_password: Optional[pulumi.Input[str]] = None,
+             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             password: Optional[pulumi.Input[str]] = None,
+             port: Optional[pulumi.Input[int]] = None,
+             private_ip: Optional[pulumi.Input[str]] = None,
+             private_key_file: Optional[pulumi.Input[str]] = None,
+             private_key_passphrase: Optional[pulumi.Input[str]] = None,
+             producer_properties: Optional[pulumi.Input[str]] = None,
+             public_key_fingerprint: Optional[pulumi.Input[str]] = None,
+             region: Optional[pulumi.Input[str]] = None,
+             sas_token: Optional[pulumi.Input[str]] = None,
+             secret_access_key: Optional[pulumi.Input[str]] = None,
+             security_protocol: Optional[pulumi.Input[str]] = None,
+             session_mode: Optional[pulumi.Input[str]] = None,
+             should_use_jndi: Optional[pulumi.Input[bool]] = None,
+             should_validate_server_certificate: Optional[pulumi.Input[bool]] = None,
+             ssl_ca: Optional[pulumi.Input[str]] = None,
+             ssl_cert: Optional[pulumi.Input[str]] = None,
+             ssl_crl: Optional[pulumi.Input[str]] = None,
+             ssl_key: Optional[pulumi.Input[str]] = None,
+             ssl_key_password: Optional[pulumi.Input[str]] = None,
+             ssl_mode: Optional[pulumi.Input[str]] = None,
+             stream_pool_id: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             tenancy_id: Optional[pulumi.Input[str]] = None,
+             trust_store: Optional[pulumi.Input[str]] = None,
+             trust_store_password: Optional[pulumi.Input[str]] = None,
+             url: Optional[pulumi.Input[str]] = None,
+             user_id: Optional[pulumi.Input[str]] = None,
+             username: Optional[pulumi.Input[str]] = None,
+             vault_id: Optional[pulumi.Input[str]] = None,
+             wallet: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if connection_type is None and 'connectionType' in kwargs:
+            connection_type = kwargs['connectionType']
+        if connection_type is None:
+            raise TypeError("Missing 'connection_type' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if technology_type is None and 'technologyType' in kwargs:
+            technology_type = kwargs['technologyType']
+        if technology_type is None:
+            raise TypeError("Missing 'technology_type' argument")
+        if access_key_id is None and 'accessKeyId' in kwargs:
+            access_key_id = kwargs['accessKeyId']
+        if account_key is None and 'accountKey' in kwargs:
+            account_key = kwargs['accountKey']
+        if account_name is None and 'accountName' in kwargs:
+            account_name = kwargs['accountName']
+        if additional_attributes is None and 'additionalAttributes' in kwargs:
+            additional_attributes = kwargs['additionalAttributes']
+        if authentication_type is None and 'authenticationType' in kwargs:
+            authentication_type = kwargs['authenticationType']
+        if azure_tenant_id is None and 'azureTenantId' in kwargs:
+            azure_tenant_id = kwargs['azureTenantId']
+        if bootstrap_servers is None and 'bootstrapServers' in kwargs:
+            bootstrap_servers = kwargs['bootstrapServers']
+        if client_id is None and 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if client_secret is None and 'clientSecret' in kwargs:
+            client_secret = kwargs['clientSecret']
+        if connection_factory is None and 'connectionFactory' in kwargs:
+            connection_factory = kwargs['connectionFactory']
+        if connection_string is None and 'connectionString' in kwargs:
+            connection_string = kwargs['connectionString']
+        if connection_url is None and 'connectionUrl' in kwargs:
+            connection_url = kwargs['connectionUrl']
+        if consumer_properties is None and 'consumerProperties' in kwargs:
+            consumer_properties = kwargs['consumerProperties']
+        if core_site_xml is None and 'coreSiteXml' in kwargs:
+            core_site_xml = kwargs['coreSiteXml']
+        if database_id is None and 'databaseId' in kwargs:
+            database_id = kwargs['databaseId']
+        if database_name is None and 'databaseName' in kwargs:
+            database_name = kwargs['databaseName']
+        if db_system_id is None and 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if deployment_id is None and 'deploymentId' in kwargs:
+            deployment_id = kwargs['deploymentId']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if jndi_connection_factory is None and 'jndiConnectionFactory' in kwargs:
+            jndi_connection_factory = kwargs['jndiConnectionFactory']
+        if jndi_initial_context_factory is None and 'jndiInitialContextFactory' in kwargs:
+            jndi_initial_context_factory = kwargs['jndiInitialContextFactory']
+        if jndi_provider_url is None and 'jndiProviderUrl' in kwargs:
+            jndi_provider_url = kwargs['jndiProviderUrl']
+        if jndi_security_credentials is None and 'jndiSecurityCredentials' in kwargs:
+            jndi_security_credentials = kwargs['jndiSecurityCredentials']
+        if jndi_security_principal is None and 'jndiSecurityPrincipal' in kwargs:
+            jndi_security_principal = kwargs['jndiSecurityPrincipal']
+        if key_id is None and 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if key_store is None and 'keyStore' in kwargs:
+            key_store = kwargs['keyStore']
+        if key_store_password is None and 'keyStorePassword' in kwargs:
+            key_store_password = kwargs['keyStorePassword']
+        if nsg_ids is None and 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if private_ip is None and 'privateIp' in kwargs:
+            private_ip = kwargs['privateIp']
+        if private_key_file is None and 'privateKeyFile' in kwargs:
+            private_key_file = kwargs['privateKeyFile']
+        if private_key_passphrase is None and 'privateKeyPassphrase' in kwargs:
+            private_key_passphrase = kwargs['privateKeyPassphrase']
+        if producer_properties is None and 'producerProperties' in kwargs:
+            producer_properties = kwargs['producerProperties']
+        if public_key_fingerprint is None and 'publicKeyFingerprint' in kwargs:
+            public_key_fingerprint = kwargs['publicKeyFingerprint']
+        if sas_token is None and 'sasToken' in kwargs:
+            sas_token = kwargs['sasToken']
+        if secret_access_key is None and 'secretAccessKey' in kwargs:
+            secret_access_key = kwargs['secretAccessKey']
+        if security_protocol is None and 'securityProtocol' in kwargs:
+            security_protocol = kwargs['securityProtocol']
+        if session_mode is None and 'sessionMode' in kwargs:
+            session_mode = kwargs['sessionMode']
+        if should_use_jndi is None and 'shouldUseJndi' in kwargs:
+            should_use_jndi = kwargs['shouldUseJndi']
+        if should_validate_server_certificate is None and 'shouldValidateServerCertificate' in kwargs:
+            should_validate_server_certificate = kwargs['shouldValidateServerCertificate']
+        if ssl_ca is None and 'sslCa' in kwargs:
+            ssl_ca = kwargs['sslCa']
+        if ssl_cert is None and 'sslCert' in kwargs:
+            ssl_cert = kwargs['sslCert']
+        if ssl_crl is None and 'sslCrl' in kwargs:
+            ssl_crl = kwargs['sslCrl']
+        if ssl_key is None and 'sslKey' in kwargs:
+            ssl_key = kwargs['sslKey']
+        if ssl_key_password is None and 'sslKeyPassword' in kwargs:
+            ssl_key_password = kwargs['sslKeyPassword']
+        if ssl_mode is None and 'sslMode' in kwargs:
+            ssl_mode = kwargs['sslMode']
+        if stream_pool_id is None and 'streamPoolId' in kwargs:
+            stream_pool_id = kwargs['streamPoolId']
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if tenancy_id is None and 'tenancyId' in kwargs:
+            tenancy_id = kwargs['tenancyId']
+        if trust_store is None and 'trustStore' in kwargs:
+            trust_store = kwargs['trustStore']
+        if trust_store_password is None and 'trustStorePassword' in kwargs:
+            trust_store_password = kwargs['trustStorePassword']
+        if user_id is None and 'userId' in kwargs:
+            user_id = kwargs['userId']
+        if vault_id is None and 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+
+        _setter("compartment_id", compartment_id)
+        _setter("connection_type", connection_type)
+        _setter("display_name", display_name)
+        _setter("technology_type", technology_type)
         if access_key_id is not None:
-            pulumi.set(__self__, "access_key_id", access_key_id)
+            _setter("access_key_id", access_key_id)
         if account_key is not None:
-            pulumi.set(__self__, "account_key", account_key)
+            _setter("account_key", account_key)
         if account_name is not None:
-            pulumi.set(__self__, "account_name", account_name)
+            _setter("account_name", account_name)
         if additional_attributes is not None:
-            pulumi.set(__self__, "additional_attributes", additional_attributes)
+            _setter("additional_attributes", additional_attributes)
         if authentication_type is not None:
-            pulumi.set(__self__, "authentication_type", authentication_type)
+            _setter("authentication_type", authentication_type)
         if azure_tenant_id is not None:
-            pulumi.set(__self__, "azure_tenant_id", azure_tenant_id)
+            _setter("azure_tenant_id", azure_tenant_id)
         if bootstrap_servers is not None:
-            pulumi.set(__self__, "bootstrap_servers", bootstrap_servers)
+            _setter("bootstrap_servers", bootstrap_servers)
         if client_id is not None:
-            pulumi.set(__self__, "client_id", client_id)
+            _setter("client_id", client_id)
         if client_secret is not None:
-            pulumi.set(__self__, "client_secret", client_secret)
+            _setter("client_secret", client_secret)
         if connection_factory is not None:
-            pulumi.set(__self__, "connection_factory", connection_factory)
+            _setter("connection_factory", connection_factory)
         if connection_string is not None:
-            pulumi.set(__self__, "connection_string", connection_string)
+            _setter("connection_string", connection_string)
         if connection_url is not None:
-            pulumi.set(__self__, "connection_url", connection_url)
+            _setter("connection_url", connection_url)
         if consumer_properties is not None:
-            pulumi.set(__self__, "consumer_properties", consumer_properties)
+            _setter("consumer_properties", consumer_properties)
         if core_site_xml is not None:
-            pulumi.set(__self__, "core_site_xml", core_site_xml)
+            _setter("core_site_xml", core_site_xml)
         if database_id is not None:
-            pulumi.set(__self__, "database_id", database_id)
+            _setter("database_id", database_id)
         if database_name is not None:
-            pulumi.set(__self__, "database_name", database_name)
+            _setter("database_name", database_name)
         if db_system_id is not None:
-            pulumi.set(__self__, "db_system_id", db_system_id)
+            _setter("db_system_id", db_system_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if deployment_id is not None:
-            pulumi.set(__self__, "deployment_id", deployment_id)
+            _setter("deployment_id", deployment_id)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if endpoint is not None:
-            pulumi.set(__self__, "endpoint", endpoint)
+            _setter("endpoint", endpoint)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if host is not None:
-            pulumi.set(__self__, "host", host)
+            _setter("host", host)
         if jndi_connection_factory is not None:
-            pulumi.set(__self__, "jndi_connection_factory", jndi_connection_factory)
+            _setter("jndi_connection_factory", jndi_connection_factory)
         if jndi_initial_context_factory is not None:
-            pulumi.set(__self__, "jndi_initial_context_factory", jndi_initial_context_factory)
+            _setter("jndi_initial_context_factory", jndi_initial_context_factory)
         if jndi_provider_url is not None:
-            pulumi.set(__self__, "jndi_provider_url", jndi_provider_url)
+            _setter("jndi_provider_url", jndi_provider_url)
         if jndi_security_credentials is not None:
-            pulumi.set(__self__, "jndi_security_credentials", jndi_security_credentials)
+            _setter("jndi_security_credentials", jndi_security_credentials)
         if jndi_security_principal is not None:
-            pulumi.set(__self__, "jndi_security_principal", jndi_security_principal)
+            _setter("jndi_security_principal", jndi_security_principal)
         if key_id is not None:
-            pulumi.set(__self__, "key_id", key_id)
+            _setter("key_id", key_id)
         if key_store is not None:
-            pulumi.set(__self__, "key_store", key_store)
+            _setter("key_store", key_store)
         if key_store_password is not None:
-            pulumi.set(__self__, "key_store_password", key_store_password)
+            _setter("key_store_password", key_store_password)
         if nsg_ids is not None:
-            pulumi.set(__self__, "nsg_ids", nsg_ids)
+            _setter("nsg_ids", nsg_ids)
         if password is not None:
-            pulumi.set(__self__, "password", password)
+            _setter("password", password)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if private_ip is not None:
-            pulumi.set(__self__, "private_ip", private_ip)
+            _setter("private_ip", private_ip)
         if private_key_file is not None:
-            pulumi.set(__self__, "private_key_file", private_key_file)
+            _setter("private_key_file", private_key_file)
         if private_key_passphrase is not None:
-            pulumi.set(__self__, "private_key_passphrase", private_key_passphrase)
+            _setter("private_key_passphrase", private_key_passphrase)
         if producer_properties is not None:
-            pulumi.set(__self__, "producer_properties", producer_properties)
+            _setter("producer_properties", producer_properties)
         if public_key_fingerprint is not None:
-            pulumi.set(__self__, "public_key_fingerprint", public_key_fingerprint)
+            _setter("public_key_fingerprint", public_key_fingerprint)
         if region is not None:
-            pulumi.set(__self__, "region", region)
+            _setter("region", region)
         if sas_token is not None:
-            pulumi.set(__self__, "sas_token", sas_token)
+            _setter("sas_token", sas_token)
         if secret_access_key is not None:
-            pulumi.set(__self__, "secret_access_key", secret_access_key)
+            _setter("secret_access_key", secret_access_key)
         if security_protocol is not None:
-            pulumi.set(__self__, "security_protocol", security_protocol)
+            _setter("security_protocol", security_protocol)
         if session_mode is not None:
-            pulumi.set(__self__, "session_mode", session_mode)
+            _setter("session_mode", session_mode)
         if should_use_jndi is not None:
-            pulumi.set(__self__, "should_use_jndi", should_use_jndi)
+            _setter("should_use_jndi", should_use_jndi)
         if should_validate_server_certificate is not None:
-            pulumi.set(__self__, "should_validate_server_certificate", should_validate_server_certificate)
+            _setter("should_validate_server_certificate", should_validate_server_certificate)
         if ssl_ca is not None:
-            pulumi.set(__self__, "ssl_ca", ssl_ca)
+            _setter("ssl_ca", ssl_ca)
         if ssl_cert is not None:
-            pulumi.set(__self__, "ssl_cert", ssl_cert)
+            _setter("ssl_cert", ssl_cert)
         if ssl_crl is not None:
-            pulumi.set(__self__, "ssl_crl", ssl_crl)
+            _setter("ssl_crl", ssl_crl)
         if ssl_key is not None:
-            pulumi.set(__self__, "ssl_key", ssl_key)
+            _setter("ssl_key", ssl_key)
         if ssl_key_password is not None:
-            pulumi.set(__self__, "ssl_key_password", ssl_key_password)
+            _setter("ssl_key_password", ssl_key_password)
         if ssl_mode is not None:
-            pulumi.set(__self__, "ssl_mode", ssl_mode)
+            _setter("ssl_mode", ssl_mode)
         if stream_pool_id is not None:
-            pulumi.set(__self__, "stream_pool_id", stream_pool_id)
+            _setter("stream_pool_id", stream_pool_id)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
         if tenancy_id is not None:
-            pulumi.set(__self__, "tenancy_id", tenancy_id)
+            _setter("tenancy_id", tenancy_id)
         if trust_store is not None:
-            pulumi.set(__self__, "trust_store", trust_store)
+            _setter("trust_store", trust_store)
         if trust_store_password is not None:
-            pulumi.set(__self__, "trust_store_password", trust_store_password)
+            _setter("trust_store_password", trust_store_password)
         if url is not None:
-            pulumi.set(__self__, "url", url)
+            _setter("url", url)
         if user_id is not None:
-            pulumi.set(__self__, "user_id", user_id)
+            _setter("user_id", user_id)
         if username is not None:
-            pulumi.set(__self__, "username", username)
+            _setter("username", username)
         if vault_id is not None:
-            pulumi.set(__self__, "vault_id", vault_id)
+            _setter("vault_id", vault_id)
         if wallet is not None:
-            pulumi.set(__self__, "wallet", wallet)
+            _setter("wallet", wallet)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1232,150 +1495,427 @@ class _ConnectionState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _ConnectionState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            access_key_id=access_key_id,
+            account_key=account_key,
+            account_name=account_name,
+            additional_attributes=additional_attributes,
+            authentication_type=authentication_type,
+            azure_tenant_id=azure_tenant_id,
+            bootstrap_servers=bootstrap_servers,
+            client_id=client_id,
+            client_secret=client_secret,
+            compartment_id=compartment_id,
+            connection_factory=connection_factory,
+            connection_string=connection_string,
+            connection_type=connection_type,
+            connection_url=connection_url,
+            consumer_properties=consumer_properties,
+            core_site_xml=core_site_xml,
+            database_id=database_id,
+            database_name=database_name,
+            db_system_id=db_system_id,
+            defined_tags=defined_tags,
+            deployment_id=deployment_id,
+            description=description,
+            display_name=display_name,
+            endpoint=endpoint,
+            freeform_tags=freeform_tags,
+            host=host,
+            ingress_ips=ingress_ips,
+            jndi_connection_factory=jndi_connection_factory,
+            jndi_initial_context_factory=jndi_initial_context_factory,
+            jndi_provider_url=jndi_provider_url,
+            jndi_security_credentials=jndi_security_credentials,
+            jndi_security_principal=jndi_security_principal,
+            key_id=key_id,
+            key_store=key_store,
+            key_store_password=key_store_password,
+            lifecycle_details=lifecycle_details,
+            nsg_ids=nsg_ids,
+            password=password,
+            port=port,
+            private_ip=private_ip,
+            private_key_file=private_key_file,
+            private_key_passphrase=private_key_passphrase,
+            producer_properties=producer_properties,
+            public_key_fingerprint=public_key_fingerprint,
+            region=region,
+            sas_token=sas_token,
+            secret_access_key=secret_access_key,
+            security_protocol=security_protocol,
+            session_mode=session_mode,
+            should_use_jndi=should_use_jndi,
+            should_validate_server_certificate=should_validate_server_certificate,
+            ssl_ca=ssl_ca,
+            ssl_cert=ssl_cert,
+            ssl_crl=ssl_crl,
+            ssl_key=ssl_key,
+            ssl_key_password=ssl_key_password,
+            ssl_mode=ssl_mode,
+            state=state,
+            stream_pool_id=stream_pool_id,
+            subnet_id=subnet_id,
+            system_tags=system_tags,
+            technology_type=technology_type,
+            tenancy_id=tenancy_id,
+            time_created=time_created,
+            time_updated=time_updated,
+            trust_store=trust_store,
+            trust_store_password=trust_store_password,
+            url=url,
+            user_id=user_id,
+            username=username,
+            vault_id=vault_id,
+            wallet=wallet,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             access_key_id: Optional[pulumi.Input[str]] = None,
+             account_key: Optional[pulumi.Input[str]] = None,
+             account_name: Optional[pulumi.Input[str]] = None,
+             additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]] = None,
+             authentication_type: Optional[pulumi.Input[str]] = None,
+             azure_tenant_id: Optional[pulumi.Input[str]] = None,
+             bootstrap_servers: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionBootstrapServerArgs']]]] = None,
+             client_id: Optional[pulumi.Input[str]] = None,
+             client_secret: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             connection_factory: Optional[pulumi.Input[str]] = None,
+             connection_string: Optional[pulumi.Input[str]] = None,
+             connection_type: Optional[pulumi.Input[str]] = None,
+             connection_url: Optional[pulumi.Input[str]] = None,
+             consumer_properties: Optional[pulumi.Input[str]] = None,
+             core_site_xml: Optional[pulumi.Input[str]] = None,
+             database_id: Optional[pulumi.Input[str]] = None,
+             database_name: Optional[pulumi.Input[str]] = None,
+             db_system_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             deployment_id: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             endpoint: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             host: Optional[pulumi.Input[str]] = None,
+             ingress_ips: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionIngressIpArgs']]]] = None,
+             jndi_connection_factory: Optional[pulumi.Input[str]] = None,
+             jndi_initial_context_factory: Optional[pulumi.Input[str]] = None,
+             jndi_provider_url: Optional[pulumi.Input[str]] = None,
+             jndi_security_credentials: Optional[pulumi.Input[str]] = None,
+             jndi_security_principal: Optional[pulumi.Input[str]] = None,
+             key_id: Optional[pulumi.Input[str]] = None,
+             key_store: Optional[pulumi.Input[str]] = None,
+             key_store_password: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             password: Optional[pulumi.Input[str]] = None,
+             port: Optional[pulumi.Input[int]] = None,
+             private_ip: Optional[pulumi.Input[str]] = None,
+             private_key_file: Optional[pulumi.Input[str]] = None,
+             private_key_passphrase: Optional[pulumi.Input[str]] = None,
+             producer_properties: Optional[pulumi.Input[str]] = None,
+             public_key_fingerprint: Optional[pulumi.Input[str]] = None,
+             region: Optional[pulumi.Input[str]] = None,
+             sas_token: Optional[pulumi.Input[str]] = None,
+             secret_access_key: Optional[pulumi.Input[str]] = None,
+             security_protocol: Optional[pulumi.Input[str]] = None,
+             session_mode: Optional[pulumi.Input[str]] = None,
+             should_use_jndi: Optional[pulumi.Input[bool]] = None,
+             should_validate_server_certificate: Optional[pulumi.Input[bool]] = None,
+             ssl_ca: Optional[pulumi.Input[str]] = None,
+             ssl_cert: Optional[pulumi.Input[str]] = None,
+             ssl_crl: Optional[pulumi.Input[str]] = None,
+             ssl_key: Optional[pulumi.Input[str]] = None,
+             ssl_key_password: Optional[pulumi.Input[str]] = None,
+             ssl_mode: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             stream_pool_id: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             technology_type: Optional[pulumi.Input[str]] = None,
+             tenancy_id: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             trust_store: Optional[pulumi.Input[str]] = None,
+             trust_store_password: Optional[pulumi.Input[str]] = None,
+             url: Optional[pulumi.Input[str]] = None,
+             user_id: Optional[pulumi.Input[str]] = None,
+             username: Optional[pulumi.Input[str]] = None,
+             vault_id: Optional[pulumi.Input[str]] = None,
+             wallet: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if access_key_id is None and 'accessKeyId' in kwargs:
+            access_key_id = kwargs['accessKeyId']
+        if account_key is None and 'accountKey' in kwargs:
+            account_key = kwargs['accountKey']
+        if account_name is None and 'accountName' in kwargs:
+            account_name = kwargs['accountName']
+        if additional_attributes is None and 'additionalAttributes' in kwargs:
+            additional_attributes = kwargs['additionalAttributes']
+        if authentication_type is None and 'authenticationType' in kwargs:
+            authentication_type = kwargs['authenticationType']
+        if azure_tenant_id is None and 'azureTenantId' in kwargs:
+            azure_tenant_id = kwargs['azureTenantId']
+        if bootstrap_servers is None and 'bootstrapServers' in kwargs:
+            bootstrap_servers = kwargs['bootstrapServers']
+        if client_id is None and 'clientId' in kwargs:
+            client_id = kwargs['clientId']
+        if client_secret is None and 'clientSecret' in kwargs:
+            client_secret = kwargs['clientSecret']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if connection_factory is None and 'connectionFactory' in kwargs:
+            connection_factory = kwargs['connectionFactory']
+        if connection_string is None and 'connectionString' in kwargs:
+            connection_string = kwargs['connectionString']
+        if connection_type is None and 'connectionType' in kwargs:
+            connection_type = kwargs['connectionType']
+        if connection_url is None and 'connectionUrl' in kwargs:
+            connection_url = kwargs['connectionUrl']
+        if consumer_properties is None and 'consumerProperties' in kwargs:
+            consumer_properties = kwargs['consumerProperties']
+        if core_site_xml is None and 'coreSiteXml' in kwargs:
+            core_site_xml = kwargs['coreSiteXml']
+        if database_id is None and 'databaseId' in kwargs:
+            database_id = kwargs['databaseId']
+        if database_name is None and 'databaseName' in kwargs:
+            database_name = kwargs['databaseName']
+        if db_system_id is None and 'dbSystemId' in kwargs:
+            db_system_id = kwargs['dbSystemId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if deployment_id is None and 'deploymentId' in kwargs:
+            deployment_id = kwargs['deploymentId']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if ingress_ips is None and 'ingressIps' in kwargs:
+            ingress_ips = kwargs['ingressIps']
+        if jndi_connection_factory is None and 'jndiConnectionFactory' in kwargs:
+            jndi_connection_factory = kwargs['jndiConnectionFactory']
+        if jndi_initial_context_factory is None and 'jndiInitialContextFactory' in kwargs:
+            jndi_initial_context_factory = kwargs['jndiInitialContextFactory']
+        if jndi_provider_url is None and 'jndiProviderUrl' in kwargs:
+            jndi_provider_url = kwargs['jndiProviderUrl']
+        if jndi_security_credentials is None and 'jndiSecurityCredentials' in kwargs:
+            jndi_security_credentials = kwargs['jndiSecurityCredentials']
+        if jndi_security_principal is None and 'jndiSecurityPrincipal' in kwargs:
+            jndi_security_principal = kwargs['jndiSecurityPrincipal']
+        if key_id is None and 'keyId' in kwargs:
+            key_id = kwargs['keyId']
+        if key_store is None and 'keyStore' in kwargs:
+            key_store = kwargs['keyStore']
+        if key_store_password is None and 'keyStorePassword' in kwargs:
+            key_store_password = kwargs['keyStorePassword']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if nsg_ids is None and 'nsgIds' in kwargs:
+            nsg_ids = kwargs['nsgIds']
+        if private_ip is None and 'privateIp' in kwargs:
+            private_ip = kwargs['privateIp']
+        if private_key_file is None and 'privateKeyFile' in kwargs:
+            private_key_file = kwargs['privateKeyFile']
+        if private_key_passphrase is None and 'privateKeyPassphrase' in kwargs:
+            private_key_passphrase = kwargs['privateKeyPassphrase']
+        if producer_properties is None and 'producerProperties' in kwargs:
+            producer_properties = kwargs['producerProperties']
+        if public_key_fingerprint is None and 'publicKeyFingerprint' in kwargs:
+            public_key_fingerprint = kwargs['publicKeyFingerprint']
+        if sas_token is None and 'sasToken' in kwargs:
+            sas_token = kwargs['sasToken']
+        if secret_access_key is None and 'secretAccessKey' in kwargs:
+            secret_access_key = kwargs['secretAccessKey']
+        if security_protocol is None and 'securityProtocol' in kwargs:
+            security_protocol = kwargs['securityProtocol']
+        if session_mode is None and 'sessionMode' in kwargs:
+            session_mode = kwargs['sessionMode']
+        if should_use_jndi is None and 'shouldUseJndi' in kwargs:
+            should_use_jndi = kwargs['shouldUseJndi']
+        if should_validate_server_certificate is None and 'shouldValidateServerCertificate' in kwargs:
+            should_validate_server_certificate = kwargs['shouldValidateServerCertificate']
+        if ssl_ca is None and 'sslCa' in kwargs:
+            ssl_ca = kwargs['sslCa']
+        if ssl_cert is None and 'sslCert' in kwargs:
+            ssl_cert = kwargs['sslCert']
+        if ssl_crl is None and 'sslCrl' in kwargs:
+            ssl_crl = kwargs['sslCrl']
+        if ssl_key is None and 'sslKey' in kwargs:
+            ssl_key = kwargs['sslKey']
+        if ssl_key_password is None and 'sslKeyPassword' in kwargs:
+            ssl_key_password = kwargs['sslKeyPassword']
+        if ssl_mode is None and 'sslMode' in kwargs:
+            ssl_mode = kwargs['sslMode']
+        if stream_pool_id is None and 'streamPoolId' in kwargs:
+            stream_pool_id = kwargs['streamPoolId']
+        if subnet_id is None and 'subnetId' in kwargs:
+            subnet_id = kwargs['subnetId']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if technology_type is None and 'technologyType' in kwargs:
+            technology_type = kwargs['technologyType']
+        if tenancy_id is None and 'tenancyId' in kwargs:
+            tenancy_id = kwargs['tenancyId']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if trust_store is None and 'trustStore' in kwargs:
+            trust_store = kwargs['trustStore']
+        if trust_store_password is None and 'trustStorePassword' in kwargs:
+            trust_store_password = kwargs['trustStorePassword']
+        if user_id is None and 'userId' in kwargs:
+            user_id = kwargs['userId']
+        if vault_id is None and 'vaultId' in kwargs:
+            vault_id = kwargs['vaultId']
+
         if access_key_id is not None:
-            pulumi.set(__self__, "access_key_id", access_key_id)
+            _setter("access_key_id", access_key_id)
         if account_key is not None:
-            pulumi.set(__self__, "account_key", account_key)
+            _setter("account_key", account_key)
         if account_name is not None:
-            pulumi.set(__self__, "account_name", account_name)
+            _setter("account_name", account_name)
         if additional_attributes is not None:
-            pulumi.set(__self__, "additional_attributes", additional_attributes)
+            _setter("additional_attributes", additional_attributes)
         if authentication_type is not None:
-            pulumi.set(__self__, "authentication_type", authentication_type)
+            _setter("authentication_type", authentication_type)
         if azure_tenant_id is not None:
-            pulumi.set(__self__, "azure_tenant_id", azure_tenant_id)
+            _setter("azure_tenant_id", azure_tenant_id)
         if bootstrap_servers is not None:
-            pulumi.set(__self__, "bootstrap_servers", bootstrap_servers)
+            _setter("bootstrap_servers", bootstrap_servers)
         if client_id is not None:
-            pulumi.set(__self__, "client_id", client_id)
+            _setter("client_id", client_id)
         if client_secret is not None:
-            pulumi.set(__self__, "client_secret", client_secret)
+            _setter("client_secret", client_secret)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if connection_factory is not None:
-            pulumi.set(__self__, "connection_factory", connection_factory)
+            _setter("connection_factory", connection_factory)
         if connection_string is not None:
-            pulumi.set(__self__, "connection_string", connection_string)
+            _setter("connection_string", connection_string)
         if connection_type is not None:
-            pulumi.set(__self__, "connection_type", connection_type)
+            _setter("connection_type", connection_type)
         if connection_url is not None:
-            pulumi.set(__self__, "connection_url", connection_url)
+            _setter("connection_url", connection_url)
         if consumer_properties is not None:
-            pulumi.set(__self__, "consumer_properties", consumer_properties)
+            _setter("consumer_properties", consumer_properties)
         if core_site_xml is not None:
-            pulumi.set(__self__, "core_site_xml", core_site_xml)
+            _setter("core_site_xml", core_site_xml)
         if database_id is not None:
-            pulumi.set(__self__, "database_id", database_id)
+            _setter("database_id", database_id)
         if database_name is not None:
-            pulumi.set(__self__, "database_name", database_name)
+            _setter("database_name", database_name)
         if db_system_id is not None:
-            pulumi.set(__self__, "db_system_id", db_system_id)
+            _setter("db_system_id", db_system_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if deployment_id is not None:
-            pulumi.set(__self__, "deployment_id", deployment_id)
+            _setter("deployment_id", deployment_id)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if endpoint is not None:
-            pulumi.set(__self__, "endpoint", endpoint)
+            _setter("endpoint", endpoint)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if host is not None:
-            pulumi.set(__self__, "host", host)
+            _setter("host", host)
         if ingress_ips is not None:
-            pulumi.set(__self__, "ingress_ips", ingress_ips)
+            _setter("ingress_ips", ingress_ips)
         if jndi_connection_factory is not None:
-            pulumi.set(__self__, "jndi_connection_factory", jndi_connection_factory)
+            _setter("jndi_connection_factory", jndi_connection_factory)
         if jndi_initial_context_factory is not None:
-            pulumi.set(__self__, "jndi_initial_context_factory", jndi_initial_context_factory)
+            _setter("jndi_initial_context_factory", jndi_initial_context_factory)
         if jndi_provider_url is not None:
-            pulumi.set(__self__, "jndi_provider_url", jndi_provider_url)
+            _setter("jndi_provider_url", jndi_provider_url)
         if jndi_security_credentials is not None:
-            pulumi.set(__self__, "jndi_security_credentials", jndi_security_credentials)
+            _setter("jndi_security_credentials", jndi_security_credentials)
         if jndi_security_principal is not None:
-            pulumi.set(__self__, "jndi_security_principal", jndi_security_principal)
+            _setter("jndi_security_principal", jndi_security_principal)
         if key_id is not None:
-            pulumi.set(__self__, "key_id", key_id)
+            _setter("key_id", key_id)
         if key_store is not None:
-            pulumi.set(__self__, "key_store", key_store)
+            _setter("key_store", key_store)
         if key_store_password is not None:
-            pulumi.set(__self__, "key_store_password", key_store_password)
+            _setter("key_store_password", key_store_password)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if nsg_ids is not None:
-            pulumi.set(__self__, "nsg_ids", nsg_ids)
+            _setter("nsg_ids", nsg_ids)
         if password is not None:
-            pulumi.set(__self__, "password", password)
+            _setter("password", password)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if private_ip is not None:
-            pulumi.set(__self__, "private_ip", private_ip)
+            _setter("private_ip", private_ip)
         if private_key_file is not None:
-            pulumi.set(__self__, "private_key_file", private_key_file)
+            _setter("private_key_file", private_key_file)
         if private_key_passphrase is not None:
-            pulumi.set(__self__, "private_key_passphrase", private_key_passphrase)
+            _setter("private_key_passphrase", private_key_passphrase)
         if producer_properties is not None:
-            pulumi.set(__self__, "producer_properties", producer_properties)
+            _setter("producer_properties", producer_properties)
         if public_key_fingerprint is not None:
-            pulumi.set(__self__, "public_key_fingerprint", public_key_fingerprint)
+            _setter("public_key_fingerprint", public_key_fingerprint)
         if region is not None:
-            pulumi.set(__self__, "region", region)
+            _setter("region", region)
         if sas_token is not None:
-            pulumi.set(__self__, "sas_token", sas_token)
+            _setter("sas_token", sas_token)
         if secret_access_key is not None:
-            pulumi.set(__self__, "secret_access_key", secret_access_key)
+            _setter("secret_access_key", secret_access_key)
         if security_protocol is not None:
-            pulumi.set(__self__, "security_protocol", security_protocol)
+            _setter("security_protocol", security_protocol)
         if session_mode is not None:
-            pulumi.set(__self__, "session_mode", session_mode)
+            _setter("session_mode", session_mode)
         if should_use_jndi is not None:
-            pulumi.set(__self__, "should_use_jndi", should_use_jndi)
+            _setter("should_use_jndi", should_use_jndi)
         if should_validate_server_certificate is not None:
-            pulumi.set(__self__, "should_validate_server_certificate", should_validate_server_certificate)
+            _setter("should_validate_server_certificate", should_validate_server_certificate)
         if ssl_ca is not None:
-            pulumi.set(__self__, "ssl_ca", ssl_ca)
+            _setter("ssl_ca", ssl_ca)
         if ssl_cert is not None:
-            pulumi.set(__self__, "ssl_cert", ssl_cert)
+            _setter("ssl_cert", ssl_cert)
         if ssl_crl is not None:
-            pulumi.set(__self__, "ssl_crl", ssl_crl)
+            _setter("ssl_crl", ssl_crl)
         if ssl_key is not None:
-            pulumi.set(__self__, "ssl_key", ssl_key)
+            _setter("ssl_key", ssl_key)
         if ssl_key_password is not None:
-            pulumi.set(__self__, "ssl_key_password", ssl_key_password)
+            _setter("ssl_key_password", ssl_key_password)
         if ssl_mode is not None:
-            pulumi.set(__self__, "ssl_mode", ssl_mode)
+            _setter("ssl_mode", ssl_mode)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if stream_pool_id is not None:
-            pulumi.set(__self__, "stream_pool_id", stream_pool_id)
+            _setter("stream_pool_id", stream_pool_id)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if technology_type is not None:
-            pulumi.set(__self__, "technology_type", technology_type)
+            _setter("technology_type", technology_type)
         if tenancy_id is not None:
-            pulumi.set(__self__, "tenancy_id", tenancy_id)
+            _setter("tenancy_id", tenancy_id)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if trust_store is not None:
-            pulumi.set(__self__, "trust_store", trust_store)
+            _setter("trust_store", trust_store)
         if trust_store_password is not None:
-            pulumi.set(__self__, "trust_store_password", trust_store_password)
+            _setter("trust_store_password", trust_store_password)
         if url is not None:
-            pulumi.set(__self__, "url", url)
+            _setter("url", url)
         if user_id is not None:
-            pulumi.set(__self__, "user_id", user_id)
+            _setter("user_id", user_id)
         if username is not None:
-            pulumi.set(__self__, "username", username)
+            _setter("username", username)
         if vault_id is not None:
-            pulumi.set(__self__, "vault_id", vault_id)
+            _setter("vault_id", vault_id)
         if wallet is not None:
-            pulumi.set(__self__, "wallet", wallet)
+            _setter("wallet", wallet)
 
     @property
     @pulumi.getter(name="accessKeyId")
@@ -2603,6 +3143,10 @@ class Connection(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ConnectionArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

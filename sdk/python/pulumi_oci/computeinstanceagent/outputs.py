@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -25,10 +25,29 @@ class GetInstanceAgentPluginsFilterResult(dict):
         """
         :param str name: The plugin name
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetInstanceAgentPluginsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -62,10 +81,37 @@ class GetInstanceAgentPluginsInstanceAgentPluginResult(dict):
         :param str status: The plugin status
         :param str time_last_updated_utc: The last update time of the plugin in UTC
         """
-        pulumi.set(__self__, "message", message)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "time_last_updated_utc", time_last_updated_utc)
+        GetInstanceAgentPluginsInstanceAgentPluginResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            message=message,
+            name=name,
+            status=status,
+            time_last_updated_utc=time_last_updated_utc,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             message: Optional[str] = None,
+             name: Optional[str] = None,
+             status: Optional[str] = None,
+             time_last_updated_utc: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if message is None:
+            raise TypeError("Missing 'message' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if status is None:
+            raise TypeError("Missing 'status' argument")
+        if time_last_updated_utc is None and 'timeLastUpdatedUtc' in kwargs:
+            time_last_updated_utc = kwargs['timeLastUpdatedUtc']
+        if time_last_updated_utc is None:
+            raise TypeError("Missing 'time_last_updated_utc' argument")
+
+        _setter("message", message)
+        _setter("name", name)
+        _setter("status", status)
+        _setter("time_last_updated_utc", time_last_updated_utc)
 
     @property
     @pulumi.getter
@@ -113,10 +159,39 @@ class GetInstanceAvailablePluginAvailablePluginResult(dict):
         :param str name: The plugin name
         :param str summary: A brief description of the plugin functionality
         """
-        pulumi.set(__self__, "is_enabled_by_default", is_enabled_by_default)
-        pulumi.set(__self__, "is_supported", is_supported)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "summary", summary)
+        GetInstanceAvailablePluginAvailablePluginResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled_by_default=is_enabled_by_default,
+            is_supported=is_supported,
+            name=name,
+            summary=summary,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled_by_default: Optional[bool] = None,
+             is_supported: Optional[bool] = None,
+             name: Optional[str] = None,
+             summary: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if is_enabled_by_default is None and 'isEnabledByDefault' in kwargs:
+            is_enabled_by_default = kwargs['isEnabledByDefault']
+        if is_enabled_by_default is None:
+            raise TypeError("Missing 'is_enabled_by_default' argument")
+        if is_supported is None and 'isSupported' in kwargs:
+            is_supported = kwargs['isSupported']
+        if is_supported is None:
+            raise TypeError("Missing 'is_supported' argument")
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if summary is None:
+            raise TypeError("Missing 'summary' argument")
+
+        _setter("is_enabled_by_default", is_enabled_by_default)
+        _setter("is_supported", is_supported)
+        _setter("name", name)
+        _setter("summary", summary)
 
     @property
     @pulumi.getter(name="isEnabledByDefault")
@@ -160,10 +235,29 @@ class GetInstanceAvailablePluginFilterResult(dict):
         """
         :param str name: The plugin name
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetInstanceAvailablePluginFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

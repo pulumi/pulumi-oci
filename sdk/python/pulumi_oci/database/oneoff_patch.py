@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['OneoffPatchArgs', 'OneoffPatch']
@@ -37,18 +37,67 @@ class OneoffPatchArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] one_off_patches: List of one-off patches for Database Homes.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "db_version", db_version)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "release_update", release_update)
+        OneoffPatchArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            db_version=db_version,
+            display_name=display_name,
+            release_update=release_update,
+            defined_tags=defined_tags,
+            download_oneoff_patch_trigger=download_oneoff_patch_trigger,
+            freeform_tags=freeform_tags,
+            one_off_patches=one_off_patches,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             db_version: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             release_update: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             download_oneoff_patch_trigger: Optional[pulumi.Input[int]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             one_off_patches: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if db_version is None and 'dbVersion' in kwargs:
+            db_version = kwargs['dbVersion']
+        if db_version is None:
+            raise TypeError("Missing 'db_version' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if release_update is None and 'releaseUpdate' in kwargs:
+            release_update = kwargs['releaseUpdate']
+        if release_update is None:
+            raise TypeError("Missing 'release_update' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if download_oneoff_patch_trigger is None and 'downloadOneoffPatchTrigger' in kwargs:
+            download_oneoff_patch_trigger = kwargs['downloadOneoffPatchTrigger']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if one_off_patches is None and 'oneOffPatches' in kwargs:
+            one_off_patches = kwargs['oneOffPatches']
+
+        _setter("compartment_id", compartment_id)
+        _setter("db_version", db_version)
+        _setter("display_name", display_name)
+        _setter("release_update", release_update)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if download_oneoff_patch_trigger is not None:
-            pulumi.set(__self__, "download_oneoff_patch_trigger", download_oneoff_patch_trigger)
+            _setter("download_oneoff_patch_trigger", download_oneoff_patch_trigger)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if one_off_patches is not None:
-            pulumi.set(__self__, "one_off_patches", one_off_patches)
+            _setter("one_off_patches", one_off_patches)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -191,36 +240,101 @@ class _OneoffPatchState:
         :param pulumi.Input[str] time_of_expiration: The date and time until which the one-off patch will be available for download.
         :param pulumi.Input[str] time_updated: The date and time one-off patch was updated.
         """
+        _OneoffPatchState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            db_version=db_version,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            download_oneoff_patch_trigger=download_oneoff_patch_trigger,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            one_off_patches=one_off_patches,
+            release_update=release_update,
+            sha256sum=sha256sum,
+            size_in_kbs=size_in_kbs,
+            state=state,
+            time_created=time_created,
+            time_of_expiration=time_of_expiration,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             db_version: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             download_oneoff_patch_trigger: Optional[pulumi.Input[int]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             one_off_patches: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             release_update: Optional[pulumi.Input[str]] = None,
+             sha256sum: Optional[pulumi.Input[str]] = None,
+             size_in_kbs: Optional[pulumi.Input[float]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_of_expiration: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if db_version is None and 'dbVersion' in kwargs:
+            db_version = kwargs['dbVersion']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if download_oneoff_patch_trigger is None and 'downloadOneoffPatchTrigger' in kwargs:
+            download_oneoff_patch_trigger = kwargs['downloadOneoffPatchTrigger']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if lifecycle_details is None and 'lifecycleDetails' in kwargs:
+            lifecycle_details = kwargs['lifecycleDetails']
+        if one_off_patches is None and 'oneOffPatches' in kwargs:
+            one_off_patches = kwargs['oneOffPatches']
+        if release_update is None and 'releaseUpdate' in kwargs:
+            release_update = kwargs['releaseUpdate']
+        if size_in_kbs is None and 'sizeInKbs' in kwargs:
+            size_in_kbs = kwargs['sizeInKbs']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_of_expiration is None and 'timeOfExpiration' in kwargs:
+            time_of_expiration = kwargs['timeOfExpiration']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if db_version is not None:
-            pulumi.set(__self__, "db_version", db_version)
+            _setter("db_version", db_version)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if download_oneoff_patch_trigger is not None:
-            pulumi.set(__self__, "download_oneoff_patch_trigger", download_oneoff_patch_trigger)
+            _setter("download_oneoff_patch_trigger", download_oneoff_patch_trigger)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if one_off_patches is not None:
-            pulumi.set(__self__, "one_off_patches", one_off_patches)
+            _setter("one_off_patches", one_off_patches)
         if release_update is not None:
-            pulumi.set(__self__, "release_update", release_update)
+            _setter("release_update", release_update)
         if sha256sum is not None:
-            pulumi.set(__self__, "sha256sum", sha256sum)
+            _setter("sha256sum", sha256sum)
         if size_in_kbs is not None:
-            pulumi.set(__self__, "size_in_kbs", size_in_kbs)
+            _setter("size_in_kbs", size_in_kbs)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_of_expiration is not None:
-            pulumi.set(__self__, "time_of_expiration", time_of_expiration)
+            _setter("time_of_expiration", time_of_expiration)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -514,6 +628,10 @@ class OneoffPatch(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            OneoffPatchArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

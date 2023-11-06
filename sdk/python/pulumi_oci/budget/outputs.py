@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -51,21 +51,104 @@ class GetAlertRulesAlertRuleResult(dict):
         :param str type: The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
         :param int version: The version of the alert rule. Starts from 1 and increments by 1.
         """
-        pulumi.set(__self__, "budget_id", budget_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "message", message)
-        pulumi.set(__self__, "recipients", recipients)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "threshold", threshold)
-        pulumi.set(__self__, "threshold_type", threshold_type)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "version", version)
+        GetAlertRulesAlertRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            budget_id=budget_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            message=message,
+            recipients=recipients,
+            state=state,
+            threshold=threshold,
+            threshold_type=threshold_type,
+            time_created=time_created,
+            time_updated=time_updated,
+            type=type,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             budget_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             message: Optional[str] = None,
+             recipients: Optional[str] = None,
+             state: Optional[str] = None,
+             threshold: Optional[float] = None,
+             threshold_type: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             type: Optional[str] = None,
+             version: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if budget_id is None and 'budgetId' in kwargs:
+            budget_id = kwargs['budgetId']
+        if budget_id is None:
+            raise TypeError("Missing 'budget_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if message is None:
+            raise TypeError("Missing 'message' argument")
+        if recipients is None:
+            raise TypeError("Missing 'recipients' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if threshold is None:
+            raise TypeError("Missing 'threshold' argument")
+        if threshold_type is None and 'thresholdType' in kwargs:
+            threshold_type = kwargs['thresholdType']
+        if threshold_type is None:
+            raise TypeError("Missing 'threshold_type' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
+
+        _setter("budget_id", budget_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("message", message)
+        _setter("recipients", recipients)
+        _setter("state", state)
+        _setter("threshold", threshold)
+        _setter("threshold_type", threshold_type)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("type", type)
+        _setter("version", version)
 
     @property
     @pulumi.getter(name="budgetId")
@@ -194,10 +277,29 @@ class GetAlertRulesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAlertRulesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -269,29 +371,164 @@ class GetBudgetsBudgetResult(dict):
         :param str time_updated: The time that the budget was updated.
         :param int version: The version of the budget. Starts from 1 and increments by 1.
         """
-        pulumi.set(__self__, "actual_spend", actual_spend)
-        pulumi.set(__self__, "alert_rule_count", alert_rule_count)
-        pulumi.set(__self__, "amount", amount)
-        pulumi.set(__self__, "budget_processing_period_start_offset", budget_processing_period_start_offset)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "end_date", end_date)
-        pulumi.set(__self__, "forecasted_spend", forecasted_spend)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "processing_period_type", processing_period_type)
-        pulumi.set(__self__, "reset_period", reset_period)
-        pulumi.set(__self__, "start_date", start_date)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "target_compartment_id", target_compartment_id)
-        pulumi.set(__self__, "target_type", target_type)
-        pulumi.set(__self__, "targets", targets)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_spend_computed", time_spend_computed)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "version", version)
+        GetBudgetsBudgetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            actual_spend=actual_spend,
+            alert_rule_count=alert_rule_count,
+            amount=amount,
+            budget_processing_period_start_offset=budget_processing_period_start_offset,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            end_date=end_date,
+            forecasted_spend=forecasted_spend,
+            freeform_tags=freeform_tags,
+            id=id,
+            processing_period_type=processing_period_type,
+            reset_period=reset_period,
+            start_date=start_date,
+            state=state,
+            target_compartment_id=target_compartment_id,
+            target_type=target_type,
+            targets=targets,
+            time_created=time_created,
+            time_spend_computed=time_spend_computed,
+            time_updated=time_updated,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             actual_spend: Optional[float] = None,
+             alert_rule_count: Optional[int] = None,
+             amount: Optional[int] = None,
+             budget_processing_period_start_offset: Optional[int] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             end_date: Optional[str] = None,
+             forecasted_spend: Optional[float] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             processing_period_type: Optional[str] = None,
+             reset_period: Optional[str] = None,
+             start_date: Optional[str] = None,
+             state: Optional[str] = None,
+             target_compartment_id: Optional[str] = None,
+             target_type: Optional[str] = None,
+             targets: Optional[Sequence[str]] = None,
+             time_created: Optional[str] = None,
+             time_spend_computed: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             version: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if actual_spend is None and 'actualSpend' in kwargs:
+            actual_spend = kwargs['actualSpend']
+        if actual_spend is None:
+            raise TypeError("Missing 'actual_spend' argument")
+        if alert_rule_count is None and 'alertRuleCount' in kwargs:
+            alert_rule_count = kwargs['alertRuleCount']
+        if alert_rule_count is None:
+            raise TypeError("Missing 'alert_rule_count' argument")
+        if amount is None:
+            raise TypeError("Missing 'amount' argument")
+        if budget_processing_period_start_offset is None and 'budgetProcessingPeriodStartOffset' in kwargs:
+            budget_processing_period_start_offset = kwargs['budgetProcessingPeriodStartOffset']
+        if budget_processing_period_start_offset is None:
+            raise TypeError("Missing 'budget_processing_period_start_offset' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if defined_tags is None:
+            raise TypeError("Missing 'defined_tags' argument")
+        if description is None:
+            raise TypeError("Missing 'description' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if end_date is None and 'endDate' in kwargs:
+            end_date = kwargs['endDate']
+        if end_date is None:
+            raise TypeError("Missing 'end_date' argument")
+        if forecasted_spend is None and 'forecastedSpend' in kwargs:
+            forecasted_spend = kwargs['forecastedSpend']
+        if forecasted_spend is None:
+            raise TypeError("Missing 'forecasted_spend' argument")
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if freeform_tags is None:
+            raise TypeError("Missing 'freeform_tags' argument")
+        if id is None:
+            raise TypeError("Missing 'id' argument")
+        if processing_period_type is None and 'processingPeriodType' in kwargs:
+            processing_period_type = kwargs['processingPeriodType']
+        if processing_period_type is None:
+            raise TypeError("Missing 'processing_period_type' argument")
+        if reset_period is None and 'resetPeriod' in kwargs:
+            reset_period = kwargs['resetPeriod']
+        if reset_period is None:
+            raise TypeError("Missing 'reset_period' argument")
+        if start_date is None and 'startDate' in kwargs:
+            start_date = kwargs['startDate']
+        if start_date is None:
+            raise TypeError("Missing 'start_date' argument")
+        if state is None:
+            raise TypeError("Missing 'state' argument")
+        if target_compartment_id is None and 'targetCompartmentId' in kwargs:
+            target_compartment_id = kwargs['targetCompartmentId']
+        if target_compartment_id is None:
+            raise TypeError("Missing 'target_compartment_id' argument")
+        if target_type is None and 'targetType' in kwargs:
+            target_type = kwargs['targetType']
+        if target_type is None:
+            raise TypeError("Missing 'target_type' argument")
+        if targets is None:
+            raise TypeError("Missing 'targets' argument")
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_created is None:
+            raise TypeError("Missing 'time_created' argument")
+        if time_spend_computed is None and 'timeSpendComputed' in kwargs:
+            time_spend_computed = kwargs['timeSpendComputed']
+        if time_spend_computed is None:
+            raise TypeError("Missing 'time_spend_computed' argument")
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if time_updated is None:
+            raise TypeError("Missing 'time_updated' argument")
+        if version is None:
+            raise TypeError("Missing 'version' argument")
+
+        _setter("actual_spend", actual_spend)
+        _setter("alert_rule_count", alert_rule_count)
+        _setter("amount", amount)
+        _setter("budget_processing_period_start_offset", budget_processing_period_start_offset)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("end_date", end_date)
+        _setter("forecasted_spend", forecasted_spend)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("processing_period_type", processing_period_type)
+        _setter("reset_period", reset_period)
+        _setter("start_date", start_date)
+        _setter("state", state)
+        _setter("target_compartment_id", target_compartment_id)
+        _setter("target_type", target_type)
+        _setter("targets", targets)
+        _setter("time_created", time_created)
+        _setter("time_spend_computed", time_spend_computed)
+        _setter("time_updated", time_updated)
+        _setter("version", version)
 
     @property
     @pulumi.getter(name="actualSpend")
@@ -490,10 +727,29 @@ class GetBudgetsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetBudgetsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

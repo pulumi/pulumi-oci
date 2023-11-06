@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -43,25 +43,80 @@ class ApplicationArgs:
         :param pulumi.Input[str] syslog_url: (Updatable) A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls. The syslog URL must be reachable from all of the subnets configured for the application. Note: If you enable the Oracle Cloud Infrastructure Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the Oracle Cloud Infrastructure Logging service, and not to the syslog URL.  Example: `tcp://logserver.myserver:1234`
         :param pulumi.Input['ApplicationTraceConfigArgs'] trace_config: (Updatable) Define the tracing configuration for an application.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "subnet_ids", subnet_ids)
+        ApplicationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            subnet_ids=subnet_ids,
+            config=config,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            image_policy_config=image_policy_config,
+            network_security_group_ids=network_security_group_ids,
+            shape=shape,
+            syslog_url=syslog_url,
+            trace_config=trace_config,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             config: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             image_policy_config: Optional[pulumi.Input['ApplicationImagePolicyConfigArgs']] = None,
+             network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             shape: Optional[pulumi.Input[str]] = None,
+             syslog_url: Optional[pulumi.Input[str]] = None,
+             trace_config: Optional[pulumi.Input['ApplicationTraceConfigArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if subnet_ids is None and 'subnetIds' in kwargs:
+            subnet_ids = kwargs['subnetIds']
+        if subnet_ids is None:
+            raise TypeError("Missing 'subnet_ids' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if image_policy_config is None and 'imagePolicyConfig' in kwargs:
+            image_policy_config = kwargs['imagePolicyConfig']
+        if network_security_group_ids is None and 'networkSecurityGroupIds' in kwargs:
+            network_security_group_ids = kwargs['networkSecurityGroupIds']
+        if syslog_url is None and 'syslogUrl' in kwargs:
+            syslog_url = kwargs['syslogUrl']
+        if trace_config is None and 'traceConfig' in kwargs:
+            trace_config = kwargs['traceConfig']
+
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
+        _setter("subnet_ids", subnet_ids)
         if config is not None:
-            pulumi.set(__self__, "config", config)
+            _setter("config", config)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if image_policy_config is not None:
-            pulumi.set(__self__, "image_policy_config", image_policy_config)
+            _setter("image_policy_config", image_policy_config)
         if network_security_group_ids is not None:
-            pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
+            _setter("network_security_group_ids", network_security_group_ids)
         if shape is not None:
-            pulumi.set(__self__, "shape", shape)
+            _setter("shape", shape)
         if syslog_url is not None:
-            pulumi.set(__self__, "syslog_url", syslog_url)
+            _setter("syslog_url", syslog_url)
         if trace_config is not None:
-            pulumi.set(__self__, "trace_config", trace_config)
+            _setter("trace_config", trace_config)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -234,34 +289,93 @@ class _ApplicationState:
         :param pulumi.Input[str] time_updated: The time the application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-09-12T22:47:12.613Z`
         :param pulumi.Input['ApplicationTraceConfigArgs'] trace_config: (Updatable) Define the tracing configuration for an application.
         """
+        _ApplicationState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            config=config,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            image_policy_config=image_policy_config,
+            network_security_group_ids=network_security_group_ids,
+            shape=shape,
+            state=state,
+            subnet_ids=subnet_ids,
+            syslog_url=syslog_url,
+            time_created=time_created,
+            time_updated=time_updated,
+            trace_config=trace_config,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             config: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             image_policy_config: Optional[pulumi.Input['ApplicationImagePolicyConfigArgs']] = None,
+             network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             shape: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             syslog_url: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             trace_config: Optional[pulumi.Input['ApplicationTraceConfigArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if image_policy_config is None and 'imagePolicyConfig' in kwargs:
+            image_policy_config = kwargs['imagePolicyConfig']
+        if network_security_group_ids is None and 'networkSecurityGroupIds' in kwargs:
+            network_security_group_ids = kwargs['networkSecurityGroupIds']
+        if subnet_ids is None and 'subnetIds' in kwargs:
+            subnet_ids = kwargs['subnetIds']
+        if syslog_url is None and 'syslogUrl' in kwargs:
+            syslog_url = kwargs['syslogUrl']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if time_updated is None and 'timeUpdated' in kwargs:
+            time_updated = kwargs['timeUpdated']
+        if trace_config is None and 'traceConfig' in kwargs:
+            trace_config = kwargs['traceConfig']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if config is not None:
-            pulumi.set(__self__, "config", config)
+            _setter("config", config)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if image_policy_config is not None:
-            pulumi.set(__self__, "image_policy_config", image_policy_config)
+            _setter("image_policy_config", image_policy_config)
         if network_security_group_ids is not None:
-            pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
+            _setter("network_security_group_ids", network_security_group_ids)
         if shape is not None:
-            pulumi.set(__self__, "shape", shape)
+            _setter("shape", shape)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if subnet_ids is not None:
-            pulumi.set(__self__, "subnet_ids", subnet_ids)
+            _setter("subnet_ids", subnet_ids)
         if syslog_url is not None:
-            pulumi.set(__self__, "syslog_url", syslog_url)
+            _setter("syslog_url", syslog_url)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if trace_config is not None:
-            pulumi.set(__self__, "trace_config", trace_config)
+            _setter("trace_config", trace_config)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -565,6 +679,10 @@ class Application(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ApplicationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -599,6 +717,11 @@ class Application(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            if image_policy_config is not None and not isinstance(image_policy_config, ApplicationImagePolicyConfigArgs):
+                image_policy_config = image_policy_config or {}
+                def _setter(key, value):
+                    image_policy_config[key] = value
+                ApplicationImagePolicyConfigArgs._configure(_setter, **image_policy_config)
             __props__.__dict__["image_policy_config"] = image_policy_config
             __props__.__dict__["network_security_group_ids"] = network_security_group_ids
             __props__.__dict__["shape"] = shape
@@ -606,6 +729,11 @@ class Application(pulumi.CustomResource):
                 raise TypeError("Missing required property 'subnet_ids'")
             __props__.__dict__["subnet_ids"] = subnet_ids
             __props__.__dict__["syslog_url"] = syslog_url
+            if trace_config is not None and not isinstance(trace_config, ApplicationTraceConfigArgs):
+                trace_config = trace_config or {}
+                def _setter(key, value):
+                    trace_config[key] = value
+                ApplicationTraceConfigArgs._configure(_setter, **trace_config)
             __props__.__dict__["trace_config"] = trace_config
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -37,17 +37,58 @@ class WorkspaceImportRequestArgs:
         :param pulumi.Input[str] object_storage_region: Region of the object storage (if using object storage of different region)
         :param pulumi.Input[str] object_storage_tenancy_id: Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "file_name", file_name)
-        pulumi.set(__self__, "workspace_id", workspace_id)
+        WorkspaceImportRequestArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            file_name=file_name,
+            workspace_id=workspace_id,
+            import_conflict_resolution=import_conflict_resolution,
+            object_key_for_import=object_key_for_import,
+            object_storage_region=object_storage_region,
+            object_storage_tenancy_id=object_storage_tenancy_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[pulumi.Input[str]] = None,
+             file_name: Optional[pulumi.Input[str]] = None,
+             workspace_id: Optional[pulumi.Input[str]] = None,
+             import_conflict_resolution: Optional[pulumi.Input['WorkspaceImportRequestImportConflictResolutionArgs']] = None,
+             object_key_for_import: Optional[pulumi.Input[str]] = None,
+             object_storage_region: Optional[pulumi.Input[str]] = None,
+             object_storage_tenancy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if bucket is None:
+            raise TypeError("Missing 'bucket' argument")
+        if file_name is None and 'fileName' in kwargs:
+            file_name = kwargs['fileName']
+        if file_name is None:
+            raise TypeError("Missing 'file_name' argument")
+        if workspace_id is None and 'workspaceId' in kwargs:
+            workspace_id = kwargs['workspaceId']
+        if workspace_id is None:
+            raise TypeError("Missing 'workspace_id' argument")
+        if import_conflict_resolution is None and 'importConflictResolution' in kwargs:
+            import_conflict_resolution = kwargs['importConflictResolution']
+        if object_key_for_import is None and 'objectKeyForImport' in kwargs:
+            object_key_for_import = kwargs['objectKeyForImport']
+        if object_storage_region is None and 'objectStorageRegion' in kwargs:
+            object_storage_region = kwargs['objectStorageRegion']
+        if object_storage_tenancy_id is None and 'objectStorageTenancyId' in kwargs:
+            object_storage_tenancy_id = kwargs['objectStorageTenancyId']
+
+        _setter("bucket", bucket)
+        _setter("file_name", file_name)
+        _setter("workspace_id", workspace_id)
         if import_conflict_resolution is not None:
-            pulumi.set(__self__, "import_conflict_resolution", import_conflict_resolution)
+            _setter("import_conflict_resolution", import_conflict_resolution)
         if object_key_for_import is not None:
-            pulumi.set(__self__, "object_key_for_import", object_key_for_import)
+            _setter("object_key_for_import", object_key_for_import)
         if object_storage_region is not None:
-            pulumi.set(__self__, "object_storage_region", object_storage_region)
+            _setter("object_storage_region", object_storage_region)
         if object_storage_tenancy_id is not None:
-            pulumi.set(__self__, "object_storage_tenancy_id", object_storage_tenancy_id)
+            _setter("object_storage_tenancy_id", object_storage_tenancy_id)
 
     @property
     @pulumi.getter
@@ -180,38 +221,103 @@ class _WorkspaceImportRequestState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _WorkspaceImportRequestState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            created_by=created_by,
+            error_messages=error_messages,
+            file_name=file_name,
+            import_conflict_resolution=import_conflict_resolution,
+            imported_objects=imported_objects,
+            key=key,
+            name=name,
+            object_key_for_import=object_key_for_import,
+            object_storage_region=object_storage_region,
+            object_storage_tenancy_id=object_storage_tenancy_id,
+            status=status,
+            time_ended_in_millis=time_ended_in_millis,
+            time_started_in_millis=time_started_in_millis,
+            total_imported_object_count=total_imported_object_count,
+            workspace_id=workspace_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[pulumi.Input[str]] = None,
+             created_by: Optional[pulumi.Input[str]] = None,
+             error_messages: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             file_name: Optional[pulumi.Input[str]] = None,
+             import_conflict_resolution: Optional[pulumi.Input['WorkspaceImportRequestImportConflictResolutionArgs']] = None,
+             imported_objects: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceImportRequestImportedObjectArgs']]]] = None,
+             key: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             object_key_for_import: Optional[pulumi.Input[str]] = None,
+             object_storage_region: Optional[pulumi.Input[str]] = None,
+             object_storage_tenancy_id: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             time_ended_in_millis: Optional[pulumi.Input[str]] = None,
+             time_started_in_millis: Optional[pulumi.Input[str]] = None,
+             total_imported_object_count: Optional[pulumi.Input[int]] = None,
+             workspace_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if created_by is None and 'createdBy' in kwargs:
+            created_by = kwargs['createdBy']
+        if error_messages is None and 'errorMessages' in kwargs:
+            error_messages = kwargs['errorMessages']
+        if file_name is None and 'fileName' in kwargs:
+            file_name = kwargs['fileName']
+        if import_conflict_resolution is None and 'importConflictResolution' in kwargs:
+            import_conflict_resolution = kwargs['importConflictResolution']
+        if imported_objects is None and 'importedObjects' in kwargs:
+            imported_objects = kwargs['importedObjects']
+        if object_key_for_import is None and 'objectKeyForImport' in kwargs:
+            object_key_for_import = kwargs['objectKeyForImport']
+        if object_storage_region is None and 'objectStorageRegion' in kwargs:
+            object_storage_region = kwargs['objectStorageRegion']
+        if object_storage_tenancy_id is None and 'objectStorageTenancyId' in kwargs:
+            object_storage_tenancy_id = kwargs['objectStorageTenancyId']
+        if time_ended_in_millis is None and 'timeEndedInMillis' in kwargs:
+            time_ended_in_millis = kwargs['timeEndedInMillis']
+        if time_started_in_millis is None and 'timeStartedInMillis' in kwargs:
+            time_started_in_millis = kwargs['timeStartedInMillis']
+        if total_imported_object_count is None and 'totalImportedObjectCount' in kwargs:
+            total_imported_object_count = kwargs['totalImportedObjectCount']
+        if workspace_id is None and 'workspaceId' in kwargs:
+            workspace_id = kwargs['workspaceId']
+
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if created_by is not None:
-            pulumi.set(__self__, "created_by", created_by)
+            _setter("created_by", created_by)
         if error_messages is not None:
-            pulumi.set(__self__, "error_messages", error_messages)
+            _setter("error_messages", error_messages)
         if file_name is not None:
-            pulumi.set(__self__, "file_name", file_name)
+            _setter("file_name", file_name)
         if import_conflict_resolution is not None:
-            pulumi.set(__self__, "import_conflict_resolution", import_conflict_resolution)
+            _setter("import_conflict_resolution", import_conflict_resolution)
         if imported_objects is not None:
-            pulumi.set(__self__, "imported_objects", imported_objects)
+            _setter("imported_objects", imported_objects)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if object_key_for_import is not None:
-            pulumi.set(__self__, "object_key_for_import", object_key_for_import)
+            _setter("object_key_for_import", object_key_for_import)
         if object_storage_region is not None:
-            pulumi.set(__self__, "object_storage_region", object_storage_region)
+            _setter("object_storage_region", object_storage_region)
         if object_storage_tenancy_id is not None:
-            pulumi.set(__self__, "object_storage_tenancy_id", object_storage_tenancy_id)
+            _setter("object_storage_tenancy_id", object_storage_tenancy_id)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if time_ended_in_millis is not None:
-            pulumi.set(__self__, "time_ended_in_millis", time_ended_in_millis)
+            _setter("time_ended_in_millis", time_ended_in_millis)
         if time_started_in_millis is not None:
-            pulumi.set(__self__, "time_started_in_millis", time_started_in_millis)
+            _setter("time_started_in_millis", time_started_in_millis)
         if total_imported_object_count is not None:
-            pulumi.set(__self__, "total_imported_object_count", total_imported_object_count)
+            _setter("total_imported_object_count", total_imported_object_count)
         if workspace_id is not None:
-            pulumi.set(__self__, "workspace_id", workspace_id)
+            _setter("workspace_id", workspace_id)
 
     @property
     @pulumi.getter
@@ -519,6 +625,10 @@ class WorkspaceImportRequest(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            WorkspaceImportRequestArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -546,6 +656,11 @@ class WorkspaceImportRequest(pulumi.CustomResource):
             if file_name is None and not opts.urn:
                 raise TypeError("Missing required property 'file_name'")
             __props__.__dict__["file_name"] = file_name
+            if import_conflict_resolution is not None and not isinstance(import_conflict_resolution, WorkspaceImportRequestImportConflictResolutionArgs):
+                import_conflict_resolution = import_conflict_resolution or {}
+                def _setter(key, value):
+                    import_conflict_resolution[key] = value
+                WorkspaceImportRequestImportConflictResolutionArgs._configure(_setter, **import_conflict_resolution)
             __props__.__dict__["import_conflict_resolution"] = import_conflict_resolution
             __props__.__dict__["object_key_for_import"] = object_key_for_import
             __props__.__dict__["object_storage_region"] = object_storage_region

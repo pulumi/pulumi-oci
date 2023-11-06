@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -35,17 +35,60 @@ class ManagementStationArgs:
         :param pulumi.Input[str] description: (Updatable) Details describing the Management Station config.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "mirror", mirror)
-        pulumi.set(__self__, "proxy", proxy)
+        ManagementStationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            hostname=hostname,
+            mirror=mirror,
+            proxy=proxy,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             hostname: Optional[pulumi.Input[str]] = None,
+             mirror: Optional[pulumi.Input['ManagementStationMirrorArgs']] = None,
+             proxy: Optional[pulumi.Input['ManagementStationProxyArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if display_name is None:
+            raise TypeError("Missing 'display_name' argument")
+        if hostname is None:
+            raise TypeError("Missing 'hostname' argument")
+        if mirror is None:
+            raise TypeError("Missing 'mirror' argument")
+        if proxy is None:
+            raise TypeError("Missing 'proxy' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
+        _setter("hostname", hostname)
+        _setter("mirror", mirror)
+        _setter("proxy", proxy)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -186,42 +229,113 @@ class _ManagementStationState:
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[int] total_mirrors: A decimal number representing the total of repos
         """
+        _ManagementStationState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            hostname=hostname,
+            managed_instance_id=managed_instance_id,
+            mirror=mirror,
+            mirror_capacity=mirror_capacity,
+            mirror_sync_statuses=mirror_sync_statuses,
+            overall_percentage=overall_percentage,
+            overall_state=overall_state,
+            profile_id=profile_id,
+            proxy=proxy,
+            scheduled_job_id=scheduled_job_id,
+            state=state,
+            system_tags=system_tags,
+            total_mirrors=total_mirrors,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             hostname: Optional[pulumi.Input[str]] = None,
+             managed_instance_id: Optional[pulumi.Input[str]] = None,
+             mirror: Optional[pulumi.Input['ManagementStationMirrorArgs']] = None,
+             mirror_capacity: Optional[pulumi.Input[int]] = None,
+             mirror_sync_statuses: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementStationMirrorSyncStatusArgs']]]] = None,
+             overall_percentage: Optional[pulumi.Input[int]] = None,
+             overall_state: Optional[pulumi.Input[str]] = None,
+             profile_id: Optional[pulumi.Input[str]] = None,
+             proxy: Optional[pulumi.Input['ManagementStationProxyArgs']] = None,
+             scheduled_job_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             total_mirrors: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if managed_instance_id is None and 'managedInstanceId' in kwargs:
+            managed_instance_id = kwargs['managedInstanceId']
+        if mirror_capacity is None and 'mirrorCapacity' in kwargs:
+            mirror_capacity = kwargs['mirrorCapacity']
+        if mirror_sync_statuses is None and 'mirrorSyncStatuses' in kwargs:
+            mirror_sync_statuses = kwargs['mirrorSyncStatuses']
+        if overall_percentage is None and 'overallPercentage' in kwargs:
+            overall_percentage = kwargs['overallPercentage']
+        if overall_state is None and 'overallState' in kwargs:
+            overall_state = kwargs['overallState']
+        if profile_id is None and 'profileId' in kwargs:
+            profile_id = kwargs['profileId']
+        if scheduled_job_id is None and 'scheduledJobId' in kwargs:
+            scheduled_job_id = kwargs['scheduledJobId']
+        if system_tags is None and 'systemTags' in kwargs:
+            system_tags = kwargs['systemTags']
+        if total_mirrors is None and 'totalMirrors' in kwargs:
+            total_mirrors = kwargs['totalMirrors']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if hostname is not None:
-            pulumi.set(__self__, "hostname", hostname)
+            _setter("hostname", hostname)
         if managed_instance_id is not None:
-            pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+            _setter("managed_instance_id", managed_instance_id)
         if mirror is not None:
-            pulumi.set(__self__, "mirror", mirror)
+            _setter("mirror", mirror)
         if mirror_capacity is not None:
-            pulumi.set(__self__, "mirror_capacity", mirror_capacity)
+            _setter("mirror_capacity", mirror_capacity)
         if mirror_sync_statuses is not None:
-            pulumi.set(__self__, "mirror_sync_statuses", mirror_sync_statuses)
+            _setter("mirror_sync_statuses", mirror_sync_statuses)
         if overall_percentage is not None:
-            pulumi.set(__self__, "overall_percentage", overall_percentage)
+            _setter("overall_percentage", overall_percentage)
         if overall_state is not None:
-            pulumi.set(__self__, "overall_state", overall_state)
+            _setter("overall_state", overall_state)
         if profile_id is not None:
-            pulumi.set(__self__, "profile_id", profile_id)
+            _setter("profile_id", profile_id)
         if proxy is not None:
-            pulumi.set(__self__, "proxy", proxy)
+            _setter("proxy", proxy)
         if scheduled_job_id is not None:
-            pulumi.set(__self__, "scheduled_job_id", scheduled_job_id)
+            _setter("scheduled_job_id", scheduled_job_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if total_mirrors is not None:
-            pulumi.set(__self__, "total_mirrors", total_mirrors)
+            _setter("total_mirrors", total_mirrors)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -569,6 +683,10 @@ class ManagementStation(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ManagementStationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -603,9 +721,19 @@ class ManagementStation(pulumi.CustomResource):
             if hostname is None and not opts.urn:
                 raise TypeError("Missing required property 'hostname'")
             __props__.__dict__["hostname"] = hostname
+            if mirror is not None and not isinstance(mirror, ManagementStationMirrorArgs):
+                mirror = mirror or {}
+                def _setter(key, value):
+                    mirror[key] = value
+                ManagementStationMirrorArgs._configure(_setter, **mirror)
             if mirror is None and not opts.urn:
                 raise TypeError("Missing required property 'mirror'")
             __props__.__dict__["mirror"] = mirror
+            if proxy is not None and not isinstance(proxy, ManagementStationProxyArgs):
+                proxy = proxy or {}
+                def _setter(key, value):
+                    proxy[key] = value
+                ManagementStationProxyArgs._configure(_setter, **proxy)
             if proxy is None and not opts.urn:
                 raise TypeError("Missing required property 'proxy'")
             __props__.__dict__["proxy"] = proxy

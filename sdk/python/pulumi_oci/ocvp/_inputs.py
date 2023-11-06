@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -32,10 +32,33 @@ class SddcDatastoreArgs:
         :param pulumi.Input[str] datastore_type: Type of the datastore.
         :param pulumi.Input[float] capacity: Size of the Block Storage Volume in GB.
         """
-        pulumi.set(__self__, "block_volume_ids", block_volume_ids)
-        pulumi.set(__self__, "datastore_type", datastore_type)
+        SddcDatastoreArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_volume_ids=block_volume_ids,
+            datastore_type=datastore_type,
+            capacity=capacity,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             datastore_type: Optional[pulumi.Input[str]] = None,
+             capacity: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if block_volume_ids is None and 'blockVolumeIds' in kwargs:
+            block_volume_ids = kwargs['blockVolumeIds']
+        if block_volume_ids is None:
+            raise TypeError("Missing 'block_volume_ids' argument")
+        if datastore_type is None and 'datastoreType' in kwargs:
+            datastore_type = kwargs['datastoreType']
+        if datastore_type is None:
+            raise TypeError("Missing 'datastore_type' argument")
+
+        _setter("block_volume_ids", block_volume_ids)
+        _setter("datastore_type", datastore_type)
         if capacity is not None:
-            pulumi.set(__self__, "capacity", capacity)
+            _setter("capacity", capacity)
 
     @property
     @pulumi.getter(name="blockVolumeIds")
@@ -85,12 +108,31 @@ class SddcHcxOnPremLicenseArgs:
         :param pulumi.Input[str] status: status of HCX on-premise license.
         :param pulumi.Input[str] system_name: Name of the system that consumed the HCX on-premise license
         """
+        SddcHcxOnPremLicenseArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            activation_key=activation_key,
+            status=status,
+            system_name=system_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             activation_key: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             system_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if activation_key is None and 'activationKey' in kwargs:
+            activation_key = kwargs['activationKey']
+        if system_name is None and 'systemName' in kwargs:
+            system_name = kwargs['systemName']
+
         if activation_key is not None:
-            pulumi.set(__self__, "activation_key", activation_key)
+            _setter("activation_key", activation_key)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if system_name is not None:
-            pulumi.set(__self__, "system_name", system_name)
+            _setter("system_name", system_name)
 
     @property
     @pulumi.getter(name="activationKey")
@@ -138,10 +180,27 @@ class SddcUpgradeLicenseArgs:
         :param pulumi.Input[str] license_key: vSphere license key value.
         :param pulumi.Input[str] license_type: vSphere license type.
         """
+        SddcUpgradeLicenseArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            license_key=license_key,
+            license_type=license_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             license_key: Optional[pulumi.Input[str]] = None,
+             license_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if license_key is None and 'licenseKey' in kwargs:
+            license_key = kwargs['licenseKey']
+        if license_type is None and 'licenseType' in kwargs:
+            license_type = kwargs['licenseType']
+
         if license_key is not None:
-            pulumi.set(__self__, "license_key", license_key)
+            _setter("license_key", license_key)
         if license_type is not None:
-            pulumi.set(__self__, "license_type", license_type)
+            _setter("license_type", license_type)
 
     @property
     @pulumi.getter(name="licenseKey")
@@ -177,10 +236,27 @@ class SddcVsphereUpgradeObjectArgs:
         :param pulumi.Input[str] download_link: Binary object download link.
         :param pulumi.Input[str] link_description: Binary object description.
         """
+        SddcVsphereUpgradeObjectArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            download_link=download_link,
+            link_description=link_description,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             download_link: Optional[pulumi.Input[str]] = None,
+             link_description: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if download_link is None and 'downloadLink' in kwargs:
+            download_link = kwargs['downloadLink']
+        if link_description is None and 'linkDescription' in kwargs:
+            link_description = kwargs['linkDescription']
+
         if download_link is not None:
-            pulumi.set(__self__, "download_link", download_link)
+            _setter("download_link", download_link)
         if link_description is not None:
-            pulumi.set(__self__, "link_description", link_description)
+            _setter("link_description", link_description)
 
     @property
     @pulumi.getter(name="downloadLink")
@@ -213,10 +289,29 @@ class GetExsiHostsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetExsiHostsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -252,10 +347,29 @@ class GetSddcsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSddcsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -294,10 +408,29 @@ class GetSupportedHostShapesFilterArgs:
         """
         :param str name: A filter to return only resources that match the given name exactly.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSupportedHostShapesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -339,10 +472,29 @@ class GetSupportedSkusFilterArgs:
         """
         :param str name: name of SKU
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSupportedSkusFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -381,10 +533,29 @@ class GetSupportedVmwareSoftwareVersionsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSupportedVmwareSoftwareVersionsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if name is None:
+            raise TypeError("Missing 'name' argument")
+        if values is None:
+            raise TypeError("Missing 'values' argument")
+
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

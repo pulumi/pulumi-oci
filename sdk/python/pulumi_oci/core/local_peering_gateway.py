@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['LocalPeeringGatewayArgs', 'LocalPeeringGateway']
@@ -39,18 +39,59 @@ class LocalPeeringGatewayArgs:
                
                For information about why you would associate a route table with an LPG, see [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "vcn_id", vcn_id)
+        LocalPeeringGatewayArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            vcn_id=vcn_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            peer_id=peer_id,
+            route_table_id=route_table_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             vcn_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             peer_id: Optional[pulumi.Input[str]] = None,
+             route_table_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if vcn_id is None and 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+        if vcn_id is None:
+            raise TypeError("Missing 'vcn_id' argument")
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if peer_id is None and 'peerId' in kwargs:
+            peer_id = kwargs['peerId']
+        if route_table_id is None and 'routeTableId' in kwargs:
+            route_table_id = kwargs['routeTableId']
+
+        _setter("compartment_id", compartment_id)
+        _setter("vcn_id", vcn_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if peer_id is not None:
-            pulumi.set(__self__, "peer_id", peer_id)
+            _setter("peer_id", peer_id)
         if route_table_id is not None:
-            pulumi.set(__self__, "route_table_id", route_table_id)
+            _setter("route_table_id", route_table_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -187,34 +228,97 @@ class _LocalPeeringGatewayState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _LocalPeeringGatewayState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            is_cross_tenancy_peering=is_cross_tenancy_peering,
+            peer_advertised_cidr=peer_advertised_cidr,
+            peer_advertised_cidr_details=peer_advertised_cidr_details,
+            peer_id=peer_id,
+            peering_status=peering_status,
+            peering_status_details=peering_status_details,
+            route_table_id=route_table_id,
+            state=state,
+            time_created=time_created,
+            vcn_id=vcn_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_cross_tenancy_peering: Optional[pulumi.Input[bool]] = None,
+             peer_advertised_cidr: Optional[pulumi.Input[str]] = None,
+             peer_advertised_cidr_details: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             peer_id: Optional[pulumi.Input[str]] = None,
+             peering_status: Optional[pulumi.Input[str]] = None,
+             peering_status_details: Optional[pulumi.Input[str]] = None,
+             route_table_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             vcn_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if is_cross_tenancy_peering is None and 'isCrossTenancyPeering' in kwargs:
+            is_cross_tenancy_peering = kwargs['isCrossTenancyPeering']
+        if peer_advertised_cidr is None and 'peerAdvertisedCidr' in kwargs:
+            peer_advertised_cidr = kwargs['peerAdvertisedCidr']
+        if peer_advertised_cidr_details is None and 'peerAdvertisedCidrDetails' in kwargs:
+            peer_advertised_cidr_details = kwargs['peerAdvertisedCidrDetails']
+        if peer_id is None and 'peerId' in kwargs:
+            peer_id = kwargs['peerId']
+        if peering_status is None and 'peeringStatus' in kwargs:
+            peering_status = kwargs['peeringStatus']
+        if peering_status_details is None and 'peeringStatusDetails' in kwargs:
+            peering_status_details = kwargs['peeringStatusDetails']
+        if route_table_id is None and 'routeTableId' in kwargs:
+            route_table_id = kwargs['routeTableId']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if vcn_id is None and 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_cross_tenancy_peering is not None:
-            pulumi.set(__self__, "is_cross_tenancy_peering", is_cross_tenancy_peering)
+            _setter("is_cross_tenancy_peering", is_cross_tenancy_peering)
         if peer_advertised_cidr is not None:
-            pulumi.set(__self__, "peer_advertised_cidr", peer_advertised_cidr)
+            _setter("peer_advertised_cidr", peer_advertised_cidr)
         if peer_advertised_cidr_details is not None:
-            pulumi.set(__self__, "peer_advertised_cidr_details", peer_advertised_cidr_details)
+            _setter("peer_advertised_cidr_details", peer_advertised_cidr_details)
         if peer_id is not None:
-            pulumi.set(__self__, "peer_id", peer_id)
+            _setter("peer_id", peer_id)
         if peering_status is not None:
-            pulumi.set(__self__, "peering_status", peering_status)
+            _setter("peering_status", peering_status)
         if peering_status_details is not None:
-            pulumi.set(__self__, "peering_status_details", peering_status_details)
+            _setter("peering_status_details", peering_status_details)
         if route_table_id is not None:
-            pulumi.set(__self__, "route_table_id", route_table_id)
+            _setter("route_table_id", route_table_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if vcn_id is not None:
-            pulumi.set(__self__, "vcn_id", vcn_id)
+            _setter("vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -506,6 +610,10 @@ class LocalPeeringGateway(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            LocalPeeringGatewayArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

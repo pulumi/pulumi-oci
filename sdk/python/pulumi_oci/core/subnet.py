@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['SubnetArgs', 'Subnet']
@@ -84,33 +84,108 @@ class SubnetArgs:
         :param pulumi.Input[str] route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the subnet will use. If you don't provide a value, the subnet uses the VCN's default route table.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] security_list_ids: (Updatable) The OCIDs of the security list or lists the subnet will use. If you don't provide a value, the subnet uses the VCN's default security list. Remember that security lists are associated *with the subnet*, but the rules are applied to the individual VNICs in the subnet.
         """
-        pulumi.set(__self__, "cidr_block", cidr_block)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "vcn_id", vcn_id)
+        SubnetArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cidr_block=cidr_block,
+            compartment_id=compartment_id,
+            vcn_id=vcn_id,
+            availability_domain=availability_domain,
+            defined_tags=defined_tags,
+            dhcp_options_id=dhcp_options_id,
+            display_name=display_name,
+            dns_label=dns_label,
+            freeform_tags=freeform_tags,
+            ipv6cidr_block=ipv6cidr_block,
+            ipv6cidr_blocks=ipv6cidr_blocks,
+            prohibit_internet_ingress=prohibit_internet_ingress,
+            prohibit_public_ip_on_vnic=prohibit_public_ip_on_vnic,
+            route_table_id=route_table_id,
+            security_list_ids=security_list_ids,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cidr_block: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             vcn_id: Optional[pulumi.Input[str]] = None,
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             dhcp_options_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             dns_label: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             ipv6cidr_block: Optional[pulumi.Input[str]] = None,
+             ipv6cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             prohibit_internet_ingress: Optional[pulumi.Input[bool]] = None,
+             prohibit_public_ip_on_vnic: Optional[pulumi.Input[bool]] = None,
+             route_table_id: Optional[pulumi.Input[str]] = None,
+             security_list_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if cidr_block is None and 'cidrBlock' in kwargs:
+            cidr_block = kwargs['cidrBlock']
+        if cidr_block is None:
+            raise TypeError("Missing 'cidr_block' argument")
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if compartment_id is None:
+            raise TypeError("Missing 'compartment_id' argument")
+        if vcn_id is None and 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+        if vcn_id is None:
+            raise TypeError("Missing 'vcn_id' argument")
+        if availability_domain is None and 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if dhcp_options_id is None and 'dhcpOptionsId' in kwargs:
+            dhcp_options_id = kwargs['dhcpOptionsId']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if dns_label is None and 'dnsLabel' in kwargs:
+            dns_label = kwargs['dnsLabel']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if ipv6cidr_block is None and 'ipv6cidrBlock' in kwargs:
+            ipv6cidr_block = kwargs['ipv6cidrBlock']
+        if ipv6cidr_blocks is None and 'ipv6cidrBlocks' in kwargs:
+            ipv6cidr_blocks = kwargs['ipv6cidrBlocks']
+        if prohibit_internet_ingress is None and 'prohibitInternetIngress' in kwargs:
+            prohibit_internet_ingress = kwargs['prohibitInternetIngress']
+        if prohibit_public_ip_on_vnic is None and 'prohibitPublicIpOnVnic' in kwargs:
+            prohibit_public_ip_on_vnic = kwargs['prohibitPublicIpOnVnic']
+        if route_table_id is None and 'routeTableId' in kwargs:
+            route_table_id = kwargs['routeTableId']
+        if security_list_ids is None and 'securityListIds' in kwargs:
+            security_list_ids = kwargs['securityListIds']
+
+        _setter("cidr_block", cidr_block)
+        _setter("compartment_id", compartment_id)
+        _setter("vcn_id", vcn_id)
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if dhcp_options_id is not None:
-            pulumi.set(__self__, "dhcp_options_id", dhcp_options_id)
+            _setter("dhcp_options_id", dhcp_options_id)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if dns_label is not None:
-            pulumi.set(__self__, "dns_label", dns_label)
+            _setter("dns_label", dns_label)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if ipv6cidr_block is not None:
-            pulumi.set(__self__, "ipv6cidr_block", ipv6cidr_block)
+            _setter("ipv6cidr_block", ipv6cidr_block)
         if ipv6cidr_blocks is not None:
-            pulumi.set(__self__, "ipv6cidr_blocks", ipv6cidr_blocks)
+            _setter("ipv6cidr_blocks", ipv6cidr_blocks)
         if prohibit_internet_ingress is not None:
-            pulumi.set(__self__, "prohibit_internet_ingress", prohibit_internet_ingress)
+            _setter("prohibit_internet_ingress", prohibit_internet_ingress)
         if prohibit_public_ip_on_vnic is not None:
-            pulumi.set(__self__, "prohibit_public_ip_on_vnic", prohibit_public_ip_on_vnic)
+            _setter("prohibit_public_ip_on_vnic", prohibit_public_ip_on_vnic)
         if route_table_id is not None:
-            pulumi.set(__self__, "route_table_id", route_table_id)
+            _setter("route_table_id", route_table_id)
         if security_list_ids is not None:
-            pulumi.set(__self__, "security_list_ids", security_list_ids)
+            _setter("security_list_ids", security_list_ids)
 
     @property
     @pulumi.getter(name="cidrBlock")
@@ -415,48 +490,139 @@ class _SubnetState:
         :param pulumi.Input[str] virtual_router_ip: The IP address of the virtual router.  Example: `10.0.14.1`
         :param pulumi.Input[str] virtual_router_mac: The MAC address of the virtual router.  Example: `00:00:00:00:00:01`
         """
+        _SubnetState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            cidr_block=cidr_block,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            dhcp_options_id=dhcp_options_id,
+            display_name=display_name,
+            dns_label=dns_label,
+            freeform_tags=freeform_tags,
+            ipv6cidr_block=ipv6cidr_block,
+            ipv6cidr_blocks=ipv6cidr_blocks,
+            ipv6virtual_router_ip=ipv6virtual_router_ip,
+            prohibit_internet_ingress=prohibit_internet_ingress,
+            prohibit_public_ip_on_vnic=prohibit_public_ip_on_vnic,
+            route_table_id=route_table_id,
+            security_list_ids=security_list_ids,
+            state=state,
+            subnet_domain_name=subnet_domain_name,
+            time_created=time_created,
+            vcn_id=vcn_id,
+            virtual_router_ip=virtual_router_ip,
+            virtual_router_mac=virtual_router_mac,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             cidr_block: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             dhcp_options_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             dns_label: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             ipv6cidr_block: Optional[pulumi.Input[str]] = None,
+             ipv6cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             ipv6virtual_router_ip: Optional[pulumi.Input[str]] = None,
+             prohibit_internet_ingress: Optional[pulumi.Input[bool]] = None,
+             prohibit_public_ip_on_vnic: Optional[pulumi.Input[bool]] = None,
+             route_table_id: Optional[pulumi.Input[str]] = None,
+             security_list_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             subnet_domain_name: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             vcn_id: Optional[pulumi.Input[str]] = None,
+             virtual_router_ip: Optional[pulumi.Input[str]] = None,
+             virtual_router_mac: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if availability_domain is None and 'availabilityDomain' in kwargs:
+            availability_domain = kwargs['availabilityDomain']
+        if cidr_block is None and 'cidrBlock' in kwargs:
+            cidr_block = kwargs['cidrBlock']
+        if compartment_id is None and 'compartmentId' in kwargs:
+            compartment_id = kwargs['compartmentId']
+        if defined_tags is None and 'definedTags' in kwargs:
+            defined_tags = kwargs['definedTags']
+        if dhcp_options_id is None and 'dhcpOptionsId' in kwargs:
+            dhcp_options_id = kwargs['dhcpOptionsId']
+        if display_name is None and 'displayName' in kwargs:
+            display_name = kwargs['displayName']
+        if dns_label is None and 'dnsLabel' in kwargs:
+            dns_label = kwargs['dnsLabel']
+        if freeform_tags is None and 'freeformTags' in kwargs:
+            freeform_tags = kwargs['freeformTags']
+        if ipv6cidr_block is None and 'ipv6cidrBlock' in kwargs:
+            ipv6cidr_block = kwargs['ipv6cidrBlock']
+        if ipv6cidr_blocks is None and 'ipv6cidrBlocks' in kwargs:
+            ipv6cidr_blocks = kwargs['ipv6cidrBlocks']
+        if ipv6virtual_router_ip is None and 'ipv6virtualRouterIp' in kwargs:
+            ipv6virtual_router_ip = kwargs['ipv6virtualRouterIp']
+        if prohibit_internet_ingress is None and 'prohibitInternetIngress' in kwargs:
+            prohibit_internet_ingress = kwargs['prohibitInternetIngress']
+        if prohibit_public_ip_on_vnic is None and 'prohibitPublicIpOnVnic' in kwargs:
+            prohibit_public_ip_on_vnic = kwargs['prohibitPublicIpOnVnic']
+        if route_table_id is None and 'routeTableId' in kwargs:
+            route_table_id = kwargs['routeTableId']
+        if security_list_ids is None and 'securityListIds' in kwargs:
+            security_list_ids = kwargs['securityListIds']
+        if subnet_domain_name is None and 'subnetDomainName' in kwargs:
+            subnet_domain_name = kwargs['subnetDomainName']
+        if time_created is None and 'timeCreated' in kwargs:
+            time_created = kwargs['timeCreated']
+        if vcn_id is None and 'vcnId' in kwargs:
+            vcn_id = kwargs['vcnId']
+        if virtual_router_ip is None and 'virtualRouterIp' in kwargs:
+            virtual_router_ip = kwargs['virtualRouterIp']
+        if virtual_router_mac is None and 'virtualRouterMac' in kwargs:
+            virtual_router_mac = kwargs['virtualRouterMac']
+
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if cidr_block is not None:
-            pulumi.set(__self__, "cidr_block", cidr_block)
+            _setter("cidr_block", cidr_block)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if dhcp_options_id is not None:
-            pulumi.set(__self__, "dhcp_options_id", dhcp_options_id)
+            _setter("dhcp_options_id", dhcp_options_id)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if dns_label is not None:
-            pulumi.set(__self__, "dns_label", dns_label)
+            _setter("dns_label", dns_label)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if ipv6cidr_block is not None:
-            pulumi.set(__self__, "ipv6cidr_block", ipv6cidr_block)
+            _setter("ipv6cidr_block", ipv6cidr_block)
         if ipv6cidr_blocks is not None:
-            pulumi.set(__self__, "ipv6cidr_blocks", ipv6cidr_blocks)
+            _setter("ipv6cidr_blocks", ipv6cidr_blocks)
         if ipv6virtual_router_ip is not None:
-            pulumi.set(__self__, "ipv6virtual_router_ip", ipv6virtual_router_ip)
+            _setter("ipv6virtual_router_ip", ipv6virtual_router_ip)
         if prohibit_internet_ingress is not None:
-            pulumi.set(__self__, "prohibit_internet_ingress", prohibit_internet_ingress)
+            _setter("prohibit_internet_ingress", prohibit_internet_ingress)
         if prohibit_public_ip_on_vnic is not None:
-            pulumi.set(__self__, "prohibit_public_ip_on_vnic", prohibit_public_ip_on_vnic)
+            _setter("prohibit_public_ip_on_vnic", prohibit_public_ip_on_vnic)
         if route_table_id is not None:
-            pulumi.set(__self__, "route_table_id", route_table_id)
+            _setter("route_table_id", route_table_id)
         if security_list_ids is not None:
-            pulumi.set(__self__, "security_list_ids", security_list_ids)
+            _setter("security_list_ids", security_list_ids)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if subnet_domain_name is not None:
-            pulumi.set(__self__, "subnet_domain_name", subnet_domain_name)
+            _setter("subnet_domain_name", subnet_domain_name)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if vcn_id is not None:
-            pulumi.set(__self__, "vcn_id", vcn_id)
+            _setter("vcn_id", vcn_id)
         if virtual_router_ip is not None:
-            pulumi.set(__self__, "virtual_router_ip", virtual_router_ip)
+            _setter("virtual_router_ip", virtual_router_ip)
         if virtual_router_mac is not None:
-            pulumi.set(__self__, "virtual_router_mac", virtual_router_mac)
+            _setter("virtual_router_mac", virtual_router_mac)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -982,6 +1148,10 @@ class Subnet(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            SubnetArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

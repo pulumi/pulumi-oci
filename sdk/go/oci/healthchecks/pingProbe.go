@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Ping Probe resource in Oracle Cloud Infrastructure Health Checks service.
@@ -236,12 +235,6 @@ func (i *PingProbe) ToPingProbeOutputWithContext(ctx context.Context) PingProbeO
 	return pulumi.ToOutputWithContext(ctx, i).(PingProbeOutput)
 }
 
-func (i *PingProbe) ToOutput(ctx context.Context) pulumix.Output[*PingProbe] {
-	return pulumix.Output[*PingProbe]{
-		OutputState: i.ToPingProbeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PingProbeArrayInput is an input type that accepts PingProbeArray and PingProbeArrayOutput values.
 // You can construct a concrete instance of `PingProbeArrayInput` via:
 //
@@ -265,12 +258,6 @@ func (i PingProbeArray) ToPingProbeArrayOutput() PingProbeArrayOutput {
 
 func (i PingProbeArray) ToPingProbeArrayOutputWithContext(ctx context.Context) PingProbeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PingProbeArrayOutput)
-}
-
-func (i PingProbeArray) ToOutput(ctx context.Context) pulumix.Output[[]*PingProbe] {
-	return pulumix.Output[[]*PingProbe]{
-		OutputState: i.ToPingProbeArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // PingProbeMapInput is an input type that accepts PingProbeMap and PingProbeMapOutput values.
@@ -298,12 +285,6 @@ func (i PingProbeMap) ToPingProbeMapOutputWithContext(ctx context.Context) PingP
 	return pulumi.ToOutputWithContext(ctx, i).(PingProbeMapOutput)
 }
 
-func (i PingProbeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*PingProbe] {
-	return pulumix.Output[map[string]*PingProbe]{
-		OutputState: i.ToPingProbeMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PingProbeOutput struct{ *pulumi.OutputState }
 
 func (PingProbeOutput) ElementType() reflect.Type {
@@ -316,12 +297,6 @@ func (o PingProbeOutput) ToPingProbeOutput() PingProbeOutput {
 
 func (o PingProbeOutput) ToPingProbeOutputWithContext(ctx context.Context) PingProbeOutput {
 	return o
-}
-
-func (o PingProbeOutput) ToOutput(ctx context.Context) pulumix.Output[*PingProbe] {
-	return pulumix.Output[*PingProbe]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment.
@@ -386,12 +361,6 @@ func (o PingProbeArrayOutput) ToPingProbeArrayOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o PingProbeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*PingProbe] {
-	return pulumix.Output[[]*PingProbe]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o PingProbeArrayOutput) Index(i pulumi.IntInput) PingProbeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *PingProbe {
 		return vs[0].([]*PingProbe)[vs[1].(int)]
@@ -410,12 +379,6 @@ func (o PingProbeMapOutput) ToPingProbeMapOutput() PingProbeMapOutput {
 
 func (o PingProbeMapOutput) ToPingProbeMapOutputWithContext(ctx context.Context) PingProbeMapOutput {
 	return o
-}
-
-func (o PingProbeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*PingProbe] {
-	return pulumix.Output[map[string]*PingProbe]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PingProbeMapOutput) MapIndex(k pulumi.StringInput) PingProbeOutput {

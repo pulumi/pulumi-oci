@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Cpe Device Shapes in Oracle Cloud Infrastructure Core service.
@@ -110,12 +109,6 @@ func (o GetCpeDeviceShapesResultOutput) ToGetCpeDeviceShapesResultOutput() GetCp
 
 func (o GetCpeDeviceShapesResultOutput) ToGetCpeDeviceShapesResultOutputWithContext(ctx context.Context) GetCpeDeviceShapesResultOutput {
 	return o
-}
-
-func (o GetCpeDeviceShapesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCpeDeviceShapesResult] {
-	return pulumix.Output[GetCpeDeviceShapesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of cpe_device_shapes.

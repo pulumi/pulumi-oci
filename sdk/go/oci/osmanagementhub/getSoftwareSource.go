@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Software Source resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -148,12 +147,6 @@ func (o LookupSoftwareSourceResultOutput) ToLookupSoftwareSourceResultOutput() L
 
 func (o LookupSoftwareSourceResultOutput) ToLookupSoftwareSourceResultOutputWithContext(ctx context.Context) LookupSoftwareSourceResultOutput {
 	return o
-}
-
-func (o LookupSoftwareSourceResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSoftwareSourceResult] {
-	return pulumix.Output[LookupSoftwareSourceResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The architecture type supported by the software source.

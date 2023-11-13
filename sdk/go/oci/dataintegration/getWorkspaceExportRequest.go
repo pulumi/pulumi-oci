@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Workspace Export Request resource in Oracle Cloud Infrastructure Data Integration service.
@@ -141,12 +140,6 @@ func (o LookupWorkspaceExportRequestResultOutput) ToLookupWorkspaceExportRequest
 
 func (o LookupWorkspaceExportRequestResultOutput) ToLookupWorkspaceExportRequestResultOutputWithContext(ctx context.Context) LookupWorkspaceExportRequestResultOutput {
 	return o
-}
-
-func (o LookupWorkspaceExportRequestResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupWorkspaceExportRequestResult] {
-	return pulumix.Output[LookupWorkspaceExportRequestResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Controls if the references will be exported along with the objects

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Bds Instance List Os Patches in Oracle Cloud Infrastructure Big Data Service service.
@@ -105,12 +104,6 @@ func (o GetBdsInstanceListOsPatchesResultOutput) ToGetBdsInstanceListOsPatchesRe
 
 func (o GetBdsInstanceListOsPatchesResultOutput) ToGetBdsInstanceListOsPatchesResultOutputWithContext(ctx context.Context) GetBdsInstanceListOsPatchesResultOutput {
 	return o
-}
-
-func (o GetBdsInstanceListOsPatchesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceListOsPatchesResult] {
-	return pulumix.Output[GetBdsInstanceListOsPatchesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstanceListOsPatchesResultOutput) BdsInstanceId() pulumi.StringOutput {

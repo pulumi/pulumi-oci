@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Vlan resource in Oracle Cloud Infrastructure Core service.
@@ -124,12 +123,6 @@ func (o LookupVlanResultOutput) ToLookupVlanResultOutput() LookupVlanResultOutpu
 
 func (o LookupVlanResultOutput) ToLookupVlanResultOutputWithContext(ctx context.Context) LookupVlanResultOutput {
 	return o
-}
-
-func (o LookupVlanResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupVlanResult] {
-	return pulumix.Output[LookupVlanResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The VLAN's availability domain. This attribute will be null if this is a regional VLAN rather than an AD-specific VLAN.  Example: `Uocm:PHX-AD-1`

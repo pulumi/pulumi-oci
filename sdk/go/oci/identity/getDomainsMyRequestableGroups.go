@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of My Requestable Groups in Oracle Cloud Infrastructure Identity Domains service.
@@ -148,12 +147,6 @@ func (o GetDomainsMyRequestableGroupsResultOutput) ToGetDomainsMyRequestableGrou
 
 func (o GetDomainsMyRequestableGroupsResultOutput) ToGetDomainsMyRequestableGroupsResultOutputWithContext(ctx context.Context) GetDomainsMyRequestableGroupsResultOutput {
 	return o
-}
-
-func (o GetDomainsMyRequestableGroupsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsMyRequestableGroupsResult] {
-	return pulumix.Output[GetDomainsMyRequestableGroupsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDomainsMyRequestableGroupsResultOutput) Authorization() pulumi.StringPtrOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Media Asset Distribution Channel Attachment resource in Oracle Cloud Infrastructure Media Services service.
@@ -90,12 +89,6 @@ func (o GetMediaAssetDistributionChannelAttachmentResultOutput) ToGetMediaAssetD
 
 func (o GetMediaAssetDistributionChannelAttachmentResultOutput) ToGetMediaAssetDistributionChannelAttachmentResultOutputWithContext(ctx context.Context) GetMediaAssetDistributionChannelAttachmentResultOutput {
 	return o
-}
-
-func (o GetMediaAssetDistributionChannelAttachmentResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaAssetDistributionChannelAttachmentResult] {
-	return pulumix.Output[GetMediaAssetDistributionChannelAttachmentResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.

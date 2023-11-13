@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Awr Hub resource in Oracle Cloud Infrastructure Opsi service.
@@ -124,12 +123,6 @@ func (o LookupAwrHubResultOutput) ToLookupAwrHubResultOutput() LookupAwrHubResul
 
 func (o LookupAwrHubResultOutput) ToLookupAwrHubResultOutputWithContext(ctx context.Context) LookupAwrHubResultOutput {
 	return o
-}
-
-func (o LookupAwrHubResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAwrHubResult] {
-	return pulumix.Output[LookupAwrHubResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupAwrHubResultOutput) AwrHubId() pulumi.StringOutput {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Workspace Application resource in Oracle Cloud Infrastructure Data Integration service.
@@ -382,12 +381,6 @@ func (i *WorkspaceApplication) ToWorkspaceApplicationOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationOutput)
 }
 
-func (i *WorkspaceApplication) ToOutput(ctx context.Context) pulumix.Output[*WorkspaceApplication] {
-	return pulumix.Output[*WorkspaceApplication]{
-		OutputState: i.ToWorkspaceApplicationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // WorkspaceApplicationArrayInput is an input type that accepts WorkspaceApplicationArray and WorkspaceApplicationArrayOutput values.
 // You can construct a concrete instance of `WorkspaceApplicationArrayInput` via:
 //
@@ -411,12 +404,6 @@ func (i WorkspaceApplicationArray) ToWorkspaceApplicationArrayOutput() Workspace
 
 func (i WorkspaceApplicationArray) ToWorkspaceApplicationArrayOutputWithContext(ctx context.Context) WorkspaceApplicationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationArrayOutput)
-}
-
-func (i WorkspaceApplicationArray) ToOutput(ctx context.Context) pulumix.Output[[]*WorkspaceApplication] {
-	return pulumix.Output[[]*WorkspaceApplication]{
-		OutputState: i.ToWorkspaceApplicationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // WorkspaceApplicationMapInput is an input type that accepts WorkspaceApplicationMap and WorkspaceApplicationMapOutput values.
@@ -444,12 +431,6 @@ func (i WorkspaceApplicationMap) ToWorkspaceApplicationMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationMapOutput)
 }
 
-func (i WorkspaceApplicationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*WorkspaceApplication] {
-	return pulumix.Output[map[string]*WorkspaceApplication]{
-		OutputState: i.ToWorkspaceApplicationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type WorkspaceApplicationOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceApplicationOutput) ElementType() reflect.Type {
@@ -462,12 +443,6 @@ func (o WorkspaceApplicationOutput) ToWorkspaceApplicationOutput() WorkspaceAppl
 
 func (o WorkspaceApplicationOutput) ToWorkspaceApplicationOutputWithContext(ctx context.Context) WorkspaceApplicationOutput {
 	return o
-}
-
-func (o WorkspaceApplicationOutput) ToOutput(ctx context.Context) pulumix.Output[*WorkspaceApplication] {
-	return pulumix.Output[*WorkspaceApplication]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The source application version of the application.
@@ -618,12 +593,6 @@ func (o WorkspaceApplicationArrayOutput) ToWorkspaceApplicationArrayOutputWithCo
 	return o
 }
 
-func (o WorkspaceApplicationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*WorkspaceApplication] {
-	return pulumix.Output[[]*WorkspaceApplication]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o WorkspaceApplicationArrayOutput) Index(i pulumi.IntInput) WorkspaceApplicationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *WorkspaceApplication {
 		return vs[0].([]*WorkspaceApplication)[vs[1].(int)]
@@ -642,12 +611,6 @@ func (o WorkspaceApplicationMapOutput) ToWorkspaceApplicationMapOutput() Workspa
 
 func (o WorkspaceApplicationMapOutput) ToWorkspaceApplicationMapOutputWithContext(ctx context.Context) WorkspaceApplicationMapOutput {
 	return o
-}
-
-func (o WorkspaceApplicationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*WorkspaceApplication] {
-	return pulumix.Output[map[string]*WorkspaceApplication]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o WorkspaceApplicationMapOutput) MapIndex(k pulumi.StringInput) WorkspaceApplicationOutput {

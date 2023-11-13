@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Container Instance Shapes in Oracle Cloud Infrastructure Container Instances service.
@@ -111,12 +110,6 @@ func (o GetContainerInstanceShapesResultOutput) ToGetContainerInstanceShapesResu
 
 func (o GetContainerInstanceShapesResultOutput) ToGetContainerInstanceShapesResultOutputWithContext(ctx context.Context) GetContainerInstanceShapesResultOutput {
 	return o
-}
-
-func (o GetContainerInstanceShapesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceShapesResult] {
-	return pulumix.Output[GetContainerInstanceShapesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstanceShapesResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {

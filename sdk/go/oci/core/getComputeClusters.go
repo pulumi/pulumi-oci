@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Compute Clusters in Oracle Cloud Infrastructure Core service.
@@ -121,12 +120,6 @@ func (o GetComputeClustersResultOutput) ToGetComputeClustersResultOutput() GetCo
 
 func (o GetComputeClustersResultOutput) ToGetComputeClustersResultOutputWithContext(ctx context.Context) GetComputeClustersResultOutput {
 	return o
-}
-
-func (o GetComputeClustersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputeClustersResult] {
-	return pulumix.Output[GetComputeClustersResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The availability domain the compute cluster is running in.  Example: `Uocm:PHX-AD-1`

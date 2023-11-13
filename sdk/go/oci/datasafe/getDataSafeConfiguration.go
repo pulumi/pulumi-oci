@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Data Safe Configuration resource in Oracle Cloud Infrastructure Data Safe service.
@@ -116,12 +115,6 @@ func (o LookupDataSafeConfigurationResultOutput) ToLookupDataSafeConfigurationRe
 
 func (o LookupDataSafeConfigurationResultOutput) ToLookupDataSafeConfigurationResultOutputWithContext(ctx context.Context) LookupDataSafeConfigurationResultOutput {
 	return o
-}
-
-func (o LookupDataSafeConfigurationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDataSafeConfigurationResult] {
-	return pulumix.Output[LookupDataSafeConfigurationResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the tenancy used to enable Data Safe.

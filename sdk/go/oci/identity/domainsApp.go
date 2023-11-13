@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the App resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -5899,12 +5898,6 @@ func (i *DomainsApp) ToDomainsAppOutputWithContext(ctx context.Context) DomainsA
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsAppOutput)
 }
 
-func (i *DomainsApp) ToOutput(ctx context.Context) pulumix.Output[*DomainsApp] {
-	return pulumix.Output[*DomainsApp]{
-		OutputState: i.ToDomainsAppOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsAppArrayInput is an input type that accepts DomainsAppArray and DomainsAppArrayOutput values.
 // You can construct a concrete instance of `DomainsAppArrayInput` via:
 //
@@ -5928,12 +5921,6 @@ func (i DomainsAppArray) ToDomainsAppArrayOutput() DomainsAppArrayOutput {
 
 func (i DomainsAppArray) ToDomainsAppArrayOutputWithContext(ctx context.Context) DomainsAppArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsAppArrayOutput)
-}
-
-func (i DomainsAppArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsApp] {
-	return pulumix.Output[[]*DomainsApp]{
-		OutputState: i.ToDomainsAppArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsAppMapInput is an input type that accepts DomainsAppMap and DomainsAppMapOutput values.
@@ -5961,12 +5948,6 @@ func (i DomainsAppMap) ToDomainsAppMapOutputWithContext(ctx context.Context) Dom
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsAppMapOutput)
 }
 
-func (i DomainsAppMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsApp] {
-	return pulumix.Output[map[string]*DomainsApp]{
-		OutputState: i.ToDomainsAppMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsAppOutput struct{ *pulumi.OutputState }
 
 func (DomainsAppOutput) ElementType() reflect.Type {
@@ -5979,12 +5960,6 @@ func (o DomainsAppOutput) ToDomainsAppOutput() DomainsAppOutput {
 
 func (o DomainsAppOutput) ToDomainsAppOutputWithContext(ctx context.Context) DomainsAppOutput {
 	return o
-}
-
-func (o DomainsAppOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsApp] {
-	return pulumix.Output[*DomainsApp]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Access token expiry
@@ -7673,12 +7648,6 @@ func (o DomainsAppArrayOutput) ToDomainsAppArrayOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o DomainsAppArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsApp] {
-	return pulumix.Output[[]*DomainsApp]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DomainsAppArrayOutput) Index(i pulumi.IntInput) DomainsAppOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DomainsApp {
 		return vs[0].([]*DomainsApp)[vs[1].(int)]
@@ -7697,12 +7666,6 @@ func (o DomainsAppMapOutput) ToDomainsAppMapOutput() DomainsAppMapOutput {
 
 func (o DomainsAppMapOutput) ToDomainsAppMapOutputWithContext(ctx context.Context) DomainsAppMapOutput {
 	return o
-}
-
-func (o DomainsAppMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsApp] {
-	return pulumix.Output[map[string]*DomainsApp]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsAppMapOutput) MapIndex(k pulumi.StringInput) DomainsAppOutput {

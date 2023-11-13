@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -288,12 +287,6 @@ func (i *CloudGuardDataSource) ToCloudGuardDataSourceOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(CloudGuardDataSourceOutput)
 }
 
-func (i *CloudGuardDataSource) ToOutput(ctx context.Context) pulumix.Output[*CloudGuardDataSource] {
-	return pulumix.Output[*CloudGuardDataSource]{
-		OutputState: i.ToCloudGuardDataSourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CloudGuardDataSourceArrayInput is an input type that accepts CloudGuardDataSourceArray and CloudGuardDataSourceArrayOutput values.
 // You can construct a concrete instance of `CloudGuardDataSourceArrayInput` via:
 //
@@ -317,12 +310,6 @@ func (i CloudGuardDataSourceArray) ToCloudGuardDataSourceArrayOutput() CloudGuar
 
 func (i CloudGuardDataSourceArray) ToCloudGuardDataSourceArrayOutputWithContext(ctx context.Context) CloudGuardDataSourceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudGuardDataSourceArrayOutput)
-}
-
-func (i CloudGuardDataSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]*CloudGuardDataSource] {
-	return pulumix.Output[[]*CloudGuardDataSource]{
-		OutputState: i.ToCloudGuardDataSourceArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CloudGuardDataSourceMapInput is an input type that accepts CloudGuardDataSourceMap and CloudGuardDataSourceMapOutput values.
@@ -350,12 +337,6 @@ func (i CloudGuardDataSourceMap) ToCloudGuardDataSourceMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(CloudGuardDataSourceMapOutput)
 }
 
-func (i CloudGuardDataSourceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudGuardDataSource] {
-	return pulumix.Output[map[string]*CloudGuardDataSource]{
-		OutputState: i.ToCloudGuardDataSourceMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CloudGuardDataSourceOutput struct{ *pulumi.OutputState }
 
 func (CloudGuardDataSourceOutput) ElementType() reflect.Type {
@@ -368,12 +349,6 @@ func (o CloudGuardDataSourceOutput) ToCloudGuardDataSourceOutput() CloudGuardDat
 
 func (o CloudGuardDataSourceOutput) ToCloudGuardDataSourceOutputWithContext(ctx context.Context) CloudGuardDataSourceOutput {
 	return o
-}
-
-func (o CloudGuardDataSourceOutput) ToOutput(ctx context.Context) pulumix.Output[*CloudGuardDataSource] {
-	return pulumix.Output[*CloudGuardDataSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) CompartmentId of Data Source.
@@ -464,12 +439,6 @@ func (o CloudGuardDataSourceArrayOutput) ToCloudGuardDataSourceArrayOutputWithCo
 	return o
 }
 
-func (o CloudGuardDataSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CloudGuardDataSource] {
-	return pulumix.Output[[]*CloudGuardDataSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o CloudGuardDataSourceArrayOutput) Index(i pulumi.IntInput) CloudGuardDataSourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CloudGuardDataSource {
 		return vs[0].([]*CloudGuardDataSource)[vs[1].(int)]
@@ -488,12 +457,6 @@ func (o CloudGuardDataSourceMapOutput) ToCloudGuardDataSourceMapOutput() CloudGu
 
 func (o CloudGuardDataSourceMapOutput) ToCloudGuardDataSourceMapOutputWithContext(ctx context.Context) CloudGuardDataSourceMapOutput {
 	return o
-}
-
-func (o CloudGuardDataSourceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudGuardDataSource] {
-	return pulumix.Output[map[string]*CloudGuardDataSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CloudGuardDataSourceMapOutput) MapIndex(k pulumi.StringInput) CloudGuardDataSourceOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -55,12 +54,6 @@ func (i ManagementAgentManagementAgentPropertyArgs) ToManagementAgentManagementA
 	return pulumi.ToOutputWithContext(ctx, i).(ManagementAgentManagementAgentPropertyOutput)
 }
 
-func (i ManagementAgentManagementAgentPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[ManagementAgentManagementAgentProperty] {
-	return pulumix.Output[ManagementAgentManagementAgentProperty]{
-		OutputState: i.ToManagementAgentManagementAgentPropertyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ManagementAgentManagementAgentPropertyArrayInput is an input type that accepts ManagementAgentManagementAgentPropertyArray and ManagementAgentManagementAgentPropertyArrayOutput values.
 // You can construct a concrete instance of `ManagementAgentManagementAgentPropertyArrayInput` via:
 //
@@ -86,12 +79,6 @@ func (i ManagementAgentManagementAgentPropertyArray) ToManagementAgentManagement
 	return pulumi.ToOutputWithContext(ctx, i).(ManagementAgentManagementAgentPropertyArrayOutput)
 }
 
-func (i ManagementAgentManagementAgentPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]ManagementAgentManagementAgentProperty] {
-	return pulumix.Output[[]ManagementAgentManagementAgentProperty]{
-		OutputState: i.ToManagementAgentManagementAgentPropertyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ManagementAgentManagementAgentPropertyOutput struct{ *pulumi.OutputState }
 
 func (ManagementAgentManagementAgentPropertyOutput) ElementType() reflect.Type {
@@ -104,12 +91,6 @@ func (o ManagementAgentManagementAgentPropertyOutput) ToManagementAgentManagemen
 
 func (o ManagementAgentManagementAgentPropertyOutput) ToManagementAgentManagementAgentPropertyOutputWithContext(ctx context.Context) ManagementAgentManagementAgentPropertyOutput {
 	return o
-}
-
-func (o ManagementAgentManagementAgentPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[ManagementAgentManagementAgentProperty] {
-	return pulumix.Output[ManagementAgentManagementAgentProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Name of the property
@@ -139,12 +120,6 @@ func (o ManagementAgentManagementAgentPropertyArrayOutput) ToManagementAgentMana
 
 func (o ManagementAgentManagementAgentPropertyArrayOutput) ToManagementAgentManagementAgentPropertyArrayOutputWithContext(ctx context.Context) ManagementAgentManagementAgentPropertyArrayOutput {
 	return o
-}
-
-func (o ManagementAgentManagementAgentPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ManagementAgentManagementAgentProperty] {
-	return pulumix.Output[[]ManagementAgentManagementAgentProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagementAgentManagementAgentPropertyArrayOutput) Index(i pulumi.IntInput) ManagementAgentManagementAgentPropertyOutput {
@@ -210,12 +185,6 @@ func (i ManagementAgentPluginListArgs) ToManagementAgentPluginListOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(ManagementAgentPluginListOutput)
 }
 
-func (i ManagementAgentPluginListArgs) ToOutput(ctx context.Context) pulumix.Output[ManagementAgentPluginList] {
-	return pulumix.Output[ManagementAgentPluginList]{
-		OutputState: i.ToManagementAgentPluginListOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ManagementAgentPluginListArrayInput is an input type that accepts ManagementAgentPluginListArray and ManagementAgentPluginListArrayOutput values.
 // You can construct a concrete instance of `ManagementAgentPluginListArrayInput` via:
 //
@@ -241,12 +210,6 @@ func (i ManagementAgentPluginListArray) ToManagementAgentPluginListArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(ManagementAgentPluginListArrayOutput)
 }
 
-func (i ManagementAgentPluginListArray) ToOutput(ctx context.Context) pulumix.Output[[]ManagementAgentPluginList] {
-	return pulumix.Output[[]ManagementAgentPluginList]{
-		OutputState: i.ToManagementAgentPluginListArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ManagementAgentPluginListOutput struct{ *pulumi.OutputState }
 
 func (ManagementAgentPluginListOutput) ElementType() reflect.Type {
@@ -259,12 +222,6 @@ func (o ManagementAgentPluginListOutput) ToManagementAgentPluginListOutput() Man
 
 func (o ManagementAgentPluginListOutput) ToManagementAgentPluginListOutputWithContext(ctx context.Context) ManagementAgentPluginListOutput {
 	return o
-}
-
-func (o ManagementAgentPluginListOutput) ToOutput(ctx context.Context) pulumix.Output[ManagementAgentPluginList] {
-	return pulumix.Output[ManagementAgentPluginList]{
-		OutputState: o.OutputState,
-	}
 }
 
 // flag indicating whether the plugin is in enabled mode or disabled mode.
@@ -314,12 +271,6 @@ func (o ManagementAgentPluginListArrayOutput) ToManagementAgentPluginListArrayOu
 
 func (o ManagementAgentPluginListArrayOutput) ToManagementAgentPluginListArrayOutputWithContext(ctx context.Context) ManagementAgentPluginListArrayOutput {
 	return o
-}
-
-func (o ManagementAgentPluginListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ManagementAgentPluginList] {
-	return pulumix.Output[[]ManagementAgentPluginList]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagementAgentPluginListArrayOutput) Index(i pulumi.IntInput) ManagementAgentPluginListOutput {
@@ -373,12 +324,6 @@ func (i GetManagementAgentAvailableHistoriesAvailabilityHistoryArgs) ToGetManage
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentAvailableHistoriesAvailabilityHistoryOutput)
 }
 
-func (i GetManagementAgentAvailableHistoriesAvailabilityHistoryArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentAvailableHistoriesAvailabilityHistory] {
-	return pulumix.Output[GetManagementAgentAvailableHistoriesAvailabilityHistory]{
-		OutputState: i.ToGetManagementAgentAvailableHistoriesAvailabilityHistoryOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagementAgentAvailableHistoriesAvailabilityHistoryArrayInput is an input type that accepts GetManagementAgentAvailableHistoriesAvailabilityHistoryArray and GetManagementAgentAvailableHistoriesAvailabilityHistoryArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentAvailableHistoriesAvailabilityHistoryArrayInput` via:
 //
@@ -404,12 +349,6 @@ func (i GetManagementAgentAvailableHistoriesAvailabilityHistoryArray) ToGetManag
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentAvailableHistoriesAvailabilityHistoryArrayOutput)
 }
 
-func (i GetManagementAgentAvailableHistoriesAvailabilityHistoryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentAvailableHistoriesAvailabilityHistory] {
-	return pulumix.Output[[]GetManagementAgentAvailableHistoriesAvailabilityHistory]{
-		OutputState: i.ToGetManagementAgentAvailableHistoriesAvailabilityHistoryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentAvailableHistoriesAvailabilityHistoryOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentAvailableHistoriesAvailabilityHistoryOutput) ElementType() reflect.Type {
@@ -422,12 +361,6 @@ func (o GetManagementAgentAvailableHistoriesAvailabilityHistoryOutput) ToGetMana
 
 func (o GetManagementAgentAvailableHistoriesAvailabilityHistoryOutput) ToGetManagementAgentAvailableHistoriesAvailabilityHistoryOutputWithContext(ctx context.Context) GetManagementAgentAvailableHistoriesAvailabilityHistoryOutput {
 	return o
-}
-
-func (o GetManagementAgentAvailableHistoriesAvailabilityHistoryOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentAvailableHistoriesAvailabilityHistory] {
-	return pulumix.Output[GetManagementAgentAvailableHistoriesAvailabilityHistory]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The availability status of managementAgent
@@ -466,12 +399,6 @@ func (o GetManagementAgentAvailableHistoriesAvailabilityHistoryArrayOutput) ToGe
 
 func (o GetManagementAgentAvailableHistoriesAvailabilityHistoryArrayOutput) ToGetManagementAgentAvailableHistoriesAvailabilityHistoryArrayOutputWithContext(ctx context.Context) GetManagementAgentAvailableHistoriesAvailabilityHistoryArrayOutput {
 	return o
-}
-
-func (o GetManagementAgentAvailableHistoriesAvailabilityHistoryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentAvailableHistoriesAvailabilityHistory] {
-	return pulumix.Output[[]GetManagementAgentAvailableHistoriesAvailabilityHistory]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagementAgentAvailableHistoriesAvailabilityHistoryArrayOutput) Index(i pulumi.IntInput) GetManagementAgentAvailableHistoriesAvailabilityHistoryOutput {
@@ -515,12 +442,6 @@ func (i GetManagementAgentAvailableHistoriesFilterArgs) ToGetManagementAgentAvai
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentAvailableHistoriesFilterOutput)
 }
 
-func (i GetManagementAgentAvailableHistoriesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentAvailableHistoriesFilter] {
-	return pulumix.Output[GetManagementAgentAvailableHistoriesFilter]{
-		OutputState: i.ToGetManagementAgentAvailableHistoriesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagementAgentAvailableHistoriesFilterArrayInput is an input type that accepts GetManagementAgentAvailableHistoriesFilterArray and GetManagementAgentAvailableHistoriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentAvailableHistoriesFilterArrayInput` via:
 //
@@ -546,12 +467,6 @@ func (i GetManagementAgentAvailableHistoriesFilterArray) ToGetManagementAgentAva
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentAvailableHistoriesFilterArrayOutput)
 }
 
-func (i GetManagementAgentAvailableHistoriesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentAvailableHistoriesFilter] {
-	return pulumix.Output[[]GetManagementAgentAvailableHistoriesFilter]{
-		OutputState: i.ToGetManagementAgentAvailableHistoriesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentAvailableHistoriesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentAvailableHistoriesFilterOutput) ElementType() reflect.Type {
@@ -564,12 +479,6 @@ func (o GetManagementAgentAvailableHistoriesFilterOutput) ToGetManagementAgentAv
 
 func (o GetManagementAgentAvailableHistoriesFilterOutput) ToGetManagementAgentAvailableHistoriesFilterOutputWithContext(ctx context.Context) GetManagementAgentAvailableHistoriesFilterOutput {
 	return o
-}
-
-func (o GetManagementAgentAvailableHistoriesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentAvailableHistoriesFilter] {
-	return pulumix.Output[GetManagementAgentAvailableHistoriesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagementAgentAvailableHistoriesFilterOutput) Name() pulumi.StringOutput {
@@ -596,12 +505,6 @@ func (o GetManagementAgentAvailableHistoriesFilterArrayOutput) ToGetManagementAg
 
 func (o GetManagementAgentAvailableHistoriesFilterArrayOutput) ToGetManagementAgentAvailableHistoriesFilterArrayOutputWithContext(ctx context.Context) GetManagementAgentAvailableHistoriesFilterArrayOutput {
 	return o
-}
-
-func (o GetManagementAgentAvailableHistoriesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentAvailableHistoriesFilter] {
-	return pulumix.Output[[]GetManagementAgentAvailableHistoriesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagementAgentAvailableHistoriesFilterArrayOutput) Index(i pulumi.IntInput) GetManagementAgentAvailableHistoriesFilterOutput {
@@ -647,12 +550,6 @@ func (i GetManagementAgentCountItemArgs) ToGetManagementAgentCountItemOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentCountItemOutput)
 }
 
-func (i GetManagementAgentCountItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentCountItem] {
-	return pulumix.Output[GetManagementAgentCountItem]{
-		OutputState: i.ToGetManagementAgentCountItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagementAgentCountItemArrayInput is an input type that accepts GetManagementAgentCountItemArray and GetManagementAgentCountItemArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentCountItemArrayInput` via:
 //
@@ -678,12 +575,6 @@ func (i GetManagementAgentCountItemArray) ToGetManagementAgentCountItemArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentCountItemArrayOutput)
 }
 
-func (i GetManagementAgentCountItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentCountItem] {
-	return pulumix.Output[[]GetManagementAgentCountItem]{
-		OutputState: i.ToGetManagementAgentCountItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentCountItemOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentCountItemOutput) ElementType() reflect.Type {
@@ -696,12 +587,6 @@ func (o GetManagementAgentCountItemOutput) ToGetManagementAgentCountItemOutput()
 
 func (o GetManagementAgentCountItemOutput) ToGetManagementAgentCountItemOutputWithContext(ctx context.Context) GetManagementAgentCountItemOutput {
 	return o
-}
-
-func (o GetManagementAgentCountItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentCountItem] {
-	return pulumix.Output[GetManagementAgentCountItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The number of Management Agents in this group
@@ -726,12 +611,6 @@ func (o GetManagementAgentCountItemArrayOutput) ToGetManagementAgentCountItemArr
 
 func (o GetManagementAgentCountItemArrayOutput) ToGetManagementAgentCountItemArrayOutputWithContext(ctx context.Context) GetManagementAgentCountItemArrayOutput {
 	return o
-}
-
-func (o GetManagementAgentCountItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentCountItem] {
-	return pulumix.Output[[]GetManagementAgentCountItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagementAgentCountItemArrayOutput) Index(i pulumi.IntInput) GetManagementAgentCountItemOutput {
@@ -789,12 +668,6 @@ func (i GetManagementAgentCountItemDimensionArgs) ToGetManagementAgentCountItemD
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentCountItemDimensionOutput)
 }
 
-func (i GetManagementAgentCountItemDimensionArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentCountItemDimension] {
-	return pulumix.Output[GetManagementAgentCountItemDimension]{
-		OutputState: i.ToGetManagementAgentCountItemDimensionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagementAgentCountItemDimensionArrayInput is an input type that accepts GetManagementAgentCountItemDimensionArray and GetManagementAgentCountItemDimensionArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentCountItemDimensionArrayInput` via:
 //
@@ -820,12 +693,6 @@ func (i GetManagementAgentCountItemDimensionArray) ToGetManagementAgentCountItem
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentCountItemDimensionArrayOutput)
 }
 
-func (i GetManagementAgentCountItemDimensionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentCountItemDimension] {
-	return pulumix.Output[[]GetManagementAgentCountItemDimension]{
-		OutputState: i.ToGetManagementAgentCountItemDimensionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentCountItemDimensionOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentCountItemDimensionOutput) ElementType() reflect.Type {
@@ -838,12 +705,6 @@ func (o GetManagementAgentCountItemDimensionOutput) ToGetManagementAgentCountIte
 
 func (o GetManagementAgentCountItemDimensionOutput) ToGetManagementAgentCountItemDimensionOutputWithContext(ctx context.Context) GetManagementAgentCountItemDimensionOutput {
 	return o
-}
-
-func (o GetManagementAgentCountItemDimensionOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentCountItemDimension] {
-	return pulumix.Output[GetManagementAgentCountItemDimension]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The availability status of managementAgent
@@ -883,12 +744,6 @@ func (o GetManagementAgentCountItemDimensionArrayOutput) ToGetManagementAgentCou
 
 func (o GetManagementAgentCountItemDimensionArrayOutput) ToGetManagementAgentCountItemDimensionArrayOutputWithContext(ctx context.Context) GetManagementAgentCountItemDimensionArrayOutput {
 	return o
-}
-
-func (o GetManagementAgentCountItemDimensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentCountItemDimension] {
-	return pulumix.Output[[]GetManagementAgentCountItemDimension]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagementAgentCountItemDimensionArrayOutput) Index(i pulumi.IntInput) GetManagementAgentCountItemDimensionOutput {
@@ -934,12 +789,6 @@ func (i GetManagementAgentImagesFilterArgs) ToGetManagementAgentImagesFilterOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentImagesFilterOutput)
 }
 
-func (i GetManagementAgentImagesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentImagesFilter] {
-	return pulumix.Output[GetManagementAgentImagesFilter]{
-		OutputState: i.ToGetManagementAgentImagesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagementAgentImagesFilterArrayInput is an input type that accepts GetManagementAgentImagesFilterArray and GetManagementAgentImagesFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentImagesFilterArrayInput` via:
 //
@@ -965,12 +814,6 @@ func (i GetManagementAgentImagesFilterArray) ToGetManagementAgentImagesFilterArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentImagesFilterArrayOutput)
 }
 
-func (i GetManagementAgentImagesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentImagesFilter] {
-	return pulumix.Output[[]GetManagementAgentImagesFilter]{
-		OutputState: i.ToGetManagementAgentImagesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentImagesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentImagesFilterOutput) ElementType() reflect.Type {
@@ -983,12 +826,6 @@ func (o GetManagementAgentImagesFilterOutput) ToGetManagementAgentImagesFilterOu
 
 func (o GetManagementAgentImagesFilterOutput) ToGetManagementAgentImagesFilterOutputWithContext(ctx context.Context) GetManagementAgentImagesFilterOutput {
 	return o
-}
-
-func (o GetManagementAgentImagesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentImagesFilter] {
-	return pulumix.Output[GetManagementAgentImagesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the entire platform name given.
@@ -1016,12 +853,6 @@ func (o GetManagementAgentImagesFilterArrayOutput) ToGetManagementAgentImagesFil
 
 func (o GetManagementAgentImagesFilterArrayOutput) ToGetManagementAgentImagesFilterArrayOutputWithContext(ctx context.Context) GetManagementAgentImagesFilterArrayOutput {
 	return o
-}
-
-func (o GetManagementAgentImagesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentImagesFilter] {
-	return pulumix.Output[[]GetManagementAgentImagesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagementAgentImagesFilterArrayOutput) Index(i pulumi.IntInput) GetManagementAgentImagesFilterOutput {
@@ -1103,12 +934,6 @@ func (i GetManagementAgentImagesManagementAgentImageArgs) ToGetManagementAgentIm
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentImagesManagementAgentImageOutput)
 }
 
-func (i GetManagementAgentImagesManagementAgentImageArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentImagesManagementAgentImage] {
-	return pulumix.Output[GetManagementAgentImagesManagementAgentImage]{
-		OutputState: i.ToGetManagementAgentImagesManagementAgentImageOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagementAgentImagesManagementAgentImageArrayInput is an input type that accepts GetManagementAgentImagesManagementAgentImageArray and GetManagementAgentImagesManagementAgentImageArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentImagesManagementAgentImageArrayInput` via:
 //
@@ -1134,12 +959,6 @@ func (i GetManagementAgentImagesManagementAgentImageArray) ToGetManagementAgentI
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentImagesManagementAgentImageArrayOutput)
 }
 
-func (i GetManagementAgentImagesManagementAgentImageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentImagesManagementAgentImage] {
-	return pulumix.Output[[]GetManagementAgentImagesManagementAgentImage]{
-		OutputState: i.ToGetManagementAgentImagesManagementAgentImageArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentImagesManagementAgentImageOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentImagesManagementAgentImageOutput) ElementType() reflect.Type {
@@ -1152,12 +971,6 @@ func (o GetManagementAgentImagesManagementAgentImageOutput) ToGetManagementAgent
 
 func (o GetManagementAgentImagesManagementAgentImageOutput) ToGetManagementAgentImagesManagementAgentImageOutputWithContext(ctx context.Context) GetManagementAgentImagesManagementAgentImageOutput {
 	return o
-}
-
-func (o GetManagementAgentImagesManagementAgentImageOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentImagesManagementAgentImage] {
-	return pulumix.Output[GetManagementAgentImagesManagementAgentImage]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Object content SHA256 Hash
@@ -1231,12 +1044,6 @@ func (o GetManagementAgentImagesManagementAgentImageArrayOutput) ToGetManagement
 	return o
 }
 
-func (o GetManagementAgentImagesManagementAgentImageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentImagesManagementAgentImage] {
-	return pulumix.Output[[]GetManagementAgentImagesManagementAgentImage]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementAgentImagesManagementAgentImageArrayOutput) Index(i pulumi.IntInput) GetManagementAgentImagesManagementAgentImageOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentImagesManagementAgentImage {
 		return vs[0].([]GetManagementAgentImagesManagementAgentImage)[vs[1].(int)]
@@ -1292,12 +1099,6 @@ func (i GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArgs
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput)
 }
 
-func (i GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail] {
-	return pulumix.Output[GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail]{
-		OutputState: i.ToGetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayInput is an input type that accepts GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArray and GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayInput` via:
 //
@@ -1323,12 +1124,6 @@ func (i GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutput)
 }
 
-func (i GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail] {
-	return pulumix.Output[[]GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail]{
-		OutputState: i.ToGetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput) ElementType() reflect.Type {
@@ -1341,12 +1136,6 @@ func (o GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutp
 
 func (o GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput) ToGetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutputWithContext(ctx context.Context) GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput {
 	return o
-}
-
-func (o GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail] {
-	return pulumix.Output[GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Object content SHA256 Hash
@@ -1394,12 +1183,6 @@ func (o GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArra
 	return o
 }
 
-func (o GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail] {
-	return pulumix.Output[[]GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutput) Index(i pulumi.IntInput) GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail {
 		return vs[0].([]GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail)[vs[1].(int)]
@@ -1441,12 +1224,6 @@ func (i GetManagementAgentInstallKeysFilterArgs) ToGetManagementAgentInstallKeys
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentInstallKeysFilterOutput)
 }
 
-func (i GetManagementAgentInstallKeysFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentInstallKeysFilter] {
-	return pulumix.Output[GetManagementAgentInstallKeysFilter]{
-		OutputState: i.ToGetManagementAgentInstallKeysFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagementAgentInstallKeysFilterArrayInput is an input type that accepts GetManagementAgentInstallKeysFilterArray and GetManagementAgentInstallKeysFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentInstallKeysFilterArrayInput` via:
 //
@@ -1472,12 +1249,6 @@ func (i GetManagementAgentInstallKeysFilterArray) ToGetManagementAgentInstallKey
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentInstallKeysFilterArrayOutput)
 }
 
-func (i GetManagementAgentInstallKeysFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentInstallKeysFilter] {
-	return pulumix.Output[[]GetManagementAgentInstallKeysFilter]{
-		OutputState: i.ToGetManagementAgentInstallKeysFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentInstallKeysFilterOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentInstallKeysFilterOutput) ElementType() reflect.Type {
@@ -1490,12 +1261,6 @@ func (o GetManagementAgentInstallKeysFilterOutput) ToGetManagementAgentInstallKe
 
 func (o GetManagementAgentInstallKeysFilterOutput) ToGetManagementAgentInstallKeysFilterOutputWithContext(ctx context.Context) GetManagementAgentInstallKeysFilterOutput {
 	return o
-}
-
-func (o GetManagementAgentInstallKeysFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentInstallKeysFilter] {
-	return pulumix.Output[GetManagementAgentInstallKeysFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagementAgentInstallKeysFilterOutput) Name() pulumi.StringOutput {
@@ -1522,12 +1287,6 @@ func (o GetManagementAgentInstallKeysFilterArrayOutput) ToGetManagementAgentInst
 
 func (o GetManagementAgentInstallKeysFilterArrayOutput) ToGetManagementAgentInstallKeysFilterArrayOutputWithContext(ctx context.Context) GetManagementAgentInstallKeysFilterArrayOutput {
 	return o
-}
-
-func (o GetManagementAgentInstallKeysFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentInstallKeysFilter] {
-	return pulumix.Output[[]GetManagementAgentInstallKeysFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagementAgentInstallKeysFilterArrayOutput) Index(i pulumi.IntInput) GetManagementAgentInstallKeysFilterOutput {
@@ -1617,12 +1376,6 @@ func (i GetManagementAgentInstallKeysManagementAgentInstallKeyArgs) ToGetManagem
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentInstallKeysManagementAgentInstallKeyOutput)
 }
 
-func (i GetManagementAgentInstallKeysManagementAgentInstallKeyArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentInstallKeysManagementAgentInstallKey] {
-	return pulumix.Output[GetManagementAgentInstallKeysManagementAgentInstallKey]{
-		OutputState: i.ToGetManagementAgentInstallKeysManagementAgentInstallKeyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagementAgentInstallKeysManagementAgentInstallKeyArrayInput is an input type that accepts GetManagementAgentInstallKeysManagementAgentInstallKeyArray and GetManagementAgentInstallKeysManagementAgentInstallKeyArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentInstallKeysManagementAgentInstallKeyArrayInput` via:
 //
@@ -1648,12 +1401,6 @@ func (i GetManagementAgentInstallKeysManagementAgentInstallKeyArray) ToGetManage
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentInstallKeysManagementAgentInstallKeyArrayOutput)
 }
 
-func (i GetManagementAgentInstallKeysManagementAgentInstallKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentInstallKeysManagementAgentInstallKey] {
-	return pulumix.Output[[]GetManagementAgentInstallKeysManagementAgentInstallKey]{
-		OutputState: i.ToGetManagementAgentInstallKeysManagementAgentInstallKeyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentInstallKeysManagementAgentInstallKeyOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) ElementType() reflect.Type {
@@ -1666,12 +1413,6 @@ func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) ToGetManag
 
 func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) ToGetManagementAgentInstallKeysManagementAgentInstallKeyOutputWithContext(ctx context.Context) GetManagementAgentInstallKeysManagementAgentInstallKeyOutput {
 	return o
-}
-
-func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentInstallKeysManagementAgentInstallKey] {
-	return pulumix.Output[GetManagementAgentInstallKeysManagementAgentInstallKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Total number of install for this keys
@@ -1753,12 +1494,6 @@ func (o GetManagementAgentInstallKeysManagementAgentInstallKeyArrayOutput) ToGet
 	return o
 }
 
-func (o GetManagementAgentInstallKeysManagementAgentInstallKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentInstallKeysManagementAgentInstallKey] {
-	return pulumix.Output[[]GetManagementAgentInstallKeysManagementAgentInstallKey]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementAgentInstallKeysManagementAgentInstallKeyArrayOutput) Index(i pulumi.IntInput) GetManagementAgentInstallKeysManagementAgentInstallKeyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentInstallKeysManagementAgentInstallKey {
 		return vs[0].([]GetManagementAgentInstallKeysManagementAgentInstallKey)[vs[1].(int)]
@@ -1806,12 +1541,6 @@ func (i GetManagementAgentManagementAgentPropertyArgs) ToGetManagementAgentManag
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentManagementAgentPropertyOutput)
 }
 
-func (i GetManagementAgentManagementAgentPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentManagementAgentProperty] {
-	return pulumix.Output[GetManagementAgentManagementAgentProperty]{
-		OutputState: i.ToGetManagementAgentManagementAgentPropertyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagementAgentManagementAgentPropertyArrayInput is an input type that accepts GetManagementAgentManagementAgentPropertyArray and GetManagementAgentManagementAgentPropertyArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentManagementAgentPropertyArrayInput` via:
 //
@@ -1837,12 +1566,6 @@ func (i GetManagementAgentManagementAgentPropertyArray) ToGetManagementAgentMana
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentManagementAgentPropertyArrayOutput)
 }
 
-func (i GetManagementAgentManagementAgentPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentManagementAgentProperty] {
-	return pulumix.Output[[]GetManagementAgentManagementAgentProperty]{
-		OutputState: i.ToGetManagementAgentManagementAgentPropertyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentManagementAgentPropertyOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentManagementAgentPropertyOutput) ElementType() reflect.Type {
@@ -1855,12 +1578,6 @@ func (o GetManagementAgentManagementAgentPropertyOutput) ToGetManagementAgentMan
 
 func (o GetManagementAgentManagementAgentPropertyOutput) ToGetManagementAgentManagementAgentPropertyOutputWithContext(ctx context.Context) GetManagementAgentManagementAgentPropertyOutput {
 	return o
-}
-
-func (o GetManagementAgentManagementAgentPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentManagementAgentProperty] {
-	return pulumix.Output[GetManagementAgentManagementAgentProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Name of the property
@@ -1890,12 +1607,6 @@ func (o GetManagementAgentManagementAgentPropertyArrayOutput) ToGetManagementAge
 
 func (o GetManagementAgentManagementAgentPropertyArrayOutput) ToGetManagementAgentManagementAgentPropertyArrayOutputWithContext(ctx context.Context) GetManagementAgentManagementAgentPropertyArrayOutput {
 	return o
-}
-
-func (o GetManagementAgentManagementAgentPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentManagementAgentProperty] {
-	return pulumix.Output[[]GetManagementAgentManagementAgentProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagementAgentManagementAgentPropertyArrayOutput) Index(i pulumi.IntInput) GetManagementAgentManagementAgentPropertyOutput {
@@ -1941,12 +1652,6 @@ func (i GetManagementAgentPluginCountItemArgs) ToGetManagementAgentPluginCountIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentPluginCountItemOutput)
 }
 
-func (i GetManagementAgentPluginCountItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentPluginCountItem] {
-	return pulumix.Output[GetManagementAgentPluginCountItem]{
-		OutputState: i.ToGetManagementAgentPluginCountItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagementAgentPluginCountItemArrayInput is an input type that accepts GetManagementAgentPluginCountItemArray and GetManagementAgentPluginCountItemArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentPluginCountItemArrayInput` via:
 //
@@ -1972,12 +1677,6 @@ func (i GetManagementAgentPluginCountItemArray) ToGetManagementAgentPluginCountI
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentPluginCountItemArrayOutput)
 }
 
-func (i GetManagementAgentPluginCountItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentPluginCountItem] {
-	return pulumix.Output[[]GetManagementAgentPluginCountItem]{
-		OutputState: i.ToGetManagementAgentPluginCountItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentPluginCountItemOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentPluginCountItemOutput) ElementType() reflect.Type {
@@ -1990,12 +1689,6 @@ func (o GetManagementAgentPluginCountItemOutput) ToGetManagementAgentPluginCount
 
 func (o GetManagementAgentPluginCountItemOutput) ToGetManagementAgentPluginCountItemOutputWithContext(ctx context.Context) GetManagementAgentPluginCountItemOutput {
 	return o
-}
-
-func (o GetManagementAgentPluginCountItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentPluginCountItem] {
-	return pulumix.Output[GetManagementAgentPluginCountItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The number of Management Agent Plugins in this group
@@ -2022,12 +1715,6 @@ func (o GetManagementAgentPluginCountItemArrayOutput) ToGetManagementAgentPlugin
 
 func (o GetManagementAgentPluginCountItemArrayOutput) ToGetManagementAgentPluginCountItemArrayOutputWithContext(ctx context.Context) GetManagementAgentPluginCountItemArrayOutput {
 	return o
-}
-
-func (o GetManagementAgentPluginCountItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentPluginCountItem] {
-	return pulumix.Output[[]GetManagementAgentPluginCountItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagementAgentPluginCountItemArrayOutput) Index(i pulumi.IntInput) GetManagementAgentPluginCountItemOutput {
@@ -2073,12 +1760,6 @@ func (i GetManagementAgentPluginCountItemDimensionArgs) ToGetManagementAgentPlug
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentPluginCountItemDimensionOutput)
 }
 
-func (i GetManagementAgentPluginCountItemDimensionArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentPluginCountItemDimension] {
-	return pulumix.Output[GetManagementAgentPluginCountItemDimension]{
-		OutputState: i.ToGetManagementAgentPluginCountItemDimensionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagementAgentPluginCountItemDimensionArrayInput is an input type that accepts GetManagementAgentPluginCountItemDimensionArray and GetManagementAgentPluginCountItemDimensionArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentPluginCountItemDimensionArrayInput` via:
 //
@@ -2104,12 +1785,6 @@ func (i GetManagementAgentPluginCountItemDimensionArray) ToGetManagementAgentPlu
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentPluginCountItemDimensionArrayOutput)
 }
 
-func (i GetManagementAgentPluginCountItemDimensionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentPluginCountItemDimension] {
-	return pulumix.Output[[]GetManagementAgentPluginCountItemDimension]{
-		OutputState: i.ToGetManagementAgentPluginCountItemDimensionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentPluginCountItemDimensionOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentPluginCountItemDimensionOutput) ElementType() reflect.Type {
@@ -2122,12 +1797,6 @@ func (o GetManagementAgentPluginCountItemDimensionOutput) ToGetManagementAgentPl
 
 func (o GetManagementAgentPluginCountItemDimensionOutput) ToGetManagementAgentPluginCountItemDimensionOutputWithContext(ctx context.Context) GetManagementAgentPluginCountItemDimensionOutput {
 	return o
-}
-
-func (o GetManagementAgentPluginCountItemDimensionOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentPluginCountItemDimension] {
-	return pulumix.Output[GetManagementAgentPluginCountItemDimension]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Management Agent Plugin Display Name
@@ -2152,12 +1821,6 @@ func (o GetManagementAgentPluginCountItemDimensionArrayOutput) ToGetManagementAg
 
 func (o GetManagementAgentPluginCountItemDimensionArrayOutput) ToGetManagementAgentPluginCountItemDimensionArrayOutputWithContext(ctx context.Context) GetManagementAgentPluginCountItemDimensionArrayOutput {
 	return o
-}
-
-func (o GetManagementAgentPluginCountItemDimensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentPluginCountItemDimension] {
-	return pulumix.Output[[]GetManagementAgentPluginCountItemDimension]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagementAgentPluginCountItemDimensionArrayOutput) Index(i pulumi.IntInput) GetManagementAgentPluginCountItemDimensionOutput {
@@ -2223,12 +1886,6 @@ func (i GetManagementAgentPluginListArgs) ToGetManagementAgentPluginListOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentPluginListOutput)
 }
 
-func (i GetManagementAgentPluginListArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentPluginList] {
-	return pulumix.Output[GetManagementAgentPluginList]{
-		OutputState: i.ToGetManagementAgentPluginListOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagementAgentPluginListArrayInput is an input type that accepts GetManagementAgentPluginListArray and GetManagementAgentPluginListArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentPluginListArrayInput` via:
 //
@@ -2254,12 +1911,6 @@ func (i GetManagementAgentPluginListArray) ToGetManagementAgentPluginListArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentPluginListArrayOutput)
 }
 
-func (i GetManagementAgentPluginListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentPluginList] {
-	return pulumix.Output[[]GetManagementAgentPluginList]{
-		OutputState: i.ToGetManagementAgentPluginListArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentPluginListOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentPluginListOutput) ElementType() reflect.Type {
@@ -2272,12 +1923,6 @@ func (o GetManagementAgentPluginListOutput) ToGetManagementAgentPluginListOutput
 
 func (o GetManagementAgentPluginListOutput) ToGetManagementAgentPluginListOutputWithContext(ctx context.Context) GetManagementAgentPluginListOutput {
 	return o
-}
-
-func (o GetManagementAgentPluginListOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentPluginList] {
-	return pulumix.Output[GetManagementAgentPluginList]{
-		OutputState: o.OutputState,
-	}
 }
 
 // flag indicating whether the plugin is in enabled mode or disabled mode.
@@ -2329,12 +1974,6 @@ func (o GetManagementAgentPluginListArrayOutput) ToGetManagementAgentPluginListA
 	return o
 }
 
-func (o GetManagementAgentPluginListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentPluginList] {
-	return pulumix.Output[[]GetManagementAgentPluginList]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementAgentPluginListArrayOutput) Index(i pulumi.IntInput) GetManagementAgentPluginListOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentPluginList {
 		return vs[0].([]GetManagementAgentPluginList)[vs[1].(int)]
@@ -2378,12 +2017,6 @@ func (i GetManagementAgentPluginsFilterArgs) ToGetManagementAgentPluginsFilterOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentPluginsFilterOutput)
 }
 
-func (i GetManagementAgentPluginsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentPluginsFilter] {
-	return pulumix.Output[GetManagementAgentPluginsFilter]{
-		OutputState: i.ToGetManagementAgentPluginsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagementAgentPluginsFilterArrayInput is an input type that accepts GetManagementAgentPluginsFilterArray and GetManagementAgentPluginsFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentPluginsFilterArrayInput` via:
 //
@@ -2409,12 +2042,6 @@ func (i GetManagementAgentPluginsFilterArray) ToGetManagementAgentPluginsFilterA
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentPluginsFilterArrayOutput)
 }
 
-func (i GetManagementAgentPluginsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentPluginsFilter] {
-	return pulumix.Output[[]GetManagementAgentPluginsFilter]{
-		OutputState: i.ToGetManagementAgentPluginsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentPluginsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentPluginsFilterOutput) ElementType() reflect.Type {
@@ -2427,12 +2054,6 @@ func (o GetManagementAgentPluginsFilterOutput) ToGetManagementAgentPluginsFilter
 
 func (o GetManagementAgentPluginsFilterOutput) ToGetManagementAgentPluginsFilterOutputWithContext(ctx context.Context) GetManagementAgentPluginsFilterOutput {
 	return o
-}
-
-func (o GetManagementAgentPluginsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentPluginsFilter] {
-	return pulumix.Output[GetManagementAgentPluginsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Management Agent Plugin Name
@@ -2460,12 +2081,6 @@ func (o GetManagementAgentPluginsFilterArrayOutput) ToGetManagementAgentPluginsF
 
 func (o GetManagementAgentPluginsFilterArrayOutput) ToGetManagementAgentPluginsFilterArrayOutputWithContext(ctx context.Context) GetManagementAgentPluginsFilterArrayOutput {
 	return o
-}
-
-func (o GetManagementAgentPluginsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentPluginsFilter] {
-	return pulumix.Output[[]GetManagementAgentPluginsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagementAgentPluginsFilterArrayOutput) Index(i pulumi.IntInput) GetManagementAgentPluginsFilterOutput {
@@ -2535,12 +2150,6 @@ func (i GetManagementAgentPluginsManagementAgentPluginArgs) ToGetManagementAgent
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentPluginsManagementAgentPluginOutput)
 }
 
-func (i GetManagementAgentPluginsManagementAgentPluginArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentPluginsManagementAgentPlugin] {
-	return pulumix.Output[GetManagementAgentPluginsManagementAgentPlugin]{
-		OutputState: i.ToGetManagementAgentPluginsManagementAgentPluginOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagementAgentPluginsManagementAgentPluginArrayInput is an input type that accepts GetManagementAgentPluginsManagementAgentPluginArray and GetManagementAgentPluginsManagementAgentPluginArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentPluginsManagementAgentPluginArrayInput` via:
 //
@@ -2566,12 +2175,6 @@ func (i GetManagementAgentPluginsManagementAgentPluginArray) ToGetManagementAgen
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentPluginsManagementAgentPluginArrayOutput)
 }
 
-func (i GetManagementAgentPluginsManagementAgentPluginArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentPluginsManagementAgentPlugin] {
-	return pulumix.Output[[]GetManagementAgentPluginsManagementAgentPlugin]{
-		OutputState: i.ToGetManagementAgentPluginsManagementAgentPluginArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentPluginsManagementAgentPluginOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentPluginsManagementAgentPluginOutput) ElementType() reflect.Type {
@@ -2584,12 +2187,6 @@ func (o GetManagementAgentPluginsManagementAgentPluginOutput) ToGetManagementAge
 
 func (o GetManagementAgentPluginsManagementAgentPluginOutput) ToGetManagementAgentPluginsManagementAgentPluginOutputWithContext(ctx context.Context) GetManagementAgentPluginsManagementAgentPluginOutput {
 	return o
-}
-
-func (o GetManagementAgentPluginsManagementAgentPluginOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentPluginsManagementAgentPlugin] {
-	return pulumix.Output[GetManagementAgentPluginsManagementAgentPlugin]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Management Agent Plugin description
@@ -2646,12 +2243,6 @@ func (o GetManagementAgentPluginsManagementAgentPluginArrayOutput) ToGetManageme
 	return o
 }
 
-func (o GetManagementAgentPluginsManagementAgentPluginArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentPluginsManagementAgentPlugin] {
-	return pulumix.Output[[]GetManagementAgentPluginsManagementAgentPlugin]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementAgentPluginsManagementAgentPluginArrayOutput) Index(i pulumi.IntInput) GetManagementAgentPluginsManagementAgentPluginOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentPluginsManagementAgentPlugin {
 		return vs[0].([]GetManagementAgentPluginsManagementAgentPlugin)[vs[1].(int)]
@@ -2697,12 +2288,6 @@ func (i GetManagementAgentsFilterArgs) ToGetManagementAgentsFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentsFilterOutput)
 }
 
-func (i GetManagementAgentsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentsFilter] {
-	return pulumix.Output[GetManagementAgentsFilter]{
-		OutputState: i.ToGetManagementAgentsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagementAgentsFilterArrayInput is an input type that accepts GetManagementAgentsFilterArray and GetManagementAgentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentsFilterArrayInput` via:
 //
@@ -2728,12 +2313,6 @@ func (i GetManagementAgentsFilterArray) ToGetManagementAgentsFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentsFilterArrayOutput)
 }
 
-func (i GetManagementAgentsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentsFilter] {
-	return pulumix.Output[[]GetManagementAgentsFilter]{
-		OutputState: i.ToGetManagementAgentsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentsFilterOutput) ElementType() reflect.Type {
@@ -2746,12 +2325,6 @@ func (o GetManagementAgentsFilterOutput) ToGetManagementAgentsFilterOutput() Get
 
 func (o GetManagementAgentsFilterOutput) ToGetManagementAgentsFilterOutputWithContext(ctx context.Context) GetManagementAgentsFilterOutput {
 	return o
-}
-
-func (o GetManagementAgentsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentsFilter] {
-	return pulumix.Output[GetManagementAgentsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Name of the property
@@ -2780,12 +2353,6 @@ func (o GetManagementAgentsFilterArrayOutput) ToGetManagementAgentsFilterArrayOu
 
 func (o GetManagementAgentsFilterArrayOutput) ToGetManagementAgentsFilterArrayOutputWithContext(ctx context.Context) GetManagementAgentsFilterArrayOutput {
 	return o
-}
-
-func (o GetManagementAgentsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentsFilter] {
-	return pulumix.Output[[]GetManagementAgentsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagementAgentsFilterArrayOutput) Index(i pulumi.IntInput) GetManagementAgentsFilterOutput {
@@ -2927,12 +2494,6 @@ func (i GetManagementAgentsManagementAgentArgs) ToGetManagementAgentsManagementA
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentsManagementAgentOutput)
 }
 
-func (i GetManagementAgentsManagementAgentArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentsManagementAgent] {
-	return pulumix.Output[GetManagementAgentsManagementAgent]{
-		OutputState: i.ToGetManagementAgentsManagementAgentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagementAgentsManagementAgentArrayInput is an input type that accepts GetManagementAgentsManagementAgentArray and GetManagementAgentsManagementAgentArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentsManagementAgentArrayInput` via:
 //
@@ -2958,12 +2519,6 @@ func (i GetManagementAgentsManagementAgentArray) ToGetManagementAgentsManagement
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentsManagementAgentArrayOutput)
 }
 
-func (i GetManagementAgentsManagementAgentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentsManagementAgent] {
-	return pulumix.Output[[]GetManagementAgentsManagementAgent]{
-		OutputState: i.ToGetManagementAgentsManagementAgentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentsManagementAgentOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentsManagementAgentOutput) ElementType() reflect.Type {
@@ -2976,12 +2531,6 @@ func (o GetManagementAgentsManagementAgentOutput) ToGetManagementAgentsManagemen
 
 func (o GetManagementAgentsManagementAgentOutput) ToGetManagementAgentsManagementAgentOutputWithContext(ctx context.Context) GetManagementAgentsManagementAgentOutput {
 	return o
-}
-
-func (o GetManagementAgentsManagementAgentOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentsManagementAgent] {
-	return pulumix.Output[GetManagementAgentsManagementAgent]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Filter to return only Management Agents in the particular availability status.
@@ -3135,12 +2684,6 @@ func (o GetManagementAgentsManagementAgentArrayOutput) ToGetManagementAgentsMana
 	return o
 }
 
-func (o GetManagementAgentsManagementAgentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentsManagementAgent] {
-	return pulumix.Output[[]GetManagementAgentsManagementAgent]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementAgentsManagementAgentArrayOutput) Index(i pulumi.IntInput) GetManagementAgentsManagementAgentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentsManagementAgent {
 		return vs[0].([]GetManagementAgentsManagementAgent)[vs[1].(int)]
@@ -3188,12 +2731,6 @@ func (i GetManagementAgentsManagementAgentManagementAgentPropertyArgs) ToGetMana
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentsManagementAgentManagementAgentPropertyOutput)
 }
 
-func (i GetManagementAgentsManagementAgentManagementAgentPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentsManagementAgentManagementAgentProperty] {
-	return pulumix.Output[GetManagementAgentsManagementAgentManagementAgentProperty]{
-		OutputState: i.ToGetManagementAgentsManagementAgentManagementAgentPropertyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagementAgentsManagementAgentManagementAgentPropertyArrayInput is an input type that accepts GetManagementAgentsManagementAgentManagementAgentPropertyArray and GetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentsManagementAgentManagementAgentPropertyArrayInput` via:
 //
@@ -3219,12 +2756,6 @@ func (i GetManagementAgentsManagementAgentManagementAgentPropertyArray) ToGetMan
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput)
 }
 
-func (i GetManagementAgentsManagementAgentManagementAgentPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentsManagementAgentManagementAgentProperty] {
-	return pulumix.Output[[]GetManagementAgentsManagementAgentManagementAgentProperty]{
-		OutputState: i.ToGetManagementAgentsManagementAgentManagementAgentPropertyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentsManagementAgentManagementAgentPropertyOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentsManagementAgentManagementAgentPropertyOutput) ElementType() reflect.Type {
@@ -3237,12 +2768,6 @@ func (o GetManagementAgentsManagementAgentManagementAgentPropertyOutput) ToGetMa
 
 func (o GetManagementAgentsManagementAgentManagementAgentPropertyOutput) ToGetManagementAgentsManagementAgentManagementAgentPropertyOutputWithContext(ctx context.Context) GetManagementAgentsManagementAgentManagementAgentPropertyOutput {
 	return o
-}
-
-func (o GetManagementAgentsManagementAgentManagementAgentPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentsManagementAgentManagementAgentProperty] {
-	return pulumix.Output[GetManagementAgentsManagementAgentManagementAgentProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Name of the property
@@ -3272,12 +2797,6 @@ func (o GetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput) To
 
 func (o GetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput) ToGetManagementAgentsManagementAgentManagementAgentPropertyArrayOutputWithContext(ctx context.Context) GetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput {
 	return o
-}
-
-func (o GetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentsManagementAgentManagementAgentProperty] {
-	return pulumix.Output[[]GetManagementAgentsManagementAgentManagementAgentProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput) Index(i pulumi.IntInput) GetManagementAgentsManagementAgentManagementAgentPropertyOutput {
@@ -3343,12 +2862,6 @@ func (i GetManagementAgentsManagementAgentPluginListArgs) ToGetManagementAgentsM
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentsManagementAgentPluginListOutput)
 }
 
-func (i GetManagementAgentsManagementAgentPluginListArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentsManagementAgentPluginList] {
-	return pulumix.Output[GetManagementAgentsManagementAgentPluginList]{
-		OutputState: i.ToGetManagementAgentsManagementAgentPluginListOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagementAgentsManagementAgentPluginListArrayInput is an input type that accepts GetManagementAgentsManagementAgentPluginListArray and GetManagementAgentsManagementAgentPluginListArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentsManagementAgentPluginListArrayInput` via:
 //
@@ -3374,12 +2887,6 @@ func (i GetManagementAgentsManagementAgentPluginListArray) ToGetManagementAgents
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentsManagementAgentPluginListArrayOutput)
 }
 
-func (i GetManagementAgentsManagementAgentPluginListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentsManagementAgentPluginList] {
-	return pulumix.Output[[]GetManagementAgentsManagementAgentPluginList]{
-		OutputState: i.ToGetManagementAgentsManagementAgentPluginListArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentsManagementAgentPluginListOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentsManagementAgentPluginListOutput) ElementType() reflect.Type {
@@ -3392,12 +2899,6 @@ func (o GetManagementAgentsManagementAgentPluginListOutput) ToGetManagementAgent
 
 func (o GetManagementAgentsManagementAgentPluginListOutput) ToGetManagementAgentsManagementAgentPluginListOutputWithContext(ctx context.Context) GetManagementAgentsManagementAgentPluginListOutput {
 	return o
-}
-
-func (o GetManagementAgentsManagementAgentPluginListOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentsManagementAgentPluginList] {
-	return pulumix.Output[GetManagementAgentsManagementAgentPluginList]{
-		OutputState: o.OutputState,
-	}
 }
 
 // flag indicating whether the plugin is in enabled mode or disabled mode.
@@ -3447,12 +2948,6 @@ func (o GetManagementAgentsManagementAgentPluginListArrayOutput) ToGetManagement
 
 func (o GetManagementAgentsManagementAgentPluginListArrayOutput) ToGetManagementAgentsManagementAgentPluginListArrayOutputWithContext(ctx context.Context) GetManagementAgentsManagementAgentPluginListArrayOutput {
 	return o
-}
-
-func (o GetManagementAgentsManagementAgentPluginListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentsManagementAgentPluginList] {
-	return pulumix.Output[[]GetManagementAgentsManagementAgentPluginList]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagementAgentsManagementAgentPluginListArrayOutput) Index(i pulumi.IntInput) GetManagementAgentsManagementAgentPluginListOutput {

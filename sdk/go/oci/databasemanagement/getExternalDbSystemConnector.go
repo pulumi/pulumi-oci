@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific External Db System Connector resource in Oracle Cloud Infrastructure Database Management service.
@@ -126,12 +125,6 @@ func (o LookupExternalDbSystemConnectorResultOutput) ToLookupExternalDbSystemCon
 
 func (o LookupExternalDbSystemConnectorResultOutput) ToLookupExternalDbSystemConnectorResultOutputWithContext(ctx context.Context) LookupExternalDbSystemConnectorResultOutput {
 	return o
-}
-
-func (o LookupExternalDbSystemConnectorResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupExternalDbSystemConnectorResult] {
-	return pulumix.Output[LookupExternalDbSystemConnectorResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.
@@ -131,12 +130,6 @@ func (o LookupAnalyticsInstanceResultOutput) ToLookupAnalyticsInstanceResultOutp
 
 func (o LookupAnalyticsInstanceResultOutput) ToLookupAnalyticsInstanceResultOutputWithContext(ctx context.Context) LookupAnalyticsInstanceResultOutput {
 	return o
-}
-
-func (o LookupAnalyticsInstanceResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAnalyticsInstanceResult] {
-	return pulumix.Output[LookupAnalyticsInstanceResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupAnalyticsInstanceResultOutput) AnalyticsInstanceId() pulumi.StringOutput {

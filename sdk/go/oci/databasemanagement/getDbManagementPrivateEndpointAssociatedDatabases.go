@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Db Management Private Endpoint Associated Databases in Oracle Cloud Infrastructure Database Management service.
@@ -112,12 +111,6 @@ func (o GetDbManagementPrivateEndpointAssociatedDatabasesResultOutput) ToGetDbMa
 
 func (o GetDbManagementPrivateEndpointAssociatedDatabasesResultOutput) ToGetDbManagementPrivateEndpointAssociatedDatabasesResultOutputWithContext(ctx context.Context) GetDbManagementPrivateEndpointAssociatedDatabasesResultOutput {
 	return o
-}
-
-func (o GetDbManagementPrivateEndpointAssociatedDatabasesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDbManagementPrivateEndpointAssociatedDatabasesResult] {
-	return pulumix.Output[GetDbManagementPrivateEndpointAssociatedDatabasesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of associated_database_collection.

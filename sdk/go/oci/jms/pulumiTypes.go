@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -57,12 +56,6 @@ func (i FleetInventoryLogArgs) ToFleetInventoryLogOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(FleetInventoryLogOutput)
 }
 
-func (i FleetInventoryLogArgs) ToOutput(ctx context.Context) pulumix.Output[FleetInventoryLog] {
-	return pulumix.Output[FleetInventoryLog]{
-		OutputState: i.ToFleetInventoryLogOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i FleetInventoryLogArgs) ToFleetInventoryLogPtrOutput() FleetInventoryLogPtrOutput {
 	return i.ToFleetInventoryLogPtrOutputWithContext(context.Background())
 }
@@ -104,12 +97,6 @@ func (i *fleetInventoryLogPtrType) ToFleetInventoryLogPtrOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(FleetInventoryLogPtrOutput)
 }
 
-func (i *fleetInventoryLogPtrType) ToOutput(ctx context.Context) pulumix.Output[*FleetInventoryLog] {
-	return pulumix.Output[*FleetInventoryLog]{
-		OutputState: i.ToFleetInventoryLogPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FleetInventoryLogOutput struct{ *pulumi.OutputState }
 
 func (FleetInventoryLogOutput) ElementType() reflect.Type {
@@ -132,12 +119,6 @@ func (o FleetInventoryLogOutput) ToFleetInventoryLogPtrOutputWithContext(ctx con
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v FleetInventoryLog) *FleetInventoryLog {
 		return &v
 	}).(FleetInventoryLogPtrOutput)
-}
-
-func (o FleetInventoryLogOutput) ToOutput(ctx context.Context) pulumix.Output[FleetInventoryLog] {
-	return pulumix.Output[FleetInventoryLog]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
@@ -165,12 +146,6 @@ func (o FleetInventoryLogPtrOutput) ToFleetInventoryLogPtrOutput() FleetInventor
 
 func (o FleetInventoryLogPtrOutput) ToFleetInventoryLogPtrOutputWithContext(ctx context.Context) FleetInventoryLogPtrOutput {
 	return o
-}
-
-func (o FleetInventoryLogPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*FleetInventoryLog] {
-	return pulumix.Output[*FleetInventoryLog]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FleetInventoryLogPtrOutput) Elem() FleetInventoryLogOutput {
@@ -249,12 +224,6 @@ func (i FleetOperationLogArgs) ToFleetOperationLogOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(FleetOperationLogOutput)
 }
 
-func (i FleetOperationLogArgs) ToOutput(ctx context.Context) pulumix.Output[FleetOperationLog] {
-	return pulumix.Output[FleetOperationLog]{
-		OutputState: i.ToFleetOperationLogOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i FleetOperationLogArgs) ToFleetOperationLogPtrOutput() FleetOperationLogPtrOutput {
 	return i.ToFleetOperationLogPtrOutputWithContext(context.Background())
 }
@@ -296,12 +265,6 @@ func (i *fleetOperationLogPtrType) ToFleetOperationLogPtrOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(FleetOperationLogPtrOutput)
 }
 
-func (i *fleetOperationLogPtrType) ToOutput(ctx context.Context) pulumix.Output[*FleetOperationLog] {
-	return pulumix.Output[*FleetOperationLog]{
-		OutputState: i.ToFleetOperationLogPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FleetOperationLogOutput struct{ *pulumi.OutputState }
 
 func (FleetOperationLogOutput) ElementType() reflect.Type {
@@ -324,12 +287,6 @@ func (o FleetOperationLogOutput) ToFleetOperationLogPtrOutputWithContext(ctx con
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v FleetOperationLog) *FleetOperationLog {
 		return &v
 	}).(FleetOperationLogPtrOutput)
-}
-
-func (o FleetOperationLogOutput) ToOutput(ctx context.Context) pulumix.Output[FleetOperationLog] {
-	return pulumix.Output[FleetOperationLog]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
@@ -357,12 +314,6 @@ func (o FleetOperationLogPtrOutput) ToFleetOperationLogPtrOutput() FleetOperatio
 
 func (o FleetOperationLogPtrOutput) ToFleetOperationLogPtrOutputWithContext(ctx context.Context) FleetOperationLogPtrOutput {
 	return o
-}
-
-func (o FleetOperationLogPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*FleetOperationLog] {
-	return pulumix.Output[*FleetOperationLog]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FleetOperationLogPtrOutput) Elem() FleetOperationLogOutput {
@@ -431,12 +382,6 @@ func (i GetAnnouncementsAnnouncementCollectionArgs) ToGetAnnouncementsAnnounceme
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnouncementsAnnouncementCollectionOutput)
 }
 
-func (i GetAnnouncementsAnnouncementCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAnnouncementsAnnouncementCollection] {
-	return pulumix.Output[GetAnnouncementsAnnouncementCollection]{
-		OutputState: i.ToGetAnnouncementsAnnouncementCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAnnouncementsAnnouncementCollectionArrayInput is an input type that accepts GetAnnouncementsAnnouncementCollectionArray and GetAnnouncementsAnnouncementCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAnnouncementsAnnouncementCollectionArrayInput` via:
 //
@@ -462,12 +407,6 @@ func (i GetAnnouncementsAnnouncementCollectionArray) ToGetAnnouncementsAnnouncem
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnouncementsAnnouncementCollectionArrayOutput)
 }
 
-func (i GetAnnouncementsAnnouncementCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnouncementsAnnouncementCollection] {
-	return pulumix.Output[[]GetAnnouncementsAnnouncementCollection]{
-		OutputState: i.ToGetAnnouncementsAnnouncementCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAnnouncementsAnnouncementCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAnnouncementsAnnouncementCollectionOutput) ElementType() reflect.Type {
@@ -480,12 +419,6 @@ func (o GetAnnouncementsAnnouncementCollectionOutput) ToGetAnnouncementsAnnounce
 
 func (o GetAnnouncementsAnnouncementCollectionOutput) ToGetAnnouncementsAnnouncementCollectionOutputWithContext(ctx context.Context) GetAnnouncementsAnnouncementCollectionOutput {
 	return o
-}
-
-func (o GetAnnouncementsAnnouncementCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnnouncementsAnnouncementCollection] {
-	return pulumix.Output[GetAnnouncementsAnnouncementCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of AnnouncementSummary items
@@ -507,12 +440,6 @@ func (o GetAnnouncementsAnnouncementCollectionArrayOutput) ToGetAnnouncementsAnn
 
 func (o GetAnnouncementsAnnouncementCollectionArrayOutput) ToGetAnnouncementsAnnouncementCollectionArrayOutputWithContext(ctx context.Context) GetAnnouncementsAnnouncementCollectionArrayOutput {
 	return o
-}
-
-func (o GetAnnouncementsAnnouncementCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnouncementsAnnouncementCollection] {
-	return pulumix.Output[[]GetAnnouncementsAnnouncementCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAnnouncementsAnnouncementCollectionArrayOutput) Index(i pulumi.IntInput) GetAnnouncementsAnnouncementCollectionOutput {
@@ -566,12 +493,6 @@ func (i GetAnnouncementsAnnouncementCollectionItemArgs) ToGetAnnouncementsAnnoun
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnouncementsAnnouncementCollectionItemOutput)
 }
 
-func (i GetAnnouncementsAnnouncementCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAnnouncementsAnnouncementCollectionItem] {
-	return pulumix.Output[GetAnnouncementsAnnouncementCollectionItem]{
-		OutputState: i.ToGetAnnouncementsAnnouncementCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAnnouncementsAnnouncementCollectionItemArrayInput is an input type that accepts GetAnnouncementsAnnouncementCollectionItemArray and GetAnnouncementsAnnouncementCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAnnouncementsAnnouncementCollectionItemArrayInput` via:
 //
@@ -597,12 +518,6 @@ func (i GetAnnouncementsAnnouncementCollectionItemArray) ToGetAnnouncementsAnnou
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnouncementsAnnouncementCollectionItemArrayOutput)
 }
 
-func (i GetAnnouncementsAnnouncementCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnouncementsAnnouncementCollectionItem] {
-	return pulumix.Output[[]GetAnnouncementsAnnouncementCollectionItem]{
-		OutputState: i.ToGetAnnouncementsAnnouncementCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAnnouncementsAnnouncementCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAnnouncementsAnnouncementCollectionItemOutput) ElementType() reflect.Type {
@@ -615,12 +530,6 @@ func (o GetAnnouncementsAnnouncementCollectionItemOutput) ToGetAnnouncementsAnno
 
 func (o GetAnnouncementsAnnouncementCollectionItemOutput) ToGetAnnouncementsAnnouncementCollectionItemOutputWithContext(ctx context.Context) GetAnnouncementsAnnouncementCollectionItemOutput {
 	return o
-}
-
-func (o GetAnnouncementsAnnouncementCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnnouncementsAnnouncementCollectionItem] {
-	return pulumix.Output[GetAnnouncementsAnnouncementCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique id of the announcement
@@ -655,12 +564,6 @@ func (o GetAnnouncementsAnnouncementCollectionItemArrayOutput) ToGetAnnouncement
 
 func (o GetAnnouncementsAnnouncementCollectionItemArrayOutput) ToGetAnnouncementsAnnouncementCollectionItemArrayOutputWithContext(ctx context.Context) GetAnnouncementsAnnouncementCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetAnnouncementsAnnouncementCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnouncementsAnnouncementCollectionItem] {
-	return pulumix.Output[[]GetAnnouncementsAnnouncementCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAnnouncementsAnnouncementCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAnnouncementsAnnouncementCollectionItemOutput {
@@ -704,12 +607,6 @@ func (i GetAnnouncementsFilterArgs) ToGetAnnouncementsFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnouncementsFilterOutput)
 }
 
-func (i GetAnnouncementsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAnnouncementsFilter] {
-	return pulumix.Output[GetAnnouncementsFilter]{
-		OutputState: i.ToGetAnnouncementsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAnnouncementsFilterArrayInput is an input type that accepts GetAnnouncementsFilterArray and GetAnnouncementsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAnnouncementsFilterArrayInput` via:
 //
@@ -735,12 +632,6 @@ func (i GetAnnouncementsFilterArray) ToGetAnnouncementsFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnouncementsFilterArrayOutput)
 }
 
-func (i GetAnnouncementsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnouncementsFilter] {
-	return pulumix.Output[[]GetAnnouncementsFilter]{
-		OutputState: i.ToGetAnnouncementsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAnnouncementsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAnnouncementsFilterOutput) ElementType() reflect.Type {
@@ -753,12 +644,6 @@ func (o GetAnnouncementsFilterOutput) ToGetAnnouncementsFilterOutput() GetAnnoun
 
 func (o GetAnnouncementsFilterOutput) ToGetAnnouncementsFilterOutputWithContext(ctx context.Context) GetAnnouncementsFilterOutput {
 	return o
-}
-
-func (o GetAnnouncementsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnnouncementsFilter] {
-	return pulumix.Output[GetAnnouncementsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAnnouncementsFilterOutput) Name() pulumi.StringOutput {
@@ -785,12 +670,6 @@ func (o GetAnnouncementsFilterArrayOutput) ToGetAnnouncementsFilterArrayOutput()
 
 func (o GetAnnouncementsFilterArrayOutput) ToGetAnnouncementsFilterArrayOutputWithContext(ctx context.Context) GetAnnouncementsFilterArrayOutput {
 	return o
-}
-
-func (o GetAnnouncementsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnouncementsFilter] {
-	return pulumix.Output[[]GetAnnouncementsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAnnouncementsFilterArrayOutput) Index(i pulumi.IntInput) GetAnnouncementsFilterOutput {
@@ -832,12 +711,6 @@ func (i GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs) ToGetFlee
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArray and GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput values.
 // You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayInput` via:
 //
@@ -863,12 +736,6 @@ func (i GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArray) ToGetFle
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput struct{ *pulumi.OutputState }
 
 func (GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput) ElementType() reflect.Type {
@@ -881,12 +748,6 @@ func (o GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput) ToGetFl
 
 func (o GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput) ToGetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput {
 	return o
-}
-
-func (o GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking]{
-		OutputState: o.OutputState,
-	}
 }
 
 // PerformanceTuningAnalysis flag to store enabled or disabled status.
@@ -906,12 +767,6 @@ func (o GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput) To
 
 func (o GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput) ToGetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput {
 	return o
-}
-
-func (o GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput {
@@ -957,12 +812,6 @@ func (i GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs) ToGetFleetA
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArray and GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput values.
 // You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayInput` via:
 //
@@ -988,12 +837,6 @@ func (i GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArray) ToGetFleet
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput struct{ *pulumi.OutputState }
 
 func (GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput) ElementType() reflect.Type {
@@ -1006,12 +849,6 @@ func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput) ToGetFlee
 
 func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput) ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput {
 	return o
-}
-
-func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis]{
-		OutputState: o.OutputState,
-	}
 }
 
 // PerformanceTuningAnalysis flag to store enabled or disabled status.
@@ -1038,12 +875,6 @@ func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput) ToGe
 
 func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput) ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput {
 	return o
-}
-
-func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput {
@@ -1089,12 +920,6 @@ func (i GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsL
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArray and GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutput values.
 // You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayInput` via:
 //
@@ -1120,12 +945,6 @@ func (i GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsL
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput struct{ *pulumi.OutputState }
 
 func (GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput) ElementType() reflect.Type {
@@ -1138,12 +957,6 @@ func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsL
 
 func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput) ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput {
 	return o
-}
-
-func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
@@ -1172,12 +985,6 @@ func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsL
 
 func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutput) ToGetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutput {
 	return o
-}
-
-func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput {
@@ -1219,12 +1026,6 @@ func (i GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs) ToGetFlee
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArray and GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput values.
 // You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayInput` via:
 //
@@ -1250,12 +1051,6 @@ func (i GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArray) ToGetFle
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput struct{ *pulumi.OutputState }
 
 func (GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput) ElementType() reflect.Type {
@@ -1268,12 +1063,6 @@ func (o GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput) ToGetFl
 
 func (o GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput) ToGetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput {
 	return o
-}
-
-func (o GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis]{
-		OutputState: o.OutputState,
-	}
 }
 
 // PerformanceTuningAnalysis flag to store enabled or disabled status.
@@ -1293,12 +1082,6 @@ func (o GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput) To
 
 func (o GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput) ToGetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput {
 	return o
-}
-
-func (o GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput {
@@ -1340,12 +1123,6 @@ func (i GetFleetAdvancedFeatureConfigurationJfrRecordingArgs) ToGetFleetAdvanced
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationJfrRecordingOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationJfrRecordingArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationJfrRecording] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationJfrRecording]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationJfrRecordingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetAdvancedFeatureConfigurationJfrRecordingArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationJfrRecordingArray and GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput values.
 // You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationJfrRecordingArrayInput` via:
 //
@@ -1371,12 +1148,6 @@ func (i GetFleetAdvancedFeatureConfigurationJfrRecordingArray) ToGetFleetAdvance
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationJfrRecordingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationJfrRecording] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationJfrRecording]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetAdvancedFeatureConfigurationJfrRecordingOutput struct{ *pulumi.OutputState }
 
 func (GetFleetAdvancedFeatureConfigurationJfrRecordingOutput) ElementType() reflect.Type {
@@ -1389,12 +1160,6 @@ func (o GetFleetAdvancedFeatureConfigurationJfrRecordingOutput) ToGetFleetAdvanc
 
 func (o GetFleetAdvancedFeatureConfigurationJfrRecordingOutput) ToGetFleetAdvancedFeatureConfigurationJfrRecordingOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationJfrRecordingOutput {
 	return o
-}
-
-func (o GetFleetAdvancedFeatureConfigurationJfrRecordingOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationJfrRecording] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationJfrRecording]{
-		OutputState: o.OutputState,
-	}
 }
 
 // PerformanceTuningAnalysis flag to store enabled or disabled status.
@@ -1414,12 +1179,6 @@ func (o GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput) ToGetFleetA
 
 func (o GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput) ToGetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput {
 	return o
-}
-
-func (o GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationJfrRecording] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationJfrRecording]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationJfrRecordingOutput {
@@ -1465,12 +1224,6 @@ func (i GetFleetAdvancedFeatureConfigurationLcmArgs) ToGetFleetAdvancedFeatureCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationLcmArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationLcm] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationLcm]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationLcmOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetAdvancedFeatureConfigurationLcmArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmArray and GetFleetAdvancedFeatureConfigurationLcmArrayOutput values.
 // You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationLcmArrayInput` via:
 //
@@ -1496,12 +1249,6 @@ func (i GetFleetAdvancedFeatureConfigurationLcmArray) ToGetFleetAdvancedFeatureC
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmArrayOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationLcmArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcm] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcm]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationLcmArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetAdvancedFeatureConfigurationLcmOutput struct{ *pulumi.OutputState }
 
 func (GetFleetAdvancedFeatureConfigurationLcmOutput) ElementType() reflect.Type {
@@ -1514,12 +1261,6 @@ func (o GetFleetAdvancedFeatureConfigurationLcmOutput) ToGetFleetAdvancedFeature
 
 func (o GetFleetAdvancedFeatureConfigurationLcmOutput) ToGetFleetAdvancedFeatureConfigurationLcmOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmOutput {
 	return o
-}
-
-func (o GetFleetAdvancedFeatureConfigurationLcmOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationLcm] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationLcm]{
-		OutputState: o.OutputState,
-	}
 }
 
 // PerformanceTuningAnalysis flag to store enabled or disabled status.
@@ -1546,12 +1287,6 @@ func (o GetFleetAdvancedFeatureConfigurationLcmArrayOutput) ToGetFleetAdvancedFe
 
 func (o GetFleetAdvancedFeatureConfigurationLcmArrayOutput) ToGetFleetAdvancedFeatureConfigurationLcmArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmArrayOutput {
 	return o
-}
-
-func (o GetFleetAdvancedFeatureConfigurationLcmArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcm] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcm]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetAdvancedFeatureConfigurationLcmArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationLcmOutput {
@@ -1617,12 +1352,6 @@ func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArray and GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput values.
 // You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayInput` via:
 //
@@ -1648,12 +1377,6 @@ func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput struct{ *pulumi.OutputState }
 
 func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput) ElementType() reflect.Type {
@@ -1666,12 +1389,6 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput) ToG
 
 func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput {
 	return o
-}
-
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
@@ -1728,12 +1445,6 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput
 
 func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput {
 	return o
-}
-
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionOutput {
@@ -1797,12 +1508,6 @@ func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArray and GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutput values.
 // You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayInput` via:
 //
@@ -1828,12 +1533,6 @@ func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput struct{ *pulumi.OutputState }
 
 func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput) ElementType() reflect.Type {
@@ -1846,12 +1545,6 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 
 func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput {
 	return o
-}
-
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.certpath.disabledAlgorithms will be updated with the following supported actions:
@@ -1894,12 +1587,6 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 
 func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutput {
 	return o
-}
-
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingOutput {
@@ -1945,12 +1632,6 @@ func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArray and GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutput values.
 // You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayInput` via:
 //
@@ -1976,12 +1657,6 @@ func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput struct{ *pulumi.OutputState }
 
 func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput) ElementType() reflect.Type {
@@ -1994,12 +1669,6 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 
 func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput {
 	return o
-}
-
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
@@ -2028,12 +1697,6 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 
 func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutput {
 	return o
-}
-
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathOutput {
@@ -2079,12 +1742,6 @@ func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArray and GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutput values.
 // You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayInput` via:
 //
@@ -2110,12 +1767,6 @@ func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput struct{ *pulumi.OutputState }
 
 func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput) ElementType() reflect.Type {
@@ -2128,12 +1779,6 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 
 func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput {
 	return o
-}
-
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
@@ -2162,12 +1807,6 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 
 func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutput {
 	return o
-}
-
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarOutput {
@@ -2213,12 +1852,6 @@ func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArray and GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutput values.
 // You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayInput` via:
 //
@@ -2244,12 +1877,6 @@ func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput struct{ *pulumi.OutputState }
 
 func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput) ElementType() reflect.Type {
@@ -2262,12 +1889,6 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 
 func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput {
 	return o
-}
-
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
@@ -2296,12 +1917,6 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeyS
 
 func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutput {
 	return o
-}
-
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlOutput {
@@ -2375,12 +1990,6 @@ func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArgs) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArray and GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutput values.
 // You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayInput` via:
 //
@@ -2406,12 +2015,6 @@ func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArray)
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput struct{ *pulumi.OutputState }
 
 func (GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) ElementType() reflect.Type {
@@ -2424,12 +2027,6 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput
 
 func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) ToGetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput {
 	return o
-}
-
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Ftp host to be set in net.properties file.
@@ -2505,12 +2102,6 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayO
 	return o
 }
 
-func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy {
 		return vs[0].([]GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy)[vs[1].(int)]
@@ -2550,12 +2141,6 @@ func (i GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayInput is an input type that accepts GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArray and GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput values.
 // You can construct a concrete instance of `GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayInput` via:
 //
@@ -2581,12 +2166,6 @@ func (i GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput)
 }
 
-func (i GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis]{
-		OutputState: i.ToGetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput struct{ *pulumi.OutputState }
 
 func (GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput) ElementType() reflect.Type {
@@ -2599,12 +2178,6 @@ func (o GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput) ToG
 
 func (o GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput) ToGetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput {
 	return o
-}
-
-func (o GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis]{
-		OutputState: o.OutputState,
-	}
 }
 
 // PerformanceTuningAnalysis flag to store enabled or disabled status.
@@ -2624,12 +2197,6 @@ func (o GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput
 
 func (o GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput) ToGetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput {
 	return o
-}
-
-func (o GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis] {
-	return pulumix.Output[[]GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput) Index(i pulumi.IntInput) GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput {
@@ -2673,12 +2240,6 @@ func (i GetFleetBlocklistsFilterArgs) ToGetFleetBlocklistsFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetBlocklistsFilterOutput)
 }
 
-func (i GetFleetBlocklistsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetBlocklistsFilter] {
-	return pulumix.Output[GetFleetBlocklistsFilter]{
-		OutputState: i.ToGetFleetBlocklistsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetBlocklistsFilterArrayInput is an input type that accepts GetFleetBlocklistsFilterArray and GetFleetBlocklistsFilterArrayOutput values.
 // You can construct a concrete instance of `GetFleetBlocklistsFilterArrayInput` via:
 //
@@ -2704,12 +2265,6 @@ func (i GetFleetBlocklistsFilterArray) ToGetFleetBlocklistsFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetBlocklistsFilterArrayOutput)
 }
 
-func (i GetFleetBlocklistsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetBlocklistsFilter] {
-	return pulumix.Output[[]GetFleetBlocklistsFilter]{
-		OutputState: i.ToGetFleetBlocklistsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetBlocklistsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetFleetBlocklistsFilterOutput) ElementType() reflect.Type {
@@ -2722,12 +2277,6 @@ func (o GetFleetBlocklistsFilterOutput) ToGetFleetBlocklistsFilterOutput() GetFl
 
 func (o GetFleetBlocklistsFilterOutput) ToGetFleetBlocklistsFilterOutputWithContext(ctx context.Context) GetFleetBlocklistsFilterOutput {
 	return o
-}
-
-func (o GetFleetBlocklistsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetBlocklistsFilter] {
-	return pulumix.Output[GetFleetBlocklistsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetBlocklistsFilterOutput) Name() pulumi.StringOutput {
@@ -2754,12 +2303,6 @@ func (o GetFleetBlocklistsFilterArrayOutput) ToGetFleetBlocklistsFilterArrayOutp
 
 func (o GetFleetBlocklistsFilterArrayOutput) ToGetFleetBlocklistsFilterArrayOutputWithContext(ctx context.Context) GetFleetBlocklistsFilterArrayOutput {
 	return o
-}
-
-func (o GetFleetBlocklistsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetBlocklistsFilter] {
-	return pulumix.Output[[]GetFleetBlocklistsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetBlocklistsFilterArrayOutput) Index(i pulumi.IntInput) GetFleetBlocklistsFilterOutput {
@@ -2813,12 +2356,6 @@ func (i GetFleetBlocklistsItemArgs) ToGetFleetBlocklistsItemOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetBlocklistsItemOutput)
 }
 
-func (i GetFleetBlocklistsItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetBlocklistsItem] {
-	return pulumix.Output[GetFleetBlocklistsItem]{
-		OutputState: i.ToGetFleetBlocklistsItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetBlocklistsItemArrayInput is an input type that accepts GetFleetBlocklistsItemArray and GetFleetBlocklistsItemArrayOutput values.
 // You can construct a concrete instance of `GetFleetBlocklistsItemArrayInput` via:
 //
@@ -2844,12 +2381,6 @@ func (i GetFleetBlocklistsItemArray) ToGetFleetBlocklistsItemArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetBlocklistsItemArrayOutput)
 }
 
-func (i GetFleetBlocklistsItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetBlocklistsItem] {
-	return pulumix.Output[[]GetFleetBlocklistsItem]{
-		OutputState: i.ToGetFleetBlocklistsItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetBlocklistsItemOutput struct{ *pulumi.OutputState }
 
 func (GetFleetBlocklistsItemOutput) ElementType() reflect.Type {
@@ -2862,12 +2393,6 @@ func (o GetFleetBlocklistsItemOutput) ToGetFleetBlocklistsItemOutput() GetFleetB
 
 func (o GetFleetBlocklistsItemOutput) ToGetFleetBlocklistsItemOutputWithContext(ctx context.Context) GetFleetBlocklistsItemOutput {
 	return o
-}
-
-func (o GetFleetBlocklistsItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetBlocklistsItem] {
-	return pulumix.Output[GetFleetBlocklistsItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The unique identifier of this blocklist record.
@@ -2902,12 +2427,6 @@ func (o GetFleetBlocklistsItemArrayOutput) ToGetFleetBlocklistsItemArrayOutput()
 
 func (o GetFleetBlocklistsItemArrayOutput) ToGetFleetBlocklistsItemArrayOutputWithContext(ctx context.Context) GetFleetBlocklistsItemArrayOutput {
 	return o
-}
-
-func (o GetFleetBlocklistsItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetBlocklistsItem] {
-	return pulumix.Output[[]GetFleetBlocklistsItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetBlocklistsItemArrayOutput) Index(i pulumi.IntInput) GetFleetBlocklistsItemOutput {
@@ -2957,12 +2476,6 @@ func (i GetFleetBlocklistsItemTargetArgs) ToGetFleetBlocklistsItemTargetOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetBlocklistsItemTargetOutput)
 }
 
-func (i GetFleetBlocklistsItemTargetArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetBlocklistsItemTarget] {
-	return pulumix.Output[GetFleetBlocklistsItemTarget]{
-		OutputState: i.ToGetFleetBlocklistsItemTargetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetBlocklistsItemTargetArrayInput is an input type that accepts GetFleetBlocklistsItemTargetArray and GetFleetBlocklistsItemTargetArrayOutput values.
 // You can construct a concrete instance of `GetFleetBlocklistsItemTargetArrayInput` via:
 //
@@ -2988,12 +2501,6 @@ func (i GetFleetBlocklistsItemTargetArray) ToGetFleetBlocklistsItemTargetArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetBlocklistsItemTargetArrayOutput)
 }
 
-func (i GetFleetBlocklistsItemTargetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetBlocklistsItemTarget] {
-	return pulumix.Output[[]GetFleetBlocklistsItemTarget]{
-		OutputState: i.ToGetFleetBlocklistsItemTargetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetBlocklistsItemTargetOutput struct{ *pulumi.OutputState }
 
 func (GetFleetBlocklistsItemTargetOutput) ElementType() reflect.Type {
@@ -3006,12 +2513,6 @@ func (o GetFleetBlocklistsItemTargetOutput) ToGetFleetBlocklistsItemTargetOutput
 
 func (o GetFleetBlocklistsItemTargetOutput) ToGetFleetBlocklistsItemTargetOutputWithContext(ctx context.Context) GetFleetBlocklistsItemTargetOutput {
 	return o
-}
-
-func (o GetFleetBlocklistsItemTargetOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetBlocklistsItemTarget] {
-	return pulumix.Output[GetFleetBlocklistsItemTarget]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
@@ -3041,12 +2542,6 @@ func (o GetFleetBlocklistsItemTargetArrayOutput) ToGetFleetBlocklistsItemTargetA
 
 func (o GetFleetBlocklistsItemTargetArrayOutput) ToGetFleetBlocklistsItemTargetArrayOutputWithContext(ctx context.Context) GetFleetBlocklistsItemTargetArrayOutput {
 	return o
-}
-
-func (o GetFleetBlocklistsItemTargetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetBlocklistsItemTarget] {
-	return pulumix.Output[[]GetFleetBlocklistsItemTarget]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetBlocklistsItemTargetArrayOutput) Index(i pulumi.IntInput) GetFleetBlocklistsItemTargetOutput {
@@ -3086,12 +2581,6 @@ func (i GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArgs) ToGetFl
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput)
 }
 
-func (i GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection] {
-	return pulumix.Output[GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection]{
-		OutputState: i.ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayInput is an input type that accepts GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArray and GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutput values.
 // You can construct a concrete instance of `GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayInput` via:
 //
@@ -3117,12 +2606,6 @@ func (i GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArray) ToGetF
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutput)
 }
 
-func (i GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection] {
-	return pulumix.Output[[]GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection]{
-		OutputState: i.ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput) ElementType() reflect.Type {
@@ -3135,12 +2618,6 @@ func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput) ToGet
 
 func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput) ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutputWithContext(ctx context.Context) GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput {
 	return o
-}
-
-func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection] {
-	return pulumix.Output[GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput) Items() GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput {
@@ -3161,12 +2638,6 @@ func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutput) 
 
 func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutput) ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutputWithContext(ctx context.Context) GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutput {
 	return o
-}
-
-func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection] {
-	return pulumix.Output[[]GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutput) Index(i pulumi.IntInput) GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput {
@@ -3272,12 +2743,6 @@ func (i GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArgs) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput)
 }
 
-func (i GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem] {
-	return pulumix.Output[GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem]{
-		OutputState: i.ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayInput is an input type that accepts GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArray and GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayInput` via:
 //
@@ -3303,12 +2768,6 @@ func (i GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput)
 }
 
-func (i GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem] {
-	return pulumix.Output[[]GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem]{
-		OutputState: i.ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) ElementType() reflect.Type {
@@ -3321,12 +2780,6 @@ func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) T
 
 func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) ToGetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutputWithContext(ctx context.Context) GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput {
 	return o
-}
-
-func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem] {
-	return pulumix.Output[GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The aggregation mode of the crypto event analysis result.
@@ -3440,12 +2893,6 @@ func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutp
 	return o
 }
 
-func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem] {
-	return pulumix.Output[[]GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem {
 		return vs[0].([]GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem)[vs[1].(int)]
@@ -3487,12 +2934,6 @@ func (i GetFleetCryptoAnalysisResultsFilterArgs) ToGetFleetCryptoAnalysisResults
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetCryptoAnalysisResultsFilterOutput)
 }
 
-func (i GetFleetCryptoAnalysisResultsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetCryptoAnalysisResultsFilter] {
-	return pulumix.Output[GetFleetCryptoAnalysisResultsFilter]{
-		OutputState: i.ToGetFleetCryptoAnalysisResultsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetCryptoAnalysisResultsFilterArrayInput is an input type that accepts GetFleetCryptoAnalysisResultsFilterArray and GetFleetCryptoAnalysisResultsFilterArrayOutput values.
 // You can construct a concrete instance of `GetFleetCryptoAnalysisResultsFilterArrayInput` via:
 //
@@ -3518,12 +2959,6 @@ func (i GetFleetCryptoAnalysisResultsFilterArray) ToGetFleetCryptoAnalysisResult
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetCryptoAnalysisResultsFilterArrayOutput)
 }
 
-func (i GetFleetCryptoAnalysisResultsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetCryptoAnalysisResultsFilter] {
-	return pulumix.Output[[]GetFleetCryptoAnalysisResultsFilter]{
-		OutputState: i.ToGetFleetCryptoAnalysisResultsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetCryptoAnalysisResultsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetFleetCryptoAnalysisResultsFilterOutput) ElementType() reflect.Type {
@@ -3536,12 +2971,6 @@ func (o GetFleetCryptoAnalysisResultsFilterOutput) ToGetFleetCryptoAnalysisResul
 
 func (o GetFleetCryptoAnalysisResultsFilterOutput) ToGetFleetCryptoAnalysisResultsFilterOutputWithContext(ctx context.Context) GetFleetCryptoAnalysisResultsFilterOutput {
 	return o
-}
-
-func (o GetFleetCryptoAnalysisResultsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetCryptoAnalysisResultsFilter] {
-	return pulumix.Output[GetFleetCryptoAnalysisResultsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetCryptoAnalysisResultsFilterOutput) Name() pulumi.StringOutput {
@@ -3568,12 +2997,6 @@ func (o GetFleetCryptoAnalysisResultsFilterArrayOutput) ToGetFleetCryptoAnalysis
 
 func (o GetFleetCryptoAnalysisResultsFilterArrayOutput) ToGetFleetCryptoAnalysisResultsFilterArrayOutputWithContext(ctx context.Context) GetFleetCryptoAnalysisResultsFilterArrayOutput {
 	return o
-}
-
-func (o GetFleetCryptoAnalysisResultsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetCryptoAnalysisResultsFilter] {
-	return pulumix.Output[[]GetFleetCryptoAnalysisResultsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetCryptoAnalysisResultsFilterArrayOutput) Index(i pulumi.IntInput) GetFleetCryptoAnalysisResultsFilterOutput {
@@ -3617,12 +3040,6 @@ func (i GetFleetDiagnosesFilterArgs) ToGetFleetDiagnosesFilterOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetDiagnosesFilterOutput)
 }
 
-func (i GetFleetDiagnosesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetDiagnosesFilter] {
-	return pulumix.Output[GetFleetDiagnosesFilter]{
-		OutputState: i.ToGetFleetDiagnosesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetDiagnosesFilterArrayInput is an input type that accepts GetFleetDiagnosesFilterArray and GetFleetDiagnosesFilterArrayOutput values.
 // You can construct a concrete instance of `GetFleetDiagnosesFilterArrayInput` via:
 //
@@ -3648,12 +3065,6 @@ func (i GetFleetDiagnosesFilterArray) ToGetFleetDiagnosesFilterArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetDiagnosesFilterArrayOutput)
 }
 
-func (i GetFleetDiagnosesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetDiagnosesFilter] {
-	return pulumix.Output[[]GetFleetDiagnosesFilter]{
-		OutputState: i.ToGetFleetDiagnosesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetDiagnosesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetFleetDiagnosesFilterOutput) ElementType() reflect.Type {
@@ -3666,12 +3077,6 @@ func (o GetFleetDiagnosesFilterOutput) ToGetFleetDiagnosesFilterOutput() GetFlee
 
 func (o GetFleetDiagnosesFilterOutput) ToGetFleetDiagnosesFilterOutputWithContext(ctx context.Context) GetFleetDiagnosesFilterOutput {
 	return o
-}
-
-func (o GetFleetDiagnosesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetDiagnosesFilter] {
-	return pulumix.Output[GetFleetDiagnosesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetDiagnosesFilterOutput) Name() pulumi.StringOutput {
@@ -3698,12 +3103,6 @@ func (o GetFleetDiagnosesFilterArrayOutput) ToGetFleetDiagnosesFilterArrayOutput
 
 func (o GetFleetDiagnosesFilterArrayOutput) ToGetFleetDiagnosesFilterArrayOutputWithContext(ctx context.Context) GetFleetDiagnosesFilterArrayOutput {
 	return o
-}
-
-func (o GetFleetDiagnosesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetDiagnosesFilter] {
-	return pulumix.Output[[]GetFleetDiagnosesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetDiagnosesFilterArrayOutput) Index(i pulumi.IntInput) GetFleetDiagnosesFilterOutput {
@@ -3745,12 +3144,6 @@ func (i GetFleetDiagnosesFleetDiagnosisCollectionArgs) ToGetFleetDiagnosesFleetD
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetDiagnosesFleetDiagnosisCollectionOutput)
 }
 
-func (i GetFleetDiagnosesFleetDiagnosisCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetDiagnosesFleetDiagnosisCollection] {
-	return pulumix.Output[GetFleetDiagnosesFleetDiagnosisCollection]{
-		OutputState: i.ToGetFleetDiagnosesFleetDiagnosisCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetDiagnosesFleetDiagnosisCollectionArrayInput is an input type that accepts GetFleetDiagnosesFleetDiagnosisCollectionArray and GetFleetDiagnosesFleetDiagnosisCollectionArrayOutput values.
 // You can construct a concrete instance of `GetFleetDiagnosesFleetDiagnosisCollectionArrayInput` via:
 //
@@ -3776,12 +3169,6 @@ func (i GetFleetDiagnosesFleetDiagnosisCollectionArray) ToGetFleetDiagnosesFleet
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetDiagnosesFleetDiagnosisCollectionArrayOutput)
 }
 
-func (i GetFleetDiagnosesFleetDiagnosisCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetDiagnosesFleetDiagnosisCollection] {
-	return pulumix.Output[[]GetFleetDiagnosesFleetDiagnosisCollection]{
-		OutputState: i.ToGetFleetDiagnosesFleetDiagnosisCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetDiagnosesFleetDiagnosisCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetFleetDiagnosesFleetDiagnosisCollectionOutput) ElementType() reflect.Type {
@@ -3794,12 +3181,6 @@ func (o GetFleetDiagnosesFleetDiagnosisCollectionOutput) ToGetFleetDiagnosesFlee
 
 func (o GetFleetDiagnosesFleetDiagnosisCollectionOutput) ToGetFleetDiagnosesFleetDiagnosisCollectionOutputWithContext(ctx context.Context) GetFleetDiagnosesFleetDiagnosisCollectionOutput {
 	return o
-}
-
-func (o GetFleetDiagnosesFleetDiagnosisCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetDiagnosesFleetDiagnosisCollection] {
-	return pulumix.Output[GetFleetDiagnosesFleetDiagnosisCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of the fleet resource diagnosis.
@@ -3821,12 +3202,6 @@ func (o GetFleetDiagnosesFleetDiagnosisCollectionArrayOutput) ToGetFleetDiagnose
 
 func (o GetFleetDiagnosesFleetDiagnosisCollectionArrayOutput) ToGetFleetDiagnosesFleetDiagnosisCollectionArrayOutputWithContext(ctx context.Context) GetFleetDiagnosesFleetDiagnosisCollectionArrayOutput {
 	return o
-}
-
-func (o GetFleetDiagnosesFleetDiagnosisCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetDiagnosesFleetDiagnosisCollection] {
-	return pulumix.Output[[]GetFleetDiagnosesFleetDiagnosisCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetDiagnosesFleetDiagnosisCollectionArrayOutput) Index(i pulumi.IntInput) GetFleetDiagnosesFleetDiagnosisCollectionOutput {
@@ -3880,12 +3255,6 @@ func (i GetFleetDiagnosesFleetDiagnosisCollectionItemArgs) ToGetFleetDiagnosesFl
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetDiagnosesFleetDiagnosisCollectionItemOutput)
 }
 
-func (i GetFleetDiagnosesFleetDiagnosisCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetDiagnosesFleetDiagnosisCollectionItem] {
-	return pulumix.Output[GetFleetDiagnosesFleetDiagnosisCollectionItem]{
-		OutputState: i.ToGetFleetDiagnosesFleetDiagnosisCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetDiagnosesFleetDiagnosisCollectionItemArrayInput is an input type that accepts GetFleetDiagnosesFleetDiagnosisCollectionItemArray and GetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetFleetDiagnosesFleetDiagnosisCollectionItemArrayInput` via:
 //
@@ -3911,12 +3280,6 @@ func (i GetFleetDiagnosesFleetDiagnosisCollectionItemArray) ToGetFleetDiagnosesF
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput)
 }
 
-func (i GetFleetDiagnosesFleetDiagnosisCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetDiagnosesFleetDiagnosisCollectionItem] {
-	return pulumix.Output[[]GetFleetDiagnosesFleetDiagnosisCollectionItem]{
-		OutputState: i.ToGetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetDiagnosesFleetDiagnosisCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetFleetDiagnosesFleetDiagnosisCollectionItemOutput) ElementType() reflect.Type {
@@ -3929,12 +3292,6 @@ func (o GetFleetDiagnosesFleetDiagnosisCollectionItemOutput) ToGetFleetDiagnoses
 
 func (o GetFleetDiagnosesFleetDiagnosisCollectionItemOutput) ToGetFleetDiagnosesFleetDiagnosisCollectionItemOutputWithContext(ctx context.Context) GetFleetDiagnosesFleetDiagnosisCollectionItemOutput {
 	return o
-}
-
-func (o GetFleetDiagnosesFleetDiagnosisCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetDiagnosesFleetDiagnosisCollectionItem] {
-	return pulumix.Output[GetFleetDiagnosesFleetDiagnosisCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The diagnosis message.
@@ -3969,12 +3326,6 @@ func (o GetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput) ToGetFleetDiag
 
 func (o GetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput) ToGetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutputWithContext(ctx context.Context) GetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetDiagnosesFleetDiagnosisCollectionItem] {
-	return pulumix.Output[[]GetFleetDiagnosesFleetDiagnosisCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFleetDiagnosesFleetDiagnosisCollectionItemOutput {
@@ -4020,12 +3371,6 @@ func (i GetFleetInventoryLogArgs) ToGetFleetInventoryLogOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetInventoryLogOutput)
 }
 
-func (i GetFleetInventoryLogArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetInventoryLog] {
-	return pulumix.Output[GetFleetInventoryLog]{
-		OutputState: i.ToGetFleetInventoryLogOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetInventoryLogArrayInput is an input type that accepts GetFleetInventoryLogArray and GetFleetInventoryLogArrayOutput values.
 // You can construct a concrete instance of `GetFleetInventoryLogArrayInput` via:
 //
@@ -4051,12 +3396,6 @@ func (i GetFleetInventoryLogArray) ToGetFleetInventoryLogArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetInventoryLogArrayOutput)
 }
 
-func (i GetFleetInventoryLogArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetInventoryLog] {
-	return pulumix.Output[[]GetFleetInventoryLog]{
-		OutputState: i.ToGetFleetInventoryLogArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetInventoryLogOutput struct{ *pulumi.OutputState }
 
 func (GetFleetInventoryLogOutput) ElementType() reflect.Type {
@@ -4069,12 +3408,6 @@ func (o GetFleetInventoryLogOutput) ToGetFleetInventoryLogOutput() GetFleetInven
 
 func (o GetFleetInventoryLogOutput) ToGetFleetInventoryLogOutputWithContext(ctx context.Context) GetFleetInventoryLogOutput {
 	return o
-}
-
-func (o GetFleetInventoryLogOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetInventoryLog] {
-	return pulumix.Output[GetFleetInventoryLog]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
@@ -4099,12 +3432,6 @@ func (o GetFleetInventoryLogArrayOutput) ToGetFleetInventoryLogArrayOutput() Get
 
 func (o GetFleetInventoryLogArrayOutput) ToGetFleetInventoryLogArrayOutputWithContext(ctx context.Context) GetFleetInventoryLogArrayOutput {
 	return o
-}
-
-func (o GetFleetInventoryLogArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetInventoryLog] {
-	return pulumix.Output[[]GetFleetInventoryLog]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetInventoryLogArrayOutput) Index(i pulumi.IntInput) GetFleetInventoryLogOutput {
@@ -4148,12 +3475,6 @@ func (i GetFleetJavaMigrationAnalysisResultsFilterArgs) ToGetFleetJavaMigrationA
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetJavaMigrationAnalysisResultsFilterOutput)
 }
 
-func (i GetFleetJavaMigrationAnalysisResultsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetJavaMigrationAnalysisResultsFilter] {
-	return pulumix.Output[GetFleetJavaMigrationAnalysisResultsFilter]{
-		OutputState: i.ToGetFleetJavaMigrationAnalysisResultsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetJavaMigrationAnalysisResultsFilterArrayInput is an input type that accepts GetFleetJavaMigrationAnalysisResultsFilterArray and GetFleetJavaMigrationAnalysisResultsFilterArrayOutput values.
 // You can construct a concrete instance of `GetFleetJavaMigrationAnalysisResultsFilterArrayInput` via:
 //
@@ -4179,12 +3500,6 @@ func (i GetFleetJavaMigrationAnalysisResultsFilterArray) ToGetFleetJavaMigration
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetJavaMigrationAnalysisResultsFilterArrayOutput)
 }
 
-func (i GetFleetJavaMigrationAnalysisResultsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetJavaMigrationAnalysisResultsFilter] {
-	return pulumix.Output[[]GetFleetJavaMigrationAnalysisResultsFilter]{
-		OutputState: i.ToGetFleetJavaMigrationAnalysisResultsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetJavaMigrationAnalysisResultsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetFleetJavaMigrationAnalysisResultsFilterOutput) ElementType() reflect.Type {
@@ -4197,12 +3512,6 @@ func (o GetFleetJavaMigrationAnalysisResultsFilterOutput) ToGetFleetJavaMigratio
 
 func (o GetFleetJavaMigrationAnalysisResultsFilterOutput) ToGetFleetJavaMigrationAnalysisResultsFilterOutputWithContext(ctx context.Context) GetFleetJavaMigrationAnalysisResultsFilterOutput {
 	return o
-}
-
-func (o GetFleetJavaMigrationAnalysisResultsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetJavaMigrationAnalysisResultsFilter] {
-	return pulumix.Output[GetFleetJavaMigrationAnalysisResultsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetJavaMigrationAnalysisResultsFilterOutput) Name() pulumi.StringOutput {
@@ -4229,12 +3538,6 @@ func (o GetFleetJavaMigrationAnalysisResultsFilterArrayOutput) ToGetFleetJavaMig
 
 func (o GetFleetJavaMigrationAnalysisResultsFilterArrayOutput) ToGetFleetJavaMigrationAnalysisResultsFilterArrayOutputWithContext(ctx context.Context) GetFleetJavaMigrationAnalysisResultsFilterArrayOutput {
 	return o
-}
-
-func (o GetFleetJavaMigrationAnalysisResultsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetJavaMigrationAnalysisResultsFilter] {
-	return pulumix.Output[[]GetFleetJavaMigrationAnalysisResultsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetJavaMigrationAnalysisResultsFilterArrayOutput) Index(i pulumi.IntInput) GetFleetJavaMigrationAnalysisResultsFilterOutput {
@@ -4274,12 +3577,6 @@ func (i GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectio
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput)
 }
 
-func (i GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection] {
-	return pulumix.Output[GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection]{
-		OutputState: i.ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayInput is an input type that accepts GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArray and GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutput values.
 // You can construct a concrete instance of `GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayInput` via:
 //
@@ -4305,12 +3602,6 @@ func (i GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectio
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutput)
 }
 
-func (i GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection] {
-	return pulumix.Output[[]GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection]{
-		OutputState: i.ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput) ElementType() reflect.Type {
@@ -4323,12 +3614,6 @@ func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectio
 
 func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput) ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutputWithContext(ctx context.Context) GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput {
 	return o
-}
-
-func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection] {
-	return pulumix.Output[GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput) Items() GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutput {
@@ -4349,12 +3634,6 @@ func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectio
 
 func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutput) ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutputWithContext(ctx context.Context) GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutput {
 	return o
-}
-
-func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection] {
-	return pulumix.Output[[]GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutput) Index(i pulumi.IntInput) GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionOutput {
@@ -4456,12 +3735,6 @@ func (i GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectio
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput)
 }
 
-func (i GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem] {
-	return pulumix.Output[GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem]{
-		OutputState: i.ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayInput is an input type that accepts GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArray and GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayInput` via:
 //
@@ -4487,12 +3760,6 @@ func (i GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectio
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutput)
 }
 
-func (i GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem] {
-	return pulumix.Output[[]GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem]{
-		OutputState: i.ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) ElementType() reflect.Type {
@@ -4505,12 +3772,6 @@ func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectio
 
 func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) ToGetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutputWithContext(ctx context.Context) GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput {
 	return o
-}
-
-func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem] {
-	return pulumix.Output[GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Execution type of the application for an application type, such as WAR and EAR, that is deployed or installed.
@@ -4639,12 +3900,6 @@ func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectio
 	return o
 }
 
-func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem] {
-	return pulumix.Output[[]GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem {
 		return vs[0].([]GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem)[vs[1].(int)]
@@ -4688,12 +3943,6 @@ func (i GetFleetOperationLogArgs) ToGetFleetOperationLogOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetOperationLogOutput)
 }
 
-func (i GetFleetOperationLogArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetOperationLog] {
-	return pulumix.Output[GetFleetOperationLog]{
-		OutputState: i.ToGetFleetOperationLogOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetOperationLogArrayInput is an input type that accepts GetFleetOperationLogArray and GetFleetOperationLogArrayOutput values.
 // You can construct a concrete instance of `GetFleetOperationLogArrayInput` via:
 //
@@ -4719,12 +3968,6 @@ func (i GetFleetOperationLogArray) ToGetFleetOperationLogArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetOperationLogArrayOutput)
 }
 
-func (i GetFleetOperationLogArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetOperationLog] {
-	return pulumix.Output[[]GetFleetOperationLog]{
-		OutputState: i.ToGetFleetOperationLogArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetOperationLogOutput struct{ *pulumi.OutputState }
 
 func (GetFleetOperationLogOutput) ElementType() reflect.Type {
@@ -4737,12 +3980,6 @@ func (o GetFleetOperationLogOutput) ToGetFleetOperationLogOutput() GetFleetOpera
 
 func (o GetFleetOperationLogOutput) ToGetFleetOperationLogOutputWithContext(ctx context.Context) GetFleetOperationLogOutput {
 	return o
-}
-
-func (o GetFleetOperationLogOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetOperationLog] {
-	return pulumix.Output[GetFleetOperationLog]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
@@ -4767,12 +4004,6 @@ func (o GetFleetOperationLogArrayOutput) ToGetFleetOperationLogArrayOutput() Get
 
 func (o GetFleetOperationLogArrayOutput) ToGetFleetOperationLogArrayOutputWithContext(ctx context.Context) GetFleetOperationLogArrayOutput {
 	return o
-}
-
-func (o GetFleetOperationLogArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetOperationLog] {
-	return pulumix.Output[[]GetFleetOperationLog]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetOperationLogArrayOutput) Index(i pulumi.IntInput) GetFleetOperationLogOutput {
@@ -4816,12 +4047,6 @@ func (i GetFleetPerformanceTuningAnalysisResultsFilterArgs) ToGetFleetPerformanc
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetPerformanceTuningAnalysisResultsFilterOutput)
 }
 
-func (i GetFleetPerformanceTuningAnalysisResultsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetPerformanceTuningAnalysisResultsFilter] {
-	return pulumix.Output[GetFleetPerformanceTuningAnalysisResultsFilter]{
-		OutputState: i.ToGetFleetPerformanceTuningAnalysisResultsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetPerformanceTuningAnalysisResultsFilterArrayInput is an input type that accepts GetFleetPerformanceTuningAnalysisResultsFilterArray and GetFleetPerformanceTuningAnalysisResultsFilterArrayOutput values.
 // You can construct a concrete instance of `GetFleetPerformanceTuningAnalysisResultsFilterArrayInput` via:
 //
@@ -4847,12 +4072,6 @@ func (i GetFleetPerformanceTuningAnalysisResultsFilterArray) ToGetFleetPerforman
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetPerformanceTuningAnalysisResultsFilterArrayOutput)
 }
 
-func (i GetFleetPerformanceTuningAnalysisResultsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetPerformanceTuningAnalysisResultsFilter] {
-	return pulumix.Output[[]GetFleetPerformanceTuningAnalysisResultsFilter]{
-		OutputState: i.ToGetFleetPerformanceTuningAnalysisResultsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetPerformanceTuningAnalysisResultsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetFleetPerformanceTuningAnalysisResultsFilterOutput) ElementType() reflect.Type {
@@ -4865,12 +4084,6 @@ func (o GetFleetPerformanceTuningAnalysisResultsFilterOutput) ToGetFleetPerforma
 
 func (o GetFleetPerformanceTuningAnalysisResultsFilterOutput) ToGetFleetPerformanceTuningAnalysisResultsFilterOutputWithContext(ctx context.Context) GetFleetPerformanceTuningAnalysisResultsFilterOutput {
 	return o
-}
-
-func (o GetFleetPerformanceTuningAnalysisResultsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetPerformanceTuningAnalysisResultsFilter] {
-	return pulumix.Output[GetFleetPerformanceTuningAnalysisResultsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetPerformanceTuningAnalysisResultsFilterOutput) Name() pulumi.StringOutput {
@@ -4897,12 +4110,6 @@ func (o GetFleetPerformanceTuningAnalysisResultsFilterArrayOutput) ToGetFleetPer
 
 func (o GetFleetPerformanceTuningAnalysisResultsFilterArrayOutput) ToGetFleetPerformanceTuningAnalysisResultsFilterArrayOutputWithContext(ctx context.Context) GetFleetPerformanceTuningAnalysisResultsFilterArrayOutput {
 	return o
-}
-
-func (o GetFleetPerformanceTuningAnalysisResultsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetPerformanceTuningAnalysisResultsFilter] {
-	return pulumix.Output[[]GetFleetPerformanceTuningAnalysisResultsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetPerformanceTuningAnalysisResultsFilterArrayOutput) Index(i pulumi.IntInput) GetFleetPerformanceTuningAnalysisResultsFilterOutput {
@@ -4942,12 +4149,6 @@ func (i GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultC
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput)
 }
 
-func (i GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection] {
-	return pulumix.Output[GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection]{
-		OutputState: i.ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayInput is an input type that accepts GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArray and GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutput values.
 // You can construct a concrete instance of `GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayInput` via:
 //
@@ -4973,12 +4174,6 @@ func (i GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultC
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutput)
 }
 
-func (i GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection] {
-	return pulumix.Output[[]GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection]{
-		OutputState: i.ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput) ElementType() reflect.Type {
@@ -4991,12 +4186,6 @@ func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultC
 
 func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput) ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutputWithContext(ctx context.Context) GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput {
 	return o
-}
-
-func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection] {
-	return pulumix.Output[GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput) Items() GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput {
@@ -5017,12 +4206,6 @@ func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultC
 
 func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutput) ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutputWithContext(ctx context.Context) GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutput {
 	return o
-}
-
-func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection] {
-	return pulumix.Output[[]GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutput) Index(i pulumi.IntInput) GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutput {
@@ -5128,12 +4311,6 @@ func (i GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultC
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput)
 }
 
-func (i GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem] {
-	return pulumix.Output[GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem]{
-		OutputState: i.ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayInput is an input type that accepts GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArray and GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayInput` via:
 //
@@ -5159,12 +4336,6 @@ func (i GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultC
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput)
 }
 
-func (i GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem] {
-	return pulumix.Output[[]GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem]{
-		OutputState: i.ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) ElementType() reflect.Type {
@@ -5177,12 +4348,6 @@ func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultC
 
 func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) ToGetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutputWithContext(ctx context.Context) GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput {
 	return o
-}
-
-func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem] {
-	return pulumix.Output[GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The Fleet-unique identifier of the related application.
@@ -5318,12 +4483,6 @@ func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultC
 	return o
 }
 
-func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem] {
-	return pulumix.Output[[]GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem {
 		return vs[0].([]GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItem)[vs[1].(int)]
@@ -5365,12 +4524,6 @@ func (i GetFleetsFilterArgs) ToGetFleetsFilterOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetsFilterOutput)
 }
 
-func (i GetFleetsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetsFilter] {
-	return pulumix.Output[GetFleetsFilter]{
-		OutputState: i.ToGetFleetsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetsFilterArrayInput is an input type that accepts GetFleetsFilterArray and GetFleetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetFleetsFilterArrayInput` via:
 //
@@ -5396,12 +4549,6 @@ func (i GetFleetsFilterArray) ToGetFleetsFilterArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetsFilterArrayOutput)
 }
 
-func (i GetFleetsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetsFilter] {
-	return pulumix.Output[[]GetFleetsFilter]{
-		OutputState: i.ToGetFleetsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetFleetsFilterOutput) ElementType() reflect.Type {
@@ -5414,12 +4561,6 @@ func (o GetFleetsFilterOutput) ToGetFleetsFilterOutput() GetFleetsFilterOutput {
 
 func (o GetFleetsFilterOutput) ToGetFleetsFilterOutputWithContext(ctx context.Context) GetFleetsFilterOutput {
 	return o
-}
-
-func (o GetFleetsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetsFilter] {
-	return pulumix.Output[GetFleetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetsFilterOutput) Name() pulumi.StringOutput {
@@ -5446,12 +4587,6 @@ func (o GetFleetsFilterArrayOutput) ToGetFleetsFilterArrayOutput() GetFleetsFilt
 
 func (o GetFleetsFilterArrayOutput) ToGetFleetsFilterArrayOutputWithContext(ctx context.Context) GetFleetsFilterArrayOutput {
 	return o
-}
-
-func (o GetFleetsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetsFilter] {
-	return pulumix.Output[[]GetFleetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetsFilterArrayOutput) Index(i pulumi.IntInput) GetFleetsFilterOutput {
@@ -5491,12 +4626,6 @@ func (i GetFleetsFleetCollectionArgs) ToGetFleetsFleetCollectionOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetsFleetCollectionOutput)
 }
 
-func (i GetFleetsFleetCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetsFleetCollection] {
-	return pulumix.Output[GetFleetsFleetCollection]{
-		OutputState: i.ToGetFleetsFleetCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetsFleetCollectionArrayInput is an input type that accepts GetFleetsFleetCollectionArray and GetFleetsFleetCollectionArrayOutput values.
 // You can construct a concrete instance of `GetFleetsFleetCollectionArrayInput` via:
 //
@@ -5522,12 +4651,6 @@ func (i GetFleetsFleetCollectionArray) ToGetFleetsFleetCollectionArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetsFleetCollectionArrayOutput)
 }
 
-func (i GetFleetsFleetCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetsFleetCollection] {
-	return pulumix.Output[[]GetFleetsFleetCollection]{
-		OutputState: i.ToGetFleetsFleetCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetsFleetCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetFleetsFleetCollectionOutput) ElementType() reflect.Type {
@@ -5540,12 +4663,6 @@ func (o GetFleetsFleetCollectionOutput) ToGetFleetsFleetCollectionOutput() GetFl
 
 func (o GetFleetsFleetCollectionOutput) ToGetFleetsFleetCollectionOutputWithContext(ctx context.Context) GetFleetsFleetCollectionOutput {
 	return o
-}
-
-func (o GetFleetsFleetCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetsFleetCollection] {
-	return pulumix.Output[GetFleetsFleetCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetsFleetCollectionOutput) Items() GetFleetsFleetCollectionItemArrayOutput {
@@ -5564,12 +4681,6 @@ func (o GetFleetsFleetCollectionArrayOutput) ToGetFleetsFleetCollectionArrayOutp
 
 func (o GetFleetsFleetCollectionArrayOutput) ToGetFleetsFleetCollectionArrayOutputWithContext(ctx context.Context) GetFleetsFleetCollectionArrayOutput {
 	return o
-}
-
-func (o GetFleetsFleetCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetsFleetCollection] {
-	return pulumix.Output[[]GetFleetsFleetCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetsFleetCollectionArrayOutput) Index(i pulumi.IntInput) GetFleetsFleetCollectionOutput {
@@ -5675,12 +4786,6 @@ func (i GetFleetsFleetCollectionItemArgs) ToGetFleetsFleetCollectionItemOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetsFleetCollectionItemOutput)
 }
 
-func (i GetFleetsFleetCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetsFleetCollectionItem] {
-	return pulumix.Output[GetFleetsFleetCollectionItem]{
-		OutputState: i.ToGetFleetsFleetCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetsFleetCollectionItemArrayInput is an input type that accepts GetFleetsFleetCollectionItemArray and GetFleetsFleetCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetFleetsFleetCollectionItemArrayInput` via:
 //
@@ -5706,12 +4811,6 @@ func (i GetFleetsFleetCollectionItemArray) ToGetFleetsFleetCollectionItemArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetsFleetCollectionItemArrayOutput)
 }
 
-func (i GetFleetsFleetCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetsFleetCollectionItem] {
-	return pulumix.Output[[]GetFleetsFleetCollectionItem]{
-		OutputState: i.ToGetFleetsFleetCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetsFleetCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetFleetsFleetCollectionItemOutput) ElementType() reflect.Type {
@@ -5724,12 +4823,6 @@ func (o GetFleetsFleetCollectionItemOutput) ToGetFleetsFleetCollectionItemOutput
 
 func (o GetFleetsFleetCollectionItemOutput) ToGetFleetsFleetCollectionItemOutputWithContext(ctx context.Context) GetFleetsFleetCollectionItemOutput {
 	return o
-}
-
-func (o GetFleetsFleetCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetsFleetCollectionItem] {
-	return pulumix.Output[GetFleetsFleetCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
@@ -5835,12 +4928,6 @@ func (o GetFleetsFleetCollectionItemArrayOutput) ToGetFleetsFleetCollectionItemA
 	return o
 }
 
-func (o GetFleetsFleetCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetsFleetCollectionItem] {
-	return pulumix.Output[[]GetFleetsFleetCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFleetsFleetCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFleetsFleetCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetsFleetCollectionItem {
 		return vs[0].([]GetFleetsFleetCollectionItem)[vs[1].(int)]
@@ -5884,12 +4971,6 @@ func (i GetFleetsFleetCollectionItemInventoryLogArgs) ToGetFleetsFleetCollection
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetsFleetCollectionItemInventoryLogOutput)
 }
 
-func (i GetFleetsFleetCollectionItemInventoryLogArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetsFleetCollectionItemInventoryLog] {
-	return pulumix.Output[GetFleetsFleetCollectionItemInventoryLog]{
-		OutputState: i.ToGetFleetsFleetCollectionItemInventoryLogOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetsFleetCollectionItemInventoryLogArrayInput is an input type that accepts GetFleetsFleetCollectionItemInventoryLogArray and GetFleetsFleetCollectionItemInventoryLogArrayOutput values.
 // You can construct a concrete instance of `GetFleetsFleetCollectionItemInventoryLogArrayInput` via:
 //
@@ -5915,12 +4996,6 @@ func (i GetFleetsFleetCollectionItemInventoryLogArray) ToGetFleetsFleetCollectio
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetsFleetCollectionItemInventoryLogArrayOutput)
 }
 
-func (i GetFleetsFleetCollectionItemInventoryLogArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetsFleetCollectionItemInventoryLog] {
-	return pulumix.Output[[]GetFleetsFleetCollectionItemInventoryLog]{
-		OutputState: i.ToGetFleetsFleetCollectionItemInventoryLogArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetsFleetCollectionItemInventoryLogOutput struct{ *pulumi.OutputState }
 
 func (GetFleetsFleetCollectionItemInventoryLogOutput) ElementType() reflect.Type {
@@ -5933,12 +5008,6 @@ func (o GetFleetsFleetCollectionItemInventoryLogOutput) ToGetFleetsFleetCollecti
 
 func (o GetFleetsFleetCollectionItemInventoryLogOutput) ToGetFleetsFleetCollectionItemInventoryLogOutputWithContext(ctx context.Context) GetFleetsFleetCollectionItemInventoryLogOutput {
 	return o
-}
-
-func (o GetFleetsFleetCollectionItemInventoryLogOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetsFleetCollectionItemInventoryLog] {
-	return pulumix.Output[GetFleetsFleetCollectionItemInventoryLog]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
@@ -5963,12 +5032,6 @@ func (o GetFleetsFleetCollectionItemInventoryLogArrayOutput) ToGetFleetsFleetCol
 
 func (o GetFleetsFleetCollectionItemInventoryLogArrayOutput) ToGetFleetsFleetCollectionItemInventoryLogArrayOutputWithContext(ctx context.Context) GetFleetsFleetCollectionItemInventoryLogArrayOutput {
 	return o
-}
-
-func (o GetFleetsFleetCollectionItemInventoryLogArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetsFleetCollectionItemInventoryLog] {
-	return pulumix.Output[[]GetFleetsFleetCollectionItemInventoryLog]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetsFleetCollectionItemInventoryLogArrayOutput) Index(i pulumi.IntInput) GetFleetsFleetCollectionItemInventoryLogOutput {
@@ -6014,12 +5077,6 @@ func (i GetFleetsFleetCollectionItemOperationLogArgs) ToGetFleetsFleetCollection
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetsFleetCollectionItemOperationLogOutput)
 }
 
-func (i GetFleetsFleetCollectionItemOperationLogArgs) ToOutput(ctx context.Context) pulumix.Output[GetFleetsFleetCollectionItemOperationLog] {
-	return pulumix.Output[GetFleetsFleetCollectionItemOperationLog]{
-		OutputState: i.ToGetFleetsFleetCollectionItemOperationLogOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFleetsFleetCollectionItemOperationLogArrayInput is an input type that accepts GetFleetsFleetCollectionItemOperationLogArray and GetFleetsFleetCollectionItemOperationLogArrayOutput values.
 // You can construct a concrete instance of `GetFleetsFleetCollectionItemOperationLogArrayInput` via:
 //
@@ -6045,12 +5102,6 @@ func (i GetFleetsFleetCollectionItemOperationLogArray) ToGetFleetsFleetCollectio
 	return pulumi.ToOutputWithContext(ctx, i).(GetFleetsFleetCollectionItemOperationLogArrayOutput)
 }
 
-func (i GetFleetsFleetCollectionItemOperationLogArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetsFleetCollectionItemOperationLog] {
-	return pulumix.Output[[]GetFleetsFleetCollectionItemOperationLog]{
-		OutputState: i.ToGetFleetsFleetCollectionItemOperationLogArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFleetsFleetCollectionItemOperationLogOutput struct{ *pulumi.OutputState }
 
 func (GetFleetsFleetCollectionItemOperationLogOutput) ElementType() reflect.Type {
@@ -6063,12 +5114,6 @@ func (o GetFleetsFleetCollectionItemOperationLogOutput) ToGetFleetsFleetCollecti
 
 func (o GetFleetsFleetCollectionItemOperationLogOutput) ToGetFleetsFleetCollectionItemOperationLogOutputWithContext(ctx context.Context) GetFleetsFleetCollectionItemOperationLogOutput {
 	return o
-}
-
-func (o GetFleetsFleetCollectionItemOperationLogOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetsFleetCollectionItemOperationLog] {
-	return pulumix.Output[GetFleetsFleetCollectionItemOperationLog]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
@@ -6093,12 +5138,6 @@ func (o GetFleetsFleetCollectionItemOperationLogArrayOutput) ToGetFleetsFleetCol
 
 func (o GetFleetsFleetCollectionItemOperationLogArrayOutput) ToGetFleetsFleetCollectionItemOperationLogArrayOutputWithContext(ctx context.Context) GetFleetsFleetCollectionItemOperationLogArrayOutput {
 	return o
-}
-
-func (o GetFleetsFleetCollectionItemOperationLogArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFleetsFleetCollectionItemOperationLog] {
-	return pulumix.Output[[]GetFleetsFleetCollectionItemOperationLog]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetsFleetCollectionItemOperationLogArrayOutput) Index(i pulumi.IntInput) GetFleetsFleetCollectionItemOperationLogOutput {
@@ -6176,12 +5215,6 @@ func (i GetInstallationSiteItemArgs) ToGetInstallationSiteItemOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSiteItemOutput)
 }
 
-func (i GetInstallationSiteItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSiteItem] {
-	return pulumix.Output[GetInstallationSiteItem]{
-		OutputState: i.ToGetInstallationSiteItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetInstallationSiteItemArrayInput is an input type that accepts GetInstallationSiteItemArray and GetInstallationSiteItemArrayOutput values.
 // You can construct a concrete instance of `GetInstallationSiteItemArrayInput` via:
 //
@@ -6207,12 +5240,6 @@ func (i GetInstallationSiteItemArray) ToGetInstallationSiteItemArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSiteItemArrayOutput)
 }
 
-func (i GetInstallationSiteItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSiteItem] {
-	return pulumix.Output[[]GetInstallationSiteItem]{
-		OutputState: i.ToGetInstallationSiteItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInstallationSiteItemOutput struct{ *pulumi.OutputState }
 
 func (GetInstallationSiteItemOutput) ElementType() reflect.Type {
@@ -6225,12 +5252,6 @@ func (o GetInstallationSiteItemOutput) ToGetInstallationSiteItemOutput() GetInst
 
 func (o GetInstallationSiteItemOutput) ToGetInstallationSiteItemOutputWithContext(ctx context.Context) GetInstallationSiteItemOutput {
 	return o
-}
-
-func (o GetInstallationSiteItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSiteItem] {
-	return pulumix.Output[GetInstallationSiteItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The approximate count of applications running on this installation
@@ -6297,12 +5318,6 @@ func (o GetInstallationSiteItemArrayOutput) ToGetInstallationSiteItemArrayOutput
 	return o
 }
 
-func (o GetInstallationSiteItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSiteItem] {
-	return pulumix.Output[[]GetInstallationSiteItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInstallationSiteItemArrayOutput) Index(i pulumi.IntInput) GetInstallationSiteItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstallationSiteItem {
 		return vs[0].([]GetInstallationSiteItem)[vs[1].(int)]
@@ -6346,12 +5361,6 @@ func (i GetInstallationSiteItemBlocklistArgs) ToGetInstallationSiteItemBlocklist
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSiteItemBlocklistOutput)
 }
 
-func (i GetInstallationSiteItemBlocklistArgs) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSiteItemBlocklist] {
-	return pulumix.Output[GetInstallationSiteItemBlocklist]{
-		OutputState: i.ToGetInstallationSiteItemBlocklistOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetInstallationSiteItemBlocklistArrayInput is an input type that accepts GetInstallationSiteItemBlocklistArray and GetInstallationSiteItemBlocklistArrayOutput values.
 // You can construct a concrete instance of `GetInstallationSiteItemBlocklistArrayInput` via:
 //
@@ -6377,12 +5386,6 @@ func (i GetInstallationSiteItemBlocklistArray) ToGetInstallationSiteItemBlocklis
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSiteItemBlocklistArrayOutput)
 }
 
-func (i GetInstallationSiteItemBlocklistArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSiteItemBlocklist] {
-	return pulumix.Output[[]GetInstallationSiteItemBlocklist]{
-		OutputState: i.ToGetInstallationSiteItemBlocklistArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInstallationSiteItemBlocklistOutput struct{ *pulumi.OutputState }
 
 func (GetInstallationSiteItemBlocklistOutput) ElementType() reflect.Type {
@@ -6395,12 +5398,6 @@ func (o GetInstallationSiteItemBlocklistOutput) ToGetInstallationSiteItemBlockli
 
 func (o GetInstallationSiteItemBlocklistOutput) ToGetInstallationSiteItemBlocklistOutputWithContext(ctx context.Context) GetInstallationSiteItemBlocklistOutput {
 	return o
-}
-
-func (o GetInstallationSiteItemBlocklistOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSiteItemBlocklist] {
-	return pulumix.Output[GetInstallationSiteItemBlocklist]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The operation type.
@@ -6425,12 +5422,6 @@ func (o GetInstallationSiteItemBlocklistArrayOutput) ToGetInstallationSiteItemBl
 
 func (o GetInstallationSiteItemBlocklistArrayOutput) ToGetInstallationSiteItemBlocklistArrayOutputWithContext(ctx context.Context) GetInstallationSiteItemBlocklistArrayOutput {
 	return o
-}
-
-func (o GetInstallationSiteItemBlocklistArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSiteItemBlocklist] {
-	return pulumix.Output[[]GetInstallationSiteItemBlocklist]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInstallationSiteItemBlocklistArrayOutput) Index(i pulumi.IntInput) GetInstallationSiteItemBlocklistOutput {
@@ -6484,12 +5475,6 @@ func (i GetInstallationSiteItemJreArgs) ToGetInstallationSiteItemJreOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSiteItemJreOutput)
 }
 
-func (i GetInstallationSiteItemJreArgs) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSiteItemJre] {
-	return pulumix.Output[GetInstallationSiteItemJre]{
-		OutputState: i.ToGetInstallationSiteItemJreOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetInstallationSiteItemJreArrayInput is an input type that accepts GetInstallationSiteItemJreArray and GetInstallationSiteItemJreArrayOutput values.
 // You can construct a concrete instance of `GetInstallationSiteItemJreArrayInput` via:
 //
@@ -6515,12 +5500,6 @@ func (i GetInstallationSiteItemJreArray) ToGetInstallationSiteItemJreArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSiteItemJreArrayOutput)
 }
 
-func (i GetInstallationSiteItemJreArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSiteItemJre] {
-	return pulumix.Output[[]GetInstallationSiteItemJre]{
-		OutputState: i.ToGetInstallationSiteItemJreArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInstallationSiteItemJreOutput struct{ *pulumi.OutputState }
 
 func (GetInstallationSiteItemJreOutput) ElementType() reflect.Type {
@@ -6533,12 +5512,6 @@ func (o GetInstallationSiteItemJreOutput) ToGetInstallationSiteItemJreOutput() G
 
 func (o GetInstallationSiteItemJreOutput) ToGetInstallationSiteItemJreOutputWithContext(ctx context.Context) GetInstallationSiteItemJreOutput {
 	return o
-}
-
-func (o GetInstallationSiteItemJreOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSiteItemJre] {
-	return pulumix.Output[GetInstallationSiteItemJre]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
@@ -6573,12 +5546,6 @@ func (o GetInstallationSiteItemJreArrayOutput) ToGetInstallationSiteItemJreArray
 
 func (o GetInstallationSiteItemJreArrayOutput) ToGetInstallationSiteItemJreArrayOutputWithContext(ctx context.Context) GetInstallationSiteItemJreArrayOutput {
 	return o
-}
-
-func (o GetInstallationSiteItemJreArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSiteItemJre] {
-	return pulumix.Output[[]GetInstallationSiteItemJre]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInstallationSiteItemJreArrayOutput) Index(i pulumi.IntInput) GetInstallationSiteItemJreOutput {
@@ -6636,12 +5603,6 @@ func (i GetInstallationSiteItemOperatingSystemArgs) ToGetInstallationSiteItemOpe
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSiteItemOperatingSystemOutput)
 }
 
-func (i GetInstallationSiteItemOperatingSystemArgs) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSiteItemOperatingSystem] {
-	return pulumix.Output[GetInstallationSiteItemOperatingSystem]{
-		OutputState: i.ToGetInstallationSiteItemOperatingSystemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetInstallationSiteItemOperatingSystemArrayInput is an input type that accepts GetInstallationSiteItemOperatingSystemArray and GetInstallationSiteItemOperatingSystemArrayOutput values.
 // You can construct a concrete instance of `GetInstallationSiteItemOperatingSystemArrayInput` via:
 //
@@ -6667,12 +5628,6 @@ func (i GetInstallationSiteItemOperatingSystemArray) ToGetInstallationSiteItemOp
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSiteItemOperatingSystemArrayOutput)
 }
 
-func (i GetInstallationSiteItemOperatingSystemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSiteItemOperatingSystem] {
-	return pulumix.Output[[]GetInstallationSiteItemOperatingSystem]{
-		OutputState: i.ToGetInstallationSiteItemOperatingSystemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInstallationSiteItemOperatingSystemOutput struct{ *pulumi.OutputState }
 
 func (GetInstallationSiteItemOperatingSystemOutput) ElementType() reflect.Type {
@@ -6685,12 +5640,6 @@ func (o GetInstallationSiteItemOperatingSystemOutput) ToGetInstallationSiteItemO
 
 func (o GetInstallationSiteItemOperatingSystemOutput) ToGetInstallationSiteItemOperatingSystemOutputWithContext(ctx context.Context) GetInstallationSiteItemOperatingSystemOutput {
 	return o
-}
-
-func (o GetInstallationSiteItemOperatingSystemOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSiteItemOperatingSystem] {
-	return pulumix.Output[GetInstallationSiteItemOperatingSystem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The architecture of the operating system as provided by the Java system property os.arch.
@@ -6730,12 +5679,6 @@ func (o GetInstallationSiteItemOperatingSystemArrayOutput) ToGetInstallationSite
 
 func (o GetInstallationSiteItemOperatingSystemArrayOutput) ToGetInstallationSiteItemOperatingSystemArrayOutputWithContext(ctx context.Context) GetInstallationSiteItemOperatingSystemArrayOutput {
 	return o
-}
-
-func (o GetInstallationSiteItemOperatingSystemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSiteItemOperatingSystem] {
-	return pulumix.Output[[]GetInstallationSiteItemOperatingSystem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInstallationSiteItemOperatingSystemArrayOutput) Index(i pulumi.IntInput) GetInstallationSiteItemOperatingSystemOutput {
@@ -6781,12 +5724,6 @@ func (i GetInstallationSitesFilterArgs) ToGetInstallationSitesFilterOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesFilterOutput)
 }
 
-func (i GetInstallationSitesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSitesFilter] {
-	return pulumix.Output[GetInstallationSitesFilter]{
-		OutputState: i.ToGetInstallationSitesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetInstallationSitesFilterArrayInput is an input type that accepts GetInstallationSitesFilterArray and GetInstallationSitesFilterArrayOutput values.
 // You can construct a concrete instance of `GetInstallationSitesFilterArrayInput` via:
 //
@@ -6812,12 +5749,6 @@ func (i GetInstallationSitesFilterArray) ToGetInstallationSitesFilterArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesFilterArrayOutput)
 }
 
-func (i GetInstallationSitesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSitesFilter] {
-	return pulumix.Output[[]GetInstallationSitesFilter]{
-		OutputState: i.ToGetInstallationSitesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInstallationSitesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetInstallationSitesFilterOutput) ElementType() reflect.Type {
@@ -6830,12 +5761,6 @@ func (o GetInstallationSitesFilterOutput) ToGetInstallationSitesFilterOutput() G
 
 func (o GetInstallationSitesFilterOutput) ToGetInstallationSitesFilterOutputWithContext(ctx context.Context) GetInstallationSitesFilterOutput {
 	return o
-}
-
-func (o GetInstallationSitesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSitesFilter] {
-	return pulumix.Output[GetInstallationSitesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the operating system as provided by the Java system property os.name.
@@ -6863,12 +5788,6 @@ func (o GetInstallationSitesFilterArrayOutput) ToGetInstallationSitesFilterArray
 
 func (o GetInstallationSitesFilterArrayOutput) ToGetInstallationSitesFilterArrayOutputWithContext(ctx context.Context) GetInstallationSitesFilterArrayOutput {
 	return o
-}
-
-func (o GetInstallationSitesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSitesFilter] {
-	return pulumix.Output[[]GetInstallationSitesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInstallationSitesFilterArrayOutput) Index(i pulumi.IntInput) GetInstallationSitesFilterOutput {
@@ -6910,12 +5829,6 @@ func (i GetInstallationSitesInstallationSiteCollectionArgs) ToGetInstallationSit
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionOutput)
 }
 
-func (i GetInstallationSitesInstallationSiteCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSitesInstallationSiteCollection] {
-	return pulumix.Output[GetInstallationSitesInstallationSiteCollection]{
-		OutputState: i.ToGetInstallationSitesInstallationSiteCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetInstallationSitesInstallationSiteCollectionArrayInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionArray and GetInstallationSitesInstallationSiteCollectionArrayOutput values.
 // You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionArrayInput` via:
 //
@@ -6941,12 +5854,6 @@ func (i GetInstallationSitesInstallationSiteCollectionArray) ToGetInstallationSi
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionArrayOutput)
 }
 
-func (i GetInstallationSitesInstallationSiteCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSitesInstallationSiteCollection] {
-	return pulumix.Output[[]GetInstallationSitesInstallationSiteCollection]{
-		OutputState: i.ToGetInstallationSitesInstallationSiteCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInstallationSitesInstallationSiteCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetInstallationSitesInstallationSiteCollectionOutput) ElementType() reflect.Type {
@@ -6959,12 +5866,6 @@ func (o GetInstallationSitesInstallationSiteCollectionOutput) ToGetInstallationS
 
 func (o GetInstallationSitesInstallationSiteCollectionOutput) ToGetInstallationSitesInstallationSiteCollectionOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionOutput {
 	return o
-}
-
-func (o GetInstallationSitesInstallationSiteCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSitesInstallationSiteCollection] {
-	return pulumix.Output[GetInstallationSitesInstallationSiteCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of Java installation sites.
@@ -6986,12 +5887,6 @@ func (o GetInstallationSitesInstallationSiteCollectionArrayOutput) ToGetInstalla
 
 func (o GetInstallationSitesInstallationSiteCollectionArrayOutput) ToGetInstallationSitesInstallationSiteCollectionArrayOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionArrayOutput {
 	return o
-}
-
-func (o GetInstallationSitesInstallationSiteCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSitesInstallationSiteCollection] {
-	return pulumix.Output[[]GetInstallationSitesInstallationSiteCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInstallationSitesInstallationSiteCollectionArrayOutput) Index(i pulumi.IntInput) GetInstallationSitesInstallationSiteCollectionOutput {
@@ -7033,12 +5928,6 @@ func (i GetInstallationSitesInstallationSiteCollectionItemArgs) ToGetInstallatio
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemOutput)
 }
 
-func (i GetInstallationSitesInstallationSiteCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSitesInstallationSiteCollectionItem] {
-	return pulumix.Output[GetInstallationSitesInstallationSiteCollectionItem]{
-		OutputState: i.ToGetInstallationSitesInstallationSiteCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetInstallationSitesInstallationSiteCollectionItemArrayInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemArray and GetInstallationSitesInstallationSiteCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionItemArrayInput` via:
 //
@@ -7064,12 +5953,6 @@ func (i GetInstallationSitesInstallationSiteCollectionItemArray) ToGetInstallati
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemArrayOutput)
 }
 
-func (i GetInstallationSitesInstallationSiteCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItem] {
-	return pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItem]{
-		OutputState: i.ToGetInstallationSitesInstallationSiteCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInstallationSitesInstallationSiteCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetInstallationSitesInstallationSiteCollectionItemOutput) ElementType() reflect.Type {
@@ -7082,12 +5965,6 @@ func (o GetInstallationSitesInstallationSiteCollectionItemOutput) ToGetInstallat
 
 func (o GetInstallationSitesInstallationSiteCollectionItemOutput) ToGetInstallationSitesInstallationSiteCollectionItemOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemOutput {
 	return o
-}
-
-func (o GetInstallationSitesInstallationSiteCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSitesInstallationSiteCollectionItem] {
-	return pulumix.Output[GetInstallationSitesInstallationSiteCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of Java installation sites.
@@ -7109,12 +5986,6 @@ func (o GetInstallationSitesInstallationSiteCollectionItemArrayOutput) ToGetInst
 
 func (o GetInstallationSitesInstallationSiteCollectionItemArrayOutput) ToGetInstallationSitesInstallationSiteCollectionItemArrayOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetInstallationSitesInstallationSiteCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItem] {
-	return pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInstallationSitesInstallationSiteCollectionItemArrayOutput) Index(i pulumi.IntInput) GetInstallationSitesInstallationSiteCollectionItemOutput {
@@ -7192,12 +6063,6 @@ func (i GetInstallationSitesInstallationSiteCollectionItemItemArgs) ToGetInstall
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemItemOutput)
 }
 
-func (i GetInstallationSitesInstallationSiteCollectionItemItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSitesInstallationSiteCollectionItemItem] {
-	return pulumix.Output[GetInstallationSitesInstallationSiteCollectionItemItem]{
-		OutputState: i.ToGetInstallationSitesInstallationSiteCollectionItemItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetInstallationSitesInstallationSiteCollectionItemItemArrayInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemItemArray and GetInstallationSitesInstallationSiteCollectionItemItemArrayOutput values.
 // You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionItemItemArrayInput` via:
 //
@@ -7223,12 +6088,6 @@ func (i GetInstallationSitesInstallationSiteCollectionItemItemArray) ToGetInstal
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemItemArrayOutput)
 }
 
-func (i GetInstallationSitesInstallationSiteCollectionItemItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItemItem] {
-	return pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItemItem]{
-		OutputState: i.ToGetInstallationSitesInstallationSiteCollectionItemItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInstallationSitesInstallationSiteCollectionItemItemOutput struct{ *pulumi.OutputState }
 
 func (GetInstallationSitesInstallationSiteCollectionItemItemOutput) ElementType() reflect.Type {
@@ -7241,12 +6100,6 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) ToGetInsta
 
 func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) ToGetInstallationSitesInstallationSiteCollectionItemItemOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemItemOutput {
 	return o
-}
-
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSitesInstallationSiteCollectionItemItem] {
-	return pulumix.Output[GetInstallationSitesInstallationSiteCollectionItemItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The approximate count of applications running on this installation
@@ -7321,12 +6174,6 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemArrayOutput) ToGet
 	return o
 }
 
-func (o GetInstallationSitesInstallationSiteCollectionItemItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItemItem] {
-	return pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItemItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInstallationSitesInstallationSiteCollectionItemItemArrayOutput) Index(i pulumi.IntInput) GetInstallationSitesInstallationSiteCollectionItemItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstallationSitesInstallationSiteCollectionItemItem {
 		return vs[0].([]GetInstallationSitesInstallationSiteCollectionItemItem)[vs[1].(int)]
@@ -7370,12 +6217,6 @@ func (i GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArgs) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput)
 }
 
-func (i GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArgs) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSitesInstallationSiteCollectionItemItemBlocklist] {
-	return pulumix.Output[GetInstallationSitesInstallationSiteCollectionItemItemBlocklist]{
-		OutputState: i.ToGetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArray and GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutput values.
 // You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayInput` via:
 //
@@ -7401,12 +6242,6 @@ func (i GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutput)
 }
 
-func (i GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItemItemBlocklist] {
-	return pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItemItemBlocklist]{
-		OutputState: i.ToGetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput struct{ *pulumi.OutputState }
 
 func (GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput) ElementType() reflect.Type {
@@ -7419,12 +6254,6 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput) T
 
 func (o GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput) ToGetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput {
 	return o
-}
-
-func (o GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSitesInstallationSiteCollectionItemItemBlocklist] {
-	return pulumix.Output[GetInstallationSitesInstallationSiteCollectionItemItemBlocklist]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The operation type.
@@ -7449,12 +6278,6 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutp
 
 func (o GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutput) ToGetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutput {
 	return o
-}
-
-func (o GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItemItemBlocklist] {
-	return pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItemItemBlocklist]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutput) Index(i pulumi.IntInput) GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput {
@@ -7508,12 +6331,6 @@ func (i GetInstallationSitesInstallationSiteCollectionItemItemJreArgs) ToGetInst
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemItemJreOutput)
 }
 
-func (i GetInstallationSitesInstallationSiteCollectionItemItemJreArgs) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSitesInstallationSiteCollectionItemItemJre] {
-	return pulumix.Output[GetInstallationSitesInstallationSiteCollectionItemItemJre]{
-		OutputState: i.ToGetInstallationSitesInstallationSiteCollectionItemItemJreOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetInstallationSitesInstallationSiteCollectionItemItemJreArrayInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemItemJreArray and GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput values.
 // You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionItemItemJreArrayInput` via:
 //
@@ -7539,12 +6356,6 @@ func (i GetInstallationSitesInstallationSiteCollectionItemItemJreArray) ToGetIns
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput)
 }
 
-func (i GetInstallationSitesInstallationSiteCollectionItemItemJreArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItemItemJre] {
-	return pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItemItemJre]{
-		OutputState: i.ToGetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInstallationSitesInstallationSiteCollectionItemItemJreOutput struct{ *pulumi.OutputState }
 
 func (GetInstallationSitesInstallationSiteCollectionItemItemJreOutput) ElementType() reflect.Type {
@@ -7557,12 +6368,6 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemJreOutput) ToGetIn
 
 func (o GetInstallationSitesInstallationSiteCollectionItemItemJreOutput) ToGetInstallationSitesInstallationSiteCollectionItemItemJreOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemItemJreOutput {
 	return o
-}
-
-func (o GetInstallationSitesInstallationSiteCollectionItemItemJreOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSitesInstallationSiteCollectionItemItemJre] {
-	return pulumix.Output[GetInstallationSitesInstallationSiteCollectionItemItemJre]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
@@ -7597,12 +6402,6 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput) To
 
 func (o GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput) ToGetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput {
 	return o
-}
-
-func (o GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItemItemJre] {
-	return pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItemItemJre]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput) Index(i pulumi.IntInput) GetInstallationSitesInstallationSiteCollectionItemItemJreOutput {
@@ -7660,12 +6459,6 @@ func (i GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArg
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput)
 }
 
-func (i GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArgs) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem] {
-	return pulumix.Output[GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem]{
-		OutputState: i.ToGetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArray and GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput values.
 // You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayInput` via:
 //
@@ -7691,12 +6484,6 @@ func (i GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput)
 }
 
-func (i GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem] {
-	return pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem]{
-		OutputState: i.ToGetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput struct{ *pulumi.OutputState }
 
 func (GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput) ElementType() reflect.Type {
@@ -7709,12 +6496,6 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOut
 
 func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput) ToGetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput {
 	return o
-}
-
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem] {
-	return pulumix.Output[GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The architecture of the operating system as provided by the Java system property os.arch.
@@ -7760,12 +6541,6 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArr
 	return o
 }
 
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem] {
-	return pulumix.Output[[]GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput) Index(i pulumi.IntInput) GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem {
 		return vs[0].([]GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem)[vs[1].(int)]
@@ -7807,12 +6582,6 @@ func (i GetJavaFamiliesFilterArgs) ToGetJavaFamiliesFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaFamiliesFilterOutput)
 }
 
-func (i GetJavaFamiliesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetJavaFamiliesFilter] {
-	return pulumix.Output[GetJavaFamiliesFilter]{
-		OutputState: i.ToGetJavaFamiliesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetJavaFamiliesFilterArrayInput is an input type that accepts GetJavaFamiliesFilterArray and GetJavaFamiliesFilterArrayOutput values.
 // You can construct a concrete instance of `GetJavaFamiliesFilterArrayInput` via:
 //
@@ -7838,12 +6607,6 @@ func (i GetJavaFamiliesFilterArray) ToGetJavaFamiliesFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaFamiliesFilterArrayOutput)
 }
 
-func (i GetJavaFamiliesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaFamiliesFilter] {
-	return pulumix.Output[[]GetJavaFamiliesFilter]{
-		OutputState: i.ToGetJavaFamiliesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetJavaFamiliesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetJavaFamiliesFilterOutput) ElementType() reflect.Type {
@@ -7856,12 +6619,6 @@ func (o GetJavaFamiliesFilterOutput) ToGetJavaFamiliesFilterOutput() GetJavaFami
 
 func (o GetJavaFamiliesFilterOutput) ToGetJavaFamiliesFilterOutputWithContext(ctx context.Context) GetJavaFamiliesFilterOutput {
 	return o
-}
-
-func (o GetJavaFamiliesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetJavaFamiliesFilter] {
-	return pulumix.Output[GetJavaFamiliesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetJavaFamiliesFilterOutput) Name() pulumi.StringOutput {
@@ -7888,12 +6645,6 @@ func (o GetJavaFamiliesFilterArrayOutput) ToGetJavaFamiliesFilterArrayOutput() G
 
 func (o GetJavaFamiliesFilterArrayOutput) ToGetJavaFamiliesFilterArrayOutputWithContext(ctx context.Context) GetJavaFamiliesFilterArrayOutput {
 	return o
-}
-
-func (o GetJavaFamiliesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaFamiliesFilter] {
-	return pulumix.Output[[]GetJavaFamiliesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetJavaFamiliesFilterArrayOutput) Index(i pulumi.IntInput) GetJavaFamiliesFilterOutput {
@@ -7933,12 +6684,6 @@ func (i GetJavaFamiliesJavaFamilyCollectionArgs) ToGetJavaFamiliesJavaFamilyColl
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaFamiliesJavaFamilyCollectionOutput)
 }
 
-func (i GetJavaFamiliesJavaFamilyCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetJavaFamiliesJavaFamilyCollection] {
-	return pulumix.Output[GetJavaFamiliesJavaFamilyCollection]{
-		OutputState: i.ToGetJavaFamiliesJavaFamilyCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetJavaFamiliesJavaFamilyCollectionArrayInput is an input type that accepts GetJavaFamiliesJavaFamilyCollectionArray and GetJavaFamiliesJavaFamilyCollectionArrayOutput values.
 // You can construct a concrete instance of `GetJavaFamiliesJavaFamilyCollectionArrayInput` via:
 //
@@ -7964,12 +6709,6 @@ func (i GetJavaFamiliesJavaFamilyCollectionArray) ToGetJavaFamiliesJavaFamilyCol
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaFamiliesJavaFamilyCollectionArrayOutput)
 }
 
-func (i GetJavaFamiliesJavaFamilyCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaFamiliesJavaFamilyCollection] {
-	return pulumix.Output[[]GetJavaFamiliesJavaFamilyCollection]{
-		OutputState: i.ToGetJavaFamiliesJavaFamilyCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetJavaFamiliesJavaFamilyCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetJavaFamiliesJavaFamilyCollectionOutput) ElementType() reflect.Type {
@@ -7982,12 +6721,6 @@ func (o GetJavaFamiliesJavaFamilyCollectionOutput) ToGetJavaFamiliesJavaFamilyCo
 
 func (o GetJavaFamiliesJavaFamilyCollectionOutput) ToGetJavaFamiliesJavaFamilyCollectionOutputWithContext(ctx context.Context) GetJavaFamiliesJavaFamilyCollectionOutput {
 	return o
-}
-
-func (o GetJavaFamiliesJavaFamilyCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetJavaFamiliesJavaFamilyCollection] {
-	return pulumix.Output[GetJavaFamiliesJavaFamilyCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetJavaFamiliesJavaFamilyCollectionOutput) Items() GetJavaFamiliesJavaFamilyCollectionItemArrayOutput {
@@ -8006,12 +6739,6 @@ func (o GetJavaFamiliesJavaFamilyCollectionArrayOutput) ToGetJavaFamiliesJavaFam
 
 func (o GetJavaFamiliesJavaFamilyCollectionArrayOutput) ToGetJavaFamiliesJavaFamilyCollectionArrayOutputWithContext(ctx context.Context) GetJavaFamiliesJavaFamilyCollectionArrayOutput {
 	return o
-}
-
-func (o GetJavaFamiliesJavaFamilyCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaFamiliesJavaFamilyCollection] {
-	return pulumix.Output[[]GetJavaFamiliesJavaFamilyCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetJavaFamiliesJavaFamilyCollectionArrayOutput) Index(i pulumi.IntInput) GetJavaFamiliesJavaFamilyCollectionOutput {
@@ -8069,12 +6796,6 @@ func (i GetJavaFamiliesJavaFamilyCollectionItemArgs) ToGetJavaFamiliesJavaFamily
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaFamiliesJavaFamilyCollectionItemOutput)
 }
 
-func (i GetJavaFamiliesJavaFamilyCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetJavaFamiliesJavaFamilyCollectionItem] {
-	return pulumix.Output[GetJavaFamiliesJavaFamilyCollectionItem]{
-		OutputState: i.ToGetJavaFamiliesJavaFamilyCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetJavaFamiliesJavaFamilyCollectionItemArrayInput is an input type that accepts GetJavaFamiliesJavaFamilyCollectionItemArray and GetJavaFamiliesJavaFamilyCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetJavaFamiliesJavaFamilyCollectionItemArrayInput` via:
 //
@@ -8100,12 +6821,6 @@ func (i GetJavaFamiliesJavaFamilyCollectionItemArray) ToGetJavaFamiliesJavaFamil
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaFamiliesJavaFamilyCollectionItemArrayOutput)
 }
 
-func (i GetJavaFamiliesJavaFamilyCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaFamiliesJavaFamilyCollectionItem] {
-	return pulumix.Output[[]GetJavaFamiliesJavaFamilyCollectionItem]{
-		OutputState: i.ToGetJavaFamiliesJavaFamilyCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetJavaFamiliesJavaFamilyCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetJavaFamiliesJavaFamilyCollectionItemOutput) ElementType() reflect.Type {
@@ -8118,12 +6833,6 @@ func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) ToGetJavaFamiliesJavaFami
 
 func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) ToGetJavaFamiliesJavaFamilyCollectionItemOutputWithContext(ctx context.Context) GetJavaFamiliesJavaFamilyCollectionItemOutput {
 	return o
-}
-
-func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetJavaFamiliesJavaFamilyCollectionItem] {
-	return pulumix.Output[GetJavaFamiliesJavaFamilyCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The display name for the Java family.
@@ -8163,12 +6872,6 @@ func (o GetJavaFamiliesJavaFamilyCollectionItemArrayOutput) ToGetJavaFamiliesJav
 
 func (o GetJavaFamiliesJavaFamilyCollectionItemArrayOutput) ToGetJavaFamiliesJavaFamilyCollectionItemArrayOutputWithContext(ctx context.Context) GetJavaFamiliesJavaFamilyCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetJavaFamiliesJavaFamilyCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaFamiliesJavaFamilyCollectionItem] {
-	return pulumix.Output[[]GetJavaFamiliesJavaFamilyCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetJavaFamiliesJavaFamilyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetJavaFamiliesJavaFamilyCollectionItemOutput {
@@ -8226,12 +6929,6 @@ func (i GetJavaReleaseArtifactArgs) ToGetJavaReleaseArtifactOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleaseArtifactOutput)
 }
 
-func (i GetJavaReleaseArtifactArgs) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleaseArtifact] {
-	return pulumix.Output[GetJavaReleaseArtifact]{
-		OutputState: i.ToGetJavaReleaseArtifactOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetJavaReleaseArtifactArrayInput is an input type that accepts GetJavaReleaseArtifactArray and GetJavaReleaseArtifactArrayOutput values.
 // You can construct a concrete instance of `GetJavaReleaseArtifactArrayInput` via:
 //
@@ -8257,12 +6954,6 @@ func (i GetJavaReleaseArtifactArray) ToGetJavaReleaseArtifactArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleaseArtifactArrayOutput)
 }
 
-func (i GetJavaReleaseArtifactArray) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleaseArtifact] {
-	return pulumix.Output[[]GetJavaReleaseArtifact]{
-		OutputState: i.ToGetJavaReleaseArtifactArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetJavaReleaseArtifactOutput struct{ *pulumi.OutputState }
 
 func (GetJavaReleaseArtifactOutput) ElementType() reflect.Type {
@@ -8275,12 +6966,6 @@ func (o GetJavaReleaseArtifactOutput) ToGetJavaReleaseArtifactOutput() GetJavaRe
 
 func (o GetJavaReleaseArtifactOutput) ToGetJavaReleaseArtifactOutputWithContext(ctx context.Context) GetJavaReleaseArtifactOutput {
 	return o
-}
-
-func (o GetJavaReleaseArtifactOutput) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleaseArtifact] {
-	return pulumix.Output[GetJavaReleaseArtifact]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Approximate compressed file size in bytes.
@@ -8320,12 +7005,6 @@ func (o GetJavaReleaseArtifactArrayOutput) ToGetJavaReleaseArtifactArrayOutput()
 
 func (o GetJavaReleaseArtifactArrayOutput) ToGetJavaReleaseArtifactArrayOutputWithContext(ctx context.Context) GetJavaReleaseArtifactArrayOutput {
 	return o
-}
-
-func (o GetJavaReleaseArtifactArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleaseArtifact] {
-	return pulumix.Output[[]GetJavaReleaseArtifact]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetJavaReleaseArtifactArrayOutput) Index(i pulumi.IntInput) GetJavaReleaseArtifactOutput {
@@ -8383,12 +7062,6 @@ func (i GetJavaReleaseFamilyDetailArgs) ToGetJavaReleaseFamilyDetailOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleaseFamilyDetailOutput)
 }
 
-func (i GetJavaReleaseFamilyDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleaseFamilyDetail] {
-	return pulumix.Output[GetJavaReleaseFamilyDetail]{
-		OutputState: i.ToGetJavaReleaseFamilyDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetJavaReleaseFamilyDetailArrayInput is an input type that accepts GetJavaReleaseFamilyDetailArray and GetJavaReleaseFamilyDetailArrayOutput values.
 // You can construct a concrete instance of `GetJavaReleaseFamilyDetailArrayInput` via:
 //
@@ -8414,12 +7087,6 @@ func (i GetJavaReleaseFamilyDetailArray) ToGetJavaReleaseFamilyDetailArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleaseFamilyDetailArrayOutput)
 }
 
-func (i GetJavaReleaseFamilyDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleaseFamilyDetail] {
-	return pulumix.Output[[]GetJavaReleaseFamilyDetail]{
-		OutputState: i.ToGetJavaReleaseFamilyDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetJavaReleaseFamilyDetailOutput struct{ *pulumi.OutputState }
 
 func (GetJavaReleaseFamilyDetailOutput) ElementType() reflect.Type {
@@ -8432,12 +7099,6 @@ func (o GetJavaReleaseFamilyDetailOutput) ToGetJavaReleaseFamilyDetailOutput() G
 
 func (o GetJavaReleaseFamilyDetailOutput) ToGetJavaReleaseFamilyDetailOutputWithContext(ctx context.Context) GetJavaReleaseFamilyDetailOutput {
 	return o
-}
-
-func (o GetJavaReleaseFamilyDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleaseFamilyDetail] {
-	return pulumix.Output[GetJavaReleaseFamilyDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Commonly used name for the license type.
@@ -8477,12 +7138,6 @@ func (o GetJavaReleaseFamilyDetailArrayOutput) ToGetJavaReleaseFamilyDetailArray
 
 func (o GetJavaReleaseFamilyDetailArrayOutput) ToGetJavaReleaseFamilyDetailArrayOutputWithContext(ctx context.Context) GetJavaReleaseFamilyDetailArrayOutput {
 	return o
-}
-
-func (o GetJavaReleaseFamilyDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleaseFamilyDetail] {
-	return pulumix.Output[[]GetJavaReleaseFamilyDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetJavaReleaseFamilyDetailArrayOutput) Index(i pulumi.IntInput) GetJavaReleaseFamilyDetailOutput {
@@ -8532,12 +7187,6 @@ func (i GetJavaReleaseLicenseDetailArgs) ToGetJavaReleaseLicenseDetailOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleaseLicenseDetailOutput)
 }
 
-func (i GetJavaReleaseLicenseDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleaseLicenseDetail] {
-	return pulumix.Output[GetJavaReleaseLicenseDetail]{
-		OutputState: i.ToGetJavaReleaseLicenseDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetJavaReleaseLicenseDetailArrayInput is an input type that accepts GetJavaReleaseLicenseDetailArray and GetJavaReleaseLicenseDetailArrayOutput values.
 // You can construct a concrete instance of `GetJavaReleaseLicenseDetailArrayInput` via:
 //
@@ -8563,12 +7212,6 @@ func (i GetJavaReleaseLicenseDetailArray) ToGetJavaReleaseLicenseDetailArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleaseLicenseDetailArrayOutput)
 }
 
-func (i GetJavaReleaseLicenseDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleaseLicenseDetail] {
-	return pulumix.Output[[]GetJavaReleaseLicenseDetail]{
-		OutputState: i.ToGetJavaReleaseLicenseDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetJavaReleaseLicenseDetailOutput struct{ *pulumi.OutputState }
 
 func (GetJavaReleaseLicenseDetailOutput) ElementType() reflect.Type {
@@ -8581,12 +7224,6 @@ func (o GetJavaReleaseLicenseDetailOutput) ToGetJavaReleaseLicenseDetailOutput()
 
 func (o GetJavaReleaseLicenseDetailOutput) ToGetJavaReleaseLicenseDetailOutputWithContext(ctx context.Context) GetJavaReleaseLicenseDetailOutput {
 	return o
-}
-
-func (o GetJavaReleaseLicenseDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleaseLicenseDetail] {
-	return pulumix.Output[GetJavaReleaseLicenseDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Commonly used name for the license type.
@@ -8616,12 +7253,6 @@ func (o GetJavaReleaseLicenseDetailArrayOutput) ToGetJavaReleaseLicenseDetailArr
 
 func (o GetJavaReleaseLicenseDetailArrayOutput) ToGetJavaReleaseLicenseDetailArrayOutputWithContext(ctx context.Context) GetJavaReleaseLicenseDetailArrayOutput {
 	return o
-}
-
-func (o GetJavaReleaseLicenseDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleaseLicenseDetail] {
-	return pulumix.Output[[]GetJavaReleaseLicenseDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetJavaReleaseLicenseDetailArrayOutput) Index(i pulumi.IntInput) GetJavaReleaseLicenseDetailOutput {
@@ -8665,12 +7296,6 @@ func (i GetJavaReleasesFilterArgs) ToGetJavaReleasesFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesFilterOutput)
 }
 
-func (i GetJavaReleasesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleasesFilter] {
-	return pulumix.Output[GetJavaReleasesFilter]{
-		OutputState: i.ToGetJavaReleasesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetJavaReleasesFilterArrayInput is an input type that accepts GetJavaReleasesFilterArray and GetJavaReleasesFilterArrayOutput values.
 // You can construct a concrete instance of `GetJavaReleasesFilterArrayInput` via:
 //
@@ -8696,12 +7321,6 @@ func (i GetJavaReleasesFilterArray) ToGetJavaReleasesFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesFilterArrayOutput)
 }
 
-func (i GetJavaReleasesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleasesFilter] {
-	return pulumix.Output[[]GetJavaReleasesFilter]{
-		OutputState: i.ToGetJavaReleasesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetJavaReleasesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetJavaReleasesFilterOutput) ElementType() reflect.Type {
@@ -8714,12 +7333,6 @@ func (o GetJavaReleasesFilterOutput) ToGetJavaReleasesFilterOutput() GetJavaRele
 
 func (o GetJavaReleasesFilterOutput) ToGetJavaReleasesFilterOutputWithContext(ctx context.Context) GetJavaReleasesFilterOutput {
 	return o
-}
-
-func (o GetJavaReleasesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleasesFilter] {
-	return pulumix.Output[GetJavaReleasesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetJavaReleasesFilterOutput) Name() pulumi.StringOutput {
@@ -8746,12 +7359,6 @@ func (o GetJavaReleasesFilterArrayOutput) ToGetJavaReleasesFilterArrayOutput() G
 
 func (o GetJavaReleasesFilterArrayOutput) ToGetJavaReleasesFilterArrayOutputWithContext(ctx context.Context) GetJavaReleasesFilterArrayOutput {
 	return o
-}
-
-func (o GetJavaReleasesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleasesFilter] {
-	return pulumix.Output[[]GetJavaReleasesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetJavaReleasesFilterArrayOutput) Index(i pulumi.IntInput) GetJavaReleasesFilterOutput {
@@ -8791,12 +7398,6 @@ func (i GetJavaReleasesJavaReleaseCollectionArgs) ToGetJavaReleasesJavaReleaseCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionOutput)
 }
 
-func (i GetJavaReleasesJavaReleaseCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleasesJavaReleaseCollection] {
-	return pulumix.Output[GetJavaReleasesJavaReleaseCollection]{
-		OutputState: i.ToGetJavaReleasesJavaReleaseCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetJavaReleasesJavaReleaseCollectionArrayInput is an input type that accepts GetJavaReleasesJavaReleaseCollectionArray and GetJavaReleasesJavaReleaseCollectionArrayOutput values.
 // You can construct a concrete instance of `GetJavaReleasesJavaReleaseCollectionArrayInput` via:
 //
@@ -8822,12 +7423,6 @@ func (i GetJavaReleasesJavaReleaseCollectionArray) ToGetJavaReleasesJavaReleaseC
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionArrayOutput)
 }
 
-func (i GetJavaReleasesJavaReleaseCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleasesJavaReleaseCollection] {
-	return pulumix.Output[[]GetJavaReleasesJavaReleaseCollection]{
-		OutputState: i.ToGetJavaReleasesJavaReleaseCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetJavaReleasesJavaReleaseCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetJavaReleasesJavaReleaseCollectionOutput) ElementType() reflect.Type {
@@ -8840,12 +7435,6 @@ func (o GetJavaReleasesJavaReleaseCollectionOutput) ToGetJavaReleasesJavaRelease
 
 func (o GetJavaReleasesJavaReleaseCollectionOutput) ToGetJavaReleasesJavaReleaseCollectionOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionOutput {
 	return o
-}
-
-func (o GetJavaReleasesJavaReleaseCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleasesJavaReleaseCollection] {
-	return pulumix.Output[GetJavaReleasesJavaReleaseCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetJavaReleasesJavaReleaseCollectionOutput) Items() GetJavaReleasesJavaReleaseCollectionItemArrayOutput {
@@ -8866,12 +7455,6 @@ func (o GetJavaReleasesJavaReleaseCollectionArrayOutput) ToGetJavaReleasesJavaRe
 
 func (o GetJavaReleasesJavaReleaseCollectionArrayOutput) ToGetJavaReleasesJavaReleaseCollectionArrayOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionArrayOutput {
 	return o
-}
-
-func (o GetJavaReleasesJavaReleaseCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleasesJavaReleaseCollection] {
-	return pulumix.Output[[]GetJavaReleasesJavaReleaseCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetJavaReleasesJavaReleaseCollectionArrayOutput) Index(i pulumi.IntInput) GetJavaReleasesJavaReleaseCollectionOutput {
@@ -8957,12 +7540,6 @@ func (i GetJavaReleasesJavaReleaseCollectionItemArgs) ToGetJavaReleasesJavaRelea
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionItemOutput)
 }
 
-func (i GetJavaReleasesJavaReleaseCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleasesJavaReleaseCollectionItem] {
-	return pulumix.Output[GetJavaReleasesJavaReleaseCollectionItem]{
-		OutputState: i.ToGetJavaReleasesJavaReleaseCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetJavaReleasesJavaReleaseCollectionItemArrayInput is an input type that accepts GetJavaReleasesJavaReleaseCollectionItemArray and GetJavaReleasesJavaReleaseCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetJavaReleasesJavaReleaseCollectionItemArrayInput` via:
 //
@@ -8988,12 +7565,6 @@ func (i GetJavaReleasesJavaReleaseCollectionItemArray) ToGetJavaReleasesJavaRele
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionItemArrayOutput)
 }
 
-func (i GetJavaReleasesJavaReleaseCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleasesJavaReleaseCollectionItem] {
-	return pulumix.Output[[]GetJavaReleasesJavaReleaseCollectionItem]{
-		OutputState: i.ToGetJavaReleasesJavaReleaseCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetJavaReleasesJavaReleaseCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetJavaReleasesJavaReleaseCollectionItemOutput) ElementType() reflect.Type {
@@ -9006,12 +7577,6 @@ func (o GetJavaReleasesJavaReleaseCollectionItemOutput) ToGetJavaReleasesJavaRel
 
 func (o GetJavaReleasesJavaReleaseCollectionItemOutput) ToGetJavaReleasesJavaReleaseCollectionItemOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemOutput {
 	return o
-}
-
-func (o GetJavaReleasesJavaReleaseCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleasesJavaReleaseCollectionItem] {
-	return pulumix.Output[GetJavaReleasesJavaReleaseCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Artifact content types for the Java version.
@@ -9094,12 +7659,6 @@ func (o GetJavaReleasesJavaReleaseCollectionItemArrayOutput) ToGetJavaReleasesJa
 	return o
 }
 
-func (o GetJavaReleasesJavaReleaseCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleasesJavaReleaseCollectionItem] {
-	return pulumix.Output[[]GetJavaReleasesJavaReleaseCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetJavaReleasesJavaReleaseCollectionItemArrayOutput) Index(i pulumi.IntInput) GetJavaReleasesJavaReleaseCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaReleasesJavaReleaseCollectionItem {
 		return vs[0].([]GetJavaReleasesJavaReleaseCollectionItem)[vs[1].(int)]
@@ -9155,12 +7714,6 @@ func (i GetJavaReleasesJavaReleaseCollectionItemArtifactArgs) ToGetJavaReleasesJ
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionItemArtifactOutput)
 }
 
-func (i GetJavaReleasesJavaReleaseCollectionItemArtifactArgs) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleasesJavaReleaseCollectionItemArtifact] {
-	return pulumix.Output[GetJavaReleasesJavaReleaseCollectionItemArtifact]{
-		OutputState: i.ToGetJavaReleasesJavaReleaseCollectionItemArtifactOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetJavaReleasesJavaReleaseCollectionItemArtifactArrayInput is an input type that accepts GetJavaReleasesJavaReleaseCollectionItemArtifactArray and GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput values.
 // You can construct a concrete instance of `GetJavaReleasesJavaReleaseCollectionItemArtifactArrayInput` via:
 //
@@ -9186,12 +7739,6 @@ func (i GetJavaReleasesJavaReleaseCollectionItemArtifactArray) ToGetJavaReleases
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput)
 }
 
-func (i GetJavaReleasesJavaReleaseCollectionItemArtifactArray) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleasesJavaReleaseCollectionItemArtifact] {
-	return pulumix.Output[[]GetJavaReleasesJavaReleaseCollectionItemArtifact]{
-		OutputState: i.ToGetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetJavaReleasesJavaReleaseCollectionItemArtifactOutput struct{ *pulumi.OutputState }
 
 func (GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) ElementType() reflect.Type {
@@ -9204,12 +7751,6 @@ func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) ToGetJavaRelease
 
 func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) ToGetJavaReleasesJavaReleaseCollectionItemArtifactOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemArtifactOutput {
 	return o
-}
-
-func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleasesJavaReleaseCollectionItemArtifact] {
-	return pulumix.Output[GetJavaReleasesJavaReleaseCollectionItemArtifact]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Approximate compressed file size in bytes.
@@ -9249,12 +7790,6 @@ func (o GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput) ToGetJavaRe
 
 func (o GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput) ToGetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput {
 	return o
-}
-
-func (o GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleasesJavaReleaseCollectionItemArtifact] {
-	return pulumix.Output[[]GetJavaReleasesJavaReleaseCollectionItemArtifact]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput) Index(i pulumi.IntInput) GetJavaReleasesJavaReleaseCollectionItemArtifactOutput {
@@ -9312,12 +7847,6 @@ func (i GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArgs) ToGetJavaRelea
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput)
 }
 
-func (i GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleasesJavaReleaseCollectionItemFamilyDetail] {
-	return pulumix.Output[GetJavaReleasesJavaReleaseCollectionItemFamilyDetail]{
-		OutputState: i.ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayInput is an input type that accepts GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArray and GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput values.
 // You can construct a concrete instance of `GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayInput` via:
 //
@@ -9343,12 +7872,6 @@ func (i GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArray) ToGetJavaRele
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput)
 }
 
-func (i GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleasesJavaReleaseCollectionItemFamilyDetail] {
-	return pulumix.Output[[]GetJavaReleasesJavaReleaseCollectionItemFamilyDetail]{
-		OutputState: i.ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput struct{ *pulumi.OutputState }
 
 func (GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) ElementType() reflect.Type {
@@ -9361,12 +7884,6 @@ func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) ToGetJavaRel
 
 func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput {
 	return o
-}
-
-func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleasesJavaReleaseCollectionItemFamilyDetail] {
-	return pulumix.Output[GetJavaReleasesJavaReleaseCollectionItemFamilyDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Commonly used name for the license type.
@@ -9406,12 +7923,6 @@ func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput) ToGetJa
 
 func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput) ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput {
 	return o
-}
-
-func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleasesJavaReleaseCollectionItemFamilyDetail] {
-	return pulumix.Output[[]GetJavaReleasesJavaReleaseCollectionItemFamilyDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput) Index(i pulumi.IntInput) GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput {
@@ -9461,12 +7972,6 @@ func (i GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArgs) ToGetJavaRele
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput)
 }
 
-func (i GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleasesJavaReleaseCollectionItemLicenseDetail] {
-	return pulumix.Output[GetJavaReleasesJavaReleaseCollectionItemLicenseDetail]{
-		OutputState: i.ToGetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayInput is an input type that accepts GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArray and GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput values.
 // You can construct a concrete instance of `GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayInput` via:
 //
@@ -9492,12 +7997,6 @@ func (i GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArray) ToGetJavaRel
 	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput)
 }
 
-func (i GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleasesJavaReleaseCollectionItemLicenseDetail] {
-	return pulumix.Output[[]GetJavaReleasesJavaReleaseCollectionItemLicenseDetail]{
-		OutputState: i.ToGetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput struct{ *pulumi.OutputState }
 
 func (GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput) ElementType() reflect.Type {
@@ -9510,12 +8009,6 @@ func (o GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput) ToGetJavaRe
 
 func (o GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput) ToGetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput {
 	return o
-}
-
-func (o GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetJavaReleasesJavaReleaseCollectionItemLicenseDetail] {
-	return pulumix.Output[GetJavaReleasesJavaReleaseCollectionItemLicenseDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Commonly used name for the license type.
@@ -9545,12 +8038,6 @@ func (o GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput) ToGetJ
 
 func (o GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput) ToGetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput {
 	return o
-}
-
-func (o GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetJavaReleasesJavaReleaseCollectionItemLicenseDetail] {
-	return pulumix.Output[[]GetJavaReleasesJavaReleaseCollectionItemLicenseDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput) Index(i pulumi.IntInput) GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput {
@@ -9664,12 +8151,6 @@ func (i GetListJreUsageItemArgs) ToGetListJreUsageItemOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetListJreUsageItemOutput)
 }
 
-func (i GetListJreUsageItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetListJreUsageItem] {
-	return pulumix.Output[GetListJreUsageItem]{
-		OutputState: i.ToGetListJreUsageItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetListJreUsageItemArrayInput is an input type that accepts GetListJreUsageItemArray and GetListJreUsageItemArrayOutput values.
 // You can construct a concrete instance of `GetListJreUsageItemArrayInput` via:
 //
@@ -9695,12 +8176,6 @@ func (i GetListJreUsageItemArray) ToGetListJreUsageItemArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetListJreUsageItemArrayOutput)
 }
 
-func (i GetListJreUsageItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListJreUsageItem] {
-	return pulumix.Output[[]GetListJreUsageItem]{
-		OutputState: i.ToGetListJreUsageItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetListJreUsageItemOutput struct{ *pulumi.OutputState }
 
 func (GetListJreUsageItemOutput) ElementType() reflect.Type {
@@ -9713,12 +8188,6 @@ func (o GetListJreUsageItemOutput) ToGetListJreUsageItemOutput() GetListJreUsage
 
 func (o GetListJreUsageItemOutput) ToGetListJreUsageItemOutputWithContext(ctx context.Context) GetListJreUsageItemOutput {
 	return o
-}
-
-func (o GetListJreUsageItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetListJreUsageItem] {
-	return pulumix.Output[GetListJreUsageItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The approximate count of the applications running on this Java Runtime.
@@ -9830,12 +8299,6 @@ func (o GetListJreUsageItemArrayOutput) ToGetListJreUsageItemArrayOutputWithCont
 	return o
 }
 
-func (o GetListJreUsageItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListJreUsageItem] {
-	return pulumix.Output[[]GetListJreUsageItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetListJreUsageItemArrayOutput) Index(i pulumi.IntInput) GetListJreUsageItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetListJreUsageItem {
 		return vs[0].([]GetListJreUsageItem)[vs[1].(int)]
@@ -9891,12 +8354,6 @@ func (i GetListJreUsageItemOperatingSystemArgs) ToGetListJreUsageItemOperatingSy
 	return pulumi.ToOutputWithContext(ctx, i).(GetListJreUsageItemOperatingSystemOutput)
 }
 
-func (i GetListJreUsageItemOperatingSystemArgs) ToOutput(ctx context.Context) pulumix.Output[GetListJreUsageItemOperatingSystem] {
-	return pulumix.Output[GetListJreUsageItemOperatingSystem]{
-		OutputState: i.ToGetListJreUsageItemOperatingSystemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetListJreUsageItemOperatingSystemArrayInput is an input type that accepts GetListJreUsageItemOperatingSystemArray and GetListJreUsageItemOperatingSystemArrayOutput values.
 // You can construct a concrete instance of `GetListJreUsageItemOperatingSystemArrayInput` via:
 //
@@ -9922,12 +8379,6 @@ func (i GetListJreUsageItemOperatingSystemArray) ToGetListJreUsageItemOperatingS
 	return pulumi.ToOutputWithContext(ctx, i).(GetListJreUsageItemOperatingSystemArrayOutput)
 }
 
-func (i GetListJreUsageItemOperatingSystemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListJreUsageItemOperatingSystem] {
-	return pulumix.Output[[]GetListJreUsageItemOperatingSystem]{
-		OutputState: i.ToGetListJreUsageItemOperatingSystemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetListJreUsageItemOperatingSystemOutput struct{ *pulumi.OutputState }
 
 func (GetListJreUsageItemOperatingSystemOutput) ElementType() reflect.Type {
@@ -9940,12 +8391,6 @@ func (o GetListJreUsageItemOperatingSystemOutput) ToGetListJreUsageItemOperating
 
 func (o GetListJreUsageItemOperatingSystemOutput) ToGetListJreUsageItemOperatingSystemOutputWithContext(ctx context.Context) GetListJreUsageItemOperatingSystemOutput {
 	return o
-}
-
-func (o GetListJreUsageItemOperatingSystemOutput) ToOutput(ctx context.Context) pulumix.Output[GetListJreUsageItemOperatingSystem] {
-	return pulumix.Output[GetListJreUsageItemOperatingSystem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The architecture of the operating system as provided by the Java system property os.arch.
@@ -9985,12 +8430,6 @@ func (o GetListJreUsageItemOperatingSystemArrayOutput) ToGetListJreUsageItemOper
 
 func (o GetListJreUsageItemOperatingSystemArrayOutput) ToGetListJreUsageItemOperatingSystemArrayOutputWithContext(ctx context.Context) GetListJreUsageItemOperatingSystemArrayOutput {
 	return o
-}
-
-func (o GetListJreUsageItemOperatingSystemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListJreUsageItemOperatingSystem] {
-	return pulumix.Output[[]GetListJreUsageItemOperatingSystem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetListJreUsageItemOperatingSystemArrayOutput) Index(i pulumi.IntInput) GetListJreUsageItemOperatingSystemOutput {

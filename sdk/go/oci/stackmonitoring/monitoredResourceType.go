@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Monitored Resource Type resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -270,12 +269,6 @@ func (i *MonitoredResourceType) ToMonitoredResourceTypeOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTypeOutput)
 }
 
-func (i *MonitoredResourceType) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourceType] {
-	return pulumix.Output[*MonitoredResourceType]{
-		OutputState: i.ToMonitoredResourceTypeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MonitoredResourceTypeArrayInput is an input type that accepts MonitoredResourceTypeArray and MonitoredResourceTypeArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourceTypeArrayInput` via:
 //
@@ -299,12 +292,6 @@ func (i MonitoredResourceTypeArray) ToMonitoredResourceTypeArrayOutput() Monitor
 
 func (i MonitoredResourceTypeArray) ToMonitoredResourceTypeArrayOutputWithContext(ctx context.Context) MonitoredResourceTypeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTypeArrayOutput)
-}
-
-func (i MonitoredResourceTypeArray) ToOutput(ctx context.Context) pulumix.Output[[]*MonitoredResourceType] {
-	return pulumix.Output[[]*MonitoredResourceType]{
-		OutputState: i.ToMonitoredResourceTypeArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MonitoredResourceTypeMapInput is an input type that accepts MonitoredResourceTypeMap and MonitoredResourceTypeMapOutput values.
@@ -332,12 +319,6 @@ func (i MonitoredResourceTypeMap) ToMonitoredResourceTypeMapOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTypeMapOutput)
 }
 
-func (i MonitoredResourceTypeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MonitoredResourceType] {
-	return pulumix.Output[map[string]*MonitoredResourceType]{
-		OutputState: i.ToMonitoredResourceTypeMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MonitoredResourceTypeOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourceTypeOutput) ElementType() reflect.Type {
@@ -350,12 +331,6 @@ func (o MonitoredResourceTypeOutput) ToMonitoredResourceTypeOutput() MonitoredRe
 
 func (o MonitoredResourceTypeOutput) ToMonitoredResourceTypeOutputWithContext(ctx context.Context) MonitoredResourceTypeOutput {
 	return o
-}
-
-func (o MonitoredResourceTypeOutput) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourceType] {
-	return pulumix.Output[*MonitoredResourceType]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
@@ -435,12 +410,6 @@ func (o MonitoredResourceTypeArrayOutput) ToMonitoredResourceTypeArrayOutputWith
 	return o
 }
 
-func (o MonitoredResourceTypeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MonitoredResourceType] {
-	return pulumix.Output[[]*MonitoredResourceType]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o MonitoredResourceTypeArrayOutput) Index(i pulumi.IntInput) MonitoredResourceTypeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *MonitoredResourceType {
 		return vs[0].([]*MonitoredResourceType)[vs[1].(int)]
@@ -459,12 +428,6 @@ func (o MonitoredResourceTypeMapOutput) ToMonitoredResourceTypeMapOutput() Monit
 
 func (o MonitoredResourceTypeMapOutput) ToMonitoredResourceTypeMapOutputWithContext(ctx context.Context) MonitoredResourceTypeMapOutput {
 	return o
-}
-
-func (o MonitoredResourceTypeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MonitoredResourceType] {
-	return pulumix.Output[map[string]*MonitoredResourceType]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MonitoredResourceTypeMapOutput) MapIndex(k pulumi.StringInput) MonitoredResourceTypeOutput {

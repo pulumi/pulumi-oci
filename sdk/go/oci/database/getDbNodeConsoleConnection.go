@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Db Node Console Connection resource in Oracle Cloud Infrastructure Database service.
@@ -123,12 +122,6 @@ func (o LookupDbNodeConsoleConnectionResultOutput) ToLookupDbNodeConsoleConnecti
 
 func (o LookupDbNodeConsoleConnectionResultOutput) ToLookupDbNodeConsoleConnectionResultOutputWithContext(ctx context.Context) LookupDbNodeConsoleConnectionResultOutput {
 	return o
-}
-
-func (o LookupDbNodeConsoleConnectionResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDbNodeConsoleConnectionResult] {
-	return pulumix.Output[LookupDbNodeConsoleConnectionResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment to contain the console connection.

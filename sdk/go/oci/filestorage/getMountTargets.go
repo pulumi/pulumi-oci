@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Mount Targets in Oracle Cloud Infrastructure File Storage service.
@@ -139,12 +138,6 @@ func (o GetMountTargetsResultOutput) ToGetMountTargetsResultOutput() GetMountTar
 
 func (o GetMountTargetsResultOutput) ToGetMountTargetsResultOutputWithContext(ctx context.Context) GetMountTargetsResultOutput {
 	return o
-}
-
-func (o GetMountTargetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMountTargetsResult] {
-	return pulumix.Output[GetMountTargetsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The availability domain the mount target is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`

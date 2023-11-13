@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Dkim resource in Oracle Cloud Infrastructure Email service.
@@ -279,12 +278,6 @@ func (i *Dkim) ToDkimOutputWithContext(ctx context.Context) DkimOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DkimOutput)
 }
 
-func (i *Dkim) ToOutput(ctx context.Context) pulumix.Output[*Dkim] {
-	return pulumix.Output[*Dkim]{
-		OutputState: i.ToDkimOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DkimArrayInput is an input type that accepts DkimArray and DkimArrayOutput values.
 // You can construct a concrete instance of `DkimArrayInput` via:
 //
@@ -308,12 +301,6 @@ func (i DkimArray) ToDkimArrayOutput() DkimArrayOutput {
 
 func (i DkimArray) ToDkimArrayOutputWithContext(ctx context.Context) DkimArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DkimArrayOutput)
-}
-
-func (i DkimArray) ToOutput(ctx context.Context) pulumix.Output[[]*Dkim] {
-	return pulumix.Output[[]*Dkim]{
-		OutputState: i.ToDkimArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DkimMapInput is an input type that accepts DkimMap and DkimMapOutput values.
@@ -341,12 +328,6 @@ func (i DkimMap) ToDkimMapOutputWithContext(ctx context.Context) DkimMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DkimMapOutput)
 }
 
-func (i DkimMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Dkim] {
-	return pulumix.Output[map[string]*Dkim]{
-		OutputState: i.ToDkimMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DkimOutput struct{ *pulumi.OutputState }
 
 func (DkimOutput) ElementType() reflect.Type {
@@ -359,12 +340,6 @@ func (o DkimOutput) ToDkimOutput() DkimOutput {
 
 func (o DkimOutput) ToDkimOutputWithContext(ctx context.Context) DkimOutput {
 	return o
-}
-
-func (o DkimOutput) ToOutput(ctx context.Context) pulumix.Output[*Dkim] {
-	return pulumix.Output[*Dkim]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The DNS CNAME record value to provision to the DKIM DNS subdomain, when using the CNAME method for DKIM setup (preferred).
@@ -458,12 +433,6 @@ func (o DkimArrayOutput) ToDkimArrayOutputWithContext(ctx context.Context) DkimA
 	return o
 }
 
-func (o DkimArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Dkim] {
-	return pulumix.Output[[]*Dkim]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DkimArrayOutput) Index(i pulumi.IntInput) DkimOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Dkim {
 		return vs[0].([]*Dkim)[vs[1].(int)]
@@ -482,12 +451,6 @@ func (o DkimMapOutput) ToDkimMapOutput() DkimMapOutput {
 
 func (o DkimMapOutput) ToDkimMapOutputWithContext(ctx context.Context) DkimMapOutput {
 	return o
-}
-
-func (o DkimMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Dkim] {
-	return pulumix.Output[map[string]*Dkim]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DkimMapOutput) MapIndex(k pulumi.StringInput) DkimOutput {

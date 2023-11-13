@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Cpe resource in Oracle Cloud Infrastructure Core service.
@@ -277,12 +276,6 @@ func (i *Cpe) ToCpeOutputWithContext(ctx context.Context) CpeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CpeOutput)
 }
 
-func (i *Cpe) ToOutput(ctx context.Context) pulumix.Output[*Cpe] {
-	return pulumix.Output[*Cpe]{
-		OutputState: i.ToCpeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CpeArrayInput is an input type that accepts CpeArray and CpeArrayOutput values.
 // You can construct a concrete instance of `CpeArrayInput` via:
 //
@@ -306,12 +299,6 @@ func (i CpeArray) ToCpeArrayOutput() CpeArrayOutput {
 
 func (i CpeArray) ToCpeArrayOutputWithContext(ctx context.Context) CpeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CpeArrayOutput)
-}
-
-func (i CpeArray) ToOutput(ctx context.Context) pulumix.Output[[]*Cpe] {
-	return pulumix.Output[[]*Cpe]{
-		OutputState: i.ToCpeArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CpeMapInput is an input type that accepts CpeMap and CpeMapOutput values.
@@ -339,12 +326,6 @@ func (i CpeMap) ToCpeMapOutputWithContext(ctx context.Context) CpeMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CpeMapOutput)
 }
 
-func (i CpeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Cpe] {
-	return pulumix.Output[map[string]*Cpe]{
-		OutputState: i.ToCpeMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CpeOutput struct{ *pulumi.OutputState }
 
 func (CpeOutput) ElementType() reflect.Type {
@@ -357,12 +338,6 @@ func (o CpeOutput) ToCpeOutput() CpeOutput {
 
 func (o CpeOutput) ToCpeOutputWithContext(ctx context.Context) CpeOutput {
 	return o
-}
-
-func (o CpeOutput) ToOutput(ctx context.Context) pulumix.Output[*Cpe] {
-	return pulumix.Output[*Cpe]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the CPE.
@@ -428,12 +403,6 @@ func (o CpeArrayOutput) ToCpeArrayOutputWithContext(ctx context.Context) CpeArra
 	return o
 }
 
-func (o CpeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Cpe] {
-	return pulumix.Output[[]*Cpe]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o CpeArrayOutput) Index(i pulumi.IntInput) CpeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Cpe {
 		return vs[0].([]*Cpe)[vs[1].(int)]
@@ -452,12 +421,6 @@ func (o CpeMapOutput) ToCpeMapOutput() CpeMapOutput {
 
 func (o CpeMapOutput) ToCpeMapOutputWithContext(ctx context.Context) CpeMapOutput {
 	return o
-}
-
-func (o CpeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Cpe] {
-	return pulumix.Output[map[string]*Cpe]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CpeMapOutput) MapIndex(k pulumi.StringInput) CpeOutput {

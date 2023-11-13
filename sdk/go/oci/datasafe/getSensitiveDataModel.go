@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Sensitive Data Model resource in Oracle Cloud Infrastructure Data Safe service.
@@ -134,12 +133,6 @@ func (o LookupSensitiveDataModelResultOutput) ToLookupSensitiveDataModelResultOu
 
 func (o LookupSensitiveDataModelResultOutput) ToLookupSensitiveDataModelResultOutputWithContext(ctx context.Context) LookupSensitiveDataModelResultOutput {
 	return o
-}
-
-func (o LookupSensitiveDataModelResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSensitiveDataModelResult] {
-	return pulumix.Output[LookupSensitiveDataModelResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The application suite name identifying a collection of applications. The default value is GENERIC. It's useful only if maintaining a sensitive data model for a suite of applications.

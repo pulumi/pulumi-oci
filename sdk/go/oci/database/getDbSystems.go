@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Db Systems in Oracle Cloud Infrastructure Database service.
@@ -137,12 +136,6 @@ func (o GetDbSystemsResultOutput) ToGetDbSystemsResultOutput() GetDbSystemsResul
 
 func (o GetDbSystemsResultOutput) ToGetDbSystemsResultOutputWithContext(ctx context.Context) GetDbSystemsResultOutput {
 	return o
-}
-
-func (o GetDbSystemsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDbSystemsResult] {
-	return pulumix.Output[GetDbSystemsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the availability domain that the DB system is located in.

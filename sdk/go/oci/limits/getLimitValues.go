@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Limit Values in Oracle Cloud Infrastructure Limits service.
@@ -132,12 +131,6 @@ func (o GetLimitValuesResultOutput) ToGetLimitValuesResultOutput() GetLimitValue
 
 func (o GetLimitValuesResultOutput) ToGetLimitValuesResultOutputWithContext(ctx context.Context) GetLimitValuesResultOutput {
 	return o
-}
-
-func (o GetLimitValuesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLimitValuesResult] {
-	return pulumix.Output[GetLimitValuesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // If present, the returned value is only specific to this availability domain.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Target Databases Columns in Oracle Cloud Infrastructure Data Safe service.
@@ -150,12 +149,6 @@ func (o GetTargetDatabasesColumnsResultOutput) ToGetTargetDatabasesColumnsResult
 
 func (o GetTargetDatabasesColumnsResultOutput) ToGetTargetDatabasesColumnsResultOutputWithContext(ctx context.Context) GetTargetDatabasesColumnsResultOutput {
 	return o
-}
-
-func (o GetTargetDatabasesColumnsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabasesColumnsResult] {
-	return pulumix.Output[GetTargetDatabasesColumnsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetTargetDatabasesColumnsResultOutput) ColumnNameContains() pulumi.StringPtrOutput {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Run Statement resource in Oracle Cloud Infrastructure Data Flow service.
@@ -198,12 +197,6 @@ func (i *RunStatement) ToRunStatementOutputWithContext(ctx context.Context) RunS
 	return pulumi.ToOutputWithContext(ctx, i).(RunStatementOutput)
 }
 
-func (i *RunStatement) ToOutput(ctx context.Context) pulumix.Output[*RunStatement] {
-	return pulumix.Output[*RunStatement]{
-		OutputState: i.ToRunStatementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RunStatementArrayInput is an input type that accepts RunStatementArray and RunStatementArrayOutput values.
 // You can construct a concrete instance of `RunStatementArrayInput` via:
 //
@@ -227,12 +220,6 @@ func (i RunStatementArray) ToRunStatementArrayOutput() RunStatementArrayOutput {
 
 func (i RunStatementArray) ToRunStatementArrayOutputWithContext(ctx context.Context) RunStatementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RunStatementArrayOutput)
-}
-
-func (i RunStatementArray) ToOutput(ctx context.Context) pulumix.Output[[]*RunStatement] {
-	return pulumix.Output[[]*RunStatement]{
-		OutputState: i.ToRunStatementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // RunStatementMapInput is an input type that accepts RunStatementMap and RunStatementMapOutput values.
@@ -260,12 +247,6 @@ func (i RunStatementMap) ToRunStatementMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(RunStatementMapOutput)
 }
 
-func (i RunStatementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*RunStatement] {
-	return pulumix.Output[map[string]*RunStatement]{
-		OutputState: i.ToRunStatementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RunStatementOutput struct{ *pulumi.OutputState }
 
 func (RunStatementOutput) ElementType() reflect.Type {
@@ -278,12 +259,6 @@ func (o RunStatementOutput) ToRunStatementOutput() RunStatementOutput {
 
 func (o RunStatementOutput) ToRunStatementOutputWithContext(ctx context.Context) RunStatementOutput {
 	return o
-}
-
-func (o RunStatementOutput) ToOutput(ctx context.Context) pulumix.Output[*RunStatement] {
-	return pulumix.Output[*RunStatement]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The statement code to execute. Example: `println(sc.version)`
@@ -338,12 +313,6 @@ func (o RunStatementArrayOutput) ToRunStatementArrayOutputWithContext(ctx contex
 	return o
 }
 
-func (o RunStatementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*RunStatement] {
-	return pulumix.Output[[]*RunStatement]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o RunStatementArrayOutput) Index(i pulumi.IntInput) RunStatementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *RunStatement {
 		return vs[0].([]*RunStatement)[vs[1].(int)]
@@ -362,12 +331,6 @@ func (o RunStatementMapOutput) ToRunStatementMapOutput() RunStatementMapOutput {
 
 func (o RunStatementMapOutput) ToRunStatementMapOutputWithContext(ctx context.Context) RunStatementMapOutput {
 	return o
-}
-
-func (o RunStatementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*RunStatement] {
-	return pulumix.Output[map[string]*RunStatement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RunStatementMapOutput) MapIndex(k pulumi.StringInput) RunStatementOutput {

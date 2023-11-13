@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Backend Set resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -416,12 +415,6 @@ func (i *BackendSet) ToBackendSetOutputWithContext(ctx context.Context) BackendS
 	return pulumi.ToOutputWithContext(ctx, i).(BackendSetOutput)
 }
 
-func (i *BackendSet) ToOutput(ctx context.Context) pulumix.Output[*BackendSet] {
-	return pulumix.Output[*BackendSet]{
-		OutputState: i.ToBackendSetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BackendSetArrayInput is an input type that accepts BackendSetArray and BackendSetArrayOutput values.
 // You can construct a concrete instance of `BackendSetArrayInput` via:
 //
@@ -445,12 +438,6 @@ func (i BackendSetArray) ToBackendSetArrayOutput() BackendSetArrayOutput {
 
 func (i BackendSetArray) ToBackendSetArrayOutputWithContext(ctx context.Context) BackendSetArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BackendSetArrayOutput)
-}
-
-func (i BackendSetArray) ToOutput(ctx context.Context) pulumix.Output[[]*BackendSet] {
-	return pulumix.Output[[]*BackendSet]{
-		OutputState: i.ToBackendSetArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BackendSetMapInput is an input type that accepts BackendSetMap and BackendSetMapOutput values.
@@ -478,12 +465,6 @@ func (i BackendSetMap) ToBackendSetMapOutputWithContext(ctx context.Context) Bac
 	return pulumi.ToOutputWithContext(ctx, i).(BackendSetMapOutput)
 }
 
-func (i BackendSetMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BackendSet] {
-	return pulumix.Output[map[string]*BackendSet]{
-		OutputState: i.ToBackendSetMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BackendSetOutput struct{ *pulumi.OutputState }
 
 func (BackendSetOutput) ElementType() reflect.Type {
@@ -496,12 +477,6 @@ func (o BackendSetOutput) ToBackendSetOutput() BackendSetOutput {
 
 func (o BackendSetOutput) ToBackendSetOutputWithContext(ctx context.Context) BackendSetOutput {
 	return o
-}
-
-func (o BackendSetOutput) ToOutput(ctx context.Context) pulumix.Output[*BackendSet] {
-	return pulumix.Output[*BackendSet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BackendSetOutput) Backends() BackendSetBackendArrayOutput {
@@ -597,12 +572,6 @@ func (o BackendSetArrayOutput) ToBackendSetArrayOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o BackendSetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BackendSet] {
-	return pulumix.Output[[]*BackendSet]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o BackendSetArrayOutput) Index(i pulumi.IntInput) BackendSetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BackendSet {
 		return vs[0].([]*BackendSet)[vs[1].(int)]
@@ -621,12 +590,6 @@ func (o BackendSetMapOutput) ToBackendSetMapOutput() BackendSetMapOutput {
 
 func (o BackendSetMapOutput) ToBackendSetMapOutputWithContext(ctx context.Context) BackendSetMapOutput {
 	return o
-}
-
-func (o BackendSetMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BackendSet] {
-	return pulumix.Output[map[string]*BackendSet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BackendSetMapOutput) MapIndex(k pulumi.StringInput) BackendSetOutput {

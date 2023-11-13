@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Workspace Import Request resource in Oracle Cloud Infrastructure Data Integration service.
@@ -284,12 +283,6 @@ func (i *WorkspaceImportRequest) ToWorkspaceImportRequestOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceImportRequestOutput)
 }
 
-func (i *WorkspaceImportRequest) ToOutput(ctx context.Context) pulumix.Output[*WorkspaceImportRequest] {
-	return pulumix.Output[*WorkspaceImportRequest]{
-		OutputState: i.ToWorkspaceImportRequestOutputWithContext(ctx).OutputState,
-	}
-}
-
 // WorkspaceImportRequestArrayInput is an input type that accepts WorkspaceImportRequestArray and WorkspaceImportRequestArrayOutput values.
 // You can construct a concrete instance of `WorkspaceImportRequestArrayInput` via:
 //
@@ -313,12 +306,6 @@ func (i WorkspaceImportRequestArray) ToWorkspaceImportRequestArrayOutput() Works
 
 func (i WorkspaceImportRequestArray) ToWorkspaceImportRequestArrayOutputWithContext(ctx context.Context) WorkspaceImportRequestArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceImportRequestArrayOutput)
-}
-
-func (i WorkspaceImportRequestArray) ToOutput(ctx context.Context) pulumix.Output[[]*WorkspaceImportRequest] {
-	return pulumix.Output[[]*WorkspaceImportRequest]{
-		OutputState: i.ToWorkspaceImportRequestArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // WorkspaceImportRequestMapInput is an input type that accepts WorkspaceImportRequestMap and WorkspaceImportRequestMapOutput values.
@@ -346,12 +333,6 @@ func (i WorkspaceImportRequestMap) ToWorkspaceImportRequestMapOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceImportRequestMapOutput)
 }
 
-func (i WorkspaceImportRequestMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*WorkspaceImportRequest] {
-	return pulumix.Output[map[string]*WorkspaceImportRequest]{
-		OutputState: i.ToWorkspaceImportRequestMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type WorkspaceImportRequestOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceImportRequestOutput) ElementType() reflect.Type {
@@ -364,12 +345,6 @@ func (o WorkspaceImportRequestOutput) ToWorkspaceImportRequestOutput() Workspace
 
 func (o WorkspaceImportRequestOutput) ToWorkspaceImportRequestOutputWithContext(ctx context.Context) WorkspaceImportRequestOutput {
 	return o
-}
-
-func (o WorkspaceImportRequestOutput) ToOutput(ctx context.Context) pulumix.Output[*WorkspaceImportRequest] {
-	return pulumix.Output[*WorkspaceImportRequest]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Name of the Object Storage bucket where the object will be imported from.
@@ -473,12 +448,6 @@ func (o WorkspaceImportRequestArrayOutput) ToWorkspaceImportRequestArrayOutputWi
 	return o
 }
 
-func (o WorkspaceImportRequestArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*WorkspaceImportRequest] {
-	return pulumix.Output[[]*WorkspaceImportRequest]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o WorkspaceImportRequestArrayOutput) Index(i pulumi.IntInput) WorkspaceImportRequestOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *WorkspaceImportRequest {
 		return vs[0].([]*WorkspaceImportRequest)[vs[1].(int)]
@@ -497,12 +466,6 @@ func (o WorkspaceImportRequestMapOutput) ToWorkspaceImportRequestMapOutput() Wor
 
 func (o WorkspaceImportRequestMapOutput) ToWorkspaceImportRequestMapOutputWithContext(ctx context.Context) WorkspaceImportRequestMapOutput {
 	return o
-}
-
-func (o WorkspaceImportRequestMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*WorkspaceImportRequest] {
-	return pulumix.Output[map[string]*WorkspaceImportRequest]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o WorkspaceImportRequestMapOutput) MapIndex(k pulumi.StringInput) WorkspaceImportRequestOutput {

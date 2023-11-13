@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of My Devices in Oracle Cloud Infrastructure Identity Domains service.
@@ -157,12 +156,6 @@ func (o GetDomainsMyDevicesResultOutput) ToGetDomainsMyDevicesResultOutput() Get
 
 func (o GetDomainsMyDevicesResultOutput) ToGetDomainsMyDevicesResultOutputWithContext(ctx context.Context) GetDomainsMyDevicesResultOutput {
 	return o
-}
-
-func (o GetDomainsMyDevicesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsMyDevicesResult] {
-	return pulumix.Output[GetDomainsMyDevicesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDomainsMyDevicesResultOutput) AttributeSets() pulumi.StringArrayOutput {

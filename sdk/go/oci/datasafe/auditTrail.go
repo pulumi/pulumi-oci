@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Audit Trail resource in Oracle Cloud Infrastructure Data Safe service.
@@ -270,12 +269,6 @@ func (i *AuditTrail) ToAuditTrailOutputWithContext(ctx context.Context) AuditTra
 	return pulumi.ToOutputWithContext(ctx, i).(AuditTrailOutput)
 }
 
-func (i *AuditTrail) ToOutput(ctx context.Context) pulumix.Output[*AuditTrail] {
-	return pulumix.Output[*AuditTrail]{
-		OutputState: i.ToAuditTrailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AuditTrailArrayInput is an input type that accepts AuditTrailArray and AuditTrailArrayOutput values.
 // You can construct a concrete instance of `AuditTrailArrayInput` via:
 //
@@ -299,12 +292,6 @@ func (i AuditTrailArray) ToAuditTrailArrayOutput() AuditTrailArrayOutput {
 
 func (i AuditTrailArray) ToAuditTrailArrayOutputWithContext(ctx context.Context) AuditTrailArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AuditTrailArrayOutput)
-}
-
-func (i AuditTrailArray) ToOutput(ctx context.Context) pulumix.Output[[]*AuditTrail] {
-	return pulumix.Output[[]*AuditTrail]{
-		OutputState: i.ToAuditTrailArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AuditTrailMapInput is an input type that accepts AuditTrailMap and AuditTrailMapOutput values.
@@ -332,12 +319,6 @@ func (i AuditTrailMap) ToAuditTrailMapOutputWithContext(ctx context.Context) Aud
 	return pulumi.ToOutputWithContext(ctx, i).(AuditTrailMapOutput)
 }
 
-func (i AuditTrailMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AuditTrail] {
-	return pulumix.Output[map[string]*AuditTrail]{
-		OutputState: i.ToAuditTrailMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AuditTrailOutput struct{ *pulumi.OutputState }
 
 func (AuditTrailOutput) ElementType() reflect.Type {
@@ -350,12 +331,6 @@ func (o AuditTrailOutput) ToAuditTrailOutput() AuditTrailOutput {
 
 func (o AuditTrailOutput) ToAuditTrailOutputWithContext(ctx context.Context) AuditTrailOutput {
 	return o
-}
-
-func (o AuditTrailOutput) ToOutput(ctx context.Context) pulumix.Output[*AuditTrail] {
-	return pulumix.Output[*AuditTrail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The date from which the audit trail must start collecting data, in the format defined by RFC3339.
@@ -475,12 +450,6 @@ func (o AuditTrailArrayOutput) ToAuditTrailArrayOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o AuditTrailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AuditTrail] {
-	return pulumix.Output[[]*AuditTrail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AuditTrailArrayOutput) Index(i pulumi.IntInput) AuditTrailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AuditTrail {
 		return vs[0].([]*AuditTrail)[vs[1].(int)]
@@ -499,12 +468,6 @@ func (o AuditTrailMapOutput) ToAuditTrailMapOutput() AuditTrailMapOutput {
 
 func (o AuditTrailMapOutput) ToAuditTrailMapOutputWithContext(ctx context.Context) AuditTrailMapOutput {
 	return o
-}
-
-func (o AuditTrailMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AuditTrail] {
-	return pulumix.Output[map[string]*AuditTrail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AuditTrailMapOutput) MapIndex(k pulumi.StringInput) AuditTrailOutput {

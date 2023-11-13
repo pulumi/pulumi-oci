@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Auto Scaling Configuration resource in Oracle Cloud Infrastructure Auto Scaling service.
@@ -122,12 +121,6 @@ func (o LookupAutoScalingConfigurationResultOutput) ToLookupAutoScalingConfigura
 
 func (o LookupAutoScalingConfigurationResultOutput) ToLookupAutoScalingConfigurationResultOutputWithContext(ctx context.Context) LookupAutoScalingConfigurationResultOutput {
 	return o
-}
-
-func (o LookupAutoScalingConfigurationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAutoScalingConfigurationResult] {
-	return pulumix.Output[LookupAutoScalingConfigurationResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupAutoScalingConfigurationResultOutput) AutoScalingConfigurationId() pulumi.StringOutput {

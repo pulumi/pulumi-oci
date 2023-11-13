@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Subnet resource in Oracle Cloud Infrastructure Core service.
@@ -142,12 +141,6 @@ func (o LookupSubnetResultOutput) ToLookupSubnetResultOutput() LookupSubnetResul
 
 func (o LookupSubnetResultOutput) ToLookupSubnetResultOutputWithContext(ctx context.Context) LookupSubnetResultOutput {
 	return o
-}
-
-func (o LookupSubnetResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSubnetResult] {
-	return pulumix.Output[LookupSubnetResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The subnet's availability domain. This attribute will be null if this is a regional subnet instead of an AD-specific subnet. Oracle recommends creating regional subnets.  Example: `Uocm:PHX-AD-1`

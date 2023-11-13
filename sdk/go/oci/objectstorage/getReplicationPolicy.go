@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Replication Policy resource in Oracle Cloud Infrastructure Object Storage service.
@@ -128,12 +127,6 @@ func (o LookupReplicationPolicyResultOutput) ToLookupReplicationPolicyResultOutp
 
 func (o LookupReplicationPolicyResultOutput) ToLookupReplicationPolicyResultOutputWithContext(ctx context.Context) LookupReplicationPolicyResultOutput {
 	return o
-}
-
-func (o LookupReplicationPolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupReplicationPolicyResult] {
-	return pulumix.Output[LookupReplicationPolicyResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupReplicationPolicyResultOutput) Bucket() pulumi.StringOutput {

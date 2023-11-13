@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Instance Pool resource in Oracle Cloud Infrastructure Core service.
@@ -336,12 +335,6 @@ func (i *InstancePool) ToInstancePoolOutputWithContext(ctx context.Context) Inst
 	return pulumi.ToOutputWithContext(ctx, i).(InstancePoolOutput)
 }
 
-func (i *InstancePool) ToOutput(ctx context.Context) pulumix.Output[*InstancePool] {
-	return pulumix.Output[*InstancePool]{
-		OutputState: i.ToInstancePoolOutputWithContext(ctx).OutputState,
-	}
-}
-
 // InstancePoolArrayInput is an input type that accepts InstancePoolArray and InstancePoolArrayOutput values.
 // You can construct a concrete instance of `InstancePoolArrayInput` via:
 //
@@ -365,12 +358,6 @@ func (i InstancePoolArray) ToInstancePoolArrayOutput() InstancePoolArrayOutput {
 
 func (i InstancePoolArray) ToInstancePoolArrayOutputWithContext(ctx context.Context) InstancePoolArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InstancePoolArrayOutput)
-}
-
-func (i InstancePoolArray) ToOutput(ctx context.Context) pulumix.Output[[]*InstancePool] {
-	return pulumix.Output[[]*InstancePool]{
-		OutputState: i.ToInstancePoolArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // InstancePoolMapInput is an input type that accepts InstancePoolMap and InstancePoolMapOutput values.
@@ -398,12 +385,6 @@ func (i InstancePoolMap) ToInstancePoolMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(InstancePoolMapOutput)
 }
 
-func (i InstancePoolMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*InstancePool] {
-	return pulumix.Output[map[string]*InstancePool]{
-		OutputState: i.ToInstancePoolMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type InstancePoolOutput struct{ *pulumi.OutputState }
 
 func (InstancePoolOutput) ElementType() reflect.Type {
@@ -416,12 +397,6 @@ func (o InstancePoolOutput) ToInstancePoolOutput() InstancePoolOutput {
 
 func (o InstancePoolOutput) ToInstancePoolOutputWithContext(ctx context.Context) InstancePoolOutput {
 	return o
-}
-
-func (o InstancePoolOutput) ToOutput(ctx context.Context) pulumix.Output[*InstancePool] {
-	return pulumix.Output[*InstancePool]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
@@ -508,12 +483,6 @@ func (o InstancePoolArrayOutput) ToInstancePoolArrayOutputWithContext(ctx contex
 	return o
 }
 
-func (o InstancePoolArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*InstancePool] {
-	return pulumix.Output[[]*InstancePool]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o InstancePoolArrayOutput) Index(i pulumi.IntInput) InstancePoolOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *InstancePool {
 		return vs[0].([]*InstancePool)[vs[1].(int)]
@@ -532,12 +501,6 @@ func (o InstancePoolMapOutput) ToInstancePoolMapOutput() InstancePoolMapOutput {
 
 func (o InstancePoolMapOutput) ToInstancePoolMapOutputWithContext(ctx context.Context) InstancePoolMapOutput {
 	return o
-}
-
-func (o InstancePoolMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*InstancePool] {
-	return pulumix.Output[map[string]*InstancePool]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o InstancePoolMapOutput) MapIndex(k pulumi.StringInput) InstancePoolOutput {

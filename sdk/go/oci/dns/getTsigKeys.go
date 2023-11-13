@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Tsig Keys in Oracle Cloud Infrastructure DNS service.
@@ -125,12 +124,6 @@ func (o GetTsigKeysResultOutput) ToGetTsigKeysResultOutput() GetTsigKeysResultOu
 
 func (o GetTsigKeysResultOutput) ToGetTsigKeysResultOutputWithContext(ctx context.Context) GetTsigKeysResultOutput {
 	return o
-}
-
-func (o GetTsigKeysResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTsigKeysResult] {
-	return pulumix.Output[GetTsigKeysResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment containing the TSIG key.

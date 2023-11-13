@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -65,12 +64,6 @@ func (i FusionEnvironmentAdminUserItemArgs) ToFusionEnvironmentAdminUserItemOutp
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentAdminUserItemOutput)
 }
 
-func (i FusionEnvironmentAdminUserItemArgs) ToOutput(ctx context.Context) pulumix.Output[FusionEnvironmentAdminUserItem] {
-	return pulumix.Output[FusionEnvironmentAdminUserItem]{
-		OutputState: i.ToFusionEnvironmentAdminUserItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // FusionEnvironmentAdminUserItemArrayInput is an input type that accepts FusionEnvironmentAdminUserItemArray and FusionEnvironmentAdminUserItemArrayOutput values.
 // You can construct a concrete instance of `FusionEnvironmentAdminUserItemArrayInput` via:
 //
@@ -96,12 +89,6 @@ func (i FusionEnvironmentAdminUserItemArray) ToFusionEnvironmentAdminUserItemArr
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentAdminUserItemArrayOutput)
 }
 
-func (i FusionEnvironmentAdminUserItemArray) ToOutput(ctx context.Context) pulumix.Output[[]FusionEnvironmentAdminUserItem] {
-	return pulumix.Output[[]FusionEnvironmentAdminUserItem]{
-		OutputState: i.ToFusionEnvironmentAdminUserItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FusionEnvironmentAdminUserItemOutput struct{ *pulumi.OutputState }
 
 func (FusionEnvironmentAdminUserItemOutput) ElementType() reflect.Type {
@@ -114,12 +101,6 @@ func (o FusionEnvironmentAdminUserItemOutput) ToFusionEnvironmentAdminUserItemOu
 
 func (o FusionEnvironmentAdminUserItemOutput) ToFusionEnvironmentAdminUserItemOutputWithContext(ctx context.Context) FusionEnvironmentAdminUserItemOutput {
 	return o
-}
-
-func (o FusionEnvironmentAdminUserItemOutput) ToOutput(ctx context.Context) pulumix.Output[FusionEnvironmentAdminUserItem] {
-	return pulumix.Output[FusionEnvironmentAdminUserItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The email address for the administrator.
@@ -157,12 +138,6 @@ func (o FusionEnvironmentAdminUserItemArrayOutput) ToFusionEnvironmentAdminUserI
 
 func (o FusionEnvironmentAdminUserItemArrayOutput) ToFusionEnvironmentAdminUserItemArrayOutputWithContext(ctx context.Context) FusionEnvironmentAdminUserItemArrayOutput {
 	return o
-}
-
-func (o FusionEnvironmentAdminUserItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]FusionEnvironmentAdminUserItem] {
-	return pulumix.Output[[]FusionEnvironmentAdminUserItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FusionEnvironmentAdminUserItemArrayOutput) Index(i pulumi.IntInput) FusionEnvironmentAdminUserItemOutput {
@@ -220,12 +195,6 @@ func (i FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs) ToFusionEn
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsOutput)
 }
 
-func (i FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[FusionEnvironmentCreateFusionEnvironmentAdminUserDetails] {
-	return pulumix.Output[FusionEnvironmentCreateFusionEnvironmentAdminUserDetails]{
-		OutputState: i.ToFusionEnvironmentCreateFusionEnvironmentAdminUserDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs) ToFusionEnvironmentCreateFusionEnvironmentAdminUserDetailsPtrOutput() FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsPtrOutput {
 	return i.ToFusionEnvironmentCreateFusionEnvironmentAdminUserDetailsPtrOutputWithContext(context.Background())
 }
@@ -267,12 +236,6 @@ func (i *fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsPtrType) ToFusi
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsPtrOutput)
 }
 
-func (i *fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*FusionEnvironmentCreateFusionEnvironmentAdminUserDetails] {
-	return pulumix.Output[*FusionEnvironmentCreateFusionEnvironmentAdminUserDetails]{
-		OutputState: i.ToFusionEnvironmentCreateFusionEnvironmentAdminUserDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsOutput struct{ *pulumi.OutputState }
 
 func (FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsOutput) ElementType() reflect.Type {
@@ -295,12 +258,6 @@ func (o FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsOutput) ToFusion
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v FusionEnvironmentCreateFusionEnvironmentAdminUserDetails) *FusionEnvironmentCreateFusionEnvironmentAdminUserDetails {
 		return &v
 	}).(FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsPtrOutput)
-}
-
-func (o FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[FusionEnvironmentCreateFusionEnvironmentAdminUserDetails] {
-	return pulumix.Output[FusionEnvironmentCreateFusionEnvironmentAdminUserDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The email address for the administrator.
@@ -340,12 +297,6 @@ func (o FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsPtrOutput) ToFus
 
 func (o FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsPtrOutput) ToFusionEnvironmentCreateFusionEnvironmentAdminUserDetailsPtrOutputWithContext(ctx context.Context) FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsPtrOutput {
 	return o
-}
-
-func (o FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*FusionEnvironmentCreateFusionEnvironmentAdminUserDetails] {
-	return pulumix.Output[*FusionEnvironmentCreateFusionEnvironmentAdminUserDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsPtrOutput) Elem() FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsOutput {
@@ -449,12 +400,6 @@ func (i FusionEnvironmentFamilyFamilyMaintenancePolicyArgs) ToFusionEnvironmentF
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentFamilyFamilyMaintenancePolicyOutput)
 }
 
-func (i FusionEnvironmentFamilyFamilyMaintenancePolicyArgs) ToOutput(ctx context.Context) pulumix.Output[FusionEnvironmentFamilyFamilyMaintenancePolicy] {
-	return pulumix.Output[FusionEnvironmentFamilyFamilyMaintenancePolicy]{
-		OutputState: i.ToFusionEnvironmentFamilyFamilyMaintenancePolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i FusionEnvironmentFamilyFamilyMaintenancePolicyArgs) ToFusionEnvironmentFamilyFamilyMaintenancePolicyPtrOutput() FusionEnvironmentFamilyFamilyMaintenancePolicyPtrOutput {
 	return i.ToFusionEnvironmentFamilyFamilyMaintenancePolicyPtrOutputWithContext(context.Background())
 }
@@ -496,12 +441,6 @@ func (i *fusionEnvironmentFamilyFamilyMaintenancePolicyPtrType) ToFusionEnvironm
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentFamilyFamilyMaintenancePolicyPtrOutput)
 }
 
-func (i *fusionEnvironmentFamilyFamilyMaintenancePolicyPtrType) ToOutput(ctx context.Context) pulumix.Output[*FusionEnvironmentFamilyFamilyMaintenancePolicy] {
-	return pulumix.Output[*FusionEnvironmentFamilyFamilyMaintenancePolicy]{
-		OutputState: i.ToFusionEnvironmentFamilyFamilyMaintenancePolicyPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FusionEnvironmentFamilyFamilyMaintenancePolicyOutput struct{ *pulumi.OutputState }
 
 func (FusionEnvironmentFamilyFamilyMaintenancePolicyOutput) ElementType() reflect.Type {
@@ -524,12 +463,6 @@ func (o FusionEnvironmentFamilyFamilyMaintenancePolicyOutput) ToFusionEnvironmen
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v FusionEnvironmentFamilyFamilyMaintenancePolicy) *FusionEnvironmentFamilyFamilyMaintenancePolicy {
 		return &v
 	}).(FusionEnvironmentFamilyFamilyMaintenancePolicyPtrOutput)
-}
-
-func (o FusionEnvironmentFamilyFamilyMaintenancePolicyOutput) ToOutput(ctx context.Context) pulumix.Output[FusionEnvironmentFamilyFamilyMaintenancePolicy] {
-	return pulumix.Output[FusionEnvironmentFamilyFamilyMaintenancePolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Option to upgrade both production and non-production environments at the same time. When set to PROD both types of environnments are upgraded on the production schedule. When set to NON_PROD both types of environments are upgraded on the non-production schedule.
@@ -559,12 +492,6 @@ func (o FusionEnvironmentFamilyFamilyMaintenancePolicyPtrOutput) ToFusionEnviron
 
 func (o FusionEnvironmentFamilyFamilyMaintenancePolicyPtrOutput) ToFusionEnvironmentFamilyFamilyMaintenancePolicyPtrOutputWithContext(ctx context.Context) FusionEnvironmentFamilyFamilyMaintenancePolicyPtrOutput {
 	return o
-}
-
-func (o FusionEnvironmentFamilyFamilyMaintenancePolicyPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*FusionEnvironmentFamilyFamilyMaintenancePolicy] {
-	return pulumix.Output[*FusionEnvironmentFamilyFamilyMaintenancePolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FusionEnvironmentFamilyFamilyMaintenancePolicyPtrOutput) Elem() FusionEnvironmentFamilyFamilyMaintenancePolicyOutput {
@@ -650,12 +577,6 @@ func (i FusionEnvironmentKmsKeyInfoArgs) ToFusionEnvironmentKmsKeyInfoOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentKmsKeyInfoOutput)
 }
 
-func (i FusionEnvironmentKmsKeyInfoArgs) ToOutput(ctx context.Context) pulumix.Output[FusionEnvironmentKmsKeyInfo] {
-	return pulumix.Output[FusionEnvironmentKmsKeyInfo]{
-		OutputState: i.ToFusionEnvironmentKmsKeyInfoOutputWithContext(ctx).OutputState,
-	}
-}
-
 // FusionEnvironmentKmsKeyInfoArrayInput is an input type that accepts FusionEnvironmentKmsKeyInfoArray and FusionEnvironmentKmsKeyInfoArrayOutput values.
 // You can construct a concrete instance of `FusionEnvironmentKmsKeyInfoArrayInput` via:
 //
@@ -681,12 +602,6 @@ func (i FusionEnvironmentKmsKeyInfoArray) ToFusionEnvironmentKmsKeyInfoArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentKmsKeyInfoArrayOutput)
 }
 
-func (i FusionEnvironmentKmsKeyInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]FusionEnvironmentKmsKeyInfo] {
-	return pulumix.Output[[]FusionEnvironmentKmsKeyInfo]{
-		OutputState: i.ToFusionEnvironmentKmsKeyInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FusionEnvironmentKmsKeyInfoOutput struct{ *pulumi.OutputState }
 
 func (FusionEnvironmentKmsKeyInfoOutput) ElementType() reflect.Type {
@@ -699,12 +614,6 @@ func (o FusionEnvironmentKmsKeyInfoOutput) ToFusionEnvironmentKmsKeyInfoOutput()
 
 func (o FusionEnvironmentKmsKeyInfoOutput) ToFusionEnvironmentKmsKeyInfoOutputWithContext(ctx context.Context) FusionEnvironmentKmsKeyInfoOutput {
 	return o
-}
-
-func (o FusionEnvironmentKmsKeyInfoOutput) ToOutput(ctx context.Context) pulumix.Output[FusionEnvironmentKmsKeyInfo] {
-	return pulumix.Output[FusionEnvironmentKmsKeyInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FusionEnvironmentKmsKeyInfoOutput) ActiveKeyId() pulumi.StringPtrOutput {
@@ -747,12 +656,6 @@ func (o FusionEnvironmentKmsKeyInfoArrayOutput) ToFusionEnvironmentKmsKeyInfoArr
 
 func (o FusionEnvironmentKmsKeyInfoArrayOutput) ToFusionEnvironmentKmsKeyInfoArrayOutputWithContext(ctx context.Context) FusionEnvironmentKmsKeyInfoArrayOutput {
 	return o
-}
-
-func (o FusionEnvironmentKmsKeyInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]FusionEnvironmentKmsKeyInfo] {
-	return pulumix.Output[[]FusionEnvironmentKmsKeyInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FusionEnvironmentKmsKeyInfoArrayOutput) Index(i pulumi.IntInput) FusionEnvironmentKmsKeyInfoOutput {
@@ -802,12 +705,6 @@ func (i FusionEnvironmentMaintenancePolicyArgs) ToFusionEnvironmentMaintenancePo
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentMaintenancePolicyOutput)
 }
 
-func (i FusionEnvironmentMaintenancePolicyArgs) ToOutput(ctx context.Context) pulumix.Output[FusionEnvironmentMaintenancePolicy] {
-	return pulumix.Output[FusionEnvironmentMaintenancePolicy]{
-		OutputState: i.ToFusionEnvironmentMaintenancePolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i FusionEnvironmentMaintenancePolicyArgs) ToFusionEnvironmentMaintenancePolicyPtrOutput() FusionEnvironmentMaintenancePolicyPtrOutput {
 	return i.ToFusionEnvironmentMaintenancePolicyPtrOutputWithContext(context.Background())
 }
@@ -849,12 +746,6 @@ func (i *fusionEnvironmentMaintenancePolicyPtrType) ToFusionEnvironmentMaintenan
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentMaintenancePolicyPtrOutput)
 }
 
-func (i *fusionEnvironmentMaintenancePolicyPtrType) ToOutput(ctx context.Context) pulumix.Output[*FusionEnvironmentMaintenancePolicy] {
-	return pulumix.Output[*FusionEnvironmentMaintenancePolicy]{
-		OutputState: i.ToFusionEnvironmentMaintenancePolicyPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FusionEnvironmentMaintenancePolicyOutput struct{ *pulumi.OutputState }
 
 func (FusionEnvironmentMaintenancePolicyOutput) ElementType() reflect.Type {
@@ -877,12 +768,6 @@ func (o FusionEnvironmentMaintenancePolicyOutput) ToFusionEnvironmentMaintenance
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v FusionEnvironmentMaintenancePolicy) *FusionEnvironmentMaintenancePolicy {
 		return &v
 	}).(FusionEnvironmentMaintenancePolicyPtrOutput)
-}
-
-func (o FusionEnvironmentMaintenancePolicyOutput) ToOutput(ctx context.Context) pulumix.Output[FusionEnvironmentMaintenancePolicy] {
-	return pulumix.Output[FusionEnvironmentMaintenancePolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) User choice to upgrade both test and prod pods at the same time. Overrides fusion environment families'.
@@ -914,12 +799,6 @@ func (o FusionEnvironmentMaintenancePolicyPtrOutput) ToFusionEnvironmentMaintena
 
 func (o FusionEnvironmentMaintenancePolicyPtrOutput) ToFusionEnvironmentMaintenancePolicyPtrOutputWithContext(ctx context.Context) FusionEnvironmentMaintenancePolicyPtrOutput {
 	return o
-}
-
-func (o FusionEnvironmentMaintenancePolicyPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*FusionEnvironmentMaintenancePolicy] {
-	return pulumix.Output[*FusionEnvironmentMaintenancePolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FusionEnvironmentMaintenancePolicyPtrOutput) Elem() FusionEnvironmentMaintenancePolicyOutput {
@@ -999,12 +878,6 @@ func (i FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs) ToFusio
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput)
 }
 
-func (i FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs) ToOutput(ctx context.Context) pulumix.Output[FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime] {
-	return pulumix.Output[FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime]{
-		OutputState: i.ToFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayInput is an input type that accepts FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArray and FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput values.
 // You can construct a concrete instance of `FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayInput` via:
 //
@@ -1030,12 +903,6 @@ func (i FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArray) ToFusi
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput)
 }
 
-func (i FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArray) ToOutput(ctx context.Context) pulumix.Output[[]FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime] {
-	return pulumix.Output[[]FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime]{
-		OutputState: i.ToFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput struct{ *pulumi.OutputState }
 
 func (FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput) ElementType() reflect.Type {
@@ -1048,12 +915,6 @@ func (o FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput) ToFus
 
 func (o FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput) ToFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutputWithContext(ctx context.Context) FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput {
 	return o
-}
-
-func (o FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput) ToOutput(ctx context.Context) pulumix.Output[FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime] {
-	return pulumix.Output[FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The frequency and month when maintenance occurs for the Fusion environment.
@@ -1078,12 +939,6 @@ func (o FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput) 
 
 func (o FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput) ToFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutputWithContext(ctx context.Context) FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput {
 	return o
-}
-
-func (o FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime] {
-	return pulumix.Output[[]FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput) Index(i pulumi.IntInput) FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput {
@@ -1133,12 +988,6 @@ func (i FusionEnvironmentRefreshArgs) ToFusionEnvironmentRefreshOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentRefreshOutput)
 }
 
-func (i FusionEnvironmentRefreshArgs) ToOutput(ctx context.Context) pulumix.Output[FusionEnvironmentRefresh] {
-	return pulumix.Output[FusionEnvironmentRefresh]{
-		OutputState: i.ToFusionEnvironmentRefreshOutputWithContext(ctx).OutputState,
-	}
-}
-
 // FusionEnvironmentRefreshArrayInput is an input type that accepts FusionEnvironmentRefreshArray and FusionEnvironmentRefreshArrayOutput values.
 // You can construct a concrete instance of `FusionEnvironmentRefreshArrayInput` via:
 //
@@ -1164,12 +1013,6 @@ func (i FusionEnvironmentRefreshArray) ToFusionEnvironmentRefreshArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentRefreshArrayOutput)
 }
 
-func (i FusionEnvironmentRefreshArray) ToOutput(ctx context.Context) pulumix.Output[[]FusionEnvironmentRefresh] {
-	return pulumix.Output[[]FusionEnvironmentRefresh]{
-		OutputState: i.ToFusionEnvironmentRefreshArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FusionEnvironmentRefreshOutput struct{ *pulumi.OutputState }
 
 func (FusionEnvironmentRefreshOutput) ElementType() reflect.Type {
@@ -1182,12 +1025,6 @@ func (o FusionEnvironmentRefreshOutput) ToFusionEnvironmentRefreshOutput() Fusio
 
 func (o FusionEnvironmentRefreshOutput) ToFusionEnvironmentRefreshOutputWithContext(ctx context.Context) FusionEnvironmentRefreshOutput {
 	return o
-}
-
-func (o FusionEnvironmentRefreshOutput) ToOutput(ctx context.Context) pulumix.Output[FusionEnvironmentRefresh] {
-	return pulumix.Output[FusionEnvironmentRefresh]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The source environment id for the last refresh
@@ -1217,12 +1054,6 @@ func (o FusionEnvironmentRefreshArrayOutput) ToFusionEnvironmentRefreshArrayOutp
 
 func (o FusionEnvironmentRefreshArrayOutput) ToFusionEnvironmentRefreshArrayOutputWithContext(ctx context.Context) FusionEnvironmentRefreshArrayOutput {
 	return o
-}
-
-func (o FusionEnvironmentRefreshArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]FusionEnvironmentRefresh] {
-	return pulumix.Output[[]FusionEnvironmentRefresh]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FusionEnvironmentRefreshArrayOutput) Index(i pulumi.IntInput) FusionEnvironmentRefreshOutput {
@@ -1264,12 +1095,6 @@ func (i FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs) ToFusionEnv
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput)
 }
 
-func (i FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs) ToOutput(ctx context.Context) pulumix.Output[FusionEnvironmentRefreshActivityRefreshIssueDetailsList] {
-	return pulumix.Output[FusionEnvironmentRefreshActivityRefreshIssueDetailsList]{
-		OutputState: i.ToFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutputWithContext(ctx).OutputState,
-	}
-}
-
 // FusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayInput is an input type that accepts FusionEnvironmentRefreshActivityRefreshIssueDetailsListArray and FusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput values.
 // You can construct a concrete instance of `FusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayInput` via:
 //
@@ -1295,12 +1120,6 @@ func (i FusionEnvironmentRefreshActivityRefreshIssueDetailsListArray) ToFusionEn
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput)
 }
 
-func (i FusionEnvironmentRefreshActivityRefreshIssueDetailsListArray) ToOutput(ctx context.Context) pulumix.Output[[]FusionEnvironmentRefreshActivityRefreshIssueDetailsList] {
-	return pulumix.Output[[]FusionEnvironmentRefreshActivityRefreshIssueDetailsList]{
-		OutputState: i.ToFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput struct{ *pulumi.OutputState }
 
 func (FusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput) ElementType() reflect.Type {
@@ -1313,12 +1132,6 @@ func (o FusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput) ToFusionE
 
 func (o FusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput) ToFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutputWithContext(ctx context.Context) FusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput {
 	return o
-}
-
-func (o FusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput) ToOutput(ctx context.Context) pulumix.Output[FusionEnvironmentRefreshActivityRefreshIssueDetailsList] {
-	return pulumix.Output[FusionEnvironmentRefreshActivityRefreshIssueDetailsList]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Detail reasons of refresh failure or validation failure that needs to be shown to customer.
@@ -1338,12 +1151,6 @@ func (o FusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput) ToFu
 
 func (o FusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput) ToFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutputWithContext(ctx context.Context) FusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput {
 	return o
-}
-
-func (o FusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]FusionEnvironmentRefreshActivityRefreshIssueDetailsList] {
-	return pulumix.Output[[]FusionEnvironmentRefreshActivityRefreshIssueDetailsList]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput) Index(i pulumi.IntInput) FusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput {
@@ -1399,12 +1206,6 @@ func (i FusionEnvironmentRuleArgs) ToFusionEnvironmentRuleOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentRuleOutput)
 }
 
-func (i FusionEnvironmentRuleArgs) ToOutput(ctx context.Context) pulumix.Output[FusionEnvironmentRule] {
-	return pulumix.Output[FusionEnvironmentRule]{
-		OutputState: i.ToFusionEnvironmentRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // FusionEnvironmentRuleArrayInput is an input type that accepts FusionEnvironmentRuleArray and FusionEnvironmentRuleArrayOutput values.
 // You can construct a concrete instance of `FusionEnvironmentRuleArrayInput` via:
 //
@@ -1430,12 +1231,6 @@ func (i FusionEnvironmentRuleArray) ToFusionEnvironmentRuleArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentRuleArrayOutput)
 }
 
-func (i FusionEnvironmentRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]FusionEnvironmentRule] {
-	return pulumix.Output[[]FusionEnvironmentRule]{
-		OutputState: i.ToFusionEnvironmentRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FusionEnvironmentRuleOutput struct{ *pulumi.OutputState }
 
 func (FusionEnvironmentRuleOutput) ElementType() reflect.Type {
@@ -1448,12 +1243,6 @@ func (o FusionEnvironmentRuleOutput) ToFusionEnvironmentRuleOutput() FusionEnvir
 
 func (o FusionEnvironmentRuleOutput) ToFusionEnvironmentRuleOutputWithContext(ctx context.Context) FusionEnvironmentRuleOutput {
 	return o
-}
-
-func (o FusionEnvironmentRuleOutput) ToOutput(ctx context.Context) pulumix.Output[FusionEnvironmentRule] {
-	return pulumix.Output[FusionEnvironmentRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Rule type
@@ -1486,12 +1275,6 @@ func (o FusionEnvironmentRuleArrayOutput) ToFusionEnvironmentRuleArrayOutput() F
 
 func (o FusionEnvironmentRuleArrayOutput) ToFusionEnvironmentRuleArrayOutputWithContext(ctx context.Context) FusionEnvironmentRuleArrayOutput {
 	return o
-}
-
-func (o FusionEnvironmentRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]FusionEnvironmentRule] {
-	return pulumix.Output[[]FusionEnvironmentRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FusionEnvironmentRuleArrayOutput) Index(i pulumi.IntInput) FusionEnvironmentRuleOutput {
@@ -1537,12 +1320,6 @@ func (i FusionEnvironmentRuleConditionArgs) ToFusionEnvironmentRuleConditionOutp
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentRuleConditionOutput)
 }
 
-func (i FusionEnvironmentRuleConditionArgs) ToOutput(ctx context.Context) pulumix.Output[FusionEnvironmentRuleCondition] {
-	return pulumix.Output[FusionEnvironmentRuleCondition]{
-		OutputState: i.ToFusionEnvironmentRuleConditionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // FusionEnvironmentRuleConditionArrayInput is an input type that accepts FusionEnvironmentRuleConditionArray and FusionEnvironmentRuleConditionArrayOutput values.
 // You can construct a concrete instance of `FusionEnvironmentRuleConditionArrayInput` via:
 //
@@ -1568,12 +1345,6 @@ func (i FusionEnvironmentRuleConditionArray) ToFusionEnvironmentRuleConditionArr
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentRuleConditionArrayOutput)
 }
 
-func (i FusionEnvironmentRuleConditionArray) ToOutput(ctx context.Context) pulumix.Output[[]FusionEnvironmentRuleCondition] {
-	return pulumix.Output[[]FusionEnvironmentRuleCondition]{
-		OutputState: i.ToFusionEnvironmentRuleConditionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FusionEnvironmentRuleConditionOutput struct{ *pulumi.OutputState }
 
 func (FusionEnvironmentRuleConditionOutput) ElementType() reflect.Type {
@@ -1586,12 +1357,6 @@ func (o FusionEnvironmentRuleConditionOutput) ToFusionEnvironmentRuleConditionOu
 
 func (o FusionEnvironmentRuleConditionOutput) ToFusionEnvironmentRuleConditionOutputWithContext(ctx context.Context) FusionEnvironmentRuleConditionOutput {
 	return o
-}
-
-func (o FusionEnvironmentRuleConditionOutput) ToOutput(ctx context.Context) pulumix.Output[FusionEnvironmentRuleCondition] {
-	return pulumix.Output[FusionEnvironmentRuleCondition]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) RuleCondition type
@@ -1616,12 +1381,6 @@ func (o FusionEnvironmentRuleConditionArrayOutput) ToFusionEnvironmentRuleCondit
 
 func (o FusionEnvironmentRuleConditionArrayOutput) ToFusionEnvironmentRuleConditionArrayOutputWithContext(ctx context.Context) FusionEnvironmentRuleConditionArrayOutput {
 	return o
-}
-
-func (o FusionEnvironmentRuleConditionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]FusionEnvironmentRuleCondition] {
-	return pulumix.Output[[]FusionEnvironmentRuleCondition]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FusionEnvironmentRuleConditionArrayOutput) Index(i pulumi.IntInput) FusionEnvironmentRuleConditionOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Publication Package resource in Oracle Cloud Infrastructure Marketplace service.
@@ -130,12 +129,6 @@ func (o GetPublicationPackageResultOutput) ToGetPublicationPackageResultOutput()
 
 func (o GetPublicationPackageResultOutput) ToGetPublicationPackageResultOutputWithContext(ctx context.Context) GetPublicationPackageResultOutput {
 	return o
-}
-
-func (o GetPublicationPackageResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublicationPackageResult] {
-	return pulumix.Output[GetPublicationPackageResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the listing resource associated with this publication package. For more information, see [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/) in the Core Services API.

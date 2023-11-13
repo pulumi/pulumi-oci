@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Remediation Recipes in Oracle Cloud Infrastructure Adm service.
@@ -126,12 +125,6 @@ func (o GetRemediationRecipesResultOutput) ToGetRemediationRecipesResultOutput()
 
 func (o GetRemediationRecipesResultOutput) ToGetRemediationRecipesResultOutputWithContext(ctx context.Context) GetRemediationRecipesResultOutput {
 	return o
-}
-
-func (o GetRemediationRecipesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipesResult] {
-	return pulumix.Output[GetRemediationRecipesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Operator Controls in Oracle Cloud Infrastructure Operator Access Control service.
@@ -126,12 +125,6 @@ func (o GetControlsResultOutput) ToGetControlsResultOutput() GetControlsResultOu
 
 func (o GetControlsResultOutput) ToGetControlsResultOutputWithContext(ctx context.Context) GetControlsResultOutput {
 	return o
-}
-
-func (o GetControlsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetControlsResult] {
-	return pulumix.Output[GetControlsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment that contains the operator control.

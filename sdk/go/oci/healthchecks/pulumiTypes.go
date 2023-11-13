@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -49,12 +48,6 @@ func (i GetHttpMonitorsFilterArgs) ToGetHttpMonitorsFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpMonitorsFilterOutput)
 }
 
-func (i GetHttpMonitorsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetHttpMonitorsFilter] {
-	return pulumix.Output[GetHttpMonitorsFilter]{
-		OutputState: i.ToGetHttpMonitorsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetHttpMonitorsFilterArrayInput is an input type that accepts GetHttpMonitorsFilterArray and GetHttpMonitorsFilterArrayOutput values.
 // You can construct a concrete instance of `GetHttpMonitorsFilterArrayInput` via:
 //
@@ -80,12 +73,6 @@ func (i GetHttpMonitorsFilterArray) ToGetHttpMonitorsFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpMonitorsFilterArrayOutput)
 }
 
-func (i GetHttpMonitorsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpMonitorsFilter] {
-	return pulumix.Output[[]GetHttpMonitorsFilter]{
-		OutputState: i.ToGetHttpMonitorsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHttpMonitorsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetHttpMonitorsFilterOutput) ElementType() reflect.Type {
@@ -98,12 +85,6 @@ func (o GetHttpMonitorsFilterOutput) ToGetHttpMonitorsFilterOutput() GetHttpMoni
 
 func (o GetHttpMonitorsFilterOutput) ToGetHttpMonitorsFilterOutputWithContext(ctx context.Context) GetHttpMonitorsFilterOutput {
 	return o
-}
-
-func (o GetHttpMonitorsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetHttpMonitorsFilter] {
-	return pulumix.Output[GetHttpMonitorsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetHttpMonitorsFilterOutput) Name() pulumi.StringOutput {
@@ -130,12 +111,6 @@ func (o GetHttpMonitorsFilterArrayOutput) ToGetHttpMonitorsFilterArrayOutput() G
 
 func (o GetHttpMonitorsFilterArrayOutput) ToGetHttpMonitorsFilterArrayOutputWithContext(ctx context.Context) GetHttpMonitorsFilterArrayOutput {
 	return o
-}
-
-func (o GetHttpMonitorsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpMonitorsFilter] {
-	return pulumix.Output[[]GetHttpMonitorsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetHttpMonitorsFilterArrayOutput) Index(i pulumi.IntInput) GetHttpMonitorsFilterOutput {
@@ -245,12 +220,6 @@ func (i GetHttpMonitorsHttpMonitorArgs) ToGetHttpMonitorsHttpMonitorOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpMonitorsHttpMonitorOutput)
 }
 
-func (i GetHttpMonitorsHttpMonitorArgs) ToOutput(ctx context.Context) pulumix.Output[GetHttpMonitorsHttpMonitor] {
-	return pulumix.Output[GetHttpMonitorsHttpMonitor]{
-		OutputState: i.ToGetHttpMonitorsHttpMonitorOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetHttpMonitorsHttpMonitorArrayInput is an input type that accepts GetHttpMonitorsHttpMonitorArray and GetHttpMonitorsHttpMonitorArrayOutput values.
 // You can construct a concrete instance of `GetHttpMonitorsHttpMonitorArrayInput` via:
 //
@@ -276,12 +245,6 @@ func (i GetHttpMonitorsHttpMonitorArray) ToGetHttpMonitorsHttpMonitorArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpMonitorsHttpMonitorArrayOutput)
 }
 
-func (i GetHttpMonitorsHttpMonitorArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpMonitorsHttpMonitor] {
-	return pulumix.Output[[]GetHttpMonitorsHttpMonitor]{
-		OutputState: i.ToGetHttpMonitorsHttpMonitorArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHttpMonitorsHttpMonitorOutput struct{ *pulumi.OutputState }
 
 func (GetHttpMonitorsHttpMonitorOutput) ElementType() reflect.Type {
@@ -294,12 +257,6 @@ func (o GetHttpMonitorsHttpMonitorOutput) ToGetHttpMonitorsHttpMonitorOutput() G
 
 func (o GetHttpMonitorsHttpMonitorOutput) ToGetHttpMonitorsHttpMonitorOutputWithContext(ctx context.Context) GetHttpMonitorsHttpMonitorOutput {
 	return o
-}
-
-func (o GetHttpMonitorsHttpMonitorOutput) ToOutput(ctx context.Context) pulumix.Output[GetHttpMonitorsHttpMonitor] {
-	return pulumix.Output[GetHttpMonitorsHttpMonitor]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Filters results by compartment.
@@ -406,12 +363,6 @@ func (o GetHttpMonitorsHttpMonitorArrayOutput) ToGetHttpMonitorsHttpMonitorArray
 	return o
 }
 
-func (o GetHttpMonitorsHttpMonitorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpMonitorsHttpMonitor] {
-	return pulumix.Output[[]GetHttpMonitorsHttpMonitor]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetHttpMonitorsHttpMonitorArrayOutput) Index(i pulumi.IntInput) GetHttpMonitorsHttpMonitorOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHttpMonitorsHttpMonitor {
 		return vs[0].([]GetHttpMonitorsHttpMonitor)[vs[1].(int)]
@@ -453,12 +404,6 @@ func (i GetHttpProbeResultsFilterArgs) ToGetHttpProbeResultsFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpProbeResultsFilterOutput)
 }
 
-func (i GetHttpProbeResultsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetHttpProbeResultsFilter] {
-	return pulumix.Output[GetHttpProbeResultsFilter]{
-		OutputState: i.ToGetHttpProbeResultsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetHttpProbeResultsFilterArrayInput is an input type that accepts GetHttpProbeResultsFilterArray and GetHttpProbeResultsFilterArrayOutput values.
 // You can construct a concrete instance of `GetHttpProbeResultsFilterArrayInput` via:
 //
@@ -484,12 +429,6 @@ func (i GetHttpProbeResultsFilterArray) ToGetHttpProbeResultsFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpProbeResultsFilterArrayOutput)
 }
 
-func (i GetHttpProbeResultsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpProbeResultsFilter] {
-	return pulumix.Output[[]GetHttpProbeResultsFilter]{
-		OutputState: i.ToGetHttpProbeResultsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHttpProbeResultsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetHttpProbeResultsFilterOutput) ElementType() reflect.Type {
@@ -502,12 +441,6 @@ func (o GetHttpProbeResultsFilterOutput) ToGetHttpProbeResultsFilterOutput() Get
 
 func (o GetHttpProbeResultsFilterOutput) ToGetHttpProbeResultsFilterOutputWithContext(ctx context.Context) GetHttpProbeResultsFilterOutput {
 	return o
-}
-
-func (o GetHttpProbeResultsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetHttpProbeResultsFilter] {
-	return pulumix.Output[GetHttpProbeResultsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetHttpProbeResultsFilterOutput) Name() pulumi.StringOutput {
@@ -534,12 +467,6 @@ func (o GetHttpProbeResultsFilterArrayOutput) ToGetHttpProbeResultsFilterArrayOu
 
 func (o GetHttpProbeResultsFilterArrayOutput) ToGetHttpProbeResultsFilterArrayOutputWithContext(ctx context.Context) GetHttpProbeResultsFilterArrayOutput {
 	return o
-}
-
-func (o GetHttpProbeResultsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpProbeResultsFilter] {
-	return pulumix.Output[[]GetHttpProbeResultsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetHttpProbeResultsFilterArrayOutput) Index(i pulumi.IntInput) GetHttpProbeResultsFilterOutput {
@@ -683,12 +610,6 @@ func (i GetHttpProbeResultsHttpProbeResultArgs) ToGetHttpProbeResultsHttpProbeRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpProbeResultsHttpProbeResultOutput)
 }
 
-func (i GetHttpProbeResultsHttpProbeResultArgs) ToOutput(ctx context.Context) pulumix.Output[GetHttpProbeResultsHttpProbeResult] {
-	return pulumix.Output[GetHttpProbeResultsHttpProbeResult]{
-		OutputState: i.ToGetHttpProbeResultsHttpProbeResultOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetHttpProbeResultsHttpProbeResultArrayInput is an input type that accepts GetHttpProbeResultsHttpProbeResultArray and GetHttpProbeResultsHttpProbeResultArrayOutput values.
 // You can construct a concrete instance of `GetHttpProbeResultsHttpProbeResultArrayInput` via:
 //
@@ -714,12 +635,6 @@ func (i GetHttpProbeResultsHttpProbeResultArray) ToGetHttpProbeResultsHttpProbeR
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpProbeResultsHttpProbeResultArrayOutput)
 }
 
-func (i GetHttpProbeResultsHttpProbeResultArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpProbeResultsHttpProbeResult] {
-	return pulumix.Output[[]GetHttpProbeResultsHttpProbeResult]{
-		OutputState: i.ToGetHttpProbeResultsHttpProbeResultArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHttpProbeResultsHttpProbeResultOutput struct{ *pulumi.OutputState }
 
 func (GetHttpProbeResultsHttpProbeResultOutput) ElementType() reflect.Type {
@@ -732,12 +647,6 @@ func (o GetHttpProbeResultsHttpProbeResultOutput) ToGetHttpProbeResultsHttpProbe
 
 func (o GetHttpProbeResultsHttpProbeResultOutput) ToGetHttpProbeResultsHttpProbeResultOutputWithContext(ctx context.Context) GetHttpProbeResultsHttpProbeResultOutput {
 	return o
-}
-
-func (o GetHttpProbeResultsHttpProbeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetHttpProbeResultsHttpProbeResult] {
-	return pulumix.Output[GetHttpProbeResultsHttpProbeResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The time immediately after the vantage point finishes establishing the connection to the server to retrieve the resource.
@@ -881,12 +790,6 @@ func (o GetHttpProbeResultsHttpProbeResultArrayOutput) ToGetHttpProbeResultsHttp
 	return o
 }
 
-func (o GetHttpProbeResultsHttpProbeResultArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpProbeResultsHttpProbeResult] {
-	return pulumix.Output[[]GetHttpProbeResultsHttpProbeResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetHttpProbeResultsHttpProbeResultArrayOutput) Index(i pulumi.IntInput) GetHttpProbeResultsHttpProbeResultOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHttpProbeResultsHttpProbeResult {
 		return vs[0].([]GetHttpProbeResultsHttpProbeResult)[vs[1].(int)]
@@ -938,12 +841,6 @@ func (i GetHttpProbeResultsHttpProbeResultConnectionArgs) ToGetHttpProbeResultsH
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpProbeResultsHttpProbeResultConnectionOutput)
 }
 
-func (i GetHttpProbeResultsHttpProbeResultConnectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetHttpProbeResultsHttpProbeResultConnection] {
-	return pulumix.Output[GetHttpProbeResultsHttpProbeResultConnection]{
-		OutputState: i.ToGetHttpProbeResultsHttpProbeResultConnectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetHttpProbeResultsHttpProbeResultConnectionArrayInput is an input type that accepts GetHttpProbeResultsHttpProbeResultConnectionArray and GetHttpProbeResultsHttpProbeResultConnectionArrayOutput values.
 // You can construct a concrete instance of `GetHttpProbeResultsHttpProbeResultConnectionArrayInput` via:
 //
@@ -969,12 +866,6 @@ func (i GetHttpProbeResultsHttpProbeResultConnectionArray) ToGetHttpProbeResults
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpProbeResultsHttpProbeResultConnectionArrayOutput)
 }
 
-func (i GetHttpProbeResultsHttpProbeResultConnectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpProbeResultsHttpProbeResultConnection] {
-	return pulumix.Output[[]GetHttpProbeResultsHttpProbeResultConnection]{
-		OutputState: i.ToGetHttpProbeResultsHttpProbeResultConnectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHttpProbeResultsHttpProbeResultConnectionOutput struct{ *pulumi.OutputState }
 
 func (GetHttpProbeResultsHttpProbeResultConnectionOutput) ElementType() reflect.Type {
@@ -987,12 +878,6 @@ func (o GetHttpProbeResultsHttpProbeResultConnectionOutput) ToGetHttpProbeResult
 
 func (o GetHttpProbeResultsHttpProbeResultConnectionOutput) ToGetHttpProbeResultsHttpProbeResultConnectionOutputWithContext(ctx context.Context) GetHttpProbeResultsHttpProbeResultConnectionOutput {
 	return o
-}
-
-func (o GetHttpProbeResultsHttpProbeResultConnectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetHttpProbeResultsHttpProbeResultConnection] {
-	return pulumix.Output[GetHttpProbeResultsHttpProbeResultConnection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The connection IP address.
@@ -1027,12 +912,6 @@ func (o GetHttpProbeResultsHttpProbeResultConnectionArrayOutput) ToGetHttpProbeR
 
 func (o GetHttpProbeResultsHttpProbeResultConnectionArrayOutput) ToGetHttpProbeResultsHttpProbeResultConnectionArrayOutputWithContext(ctx context.Context) GetHttpProbeResultsHttpProbeResultConnectionArrayOutput {
 	return o
-}
-
-func (o GetHttpProbeResultsHttpProbeResultConnectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpProbeResultsHttpProbeResultConnection] {
-	return pulumix.Output[[]GetHttpProbeResultsHttpProbeResultConnection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetHttpProbeResultsHttpProbeResultConnectionArrayOutput) Index(i pulumi.IntInput) GetHttpProbeResultsHttpProbeResultConnectionOutput {
@@ -1078,12 +957,6 @@ func (i GetHttpProbeResultsHttpProbeResultDnArgs) ToGetHttpProbeResultsHttpProbe
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpProbeResultsHttpProbeResultDnOutput)
 }
 
-func (i GetHttpProbeResultsHttpProbeResultDnArgs) ToOutput(ctx context.Context) pulumix.Output[GetHttpProbeResultsHttpProbeResultDn] {
-	return pulumix.Output[GetHttpProbeResultsHttpProbeResultDn]{
-		OutputState: i.ToGetHttpProbeResultsHttpProbeResultDnOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetHttpProbeResultsHttpProbeResultDnArrayInput is an input type that accepts GetHttpProbeResultsHttpProbeResultDnArray and GetHttpProbeResultsHttpProbeResultDnArrayOutput values.
 // You can construct a concrete instance of `GetHttpProbeResultsHttpProbeResultDnArrayInput` via:
 //
@@ -1109,12 +982,6 @@ func (i GetHttpProbeResultsHttpProbeResultDnArray) ToGetHttpProbeResultsHttpProb
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpProbeResultsHttpProbeResultDnArrayOutput)
 }
 
-func (i GetHttpProbeResultsHttpProbeResultDnArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpProbeResultsHttpProbeResultDn] {
-	return pulumix.Output[[]GetHttpProbeResultsHttpProbeResultDn]{
-		OutputState: i.ToGetHttpProbeResultsHttpProbeResultDnArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHttpProbeResultsHttpProbeResultDnOutput struct{ *pulumi.OutputState }
 
 func (GetHttpProbeResultsHttpProbeResultDnOutput) ElementType() reflect.Type {
@@ -1127,12 +994,6 @@ func (o GetHttpProbeResultsHttpProbeResultDnOutput) ToGetHttpProbeResultsHttpPro
 
 func (o GetHttpProbeResultsHttpProbeResultDnOutput) ToGetHttpProbeResultsHttpProbeResultDnOutputWithContext(ctx context.Context) GetHttpProbeResultsHttpProbeResultDnOutput {
 	return o
-}
-
-func (o GetHttpProbeResultsHttpProbeResultDnOutput) ToOutput(ctx context.Context) pulumix.Output[GetHttpProbeResultsHttpProbeResultDn] {
-	return pulumix.Output[GetHttpProbeResultsHttpProbeResultDn]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The addresses returned by DNS resolution.
@@ -1157,12 +1018,6 @@ func (o GetHttpProbeResultsHttpProbeResultDnArrayOutput) ToGetHttpProbeResultsHt
 
 func (o GetHttpProbeResultsHttpProbeResultDnArrayOutput) ToGetHttpProbeResultsHttpProbeResultDnArrayOutputWithContext(ctx context.Context) GetHttpProbeResultsHttpProbeResultDnArrayOutput {
 	return o
-}
-
-func (o GetHttpProbeResultsHttpProbeResultDnArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpProbeResultsHttpProbeResultDn] {
-	return pulumix.Output[[]GetHttpProbeResultsHttpProbeResultDn]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetHttpProbeResultsHttpProbeResultDnArrayOutput) Index(i pulumi.IntInput) GetHttpProbeResultsHttpProbeResultDnOutput {
@@ -1206,12 +1061,6 @@ func (i GetPingMonitorsFilterArgs) ToGetPingMonitorsFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetPingMonitorsFilterOutput)
 }
 
-func (i GetPingMonitorsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetPingMonitorsFilter] {
-	return pulumix.Output[GetPingMonitorsFilter]{
-		OutputState: i.ToGetPingMonitorsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetPingMonitorsFilterArrayInput is an input type that accepts GetPingMonitorsFilterArray and GetPingMonitorsFilterArrayOutput values.
 // You can construct a concrete instance of `GetPingMonitorsFilterArrayInput` via:
 //
@@ -1237,12 +1086,6 @@ func (i GetPingMonitorsFilterArray) ToGetPingMonitorsFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetPingMonitorsFilterArrayOutput)
 }
 
-func (i GetPingMonitorsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPingMonitorsFilter] {
-	return pulumix.Output[[]GetPingMonitorsFilter]{
-		OutputState: i.ToGetPingMonitorsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPingMonitorsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetPingMonitorsFilterOutput) ElementType() reflect.Type {
@@ -1255,12 +1098,6 @@ func (o GetPingMonitorsFilterOutput) ToGetPingMonitorsFilterOutput() GetPingMoni
 
 func (o GetPingMonitorsFilterOutput) ToGetPingMonitorsFilterOutputWithContext(ctx context.Context) GetPingMonitorsFilterOutput {
 	return o
-}
-
-func (o GetPingMonitorsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetPingMonitorsFilter] {
-	return pulumix.Output[GetPingMonitorsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPingMonitorsFilterOutput) Name() pulumi.StringOutput {
@@ -1287,12 +1124,6 @@ func (o GetPingMonitorsFilterArrayOutput) ToGetPingMonitorsFilterArrayOutput() G
 
 func (o GetPingMonitorsFilterArrayOutput) ToGetPingMonitorsFilterArrayOutputWithContext(ctx context.Context) GetPingMonitorsFilterArrayOutput {
 	return o
-}
-
-func (o GetPingMonitorsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPingMonitorsFilter] {
-	return pulumix.Output[[]GetPingMonitorsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPingMonitorsFilterArrayOutput) Index(i pulumi.IntInput) GetPingMonitorsFilterOutput {
@@ -1390,12 +1221,6 @@ func (i GetPingMonitorsPingMonitorArgs) ToGetPingMonitorsPingMonitorOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetPingMonitorsPingMonitorOutput)
 }
 
-func (i GetPingMonitorsPingMonitorArgs) ToOutput(ctx context.Context) pulumix.Output[GetPingMonitorsPingMonitor] {
-	return pulumix.Output[GetPingMonitorsPingMonitor]{
-		OutputState: i.ToGetPingMonitorsPingMonitorOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetPingMonitorsPingMonitorArrayInput is an input type that accepts GetPingMonitorsPingMonitorArray and GetPingMonitorsPingMonitorArrayOutput values.
 // You can construct a concrete instance of `GetPingMonitorsPingMonitorArrayInput` via:
 //
@@ -1421,12 +1246,6 @@ func (i GetPingMonitorsPingMonitorArray) ToGetPingMonitorsPingMonitorArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetPingMonitorsPingMonitorArrayOutput)
 }
 
-func (i GetPingMonitorsPingMonitorArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPingMonitorsPingMonitor] {
-	return pulumix.Output[[]GetPingMonitorsPingMonitor]{
-		OutputState: i.ToGetPingMonitorsPingMonitorArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPingMonitorsPingMonitorOutput struct{ *pulumi.OutputState }
 
 func (GetPingMonitorsPingMonitorOutput) ElementType() reflect.Type {
@@ -1439,12 +1258,6 @@ func (o GetPingMonitorsPingMonitorOutput) ToGetPingMonitorsPingMonitorOutput() G
 
 func (o GetPingMonitorsPingMonitorOutput) ToGetPingMonitorsPingMonitorOutputWithContext(ctx context.Context) GetPingMonitorsPingMonitorOutput {
 	return o
-}
-
-func (o GetPingMonitorsPingMonitorOutput) ToOutput(ctx context.Context) pulumix.Output[GetPingMonitorsPingMonitor] {
-	return pulumix.Output[GetPingMonitorsPingMonitor]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Filters results by compartment.
@@ -1536,12 +1349,6 @@ func (o GetPingMonitorsPingMonitorArrayOutput) ToGetPingMonitorsPingMonitorArray
 	return o
 }
 
-func (o GetPingMonitorsPingMonitorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPingMonitorsPingMonitor] {
-	return pulumix.Output[[]GetPingMonitorsPingMonitor]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPingMonitorsPingMonitorArrayOutput) Index(i pulumi.IntInput) GetPingMonitorsPingMonitorOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPingMonitorsPingMonitor {
 		return vs[0].([]GetPingMonitorsPingMonitor)[vs[1].(int)]
@@ -1583,12 +1390,6 @@ func (i GetPingProbeResultsFilterArgs) ToGetPingProbeResultsFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetPingProbeResultsFilterOutput)
 }
 
-func (i GetPingProbeResultsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetPingProbeResultsFilter] {
-	return pulumix.Output[GetPingProbeResultsFilter]{
-		OutputState: i.ToGetPingProbeResultsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetPingProbeResultsFilterArrayInput is an input type that accepts GetPingProbeResultsFilterArray and GetPingProbeResultsFilterArrayOutput values.
 // You can construct a concrete instance of `GetPingProbeResultsFilterArrayInput` via:
 //
@@ -1614,12 +1415,6 @@ func (i GetPingProbeResultsFilterArray) ToGetPingProbeResultsFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetPingProbeResultsFilterArrayOutput)
 }
 
-func (i GetPingProbeResultsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPingProbeResultsFilter] {
-	return pulumix.Output[[]GetPingProbeResultsFilter]{
-		OutputState: i.ToGetPingProbeResultsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPingProbeResultsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetPingProbeResultsFilterOutput) ElementType() reflect.Type {
@@ -1632,12 +1427,6 @@ func (o GetPingProbeResultsFilterOutput) ToGetPingProbeResultsFilterOutput() Get
 
 func (o GetPingProbeResultsFilterOutput) ToGetPingProbeResultsFilterOutputWithContext(ctx context.Context) GetPingProbeResultsFilterOutput {
 	return o
-}
-
-func (o GetPingProbeResultsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetPingProbeResultsFilter] {
-	return pulumix.Output[GetPingProbeResultsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPingProbeResultsFilterOutput) Name() pulumi.StringOutput {
@@ -1664,12 +1453,6 @@ func (o GetPingProbeResultsFilterArrayOutput) ToGetPingProbeResultsFilterArrayOu
 
 func (o GetPingProbeResultsFilterArrayOutput) ToGetPingProbeResultsFilterArrayOutputWithContext(ctx context.Context) GetPingProbeResultsFilterArrayOutput {
 	return o
-}
-
-func (o GetPingProbeResultsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPingProbeResultsFilter] {
-	return pulumix.Output[[]GetPingProbeResultsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPingProbeResultsFilterArrayOutput) Index(i pulumi.IntInput) GetPingProbeResultsFilterOutput {
@@ -1781,12 +1564,6 @@ func (i GetPingProbeResultsPingProbeResultArgs) ToGetPingProbeResultsPingProbeRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetPingProbeResultsPingProbeResultOutput)
 }
 
-func (i GetPingProbeResultsPingProbeResultArgs) ToOutput(ctx context.Context) pulumix.Output[GetPingProbeResultsPingProbeResult] {
-	return pulumix.Output[GetPingProbeResultsPingProbeResult]{
-		OutputState: i.ToGetPingProbeResultsPingProbeResultOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetPingProbeResultsPingProbeResultArrayInput is an input type that accepts GetPingProbeResultsPingProbeResultArray and GetPingProbeResultsPingProbeResultArrayOutput values.
 // You can construct a concrete instance of `GetPingProbeResultsPingProbeResultArrayInput` via:
 //
@@ -1812,12 +1589,6 @@ func (i GetPingProbeResultsPingProbeResultArray) ToGetPingProbeResultsPingProbeR
 	return pulumi.ToOutputWithContext(ctx, i).(GetPingProbeResultsPingProbeResultArrayOutput)
 }
 
-func (i GetPingProbeResultsPingProbeResultArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPingProbeResultsPingProbeResult] {
-	return pulumix.Output[[]GetPingProbeResultsPingProbeResult]{
-		OutputState: i.ToGetPingProbeResultsPingProbeResultArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPingProbeResultsPingProbeResultOutput struct{ *pulumi.OutputState }
 
 func (GetPingProbeResultsPingProbeResultOutput) ElementType() reflect.Type {
@@ -1830,12 +1601,6 @@ func (o GetPingProbeResultsPingProbeResultOutput) ToGetPingProbeResultsPingProbe
 
 func (o GetPingProbeResultsPingProbeResultOutput) ToGetPingProbeResultsPingProbeResultOutputWithContext(ctx context.Context) GetPingProbeResultsPingProbeResultOutput {
 	return o
-}
-
-func (o GetPingProbeResultsPingProbeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPingProbeResultsPingProbeResult] {
-	return pulumix.Output[GetPingProbeResultsPingProbeResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The network connection results.
@@ -1939,12 +1704,6 @@ func (o GetPingProbeResultsPingProbeResultArrayOutput) ToGetPingProbeResultsPing
 	return o
 }
 
-func (o GetPingProbeResultsPingProbeResultArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPingProbeResultsPingProbeResult] {
-	return pulumix.Output[[]GetPingProbeResultsPingProbeResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPingProbeResultsPingProbeResultArrayOutput) Index(i pulumi.IntInput) GetPingProbeResultsPingProbeResultOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPingProbeResultsPingProbeResult {
 		return vs[0].([]GetPingProbeResultsPingProbeResult)[vs[1].(int)]
@@ -1988,12 +1747,6 @@ func (i GetPingProbeResultsPingProbeResultConnectionArgs) ToGetPingProbeResultsP
 	return pulumi.ToOutputWithContext(ctx, i).(GetPingProbeResultsPingProbeResultConnectionOutput)
 }
 
-func (i GetPingProbeResultsPingProbeResultConnectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetPingProbeResultsPingProbeResultConnection] {
-	return pulumix.Output[GetPingProbeResultsPingProbeResultConnection]{
-		OutputState: i.ToGetPingProbeResultsPingProbeResultConnectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetPingProbeResultsPingProbeResultConnectionArrayInput is an input type that accepts GetPingProbeResultsPingProbeResultConnectionArray and GetPingProbeResultsPingProbeResultConnectionArrayOutput values.
 // You can construct a concrete instance of `GetPingProbeResultsPingProbeResultConnectionArrayInput` via:
 //
@@ -2019,12 +1772,6 @@ func (i GetPingProbeResultsPingProbeResultConnectionArray) ToGetPingProbeResults
 	return pulumi.ToOutputWithContext(ctx, i).(GetPingProbeResultsPingProbeResultConnectionArrayOutput)
 }
 
-func (i GetPingProbeResultsPingProbeResultConnectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPingProbeResultsPingProbeResultConnection] {
-	return pulumix.Output[[]GetPingProbeResultsPingProbeResultConnection]{
-		OutputState: i.ToGetPingProbeResultsPingProbeResultConnectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPingProbeResultsPingProbeResultConnectionOutput struct{ *pulumi.OutputState }
 
 func (GetPingProbeResultsPingProbeResultConnectionOutput) ElementType() reflect.Type {
@@ -2037,12 +1784,6 @@ func (o GetPingProbeResultsPingProbeResultConnectionOutput) ToGetPingProbeResult
 
 func (o GetPingProbeResultsPingProbeResultConnectionOutput) ToGetPingProbeResultsPingProbeResultConnectionOutputWithContext(ctx context.Context) GetPingProbeResultsPingProbeResultConnectionOutput {
 	return o
-}
-
-func (o GetPingProbeResultsPingProbeResultConnectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetPingProbeResultsPingProbeResultConnection] {
-	return pulumix.Output[GetPingProbeResultsPingProbeResultConnection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The connection IP address.
@@ -2067,12 +1808,6 @@ func (o GetPingProbeResultsPingProbeResultConnectionArrayOutput) ToGetPingProbeR
 
 func (o GetPingProbeResultsPingProbeResultConnectionArrayOutput) ToGetPingProbeResultsPingProbeResultConnectionArrayOutputWithContext(ctx context.Context) GetPingProbeResultsPingProbeResultConnectionArrayOutput {
 	return o
-}
-
-func (o GetPingProbeResultsPingProbeResultConnectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPingProbeResultsPingProbeResultConnection] {
-	return pulumix.Output[[]GetPingProbeResultsPingProbeResultConnection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPingProbeResultsPingProbeResultConnectionArrayOutput) Index(i pulumi.IntInput) GetPingProbeResultsPingProbeResultConnectionOutput {
@@ -2118,12 +1853,6 @@ func (i GetPingProbeResultsPingProbeResultDnArgs) ToGetPingProbeResultsPingProbe
 	return pulumi.ToOutputWithContext(ctx, i).(GetPingProbeResultsPingProbeResultDnOutput)
 }
 
-func (i GetPingProbeResultsPingProbeResultDnArgs) ToOutput(ctx context.Context) pulumix.Output[GetPingProbeResultsPingProbeResultDn] {
-	return pulumix.Output[GetPingProbeResultsPingProbeResultDn]{
-		OutputState: i.ToGetPingProbeResultsPingProbeResultDnOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetPingProbeResultsPingProbeResultDnArrayInput is an input type that accepts GetPingProbeResultsPingProbeResultDnArray and GetPingProbeResultsPingProbeResultDnArrayOutput values.
 // You can construct a concrete instance of `GetPingProbeResultsPingProbeResultDnArrayInput` via:
 //
@@ -2149,12 +1878,6 @@ func (i GetPingProbeResultsPingProbeResultDnArray) ToGetPingProbeResultsPingProb
 	return pulumi.ToOutputWithContext(ctx, i).(GetPingProbeResultsPingProbeResultDnArrayOutput)
 }
 
-func (i GetPingProbeResultsPingProbeResultDnArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPingProbeResultsPingProbeResultDn] {
-	return pulumix.Output[[]GetPingProbeResultsPingProbeResultDn]{
-		OutputState: i.ToGetPingProbeResultsPingProbeResultDnArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPingProbeResultsPingProbeResultDnOutput struct{ *pulumi.OutputState }
 
 func (GetPingProbeResultsPingProbeResultDnOutput) ElementType() reflect.Type {
@@ -2167,12 +1890,6 @@ func (o GetPingProbeResultsPingProbeResultDnOutput) ToGetPingProbeResultsPingPro
 
 func (o GetPingProbeResultsPingProbeResultDnOutput) ToGetPingProbeResultsPingProbeResultDnOutputWithContext(ctx context.Context) GetPingProbeResultsPingProbeResultDnOutput {
 	return o
-}
-
-func (o GetPingProbeResultsPingProbeResultDnOutput) ToOutput(ctx context.Context) pulumix.Output[GetPingProbeResultsPingProbeResultDn] {
-	return pulumix.Output[GetPingProbeResultsPingProbeResultDn]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The addresses returned by DNS resolution.
@@ -2197,12 +1914,6 @@ func (o GetPingProbeResultsPingProbeResultDnArrayOutput) ToGetPingProbeResultsPi
 
 func (o GetPingProbeResultsPingProbeResultDnArrayOutput) ToGetPingProbeResultsPingProbeResultDnArrayOutputWithContext(ctx context.Context) GetPingProbeResultsPingProbeResultDnArrayOutput {
 	return o
-}
-
-func (o GetPingProbeResultsPingProbeResultDnArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPingProbeResultsPingProbeResultDn] {
-	return pulumix.Output[[]GetPingProbeResultsPingProbeResultDn]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPingProbeResultsPingProbeResultDnArrayOutput) Index(i pulumi.IntInput) GetPingProbeResultsPingProbeResultDnOutput {
@@ -2248,12 +1959,6 @@ func (i GetVantagePointsFilterArgs) ToGetVantagePointsFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetVantagePointsFilterOutput)
 }
 
-func (i GetVantagePointsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVantagePointsFilter] {
-	return pulumix.Output[GetVantagePointsFilter]{
-		OutputState: i.ToGetVantagePointsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVantagePointsFilterArrayInput is an input type that accepts GetVantagePointsFilterArray and GetVantagePointsFilterArrayOutput values.
 // You can construct a concrete instance of `GetVantagePointsFilterArrayInput` via:
 //
@@ -2279,12 +1984,6 @@ func (i GetVantagePointsFilterArray) ToGetVantagePointsFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetVantagePointsFilterArrayOutput)
 }
 
-func (i GetVantagePointsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVantagePointsFilter] {
-	return pulumix.Output[[]GetVantagePointsFilter]{
-		OutputState: i.ToGetVantagePointsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVantagePointsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVantagePointsFilterOutput) ElementType() reflect.Type {
@@ -2297,12 +1996,6 @@ func (o GetVantagePointsFilterOutput) ToGetVantagePointsFilterOutput() GetVantag
 
 func (o GetVantagePointsFilterOutput) ToGetVantagePointsFilterOutputWithContext(ctx context.Context) GetVantagePointsFilterOutput {
 	return o
-}
-
-func (o GetVantagePointsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVantagePointsFilter] {
-	return pulumix.Output[GetVantagePointsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Filters results that exactly match the `name` field.
@@ -2330,12 +2023,6 @@ func (o GetVantagePointsFilterArrayOutput) ToGetVantagePointsFilterArrayOutput()
 
 func (o GetVantagePointsFilterArrayOutput) ToGetVantagePointsFilterArrayOutputWithContext(ctx context.Context) GetVantagePointsFilterArrayOutput {
 	return o
-}
-
-func (o GetVantagePointsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVantagePointsFilter] {
-	return pulumix.Output[[]GetVantagePointsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVantagePointsFilterArrayOutput) Index(i pulumi.IntInput) GetVantagePointsFilterOutput {
@@ -2393,12 +2080,6 @@ func (i GetVantagePointsHealthChecksVantagePointArgs) ToGetVantagePointsHealthCh
 	return pulumi.ToOutputWithContext(ctx, i).(GetVantagePointsHealthChecksVantagePointOutput)
 }
 
-func (i GetVantagePointsHealthChecksVantagePointArgs) ToOutput(ctx context.Context) pulumix.Output[GetVantagePointsHealthChecksVantagePoint] {
-	return pulumix.Output[GetVantagePointsHealthChecksVantagePoint]{
-		OutputState: i.ToGetVantagePointsHealthChecksVantagePointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVantagePointsHealthChecksVantagePointArrayInput is an input type that accepts GetVantagePointsHealthChecksVantagePointArray and GetVantagePointsHealthChecksVantagePointArrayOutput values.
 // You can construct a concrete instance of `GetVantagePointsHealthChecksVantagePointArrayInput` via:
 //
@@ -2424,12 +2105,6 @@ func (i GetVantagePointsHealthChecksVantagePointArray) ToGetVantagePointsHealthC
 	return pulumi.ToOutputWithContext(ctx, i).(GetVantagePointsHealthChecksVantagePointArrayOutput)
 }
 
-func (i GetVantagePointsHealthChecksVantagePointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVantagePointsHealthChecksVantagePoint] {
-	return pulumix.Output[[]GetVantagePointsHealthChecksVantagePoint]{
-		OutputState: i.ToGetVantagePointsHealthChecksVantagePointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVantagePointsHealthChecksVantagePointOutput struct{ *pulumi.OutputState }
 
 func (GetVantagePointsHealthChecksVantagePointOutput) ElementType() reflect.Type {
@@ -2442,12 +2117,6 @@ func (o GetVantagePointsHealthChecksVantagePointOutput) ToGetVantagePointsHealth
 
 func (o GetVantagePointsHealthChecksVantagePointOutput) ToGetVantagePointsHealthChecksVantagePointOutputWithContext(ctx context.Context) GetVantagePointsHealthChecksVantagePointOutput {
 	return o
-}
-
-func (o GetVantagePointsHealthChecksVantagePointOutput) ToOutput(ctx context.Context) pulumix.Output[GetVantagePointsHealthChecksVantagePoint] {
-	return pulumix.Output[GetVantagePointsHealthChecksVantagePoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Filters results that exactly match the `displayName` field.
@@ -2491,12 +2160,6 @@ func (o GetVantagePointsHealthChecksVantagePointArrayOutput) ToGetVantagePointsH
 
 func (o GetVantagePointsHealthChecksVantagePointArrayOutput) ToGetVantagePointsHealthChecksVantagePointArrayOutputWithContext(ctx context.Context) GetVantagePointsHealthChecksVantagePointArrayOutput {
 	return o
-}
-
-func (o GetVantagePointsHealthChecksVantagePointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVantagePointsHealthChecksVantagePoint] {
-	return pulumix.Output[[]GetVantagePointsHealthChecksVantagePoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVantagePointsHealthChecksVantagePointArrayOutput) Index(i pulumi.IntInput) GetVantagePointsHealthChecksVantagePointOutput {
@@ -2562,12 +2225,6 @@ func (i GetVantagePointsHealthChecksVantagePointGeoArgs) ToGetVantagePointsHealt
 	return pulumi.ToOutputWithContext(ctx, i).(GetVantagePointsHealthChecksVantagePointGeoOutput)
 }
 
-func (i GetVantagePointsHealthChecksVantagePointGeoArgs) ToOutput(ctx context.Context) pulumix.Output[GetVantagePointsHealthChecksVantagePointGeo] {
-	return pulumix.Output[GetVantagePointsHealthChecksVantagePointGeo]{
-		OutputState: i.ToGetVantagePointsHealthChecksVantagePointGeoOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVantagePointsHealthChecksVantagePointGeoArrayInput is an input type that accepts GetVantagePointsHealthChecksVantagePointGeoArray and GetVantagePointsHealthChecksVantagePointGeoArrayOutput values.
 // You can construct a concrete instance of `GetVantagePointsHealthChecksVantagePointGeoArrayInput` via:
 //
@@ -2593,12 +2250,6 @@ func (i GetVantagePointsHealthChecksVantagePointGeoArray) ToGetVantagePointsHeal
 	return pulumi.ToOutputWithContext(ctx, i).(GetVantagePointsHealthChecksVantagePointGeoArrayOutput)
 }
 
-func (i GetVantagePointsHealthChecksVantagePointGeoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVantagePointsHealthChecksVantagePointGeo] {
-	return pulumix.Output[[]GetVantagePointsHealthChecksVantagePointGeo]{
-		OutputState: i.ToGetVantagePointsHealthChecksVantagePointGeoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVantagePointsHealthChecksVantagePointGeoOutput struct{ *pulumi.OutputState }
 
 func (GetVantagePointsHealthChecksVantagePointGeoOutput) ElementType() reflect.Type {
@@ -2611,12 +2262,6 @@ func (o GetVantagePointsHealthChecksVantagePointGeoOutput) ToGetVantagePointsHea
 
 func (o GetVantagePointsHealthChecksVantagePointGeoOutput) ToGetVantagePointsHealthChecksVantagePointGeoOutputWithContext(ctx context.Context) GetVantagePointsHealthChecksVantagePointGeoOutput {
 	return o
-}
-
-func (o GetVantagePointsHealthChecksVantagePointGeoOutput) ToOutput(ctx context.Context) pulumix.Output[GetVantagePointsHealthChecksVantagePointGeo] {
-	return pulumix.Output[GetVantagePointsHealthChecksVantagePointGeo]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ISO 3166-2 code for this location's first-level administrative division, either a US state or Canadian province. Only included for locations in the US or Canada. For a list of codes, see [Country Codes](https://www.iso.org/obp/ui/#search).
@@ -2666,12 +2311,6 @@ func (o GetVantagePointsHealthChecksVantagePointGeoArrayOutput) ToGetVantagePoin
 
 func (o GetVantagePointsHealthChecksVantagePointGeoArrayOutput) ToGetVantagePointsHealthChecksVantagePointGeoArrayOutputWithContext(ctx context.Context) GetVantagePointsHealthChecksVantagePointGeoArrayOutput {
 	return o
-}
-
-func (o GetVantagePointsHealthChecksVantagePointGeoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVantagePointsHealthChecksVantagePointGeo] {
-	return pulumix.Output[[]GetVantagePointsHealthChecksVantagePointGeo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVantagePointsHealthChecksVantagePointGeoArrayOutput) Index(i pulumi.IntInput) GetVantagePointsHealthChecksVantagePointGeoOutput {
@@ -2725,12 +2364,6 @@ func (i GetVantagePointsHealthChecksVantagePointRoutingArgs) ToGetVantagePointsH
 	return pulumi.ToOutputWithContext(ctx, i).(GetVantagePointsHealthChecksVantagePointRoutingOutput)
 }
 
-func (i GetVantagePointsHealthChecksVantagePointRoutingArgs) ToOutput(ctx context.Context) pulumix.Output[GetVantagePointsHealthChecksVantagePointRouting] {
-	return pulumix.Output[GetVantagePointsHealthChecksVantagePointRouting]{
-		OutputState: i.ToGetVantagePointsHealthChecksVantagePointRoutingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVantagePointsHealthChecksVantagePointRoutingArrayInput is an input type that accepts GetVantagePointsHealthChecksVantagePointRoutingArray and GetVantagePointsHealthChecksVantagePointRoutingArrayOutput values.
 // You can construct a concrete instance of `GetVantagePointsHealthChecksVantagePointRoutingArrayInput` via:
 //
@@ -2756,12 +2389,6 @@ func (i GetVantagePointsHealthChecksVantagePointRoutingArray) ToGetVantagePoints
 	return pulumi.ToOutputWithContext(ctx, i).(GetVantagePointsHealthChecksVantagePointRoutingArrayOutput)
 }
 
-func (i GetVantagePointsHealthChecksVantagePointRoutingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVantagePointsHealthChecksVantagePointRouting] {
-	return pulumix.Output[[]GetVantagePointsHealthChecksVantagePointRouting]{
-		OutputState: i.ToGetVantagePointsHealthChecksVantagePointRoutingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVantagePointsHealthChecksVantagePointRoutingOutput struct{ *pulumi.OutputState }
 
 func (GetVantagePointsHealthChecksVantagePointRoutingOutput) ElementType() reflect.Type {
@@ -2774,12 +2401,6 @@ func (o GetVantagePointsHealthChecksVantagePointRoutingOutput) ToGetVantagePoint
 
 func (o GetVantagePointsHealthChecksVantagePointRoutingOutput) ToGetVantagePointsHealthChecksVantagePointRoutingOutputWithContext(ctx context.Context) GetVantagePointsHealthChecksVantagePointRoutingOutput {
 	return o
-}
-
-func (o GetVantagePointsHealthChecksVantagePointRoutingOutput) ToOutput(ctx context.Context) pulumix.Output[GetVantagePointsHealthChecksVantagePointRouting] {
-	return pulumix.Output[GetVantagePointsHealthChecksVantagePointRouting]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The registry label for `asn`, usually the name of the organization that owns the ASN. May be omitted or null.
@@ -2814,12 +2435,6 @@ func (o GetVantagePointsHealthChecksVantagePointRoutingArrayOutput) ToGetVantage
 
 func (o GetVantagePointsHealthChecksVantagePointRoutingArrayOutput) ToGetVantagePointsHealthChecksVantagePointRoutingArrayOutputWithContext(ctx context.Context) GetVantagePointsHealthChecksVantagePointRoutingArrayOutput {
 	return o
-}
-
-func (o GetVantagePointsHealthChecksVantagePointRoutingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVantagePointsHealthChecksVantagePointRouting] {
-	return pulumix.Output[[]GetVantagePointsHealthChecksVantagePointRouting]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVantagePointsHealthChecksVantagePointRoutingArrayOutput) Index(i pulumi.IntInput) GetVantagePointsHealthChecksVantagePointRoutingOutput {

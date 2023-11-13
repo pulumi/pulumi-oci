@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Invoke Function resource in Oracle Cloud Infrastructure Functions service.
@@ -211,12 +210,6 @@ func (i *InvokeFunction) ToInvokeFunctionOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(InvokeFunctionOutput)
 }
 
-func (i *InvokeFunction) ToOutput(ctx context.Context) pulumix.Output[*InvokeFunction] {
-	return pulumix.Output[*InvokeFunction]{
-		OutputState: i.ToInvokeFunctionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // InvokeFunctionArrayInput is an input type that accepts InvokeFunctionArray and InvokeFunctionArrayOutput values.
 // You can construct a concrete instance of `InvokeFunctionArrayInput` via:
 //
@@ -240,12 +233,6 @@ func (i InvokeFunctionArray) ToInvokeFunctionArrayOutput() InvokeFunctionArrayOu
 
 func (i InvokeFunctionArray) ToInvokeFunctionArrayOutputWithContext(ctx context.Context) InvokeFunctionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InvokeFunctionArrayOutput)
-}
-
-func (i InvokeFunctionArray) ToOutput(ctx context.Context) pulumix.Output[[]*InvokeFunction] {
-	return pulumix.Output[[]*InvokeFunction]{
-		OutputState: i.ToInvokeFunctionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // InvokeFunctionMapInput is an input type that accepts InvokeFunctionMap and InvokeFunctionMapOutput values.
@@ -273,12 +260,6 @@ func (i InvokeFunctionMap) ToInvokeFunctionMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(InvokeFunctionMapOutput)
 }
 
-func (i InvokeFunctionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*InvokeFunction] {
-	return pulumix.Output[map[string]*InvokeFunction]{
-		OutputState: i.ToInvokeFunctionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type InvokeFunctionOutput struct{ *pulumi.OutputState }
 
 func (InvokeFunctionOutput) ElementType() reflect.Type {
@@ -291,12 +272,6 @@ func (o InvokeFunctionOutput) ToInvokeFunctionOutput() InvokeFunctionOutput {
 
 func (o InvokeFunctionOutput) ToInvokeFunctionOutputWithContext(ctx context.Context) InvokeFunctionOutput {
 	return o
-}
-
-func (o InvokeFunctionOutput) ToOutput(ctx context.Context) pulumix.Output[*InvokeFunction] {
-	return pulumix.Output[*InvokeFunction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o InvokeFunctionOutput) Base64EncodeContent() pulumi.BoolPtrOutput {
@@ -358,12 +333,6 @@ func (o InvokeFunctionArrayOutput) ToInvokeFunctionArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o InvokeFunctionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*InvokeFunction] {
-	return pulumix.Output[[]*InvokeFunction]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o InvokeFunctionArrayOutput) Index(i pulumi.IntInput) InvokeFunctionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *InvokeFunction {
 		return vs[0].([]*InvokeFunction)[vs[1].(int)]
@@ -382,12 +351,6 @@ func (o InvokeFunctionMapOutput) ToInvokeFunctionMapOutput() InvokeFunctionMapOu
 
 func (o InvokeFunctionMapOutput) ToInvokeFunctionMapOutputWithContext(ctx context.Context) InvokeFunctionMapOutput {
 	return o
-}
-
-func (o InvokeFunctionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*InvokeFunction] {
-	return pulumix.Output[map[string]*InvokeFunction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o InvokeFunctionMapOutput) MapIndex(k pulumi.StringInput) InvokeFunctionOutput {

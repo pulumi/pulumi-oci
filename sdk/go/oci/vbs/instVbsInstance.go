@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Vbs Instance resource in Oracle Cloud Infrastructure Vbs Inst service.
@@ -273,12 +272,6 @@ func (i *InstVbsInstance) ToInstVbsInstanceOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(InstVbsInstanceOutput)
 }
 
-func (i *InstVbsInstance) ToOutput(ctx context.Context) pulumix.Output[*InstVbsInstance] {
-	return pulumix.Output[*InstVbsInstance]{
-		OutputState: i.ToInstVbsInstanceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // InstVbsInstanceArrayInput is an input type that accepts InstVbsInstanceArray and InstVbsInstanceArrayOutput values.
 // You can construct a concrete instance of `InstVbsInstanceArrayInput` via:
 //
@@ -302,12 +295,6 @@ func (i InstVbsInstanceArray) ToInstVbsInstanceArrayOutput() InstVbsInstanceArra
 
 func (i InstVbsInstanceArray) ToInstVbsInstanceArrayOutputWithContext(ctx context.Context) InstVbsInstanceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InstVbsInstanceArrayOutput)
-}
-
-func (i InstVbsInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]*InstVbsInstance] {
-	return pulumix.Output[[]*InstVbsInstance]{
-		OutputState: i.ToInstVbsInstanceArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // InstVbsInstanceMapInput is an input type that accepts InstVbsInstanceMap and InstVbsInstanceMapOutput values.
@@ -335,12 +322,6 @@ func (i InstVbsInstanceMap) ToInstVbsInstanceMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(InstVbsInstanceMapOutput)
 }
 
-func (i InstVbsInstanceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*InstVbsInstance] {
-	return pulumix.Output[map[string]*InstVbsInstance]{
-		OutputState: i.ToInstVbsInstanceMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type InstVbsInstanceOutput struct{ *pulumi.OutputState }
 
 func (InstVbsInstanceOutput) ElementType() reflect.Type {
@@ -353,12 +334,6 @@ func (o InstVbsInstanceOutput) ToInstVbsInstanceOutput() InstVbsInstanceOutput {
 
 func (o InstVbsInstanceOutput) ToInstVbsInstanceOutputWithContext(ctx context.Context) InstVbsInstanceOutput {
 	return o
-}
-
-func (o InstVbsInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[*InstVbsInstance] {
-	return pulumix.Output[*InstVbsInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Compartment Identifier. It can only be the root compartment
@@ -448,12 +423,6 @@ func (o InstVbsInstanceArrayOutput) ToInstVbsInstanceArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o InstVbsInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*InstVbsInstance] {
-	return pulumix.Output[[]*InstVbsInstance]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o InstVbsInstanceArrayOutput) Index(i pulumi.IntInput) InstVbsInstanceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *InstVbsInstance {
 		return vs[0].([]*InstVbsInstance)[vs[1].(int)]
@@ -472,12 +441,6 @@ func (o InstVbsInstanceMapOutput) ToInstVbsInstanceMapOutput() InstVbsInstanceMa
 
 func (o InstVbsInstanceMapOutput) ToInstVbsInstanceMapOutputWithContext(ctx context.Context) InstVbsInstanceMapOutput {
 	return o
-}
-
-func (o InstVbsInstanceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*InstVbsInstance] {
-	return pulumix.Output[map[string]*InstVbsInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o InstVbsInstanceMapOutput) MapIndex(k pulumi.StringInput) InstVbsInstanceOutput {

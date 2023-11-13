@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Instance Agent Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
@@ -122,12 +121,6 @@ func (o GetInstanceAgentPluginsResultOutput) ToGetInstanceAgentPluginsResultOutp
 
 func (o GetInstanceAgentPluginsResultOutput) ToGetInstanceAgentPluginsResultOutputWithContext(ctx context.Context) GetInstanceAgentPluginsResultOutput {
 	return o
-}
-
-func (o GetInstanceAgentPluginsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstanceAgentPluginsResult] {
-	return pulumix.Output[GetInstanceAgentPluginsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInstanceAgentPluginsResultOutput) CompartmentId() pulumi.StringOutput {

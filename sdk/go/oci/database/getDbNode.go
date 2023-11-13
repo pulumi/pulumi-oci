@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Db Node resource in Oracle Cloud Infrastructure Database service.
@@ -147,12 +146,6 @@ func (o LookupDbNodeResultOutput) ToLookupDbNodeResultOutput() LookupDbNodeResul
 
 func (o LookupDbNodeResultOutput) ToLookupDbNodeResultOutputWithContext(ctx context.Context) LookupDbNodeResultOutput {
 	return o
-}
-
-func (o LookupDbNodeResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDbNodeResult] {
-	return pulumix.Output[LookupDbNodeResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Additional information about the planned maintenance.

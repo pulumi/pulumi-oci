@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Identity Provider resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -3515,12 +3514,6 @@ func (i *DomainsIdentityProvider) ToDomainsIdentityProviderOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsIdentityProviderOutput)
 }
 
-func (i *DomainsIdentityProvider) ToOutput(ctx context.Context) pulumix.Output[*DomainsIdentityProvider] {
-	return pulumix.Output[*DomainsIdentityProvider]{
-		OutputState: i.ToDomainsIdentityProviderOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsIdentityProviderArrayInput is an input type that accepts DomainsIdentityProviderArray and DomainsIdentityProviderArrayOutput values.
 // You can construct a concrete instance of `DomainsIdentityProviderArrayInput` via:
 //
@@ -3544,12 +3537,6 @@ func (i DomainsIdentityProviderArray) ToDomainsIdentityProviderArrayOutput() Dom
 
 func (i DomainsIdentityProviderArray) ToDomainsIdentityProviderArrayOutputWithContext(ctx context.Context) DomainsIdentityProviderArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsIdentityProviderArrayOutput)
-}
-
-func (i DomainsIdentityProviderArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsIdentityProvider] {
-	return pulumix.Output[[]*DomainsIdentityProvider]{
-		OutputState: i.ToDomainsIdentityProviderArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsIdentityProviderMapInput is an input type that accepts DomainsIdentityProviderMap and DomainsIdentityProviderMapOutput values.
@@ -3577,12 +3564,6 @@ func (i DomainsIdentityProviderMap) ToDomainsIdentityProviderMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsIdentityProviderMapOutput)
 }
 
-func (i DomainsIdentityProviderMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsIdentityProvider] {
-	return pulumix.Output[map[string]*DomainsIdentityProvider]{
-		OutputState: i.ToDomainsIdentityProviderMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsIdentityProviderOutput struct{ *pulumi.OutputState }
 
 func (DomainsIdentityProviderOutput) ElementType() reflect.Type {
@@ -3595,12 +3576,6 @@ func (o DomainsIdentityProviderOutput) ToDomainsIdentityProviderOutput() Domains
 
 func (o DomainsIdentityProviderOutput) ToDomainsIdentityProviderOutputWithContext(ctx context.Context) DomainsIdentityProviderOutput {
 	return o
-}
-
-func (o DomainsIdentityProviderOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsIdentityProvider] {
-	return pulumix.Output[*DomainsIdentityProvider]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Assertion attribute name.
@@ -4555,12 +4530,6 @@ func (o DomainsIdentityProviderArrayOutput) ToDomainsIdentityProviderArrayOutput
 	return o
 }
 
-func (o DomainsIdentityProviderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsIdentityProvider] {
-	return pulumix.Output[[]*DomainsIdentityProvider]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DomainsIdentityProviderArrayOutput) Index(i pulumi.IntInput) DomainsIdentityProviderOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DomainsIdentityProvider {
 		return vs[0].([]*DomainsIdentityProvider)[vs[1].(int)]
@@ -4579,12 +4548,6 @@ func (o DomainsIdentityProviderMapOutput) ToDomainsIdentityProviderMapOutput() D
 
 func (o DomainsIdentityProviderMapOutput) ToDomainsIdentityProviderMapOutputWithContext(ctx context.Context) DomainsIdentityProviderMapOutput {
 	return o
-}
-
-func (o DomainsIdentityProviderMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsIdentityProvider] {
-	return pulumix.Output[map[string]*DomainsIdentityProvider]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsIdentityProviderMapOutput) MapIndex(k pulumi.StringInput) DomainsIdentityProviderOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Region Subscriptions in Oracle Cloud Infrastructure Identity service.
@@ -105,12 +104,6 @@ func (o GetRegionSubscriptionsResultOutput) ToGetRegionSubscriptionsResultOutput
 
 func (o GetRegionSubscriptionsResultOutput) ToGetRegionSubscriptionsResultOutputWithContext(ctx context.Context) GetRegionSubscriptionsResultOutput {
 	return o
-}
-
-func (o GetRegionSubscriptionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRegionSubscriptionsResult] {
-	return pulumix.Output[GetRegionSubscriptionsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRegionSubscriptionsResultOutput) Filters() GetRegionSubscriptionsFilterArrayOutput {

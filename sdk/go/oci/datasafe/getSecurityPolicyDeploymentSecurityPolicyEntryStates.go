@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Security Policy Deployment Security Policy Entry States in Oracle Cloud Infrastructure Data Safe service.
@@ -122,12 +121,6 @@ func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResultOutput) ToGetS
 
 func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResultOutput) ToGetSecurityPolicyDeploymentSecurityPolicyEntryStatesResultOutputWithContext(ctx context.Context) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResultOutput {
 	return o
-}
-
-func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult] {
-	return pulumix.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The current deployment status of the security policy deployment and the security policy entry associated.

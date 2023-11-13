@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Shape Management resource in Oracle Cloud Infrastructure Core service.
@@ -129,12 +128,6 @@ func (i *ShapeManagement) ToShapeManagementOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(ShapeManagementOutput)
 }
 
-func (i *ShapeManagement) ToOutput(ctx context.Context) pulumix.Output[*ShapeManagement] {
-	return pulumix.Output[*ShapeManagement]{
-		OutputState: i.ToShapeManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ShapeManagementArrayInput is an input type that accepts ShapeManagementArray and ShapeManagementArrayOutput values.
 // You can construct a concrete instance of `ShapeManagementArrayInput` via:
 //
@@ -158,12 +151,6 @@ func (i ShapeManagementArray) ToShapeManagementArrayOutput() ShapeManagementArra
 
 func (i ShapeManagementArray) ToShapeManagementArrayOutputWithContext(ctx context.Context) ShapeManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ShapeManagementArrayOutput)
-}
-
-func (i ShapeManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*ShapeManagement] {
-	return pulumix.Output[[]*ShapeManagement]{
-		OutputState: i.ToShapeManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ShapeManagementMapInput is an input type that accepts ShapeManagementMap and ShapeManagementMapOutput values.
@@ -191,12 +178,6 @@ func (i ShapeManagementMap) ToShapeManagementMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(ShapeManagementMapOutput)
 }
 
-func (i ShapeManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ShapeManagement] {
-	return pulumix.Output[map[string]*ShapeManagement]{
-		OutputState: i.ToShapeManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ShapeManagementOutput struct{ *pulumi.OutputState }
 
 func (ShapeManagementOutput) ElementType() reflect.Type {
@@ -209,12 +190,6 @@ func (o ShapeManagementOutput) ToShapeManagementOutput() ShapeManagementOutput {
 
 func (o ShapeManagementOutput) ToShapeManagementOutputWithContext(ctx context.Context) ShapeManagementOutput {
 	return o
-}
-
-func (o ShapeManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*ShapeManagement] {
-	return pulumix.Output[*ShapeManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment containing the image.
@@ -246,12 +221,6 @@ func (o ShapeManagementArrayOutput) ToShapeManagementArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o ShapeManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ShapeManagement] {
-	return pulumix.Output[[]*ShapeManagement]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ShapeManagementArrayOutput) Index(i pulumi.IntInput) ShapeManagementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ShapeManagement {
 		return vs[0].([]*ShapeManagement)[vs[1].(int)]
@@ -270,12 +239,6 @@ func (o ShapeManagementMapOutput) ToShapeManagementMapOutput() ShapeManagementMa
 
 func (o ShapeManagementMapOutput) ToShapeManagementMapOutputWithContext(ctx context.Context) ShapeManagementMapOutput {
 	return o
-}
-
-func (o ShapeManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ShapeManagement] {
-	return pulumix.Output[map[string]*ShapeManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ShapeManagementMapOutput) MapIndex(k pulumi.StringInput) ShapeManagementOutput {

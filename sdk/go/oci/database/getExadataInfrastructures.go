@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Exadata Infrastructures in Oracle Cloud Infrastructure Database service.
@@ -93,12 +92,6 @@ func (o GetExadataInfrastructuresResultOutput) ToGetExadataInfrastructuresResult
 
 func (o GetExadataInfrastructuresResultOutput) ToGetExadataInfrastructuresResultOutputWithContext(ctx context.Context) GetExadataInfrastructuresResultOutput {
 	return o
-}
-
-func (o GetExadataInfrastructuresResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExadataInfrastructuresResult] {
-	return pulumix.Output[GetExadataInfrastructuresResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

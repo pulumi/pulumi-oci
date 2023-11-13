@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Sql Firewall Policy Analytics in Oracle Cloud Infrastructure Data Safe service.
@@ -160,12 +159,6 @@ func (o GetSqlFirewallPolicyAnalyticsResultOutput) ToGetSqlFirewallPolicyAnalyti
 
 func (o GetSqlFirewallPolicyAnalyticsResultOutput) ToGetSqlFirewallPolicyAnalyticsResultOutputWithContext(ctx context.Context) GetSqlFirewallPolicyAnalyticsResultOutput {
 	return o
-}
-
-func (o GetSqlFirewallPolicyAnalyticsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallPolicyAnalyticsResult] {
-	return pulumix.Output[GetSqlFirewallPolicyAnalyticsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSqlFirewallPolicyAnalyticsResultOutput) AccessLevel() pulumi.StringPtrOutput {

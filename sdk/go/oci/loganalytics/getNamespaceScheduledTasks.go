@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Namespace Scheduled Tasks in Oracle Cloud Infrastructure Log Analytics service.
@@ -126,12 +125,6 @@ func (o GetNamespaceScheduledTasksResultOutput) ToGetNamespaceScheduledTasksResu
 
 func (o GetNamespaceScheduledTasksResultOutput) ToGetNamespaceScheduledTasksResultOutputWithContext(ctx context.Context) GetNamespaceScheduledTasksResultOutput {
 	return o
-}
-
-func (o GetNamespaceScheduledTasksResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTasksResult] {
-	return pulumix.Output[GetNamespaceScheduledTasksResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

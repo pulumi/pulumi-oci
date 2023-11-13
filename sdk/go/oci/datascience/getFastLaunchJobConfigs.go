@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Fast Launch Job Configs in Oracle Cloud Infrastructure Data Science service.
@@ -105,12 +104,6 @@ func (o GetFastLaunchJobConfigsResultOutput) ToGetFastLaunchJobConfigsResultOutp
 
 func (o GetFastLaunchJobConfigsResultOutput) ToGetFastLaunchJobConfigsResultOutputWithContext(ctx context.Context) GetFastLaunchJobConfigsResultOutput {
 	return o
-}
-
-func (o GetFastLaunchJobConfigsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFastLaunchJobConfigsResult] {
-	return pulumix.Output[GetFastLaunchJobConfigsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFastLaunchJobConfigsResultOutput) CompartmentId() pulumi.StringOutput {

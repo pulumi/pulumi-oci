@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Ui Password resource in Oracle Cloud Infrastructure Identity service.
@@ -182,12 +181,6 @@ func (i *UiPassword) ToUiPasswordOutputWithContext(ctx context.Context) UiPasswo
 	return pulumi.ToOutputWithContext(ctx, i).(UiPasswordOutput)
 }
 
-func (i *UiPassword) ToOutput(ctx context.Context) pulumix.Output[*UiPassword] {
-	return pulumix.Output[*UiPassword]{
-		OutputState: i.ToUiPasswordOutputWithContext(ctx).OutputState,
-	}
-}
-
 // UiPasswordArrayInput is an input type that accepts UiPasswordArray and UiPasswordArrayOutput values.
 // You can construct a concrete instance of `UiPasswordArrayInput` via:
 //
@@ -211,12 +204,6 @@ func (i UiPasswordArray) ToUiPasswordArrayOutput() UiPasswordArrayOutput {
 
 func (i UiPasswordArray) ToUiPasswordArrayOutputWithContext(ctx context.Context) UiPasswordArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(UiPasswordArrayOutput)
-}
-
-func (i UiPasswordArray) ToOutput(ctx context.Context) pulumix.Output[[]*UiPassword] {
-	return pulumix.Output[[]*UiPassword]{
-		OutputState: i.ToUiPasswordArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // UiPasswordMapInput is an input type that accepts UiPasswordMap and UiPasswordMapOutput values.
@@ -244,12 +231,6 @@ func (i UiPasswordMap) ToUiPasswordMapOutputWithContext(ctx context.Context) UiP
 	return pulumi.ToOutputWithContext(ctx, i).(UiPasswordMapOutput)
 }
 
-func (i UiPasswordMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*UiPassword] {
-	return pulumix.Output[map[string]*UiPassword]{
-		OutputState: i.ToUiPasswordMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type UiPasswordOutput struct{ *pulumi.OutputState }
 
 func (UiPasswordOutput) ElementType() reflect.Type {
@@ -262,12 +243,6 @@ func (o UiPasswordOutput) ToUiPasswordOutput() UiPasswordOutput {
 
 func (o UiPasswordOutput) ToUiPasswordOutputWithContext(ctx context.Context) UiPasswordOutput {
 	return o
-}
-
-func (o UiPasswordOutput) ToOutput(ctx context.Context) pulumix.Output[*UiPassword] {
-	return pulumix.Output[*UiPassword]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The detailed status of INACTIVE lifecycleState.
@@ -312,12 +287,6 @@ func (o UiPasswordArrayOutput) ToUiPasswordArrayOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o UiPasswordArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*UiPassword] {
-	return pulumix.Output[[]*UiPassword]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o UiPasswordArrayOutput) Index(i pulumi.IntInput) UiPasswordOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *UiPassword {
 		return vs[0].([]*UiPassword)[vs[1].(int)]
@@ -336,12 +305,6 @@ func (o UiPasswordMapOutput) ToUiPasswordMapOutput() UiPasswordMapOutput {
 
 func (o UiPasswordMapOutput) ToUiPasswordMapOutputWithContext(ctx context.Context) UiPasswordMapOutput {
 	return o
-}
-
-func (o UiPasswordMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*UiPassword] {
-	return pulumix.Output[map[string]*UiPassword]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o UiPasswordMapOutput) MapIndex(k pulumi.StringInput) UiPasswordOutput {

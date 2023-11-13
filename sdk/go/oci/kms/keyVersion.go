@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Key Version resource in Oracle Cloud Infrastructure Kms service.
@@ -227,12 +226,6 @@ func (i *KeyVersion) ToKeyVersionOutputWithContext(ctx context.Context) KeyVersi
 	return pulumi.ToOutputWithContext(ctx, i).(KeyVersionOutput)
 }
 
-func (i *KeyVersion) ToOutput(ctx context.Context) pulumix.Output[*KeyVersion] {
-	return pulumix.Output[*KeyVersion]{
-		OutputState: i.ToKeyVersionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // KeyVersionArrayInput is an input type that accepts KeyVersionArray and KeyVersionArrayOutput values.
 // You can construct a concrete instance of `KeyVersionArrayInput` via:
 //
@@ -256,12 +249,6 @@ func (i KeyVersionArray) ToKeyVersionArrayOutput() KeyVersionArrayOutput {
 
 func (i KeyVersionArray) ToKeyVersionArrayOutputWithContext(ctx context.Context) KeyVersionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(KeyVersionArrayOutput)
-}
-
-func (i KeyVersionArray) ToOutput(ctx context.Context) pulumix.Output[[]*KeyVersion] {
-	return pulumix.Output[[]*KeyVersion]{
-		OutputState: i.ToKeyVersionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // KeyVersionMapInput is an input type that accepts KeyVersionMap and KeyVersionMapOutput values.
@@ -289,12 +276,6 @@ func (i KeyVersionMap) ToKeyVersionMapOutputWithContext(ctx context.Context) Key
 	return pulumi.ToOutputWithContext(ctx, i).(KeyVersionMapOutput)
 }
 
-func (i KeyVersionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*KeyVersion] {
-	return pulumix.Output[map[string]*KeyVersion]{
-		OutputState: i.ToKeyVersionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type KeyVersionOutput struct{ *pulumi.OutputState }
 
 func (KeyVersionOutput) ElementType() reflect.Type {
@@ -307,12 +288,6 @@ func (o KeyVersionOutput) ToKeyVersionOutput() KeyVersionOutput {
 
 func (o KeyVersionOutput) ToKeyVersionOutputWithContext(ctx context.Context) KeyVersionOutput {
 	return o
-}
-
-func (o KeyVersionOutput) ToOutput(ctx context.Context) pulumix.Output[*KeyVersion] {
-	return pulumix.Output[*KeyVersion]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment that contains this key version.
@@ -407,12 +382,6 @@ func (o KeyVersionArrayOutput) ToKeyVersionArrayOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o KeyVersionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*KeyVersion] {
-	return pulumix.Output[[]*KeyVersion]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o KeyVersionArrayOutput) Index(i pulumi.IntInput) KeyVersionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *KeyVersion {
 		return vs[0].([]*KeyVersion)[vs[1].(int)]
@@ -431,12 +400,6 @@ func (o KeyVersionMapOutput) ToKeyVersionMapOutput() KeyVersionMapOutput {
 
 func (o KeyVersionMapOutput) ToKeyVersionMapOutputWithContext(ctx context.Context) KeyVersionMapOutput {
 	return o
-}
-
-func (o KeyVersionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*KeyVersion] {
-	return pulumix.Output[map[string]*KeyVersion]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o KeyVersionMapOutput) MapIndex(k pulumi.StringInput) KeyVersionOutput {

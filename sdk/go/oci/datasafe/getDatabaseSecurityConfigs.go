@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Database Security Configs in Oracle Cloud Infrastructure Data Safe service.
@@ -178,12 +177,6 @@ func (o GetDatabaseSecurityConfigsResultOutput) ToGetDatabaseSecurityConfigsResu
 
 func (o GetDatabaseSecurityConfigsResultOutput) ToGetDatabaseSecurityConfigsResultOutputWithContext(ctx context.Context) GetDatabaseSecurityConfigsResultOutput {
 	return o
-}
-
-func (o GetDatabaseSecurityConfigsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseSecurityConfigsResult] {
-	return pulumix.Output[GetDatabaseSecurityConfigsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatabaseSecurityConfigsResultOutput) AccessLevel() pulumi.StringPtrOutput {

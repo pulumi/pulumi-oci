@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific View resource in Oracle Cloud Infrastructure DNS service.
@@ -126,12 +125,6 @@ func (o LookupViewResultOutput) ToLookupViewResultOutput() LookupViewResultOutpu
 
 func (o LookupViewResultOutput) ToLookupViewResultOutputWithContext(ctx context.Context) LookupViewResultOutput {
 	return o
-}
-
-func (o LookupViewResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupViewResult] {
-	return pulumix.Output[LookupViewResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the owning compartment.

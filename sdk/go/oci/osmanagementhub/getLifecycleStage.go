@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Lifecycle Stage resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -130,12 +129,6 @@ func (o GetLifecycleStageResultOutput) ToGetLifecycleStageResultOutput() GetLife
 
 func (o GetLifecycleStageResultOutput) ToGetLifecycleStageResultOutputWithContext(ctx context.Context) GetLifecycleStageResultOutput {
 	return o
-}
-
-func (o GetLifecycleStageResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleStageResult] {
-	return pulumix.Output[GetLifecycleStageResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The CPU architecture of the target instances.

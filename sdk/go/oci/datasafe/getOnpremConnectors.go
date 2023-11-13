@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of On Prem Connectors in Oracle Cloud Infrastructure Data Safe service.
@@ -137,12 +136,6 @@ func (o GetOnpremConnectorsResultOutput) ToGetOnpremConnectorsResultOutput() Get
 
 func (o GetOnpremConnectorsResultOutput) ToGetOnpremConnectorsResultOutputWithContext(ctx context.Context) GetOnpremConnectorsResultOutput {
 	return o
-}
-
-func (o GetOnpremConnectorsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetOnpremConnectorsResult] {
-	return pulumix.Output[GetOnpremConnectorsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOnpremConnectorsResultOutput) AccessLevel() pulumi.StringPtrOutput {

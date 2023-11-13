@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Key Version resource in Oracle Cloud Infrastructure Kms service.
@@ -142,12 +141,6 @@ func (o LookupKeyVersionResultOutput) ToLookupKeyVersionResultOutput() LookupKey
 
 func (o LookupKeyVersionResultOutput) ToLookupKeyVersionResultOutputWithContext(ctx context.Context) LookupKeyVersionResultOutput {
 	return o
-}
-
-func (o LookupKeyVersionResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupKeyVersionResult] {
-	return pulumix.Output[LookupKeyVersionResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment that contains this key version.

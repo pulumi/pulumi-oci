@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -47,12 +46,6 @@ func (i RedisClusterNodeCollectionArgs) ToRedisClusterNodeCollectionOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(RedisClusterNodeCollectionOutput)
 }
 
-func (i RedisClusterNodeCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[RedisClusterNodeCollection] {
-	return pulumix.Output[RedisClusterNodeCollection]{
-		OutputState: i.ToRedisClusterNodeCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RedisClusterNodeCollectionArrayInput is an input type that accepts RedisClusterNodeCollectionArray and RedisClusterNodeCollectionArrayOutput values.
 // You can construct a concrete instance of `RedisClusterNodeCollectionArrayInput` via:
 //
@@ -78,12 +71,6 @@ func (i RedisClusterNodeCollectionArray) ToRedisClusterNodeCollectionArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(RedisClusterNodeCollectionArrayOutput)
 }
 
-func (i RedisClusterNodeCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]RedisClusterNodeCollection] {
-	return pulumix.Output[[]RedisClusterNodeCollection]{
-		OutputState: i.ToRedisClusterNodeCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RedisClusterNodeCollectionOutput struct{ *pulumi.OutputState }
 
 func (RedisClusterNodeCollectionOutput) ElementType() reflect.Type {
@@ -96,12 +83,6 @@ func (o RedisClusterNodeCollectionOutput) ToRedisClusterNodeCollectionOutput() R
 
 func (o RedisClusterNodeCollectionOutput) ToRedisClusterNodeCollectionOutputWithContext(ctx context.Context) RedisClusterNodeCollectionOutput {
 	return o
-}
-
-func (o RedisClusterNodeCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[RedisClusterNodeCollection] {
-	return pulumix.Output[RedisClusterNodeCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Collection of node objects.
@@ -121,12 +102,6 @@ func (o RedisClusterNodeCollectionArrayOutput) ToRedisClusterNodeCollectionArray
 
 func (o RedisClusterNodeCollectionArrayOutput) ToRedisClusterNodeCollectionArrayOutputWithContext(ctx context.Context) RedisClusterNodeCollectionArrayOutput {
 	return o
-}
-
-func (o RedisClusterNodeCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]RedisClusterNodeCollection] {
-	return pulumix.Output[[]RedisClusterNodeCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RedisClusterNodeCollectionArrayOutput) Index(i pulumi.IntInput) RedisClusterNodeCollectionOutput {
@@ -176,12 +151,6 @@ func (i RedisClusterNodeCollectionItemArgs) ToRedisClusterNodeCollectionItemOutp
 	return pulumi.ToOutputWithContext(ctx, i).(RedisClusterNodeCollectionItemOutput)
 }
 
-func (i RedisClusterNodeCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[RedisClusterNodeCollectionItem] {
-	return pulumix.Output[RedisClusterNodeCollectionItem]{
-		OutputState: i.ToRedisClusterNodeCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RedisClusterNodeCollectionItemArrayInput is an input type that accepts RedisClusterNodeCollectionItemArray and RedisClusterNodeCollectionItemArrayOutput values.
 // You can construct a concrete instance of `RedisClusterNodeCollectionItemArrayInput` via:
 //
@@ -207,12 +176,6 @@ func (i RedisClusterNodeCollectionItemArray) ToRedisClusterNodeCollectionItemArr
 	return pulumi.ToOutputWithContext(ctx, i).(RedisClusterNodeCollectionItemArrayOutput)
 }
 
-func (i RedisClusterNodeCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]RedisClusterNodeCollectionItem] {
-	return pulumix.Output[[]RedisClusterNodeCollectionItem]{
-		OutputState: i.ToRedisClusterNodeCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RedisClusterNodeCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (RedisClusterNodeCollectionItemOutput) ElementType() reflect.Type {
@@ -225,12 +188,6 @@ func (o RedisClusterNodeCollectionItemOutput) ToRedisClusterNodeCollectionItemOu
 
 func (o RedisClusterNodeCollectionItemOutput) ToRedisClusterNodeCollectionItemOutputWithContext(ctx context.Context) RedisClusterNodeCollectionItemOutput {
 	return o
-}
-
-func (o RedisClusterNodeCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[RedisClusterNodeCollectionItem] {
-	return pulumix.Output[RedisClusterNodeCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -260,12 +217,6 @@ func (o RedisClusterNodeCollectionItemArrayOutput) ToRedisClusterNodeCollectionI
 
 func (o RedisClusterNodeCollectionItemArrayOutput) ToRedisClusterNodeCollectionItemArrayOutputWithContext(ctx context.Context) RedisClusterNodeCollectionItemArrayOutput {
 	return o
-}
-
-func (o RedisClusterNodeCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]RedisClusterNodeCollectionItem] {
-	return pulumix.Output[[]RedisClusterNodeCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RedisClusterNodeCollectionItemArrayOutput) Index(i pulumi.IntInput) RedisClusterNodeCollectionItemOutput {
@@ -307,12 +258,6 @@ func (i GetRedisClusterNodeCollectionArgs) ToGetRedisClusterNodeCollectionOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClusterNodeCollectionOutput)
 }
 
-func (i GetRedisClusterNodeCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRedisClusterNodeCollection] {
-	return pulumix.Output[GetRedisClusterNodeCollection]{
-		OutputState: i.ToGetRedisClusterNodeCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRedisClusterNodeCollectionArrayInput is an input type that accepts GetRedisClusterNodeCollectionArray and GetRedisClusterNodeCollectionArrayOutput values.
 // You can construct a concrete instance of `GetRedisClusterNodeCollectionArrayInput` via:
 //
@@ -338,12 +283,6 @@ func (i GetRedisClusterNodeCollectionArray) ToGetRedisClusterNodeCollectionArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClusterNodeCollectionArrayOutput)
 }
 
-func (i GetRedisClusterNodeCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRedisClusterNodeCollection] {
-	return pulumix.Output[[]GetRedisClusterNodeCollection]{
-		OutputState: i.ToGetRedisClusterNodeCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRedisClusterNodeCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetRedisClusterNodeCollectionOutput) ElementType() reflect.Type {
@@ -356,12 +295,6 @@ func (o GetRedisClusterNodeCollectionOutput) ToGetRedisClusterNodeCollectionOutp
 
 func (o GetRedisClusterNodeCollectionOutput) ToGetRedisClusterNodeCollectionOutputWithContext(ctx context.Context) GetRedisClusterNodeCollectionOutput {
 	return o
-}
-
-func (o GetRedisClusterNodeCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRedisClusterNodeCollection] {
-	return pulumix.Output[GetRedisClusterNodeCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Collection of node objects.
@@ -381,12 +314,6 @@ func (o GetRedisClusterNodeCollectionArrayOutput) ToGetRedisClusterNodeCollectio
 
 func (o GetRedisClusterNodeCollectionArrayOutput) ToGetRedisClusterNodeCollectionArrayOutputWithContext(ctx context.Context) GetRedisClusterNodeCollectionArrayOutput {
 	return o
-}
-
-func (o GetRedisClusterNodeCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRedisClusterNodeCollection] {
-	return pulumix.Output[[]GetRedisClusterNodeCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRedisClusterNodeCollectionArrayOutput) Index(i pulumi.IntInput) GetRedisClusterNodeCollectionOutput {
@@ -436,12 +363,6 @@ func (i GetRedisClusterNodeCollectionItemArgs) ToGetRedisClusterNodeCollectionIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClusterNodeCollectionItemOutput)
 }
 
-func (i GetRedisClusterNodeCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetRedisClusterNodeCollectionItem] {
-	return pulumix.Output[GetRedisClusterNodeCollectionItem]{
-		OutputState: i.ToGetRedisClusterNodeCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRedisClusterNodeCollectionItemArrayInput is an input type that accepts GetRedisClusterNodeCollectionItemArray and GetRedisClusterNodeCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetRedisClusterNodeCollectionItemArrayInput` via:
 //
@@ -467,12 +388,6 @@ func (i GetRedisClusterNodeCollectionItemArray) ToGetRedisClusterNodeCollectionI
 	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClusterNodeCollectionItemArrayOutput)
 }
 
-func (i GetRedisClusterNodeCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRedisClusterNodeCollectionItem] {
-	return pulumix.Output[[]GetRedisClusterNodeCollectionItem]{
-		OutputState: i.ToGetRedisClusterNodeCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRedisClusterNodeCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetRedisClusterNodeCollectionItemOutput) ElementType() reflect.Type {
@@ -485,12 +400,6 @@ func (o GetRedisClusterNodeCollectionItemOutput) ToGetRedisClusterNodeCollection
 
 func (o GetRedisClusterNodeCollectionItemOutput) ToGetRedisClusterNodeCollectionItemOutputWithContext(ctx context.Context) GetRedisClusterNodeCollectionItemOutput {
 	return o
-}
-
-func (o GetRedisClusterNodeCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetRedisClusterNodeCollectionItem] {
-	return pulumix.Output[GetRedisClusterNodeCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A user-friendly name of a Redis cluster node.
@@ -520,12 +429,6 @@ func (o GetRedisClusterNodeCollectionItemArrayOutput) ToGetRedisClusterNodeColle
 
 func (o GetRedisClusterNodeCollectionItemArrayOutput) ToGetRedisClusterNodeCollectionItemArrayOutputWithContext(ctx context.Context) GetRedisClusterNodeCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetRedisClusterNodeCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRedisClusterNodeCollectionItem] {
-	return pulumix.Output[[]GetRedisClusterNodeCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRedisClusterNodeCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRedisClusterNodeCollectionItemOutput {
@@ -569,12 +472,6 @@ func (i GetRedisClustersFilterArgs) ToGetRedisClustersFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClustersFilterOutput)
 }
 
-func (i GetRedisClustersFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetRedisClustersFilter] {
-	return pulumix.Output[GetRedisClustersFilter]{
-		OutputState: i.ToGetRedisClustersFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRedisClustersFilterArrayInput is an input type that accepts GetRedisClustersFilterArray and GetRedisClustersFilterArrayOutput values.
 // You can construct a concrete instance of `GetRedisClustersFilterArrayInput` via:
 //
@@ -600,12 +497,6 @@ func (i GetRedisClustersFilterArray) ToGetRedisClustersFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClustersFilterArrayOutput)
 }
 
-func (i GetRedisClustersFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRedisClustersFilter] {
-	return pulumix.Output[[]GetRedisClustersFilter]{
-		OutputState: i.ToGetRedisClustersFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRedisClustersFilterOutput struct{ *pulumi.OutputState }
 
 func (GetRedisClustersFilterOutput) ElementType() reflect.Type {
@@ -618,12 +509,6 @@ func (o GetRedisClustersFilterOutput) ToGetRedisClustersFilterOutput() GetRedisC
 
 func (o GetRedisClustersFilterOutput) ToGetRedisClustersFilterOutputWithContext(ctx context.Context) GetRedisClustersFilterOutput {
 	return o
-}
-
-func (o GetRedisClustersFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetRedisClustersFilter] {
-	return pulumix.Output[GetRedisClustersFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRedisClustersFilterOutput) Name() pulumi.StringOutput {
@@ -650,12 +535,6 @@ func (o GetRedisClustersFilterArrayOutput) ToGetRedisClustersFilterArrayOutput()
 
 func (o GetRedisClustersFilterArrayOutput) ToGetRedisClustersFilterArrayOutputWithContext(ctx context.Context) GetRedisClustersFilterArrayOutput {
 	return o
-}
-
-func (o GetRedisClustersFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRedisClustersFilter] {
-	return pulumix.Output[[]GetRedisClustersFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRedisClustersFilterArrayOutput) Index(i pulumi.IntInput) GetRedisClustersFilterOutput {
@@ -697,12 +576,6 @@ func (i GetRedisClustersRedisClusterCollectionArgs) ToGetRedisClustersRedisClust
 	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClustersRedisClusterCollectionOutput)
 }
 
-func (i GetRedisClustersRedisClusterCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRedisClustersRedisClusterCollection] {
-	return pulumix.Output[GetRedisClustersRedisClusterCollection]{
-		OutputState: i.ToGetRedisClustersRedisClusterCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRedisClustersRedisClusterCollectionArrayInput is an input type that accepts GetRedisClustersRedisClusterCollectionArray and GetRedisClustersRedisClusterCollectionArrayOutput values.
 // You can construct a concrete instance of `GetRedisClustersRedisClusterCollectionArrayInput` via:
 //
@@ -728,12 +601,6 @@ func (i GetRedisClustersRedisClusterCollectionArray) ToGetRedisClustersRedisClus
 	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClustersRedisClusterCollectionArrayOutput)
 }
 
-func (i GetRedisClustersRedisClusterCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRedisClustersRedisClusterCollection] {
-	return pulumix.Output[[]GetRedisClustersRedisClusterCollection]{
-		OutputState: i.ToGetRedisClustersRedisClusterCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRedisClustersRedisClusterCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetRedisClustersRedisClusterCollectionOutput) ElementType() reflect.Type {
@@ -746,12 +613,6 @@ func (o GetRedisClustersRedisClusterCollectionOutput) ToGetRedisClustersRedisClu
 
 func (o GetRedisClustersRedisClusterCollectionOutput) ToGetRedisClustersRedisClusterCollectionOutputWithContext(ctx context.Context) GetRedisClustersRedisClusterCollectionOutput {
 	return o
-}
-
-func (o GetRedisClustersRedisClusterCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRedisClustersRedisClusterCollection] {
-	return pulumix.Output[GetRedisClustersRedisClusterCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Collection of node objects.
@@ -773,12 +634,6 @@ func (o GetRedisClustersRedisClusterCollectionArrayOutput) ToGetRedisClustersRed
 
 func (o GetRedisClustersRedisClusterCollectionArrayOutput) ToGetRedisClustersRedisClusterCollectionArrayOutputWithContext(ctx context.Context) GetRedisClustersRedisClusterCollectionArrayOutput {
 	return o
-}
-
-func (o GetRedisClustersRedisClusterCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRedisClustersRedisClusterCollection] {
-	return pulumix.Output[[]GetRedisClustersRedisClusterCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRedisClustersRedisClusterCollectionArrayOutput) Index(i pulumi.IntInput) GetRedisClustersRedisClusterCollectionOutput {
@@ -892,12 +747,6 @@ func (i GetRedisClustersRedisClusterCollectionItemArgs) ToGetRedisClustersRedisC
 	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClustersRedisClusterCollectionItemOutput)
 }
 
-func (i GetRedisClustersRedisClusterCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetRedisClustersRedisClusterCollectionItem] {
-	return pulumix.Output[GetRedisClustersRedisClusterCollectionItem]{
-		OutputState: i.ToGetRedisClustersRedisClusterCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRedisClustersRedisClusterCollectionItemArrayInput is an input type that accepts GetRedisClustersRedisClusterCollectionItemArray and GetRedisClustersRedisClusterCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetRedisClustersRedisClusterCollectionItemArrayInput` via:
 //
@@ -923,12 +772,6 @@ func (i GetRedisClustersRedisClusterCollectionItemArray) ToGetRedisClustersRedis
 	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClustersRedisClusterCollectionItemArrayOutput)
 }
 
-func (i GetRedisClustersRedisClusterCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRedisClustersRedisClusterCollectionItem] {
-	return pulumix.Output[[]GetRedisClustersRedisClusterCollectionItem]{
-		OutputState: i.ToGetRedisClustersRedisClusterCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRedisClustersRedisClusterCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetRedisClustersRedisClusterCollectionItemOutput) ElementType() reflect.Type {
@@ -941,12 +784,6 @@ func (o GetRedisClustersRedisClusterCollectionItemOutput) ToGetRedisClustersRedi
 
 func (o GetRedisClustersRedisClusterCollectionItemOutput) ToGetRedisClustersRedisClusterCollectionItemOutputWithContext(ctx context.Context) GetRedisClustersRedisClusterCollectionItemOutput {
 	return o
-}
-
-func (o GetRedisClustersRedisClusterCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetRedisClustersRedisClusterCollectionItem] {
-	return pulumix.Output[GetRedisClustersRedisClusterCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -1060,12 +897,6 @@ func (o GetRedisClustersRedisClusterCollectionItemArrayOutput) ToGetRedisCluster
 	return o
 }
 
-func (o GetRedisClustersRedisClusterCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRedisClustersRedisClusterCollectionItem] {
-	return pulumix.Output[[]GetRedisClustersRedisClusterCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRedisClustersRedisClusterCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRedisClustersRedisClusterCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRedisClustersRedisClusterCollectionItem {
 		return vs[0].([]GetRedisClustersRedisClusterCollectionItem)[vs[1].(int)]
@@ -1105,12 +936,6 @@ func (i GetRedisClustersRedisClusterCollectionItemNodeCollectionArgs) ToGetRedis
 	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClustersRedisClusterCollectionItemNodeCollectionOutput)
 }
 
-func (i GetRedisClustersRedisClusterCollectionItemNodeCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRedisClustersRedisClusterCollectionItemNodeCollection] {
-	return pulumix.Output[GetRedisClustersRedisClusterCollectionItemNodeCollection]{
-		OutputState: i.ToGetRedisClustersRedisClusterCollectionItemNodeCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRedisClustersRedisClusterCollectionItemNodeCollectionArrayInput is an input type that accepts GetRedisClustersRedisClusterCollectionItemNodeCollectionArray and GetRedisClustersRedisClusterCollectionItemNodeCollectionArrayOutput values.
 // You can construct a concrete instance of `GetRedisClustersRedisClusterCollectionItemNodeCollectionArrayInput` via:
 //
@@ -1136,12 +961,6 @@ func (i GetRedisClustersRedisClusterCollectionItemNodeCollectionArray) ToGetRedi
 	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClustersRedisClusterCollectionItemNodeCollectionArrayOutput)
 }
 
-func (i GetRedisClustersRedisClusterCollectionItemNodeCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRedisClustersRedisClusterCollectionItemNodeCollection] {
-	return pulumix.Output[[]GetRedisClustersRedisClusterCollectionItemNodeCollection]{
-		OutputState: i.ToGetRedisClustersRedisClusterCollectionItemNodeCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRedisClustersRedisClusterCollectionItemNodeCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetRedisClustersRedisClusterCollectionItemNodeCollectionOutput) ElementType() reflect.Type {
@@ -1154,12 +973,6 @@ func (o GetRedisClustersRedisClusterCollectionItemNodeCollectionOutput) ToGetRed
 
 func (o GetRedisClustersRedisClusterCollectionItemNodeCollectionOutput) ToGetRedisClustersRedisClusterCollectionItemNodeCollectionOutputWithContext(ctx context.Context) GetRedisClustersRedisClusterCollectionItemNodeCollectionOutput {
 	return o
-}
-
-func (o GetRedisClustersRedisClusterCollectionItemNodeCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRedisClustersRedisClusterCollectionItemNodeCollection] {
-	return pulumix.Output[GetRedisClustersRedisClusterCollectionItemNodeCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Collection of node objects.
@@ -1181,12 +994,6 @@ func (o GetRedisClustersRedisClusterCollectionItemNodeCollectionArrayOutput) ToG
 
 func (o GetRedisClustersRedisClusterCollectionItemNodeCollectionArrayOutput) ToGetRedisClustersRedisClusterCollectionItemNodeCollectionArrayOutputWithContext(ctx context.Context) GetRedisClustersRedisClusterCollectionItemNodeCollectionArrayOutput {
 	return o
-}
-
-func (o GetRedisClustersRedisClusterCollectionItemNodeCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRedisClustersRedisClusterCollectionItemNodeCollection] {
-	return pulumix.Output[[]GetRedisClustersRedisClusterCollectionItemNodeCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRedisClustersRedisClusterCollectionItemNodeCollectionArrayOutput) Index(i pulumi.IntInput) GetRedisClustersRedisClusterCollectionItemNodeCollectionOutput {
@@ -1236,12 +1043,6 @@ func (i GetRedisClustersRedisClusterCollectionItemNodeCollectionItemArgs) ToGetR
 	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClustersRedisClusterCollectionItemNodeCollectionItemOutput)
 }
 
-func (i GetRedisClustersRedisClusterCollectionItemNodeCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetRedisClustersRedisClusterCollectionItemNodeCollectionItem] {
-	return pulumix.Output[GetRedisClustersRedisClusterCollectionItemNodeCollectionItem]{
-		OutputState: i.ToGetRedisClustersRedisClusterCollectionItemNodeCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRedisClustersRedisClusterCollectionItemNodeCollectionItemArrayInput is an input type that accepts GetRedisClustersRedisClusterCollectionItemNodeCollectionItemArray and GetRedisClustersRedisClusterCollectionItemNodeCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetRedisClustersRedisClusterCollectionItemNodeCollectionItemArrayInput` via:
 //
@@ -1267,12 +1068,6 @@ func (i GetRedisClustersRedisClusterCollectionItemNodeCollectionItemArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetRedisClustersRedisClusterCollectionItemNodeCollectionItemArrayOutput)
 }
 
-func (i GetRedisClustersRedisClusterCollectionItemNodeCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRedisClustersRedisClusterCollectionItemNodeCollectionItem] {
-	return pulumix.Output[[]GetRedisClustersRedisClusterCollectionItemNodeCollectionItem]{
-		OutputState: i.ToGetRedisClustersRedisClusterCollectionItemNodeCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRedisClustersRedisClusterCollectionItemNodeCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetRedisClustersRedisClusterCollectionItemNodeCollectionItemOutput) ElementType() reflect.Type {
@@ -1285,12 +1080,6 @@ func (o GetRedisClustersRedisClusterCollectionItemNodeCollectionItemOutput) ToGe
 
 func (o GetRedisClustersRedisClusterCollectionItemNodeCollectionItemOutput) ToGetRedisClustersRedisClusterCollectionItemNodeCollectionItemOutputWithContext(ctx context.Context) GetRedisClustersRedisClusterCollectionItemNodeCollectionItemOutput {
 	return o
-}
-
-func (o GetRedisClustersRedisClusterCollectionItemNodeCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetRedisClustersRedisClusterCollectionItemNodeCollectionItem] {
-	return pulumix.Output[GetRedisClustersRedisClusterCollectionItemNodeCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -1324,12 +1113,6 @@ func (o GetRedisClustersRedisClusterCollectionItemNodeCollectionItemArrayOutput)
 
 func (o GetRedisClustersRedisClusterCollectionItemNodeCollectionItemArrayOutput) ToGetRedisClustersRedisClusterCollectionItemNodeCollectionItemArrayOutputWithContext(ctx context.Context) GetRedisClustersRedisClusterCollectionItemNodeCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetRedisClustersRedisClusterCollectionItemNodeCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRedisClustersRedisClusterCollectionItemNodeCollectionItem] {
-	return pulumix.Output[[]GetRedisClustersRedisClusterCollectionItemNodeCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRedisClustersRedisClusterCollectionItemNodeCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRedisClustersRedisClusterCollectionItemNodeCollectionItemOutput {

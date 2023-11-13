@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Pools in Oracle Cloud Infrastructure Data Flow service.
@@ -133,12 +132,6 @@ func (o GetPoolsResultOutput) ToGetPoolsResultOutput() GetPoolsResultOutput {
 
 func (o GetPoolsResultOutput) ToGetPoolsResultOutputWithContext(ctx context.Context) GetPoolsResultOutput {
 	return o
-}
-
-func (o GetPoolsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPoolsResult] {
-	return pulumix.Output[GetPoolsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of a compartment.

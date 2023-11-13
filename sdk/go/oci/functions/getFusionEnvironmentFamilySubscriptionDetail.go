@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Fusion Environment Family Subscription Detail resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -102,12 +101,6 @@ func (o GetFusionEnvironmentFamilySubscriptionDetailResultOutput) ToGetFusionEnv
 
 func (o GetFusionEnvironmentFamilySubscriptionDetailResultOutput) ToGetFusionEnvironmentFamilySubscriptionDetailResultOutputWithContext(ctx context.Context) GetFusionEnvironmentFamilySubscriptionDetailResultOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentFamilySubscriptionDetailResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentFamilySubscriptionDetailResult] {
-	return pulumix.Output[GetFusionEnvironmentFamilySubscriptionDetailResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFusionEnvironmentFamilySubscriptionDetailResultOutput) FusionEnvironmentFamilyId() pulumi.StringOutput {

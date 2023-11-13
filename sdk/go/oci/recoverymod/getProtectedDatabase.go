@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Protected Database resource in Oracle Cloud Infrastructure Recovery service.
@@ -144,12 +143,6 @@ func (o LookupProtectedDatabaseResultOutput) ToLookupProtectedDatabaseResultOutp
 
 func (o LookupProtectedDatabaseResultOutput) ToLookupProtectedDatabaseResultOutputWithContext(ctx context.Context) LookupProtectedDatabaseResultOutput {
 	return o
-}
-
-func (o LookupProtectedDatabaseResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupProtectedDatabaseResult] {
-	return pulumix.Output[LookupProtectedDatabaseResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment that contains the protected database.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Fleet Installation Sites in Oracle Cloud Infrastructure Jms service.
@@ -172,12 +171,6 @@ func (o GetInstallationSitesResultOutput) ToGetInstallationSitesResultOutput() G
 
 func (o GetInstallationSitesResultOutput) ToGetInstallationSitesResultOutputWithContext(ctx context.Context) GetInstallationSitesResultOutput {
 	return o
-}
-
-func (o GetInstallationSitesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstallationSitesResult] {
-	return pulumix.Output[GetInstallationSitesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInstallationSitesResultOutput) ApplicationId() pulumi.StringPtrOutput {

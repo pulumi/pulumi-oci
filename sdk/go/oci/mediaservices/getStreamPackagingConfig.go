@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Stream Packaging Config resource in Oracle Cloud Infrastructure Media Services service.
@@ -124,12 +123,6 @@ func (o LookupStreamPackagingConfigResultOutput) ToLookupStreamPackagingConfigRe
 
 func (o LookupStreamPackagingConfigResultOutput) ToLookupStreamPackagingConfigResultOutputWithContext(ctx context.Context) LookupStreamPackagingConfigResultOutput {
 	return o
-}
-
-func (o LookupStreamPackagingConfigResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupStreamPackagingConfigResult] {
-	return pulumix.Output[LookupStreamPackagingConfigResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier

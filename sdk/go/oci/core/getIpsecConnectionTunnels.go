@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Ip Sec Connection Tunnels in Oracle Cloud Infrastructure Core service.
@@ -105,12 +104,6 @@ func (o GetIpsecConnectionTunnelsResultOutput) ToGetIpsecConnectionTunnelsResult
 
 func (o GetIpsecConnectionTunnelsResultOutput) ToGetIpsecConnectionTunnelsResultOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelsResultOutput {
 	return o
-}
-
-func (o GetIpsecConnectionTunnelsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIpsecConnectionTunnelsResult] {
-	return pulumix.Output[GetIpsecConnectionTunnelsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetIpsecConnectionTunnelsResultOutput) Filters() GetIpsecConnectionTunnelsFilterArrayOutput {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Protection Rule resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -172,12 +171,6 @@ func (i *ProtectionRule) ToProtectionRuleOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectionRuleOutput)
 }
 
-func (i *ProtectionRule) ToOutput(ctx context.Context) pulumix.Output[*ProtectionRule] {
-	return pulumix.Output[*ProtectionRule]{
-		OutputState: i.ToProtectionRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ProtectionRuleArrayInput is an input type that accepts ProtectionRuleArray and ProtectionRuleArrayOutput values.
 // You can construct a concrete instance of `ProtectionRuleArrayInput` via:
 //
@@ -201,12 +194,6 @@ func (i ProtectionRuleArray) ToProtectionRuleArrayOutput() ProtectionRuleArrayOu
 
 func (i ProtectionRuleArray) ToProtectionRuleArrayOutputWithContext(ctx context.Context) ProtectionRuleArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectionRuleArrayOutput)
-}
-
-func (i ProtectionRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]*ProtectionRule] {
-	return pulumix.Output[[]*ProtectionRule]{
-		OutputState: i.ToProtectionRuleArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ProtectionRuleMapInput is an input type that accepts ProtectionRuleMap and ProtectionRuleMapOutput values.
@@ -234,12 +221,6 @@ func (i ProtectionRuleMap) ToProtectionRuleMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectionRuleMapOutput)
 }
 
-func (i ProtectionRuleMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ProtectionRule] {
-	return pulumix.Output[map[string]*ProtectionRule]{
-		OutputState: i.ToProtectionRuleMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ProtectionRuleOutput struct{ *pulumi.OutputState }
 
 func (ProtectionRuleOutput) ElementType() reflect.Type {
@@ -252,12 +233,6 @@ func (o ProtectionRuleOutput) ToProtectionRuleOutput() ProtectionRuleOutput {
 
 func (o ProtectionRuleOutput) ToProtectionRuleOutputWithContext(ctx context.Context) ProtectionRuleOutput {
 	return o
-}
-
-func (o ProtectionRuleOutput) ToOutput(ctx context.Context) pulumix.Output[*ProtectionRule] {
-	return pulumix.Output[*ProtectionRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
@@ -314,12 +289,6 @@ func (o ProtectionRuleArrayOutput) ToProtectionRuleArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o ProtectionRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ProtectionRule] {
-	return pulumix.Output[[]*ProtectionRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ProtectionRuleArrayOutput) Index(i pulumi.IntInput) ProtectionRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ProtectionRule {
 		return vs[0].([]*ProtectionRule)[vs[1].(int)]
@@ -338,12 +307,6 @@ func (o ProtectionRuleMapOutput) ToProtectionRuleMapOutput() ProtectionRuleMapOu
 
 func (o ProtectionRuleMapOutput) ToProtectionRuleMapOutputWithContext(ctx context.Context) ProtectionRuleMapOutput {
 	return o
-}
-
-func (o ProtectionRuleMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ProtectionRule] {
-	return pulumix.Output[map[string]*ProtectionRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProtectionRuleMapOutput) MapIndex(k pulumi.StringInput) ProtectionRuleOutput {

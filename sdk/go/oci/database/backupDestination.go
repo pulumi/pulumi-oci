@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Backup Destination resource in Oracle Cloud Infrastructure Database service.
@@ -307,12 +306,6 @@ func (i *BackupDestination) ToBackupDestinationOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(BackupDestinationOutput)
 }
 
-func (i *BackupDestination) ToOutput(ctx context.Context) pulumix.Output[*BackupDestination] {
-	return pulumix.Output[*BackupDestination]{
-		OutputState: i.ToBackupDestinationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BackupDestinationArrayInput is an input type that accepts BackupDestinationArray and BackupDestinationArrayOutput values.
 // You can construct a concrete instance of `BackupDestinationArrayInput` via:
 //
@@ -336,12 +329,6 @@ func (i BackupDestinationArray) ToBackupDestinationArrayOutput() BackupDestinati
 
 func (i BackupDestinationArray) ToBackupDestinationArrayOutputWithContext(ctx context.Context) BackupDestinationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BackupDestinationArrayOutput)
-}
-
-func (i BackupDestinationArray) ToOutput(ctx context.Context) pulumix.Output[[]*BackupDestination] {
-	return pulumix.Output[[]*BackupDestination]{
-		OutputState: i.ToBackupDestinationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BackupDestinationMapInput is an input type that accepts BackupDestinationMap and BackupDestinationMapOutput values.
@@ -369,12 +356,6 @@ func (i BackupDestinationMap) ToBackupDestinationMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(BackupDestinationMapOutput)
 }
 
-func (i BackupDestinationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BackupDestination] {
-	return pulumix.Output[map[string]*BackupDestination]{
-		OutputState: i.ToBackupDestinationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BackupDestinationOutput struct{ *pulumi.OutputState }
 
 func (BackupDestinationOutput) ElementType() reflect.Type {
@@ -387,12 +368,6 @@ func (o BackupDestinationOutput) ToBackupDestinationOutput() BackupDestinationOu
 
 func (o BackupDestinationOutput) ToBackupDestinationOutputWithContext(ctx context.Context) BackupDestinationOutput {
 	return o
-}
-
-func (o BackupDestinationOutput) ToOutput(ctx context.Context) pulumix.Output[*BackupDestination] {
-	return pulumix.Output[*BackupDestination]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of databases associated with the backup destination.
@@ -496,12 +471,6 @@ func (o BackupDestinationArrayOutput) ToBackupDestinationArrayOutputWithContext(
 	return o
 }
 
-func (o BackupDestinationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BackupDestination] {
-	return pulumix.Output[[]*BackupDestination]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o BackupDestinationArrayOutput) Index(i pulumi.IntInput) BackupDestinationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BackupDestination {
 		return vs[0].([]*BackupDestination)[vs[1].(int)]
@@ -520,12 +489,6 @@ func (o BackupDestinationMapOutput) ToBackupDestinationMapOutput() BackupDestina
 
 func (o BackupDestinationMapOutput) ToBackupDestinationMapOutputWithContext(ctx context.Context) BackupDestinationMapOutput {
 	return o
-}
-
-func (o BackupDestinationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BackupDestination] {
-	return pulumix.Output[map[string]*BackupDestination]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BackupDestinationMapOutput) MapIndex(k pulumi.StringInput) BackupDestinationOutput {

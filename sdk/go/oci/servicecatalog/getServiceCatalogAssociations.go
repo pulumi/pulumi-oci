@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Service Catalog Associations in Oracle Cloud Infrastructure Service Catalog service.
@@ -126,12 +125,6 @@ func (o GetServiceCatalogAssociationsResultOutput) ToGetServiceCatalogAssociatio
 
 func (o GetServiceCatalogAssociationsResultOutput) ToGetServiceCatalogAssociationsResultOutputWithContext(ctx context.Context) GetServiceCatalogAssociationsResultOutput {
 	return o
-}
-
-func (o GetServiceCatalogAssociationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceCatalogAssociationsResult] {
-	return pulumix.Output[GetServiceCatalogAssociationsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Identifier of the entity being associated with service catalog.

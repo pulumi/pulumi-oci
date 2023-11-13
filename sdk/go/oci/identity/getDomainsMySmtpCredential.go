@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific My Smtp Credential resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -152,12 +151,6 @@ func (o LookupDomainsMySmtpCredentialResultOutput) ToLookupDomainsMySmtpCredenti
 
 func (o LookupDomainsMySmtpCredentialResultOutput) ToLookupDomainsMySmtpCredentialResultOutputWithContext(ctx context.Context) LookupDomainsMySmtpCredentialResultOutput {
 	return o
-}
-
-func (o LookupDomainsMySmtpCredentialResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainsMySmtpCredentialResult] {
-	return pulumix.Output[LookupDomainsMySmtpCredentialResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupDomainsMySmtpCredentialResultOutput) Authorization() pulumi.StringPtrOutput {

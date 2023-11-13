@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Recovery Service Subnets in Oracle Cloud Infrastructure Recovery service.
@@ -150,12 +149,6 @@ func (o GetRecoveryServiceSubnetsResultOutput) ToGetRecoveryServiceSubnetsResult
 
 func (o GetRecoveryServiceSubnetsResultOutput) ToGetRecoveryServiceSubnetsResultOutputWithContext(ctx context.Context) GetRecoveryServiceSubnetsResultOutput {
 	return o
-}
-
-func (o GetRecoveryServiceSubnetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecoveryServiceSubnetsResult] {
-	return pulumix.Output[GetRecoveryServiceSubnetsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The compartment OCID.

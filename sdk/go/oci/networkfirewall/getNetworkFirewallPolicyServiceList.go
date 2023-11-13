@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Network Firewall Policy Service List resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -85,12 +84,6 @@ func (o LookupNetworkFirewallPolicyServiceListResultOutput) ToLookupNetworkFirew
 
 func (o LookupNetworkFirewallPolicyServiceListResultOutput) ToLookupNetworkFirewallPolicyServiceListResultOutputWithContext(ctx context.Context) LookupNetworkFirewallPolicyServiceListResultOutput {
 	return o
-}
-
-func (o LookupNetworkFirewallPolicyServiceListResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNetworkFirewallPolicyServiceListResult] {
-	return pulumix.Output[LookupNetworkFirewallPolicyServiceListResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupNetworkFirewallPolicyServiceListResultOutput) Id() pulumi.StringOutput {

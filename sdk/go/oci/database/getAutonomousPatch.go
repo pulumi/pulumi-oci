@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Autonomous Patch resource in Oracle Cloud Infrastructure Database service.
@@ -120,12 +119,6 @@ func (o GetAutonomousPatchResultOutput) ToGetAutonomousPatchResultOutput() GetAu
 
 func (o GetAutonomousPatchResultOutput) ToGetAutonomousPatchResultOutputWithContext(ctx context.Context) GetAutonomousPatchResultOutput {
 	return o
-}
-
-func (o GetAutonomousPatchResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutonomousPatchResult] {
-	return pulumix.Output[GetAutonomousPatchResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutonomousPatchResultOutput) AutonomousPatchId() pulumi.StringOutput {

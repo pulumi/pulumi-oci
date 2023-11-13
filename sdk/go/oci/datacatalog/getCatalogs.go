@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Catalogs in Oracle Cloud Infrastructure Data Catalog service.
@@ -120,12 +119,6 @@ func (o GetCatalogsResultOutput) ToGetCatalogsResultOutput() GetCatalogsResultOu
 
 func (o GetCatalogsResultOutput) ToGetCatalogsResultOutputWithContext(ctx context.Context) GetCatalogsResultOutput {
 	return o
-}
-
-func (o GetCatalogsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCatalogsResult] {
-	return pulumix.Output[GetCatalogsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of catalogs.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Addon resource in Oracle Cloud Infrastructure Container Engine service.
@@ -119,12 +118,6 @@ func (o LookupAddonResultOutput) ToLookupAddonResultOutput() LookupAddonResultOu
 
 func (o LookupAddonResultOutput) ToLookupAddonResultOutputWithContext(ctx context.Context) LookupAddonResultOutput {
 	return o
-}
-
-func (o LookupAddonResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAddonResult] {
-	return pulumix.Output[LookupAddonResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The error info of the addon.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Local Peering Gateways in Oracle Cloud Infrastructure Core service.
@@ -114,12 +113,6 @@ func (o GetLocalPeeringGatewaysResultOutput) ToGetLocalPeeringGatewaysResultOutp
 
 func (o GetLocalPeeringGatewaysResultOutput) ToGetLocalPeeringGatewaysResultOutputWithContext(ctx context.Context) GetLocalPeeringGatewaysResultOutput {
 	return o
-}
-
-func (o GetLocalPeeringGatewaysResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLocalPeeringGatewaysResult] {
-	return pulumix.Output[GetLocalPeeringGatewaysResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the LPG.

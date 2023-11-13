@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Sensitive Data Models Sensitive Column resource in Oracle Cloud Infrastructure Data Safe service.
@@ -349,12 +348,6 @@ func (i *SensitiveDataModelsSensitiveColumn) ToSensitiveDataModelsSensitiveColum
 	return pulumi.ToOutputWithContext(ctx, i).(SensitiveDataModelsSensitiveColumnOutput)
 }
 
-func (i *SensitiveDataModelsSensitiveColumn) ToOutput(ctx context.Context) pulumix.Output[*SensitiveDataModelsSensitiveColumn] {
-	return pulumix.Output[*SensitiveDataModelsSensitiveColumn]{
-		OutputState: i.ToSensitiveDataModelsSensitiveColumnOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SensitiveDataModelsSensitiveColumnArrayInput is an input type that accepts SensitiveDataModelsSensitiveColumnArray and SensitiveDataModelsSensitiveColumnArrayOutput values.
 // You can construct a concrete instance of `SensitiveDataModelsSensitiveColumnArrayInput` via:
 //
@@ -378,12 +371,6 @@ func (i SensitiveDataModelsSensitiveColumnArray) ToSensitiveDataModelsSensitiveC
 
 func (i SensitiveDataModelsSensitiveColumnArray) ToSensitiveDataModelsSensitiveColumnArrayOutputWithContext(ctx context.Context) SensitiveDataModelsSensitiveColumnArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SensitiveDataModelsSensitiveColumnArrayOutput)
-}
-
-func (i SensitiveDataModelsSensitiveColumnArray) ToOutput(ctx context.Context) pulumix.Output[[]*SensitiveDataModelsSensitiveColumn] {
-	return pulumix.Output[[]*SensitiveDataModelsSensitiveColumn]{
-		OutputState: i.ToSensitiveDataModelsSensitiveColumnArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SensitiveDataModelsSensitiveColumnMapInput is an input type that accepts SensitiveDataModelsSensitiveColumnMap and SensitiveDataModelsSensitiveColumnMapOutput values.
@@ -411,12 +398,6 @@ func (i SensitiveDataModelsSensitiveColumnMap) ToSensitiveDataModelsSensitiveCol
 	return pulumi.ToOutputWithContext(ctx, i).(SensitiveDataModelsSensitiveColumnMapOutput)
 }
 
-func (i SensitiveDataModelsSensitiveColumnMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SensitiveDataModelsSensitiveColumn] {
-	return pulumix.Output[map[string]*SensitiveDataModelsSensitiveColumn]{
-		OutputState: i.ToSensitiveDataModelsSensitiveColumnMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SensitiveDataModelsSensitiveColumnOutput struct{ *pulumi.OutputState }
 
 func (SensitiveDataModelsSensitiveColumnOutput) ElementType() reflect.Type {
@@ -429,12 +410,6 @@ func (o SensitiveDataModelsSensitiveColumnOutput) ToSensitiveDataModelsSensitive
 
 func (o SensitiveDataModelsSensitiveColumnOutput) ToSensitiveDataModelsSensitiveColumnOutputWithContext(ctx context.Context) SensitiveDataModelsSensitiveColumnOutput {
 	return o
-}
-
-func (o SensitiveDataModelsSensitiveColumnOutput) ToOutput(ctx context.Context) pulumix.Output[*SensitiveDataModelsSensitiveColumn] {
-	return pulumix.Output[*SensitiveDataModelsSensitiveColumn]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the child columns must be added to the sensitive data model before their keys can be specified here. If this attribute is provided, the parentColumnKeys and relationType attributes of the child columns are automatically updated to reflect the relationship.
@@ -568,12 +543,6 @@ func (o SensitiveDataModelsSensitiveColumnArrayOutput) ToSensitiveDataModelsSens
 	return o
 }
 
-func (o SensitiveDataModelsSensitiveColumnArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SensitiveDataModelsSensitiveColumn] {
-	return pulumix.Output[[]*SensitiveDataModelsSensitiveColumn]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o SensitiveDataModelsSensitiveColumnArrayOutput) Index(i pulumi.IntInput) SensitiveDataModelsSensitiveColumnOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *SensitiveDataModelsSensitiveColumn {
 		return vs[0].([]*SensitiveDataModelsSensitiveColumn)[vs[1].(int)]
@@ -592,12 +561,6 @@ func (o SensitiveDataModelsSensitiveColumnMapOutput) ToSensitiveDataModelsSensit
 
 func (o SensitiveDataModelsSensitiveColumnMapOutput) ToSensitiveDataModelsSensitiveColumnMapOutputWithContext(ctx context.Context) SensitiveDataModelsSensitiveColumnMapOutput {
 	return o
-}
-
-func (o SensitiveDataModelsSensitiveColumnMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SensitiveDataModelsSensitiveColumn] {
-	return pulumix.Output[map[string]*SensitiveDataModelsSensitiveColumn]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SensitiveDataModelsSensitiveColumnMapOutput) MapIndex(k pulumi.StringInput) SensitiveDataModelsSensitiveColumnOutput {

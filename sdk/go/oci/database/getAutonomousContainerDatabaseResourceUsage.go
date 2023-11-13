@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Autonomous Container Database Resource Usage resource in Oracle Cloud Infrastructure Database service.
@@ -122,12 +121,6 @@ func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) ToGetAutonomous
 
 func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) ToGetAutonomousContainerDatabaseResourceUsageResultOutputWithContext(ctx context.Context) GetAutonomousContainerDatabaseResourceUsageResultOutput {
 	return o
-}
-
-func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutonomousContainerDatabaseResourceUsageResult] {
-	return pulumix.Output[GetAutonomousContainerDatabaseResourceUsageResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) AutonomousContainerDatabaseId() pulumi.StringOutput {

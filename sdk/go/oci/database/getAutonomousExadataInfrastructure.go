@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Autonomous Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
@@ -143,12 +142,6 @@ func (o LookupAutonomousExadataInfrastructureResultOutput) ToLookupAutonomousExa
 
 func (o LookupAutonomousExadataInfrastructureResultOutput) ToLookupAutonomousExadataInfrastructureResultOutputWithContext(ctx context.Context) LookupAutonomousExadataInfrastructureResultOutput {
 	return o
-}
-
-func (o LookupAutonomousExadataInfrastructureResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAutonomousExadataInfrastructureResult] {
-	return pulumix.Output[LookupAutonomousExadataInfrastructureResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupAutonomousExadataInfrastructureResultOutput) AutonomousExadataInfrastructureId() pulumi.StringOutput {

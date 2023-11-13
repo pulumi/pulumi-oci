@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Outbound Connector resource in Oracle Cloud Infrastructure File Storage service.
@@ -305,12 +304,6 @@ func (i *OutboundConnector) ToOutboundConnectorOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(OutboundConnectorOutput)
 }
 
-func (i *OutboundConnector) ToOutput(ctx context.Context) pulumix.Output[*OutboundConnector] {
-	return pulumix.Output[*OutboundConnector]{
-		OutputState: i.ToOutboundConnectorOutputWithContext(ctx).OutputState,
-	}
-}
-
 // OutboundConnectorArrayInput is an input type that accepts OutboundConnectorArray and OutboundConnectorArrayOutput values.
 // You can construct a concrete instance of `OutboundConnectorArrayInput` via:
 //
@@ -334,12 +327,6 @@ func (i OutboundConnectorArray) ToOutboundConnectorArrayOutput() OutboundConnect
 
 func (i OutboundConnectorArray) ToOutboundConnectorArrayOutputWithContext(ctx context.Context) OutboundConnectorArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OutboundConnectorArrayOutput)
-}
-
-func (i OutboundConnectorArray) ToOutput(ctx context.Context) pulumix.Output[[]*OutboundConnector] {
-	return pulumix.Output[[]*OutboundConnector]{
-		OutputState: i.ToOutboundConnectorArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // OutboundConnectorMapInput is an input type that accepts OutboundConnectorMap and OutboundConnectorMapOutput values.
@@ -367,12 +354,6 @@ func (i OutboundConnectorMap) ToOutboundConnectorMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(OutboundConnectorMapOutput)
 }
 
-func (i OutboundConnectorMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*OutboundConnector] {
-	return pulumix.Output[map[string]*OutboundConnector]{
-		OutputState: i.ToOutboundConnectorMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type OutboundConnectorOutput struct{ *pulumi.OutputState }
 
 func (OutboundConnectorOutput) ElementType() reflect.Type {
@@ -385,12 +366,6 @@ func (o OutboundConnectorOutput) ToOutboundConnectorOutput() OutboundConnectorOu
 
 func (o OutboundConnectorOutput) ToOutboundConnectorOutputWithContext(ctx context.Context) OutboundConnectorOutput {
 	return o
-}
-
-func (o OutboundConnectorOutput) ToOutput(ctx context.Context) pulumix.Output[*OutboundConnector] {
-	return pulumix.Output[*OutboundConnector]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The availability domain the outbound connector is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
@@ -470,12 +445,6 @@ func (o OutboundConnectorArrayOutput) ToOutboundConnectorArrayOutputWithContext(
 	return o
 }
 
-func (o OutboundConnectorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*OutboundConnector] {
-	return pulumix.Output[[]*OutboundConnector]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o OutboundConnectorArrayOutput) Index(i pulumi.IntInput) OutboundConnectorOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *OutboundConnector {
 		return vs[0].([]*OutboundConnector)[vs[1].(int)]
@@ -494,12 +463,6 @@ func (o OutboundConnectorMapOutput) ToOutboundConnectorMapOutput() OutboundConne
 
 func (o OutboundConnectorMapOutput) ToOutboundConnectorMapOutputWithContext(ctx context.Context) OutboundConnectorMapOutput {
 	return o
-}
-
-func (o OutboundConnectorMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*OutboundConnector] {
-	return pulumix.Output[map[string]*OutboundConnector]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OutboundConnectorMapOutput) MapIndex(k pulumi.StringInput) OutboundConnectorOutput {

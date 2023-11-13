@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Resource Action resource in Oracle Cloud Infrastructure Optimizer service.
@@ -256,12 +255,6 @@ func (i *ResourceAction) ToResourceActionOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(ResourceActionOutput)
 }
 
-func (i *ResourceAction) ToOutput(ctx context.Context) pulumix.Output[*ResourceAction] {
-	return pulumix.Output[*ResourceAction]{
-		OutputState: i.ToResourceActionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ResourceActionArrayInput is an input type that accepts ResourceActionArray and ResourceActionArrayOutput values.
 // You can construct a concrete instance of `ResourceActionArrayInput` via:
 //
@@ -285,12 +278,6 @@ func (i ResourceActionArray) ToResourceActionArrayOutput() ResourceActionArrayOu
 
 func (i ResourceActionArray) ToResourceActionArrayOutputWithContext(ctx context.Context) ResourceActionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ResourceActionArrayOutput)
-}
-
-func (i ResourceActionArray) ToOutput(ctx context.Context) pulumix.Output[[]*ResourceAction] {
-	return pulumix.Output[[]*ResourceAction]{
-		OutputState: i.ToResourceActionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ResourceActionMapInput is an input type that accepts ResourceActionMap and ResourceActionMapOutput values.
@@ -318,12 +305,6 @@ func (i ResourceActionMap) ToResourceActionMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ResourceActionMapOutput)
 }
 
-func (i ResourceActionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ResourceAction] {
-	return pulumix.Output[map[string]*ResourceAction]{
-		OutputState: i.ToResourceActionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ResourceActionOutput struct{ *pulumi.OutputState }
 
 func (ResourceActionOutput) ElementType() reflect.Type {
@@ -336,12 +317,6 @@ func (o ResourceActionOutput) ToResourceActionOutput() ResourceActionOutput {
 
 func (o ResourceActionOutput) ToResourceActionOutputWithContext(ctx context.Context) ResourceActionOutput {
 	return o
-}
-
-func (o ResourceActionOutput) ToOutput(ctx context.Context) pulumix.Output[*ResourceAction] {
-	return pulumix.Output[*ResourceAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Details about the recommended action.
@@ -453,12 +428,6 @@ func (o ResourceActionArrayOutput) ToResourceActionArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o ResourceActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ResourceAction] {
-	return pulumix.Output[[]*ResourceAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ResourceActionArrayOutput) Index(i pulumi.IntInput) ResourceActionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ResourceAction {
 		return vs[0].([]*ResourceAction)[vs[1].(int)]
@@ -477,12 +446,6 @@ func (o ResourceActionMapOutput) ToResourceActionMapOutput() ResourceActionMapOu
 
 func (o ResourceActionMapOutput) ToResourceActionMapOutputWithContext(ctx context.Context) ResourceActionMapOutput {
 	return o
-}
-
-func (o ResourceActionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ResourceAction] {
-	return pulumix.Output[map[string]*ResourceAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ResourceActionMapOutput) MapIndex(k pulumi.StringInput) ResourceActionOutput {

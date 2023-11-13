@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Container Configuration resource in Oracle Cloud Infrastructure Artifacts service.
@@ -149,12 +148,6 @@ func (i *ContainerConfiguration) ToContainerConfigurationOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerConfigurationOutput)
 }
 
-func (i *ContainerConfiguration) ToOutput(ctx context.Context) pulumix.Output[*ContainerConfiguration] {
-	return pulumix.Output[*ContainerConfiguration]{
-		OutputState: i.ToContainerConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ContainerConfigurationArrayInput is an input type that accepts ContainerConfigurationArray and ContainerConfigurationArrayOutput values.
 // You can construct a concrete instance of `ContainerConfigurationArrayInput` via:
 //
@@ -178,12 +171,6 @@ func (i ContainerConfigurationArray) ToContainerConfigurationArrayOutput() Conta
 
 func (i ContainerConfigurationArray) ToContainerConfigurationArrayOutputWithContext(ctx context.Context) ContainerConfigurationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerConfigurationArrayOutput)
-}
-
-func (i ContainerConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]*ContainerConfiguration] {
-	return pulumix.Output[[]*ContainerConfiguration]{
-		OutputState: i.ToContainerConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ContainerConfigurationMapInput is an input type that accepts ContainerConfigurationMap and ContainerConfigurationMapOutput values.
@@ -211,12 +198,6 @@ func (i ContainerConfigurationMap) ToContainerConfigurationMapOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerConfigurationMapOutput)
 }
 
-func (i ContainerConfigurationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ContainerConfiguration] {
-	return pulumix.Output[map[string]*ContainerConfiguration]{
-		OutputState: i.ToContainerConfigurationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ContainerConfigurationOutput struct{ *pulumi.OutputState }
 
 func (ContainerConfigurationOutput) ElementType() reflect.Type {
@@ -229,12 +210,6 @@ func (o ContainerConfigurationOutput) ToContainerConfigurationOutput() Container
 
 func (o ContainerConfigurationOutput) ToContainerConfigurationOutputWithContext(ctx context.Context) ContainerConfigurationOutput {
 	return o
-}
-
-func (o ContainerConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[*ContainerConfiguration] {
-	return pulumix.Output[*ContainerConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ContainerConfigurationOutput) CompartmentId() pulumi.StringOutput {
@@ -265,12 +240,6 @@ func (o ContainerConfigurationArrayOutput) ToContainerConfigurationArrayOutputWi
 	return o
 }
 
-func (o ContainerConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ContainerConfiguration] {
-	return pulumix.Output[[]*ContainerConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ContainerConfigurationArrayOutput) Index(i pulumi.IntInput) ContainerConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ContainerConfiguration {
 		return vs[0].([]*ContainerConfiguration)[vs[1].(int)]
@@ -289,12 +258,6 @@ func (o ContainerConfigurationMapOutput) ToContainerConfigurationMapOutput() Con
 
 func (o ContainerConfigurationMapOutput) ToContainerConfigurationMapOutputWithContext(ctx context.Context) ContainerConfigurationMapOutput {
 	return o
-}
-
-func (o ContainerConfigurationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ContainerConfiguration] {
-	return pulumix.Output[map[string]*ContainerConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ContainerConfigurationMapOutput) MapIndex(k pulumi.StringInput) ContainerConfigurationOutput {

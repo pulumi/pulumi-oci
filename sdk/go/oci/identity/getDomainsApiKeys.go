@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Api Keys in Oracle Cloud Infrastructure Identity Domains service.
@@ -157,12 +156,6 @@ func (o GetDomainsApiKeysResultOutput) ToGetDomainsApiKeysResultOutput() GetDoma
 
 func (o GetDomainsApiKeysResultOutput) ToGetDomainsApiKeysResultOutputWithContext(ctx context.Context) GetDomainsApiKeysResultOutput {
 	return o
-}
-
-func (o GetDomainsApiKeysResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsApiKeysResult] {
-	return pulumix.Output[GetDomainsApiKeysResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDomainsApiKeysResultOutput) ApiKeyCount() pulumi.IntPtrOutput {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Web App Firewall resource in Oracle Cloud Infrastructure Waf service.
@@ -268,12 +267,6 @@ func (i *AppFirewall) ToAppFirewallOutputWithContext(ctx context.Context) AppFir
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallOutput)
 }
 
-func (i *AppFirewall) ToOutput(ctx context.Context) pulumix.Output[*AppFirewall] {
-	return pulumix.Output[*AppFirewall]{
-		OutputState: i.ToAppFirewallOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AppFirewallArrayInput is an input type that accepts AppFirewallArray and AppFirewallArrayOutput values.
 // You can construct a concrete instance of `AppFirewallArrayInput` via:
 //
@@ -297,12 +290,6 @@ func (i AppFirewallArray) ToAppFirewallArrayOutput() AppFirewallArrayOutput {
 
 func (i AppFirewallArray) ToAppFirewallArrayOutputWithContext(ctx context.Context) AppFirewallArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallArrayOutput)
-}
-
-func (i AppFirewallArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppFirewall] {
-	return pulumix.Output[[]*AppFirewall]{
-		OutputState: i.ToAppFirewallArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AppFirewallMapInput is an input type that accepts AppFirewallMap and AppFirewallMapOutput values.
@@ -330,12 +317,6 @@ func (i AppFirewallMap) ToAppFirewallMapOutputWithContext(ctx context.Context) A
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallMapOutput)
 }
 
-func (i AppFirewallMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppFirewall] {
-	return pulumix.Output[map[string]*AppFirewall]{
-		OutputState: i.ToAppFirewallMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AppFirewallOutput struct{ *pulumi.OutputState }
 
 func (AppFirewallOutput) ElementType() reflect.Type {
@@ -348,12 +329,6 @@ func (o AppFirewallOutput) ToAppFirewallOutput() AppFirewallOutput {
 
 func (o AppFirewallOutput) ToAppFirewallOutputWithContext(ctx context.Context) AppFirewallOutput {
 	return o
-}
-
-func (o AppFirewallOutput) ToOutput(ctx context.Context) pulumix.Output[*AppFirewall] {
-	return pulumix.Output[*AppFirewall]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Type of the WebAppFirewall, as example LOAD_BALANCER.
@@ -433,12 +408,6 @@ func (o AppFirewallArrayOutput) ToAppFirewallArrayOutputWithContext(ctx context.
 	return o
 }
 
-func (o AppFirewallArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppFirewall] {
-	return pulumix.Output[[]*AppFirewall]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AppFirewallArrayOutput) Index(i pulumi.IntInput) AppFirewallOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppFirewall {
 		return vs[0].([]*AppFirewall)[vs[1].(int)]
@@ -457,12 +426,6 @@ func (o AppFirewallMapOutput) ToAppFirewallMapOutput() AppFirewallMapOutput {
 
 func (o AppFirewallMapOutput) ToAppFirewallMapOutputWithContext(ctx context.Context) AppFirewallMapOutput {
 	return o
-}
-
-func (o AppFirewallMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppFirewall] {
-	return pulumix.Output[map[string]*AppFirewall]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AppFirewallMapOutput) MapIndex(k pulumi.StringInput) AppFirewallOutput {

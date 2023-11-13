@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Target Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -362,12 +361,6 @@ func (i *TargetAsset) ToTargetAssetOutputWithContext(ctx context.Context) Target
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetOutput)
 }
 
-func (i *TargetAsset) ToOutput(ctx context.Context) pulumix.Output[*TargetAsset] {
-	return pulumix.Output[*TargetAsset]{
-		OutputState: i.ToTargetAssetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // TargetAssetArrayInput is an input type that accepts TargetAssetArray and TargetAssetArrayOutput values.
 // You can construct a concrete instance of `TargetAssetArrayInput` via:
 //
@@ -391,12 +384,6 @@ func (i TargetAssetArray) ToTargetAssetArrayOutput() TargetAssetArrayOutput {
 
 func (i TargetAssetArray) ToTargetAssetArrayOutputWithContext(ctx context.Context) TargetAssetArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetArrayOutput)
-}
-
-func (i TargetAssetArray) ToOutput(ctx context.Context) pulumix.Output[[]*TargetAsset] {
-	return pulumix.Output[[]*TargetAsset]{
-		OutputState: i.ToTargetAssetArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // TargetAssetMapInput is an input type that accepts TargetAssetMap and TargetAssetMapOutput values.
@@ -424,12 +411,6 @@ func (i TargetAssetMap) ToTargetAssetMapOutputWithContext(ctx context.Context) T
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAssetMapOutput)
 }
 
-func (i TargetAssetMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*TargetAsset] {
-	return pulumix.Output[map[string]*TargetAsset]{
-		OutputState: i.ToTargetAssetMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type TargetAssetOutput struct{ *pulumi.OutputState }
 
 func (TargetAssetOutput) ElementType() reflect.Type {
@@ -442,12 +423,6 @@ func (o TargetAssetOutput) ToTargetAssetOutput() TargetAssetOutput {
 
 func (o TargetAssetOutput) ToTargetAssetOutputWithContext(ctx context.Context) TargetAssetOutput {
 	return o
-}
-
-func (o TargetAssetOutput) ToOutput(ctx context.Context) pulumix.Output[*TargetAsset] {
-	return pulumix.Output[*TargetAsset]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Performance of the block volumes.
@@ -564,12 +539,6 @@ func (o TargetAssetArrayOutput) ToTargetAssetArrayOutputWithContext(ctx context.
 	return o
 }
 
-func (o TargetAssetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*TargetAsset] {
-	return pulumix.Output[[]*TargetAsset]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o TargetAssetArrayOutput) Index(i pulumi.IntInput) TargetAssetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *TargetAsset {
 		return vs[0].([]*TargetAsset)[vs[1].(int)]
@@ -588,12 +557,6 @@ func (o TargetAssetMapOutput) ToTargetAssetMapOutput() TargetAssetMapOutput {
 
 func (o TargetAssetMapOutput) ToTargetAssetMapOutputWithContext(ctx context.Context) TargetAssetMapOutput {
 	return o
-}
-
-func (o TargetAssetMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*TargetAsset] {
-	return pulumix.Output[map[string]*TargetAsset]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o TargetAssetMapOutput) MapIndex(k pulumi.StringInput) TargetAssetOutput {

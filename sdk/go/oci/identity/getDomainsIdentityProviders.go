@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Identity Providers in Oracle Cloud Infrastructure Identity Domains service.
@@ -157,12 +156,6 @@ func (o GetDomainsIdentityProvidersResultOutput) ToGetDomainsIdentityProvidersRe
 
 func (o GetDomainsIdentityProvidersResultOutput) ToGetDomainsIdentityProvidersResultOutputWithContext(ctx context.Context) GetDomainsIdentityProvidersResultOutput {
 	return o
-}
-
-func (o GetDomainsIdentityProvidersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsIdentityProvidersResult] {
-	return pulumix.Output[GetDomainsIdentityProvidersResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDomainsIdentityProvidersResultOutput) AttributeSets() pulumi.StringArrayOutput {

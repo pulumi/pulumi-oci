@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Stream Cdn Config resource in Oracle Cloud Infrastructure Media Services service.
@@ -268,12 +267,6 @@ func (i *StreamCdnConfig) ToStreamCdnConfigOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(StreamCdnConfigOutput)
 }
 
-func (i *StreamCdnConfig) ToOutput(ctx context.Context) pulumix.Output[*StreamCdnConfig] {
-	return pulumix.Output[*StreamCdnConfig]{
-		OutputState: i.ToStreamCdnConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // StreamCdnConfigArrayInput is an input type that accepts StreamCdnConfigArray and StreamCdnConfigArrayOutput values.
 // You can construct a concrete instance of `StreamCdnConfigArrayInput` via:
 //
@@ -297,12 +290,6 @@ func (i StreamCdnConfigArray) ToStreamCdnConfigArrayOutput() StreamCdnConfigArra
 
 func (i StreamCdnConfigArray) ToStreamCdnConfigArrayOutputWithContext(ctx context.Context) StreamCdnConfigArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(StreamCdnConfigArrayOutput)
-}
-
-func (i StreamCdnConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]*StreamCdnConfig] {
-	return pulumix.Output[[]*StreamCdnConfig]{
-		OutputState: i.ToStreamCdnConfigArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // StreamCdnConfigMapInput is an input type that accepts StreamCdnConfigMap and StreamCdnConfigMapOutput values.
@@ -330,12 +317,6 @@ func (i StreamCdnConfigMap) ToStreamCdnConfigMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(StreamCdnConfigMapOutput)
 }
 
-func (i StreamCdnConfigMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*StreamCdnConfig] {
-	return pulumix.Output[map[string]*StreamCdnConfig]{
-		OutputState: i.ToStreamCdnConfigMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type StreamCdnConfigOutput struct{ *pulumi.OutputState }
 
 func (StreamCdnConfigOutput) ElementType() reflect.Type {
@@ -348,12 +329,6 @@ func (o StreamCdnConfigOutput) ToStreamCdnConfigOutput() StreamCdnConfigOutput {
 
 func (o StreamCdnConfigOutput) ToStreamCdnConfigOutputWithContext(ctx context.Context) StreamCdnConfigOutput {
 	return o
-}
-
-func (o StreamCdnConfigOutput) ToOutput(ctx context.Context) pulumix.Output[*StreamCdnConfig] {
-	return pulumix.Output[*StreamCdnConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier.
@@ -433,12 +408,6 @@ func (o StreamCdnConfigArrayOutput) ToStreamCdnConfigArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o StreamCdnConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*StreamCdnConfig] {
-	return pulumix.Output[[]*StreamCdnConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o StreamCdnConfigArrayOutput) Index(i pulumi.IntInput) StreamCdnConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *StreamCdnConfig {
 		return vs[0].([]*StreamCdnConfig)[vs[1].(int)]
@@ -457,12 +426,6 @@ func (o StreamCdnConfigMapOutput) ToStreamCdnConfigMapOutput() StreamCdnConfigMa
 
 func (o StreamCdnConfigMapOutput) ToStreamCdnConfigMapOutputWithContext(ctx context.Context) StreamCdnConfigMapOutput {
 	return o
-}
-
-func (o StreamCdnConfigMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*StreamCdnConfig] {
-	return pulumix.Output[map[string]*StreamCdnConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o StreamCdnConfigMapOutput) MapIndex(k pulumi.StringInput) StreamCdnConfigOutput {

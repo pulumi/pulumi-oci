@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Listener Rules in Oracle Cloud Infrastructure Load Balancer service.
@@ -117,12 +116,6 @@ func (o GetListenerRulesResultOutput) ToGetListenerRulesResultOutput() GetListen
 
 func (o GetListenerRulesResultOutput) ToGetListenerRulesResultOutputWithContext(ctx context.Context) GetListenerRulesResultOutput {
 	return o
-}
-
-func (o GetListenerRulesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetListenerRulesResult] {
-	return pulumix.Output[GetListenerRulesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetListenerRulesResultOutput) Filters() GetListenerRulesFilterArrayOutput {

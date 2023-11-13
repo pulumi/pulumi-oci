@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Peer resource in Oracle Cloud Infrastructure Blockchain service.
@@ -227,12 +226,6 @@ func (i *Peer) ToPeerOutputWithContext(ctx context.Context) PeerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PeerOutput)
 }
 
-func (i *Peer) ToOutput(ctx context.Context) pulumix.Output[*Peer] {
-	return pulumix.Output[*Peer]{
-		OutputState: i.ToPeerOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PeerArrayInput is an input type that accepts PeerArray and PeerArrayOutput values.
 // You can construct a concrete instance of `PeerArrayInput` via:
 //
@@ -256,12 +249,6 @@ func (i PeerArray) ToPeerArrayOutput() PeerArrayOutput {
 
 func (i PeerArray) ToPeerArrayOutputWithContext(ctx context.Context) PeerArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PeerArrayOutput)
-}
-
-func (i PeerArray) ToOutput(ctx context.Context) pulumix.Output[[]*Peer] {
-	return pulumix.Output[[]*Peer]{
-		OutputState: i.ToPeerArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // PeerMapInput is an input type that accepts PeerMap and PeerMapOutput values.
@@ -289,12 +276,6 @@ func (i PeerMap) ToPeerMapOutputWithContext(ctx context.Context) PeerMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PeerMapOutput)
 }
 
-func (i PeerMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Peer] {
-	return pulumix.Output[map[string]*Peer]{
-		OutputState: i.ToPeerMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PeerOutput struct{ *pulumi.OutputState }
 
 func (PeerOutput) ElementType() reflect.Type {
@@ -307,12 +288,6 @@ func (o PeerOutput) ToPeerOutput() PeerOutput {
 
 func (o PeerOutput) ToPeerOutputWithContext(ctx context.Context) PeerOutput {
 	return o
-}
-
-func (o PeerOutput) ToOutput(ctx context.Context) pulumix.Output[*Peer] {
-	return pulumix.Output[*Peer]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Availability Domain to place new peer
@@ -372,12 +347,6 @@ func (o PeerArrayOutput) ToPeerArrayOutputWithContext(ctx context.Context) PeerA
 	return o
 }
 
-func (o PeerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Peer] {
-	return pulumix.Output[[]*Peer]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o PeerArrayOutput) Index(i pulumi.IntInput) PeerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Peer {
 		return vs[0].([]*Peer)[vs[1].(int)]
@@ -396,12 +365,6 @@ func (o PeerMapOutput) ToPeerMapOutput() PeerMapOutput {
 
 func (o PeerMapOutput) ToPeerMapOutputWithContext(ctx context.Context) PeerMapOutput {
 	return o
-}
-
-func (o PeerMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Peer] {
-	return pulumix.Output[map[string]*Peer]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PeerMapOutput) MapIndex(k pulumi.StringInput) PeerOutput {

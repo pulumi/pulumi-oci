@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Tsig Key resource in Oracle Cloud Infrastructure DNS service.
@@ -120,12 +119,6 @@ func (o LookupTsigKeyResultOutput) ToLookupTsigKeyResultOutput() LookupTsigKeyRe
 
 func (o LookupTsigKeyResultOutput) ToLookupTsigKeyResultOutputWithContext(ctx context.Context) LookupTsigKeyResultOutput {
 	return o
-}
-
-func (o LookupTsigKeyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupTsigKeyResult] {
-	return pulumix.Output[LookupTsigKeyResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // TSIG key algorithms are encoded as domain names, but most consist of only one non-empty label, which is not required to be explicitly absolute. Applicable algorithms include: hmac-sha1, hmac-sha224, hmac-sha256, hmac-sha512. For more information on these algorithms, see [RFC 4635](https://tools.ietf.org/html/rfc4635#section-2).

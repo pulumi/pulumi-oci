@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Sddc resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -1011,12 +1010,6 @@ func (i *Sddc) ToSddcOutputWithContext(ctx context.Context) SddcOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SddcOutput)
 }
 
-func (i *Sddc) ToOutput(ctx context.Context) pulumix.Output[*Sddc] {
-	return pulumix.Output[*Sddc]{
-		OutputState: i.ToSddcOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SddcArrayInput is an input type that accepts SddcArray and SddcArrayOutput values.
 // You can construct a concrete instance of `SddcArrayInput` via:
 //
@@ -1040,12 +1033,6 @@ func (i SddcArray) ToSddcArrayOutput() SddcArrayOutput {
 
 func (i SddcArray) ToSddcArrayOutputWithContext(ctx context.Context) SddcArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SddcArrayOutput)
-}
-
-func (i SddcArray) ToOutput(ctx context.Context) pulumix.Output[[]*Sddc] {
-	return pulumix.Output[[]*Sddc]{
-		OutputState: i.ToSddcArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SddcMapInput is an input type that accepts SddcMap and SddcMapOutput values.
@@ -1073,12 +1060,6 @@ func (i SddcMap) ToSddcMapOutputWithContext(ctx context.Context) SddcMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SddcMapOutput)
 }
 
-func (i SddcMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Sddc] {
-	return pulumix.Output[map[string]*Sddc]{
-		OutputState: i.ToSddcMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SddcOutput struct{ *pulumi.OutputState }
 
 func (SddcOutput) ElementType() reflect.Type {
@@ -1091,12 +1072,6 @@ func (o SddcOutput) ToSddcOutput() SddcOutput {
 
 func (o SddcOutput) ToSddcOutputWithContext(ctx context.Context) SddcOutput {
 	return o
-}
-
-func (o SddcOutput) ToOutput(ctx context.Context) pulumix.Output[*Sddc] {
-	return pulumix.Output[*Sddc]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
@@ -1476,12 +1451,6 @@ func (o SddcArrayOutput) ToSddcArrayOutputWithContext(ctx context.Context) SddcA
 	return o
 }
 
-func (o SddcArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Sddc] {
-	return pulumix.Output[[]*Sddc]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o SddcArrayOutput) Index(i pulumi.IntInput) SddcOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Sddc {
 		return vs[0].([]*Sddc)[vs[1].(int)]
@@ -1500,12 +1469,6 @@ func (o SddcMapOutput) ToSddcMapOutput() SddcMapOutput {
 
 func (o SddcMapOutput) ToSddcMapOutputWithContext(ctx context.Context) SddcMapOutput {
 	return o
-}
-
-func (o SddcMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Sddc] {
-	return pulumix.Output[map[string]*Sddc]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SddcMapOutput) MapIndex(k pulumi.StringInput) SddcOutput {

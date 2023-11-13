@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the User Capabilities Management resource in Oracle Cloud Infrastructure Identity service.
@@ -211,12 +210,6 @@ func (i *UserCapabilitiesManagement) ToUserCapabilitiesManagementOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(UserCapabilitiesManagementOutput)
 }
 
-func (i *UserCapabilitiesManagement) ToOutput(ctx context.Context) pulumix.Output[*UserCapabilitiesManagement] {
-	return pulumix.Output[*UserCapabilitiesManagement]{
-		OutputState: i.ToUserCapabilitiesManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // UserCapabilitiesManagementArrayInput is an input type that accepts UserCapabilitiesManagementArray and UserCapabilitiesManagementArrayOutput values.
 // You can construct a concrete instance of `UserCapabilitiesManagementArrayInput` via:
 //
@@ -240,12 +233,6 @@ func (i UserCapabilitiesManagementArray) ToUserCapabilitiesManagementArrayOutput
 
 func (i UserCapabilitiesManagementArray) ToUserCapabilitiesManagementArrayOutputWithContext(ctx context.Context) UserCapabilitiesManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(UserCapabilitiesManagementArrayOutput)
-}
-
-func (i UserCapabilitiesManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*UserCapabilitiesManagement] {
-	return pulumix.Output[[]*UserCapabilitiesManagement]{
-		OutputState: i.ToUserCapabilitiesManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // UserCapabilitiesManagementMapInput is an input type that accepts UserCapabilitiesManagementMap and UserCapabilitiesManagementMapOutput values.
@@ -273,12 +260,6 @@ func (i UserCapabilitiesManagementMap) ToUserCapabilitiesManagementMapOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(UserCapabilitiesManagementMapOutput)
 }
 
-func (i UserCapabilitiesManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*UserCapabilitiesManagement] {
-	return pulumix.Output[map[string]*UserCapabilitiesManagement]{
-		OutputState: i.ToUserCapabilitiesManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type UserCapabilitiesManagementOutput struct{ *pulumi.OutputState }
 
 func (UserCapabilitiesManagementOutput) ElementType() reflect.Type {
@@ -291,12 +272,6 @@ func (o UserCapabilitiesManagementOutput) ToUserCapabilitiesManagementOutput() U
 
 func (o UserCapabilitiesManagementOutput) ToUserCapabilitiesManagementOutputWithContext(ctx context.Context) UserCapabilitiesManagementOutput {
 	return o
-}
-
-func (o UserCapabilitiesManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*UserCapabilitiesManagement] {
-	return pulumix.Output[*UserCapabilitiesManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Indicates if the user can use API keys.
@@ -346,12 +321,6 @@ func (o UserCapabilitiesManagementArrayOutput) ToUserCapabilitiesManagementArray
 	return o
 }
 
-func (o UserCapabilitiesManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*UserCapabilitiesManagement] {
-	return pulumix.Output[[]*UserCapabilitiesManagement]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o UserCapabilitiesManagementArrayOutput) Index(i pulumi.IntInput) UserCapabilitiesManagementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *UserCapabilitiesManagement {
 		return vs[0].([]*UserCapabilitiesManagement)[vs[1].(int)]
@@ -370,12 +339,6 @@ func (o UserCapabilitiesManagementMapOutput) ToUserCapabilitiesManagementMapOutp
 
 func (o UserCapabilitiesManagementMapOutput) ToUserCapabilitiesManagementMapOutputWithContext(ctx context.Context) UserCapabilitiesManagementMapOutput {
 	return o
-}
-
-func (o UserCapabilitiesManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*UserCapabilitiesManagement] {
-	return pulumix.Output[map[string]*UserCapabilitiesManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o UserCapabilitiesManagementMapOutput) MapIndex(k pulumi.StringInput) UserCapabilitiesManagementOutput {

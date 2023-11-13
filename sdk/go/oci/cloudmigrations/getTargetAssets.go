@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Target Assets in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -126,12 +125,6 @@ func (o GetTargetAssetsResultOutput) ToGetTargetAssetsResultOutput() GetTargetAs
 
 func (o GetTargetAssetsResultOutput) ToGetTargetAssetsResultOutputWithContext(ctx context.Context) GetTargetAssetsResultOutput {
 	return o
-}
-
-func (o GetTargetAssetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetAssetsResult] {
-	return pulumix.Output[GetTargetAssetsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.

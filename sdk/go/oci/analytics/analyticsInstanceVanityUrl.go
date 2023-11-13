@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Analytics Instance Vanity Url resource in Oracle Cloud Infrastructure Analytics service.
@@ -244,12 +243,6 @@ func (i *AnalyticsInstanceVanityUrl) ToAnalyticsInstanceVanityUrlOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(AnalyticsInstanceVanityUrlOutput)
 }
 
-func (i *AnalyticsInstanceVanityUrl) ToOutput(ctx context.Context) pulumix.Output[*AnalyticsInstanceVanityUrl] {
-	return pulumix.Output[*AnalyticsInstanceVanityUrl]{
-		OutputState: i.ToAnalyticsInstanceVanityUrlOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AnalyticsInstanceVanityUrlArrayInput is an input type that accepts AnalyticsInstanceVanityUrlArray and AnalyticsInstanceVanityUrlArrayOutput values.
 // You can construct a concrete instance of `AnalyticsInstanceVanityUrlArrayInput` via:
 //
@@ -273,12 +266,6 @@ func (i AnalyticsInstanceVanityUrlArray) ToAnalyticsInstanceVanityUrlArrayOutput
 
 func (i AnalyticsInstanceVanityUrlArray) ToAnalyticsInstanceVanityUrlArrayOutputWithContext(ctx context.Context) AnalyticsInstanceVanityUrlArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AnalyticsInstanceVanityUrlArrayOutput)
-}
-
-func (i AnalyticsInstanceVanityUrlArray) ToOutput(ctx context.Context) pulumix.Output[[]*AnalyticsInstanceVanityUrl] {
-	return pulumix.Output[[]*AnalyticsInstanceVanityUrl]{
-		OutputState: i.ToAnalyticsInstanceVanityUrlArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AnalyticsInstanceVanityUrlMapInput is an input type that accepts AnalyticsInstanceVanityUrlMap and AnalyticsInstanceVanityUrlMapOutput values.
@@ -306,12 +293,6 @@ func (i AnalyticsInstanceVanityUrlMap) ToAnalyticsInstanceVanityUrlMapOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(AnalyticsInstanceVanityUrlMapOutput)
 }
 
-func (i AnalyticsInstanceVanityUrlMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AnalyticsInstanceVanityUrl] {
-	return pulumix.Output[map[string]*AnalyticsInstanceVanityUrl]{
-		OutputState: i.ToAnalyticsInstanceVanityUrlMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AnalyticsInstanceVanityUrlOutput struct{ *pulumi.OutputState }
 
 func (AnalyticsInstanceVanityUrlOutput) ElementType() reflect.Type {
@@ -324,12 +305,6 @@ func (o AnalyticsInstanceVanityUrlOutput) ToAnalyticsInstanceVanityUrlOutput() A
 
 func (o AnalyticsInstanceVanityUrlOutput) ToAnalyticsInstanceVanityUrlOutputWithContext(ctx context.Context) AnalyticsInstanceVanityUrlOutput {
 	return o
-}
-
-func (o AnalyticsInstanceVanityUrlOutput) ToOutput(ctx context.Context) pulumix.Output[*AnalyticsInstanceVanityUrl] {
-	return pulumix.Output[*AnalyticsInstanceVanityUrl]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the AnalyticsInstance.
@@ -384,12 +359,6 @@ func (o AnalyticsInstanceVanityUrlArrayOutput) ToAnalyticsInstanceVanityUrlArray
 	return o
 }
 
-func (o AnalyticsInstanceVanityUrlArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AnalyticsInstanceVanityUrl] {
-	return pulumix.Output[[]*AnalyticsInstanceVanityUrl]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AnalyticsInstanceVanityUrlArrayOutput) Index(i pulumi.IntInput) AnalyticsInstanceVanityUrlOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AnalyticsInstanceVanityUrl {
 		return vs[0].([]*AnalyticsInstanceVanityUrl)[vs[1].(int)]
@@ -408,12 +377,6 @@ func (o AnalyticsInstanceVanityUrlMapOutput) ToAnalyticsInstanceVanityUrlMapOutp
 
 func (o AnalyticsInstanceVanityUrlMapOutput) ToAnalyticsInstanceVanityUrlMapOutputWithContext(ctx context.Context) AnalyticsInstanceVanityUrlMapOutput {
 	return o
-}
-
-func (o AnalyticsInstanceVanityUrlMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AnalyticsInstanceVanityUrl] {
-	return pulumix.Output[map[string]*AnalyticsInstanceVanityUrl]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AnalyticsInstanceVanityUrlMapOutput) MapIndex(k pulumi.StringInput) AnalyticsInstanceVanityUrlOutput {

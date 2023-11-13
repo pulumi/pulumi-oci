@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Data Asset resource in Oracle Cloud Infrastructure Data Catalog service.
@@ -259,12 +258,6 @@ func (i *DataAsset) ToDataAssetOutputWithContext(ctx context.Context) DataAssetO
 	return pulumi.ToOutputWithContext(ctx, i).(DataAssetOutput)
 }
 
-func (i *DataAsset) ToOutput(ctx context.Context) pulumix.Output[*DataAsset] {
-	return pulumix.Output[*DataAsset]{
-		OutputState: i.ToDataAssetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DataAssetArrayInput is an input type that accepts DataAssetArray and DataAssetArrayOutput values.
 // You can construct a concrete instance of `DataAssetArrayInput` via:
 //
@@ -288,12 +281,6 @@ func (i DataAssetArray) ToDataAssetArrayOutput() DataAssetArrayOutput {
 
 func (i DataAssetArray) ToDataAssetArrayOutputWithContext(ctx context.Context) DataAssetArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DataAssetArrayOutput)
-}
-
-func (i DataAssetArray) ToOutput(ctx context.Context) pulumix.Output[[]*DataAsset] {
-	return pulumix.Output[[]*DataAsset]{
-		OutputState: i.ToDataAssetArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DataAssetMapInput is an input type that accepts DataAssetMap and DataAssetMapOutput values.
@@ -321,12 +308,6 @@ func (i DataAssetMap) ToDataAssetMapOutputWithContext(ctx context.Context) DataA
 	return pulumi.ToOutputWithContext(ctx, i).(DataAssetMapOutput)
 }
 
-func (i DataAssetMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DataAsset] {
-	return pulumix.Output[map[string]*DataAsset]{
-		OutputState: i.ToDataAssetMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DataAssetOutput struct{ *pulumi.OutputState }
 
 func (DataAssetOutput) ElementType() reflect.Type {
@@ -339,12 +320,6 @@ func (o DataAssetOutput) ToDataAssetOutput() DataAssetOutput {
 
 func (o DataAssetOutput) ToDataAssetOutputWithContext(ctx context.Context) DataAssetOutput {
 	return o
-}
-
-func (o DataAssetOutput) ToOutput(ctx context.Context) pulumix.Output[*DataAsset] {
-	return pulumix.Output[*DataAsset]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique catalog identifier.
@@ -438,12 +413,6 @@ func (o DataAssetArrayOutput) ToDataAssetArrayOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o DataAssetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DataAsset] {
-	return pulumix.Output[[]*DataAsset]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DataAssetArrayOutput) Index(i pulumi.IntInput) DataAssetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DataAsset {
 		return vs[0].([]*DataAsset)[vs[1].(int)]
@@ -462,12 +431,6 @@ func (o DataAssetMapOutput) ToDataAssetMapOutput() DataAssetMapOutput {
 
 func (o DataAssetMapOutput) ToDataAssetMapOutputWithContext(ctx context.Context) DataAssetMapOutput {
 	return o
-}
-
-func (o DataAssetMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DataAsset] {
-	return pulumix.Output[map[string]*DataAsset]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DataAssetMapOutput) MapIndex(k pulumi.StringInput) DataAssetOutput {

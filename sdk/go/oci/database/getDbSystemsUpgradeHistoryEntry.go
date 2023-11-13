@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Db Systems Upgrade History Entry resource in Oracle Cloud Infrastructure Database service.
@@ -122,12 +121,6 @@ func (o GetDbSystemsUpgradeHistoryEntryResultOutput) ToGetDbSystemsUpgradeHistor
 
 func (o GetDbSystemsUpgradeHistoryEntryResultOutput) ToGetDbSystemsUpgradeHistoryEntryResultOutputWithContext(ctx context.Context) GetDbSystemsUpgradeHistoryEntryResultOutput {
 	return o
-}
-
-func (o GetDbSystemsUpgradeHistoryEntryResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDbSystemsUpgradeHistoryEntryResult] {
-	return pulumix.Output[GetDbSystemsUpgradeHistoryEntryResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The operating system upgrade action.

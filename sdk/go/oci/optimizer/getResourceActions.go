@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Resource Actions in Oracle Cloud Infrastructure Optimizer service.
@@ -189,12 +188,6 @@ func (o GetResourceActionsResultOutput) ToGetResourceActionsResultOutput() GetRe
 
 func (o GetResourceActionsResultOutput) ToGetResourceActionsResultOutputWithContext(ctx context.Context) GetResourceActionsResultOutput {
 	return o
-}
-
-func (o GetResourceActionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetResourceActionsResult] {
-	return pulumix.Output[GetResourceActionsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetResourceActionsResultOutput) ChildTenancyIds() pulumi.StringArrayOutput {

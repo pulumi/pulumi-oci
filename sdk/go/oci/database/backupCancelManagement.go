@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Backup Cancel Management resource in Oracle Cloud Infrastructure Database service.
@@ -159,12 +158,6 @@ func (i *BackupCancelManagement) ToBackupCancelManagementOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(BackupCancelManagementOutput)
 }
 
-func (i *BackupCancelManagement) ToOutput(ctx context.Context) pulumix.Output[*BackupCancelManagement] {
-	return pulumix.Output[*BackupCancelManagement]{
-		OutputState: i.ToBackupCancelManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BackupCancelManagementArrayInput is an input type that accepts BackupCancelManagementArray and BackupCancelManagementArrayOutput values.
 // You can construct a concrete instance of `BackupCancelManagementArrayInput` via:
 //
@@ -188,12 +181,6 @@ func (i BackupCancelManagementArray) ToBackupCancelManagementArrayOutput() Backu
 
 func (i BackupCancelManagementArray) ToBackupCancelManagementArrayOutputWithContext(ctx context.Context) BackupCancelManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BackupCancelManagementArrayOutput)
-}
-
-func (i BackupCancelManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*BackupCancelManagement] {
-	return pulumix.Output[[]*BackupCancelManagement]{
-		OutputState: i.ToBackupCancelManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BackupCancelManagementMapInput is an input type that accepts BackupCancelManagementMap and BackupCancelManagementMapOutput values.
@@ -221,12 +208,6 @@ func (i BackupCancelManagementMap) ToBackupCancelManagementMapOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(BackupCancelManagementMapOutput)
 }
 
-func (i BackupCancelManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BackupCancelManagement] {
-	return pulumix.Output[map[string]*BackupCancelManagement]{
-		OutputState: i.ToBackupCancelManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BackupCancelManagementOutput struct{ *pulumi.OutputState }
 
 func (BackupCancelManagementOutput) ElementType() reflect.Type {
@@ -239,12 +220,6 @@ func (o BackupCancelManagementOutput) ToBackupCancelManagementOutput() BackupCan
 
 func (o BackupCancelManagementOutput) ToBackupCancelManagementOutputWithContext(ctx context.Context) BackupCancelManagementOutput {
 	return o
-}
-
-func (o BackupCancelManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*BackupCancelManagement] {
-	return pulumix.Output[*BackupCancelManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -274,12 +249,6 @@ func (o BackupCancelManagementArrayOutput) ToBackupCancelManagementArrayOutputWi
 	return o
 }
 
-func (o BackupCancelManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BackupCancelManagement] {
-	return pulumix.Output[[]*BackupCancelManagement]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o BackupCancelManagementArrayOutput) Index(i pulumi.IntInput) BackupCancelManagementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BackupCancelManagement {
 		return vs[0].([]*BackupCancelManagement)[vs[1].(int)]
@@ -298,12 +267,6 @@ func (o BackupCancelManagementMapOutput) ToBackupCancelManagementMapOutput() Bac
 
 func (o BackupCancelManagementMapOutput) ToBackupCancelManagementMapOutputWithContext(ctx context.Context) BackupCancelManagementMapOutput {
 	return o
-}
-
-func (o BackupCancelManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BackupCancelManagement] {
-	return pulumix.Output[map[string]*BackupCancelManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BackupCancelManagementMapOutput) MapIndex(k pulumi.StringInput) BackupCancelManagementOutput {

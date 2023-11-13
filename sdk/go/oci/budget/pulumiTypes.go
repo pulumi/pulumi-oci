@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -103,12 +102,6 @@ func (i GetAlertRulesAlertRuleArgs) ToGetAlertRulesAlertRuleOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlertRulesAlertRuleOutput)
 }
 
-func (i GetAlertRulesAlertRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetAlertRulesAlertRule] {
-	return pulumix.Output[GetAlertRulesAlertRule]{
-		OutputState: i.ToGetAlertRulesAlertRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAlertRulesAlertRuleArrayInput is an input type that accepts GetAlertRulesAlertRuleArray and GetAlertRulesAlertRuleArrayOutput values.
 // You can construct a concrete instance of `GetAlertRulesAlertRuleArrayInput` via:
 //
@@ -134,12 +127,6 @@ func (i GetAlertRulesAlertRuleArray) ToGetAlertRulesAlertRuleArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlertRulesAlertRuleArrayOutput)
 }
 
-func (i GetAlertRulesAlertRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAlertRulesAlertRule] {
-	return pulumix.Output[[]GetAlertRulesAlertRule]{
-		OutputState: i.ToGetAlertRulesAlertRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAlertRulesAlertRuleOutput struct{ *pulumi.OutputState }
 
 func (GetAlertRulesAlertRuleOutput) ElementType() reflect.Type {
@@ -152,12 +139,6 @@ func (o GetAlertRulesAlertRuleOutput) ToGetAlertRulesAlertRuleOutput() GetAlertR
 
 func (o GetAlertRulesAlertRuleOutput) ToGetAlertRulesAlertRuleOutputWithContext(ctx context.Context) GetAlertRulesAlertRuleOutput {
 	return o
-}
-
-func (o GetAlertRulesAlertRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlertRulesAlertRule] {
-	return pulumix.Output[GetAlertRulesAlertRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The unique budget OCID.
@@ -249,12 +230,6 @@ func (o GetAlertRulesAlertRuleArrayOutput) ToGetAlertRulesAlertRuleArrayOutputWi
 	return o
 }
 
-func (o GetAlertRulesAlertRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAlertRulesAlertRule] {
-	return pulumix.Output[[]GetAlertRulesAlertRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAlertRulesAlertRuleArrayOutput) Index(i pulumi.IntInput) GetAlertRulesAlertRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlertRulesAlertRule {
 		return vs[0].([]GetAlertRulesAlertRule)[vs[1].(int)]
@@ -296,12 +271,6 @@ func (i GetAlertRulesFilterArgs) ToGetAlertRulesFilterOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlertRulesFilterOutput)
 }
 
-func (i GetAlertRulesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAlertRulesFilter] {
-	return pulumix.Output[GetAlertRulesFilter]{
-		OutputState: i.ToGetAlertRulesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAlertRulesFilterArrayInput is an input type that accepts GetAlertRulesFilterArray and GetAlertRulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAlertRulesFilterArrayInput` via:
 //
@@ -327,12 +296,6 @@ func (i GetAlertRulesFilterArray) ToGetAlertRulesFilterArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlertRulesFilterArrayOutput)
 }
 
-func (i GetAlertRulesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAlertRulesFilter] {
-	return pulumix.Output[[]GetAlertRulesFilter]{
-		OutputState: i.ToGetAlertRulesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAlertRulesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAlertRulesFilterOutput) ElementType() reflect.Type {
@@ -345,12 +308,6 @@ func (o GetAlertRulesFilterOutput) ToGetAlertRulesFilterOutput() GetAlertRulesFi
 
 func (o GetAlertRulesFilterOutput) ToGetAlertRulesFilterOutputWithContext(ctx context.Context) GetAlertRulesFilterOutput {
 	return o
-}
-
-func (o GetAlertRulesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlertRulesFilter] {
-	return pulumix.Output[GetAlertRulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAlertRulesFilterOutput) Name() pulumi.StringOutput {
@@ -377,12 +334,6 @@ func (o GetAlertRulesFilterArrayOutput) ToGetAlertRulesFilterArrayOutput() GetAl
 
 func (o GetAlertRulesFilterArrayOutput) ToGetAlertRulesFilterArrayOutputWithContext(ctx context.Context) GetAlertRulesFilterArrayOutput {
 	return o
-}
-
-func (o GetAlertRulesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAlertRulesFilter] {
-	return pulumix.Output[[]GetAlertRulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAlertRulesFilterArrayOutput) Index(i pulumi.IntInput) GetAlertRulesFilterOutput {
@@ -522,12 +473,6 @@ func (i GetBudgetsBudgetArgs) ToGetBudgetsBudgetOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetBudgetsBudgetOutput)
 }
 
-func (i GetBudgetsBudgetArgs) ToOutput(ctx context.Context) pulumix.Output[GetBudgetsBudget] {
-	return pulumix.Output[GetBudgetsBudget]{
-		OutputState: i.ToGetBudgetsBudgetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBudgetsBudgetArrayInput is an input type that accepts GetBudgetsBudgetArray and GetBudgetsBudgetArrayOutput values.
 // You can construct a concrete instance of `GetBudgetsBudgetArrayInput` via:
 //
@@ -553,12 +498,6 @@ func (i GetBudgetsBudgetArray) ToGetBudgetsBudgetArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetBudgetsBudgetArrayOutput)
 }
 
-func (i GetBudgetsBudgetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBudgetsBudget] {
-	return pulumix.Output[[]GetBudgetsBudget]{
-		OutputState: i.ToGetBudgetsBudgetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBudgetsBudgetOutput struct{ *pulumi.OutputState }
 
 func (GetBudgetsBudgetOutput) ElementType() reflect.Type {
@@ -571,12 +510,6 @@ func (o GetBudgetsBudgetOutput) ToGetBudgetsBudgetOutput() GetBudgetsBudgetOutpu
 
 func (o GetBudgetsBudgetOutput) ToGetBudgetsBudgetOutputWithContext(ctx context.Context) GetBudgetsBudgetOutput {
 	return o
-}
-
-func (o GetBudgetsBudgetOutput) ToOutput(ctx context.Context) pulumix.Output[GetBudgetsBudget] {
-	return pulumix.Output[GetBudgetsBudget]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The actual spend in currency for the current budget cycle.
@@ -713,12 +646,6 @@ func (o GetBudgetsBudgetArrayOutput) ToGetBudgetsBudgetArrayOutputWithContext(ct
 	return o
 }
 
-func (o GetBudgetsBudgetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBudgetsBudget] {
-	return pulumix.Output[[]GetBudgetsBudget]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBudgetsBudgetArrayOutput) Index(i pulumi.IntInput) GetBudgetsBudgetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBudgetsBudget {
 		return vs[0].([]GetBudgetsBudget)[vs[1].(int)]
@@ -760,12 +687,6 @@ func (i GetBudgetsFilterArgs) ToGetBudgetsFilterOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetBudgetsFilterOutput)
 }
 
-func (i GetBudgetsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetBudgetsFilter] {
-	return pulumix.Output[GetBudgetsFilter]{
-		OutputState: i.ToGetBudgetsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBudgetsFilterArrayInput is an input type that accepts GetBudgetsFilterArray and GetBudgetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetBudgetsFilterArrayInput` via:
 //
@@ -791,12 +712,6 @@ func (i GetBudgetsFilterArray) ToGetBudgetsFilterArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetBudgetsFilterArrayOutput)
 }
 
-func (i GetBudgetsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBudgetsFilter] {
-	return pulumix.Output[[]GetBudgetsFilter]{
-		OutputState: i.ToGetBudgetsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBudgetsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetBudgetsFilterOutput) ElementType() reflect.Type {
@@ -809,12 +724,6 @@ func (o GetBudgetsFilterOutput) ToGetBudgetsFilterOutput() GetBudgetsFilterOutpu
 
 func (o GetBudgetsFilterOutput) ToGetBudgetsFilterOutputWithContext(ctx context.Context) GetBudgetsFilterOutput {
 	return o
-}
-
-func (o GetBudgetsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetBudgetsFilter] {
-	return pulumix.Output[GetBudgetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBudgetsFilterOutput) Name() pulumi.StringOutput {
@@ -841,12 +750,6 @@ func (o GetBudgetsFilterArrayOutput) ToGetBudgetsFilterArrayOutput() GetBudgetsF
 
 func (o GetBudgetsFilterArrayOutput) ToGetBudgetsFilterArrayOutputWithContext(ctx context.Context) GetBudgetsFilterArrayOutput {
 	return o
-}
-
-func (o GetBudgetsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBudgetsFilter] {
-	return pulumix.Output[[]GetBudgetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBudgetsFilterArrayOutput) Index(i pulumi.IntInput) GetBudgetsFilterOutput {

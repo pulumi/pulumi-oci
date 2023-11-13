@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
@@ -315,12 +314,6 @@ func (i *DatabaseToolsPrivateEndpoint) ToDatabaseToolsPrivateEndpointOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsPrivateEndpointOutput)
 }
 
-func (i *DatabaseToolsPrivateEndpoint) ToOutput(ctx context.Context) pulumix.Output[*DatabaseToolsPrivateEndpoint] {
-	return pulumix.Output[*DatabaseToolsPrivateEndpoint]{
-		OutputState: i.ToDatabaseToolsPrivateEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DatabaseToolsPrivateEndpointArrayInput is an input type that accepts DatabaseToolsPrivateEndpointArray and DatabaseToolsPrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `DatabaseToolsPrivateEndpointArrayInput` via:
 //
@@ -344,12 +337,6 @@ func (i DatabaseToolsPrivateEndpointArray) ToDatabaseToolsPrivateEndpointArrayOu
 
 func (i DatabaseToolsPrivateEndpointArray) ToDatabaseToolsPrivateEndpointArrayOutputWithContext(ctx context.Context) DatabaseToolsPrivateEndpointArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsPrivateEndpointArrayOutput)
-}
-
-func (i DatabaseToolsPrivateEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]*DatabaseToolsPrivateEndpoint] {
-	return pulumix.Output[[]*DatabaseToolsPrivateEndpoint]{
-		OutputState: i.ToDatabaseToolsPrivateEndpointArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DatabaseToolsPrivateEndpointMapInput is an input type that accepts DatabaseToolsPrivateEndpointMap and DatabaseToolsPrivateEndpointMapOutput values.
@@ -377,12 +364,6 @@ func (i DatabaseToolsPrivateEndpointMap) ToDatabaseToolsPrivateEndpointMapOutput
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsPrivateEndpointMapOutput)
 }
 
-func (i DatabaseToolsPrivateEndpointMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DatabaseToolsPrivateEndpoint] {
-	return pulumix.Output[map[string]*DatabaseToolsPrivateEndpoint]{
-		OutputState: i.ToDatabaseToolsPrivateEndpointMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DatabaseToolsPrivateEndpointOutput struct{ *pulumi.OutputState }
 
 func (DatabaseToolsPrivateEndpointOutput) ElementType() reflect.Type {
@@ -395,12 +376,6 @@ func (o DatabaseToolsPrivateEndpointOutput) ToDatabaseToolsPrivateEndpointOutput
 
 func (o DatabaseToolsPrivateEndpointOutput) ToDatabaseToolsPrivateEndpointOutputWithContext(ctx context.Context) DatabaseToolsPrivateEndpointOutput {
 	return o
-}
-
-func (o DatabaseToolsPrivateEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[*DatabaseToolsPrivateEndpoint] {
-	return pulumix.Output[*DatabaseToolsPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of additional FQDNs that can be also be used for the private endpoint.
@@ -517,12 +492,6 @@ func (o DatabaseToolsPrivateEndpointArrayOutput) ToDatabaseToolsPrivateEndpointA
 	return o
 }
 
-func (o DatabaseToolsPrivateEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DatabaseToolsPrivateEndpoint] {
-	return pulumix.Output[[]*DatabaseToolsPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DatabaseToolsPrivateEndpointArrayOutput) Index(i pulumi.IntInput) DatabaseToolsPrivateEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DatabaseToolsPrivateEndpoint {
 		return vs[0].([]*DatabaseToolsPrivateEndpoint)[vs[1].(int)]
@@ -541,12 +510,6 @@ func (o DatabaseToolsPrivateEndpointMapOutput) ToDatabaseToolsPrivateEndpointMap
 
 func (o DatabaseToolsPrivateEndpointMapOutput) ToDatabaseToolsPrivateEndpointMapOutputWithContext(ctx context.Context) DatabaseToolsPrivateEndpointMapOutput {
 	return o
-}
-
-func (o DatabaseToolsPrivateEndpointMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DatabaseToolsPrivateEndpoint] {
-	return pulumix.Output[map[string]*DatabaseToolsPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatabaseToolsPrivateEndpointMapOutput) MapIndex(k pulumi.StringInput) DatabaseToolsPrivateEndpointOutput {

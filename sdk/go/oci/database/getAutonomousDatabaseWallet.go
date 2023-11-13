@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // **Deprecated. Use Database.AutonomousDatabaseWallet instead.**
@@ -129,12 +128,6 @@ func (o LookupAutonomousDatabaseWalletResultOutput) ToLookupAutonomousDatabaseWa
 
 func (o LookupAutonomousDatabaseWalletResultOutput) ToLookupAutonomousDatabaseWalletResultOutputWithContext(ctx context.Context) LookupAutonomousDatabaseWalletResultOutput {
 	return o
-}
-
-func (o LookupAutonomousDatabaseWalletResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAutonomousDatabaseWalletResult] {
-	return pulumix.Output[LookupAutonomousDatabaseWalletResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Deprecated: The 'data.oci_database_autonomous_database_wallet' resource has been deprecated. Please use 'oci_database_autonomous_database_wallet' instead.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Backend Health resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -120,12 +119,6 @@ func (o GetBackendHealthResultOutput) ToGetBackendHealthResultOutput() GetBacken
 
 func (o GetBackendHealthResultOutput) ToGetBackendHealthResultOutputWithContext(ctx context.Context) GetBackendHealthResultOutput {
 	return o
-}
-
-func (o GetBackendHealthResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBackendHealthResult] {
-	return pulumix.Output[GetBackendHealthResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBackendHealthResultOutput) BackendName() pulumi.StringOutput {

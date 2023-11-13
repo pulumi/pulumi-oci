@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -63,12 +62,6 @@ func (i AtCustomerCccInfrastructureInfrastructureInventoryArgs) ToAtCustomerCccI
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureInfrastructureInventoryOutput)
 }
 
-func (i AtCustomerCccInfrastructureInfrastructureInventoryArgs) ToOutput(ctx context.Context) pulumix.Output[AtCustomerCccInfrastructureInfrastructureInventory] {
-	return pulumix.Output[AtCustomerCccInfrastructureInfrastructureInventory]{
-		OutputState: i.ToAtCustomerCccInfrastructureInfrastructureInventoryOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AtCustomerCccInfrastructureInfrastructureInventoryArrayInput is an input type that accepts AtCustomerCccInfrastructureInfrastructureInventoryArray and AtCustomerCccInfrastructureInfrastructureInventoryArrayOutput values.
 // You can construct a concrete instance of `AtCustomerCccInfrastructureInfrastructureInventoryArrayInput` via:
 //
@@ -94,12 +87,6 @@ func (i AtCustomerCccInfrastructureInfrastructureInventoryArray) ToAtCustomerCcc
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureInfrastructureInventoryArrayOutput)
 }
 
-func (i AtCustomerCccInfrastructureInfrastructureInventoryArray) ToOutput(ctx context.Context) pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureInventory] {
-	return pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureInventory]{
-		OutputState: i.ToAtCustomerCccInfrastructureInfrastructureInventoryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AtCustomerCccInfrastructureInfrastructureInventoryOutput struct{ *pulumi.OutputState }
 
 func (AtCustomerCccInfrastructureInfrastructureInventoryOutput) ElementType() reflect.Type {
@@ -112,12 +99,6 @@ func (o AtCustomerCccInfrastructureInfrastructureInventoryOutput) ToAtCustomerCc
 
 func (o AtCustomerCccInfrastructureInfrastructureInventoryOutput) ToAtCustomerCccInfrastructureInfrastructureInventoryOutputWithContext(ctx context.Context) AtCustomerCccInfrastructureInfrastructureInventoryOutput {
 	return o
-}
-
-func (o AtCustomerCccInfrastructureInfrastructureInventoryOutput) ToOutput(ctx context.Context) pulumix.Output[AtCustomerCccInfrastructureInfrastructureInventory] {
-	return pulumix.Output[AtCustomerCccInfrastructureInfrastructureInventory]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for capacity storage.
@@ -157,12 +138,6 @@ func (o AtCustomerCccInfrastructureInfrastructureInventoryArrayOutput) ToAtCusto
 
 func (o AtCustomerCccInfrastructureInfrastructureInventoryArrayOutput) ToAtCustomerCccInfrastructureInfrastructureInventoryArrayOutputWithContext(ctx context.Context) AtCustomerCccInfrastructureInfrastructureInventoryArrayOutput {
 	return o
-}
-
-func (o AtCustomerCccInfrastructureInfrastructureInventoryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureInventory] {
-	return pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureInventory]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AtCustomerCccInfrastructureInfrastructureInventoryArrayOutput) Index(i pulumi.IntInput) AtCustomerCccInfrastructureInfrastructureInventoryOutput {
@@ -260,12 +235,6 @@ func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs) ToAtC
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput)
 }
 
-func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfiguration] {
-	return pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfiguration]{
-		OutputState: i.ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayInput is an input type that accepts AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArray and AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayOutput values.
 // You can construct a concrete instance of `AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayInput` via:
 //
@@ -291,12 +260,6 @@ func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArray) ToAt
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayOutput)
 }
 
-func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfiguration] {
-	return pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfiguration]{
-		OutputState: i.ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput struct{ *pulumi.OutputState }
 
 func (AtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) ElementType() reflect.Type {
@@ -309,12 +272,6 @@ func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) ToA
 
 func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutputWithContext(ctx context.Context) AtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput {
 	return o
-}
-
-func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfiguration] {
-	return pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The domain name system (DNS) addresses that the Compute Cloud@Customer infrastructure uses for the data center network.
@@ -420,12 +377,6 @@ func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayOutput
 	return o
 }
 
-func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfiguration] {
-	return pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) AtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AtCustomerCccInfrastructureInfrastructureNetworkConfiguration {
 		return vs[0].([]AtCustomerCccInfrastructureInfrastructureNetworkConfiguration)[vs[1].(int)]
@@ -473,12 +424,6 @@ func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruct
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput)
 }
 
-func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArgs) ToOutput(ctx context.Context) pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic] {
-	return pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic]{
-		OutputState: i.ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayInput is an input type that accepts AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArray and AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutput values.
 // You can construct a concrete instance of `AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayInput` via:
 //
@@ -504,12 +449,6 @@ func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruct
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutput)
 }
 
-func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArray) ToOutput(ctx context.Context) pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic] {
-	return pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic]{
-		OutputState: i.ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput struct{ *pulumi.OutputState }
 
 func (AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput) ElementType() reflect.Type {
@@ -522,12 +461,6 @@ func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruct
 
 func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput) ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutputWithContext(ctx context.Context) AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput {
 	return o
-}
-
-func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput) ToOutput(ctx context.Context) pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic] {
-	return pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The topology in use for the Border Gateway Protocol (BGP) configuration.
@@ -563,12 +496,6 @@ func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruct
 
 func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutput) ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutputWithContext(ctx context.Context) AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutput {
 	return o
-}
-
-func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic] {
-	return pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutput) Index(i pulumi.IntInput) AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput {
@@ -614,12 +541,6 @@ func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruct
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput)
 }
 
-func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgs) ToOutput(ctx context.Context) pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation] {
-	return pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation]{
-		OutputState: i.ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayInput is an input type that accepts AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArray and AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput values.
 // You can construct a concrete instance of `AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayInput` via:
 //
@@ -645,12 +566,6 @@ func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruct
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput)
 }
 
-func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArray) ToOutput(ctx context.Context) pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation] {
-	return pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation]{
-		OutputState: i.ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput struct{ *pulumi.OutputState }
 
 func (AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput) ElementType() reflect.Type {
@@ -663,12 +578,6 @@ func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruct
 
 func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput) ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutputWithContext(ctx context.Context) AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput {
 	return o
-}
-
-func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput) ToOutput(ctx context.Context) pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation] {
-	return pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The Autonomous System Number (ASN) of the peer network.
@@ -697,12 +606,6 @@ func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruct
 
 func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput) ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutputWithContext(ctx context.Context) AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput {
 	return o
-}
-
-func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation] {
-	return pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput) Index(i pulumi.IntInput) AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput {
@@ -748,12 +651,6 @@ func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruct
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput)
 }
 
-func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgs) ToOutput(ctx context.Context) pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic] {
-	return pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic]{
-		OutputState: i.ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayInput is an input type that accepts AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArray and AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput values.
 // You can construct a concrete instance of `AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayInput` via:
 //
@@ -779,12 +676,6 @@ func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruct
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput)
 }
 
-func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArray) ToOutput(ctx context.Context) pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic] {
-	return pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic]{
-		OutputState: i.ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput struct{ *pulumi.OutputState }
 
 func (AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput) ElementType() reflect.Type {
@@ -797,12 +688,6 @@ func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruct
 
 func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput) ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutputWithContext(ctx context.Context) AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput {
 	return o
-}
-
-func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput) ToOutput(ctx context.Context) pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic] {
-	return pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud@Customer infrastructure.
@@ -831,12 +716,6 @@ func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastruct
 
 func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput) ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutputWithContext(ctx context.Context) AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput {
 	return o
-}
-
-func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic] {
-	return pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput) Index(i pulumi.IntInput) AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput {
@@ -882,12 +761,6 @@ func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementN
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutput)
 }
 
-func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArgs) ToOutput(ctx context.Context) pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode] {
-	return pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode]{
-		OutputState: i.ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayInput is an input type that accepts AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArray and AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayOutput values.
 // You can construct a concrete instance of `AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayInput` via:
 //
@@ -913,12 +786,6 @@ func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementN
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayOutput)
 }
 
-func (i AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode] {
-	return pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode]{
-		OutputState: i.ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutput struct{ *pulumi.OutputState }
 
 func (AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutput) ElementType() reflect.Type {
@@ -931,12 +798,6 @@ func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementN
 
 func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutput) ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutputWithContext(ctx context.Context) AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutput {
 	return o
-}
-
-func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutput) ToOutput(ctx context.Context) pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode] {
-	return pulumix.Output[AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Hostname for interface to the management node.
@@ -965,12 +826,6 @@ func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementN
 
 func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayOutput) ToAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayOutputWithContext(ctx context.Context) AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayOutput {
 	return o
-}
-
-func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode] {
-	return pulumix.Output[[]AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayOutput) Index(i pulumi.IntInput) AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutput {
@@ -1024,12 +879,6 @@ func (i AtCustomerCccInfrastructureUpgradeInformationArgs) ToAtCustomerCccInfras
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureUpgradeInformationOutput)
 }
 
-func (i AtCustomerCccInfrastructureUpgradeInformationArgs) ToOutput(ctx context.Context) pulumix.Output[AtCustomerCccInfrastructureUpgradeInformation] {
-	return pulumix.Output[AtCustomerCccInfrastructureUpgradeInformation]{
-		OutputState: i.ToAtCustomerCccInfrastructureUpgradeInformationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AtCustomerCccInfrastructureUpgradeInformationArrayInput is an input type that accepts AtCustomerCccInfrastructureUpgradeInformationArray and AtCustomerCccInfrastructureUpgradeInformationArrayOutput values.
 // You can construct a concrete instance of `AtCustomerCccInfrastructureUpgradeInformationArrayInput` via:
 //
@@ -1055,12 +904,6 @@ func (i AtCustomerCccInfrastructureUpgradeInformationArray) ToAtCustomerCccInfra
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccInfrastructureUpgradeInformationArrayOutput)
 }
 
-func (i AtCustomerCccInfrastructureUpgradeInformationArray) ToOutput(ctx context.Context) pulumix.Output[[]AtCustomerCccInfrastructureUpgradeInformation] {
-	return pulumix.Output[[]AtCustomerCccInfrastructureUpgradeInformation]{
-		OutputState: i.ToAtCustomerCccInfrastructureUpgradeInformationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AtCustomerCccInfrastructureUpgradeInformationOutput struct{ *pulumi.OutputState }
 
 func (AtCustomerCccInfrastructureUpgradeInformationOutput) ElementType() reflect.Type {
@@ -1073,12 +916,6 @@ func (o AtCustomerCccInfrastructureUpgradeInformationOutput) ToAtCustomerCccInfr
 
 func (o AtCustomerCccInfrastructureUpgradeInformationOutput) ToAtCustomerCccInfrastructureUpgradeInformationOutputWithContext(ctx context.Context) AtCustomerCccInfrastructureUpgradeInformationOutput {
 	return o
-}
-
-func (o AtCustomerCccInfrastructureUpgradeInformationOutput) ToOutput(ctx context.Context) pulumix.Output[AtCustomerCccInfrastructureUpgradeInformation] {
-	return pulumix.Output[AtCustomerCccInfrastructureUpgradeInformation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The current version of software installed on the Compute Cloud@Customer infrastructure.
@@ -1113,12 +950,6 @@ func (o AtCustomerCccInfrastructureUpgradeInformationArrayOutput) ToAtCustomerCc
 
 func (o AtCustomerCccInfrastructureUpgradeInformationArrayOutput) ToAtCustomerCccInfrastructureUpgradeInformationArrayOutputWithContext(ctx context.Context) AtCustomerCccInfrastructureUpgradeInformationArrayOutput {
 	return o
-}
-
-func (o AtCustomerCccInfrastructureUpgradeInformationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AtCustomerCccInfrastructureUpgradeInformation] {
-	return pulumix.Output[[]AtCustomerCccInfrastructureUpgradeInformation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AtCustomerCccInfrastructureUpgradeInformationArrayOutput) Index(i pulumi.IntInput) AtCustomerCccInfrastructureUpgradeInformationOutput {
@@ -1176,12 +1007,6 @@ func (i AtCustomerCccUpgradeScheduleEventArgs) ToAtCustomerCccUpgradeScheduleEve
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccUpgradeScheduleEventOutput)
 }
 
-func (i AtCustomerCccUpgradeScheduleEventArgs) ToOutput(ctx context.Context) pulumix.Output[AtCustomerCccUpgradeScheduleEvent] {
-	return pulumix.Output[AtCustomerCccUpgradeScheduleEvent]{
-		OutputState: i.ToAtCustomerCccUpgradeScheduleEventOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AtCustomerCccUpgradeScheduleEventArrayInput is an input type that accepts AtCustomerCccUpgradeScheduleEventArray and AtCustomerCccUpgradeScheduleEventArrayOutput values.
 // You can construct a concrete instance of `AtCustomerCccUpgradeScheduleEventArrayInput` via:
 //
@@ -1207,12 +1032,6 @@ func (i AtCustomerCccUpgradeScheduleEventArray) ToAtCustomerCccUpgradeScheduleEv
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccUpgradeScheduleEventArrayOutput)
 }
 
-func (i AtCustomerCccUpgradeScheduleEventArray) ToOutput(ctx context.Context) pulumix.Output[[]AtCustomerCccUpgradeScheduleEvent] {
-	return pulumix.Output[[]AtCustomerCccUpgradeScheduleEvent]{
-		OutputState: i.ToAtCustomerCccUpgradeScheduleEventArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AtCustomerCccUpgradeScheduleEventOutput struct{ *pulumi.OutputState }
 
 func (AtCustomerCccUpgradeScheduleEventOutput) ElementType() reflect.Type {
@@ -1225,12 +1044,6 @@ func (o AtCustomerCccUpgradeScheduleEventOutput) ToAtCustomerCccUpgradeScheduleE
 
 func (o AtCustomerCccUpgradeScheduleEventOutput) ToAtCustomerCccUpgradeScheduleEventOutputWithContext(ctx context.Context) AtCustomerCccUpgradeScheduleEventOutput {
 	return o
-}
-
-func (o AtCustomerCccUpgradeScheduleEventOutput) ToOutput(ctx context.Context) pulumix.Output[AtCustomerCccUpgradeScheduleEvent] {
-	return pulumix.Output[AtCustomerCccUpgradeScheduleEvent]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
@@ -1270,12 +1083,6 @@ func (o AtCustomerCccUpgradeScheduleEventArrayOutput) ToAtCustomerCccUpgradeSche
 
 func (o AtCustomerCccUpgradeScheduleEventArrayOutput) ToAtCustomerCccUpgradeScheduleEventArrayOutputWithContext(ctx context.Context) AtCustomerCccUpgradeScheduleEventArrayOutput {
 	return o
-}
-
-func (o AtCustomerCccUpgradeScheduleEventArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AtCustomerCccUpgradeScheduleEvent] {
-	return pulumix.Output[[]AtCustomerCccUpgradeScheduleEvent]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AtCustomerCccUpgradeScheduleEventArrayOutput) Index(i pulumi.IntInput) AtCustomerCccUpgradeScheduleEventOutput {
@@ -1333,12 +1140,6 @@ func (i GetAtCustomerCccInfrastructureInfrastructureInventoryArgs) ToGetAtCustom
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructureInfrastructureInventoryOutput)
 }
 
-func (i GetAtCustomerCccInfrastructureInfrastructureInventoryArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureInventory] {
-	return pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureInventory]{
-		OutputState: i.ToGetAtCustomerCccInfrastructureInfrastructureInventoryOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAtCustomerCccInfrastructureInfrastructureInventoryArrayInput is an input type that accepts GetAtCustomerCccInfrastructureInfrastructureInventoryArray and GetAtCustomerCccInfrastructureInfrastructureInventoryArrayOutput values.
 // You can construct a concrete instance of `GetAtCustomerCccInfrastructureInfrastructureInventoryArrayInput` via:
 //
@@ -1364,12 +1165,6 @@ func (i GetAtCustomerCccInfrastructureInfrastructureInventoryArray) ToGetAtCusto
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructureInfrastructureInventoryArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructureInfrastructureInventoryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureInventory] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureInventory]{
-		OutputState: i.ToGetAtCustomerCccInfrastructureInfrastructureInventoryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructureInfrastructureInventoryOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructureInfrastructureInventoryOutput) ElementType() reflect.Type {
@@ -1382,12 +1177,6 @@ func (o GetAtCustomerCccInfrastructureInfrastructureInventoryOutput) ToGetAtCust
 
 func (o GetAtCustomerCccInfrastructureInfrastructureInventoryOutput) ToGetAtCustomerCccInfrastructureInfrastructureInventoryOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructureInfrastructureInventoryOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructureInfrastructureInventoryOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureInventory] {
-	return pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureInventory]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for capacity storage.
@@ -1429,12 +1218,6 @@ func (o GetAtCustomerCccInfrastructureInfrastructureInventoryArrayOutput) ToGetA
 
 func (o GetAtCustomerCccInfrastructureInfrastructureInventoryArrayOutput) ToGetAtCustomerCccInfrastructureInfrastructureInventoryArrayOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructureInfrastructureInventoryArrayOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructureInfrastructureInventoryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureInventory] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureInventory]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAtCustomerCccInfrastructureInfrastructureInventoryArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructureInfrastructureInventoryOutput {
@@ -1532,12 +1315,6 @@ func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput)
 }
 
-func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration] {
-	return pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration]{
-		OutputState: i.ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayInput is an input type that accepts GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArray and GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayInput` via:
 //
@@ -1563,12 +1340,6 @@ func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration]{
-		OutputState: i.ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) ElementType() reflect.Type {
@@ -1581,12 +1352,6 @@ func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) 
 
 func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration] {
-	return pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The domain name system (DNS) addresses that the Compute Cloud@Customer infrastructure uses for the data center network.
@@ -1694,12 +1459,6 @@ func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayOut
 	return o
 }
 
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration {
 		return vs[0].([]GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration)[vs[1].(int)]
@@ -1747,12 +1506,6 @@ func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastr
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput)
 }
 
-func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic] {
-	return pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic]{
-		OutputState: i.ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayInput is an input type that accepts GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArray and GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutput values.
 // You can construct a concrete instance of `GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayInput` via:
 //
@@ -1778,12 +1531,6 @@ func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastr
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic]{
-		OutputState: i.ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput) ElementType() reflect.Type {
@@ -1796,12 +1543,6 @@ func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastr
 
 func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput) ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic] {
-	return pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The topology in use for the Border Gateway Protocol (BGP) configuration.
@@ -1837,12 +1578,6 @@ func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastr
 
 func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutput) ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput {
@@ -1888,12 +1623,6 @@ func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastr
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput)
 }
 
-func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation] {
-	return pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation]{
-		OutputState: i.ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayInput is an input type that accepts GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArray and GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput values.
 // You can construct a concrete instance of `GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayInput` via:
 //
@@ -1919,12 +1648,6 @@ func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastr
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation]{
-		OutputState: i.ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput) ElementType() reflect.Type {
@@ -1937,12 +1660,6 @@ func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastr
 
 func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput) ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation] {
-	return pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The Autonomous System Number (ASN) of the peer network.
@@ -1971,12 +1688,6 @@ func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastr
 
 func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput) ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput {
@@ -2022,12 +1733,6 @@ func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastr
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput)
 }
 
-func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic] {
-	return pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic]{
-		OutputState: i.ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayInput is an input type that accepts GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArray and GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput values.
 // You can construct a concrete instance of `GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayInput` via:
 //
@@ -2053,12 +1758,6 @@ func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastr
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic]{
-		OutputState: i.ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput) ElementType() reflect.Type {
@@ -2071,12 +1770,6 @@ func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastr
 
 func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput) ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic] {
-	return pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud@Customer infrastructure.
@@ -2105,12 +1798,6 @@ func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastr
 
 func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput) ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput {
@@ -2156,12 +1843,6 @@ func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManageme
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutput)
 }
 
-func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode] {
-	return pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode]{
-		OutputState: i.ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayInput is an input type that accepts GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArray and GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayOutput values.
 // You can construct a concrete instance of `GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayInput` via:
 //
@@ -2187,12 +1868,6 @@ func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManageme
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode]{
-		OutputState: i.ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutput) ElementType() reflect.Type {
@@ -2205,12 +1880,6 @@ func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManageme
 
 func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutput) ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode] {
-	return pulumix.Output[GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Hostname for interface to the management node.
@@ -2239,12 +1908,6 @@ func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManageme
 
 func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayOutput) ToGetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeOutput {
@@ -2298,12 +1961,6 @@ func (i GetAtCustomerCccInfrastructureUpgradeInformationArgs) ToGetAtCustomerCcc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructureUpgradeInformationOutput)
 }
 
-func (i GetAtCustomerCccInfrastructureUpgradeInformationArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructureUpgradeInformation] {
-	return pulumix.Output[GetAtCustomerCccInfrastructureUpgradeInformation]{
-		OutputState: i.ToGetAtCustomerCccInfrastructureUpgradeInformationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAtCustomerCccInfrastructureUpgradeInformationArrayInput is an input type that accepts GetAtCustomerCccInfrastructureUpgradeInformationArray and GetAtCustomerCccInfrastructureUpgradeInformationArrayOutput values.
 // You can construct a concrete instance of `GetAtCustomerCccInfrastructureUpgradeInformationArrayInput` via:
 //
@@ -2329,12 +1986,6 @@ func (i GetAtCustomerCccInfrastructureUpgradeInformationArray) ToGetAtCustomerCc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructureUpgradeInformationArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructureUpgradeInformationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructureUpgradeInformation] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructureUpgradeInformation]{
-		OutputState: i.ToGetAtCustomerCccInfrastructureUpgradeInformationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructureUpgradeInformationOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructureUpgradeInformationOutput) ElementType() reflect.Type {
@@ -2347,12 +1998,6 @@ func (o GetAtCustomerCccInfrastructureUpgradeInformationOutput) ToGetAtCustomerC
 
 func (o GetAtCustomerCccInfrastructureUpgradeInformationOutput) ToGetAtCustomerCccInfrastructureUpgradeInformationOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructureUpgradeInformationOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructureUpgradeInformationOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructureUpgradeInformation] {
-	return pulumix.Output[GetAtCustomerCccInfrastructureUpgradeInformation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The current version of software installed on the Compute Cloud@Customer infrastructure.
@@ -2387,12 +2032,6 @@ func (o GetAtCustomerCccInfrastructureUpgradeInformationArrayOutput) ToGetAtCust
 
 func (o GetAtCustomerCccInfrastructureUpgradeInformationArrayOutput) ToGetAtCustomerCccInfrastructureUpgradeInformationArrayOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructureUpgradeInformationArrayOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructureUpgradeInformationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructureUpgradeInformation] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructureUpgradeInformation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAtCustomerCccInfrastructureUpgradeInformationArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructureUpgradeInformationOutput {
@@ -2432,12 +2071,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionArgs) ToGetAtC
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionOutput)
 }
 
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollection] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollection]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAtCustomerCccInfrastructuresCccInfrastructureCollectionArrayInput is an input type that accepts GetAtCustomerCccInfrastructuresCccInfrastructureCollectionArray and GetAtCustomerCccInfrastructuresCccInfrastructureCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAtCustomerCccInfrastructuresCccInfrastructureCollectionArrayInput` via:
 //
@@ -2463,12 +2096,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionArray) ToGetAt
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollection] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollection]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructuresCccInfrastructureCollectionOutput) ElementType() reflect.Type {
@@ -2481,12 +2108,6 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionOutput) ToGetA
 
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionOutput) ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollection] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionOutput) Items() GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemArrayOutput {
@@ -2507,12 +2128,6 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionArrayOutput) T
 
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionArrayOutput) ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionArrayOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionArrayOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollection] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionOutput {
@@ -2634,12 +2249,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemArgs) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput)
 }
 
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemArrayInput is an input type that accepts GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemArray and GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemArrayInput` via:
 //
@@ -2665,12 +2274,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) ElementType() reflect.Type {
@@ -2683,12 +2286,6 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) To
 
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Schedule used for upgrades. If no schedule is associated with the infrastructure, it can be updated at any time.
@@ -2834,12 +2431,6 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemArrayOutpu
 	return o
 }
 
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem {
 		return vs[0].([]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem)[vs[1].(int)]
@@ -2895,12 +2486,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryOutput)
 }
 
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryArrayInput is an input type that accepts GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryArray and GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryArrayOutput values.
 // You can construct a concrete instance of `GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryArrayInput` via:
 //
@@ -2926,12 +2511,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryOutput) ElementType() reflect.Type {
@@ -2944,12 +2523,6 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryOutput) ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for capacity storage.
@@ -2999,12 +2572,6 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryArrayOutput) ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryArrayOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryArrayOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventory]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryOutput {
@@ -3102,12 +2669,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput)
 }
 
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationArrayInput is an input type that accepts GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationArray and GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationArrayInput` via:
 //
@@ -3133,12 +2694,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput) ElementType() reflect.Type {
@@ -3151,12 +2706,6 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput) ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The domain name system (DNS) addresses that the Compute Cloud@Customer infrastructure uses for the data center network.
@@ -3278,12 +2827,6 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 	return o
 }
 
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration {
 		return vs[0].([]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfiguration)[vs[1].(int)]
@@ -3331,12 +2874,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput)
 }
 
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayInput is an input type that accepts GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArray and GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutput values.
 // You can construct a concrete instance of `GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayInput` via:
 //
@@ -3362,12 +2899,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput) ElementType() reflect.Type {
@@ -3380,12 +2911,6 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput) ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The topology in use for the Border Gateway Protocol (BGP) configuration.
@@ -3421,12 +2946,6 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutput) ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamic]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutput {
@@ -3472,12 +2991,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput)
 }
 
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayInput is an input type that accepts GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArray and GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput values.
 // You can construct a concrete instance of `GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayInput` via:
 //
@@ -3503,12 +3016,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput) ElementType() reflect.Type {
@@ -3521,12 +3028,6 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput) ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The Autonomous System Number (ASN) of the peer network.
@@ -3555,12 +3056,6 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput) ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutput {
@@ -3606,12 +3101,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput)
 }
 
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayInput is an input type that accepts GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticArray and GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput values.
 // You can construct a concrete instance of `GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayInput` via:
 //
@@ -3637,12 +3126,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput) ElementType() reflect.Type {
@@ -3655,12 +3138,6 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput) ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud@Customer infrastructure.
@@ -3689,12 +3166,6 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput) ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutput {
@@ -3740,12 +3211,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeOutput)
 }
 
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeArrayInput is an input type that accepts GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeArray and GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeArrayOutput values.
 // You can construct a concrete instance of `GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeArrayInput` via:
 //
@@ -3771,12 +3236,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeOutput) ElementType() reflect.Type {
@@ -3789,12 +3248,6 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeOutput) ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Hostname for interface to the management node.
@@ -3823,12 +3276,6 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastruc
 
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeArrayOutput) ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeArrayOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeArrayOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeOutput {
@@ -3882,12 +3329,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInf
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationOutput)
 }
 
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationArrayInput is an input type that accepts GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationArray and GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationArrayOutput values.
 // You can construct a concrete instance of `GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationArrayInput` via:
 //
@@ -3913,12 +3354,6 @@ func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInf
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationOutput) ElementType() reflect.Type {
@@ -3931,12 +3366,6 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInf
 
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationOutput) ToGetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The current version of software installed on the Compute Cloud@Customer infrastructure.
@@ -3981,12 +3410,6 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInf
 	return o
 }
 
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation {
 		return vs[0].([]GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation)[vs[1].(int)]
@@ -4028,12 +3451,6 @@ func (i GetAtCustomerCccInfrastructuresFilterArgs) ToGetAtCustomerCccInfrastruct
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresFilterOutput)
 }
 
-func (i GetAtCustomerCccInfrastructuresFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresFilter] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresFilter]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAtCustomerCccInfrastructuresFilterArrayInput is an input type that accepts GetAtCustomerCccInfrastructuresFilterArray and GetAtCustomerCccInfrastructuresFilterArrayOutput values.
 // You can construct a concrete instance of `GetAtCustomerCccInfrastructuresFilterArrayInput` via:
 //
@@ -4059,12 +3476,6 @@ func (i GetAtCustomerCccInfrastructuresFilterArray) ToGetAtCustomerCccInfrastruc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccInfrastructuresFilterArrayOutput)
 }
 
-func (i GetAtCustomerCccInfrastructuresFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresFilter] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresFilter]{
-		OutputState: i.ToGetAtCustomerCccInfrastructuresFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccInfrastructuresFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccInfrastructuresFilterOutput) ElementType() reflect.Type {
@@ -4077,12 +3488,6 @@ func (o GetAtCustomerCccInfrastructuresFilterOutput) ToGetAtCustomerCccInfrastru
 
 func (o GetAtCustomerCccInfrastructuresFilterOutput) ToGetAtCustomerCccInfrastructuresFilterOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructuresFilterOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructuresFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccInfrastructuresFilter] {
-	return pulumix.Output[GetAtCustomerCccInfrastructuresFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAtCustomerCccInfrastructuresFilterOutput) Name() pulumi.StringOutput {
@@ -4109,12 +3514,6 @@ func (o GetAtCustomerCccInfrastructuresFilterArrayOutput) ToGetAtCustomerCccInfr
 
 func (o GetAtCustomerCccInfrastructuresFilterArrayOutput) ToGetAtCustomerCccInfrastructuresFilterArrayOutputWithContext(ctx context.Context) GetAtCustomerCccInfrastructuresFilterArrayOutput {
 	return o
-}
-
-func (o GetAtCustomerCccInfrastructuresFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccInfrastructuresFilter] {
-	return pulumix.Output[[]GetAtCustomerCccInfrastructuresFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAtCustomerCccInfrastructuresFilterArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccInfrastructuresFilterOutput {
@@ -4172,12 +3571,6 @@ func (i GetAtCustomerCccUpgradeScheduleEventArgs) ToGetAtCustomerCccUpgradeSched
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccUpgradeScheduleEventOutput)
 }
 
-func (i GetAtCustomerCccUpgradeScheduleEventArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccUpgradeScheduleEvent] {
-	return pulumix.Output[GetAtCustomerCccUpgradeScheduleEvent]{
-		OutputState: i.ToGetAtCustomerCccUpgradeScheduleEventOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAtCustomerCccUpgradeScheduleEventArrayInput is an input type that accepts GetAtCustomerCccUpgradeScheduleEventArray and GetAtCustomerCccUpgradeScheduleEventArrayOutput values.
 // You can construct a concrete instance of `GetAtCustomerCccUpgradeScheduleEventArrayInput` via:
 //
@@ -4203,12 +3596,6 @@ func (i GetAtCustomerCccUpgradeScheduleEventArray) ToGetAtCustomerCccUpgradeSche
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccUpgradeScheduleEventArrayOutput)
 }
 
-func (i GetAtCustomerCccUpgradeScheduleEventArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccUpgradeScheduleEvent] {
-	return pulumix.Output[[]GetAtCustomerCccUpgradeScheduleEvent]{
-		OutputState: i.ToGetAtCustomerCccUpgradeScheduleEventArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccUpgradeScheduleEventOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccUpgradeScheduleEventOutput) ElementType() reflect.Type {
@@ -4221,12 +3608,6 @@ func (o GetAtCustomerCccUpgradeScheduleEventOutput) ToGetAtCustomerCccUpgradeSch
 
 func (o GetAtCustomerCccUpgradeScheduleEventOutput) ToGetAtCustomerCccUpgradeScheduleEventOutputWithContext(ctx context.Context) GetAtCustomerCccUpgradeScheduleEventOutput {
 	return o
-}
-
-func (o GetAtCustomerCccUpgradeScheduleEventOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccUpgradeScheduleEvent] {
-	return pulumix.Output[GetAtCustomerCccUpgradeScheduleEvent]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A description of the Compute Cloud@Customer upgrade schedule time block.
@@ -4268,12 +3649,6 @@ func (o GetAtCustomerCccUpgradeScheduleEventArrayOutput) ToGetAtCustomerCccUpgra
 	return o
 }
 
-func (o GetAtCustomerCccUpgradeScheduleEventArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccUpgradeScheduleEvent] {
-	return pulumix.Output[[]GetAtCustomerCccUpgradeScheduleEvent]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAtCustomerCccUpgradeScheduleEventArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccUpgradeScheduleEventOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAtCustomerCccUpgradeScheduleEvent {
 		return vs[0].([]GetAtCustomerCccUpgradeScheduleEvent)[vs[1].(int)]
@@ -4311,12 +3686,6 @@ func (i GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionArgs) ToGetA
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionOutput)
 }
 
-func (i GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection] {
-	return pulumix.Output[GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection]{
-		OutputState: i.ToGetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionArrayInput is an input type that accepts GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionArray and GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionArrayInput` via:
 //
@@ -4342,12 +3711,6 @@ func (i GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionArrayOutput)
 }
 
-func (i GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection] {
-	return pulumix.Output[[]GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection]{
-		OutputState: i.ToGetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionOutput) ElementType() reflect.Type {
@@ -4360,12 +3723,6 @@ func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionOutput) ToGe
 
 func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionOutput) ToGetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionOutputWithContext(ctx context.Context) GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionOutput {
 	return o
-}
-
-func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection] {
-	return pulumix.Output[GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionOutput) Items() GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArrayOutput {
@@ -4386,12 +3743,6 @@ func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionArrayOutput)
 
 func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionArrayOutput) ToGetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionArrayOutputWithContext(ctx context.Context) GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionArrayOutput {
 	return o
-}
-
-func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection] {
-	return pulumix.Output[[]GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionOutput {
@@ -4481,12 +3832,6 @@ func (i GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput)
 }
 
-func (i GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem] {
-	return pulumix.Output[GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem]{
-		OutputState: i.ToGetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArrayInput is an input type that accepts GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArray and GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArrayInput` via:
 //
@@ -4512,12 +3857,6 @@ func (i GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArrayOutput)
 }
 
-func (i GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem] {
-	return pulumix.Output[[]GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem]{
-		OutputState: i.ToGetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) ElementType() reflect.Type {
@@ -4530,12 +3869,6 @@ func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) 
 
 func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) ToGetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutputWithContext(ctx context.Context) GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput {
 	return o
-}
-
-func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem] {
-	return pulumix.Output[GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -4631,12 +3964,6 @@ func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArrayOut
 	return o
 }
 
-func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem] {
-	return pulumix.Output[[]GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem {
 		return vs[0].([]GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem)[vs[1].(int)]
@@ -4692,12 +4019,6 @@ func (i GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArg
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventOutput)
 }
 
-func (i GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent] {
-	return pulumix.Output[GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent]{
-		OutputState: i.ToGetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArrayInput is an input type that accepts GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArray and GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArrayOutput values.
 // You can construct a concrete instance of `GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArrayInput` via:
 //
@@ -4723,12 +4044,6 @@ func (i GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArrayOutput)
 }
 
-func (i GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent] {
-	return pulumix.Output[[]GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent]{
-		OutputState: i.ToGetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventOutput) ElementType() reflect.Type {
@@ -4741,12 +4056,6 @@ func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventOut
 
 func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventOutput) ToGetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventOutputWithContext(ctx context.Context) GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventOutput {
 	return o
-}
-
-func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent] {
-	return pulumix.Output[GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A description of the Compute Cloud@Customer upgrade schedule time block.
@@ -4796,12 +4105,6 @@ func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArr
 	return o
 }
 
-func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent] {
-	return pulumix.Output[[]GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent {
 		return vs[0].([]GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent)[vs[1].(int)]
@@ -4845,12 +4148,6 @@ func (i GetAtCustomerCccUpgradeSchedulesFilterArgs) ToGetAtCustomerCccUpgradeSch
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccUpgradeSchedulesFilterOutput)
 }
 
-func (i GetAtCustomerCccUpgradeSchedulesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccUpgradeSchedulesFilter] {
-	return pulumix.Output[GetAtCustomerCccUpgradeSchedulesFilter]{
-		OutputState: i.ToGetAtCustomerCccUpgradeSchedulesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAtCustomerCccUpgradeSchedulesFilterArrayInput is an input type that accepts GetAtCustomerCccUpgradeSchedulesFilterArray and GetAtCustomerCccUpgradeSchedulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAtCustomerCccUpgradeSchedulesFilterArrayInput` via:
 //
@@ -4876,12 +4173,6 @@ func (i GetAtCustomerCccUpgradeSchedulesFilterArray) ToGetAtCustomerCccUpgradeSc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAtCustomerCccUpgradeSchedulesFilterArrayOutput)
 }
 
-func (i GetAtCustomerCccUpgradeSchedulesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccUpgradeSchedulesFilter] {
-	return pulumix.Output[[]GetAtCustomerCccUpgradeSchedulesFilter]{
-		OutputState: i.ToGetAtCustomerCccUpgradeSchedulesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAtCustomerCccUpgradeSchedulesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAtCustomerCccUpgradeSchedulesFilterOutput) ElementType() reflect.Type {
@@ -4894,12 +4185,6 @@ func (o GetAtCustomerCccUpgradeSchedulesFilterOutput) ToGetAtCustomerCccUpgradeS
 
 func (o GetAtCustomerCccUpgradeSchedulesFilterOutput) ToGetAtCustomerCccUpgradeSchedulesFilterOutputWithContext(ctx context.Context) GetAtCustomerCccUpgradeSchedulesFilterOutput {
 	return o
-}
-
-func (o GetAtCustomerCccUpgradeSchedulesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccUpgradeSchedulesFilter] {
-	return pulumix.Output[GetAtCustomerCccUpgradeSchedulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Generated name associated with the event.
@@ -4927,12 +4212,6 @@ func (o GetAtCustomerCccUpgradeSchedulesFilterArrayOutput) ToGetAtCustomerCccUpg
 
 func (o GetAtCustomerCccUpgradeSchedulesFilterArrayOutput) ToGetAtCustomerCccUpgradeSchedulesFilterArrayOutputWithContext(ctx context.Context) GetAtCustomerCccUpgradeSchedulesFilterArrayOutput {
 	return o
-}
-
-func (o GetAtCustomerCccUpgradeSchedulesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAtCustomerCccUpgradeSchedulesFilter] {
-	return pulumix.Output[[]GetAtCustomerCccUpgradeSchedulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAtCustomerCccUpgradeSchedulesFilterArrayOutput) Index(i pulumi.IntInput) GetAtCustomerCccUpgradeSchedulesFilterOutput {

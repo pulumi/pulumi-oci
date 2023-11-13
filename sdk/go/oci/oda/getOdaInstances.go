@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Oda Instances in Oracle Cloud Infrastructure Digital Assistant service.
@@ -125,12 +124,6 @@ func (o GetOdaInstancesResultOutput) ToGetOdaInstancesResultOutput() GetOdaInsta
 
 func (o GetOdaInstancesResultOutput) ToGetOdaInstancesResultOutputWithContext(ctx context.Context) GetOdaInstancesResultOutput {
 	return o
-}
-
-func (o GetOdaInstancesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaInstancesResult] {
-	return pulumix.Output[GetOdaInstancesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Identifier of the compartment that the instance belongs to.

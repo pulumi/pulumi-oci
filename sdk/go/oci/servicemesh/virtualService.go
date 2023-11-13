@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Virtual Service resource in Oracle Cloud Infrastructure Service Mesh service.
@@ -283,12 +282,6 @@ func (i *VirtualService) ToVirtualServiceOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualServiceOutput)
 }
 
-func (i *VirtualService) ToOutput(ctx context.Context) pulumix.Output[*VirtualService] {
-	return pulumix.Output[*VirtualService]{
-		OutputState: i.ToVirtualServiceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VirtualServiceArrayInput is an input type that accepts VirtualServiceArray and VirtualServiceArrayOutput values.
 // You can construct a concrete instance of `VirtualServiceArrayInput` via:
 //
@@ -312,12 +305,6 @@ func (i VirtualServiceArray) ToVirtualServiceArrayOutput() VirtualServiceArrayOu
 
 func (i VirtualServiceArray) ToVirtualServiceArrayOutputWithContext(ctx context.Context) VirtualServiceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualServiceArrayOutput)
-}
-
-func (i VirtualServiceArray) ToOutput(ctx context.Context) pulumix.Output[[]*VirtualService] {
-	return pulumix.Output[[]*VirtualService]{
-		OutputState: i.ToVirtualServiceArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // VirtualServiceMapInput is an input type that accepts VirtualServiceMap and VirtualServiceMapOutput values.
@@ -345,12 +332,6 @@ func (i VirtualServiceMap) ToVirtualServiceMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualServiceMapOutput)
 }
 
-func (i VirtualServiceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*VirtualService] {
-	return pulumix.Output[map[string]*VirtualService]{
-		OutputState: i.ToVirtualServiceMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VirtualServiceOutput struct{ *pulumi.OutputState }
 
 func (VirtualServiceOutput) ElementType() reflect.Type {
@@ -363,12 +344,6 @@ func (o VirtualServiceOutput) ToVirtualServiceOutput() VirtualServiceOutput {
 
 func (o VirtualServiceOutput) ToVirtualServiceOutputWithContext(ctx context.Context) VirtualServiceOutput {
 	return o
-}
-
-func (o VirtualServiceOutput) ToOutput(ctx context.Context) pulumix.Output[*VirtualService] {
-	return pulumix.Output[*VirtualService]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -458,12 +433,6 @@ func (o VirtualServiceArrayOutput) ToVirtualServiceArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o VirtualServiceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*VirtualService] {
-	return pulumix.Output[[]*VirtualService]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o VirtualServiceArrayOutput) Index(i pulumi.IntInput) VirtualServiceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *VirtualService {
 		return vs[0].([]*VirtualService)[vs[1].(int)]
@@ -482,12 +451,6 @@ func (o VirtualServiceMapOutput) ToVirtualServiceMapOutput() VirtualServiceMapOu
 
 func (o VirtualServiceMapOutput) ToVirtualServiceMapOutputWithContext(ctx context.Context) VirtualServiceMapOutput {
 	return o
-}
-
-func (o VirtualServiceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*VirtualService] {
-	return pulumix.Output[map[string]*VirtualService]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VirtualServiceMapOutput) MapIndex(k pulumi.StringInput) VirtualServiceOutput {

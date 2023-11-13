@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -49,12 +48,6 @@ func (i StreamPoolCustomEncryptionKeyArgs) ToStreamPoolCustomEncryptionKeyOutput
 
 func (i StreamPoolCustomEncryptionKeyArgs) ToStreamPoolCustomEncryptionKeyOutputWithContext(ctx context.Context) StreamPoolCustomEncryptionKeyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(StreamPoolCustomEncryptionKeyOutput)
-}
-
-func (i StreamPoolCustomEncryptionKeyArgs) ToOutput(ctx context.Context) pulumix.Output[StreamPoolCustomEncryptionKey] {
-	return pulumix.Output[StreamPoolCustomEncryptionKey]{
-		OutputState: i.ToStreamPoolCustomEncryptionKeyOutputWithContext(ctx).OutputState,
-	}
 }
 
 func (i StreamPoolCustomEncryptionKeyArgs) ToStreamPoolCustomEncryptionKeyPtrOutput() StreamPoolCustomEncryptionKeyPtrOutput {
@@ -98,12 +91,6 @@ func (i *streamPoolCustomEncryptionKeyPtrType) ToStreamPoolCustomEncryptionKeyPt
 	return pulumi.ToOutputWithContext(ctx, i).(StreamPoolCustomEncryptionKeyPtrOutput)
 }
 
-func (i *streamPoolCustomEncryptionKeyPtrType) ToOutput(ctx context.Context) pulumix.Output[*StreamPoolCustomEncryptionKey] {
-	return pulumix.Output[*StreamPoolCustomEncryptionKey]{
-		OutputState: i.ToStreamPoolCustomEncryptionKeyPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type StreamPoolCustomEncryptionKeyOutput struct{ *pulumi.OutputState }
 
 func (StreamPoolCustomEncryptionKeyOutput) ElementType() reflect.Type {
@@ -128,12 +115,6 @@ func (o StreamPoolCustomEncryptionKeyOutput) ToStreamPoolCustomEncryptionKeyPtrO
 	}).(StreamPoolCustomEncryptionKeyPtrOutput)
 }
 
-func (o StreamPoolCustomEncryptionKeyOutput) ToOutput(ctx context.Context) pulumix.Output[StreamPoolCustomEncryptionKey] {
-	return pulumix.Output[StreamPoolCustomEncryptionKey]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Life cycle State of the custom key
 func (o StreamPoolCustomEncryptionKeyOutput) KeyState() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v StreamPoolCustomEncryptionKey) *string { return v.KeyState }).(pulumi.StringPtrOutput)
@@ -156,12 +137,6 @@ func (o StreamPoolCustomEncryptionKeyPtrOutput) ToStreamPoolCustomEncryptionKeyP
 
 func (o StreamPoolCustomEncryptionKeyPtrOutput) ToStreamPoolCustomEncryptionKeyPtrOutputWithContext(ctx context.Context) StreamPoolCustomEncryptionKeyPtrOutput {
 	return o
-}
-
-func (o StreamPoolCustomEncryptionKeyPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*StreamPoolCustomEncryptionKey] {
-	return pulumix.Output[*StreamPoolCustomEncryptionKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o StreamPoolCustomEncryptionKeyPtrOutput) Elem() StreamPoolCustomEncryptionKeyOutput {
@@ -239,12 +214,6 @@ func (i StreamPoolKafkaSettingsArgs) ToStreamPoolKafkaSettingsOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(StreamPoolKafkaSettingsOutput)
 }
 
-func (i StreamPoolKafkaSettingsArgs) ToOutput(ctx context.Context) pulumix.Output[StreamPoolKafkaSettings] {
-	return pulumix.Output[StreamPoolKafkaSettings]{
-		OutputState: i.ToStreamPoolKafkaSettingsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i StreamPoolKafkaSettingsArgs) ToStreamPoolKafkaSettingsPtrOutput() StreamPoolKafkaSettingsPtrOutput {
 	return i.ToStreamPoolKafkaSettingsPtrOutputWithContext(context.Background())
 }
@@ -286,12 +255,6 @@ func (i *streamPoolKafkaSettingsPtrType) ToStreamPoolKafkaSettingsPtrOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(StreamPoolKafkaSettingsPtrOutput)
 }
 
-func (i *streamPoolKafkaSettingsPtrType) ToOutput(ctx context.Context) pulumix.Output[*StreamPoolKafkaSettings] {
-	return pulumix.Output[*StreamPoolKafkaSettings]{
-		OutputState: i.ToStreamPoolKafkaSettingsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type StreamPoolKafkaSettingsOutput struct{ *pulumi.OutputState }
 
 func (StreamPoolKafkaSettingsOutput) ElementType() reflect.Type {
@@ -314,12 +277,6 @@ func (o StreamPoolKafkaSettingsOutput) ToStreamPoolKafkaSettingsPtrOutputWithCon
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v StreamPoolKafkaSettings) *StreamPoolKafkaSettings {
 		return &v
 	}).(StreamPoolKafkaSettingsPtrOutput)
-}
-
-func (o StreamPoolKafkaSettingsOutput) ToOutput(ctx context.Context) pulumix.Output[StreamPoolKafkaSettings] {
-	return pulumix.Output[StreamPoolKafkaSettings]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Enable auto creation of topic on the server.
@@ -354,12 +311,6 @@ func (o StreamPoolKafkaSettingsPtrOutput) ToStreamPoolKafkaSettingsPtrOutput() S
 
 func (o StreamPoolKafkaSettingsPtrOutput) ToStreamPoolKafkaSettingsPtrOutputWithContext(ctx context.Context) StreamPoolKafkaSettingsPtrOutput {
 	return o
-}
-
-func (o StreamPoolKafkaSettingsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*StreamPoolKafkaSettings] {
-	return pulumix.Output[*StreamPoolKafkaSettings]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o StreamPoolKafkaSettingsPtrOutput) Elem() StreamPoolKafkaSettingsOutput {
@@ -459,12 +410,6 @@ func (i StreamPoolPrivateEndpointSettingsArgs) ToStreamPoolPrivateEndpointSettin
 	return pulumi.ToOutputWithContext(ctx, i).(StreamPoolPrivateEndpointSettingsOutput)
 }
 
-func (i StreamPoolPrivateEndpointSettingsArgs) ToOutput(ctx context.Context) pulumix.Output[StreamPoolPrivateEndpointSettings] {
-	return pulumix.Output[StreamPoolPrivateEndpointSettings]{
-		OutputState: i.ToStreamPoolPrivateEndpointSettingsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i StreamPoolPrivateEndpointSettingsArgs) ToStreamPoolPrivateEndpointSettingsPtrOutput() StreamPoolPrivateEndpointSettingsPtrOutput {
 	return i.ToStreamPoolPrivateEndpointSettingsPtrOutputWithContext(context.Background())
 }
@@ -506,12 +451,6 @@ func (i *streamPoolPrivateEndpointSettingsPtrType) ToStreamPoolPrivateEndpointSe
 	return pulumi.ToOutputWithContext(ctx, i).(StreamPoolPrivateEndpointSettingsPtrOutput)
 }
 
-func (i *streamPoolPrivateEndpointSettingsPtrType) ToOutput(ctx context.Context) pulumix.Output[*StreamPoolPrivateEndpointSettings] {
-	return pulumix.Output[*StreamPoolPrivateEndpointSettings]{
-		OutputState: i.ToStreamPoolPrivateEndpointSettingsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type StreamPoolPrivateEndpointSettingsOutput struct{ *pulumi.OutputState }
 
 func (StreamPoolPrivateEndpointSettingsOutput) ElementType() reflect.Type {
@@ -534,12 +473,6 @@ func (o StreamPoolPrivateEndpointSettingsOutput) ToStreamPoolPrivateEndpointSett
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v StreamPoolPrivateEndpointSettings) *StreamPoolPrivateEndpointSettings {
 		return &v
 	}).(StreamPoolPrivateEndpointSettingsPtrOutput)
-}
-
-func (o StreamPoolPrivateEndpointSettingsOutput) ToOutput(ctx context.Context) pulumix.Output[StreamPoolPrivateEndpointSettings] {
-	return pulumix.Output[StreamPoolPrivateEndpointSettings]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The optional list of network security groups to be used with the private endpoint of the stream pool. That value cannot be changed.
@@ -572,12 +505,6 @@ func (o StreamPoolPrivateEndpointSettingsPtrOutput) ToStreamPoolPrivateEndpointS
 
 func (o StreamPoolPrivateEndpointSettingsPtrOutput) ToStreamPoolPrivateEndpointSettingsPtrOutputWithContext(ctx context.Context) StreamPoolPrivateEndpointSettingsPtrOutput {
 	return o
-}
-
-func (o StreamPoolPrivateEndpointSettingsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*StreamPoolPrivateEndpointSettings] {
-	return pulumix.Output[*StreamPoolPrivateEndpointSettings]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o StreamPoolPrivateEndpointSettingsPtrOutput) Elem() StreamPoolPrivateEndpointSettingsOutput {
@@ -684,12 +611,6 @@ func (i GetConnectHarnessesConnectHarnessArgs) ToGetConnectHarnessesConnectHarne
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectHarnessesConnectHarnessOutput)
 }
 
-func (i GetConnectHarnessesConnectHarnessArgs) ToOutput(ctx context.Context) pulumix.Output[GetConnectHarnessesConnectHarness] {
-	return pulumix.Output[GetConnectHarnessesConnectHarness]{
-		OutputState: i.ToGetConnectHarnessesConnectHarnessOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetConnectHarnessesConnectHarnessArrayInput is an input type that accepts GetConnectHarnessesConnectHarnessArray and GetConnectHarnessesConnectHarnessArrayOutput values.
 // You can construct a concrete instance of `GetConnectHarnessesConnectHarnessArrayInput` via:
 //
@@ -715,12 +636,6 @@ func (i GetConnectHarnessesConnectHarnessArray) ToGetConnectHarnessesConnectHarn
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectHarnessesConnectHarnessArrayOutput)
 }
 
-func (i GetConnectHarnessesConnectHarnessArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectHarnessesConnectHarness] {
-	return pulumix.Output[[]GetConnectHarnessesConnectHarness]{
-		OutputState: i.ToGetConnectHarnessesConnectHarnessArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConnectHarnessesConnectHarnessOutput struct{ *pulumi.OutputState }
 
 func (GetConnectHarnessesConnectHarnessOutput) ElementType() reflect.Type {
@@ -733,12 +648,6 @@ func (o GetConnectHarnessesConnectHarnessOutput) ToGetConnectHarnessesConnectHar
 
 func (o GetConnectHarnessesConnectHarnessOutput) ToGetConnectHarnessesConnectHarnessOutputWithContext(ctx context.Context) GetConnectHarnessesConnectHarnessOutput {
 	return o
-}
-
-func (o GetConnectHarnessesConnectHarnessOutput) ToOutput(ctx context.Context) pulumix.Output[GetConnectHarnessesConnectHarness] {
-	return pulumix.Output[GetConnectHarnessesConnectHarness]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment.
@@ -795,12 +704,6 @@ func (o GetConnectHarnessesConnectHarnessArrayOutput) ToGetConnectHarnessesConne
 	return o
 }
 
-func (o GetConnectHarnessesConnectHarnessArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectHarnessesConnectHarness] {
-	return pulumix.Output[[]GetConnectHarnessesConnectHarness]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetConnectHarnessesConnectHarnessArrayOutput) Index(i pulumi.IntInput) GetConnectHarnessesConnectHarnessOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectHarnessesConnectHarness {
 		return vs[0].([]GetConnectHarnessesConnectHarness)[vs[1].(int)]
@@ -844,12 +747,6 @@ func (i GetConnectHarnessesFilterArgs) ToGetConnectHarnessesFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectHarnessesFilterOutput)
 }
 
-func (i GetConnectHarnessesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetConnectHarnessesFilter] {
-	return pulumix.Output[GetConnectHarnessesFilter]{
-		OutputState: i.ToGetConnectHarnessesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetConnectHarnessesFilterArrayInput is an input type that accepts GetConnectHarnessesFilterArray and GetConnectHarnessesFilterArrayOutput values.
 // You can construct a concrete instance of `GetConnectHarnessesFilterArrayInput` via:
 //
@@ -875,12 +772,6 @@ func (i GetConnectHarnessesFilterArray) ToGetConnectHarnessesFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectHarnessesFilterArrayOutput)
 }
 
-func (i GetConnectHarnessesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectHarnessesFilter] {
-	return pulumix.Output[[]GetConnectHarnessesFilter]{
-		OutputState: i.ToGetConnectHarnessesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConnectHarnessesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetConnectHarnessesFilterOutput) ElementType() reflect.Type {
@@ -893,12 +784,6 @@ func (o GetConnectHarnessesFilterOutput) ToGetConnectHarnessesFilterOutput() Get
 
 func (o GetConnectHarnessesFilterOutput) ToGetConnectHarnessesFilterOutputWithContext(ctx context.Context) GetConnectHarnessesFilterOutput {
 	return o
-}
-
-func (o GetConnectHarnessesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetConnectHarnessesFilter] {
-	return pulumix.Output[GetConnectHarnessesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the given name exactly.
@@ -926,12 +811,6 @@ func (o GetConnectHarnessesFilterArrayOutput) ToGetConnectHarnessesFilterArrayOu
 
 func (o GetConnectHarnessesFilterArrayOutput) ToGetConnectHarnessesFilterArrayOutputWithContext(ctx context.Context) GetConnectHarnessesFilterArrayOutput {
 	return o
-}
-
-func (o GetConnectHarnessesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectHarnessesFilter] {
-	return pulumix.Output[[]GetConnectHarnessesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetConnectHarnessesFilterArrayOutput) Index(i pulumi.IntInput) GetConnectHarnessesFilterOutput {
@@ -977,12 +856,6 @@ func (i GetStreamPoolCustomEncryptionKeyArgs) ToGetStreamPoolCustomEncryptionKey
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPoolCustomEncryptionKeyOutput)
 }
 
-func (i GetStreamPoolCustomEncryptionKeyArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamPoolCustomEncryptionKey] {
-	return pulumix.Output[GetStreamPoolCustomEncryptionKey]{
-		OutputState: i.ToGetStreamPoolCustomEncryptionKeyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetStreamPoolCustomEncryptionKeyArrayInput is an input type that accepts GetStreamPoolCustomEncryptionKeyArray and GetStreamPoolCustomEncryptionKeyArrayOutput values.
 // You can construct a concrete instance of `GetStreamPoolCustomEncryptionKeyArrayInput` via:
 //
@@ -1008,12 +881,6 @@ func (i GetStreamPoolCustomEncryptionKeyArray) ToGetStreamPoolCustomEncryptionKe
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPoolCustomEncryptionKeyArrayOutput)
 }
 
-func (i GetStreamPoolCustomEncryptionKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPoolCustomEncryptionKey] {
-	return pulumix.Output[[]GetStreamPoolCustomEncryptionKey]{
-		OutputState: i.ToGetStreamPoolCustomEncryptionKeyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamPoolCustomEncryptionKeyOutput struct{ *pulumi.OutputState }
 
 func (GetStreamPoolCustomEncryptionKeyOutput) ElementType() reflect.Type {
@@ -1026,12 +893,6 @@ func (o GetStreamPoolCustomEncryptionKeyOutput) ToGetStreamPoolCustomEncryptionK
 
 func (o GetStreamPoolCustomEncryptionKeyOutput) ToGetStreamPoolCustomEncryptionKeyOutputWithContext(ctx context.Context) GetStreamPoolCustomEncryptionKeyOutput {
 	return o
-}
-
-func (o GetStreamPoolCustomEncryptionKeyOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamPoolCustomEncryptionKey] {
-	return pulumix.Output[GetStreamPoolCustomEncryptionKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Life cycle State of the custom key
@@ -1056,12 +917,6 @@ func (o GetStreamPoolCustomEncryptionKeyArrayOutput) ToGetStreamPoolCustomEncryp
 
 func (o GetStreamPoolCustomEncryptionKeyArrayOutput) ToGetStreamPoolCustomEncryptionKeyArrayOutputWithContext(ctx context.Context) GetStreamPoolCustomEncryptionKeyArrayOutput {
 	return o
-}
-
-func (o GetStreamPoolCustomEncryptionKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPoolCustomEncryptionKey] {
-	return pulumix.Output[[]GetStreamPoolCustomEncryptionKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamPoolCustomEncryptionKeyArrayOutput) Index(i pulumi.IntInput) GetStreamPoolCustomEncryptionKeyOutput {
@@ -1115,12 +970,6 @@ func (i GetStreamPoolKafkaSettingArgs) ToGetStreamPoolKafkaSettingOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPoolKafkaSettingOutput)
 }
 
-func (i GetStreamPoolKafkaSettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamPoolKafkaSetting] {
-	return pulumix.Output[GetStreamPoolKafkaSetting]{
-		OutputState: i.ToGetStreamPoolKafkaSettingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetStreamPoolKafkaSettingArrayInput is an input type that accepts GetStreamPoolKafkaSettingArray and GetStreamPoolKafkaSettingArrayOutput values.
 // You can construct a concrete instance of `GetStreamPoolKafkaSettingArrayInput` via:
 //
@@ -1146,12 +995,6 @@ func (i GetStreamPoolKafkaSettingArray) ToGetStreamPoolKafkaSettingArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPoolKafkaSettingArrayOutput)
 }
 
-func (i GetStreamPoolKafkaSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPoolKafkaSetting] {
-	return pulumix.Output[[]GetStreamPoolKafkaSetting]{
-		OutputState: i.ToGetStreamPoolKafkaSettingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamPoolKafkaSettingOutput struct{ *pulumi.OutputState }
 
 func (GetStreamPoolKafkaSettingOutput) ElementType() reflect.Type {
@@ -1164,12 +1007,6 @@ func (o GetStreamPoolKafkaSettingOutput) ToGetStreamPoolKafkaSettingOutput() Get
 
 func (o GetStreamPoolKafkaSettingOutput) ToGetStreamPoolKafkaSettingOutputWithContext(ctx context.Context) GetStreamPoolKafkaSettingOutput {
 	return o
-}
-
-func (o GetStreamPoolKafkaSettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamPoolKafkaSetting] {
-	return pulumix.Output[GetStreamPoolKafkaSetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Enable auto creation of topic on the server.
@@ -1204,12 +1041,6 @@ func (o GetStreamPoolKafkaSettingArrayOutput) ToGetStreamPoolKafkaSettingArrayOu
 
 func (o GetStreamPoolKafkaSettingArrayOutput) ToGetStreamPoolKafkaSettingArrayOutputWithContext(ctx context.Context) GetStreamPoolKafkaSettingArrayOutput {
 	return o
-}
-
-func (o GetStreamPoolKafkaSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPoolKafkaSetting] {
-	return pulumix.Output[[]GetStreamPoolKafkaSetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamPoolKafkaSettingArrayOutput) Index(i pulumi.IntInput) GetStreamPoolKafkaSettingOutput {
@@ -1259,12 +1090,6 @@ func (i GetStreamPoolPrivateEndpointSettingArgs) ToGetStreamPoolPrivateEndpointS
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPoolPrivateEndpointSettingOutput)
 }
 
-func (i GetStreamPoolPrivateEndpointSettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamPoolPrivateEndpointSetting] {
-	return pulumix.Output[GetStreamPoolPrivateEndpointSetting]{
-		OutputState: i.ToGetStreamPoolPrivateEndpointSettingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetStreamPoolPrivateEndpointSettingArrayInput is an input type that accepts GetStreamPoolPrivateEndpointSettingArray and GetStreamPoolPrivateEndpointSettingArrayOutput values.
 // You can construct a concrete instance of `GetStreamPoolPrivateEndpointSettingArrayInput` via:
 //
@@ -1290,12 +1115,6 @@ func (i GetStreamPoolPrivateEndpointSettingArray) ToGetStreamPoolPrivateEndpoint
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPoolPrivateEndpointSettingArrayOutput)
 }
 
-func (i GetStreamPoolPrivateEndpointSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPoolPrivateEndpointSetting] {
-	return pulumix.Output[[]GetStreamPoolPrivateEndpointSetting]{
-		OutputState: i.ToGetStreamPoolPrivateEndpointSettingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamPoolPrivateEndpointSettingOutput struct{ *pulumi.OutputState }
 
 func (GetStreamPoolPrivateEndpointSettingOutput) ElementType() reflect.Type {
@@ -1308,12 +1127,6 @@ func (o GetStreamPoolPrivateEndpointSettingOutput) ToGetStreamPoolPrivateEndpoin
 
 func (o GetStreamPoolPrivateEndpointSettingOutput) ToGetStreamPoolPrivateEndpointSettingOutputWithContext(ctx context.Context) GetStreamPoolPrivateEndpointSettingOutput {
 	return o
-}
-
-func (o GetStreamPoolPrivateEndpointSettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamPoolPrivateEndpointSetting] {
-	return pulumix.Output[GetStreamPoolPrivateEndpointSetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The optional list of network security groups that are associated with the private endpoint of the stream pool.
@@ -1343,12 +1156,6 @@ func (o GetStreamPoolPrivateEndpointSettingArrayOutput) ToGetStreamPoolPrivateEn
 
 func (o GetStreamPoolPrivateEndpointSettingArrayOutput) ToGetStreamPoolPrivateEndpointSettingArrayOutputWithContext(ctx context.Context) GetStreamPoolPrivateEndpointSettingArrayOutput {
 	return o
-}
-
-func (o GetStreamPoolPrivateEndpointSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPoolPrivateEndpointSetting] {
-	return pulumix.Output[[]GetStreamPoolPrivateEndpointSetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamPoolPrivateEndpointSettingArrayOutput) Index(i pulumi.IntInput) GetStreamPoolPrivateEndpointSettingOutput {
@@ -1394,12 +1201,6 @@ func (i GetStreamPoolsFilterArgs) ToGetStreamPoolsFilterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPoolsFilterOutput)
 }
 
-func (i GetStreamPoolsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamPoolsFilter] {
-	return pulumix.Output[GetStreamPoolsFilter]{
-		OutputState: i.ToGetStreamPoolsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetStreamPoolsFilterArrayInput is an input type that accepts GetStreamPoolsFilterArray and GetStreamPoolsFilterArrayOutput values.
 // You can construct a concrete instance of `GetStreamPoolsFilterArrayInput` via:
 //
@@ -1425,12 +1226,6 @@ func (i GetStreamPoolsFilterArray) ToGetStreamPoolsFilterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPoolsFilterArrayOutput)
 }
 
-func (i GetStreamPoolsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPoolsFilter] {
-	return pulumix.Output[[]GetStreamPoolsFilter]{
-		OutputState: i.ToGetStreamPoolsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamPoolsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetStreamPoolsFilterOutput) ElementType() reflect.Type {
@@ -1443,12 +1238,6 @@ func (o GetStreamPoolsFilterOutput) ToGetStreamPoolsFilterOutput() GetStreamPool
 
 func (o GetStreamPoolsFilterOutput) ToGetStreamPoolsFilterOutputWithContext(ctx context.Context) GetStreamPoolsFilterOutput {
 	return o
-}
-
-func (o GetStreamPoolsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamPoolsFilter] {
-	return pulumix.Output[GetStreamPoolsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the given name exactly.
@@ -1476,12 +1265,6 @@ func (o GetStreamPoolsFilterArrayOutput) ToGetStreamPoolsFilterArrayOutput() Get
 
 func (o GetStreamPoolsFilterArrayOutput) ToGetStreamPoolsFilterArrayOutputWithContext(ctx context.Context) GetStreamPoolsFilterArrayOutput {
 	return o
-}
-
-func (o GetStreamPoolsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPoolsFilter] {
-	return pulumix.Output[[]GetStreamPoolsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamPoolsFilterArrayOutput) Index(i pulumi.IntInput) GetStreamPoolsFilterOutput {
@@ -1571,12 +1354,6 @@ func (i GetStreamPoolsStreamPoolArgs) ToGetStreamPoolsStreamPoolOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPoolsStreamPoolOutput)
 }
 
-func (i GetStreamPoolsStreamPoolArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamPoolsStreamPool] {
-	return pulumix.Output[GetStreamPoolsStreamPool]{
-		OutputState: i.ToGetStreamPoolsStreamPoolOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetStreamPoolsStreamPoolArrayInput is an input type that accepts GetStreamPoolsStreamPoolArray and GetStreamPoolsStreamPoolArrayOutput values.
 // You can construct a concrete instance of `GetStreamPoolsStreamPoolArrayInput` via:
 //
@@ -1602,12 +1379,6 @@ func (i GetStreamPoolsStreamPoolArray) ToGetStreamPoolsStreamPoolArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPoolsStreamPoolArrayOutput)
 }
 
-func (i GetStreamPoolsStreamPoolArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPoolsStreamPool] {
-	return pulumix.Output[[]GetStreamPoolsStreamPool]{
-		OutputState: i.ToGetStreamPoolsStreamPoolArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamPoolsStreamPoolOutput struct{ *pulumi.OutputState }
 
 func (GetStreamPoolsStreamPoolOutput) ElementType() reflect.Type {
@@ -1620,12 +1391,6 @@ func (o GetStreamPoolsStreamPoolOutput) ToGetStreamPoolsStreamPoolOutput() GetSt
 
 func (o GetStreamPoolsStreamPoolOutput) ToGetStreamPoolsStreamPoolOutputWithContext(ctx context.Context) GetStreamPoolsStreamPoolOutput {
 	return o
-}
-
-func (o GetStreamPoolsStreamPoolOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamPoolsStreamPool] {
-	return pulumix.Output[GetStreamPoolsStreamPool]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment.
@@ -1711,12 +1476,6 @@ func (o GetStreamPoolsStreamPoolArrayOutput) ToGetStreamPoolsStreamPoolArrayOutp
 	return o
 }
 
-func (o GetStreamPoolsStreamPoolArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPoolsStreamPool] {
-	return pulumix.Output[[]GetStreamPoolsStreamPool]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetStreamPoolsStreamPoolArrayOutput) Index(i pulumi.IntInput) GetStreamPoolsStreamPoolOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamPoolsStreamPool {
 		return vs[0].([]GetStreamPoolsStreamPool)[vs[1].(int)]
@@ -1760,12 +1519,6 @@ func (i GetStreamPoolsStreamPoolCustomEncryptionKeyArgs) ToGetStreamPoolsStreamP
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPoolsStreamPoolCustomEncryptionKeyOutput)
 }
 
-func (i GetStreamPoolsStreamPoolCustomEncryptionKeyArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamPoolsStreamPoolCustomEncryptionKey] {
-	return pulumix.Output[GetStreamPoolsStreamPoolCustomEncryptionKey]{
-		OutputState: i.ToGetStreamPoolsStreamPoolCustomEncryptionKeyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetStreamPoolsStreamPoolCustomEncryptionKeyArrayInput is an input type that accepts GetStreamPoolsStreamPoolCustomEncryptionKeyArray and GetStreamPoolsStreamPoolCustomEncryptionKeyArrayOutput values.
 // You can construct a concrete instance of `GetStreamPoolsStreamPoolCustomEncryptionKeyArrayInput` via:
 //
@@ -1791,12 +1544,6 @@ func (i GetStreamPoolsStreamPoolCustomEncryptionKeyArray) ToGetStreamPoolsStream
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPoolsStreamPoolCustomEncryptionKeyArrayOutput)
 }
 
-func (i GetStreamPoolsStreamPoolCustomEncryptionKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPoolsStreamPoolCustomEncryptionKey] {
-	return pulumix.Output[[]GetStreamPoolsStreamPoolCustomEncryptionKey]{
-		OutputState: i.ToGetStreamPoolsStreamPoolCustomEncryptionKeyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamPoolsStreamPoolCustomEncryptionKeyOutput struct{ *pulumi.OutputState }
 
 func (GetStreamPoolsStreamPoolCustomEncryptionKeyOutput) ElementType() reflect.Type {
@@ -1809,12 +1556,6 @@ func (o GetStreamPoolsStreamPoolCustomEncryptionKeyOutput) ToGetStreamPoolsStrea
 
 func (o GetStreamPoolsStreamPoolCustomEncryptionKeyOutput) ToGetStreamPoolsStreamPoolCustomEncryptionKeyOutputWithContext(ctx context.Context) GetStreamPoolsStreamPoolCustomEncryptionKeyOutput {
 	return o
-}
-
-func (o GetStreamPoolsStreamPoolCustomEncryptionKeyOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamPoolsStreamPoolCustomEncryptionKey] {
-	return pulumix.Output[GetStreamPoolsStreamPoolCustomEncryptionKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Life cycle State of the custom key
@@ -1839,12 +1580,6 @@ func (o GetStreamPoolsStreamPoolCustomEncryptionKeyArrayOutput) ToGetStreamPools
 
 func (o GetStreamPoolsStreamPoolCustomEncryptionKeyArrayOutput) ToGetStreamPoolsStreamPoolCustomEncryptionKeyArrayOutputWithContext(ctx context.Context) GetStreamPoolsStreamPoolCustomEncryptionKeyArrayOutput {
 	return o
-}
-
-func (o GetStreamPoolsStreamPoolCustomEncryptionKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPoolsStreamPoolCustomEncryptionKey] {
-	return pulumix.Output[[]GetStreamPoolsStreamPoolCustomEncryptionKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamPoolsStreamPoolCustomEncryptionKeyArrayOutput) Index(i pulumi.IntInput) GetStreamPoolsStreamPoolCustomEncryptionKeyOutput {
@@ -1898,12 +1633,6 @@ func (i GetStreamPoolsStreamPoolKafkaSettingArgs) ToGetStreamPoolsStreamPoolKafk
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPoolsStreamPoolKafkaSettingOutput)
 }
 
-func (i GetStreamPoolsStreamPoolKafkaSettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamPoolsStreamPoolKafkaSetting] {
-	return pulumix.Output[GetStreamPoolsStreamPoolKafkaSetting]{
-		OutputState: i.ToGetStreamPoolsStreamPoolKafkaSettingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetStreamPoolsStreamPoolKafkaSettingArrayInput is an input type that accepts GetStreamPoolsStreamPoolKafkaSettingArray and GetStreamPoolsStreamPoolKafkaSettingArrayOutput values.
 // You can construct a concrete instance of `GetStreamPoolsStreamPoolKafkaSettingArrayInput` via:
 //
@@ -1929,12 +1658,6 @@ func (i GetStreamPoolsStreamPoolKafkaSettingArray) ToGetStreamPoolsStreamPoolKaf
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPoolsStreamPoolKafkaSettingArrayOutput)
 }
 
-func (i GetStreamPoolsStreamPoolKafkaSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPoolsStreamPoolKafkaSetting] {
-	return pulumix.Output[[]GetStreamPoolsStreamPoolKafkaSetting]{
-		OutputState: i.ToGetStreamPoolsStreamPoolKafkaSettingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamPoolsStreamPoolKafkaSettingOutput struct{ *pulumi.OutputState }
 
 func (GetStreamPoolsStreamPoolKafkaSettingOutput) ElementType() reflect.Type {
@@ -1947,12 +1670,6 @@ func (o GetStreamPoolsStreamPoolKafkaSettingOutput) ToGetStreamPoolsStreamPoolKa
 
 func (o GetStreamPoolsStreamPoolKafkaSettingOutput) ToGetStreamPoolsStreamPoolKafkaSettingOutputWithContext(ctx context.Context) GetStreamPoolsStreamPoolKafkaSettingOutput {
 	return o
-}
-
-func (o GetStreamPoolsStreamPoolKafkaSettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamPoolsStreamPoolKafkaSetting] {
-	return pulumix.Output[GetStreamPoolsStreamPoolKafkaSetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Enable auto creation of topic on the server.
@@ -1987,12 +1704,6 @@ func (o GetStreamPoolsStreamPoolKafkaSettingArrayOutput) ToGetStreamPoolsStreamP
 
 func (o GetStreamPoolsStreamPoolKafkaSettingArrayOutput) ToGetStreamPoolsStreamPoolKafkaSettingArrayOutputWithContext(ctx context.Context) GetStreamPoolsStreamPoolKafkaSettingArrayOutput {
 	return o
-}
-
-func (o GetStreamPoolsStreamPoolKafkaSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPoolsStreamPoolKafkaSetting] {
-	return pulumix.Output[[]GetStreamPoolsStreamPoolKafkaSetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamPoolsStreamPoolKafkaSettingArrayOutput) Index(i pulumi.IntInput) GetStreamPoolsStreamPoolKafkaSettingOutput {
@@ -2042,12 +1753,6 @@ func (i GetStreamPoolsStreamPoolPrivateEndpointSettingArgs) ToGetStreamPoolsStre
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPoolsStreamPoolPrivateEndpointSettingOutput)
 }
 
-func (i GetStreamPoolsStreamPoolPrivateEndpointSettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamPoolsStreamPoolPrivateEndpointSetting] {
-	return pulumix.Output[GetStreamPoolsStreamPoolPrivateEndpointSetting]{
-		OutputState: i.ToGetStreamPoolsStreamPoolPrivateEndpointSettingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetStreamPoolsStreamPoolPrivateEndpointSettingArrayInput is an input type that accepts GetStreamPoolsStreamPoolPrivateEndpointSettingArray and GetStreamPoolsStreamPoolPrivateEndpointSettingArrayOutput values.
 // You can construct a concrete instance of `GetStreamPoolsStreamPoolPrivateEndpointSettingArrayInput` via:
 //
@@ -2073,12 +1778,6 @@ func (i GetStreamPoolsStreamPoolPrivateEndpointSettingArray) ToGetStreamPoolsStr
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPoolsStreamPoolPrivateEndpointSettingArrayOutput)
 }
 
-func (i GetStreamPoolsStreamPoolPrivateEndpointSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPoolsStreamPoolPrivateEndpointSetting] {
-	return pulumix.Output[[]GetStreamPoolsStreamPoolPrivateEndpointSetting]{
-		OutputState: i.ToGetStreamPoolsStreamPoolPrivateEndpointSettingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamPoolsStreamPoolPrivateEndpointSettingOutput struct{ *pulumi.OutputState }
 
 func (GetStreamPoolsStreamPoolPrivateEndpointSettingOutput) ElementType() reflect.Type {
@@ -2091,12 +1790,6 @@ func (o GetStreamPoolsStreamPoolPrivateEndpointSettingOutput) ToGetStreamPoolsSt
 
 func (o GetStreamPoolsStreamPoolPrivateEndpointSettingOutput) ToGetStreamPoolsStreamPoolPrivateEndpointSettingOutputWithContext(ctx context.Context) GetStreamPoolsStreamPoolPrivateEndpointSettingOutput {
 	return o
-}
-
-func (o GetStreamPoolsStreamPoolPrivateEndpointSettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamPoolsStreamPoolPrivateEndpointSetting] {
-	return pulumix.Output[GetStreamPoolsStreamPoolPrivateEndpointSetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The optional list of network security groups that are associated with the private endpoint of the stream pool.
@@ -2126,12 +1819,6 @@ func (o GetStreamPoolsStreamPoolPrivateEndpointSettingArrayOutput) ToGetStreamPo
 
 func (o GetStreamPoolsStreamPoolPrivateEndpointSettingArrayOutput) ToGetStreamPoolsStreamPoolPrivateEndpointSettingArrayOutputWithContext(ctx context.Context) GetStreamPoolsStreamPoolPrivateEndpointSettingArrayOutput {
 	return o
-}
-
-func (o GetStreamPoolsStreamPoolPrivateEndpointSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPoolsStreamPoolPrivateEndpointSetting] {
-	return pulumix.Output[[]GetStreamPoolsStreamPoolPrivateEndpointSetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamPoolsStreamPoolPrivateEndpointSettingArrayOutput) Index(i pulumi.IntInput) GetStreamPoolsStreamPoolPrivateEndpointSettingOutput {
@@ -2177,12 +1864,6 @@ func (i GetStreamsFilterArgs) ToGetStreamsFilterOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamsFilterOutput)
 }
 
-func (i GetStreamsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamsFilter] {
-	return pulumix.Output[GetStreamsFilter]{
-		OutputState: i.ToGetStreamsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetStreamsFilterArrayInput is an input type that accepts GetStreamsFilterArray and GetStreamsFilterArrayOutput values.
 // You can construct a concrete instance of `GetStreamsFilterArrayInput` via:
 //
@@ -2208,12 +1889,6 @@ func (i GetStreamsFilterArray) ToGetStreamsFilterArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamsFilterArrayOutput)
 }
 
-func (i GetStreamsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamsFilter] {
-	return pulumix.Output[[]GetStreamsFilter]{
-		OutputState: i.ToGetStreamsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetStreamsFilterOutput) ElementType() reflect.Type {
@@ -2226,12 +1901,6 @@ func (o GetStreamsFilterOutput) ToGetStreamsFilterOutput() GetStreamsFilterOutpu
 
 func (o GetStreamsFilterOutput) ToGetStreamsFilterOutputWithContext(ctx context.Context) GetStreamsFilterOutput {
 	return o
-}
-
-func (o GetStreamsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamsFilter] {
-	return pulumix.Output[GetStreamsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the given name exactly.
@@ -2259,12 +1928,6 @@ func (o GetStreamsFilterArrayOutput) ToGetStreamsFilterArrayOutput() GetStreamsF
 
 func (o GetStreamsFilterArrayOutput) ToGetStreamsFilterArrayOutputWithContext(ctx context.Context) GetStreamsFilterArrayOutput {
 	return o
-}
-
-func (o GetStreamsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamsFilter] {
-	return pulumix.Output[[]GetStreamsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamsFilterArrayOutput) Index(i pulumi.IntInput) GetStreamsFilterOutput {
@@ -2350,12 +2013,6 @@ func (i GetStreamsStreamArgs) ToGetStreamsStreamOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamsStreamOutput)
 }
 
-func (i GetStreamsStreamArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamsStream] {
-	return pulumix.Output[GetStreamsStream]{
-		OutputState: i.ToGetStreamsStreamOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetStreamsStreamArrayInput is an input type that accepts GetStreamsStreamArray and GetStreamsStreamArrayOutput values.
 // You can construct a concrete instance of `GetStreamsStreamArrayInput` via:
 //
@@ -2381,12 +2038,6 @@ func (i GetStreamsStreamArray) ToGetStreamsStreamArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamsStreamArrayOutput)
 }
 
-func (i GetStreamsStreamArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamsStream] {
-	return pulumix.Output[[]GetStreamsStream]{
-		OutputState: i.ToGetStreamsStreamArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamsStreamOutput struct{ *pulumi.OutputState }
 
 func (GetStreamsStreamOutput) ElementType() reflect.Type {
@@ -2399,12 +2050,6 @@ func (o GetStreamsStreamOutput) ToGetStreamsStreamOutput() GetStreamsStreamOutpu
 
 func (o GetStreamsStreamOutput) ToGetStreamsStreamOutputWithContext(ctx context.Context) GetStreamsStreamOutput {
 	return o
-}
-
-func (o GetStreamsStreamOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamsStream] {
-	return pulumix.Output[GetStreamsStream]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment. Is exclusive with the `streamPoolId` parameter. One of them is required.
@@ -2479,12 +2124,6 @@ func (o GetStreamsStreamArrayOutput) ToGetStreamsStreamArrayOutput() GetStreamsS
 
 func (o GetStreamsStreamArrayOutput) ToGetStreamsStreamArrayOutputWithContext(ctx context.Context) GetStreamsStreamArrayOutput {
 	return o
-}
-
-func (o GetStreamsStreamArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamsStream] {
-	return pulumix.Output[[]GetStreamsStream]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamsStreamArrayOutput) Index(i pulumi.IntInput) GetStreamsStreamOutput {

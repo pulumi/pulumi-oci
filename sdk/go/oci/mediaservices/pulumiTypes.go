@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -57,12 +56,6 @@ func (i MediaAssetMediaAssetTagArgs) ToMediaAssetMediaAssetTagOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(MediaAssetMediaAssetTagOutput)
 }
 
-func (i MediaAssetMediaAssetTagArgs) ToOutput(ctx context.Context) pulumix.Output[MediaAssetMediaAssetTag] {
-	return pulumix.Output[MediaAssetMediaAssetTag]{
-		OutputState: i.ToMediaAssetMediaAssetTagOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MediaAssetMediaAssetTagArrayInput is an input type that accepts MediaAssetMediaAssetTagArray and MediaAssetMediaAssetTagArrayOutput values.
 // You can construct a concrete instance of `MediaAssetMediaAssetTagArrayInput` via:
 //
@@ -88,12 +81,6 @@ func (i MediaAssetMediaAssetTagArray) ToMediaAssetMediaAssetTagArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(MediaAssetMediaAssetTagArrayOutput)
 }
 
-func (i MediaAssetMediaAssetTagArray) ToOutput(ctx context.Context) pulumix.Output[[]MediaAssetMediaAssetTag] {
-	return pulumix.Output[[]MediaAssetMediaAssetTag]{
-		OutputState: i.ToMediaAssetMediaAssetTagArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MediaAssetMediaAssetTagOutput struct{ *pulumi.OutputState }
 
 func (MediaAssetMediaAssetTagOutput) ElementType() reflect.Type {
@@ -106,12 +93,6 @@ func (o MediaAssetMediaAssetTagOutput) ToMediaAssetMediaAssetTagOutput() MediaAs
 
 func (o MediaAssetMediaAssetTagOutput) ToMediaAssetMediaAssetTagOutputWithContext(ctx context.Context) MediaAssetMediaAssetTagOutput {
 	return o
-}
-
-func (o MediaAssetMediaAssetTagOutput) ToOutput(ctx context.Context) pulumix.Output[MediaAssetMediaAssetTag] {
-	return pulumix.Output[MediaAssetMediaAssetTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The type of the media asset.
@@ -139,12 +120,6 @@ func (o MediaAssetMediaAssetTagArrayOutput) ToMediaAssetMediaAssetTagArrayOutput
 
 func (o MediaAssetMediaAssetTagArrayOutput) ToMediaAssetMediaAssetTagArrayOutputWithContext(ctx context.Context) MediaAssetMediaAssetTagArrayOutput {
 	return o
-}
-
-func (o MediaAssetMediaAssetTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MediaAssetMediaAssetTag] {
-	return pulumix.Output[[]MediaAssetMediaAssetTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MediaAssetMediaAssetTagArrayOutput) Index(i pulumi.IntInput) MediaAssetMediaAssetTagOutput {
@@ -186,12 +161,6 @@ func (i MediaAssetMetadataArgs) ToMediaAssetMetadataOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(MediaAssetMetadataOutput)
 }
 
-func (i MediaAssetMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[MediaAssetMetadata] {
-	return pulumix.Output[MediaAssetMetadata]{
-		OutputState: i.ToMediaAssetMetadataOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MediaAssetMetadataArrayInput is an input type that accepts MediaAssetMetadataArray and MediaAssetMetadataArrayOutput values.
 // You can construct a concrete instance of `MediaAssetMetadataArrayInput` via:
 //
@@ -217,12 +186,6 @@ func (i MediaAssetMetadataArray) ToMediaAssetMetadataArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(MediaAssetMetadataArrayOutput)
 }
 
-func (i MediaAssetMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]MediaAssetMetadata] {
-	return pulumix.Output[[]MediaAssetMetadata]{
-		OutputState: i.ToMediaAssetMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MediaAssetMetadataOutput struct{ *pulumi.OutputState }
 
 func (MediaAssetMetadataOutput) ElementType() reflect.Type {
@@ -235,12 +198,6 @@ func (o MediaAssetMetadataOutput) ToMediaAssetMetadataOutput() MediaAssetMetadat
 
 func (o MediaAssetMetadataOutput) ToMediaAssetMetadataOutputWithContext(ctx context.Context) MediaAssetMetadataOutput {
 	return o
-}
-
-func (o MediaAssetMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[MediaAssetMetadata] {
-	return pulumix.Output[MediaAssetMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) JSON string containing the technial metadata for the media asset.
@@ -260,12 +217,6 @@ func (o MediaAssetMetadataArrayOutput) ToMediaAssetMetadataArrayOutput() MediaAs
 
 func (o MediaAssetMetadataArrayOutput) ToMediaAssetMetadataArrayOutputWithContext(ctx context.Context) MediaAssetMetadataArrayOutput {
 	return o
-}
-
-func (o MediaAssetMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MediaAssetMetadata] {
-	return pulumix.Output[[]MediaAssetMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MediaAssetMetadataArrayOutput) Index(i pulumi.IntInput) MediaAssetMetadataOutput {
@@ -323,12 +274,6 @@ func (i MediaWorkflowJobOutputTypeArgs) ToMediaWorkflowJobOutputTypeOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowJobOutputTypeOutput)
 }
 
-func (i MediaWorkflowJobOutputTypeArgs) ToOutput(ctx context.Context) pulumix.Output[MediaWorkflowJobOutputType] {
-	return pulumix.Output[MediaWorkflowJobOutputType]{
-		OutputState: i.ToMediaWorkflowJobOutputTypeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MediaWorkflowJobOutputTypeArrayInput is an input type that accepts MediaWorkflowJobOutputTypeArray and MediaWorkflowJobOutputTypeArrayOutput values.
 // You can construct a concrete instance of `MediaWorkflowJobOutputTypeArrayInput` via:
 //
@@ -354,12 +299,6 @@ func (i MediaWorkflowJobOutputTypeArray) ToMediaWorkflowJobOutputTypeArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowJobOutputTypeArrayOutput)
 }
 
-func (i MediaWorkflowJobOutputTypeArray) ToOutput(ctx context.Context) pulumix.Output[[]MediaWorkflowJobOutputType] {
-	return pulumix.Output[[]MediaWorkflowJobOutputType]{
-		OutputState: i.ToMediaWorkflowJobOutputTypeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MediaWorkflowJobOutputTypeOutput struct{ *pulumi.OutputState }
 
 func (MediaWorkflowJobOutputTypeOutput) ElementType() reflect.Type {
@@ -372,12 +311,6 @@ func (o MediaWorkflowJobOutputTypeOutput) ToMediaWorkflowJobOutputTypeOutput() M
 
 func (o MediaWorkflowJobOutputTypeOutput) ToMediaWorkflowJobOutputTypeOutputWithContext(ctx context.Context) MediaWorkflowJobOutputTypeOutput {
 	return o
-}
-
-func (o MediaWorkflowJobOutputTypeOutput) ToOutput(ctx context.Context) pulumix.Output[MediaWorkflowJobOutputType] {
-	return pulumix.Output[MediaWorkflowJobOutputType]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Type of job output.
@@ -417,12 +350,6 @@ func (o MediaWorkflowJobOutputTypeArrayOutput) ToMediaWorkflowJobOutputTypeArray
 
 func (o MediaWorkflowJobOutputTypeArrayOutput) ToMediaWorkflowJobOutputTypeArrayOutputWithContext(ctx context.Context) MediaWorkflowJobOutputTypeArrayOutput {
 	return o
-}
-
-func (o MediaWorkflowJobOutputTypeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MediaWorkflowJobOutputType] {
-	return pulumix.Output[[]MediaWorkflowJobOutputType]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MediaWorkflowJobOutputTypeArrayOutput) Index(i pulumi.IntInput) MediaWorkflowJobOutputTypeOutput {
@@ -472,12 +399,6 @@ func (i MediaWorkflowJobTaskLifecycleStateArgs) ToMediaWorkflowJobTaskLifecycleS
 	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowJobTaskLifecycleStateOutput)
 }
 
-func (i MediaWorkflowJobTaskLifecycleStateArgs) ToOutput(ctx context.Context) pulumix.Output[MediaWorkflowJobTaskLifecycleState] {
-	return pulumix.Output[MediaWorkflowJobTaskLifecycleState]{
-		OutputState: i.ToMediaWorkflowJobTaskLifecycleStateOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MediaWorkflowJobTaskLifecycleStateArrayInput is an input type that accepts MediaWorkflowJobTaskLifecycleStateArray and MediaWorkflowJobTaskLifecycleStateArrayOutput values.
 // You can construct a concrete instance of `MediaWorkflowJobTaskLifecycleStateArrayInput` via:
 //
@@ -503,12 +424,6 @@ func (i MediaWorkflowJobTaskLifecycleStateArray) ToMediaWorkflowJobTaskLifecycle
 	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowJobTaskLifecycleStateArrayOutput)
 }
 
-func (i MediaWorkflowJobTaskLifecycleStateArray) ToOutput(ctx context.Context) pulumix.Output[[]MediaWorkflowJobTaskLifecycleState] {
-	return pulumix.Output[[]MediaWorkflowJobTaskLifecycleState]{
-		OutputState: i.ToMediaWorkflowJobTaskLifecycleStateArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MediaWorkflowJobTaskLifecycleStateOutput struct{ *pulumi.OutputState }
 
 func (MediaWorkflowJobTaskLifecycleStateOutput) ElementType() reflect.Type {
@@ -521,12 +436,6 @@ func (o MediaWorkflowJobTaskLifecycleStateOutput) ToMediaWorkflowJobTaskLifecycl
 
 func (o MediaWorkflowJobTaskLifecycleStateOutput) ToMediaWorkflowJobTaskLifecycleStateOutputWithContext(ctx context.Context) MediaWorkflowJobTaskLifecycleStateOutput {
 	return o
-}
-
-func (o MediaWorkflowJobTaskLifecycleStateOutput) ToOutput(ctx context.Context) pulumix.Output[MediaWorkflowJobTaskLifecycleState] {
-	return pulumix.Output[MediaWorkflowJobTaskLifecycleState]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique key within a MediaWorkflowJob for the task.
@@ -556,12 +465,6 @@ func (o MediaWorkflowJobTaskLifecycleStateArrayOutput) ToMediaWorkflowJobTaskLif
 
 func (o MediaWorkflowJobTaskLifecycleStateArrayOutput) ToMediaWorkflowJobTaskLifecycleStateArrayOutputWithContext(ctx context.Context) MediaWorkflowJobTaskLifecycleStateArrayOutput {
 	return o
-}
-
-func (o MediaWorkflowJobTaskLifecycleStateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MediaWorkflowJobTaskLifecycleState] {
-	return pulumix.Output[[]MediaWorkflowJobTaskLifecycleState]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MediaWorkflowJobTaskLifecycleStateArrayOutput) Index(i pulumi.IntInput) MediaWorkflowJobTaskLifecycleStateOutput {
@@ -633,12 +536,6 @@ func (i MediaWorkflowTaskArgs) ToMediaWorkflowTaskOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowTaskOutput)
 }
 
-func (i MediaWorkflowTaskArgs) ToOutput(ctx context.Context) pulumix.Output[MediaWorkflowTask] {
-	return pulumix.Output[MediaWorkflowTask]{
-		OutputState: i.ToMediaWorkflowTaskOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MediaWorkflowTaskArrayInput is an input type that accepts MediaWorkflowTaskArray and MediaWorkflowTaskArrayOutput values.
 // You can construct a concrete instance of `MediaWorkflowTaskArrayInput` via:
 //
@@ -664,12 +561,6 @@ func (i MediaWorkflowTaskArray) ToMediaWorkflowTaskArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowTaskArrayOutput)
 }
 
-func (i MediaWorkflowTaskArray) ToOutput(ctx context.Context) pulumix.Output[[]MediaWorkflowTask] {
-	return pulumix.Output[[]MediaWorkflowTask]{
-		OutputState: i.ToMediaWorkflowTaskArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MediaWorkflowTaskOutput struct{ *pulumi.OutputState }
 
 func (MediaWorkflowTaskOutput) ElementType() reflect.Type {
@@ -682,12 +573,6 @@ func (o MediaWorkflowTaskOutput) ToMediaWorkflowTaskOutput() MediaWorkflowTaskOu
 
 func (o MediaWorkflowTaskOutput) ToMediaWorkflowTaskOutputWithContext(ctx context.Context) MediaWorkflowTaskOutput {
 	return o
-}
-
-func (o MediaWorkflowTaskOutput) ToOutput(ctx context.Context) pulumix.Output[MediaWorkflowTask] {
-	return pulumix.Output[MediaWorkflowTask]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
@@ -740,12 +625,6 @@ func (o MediaWorkflowTaskArrayOutput) ToMediaWorkflowTaskArrayOutput() MediaWork
 
 func (o MediaWorkflowTaskArrayOutput) ToMediaWorkflowTaskArrayOutputWithContext(ctx context.Context) MediaWorkflowTaskArrayOutput {
 	return o
-}
-
-func (o MediaWorkflowTaskArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MediaWorkflowTask] {
-	return pulumix.Output[[]MediaWorkflowTask]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MediaWorkflowTaskArrayOutput) Index(i pulumi.IntInput) MediaWorkflowTaskOutput {
@@ -831,12 +710,6 @@ func (i StreamCdnConfigConfigArgs) ToStreamCdnConfigConfigOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(StreamCdnConfigConfigOutput)
 }
 
-func (i StreamCdnConfigConfigArgs) ToOutput(ctx context.Context) pulumix.Output[StreamCdnConfigConfig] {
-	return pulumix.Output[StreamCdnConfigConfig]{
-		OutputState: i.ToStreamCdnConfigConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i StreamCdnConfigConfigArgs) ToStreamCdnConfigConfigPtrOutput() StreamCdnConfigConfigPtrOutput {
 	return i.ToStreamCdnConfigConfigPtrOutputWithContext(context.Background())
 }
@@ -878,12 +751,6 @@ func (i *streamCdnConfigConfigPtrType) ToStreamCdnConfigConfigPtrOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(StreamCdnConfigConfigPtrOutput)
 }
 
-func (i *streamCdnConfigConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*StreamCdnConfigConfig] {
-	return pulumix.Output[*StreamCdnConfigConfig]{
-		OutputState: i.ToStreamCdnConfigConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type StreamCdnConfigConfigOutput struct{ *pulumi.OutputState }
 
 func (StreamCdnConfigConfigOutput) ElementType() reflect.Type {
@@ -906,12 +773,6 @@ func (o StreamCdnConfigConfigOutput) ToStreamCdnConfigConfigPtrOutputWithContext
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v StreamCdnConfigConfig) *StreamCdnConfigConfig {
 		return &v
 	}).(StreamCdnConfigConfigPtrOutput)
-}
-
-func (o StreamCdnConfigConfigOutput) ToOutput(ctx context.Context) pulumix.Output[StreamCdnConfigConfig] {
-	return pulumix.Output[StreamCdnConfigConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The hostname of the CDN edge server to use when building CDN URLs.
@@ -986,12 +847,6 @@ func (o StreamCdnConfigConfigPtrOutput) ToStreamCdnConfigConfigPtrOutput() Strea
 
 func (o StreamCdnConfigConfigPtrOutput) ToStreamCdnConfigConfigPtrOutputWithContext(ctx context.Context) StreamCdnConfigConfigPtrOutput {
 	return o
-}
-
-func (o StreamCdnConfigConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*StreamCdnConfigConfig] {
-	return pulumix.Output[*StreamCdnConfigConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o StreamCdnConfigConfigPtrOutput) Elem() StreamCdnConfigConfigOutput {
@@ -1161,12 +1016,6 @@ func (i StreamPackagingConfigEncryptionArgs) ToStreamPackagingConfigEncryptionOu
 	return pulumi.ToOutputWithContext(ctx, i).(StreamPackagingConfigEncryptionOutput)
 }
 
-func (i StreamPackagingConfigEncryptionArgs) ToOutput(ctx context.Context) pulumix.Output[StreamPackagingConfigEncryption] {
-	return pulumix.Output[StreamPackagingConfigEncryption]{
-		OutputState: i.ToStreamPackagingConfigEncryptionOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i StreamPackagingConfigEncryptionArgs) ToStreamPackagingConfigEncryptionPtrOutput() StreamPackagingConfigEncryptionPtrOutput {
 	return i.ToStreamPackagingConfigEncryptionPtrOutputWithContext(context.Background())
 }
@@ -1208,12 +1057,6 @@ func (i *streamPackagingConfigEncryptionPtrType) ToStreamPackagingConfigEncrypti
 	return pulumi.ToOutputWithContext(ctx, i).(StreamPackagingConfigEncryptionPtrOutput)
 }
 
-func (i *streamPackagingConfigEncryptionPtrType) ToOutput(ctx context.Context) pulumix.Output[*StreamPackagingConfigEncryption] {
-	return pulumix.Output[*StreamPackagingConfigEncryption]{
-		OutputState: i.ToStreamPackagingConfigEncryptionPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type StreamPackagingConfigEncryptionOutput struct{ *pulumi.OutputState }
 
 func (StreamPackagingConfigEncryptionOutput) ElementType() reflect.Type {
@@ -1238,12 +1081,6 @@ func (o StreamPackagingConfigEncryptionOutput) ToStreamPackagingConfigEncryption
 	}).(StreamPackagingConfigEncryptionPtrOutput)
 }
 
-func (o StreamPackagingConfigEncryptionOutput) ToOutput(ctx context.Context) pulumix.Output[StreamPackagingConfigEncryption] {
-	return pulumix.Output[StreamPackagingConfigEncryption]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The encryption algorithm for the stream packaging configuration.
 func (o StreamPackagingConfigEncryptionOutput) Algorithm() pulumi.StringOutput {
 	return o.ApplyT(func(v StreamPackagingConfigEncryption) string { return v.Algorithm }).(pulumi.StringOutput)
@@ -1266,12 +1103,6 @@ func (o StreamPackagingConfigEncryptionPtrOutput) ToStreamPackagingConfigEncrypt
 
 func (o StreamPackagingConfigEncryptionPtrOutput) ToStreamPackagingConfigEncryptionPtrOutputWithContext(ctx context.Context) StreamPackagingConfigEncryptionPtrOutput {
 	return o
-}
-
-func (o StreamPackagingConfigEncryptionPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*StreamPackagingConfigEncryption] {
-	return pulumix.Output[*StreamPackagingConfigEncryption]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o StreamPackagingConfigEncryptionPtrOutput) Elem() StreamPackagingConfigEncryptionOutput {
@@ -1341,12 +1172,6 @@ func (i GetMediaAssetMediaAssetTagArgs) ToGetMediaAssetMediaAssetTagOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetMediaAssetTagOutput)
 }
 
-func (i GetMediaAssetMediaAssetTagArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaAssetMediaAssetTag] {
-	return pulumix.Output[GetMediaAssetMediaAssetTag]{
-		OutputState: i.ToGetMediaAssetMediaAssetTagOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaAssetMediaAssetTagArrayInput is an input type that accepts GetMediaAssetMediaAssetTagArray and GetMediaAssetMediaAssetTagArrayOutput values.
 // You can construct a concrete instance of `GetMediaAssetMediaAssetTagArrayInput` via:
 //
@@ -1372,12 +1197,6 @@ func (i GetMediaAssetMediaAssetTagArray) ToGetMediaAssetMediaAssetTagArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetMediaAssetTagArrayOutput)
 }
 
-func (i GetMediaAssetMediaAssetTagArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaAssetMediaAssetTag] {
-	return pulumix.Output[[]GetMediaAssetMediaAssetTag]{
-		OutputState: i.ToGetMediaAssetMediaAssetTagArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaAssetMediaAssetTagOutput struct{ *pulumi.OutputState }
 
 func (GetMediaAssetMediaAssetTagOutput) ElementType() reflect.Type {
@@ -1390,12 +1209,6 @@ func (o GetMediaAssetMediaAssetTagOutput) ToGetMediaAssetMediaAssetTagOutput() G
 
 func (o GetMediaAssetMediaAssetTagOutput) ToGetMediaAssetMediaAssetTagOutputWithContext(ctx context.Context) GetMediaAssetMediaAssetTagOutput {
 	return o
-}
-
-func (o GetMediaAssetMediaAssetTagOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaAssetMediaAssetTag] {
-	return pulumix.Output[GetMediaAssetMediaAssetTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The type of the media asset.
@@ -1420,12 +1233,6 @@ func (o GetMediaAssetMediaAssetTagArrayOutput) ToGetMediaAssetMediaAssetTagArray
 
 func (o GetMediaAssetMediaAssetTagArrayOutput) ToGetMediaAssetMediaAssetTagArrayOutputWithContext(ctx context.Context) GetMediaAssetMediaAssetTagArrayOutput {
 	return o
-}
-
-func (o GetMediaAssetMediaAssetTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaAssetMediaAssetTag] {
-	return pulumix.Output[[]GetMediaAssetMediaAssetTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaAssetMediaAssetTagArrayOutput) Index(i pulumi.IntInput) GetMediaAssetMediaAssetTagOutput {
@@ -1467,12 +1274,6 @@ func (i GetMediaAssetMetadataArgs) ToGetMediaAssetMetadataOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetMetadataOutput)
 }
 
-func (i GetMediaAssetMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaAssetMetadata] {
-	return pulumix.Output[GetMediaAssetMetadata]{
-		OutputState: i.ToGetMediaAssetMetadataOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaAssetMetadataArrayInput is an input type that accepts GetMediaAssetMetadataArray and GetMediaAssetMetadataArrayOutput values.
 // You can construct a concrete instance of `GetMediaAssetMetadataArrayInput` via:
 //
@@ -1498,12 +1299,6 @@ func (i GetMediaAssetMetadataArray) ToGetMediaAssetMetadataArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetMetadataArrayOutput)
 }
 
-func (i GetMediaAssetMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaAssetMetadata] {
-	return pulumix.Output[[]GetMediaAssetMetadata]{
-		OutputState: i.ToGetMediaAssetMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaAssetMetadataOutput struct{ *pulumi.OutputState }
 
 func (GetMediaAssetMetadataOutput) ElementType() reflect.Type {
@@ -1516,12 +1311,6 @@ func (o GetMediaAssetMetadataOutput) ToGetMediaAssetMetadataOutput() GetMediaAss
 
 func (o GetMediaAssetMetadataOutput) ToGetMediaAssetMetadataOutputWithContext(ctx context.Context) GetMediaAssetMetadataOutput {
 	return o
-}
-
-func (o GetMediaAssetMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaAssetMetadata] {
-	return pulumix.Output[GetMediaAssetMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 // JSON string containing the technial metadata for the media asset.
@@ -1541,12 +1330,6 @@ func (o GetMediaAssetMetadataArrayOutput) ToGetMediaAssetMetadataArrayOutput() G
 
 func (o GetMediaAssetMetadataArrayOutput) ToGetMediaAssetMetadataArrayOutputWithContext(ctx context.Context) GetMediaAssetMetadataArrayOutput {
 	return o
-}
-
-func (o GetMediaAssetMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaAssetMetadata] {
-	return pulumix.Output[[]GetMediaAssetMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaAssetMetadataArrayOutput) Index(i pulumi.IntInput) GetMediaAssetMetadataOutput {
@@ -1590,12 +1373,6 @@ func (i GetMediaAssetsFilterArgs) ToGetMediaAssetsFilterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetsFilterOutput)
 }
 
-func (i GetMediaAssetsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaAssetsFilter] {
-	return pulumix.Output[GetMediaAssetsFilter]{
-		OutputState: i.ToGetMediaAssetsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaAssetsFilterArrayInput is an input type that accepts GetMediaAssetsFilterArray and GetMediaAssetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMediaAssetsFilterArrayInput` via:
 //
@@ -1621,12 +1398,6 @@ func (i GetMediaAssetsFilterArray) ToGetMediaAssetsFilterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetsFilterArrayOutput)
 }
 
-func (i GetMediaAssetsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaAssetsFilter] {
-	return pulumix.Output[[]GetMediaAssetsFilter]{
-		OutputState: i.ToGetMediaAssetsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaAssetsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMediaAssetsFilterOutput) ElementType() reflect.Type {
@@ -1639,12 +1410,6 @@ func (o GetMediaAssetsFilterOutput) ToGetMediaAssetsFilterOutput() GetMediaAsset
 
 func (o GetMediaAssetsFilterOutput) ToGetMediaAssetsFilterOutputWithContext(ctx context.Context) GetMediaAssetsFilterOutput {
 	return o
-}
-
-func (o GetMediaAssetsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaAssetsFilter] {
-	return pulumix.Output[GetMediaAssetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaAssetsFilterOutput) Name() pulumi.StringOutput {
@@ -1671,12 +1436,6 @@ func (o GetMediaAssetsFilterArrayOutput) ToGetMediaAssetsFilterArrayOutput() Get
 
 func (o GetMediaAssetsFilterArrayOutput) ToGetMediaAssetsFilterArrayOutputWithContext(ctx context.Context) GetMediaAssetsFilterArrayOutput {
 	return o
-}
-
-func (o GetMediaAssetsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaAssetsFilter] {
-	return pulumix.Output[[]GetMediaAssetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaAssetsFilterArrayOutput) Index(i pulumi.IntInput) GetMediaAssetsFilterOutput {
@@ -1716,12 +1475,6 @@ func (i GetMediaAssetsMediaAssetCollectionArgs) ToGetMediaAssetsMediaAssetCollec
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetsMediaAssetCollectionOutput)
 }
 
-func (i GetMediaAssetsMediaAssetCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaAssetsMediaAssetCollection] {
-	return pulumix.Output[GetMediaAssetsMediaAssetCollection]{
-		OutputState: i.ToGetMediaAssetsMediaAssetCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaAssetsMediaAssetCollectionArrayInput is an input type that accepts GetMediaAssetsMediaAssetCollectionArray and GetMediaAssetsMediaAssetCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMediaAssetsMediaAssetCollectionArrayInput` via:
 //
@@ -1747,12 +1500,6 @@ func (i GetMediaAssetsMediaAssetCollectionArray) ToGetMediaAssetsMediaAssetColle
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetsMediaAssetCollectionArrayOutput)
 }
 
-func (i GetMediaAssetsMediaAssetCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaAssetsMediaAssetCollection] {
-	return pulumix.Output[[]GetMediaAssetsMediaAssetCollection]{
-		OutputState: i.ToGetMediaAssetsMediaAssetCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaAssetsMediaAssetCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetMediaAssetsMediaAssetCollectionOutput) ElementType() reflect.Type {
@@ -1765,12 +1512,6 @@ func (o GetMediaAssetsMediaAssetCollectionOutput) ToGetMediaAssetsMediaAssetColl
 
 func (o GetMediaAssetsMediaAssetCollectionOutput) ToGetMediaAssetsMediaAssetCollectionOutputWithContext(ctx context.Context) GetMediaAssetsMediaAssetCollectionOutput {
 	return o
-}
-
-func (o GetMediaAssetsMediaAssetCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaAssetsMediaAssetCollection] {
-	return pulumix.Output[GetMediaAssetsMediaAssetCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaAssetsMediaAssetCollectionOutput) Items() GetMediaAssetsMediaAssetCollectionItemArrayOutput {
@@ -1789,12 +1530,6 @@ func (o GetMediaAssetsMediaAssetCollectionArrayOutput) ToGetMediaAssetsMediaAsse
 
 func (o GetMediaAssetsMediaAssetCollectionArrayOutput) ToGetMediaAssetsMediaAssetCollectionArrayOutputWithContext(ctx context.Context) GetMediaAssetsMediaAssetCollectionArrayOutput {
 	return o
-}
-
-func (o GetMediaAssetsMediaAssetCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaAssetsMediaAssetCollection] {
-	return pulumix.Output[[]GetMediaAssetsMediaAssetCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaAssetsMediaAssetCollectionArrayOutput) Index(i pulumi.IntInput) GetMediaAssetsMediaAssetCollectionOutput {
@@ -1924,12 +1659,6 @@ func (i GetMediaAssetsMediaAssetCollectionItemArgs) ToGetMediaAssetsMediaAssetCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetsMediaAssetCollectionItemOutput)
 }
 
-func (i GetMediaAssetsMediaAssetCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaAssetsMediaAssetCollectionItem] {
-	return pulumix.Output[GetMediaAssetsMediaAssetCollectionItem]{
-		OutputState: i.ToGetMediaAssetsMediaAssetCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaAssetsMediaAssetCollectionItemArrayInput is an input type that accepts GetMediaAssetsMediaAssetCollectionItemArray and GetMediaAssetsMediaAssetCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMediaAssetsMediaAssetCollectionItemArrayInput` via:
 //
@@ -1955,12 +1684,6 @@ func (i GetMediaAssetsMediaAssetCollectionItemArray) ToGetMediaAssetsMediaAssetC
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetsMediaAssetCollectionItemArrayOutput)
 }
 
-func (i GetMediaAssetsMediaAssetCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaAssetsMediaAssetCollectionItem] {
-	return pulumix.Output[[]GetMediaAssetsMediaAssetCollectionItem]{
-		OutputState: i.ToGetMediaAssetsMediaAssetCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaAssetsMediaAssetCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetMediaAssetsMediaAssetCollectionItemOutput) ElementType() reflect.Type {
@@ -1973,12 +1696,6 @@ func (o GetMediaAssetsMediaAssetCollectionItemOutput) ToGetMediaAssetsMediaAsset
 
 func (o GetMediaAssetsMediaAssetCollectionItemOutput) ToGetMediaAssetsMediaAssetCollectionItemOutputWithContext(ctx context.Context) GetMediaAssetsMediaAssetCollectionItemOutput {
 	return o
-}
-
-func (o GetMediaAssetsMediaAssetCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaAssetsMediaAssetCollectionItem] {
-	return pulumix.Output[GetMediaAssetsMediaAssetCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Filter MediaAsset by the bucket where the object is stored.
@@ -2114,12 +1831,6 @@ func (o GetMediaAssetsMediaAssetCollectionItemArrayOutput) ToGetMediaAssetsMedia
 	return o
 }
 
-func (o GetMediaAssetsMediaAssetCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaAssetsMediaAssetCollectionItem] {
-	return pulumix.Output[[]GetMediaAssetsMediaAssetCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMediaAssetsMediaAssetCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMediaAssetsMediaAssetCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaAssetsMediaAssetCollectionItem {
 		return vs[0].([]GetMediaAssetsMediaAssetCollectionItem)[vs[1].(int)]
@@ -2163,12 +1874,6 @@ func (i GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArgs) ToGetMediaAsset
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetsMediaAssetCollectionItemMediaAssetTagOutput)
 }
 
-func (i GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaAssetsMediaAssetCollectionItemMediaAssetTag] {
-	return pulumix.Output[GetMediaAssetsMediaAssetCollectionItemMediaAssetTag]{
-		OutputState: i.ToGetMediaAssetsMediaAssetCollectionItemMediaAssetTagOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArrayInput is an input type that accepts GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArray and GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArrayOutput values.
 // You can construct a concrete instance of `GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArrayInput` via:
 //
@@ -2194,12 +1899,6 @@ func (i GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArray) ToGetMediaAsse
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArrayOutput)
 }
 
-func (i GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaAssetsMediaAssetCollectionItemMediaAssetTag] {
-	return pulumix.Output[[]GetMediaAssetsMediaAssetCollectionItemMediaAssetTag]{
-		OutputState: i.ToGetMediaAssetsMediaAssetCollectionItemMediaAssetTagArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaAssetsMediaAssetCollectionItemMediaAssetTagOutput struct{ *pulumi.OutputState }
 
 func (GetMediaAssetsMediaAssetCollectionItemMediaAssetTagOutput) ElementType() reflect.Type {
@@ -2212,12 +1911,6 @@ func (o GetMediaAssetsMediaAssetCollectionItemMediaAssetTagOutput) ToGetMediaAss
 
 func (o GetMediaAssetsMediaAssetCollectionItemMediaAssetTagOutput) ToGetMediaAssetsMediaAssetCollectionItemMediaAssetTagOutputWithContext(ctx context.Context) GetMediaAssetsMediaAssetCollectionItemMediaAssetTagOutput {
 	return o
-}
-
-func (o GetMediaAssetsMediaAssetCollectionItemMediaAssetTagOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaAssetsMediaAssetCollectionItemMediaAssetTag] {
-	return pulumix.Output[GetMediaAssetsMediaAssetCollectionItemMediaAssetTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Filter MediaAsset by the asset type.
@@ -2242,12 +1935,6 @@ func (o GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArrayOutput) ToGetMed
 
 func (o GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArrayOutput) ToGetMediaAssetsMediaAssetCollectionItemMediaAssetTagArrayOutputWithContext(ctx context.Context) GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArrayOutput {
 	return o
-}
-
-func (o GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaAssetsMediaAssetCollectionItemMediaAssetTag] {
-	return pulumix.Output[[]GetMediaAssetsMediaAssetCollectionItemMediaAssetTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaAssetsMediaAssetCollectionItemMediaAssetTagArrayOutput) Index(i pulumi.IntInput) GetMediaAssetsMediaAssetCollectionItemMediaAssetTagOutput {
@@ -2289,12 +1976,6 @@ func (i GetMediaAssetsMediaAssetCollectionItemMetadataArgs) ToGetMediaAssetsMedi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetsMediaAssetCollectionItemMetadataOutput)
 }
 
-func (i GetMediaAssetsMediaAssetCollectionItemMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaAssetsMediaAssetCollectionItemMetadata] {
-	return pulumix.Output[GetMediaAssetsMediaAssetCollectionItemMetadata]{
-		OutputState: i.ToGetMediaAssetsMediaAssetCollectionItemMetadataOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaAssetsMediaAssetCollectionItemMetadataArrayInput is an input type that accepts GetMediaAssetsMediaAssetCollectionItemMetadataArray and GetMediaAssetsMediaAssetCollectionItemMetadataArrayOutput values.
 // You can construct a concrete instance of `GetMediaAssetsMediaAssetCollectionItemMetadataArrayInput` via:
 //
@@ -2320,12 +2001,6 @@ func (i GetMediaAssetsMediaAssetCollectionItemMetadataArray) ToGetMediaAssetsMed
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaAssetsMediaAssetCollectionItemMetadataArrayOutput)
 }
 
-func (i GetMediaAssetsMediaAssetCollectionItemMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaAssetsMediaAssetCollectionItemMetadata] {
-	return pulumix.Output[[]GetMediaAssetsMediaAssetCollectionItemMetadata]{
-		OutputState: i.ToGetMediaAssetsMediaAssetCollectionItemMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaAssetsMediaAssetCollectionItemMetadataOutput struct{ *pulumi.OutputState }
 
 func (GetMediaAssetsMediaAssetCollectionItemMetadataOutput) ElementType() reflect.Type {
@@ -2338,12 +2013,6 @@ func (o GetMediaAssetsMediaAssetCollectionItemMetadataOutput) ToGetMediaAssetsMe
 
 func (o GetMediaAssetsMediaAssetCollectionItemMetadataOutput) ToGetMediaAssetsMediaAssetCollectionItemMetadataOutputWithContext(ctx context.Context) GetMediaAssetsMediaAssetCollectionItemMetadataOutput {
 	return o
-}
-
-func (o GetMediaAssetsMediaAssetCollectionItemMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaAssetsMediaAssetCollectionItemMetadata] {
-	return pulumix.Output[GetMediaAssetsMediaAssetCollectionItemMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 // JSON string containing the technial metadata for the media asset.
@@ -2363,12 +2032,6 @@ func (o GetMediaAssetsMediaAssetCollectionItemMetadataArrayOutput) ToGetMediaAss
 
 func (o GetMediaAssetsMediaAssetCollectionItemMetadataArrayOutput) ToGetMediaAssetsMediaAssetCollectionItemMetadataArrayOutputWithContext(ctx context.Context) GetMediaAssetsMediaAssetCollectionItemMetadataArrayOutput {
 	return o
-}
-
-func (o GetMediaAssetsMediaAssetCollectionItemMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaAssetsMediaAssetCollectionItemMetadata] {
-	return pulumix.Output[[]GetMediaAssetsMediaAssetCollectionItemMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaAssetsMediaAssetCollectionItemMetadataArrayOutput) Index(i pulumi.IntInput) GetMediaAssetsMediaAssetCollectionItemMetadataOutput {
@@ -2412,12 +2075,6 @@ func (i GetMediaWorkflowConfigurationsFilterArgs) ToGetMediaWorkflowConfiguratio
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowConfigurationsFilterOutput)
 }
 
-func (i GetMediaWorkflowConfigurationsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowConfigurationsFilter] {
-	return pulumix.Output[GetMediaWorkflowConfigurationsFilter]{
-		OutputState: i.ToGetMediaWorkflowConfigurationsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaWorkflowConfigurationsFilterArrayInput is an input type that accepts GetMediaWorkflowConfigurationsFilterArray and GetMediaWorkflowConfigurationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMediaWorkflowConfigurationsFilterArrayInput` via:
 //
@@ -2443,12 +2100,6 @@ func (i GetMediaWorkflowConfigurationsFilterArray) ToGetMediaWorkflowConfigurati
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowConfigurationsFilterArrayOutput)
 }
 
-func (i GetMediaWorkflowConfigurationsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowConfigurationsFilter] {
-	return pulumix.Output[[]GetMediaWorkflowConfigurationsFilter]{
-		OutputState: i.ToGetMediaWorkflowConfigurationsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowConfigurationsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowConfigurationsFilterOutput) ElementType() reflect.Type {
@@ -2461,12 +2112,6 @@ func (o GetMediaWorkflowConfigurationsFilterOutput) ToGetMediaWorkflowConfigurat
 
 func (o GetMediaWorkflowConfigurationsFilterOutput) ToGetMediaWorkflowConfigurationsFilterOutputWithContext(ctx context.Context) GetMediaWorkflowConfigurationsFilterOutput {
 	return o
-}
-
-func (o GetMediaWorkflowConfigurationsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowConfigurationsFilter] {
-	return pulumix.Output[GetMediaWorkflowConfigurationsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowConfigurationsFilterOutput) Name() pulumi.StringOutput {
@@ -2493,12 +2138,6 @@ func (o GetMediaWorkflowConfigurationsFilterArrayOutput) ToGetMediaWorkflowConfi
 
 func (o GetMediaWorkflowConfigurationsFilterArrayOutput) ToGetMediaWorkflowConfigurationsFilterArrayOutputWithContext(ctx context.Context) GetMediaWorkflowConfigurationsFilterArrayOutput {
 	return o
-}
-
-func (o GetMediaWorkflowConfigurationsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowConfigurationsFilter] {
-	return pulumix.Output[[]GetMediaWorkflowConfigurationsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowConfigurationsFilterArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowConfigurationsFilterOutput {
@@ -2538,12 +2177,6 @@ func (i GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArgs) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionOutput)
 }
 
-func (i GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection] {
-	return pulumix.Output[GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection]{
-		OutputState: i.ToGetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArrayInput is an input type that accepts GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArray and GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArrayInput` via:
 //
@@ -2569,12 +2202,6 @@ func (i GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArray)
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArrayOutput)
 }
 
-func (i GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection] {
-	return pulumix.Output[[]GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection]{
-		OutputState: i.ToGetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionOutput) ElementType() reflect.Type {
@@ -2587,12 +2214,6 @@ func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionOutput
 
 func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionOutput) ToGetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionOutputWithContext(ctx context.Context) GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionOutput {
 	return o
-}
-
-func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection] {
-	return pulumix.Output[GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionOutput) Items() GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArrayOutput {
@@ -2613,12 +2234,6 @@ func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArrayO
 
 func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArrayOutput) ToGetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArrayOutputWithContext(ctx context.Context) GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArrayOutput {
 	return o
-}
-
-func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection] {
-	return pulumix.Output[[]GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionOutput {
@@ -2700,12 +2315,6 @@ func (i GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput)
 }
 
-func (i GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem] {
-	return pulumix.Output[GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem]{
-		OutputState: i.ToGetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArrayInput is an input type that accepts GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArray and GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArrayInput` via:
 //
@@ -2731,12 +2340,6 @@ func (i GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArrayOutput)
 }
 
-func (i GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem] {
-	return pulumix.Output[[]GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem]{
-		OutputState: i.ToGetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput) ElementType() reflect.Type {
@@ -2749,12 +2352,6 @@ func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOu
 
 func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput) ToGetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutputWithContext(ctx context.Context) GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput {
 	return o
-}
-
-func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem] {
-	return pulumix.Output[GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -2844,12 +2441,6 @@ func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemAr
 	return o
 }
 
-func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem] {
-	return pulumix.Output[[]GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem {
 		return vs[0].([]GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem)[vs[1].(int)]
@@ -2893,12 +2484,6 @@ func (i GetMediaWorkflowJobFactsFilterArgs) ToGetMediaWorkflowJobFactsFilterOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobFactsFilterOutput)
 }
 
-func (i GetMediaWorkflowJobFactsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobFactsFilter] {
-	return pulumix.Output[GetMediaWorkflowJobFactsFilter]{
-		OutputState: i.ToGetMediaWorkflowJobFactsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaWorkflowJobFactsFilterArrayInput is an input type that accepts GetMediaWorkflowJobFactsFilterArray and GetMediaWorkflowJobFactsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMediaWorkflowJobFactsFilterArrayInput` via:
 //
@@ -2924,12 +2509,6 @@ func (i GetMediaWorkflowJobFactsFilterArray) ToGetMediaWorkflowJobFactsFilterArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobFactsFilterArrayOutput)
 }
 
-func (i GetMediaWorkflowJobFactsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobFactsFilter] {
-	return pulumix.Output[[]GetMediaWorkflowJobFactsFilter]{
-		OutputState: i.ToGetMediaWorkflowJobFactsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowJobFactsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowJobFactsFilterOutput) ElementType() reflect.Type {
@@ -2942,12 +2521,6 @@ func (o GetMediaWorkflowJobFactsFilterOutput) ToGetMediaWorkflowJobFactsFilterOu
 
 func (o GetMediaWorkflowJobFactsFilterOutput) ToGetMediaWorkflowJobFactsFilterOutputWithContext(ctx context.Context) GetMediaWorkflowJobFactsFilterOutput {
 	return o
-}
-
-func (o GetMediaWorkflowJobFactsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobFactsFilter] {
-	return pulumix.Output[GetMediaWorkflowJobFactsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique name. It is read-only and generated for the fact.
@@ -2975,12 +2548,6 @@ func (o GetMediaWorkflowJobFactsFilterArrayOutput) ToGetMediaWorkflowJobFactsFil
 
 func (o GetMediaWorkflowJobFactsFilterArrayOutput) ToGetMediaWorkflowJobFactsFilterArrayOutputWithContext(ctx context.Context) GetMediaWorkflowJobFactsFilterArrayOutput {
 	return o
-}
-
-func (o GetMediaWorkflowJobFactsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobFactsFilter] {
-	return pulumix.Output[[]GetMediaWorkflowJobFactsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowJobFactsFilterArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowJobFactsFilterOutput {
@@ -3020,12 +2587,6 @@ func (i GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArgs) ToGetMediaWo
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionOutput)
 }
 
-func (i GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection] {
-	return pulumix.Output[GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection]{
-		OutputState: i.ToGetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArrayInput is an input type that accepts GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArray and GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArrayInput` via:
 //
@@ -3051,12 +2612,6 @@ func (i GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArray) ToGetMediaW
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArrayOutput)
 }
 
-func (i GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection] {
-	return pulumix.Output[[]GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection]{
-		OutputState: i.ToGetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionOutput) ElementType() reflect.Type {
@@ -3069,12 +2624,6 @@ func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionOutput) ToGetMedia
 
 func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionOutput) ToGetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionOutputWithContext(ctx context.Context) GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionOutput {
 	return o
-}
-
-func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection] {
-	return pulumix.Output[GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionOutput) Items() GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArrayOutput {
@@ -3095,12 +2644,6 @@ func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArrayOutput) ToGet
 
 func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArrayOutput) ToGetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArrayOutputWithContext(ctx context.Context) GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArrayOutput {
 	return o
-}
-
-func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection] {
-	return pulumix.Output[[]GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionOutput {
@@ -3158,12 +2701,6 @@ func (i GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArgs) ToGetMed
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput)
 }
 
-func (i GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem] {
-	return pulumix.Output[GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem]{
-		OutputState: i.ToGetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArrayInput is an input type that accepts GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArray and GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArrayInput` via:
 //
@@ -3189,12 +2726,6 @@ func (i GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArray) ToGetMe
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArrayOutput)
 }
 
-func (i GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem] {
-	return pulumix.Output[[]GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem]{
-		OutputState: i.ToGetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput) ElementType() reflect.Type {
@@ -3207,12 +2738,6 @@ func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput) ToGetM
 
 func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput) ToGetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutputWithContext(ctx context.Context) GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput {
 	return o
-}
-
-func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem] {
-	return pulumix.Output[GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The body of the detail captured as JSON.
@@ -3252,12 +2777,6 @@ func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArrayOutput) T
 
 func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArrayOutput) ToGetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArrayOutputWithContext(ctx context.Context) GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem] {
-	return pulumix.Output[[]GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemOutput {
@@ -3315,12 +2834,6 @@ func (i GetMediaWorkflowJobOutputArgs) ToGetMediaWorkflowJobOutputOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobOutputOutput)
 }
 
-func (i GetMediaWorkflowJobOutputArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobOutput] {
-	return pulumix.Output[GetMediaWorkflowJobOutput]{
-		OutputState: i.ToGetMediaWorkflowJobOutputOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaWorkflowJobOutputArrayInput is an input type that accepts GetMediaWorkflowJobOutputArray and GetMediaWorkflowJobOutputArrayOutput values.
 // You can construct a concrete instance of `GetMediaWorkflowJobOutputArrayInput` via:
 //
@@ -3346,12 +2859,6 @@ func (i GetMediaWorkflowJobOutputArray) ToGetMediaWorkflowJobOutputArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobOutputArrayOutput)
 }
 
-func (i GetMediaWorkflowJobOutputArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobOutput] {
-	return pulumix.Output[[]GetMediaWorkflowJobOutput]{
-		OutputState: i.ToGetMediaWorkflowJobOutputArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowJobOutputOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowJobOutputOutput) ElementType() reflect.Type {
@@ -3364,12 +2871,6 @@ func (o GetMediaWorkflowJobOutputOutput) ToGetMediaWorkflowJobOutputOutput() Get
 
 func (o GetMediaWorkflowJobOutputOutput) ToGetMediaWorkflowJobOutputOutputWithContext(ctx context.Context) GetMediaWorkflowJobOutputOutput {
 	return o
-}
-
-func (o GetMediaWorkflowJobOutputOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobOutput] {
-	return pulumix.Output[GetMediaWorkflowJobOutput]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Type of job output.
@@ -3409,12 +2910,6 @@ func (o GetMediaWorkflowJobOutputArrayOutput) ToGetMediaWorkflowJobOutputArrayOu
 
 func (o GetMediaWorkflowJobOutputArrayOutput) ToGetMediaWorkflowJobOutputArrayOutputWithContext(ctx context.Context) GetMediaWorkflowJobOutputArrayOutput {
 	return o
-}
-
-func (o GetMediaWorkflowJobOutputArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobOutput] {
-	return pulumix.Output[[]GetMediaWorkflowJobOutput]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowJobOutputArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowJobOutputOutput {
@@ -3464,12 +2959,6 @@ func (i GetMediaWorkflowJobTaskLifecycleStateArgs) ToGetMediaWorkflowJobTaskLife
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobTaskLifecycleStateOutput)
 }
 
-func (i GetMediaWorkflowJobTaskLifecycleStateArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobTaskLifecycleState] {
-	return pulumix.Output[GetMediaWorkflowJobTaskLifecycleState]{
-		OutputState: i.ToGetMediaWorkflowJobTaskLifecycleStateOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaWorkflowJobTaskLifecycleStateArrayInput is an input type that accepts GetMediaWorkflowJobTaskLifecycleStateArray and GetMediaWorkflowJobTaskLifecycleStateArrayOutput values.
 // You can construct a concrete instance of `GetMediaWorkflowJobTaskLifecycleStateArrayInput` via:
 //
@@ -3495,12 +2984,6 @@ func (i GetMediaWorkflowJobTaskLifecycleStateArray) ToGetMediaWorkflowJobTaskLif
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobTaskLifecycleStateArrayOutput)
 }
 
-func (i GetMediaWorkflowJobTaskLifecycleStateArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobTaskLifecycleState] {
-	return pulumix.Output[[]GetMediaWorkflowJobTaskLifecycleState]{
-		OutputState: i.ToGetMediaWorkflowJobTaskLifecycleStateArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowJobTaskLifecycleStateOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowJobTaskLifecycleStateOutput) ElementType() reflect.Type {
@@ -3513,12 +2996,6 @@ func (o GetMediaWorkflowJobTaskLifecycleStateOutput) ToGetMediaWorkflowJobTaskLi
 
 func (o GetMediaWorkflowJobTaskLifecycleStateOutput) ToGetMediaWorkflowJobTaskLifecycleStateOutputWithContext(ctx context.Context) GetMediaWorkflowJobTaskLifecycleStateOutput {
 	return o
-}
-
-func (o GetMediaWorkflowJobTaskLifecycleStateOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobTaskLifecycleState] {
-	return pulumix.Output[GetMediaWorkflowJobTaskLifecycleState]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique key within a MediaWorkflowJob for the task.
@@ -3548,12 +3025,6 @@ func (o GetMediaWorkflowJobTaskLifecycleStateArrayOutput) ToGetMediaWorkflowJobT
 
 func (o GetMediaWorkflowJobTaskLifecycleStateArrayOutput) ToGetMediaWorkflowJobTaskLifecycleStateArrayOutputWithContext(ctx context.Context) GetMediaWorkflowJobTaskLifecycleStateArrayOutput {
 	return o
-}
-
-func (o GetMediaWorkflowJobTaskLifecycleStateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobTaskLifecycleState] {
-	return pulumix.Output[[]GetMediaWorkflowJobTaskLifecycleState]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowJobTaskLifecycleStateArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowJobTaskLifecycleStateOutput {
@@ -3597,12 +3068,6 @@ func (i GetMediaWorkflowJobsFilterArgs) ToGetMediaWorkflowJobsFilterOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobsFilterOutput)
 }
 
-func (i GetMediaWorkflowJobsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobsFilter] {
-	return pulumix.Output[GetMediaWorkflowJobsFilter]{
-		OutputState: i.ToGetMediaWorkflowJobsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaWorkflowJobsFilterArrayInput is an input type that accepts GetMediaWorkflowJobsFilterArray and GetMediaWorkflowJobsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMediaWorkflowJobsFilterArrayInput` via:
 //
@@ -3628,12 +3093,6 @@ func (i GetMediaWorkflowJobsFilterArray) ToGetMediaWorkflowJobsFilterArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobsFilterArrayOutput)
 }
 
-func (i GetMediaWorkflowJobsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobsFilter] {
-	return pulumix.Output[[]GetMediaWorkflowJobsFilter]{
-		OutputState: i.ToGetMediaWorkflowJobsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowJobsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowJobsFilterOutput) ElementType() reflect.Type {
@@ -3646,12 +3105,6 @@ func (o GetMediaWorkflowJobsFilterOutput) ToGetMediaWorkflowJobsFilterOutput() G
 
 func (o GetMediaWorkflowJobsFilterOutput) ToGetMediaWorkflowJobsFilterOutputWithContext(ctx context.Context) GetMediaWorkflowJobsFilterOutput {
 	return o
-}
-
-func (o GetMediaWorkflowJobsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobsFilter] {
-	return pulumix.Output[GetMediaWorkflowJobsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowJobsFilterOutput) Name() pulumi.StringOutput {
@@ -3678,12 +3131,6 @@ func (o GetMediaWorkflowJobsFilterArrayOutput) ToGetMediaWorkflowJobsFilterArray
 
 func (o GetMediaWorkflowJobsFilterArrayOutput) ToGetMediaWorkflowJobsFilterArrayOutputWithContext(ctx context.Context) GetMediaWorkflowJobsFilterArrayOutput {
 	return o
-}
-
-func (o GetMediaWorkflowJobsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobsFilter] {
-	return pulumix.Output[[]GetMediaWorkflowJobsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowJobsFilterArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowJobsFilterOutput {
@@ -3723,12 +3170,6 @@ func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionArgs) ToGetMediaWorkflowJo
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobsMediaWorkflowJobCollectionOutput)
 }
 
-func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobsMediaWorkflowJobCollection] {
-	return pulumix.Output[GetMediaWorkflowJobsMediaWorkflowJobCollection]{
-		OutputState: i.ToGetMediaWorkflowJobsMediaWorkflowJobCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaWorkflowJobsMediaWorkflowJobCollectionArrayInput is an input type that accepts GetMediaWorkflowJobsMediaWorkflowJobCollectionArray and GetMediaWorkflowJobsMediaWorkflowJobCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMediaWorkflowJobsMediaWorkflowJobCollectionArrayInput` via:
 //
@@ -3754,12 +3195,6 @@ func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionArray) ToGetMediaWorkflowJ
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobsMediaWorkflowJobCollectionArrayOutput)
 }
 
-func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobsMediaWorkflowJobCollection] {
-	return pulumix.Output[[]GetMediaWorkflowJobsMediaWorkflowJobCollection]{
-		OutputState: i.ToGetMediaWorkflowJobsMediaWorkflowJobCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowJobsMediaWorkflowJobCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowJobsMediaWorkflowJobCollectionOutput) ElementType() reflect.Type {
@@ -3772,12 +3207,6 @@ func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionOutput) ToGetMediaWorkflow
 
 func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionOutput) ToGetMediaWorkflowJobsMediaWorkflowJobCollectionOutputWithContext(ctx context.Context) GetMediaWorkflowJobsMediaWorkflowJobCollectionOutput {
 	return o
-}
-
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobsMediaWorkflowJobCollection] {
-	return pulumix.Output[GetMediaWorkflowJobsMediaWorkflowJobCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionOutput) Items() GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArrayOutput {
@@ -3798,12 +3227,6 @@ func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionArrayOutput) ToGetMediaWor
 
 func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionArrayOutput) ToGetMediaWorkflowJobsMediaWorkflowJobCollectionArrayOutputWithContext(ctx context.Context) GetMediaWorkflowJobsMediaWorkflowJobCollectionArrayOutput {
 	return o
-}
-
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobsMediaWorkflowJobCollection] {
-	return pulumix.Output[[]GetMediaWorkflowJobsMediaWorkflowJobCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowJobsMediaWorkflowJobCollectionOutput {
@@ -3917,12 +3340,6 @@ func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArgs) ToGetMediaWorkfl
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput)
 }
 
-func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobsMediaWorkflowJobCollectionItem] {
-	return pulumix.Output[GetMediaWorkflowJobsMediaWorkflowJobCollectionItem]{
-		OutputState: i.ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArrayInput is an input type that accepts GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArray and GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArrayInput` via:
 //
@@ -3948,12 +3365,6 @@ func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArray) ToGetMediaWorkf
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArrayOutput)
 }
 
-func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobsMediaWorkflowJobCollectionItem] {
-	return pulumix.Output[[]GetMediaWorkflowJobsMediaWorkflowJobCollectionItem]{
-		OutputState: i.ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) ElementType() reflect.Type {
@@ -3966,12 +3377,6 @@ func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) ToGetMediaWork
 
 func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputWithContext(ctx context.Context) GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput {
 	return o
-}
-
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobsMediaWorkflowJobCollectionItem] {
-	return pulumix.Output[GetMediaWorkflowJobsMediaWorkflowJobCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -4096,12 +3501,6 @@ func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArrayOutput) ToGetMedi
 	return o
 }
 
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobsMediaWorkflowJobCollectionItem] {
-	return pulumix.Output[[]GetMediaWorkflowJobsMediaWorkflowJobCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaWorkflowJobsMediaWorkflowJobCollectionItem {
 		return vs[0].([]GetMediaWorkflowJobsMediaWorkflowJobCollectionItem)[vs[1].(int)]
@@ -4157,12 +3556,6 @@ func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArgs) ToGetM
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeOutput)
 }
 
-func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputType] {
-	return pulumix.Output[GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputType]{
-		OutputState: i.ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArrayInput is an input type that accepts GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArray and GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArrayOutput values.
 // You can construct a concrete instance of `GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArrayInput` via:
 //
@@ -4188,12 +3581,6 @@ func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArrayOutput)
 }
 
-func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputType] {
-	return pulumix.Output[[]GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputType]{
-		OutputState: i.ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeOutput) ElementType() reflect.Type {
@@ -4206,12 +3593,6 @@ func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeOutput) ToGe
 
 func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeOutput) ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeOutputWithContext(ctx context.Context) GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeOutput {
 	return o
-}
-
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputType] {
-	return pulumix.Output[GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputType]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Type of job output.
@@ -4251,12 +3632,6 @@ func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArrayOutput)
 
 func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArrayOutput) ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArrayOutputWithContext(ctx context.Context) GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArrayOutput {
 	return o
-}
-
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputType] {
-	return pulumix.Output[[]GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputType]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputTypeOutput {
@@ -4306,12 +3681,6 @@ func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArgs
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateOutput)
 }
 
-func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState] {
-	return pulumix.Output[GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState]{
-		OutputState: i.ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArrayInput is an input type that accepts GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArray and GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArrayOutput values.
 // You can construct a concrete instance of `GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArrayInput` via:
 //
@@ -4337,12 +3706,6 @@ func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArrayOutput)
 }
 
-func (i GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState] {
-	return pulumix.Output[[]GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState]{
-		OutputState: i.ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateOutput) ElementType() reflect.Type {
@@ -4355,12 +3718,6 @@ func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateOutp
 
 func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateOutput) ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateOutputWithContext(ctx context.Context) GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateOutput {
 	return o
-}
-
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState] {
-	return pulumix.Output[GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique key within a MediaWorkflowJob for the task.
@@ -4392,12 +3749,6 @@ func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArra
 
 func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArrayOutput) ToGetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArrayOutputWithContext(ctx context.Context) GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArrayOutput {
 	return o
-}
-
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState] {
-	return pulumix.Output[[]GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateOutput {
@@ -4463,12 +3814,6 @@ func (i GetMediaWorkflowTaskArgs) ToGetMediaWorkflowTaskOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowTaskOutput)
 }
 
-func (i GetMediaWorkflowTaskArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowTask] {
-	return pulumix.Output[GetMediaWorkflowTask]{
-		OutputState: i.ToGetMediaWorkflowTaskOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaWorkflowTaskArrayInput is an input type that accepts GetMediaWorkflowTaskArray and GetMediaWorkflowTaskArrayOutput values.
 // You can construct a concrete instance of `GetMediaWorkflowTaskArrayInput` via:
 //
@@ -4494,12 +3839,6 @@ func (i GetMediaWorkflowTaskArray) ToGetMediaWorkflowTaskArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowTaskArrayOutput)
 }
 
-func (i GetMediaWorkflowTaskArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowTask] {
-	return pulumix.Output[[]GetMediaWorkflowTask]{
-		OutputState: i.ToGetMediaWorkflowTaskArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowTaskOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowTaskOutput) ElementType() reflect.Type {
@@ -4512,12 +3851,6 @@ func (o GetMediaWorkflowTaskOutput) ToGetMediaWorkflowTaskOutput() GetMediaWorkf
 
 func (o GetMediaWorkflowTaskOutput) ToGetMediaWorkflowTaskOutputWithContext(ctx context.Context) GetMediaWorkflowTaskOutput {
 	return o
-}
-
-func (o GetMediaWorkflowTaskOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowTask] {
-	return pulumix.Output[GetMediaWorkflowTask]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
@@ -4567,12 +3900,6 @@ func (o GetMediaWorkflowTaskArrayOutput) ToGetMediaWorkflowTaskArrayOutput() Get
 
 func (o GetMediaWorkflowTaskArrayOutput) ToGetMediaWorkflowTaskArrayOutputWithContext(ctx context.Context) GetMediaWorkflowTaskArrayOutput {
 	return o
-}
-
-func (o GetMediaWorkflowTaskArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowTask] {
-	return pulumix.Output[[]GetMediaWorkflowTask]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowTaskArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowTaskOutput {
@@ -4626,12 +3953,6 @@ func (i GetMediaWorkflowTaskDeclarationItemArgs) ToGetMediaWorkflowTaskDeclarati
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowTaskDeclarationItemOutput)
 }
 
-func (i GetMediaWorkflowTaskDeclarationItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowTaskDeclarationItem] {
-	return pulumix.Output[GetMediaWorkflowTaskDeclarationItem]{
-		OutputState: i.ToGetMediaWorkflowTaskDeclarationItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaWorkflowTaskDeclarationItemArrayInput is an input type that accepts GetMediaWorkflowTaskDeclarationItemArray and GetMediaWorkflowTaskDeclarationItemArrayOutput values.
 // You can construct a concrete instance of `GetMediaWorkflowTaskDeclarationItemArrayInput` via:
 //
@@ -4657,12 +3978,6 @@ func (i GetMediaWorkflowTaskDeclarationItemArray) ToGetMediaWorkflowTaskDeclarat
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowTaskDeclarationItemArrayOutput)
 }
 
-func (i GetMediaWorkflowTaskDeclarationItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowTaskDeclarationItem] {
-	return pulumix.Output[[]GetMediaWorkflowTaskDeclarationItem]{
-		OutputState: i.ToGetMediaWorkflowTaskDeclarationItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowTaskDeclarationItemOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowTaskDeclarationItemOutput) ElementType() reflect.Type {
@@ -4675,12 +3990,6 @@ func (o GetMediaWorkflowTaskDeclarationItemOutput) ToGetMediaWorkflowTaskDeclara
 
 func (o GetMediaWorkflowTaskDeclarationItemOutput) ToGetMediaWorkflowTaskDeclarationItemOutputWithContext(ctx context.Context) GetMediaWorkflowTaskDeclarationItemOutput {
 	return o
-}
-
-func (o GetMediaWorkflowTaskDeclarationItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowTaskDeclarationItem] {
-	return pulumix.Output[GetMediaWorkflowTaskDeclarationItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only the resources with their system defined, unique name matching the given name.
@@ -4715,12 +4024,6 @@ func (o GetMediaWorkflowTaskDeclarationItemArrayOutput) ToGetMediaWorkflowTaskDe
 
 func (o GetMediaWorkflowTaskDeclarationItemArrayOutput) ToGetMediaWorkflowTaskDeclarationItemArrayOutputWithContext(ctx context.Context) GetMediaWorkflowTaskDeclarationItemArrayOutput {
 	return o
-}
-
-func (o GetMediaWorkflowTaskDeclarationItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowTaskDeclarationItem] {
-	return pulumix.Output[[]GetMediaWorkflowTaskDeclarationItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowTaskDeclarationItemArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowTaskDeclarationItemOutput {
@@ -4764,12 +4067,6 @@ func (i GetMediaWorkflowsFilterArgs) ToGetMediaWorkflowsFilterOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowsFilterOutput)
 }
 
-func (i GetMediaWorkflowsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowsFilter] {
-	return pulumix.Output[GetMediaWorkflowsFilter]{
-		OutputState: i.ToGetMediaWorkflowsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaWorkflowsFilterArrayInput is an input type that accepts GetMediaWorkflowsFilterArray and GetMediaWorkflowsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMediaWorkflowsFilterArrayInput` via:
 //
@@ -4795,12 +4092,6 @@ func (i GetMediaWorkflowsFilterArray) ToGetMediaWorkflowsFilterArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowsFilterArrayOutput)
 }
 
-func (i GetMediaWorkflowsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowsFilter] {
-	return pulumix.Output[[]GetMediaWorkflowsFilter]{
-		OutputState: i.ToGetMediaWorkflowsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowsFilterOutput) ElementType() reflect.Type {
@@ -4813,12 +4104,6 @@ func (o GetMediaWorkflowsFilterOutput) ToGetMediaWorkflowsFilterOutput() GetMedi
 
 func (o GetMediaWorkflowsFilterOutput) ToGetMediaWorkflowsFilterOutputWithContext(ctx context.Context) GetMediaWorkflowsFilterOutput {
 	return o
-}
-
-func (o GetMediaWorkflowsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowsFilter] {
-	return pulumix.Output[GetMediaWorkflowsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowsFilterOutput) Name() pulumi.StringOutput {
@@ -4845,12 +4130,6 @@ func (o GetMediaWorkflowsFilterArrayOutput) ToGetMediaWorkflowsFilterArrayOutput
 
 func (o GetMediaWorkflowsFilterArrayOutput) ToGetMediaWorkflowsFilterArrayOutputWithContext(ctx context.Context) GetMediaWorkflowsFilterArrayOutput {
 	return o
-}
-
-func (o GetMediaWorkflowsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowsFilter] {
-	return pulumix.Output[[]GetMediaWorkflowsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowsFilterArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowsFilterOutput {
@@ -4890,12 +4169,6 @@ func (i GetMediaWorkflowsMediaWorkflowCollectionArgs) ToGetMediaWorkflowsMediaWo
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowsMediaWorkflowCollectionOutput)
 }
 
-func (i GetMediaWorkflowsMediaWorkflowCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowsMediaWorkflowCollection] {
-	return pulumix.Output[GetMediaWorkflowsMediaWorkflowCollection]{
-		OutputState: i.ToGetMediaWorkflowsMediaWorkflowCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaWorkflowsMediaWorkflowCollectionArrayInput is an input type that accepts GetMediaWorkflowsMediaWorkflowCollectionArray and GetMediaWorkflowsMediaWorkflowCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMediaWorkflowsMediaWorkflowCollectionArrayInput` via:
 //
@@ -4921,12 +4194,6 @@ func (i GetMediaWorkflowsMediaWorkflowCollectionArray) ToGetMediaWorkflowsMediaW
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowsMediaWorkflowCollectionArrayOutput)
 }
 
-func (i GetMediaWorkflowsMediaWorkflowCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowsMediaWorkflowCollection] {
-	return pulumix.Output[[]GetMediaWorkflowsMediaWorkflowCollection]{
-		OutputState: i.ToGetMediaWorkflowsMediaWorkflowCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowsMediaWorkflowCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowsMediaWorkflowCollectionOutput) ElementType() reflect.Type {
@@ -4939,12 +4206,6 @@ func (o GetMediaWorkflowsMediaWorkflowCollectionOutput) ToGetMediaWorkflowsMedia
 
 func (o GetMediaWorkflowsMediaWorkflowCollectionOutput) ToGetMediaWorkflowsMediaWorkflowCollectionOutputWithContext(ctx context.Context) GetMediaWorkflowsMediaWorkflowCollectionOutput {
 	return o
-}
-
-func (o GetMediaWorkflowsMediaWorkflowCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowsMediaWorkflowCollection] {
-	return pulumix.Output[GetMediaWorkflowsMediaWorkflowCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowsMediaWorkflowCollectionOutput) Items() GetMediaWorkflowsMediaWorkflowCollectionItemArrayOutput {
@@ -4965,12 +4226,6 @@ func (o GetMediaWorkflowsMediaWorkflowCollectionArrayOutput) ToGetMediaWorkflows
 
 func (o GetMediaWorkflowsMediaWorkflowCollectionArrayOutput) ToGetMediaWorkflowsMediaWorkflowCollectionArrayOutputWithContext(ctx context.Context) GetMediaWorkflowsMediaWorkflowCollectionArrayOutput {
 	return o
-}
-
-func (o GetMediaWorkflowsMediaWorkflowCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowsMediaWorkflowCollection] {
-	return pulumix.Output[[]GetMediaWorkflowsMediaWorkflowCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowsMediaWorkflowCollectionArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowsMediaWorkflowCollectionOutput {
@@ -5064,12 +4319,6 @@ func (i GetMediaWorkflowsMediaWorkflowCollectionItemArgs) ToGetMediaWorkflowsMed
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowsMediaWorkflowCollectionItemOutput)
 }
 
-func (i GetMediaWorkflowsMediaWorkflowCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowsMediaWorkflowCollectionItem] {
-	return pulumix.Output[GetMediaWorkflowsMediaWorkflowCollectionItem]{
-		OutputState: i.ToGetMediaWorkflowsMediaWorkflowCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaWorkflowsMediaWorkflowCollectionItemArrayInput is an input type that accepts GetMediaWorkflowsMediaWorkflowCollectionItemArray and GetMediaWorkflowsMediaWorkflowCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMediaWorkflowsMediaWorkflowCollectionItemArrayInput` via:
 //
@@ -5095,12 +4344,6 @@ func (i GetMediaWorkflowsMediaWorkflowCollectionItemArray) ToGetMediaWorkflowsMe
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowsMediaWorkflowCollectionItemArrayOutput)
 }
 
-func (i GetMediaWorkflowsMediaWorkflowCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowsMediaWorkflowCollectionItem] {
-	return pulumix.Output[[]GetMediaWorkflowsMediaWorkflowCollectionItem]{
-		OutputState: i.ToGetMediaWorkflowsMediaWorkflowCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowsMediaWorkflowCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowsMediaWorkflowCollectionItemOutput) ElementType() reflect.Type {
@@ -5113,12 +4356,6 @@ func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) ToGetMediaWorkflowsM
 
 func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) ToGetMediaWorkflowsMediaWorkflowCollectionItemOutputWithContext(ctx context.Context) GetMediaWorkflowsMediaWorkflowCollectionItemOutput {
 	return o
-}
-
-func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowsMediaWorkflowCollectionItem] {
-	return pulumix.Output[GetMediaWorkflowsMediaWorkflowCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -5207,12 +4444,6 @@ func (o GetMediaWorkflowsMediaWorkflowCollectionItemArrayOutput) ToGetMediaWorkf
 	return o
 }
 
-func (o GetMediaWorkflowsMediaWorkflowCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowsMediaWorkflowCollectionItem] {
-	return pulumix.Output[[]GetMediaWorkflowsMediaWorkflowCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMediaWorkflowsMediaWorkflowCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowsMediaWorkflowCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMediaWorkflowsMediaWorkflowCollectionItem {
 		return vs[0].([]GetMediaWorkflowsMediaWorkflowCollectionItem)[vs[1].(int)]
@@ -5276,12 +4507,6 @@ func (i GetMediaWorkflowsMediaWorkflowCollectionItemTaskArgs) ToGetMediaWorkflow
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowsMediaWorkflowCollectionItemTaskOutput)
 }
 
-func (i GetMediaWorkflowsMediaWorkflowCollectionItemTaskArgs) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowsMediaWorkflowCollectionItemTask] {
-	return pulumix.Output[GetMediaWorkflowsMediaWorkflowCollectionItemTask]{
-		OutputState: i.ToGetMediaWorkflowsMediaWorkflowCollectionItemTaskOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMediaWorkflowsMediaWorkflowCollectionItemTaskArrayInput is an input type that accepts GetMediaWorkflowsMediaWorkflowCollectionItemTaskArray and GetMediaWorkflowsMediaWorkflowCollectionItemTaskArrayOutput values.
 // You can construct a concrete instance of `GetMediaWorkflowsMediaWorkflowCollectionItemTaskArrayInput` via:
 //
@@ -5307,12 +4532,6 @@ func (i GetMediaWorkflowsMediaWorkflowCollectionItemTaskArray) ToGetMediaWorkflo
 	return pulumi.ToOutputWithContext(ctx, i).(GetMediaWorkflowsMediaWorkflowCollectionItemTaskArrayOutput)
 }
 
-func (i GetMediaWorkflowsMediaWorkflowCollectionItemTaskArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowsMediaWorkflowCollectionItemTask] {
-	return pulumix.Output[[]GetMediaWorkflowsMediaWorkflowCollectionItemTask]{
-		OutputState: i.ToGetMediaWorkflowsMediaWorkflowCollectionItemTaskArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMediaWorkflowsMediaWorkflowCollectionItemTaskOutput struct{ *pulumi.OutputState }
 
 func (GetMediaWorkflowsMediaWorkflowCollectionItemTaskOutput) ElementType() reflect.Type {
@@ -5325,12 +4544,6 @@ func (o GetMediaWorkflowsMediaWorkflowCollectionItemTaskOutput) ToGetMediaWorkfl
 
 func (o GetMediaWorkflowsMediaWorkflowCollectionItemTaskOutput) ToGetMediaWorkflowsMediaWorkflowCollectionItemTaskOutputWithContext(ctx context.Context) GetMediaWorkflowsMediaWorkflowCollectionItemTaskOutput {
 	return o
-}
-
-func (o GetMediaWorkflowsMediaWorkflowCollectionItemTaskOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowsMediaWorkflowCollectionItemTask] {
-	return pulumix.Output[GetMediaWorkflowsMediaWorkflowCollectionItemTask]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
@@ -5382,12 +4595,6 @@ func (o GetMediaWorkflowsMediaWorkflowCollectionItemTaskArrayOutput) ToGetMediaW
 
 func (o GetMediaWorkflowsMediaWorkflowCollectionItemTaskArrayOutput) ToGetMediaWorkflowsMediaWorkflowCollectionItemTaskArrayOutputWithContext(ctx context.Context) GetMediaWorkflowsMediaWorkflowCollectionItemTaskArrayOutput {
 	return o
-}
-
-func (o GetMediaWorkflowsMediaWorkflowCollectionItemTaskArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMediaWorkflowsMediaWorkflowCollectionItemTask] {
-	return pulumix.Output[[]GetMediaWorkflowsMediaWorkflowCollectionItemTask]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMediaWorkflowsMediaWorkflowCollectionItemTaskArrayOutput) Index(i pulumi.IntInput) GetMediaWorkflowsMediaWorkflowCollectionItemTaskOutput {
@@ -5473,12 +4680,6 @@ func (i GetStreamCdnConfigConfigArgs) ToGetStreamCdnConfigConfigOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamCdnConfigConfigOutput)
 }
 
-func (i GetStreamCdnConfigConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamCdnConfigConfig] {
-	return pulumix.Output[GetStreamCdnConfigConfig]{
-		OutputState: i.ToGetStreamCdnConfigConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetStreamCdnConfigConfigArrayInput is an input type that accepts GetStreamCdnConfigConfigArray and GetStreamCdnConfigConfigArrayOutput values.
 // You can construct a concrete instance of `GetStreamCdnConfigConfigArrayInput` via:
 //
@@ -5504,12 +4705,6 @@ func (i GetStreamCdnConfigConfigArray) ToGetStreamCdnConfigConfigArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamCdnConfigConfigArrayOutput)
 }
 
-func (i GetStreamCdnConfigConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamCdnConfigConfig] {
-	return pulumix.Output[[]GetStreamCdnConfigConfig]{
-		OutputState: i.ToGetStreamCdnConfigConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamCdnConfigConfigOutput struct{ *pulumi.OutputState }
 
 func (GetStreamCdnConfigConfigOutput) ElementType() reflect.Type {
@@ -5522,12 +4717,6 @@ func (o GetStreamCdnConfigConfigOutput) ToGetStreamCdnConfigConfigOutput() GetSt
 
 func (o GetStreamCdnConfigConfigOutput) ToGetStreamCdnConfigConfigOutputWithContext(ctx context.Context) GetStreamCdnConfigConfigOutput {
 	return o
-}
-
-func (o GetStreamCdnConfigConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamCdnConfigConfig] {
-	return pulumix.Output[GetStreamCdnConfigConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The hostname of the CDN edge server to use when building CDN URLs.
@@ -5604,12 +4793,6 @@ func (o GetStreamCdnConfigConfigArrayOutput) ToGetStreamCdnConfigConfigArrayOutp
 	return o
 }
 
-func (o GetStreamCdnConfigConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamCdnConfigConfig] {
-	return pulumix.Output[[]GetStreamCdnConfigConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetStreamCdnConfigConfigArrayOutput) Index(i pulumi.IntInput) GetStreamCdnConfigConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamCdnConfigConfig {
 		return vs[0].([]GetStreamCdnConfigConfig)[vs[1].(int)]
@@ -5651,12 +4834,6 @@ func (i GetStreamCdnConfigsFilterArgs) ToGetStreamCdnConfigsFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamCdnConfigsFilterOutput)
 }
 
-func (i GetStreamCdnConfigsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamCdnConfigsFilter] {
-	return pulumix.Output[GetStreamCdnConfigsFilter]{
-		OutputState: i.ToGetStreamCdnConfigsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetStreamCdnConfigsFilterArrayInput is an input type that accepts GetStreamCdnConfigsFilterArray and GetStreamCdnConfigsFilterArrayOutput values.
 // You can construct a concrete instance of `GetStreamCdnConfigsFilterArrayInput` via:
 //
@@ -5682,12 +4859,6 @@ func (i GetStreamCdnConfigsFilterArray) ToGetStreamCdnConfigsFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamCdnConfigsFilterArrayOutput)
 }
 
-func (i GetStreamCdnConfigsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamCdnConfigsFilter] {
-	return pulumix.Output[[]GetStreamCdnConfigsFilter]{
-		OutputState: i.ToGetStreamCdnConfigsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamCdnConfigsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetStreamCdnConfigsFilterOutput) ElementType() reflect.Type {
@@ -5700,12 +4871,6 @@ func (o GetStreamCdnConfigsFilterOutput) ToGetStreamCdnConfigsFilterOutput() Get
 
 func (o GetStreamCdnConfigsFilterOutput) ToGetStreamCdnConfigsFilterOutputWithContext(ctx context.Context) GetStreamCdnConfigsFilterOutput {
 	return o
-}
-
-func (o GetStreamCdnConfigsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamCdnConfigsFilter] {
-	return pulumix.Output[GetStreamCdnConfigsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamCdnConfigsFilterOutput) Name() pulumi.StringOutput {
@@ -5732,12 +4897,6 @@ func (o GetStreamCdnConfigsFilterArrayOutput) ToGetStreamCdnConfigsFilterArrayOu
 
 func (o GetStreamCdnConfigsFilterArrayOutput) ToGetStreamCdnConfigsFilterArrayOutputWithContext(ctx context.Context) GetStreamCdnConfigsFilterArrayOutput {
 	return o
-}
-
-func (o GetStreamCdnConfigsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamCdnConfigsFilter] {
-	return pulumix.Output[[]GetStreamCdnConfigsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamCdnConfigsFilterArrayOutput) Index(i pulumi.IntInput) GetStreamCdnConfigsFilterOutput {
@@ -5777,12 +4936,6 @@ func (i GetStreamCdnConfigsStreamCdnConfigCollectionArgs) ToGetStreamCdnConfigsS
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamCdnConfigsStreamCdnConfigCollectionOutput)
 }
 
-func (i GetStreamCdnConfigsStreamCdnConfigCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamCdnConfigsStreamCdnConfigCollection] {
-	return pulumix.Output[GetStreamCdnConfigsStreamCdnConfigCollection]{
-		OutputState: i.ToGetStreamCdnConfigsStreamCdnConfigCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetStreamCdnConfigsStreamCdnConfigCollectionArrayInput is an input type that accepts GetStreamCdnConfigsStreamCdnConfigCollectionArray and GetStreamCdnConfigsStreamCdnConfigCollectionArrayOutput values.
 // You can construct a concrete instance of `GetStreamCdnConfigsStreamCdnConfigCollectionArrayInput` via:
 //
@@ -5808,12 +4961,6 @@ func (i GetStreamCdnConfigsStreamCdnConfigCollectionArray) ToGetStreamCdnConfigs
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamCdnConfigsStreamCdnConfigCollectionArrayOutput)
 }
 
-func (i GetStreamCdnConfigsStreamCdnConfigCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamCdnConfigsStreamCdnConfigCollection] {
-	return pulumix.Output[[]GetStreamCdnConfigsStreamCdnConfigCollection]{
-		OutputState: i.ToGetStreamCdnConfigsStreamCdnConfigCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamCdnConfigsStreamCdnConfigCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetStreamCdnConfigsStreamCdnConfigCollectionOutput) ElementType() reflect.Type {
@@ -5826,12 +4973,6 @@ func (o GetStreamCdnConfigsStreamCdnConfigCollectionOutput) ToGetStreamCdnConfig
 
 func (o GetStreamCdnConfigsStreamCdnConfigCollectionOutput) ToGetStreamCdnConfigsStreamCdnConfigCollectionOutputWithContext(ctx context.Context) GetStreamCdnConfigsStreamCdnConfigCollectionOutput {
 	return o
-}
-
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamCdnConfigsStreamCdnConfigCollection] {
-	return pulumix.Output[GetStreamCdnConfigsStreamCdnConfigCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamCdnConfigsStreamCdnConfigCollectionOutput) Items() GetStreamCdnConfigsStreamCdnConfigCollectionItemArrayOutput {
@@ -5852,12 +4993,6 @@ func (o GetStreamCdnConfigsStreamCdnConfigCollectionArrayOutput) ToGetStreamCdnC
 
 func (o GetStreamCdnConfigsStreamCdnConfigCollectionArrayOutput) ToGetStreamCdnConfigsStreamCdnConfigCollectionArrayOutputWithContext(ctx context.Context) GetStreamCdnConfigsStreamCdnConfigCollectionArrayOutput {
 	return o
-}
-
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamCdnConfigsStreamCdnConfigCollection] {
-	return pulumix.Output[[]GetStreamCdnConfigsStreamCdnConfigCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamCdnConfigsStreamCdnConfigCollectionArrayOutput) Index(i pulumi.IntInput) GetStreamCdnConfigsStreamCdnConfigCollectionOutput {
@@ -5947,12 +5082,6 @@ func (i GetStreamCdnConfigsStreamCdnConfigCollectionItemArgs) ToGetStreamCdnConf
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput)
 }
 
-func (i GetStreamCdnConfigsStreamCdnConfigCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamCdnConfigsStreamCdnConfigCollectionItem] {
-	return pulumix.Output[GetStreamCdnConfigsStreamCdnConfigCollectionItem]{
-		OutputState: i.ToGetStreamCdnConfigsStreamCdnConfigCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetStreamCdnConfigsStreamCdnConfigCollectionItemArrayInput is an input type that accepts GetStreamCdnConfigsStreamCdnConfigCollectionItemArray and GetStreamCdnConfigsStreamCdnConfigCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetStreamCdnConfigsStreamCdnConfigCollectionItemArrayInput` via:
 //
@@ -5978,12 +5107,6 @@ func (i GetStreamCdnConfigsStreamCdnConfigCollectionItemArray) ToGetStreamCdnCon
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamCdnConfigsStreamCdnConfigCollectionItemArrayOutput)
 }
 
-func (i GetStreamCdnConfigsStreamCdnConfigCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamCdnConfigsStreamCdnConfigCollectionItem] {
-	return pulumix.Output[[]GetStreamCdnConfigsStreamCdnConfigCollectionItem]{
-		OutputState: i.ToGetStreamCdnConfigsStreamCdnConfigCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) ElementType() reflect.Type {
@@ -5996,12 +5119,6 @@ func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) ToGetStreamCdnCo
 
 func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) ToGetStreamCdnConfigsStreamCdnConfigCollectionItemOutputWithContext(ctx context.Context) GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput {
 	return o
-}
-
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamCdnConfigsStreamCdnConfigCollectionItem] {
-	return pulumix.Output[GetStreamCdnConfigsStreamCdnConfigCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier.
@@ -6083,12 +5200,6 @@ func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemArrayOutput) ToGetStream
 
 func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemArrayOutput) ToGetStreamCdnConfigsStreamCdnConfigCollectionItemArrayOutputWithContext(ctx context.Context) GetStreamCdnConfigsStreamCdnConfigCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamCdnConfigsStreamCdnConfigCollectionItem] {
-	return pulumix.Output[[]GetStreamCdnConfigsStreamCdnConfigCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemArrayOutput) Index(i pulumi.IntInput) GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput {
@@ -6174,12 +5285,6 @@ func (i GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArgs) ToGetStreamC
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput)
 }
 
-func (i GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig] {
-	return pulumix.Output[GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig]{
-		OutputState: i.ToGetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArrayInput is an input type that accepts GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArray and GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArrayOutput values.
 // You can construct a concrete instance of `GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArrayInput` via:
 //
@@ -6205,12 +5310,6 @@ func (i GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArray) ToGetStream
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArrayOutput)
 }
 
-func (i GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig] {
-	return pulumix.Output[[]GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig]{
-		OutputState: i.ToGetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput struct{ *pulumi.OutputState }
 
 func (GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) ElementType() reflect.Type {
@@ -6223,12 +5322,6 @@ func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) ToGetStrea
 
 func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) ToGetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutputWithContext(ctx context.Context) GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput {
 	return o
-}
-
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig] {
-	return pulumix.Output[GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The hostname of the CDN edge server to use when building CDN URLs.
@@ -6311,12 +5404,6 @@ func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArrayOutput) ToGet
 	return o
 }
 
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig] {
-	return pulumix.Output[[]GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArrayOutput) Index(i pulumi.IntInput) GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig {
 		return vs[0].([]GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig)[vs[1].(int)]
@@ -6358,12 +5445,6 @@ func (i GetStreamDistributionChannelsFilterArgs) ToGetStreamDistributionChannels
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamDistributionChannelsFilterOutput)
 }
 
-func (i GetStreamDistributionChannelsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamDistributionChannelsFilter] {
-	return pulumix.Output[GetStreamDistributionChannelsFilter]{
-		OutputState: i.ToGetStreamDistributionChannelsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetStreamDistributionChannelsFilterArrayInput is an input type that accepts GetStreamDistributionChannelsFilterArray and GetStreamDistributionChannelsFilterArrayOutput values.
 // You can construct a concrete instance of `GetStreamDistributionChannelsFilterArrayInput` via:
 //
@@ -6389,12 +5470,6 @@ func (i GetStreamDistributionChannelsFilterArray) ToGetStreamDistributionChannel
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamDistributionChannelsFilterArrayOutput)
 }
 
-func (i GetStreamDistributionChannelsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamDistributionChannelsFilter] {
-	return pulumix.Output[[]GetStreamDistributionChannelsFilter]{
-		OutputState: i.ToGetStreamDistributionChannelsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamDistributionChannelsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetStreamDistributionChannelsFilterOutput) ElementType() reflect.Type {
@@ -6407,12 +5482,6 @@ func (o GetStreamDistributionChannelsFilterOutput) ToGetStreamDistributionChanne
 
 func (o GetStreamDistributionChannelsFilterOutput) ToGetStreamDistributionChannelsFilterOutputWithContext(ctx context.Context) GetStreamDistributionChannelsFilterOutput {
 	return o
-}
-
-func (o GetStreamDistributionChannelsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamDistributionChannelsFilter] {
-	return pulumix.Output[GetStreamDistributionChannelsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamDistributionChannelsFilterOutput) Name() pulumi.StringOutput {
@@ -6439,12 +5508,6 @@ func (o GetStreamDistributionChannelsFilterArrayOutput) ToGetStreamDistributionC
 
 func (o GetStreamDistributionChannelsFilterArrayOutput) ToGetStreamDistributionChannelsFilterArrayOutputWithContext(ctx context.Context) GetStreamDistributionChannelsFilterArrayOutput {
 	return o
-}
-
-func (o GetStreamDistributionChannelsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamDistributionChannelsFilter] {
-	return pulumix.Output[[]GetStreamDistributionChannelsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamDistributionChannelsFilterArrayOutput) Index(i pulumi.IntInput) GetStreamDistributionChannelsFilterOutput {
@@ -6484,12 +5547,6 @@ func (i GetStreamDistributionChannelsStreamDistributionChannelCollectionArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamDistributionChannelsStreamDistributionChannelCollectionOutput)
 }
 
-func (i GetStreamDistributionChannelsStreamDistributionChannelCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamDistributionChannelsStreamDistributionChannelCollection] {
-	return pulumix.Output[GetStreamDistributionChannelsStreamDistributionChannelCollection]{
-		OutputState: i.ToGetStreamDistributionChannelsStreamDistributionChannelCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetStreamDistributionChannelsStreamDistributionChannelCollectionArrayInput is an input type that accepts GetStreamDistributionChannelsStreamDistributionChannelCollectionArray and GetStreamDistributionChannelsStreamDistributionChannelCollectionArrayOutput values.
 // You can construct a concrete instance of `GetStreamDistributionChannelsStreamDistributionChannelCollectionArrayInput` via:
 //
@@ -6515,12 +5572,6 @@ func (i GetStreamDistributionChannelsStreamDistributionChannelCollectionArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamDistributionChannelsStreamDistributionChannelCollectionArrayOutput)
 }
 
-func (i GetStreamDistributionChannelsStreamDistributionChannelCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamDistributionChannelsStreamDistributionChannelCollection] {
-	return pulumix.Output[[]GetStreamDistributionChannelsStreamDistributionChannelCollection]{
-		OutputState: i.ToGetStreamDistributionChannelsStreamDistributionChannelCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamDistributionChannelsStreamDistributionChannelCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetStreamDistributionChannelsStreamDistributionChannelCollectionOutput) ElementType() reflect.Type {
@@ -6533,12 +5584,6 @@ func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionOutput) 
 
 func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionOutput) ToGetStreamDistributionChannelsStreamDistributionChannelCollectionOutputWithContext(ctx context.Context) GetStreamDistributionChannelsStreamDistributionChannelCollectionOutput {
 	return o
-}
-
-func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamDistributionChannelsStreamDistributionChannelCollection] {
-	return pulumix.Output[GetStreamDistributionChannelsStreamDistributionChannelCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionOutput) Items() GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArrayOutput {
@@ -6559,12 +5604,6 @@ func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionArrayOut
 
 func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionArrayOutput) ToGetStreamDistributionChannelsStreamDistributionChannelCollectionArrayOutputWithContext(ctx context.Context) GetStreamDistributionChannelsStreamDistributionChannelCollectionArrayOutput {
 	return o
-}
-
-func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamDistributionChannelsStreamDistributionChannelCollection] {
-	return pulumix.Output[[]GetStreamDistributionChannelsStreamDistributionChannelCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionArrayOutput) Index(i pulumi.IntInput) GetStreamDistributionChannelsStreamDistributionChannelCollectionOutput {
@@ -6642,12 +5681,6 @@ func (i GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArgs
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput)
 }
 
-func (i GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamDistributionChannelsStreamDistributionChannelCollectionItem] {
-	return pulumix.Output[GetStreamDistributionChannelsStreamDistributionChannelCollectionItem]{
-		OutputState: i.ToGetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArrayInput is an input type that accepts GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArray and GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArrayInput` via:
 //
@@ -6673,12 +5706,6 @@ func (i GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArrayOutput)
 }
 
-func (i GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamDistributionChannelsStreamDistributionChannelCollectionItem] {
-	return pulumix.Output[[]GetStreamDistributionChannelsStreamDistributionChannelCollectionItem]{
-		OutputState: i.ToGetStreamDistributionChannelsStreamDistributionChannelCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput) ElementType() reflect.Type {
@@ -6691,12 +5718,6 @@ func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutp
 
 func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput) ToGetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutputWithContext(ctx context.Context) GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput {
 	return o
-}
-
-func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamDistributionChannelsStreamDistributionChannelCollectionItem] {
-	return pulumix.Output[GetStreamDistributionChannelsStreamDistributionChannelCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -6779,12 +5800,6 @@ func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArra
 	return o
 }
 
-func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamDistributionChannelsStreamDistributionChannelCollectionItem] {
-	return pulumix.Output[[]GetStreamDistributionChannelsStreamDistributionChannelCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArrayOutput) Index(i pulumi.IntInput) GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamDistributionChannelsStreamDistributionChannelCollectionItem {
 		return vs[0].([]GetStreamDistributionChannelsStreamDistributionChannelCollectionItem)[vs[1].(int)]
@@ -6828,12 +5843,6 @@ func (i GetStreamPackagingConfigEncryptionArgs) ToGetStreamPackagingConfigEncryp
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPackagingConfigEncryptionOutput)
 }
 
-func (i GetStreamPackagingConfigEncryptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamPackagingConfigEncryption] {
-	return pulumix.Output[GetStreamPackagingConfigEncryption]{
-		OutputState: i.ToGetStreamPackagingConfigEncryptionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetStreamPackagingConfigEncryptionArrayInput is an input type that accepts GetStreamPackagingConfigEncryptionArray and GetStreamPackagingConfigEncryptionArrayOutput values.
 // You can construct a concrete instance of `GetStreamPackagingConfigEncryptionArrayInput` via:
 //
@@ -6859,12 +5868,6 @@ func (i GetStreamPackagingConfigEncryptionArray) ToGetStreamPackagingConfigEncry
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPackagingConfigEncryptionArrayOutput)
 }
 
-func (i GetStreamPackagingConfigEncryptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPackagingConfigEncryption] {
-	return pulumix.Output[[]GetStreamPackagingConfigEncryption]{
-		OutputState: i.ToGetStreamPackagingConfigEncryptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamPackagingConfigEncryptionOutput struct{ *pulumi.OutputState }
 
 func (GetStreamPackagingConfigEncryptionOutput) ElementType() reflect.Type {
@@ -6877,12 +5880,6 @@ func (o GetStreamPackagingConfigEncryptionOutput) ToGetStreamPackagingConfigEncr
 
 func (o GetStreamPackagingConfigEncryptionOutput) ToGetStreamPackagingConfigEncryptionOutputWithContext(ctx context.Context) GetStreamPackagingConfigEncryptionOutput {
 	return o
-}
-
-func (o GetStreamPackagingConfigEncryptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamPackagingConfigEncryption] {
-	return pulumix.Output[GetStreamPackagingConfigEncryption]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The encryption algorithm for the stream packaging configuration.
@@ -6907,12 +5904,6 @@ func (o GetStreamPackagingConfigEncryptionArrayOutput) ToGetStreamPackagingConfi
 
 func (o GetStreamPackagingConfigEncryptionArrayOutput) ToGetStreamPackagingConfigEncryptionArrayOutputWithContext(ctx context.Context) GetStreamPackagingConfigEncryptionArrayOutput {
 	return o
-}
-
-func (o GetStreamPackagingConfigEncryptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPackagingConfigEncryption] {
-	return pulumix.Output[[]GetStreamPackagingConfigEncryption]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamPackagingConfigEncryptionArrayOutput) Index(i pulumi.IntInput) GetStreamPackagingConfigEncryptionOutput {
@@ -6956,12 +5947,6 @@ func (i GetStreamPackagingConfigsFilterArgs) ToGetStreamPackagingConfigsFilterOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPackagingConfigsFilterOutput)
 }
 
-func (i GetStreamPackagingConfigsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamPackagingConfigsFilter] {
-	return pulumix.Output[GetStreamPackagingConfigsFilter]{
-		OutputState: i.ToGetStreamPackagingConfigsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetStreamPackagingConfigsFilterArrayInput is an input type that accepts GetStreamPackagingConfigsFilterArray and GetStreamPackagingConfigsFilterArrayOutput values.
 // You can construct a concrete instance of `GetStreamPackagingConfigsFilterArrayInput` via:
 //
@@ -6987,12 +5972,6 @@ func (i GetStreamPackagingConfigsFilterArray) ToGetStreamPackagingConfigsFilterA
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPackagingConfigsFilterArrayOutput)
 }
 
-func (i GetStreamPackagingConfigsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPackagingConfigsFilter] {
-	return pulumix.Output[[]GetStreamPackagingConfigsFilter]{
-		OutputState: i.ToGetStreamPackagingConfigsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamPackagingConfigsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetStreamPackagingConfigsFilterOutput) ElementType() reflect.Type {
@@ -7005,12 +5984,6 @@ func (o GetStreamPackagingConfigsFilterOutput) ToGetStreamPackagingConfigsFilter
 
 func (o GetStreamPackagingConfigsFilterOutput) ToGetStreamPackagingConfigsFilterOutputWithContext(ctx context.Context) GetStreamPackagingConfigsFilterOutput {
 	return o
-}
-
-func (o GetStreamPackagingConfigsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamPackagingConfigsFilter] {
-	return pulumix.Output[GetStreamPackagingConfigsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamPackagingConfigsFilterOutput) Name() pulumi.StringOutput {
@@ -7037,12 +6010,6 @@ func (o GetStreamPackagingConfigsFilterArrayOutput) ToGetStreamPackagingConfigsF
 
 func (o GetStreamPackagingConfigsFilterArrayOutput) ToGetStreamPackagingConfigsFilterArrayOutputWithContext(ctx context.Context) GetStreamPackagingConfigsFilterArrayOutput {
 	return o
-}
-
-func (o GetStreamPackagingConfigsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPackagingConfigsFilter] {
-	return pulumix.Output[[]GetStreamPackagingConfigsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamPackagingConfigsFilterArrayOutput) Index(i pulumi.IntInput) GetStreamPackagingConfigsFilterOutput {
@@ -7082,12 +6049,6 @@ func (i GetStreamPackagingConfigsStreamPackagingConfigCollectionArgs) ToGetStrea
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPackagingConfigsStreamPackagingConfigCollectionOutput)
 }
 
-func (i GetStreamPackagingConfigsStreamPackagingConfigCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamPackagingConfigsStreamPackagingConfigCollection] {
-	return pulumix.Output[GetStreamPackagingConfigsStreamPackagingConfigCollection]{
-		OutputState: i.ToGetStreamPackagingConfigsStreamPackagingConfigCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetStreamPackagingConfigsStreamPackagingConfigCollectionArrayInput is an input type that accepts GetStreamPackagingConfigsStreamPackagingConfigCollectionArray and GetStreamPackagingConfigsStreamPackagingConfigCollectionArrayOutput values.
 // You can construct a concrete instance of `GetStreamPackagingConfigsStreamPackagingConfigCollectionArrayInput` via:
 //
@@ -7113,12 +6074,6 @@ func (i GetStreamPackagingConfigsStreamPackagingConfigCollectionArray) ToGetStre
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPackagingConfigsStreamPackagingConfigCollectionArrayOutput)
 }
 
-func (i GetStreamPackagingConfigsStreamPackagingConfigCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPackagingConfigsStreamPackagingConfigCollection] {
-	return pulumix.Output[[]GetStreamPackagingConfigsStreamPackagingConfigCollection]{
-		OutputState: i.ToGetStreamPackagingConfigsStreamPackagingConfigCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamPackagingConfigsStreamPackagingConfigCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetStreamPackagingConfigsStreamPackagingConfigCollectionOutput) ElementType() reflect.Type {
@@ -7131,12 +6086,6 @@ func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionOutput) ToGetStr
 
 func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionOutput) ToGetStreamPackagingConfigsStreamPackagingConfigCollectionOutputWithContext(ctx context.Context) GetStreamPackagingConfigsStreamPackagingConfigCollectionOutput {
 	return o
-}
-
-func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamPackagingConfigsStreamPackagingConfigCollection] {
-	return pulumix.Output[GetStreamPackagingConfigsStreamPackagingConfigCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionOutput) Items() GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArrayOutput {
@@ -7157,12 +6106,6 @@ func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionArrayOutput) ToG
 
 func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionArrayOutput) ToGetStreamPackagingConfigsStreamPackagingConfigCollectionArrayOutputWithContext(ctx context.Context) GetStreamPackagingConfigsStreamPackagingConfigCollectionArrayOutput {
 	return o
-}
-
-func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPackagingConfigsStreamPackagingConfigCollection] {
-	return pulumix.Output[[]GetStreamPackagingConfigsStreamPackagingConfigCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionArrayOutput) Index(i pulumi.IntInput) GetStreamPackagingConfigsStreamPackagingConfigCollectionOutput {
@@ -7252,12 +6195,6 @@ func (i GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArgs) ToGetS
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput)
 }
 
-func (i GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamPackagingConfigsStreamPackagingConfigCollectionItem] {
-	return pulumix.Output[GetStreamPackagingConfigsStreamPackagingConfigCollectionItem]{
-		OutputState: i.ToGetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArrayInput is an input type that accepts GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArray and GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArrayInput` via:
 //
@@ -7283,12 +6220,6 @@ func (i GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArrayOutput)
 }
 
-func (i GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPackagingConfigsStreamPackagingConfigCollectionItem] {
-	return pulumix.Output[[]GetStreamPackagingConfigsStreamPackagingConfigCollectionItem]{
-		OutputState: i.ToGetStreamPackagingConfigsStreamPackagingConfigCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) ElementType() reflect.Type {
@@ -7301,12 +6232,6 @@ func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) ToGe
 
 func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) ToGetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutputWithContext(ctx context.Context) GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput {
 	return o
-}
-
-func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamPackagingConfigsStreamPackagingConfigCollectionItem] {
-	return pulumix.Output[GetStreamPackagingConfigsStreamPackagingConfigCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier
@@ -7402,12 +6327,6 @@ func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArrayOutput)
 	return o
 }
 
-func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPackagingConfigsStreamPackagingConfigCollectionItem] {
-	return pulumix.Output[[]GetStreamPackagingConfigsStreamPackagingConfigCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArrayOutput) Index(i pulumi.IntInput) GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamPackagingConfigsStreamPackagingConfigCollectionItem {
 		return vs[0].([]GetStreamPackagingConfigsStreamPackagingConfigCollectionItem)[vs[1].(int)]
@@ -7451,12 +6370,6 @@ func (i GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionOutput)
 }
 
-func (i GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption] {
-	return pulumix.Output[GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption]{
-		OutputState: i.ToGetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArrayInput is an input type that accepts GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArray and GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArrayOutput values.
 // You can construct a concrete instance of `GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArrayInput` via:
 //
@@ -7482,12 +6395,6 @@ func (i GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArrayOutput)
 }
 
-func (i GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption] {
-	return pulumix.Output[[]GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption]{
-		OutputState: i.ToGetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionOutput struct{ *pulumi.OutputState }
 
 func (GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionOutput) ElementType() reflect.Type {
@@ -7500,12 +6407,6 @@ func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionOu
 
 func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionOutput) ToGetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionOutputWithContext(ctx context.Context) GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionOutput {
 	return o
-}
-
-func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption] {
-	return pulumix.Output[GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The encryption algorithm for the stream packaging configuration.
@@ -7534,12 +6435,6 @@ func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionAr
 
 func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArrayOutput) ToGetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArrayOutputWithContext(ctx context.Context) GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArrayOutput {
 	return o
-}
-
-func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption] {
-	return pulumix.Output[[]GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArrayOutput) Index(i pulumi.IntInput) GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionOutput {
@@ -7593,12 +6488,6 @@ func (i GetSystemMediaWorkflowItemArgs) ToGetSystemMediaWorkflowItemOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetSystemMediaWorkflowItemOutput)
 }
 
-func (i GetSystemMediaWorkflowItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSystemMediaWorkflowItem] {
-	return pulumix.Output[GetSystemMediaWorkflowItem]{
-		OutputState: i.ToGetSystemMediaWorkflowItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSystemMediaWorkflowItemArrayInput is an input type that accepts GetSystemMediaWorkflowItemArray and GetSystemMediaWorkflowItemArrayOutput values.
 // You can construct a concrete instance of `GetSystemMediaWorkflowItemArrayInput` via:
 //
@@ -7624,12 +6513,6 @@ func (i GetSystemMediaWorkflowItemArray) ToGetSystemMediaWorkflowItemArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetSystemMediaWorkflowItemArrayOutput)
 }
 
-func (i GetSystemMediaWorkflowItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSystemMediaWorkflowItem] {
-	return pulumix.Output[[]GetSystemMediaWorkflowItem]{
-		OutputState: i.ToGetSystemMediaWorkflowItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSystemMediaWorkflowItemOutput struct{ *pulumi.OutputState }
 
 func (GetSystemMediaWorkflowItemOutput) ElementType() reflect.Type {
@@ -7642,12 +6525,6 @@ func (o GetSystemMediaWorkflowItemOutput) ToGetSystemMediaWorkflowItemOutput() G
 
 func (o GetSystemMediaWorkflowItemOutput) ToGetSystemMediaWorkflowItemOutputWithContext(ctx context.Context) GetSystemMediaWorkflowItemOutput {
 	return o
-}
-
-func (o GetSystemMediaWorkflowItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSystemMediaWorkflowItem] {
-	return pulumix.Output[GetSystemMediaWorkflowItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Description of this workflow's processing and how that processing can be customized by specifying parameter values.
@@ -7682,12 +6559,6 @@ func (o GetSystemMediaWorkflowItemArrayOutput) ToGetSystemMediaWorkflowItemArray
 
 func (o GetSystemMediaWorkflowItemArrayOutput) ToGetSystemMediaWorkflowItemArrayOutputWithContext(ctx context.Context) GetSystemMediaWorkflowItemArrayOutput {
 	return o
-}
-
-func (o GetSystemMediaWorkflowItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSystemMediaWorkflowItem] {
-	return pulumix.Output[[]GetSystemMediaWorkflowItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSystemMediaWorkflowItemArrayOutput) Index(i pulumi.IntInput) GetSystemMediaWorkflowItemOutput {
@@ -7753,12 +6624,6 @@ func (i GetSystemMediaWorkflowItemTaskArgs) ToGetSystemMediaWorkflowItemTaskOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetSystemMediaWorkflowItemTaskOutput)
 }
 
-func (i GetSystemMediaWorkflowItemTaskArgs) ToOutput(ctx context.Context) pulumix.Output[GetSystemMediaWorkflowItemTask] {
-	return pulumix.Output[GetSystemMediaWorkflowItemTask]{
-		OutputState: i.ToGetSystemMediaWorkflowItemTaskOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSystemMediaWorkflowItemTaskArrayInput is an input type that accepts GetSystemMediaWorkflowItemTaskArray and GetSystemMediaWorkflowItemTaskArrayOutput values.
 // You can construct a concrete instance of `GetSystemMediaWorkflowItemTaskArrayInput` via:
 //
@@ -7784,12 +6649,6 @@ func (i GetSystemMediaWorkflowItemTaskArray) ToGetSystemMediaWorkflowItemTaskArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetSystemMediaWorkflowItemTaskArrayOutput)
 }
 
-func (i GetSystemMediaWorkflowItemTaskArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSystemMediaWorkflowItemTask] {
-	return pulumix.Output[[]GetSystemMediaWorkflowItemTask]{
-		OutputState: i.ToGetSystemMediaWorkflowItemTaskArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSystemMediaWorkflowItemTaskOutput struct{ *pulumi.OutputState }
 
 func (GetSystemMediaWorkflowItemTaskOutput) ElementType() reflect.Type {
@@ -7802,12 +6661,6 @@ func (o GetSystemMediaWorkflowItemTaskOutput) ToGetSystemMediaWorkflowItemTaskOu
 
 func (o GetSystemMediaWorkflowItemTaskOutput) ToGetSystemMediaWorkflowItemTaskOutputWithContext(ctx context.Context) GetSystemMediaWorkflowItemTaskOutput {
 	return o
-}
-
-func (o GetSystemMediaWorkflowItemTaskOutput) ToOutput(ctx context.Context) pulumix.Output[GetSystemMediaWorkflowItemTask] {
-	return pulumix.Output[GetSystemMediaWorkflowItemTask]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
@@ -7859,12 +6712,6 @@ func (o GetSystemMediaWorkflowItemTaskArrayOutput) ToGetSystemMediaWorkflowItemT
 
 func (o GetSystemMediaWorkflowItemTaskArrayOutput) ToGetSystemMediaWorkflowItemTaskArrayOutputWithContext(ctx context.Context) GetSystemMediaWorkflowItemTaskArrayOutput {
 	return o
-}
-
-func (o GetSystemMediaWorkflowItemTaskArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSystemMediaWorkflowItemTask] {
-	return pulumix.Output[[]GetSystemMediaWorkflowItemTask]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSystemMediaWorkflowItemTaskArrayOutput) Index(i pulumi.IntInput) GetSystemMediaWorkflowItemTaskOutput {

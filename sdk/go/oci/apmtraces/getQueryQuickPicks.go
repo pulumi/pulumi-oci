@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Query Quick Picks in Oracle Cloud Infrastructure Apm Traces service.
@@ -106,12 +105,6 @@ func (o GetQueryQuickPicksResultOutput) ToGetQueryQuickPicksResultOutput() GetQu
 
 func (o GetQueryQuickPicksResultOutput) ToGetQueryQuickPicksResultOutputWithContext(ctx context.Context) GetQueryQuickPicksResultOutput {
 	return o
-}
-
-func (o GetQueryQuickPicksResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetQueryQuickPicksResult] {
-	return pulumix.Output[GetQueryQuickPicksResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetQueryQuickPicksResultOutput) ApmDomainId() pulumi.StringOutput {

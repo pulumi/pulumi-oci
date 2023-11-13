@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Databases Database Parameters in Oracle Cloud Infrastructure Database Management service.
@@ -124,12 +123,6 @@ func (o GetManagedDatabasesDatabaseParametersResultOutput) ToGetManagedDatabases
 
 func (o GetManagedDatabasesDatabaseParametersResultOutput) ToGetManagedDatabasesDatabaseParametersResultOutputWithContext(ctx context.Context) GetManagedDatabasesDatabaseParametersResultOutput {
 	return o
-}
-
-func (o GetManagedDatabasesDatabaseParametersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabasesDatabaseParametersResult] {
-	return pulumix.Output[GetManagedDatabasesDatabaseParametersResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of database_parameters_collection.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Analytics Instances in Oracle Cloud Infrastructure Analytics service.
@@ -134,12 +133,6 @@ func (o GetAnalyticsInstancesResultOutput) ToGetAnalyticsInstancesResultOutput()
 
 func (o GetAnalyticsInstancesResultOutput) ToGetAnalyticsInstancesResultOutputWithContext(ctx context.Context) GetAnalyticsInstancesResultOutput {
 	return o
-}
-
-func (o GetAnalyticsInstancesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnalyticsInstancesResult] {
-	return pulumix.Output[GetAnalyticsInstancesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of analytics_instances.

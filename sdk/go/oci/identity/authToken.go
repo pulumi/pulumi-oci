@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Auth Token resource in Oracle Cloud Infrastructure Identity service.
@@ -207,12 +206,6 @@ func (i *AuthToken) ToAuthTokenOutputWithContext(ctx context.Context) AuthTokenO
 	return pulumi.ToOutputWithContext(ctx, i).(AuthTokenOutput)
 }
 
-func (i *AuthToken) ToOutput(ctx context.Context) pulumix.Output[*AuthToken] {
-	return pulumix.Output[*AuthToken]{
-		OutputState: i.ToAuthTokenOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AuthTokenArrayInput is an input type that accepts AuthTokenArray and AuthTokenArrayOutput values.
 // You can construct a concrete instance of `AuthTokenArrayInput` via:
 //
@@ -236,12 +229,6 @@ func (i AuthTokenArray) ToAuthTokenArrayOutput() AuthTokenArrayOutput {
 
 func (i AuthTokenArray) ToAuthTokenArrayOutputWithContext(ctx context.Context) AuthTokenArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AuthTokenArrayOutput)
-}
-
-func (i AuthTokenArray) ToOutput(ctx context.Context) pulumix.Output[[]*AuthToken] {
-	return pulumix.Output[[]*AuthToken]{
-		OutputState: i.ToAuthTokenArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AuthTokenMapInput is an input type that accepts AuthTokenMap and AuthTokenMapOutput values.
@@ -269,12 +256,6 @@ func (i AuthTokenMap) ToAuthTokenMapOutputWithContext(ctx context.Context) AuthT
 	return pulumi.ToOutputWithContext(ctx, i).(AuthTokenMapOutput)
 }
 
-func (i AuthTokenMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AuthToken] {
-	return pulumix.Output[map[string]*AuthToken]{
-		OutputState: i.ToAuthTokenMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AuthTokenOutput struct{ *pulumi.OutputState }
 
 func (AuthTokenOutput) ElementType() reflect.Type {
@@ -287,12 +268,6 @@ func (o AuthTokenOutput) ToAuthTokenOutput() AuthTokenOutput {
 
 func (o AuthTokenOutput) ToAuthTokenOutputWithContext(ctx context.Context) AuthTokenOutput {
 	return o
-}
-
-func (o AuthTokenOutput) ToOutput(ctx context.Context) pulumix.Output[*AuthToken] {
-	return pulumix.Output[*AuthToken]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The description you assign to the auth token during creation. Does not have to be unique, and it's changeable.
@@ -347,12 +322,6 @@ func (o AuthTokenArrayOutput) ToAuthTokenArrayOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o AuthTokenArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AuthToken] {
-	return pulumix.Output[[]*AuthToken]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AuthTokenArrayOutput) Index(i pulumi.IntInput) AuthTokenOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AuthToken {
 		return vs[0].([]*AuthToken)[vs[1].(int)]
@@ -371,12 +340,6 @@ func (o AuthTokenMapOutput) ToAuthTokenMapOutput() AuthTokenMapOutput {
 
 func (o AuthTokenMapOutput) ToAuthTokenMapOutputWithContext(ctx context.Context) AuthTokenMapOutput {
 	return o
-}
-
-func (o AuthTokenMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AuthToken] {
-	return pulumix.Output[map[string]*AuthToken]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AuthTokenMapOutput) MapIndex(k pulumi.StringInput) AuthTokenOutput {

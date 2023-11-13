@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Migration Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -309,12 +308,6 @@ func (i *MigrationAsset) ToMigrationAssetOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationAssetOutput)
 }
 
-func (i *MigrationAsset) ToOutput(ctx context.Context) pulumix.Output[*MigrationAsset] {
-	return pulumix.Output[*MigrationAsset]{
-		OutputState: i.ToMigrationAssetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MigrationAssetArrayInput is an input type that accepts MigrationAssetArray and MigrationAssetArrayOutput values.
 // You can construct a concrete instance of `MigrationAssetArrayInput` via:
 //
@@ -338,12 +331,6 @@ func (i MigrationAssetArray) ToMigrationAssetArrayOutput() MigrationAssetArrayOu
 
 func (i MigrationAssetArray) ToMigrationAssetArrayOutputWithContext(ctx context.Context) MigrationAssetArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationAssetArrayOutput)
-}
-
-func (i MigrationAssetArray) ToOutput(ctx context.Context) pulumix.Output[[]*MigrationAsset] {
-	return pulumix.Output[[]*MigrationAsset]{
-		OutputState: i.ToMigrationAssetArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MigrationAssetMapInput is an input type that accepts MigrationAssetMap and MigrationAssetMapOutput values.
@@ -371,12 +358,6 @@ func (i MigrationAssetMap) ToMigrationAssetMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationAssetMapOutput)
 }
 
-func (i MigrationAssetMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MigrationAsset] {
-	return pulumix.Output[map[string]*MigrationAsset]{
-		OutputState: i.ToMigrationAssetMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MigrationAssetOutput struct{ *pulumi.OutputState }
 
 func (MigrationAssetOutput) ElementType() reflect.Type {
@@ -389,12 +370,6 @@ func (o MigrationAssetOutput) ToMigrationAssetOutput() MigrationAssetOutput {
 
 func (o MigrationAssetOutput) ToMigrationAssetOutputWithContext(ctx context.Context) MigrationAssetOutput {
 	return o
-}
-
-func (o MigrationAssetOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationAsset] {
-	return pulumix.Output[*MigrationAsset]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Availability domain
@@ -513,12 +488,6 @@ func (o MigrationAssetArrayOutput) ToMigrationAssetArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o MigrationAssetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MigrationAsset] {
-	return pulumix.Output[[]*MigrationAsset]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o MigrationAssetArrayOutput) Index(i pulumi.IntInput) MigrationAssetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *MigrationAsset {
 		return vs[0].([]*MigrationAsset)[vs[1].(int)]
@@ -537,12 +506,6 @@ func (o MigrationAssetMapOutput) ToMigrationAssetMapOutput() MigrationAssetMapOu
 
 func (o MigrationAssetMapOutput) ToMigrationAssetMapOutputWithContext(ctx context.Context) MigrationAssetMapOutput {
 	return o
-}
-
-func (o MigrationAssetMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MigrationAsset] {
-	return pulumix.Output[map[string]*MigrationAsset]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MigrationAssetMapOutput) MapIndex(k pulumi.StringInput) MigrationAssetOutput {

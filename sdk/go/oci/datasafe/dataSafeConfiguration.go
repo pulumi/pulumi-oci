@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Data Safe Configuration resource in Oracle Cloud Infrastructure Data Safe service.
@@ -201,12 +200,6 @@ func (i *DataSafeConfiguration) ToDataSafeConfigurationOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(DataSafeConfigurationOutput)
 }
 
-func (i *DataSafeConfiguration) ToOutput(ctx context.Context) pulumix.Output[*DataSafeConfiguration] {
-	return pulumix.Output[*DataSafeConfiguration]{
-		OutputState: i.ToDataSafeConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DataSafeConfigurationArrayInput is an input type that accepts DataSafeConfigurationArray and DataSafeConfigurationArrayOutput values.
 // You can construct a concrete instance of `DataSafeConfigurationArrayInput` via:
 //
@@ -230,12 +223,6 @@ func (i DataSafeConfigurationArray) ToDataSafeConfigurationArrayOutput() DataSaf
 
 func (i DataSafeConfigurationArray) ToDataSafeConfigurationArrayOutputWithContext(ctx context.Context) DataSafeConfigurationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DataSafeConfigurationArrayOutput)
-}
-
-func (i DataSafeConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]*DataSafeConfiguration] {
-	return pulumix.Output[[]*DataSafeConfiguration]{
-		OutputState: i.ToDataSafeConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DataSafeConfigurationMapInput is an input type that accepts DataSafeConfigurationMap and DataSafeConfigurationMapOutput values.
@@ -263,12 +250,6 @@ func (i DataSafeConfigurationMap) ToDataSafeConfigurationMapOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(DataSafeConfigurationMapOutput)
 }
 
-func (i DataSafeConfigurationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DataSafeConfiguration] {
-	return pulumix.Output[map[string]*DataSafeConfiguration]{
-		OutputState: i.ToDataSafeConfigurationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DataSafeConfigurationOutput struct{ *pulumi.OutputState }
 
 func (DataSafeConfigurationOutput) ElementType() reflect.Type {
@@ -281,12 +262,6 @@ func (o DataSafeConfigurationOutput) ToDataSafeConfigurationOutput() DataSafeCon
 
 func (o DataSafeConfigurationOutput) ToDataSafeConfigurationOutputWithContext(ctx context.Context) DataSafeConfigurationOutput {
 	return o
-}
-
-func (o DataSafeConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[*DataSafeConfiguration] {
-	return pulumix.Output[*DataSafeConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A filter to return only resources that match the specified compartment OCID.
@@ -351,12 +326,6 @@ func (o DataSafeConfigurationArrayOutput) ToDataSafeConfigurationArrayOutputWith
 	return o
 }
 
-func (o DataSafeConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DataSafeConfiguration] {
-	return pulumix.Output[[]*DataSafeConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DataSafeConfigurationArrayOutput) Index(i pulumi.IntInput) DataSafeConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DataSafeConfiguration {
 		return vs[0].([]*DataSafeConfiguration)[vs[1].(int)]
@@ -375,12 +344,6 @@ func (o DataSafeConfigurationMapOutput) ToDataSafeConfigurationMapOutput() DataS
 
 func (o DataSafeConfigurationMapOutput) ToDataSafeConfigurationMapOutputWithContext(ctx context.Context) DataSafeConfigurationMapOutput {
 	return o
-}
-
-func (o DataSafeConfigurationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DataSafeConfiguration] {
-	return pulumix.Output[map[string]*DataSafeConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DataSafeConfigurationMapOutput) MapIndex(k pulumi.StringInput) DataSafeConfigurationOutput {

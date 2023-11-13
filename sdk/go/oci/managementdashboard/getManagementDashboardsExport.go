@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Management Dashboards Export resource in Oracle Cloud Infrastructure Management Dashboard service.
@@ -104,12 +103,6 @@ func (o GetManagementDashboardsExportResultOutput) ToGetManagementDashboardsExpo
 
 func (o GetManagementDashboardsExportResultOutput) ToGetManagementDashboardsExportResultOutputWithContext(ctx context.Context) GetManagementDashboardsExportResultOutput {
 	return o
-}
-
-func (o GetManagementDashboardsExportResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementDashboardsExportResult] {
-	return pulumix.Output[GetManagementDashboardsExportResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagementDashboardsExportResultOutput) ExportDashboardId() pulumi.StringOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetSecurityAssessmentFinding(ctx *pulumi.Context, args *GetSecurityAssessmentFindingArgs, opts ...pulumi.InvokeOption) (*GetSecurityAssessmentFindingResult, error) {
@@ -88,12 +87,6 @@ func (o GetSecurityAssessmentFindingResultOutput) ToGetSecurityAssessmentFinding
 
 func (o GetSecurityAssessmentFindingResultOutput) ToGetSecurityAssessmentFindingResultOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingResultOutput {
 	return o
-}
-
-func (o GetSecurityAssessmentFindingResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentFindingResult] {
-	return pulumix.Output[GetSecurityAssessmentFindingResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSecurityAssessmentFindingResultOutput) AccessLevel() pulumi.StringPtrOutput {

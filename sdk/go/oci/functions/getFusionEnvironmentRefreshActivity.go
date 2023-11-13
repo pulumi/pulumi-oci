@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Fusion Environment Refresh Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -128,12 +127,6 @@ func (o GetFusionEnvironmentRefreshActivityResultOutput) ToGetFusionEnvironmentR
 
 func (o GetFusionEnvironmentRefreshActivityResultOutput) ToGetFusionEnvironmentRefreshActivityResultOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshActivityResultOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentRefreshActivityResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentRefreshActivityResult] {
-	return pulumix.Output[GetFusionEnvironmentRefreshActivityResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A friendly name for the refresh activity. Can be changed later.

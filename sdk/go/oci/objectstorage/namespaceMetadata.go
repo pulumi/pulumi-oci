@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type NamespaceMetadata struct {
@@ -105,12 +104,6 @@ func (i *NamespaceMetadata) ToNamespaceMetadataOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceMetadataOutput)
 }
 
-func (i *NamespaceMetadata) ToOutput(ctx context.Context) pulumix.Output[*NamespaceMetadata] {
-	return pulumix.Output[*NamespaceMetadata]{
-		OutputState: i.ToNamespaceMetadataOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NamespaceMetadataArrayInput is an input type that accepts NamespaceMetadataArray and NamespaceMetadataArrayOutput values.
 // You can construct a concrete instance of `NamespaceMetadataArrayInput` via:
 //
@@ -134,12 +127,6 @@ func (i NamespaceMetadataArray) ToNamespaceMetadataArrayOutput() NamespaceMetada
 
 func (i NamespaceMetadataArray) ToNamespaceMetadataArrayOutputWithContext(ctx context.Context) NamespaceMetadataArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceMetadataArrayOutput)
-}
-
-func (i NamespaceMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]*NamespaceMetadata] {
-	return pulumix.Output[[]*NamespaceMetadata]{
-		OutputState: i.ToNamespaceMetadataArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // NamespaceMetadataMapInput is an input type that accepts NamespaceMetadataMap and NamespaceMetadataMapOutput values.
@@ -167,12 +154,6 @@ func (i NamespaceMetadataMap) ToNamespaceMetadataMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceMetadataMapOutput)
 }
 
-func (i NamespaceMetadataMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NamespaceMetadata] {
-	return pulumix.Output[map[string]*NamespaceMetadata]{
-		OutputState: i.ToNamespaceMetadataMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NamespaceMetadataOutput struct{ *pulumi.OutputState }
 
 func (NamespaceMetadataOutput) ElementType() reflect.Type {
@@ -185,12 +166,6 @@ func (o NamespaceMetadataOutput) ToNamespaceMetadataOutput() NamespaceMetadataOu
 
 func (o NamespaceMetadataOutput) ToNamespaceMetadataOutputWithContext(ctx context.Context) NamespaceMetadataOutput {
 	return o
-}
-
-func (o NamespaceMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[*NamespaceMetadata] {
-	return pulumix.Output[*NamespaceMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NamespaceMetadataOutput) DefaultS3compartmentId() pulumi.StringOutput {
@@ -219,12 +194,6 @@ func (o NamespaceMetadataArrayOutput) ToNamespaceMetadataArrayOutputWithContext(
 	return o
 }
 
-func (o NamespaceMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NamespaceMetadata] {
-	return pulumix.Output[[]*NamespaceMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o NamespaceMetadataArrayOutput) Index(i pulumi.IntInput) NamespaceMetadataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *NamespaceMetadata {
 		return vs[0].([]*NamespaceMetadata)[vs[1].(int)]
@@ -243,12 +212,6 @@ func (o NamespaceMetadataMapOutput) ToNamespaceMetadataMapOutput() NamespaceMeta
 
 func (o NamespaceMetadataMapOutput) ToNamespaceMetadataMapOutputWithContext(ctx context.Context) NamespaceMetadataMapOutput {
 	return o
-}
-
-func (o NamespaceMetadataMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NamespaceMetadata] {
-	return pulumix.Output[map[string]*NamespaceMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NamespaceMetadataMapOutput) MapIndex(k pulumi.StringInput) NamespaceMetadataOutput {

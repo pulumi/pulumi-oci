@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Software Sources in Oracle Cloud Infrastructure OS Management service.
@@ -120,12 +119,6 @@ func (o GetSoftwareSourcesResultOutput) ToGetSoftwareSourcesResultOutput() GetSo
 
 func (o GetSoftwareSourcesResultOutput) ToGetSoftwareSourcesResultOutputWithContext(ctx context.Context) GetSoftwareSourcesResultOutput {
 	return o
-}
-
-func (o GetSoftwareSourcesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcesResult] {
-	return pulumix.Output[GetSoftwareSourcesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // OCID for the Compartment

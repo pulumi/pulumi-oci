@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Volume Group Replica resource in Oracle Cloud Infrastructure Core service.
@@ -122,12 +121,6 @@ func (o GetVolumeGroupReplicaResultOutput) ToGetVolumeGroupReplicaResultOutput()
 
 func (o GetVolumeGroupReplicaResultOutput) ToGetVolumeGroupReplicaResultOutputWithContext(ctx context.Context) GetVolumeGroupReplicaResultOutput {
 	return o
-}
-
-func (o GetVolumeGroupReplicaResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumeGroupReplicaResult] {
-	return pulumix.Output[GetVolumeGroupReplicaResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The availability domain of the volume group replica.

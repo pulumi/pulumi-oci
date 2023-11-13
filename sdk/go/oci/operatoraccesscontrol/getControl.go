@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Operator Control resource in Oracle Cloud Infrastructure Operator Access Control service.
@@ -138,12 +137,6 @@ func (o GetControlResultOutput) ToGetControlResultOutput() GetControlResultOutpu
 
 func (o GetControlResultOutput) ToGetControlResultOutputWithContext(ctx context.Context) GetControlResultOutput {
 	return o
-}
-
-func (o GetControlResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetControlResult] {
-	return pulumix.Output[GetControlResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of operator actions that need explicit approval. Any operator action not in the pre-approved list will require explicit approval. Access requests associated with a resource governed by this operator control will be require explicit approval if the access request contains any operator action in this list.

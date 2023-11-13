@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Dkims in Oracle Cloud Infrastructure Email service.
@@ -125,12 +124,6 @@ func (o GetDkimsResultOutput) ToGetDkimsResultOutput() GetDkimsResultOutput {
 
 func (o GetDkimsResultOutput) ToGetDkimsResultOutputWithContext(ctx context.Context) GetDkimsResultOutput {
 	return o
-}
-
-func (o GetDkimsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDkimsResult] {
-	return pulumix.Output[GetDkimsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of dkim_collection.

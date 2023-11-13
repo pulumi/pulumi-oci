@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Certificate Version resource in Oracle Cloud Infrastructure Certificates Management service.
@@ -127,12 +126,6 @@ func (o GetCertificateVersionResultOutput) ToGetCertificateVersionResultOutput()
 
 func (o GetCertificateVersionResultOutput) ToGetCertificateVersionResultOutputWithContext(ctx context.Context) GetCertificateVersionResultOutput {
 	return o
-}
-
-func (o GetCertificateVersionResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateVersionResult] {
-	return pulumix.Output[GetCertificateVersionResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the certificate.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Apps in Oracle Cloud Infrastructure Identity Domains service.
@@ -159,12 +158,6 @@ func (o GetDomainsAppsResultOutput) ToGetDomainsAppsResultOutput() GetDomainsApp
 
 func (o GetDomainsAppsResultOutput) ToGetDomainsAppsResultOutputWithContext(ctx context.Context) GetDomainsAppsResultOutput {
 	return o
-}
-
-func (o GetDomainsAppsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsAppsResult] {
-	return pulumix.Output[GetDomainsAppsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDomainsAppsResultOutput) AppCount() pulumi.IntPtrOutput {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the External Db System resource in Oracle Cloud Infrastructure Database Management service.
@@ -233,12 +232,6 @@ func (i *ExternalDbSystem) ToExternalDbSystemOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbSystemOutput)
 }
 
-func (i *ExternalDbSystem) ToOutput(ctx context.Context) pulumix.Output[*ExternalDbSystem] {
-	return pulumix.Output[*ExternalDbSystem]{
-		OutputState: i.ToExternalDbSystemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExternalDbSystemArrayInput is an input type that accepts ExternalDbSystemArray and ExternalDbSystemArrayOutput values.
 // You can construct a concrete instance of `ExternalDbSystemArrayInput` via:
 //
@@ -262,12 +255,6 @@ func (i ExternalDbSystemArray) ToExternalDbSystemArrayOutput() ExternalDbSystemA
 
 func (i ExternalDbSystemArray) ToExternalDbSystemArrayOutputWithContext(ctx context.Context) ExternalDbSystemArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbSystemArrayOutput)
-}
-
-func (i ExternalDbSystemArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalDbSystem] {
-	return pulumix.Output[[]*ExternalDbSystem]{
-		OutputState: i.ToExternalDbSystemArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ExternalDbSystemMapInput is an input type that accepts ExternalDbSystemMap and ExternalDbSystemMapOutput values.
@@ -295,12 +282,6 @@ func (i ExternalDbSystemMap) ToExternalDbSystemMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbSystemMapOutput)
 }
 
-func (i ExternalDbSystemMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalDbSystem] {
-	return pulumix.Output[map[string]*ExternalDbSystem]{
-		OutputState: i.ToExternalDbSystemMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExternalDbSystemOutput struct{ *pulumi.OutputState }
 
 func (ExternalDbSystemOutput) ElementType() reflect.Type {
@@ -313,12 +294,6 @@ func (o ExternalDbSystemOutput) ToExternalDbSystemOutput() ExternalDbSystemOutpu
 
 func (o ExternalDbSystemOutput) ToExternalDbSystemOutputWithContext(ctx context.Context) ExternalDbSystemOutput {
 	return o
-}
-
-func (o ExternalDbSystemOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalDbSystem] {
-	return pulumix.Output[*ExternalDbSystem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
@@ -397,12 +372,6 @@ func (o ExternalDbSystemArrayOutput) ToExternalDbSystemArrayOutputWithContext(ct
 	return o
 }
 
-func (o ExternalDbSystemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalDbSystem] {
-	return pulumix.Output[[]*ExternalDbSystem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ExternalDbSystemArrayOutput) Index(i pulumi.IntInput) ExternalDbSystemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ExternalDbSystem {
 		return vs[0].([]*ExternalDbSystem)[vs[1].(int)]
@@ -421,12 +390,6 @@ func (o ExternalDbSystemMapOutput) ToExternalDbSystemMapOutput() ExternalDbSyste
 
 func (o ExternalDbSystemMapOutput) ToExternalDbSystemMapOutputWithContext(ctx context.Context) ExternalDbSystemMapOutput {
 	return o
-}
-
-func (o ExternalDbSystemMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalDbSystem] {
-	return pulumix.Output[map[string]*ExternalDbSystem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalDbSystemMapOutput) MapIndex(k pulumi.StringInput) ExternalDbSystemOutput {

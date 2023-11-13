@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Network Firewall Policy Decryption Profiles in Oracle Cloud Infrastructure Network Firewall service.
@@ -111,12 +110,6 @@ func (o GetNetworkFirewallPolicyDecryptionProfilesResultOutput) ToGetNetworkFire
 
 func (o GetNetworkFirewallPolicyDecryptionProfilesResultOutput) ToGetNetworkFirewallPolicyDecryptionProfilesResultOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyDecryptionProfilesResultOutput {
 	return o
-}
-
-func (o GetNetworkFirewallPolicyDecryptionProfilesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPolicyDecryptionProfilesResult] {
-	return pulumix.Output[GetNetworkFirewallPolicyDecryptionProfilesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of decryption_profile_summary_collection.

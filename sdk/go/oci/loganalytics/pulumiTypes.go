@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -79,12 +78,6 @@ func (i LogAnalyticsImportCustomContentChangeListArgs) ToLogAnalyticsImportCusto
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsImportCustomContentChangeListOutput)
 }
 
-func (i LogAnalyticsImportCustomContentChangeListArgs) ToOutput(ctx context.Context) pulumix.Output[LogAnalyticsImportCustomContentChangeList] {
-	return pulumix.Output[LogAnalyticsImportCustomContentChangeList]{
-		OutputState: i.ToLogAnalyticsImportCustomContentChangeListOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LogAnalyticsImportCustomContentChangeListArrayInput is an input type that accepts LogAnalyticsImportCustomContentChangeListArray and LogAnalyticsImportCustomContentChangeListArrayOutput values.
 // You can construct a concrete instance of `LogAnalyticsImportCustomContentChangeListArrayInput` via:
 //
@@ -110,12 +103,6 @@ func (i LogAnalyticsImportCustomContentChangeListArray) ToLogAnalyticsImportCust
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsImportCustomContentChangeListArrayOutput)
 }
 
-func (i LogAnalyticsImportCustomContentChangeListArray) ToOutput(ctx context.Context) pulumix.Output[[]LogAnalyticsImportCustomContentChangeList] {
-	return pulumix.Output[[]LogAnalyticsImportCustomContentChangeList]{
-		OutputState: i.ToLogAnalyticsImportCustomContentChangeListArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LogAnalyticsImportCustomContentChangeListOutput struct{ *pulumi.OutputState }
 
 func (LogAnalyticsImportCustomContentChangeListOutput) ElementType() reflect.Type {
@@ -128,12 +115,6 @@ func (o LogAnalyticsImportCustomContentChangeListOutput) ToLogAnalyticsImportCus
 
 func (o LogAnalyticsImportCustomContentChangeListOutput) ToLogAnalyticsImportCustomContentChangeListOutputWithContext(ctx context.Context) LogAnalyticsImportCustomContentChangeListOutput {
 	return o
-}
-
-func (o LogAnalyticsImportCustomContentChangeListOutput) ToOutput(ctx context.Context) pulumix.Output[LogAnalyticsImportCustomContentChangeList] {
-	return pulumix.Output[LogAnalyticsImportCustomContentChangeList]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of field display names with conflicts.
@@ -195,12 +176,6 @@ func (o LogAnalyticsImportCustomContentChangeListArrayOutput) ToLogAnalyticsImpo
 	return o
 }
 
-func (o LogAnalyticsImportCustomContentChangeListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]LogAnalyticsImportCustomContentChangeList] {
-	return pulumix.Output[[]LogAnalyticsImportCustomContentChangeList]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LogAnalyticsImportCustomContentChangeListArrayOutput) Index(i pulumi.IntInput) LogAnalyticsImportCustomContentChangeListOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) LogAnalyticsImportCustomContentChangeList {
 		return vs[0].([]LogAnalyticsImportCustomContentChangeList)[vs[1].(int)]
@@ -244,12 +219,6 @@ func (i LogAnalyticsObjectCollectionRuleOverrideArgs) ToLogAnalyticsObjectCollec
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsObjectCollectionRuleOverrideOutput)
 }
 
-func (i LogAnalyticsObjectCollectionRuleOverrideArgs) ToOutput(ctx context.Context) pulumix.Output[LogAnalyticsObjectCollectionRuleOverride] {
-	return pulumix.Output[LogAnalyticsObjectCollectionRuleOverride]{
-		OutputState: i.ToLogAnalyticsObjectCollectionRuleOverrideOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LogAnalyticsObjectCollectionRuleOverrideArrayInput is an input type that accepts LogAnalyticsObjectCollectionRuleOverrideArray and LogAnalyticsObjectCollectionRuleOverrideArrayOutput values.
 // You can construct a concrete instance of `LogAnalyticsObjectCollectionRuleOverrideArrayInput` via:
 //
@@ -275,12 +244,6 @@ func (i LogAnalyticsObjectCollectionRuleOverrideArray) ToLogAnalyticsObjectColle
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsObjectCollectionRuleOverrideArrayOutput)
 }
 
-func (i LogAnalyticsObjectCollectionRuleOverrideArray) ToOutput(ctx context.Context) pulumix.Output[[]LogAnalyticsObjectCollectionRuleOverride] {
-	return pulumix.Output[[]LogAnalyticsObjectCollectionRuleOverride]{
-		OutputState: i.ToLogAnalyticsObjectCollectionRuleOverrideArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LogAnalyticsObjectCollectionRuleOverrideOutput struct{ *pulumi.OutputState }
 
 func (LogAnalyticsObjectCollectionRuleOverrideOutput) ElementType() reflect.Type {
@@ -293,12 +256,6 @@ func (o LogAnalyticsObjectCollectionRuleOverrideOutput) ToLogAnalyticsObjectColl
 
 func (o LogAnalyticsObjectCollectionRuleOverrideOutput) ToLogAnalyticsObjectCollectionRuleOverrideOutputWithContext(ctx context.Context) LogAnalyticsObjectCollectionRuleOverrideOutput {
 	return o
-}
-
-func (o LogAnalyticsObjectCollectionRuleOverrideOutput) ToOutput(ctx context.Context) pulumix.Output[LogAnalyticsObjectCollectionRuleOverride] {
-	return pulumix.Output[LogAnalyticsObjectCollectionRuleOverride]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LogAnalyticsObjectCollectionRuleOverrideOutput) MatchType() pulumi.StringPtrOutput {
@@ -329,12 +286,6 @@ func (o LogAnalyticsObjectCollectionRuleOverrideArrayOutput) ToLogAnalyticsObjec
 
 func (o LogAnalyticsObjectCollectionRuleOverrideArrayOutput) ToLogAnalyticsObjectCollectionRuleOverrideArrayOutputWithContext(ctx context.Context) LogAnalyticsObjectCollectionRuleOverrideArrayOutput {
 	return o
-}
-
-func (o LogAnalyticsObjectCollectionRuleOverrideArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]LogAnalyticsObjectCollectionRuleOverride] {
-	return pulumix.Output[[]LogAnalyticsObjectCollectionRuleOverride]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LogAnalyticsObjectCollectionRuleOverrideArrayOutput) Index(i pulumi.IntInput) LogAnalyticsObjectCollectionRuleOverrideOutput {
@@ -380,12 +331,6 @@ func (i LogAnalyticsPreferencesManagementItemArgs) ToLogAnalyticsPreferencesMana
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsPreferencesManagementItemOutput)
 }
 
-func (i LogAnalyticsPreferencesManagementItemArgs) ToOutput(ctx context.Context) pulumix.Output[LogAnalyticsPreferencesManagementItem] {
-	return pulumix.Output[LogAnalyticsPreferencesManagementItem]{
-		OutputState: i.ToLogAnalyticsPreferencesManagementItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LogAnalyticsPreferencesManagementItemArrayInput is an input type that accepts LogAnalyticsPreferencesManagementItemArray and LogAnalyticsPreferencesManagementItemArrayOutput values.
 // You can construct a concrete instance of `LogAnalyticsPreferencesManagementItemArrayInput` via:
 //
@@ -411,12 +356,6 @@ func (i LogAnalyticsPreferencesManagementItemArray) ToLogAnalyticsPreferencesMan
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsPreferencesManagementItemArrayOutput)
 }
 
-func (i LogAnalyticsPreferencesManagementItemArray) ToOutput(ctx context.Context) pulumix.Output[[]LogAnalyticsPreferencesManagementItem] {
-	return pulumix.Output[[]LogAnalyticsPreferencesManagementItem]{
-		OutputState: i.ToLogAnalyticsPreferencesManagementItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LogAnalyticsPreferencesManagementItemOutput struct{ *pulumi.OutputState }
 
 func (LogAnalyticsPreferencesManagementItemOutput) ElementType() reflect.Type {
@@ -429,12 +368,6 @@ func (o LogAnalyticsPreferencesManagementItemOutput) ToLogAnalyticsPreferencesMa
 
 func (o LogAnalyticsPreferencesManagementItemOutput) ToLogAnalyticsPreferencesManagementItemOutputWithContext(ctx context.Context) LogAnalyticsPreferencesManagementItemOutput {
 	return o
-}
-
-func (o LogAnalyticsPreferencesManagementItemOutput) ToOutput(ctx context.Context) pulumix.Output[LogAnalyticsPreferencesManagementItem] {
-	return pulumix.Output[LogAnalyticsPreferencesManagementItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The preference name.
@@ -459,12 +392,6 @@ func (o LogAnalyticsPreferencesManagementItemArrayOutput) ToLogAnalyticsPreferen
 
 func (o LogAnalyticsPreferencesManagementItemArrayOutput) ToLogAnalyticsPreferencesManagementItemArrayOutputWithContext(ctx context.Context) LogAnalyticsPreferencesManagementItemArrayOutput {
 	return o
-}
-
-func (o LogAnalyticsPreferencesManagementItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]LogAnalyticsPreferencesManagementItem] {
-	return pulumix.Output[[]LogAnalyticsPreferencesManagementItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LogAnalyticsPreferencesManagementItemArrayOutput) Index(i pulumi.IntInput) LogAnalyticsPreferencesManagementItemOutput {
@@ -532,12 +459,6 @@ func (i NamespaceIngestTimeRuleActionArgs) ToNamespaceIngestTimeRuleActionOutput
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceIngestTimeRuleActionOutput)
 }
 
-func (i NamespaceIngestTimeRuleActionArgs) ToOutput(ctx context.Context) pulumix.Output[NamespaceIngestTimeRuleAction] {
-	return pulumix.Output[NamespaceIngestTimeRuleAction]{
-		OutputState: i.ToNamespaceIngestTimeRuleActionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NamespaceIngestTimeRuleActionArrayInput is an input type that accepts NamespaceIngestTimeRuleActionArray and NamespaceIngestTimeRuleActionArrayOutput values.
 // You can construct a concrete instance of `NamespaceIngestTimeRuleActionArrayInput` via:
 //
@@ -563,12 +484,6 @@ func (i NamespaceIngestTimeRuleActionArray) ToNamespaceIngestTimeRuleActionArray
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceIngestTimeRuleActionArrayOutput)
 }
 
-func (i NamespaceIngestTimeRuleActionArray) ToOutput(ctx context.Context) pulumix.Output[[]NamespaceIngestTimeRuleAction] {
-	return pulumix.Output[[]NamespaceIngestTimeRuleAction]{
-		OutputState: i.ToNamespaceIngestTimeRuleActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NamespaceIngestTimeRuleActionOutput struct{ *pulumi.OutputState }
 
 func (NamespaceIngestTimeRuleActionOutput) ElementType() reflect.Type {
@@ -581,12 +496,6 @@ func (o NamespaceIngestTimeRuleActionOutput) ToNamespaceIngestTimeRuleActionOutp
 
 func (o NamespaceIngestTimeRuleActionOutput) ToNamespaceIngestTimeRuleActionOutputWithContext(ctx context.Context) NamespaceIngestTimeRuleActionOutput {
 	return o
-}
-
-func (o NamespaceIngestTimeRuleActionOutput) ToOutput(ctx context.Context) pulumix.Output[NamespaceIngestTimeRuleAction] {
-	return pulumix.Output[NamespaceIngestTimeRuleAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -634,12 +543,6 @@ func (o NamespaceIngestTimeRuleActionArrayOutput) ToNamespaceIngestTimeRuleActio
 
 func (o NamespaceIngestTimeRuleActionArrayOutput) ToNamespaceIngestTimeRuleActionArrayOutputWithContext(ctx context.Context) NamespaceIngestTimeRuleActionArrayOutput {
 	return o
-}
-
-func (o NamespaceIngestTimeRuleActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]NamespaceIngestTimeRuleAction] {
-	return pulumix.Output[[]NamespaceIngestTimeRuleAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NamespaceIngestTimeRuleActionArrayOutput) Index(i pulumi.IntInput) NamespaceIngestTimeRuleActionOutput {
@@ -697,12 +600,6 @@ func (i NamespaceIngestTimeRuleConditionsArgs) ToNamespaceIngestTimeRuleConditio
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceIngestTimeRuleConditionsOutput)
 }
 
-func (i NamespaceIngestTimeRuleConditionsArgs) ToOutput(ctx context.Context) pulumix.Output[NamespaceIngestTimeRuleConditions] {
-	return pulumix.Output[NamespaceIngestTimeRuleConditions]{
-		OutputState: i.ToNamespaceIngestTimeRuleConditionsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i NamespaceIngestTimeRuleConditionsArgs) ToNamespaceIngestTimeRuleConditionsPtrOutput() NamespaceIngestTimeRuleConditionsPtrOutput {
 	return i.ToNamespaceIngestTimeRuleConditionsPtrOutputWithContext(context.Background())
 }
@@ -744,12 +641,6 @@ func (i *namespaceIngestTimeRuleConditionsPtrType) ToNamespaceIngestTimeRuleCond
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceIngestTimeRuleConditionsPtrOutput)
 }
 
-func (i *namespaceIngestTimeRuleConditionsPtrType) ToOutput(ctx context.Context) pulumix.Output[*NamespaceIngestTimeRuleConditions] {
-	return pulumix.Output[*NamespaceIngestTimeRuleConditions]{
-		OutputState: i.ToNamespaceIngestTimeRuleConditionsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NamespaceIngestTimeRuleConditionsOutput struct{ *pulumi.OutputState }
 
 func (NamespaceIngestTimeRuleConditionsOutput) ElementType() reflect.Type {
@@ -772,12 +663,6 @@ func (o NamespaceIngestTimeRuleConditionsOutput) ToNamespaceIngestTimeRuleCondit
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v NamespaceIngestTimeRuleConditions) *NamespaceIngestTimeRuleConditions {
 		return &v
 	}).(NamespaceIngestTimeRuleConditionsPtrOutput)
-}
-
-func (o NamespaceIngestTimeRuleConditionsOutput) ToOutput(ctx context.Context) pulumix.Output[NamespaceIngestTimeRuleConditions] {
-	return pulumix.Output[NamespaceIngestTimeRuleConditions]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Optional additional condition(s) to be evaluated.
@@ -819,12 +704,6 @@ func (o NamespaceIngestTimeRuleConditionsPtrOutput) ToNamespaceIngestTimeRuleCon
 
 func (o NamespaceIngestTimeRuleConditionsPtrOutput) ToNamespaceIngestTimeRuleConditionsPtrOutputWithContext(ctx context.Context) NamespaceIngestTimeRuleConditionsPtrOutput {
 	return o
-}
-
-func (o NamespaceIngestTimeRuleConditionsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*NamespaceIngestTimeRuleConditions] {
-	return pulumix.Output[*NamespaceIngestTimeRuleConditions]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NamespaceIngestTimeRuleConditionsPtrOutput) Elem() NamespaceIngestTimeRuleConditionsOutput {
@@ -928,12 +807,6 @@ func (i NamespaceIngestTimeRuleConditionsAdditionalConditionArgs) ToNamespaceIng
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceIngestTimeRuleConditionsAdditionalConditionOutput)
 }
 
-func (i NamespaceIngestTimeRuleConditionsAdditionalConditionArgs) ToOutput(ctx context.Context) pulumix.Output[NamespaceIngestTimeRuleConditionsAdditionalCondition] {
-	return pulumix.Output[NamespaceIngestTimeRuleConditionsAdditionalCondition]{
-		OutputState: i.ToNamespaceIngestTimeRuleConditionsAdditionalConditionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NamespaceIngestTimeRuleConditionsAdditionalConditionArrayInput is an input type that accepts NamespaceIngestTimeRuleConditionsAdditionalConditionArray and NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput values.
 // You can construct a concrete instance of `NamespaceIngestTimeRuleConditionsAdditionalConditionArrayInput` via:
 //
@@ -959,12 +832,6 @@ func (i NamespaceIngestTimeRuleConditionsAdditionalConditionArray) ToNamespaceIn
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput)
 }
 
-func (i NamespaceIngestTimeRuleConditionsAdditionalConditionArray) ToOutput(ctx context.Context) pulumix.Output[[]NamespaceIngestTimeRuleConditionsAdditionalCondition] {
-	return pulumix.Output[[]NamespaceIngestTimeRuleConditionsAdditionalCondition]{
-		OutputState: i.ToNamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NamespaceIngestTimeRuleConditionsAdditionalConditionOutput struct{ *pulumi.OutputState }
 
 func (NamespaceIngestTimeRuleConditionsAdditionalConditionOutput) ElementType() reflect.Type {
@@ -977,12 +844,6 @@ func (o NamespaceIngestTimeRuleConditionsAdditionalConditionOutput) ToNamespaceI
 
 func (o NamespaceIngestTimeRuleConditionsAdditionalConditionOutput) ToNamespaceIngestTimeRuleConditionsAdditionalConditionOutputWithContext(ctx context.Context) NamespaceIngestTimeRuleConditionsAdditionalConditionOutput {
 	return o
-}
-
-func (o NamespaceIngestTimeRuleConditionsAdditionalConditionOutput) ToOutput(ctx context.Context) pulumix.Output[NamespaceIngestTimeRuleConditionsAdditionalCondition] {
-	return pulumix.Output[NamespaceIngestTimeRuleConditionsAdditionalCondition]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The additional field name to be evaluated.
@@ -1012,12 +873,6 @@ func (o NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput) ToNames
 
 func (o NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput) ToNamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutputWithContext(ctx context.Context) NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput {
 	return o
-}
-
-func (o NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]NamespaceIngestTimeRuleConditionsAdditionalCondition] {
-	return pulumix.Output[[]NamespaceIngestTimeRuleConditionsAdditionalCondition]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NamespaceIngestTimeRuleConditionsAdditionalConditionArrayOutput) Index(i pulumi.IntInput) NamespaceIngestTimeRuleConditionsAdditionalConditionOutput {
@@ -1087,12 +942,6 @@ func (i NamespaceScheduledTaskActionArgs) ToNamespaceScheduledTaskActionOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceScheduledTaskActionOutput)
 }
 
-func (i NamespaceScheduledTaskActionArgs) ToOutput(ctx context.Context) pulumix.Output[NamespaceScheduledTaskAction] {
-	return pulumix.Output[NamespaceScheduledTaskAction]{
-		OutputState: i.ToNamespaceScheduledTaskActionOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i NamespaceScheduledTaskActionArgs) ToNamespaceScheduledTaskActionPtrOutput() NamespaceScheduledTaskActionPtrOutput {
 	return i.ToNamespaceScheduledTaskActionPtrOutputWithContext(context.Background())
 }
@@ -1134,12 +983,6 @@ func (i *namespaceScheduledTaskActionPtrType) ToNamespaceScheduledTaskActionPtrO
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceScheduledTaskActionPtrOutput)
 }
 
-func (i *namespaceScheduledTaskActionPtrType) ToOutput(ctx context.Context) pulumix.Output[*NamespaceScheduledTaskAction] {
-	return pulumix.Output[*NamespaceScheduledTaskAction]{
-		OutputState: i.ToNamespaceScheduledTaskActionPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NamespaceScheduledTaskActionOutput struct{ *pulumi.OutputState }
 
 func (NamespaceScheduledTaskActionOutput) ElementType() reflect.Type {
@@ -1162,12 +1005,6 @@ func (o NamespaceScheduledTaskActionOutput) ToNamespaceScheduledTaskActionPtrOut
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v NamespaceScheduledTaskAction) *NamespaceScheduledTaskAction {
 		return &v
 	}).(NamespaceScheduledTaskActionPtrOutput)
-}
-
-func (o NamespaceScheduledTaskActionOutput) ToOutput(ctx context.Context) pulumix.Output[NamespaceScheduledTaskAction] {
-	return pulumix.Output[NamespaceScheduledTaskAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 // if true, purge child compartments data
@@ -1224,12 +1061,6 @@ func (o NamespaceScheduledTaskActionPtrOutput) ToNamespaceScheduledTaskActionPtr
 
 func (o NamespaceScheduledTaskActionPtrOutput) ToNamespaceScheduledTaskActionPtrOutputWithContext(ctx context.Context) NamespaceScheduledTaskActionPtrOutput {
 	return o
-}
-
-func (o NamespaceScheduledTaskActionPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*NamespaceScheduledTaskAction] {
-	return pulumix.Output[*NamespaceScheduledTaskAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NamespaceScheduledTaskActionPtrOutput) Elem() NamespaceScheduledTaskActionOutput {
@@ -1367,12 +1198,6 @@ func (i NamespaceScheduledTaskActionMetricExtractionArgs) ToNamespaceScheduledTa
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceScheduledTaskActionMetricExtractionOutput)
 }
 
-func (i NamespaceScheduledTaskActionMetricExtractionArgs) ToOutput(ctx context.Context) pulumix.Output[NamespaceScheduledTaskActionMetricExtraction] {
-	return pulumix.Output[NamespaceScheduledTaskActionMetricExtraction]{
-		OutputState: i.ToNamespaceScheduledTaskActionMetricExtractionOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i NamespaceScheduledTaskActionMetricExtractionArgs) ToNamespaceScheduledTaskActionMetricExtractionPtrOutput() NamespaceScheduledTaskActionMetricExtractionPtrOutput {
 	return i.ToNamespaceScheduledTaskActionMetricExtractionPtrOutputWithContext(context.Background())
 }
@@ -1414,12 +1239,6 @@ func (i *namespaceScheduledTaskActionMetricExtractionPtrType) ToNamespaceSchedul
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceScheduledTaskActionMetricExtractionPtrOutput)
 }
 
-func (i *namespaceScheduledTaskActionMetricExtractionPtrType) ToOutput(ctx context.Context) pulumix.Output[*NamespaceScheduledTaskActionMetricExtraction] {
-	return pulumix.Output[*NamespaceScheduledTaskActionMetricExtraction]{
-		OutputState: i.ToNamespaceScheduledTaskActionMetricExtractionPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NamespaceScheduledTaskActionMetricExtractionOutput struct{ *pulumi.OutputState }
 
 func (NamespaceScheduledTaskActionMetricExtractionOutput) ElementType() reflect.Type {
@@ -1442,12 +1261,6 @@ func (o NamespaceScheduledTaskActionMetricExtractionOutput) ToNamespaceScheduled
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v NamespaceScheduledTaskActionMetricExtraction) *NamespaceScheduledTaskActionMetricExtraction {
 		return &v
 	}).(NamespaceScheduledTaskActionMetricExtractionPtrOutput)
-}
-
-func (o NamespaceScheduledTaskActionMetricExtractionOutput) ToOutput(ctx context.Context) pulumix.Output[NamespaceScheduledTaskActionMetricExtraction] {
-	return pulumix.Output[NamespaceScheduledTaskActionMetricExtraction]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -1482,12 +1295,6 @@ func (o NamespaceScheduledTaskActionMetricExtractionPtrOutput) ToNamespaceSchedu
 
 func (o NamespaceScheduledTaskActionMetricExtractionPtrOutput) ToNamespaceScheduledTaskActionMetricExtractionPtrOutputWithContext(ctx context.Context) NamespaceScheduledTaskActionMetricExtractionPtrOutput {
 	return o
-}
-
-func (o NamespaceScheduledTaskActionMetricExtractionPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*NamespaceScheduledTaskActionMetricExtraction] {
-	return pulumix.Output[*NamespaceScheduledTaskActionMetricExtraction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NamespaceScheduledTaskActionMetricExtractionPtrOutput) Elem() NamespaceScheduledTaskActionMetricExtractionOutput {
@@ -1571,12 +1378,6 @@ func (i NamespaceScheduledTaskSchedulesArgs) ToNamespaceScheduledTaskSchedulesOu
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceScheduledTaskSchedulesOutput)
 }
 
-func (i NamespaceScheduledTaskSchedulesArgs) ToOutput(ctx context.Context) pulumix.Output[NamespaceScheduledTaskSchedules] {
-	return pulumix.Output[NamespaceScheduledTaskSchedules]{
-		OutputState: i.ToNamespaceScheduledTaskSchedulesOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i NamespaceScheduledTaskSchedulesArgs) ToNamespaceScheduledTaskSchedulesPtrOutput() NamespaceScheduledTaskSchedulesPtrOutput {
 	return i.ToNamespaceScheduledTaskSchedulesPtrOutputWithContext(context.Background())
 }
@@ -1618,12 +1419,6 @@ func (i *namespaceScheduledTaskSchedulesPtrType) ToNamespaceScheduledTaskSchedul
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceScheduledTaskSchedulesPtrOutput)
 }
 
-func (i *namespaceScheduledTaskSchedulesPtrType) ToOutput(ctx context.Context) pulumix.Output[*NamespaceScheduledTaskSchedules] {
-	return pulumix.Output[*NamespaceScheduledTaskSchedules]{
-		OutputState: i.ToNamespaceScheduledTaskSchedulesPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NamespaceScheduledTaskSchedulesOutput struct{ *pulumi.OutputState }
 
 func (NamespaceScheduledTaskSchedulesOutput) ElementType() reflect.Type {
@@ -1648,12 +1443,6 @@ func (o NamespaceScheduledTaskSchedulesOutput) ToNamespaceScheduledTaskSchedules
 	}).(NamespaceScheduledTaskSchedulesPtrOutput)
 }
 
-func (o NamespaceScheduledTaskSchedulesOutput) ToOutput(ctx context.Context) pulumix.Output[NamespaceScheduledTaskSchedules] {
-	return pulumix.Output[NamespaceScheduledTaskSchedules]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o NamespaceScheduledTaskSchedulesOutput) Schedules() NamespaceScheduledTaskSchedulesScheduleArrayOutput {
 	return o.ApplyT(func(v NamespaceScheduledTaskSchedules) []NamespaceScheduledTaskSchedulesSchedule { return v.Schedules }).(NamespaceScheduledTaskSchedulesScheduleArrayOutput)
 }
@@ -1670,12 +1459,6 @@ func (o NamespaceScheduledTaskSchedulesPtrOutput) ToNamespaceScheduledTaskSchedu
 
 func (o NamespaceScheduledTaskSchedulesPtrOutput) ToNamespaceScheduledTaskSchedulesPtrOutputWithContext(ctx context.Context) NamespaceScheduledTaskSchedulesPtrOutput {
 	return o
-}
-
-func (o NamespaceScheduledTaskSchedulesPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*NamespaceScheduledTaskSchedules] {
-	return pulumix.Output[*NamespaceScheduledTaskSchedules]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NamespaceScheduledTaskSchedulesPtrOutput) Elem() NamespaceScheduledTaskSchedulesOutput {
@@ -1750,12 +1533,6 @@ func (i NamespaceScheduledTaskSchedulesScheduleArgs) ToNamespaceScheduledTaskSch
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceScheduledTaskSchedulesScheduleOutput)
 }
 
-func (i NamespaceScheduledTaskSchedulesScheduleArgs) ToOutput(ctx context.Context) pulumix.Output[NamespaceScheduledTaskSchedulesSchedule] {
-	return pulumix.Output[NamespaceScheduledTaskSchedulesSchedule]{
-		OutputState: i.ToNamespaceScheduledTaskSchedulesScheduleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NamespaceScheduledTaskSchedulesScheduleArrayInput is an input type that accepts NamespaceScheduledTaskSchedulesScheduleArray and NamespaceScheduledTaskSchedulesScheduleArrayOutput values.
 // You can construct a concrete instance of `NamespaceScheduledTaskSchedulesScheduleArrayInput` via:
 //
@@ -1781,12 +1558,6 @@ func (i NamespaceScheduledTaskSchedulesScheduleArray) ToNamespaceScheduledTaskSc
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceScheduledTaskSchedulesScheduleArrayOutput)
 }
 
-func (i NamespaceScheduledTaskSchedulesScheduleArray) ToOutput(ctx context.Context) pulumix.Output[[]NamespaceScheduledTaskSchedulesSchedule] {
-	return pulumix.Output[[]NamespaceScheduledTaskSchedulesSchedule]{
-		OutputState: i.ToNamespaceScheduledTaskSchedulesScheduleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NamespaceScheduledTaskSchedulesScheduleOutput struct{ *pulumi.OutputState }
 
 func (NamespaceScheduledTaskSchedulesScheduleOutput) ElementType() reflect.Type {
@@ -1799,12 +1570,6 @@ func (o NamespaceScheduledTaskSchedulesScheduleOutput) ToNamespaceScheduledTaskS
 
 func (o NamespaceScheduledTaskSchedulesScheduleOutput) ToNamespaceScheduledTaskSchedulesScheduleOutputWithContext(ctx context.Context) NamespaceScheduledTaskSchedulesScheduleOutput {
 	return o
-}
-
-func (o NamespaceScheduledTaskSchedulesScheduleOutput) ToOutput(ctx context.Context) pulumix.Output[NamespaceScheduledTaskSchedulesSchedule] {
-	return pulumix.Output[NamespaceScheduledTaskSchedulesSchedule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Value in cron format.
@@ -1849,12 +1614,6 @@ func (o NamespaceScheduledTaskSchedulesScheduleArrayOutput) ToNamespaceScheduled
 
 func (o NamespaceScheduledTaskSchedulesScheduleArrayOutput) ToNamespaceScheduledTaskSchedulesScheduleArrayOutputWithContext(ctx context.Context) NamespaceScheduledTaskSchedulesScheduleArrayOutput {
 	return o
-}
-
-func (o NamespaceScheduledTaskSchedulesScheduleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]NamespaceScheduledTaskSchedulesSchedule] {
-	return pulumix.Output[[]NamespaceScheduledTaskSchedulesSchedule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NamespaceScheduledTaskSchedulesScheduleArrayOutput) Index(i pulumi.IntInput) NamespaceScheduledTaskSchedulesScheduleOutput {
@@ -1912,12 +1671,6 @@ func (i GetLogAnalyticsCategoriesListItemArgs) ToGetLogAnalyticsCategoriesListIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsCategoriesListItemOutput)
 }
 
-func (i GetLogAnalyticsCategoriesListItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsCategoriesListItem] {
-	return pulumix.Output[GetLogAnalyticsCategoriesListItem]{
-		OutputState: i.ToGetLogAnalyticsCategoriesListItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLogAnalyticsCategoriesListItemArrayInput is an input type that accepts GetLogAnalyticsCategoriesListItemArray and GetLogAnalyticsCategoriesListItemArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsCategoriesListItemArrayInput` via:
 //
@@ -1943,12 +1696,6 @@ func (i GetLogAnalyticsCategoriesListItemArray) ToGetLogAnalyticsCategoriesListI
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsCategoriesListItemArrayOutput)
 }
 
-func (i GetLogAnalyticsCategoriesListItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsCategoriesListItem] {
-	return pulumix.Output[[]GetLogAnalyticsCategoriesListItem]{
-		OutputState: i.ToGetLogAnalyticsCategoriesListItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsCategoriesListItemOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsCategoriesListItemOutput) ElementType() reflect.Type {
@@ -1961,12 +1708,6 @@ func (o GetLogAnalyticsCategoriesListItemOutput) ToGetLogAnalyticsCategoriesList
 
 func (o GetLogAnalyticsCategoriesListItemOutput) ToGetLogAnalyticsCategoriesListItemOutputWithContext(ctx context.Context) GetLogAnalyticsCategoriesListItemOutput {
 	return o
-}
-
-func (o GetLogAnalyticsCategoriesListItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsCategoriesListItem] {
-	return pulumix.Output[GetLogAnalyticsCategoriesListItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The category description.
@@ -2006,12 +1747,6 @@ func (o GetLogAnalyticsCategoriesListItemArrayOutput) ToGetLogAnalyticsCategorie
 
 func (o GetLogAnalyticsCategoriesListItemArrayOutput) ToGetLogAnalyticsCategoriesListItemArrayOutputWithContext(ctx context.Context) GetLogAnalyticsCategoriesListItemArrayOutput {
 	return o
-}
-
-func (o GetLogAnalyticsCategoriesListItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsCategoriesListItem] {
-	return pulumix.Output[[]GetLogAnalyticsCategoriesListItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsCategoriesListItemArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsCategoriesListItemOutput {
@@ -2057,12 +1792,6 @@ func (i GetLogAnalyticsEntitiesFilterArgs) ToGetLogAnalyticsEntitiesFilterOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntitiesFilterOutput)
 }
 
-func (i GetLogAnalyticsEntitiesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntitiesFilter] {
-	return pulumix.Output[GetLogAnalyticsEntitiesFilter]{
-		OutputState: i.ToGetLogAnalyticsEntitiesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLogAnalyticsEntitiesFilterArrayInput is an input type that accepts GetLogAnalyticsEntitiesFilterArray and GetLogAnalyticsEntitiesFilterArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsEntitiesFilterArrayInput` via:
 //
@@ -2088,12 +1817,6 @@ func (i GetLogAnalyticsEntitiesFilterArray) ToGetLogAnalyticsEntitiesFilterArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntitiesFilterArrayOutput)
 }
 
-func (i GetLogAnalyticsEntitiesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsEntitiesFilter] {
-	return pulumix.Output[[]GetLogAnalyticsEntitiesFilter]{
-		OutputState: i.ToGetLogAnalyticsEntitiesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsEntitiesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsEntitiesFilterOutput) ElementType() reflect.Type {
@@ -2106,12 +1829,6 @@ func (o GetLogAnalyticsEntitiesFilterOutput) ToGetLogAnalyticsEntitiesFilterOutp
 
 func (o GetLogAnalyticsEntitiesFilterOutput) ToGetLogAnalyticsEntitiesFilterOutputWithContext(ctx context.Context) GetLogAnalyticsEntitiesFilterOutput {
 	return o
-}
-
-func (o GetLogAnalyticsEntitiesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntitiesFilter] {
-	return pulumix.Output[GetLogAnalyticsEntitiesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
@@ -2139,12 +1856,6 @@ func (o GetLogAnalyticsEntitiesFilterArrayOutput) ToGetLogAnalyticsEntitiesFilte
 
 func (o GetLogAnalyticsEntitiesFilterArrayOutput) ToGetLogAnalyticsEntitiesFilterArrayOutputWithContext(ctx context.Context) GetLogAnalyticsEntitiesFilterArrayOutput {
 	return o
-}
-
-func (o GetLogAnalyticsEntitiesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsEntitiesFilter] {
-	return pulumix.Output[[]GetLogAnalyticsEntitiesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsEntitiesFilterArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsEntitiesFilterOutput {
@@ -2184,12 +1895,6 @@ func (i GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArgs) ToGetLogAnalyti
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionOutput)
 }
 
-func (i GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntitiesLogAnalyticsEntityCollection] {
-	return pulumix.Output[GetLogAnalyticsEntitiesLogAnalyticsEntityCollection]{
-		OutputState: i.ToGetLogAnalyticsEntitiesLogAnalyticsEntityCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArrayInput is an input type that accepts GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArray and GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArrayInput` via:
 //
@@ -2215,12 +1920,6 @@ func (i GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArray) ToGetLogAnalyt
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArrayOutput)
 }
 
-func (i GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsEntitiesLogAnalyticsEntityCollection] {
-	return pulumix.Output[[]GetLogAnalyticsEntitiesLogAnalyticsEntityCollection]{
-		OutputState: i.ToGetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionOutput) ElementType() reflect.Type {
@@ -2233,12 +1932,6 @@ func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionOutput) ToGetLogAnaly
 
 func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionOutput) ToGetLogAnalyticsEntitiesLogAnalyticsEntityCollectionOutputWithContext(ctx context.Context) GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionOutput {
 	return o
-}
-
-func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntitiesLogAnalyticsEntityCollection] {
-	return pulumix.Output[GetLogAnalyticsEntitiesLogAnalyticsEntityCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionOutput) Items() GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArrayOutput {
@@ -2259,12 +1952,6 @@ func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArrayOutput) ToGetLog
 
 func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArrayOutput) ToGetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArrayOutputWithContext(ctx context.Context) GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArrayOutput {
 	return o
-}
-
-func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsEntitiesLogAnalyticsEntityCollection] {
-	return pulumix.Output[[]GetLogAnalyticsEntitiesLogAnalyticsEntityCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionOutput {
@@ -2386,12 +2073,6 @@ func (i GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArgs) ToGetLogAna
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput)
 }
 
-func (i GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem] {
-	return pulumix.Output[GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem]{
-		OutputState: i.ToGetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArrayInput is an input type that accepts GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArray and GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArrayInput` via:
 //
@@ -2417,12 +2098,6 @@ func (i GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArray) ToGetLogAn
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArrayOutput)
 }
 
-func (i GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem] {
-	return pulumix.Output[[]GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem]{
-		OutputState: i.ToGetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) ElementType() reflect.Type {
@@ -2435,12 +2110,6 @@ func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) ToGetLogA
 
 func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) ToGetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutputWithContext(ctx context.Context) GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput {
 	return o
-}
-
-func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem] {
-	return pulumix.Output[GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
@@ -2574,12 +2243,6 @@ func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArrayOutput) ToGe
 	return o
 }
 
-func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem] {
-	return pulumix.Output[[]GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem {
 		return vs[0].([]GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem)[vs[1].(int)]
@@ -2623,12 +2286,6 @@ func (i GetLogAnalyticsEntityTopologyItemArgs) ToGetLogAnalyticsEntityTopologyIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntityTopologyItemOutput)
 }
 
-func (i GetLogAnalyticsEntityTopologyItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntityTopologyItem] {
-	return pulumix.Output[GetLogAnalyticsEntityTopologyItem]{
-		OutputState: i.ToGetLogAnalyticsEntityTopologyItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLogAnalyticsEntityTopologyItemArrayInput is an input type that accepts GetLogAnalyticsEntityTopologyItemArray and GetLogAnalyticsEntityTopologyItemArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsEntityTopologyItemArrayInput` via:
 //
@@ -2654,12 +2311,6 @@ func (i GetLogAnalyticsEntityTopologyItemArray) ToGetLogAnalyticsEntityTopologyI
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntityTopologyItemArrayOutput)
 }
 
-func (i GetLogAnalyticsEntityTopologyItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsEntityTopologyItem] {
-	return pulumix.Output[[]GetLogAnalyticsEntityTopologyItem]{
-		OutputState: i.ToGetLogAnalyticsEntityTopologyItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsEntityTopologyItemOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsEntityTopologyItemOutput) ElementType() reflect.Type {
@@ -2672,12 +2323,6 @@ func (o GetLogAnalyticsEntityTopologyItemOutput) ToGetLogAnalyticsEntityTopology
 
 func (o GetLogAnalyticsEntityTopologyItemOutput) ToGetLogAnalyticsEntityTopologyItemOutputWithContext(ctx context.Context) GetLogAnalyticsEntityTopologyItemOutput {
 	return o
-}
-
-func (o GetLogAnalyticsEntityTopologyItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntityTopologyItem] {
-	return pulumix.Output[GetLogAnalyticsEntityTopologyItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Collection of log analytics entity relationship links.
@@ -2702,12 +2347,6 @@ func (o GetLogAnalyticsEntityTopologyItemArrayOutput) ToGetLogAnalyticsEntityTop
 
 func (o GetLogAnalyticsEntityTopologyItemArrayOutput) ToGetLogAnalyticsEntityTopologyItemArrayOutputWithContext(ctx context.Context) GetLogAnalyticsEntityTopologyItemArrayOutput {
 	return o
-}
-
-func (o GetLogAnalyticsEntityTopologyItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsEntityTopologyItem] {
-	return pulumix.Output[[]GetLogAnalyticsEntityTopologyItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsEntityTopologyItemArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsEntityTopologyItemOutput {
@@ -2749,12 +2388,6 @@ func (i GetLogAnalyticsEntityTopologyItemLinkArgs) ToGetLogAnalyticsEntityTopolo
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntityTopologyItemLinkOutput)
 }
 
-func (i GetLogAnalyticsEntityTopologyItemLinkArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntityTopologyItemLink] {
-	return pulumix.Output[GetLogAnalyticsEntityTopologyItemLink]{
-		OutputState: i.ToGetLogAnalyticsEntityTopologyItemLinkOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLogAnalyticsEntityTopologyItemLinkArrayInput is an input type that accepts GetLogAnalyticsEntityTopologyItemLinkArray and GetLogAnalyticsEntityTopologyItemLinkArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsEntityTopologyItemLinkArrayInput` via:
 //
@@ -2780,12 +2413,6 @@ func (i GetLogAnalyticsEntityTopologyItemLinkArray) ToGetLogAnalyticsEntityTopol
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntityTopologyItemLinkArrayOutput)
 }
 
-func (i GetLogAnalyticsEntityTopologyItemLinkArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsEntityTopologyItemLink] {
-	return pulumix.Output[[]GetLogAnalyticsEntityTopologyItemLink]{
-		OutputState: i.ToGetLogAnalyticsEntityTopologyItemLinkArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsEntityTopologyItemLinkOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsEntityTopologyItemLinkOutput) ElementType() reflect.Type {
@@ -2798,12 +2425,6 @@ func (o GetLogAnalyticsEntityTopologyItemLinkOutput) ToGetLogAnalyticsEntityTopo
 
 func (o GetLogAnalyticsEntityTopologyItemLinkOutput) ToGetLogAnalyticsEntityTopologyItemLinkOutputWithContext(ctx context.Context) GetLogAnalyticsEntityTopologyItemLinkOutput {
 	return o
-}
-
-func (o GetLogAnalyticsEntityTopologyItemLinkOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntityTopologyItemLink] {
-	return pulumix.Output[GetLogAnalyticsEntityTopologyItemLink]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Array of log analytics entity summary.
@@ -2825,12 +2446,6 @@ func (o GetLogAnalyticsEntityTopologyItemLinkArrayOutput) ToGetLogAnalyticsEntit
 
 func (o GetLogAnalyticsEntityTopologyItemLinkArrayOutput) ToGetLogAnalyticsEntityTopologyItemLinkArrayOutputWithContext(ctx context.Context) GetLogAnalyticsEntityTopologyItemLinkArrayOutput {
 	return o
-}
-
-func (o GetLogAnalyticsEntityTopologyItemLinkArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsEntityTopologyItemLink] {
-	return pulumix.Output[[]GetLogAnalyticsEntityTopologyItemLink]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsEntityTopologyItemLinkArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsEntityTopologyItemLinkOutput {
@@ -2876,12 +2491,6 @@ func (i GetLogAnalyticsEntityTopologyItemLinkItemArgs) ToGetLogAnalyticsEntityTo
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntityTopologyItemLinkItemOutput)
 }
 
-func (i GetLogAnalyticsEntityTopologyItemLinkItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntityTopologyItemLinkItem] {
-	return pulumix.Output[GetLogAnalyticsEntityTopologyItemLinkItem]{
-		OutputState: i.ToGetLogAnalyticsEntityTopologyItemLinkItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLogAnalyticsEntityTopologyItemLinkItemArrayInput is an input type that accepts GetLogAnalyticsEntityTopologyItemLinkItemArray and GetLogAnalyticsEntityTopologyItemLinkItemArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsEntityTopologyItemLinkItemArrayInput` via:
 //
@@ -2907,12 +2516,6 @@ func (i GetLogAnalyticsEntityTopologyItemLinkItemArray) ToGetLogAnalyticsEntityT
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntityTopologyItemLinkItemArrayOutput)
 }
 
-func (i GetLogAnalyticsEntityTopologyItemLinkItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsEntityTopologyItemLinkItem] {
-	return pulumix.Output[[]GetLogAnalyticsEntityTopologyItemLinkItem]{
-		OutputState: i.ToGetLogAnalyticsEntityTopologyItemLinkItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsEntityTopologyItemLinkItemOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsEntityTopologyItemLinkItemOutput) ElementType() reflect.Type {
@@ -2925,12 +2528,6 @@ func (o GetLogAnalyticsEntityTopologyItemLinkItemOutput) ToGetLogAnalyticsEntity
 
 func (o GetLogAnalyticsEntityTopologyItemLinkItemOutput) ToGetLogAnalyticsEntityTopologyItemLinkItemOutputWithContext(ctx context.Context) GetLogAnalyticsEntityTopologyItemLinkItemOutput {
 	return o
-}
-
-func (o GetLogAnalyticsEntityTopologyItemLinkItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntityTopologyItemLinkItem] {
-	return pulumix.Output[GetLogAnalyticsEntityTopologyItemLinkItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
@@ -2955,12 +2552,6 @@ func (o GetLogAnalyticsEntityTopologyItemLinkItemArrayOutput) ToGetLogAnalyticsE
 
 func (o GetLogAnalyticsEntityTopologyItemLinkItemArrayOutput) ToGetLogAnalyticsEntityTopologyItemLinkItemArrayOutputWithContext(ctx context.Context) GetLogAnalyticsEntityTopologyItemLinkItemArrayOutput {
 	return o
-}
-
-func (o GetLogAnalyticsEntityTopologyItemLinkItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsEntityTopologyItemLinkItem] {
-	return pulumix.Output[[]GetLogAnalyticsEntityTopologyItemLinkItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsEntityTopologyItemLinkItemArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsEntityTopologyItemLinkItemOutput {
@@ -3002,12 +2593,6 @@ func (i GetLogAnalyticsEntityTopologyItemNodeArgs) ToGetLogAnalyticsEntityTopolo
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntityTopologyItemNodeOutput)
 }
 
-func (i GetLogAnalyticsEntityTopologyItemNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntityTopologyItemNode] {
-	return pulumix.Output[GetLogAnalyticsEntityTopologyItemNode]{
-		OutputState: i.ToGetLogAnalyticsEntityTopologyItemNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLogAnalyticsEntityTopologyItemNodeArrayInput is an input type that accepts GetLogAnalyticsEntityTopologyItemNodeArray and GetLogAnalyticsEntityTopologyItemNodeArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsEntityTopologyItemNodeArrayInput` via:
 //
@@ -3033,12 +2618,6 @@ func (i GetLogAnalyticsEntityTopologyItemNodeArray) ToGetLogAnalyticsEntityTopol
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntityTopologyItemNodeArrayOutput)
 }
 
-func (i GetLogAnalyticsEntityTopologyItemNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsEntityTopologyItemNode] {
-	return pulumix.Output[[]GetLogAnalyticsEntityTopologyItemNode]{
-		OutputState: i.ToGetLogAnalyticsEntityTopologyItemNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsEntityTopologyItemNodeOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsEntityTopologyItemNodeOutput) ElementType() reflect.Type {
@@ -3051,12 +2630,6 @@ func (o GetLogAnalyticsEntityTopologyItemNodeOutput) ToGetLogAnalyticsEntityTopo
 
 func (o GetLogAnalyticsEntityTopologyItemNodeOutput) ToGetLogAnalyticsEntityTopologyItemNodeOutputWithContext(ctx context.Context) GetLogAnalyticsEntityTopologyItemNodeOutput {
 	return o
-}
-
-func (o GetLogAnalyticsEntityTopologyItemNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntityTopologyItemNode] {
-	return pulumix.Output[GetLogAnalyticsEntityTopologyItemNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Array of log analytics entity summary.
@@ -3078,12 +2651,6 @@ func (o GetLogAnalyticsEntityTopologyItemNodeArrayOutput) ToGetLogAnalyticsEntit
 
 func (o GetLogAnalyticsEntityTopologyItemNodeArrayOutput) ToGetLogAnalyticsEntityTopologyItemNodeArrayOutputWithContext(ctx context.Context) GetLogAnalyticsEntityTopologyItemNodeArrayOutput {
 	return o
-}
-
-func (o GetLogAnalyticsEntityTopologyItemNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsEntityTopologyItemNode] {
-	return pulumix.Output[[]GetLogAnalyticsEntityTopologyItemNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsEntityTopologyItemNodeArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsEntityTopologyItemNodeOutput {
@@ -3185,12 +2752,6 @@ func (i GetLogAnalyticsEntityTopologyItemNodeItemArgs) ToGetLogAnalyticsEntityTo
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntityTopologyItemNodeItemOutput)
 }
 
-func (i GetLogAnalyticsEntityTopologyItemNodeItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntityTopologyItemNodeItem] {
-	return pulumix.Output[GetLogAnalyticsEntityTopologyItemNodeItem]{
-		OutputState: i.ToGetLogAnalyticsEntityTopologyItemNodeItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLogAnalyticsEntityTopologyItemNodeItemArrayInput is an input type that accepts GetLogAnalyticsEntityTopologyItemNodeItemArray and GetLogAnalyticsEntityTopologyItemNodeItemArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsEntityTopologyItemNodeItemArrayInput` via:
 //
@@ -3216,12 +2777,6 @@ func (i GetLogAnalyticsEntityTopologyItemNodeItemArray) ToGetLogAnalyticsEntityT
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntityTopologyItemNodeItemArrayOutput)
 }
 
-func (i GetLogAnalyticsEntityTopologyItemNodeItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsEntityTopologyItemNodeItem] {
-	return pulumix.Output[[]GetLogAnalyticsEntityTopologyItemNodeItem]{
-		OutputState: i.ToGetLogAnalyticsEntityTopologyItemNodeItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsEntityTopologyItemNodeItemOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsEntityTopologyItemNodeItemOutput) ElementType() reflect.Type {
@@ -3234,12 +2789,6 @@ func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) ToGetLogAnalyticsEntity
 
 func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) ToGetLogAnalyticsEntityTopologyItemNodeItemOutputWithContext(ctx context.Context) GetLogAnalyticsEntityTopologyItemNodeItemOutput {
 	return o
-}
-
-func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntityTopologyItemNodeItem] {
-	return pulumix.Output[GetLogAnalyticsEntityTopologyItemNodeItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
@@ -3336,12 +2885,6 @@ func (o GetLogAnalyticsEntityTopologyItemNodeItemArrayOutput) ToGetLogAnalyticsE
 	return o
 }
 
-func (o GetLogAnalyticsEntityTopologyItemNodeItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsEntityTopologyItemNodeItem] {
-	return pulumix.Output[[]GetLogAnalyticsEntityTopologyItemNodeItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLogAnalyticsEntityTopologyItemNodeItemArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsEntityTopologyItemNodeItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLogAnalyticsEntityTopologyItemNodeItem {
 		return vs[0].([]GetLogAnalyticsEntityTopologyItemNodeItem)[vs[1].(int)]
@@ -3383,12 +2926,6 @@ func (i GetLogAnalyticsLogGroupsFilterArgs) ToGetLogAnalyticsLogGroupsFilterOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsLogGroupsFilterOutput)
 }
 
-func (i GetLogAnalyticsLogGroupsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsLogGroupsFilter] {
-	return pulumix.Output[GetLogAnalyticsLogGroupsFilter]{
-		OutputState: i.ToGetLogAnalyticsLogGroupsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLogAnalyticsLogGroupsFilterArrayInput is an input type that accepts GetLogAnalyticsLogGroupsFilterArray and GetLogAnalyticsLogGroupsFilterArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsLogGroupsFilterArrayInput` via:
 //
@@ -3414,12 +2951,6 @@ func (i GetLogAnalyticsLogGroupsFilterArray) ToGetLogAnalyticsLogGroupsFilterArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsLogGroupsFilterArrayOutput)
 }
 
-func (i GetLogAnalyticsLogGroupsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsLogGroupsFilter] {
-	return pulumix.Output[[]GetLogAnalyticsLogGroupsFilter]{
-		OutputState: i.ToGetLogAnalyticsLogGroupsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsLogGroupsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsLogGroupsFilterOutput) ElementType() reflect.Type {
@@ -3432,12 +2963,6 @@ func (o GetLogAnalyticsLogGroupsFilterOutput) ToGetLogAnalyticsLogGroupsFilterOu
 
 func (o GetLogAnalyticsLogGroupsFilterOutput) ToGetLogAnalyticsLogGroupsFilterOutputWithContext(ctx context.Context) GetLogAnalyticsLogGroupsFilterOutput {
 	return o
-}
-
-func (o GetLogAnalyticsLogGroupsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsLogGroupsFilter] {
-	return pulumix.Output[GetLogAnalyticsLogGroupsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsLogGroupsFilterOutput) Name() pulumi.StringOutput {
@@ -3464,12 +2989,6 @@ func (o GetLogAnalyticsLogGroupsFilterArrayOutput) ToGetLogAnalyticsLogGroupsFil
 
 func (o GetLogAnalyticsLogGroupsFilterArrayOutput) ToGetLogAnalyticsLogGroupsFilterArrayOutputWithContext(ctx context.Context) GetLogAnalyticsLogGroupsFilterArrayOutput {
 	return o
-}
-
-func (o GetLogAnalyticsLogGroupsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsLogGroupsFilter] {
-	return pulumix.Output[[]GetLogAnalyticsLogGroupsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsLogGroupsFilterArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsLogGroupsFilterOutput {
@@ -3509,12 +3028,6 @@ func (i GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionOutput)
 }
 
-func (i GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection] {
-	return pulumix.Output[GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection]{
-		OutputState: i.ToGetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArrayInput is an input type that accepts GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArray and GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArrayInput` via:
 //
@@ -3540,12 +3053,6 @@ func (i GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArrayOutput)
 }
 
-func (i GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection] {
-	return pulumix.Output[[]GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection]{
-		OutputState: i.ToGetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionOutput) ElementType() reflect.Type {
@@ -3558,12 +3065,6 @@ func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionOutput) ToG
 
 func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionOutput) ToGetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionOutputWithContext(ctx context.Context) GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionOutput {
 	return o
-}
-
-func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection] {
-	return pulumix.Output[GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionOutput) Items() GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArrayOutput {
@@ -3584,12 +3085,6 @@ func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArrayOutput
 
 func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArrayOutput) ToGetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArrayOutputWithContext(ctx context.Context) GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArrayOutput {
 	return o
-}
-
-func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection] {
-	return pulumix.Output[[]GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionOutput {
@@ -3663,12 +3158,6 @@ func (i GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArgs) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput)
 }
 
-func (i GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem] {
-	return pulumix.Output[GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem]{
-		OutputState: i.ToGetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArrayInput is an input type that accepts GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArray and GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArrayInput` via:
 //
@@ -3694,12 +3183,6 @@ func (i GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArrayOutput)
 }
 
-func (i GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem] {
-	return pulumix.Output[[]GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem]{
-		OutputState: i.ToGetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput) ElementType() reflect.Type {
@@ -3712,12 +3195,6 @@ func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput)
 
 func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput) ToGetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutputWithContext(ctx context.Context) GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput {
 	return o
-}
-
-func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem] {
-	return pulumix.Output[GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -3785,12 +3262,6 @@ func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArrayOu
 	return o
 }
 
-func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem] {
-	return pulumix.Output[[]GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem {
 		return vs[0].([]GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem)[vs[1].(int)]
@@ -3834,12 +3305,6 @@ func (i GetLogAnalyticsObjectCollectionRuleOverrideArgs) ToGetLogAnalyticsObject
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsObjectCollectionRuleOverrideOutput)
 }
 
-func (i GetLogAnalyticsObjectCollectionRuleOverrideArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsObjectCollectionRuleOverride] {
-	return pulumix.Output[GetLogAnalyticsObjectCollectionRuleOverride]{
-		OutputState: i.ToGetLogAnalyticsObjectCollectionRuleOverrideOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLogAnalyticsObjectCollectionRuleOverrideArrayInput is an input type that accepts GetLogAnalyticsObjectCollectionRuleOverrideArray and GetLogAnalyticsObjectCollectionRuleOverrideArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsObjectCollectionRuleOverrideArrayInput` via:
 //
@@ -3865,12 +3330,6 @@ func (i GetLogAnalyticsObjectCollectionRuleOverrideArray) ToGetLogAnalyticsObjec
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsObjectCollectionRuleOverrideArrayOutput)
 }
 
-func (i GetLogAnalyticsObjectCollectionRuleOverrideArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsObjectCollectionRuleOverride] {
-	return pulumix.Output[[]GetLogAnalyticsObjectCollectionRuleOverride]{
-		OutputState: i.ToGetLogAnalyticsObjectCollectionRuleOverrideArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsObjectCollectionRuleOverrideOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsObjectCollectionRuleOverrideOutput) ElementType() reflect.Type {
@@ -3883,12 +3342,6 @@ func (o GetLogAnalyticsObjectCollectionRuleOverrideOutput) ToGetLogAnalyticsObje
 
 func (o GetLogAnalyticsObjectCollectionRuleOverrideOutput) ToGetLogAnalyticsObjectCollectionRuleOverrideOutputWithContext(ctx context.Context) GetLogAnalyticsObjectCollectionRuleOverrideOutput {
 	return o
-}
-
-func (o GetLogAnalyticsObjectCollectionRuleOverrideOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsObjectCollectionRuleOverride] {
-	return pulumix.Output[GetLogAnalyticsObjectCollectionRuleOverride]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsObjectCollectionRuleOverrideOutput) MatchType() pulumi.StringOutput {
@@ -3919,12 +3372,6 @@ func (o GetLogAnalyticsObjectCollectionRuleOverrideArrayOutput) ToGetLogAnalytic
 
 func (o GetLogAnalyticsObjectCollectionRuleOverrideArrayOutput) ToGetLogAnalyticsObjectCollectionRuleOverrideArrayOutputWithContext(ctx context.Context) GetLogAnalyticsObjectCollectionRuleOverrideArrayOutput {
 	return o
-}
-
-func (o GetLogAnalyticsObjectCollectionRuleOverrideArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsObjectCollectionRuleOverride] {
-	return pulumix.Output[[]GetLogAnalyticsObjectCollectionRuleOverride]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsObjectCollectionRuleOverrideArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsObjectCollectionRuleOverrideOutput {
@@ -3970,12 +3417,6 @@ func (i GetLogAnalyticsObjectCollectionRulesFilterArgs) ToGetLogAnalyticsObjectC
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsObjectCollectionRulesFilterOutput)
 }
 
-func (i GetLogAnalyticsObjectCollectionRulesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsObjectCollectionRulesFilter] {
-	return pulumix.Output[GetLogAnalyticsObjectCollectionRulesFilter]{
-		OutputState: i.ToGetLogAnalyticsObjectCollectionRulesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLogAnalyticsObjectCollectionRulesFilterArrayInput is an input type that accepts GetLogAnalyticsObjectCollectionRulesFilterArray and GetLogAnalyticsObjectCollectionRulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsObjectCollectionRulesFilterArrayInput` via:
 //
@@ -4001,12 +3442,6 @@ func (i GetLogAnalyticsObjectCollectionRulesFilterArray) ToGetLogAnalyticsObject
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsObjectCollectionRulesFilterArrayOutput)
 }
 
-func (i GetLogAnalyticsObjectCollectionRulesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsObjectCollectionRulesFilter] {
-	return pulumix.Output[[]GetLogAnalyticsObjectCollectionRulesFilter]{
-		OutputState: i.ToGetLogAnalyticsObjectCollectionRulesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsObjectCollectionRulesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsObjectCollectionRulesFilterOutput) ElementType() reflect.Type {
@@ -4019,12 +3454,6 @@ func (o GetLogAnalyticsObjectCollectionRulesFilterOutput) ToGetLogAnalyticsObjec
 
 func (o GetLogAnalyticsObjectCollectionRulesFilterOutput) ToGetLogAnalyticsObjectCollectionRulesFilterOutputWithContext(ctx context.Context) GetLogAnalyticsObjectCollectionRulesFilterOutput {
 	return o
-}
-
-func (o GetLogAnalyticsObjectCollectionRulesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsObjectCollectionRulesFilter] {
-	return pulumix.Output[GetLogAnalyticsObjectCollectionRulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return rules only matching with this name.
@@ -4052,12 +3481,6 @@ func (o GetLogAnalyticsObjectCollectionRulesFilterArrayOutput) ToGetLogAnalytics
 
 func (o GetLogAnalyticsObjectCollectionRulesFilterArrayOutput) ToGetLogAnalyticsObjectCollectionRulesFilterArrayOutputWithContext(ctx context.Context) GetLogAnalyticsObjectCollectionRulesFilterArrayOutput {
 	return o
-}
-
-func (o GetLogAnalyticsObjectCollectionRulesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsObjectCollectionRulesFilter] {
-	return pulumix.Output[[]GetLogAnalyticsObjectCollectionRulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsObjectCollectionRulesFilterArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsObjectCollectionRulesFilterOutput {
@@ -4097,12 +3520,6 @@ func (i GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionOutput)
 }
 
-func (i GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection] {
-	return pulumix.Output[GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection]{
-		OutputState: i.ToGetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArrayInput is an input type that accepts GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArray and GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArrayInput` via:
 //
@@ -4128,12 +3545,6 @@ func (i GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArrayOutput)
 }
 
-func (i GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection] {
-	return pulumix.Output[[]GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection]{
-		OutputState: i.ToGetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionOutput) ElementType() reflect.Type {
@@ -4146,12 +3557,6 @@ func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 
 func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionOutput) ToGetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionOutputWithContext(ctx context.Context) GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionOutput {
 	return o
-}
-
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection] {
-	return pulumix.Output[GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionOutput) Items() GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArrayOutput {
@@ -4172,12 +3577,6 @@ func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 
 func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArrayOutput) ToGetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArrayOutputWithContext(ctx context.Context) GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArrayOutput {
 	return o
-}
-
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection] {
-	return pulumix.Output[[]GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionOutput {
@@ -4323,12 +3722,6 @@ func (i GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput)
 }
 
-func (i GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem] {
-	return pulumix.Output[GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem]{
-		OutputState: i.ToGetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArrayInput is an input type that accepts GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArray and GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArrayInput` via:
 //
@@ -4354,12 +3747,6 @@ func (i GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArrayOutput)
 }
 
-func (i GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem] {
-	return pulumix.Output[[]GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem]{
-		OutputState: i.ToGetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) ElementType() reflect.Type {
@@ -4372,12 +3759,6 @@ func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 
 func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) ToGetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutputWithContext(ctx context.Context) GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput {
 	return o
-}
-
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem] {
-	return pulumix.Output[GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.
@@ -4583,12 +3964,6 @@ func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 	return o
 }
 
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem] {
-	return pulumix.Output[[]GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem {
 		return vs[0].([]GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem)[vs[1].(int)]
@@ -4632,12 +4007,6 @@ func (i GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideOutput)
 }
 
-func (i GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride] {
-	return pulumix.Output[GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride]{
-		OutputState: i.ToGetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArrayInput is an input type that accepts GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArray and GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArrayInput` via:
 //
@@ -4663,12 +4032,6 @@ func (i GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArrayOutput)
 }
 
-func (i GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride] {
-	return pulumix.Output[[]GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride]{
-		OutputState: i.ToGetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideOutput) ElementType() reflect.Type {
@@ -4681,12 +4044,6 @@ func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 
 func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideOutput) ToGetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideOutputWithContext(ctx context.Context) GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideOutput {
 	return o
-}
-
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride] {
-	return pulumix.Output[GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideOutput) MatchType() pulumi.StringOutput {
@@ -4725,12 +4082,6 @@ func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 
 func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArrayOutput) ToGetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArrayOutputWithContext(ctx context.Context) GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArrayOutput {
 	return o
-}
-
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride] {
-	return pulumix.Output[[]GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideOutput {
@@ -4776,12 +4127,6 @@ func (i GetLogAnalyticsPreferenceItemArgs) ToGetLogAnalyticsPreferenceItemOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsPreferenceItemOutput)
 }
 
-func (i GetLogAnalyticsPreferenceItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsPreferenceItem] {
-	return pulumix.Output[GetLogAnalyticsPreferenceItem]{
-		OutputState: i.ToGetLogAnalyticsPreferenceItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLogAnalyticsPreferenceItemArrayInput is an input type that accepts GetLogAnalyticsPreferenceItemArray and GetLogAnalyticsPreferenceItemArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsPreferenceItemArrayInput` via:
 //
@@ -4807,12 +4152,6 @@ func (i GetLogAnalyticsPreferenceItemArray) ToGetLogAnalyticsPreferenceItemArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsPreferenceItemArrayOutput)
 }
 
-func (i GetLogAnalyticsPreferenceItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsPreferenceItem] {
-	return pulumix.Output[[]GetLogAnalyticsPreferenceItem]{
-		OutputState: i.ToGetLogAnalyticsPreferenceItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsPreferenceItemOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsPreferenceItemOutput) ElementType() reflect.Type {
@@ -4825,12 +4164,6 @@ func (o GetLogAnalyticsPreferenceItemOutput) ToGetLogAnalyticsPreferenceItemOutp
 
 func (o GetLogAnalyticsPreferenceItemOutput) ToGetLogAnalyticsPreferenceItemOutputWithContext(ctx context.Context) GetLogAnalyticsPreferenceItemOutput {
 	return o
-}
-
-func (o GetLogAnalyticsPreferenceItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsPreferenceItem] {
-	return pulumix.Output[GetLogAnalyticsPreferenceItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The preference name.
@@ -4855,12 +4188,6 @@ func (o GetLogAnalyticsPreferenceItemArrayOutput) ToGetLogAnalyticsPreferenceIte
 
 func (o GetLogAnalyticsPreferenceItemArrayOutput) ToGetLogAnalyticsPreferenceItemArrayOutputWithContext(ctx context.Context) GetLogAnalyticsPreferenceItemArrayOutput {
 	return o
-}
-
-func (o GetLogAnalyticsPreferenceItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsPreferenceItem] {
-	return pulumix.Output[[]GetLogAnalyticsPreferenceItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsPreferenceItemArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsPreferenceItemOutput {
@@ -4918,12 +4245,6 @@ func (i GetLogAnalyticsResourceCategoriesListCategoryArgs) ToGetLogAnalyticsReso
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsResourceCategoriesListCategoryOutput)
 }
 
-func (i GetLogAnalyticsResourceCategoriesListCategoryArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsResourceCategoriesListCategory] {
-	return pulumix.Output[GetLogAnalyticsResourceCategoriesListCategory]{
-		OutputState: i.ToGetLogAnalyticsResourceCategoriesListCategoryOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLogAnalyticsResourceCategoriesListCategoryArrayInput is an input type that accepts GetLogAnalyticsResourceCategoriesListCategoryArray and GetLogAnalyticsResourceCategoriesListCategoryArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsResourceCategoriesListCategoryArrayInput` via:
 //
@@ -4949,12 +4270,6 @@ func (i GetLogAnalyticsResourceCategoriesListCategoryArray) ToGetLogAnalyticsRes
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsResourceCategoriesListCategoryArrayOutput)
 }
 
-func (i GetLogAnalyticsResourceCategoriesListCategoryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsResourceCategoriesListCategory] {
-	return pulumix.Output[[]GetLogAnalyticsResourceCategoriesListCategory]{
-		OutputState: i.ToGetLogAnalyticsResourceCategoriesListCategoryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsResourceCategoriesListCategoryOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsResourceCategoriesListCategoryOutput) ElementType() reflect.Type {
@@ -4967,12 +4282,6 @@ func (o GetLogAnalyticsResourceCategoriesListCategoryOutput) ToGetLogAnalyticsRe
 
 func (o GetLogAnalyticsResourceCategoriesListCategoryOutput) ToGetLogAnalyticsResourceCategoriesListCategoryOutputWithContext(ctx context.Context) GetLogAnalyticsResourceCategoriesListCategoryOutput {
 	return o
-}
-
-func (o GetLogAnalyticsResourceCategoriesListCategoryOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsResourceCategoriesListCategory] {
-	return pulumix.Output[GetLogAnalyticsResourceCategoriesListCategory]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The category description.
@@ -5012,12 +4321,6 @@ func (o GetLogAnalyticsResourceCategoriesListCategoryArrayOutput) ToGetLogAnalyt
 
 func (o GetLogAnalyticsResourceCategoriesListCategoryArrayOutput) ToGetLogAnalyticsResourceCategoriesListCategoryArrayOutputWithContext(ctx context.Context) GetLogAnalyticsResourceCategoriesListCategoryArrayOutput {
 	return o
-}
-
-func (o GetLogAnalyticsResourceCategoriesListCategoryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsResourceCategoriesListCategory] {
-	return pulumix.Output[[]GetLogAnalyticsResourceCategoriesListCategory]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsResourceCategoriesListCategoryArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsResourceCategoriesListCategoryOutput {
@@ -5071,12 +4374,6 @@ func (i GetLogAnalyticsResourceCategoriesListItemArgs) ToGetLogAnalyticsResource
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsResourceCategoriesListItemOutput)
 }
 
-func (i GetLogAnalyticsResourceCategoriesListItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsResourceCategoriesListItem] {
-	return pulumix.Output[GetLogAnalyticsResourceCategoriesListItem]{
-		OutputState: i.ToGetLogAnalyticsResourceCategoriesListItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLogAnalyticsResourceCategoriesListItemArrayInput is an input type that accepts GetLogAnalyticsResourceCategoriesListItemArray and GetLogAnalyticsResourceCategoriesListItemArrayOutput values.
 // You can construct a concrete instance of `GetLogAnalyticsResourceCategoriesListItemArrayInput` via:
 //
@@ -5102,12 +4399,6 @@ func (i GetLogAnalyticsResourceCategoriesListItemArray) ToGetLogAnalyticsResourc
 	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsResourceCategoriesListItemArrayOutput)
 }
 
-func (i GetLogAnalyticsResourceCategoriesListItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsResourceCategoriesListItem] {
-	return pulumix.Output[[]GetLogAnalyticsResourceCategoriesListItem]{
-		OutputState: i.ToGetLogAnalyticsResourceCategoriesListItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLogAnalyticsResourceCategoriesListItemOutput struct{ *pulumi.OutputState }
 
 func (GetLogAnalyticsResourceCategoriesListItemOutput) ElementType() reflect.Type {
@@ -5120,12 +4411,6 @@ func (o GetLogAnalyticsResourceCategoriesListItemOutput) ToGetLogAnalyticsResour
 
 func (o GetLogAnalyticsResourceCategoriesListItemOutput) ToGetLogAnalyticsResourceCategoriesListItemOutputWithContext(ctx context.Context) GetLogAnalyticsResourceCategoriesListItemOutput {
 	return o
-}
-
-func (o GetLogAnalyticsResourceCategoriesListItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsResourceCategoriesListItem] {
-	return pulumix.Output[GetLogAnalyticsResourceCategoriesListItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The category name to which this resource belongs.
@@ -5160,12 +4445,6 @@ func (o GetLogAnalyticsResourceCategoriesListItemArrayOutput) ToGetLogAnalyticsR
 
 func (o GetLogAnalyticsResourceCategoriesListItemArrayOutput) ToGetLogAnalyticsResourceCategoriesListItemArrayOutputWithContext(ctx context.Context) GetLogAnalyticsResourceCategoriesListItemArrayOutput {
 	return o
-}
-
-func (o GetLogAnalyticsResourceCategoriesListItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLogAnalyticsResourceCategoriesListItem] {
-	return pulumix.Output[[]GetLogAnalyticsResourceCategoriesListItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsResourceCategoriesListItemArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsResourceCategoriesListItemOutput {
@@ -5207,12 +4486,6 @@ func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionArgs) ToGetNam
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput)
 }
 
-func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceEffectivePropertiesEffectivePropertyCollection] {
-	return pulumix.Output[GetNamespaceEffectivePropertiesEffectivePropertyCollection]{
-		OutputState: i.ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayInput is an input type that accepts GetNamespaceEffectivePropertiesEffectivePropertyCollectionArray and GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayInput` via:
 //
@@ -5238,12 +4511,6 @@ func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionArray) ToGetNa
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutput)
 }
 
-func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceEffectivePropertiesEffectivePropertyCollection] {
-	return pulumix.Output[[]GetNamespaceEffectivePropertiesEffectivePropertyCollection]{
-		OutputState: i.ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput) ElementType() reflect.Type {
@@ -5256,12 +4523,6 @@ func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput) ToGetN
 
 func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionOutputWithContext(ctx context.Context) GetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput {
 	return o
-}
-
-func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceEffectivePropertiesEffectivePropertyCollection] {
-	return pulumix.Output[GetNamespaceEffectivePropertiesEffectivePropertyCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of properties and their effective values.
@@ -5283,12 +4544,6 @@ func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutput) T
 
 func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutput) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutputWithContext(ctx context.Context) GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutput {
 	return o
-}
-
-func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceEffectivePropertiesEffectivePropertyCollection] {
-	return pulumix.Output[[]GetNamespaceEffectivePropertiesEffectivePropertyCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionArrayOutput) Index(i pulumi.IntInput) GetNamespaceEffectivePropertiesEffectivePropertyCollectionOutput {
@@ -5342,12 +4597,6 @@ func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArgs) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput)
 }
 
-func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem] {
-	return pulumix.Output[GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem]{
-		OutputState: i.ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayInput is an input type that accepts GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArray and GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayInput` via:
 //
@@ -5373,12 +4622,6 @@ func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutput)
 }
 
-func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem] {
-	return pulumix.Output[[]GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem]{
-		OutputState: i.ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput) ElementType() reflect.Type {
@@ -5391,12 +4634,6 @@ func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput) To
 
 func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutputWithContext(ctx context.Context) GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput {
 	return o
-}
-
-func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem] {
-	return pulumix.Output[GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The effective level of the property value.
@@ -5433,12 +4670,6 @@ func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutpu
 
 func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutput) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutputWithContext(ctx context.Context) GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem] {
-	return pulumix.Output[[]GetNamespaceEffectivePropertiesEffectivePropertyCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemOutput {
@@ -5488,12 +4719,6 @@ func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArg
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput)
 }
 
-func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern] {
-	return pulumix.Output[GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern]{
-		OutputState: i.ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayInput is an input type that accepts GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArray and GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayInput` via:
 //
@@ -5519,12 +4744,6 @@ func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput)
 }
 
-func (i GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern] {
-	return pulumix.Output[[]GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern]{
-		OutputState: i.ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput) ElementType() reflect.Type {
@@ -5537,12 +4756,6 @@ func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOut
 
 func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutputWithContext(ctx context.Context) GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput {
 	return o
-}
-
-func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern] {
-	return pulumix.Output[GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The effective level of the property value.
@@ -5574,12 +4787,6 @@ func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArr
 
 func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput) ToGetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutputWithContext(ctx context.Context) GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput {
 	return o
-}
-
-func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern] {
-	return pulumix.Output[[]GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArrayOutput) Index(i pulumi.IntInput) GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternOutput {
@@ -5625,12 +4832,6 @@ func (i GetNamespaceEffectivePropertiesFilterArgs) ToGetNamespaceEffectiveProper
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceEffectivePropertiesFilterOutput)
 }
 
-func (i GetNamespaceEffectivePropertiesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceEffectivePropertiesFilter] {
-	return pulumix.Output[GetNamespaceEffectivePropertiesFilter]{
-		OutputState: i.ToGetNamespaceEffectivePropertiesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceEffectivePropertiesFilterArrayInput is an input type that accepts GetNamespaceEffectivePropertiesFilterArray and GetNamespaceEffectivePropertiesFilterArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceEffectivePropertiesFilterArrayInput` via:
 //
@@ -5656,12 +4857,6 @@ func (i GetNamespaceEffectivePropertiesFilterArray) ToGetNamespaceEffectivePrope
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceEffectivePropertiesFilterArrayOutput)
 }
 
-func (i GetNamespaceEffectivePropertiesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceEffectivePropertiesFilter] {
-	return pulumix.Output[[]GetNamespaceEffectivePropertiesFilter]{
-		OutputState: i.ToGetNamespaceEffectivePropertiesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceEffectivePropertiesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceEffectivePropertiesFilterOutput) ElementType() reflect.Type {
@@ -5674,12 +4869,6 @@ func (o GetNamespaceEffectivePropertiesFilterOutput) ToGetNamespaceEffectiveProp
 
 func (o GetNamespaceEffectivePropertiesFilterOutput) ToGetNamespaceEffectivePropertiesFilterOutputWithContext(ctx context.Context) GetNamespaceEffectivePropertiesFilterOutput {
 	return o
-}
-
-func (o GetNamespaceEffectivePropertiesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceEffectivePropertiesFilter] {
-	return pulumix.Output[GetNamespaceEffectivePropertiesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The property name used for filtering.
@@ -5707,12 +4896,6 @@ func (o GetNamespaceEffectivePropertiesFilterArrayOutput) ToGetNamespaceEffectiv
 
 func (o GetNamespaceEffectivePropertiesFilterArrayOutput) ToGetNamespaceEffectivePropertiesFilterArrayOutputWithContext(ctx context.Context) GetNamespaceEffectivePropertiesFilterArrayOutput {
 	return o
-}
-
-func (o GetNamespaceEffectivePropertiesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceEffectivePropertiesFilter] {
-	return pulumix.Output[[]GetNamespaceEffectivePropertiesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceEffectivePropertiesFilterArrayOutput) Index(i pulumi.IntInput) GetNamespaceEffectivePropertiesFilterOutput {
@@ -5774,12 +4957,6 @@ func (i GetNamespaceIngestTimeRuleActionArgs) ToGetNamespaceIngestTimeRuleAction
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRuleActionOutput)
 }
 
-func (i GetNamespaceIngestTimeRuleActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceIngestTimeRuleAction] {
-	return pulumix.Output[GetNamespaceIngestTimeRuleAction]{
-		OutputState: i.ToGetNamespaceIngestTimeRuleActionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceIngestTimeRuleActionArrayInput is an input type that accepts GetNamespaceIngestTimeRuleActionArray and GetNamespaceIngestTimeRuleActionArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceIngestTimeRuleActionArrayInput` via:
 //
@@ -5805,12 +4982,6 @@ func (i GetNamespaceIngestTimeRuleActionArray) ToGetNamespaceIngestTimeRuleActio
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRuleActionArrayOutput)
 }
 
-func (i GetNamespaceIngestTimeRuleActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceIngestTimeRuleAction] {
-	return pulumix.Output[[]GetNamespaceIngestTimeRuleAction]{
-		OutputState: i.ToGetNamespaceIngestTimeRuleActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceIngestTimeRuleActionOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceIngestTimeRuleActionOutput) ElementType() reflect.Type {
@@ -5823,12 +4994,6 @@ func (o GetNamespaceIngestTimeRuleActionOutput) ToGetNamespaceIngestTimeRuleActi
 
 func (o GetNamespaceIngestTimeRuleActionOutput) ToGetNamespaceIngestTimeRuleActionOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRuleActionOutput {
 	return o
-}
-
-func (o GetNamespaceIngestTimeRuleActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceIngestTimeRuleAction] {
-	return pulumix.Output[GetNamespaceIngestTimeRuleAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -5873,12 +5038,6 @@ func (o GetNamespaceIngestTimeRuleActionArrayOutput) ToGetNamespaceIngestTimeRul
 
 func (o GetNamespaceIngestTimeRuleActionArrayOutput) ToGetNamespaceIngestTimeRuleActionArrayOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRuleActionArrayOutput {
 	return o
-}
-
-func (o GetNamespaceIngestTimeRuleActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceIngestTimeRuleAction] {
-	return pulumix.Output[[]GetNamespaceIngestTimeRuleAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceIngestTimeRuleActionArrayOutput) Index(i pulumi.IntInput) GetNamespaceIngestTimeRuleActionOutput {
@@ -5936,12 +5095,6 @@ func (i GetNamespaceIngestTimeRuleConditionArgs) ToGetNamespaceIngestTimeRuleCon
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRuleConditionOutput)
 }
 
-func (i GetNamespaceIngestTimeRuleConditionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceIngestTimeRuleCondition] {
-	return pulumix.Output[GetNamespaceIngestTimeRuleCondition]{
-		OutputState: i.ToGetNamespaceIngestTimeRuleConditionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceIngestTimeRuleConditionArrayInput is an input type that accepts GetNamespaceIngestTimeRuleConditionArray and GetNamespaceIngestTimeRuleConditionArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceIngestTimeRuleConditionArrayInput` via:
 //
@@ -5967,12 +5120,6 @@ func (i GetNamespaceIngestTimeRuleConditionArray) ToGetNamespaceIngestTimeRuleCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRuleConditionArrayOutput)
 }
 
-func (i GetNamespaceIngestTimeRuleConditionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceIngestTimeRuleCondition] {
-	return pulumix.Output[[]GetNamespaceIngestTimeRuleCondition]{
-		OutputState: i.ToGetNamespaceIngestTimeRuleConditionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceIngestTimeRuleConditionOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceIngestTimeRuleConditionOutput) ElementType() reflect.Type {
@@ -5985,12 +5132,6 @@ func (o GetNamespaceIngestTimeRuleConditionOutput) ToGetNamespaceIngestTimeRuleC
 
 func (o GetNamespaceIngestTimeRuleConditionOutput) ToGetNamespaceIngestTimeRuleConditionOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRuleConditionOutput {
 	return o
-}
-
-func (o GetNamespaceIngestTimeRuleConditionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceIngestTimeRuleCondition] {
-	return pulumix.Output[GetNamespaceIngestTimeRuleCondition]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Optional additional condition(s) to be evaluated.
@@ -6032,12 +5173,6 @@ func (o GetNamespaceIngestTimeRuleConditionArrayOutput) ToGetNamespaceIngestTime
 
 func (o GetNamespaceIngestTimeRuleConditionArrayOutput) ToGetNamespaceIngestTimeRuleConditionArrayOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRuleConditionArrayOutput {
 	return o
-}
-
-func (o GetNamespaceIngestTimeRuleConditionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceIngestTimeRuleCondition] {
-	return pulumix.Output[[]GetNamespaceIngestTimeRuleCondition]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceIngestTimeRuleConditionArrayOutput) Index(i pulumi.IntInput) GetNamespaceIngestTimeRuleConditionOutput {
@@ -6087,12 +5222,6 @@ func (i GetNamespaceIngestTimeRuleConditionAdditionalConditionArgs) ToGetNamespa
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput)
 }
 
-func (i GetNamespaceIngestTimeRuleConditionAdditionalConditionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceIngestTimeRuleConditionAdditionalCondition] {
-	return pulumix.Output[GetNamespaceIngestTimeRuleConditionAdditionalCondition]{
-		OutputState: i.ToGetNamespaceIngestTimeRuleConditionAdditionalConditionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayInput is an input type that accepts GetNamespaceIngestTimeRuleConditionAdditionalConditionArray and GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayInput` via:
 //
@@ -6118,12 +5247,6 @@ func (i GetNamespaceIngestTimeRuleConditionAdditionalConditionArray) ToGetNamesp
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput)
 }
 
-func (i GetNamespaceIngestTimeRuleConditionAdditionalConditionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceIngestTimeRuleConditionAdditionalCondition] {
-	return pulumix.Output[[]GetNamespaceIngestTimeRuleConditionAdditionalCondition]{
-		OutputState: i.ToGetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput) ElementType() reflect.Type {
@@ -6136,12 +5259,6 @@ func (o GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput) ToGetNames
 
 func (o GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput) ToGetNamespaceIngestTimeRuleConditionAdditionalConditionOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput {
 	return o
-}
-
-func (o GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceIngestTimeRuleConditionAdditionalCondition] {
-	return pulumix.Output[GetNamespaceIngestTimeRuleConditionAdditionalCondition]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The additional field name to be evaluated.
@@ -6171,12 +5288,6 @@ func (o GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput) ToGet
 
 func (o GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput) ToGetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput {
 	return o
-}
-
-func (o GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceIngestTimeRuleConditionAdditionalCondition] {
-	return pulumix.Output[[]GetNamespaceIngestTimeRuleConditionAdditionalCondition]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceIngestTimeRuleConditionAdditionalConditionArrayOutput) Index(i pulumi.IntInput) GetNamespaceIngestTimeRuleConditionAdditionalConditionOutput {
@@ -6220,12 +5331,6 @@ func (i GetNamespaceIngestTimeRulesFilterArgs) ToGetNamespaceIngestTimeRulesFilt
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRulesFilterOutput)
 }
 
-func (i GetNamespaceIngestTimeRulesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceIngestTimeRulesFilter] {
-	return pulumix.Output[GetNamespaceIngestTimeRulesFilter]{
-		OutputState: i.ToGetNamespaceIngestTimeRulesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceIngestTimeRulesFilterArrayInput is an input type that accepts GetNamespaceIngestTimeRulesFilterArray and GetNamespaceIngestTimeRulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceIngestTimeRulesFilterArrayInput` via:
 //
@@ -6251,12 +5356,6 @@ func (i GetNamespaceIngestTimeRulesFilterArray) ToGetNamespaceIngestTimeRulesFil
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRulesFilterArrayOutput)
 }
 
-func (i GetNamespaceIngestTimeRulesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceIngestTimeRulesFilter] {
-	return pulumix.Output[[]GetNamespaceIngestTimeRulesFilter]{
-		OutputState: i.ToGetNamespaceIngestTimeRulesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceIngestTimeRulesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceIngestTimeRulesFilterOutput) ElementType() reflect.Type {
@@ -6269,12 +5368,6 @@ func (o GetNamespaceIngestTimeRulesFilterOutput) ToGetNamespaceIngestTimeRulesFi
 
 func (o GetNamespaceIngestTimeRulesFilterOutput) ToGetNamespaceIngestTimeRulesFilterOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRulesFilterOutput {
 	return o
-}
-
-func (o GetNamespaceIngestTimeRulesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceIngestTimeRulesFilter] {
-	return pulumix.Output[GetNamespaceIngestTimeRulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceIngestTimeRulesFilterOutput) Name() pulumi.StringOutput {
@@ -6301,12 +5394,6 @@ func (o GetNamespaceIngestTimeRulesFilterArrayOutput) ToGetNamespaceIngestTimeRu
 
 func (o GetNamespaceIngestTimeRulesFilterArrayOutput) ToGetNamespaceIngestTimeRulesFilterArrayOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRulesFilterArrayOutput {
 	return o
-}
-
-func (o GetNamespaceIngestTimeRulesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceIngestTimeRulesFilter] {
-	return pulumix.Output[[]GetNamespaceIngestTimeRulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceIngestTimeRulesFilterArrayOutput) Index(i pulumi.IntInput) GetNamespaceIngestTimeRulesFilterOutput {
@@ -6346,12 +5433,6 @@ func (i GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArgs) ToGetNam
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput)
 }
 
-func (i GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection] {
-	return pulumix.Output[GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection]{
-		OutputState: i.ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayInput is an input type that accepts GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArray and GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayInput` via:
 //
@@ -6377,12 +5458,6 @@ func (i GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArray) ToGetNa
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutput)
 }
 
-func (i GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection] {
-	return pulumix.Output[[]GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection]{
-		OutputState: i.ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput) ElementType() reflect.Type {
@@ -6395,12 +5470,6 @@ func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput) ToGetN
 
 func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput) ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput {
 	return o
-}
-
-func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection] {
-	return pulumix.Output[GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput) Items() GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput {
@@ -6421,12 +5490,6 @@ func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutput) T
 
 func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutput) ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutput {
 	return o
-}
-
-func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection] {
-	return pulumix.Output[[]GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionOutput {
@@ -6516,12 +5579,6 @@ func (i GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArgs) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput)
 }
 
-func (i GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem] {
-	return pulumix.Output[GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem]{
-		OutputState: i.ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayInput is an input type that accepts GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArray and GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayInput` via:
 //
@@ -6547,12 +5604,6 @@ func (i GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput)
 }
 
-func (i GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem] {
-	return pulumix.Output[[]GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem]{
-		OutputState: i.ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) ElementType() reflect.Type {
@@ -6565,12 +5616,6 @@ func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) To
 
 func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) ToGetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutputWithContext(ctx context.Context) GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput {
 	return o
-}
-
-func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem] {
-	return pulumix.Output[GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -6656,12 +5701,6 @@ func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutpu
 	return o
 }
 
-func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem] {
-	return pulumix.Output[[]GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem {
 		return vs[0].([]GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem)[vs[1].(int)]
@@ -6705,12 +5744,6 @@ func (i GetNamespacePropertiesMetadataFilterArgs) ToGetNamespacePropertiesMetada
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacePropertiesMetadataFilterOutput)
 }
 
-func (i GetNamespacePropertiesMetadataFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespacePropertiesMetadataFilter] {
-	return pulumix.Output[GetNamespacePropertiesMetadataFilter]{
-		OutputState: i.ToGetNamespacePropertiesMetadataFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespacePropertiesMetadataFilterArrayInput is an input type that accepts GetNamespacePropertiesMetadataFilterArray and GetNamespacePropertiesMetadataFilterArrayOutput values.
 // You can construct a concrete instance of `GetNamespacePropertiesMetadataFilterArrayInput` via:
 //
@@ -6736,12 +5769,6 @@ func (i GetNamespacePropertiesMetadataFilterArray) ToGetNamespacePropertiesMetad
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacePropertiesMetadataFilterArrayOutput)
 }
 
-func (i GetNamespacePropertiesMetadataFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespacePropertiesMetadataFilter] {
-	return pulumix.Output[[]GetNamespacePropertiesMetadataFilter]{
-		OutputState: i.ToGetNamespacePropertiesMetadataFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespacePropertiesMetadataFilterOutput struct{ *pulumi.OutputState }
 
 func (GetNamespacePropertiesMetadataFilterOutput) ElementType() reflect.Type {
@@ -6754,12 +5781,6 @@ func (o GetNamespacePropertiesMetadataFilterOutput) ToGetNamespacePropertiesMeta
 
 func (o GetNamespacePropertiesMetadataFilterOutput) ToGetNamespacePropertiesMetadataFilterOutputWithContext(ctx context.Context) GetNamespacePropertiesMetadataFilterOutput {
 	return o
-}
-
-func (o GetNamespacePropertiesMetadataFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespacePropertiesMetadataFilter] {
-	return pulumix.Output[GetNamespacePropertiesMetadataFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The property name used for filtering.
@@ -6787,12 +5808,6 @@ func (o GetNamespacePropertiesMetadataFilterArrayOutput) ToGetNamespacePropertie
 
 func (o GetNamespacePropertiesMetadataFilterArrayOutput) ToGetNamespacePropertiesMetadataFilterArrayOutputWithContext(ctx context.Context) GetNamespacePropertiesMetadataFilterArrayOutput {
 	return o
-}
-
-func (o GetNamespacePropertiesMetadataFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespacePropertiesMetadataFilter] {
-	return pulumix.Output[[]GetNamespacePropertiesMetadataFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespacePropertiesMetadataFilterArrayOutput) Index(i pulumi.IntInput) GetNamespacePropertiesMetadataFilterOutput {
@@ -6834,12 +5849,6 @@ func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArgs) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput)
 }
 
-func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection] {
-	return pulumix.Output[GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection]{
-		OutputState: i.ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayInput is an input type that accepts GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArray and GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayInput` via:
 //
@@ -6865,12 +5874,6 @@ func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutput)
 }
 
-func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection] {
-	return pulumix.Output[[]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection]{
-		OutputState: i.ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput) ElementType() reflect.Type {
@@ -6883,12 +5886,6 @@ func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput) T
 
 func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutputWithContext(ctx context.Context) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput {
 	return o
-}
-
-func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection] {
-	return pulumix.Output[GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An array of properties along with their metadata summary.
@@ -6910,12 +5907,6 @@ func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutp
 
 func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutput) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutputWithContext(ctx context.Context) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutput {
 	return o
-}
-
-func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection] {
-	return pulumix.Output[[]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionOutput {
@@ -6973,12 +5964,6 @@ func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput)
 }
 
-func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem] {
-	return pulumix.Output[GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem]{
-		OutputState: i.ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayInput is an input type that accepts GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArray and GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayInput` via:
 //
@@ -7004,12 +5989,6 @@ func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutput)
 }
 
-func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem] {
-	return pulumix.Output[[]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem]{
-		OutputState: i.ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput) ElementType() reflect.Type {
@@ -7022,12 +6001,6 @@ func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutpu
 
 func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutputWithContext(ctx context.Context) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput {
 	return o
-}
-
-func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem] {
-	return pulumix.Output[GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The default property value.
@@ -7077,12 +6050,6 @@ func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArray
 	return o
 }
 
-func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem] {
-	return pulumix.Output[[]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem {
 		return vs[0].([]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem)[vs[1].(int)]
@@ -7126,12 +6093,6 @@ func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput)
 }
 
-func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel] {
-	return pulumix.Output[GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel]{
-		OutputState: i.ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayInput is an input type that accepts GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArray and GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutput values.
 // You can construct a concrete instance of `GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayInput` via:
 //
@@ -7157,12 +6118,6 @@ func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutput)
 }
 
-func (i GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel] {
-	return pulumix.Output[[]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel]{
-		OutputState: i.ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput struct{ *pulumi.OutputState }
 
 func (GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput) ElementType() reflect.Type {
@@ -7175,12 +6130,6 @@ func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel
 
 func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutputWithContext(ctx context.Context) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput {
 	return o
-}
-
-func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel] {
-	return pulumix.Output[GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The constraints that apply to the properties at a certain level.
@@ -7207,12 +6156,6 @@ func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel
 
 func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutput) ToGetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutputWithContext(ctx context.Context) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutput {
 	return o
-}
-
-func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel] {
-	return pulumix.Output[[]GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArrayOutput) Index(i pulumi.IntInput) GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelOutput {
@@ -7256,12 +6199,6 @@ func (i GetNamespaceRulesFilterArgs) ToGetNamespaceRulesFilterOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceRulesFilterOutput)
 }
 
-func (i GetNamespaceRulesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceRulesFilter] {
-	return pulumix.Output[GetNamespaceRulesFilter]{
-		OutputState: i.ToGetNamespaceRulesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceRulesFilterArrayInput is an input type that accepts GetNamespaceRulesFilterArray and GetNamespaceRulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceRulesFilterArrayInput` via:
 //
@@ -7287,12 +6224,6 @@ func (i GetNamespaceRulesFilterArray) ToGetNamespaceRulesFilterArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceRulesFilterArrayOutput)
 }
 
-func (i GetNamespaceRulesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceRulesFilter] {
-	return pulumix.Output[[]GetNamespaceRulesFilter]{
-		OutputState: i.ToGetNamespaceRulesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceRulesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceRulesFilterOutput) ElementType() reflect.Type {
@@ -7305,12 +6236,6 @@ func (o GetNamespaceRulesFilterOutput) ToGetNamespaceRulesFilterOutput() GetName
 
 func (o GetNamespaceRulesFilterOutput) ToGetNamespaceRulesFilterOutputWithContext(ctx context.Context) GetNamespaceRulesFilterOutput {
 	return o
-}
-
-func (o GetNamespaceRulesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceRulesFilter] {
-	return pulumix.Output[GetNamespaceRulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceRulesFilterOutput) Name() pulumi.StringOutput {
@@ -7337,12 +6262,6 @@ func (o GetNamespaceRulesFilterArrayOutput) ToGetNamespaceRulesFilterArrayOutput
 
 func (o GetNamespaceRulesFilterArrayOutput) ToGetNamespaceRulesFilterArrayOutputWithContext(ctx context.Context) GetNamespaceRulesFilterArrayOutput {
 	return o
-}
-
-func (o GetNamespaceRulesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceRulesFilter] {
-	return pulumix.Output[[]GetNamespaceRulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceRulesFilterArrayOutput) Index(i pulumi.IntInput) GetNamespaceRulesFilterOutput {
@@ -7384,12 +6303,6 @@ func (i GetNamespaceRulesRuleSummaryCollectionArgs) ToGetNamespaceRulesRuleSumma
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceRulesRuleSummaryCollectionOutput)
 }
 
-func (i GetNamespaceRulesRuleSummaryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceRulesRuleSummaryCollection] {
-	return pulumix.Output[GetNamespaceRulesRuleSummaryCollection]{
-		OutputState: i.ToGetNamespaceRulesRuleSummaryCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceRulesRuleSummaryCollectionArrayInput is an input type that accepts GetNamespaceRulesRuleSummaryCollectionArray and GetNamespaceRulesRuleSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceRulesRuleSummaryCollectionArrayInput` via:
 //
@@ -7415,12 +6328,6 @@ func (i GetNamespaceRulesRuleSummaryCollectionArray) ToGetNamespaceRulesRuleSumm
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceRulesRuleSummaryCollectionArrayOutput)
 }
 
-func (i GetNamespaceRulesRuleSummaryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceRulesRuleSummaryCollection] {
-	return pulumix.Output[[]GetNamespaceRulesRuleSummaryCollection]{
-		OutputState: i.ToGetNamespaceRulesRuleSummaryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceRulesRuleSummaryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceRulesRuleSummaryCollectionOutput) ElementType() reflect.Type {
@@ -7433,12 +6340,6 @@ func (o GetNamespaceRulesRuleSummaryCollectionOutput) ToGetNamespaceRulesRuleSum
 
 func (o GetNamespaceRulesRuleSummaryCollectionOutput) ToGetNamespaceRulesRuleSummaryCollectionOutputWithContext(ctx context.Context) GetNamespaceRulesRuleSummaryCollectionOutput {
 	return o
-}
-
-func (o GetNamespaceRulesRuleSummaryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceRulesRuleSummaryCollection] {
-	return pulumix.Output[GetNamespaceRulesRuleSummaryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An array of rule summary objects.
@@ -7460,12 +6361,6 @@ func (o GetNamespaceRulesRuleSummaryCollectionArrayOutput) ToGetNamespaceRulesRu
 
 func (o GetNamespaceRulesRuleSummaryCollectionArrayOutput) ToGetNamespaceRulesRuleSummaryCollectionArrayOutputWithContext(ctx context.Context) GetNamespaceRulesRuleSummaryCollectionArrayOutput {
 	return o
-}
-
-func (o GetNamespaceRulesRuleSummaryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceRulesRuleSummaryCollection] {
-	return pulumix.Output[[]GetNamespaceRulesRuleSummaryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceRulesRuleSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetNamespaceRulesRuleSummaryCollectionOutput {
@@ -7555,12 +6450,6 @@ func (i GetNamespaceRulesRuleSummaryCollectionItemArgs) ToGetNamespaceRulesRuleS
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceRulesRuleSummaryCollectionItemOutput)
 }
 
-func (i GetNamespaceRulesRuleSummaryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceRulesRuleSummaryCollectionItem] {
-	return pulumix.Output[GetNamespaceRulesRuleSummaryCollectionItem]{
-		OutputState: i.ToGetNamespaceRulesRuleSummaryCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceRulesRuleSummaryCollectionItemArrayInput is an input type that accepts GetNamespaceRulesRuleSummaryCollectionItemArray and GetNamespaceRulesRuleSummaryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceRulesRuleSummaryCollectionItemArrayInput` via:
 //
@@ -7586,12 +6475,6 @@ func (i GetNamespaceRulesRuleSummaryCollectionItemArray) ToGetNamespaceRulesRule
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceRulesRuleSummaryCollectionItemArrayOutput)
 }
 
-func (i GetNamespaceRulesRuleSummaryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceRulesRuleSummaryCollectionItem] {
-	return pulumix.Output[[]GetNamespaceRulesRuleSummaryCollectionItem]{
-		OutputState: i.ToGetNamespaceRulesRuleSummaryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceRulesRuleSummaryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceRulesRuleSummaryCollectionItemOutput) ElementType() reflect.Type {
@@ -7604,12 +6487,6 @@ func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) ToGetNamespaceRulesRul
 
 func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) ToGetNamespaceRulesRuleSummaryCollectionItemOutputWithContext(ctx context.Context) GetNamespaceRulesRuleSummaryCollectionItemOutput {
 	return o
-}
-
-func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceRulesRuleSummaryCollectionItem] {
-	return pulumix.Output[GetNamespaceRulesRuleSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -7691,12 +6568,6 @@ func (o GetNamespaceRulesRuleSummaryCollectionItemArrayOutput) ToGetNamespaceRul
 	return o
 }
 
-func (o GetNamespaceRulesRuleSummaryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceRulesRuleSummaryCollectionItem] {
-	return pulumix.Output[[]GetNamespaceRulesRuleSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespaceRulesRuleSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetNamespaceRulesRuleSummaryCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceRulesRuleSummaryCollectionItem {
 		return vs[0].([]GetNamespaceRulesRuleSummaryCollectionItem)[vs[1].(int)]
@@ -7764,12 +6635,6 @@ func (i GetNamespaceScheduledTaskActionArgs) ToGetNamespaceScheduledTaskActionOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTaskActionOutput)
 }
 
-func (i GetNamespaceScheduledTaskActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTaskAction] {
-	return pulumix.Output[GetNamespaceScheduledTaskAction]{
-		OutputState: i.ToGetNamespaceScheduledTaskActionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceScheduledTaskActionArrayInput is an input type that accepts GetNamespaceScheduledTaskActionArray and GetNamespaceScheduledTaskActionArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTaskActionArrayInput` via:
 //
@@ -7795,12 +6660,6 @@ func (i GetNamespaceScheduledTaskActionArray) ToGetNamespaceScheduledTaskActionA
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTaskActionArrayOutput)
 }
 
-func (i GetNamespaceScheduledTaskActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTaskAction] {
-	return pulumix.Output[[]GetNamespaceScheduledTaskAction]{
-		OutputState: i.ToGetNamespaceScheduledTaskActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceScheduledTaskActionOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceScheduledTaskActionOutput) ElementType() reflect.Type {
@@ -7813,12 +6672,6 @@ func (o GetNamespaceScheduledTaskActionOutput) ToGetNamespaceScheduledTaskAction
 
 func (o GetNamespaceScheduledTaskActionOutput) ToGetNamespaceScheduledTaskActionOutputWithContext(ctx context.Context) GetNamespaceScheduledTaskActionOutput {
 	return o
-}
-
-func (o GetNamespaceScheduledTaskActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTaskAction] {
-	return pulumix.Output[GetNamespaceScheduledTaskAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 // if true, purge child compartments data
@@ -7877,12 +6730,6 @@ func (o GetNamespaceScheduledTaskActionArrayOutput) ToGetNamespaceScheduledTaskA
 	return o
 }
 
-func (o GetNamespaceScheduledTaskActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTaskAction] {
-	return pulumix.Output[[]GetNamespaceScheduledTaskAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespaceScheduledTaskActionArrayOutput) Index(i pulumi.IntInput) GetNamespaceScheduledTaskActionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceScheduledTaskAction {
 		return vs[0].([]GetNamespaceScheduledTaskAction)[vs[1].(int)]
@@ -7934,12 +6781,6 @@ func (i GetNamespaceScheduledTaskActionMetricExtractionArgs) ToGetNamespaceSched
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTaskActionMetricExtractionOutput)
 }
 
-func (i GetNamespaceScheduledTaskActionMetricExtractionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTaskActionMetricExtraction] {
-	return pulumix.Output[GetNamespaceScheduledTaskActionMetricExtraction]{
-		OutputState: i.ToGetNamespaceScheduledTaskActionMetricExtractionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceScheduledTaskActionMetricExtractionArrayInput is an input type that accepts GetNamespaceScheduledTaskActionMetricExtractionArray and GetNamespaceScheduledTaskActionMetricExtractionArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTaskActionMetricExtractionArrayInput` via:
 //
@@ -7965,12 +6806,6 @@ func (i GetNamespaceScheduledTaskActionMetricExtractionArray) ToGetNamespaceSche
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTaskActionMetricExtractionArrayOutput)
 }
 
-func (i GetNamespaceScheduledTaskActionMetricExtractionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTaskActionMetricExtraction] {
-	return pulumix.Output[[]GetNamespaceScheduledTaskActionMetricExtraction]{
-		OutputState: i.ToGetNamespaceScheduledTaskActionMetricExtractionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceScheduledTaskActionMetricExtractionOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceScheduledTaskActionMetricExtractionOutput) ElementType() reflect.Type {
@@ -7983,12 +6818,6 @@ func (o GetNamespaceScheduledTaskActionMetricExtractionOutput) ToGetNamespaceSch
 
 func (o GetNamespaceScheduledTaskActionMetricExtractionOutput) ToGetNamespaceScheduledTaskActionMetricExtractionOutputWithContext(ctx context.Context) GetNamespaceScheduledTaskActionMetricExtractionOutput {
 	return o
-}
-
-func (o GetNamespaceScheduledTaskActionMetricExtractionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTaskActionMetricExtraction] {
-	return pulumix.Output[GetNamespaceScheduledTaskActionMetricExtraction]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -8023,12 +6852,6 @@ func (o GetNamespaceScheduledTaskActionMetricExtractionArrayOutput) ToGetNamespa
 
 func (o GetNamespaceScheduledTaskActionMetricExtractionArrayOutput) ToGetNamespaceScheduledTaskActionMetricExtractionArrayOutputWithContext(ctx context.Context) GetNamespaceScheduledTaskActionMetricExtractionArrayOutput {
 	return o
-}
-
-func (o GetNamespaceScheduledTaskActionMetricExtractionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTaskActionMetricExtraction] {
-	return pulumix.Output[[]GetNamespaceScheduledTaskActionMetricExtraction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceScheduledTaskActionMetricExtractionArrayOutput) Index(i pulumi.IntInput) GetNamespaceScheduledTaskActionMetricExtractionOutput {
@@ -8068,12 +6891,6 @@ func (i GetNamespaceScheduledTaskScheduleArgs) ToGetNamespaceScheduledTaskSchedu
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTaskScheduleOutput)
 }
 
-func (i GetNamespaceScheduledTaskScheduleArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTaskSchedule] {
-	return pulumix.Output[GetNamespaceScheduledTaskSchedule]{
-		OutputState: i.ToGetNamespaceScheduledTaskScheduleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceScheduledTaskScheduleArrayInput is an input type that accepts GetNamespaceScheduledTaskScheduleArray and GetNamespaceScheduledTaskScheduleArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTaskScheduleArrayInput` via:
 //
@@ -8099,12 +6916,6 @@ func (i GetNamespaceScheduledTaskScheduleArray) ToGetNamespaceScheduledTaskSched
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTaskScheduleArrayOutput)
 }
 
-func (i GetNamespaceScheduledTaskScheduleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTaskSchedule] {
-	return pulumix.Output[[]GetNamespaceScheduledTaskSchedule]{
-		OutputState: i.ToGetNamespaceScheduledTaskScheduleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceScheduledTaskScheduleOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceScheduledTaskScheduleOutput) ElementType() reflect.Type {
@@ -8117,12 +6928,6 @@ func (o GetNamespaceScheduledTaskScheduleOutput) ToGetNamespaceScheduledTaskSche
 
 func (o GetNamespaceScheduledTaskScheduleOutput) ToGetNamespaceScheduledTaskScheduleOutputWithContext(ctx context.Context) GetNamespaceScheduledTaskScheduleOutput {
 	return o
-}
-
-func (o GetNamespaceScheduledTaskScheduleOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTaskSchedule] {
-	return pulumix.Output[GetNamespaceScheduledTaskSchedule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceScheduledTaskScheduleOutput) Schedules() GetNamespaceScheduledTaskScheduleScheduleArrayOutput {
@@ -8143,12 +6948,6 @@ func (o GetNamespaceScheduledTaskScheduleArrayOutput) ToGetNamespaceScheduledTas
 
 func (o GetNamespaceScheduledTaskScheduleArrayOutput) ToGetNamespaceScheduledTaskScheduleArrayOutputWithContext(ctx context.Context) GetNamespaceScheduledTaskScheduleArrayOutput {
 	return o
-}
-
-func (o GetNamespaceScheduledTaskScheduleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTaskSchedule] {
-	return pulumix.Output[[]GetNamespaceScheduledTaskSchedule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceScheduledTaskScheduleArrayOutput) Index(i pulumi.IntInput) GetNamespaceScheduledTaskScheduleOutput {
@@ -8210,12 +7009,6 @@ func (i GetNamespaceScheduledTaskScheduleScheduleArgs) ToGetNamespaceScheduledTa
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTaskScheduleScheduleOutput)
 }
 
-func (i GetNamespaceScheduledTaskScheduleScheduleArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTaskScheduleSchedule] {
-	return pulumix.Output[GetNamespaceScheduledTaskScheduleSchedule]{
-		OutputState: i.ToGetNamespaceScheduledTaskScheduleScheduleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceScheduledTaskScheduleScheduleArrayInput is an input type that accepts GetNamespaceScheduledTaskScheduleScheduleArray and GetNamespaceScheduledTaskScheduleScheduleArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTaskScheduleScheduleArrayInput` via:
 //
@@ -8241,12 +7034,6 @@ func (i GetNamespaceScheduledTaskScheduleScheduleArray) ToGetNamespaceScheduledT
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTaskScheduleScheduleArrayOutput)
 }
 
-func (i GetNamespaceScheduledTaskScheduleScheduleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTaskScheduleSchedule] {
-	return pulumix.Output[[]GetNamespaceScheduledTaskScheduleSchedule]{
-		OutputState: i.ToGetNamespaceScheduledTaskScheduleScheduleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceScheduledTaskScheduleScheduleOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceScheduledTaskScheduleScheduleOutput) ElementType() reflect.Type {
@@ -8259,12 +7046,6 @@ func (o GetNamespaceScheduledTaskScheduleScheduleOutput) ToGetNamespaceScheduled
 
 func (o GetNamespaceScheduledTaskScheduleScheduleOutput) ToGetNamespaceScheduledTaskScheduleScheduleOutputWithContext(ctx context.Context) GetNamespaceScheduledTaskScheduleScheduleOutput {
 	return o
-}
-
-func (o GetNamespaceScheduledTaskScheduleScheduleOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTaskScheduleSchedule] {
-	return pulumix.Output[GetNamespaceScheduledTaskScheduleSchedule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Value in cron format.
@@ -8311,12 +7092,6 @@ func (o GetNamespaceScheduledTaskScheduleScheduleArrayOutput) ToGetNamespaceSche
 	return o
 }
 
-func (o GetNamespaceScheduledTaskScheduleScheduleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTaskScheduleSchedule] {
-	return pulumix.Output[[]GetNamespaceScheduledTaskScheduleSchedule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespaceScheduledTaskScheduleScheduleArrayOutput) Index(i pulumi.IntInput) GetNamespaceScheduledTaskScheduleScheduleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceScheduledTaskScheduleSchedule {
 		return vs[0].([]GetNamespaceScheduledTaskScheduleSchedule)[vs[1].(int)]
@@ -8358,12 +7133,6 @@ func (i GetNamespaceScheduledTasksFilterArgs) ToGetNamespaceScheduledTasksFilter
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksFilterOutput)
 }
 
-func (i GetNamespaceScheduledTasksFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTasksFilter] {
-	return pulumix.Output[GetNamespaceScheduledTasksFilter]{
-		OutputState: i.ToGetNamespaceScheduledTasksFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceScheduledTasksFilterArrayInput is an input type that accepts GetNamespaceScheduledTasksFilterArray and GetNamespaceScheduledTasksFilterArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTasksFilterArrayInput` via:
 //
@@ -8389,12 +7158,6 @@ func (i GetNamespaceScheduledTasksFilterArray) ToGetNamespaceScheduledTasksFilte
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksFilterArrayOutput)
 }
 
-func (i GetNamespaceScheduledTasksFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTasksFilter] {
-	return pulumix.Output[[]GetNamespaceScheduledTasksFilter]{
-		OutputState: i.ToGetNamespaceScheduledTasksFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceScheduledTasksFilterOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceScheduledTasksFilterOutput) ElementType() reflect.Type {
@@ -8407,12 +7170,6 @@ func (o GetNamespaceScheduledTasksFilterOutput) ToGetNamespaceScheduledTasksFilt
 
 func (o GetNamespaceScheduledTasksFilterOutput) ToGetNamespaceScheduledTasksFilterOutputWithContext(ctx context.Context) GetNamespaceScheduledTasksFilterOutput {
 	return o
-}
-
-func (o GetNamespaceScheduledTasksFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTasksFilter] {
-	return pulumix.Output[GetNamespaceScheduledTasksFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceScheduledTasksFilterOutput) Name() pulumi.StringOutput {
@@ -8439,12 +7196,6 @@ func (o GetNamespaceScheduledTasksFilterArrayOutput) ToGetNamespaceScheduledTask
 
 func (o GetNamespaceScheduledTasksFilterArrayOutput) ToGetNamespaceScheduledTasksFilterArrayOutputWithContext(ctx context.Context) GetNamespaceScheduledTasksFilterArrayOutput {
 	return o
-}
-
-func (o GetNamespaceScheduledTasksFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTasksFilter] {
-	return pulumix.Output[[]GetNamespaceScheduledTasksFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceScheduledTasksFilterArrayOutput) Index(i pulumi.IntInput) GetNamespaceScheduledTasksFilterOutput {
@@ -8484,12 +7235,6 @@ func (i GetNamespaceScheduledTasksScheduledTaskCollectionArgs) ToGetNamespaceSch
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksScheduledTaskCollectionOutput)
 }
 
-func (i GetNamespaceScheduledTasksScheduledTaskCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollection] {
-	return pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollection]{
-		OutputState: i.ToGetNamespaceScheduledTasksScheduledTaskCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceScheduledTasksScheduledTaskCollectionArrayInput is an input type that accepts GetNamespaceScheduledTasksScheduledTaskCollectionArray and GetNamespaceScheduledTasksScheduledTaskCollectionArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTasksScheduledTaskCollectionArrayInput` via:
 //
@@ -8515,12 +7260,6 @@ func (i GetNamespaceScheduledTasksScheduledTaskCollectionArray) ToGetNamespaceSc
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksScheduledTaskCollectionArrayOutput)
 }
 
-func (i GetNamespaceScheduledTasksScheduledTaskCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollection] {
-	return pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollection]{
-		OutputState: i.ToGetNamespaceScheduledTasksScheduledTaskCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceScheduledTasksScheduledTaskCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceScheduledTasksScheduledTaskCollectionOutput) ElementType() reflect.Type {
@@ -8533,12 +7272,6 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionOutput) ToGetNamespaceS
 
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionOutput) ToGetNamespaceScheduledTasksScheduledTaskCollectionOutputWithContext(ctx context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionOutput {
 	return o
-}
-
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollection] {
-	return pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionOutput) Items() GetNamespaceScheduledTasksScheduledTaskCollectionItemArrayOutput {
@@ -8559,12 +7292,6 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionArrayOutput) ToGetNames
 
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionArrayOutput) ToGetNamespaceScheduledTasksScheduledTaskCollectionArrayOutputWithContext(ctx context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionArrayOutput {
 	return o
-}
-
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollection] {
-	return pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionArrayOutput) Index(i pulumi.IntInput) GetNamespaceScheduledTasksScheduledTaskCollectionOutput {
@@ -8670,12 +7397,6 @@ func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemArgs) ToGetNamespac
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput)
 }
 
-func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItem] {
-	return pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItem]{
-		OutputState: i.ToGetNamespaceScheduledTasksScheduledTaskCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceScheduledTasksScheduledTaskCollectionItemArrayInput is an input type that accepts GetNamespaceScheduledTasksScheduledTaskCollectionItemArray and GetNamespaceScheduledTasksScheduledTaskCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTasksScheduledTaskCollectionItemArrayInput` via:
 //
@@ -8701,12 +7422,6 @@ func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemArray) ToGetNamespa
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksScheduledTaskCollectionItemArrayOutput)
 }
 
-func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItem] {
-	return pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItem]{
-		OutputState: i.ToGetNamespaceScheduledTasksScheduledTaskCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) ElementType() reflect.Type {
@@ -8719,12 +7434,6 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) ToGetNamesp
 
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemOutputWithContext(ctx context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput {
 	return o
-}
-
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItem] {
-	return pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Action for scheduled task.
@@ -8837,12 +7546,6 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemArrayOutput) ToGetN
 	return o
 }
 
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItem] {
-	return pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemArrayOutput) Index(i pulumi.IntInput) GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceScheduledTasksScheduledTaskCollectionItem {
 		return vs[0].([]GetNamespaceScheduledTasksScheduledTaskCollectionItem)[vs[1].(int)]
@@ -8908,12 +7611,6 @@ func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArgs) ToGetNa
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput)
 }
 
-func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItemAction] {
-	return pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItemAction]{
-		OutputState: i.ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArrayInput is an input type that accepts GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArray and GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArrayInput` via:
 //
@@ -8939,12 +7636,6 @@ func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArray) ToGetN
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArrayOutput)
 }
 
-func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItemAction] {
-	return pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItemAction]{
-		OutputState: i.ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput) ElementType() reflect.Type {
@@ -8957,12 +7648,6 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput) ToGet
 
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutputWithContext(ctx context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput {
 	return o
-}
-
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItemAction] {
-	return pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItemAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 // if true, purge child compartments data
@@ -9024,12 +7709,6 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArrayOutput) 
 	return o
 }
 
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItemAction] {
-	return pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItemAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArrayOutput) Index(i pulumi.IntInput) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceScheduledTasksScheduledTaskCollectionItemAction {
 		return vs[0].([]GetNamespaceScheduledTasksScheduledTaskCollectionItemAction)[vs[1].(int)]
@@ -9077,12 +7756,6 @@ func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtract
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput)
 }
 
-func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction] {
-	return pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction]{
-		OutputState: i.ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayInput is an input type that accepts GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArray and GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayInput` via:
 //
@@ -9108,12 +7781,6 @@ func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtract
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutput)
 }
 
-func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction] {
-	return pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction]{
-		OutputState: i.ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput) ElementType() reflect.Type {
@@ -9126,12 +7793,6 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtract
 
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutputWithContext(ctx context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput {
 	return o
-}
-
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction] {
-	return pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -9174,12 +7835,6 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtract
 	return o
 }
 
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction] {
-	return pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionArrayOutput) Index(i pulumi.IntInput) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction {
 		return vs[0].([]GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction)[vs[1].(int)]
@@ -9217,12 +7872,6 @@ func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleOutput)
 }
 
-func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule] {
-	return pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule]{
-		OutputState: i.ToGetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArrayInput is an input type that accepts GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArray and GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArrayInput` via:
 //
@@ -9248,12 +7897,6 @@ func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArrayOutput)
 }
 
-func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule] {
-	return pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule]{
-		OutputState: i.ToGetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleOutput) ElementType() reflect.Type {
@@ -9266,12 +7909,6 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleOutput) ToG
 
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleOutput) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleOutputWithContext(ctx context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleOutput {
 	return o
-}
-
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule] {
-	return pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleOutput) Schedules() GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArrayOutput {
@@ -9292,12 +7929,6 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArrayOutput
 
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArrayOutput) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArrayOutputWithContext(ctx context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArrayOutput {
 	return o
-}
-
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule] {
-	return pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArrayOutput) Index(i pulumi.IntInput) GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleOutput {
@@ -9359,12 +7990,6 @@ func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArg
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput)
 }
 
-func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule] {
-	return pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule]{
-		OutputState: i.ToGetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArrayInput is an input type that accepts GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArray and GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArrayInput` via:
 //
@@ -9390,12 +8015,6 @@ func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArrayOutput)
 }
 
-func (i GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule] {
-	return pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule]{
-		OutputState: i.ToGetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput) ElementType() reflect.Type {
@@ -9408,12 +8027,6 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOut
 
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput) ToGetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutputWithContext(ctx context.Context) GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput {
 	return o
-}
-
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule] {
-	return pulumix.Output[GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Value in cron format.
@@ -9470,12 +8083,6 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArr
 	return o
 }
 
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule] {
-	return pulumix.Output[[]GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleArrayOutput) Index(i pulumi.IntInput) GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule {
 		return vs[0].([]GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule)[vs[1].(int)]
@@ -9523,12 +8130,6 @@ func (i GetNamespaceStorageEncryptionKeyInfoItemArgs) ToGetNamespaceStorageEncry
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceStorageEncryptionKeyInfoItemOutput)
 }
 
-func (i GetNamespaceStorageEncryptionKeyInfoItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceStorageEncryptionKeyInfoItem] {
-	return pulumix.Output[GetNamespaceStorageEncryptionKeyInfoItem]{
-		OutputState: i.ToGetNamespaceStorageEncryptionKeyInfoItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceStorageEncryptionKeyInfoItemArrayInput is an input type that accepts GetNamespaceStorageEncryptionKeyInfoItemArray and GetNamespaceStorageEncryptionKeyInfoItemArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceStorageEncryptionKeyInfoItemArrayInput` via:
 //
@@ -9554,12 +8155,6 @@ func (i GetNamespaceStorageEncryptionKeyInfoItemArray) ToGetNamespaceStorageEncr
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceStorageEncryptionKeyInfoItemArrayOutput)
 }
 
-func (i GetNamespaceStorageEncryptionKeyInfoItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceStorageEncryptionKeyInfoItem] {
-	return pulumix.Output[[]GetNamespaceStorageEncryptionKeyInfoItem]{
-		OutputState: i.ToGetNamespaceStorageEncryptionKeyInfoItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceStorageEncryptionKeyInfoItemOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceStorageEncryptionKeyInfoItemOutput) ElementType() reflect.Type {
@@ -9572,12 +8167,6 @@ func (o GetNamespaceStorageEncryptionKeyInfoItemOutput) ToGetNamespaceStorageEnc
 
 func (o GetNamespaceStorageEncryptionKeyInfoItemOutput) ToGetNamespaceStorageEncryptionKeyInfoItemOutputWithContext(ctx context.Context) GetNamespaceStorageEncryptionKeyInfoItemOutput {
 	return o
-}
-
-func (o GetNamespaceStorageEncryptionKeyInfoItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceStorageEncryptionKeyInfoItem] {
-	return pulumix.Output[GetNamespaceStorageEncryptionKeyInfoItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // This is the key OCID of the encryption key (null if Oracle-managed).
@@ -9607,12 +8196,6 @@ func (o GetNamespaceStorageEncryptionKeyInfoItemArrayOutput) ToGetNamespaceStora
 
 func (o GetNamespaceStorageEncryptionKeyInfoItemArrayOutput) ToGetNamespaceStorageEncryptionKeyInfoItemArrayOutputWithContext(ctx context.Context) GetNamespaceStorageEncryptionKeyInfoItemArrayOutput {
 	return o
-}
-
-func (o GetNamespaceStorageEncryptionKeyInfoItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceStorageEncryptionKeyInfoItem] {
-	return pulumix.Output[[]GetNamespaceStorageEncryptionKeyInfoItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceStorageEncryptionKeyInfoItemArrayOutput) Index(i pulumi.IntInput) GetNamespaceStorageEncryptionKeyInfoItemOutput {
@@ -9656,12 +8239,6 @@ func (i GetNamespaceStorageOverlappingRecallsFilterArgs) ToGetNamespaceStorageOv
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceStorageOverlappingRecallsFilterOutput)
 }
 
-func (i GetNamespaceStorageOverlappingRecallsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceStorageOverlappingRecallsFilter] {
-	return pulumix.Output[GetNamespaceStorageOverlappingRecallsFilter]{
-		OutputState: i.ToGetNamespaceStorageOverlappingRecallsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceStorageOverlappingRecallsFilterArrayInput is an input type that accepts GetNamespaceStorageOverlappingRecallsFilterArray and GetNamespaceStorageOverlappingRecallsFilterArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceStorageOverlappingRecallsFilterArrayInput` via:
 //
@@ -9687,12 +8264,6 @@ func (i GetNamespaceStorageOverlappingRecallsFilterArray) ToGetNamespaceStorageO
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceStorageOverlappingRecallsFilterArrayOutput)
 }
 
-func (i GetNamespaceStorageOverlappingRecallsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceStorageOverlappingRecallsFilter] {
-	return pulumix.Output[[]GetNamespaceStorageOverlappingRecallsFilter]{
-		OutputState: i.ToGetNamespaceStorageOverlappingRecallsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceStorageOverlappingRecallsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceStorageOverlappingRecallsFilterOutput) ElementType() reflect.Type {
@@ -9705,12 +8276,6 @@ func (o GetNamespaceStorageOverlappingRecallsFilterOutput) ToGetNamespaceStorage
 
 func (o GetNamespaceStorageOverlappingRecallsFilterOutput) ToGetNamespaceStorageOverlappingRecallsFilterOutputWithContext(ctx context.Context) GetNamespaceStorageOverlappingRecallsFilterOutput {
 	return o
-}
-
-func (o GetNamespaceStorageOverlappingRecallsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceStorageOverlappingRecallsFilter] {
-	return pulumix.Output[GetNamespaceStorageOverlappingRecallsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceStorageOverlappingRecallsFilterOutput) Name() pulumi.StringOutput {
@@ -9737,12 +8302,6 @@ func (o GetNamespaceStorageOverlappingRecallsFilterArrayOutput) ToGetNamespaceSt
 
 func (o GetNamespaceStorageOverlappingRecallsFilterArrayOutput) ToGetNamespaceStorageOverlappingRecallsFilterArrayOutputWithContext(ctx context.Context) GetNamespaceStorageOverlappingRecallsFilterArrayOutput {
 	return o
-}
-
-func (o GetNamespaceStorageOverlappingRecallsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceStorageOverlappingRecallsFilter] {
-	return pulumix.Output[[]GetNamespaceStorageOverlappingRecallsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceStorageOverlappingRecallsFilterArrayOutput) Index(i pulumi.IntInput) GetNamespaceStorageOverlappingRecallsFilterOutput {
@@ -9784,12 +8343,6 @@ func (i GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput)
 }
 
-func (i GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection] {
-	return pulumix.Output[GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection]{
-		OutputState: i.ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayInput is an input type that accepts GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArray and GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayInput` via:
 //
@@ -9815,12 +8368,6 @@ func (i GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutput)
 }
 
-func (i GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection] {
-	return pulumix.Output[[]GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection]{
-		OutputState: i.ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput) ElementType() reflect.Type {
@@ -9833,12 +8380,6 @@ func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput) 
 
 func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput) ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutputWithContext(ctx context.Context) GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput {
 	return o
-}
-
-func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection] {
-	return pulumix.Output[GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // This is the array of overlapping recall requests
@@ -9860,12 +8401,6 @@ func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOut
 
 func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutput) ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutputWithContext(ctx context.Context) GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutput {
 	return o
-}
-
-func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection] {
-	return pulumix.Output[[]GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionArrayOutput) Index(i pulumi.IntInput) GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionOutput {
@@ -9935,12 +8470,6 @@ func (i GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArgs
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput)
 }
 
-func (i GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem] {
-	return pulumix.Output[GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem]{
-		OutputState: i.ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayInput is an input type that accepts GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArray and GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayInput` via:
 //
@@ -9966,12 +8495,6 @@ func (i GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutput)
 }
 
-func (i GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem] {
-	return pulumix.Output[[]GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem]{
-		OutputState: i.ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput) ElementType() reflect.Type {
@@ -9984,12 +8507,6 @@ func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutp
 
 func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput) ToGetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutputWithContext(ctx context.Context) GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput {
 	return o
-}
-
-func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem] {
-	return pulumix.Output[GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // This is the user who initiated the recall request
@@ -10056,12 +8573,6 @@ func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArra
 	return o
 }
 
-func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem] {
-	return pulumix.Output[[]GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArrayOutput) Index(i pulumi.IntInput) GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem {
 		return vs[0].([]GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem)[vs[1].(int)]
@@ -10103,12 +8614,6 @@ func (i GetNamespacesFilterArgs) ToGetNamespacesFilterOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacesFilterOutput)
 }
 
-func (i GetNamespacesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespacesFilter] {
-	return pulumix.Output[GetNamespacesFilter]{
-		OutputState: i.ToGetNamespacesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespacesFilterArrayInput is an input type that accepts GetNamespacesFilterArray and GetNamespacesFilterArrayOutput values.
 // You can construct a concrete instance of `GetNamespacesFilterArrayInput` via:
 //
@@ -10134,12 +8639,6 @@ func (i GetNamespacesFilterArray) ToGetNamespacesFilterArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacesFilterArrayOutput)
 }
 
-func (i GetNamespacesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespacesFilter] {
-	return pulumix.Output[[]GetNamespacesFilter]{
-		OutputState: i.ToGetNamespacesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespacesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetNamespacesFilterOutput) ElementType() reflect.Type {
@@ -10152,12 +8651,6 @@ func (o GetNamespacesFilterOutput) ToGetNamespacesFilterOutput() GetNamespacesFi
 
 func (o GetNamespacesFilterOutput) ToGetNamespacesFilterOutputWithContext(ctx context.Context) GetNamespacesFilterOutput {
 	return o
-}
-
-func (o GetNamespacesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespacesFilter] {
-	return pulumix.Output[GetNamespacesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespacesFilterOutput) Name() pulumi.StringOutput {
@@ -10184,12 +8677,6 @@ func (o GetNamespacesFilterArrayOutput) ToGetNamespacesFilterArrayOutput() GetNa
 
 func (o GetNamespacesFilterArrayOutput) ToGetNamespacesFilterArrayOutputWithContext(ctx context.Context) GetNamespacesFilterArrayOutput {
 	return o
-}
-
-func (o GetNamespacesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespacesFilter] {
-	return pulumix.Output[[]GetNamespacesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespacesFilterArrayOutput) Index(i pulumi.IntInput) GetNamespacesFilterOutput {
@@ -10229,12 +8716,6 @@ func (i GetNamespacesNamespaceCollectionArgs) ToGetNamespacesNamespaceCollection
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacesNamespaceCollectionOutput)
 }
 
-func (i GetNamespacesNamespaceCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespacesNamespaceCollection] {
-	return pulumix.Output[GetNamespacesNamespaceCollection]{
-		OutputState: i.ToGetNamespacesNamespaceCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespacesNamespaceCollectionArrayInput is an input type that accepts GetNamespacesNamespaceCollectionArray and GetNamespacesNamespaceCollectionArrayOutput values.
 // You can construct a concrete instance of `GetNamespacesNamespaceCollectionArrayInput` via:
 //
@@ -10260,12 +8741,6 @@ func (i GetNamespacesNamespaceCollectionArray) ToGetNamespacesNamespaceCollectio
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacesNamespaceCollectionArrayOutput)
 }
 
-func (i GetNamespacesNamespaceCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespacesNamespaceCollection] {
-	return pulumix.Output[[]GetNamespacesNamespaceCollection]{
-		OutputState: i.ToGetNamespacesNamespaceCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespacesNamespaceCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetNamespacesNamespaceCollectionOutput) ElementType() reflect.Type {
@@ -10278,12 +8753,6 @@ func (o GetNamespacesNamespaceCollectionOutput) ToGetNamespacesNamespaceCollecti
 
 func (o GetNamespacesNamespaceCollectionOutput) ToGetNamespacesNamespaceCollectionOutputWithContext(ctx context.Context) GetNamespacesNamespaceCollectionOutput {
 	return o
-}
-
-func (o GetNamespacesNamespaceCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespacesNamespaceCollection] {
-	return pulumix.Output[GetNamespacesNamespaceCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespacesNamespaceCollectionOutput) Items() GetNamespacesNamespaceCollectionItemArrayOutput {
@@ -10302,12 +8771,6 @@ func (o GetNamespacesNamespaceCollectionArrayOutput) ToGetNamespacesNamespaceCol
 
 func (o GetNamespacesNamespaceCollectionArrayOutput) ToGetNamespacesNamespaceCollectionArrayOutputWithContext(ctx context.Context) GetNamespacesNamespaceCollectionArrayOutput {
 	return o
-}
-
-func (o GetNamespacesNamespaceCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespacesNamespaceCollection] {
-	return pulumix.Output[[]GetNamespacesNamespaceCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespacesNamespaceCollectionArrayOutput) Index(i pulumi.IntInput) GetNamespacesNamespaceCollectionOutput {
@@ -10357,12 +8820,6 @@ func (i GetNamespacesNamespaceCollectionItemArgs) ToGetNamespacesNamespaceCollec
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacesNamespaceCollectionItemOutput)
 }
 
-func (i GetNamespacesNamespaceCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetNamespacesNamespaceCollectionItem] {
-	return pulumix.Output[GetNamespacesNamespaceCollectionItem]{
-		OutputState: i.ToGetNamespacesNamespaceCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNamespacesNamespaceCollectionItemArrayInput is an input type that accepts GetNamespacesNamespaceCollectionItemArray and GetNamespacesNamespaceCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetNamespacesNamespaceCollectionItemArrayInput` via:
 //
@@ -10388,12 +8845,6 @@ func (i GetNamespacesNamespaceCollectionItemArray) ToGetNamespacesNamespaceColle
 	return pulumi.ToOutputWithContext(ctx, i).(GetNamespacesNamespaceCollectionItemArrayOutput)
 }
 
-func (i GetNamespacesNamespaceCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespacesNamespaceCollectionItem] {
-	return pulumix.Output[[]GetNamespacesNamespaceCollectionItem]{
-		OutputState: i.ToGetNamespacesNamespaceCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNamespacesNamespaceCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetNamespacesNamespaceCollectionItemOutput) ElementType() reflect.Type {
@@ -10406,12 +8857,6 @@ func (o GetNamespacesNamespaceCollectionItemOutput) ToGetNamespacesNamespaceColl
 
 func (o GetNamespacesNamespaceCollectionItemOutput) ToGetNamespacesNamespaceCollectionItemOutputWithContext(ctx context.Context) GetNamespacesNamespaceCollectionItemOutput {
 	return o
-}
-
-func (o GetNamespacesNamespaceCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespacesNamespaceCollectionItem] {
-	return pulumix.Output[GetNamespacesNamespaceCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -10441,12 +8886,6 @@ func (o GetNamespacesNamespaceCollectionItemArrayOutput) ToGetNamespacesNamespac
 
 func (o GetNamespacesNamespaceCollectionItemArrayOutput) ToGetNamespacesNamespaceCollectionItemArrayOutputWithContext(ctx context.Context) GetNamespacesNamespaceCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetNamespacesNamespaceCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNamespacesNamespaceCollectionItem] {
-	return pulumix.Output[[]GetNamespacesNamespaceCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespacesNamespaceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetNamespacesNamespaceCollectionItemOutput {

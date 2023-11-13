@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Key Store resource in Oracle Cloud Infrastructure Database service.
@@ -221,12 +220,6 @@ func (i *KeyStore) ToKeyStoreOutputWithContext(ctx context.Context) KeyStoreOutp
 	return pulumi.ToOutputWithContext(ctx, i).(KeyStoreOutput)
 }
 
-func (i *KeyStore) ToOutput(ctx context.Context) pulumix.Output[*KeyStore] {
-	return pulumix.Output[*KeyStore]{
-		OutputState: i.ToKeyStoreOutputWithContext(ctx).OutputState,
-	}
-}
-
 // KeyStoreArrayInput is an input type that accepts KeyStoreArray and KeyStoreArrayOutput values.
 // You can construct a concrete instance of `KeyStoreArrayInput` via:
 //
@@ -250,12 +243,6 @@ func (i KeyStoreArray) ToKeyStoreArrayOutput() KeyStoreArrayOutput {
 
 func (i KeyStoreArray) ToKeyStoreArrayOutputWithContext(ctx context.Context) KeyStoreArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(KeyStoreArrayOutput)
-}
-
-func (i KeyStoreArray) ToOutput(ctx context.Context) pulumix.Output[[]*KeyStore] {
-	return pulumix.Output[[]*KeyStore]{
-		OutputState: i.ToKeyStoreArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // KeyStoreMapInput is an input type that accepts KeyStoreMap and KeyStoreMapOutput values.
@@ -283,12 +270,6 @@ func (i KeyStoreMap) ToKeyStoreMapOutputWithContext(ctx context.Context) KeyStor
 	return pulumi.ToOutputWithContext(ctx, i).(KeyStoreMapOutput)
 }
 
-func (i KeyStoreMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*KeyStore] {
-	return pulumix.Output[map[string]*KeyStore]{
-		OutputState: i.ToKeyStoreMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type KeyStoreOutput struct{ *pulumi.OutputState }
 
 func (KeyStoreOutput) ElementType() reflect.Type {
@@ -301,12 +282,6 @@ func (o KeyStoreOutput) ToKeyStoreOutput() KeyStoreOutput {
 
 func (o KeyStoreOutput) ToKeyStoreOutputWithContext(ctx context.Context) KeyStoreOutput {
 	return o
-}
-
-func (o KeyStoreOutput) ToOutput(ctx context.Context) pulumix.Output[*KeyStore] {
-	return pulumix.Output[*KeyStore]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of databases associated with the key store.
@@ -368,12 +343,6 @@ func (o KeyStoreArrayOutput) ToKeyStoreArrayOutputWithContext(ctx context.Contex
 	return o
 }
 
-func (o KeyStoreArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*KeyStore] {
-	return pulumix.Output[[]*KeyStore]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o KeyStoreArrayOutput) Index(i pulumi.IntInput) KeyStoreOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *KeyStore {
 		return vs[0].([]*KeyStore)[vs[1].(int)]
@@ -392,12 +361,6 @@ func (o KeyStoreMapOutput) ToKeyStoreMapOutput() KeyStoreMapOutput {
 
 func (o KeyStoreMapOutput) ToKeyStoreMapOutputWithContext(ctx context.Context) KeyStoreMapOutput {
 	return o
-}
-
-func (o KeyStoreMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*KeyStore] {
-	return pulumix.Output[map[string]*KeyStore]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o KeyStoreMapOutput) MapIndex(k pulumi.StringInput) KeyStoreOutput {

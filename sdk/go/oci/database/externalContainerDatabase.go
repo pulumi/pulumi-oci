@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the External Container Database resource in Oracle Cloud Infrastructure Database service.
@@ -276,12 +275,6 @@ func (i *ExternalContainerDatabase) ToExternalContainerDatabaseOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalContainerDatabaseOutput)
 }
 
-func (i *ExternalContainerDatabase) ToOutput(ctx context.Context) pulumix.Output[*ExternalContainerDatabase] {
-	return pulumix.Output[*ExternalContainerDatabase]{
-		OutputState: i.ToExternalContainerDatabaseOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExternalContainerDatabaseArrayInput is an input type that accepts ExternalContainerDatabaseArray and ExternalContainerDatabaseArrayOutput values.
 // You can construct a concrete instance of `ExternalContainerDatabaseArrayInput` via:
 //
@@ -305,12 +298,6 @@ func (i ExternalContainerDatabaseArray) ToExternalContainerDatabaseArrayOutput()
 
 func (i ExternalContainerDatabaseArray) ToExternalContainerDatabaseArrayOutputWithContext(ctx context.Context) ExternalContainerDatabaseArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalContainerDatabaseArrayOutput)
-}
-
-func (i ExternalContainerDatabaseArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalContainerDatabase] {
-	return pulumix.Output[[]*ExternalContainerDatabase]{
-		OutputState: i.ToExternalContainerDatabaseArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ExternalContainerDatabaseMapInput is an input type that accepts ExternalContainerDatabaseMap and ExternalContainerDatabaseMapOutput values.
@@ -338,12 +325,6 @@ func (i ExternalContainerDatabaseMap) ToExternalContainerDatabaseMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalContainerDatabaseMapOutput)
 }
 
-func (i ExternalContainerDatabaseMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalContainerDatabase] {
-	return pulumix.Output[map[string]*ExternalContainerDatabase]{
-		OutputState: i.ToExternalContainerDatabaseMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExternalContainerDatabaseOutput struct{ *pulumi.OutputState }
 
 func (ExternalContainerDatabaseOutput) ElementType() reflect.Type {
@@ -356,12 +337,6 @@ func (o ExternalContainerDatabaseOutput) ToExternalContainerDatabaseOutput() Ext
 
 func (o ExternalContainerDatabaseOutput) ToExternalContainerDatabaseOutputWithContext(ctx context.Context) ExternalContainerDatabaseOutput {
 	return o
-}
-
-func (o ExternalContainerDatabaseOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalContainerDatabase] {
-	return pulumix.Output[*ExternalContainerDatabase]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The character set of the external database.
@@ -475,12 +450,6 @@ func (o ExternalContainerDatabaseArrayOutput) ToExternalContainerDatabaseArrayOu
 	return o
 }
 
-func (o ExternalContainerDatabaseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalContainerDatabase] {
-	return pulumix.Output[[]*ExternalContainerDatabase]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ExternalContainerDatabaseArrayOutput) Index(i pulumi.IntInput) ExternalContainerDatabaseOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ExternalContainerDatabase {
 		return vs[0].([]*ExternalContainerDatabase)[vs[1].(int)]
@@ -499,12 +468,6 @@ func (o ExternalContainerDatabaseMapOutput) ToExternalContainerDatabaseMapOutput
 
 func (o ExternalContainerDatabaseMapOutput) ToExternalContainerDatabaseMapOutputWithContext(ctx context.Context) ExternalContainerDatabaseMapOutput {
 	return o
-}
-
-func (o ExternalContainerDatabaseMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalContainerDatabase] {
-	return pulumix.Output[map[string]*ExternalContainerDatabase]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalContainerDatabaseMapOutput) MapIndex(k pulumi.StringInput) ExternalContainerDatabaseOutput {

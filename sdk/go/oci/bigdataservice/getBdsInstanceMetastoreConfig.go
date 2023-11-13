@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Bds Instance Metastore Config resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -123,12 +122,6 @@ func (o LookupBdsInstanceMetastoreConfigResultOutput) ToLookupBdsInstanceMetasto
 
 func (o LookupBdsInstanceMetastoreConfigResultOutput) ToLookupBdsInstanceMetastoreConfigResultOutputWithContext(ctx context.Context) LookupBdsInstanceMetastoreConfigResultOutput {
 	return o
-}
-
-func (o LookupBdsInstanceMetastoreConfigResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupBdsInstanceMetastoreConfigResult] {
-	return pulumix.Output[LookupBdsInstanceMetastoreConfigResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupBdsInstanceMetastoreConfigResultOutput) ActivateTrigger() pulumi.IntOutput {

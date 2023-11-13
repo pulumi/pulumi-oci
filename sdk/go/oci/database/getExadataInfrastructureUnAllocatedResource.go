@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Exadata Infrastructure Un Allocated Resource resource in Oracle Cloud Infrastructure Database service.
@@ -118,12 +117,6 @@ func (o GetExadataInfrastructureUnAllocatedResourceResultOutput) ToGetExadataInf
 
 func (o GetExadataInfrastructureUnAllocatedResourceResultOutput) ToGetExadataInfrastructureUnAllocatedResourceResultOutputWithContext(ctx context.Context) GetExadataInfrastructureUnAllocatedResourceResultOutput {
 	return o
-}
-
-func (o GetExadataInfrastructureUnAllocatedResourceResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExadataInfrastructureUnAllocatedResourceResult] {
-	return pulumix.Output[GetExadataInfrastructureUnAllocatedResourceResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of Autonomous VM Clusters on the Infra and their associated unallocated resources details

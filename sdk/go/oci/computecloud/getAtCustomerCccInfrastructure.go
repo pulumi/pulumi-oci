@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Ccc Infrastructure resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
@@ -141,12 +140,6 @@ func (o LookupAtCustomerCccInfrastructureResultOutput) ToLookupAtCustomerCccInfr
 
 func (o LookupAtCustomerCccInfrastructureResultOutput) ToLookupAtCustomerCccInfrastructureResultOutputWithContext(ctx context.Context) LookupAtCustomerCccInfrastructureResultOutput {
 	return o
-}
-
-func (o LookupAtCustomerCccInfrastructureResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAtCustomerCccInfrastructureResult] {
-	return pulumix.Output[LookupAtCustomerCccInfrastructureResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupAtCustomerCccInfrastructureResultOutput) CccInfrastructureId() pulumi.StringOutput {

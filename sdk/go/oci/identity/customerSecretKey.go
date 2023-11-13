@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Customer Secret Key resource in Oracle Cloud Infrastructure Identity service.
@@ -208,12 +207,6 @@ func (i *CustomerSecretKey) ToCustomerSecretKeyOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(CustomerSecretKeyOutput)
 }
 
-func (i *CustomerSecretKey) ToOutput(ctx context.Context) pulumix.Output[*CustomerSecretKey] {
-	return pulumix.Output[*CustomerSecretKey]{
-		OutputState: i.ToCustomerSecretKeyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CustomerSecretKeyArrayInput is an input type that accepts CustomerSecretKeyArray and CustomerSecretKeyArrayOutput values.
 // You can construct a concrete instance of `CustomerSecretKeyArrayInput` via:
 //
@@ -237,12 +230,6 @@ func (i CustomerSecretKeyArray) ToCustomerSecretKeyArrayOutput() CustomerSecretK
 
 func (i CustomerSecretKeyArray) ToCustomerSecretKeyArrayOutputWithContext(ctx context.Context) CustomerSecretKeyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CustomerSecretKeyArrayOutput)
-}
-
-func (i CustomerSecretKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]*CustomerSecretKey] {
-	return pulumix.Output[[]*CustomerSecretKey]{
-		OutputState: i.ToCustomerSecretKeyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CustomerSecretKeyMapInput is an input type that accepts CustomerSecretKeyMap and CustomerSecretKeyMapOutput values.
@@ -270,12 +257,6 @@ func (i CustomerSecretKeyMap) ToCustomerSecretKeyMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(CustomerSecretKeyMapOutput)
 }
 
-func (i CustomerSecretKeyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CustomerSecretKey] {
-	return pulumix.Output[map[string]*CustomerSecretKey]{
-		OutputState: i.ToCustomerSecretKeyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CustomerSecretKeyOutput struct{ *pulumi.OutputState }
 
 func (CustomerSecretKeyOutput) ElementType() reflect.Type {
@@ -288,12 +269,6 @@ func (o CustomerSecretKeyOutput) ToCustomerSecretKeyOutput() CustomerSecretKeyOu
 
 func (o CustomerSecretKeyOutput) ToCustomerSecretKeyOutputWithContext(ctx context.Context) CustomerSecretKeyOutput {
 	return o
-}
-
-func (o CustomerSecretKeyOutput) ToOutput(ctx context.Context) pulumix.Output[*CustomerSecretKey] {
-	return pulumix.Output[*CustomerSecretKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The name you assign to the secret key during creation. Does not have to be unique, and it's changeable.
@@ -348,12 +323,6 @@ func (o CustomerSecretKeyArrayOutput) ToCustomerSecretKeyArrayOutputWithContext(
 	return o
 }
 
-func (o CustomerSecretKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CustomerSecretKey] {
-	return pulumix.Output[[]*CustomerSecretKey]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o CustomerSecretKeyArrayOutput) Index(i pulumi.IntInput) CustomerSecretKeyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CustomerSecretKey {
 		return vs[0].([]*CustomerSecretKey)[vs[1].(int)]
@@ -372,12 +341,6 @@ func (o CustomerSecretKeyMapOutput) ToCustomerSecretKeyMapOutput() CustomerSecre
 
 func (o CustomerSecretKeyMapOutput) ToCustomerSecretKeyMapOutputWithContext(ctx context.Context) CustomerSecretKeyMapOutput {
 	return o
-}
-
-func (o CustomerSecretKeyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CustomerSecretKey] {
-	return pulumix.Output[map[string]*CustomerSecretKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CustomerSecretKeyMapOutput) MapIndex(k pulumi.StringInput) CustomerSecretKeyOutput {

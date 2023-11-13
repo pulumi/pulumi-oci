@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Steering Policy resource in Oracle Cloud Infrastructure DNS service.
@@ -361,12 +360,6 @@ func (i *SteeringPolicy) ToSteeringPolicyOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(SteeringPolicyOutput)
 }
 
-func (i *SteeringPolicy) ToOutput(ctx context.Context) pulumix.Output[*SteeringPolicy] {
-	return pulumix.Output[*SteeringPolicy]{
-		OutputState: i.ToSteeringPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SteeringPolicyArrayInput is an input type that accepts SteeringPolicyArray and SteeringPolicyArrayOutput values.
 // You can construct a concrete instance of `SteeringPolicyArrayInput` via:
 //
@@ -390,12 +383,6 @@ func (i SteeringPolicyArray) ToSteeringPolicyArrayOutput() SteeringPolicyArrayOu
 
 func (i SteeringPolicyArray) ToSteeringPolicyArrayOutputWithContext(ctx context.Context) SteeringPolicyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SteeringPolicyArrayOutput)
-}
-
-func (i SteeringPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]*SteeringPolicy] {
-	return pulumix.Output[[]*SteeringPolicy]{
-		OutputState: i.ToSteeringPolicyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SteeringPolicyMapInput is an input type that accepts SteeringPolicyMap and SteeringPolicyMapOutput values.
@@ -423,12 +410,6 @@ func (i SteeringPolicyMap) ToSteeringPolicyMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(SteeringPolicyMapOutput)
 }
 
-func (i SteeringPolicyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SteeringPolicy] {
-	return pulumix.Output[map[string]*SteeringPolicy]{
-		OutputState: i.ToSteeringPolicyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SteeringPolicyOutput struct{ *pulumi.OutputState }
 
 func (SteeringPolicyOutput) ElementType() reflect.Type {
@@ -441,12 +422,6 @@ func (o SteeringPolicyOutput) ToSteeringPolicyOutput() SteeringPolicyOutput {
 
 func (o SteeringPolicyOutput) ToSteeringPolicyOutputWithContext(ctx context.Context) SteeringPolicyOutput {
 	return o
-}
-
-func (o SteeringPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[*SteeringPolicy] {
-	return pulumix.Output[*SteeringPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The set of all answers that can potentially issue from the steering policy.
@@ -538,12 +513,6 @@ func (o SteeringPolicyArrayOutput) ToSteeringPolicyArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o SteeringPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SteeringPolicy] {
-	return pulumix.Output[[]*SteeringPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o SteeringPolicyArrayOutput) Index(i pulumi.IntInput) SteeringPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *SteeringPolicy {
 		return vs[0].([]*SteeringPolicy)[vs[1].(int)]
@@ -562,12 +531,6 @@ func (o SteeringPolicyMapOutput) ToSteeringPolicyMapOutput() SteeringPolicyMapOu
 
 func (o SteeringPolicyMapOutput) ToSteeringPolicyMapOutputWithContext(ctx context.Context) SteeringPolicyMapOutput {
 	return o
-}
-
-func (o SteeringPolicyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SteeringPolicy] {
-	return pulumix.Output[map[string]*SteeringPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SteeringPolicyMapOutput) MapIndex(k pulumi.StringInput) SteeringPolicyOutput {

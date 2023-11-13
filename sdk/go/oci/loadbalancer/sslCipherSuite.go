@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Ssl Cipher Suite resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -221,12 +220,6 @@ func (i *SslCipherSuite) ToSslCipherSuiteOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(SslCipherSuiteOutput)
 }
 
-func (i *SslCipherSuite) ToOutput(ctx context.Context) pulumix.Output[*SslCipherSuite] {
-	return pulumix.Output[*SslCipherSuite]{
-		OutputState: i.ToSslCipherSuiteOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SslCipherSuiteArrayInput is an input type that accepts SslCipherSuiteArray and SslCipherSuiteArrayOutput values.
 // You can construct a concrete instance of `SslCipherSuiteArrayInput` via:
 //
@@ -250,12 +243,6 @@ func (i SslCipherSuiteArray) ToSslCipherSuiteArrayOutput() SslCipherSuiteArrayOu
 
 func (i SslCipherSuiteArray) ToSslCipherSuiteArrayOutputWithContext(ctx context.Context) SslCipherSuiteArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SslCipherSuiteArrayOutput)
-}
-
-func (i SslCipherSuiteArray) ToOutput(ctx context.Context) pulumix.Output[[]*SslCipherSuite] {
-	return pulumix.Output[[]*SslCipherSuite]{
-		OutputState: i.ToSslCipherSuiteArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SslCipherSuiteMapInput is an input type that accepts SslCipherSuiteMap and SslCipherSuiteMapOutput values.
@@ -283,12 +270,6 @@ func (i SslCipherSuiteMap) ToSslCipherSuiteMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(SslCipherSuiteMapOutput)
 }
 
-func (i SslCipherSuiteMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SslCipherSuite] {
-	return pulumix.Output[map[string]*SslCipherSuite]{
-		OutputState: i.ToSslCipherSuiteMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SslCipherSuiteOutput struct{ *pulumi.OutputState }
 
 func (SslCipherSuiteOutput) ElementType() reflect.Type {
@@ -301,12 +282,6 @@ func (o SslCipherSuiteOutput) ToSslCipherSuiteOutput() SslCipherSuiteOutput {
 
 func (o SslCipherSuiteOutput) ToSslCipherSuiteOutputWithContext(ctx context.Context) SslCipherSuiteOutput {
 	return o
-}
-
-func (o SslCipherSuiteOutput) ToOutput(ctx context.Context) pulumix.Output[*SslCipherSuite] {
-	return pulumix.Output[*SslCipherSuite]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SslCipherSuiteOutput) Ciphers() pulumi.StringArrayOutput {
@@ -353,12 +328,6 @@ func (o SslCipherSuiteArrayOutput) ToSslCipherSuiteArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o SslCipherSuiteArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SslCipherSuite] {
-	return pulumix.Output[[]*SslCipherSuite]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o SslCipherSuiteArrayOutput) Index(i pulumi.IntInput) SslCipherSuiteOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *SslCipherSuite {
 		return vs[0].([]*SslCipherSuite)[vs[1].(int)]
@@ -377,12 +346,6 @@ func (o SslCipherSuiteMapOutput) ToSslCipherSuiteMapOutput() SslCipherSuiteMapOu
 
 func (o SslCipherSuiteMapOutput) ToSslCipherSuiteMapOutputWithContext(ctx context.Context) SslCipherSuiteMapOutput {
 	return o
-}
-
-func (o SslCipherSuiteMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SslCipherSuite] {
-	return pulumix.Output[map[string]*SslCipherSuite]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SslCipherSuiteMapOutput) MapIndex(k pulumi.StringInput) SslCipherSuiteOutput {

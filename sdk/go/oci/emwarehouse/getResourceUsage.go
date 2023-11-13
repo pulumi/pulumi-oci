@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Em Warehouse Resource Usage resource in Oracle Cloud Infrastructure Em Warehouse service.
@@ -110,12 +109,6 @@ func (o GetResourceUsageResultOutput) ToGetResourceUsageResultOutput() GetResour
 
 func (o GetResourceUsageResultOutput) ToGetResourceUsageResultOutputWithContext(ctx context.Context) GetResourceUsageResultOutput {
 	return o
-}
-
-func (o GetResourceUsageResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetResourceUsageResult] {
-	return pulumix.Output[GetResourceUsageResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // EmInstanceCount

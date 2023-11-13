@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Cross Connect Status resource in Oracle Cloud Infrastructure Core service.
@@ -114,12 +113,6 @@ func (o GetCrossConnectStatusResultOutput) ToGetCrossConnectStatusResultOutput()
 
 func (o GetCrossConnectStatusResultOutput) ToGetCrossConnectStatusResultOutputWithContext(ctx context.Context) GetCrossConnectStatusResultOutput {
 	return o
-}
-
-func (o GetCrossConnectStatusResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCrossConnectStatusResult] {
-	return pulumix.Output[GetCrossConnectStatusResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the cross-connect.

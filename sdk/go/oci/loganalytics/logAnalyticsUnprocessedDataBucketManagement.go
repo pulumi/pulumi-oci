@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Log Analytics Unprocessed Data Bucket Management resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -186,12 +185,6 @@ func (i *LogAnalyticsUnprocessedDataBucketManagement) ToLogAnalyticsUnprocessedD
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsUnprocessedDataBucketManagementOutput)
 }
 
-func (i *LogAnalyticsUnprocessedDataBucketManagement) ToOutput(ctx context.Context) pulumix.Output[*LogAnalyticsUnprocessedDataBucketManagement] {
-	return pulumix.Output[*LogAnalyticsUnprocessedDataBucketManagement]{
-		OutputState: i.ToLogAnalyticsUnprocessedDataBucketManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LogAnalyticsUnprocessedDataBucketManagementArrayInput is an input type that accepts LogAnalyticsUnprocessedDataBucketManagementArray and LogAnalyticsUnprocessedDataBucketManagementArrayOutput values.
 // You can construct a concrete instance of `LogAnalyticsUnprocessedDataBucketManagementArrayInput` via:
 //
@@ -215,12 +208,6 @@ func (i LogAnalyticsUnprocessedDataBucketManagementArray) ToLogAnalyticsUnproces
 
 func (i LogAnalyticsUnprocessedDataBucketManagementArray) ToLogAnalyticsUnprocessedDataBucketManagementArrayOutputWithContext(ctx context.Context) LogAnalyticsUnprocessedDataBucketManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsUnprocessedDataBucketManagementArrayOutput)
-}
-
-func (i LogAnalyticsUnprocessedDataBucketManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*LogAnalyticsUnprocessedDataBucketManagement] {
-	return pulumix.Output[[]*LogAnalyticsUnprocessedDataBucketManagement]{
-		OutputState: i.ToLogAnalyticsUnprocessedDataBucketManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // LogAnalyticsUnprocessedDataBucketManagementMapInput is an input type that accepts LogAnalyticsUnprocessedDataBucketManagementMap and LogAnalyticsUnprocessedDataBucketManagementMapOutput values.
@@ -248,12 +235,6 @@ func (i LogAnalyticsUnprocessedDataBucketManagementMap) ToLogAnalyticsUnprocesse
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsUnprocessedDataBucketManagementMapOutput)
 }
 
-func (i LogAnalyticsUnprocessedDataBucketManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*LogAnalyticsUnprocessedDataBucketManagement] {
-	return pulumix.Output[map[string]*LogAnalyticsUnprocessedDataBucketManagement]{
-		OutputState: i.ToLogAnalyticsUnprocessedDataBucketManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LogAnalyticsUnprocessedDataBucketManagementOutput struct{ *pulumi.OutputState }
 
 func (LogAnalyticsUnprocessedDataBucketManagementOutput) ElementType() reflect.Type {
@@ -266,12 +247,6 @@ func (o LogAnalyticsUnprocessedDataBucketManagementOutput) ToLogAnalyticsUnproce
 
 func (o LogAnalyticsUnprocessedDataBucketManagementOutput) ToLogAnalyticsUnprocessedDataBucketManagementOutputWithContext(ctx context.Context) LogAnalyticsUnprocessedDataBucketManagementOutput {
 	return o
-}
-
-func (o LogAnalyticsUnprocessedDataBucketManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*LogAnalyticsUnprocessedDataBucketManagement] {
-	return pulumix.Output[*LogAnalyticsUnprocessedDataBucketManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Name of the Object Storage bucket.
@@ -316,12 +291,6 @@ func (o LogAnalyticsUnprocessedDataBucketManagementArrayOutput) ToLogAnalyticsUn
 	return o
 }
 
-func (o LogAnalyticsUnprocessedDataBucketManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*LogAnalyticsUnprocessedDataBucketManagement] {
-	return pulumix.Output[[]*LogAnalyticsUnprocessedDataBucketManagement]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LogAnalyticsUnprocessedDataBucketManagementArrayOutput) Index(i pulumi.IntInput) LogAnalyticsUnprocessedDataBucketManagementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *LogAnalyticsUnprocessedDataBucketManagement {
 		return vs[0].([]*LogAnalyticsUnprocessedDataBucketManagement)[vs[1].(int)]
@@ -340,12 +309,6 @@ func (o LogAnalyticsUnprocessedDataBucketManagementMapOutput) ToLogAnalyticsUnpr
 
 func (o LogAnalyticsUnprocessedDataBucketManagementMapOutput) ToLogAnalyticsUnprocessedDataBucketManagementMapOutputWithContext(ctx context.Context) LogAnalyticsUnprocessedDataBucketManagementMapOutput {
 	return o
-}
-
-func (o LogAnalyticsUnprocessedDataBucketManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*LogAnalyticsUnprocessedDataBucketManagement] {
-	return pulumix.Output[map[string]*LogAnalyticsUnprocessedDataBucketManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LogAnalyticsUnprocessedDataBucketManagementMapOutput) MapIndex(k pulumi.StringInput) LogAnalyticsUnprocessedDataBucketManagementOutput {

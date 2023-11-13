@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Cloud Autonomous Vm Cluster resource in Oracle Cloud Infrastructure Database service.
@@ -206,12 +205,6 @@ func (o LookupCloudAutonomousVmClusterResultOutput) ToLookupCloudAutonomousVmClu
 
 func (o LookupCloudAutonomousVmClusterResultOutput) ToLookupCloudAutonomousVmClusterResultOutputWithContext(ctx context.Context) LookupCloudAutonomousVmClusterResultOutput {
 	return o
-}
-
-func (o LookupCloudAutonomousVmClusterResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupCloudAutonomousVmClusterResult] {
-	return pulumix.Output[LookupCloudAutonomousVmClusterResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.

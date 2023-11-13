@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Audit Policies in Oracle Cloud Infrastructure Data Safe service.
@@ -159,12 +158,6 @@ func (o GetAuditPoliciesResultOutput) ToGetAuditPoliciesResultOutput() GetAuditP
 
 func (o GetAuditPoliciesResultOutput) ToGetAuditPoliciesResultOutputWithContext(ctx context.Context) GetAuditPoliciesResultOutput {
 	return o
-}
-
-func (o GetAuditPoliciesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditPoliciesResult] {
-	return pulumix.Output[GetAuditPoliciesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAuditPoliciesResultOutput) AccessLevel() pulumi.StringPtrOutput {

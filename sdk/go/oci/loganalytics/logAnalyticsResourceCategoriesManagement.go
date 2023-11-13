@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Log Analytics Resource Categories Management resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -190,12 +189,6 @@ func (i *LogAnalyticsResourceCategoriesManagement) ToLogAnalyticsResourceCategor
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsResourceCategoriesManagementOutput)
 }
 
-func (i *LogAnalyticsResourceCategoriesManagement) ToOutput(ctx context.Context) pulumix.Output[*LogAnalyticsResourceCategoriesManagement] {
-	return pulumix.Output[*LogAnalyticsResourceCategoriesManagement]{
-		OutputState: i.ToLogAnalyticsResourceCategoriesManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LogAnalyticsResourceCategoriesManagementArrayInput is an input type that accepts LogAnalyticsResourceCategoriesManagementArray and LogAnalyticsResourceCategoriesManagementArrayOutput values.
 // You can construct a concrete instance of `LogAnalyticsResourceCategoriesManagementArrayInput` via:
 //
@@ -219,12 +212,6 @@ func (i LogAnalyticsResourceCategoriesManagementArray) ToLogAnalyticsResourceCat
 
 func (i LogAnalyticsResourceCategoriesManagementArray) ToLogAnalyticsResourceCategoriesManagementArrayOutputWithContext(ctx context.Context) LogAnalyticsResourceCategoriesManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsResourceCategoriesManagementArrayOutput)
-}
-
-func (i LogAnalyticsResourceCategoriesManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*LogAnalyticsResourceCategoriesManagement] {
-	return pulumix.Output[[]*LogAnalyticsResourceCategoriesManagement]{
-		OutputState: i.ToLogAnalyticsResourceCategoriesManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // LogAnalyticsResourceCategoriesManagementMapInput is an input type that accepts LogAnalyticsResourceCategoriesManagementMap and LogAnalyticsResourceCategoriesManagementMapOutput values.
@@ -252,12 +239,6 @@ func (i LogAnalyticsResourceCategoriesManagementMap) ToLogAnalyticsResourceCateg
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsResourceCategoriesManagementMapOutput)
 }
 
-func (i LogAnalyticsResourceCategoriesManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*LogAnalyticsResourceCategoriesManagement] {
-	return pulumix.Output[map[string]*LogAnalyticsResourceCategoriesManagement]{
-		OutputState: i.ToLogAnalyticsResourceCategoriesManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LogAnalyticsResourceCategoriesManagementOutput struct{ *pulumi.OutputState }
 
 func (LogAnalyticsResourceCategoriesManagementOutput) ElementType() reflect.Type {
@@ -270,12 +251,6 @@ func (o LogAnalyticsResourceCategoriesManagementOutput) ToLogAnalyticsResourceCa
 
 func (o LogAnalyticsResourceCategoriesManagementOutput) ToLogAnalyticsResourceCategoriesManagementOutputWithContext(ctx context.Context) LogAnalyticsResourceCategoriesManagementOutput {
 	return o
-}
-
-func (o LogAnalyticsResourceCategoriesManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*LogAnalyticsResourceCategoriesManagement] {
-	return pulumix.Output[*LogAnalyticsResourceCategoriesManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The Logging Analytics namespace used for the request.
@@ -317,12 +292,6 @@ func (o LogAnalyticsResourceCategoriesManagementArrayOutput) ToLogAnalyticsResou
 	return o
 }
 
-func (o LogAnalyticsResourceCategoriesManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*LogAnalyticsResourceCategoriesManagement] {
-	return pulumix.Output[[]*LogAnalyticsResourceCategoriesManagement]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LogAnalyticsResourceCategoriesManagementArrayOutput) Index(i pulumi.IntInput) LogAnalyticsResourceCategoriesManagementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *LogAnalyticsResourceCategoriesManagement {
 		return vs[0].([]*LogAnalyticsResourceCategoriesManagement)[vs[1].(int)]
@@ -341,12 +310,6 @@ func (o LogAnalyticsResourceCategoriesManagementMapOutput) ToLogAnalyticsResourc
 
 func (o LogAnalyticsResourceCategoriesManagementMapOutput) ToLogAnalyticsResourceCategoriesManagementMapOutputWithContext(ctx context.Context) LogAnalyticsResourceCategoriesManagementMapOutput {
 	return o
-}
-
-func (o LogAnalyticsResourceCategoriesManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*LogAnalyticsResourceCategoriesManagement] {
-	return pulumix.Output[map[string]*LogAnalyticsResourceCategoriesManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LogAnalyticsResourceCategoriesManagementMapOutput) MapIndex(k pulumi.StringInput) LogAnalyticsResourceCategoriesManagementOutput {

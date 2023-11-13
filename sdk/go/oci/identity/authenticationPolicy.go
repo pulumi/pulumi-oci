@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Authentication Policy resource in Oracle Cloud Infrastructure Identity service.
@@ -170,12 +169,6 @@ func (i *AuthenticationPolicy) ToAuthenticationPolicyOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(AuthenticationPolicyOutput)
 }
 
-func (i *AuthenticationPolicy) ToOutput(ctx context.Context) pulumix.Output[*AuthenticationPolicy] {
-	return pulumix.Output[*AuthenticationPolicy]{
-		OutputState: i.ToAuthenticationPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AuthenticationPolicyArrayInput is an input type that accepts AuthenticationPolicyArray and AuthenticationPolicyArrayOutput values.
 // You can construct a concrete instance of `AuthenticationPolicyArrayInput` via:
 //
@@ -199,12 +192,6 @@ func (i AuthenticationPolicyArray) ToAuthenticationPolicyArrayOutput() Authentic
 
 func (i AuthenticationPolicyArray) ToAuthenticationPolicyArrayOutputWithContext(ctx context.Context) AuthenticationPolicyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AuthenticationPolicyArrayOutput)
-}
-
-func (i AuthenticationPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]*AuthenticationPolicy] {
-	return pulumix.Output[[]*AuthenticationPolicy]{
-		OutputState: i.ToAuthenticationPolicyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AuthenticationPolicyMapInput is an input type that accepts AuthenticationPolicyMap and AuthenticationPolicyMapOutput values.
@@ -232,12 +219,6 @@ func (i AuthenticationPolicyMap) ToAuthenticationPolicyMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(AuthenticationPolicyMapOutput)
 }
 
-func (i AuthenticationPolicyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AuthenticationPolicy] {
-	return pulumix.Output[map[string]*AuthenticationPolicy]{
-		OutputState: i.ToAuthenticationPolicyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AuthenticationPolicyOutput struct{ *pulumi.OutputState }
 
 func (AuthenticationPolicyOutput) ElementType() reflect.Type {
@@ -250,12 +231,6 @@ func (o AuthenticationPolicyOutput) ToAuthenticationPolicyOutput() Authenticatio
 
 func (o AuthenticationPolicyOutput) ToAuthenticationPolicyOutputWithContext(ctx context.Context) AuthenticationPolicyOutput {
 	return o
-}
-
-func (o AuthenticationPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[*AuthenticationPolicy] {
-	return pulumix.Output[*AuthenticationPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment.
@@ -287,12 +262,6 @@ func (o AuthenticationPolicyArrayOutput) ToAuthenticationPolicyArrayOutputWithCo
 	return o
 }
 
-func (o AuthenticationPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AuthenticationPolicy] {
-	return pulumix.Output[[]*AuthenticationPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AuthenticationPolicyArrayOutput) Index(i pulumi.IntInput) AuthenticationPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AuthenticationPolicy {
 		return vs[0].([]*AuthenticationPolicy)[vs[1].(int)]
@@ -311,12 +280,6 @@ func (o AuthenticationPolicyMapOutput) ToAuthenticationPolicyMapOutput() Authent
 
 func (o AuthenticationPolicyMapOutput) ToAuthenticationPolicyMapOutputWithContext(ctx context.Context) AuthenticationPolicyMapOutput {
 	return o
-}
-
-func (o AuthenticationPolicyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AuthenticationPolicy] {
-	return pulumix.Output[map[string]*AuthenticationPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AuthenticationPolicyMapOutput) MapIndex(k pulumi.StringInput) AuthenticationPolicyOutput {

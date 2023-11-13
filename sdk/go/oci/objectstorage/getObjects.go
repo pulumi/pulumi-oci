@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Objects in Oracle Cloud Infrastructure Object Storage service.
@@ -119,12 +118,6 @@ func (o GetObjectsResultOutput) ToGetObjectsResultOutput() GetObjectsResultOutpu
 
 func (o GetObjectsResultOutput) ToGetObjectsResultOutputWithContext(ctx context.Context) GetObjectsResultOutput {
 	return o
-}
-
-func (o GetObjectsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetObjectsResult] {
-	return pulumix.Output[GetObjectsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetObjectsResultOutput) Bucket() pulumi.StringOutput {

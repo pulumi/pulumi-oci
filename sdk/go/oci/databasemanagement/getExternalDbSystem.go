@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific External Db System resource in Oracle Cloud Infrastructure Database Management service.
@@ -124,12 +123,6 @@ func (o LookupExternalDbSystemResultOutput) ToLookupExternalDbSystemResultOutput
 
 func (o LookupExternalDbSystemResultOutput) ToLookupExternalDbSystemResultOutputWithContext(ctx context.Context) LookupExternalDbSystemResultOutput {
 	return o
-}
-
-func (o LookupExternalDbSystemResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupExternalDbSystemResult] {
-	return pulumix.Output[LookupExternalDbSystemResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

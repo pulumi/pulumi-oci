@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Management Agents in Oracle Cloud Infrastructure Management Agent service.
@@ -189,12 +188,6 @@ func (o GetManagementAgentsResultOutput) ToGetManagementAgentsResultOutput() Get
 
 func (o GetManagementAgentsResultOutput) ToGetManagementAgentsResultOutputWithContext(ctx context.Context) GetManagementAgentsResultOutput {
 	return o
-}
-
-func (o GetManagementAgentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentsResult] {
-	return pulumix.Output[GetManagementAgentsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagementAgentsResultOutput) AccessLevel() pulumi.StringPtrOutput {

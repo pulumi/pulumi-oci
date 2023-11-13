@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -45,12 +44,6 @@ func (i RuleActionsArgs) ToRuleActionsOutput() RuleActionsOutput {
 
 func (i RuleActionsArgs) ToRuleActionsOutputWithContext(ctx context.Context) RuleActionsOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RuleActionsOutput)
-}
-
-func (i RuleActionsArgs) ToOutput(ctx context.Context) pulumix.Output[RuleActions] {
-	return pulumix.Output[RuleActions]{
-		OutputState: i.ToRuleActionsOutputWithContext(ctx).OutputState,
-	}
 }
 
 func (i RuleActionsArgs) ToRuleActionsPtrOutput() RuleActionsPtrOutput {
@@ -94,12 +87,6 @@ func (i *ruleActionsPtrType) ToRuleActionsPtrOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(RuleActionsPtrOutput)
 }
 
-func (i *ruleActionsPtrType) ToOutput(ctx context.Context) pulumix.Output[*RuleActions] {
-	return pulumix.Output[*RuleActions]{
-		OutputState: i.ToRuleActionsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RuleActionsOutput struct{ *pulumi.OutputState }
 
 func (RuleActionsOutput) ElementType() reflect.Type {
@@ -124,12 +111,6 @@ func (o RuleActionsOutput) ToRuleActionsPtrOutputWithContext(ctx context.Context
 	}).(RuleActionsPtrOutput)
 }
 
-func (o RuleActionsOutput) ToOutput(ctx context.Context) pulumix.Output[RuleActions] {
-	return pulumix.Output[RuleActions]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) A list of one or more ActionDetails objects.
 func (o RuleActionsOutput) Actions() RuleActionsActionArrayOutput {
 	return o.ApplyT(func(v RuleActions) []RuleActionsAction { return v.Actions }).(RuleActionsActionArrayOutput)
@@ -147,12 +128,6 @@ func (o RuleActionsPtrOutput) ToRuleActionsPtrOutput() RuleActionsPtrOutput {
 
 func (o RuleActionsPtrOutput) ToRuleActionsPtrOutputWithContext(ctx context.Context) RuleActionsPtrOutput {
 	return o
-}
-
-func (o RuleActionsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*RuleActions] {
-	return pulumix.Output[*RuleActions]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RuleActionsPtrOutput) Elem() RuleActionsOutput {
@@ -252,12 +227,6 @@ func (i RuleActionsActionArgs) ToRuleActionsActionOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(RuleActionsActionOutput)
 }
 
-func (i RuleActionsActionArgs) ToOutput(ctx context.Context) pulumix.Output[RuleActionsAction] {
-	return pulumix.Output[RuleActionsAction]{
-		OutputState: i.ToRuleActionsActionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RuleActionsActionArrayInput is an input type that accepts RuleActionsActionArray and RuleActionsActionArrayOutput values.
 // You can construct a concrete instance of `RuleActionsActionArrayInput` via:
 //
@@ -283,12 +252,6 @@ func (i RuleActionsActionArray) ToRuleActionsActionArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(RuleActionsActionArrayOutput)
 }
 
-func (i RuleActionsActionArray) ToOutput(ctx context.Context) pulumix.Output[[]RuleActionsAction] {
-	return pulumix.Output[[]RuleActionsAction]{
-		OutputState: i.ToRuleActionsActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RuleActionsActionOutput struct{ *pulumi.OutputState }
 
 func (RuleActionsActionOutput) ElementType() reflect.Type {
@@ -301,12 +264,6 @@ func (o RuleActionsActionOutput) ToRuleActionsActionOutput() RuleActionsActionOu
 
 func (o RuleActionsActionOutput) ToRuleActionsActionOutputWithContext(ctx context.Context) RuleActionsActionOutput {
 	return o
-}
-
-func (o RuleActionsActionOutput) ToOutput(ctx context.Context) pulumix.Output[RuleActionsAction] {
-	return pulumix.Output[RuleActionsAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The action to perform if the condition in the rule matches an event.
@@ -374,12 +331,6 @@ func (o RuleActionsActionArrayOutput) ToRuleActionsActionArrayOutputWithContext(
 	return o
 }
 
-func (o RuleActionsActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]RuleActionsAction] {
-	return pulumix.Output[[]RuleActionsAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o RuleActionsActionArrayOutput) Index(i pulumi.IntInput) RuleActionsActionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RuleActionsAction {
 		return vs[0].([]RuleActionsAction)[vs[1].(int)]
@@ -419,12 +370,6 @@ func (i GetRuleActionArgs) ToGetRuleActionOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(GetRuleActionOutput)
 }
 
-func (i GetRuleActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRuleAction] {
-	return pulumix.Output[GetRuleAction]{
-		OutputState: i.ToGetRuleActionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRuleActionArrayInput is an input type that accepts GetRuleActionArray and GetRuleActionArrayOutput values.
 // You can construct a concrete instance of `GetRuleActionArrayInput` via:
 //
@@ -450,12 +395,6 @@ func (i GetRuleActionArray) ToGetRuleActionArrayOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetRuleActionArrayOutput)
 }
 
-func (i GetRuleActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRuleAction] {
-	return pulumix.Output[[]GetRuleAction]{
-		OutputState: i.ToGetRuleActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRuleActionOutput struct{ *pulumi.OutputState }
 
 func (GetRuleActionOutput) ElementType() reflect.Type {
@@ -468,12 +407,6 @@ func (o GetRuleActionOutput) ToGetRuleActionOutput() GetRuleActionOutput {
 
 func (o GetRuleActionOutput) ToGetRuleActionOutputWithContext(ctx context.Context) GetRuleActionOutput {
 	return o
-}
-
-func (o GetRuleActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRuleAction] {
-	return pulumix.Output[GetRuleAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of one or more Action objects.
@@ -493,12 +426,6 @@ func (o GetRuleActionArrayOutput) ToGetRuleActionArrayOutput() GetRuleActionArra
 
 func (o GetRuleActionArrayOutput) ToGetRuleActionArrayOutputWithContext(ctx context.Context) GetRuleActionArrayOutput {
 	return o
-}
-
-func (o GetRuleActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRuleAction] {
-	return pulumix.Output[[]GetRuleAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRuleActionArrayOutput) Index(i pulumi.IntInput) GetRuleActionOutput {
@@ -578,12 +505,6 @@ func (i GetRuleActionActionArgs) ToGetRuleActionActionOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetRuleActionActionOutput)
 }
 
-func (i GetRuleActionActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRuleActionAction] {
-	return pulumix.Output[GetRuleActionAction]{
-		OutputState: i.ToGetRuleActionActionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRuleActionActionArrayInput is an input type that accepts GetRuleActionActionArray and GetRuleActionActionArrayOutput values.
 // You can construct a concrete instance of `GetRuleActionActionArrayInput` via:
 //
@@ -609,12 +530,6 @@ func (i GetRuleActionActionArray) ToGetRuleActionActionArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetRuleActionActionArrayOutput)
 }
 
-func (i GetRuleActionActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRuleActionAction] {
-	return pulumix.Output[[]GetRuleActionAction]{
-		OutputState: i.ToGetRuleActionActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRuleActionActionOutput struct{ *pulumi.OutputState }
 
 func (GetRuleActionActionOutput) ElementType() reflect.Type {
@@ -627,12 +542,6 @@ func (o GetRuleActionActionOutput) ToGetRuleActionActionOutput() GetRuleActionAc
 
 func (o GetRuleActionActionOutput) ToGetRuleActionActionOutputWithContext(ctx context.Context) GetRuleActionActionOutput {
 	return o
-}
-
-func (o GetRuleActionActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRuleActionAction] {
-	return pulumix.Output[GetRuleActionAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The action to perform if the condition in the rule matches an event.
@@ -697,12 +606,6 @@ func (o GetRuleActionActionArrayOutput) ToGetRuleActionActionArrayOutputWithCont
 	return o
 }
 
-func (o GetRuleActionActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRuleActionAction] {
-	return pulumix.Output[[]GetRuleActionAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRuleActionActionArrayOutput) Index(i pulumi.IntInput) GetRuleActionActionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuleActionAction {
 		return vs[0].([]GetRuleActionAction)[vs[1].(int)]
@@ -744,12 +647,6 @@ func (i GetRulesFilterArgs) ToGetRulesFilterOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetRulesFilterOutput)
 }
 
-func (i GetRulesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetRulesFilter] {
-	return pulumix.Output[GetRulesFilter]{
-		OutputState: i.ToGetRulesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRulesFilterArrayInput is an input type that accepts GetRulesFilterArray and GetRulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetRulesFilterArrayInput` via:
 //
@@ -775,12 +672,6 @@ func (i GetRulesFilterArray) ToGetRulesFilterArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetRulesFilterArrayOutput)
 }
 
-func (i GetRulesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRulesFilter] {
-	return pulumix.Output[[]GetRulesFilter]{
-		OutputState: i.ToGetRulesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRulesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetRulesFilterOutput) ElementType() reflect.Type {
@@ -793,12 +684,6 @@ func (o GetRulesFilterOutput) ToGetRulesFilterOutput() GetRulesFilterOutput {
 
 func (o GetRulesFilterOutput) ToGetRulesFilterOutputWithContext(ctx context.Context) GetRulesFilterOutput {
 	return o
-}
-
-func (o GetRulesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetRulesFilter] {
-	return pulumix.Output[GetRulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRulesFilterOutput) Name() pulumi.StringOutput {
@@ -825,12 +710,6 @@ func (o GetRulesFilterArrayOutput) ToGetRulesFilterArrayOutput() GetRulesFilterA
 
 func (o GetRulesFilterArrayOutput) ToGetRulesFilterArrayOutputWithContext(ctx context.Context) GetRulesFilterArrayOutput {
 	return o
-}
-
-func (o GetRulesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRulesFilter] {
-	return pulumix.Output[[]GetRulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRulesFilterArrayOutput) Index(i pulumi.IntInput) GetRulesFilterOutput {
@@ -918,12 +797,6 @@ func (i GetRulesRuleArgs) ToGetRulesRuleOutputWithContext(ctx context.Context) G
 	return pulumi.ToOutputWithContext(ctx, i).(GetRulesRuleOutput)
 }
 
-func (i GetRulesRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetRulesRule] {
-	return pulumix.Output[GetRulesRule]{
-		OutputState: i.ToGetRulesRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRulesRuleArrayInput is an input type that accepts GetRulesRuleArray and GetRulesRuleArrayOutput values.
 // You can construct a concrete instance of `GetRulesRuleArrayInput` via:
 //
@@ -949,12 +822,6 @@ func (i GetRulesRuleArray) ToGetRulesRuleArrayOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetRulesRuleArrayOutput)
 }
 
-func (i GetRulesRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRulesRule] {
-	return pulumix.Output[[]GetRulesRule]{
-		OutputState: i.ToGetRulesRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRulesRuleOutput struct{ *pulumi.OutputState }
 
 func (GetRulesRuleOutput) ElementType() reflect.Type {
@@ -967,12 +834,6 @@ func (o GetRulesRuleOutput) ToGetRulesRuleOutput() GetRulesRuleOutput {
 
 func (o GetRulesRuleOutput) ToGetRulesRuleOutputWithContext(ctx context.Context) GetRulesRuleOutput {
 	return o
-}
-
-func (o GetRulesRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetRulesRule] {
-	return pulumix.Output[GetRulesRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of one or more Action objects.
@@ -1050,12 +911,6 @@ func (o GetRulesRuleArrayOutput) ToGetRulesRuleArrayOutputWithContext(ctx contex
 	return o
 }
 
-func (o GetRulesRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRulesRule] {
-	return pulumix.Output[[]GetRulesRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRulesRuleArrayOutput) Index(i pulumi.IntInput) GetRulesRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRulesRule {
 		return vs[0].([]GetRulesRule)[vs[1].(int)]
@@ -1095,12 +950,6 @@ func (i GetRulesRuleActionArgs) ToGetRulesRuleActionOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetRulesRuleActionOutput)
 }
 
-func (i GetRulesRuleActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRulesRuleAction] {
-	return pulumix.Output[GetRulesRuleAction]{
-		OutputState: i.ToGetRulesRuleActionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRulesRuleActionArrayInput is an input type that accepts GetRulesRuleActionArray and GetRulesRuleActionArrayOutput values.
 // You can construct a concrete instance of `GetRulesRuleActionArrayInput` via:
 //
@@ -1126,12 +975,6 @@ func (i GetRulesRuleActionArray) ToGetRulesRuleActionArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetRulesRuleActionArrayOutput)
 }
 
-func (i GetRulesRuleActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRulesRuleAction] {
-	return pulumix.Output[[]GetRulesRuleAction]{
-		OutputState: i.ToGetRulesRuleActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRulesRuleActionOutput struct{ *pulumi.OutputState }
 
 func (GetRulesRuleActionOutput) ElementType() reflect.Type {
@@ -1144,12 +987,6 @@ func (o GetRulesRuleActionOutput) ToGetRulesRuleActionOutput() GetRulesRuleActio
 
 func (o GetRulesRuleActionOutput) ToGetRulesRuleActionOutputWithContext(ctx context.Context) GetRulesRuleActionOutput {
 	return o
-}
-
-func (o GetRulesRuleActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRulesRuleAction] {
-	return pulumix.Output[GetRulesRuleAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of one or more Action objects.
@@ -1169,12 +1006,6 @@ func (o GetRulesRuleActionArrayOutput) ToGetRulesRuleActionArrayOutput() GetRule
 
 func (o GetRulesRuleActionArrayOutput) ToGetRulesRuleActionArrayOutputWithContext(ctx context.Context) GetRulesRuleActionArrayOutput {
 	return o
-}
-
-func (o GetRulesRuleActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRulesRuleAction] {
-	return pulumix.Output[[]GetRulesRuleAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRulesRuleActionArrayOutput) Index(i pulumi.IntInput) GetRulesRuleActionOutput {
@@ -1254,12 +1085,6 @@ func (i GetRulesRuleActionActionArgs) ToGetRulesRuleActionActionOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetRulesRuleActionActionOutput)
 }
 
-func (i GetRulesRuleActionActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRulesRuleActionAction] {
-	return pulumix.Output[GetRulesRuleActionAction]{
-		OutputState: i.ToGetRulesRuleActionActionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRulesRuleActionActionArrayInput is an input type that accepts GetRulesRuleActionActionArray and GetRulesRuleActionActionArrayOutput values.
 // You can construct a concrete instance of `GetRulesRuleActionActionArrayInput` via:
 //
@@ -1285,12 +1110,6 @@ func (i GetRulesRuleActionActionArray) ToGetRulesRuleActionActionArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetRulesRuleActionActionArrayOutput)
 }
 
-func (i GetRulesRuleActionActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRulesRuleActionAction] {
-	return pulumix.Output[[]GetRulesRuleActionAction]{
-		OutputState: i.ToGetRulesRuleActionActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRulesRuleActionActionOutput struct{ *pulumi.OutputState }
 
 func (GetRulesRuleActionActionOutput) ElementType() reflect.Type {
@@ -1303,12 +1122,6 @@ func (o GetRulesRuleActionActionOutput) ToGetRulesRuleActionActionOutput() GetRu
 
 func (o GetRulesRuleActionActionOutput) ToGetRulesRuleActionActionOutputWithContext(ctx context.Context) GetRulesRuleActionActionOutput {
 	return o
-}
-
-func (o GetRulesRuleActionActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRulesRuleActionAction] {
-	return pulumix.Output[GetRulesRuleActionAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The action to perform if the condition in the rule matches an event.
@@ -1371,12 +1184,6 @@ func (o GetRulesRuleActionActionArrayOutput) ToGetRulesRuleActionActionArrayOutp
 
 func (o GetRulesRuleActionActionArrayOutput) ToGetRulesRuleActionActionArrayOutputWithContext(ctx context.Context) GetRulesRuleActionActionArrayOutput {
 	return o
-}
-
-func (o GetRulesRuleActionActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRulesRuleActionAction] {
-	return pulumix.Output[[]GetRulesRuleActionAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRulesRuleActionActionArrayOutput) Index(i pulumi.IntInput) GetRulesRuleActionActionOutput {

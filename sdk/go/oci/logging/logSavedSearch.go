@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Log Saved Search resource in Oracle Cloud Infrastructure Logging service.
@@ -233,12 +232,6 @@ func (i *LogSavedSearch) ToLogSavedSearchOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(LogSavedSearchOutput)
 }
 
-func (i *LogSavedSearch) ToOutput(ctx context.Context) pulumix.Output[*LogSavedSearch] {
-	return pulumix.Output[*LogSavedSearch]{
-		OutputState: i.ToLogSavedSearchOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LogSavedSearchArrayInput is an input type that accepts LogSavedSearchArray and LogSavedSearchArrayOutput values.
 // You can construct a concrete instance of `LogSavedSearchArrayInput` via:
 //
@@ -262,12 +255,6 @@ func (i LogSavedSearchArray) ToLogSavedSearchArrayOutput() LogSavedSearchArrayOu
 
 func (i LogSavedSearchArray) ToLogSavedSearchArrayOutputWithContext(ctx context.Context) LogSavedSearchArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(LogSavedSearchArrayOutput)
-}
-
-func (i LogSavedSearchArray) ToOutput(ctx context.Context) pulumix.Output[[]*LogSavedSearch] {
-	return pulumix.Output[[]*LogSavedSearch]{
-		OutputState: i.ToLogSavedSearchArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // LogSavedSearchMapInput is an input type that accepts LogSavedSearchMap and LogSavedSearchMapOutput values.
@@ -295,12 +282,6 @@ func (i LogSavedSearchMap) ToLogSavedSearchMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(LogSavedSearchMapOutput)
 }
 
-func (i LogSavedSearchMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*LogSavedSearch] {
-	return pulumix.Output[map[string]*LogSavedSearch]{
-		OutputState: i.ToLogSavedSearchMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LogSavedSearchOutput struct{ *pulumi.OutputState }
 
 func (LogSavedSearchOutput) ElementType() reflect.Type {
@@ -313,12 +294,6 @@ func (o LogSavedSearchOutput) ToLogSavedSearchOutput() LogSavedSearchOutput {
 
 func (o LogSavedSearchOutput) ToLogSavedSearchOutputWithContext(ctx context.Context) LogSavedSearchOutput {
 	return o
-}
-
-func (o LogSavedSearchOutput) ToOutput(ctx context.Context) pulumix.Output[*LogSavedSearch] {
-	return pulumix.Output[*LogSavedSearch]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of the compartment that the resource belongs to.
@@ -383,12 +358,6 @@ func (o LogSavedSearchArrayOutput) ToLogSavedSearchArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o LogSavedSearchArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*LogSavedSearch] {
-	return pulumix.Output[[]*LogSavedSearch]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LogSavedSearchArrayOutput) Index(i pulumi.IntInput) LogSavedSearchOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *LogSavedSearch {
 		return vs[0].([]*LogSavedSearch)[vs[1].(int)]
@@ -407,12 +376,6 @@ func (o LogSavedSearchMapOutput) ToLogSavedSearchMapOutput() LogSavedSearchMapOu
 
 func (o LogSavedSearchMapOutput) ToLogSavedSearchMapOutputWithContext(ctx context.Context) LogSavedSearchMapOutput {
 	return o
-}
-
-func (o LogSavedSearchMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*LogSavedSearch] {
-	return pulumix.Output[map[string]*LogSavedSearch]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LogSavedSearchMapOutput) MapIndex(k pulumi.StringInput) LogSavedSearchOutput {

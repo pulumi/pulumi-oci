@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service.
@@ -120,12 +119,6 @@ func (o GetExternalDbNodesResultOutput) ToGetExternalDbNodesResultOutput() GetEx
 
 func (o GetExternalDbNodesResultOutput) ToGetExternalDbNodesResultOutputWithContext(ctx context.Context) GetExternalDbNodesResultOutput {
 	return o
-}
-
-func (o GetExternalDbNodesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalDbNodesResult] {
-	return pulumix.Output[GetExternalDbNodesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

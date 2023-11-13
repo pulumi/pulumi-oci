@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Remediation Run Application Dependency Recommendations in Oracle Cloud Infrastructure Adm service.
@@ -112,12 +111,6 @@ func (o GetRemediationRunApplicationDependencyRecommendationsResultOutput) ToGet
 
 func (o GetRemediationRunApplicationDependencyRecommendationsResultOutput) ToGetRemediationRunApplicationDependencyRecommendationsResultOutputWithContext(ctx context.Context) GetRemediationRunApplicationDependencyRecommendationsResultOutput {
 	return o
-}
-
-func (o GetRemediationRunApplicationDependencyRecommendationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunApplicationDependencyRecommendationsResult] {
-	return pulumix.Output[GetRemediationRunApplicationDependencyRecommendationsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of application_dependency_recommendation_collection.

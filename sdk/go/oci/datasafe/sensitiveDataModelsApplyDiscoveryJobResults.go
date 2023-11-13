@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type SensitiveDataModelsApplyDiscoveryJobResults struct {
@@ -103,12 +102,6 @@ func (i *SensitiveDataModelsApplyDiscoveryJobResults) ToSensitiveDataModelsApply
 	return pulumi.ToOutputWithContext(ctx, i).(SensitiveDataModelsApplyDiscoveryJobResultsOutput)
 }
 
-func (i *SensitiveDataModelsApplyDiscoveryJobResults) ToOutput(ctx context.Context) pulumix.Output[*SensitiveDataModelsApplyDiscoveryJobResults] {
-	return pulumix.Output[*SensitiveDataModelsApplyDiscoveryJobResults]{
-		OutputState: i.ToSensitiveDataModelsApplyDiscoveryJobResultsOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SensitiveDataModelsApplyDiscoveryJobResultsArrayInput is an input type that accepts SensitiveDataModelsApplyDiscoveryJobResultsArray and SensitiveDataModelsApplyDiscoveryJobResultsArrayOutput values.
 // You can construct a concrete instance of `SensitiveDataModelsApplyDiscoveryJobResultsArrayInput` via:
 //
@@ -132,12 +125,6 @@ func (i SensitiveDataModelsApplyDiscoveryJobResultsArray) ToSensitiveDataModelsA
 
 func (i SensitiveDataModelsApplyDiscoveryJobResultsArray) ToSensitiveDataModelsApplyDiscoveryJobResultsArrayOutputWithContext(ctx context.Context) SensitiveDataModelsApplyDiscoveryJobResultsArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SensitiveDataModelsApplyDiscoveryJobResultsArrayOutput)
-}
-
-func (i SensitiveDataModelsApplyDiscoveryJobResultsArray) ToOutput(ctx context.Context) pulumix.Output[[]*SensitiveDataModelsApplyDiscoveryJobResults] {
-	return pulumix.Output[[]*SensitiveDataModelsApplyDiscoveryJobResults]{
-		OutputState: i.ToSensitiveDataModelsApplyDiscoveryJobResultsArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SensitiveDataModelsApplyDiscoveryJobResultsMapInput is an input type that accepts SensitiveDataModelsApplyDiscoveryJobResultsMap and SensitiveDataModelsApplyDiscoveryJobResultsMapOutput values.
@@ -165,12 +152,6 @@ func (i SensitiveDataModelsApplyDiscoveryJobResultsMap) ToSensitiveDataModelsApp
 	return pulumi.ToOutputWithContext(ctx, i).(SensitiveDataModelsApplyDiscoveryJobResultsMapOutput)
 }
 
-func (i SensitiveDataModelsApplyDiscoveryJobResultsMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SensitiveDataModelsApplyDiscoveryJobResults] {
-	return pulumix.Output[map[string]*SensitiveDataModelsApplyDiscoveryJobResults]{
-		OutputState: i.ToSensitiveDataModelsApplyDiscoveryJobResultsMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SensitiveDataModelsApplyDiscoveryJobResultsOutput struct{ *pulumi.OutputState }
 
 func (SensitiveDataModelsApplyDiscoveryJobResultsOutput) ElementType() reflect.Type {
@@ -183,12 +164,6 @@ func (o SensitiveDataModelsApplyDiscoveryJobResultsOutput) ToSensitiveDataModels
 
 func (o SensitiveDataModelsApplyDiscoveryJobResultsOutput) ToSensitiveDataModelsApplyDiscoveryJobResultsOutputWithContext(ctx context.Context) SensitiveDataModelsApplyDiscoveryJobResultsOutput {
 	return o
-}
-
-func (o SensitiveDataModelsApplyDiscoveryJobResultsOutput) ToOutput(ctx context.Context) pulumix.Output[*SensitiveDataModelsApplyDiscoveryJobResults] {
-	return pulumix.Output[*SensitiveDataModelsApplyDiscoveryJobResults]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SensitiveDataModelsApplyDiscoveryJobResultsOutput) DiscoveryJobId() pulumi.StringOutput {
@@ -215,12 +190,6 @@ func (o SensitiveDataModelsApplyDiscoveryJobResultsArrayOutput) ToSensitiveDataM
 	return o
 }
 
-func (o SensitiveDataModelsApplyDiscoveryJobResultsArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SensitiveDataModelsApplyDiscoveryJobResults] {
-	return pulumix.Output[[]*SensitiveDataModelsApplyDiscoveryJobResults]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o SensitiveDataModelsApplyDiscoveryJobResultsArrayOutput) Index(i pulumi.IntInput) SensitiveDataModelsApplyDiscoveryJobResultsOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *SensitiveDataModelsApplyDiscoveryJobResults {
 		return vs[0].([]*SensitiveDataModelsApplyDiscoveryJobResults)[vs[1].(int)]
@@ -239,12 +208,6 @@ func (o SensitiveDataModelsApplyDiscoveryJobResultsMapOutput) ToSensitiveDataMod
 
 func (o SensitiveDataModelsApplyDiscoveryJobResultsMapOutput) ToSensitiveDataModelsApplyDiscoveryJobResultsMapOutputWithContext(ctx context.Context) SensitiveDataModelsApplyDiscoveryJobResultsMapOutput {
 	return o
-}
-
-func (o SensitiveDataModelsApplyDiscoveryJobResultsMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SensitiveDataModelsApplyDiscoveryJobResults] {
-	return pulumix.Output[map[string]*SensitiveDataModelsApplyDiscoveryJobResults]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SensitiveDataModelsApplyDiscoveryJobResultsMapOutput) MapIndex(k pulumi.StringInput) SensitiveDataModelsApplyDiscoveryJobResultsOutput {

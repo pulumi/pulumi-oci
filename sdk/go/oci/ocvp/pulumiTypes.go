@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -55,12 +54,6 @@ func (i SddcDatastoreArgs) ToSddcDatastoreOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(SddcDatastoreOutput)
 }
 
-func (i SddcDatastoreArgs) ToOutput(ctx context.Context) pulumix.Output[SddcDatastore] {
-	return pulumix.Output[SddcDatastore]{
-		OutputState: i.ToSddcDatastoreOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SddcDatastoreArrayInput is an input type that accepts SddcDatastoreArray and SddcDatastoreArrayOutput values.
 // You can construct a concrete instance of `SddcDatastoreArrayInput` via:
 //
@@ -86,12 +79,6 @@ func (i SddcDatastoreArray) ToSddcDatastoreArrayOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(SddcDatastoreArrayOutput)
 }
 
-func (i SddcDatastoreArray) ToOutput(ctx context.Context) pulumix.Output[[]SddcDatastore] {
-	return pulumix.Output[[]SddcDatastore]{
-		OutputState: i.ToSddcDatastoreArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SddcDatastoreOutput struct{ *pulumi.OutputState }
 
 func (SddcDatastoreOutput) ElementType() reflect.Type {
@@ -104,12 +91,6 @@ func (o SddcDatastoreOutput) ToSddcDatastoreOutput() SddcDatastoreOutput {
 
 func (o SddcDatastoreOutput) ToSddcDatastoreOutputWithContext(ctx context.Context) SddcDatastoreOutput {
 	return o
-}
-
-func (o SddcDatastoreOutput) ToOutput(ctx context.Context) pulumix.Output[SddcDatastore] {
-	return pulumix.Output[SddcDatastore]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
@@ -139,12 +120,6 @@ func (o SddcDatastoreArrayOutput) ToSddcDatastoreArrayOutput() SddcDatastoreArra
 
 func (o SddcDatastoreArrayOutput) ToSddcDatastoreArrayOutputWithContext(ctx context.Context) SddcDatastoreArrayOutput {
 	return o
-}
-
-func (o SddcDatastoreArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SddcDatastore] {
-	return pulumix.Output[[]SddcDatastore]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SddcDatastoreArrayOutput) Index(i pulumi.IntInput) SddcDatastoreOutput {
@@ -194,12 +169,6 @@ func (i SddcHcxOnPremLicenseArgs) ToSddcHcxOnPremLicenseOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(SddcHcxOnPremLicenseOutput)
 }
 
-func (i SddcHcxOnPremLicenseArgs) ToOutput(ctx context.Context) pulumix.Output[SddcHcxOnPremLicense] {
-	return pulumix.Output[SddcHcxOnPremLicense]{
-		OutputState: i.ToSddcHcxOnPremLicenseOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SddcHcxOnPremLicenseArrayInput is an input type that accepts SddcHcxOnPremLicenseArray and SddcHcxOnPremLicenseArrayOutput values.
 // You can construct a concrete instance of `SddcHcxOnPremLicenseArrayInput` via:
 //
@@ -225,12 +194,6 @@ func (i SddcHcxOnPremLicenseArray) ToSddcHcxOnPremLicenseArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(SddcHcxOnPremLicenseArrayOutput)
 }
 
-func (i SddcHcxOnPremLicenseArray) ToOutput(ctx context.Context) pulumix.Output[[]SddcHcxOnPremLicense] {
-	return pulumix.Output[[]SddcHcxOnPremLicense]{
-		OutputState: i.ToSddcHcxOnPremLicenseArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SddcHcxOnPremLicenseOutput struct{ *pulumi.OutputState }
 
 func (SddcHcxOnPremLicenseOutput) ElementType() reflect.Type {
@@ -243,12 +206,6 @@ func (o SddcHcxOnPremLicenseOutput) ToSddcHcxOnPremLicenseOutput() SddcHcxOnPrem
 
 func (o SddcHcxOnPremLicenseOutput) ToSddcHcxOnPremLicenseOutputWithContext(ctx context.Context) SddcHcxOnPremLicenseOutput {
 	return o
-}
-
-func (o SddcHcxOnPremLicenseOutput) ToOutput(ctx context.Context) pulumix.Output[SddcHcxOnPremLicense] {
-	return pulumix.Output[SddcHcxOnPremLicense]{
-		OutputState: o.OutputState,
-	}
 }
 
 // HCX on-premise license key value.
@@ -278,12 +235,6 @@ func (o SddcHcxOnPremLicenseArrayOutput) ToSddcHcxOnPremLicenseArrayOutput() Sdd
 
 func (o SddcHcxOnPremLicenseArrayOutput) ToSddcHcxOnPremLicenseArrayOutputWithContext(ctx context.Context) SddcHcxOnPremLicenseArrayOutput {
 	return o
-}
-
-func (o SddcHcxOnPremLicenseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SddcHcxOnPremLicense] {
-	return pulumix.Output[[]SddcHcxOnPremLicense]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SddcHcxOnPremLicenseArrayOutput) Index(i pulumi.IntInput) SddcHcxOnPremLicenseOutput {
@@ -329,12 +280,6 @@ func (i SddcUpgradeLicenseArgs) ToSddcUpgradeLicenseOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(SddcUpgradeLicenseOutput)
 }
 
-func (i SddcUpgradeLicenseArgs) ToOutput(ctx context.Context) pulumix.Output[SddcUpgradeLicense] {
-	return pulumix.Output[SddcUpgradeLicense]{
-		OutputState: i.ToSddcUpgradeLicenseOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SddcUpgradeLicenseArrayInput is an input type that accepts SddcUpgradeLicenseArray and SddcUpgradeLicenseArrayOutput values.
 // You can construct a concrete instance of `SddcUpgradeLicenseArrayInput` via:
 //
@@ -360,12 +305,6 @@ func (i SddcUpgradeLicenseArray) ToSddcUpgradeLicenseArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(SddcUpgradeLicenseArrayOutput)
 }
 
-func (i SddcUpgradeLicenseArray) ToOutput(ctx context.Context) pulumix.Output[[]SddcUpgradeLicense] {
-	return pulumix.Output[[]SddcUpgradeLicense]{
-		OutputState: i.ToSddcUpgradeLicenseArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SddcUpgradeLicenseOutput struct{ *pulumi.OutputState }
 
 func (SddcUpgradeLicenseOutput) ElementType() reflect.Type {
@@ -378,12 +317,6 @@ func (o SddcUpgradeLicenseOutput) ToSddcUpgradeLicenseOutput() SddcUpgradeLicens
 
 func (o SddcUpgradeLicenseOutput) ToSddcUpgradeLicenseOutputWithContext(ctx context.Context) SddcUpgradeLicenseOutput {
 	return o
-}
-
-func (o SddcUpgradeLicenseOutput) ToOutput(ctx context.Context) pulumix.Output[SddcUpgradeLicense] {
-	return pulumix.Output[SddcUpgradeLicense]{
-		OutputState: o.OutputState,
-	}
 }
 
 // vSphere license key value.
@@ -408,12 +341,6 @@ func (o SddcUpgradeLicenseArrayOutput) ToSddcUpgradeLicenseArrayOutput() SddcUpg
 
 func (o SddcUpgradeLicenseArrayOutput) ToSddcUpgradeLicenseArrayOutputWithContext(ctx context.Context) SddcUpgradeLicenseArrayOutput {
 	return o
-}
-
-func (o SddcUpgradeLicenseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SddcUpgradeLicense] {
-	return pulumix.Output[[]SddcUpgradeLicense]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SddcUpgradeLicenseArrayOutput) Index(i pulumi.IntInput) SddcUpgradeLicenseOutput {
@@ -459,12 +386,6 @@ func (i SddcVsphereUpgradeObjectArgs) ToSddcVsphereUpgradeObjectOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(SddcVsphereUpgradeObjectOutput)
 }
 
-func (i SddcVsphereUpgradeObjectArgs) ToOutput(ctx context.Context) pulumix.Output[SddcVsphereUpgradeObject] {
-	return pulumix.Output[SddcVsphereUpgradeObject]{
-		OutputState: i.ToSddcVsphereUpgradeObjectOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SddcVsphereUpgradeObjectArrayInput is an input type that accepts SddcVsphereUpgradeObjectArray and SddcVsphereUpgradeObjectArrayOutput values.
 // You can construct a concrete instance of `SddcVsphereUpgradeObjectArrayInput` via:
 //
@@ -490,12 +411,6 @@ func (i SddcVsphereUpgradeObjectArray) ToSddcVsphereUpgradeObjectArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(SddcVsphereUpgradeObjectArrayOutput)
 }
 
-func (i SddcVsphereUpgradeObjectArray) ToOutput(ctx context.Context) pulumix.Output[[]SddcVsphereUpgradeObject] {
-	return pulumix.Output[[]SddcVsphereUpgradeObject]{
-		OutputState: i.ToSddcVsphereUpgradeObjectArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SddcVsphereUpgradeObjectOutput struct{ *pulumi.OutputState }
 
 func (SddcVsphereUpgradeObjectOutput) ElementType() reflect.Type {
@@ -508,12 +423,6 @@ func (o SddcVsphereUpgradeObjectOutput) ToSddcVsphereUpgradeObjectOutput() SddcV
 
 func (o SddcVsphereUpgradeObjectOutput) ToSddcVsphereUpgradeObjectOutputWithContext(ctx context.Context) SddcVsphereUpgradeObjectOutput {
 	return o
-}
-
-func (o SddcVsphereUpgradeObjectOutput) ToOutput(ctx context.Context) pulumix.Output[SddcVsphereUpgradeObject] {
-	return pulumix.Output[SddcVsphereUpgradeObject]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Binary object download link.
@@ -538,12 +447,6 @@ func (o SddcVsphereUpgradeObjectArrayOutput) ToSddcVsphereUpgradeObjectArrayOutp
 
 func (o SddcVsphereUpgradeObjectArrayOutput) ToSddcVsphereUpgradeObjectArrayOutputWithContext(ctx context.Context) SddcVsphereUpgradeObjectArrayOutput {
 	return o
-}
-
-func (o SddcVsphereUpgradeObjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SddcVsphereUpgradeObject] {
-	return pulumix.Output[[]SddcVsphereUpgradeObject]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SddcVsphereUpgradeObjectArrayOutput) Index(i pulumi.IntInput) SddcVsphereUpgradeObjectOutput {
@@ -713,12 +616,6 @@ func (i GetExsiHostsEsxiHostCollectionArgs) ToGetExsiHostsEsxiHostCollectionOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetExsiHostsEsxiHostCollectionOutput)
 }
 
-func (i GetExsiHostsEsxiHostCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetExsiHostsEsxiHostCollection] {
-	return pulumix.Output[GetExsiHostsEsxiHostCollection]{
-		OutputState: i.ToGetExsiHostsEsxiHostCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetExsiHostsEsxiHostCollectionArrayInput is an input type that accepts GetExsiHostsEsxiHostCollectionArray and GetExsiHostsEsxiHostCollectionArrayOutput values.
 // You can construct a concrete instance of `GetExsiHostsEsxiHostCollectionArrayInput` via:
 //
@@ -744,12 +641,6 @@ func (i GetExsiHostsEsxiHostCollectionArray) ToGetExsiHostsEsxiHostCollectionArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetExsiHostsEsxiHostCollectionArrayOutput)
 }
 
-func (i GetExsiHostsEsxiHostCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetExsiHostsEsxiHostCollection] {
-	return pulumix.Output[[]GetExsiHostsEsxiHostCollection]{
-		OutputState: i.ToGetExsiHostsEsxiHostCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetExsiHostsEsxiHostCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetExsiHostsEsxiHostCollectionOutput) ElementType() reflect.Type {
@@ -762,12 +653,6 @@ func (o GetExsiHostsEsxiHostCollectionOutput) ToGetExsiHostsEsxiHostCollectionOu
 
 func (o GetExsiHostsEsxiHostCollectionOutput) ToGetExsiHostsEsxiHostCollectionOutputWithContext(ctx context.Context) GetExsiHostsEsxiHostCollectionOutput {
 	return o
-}
-
-func (o GetExsiHostsEsxiHostCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetExsiHostsEsxiHostCollection] {
-	return pulumix.Output[GetExsiHostsEsxiHostCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
@@ -931,12 +816,6 @@ func (o GetExsiHostsEsxiHostCollectionArrayOutput) ToGetExsiHostsEsxiHostCollect
 	return o
 }
 
-func (o GetExsiHostsEsxiHostCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetExsiHostsEsxiHostCollection] {
-	return pulumix.Output[[]GetExsiHostsEsxiHostCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetExsiHostsEsxiHostCollectionArrayOutput) Index(i pulumi.IntInput) GetExsiHostsEsxiHostCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExsiHostsEsxiHostCollection {
 		return vs[0].([]GetExsiHostsEsxiHostCollection)[vs[1].(int)]
@@ -978,12 +857,6 @@ func (i GetExsiHostsFilterArgs) ToGetExsiHostsFilterOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetExsiHostsFilterOutput)
 }
 
-func (i GetExsiHostsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetExsiHostsFilter] {
-	return pulumix.Output[GetExsiHostsFilter]{
-		OutputState: i.ToGetExsiHostsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetExsiHostsFilterArrayInput is an input type that accepts GetExsiHostsFilterArray and GetExsiHostsFilterArrayOutput values.
 // You can construct a concrete instance of `GetExsiHostsFilterArrayInput` via:
 //
@@ -1009,12 +882,6 @@ func (i GetExsiHostsFilterArray) ToGetExsiHostsFilterArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetExsiHostsFilterArrayOutput)
 }
 
-func (i GetExsiHostsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetExsiHostsFilter] {
-	return pulumix.Output[[]GetExsiHostsFilter]{
-		OutputState: i.ToGetExsiHostsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetExsiHostsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetExsiHostsFilterOutput) ElementType() reflect.Type {
@@ -1027,12 +894,6 @@ func (o GetExsiHostsFilterOutput) ToGetExsiHostsFilterOutput() GetExsiHostsFilte
 
 func (o GetExsiHostsFilterOutput) ToGetExsiHostsFilterOutputWithContext(ctx context.Context) GetExsiHostsFilterOutput {
 	return o
-}
-
-func (o GetExsiHostsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetExsiHostsFilter] {
-	return pulumix.Output[GetExsiHostsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetExsiHostsFilterOutput) Name() pulumi.StringOutput {
@@ -1059,12 +920,6 @@ func (o GetExsiHostsFilterArrayOutput) ToGetExsiHostsFilterArrayOutput() GetExsi
 
 func (o GetExsiHostsFilterArrayOutput) ToGetExsiHostsFilterArrayOutputWithContext(ctx context.Context) GetExsiHostsFilterArrayOutput {
 	return o
-}
-
-func (o GetExsiHostsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetExsiHostsFilter] {
-	return pulumix.Output[[]GetExsiHostsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetExsiHostsFilterArrayOutput) Index(i pulumi.IntInput) GetExsiHostsFilterOutput {
@@ -1114,12 +969,6 @@ func (i GetSddcDatastoreArgs) ToGetSddcDatastoreOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcDatastoreOutput)
 }
 
-func (i GetSddcDatastoreArgs) ToOutput(ctx context.Context) pulumix.Output[GetSddcDatastore] {
-	return pulumix.Output[GetSddcDatastore]{
-		OutputState: i.ToGetSddcDatastoreOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSddcDatastoreArrayInput is an input type that accepts GetSddcDatastoreArray and GetSddcDatastoreArrayOutput values.
 // You can construct a concrete instance of `GetSddcDatastoreArrayInput` via:
 //
@@ -1145,12 +994,6 @@ func (i GetSddcDatastoreArray) ToGetSddcDatastoreArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcDatastoreArrayOutput)
 }
 
-func (i GetSddcDatastoreArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcDatastore] {
-	return pulumix.Output[[]GetSddcDatastore]{
-		OutputState: i.ToGetSddcDatastoreArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSddcDatastoreOutput struct{ *pulumi.OutputState }
 
 func (GetSddcDatastoreOutput) ElementType() reflect.Type {
@@ -1163,12 +1006,6 @@ func (o GetSddcDatastoreOutput) ToGetSddcDatastoreOutput() GetSddcDatastoreOutpu
 
 func (o GetSddcDatastoreOutput) ToGetSddcDatastoreOutputWithContext(ctx context.Context) GetSddcDatastoreOutput {
 	return o
-}
-
-func (o GetSddcDatastoreOutput) ToOutput(ctx context.Context) pulumix.Output[GetSddcDatastore] {
-	return pulumix.Output[GetSddcDatastore]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
@@ -1198,12 +1035,6 @@ func (o GetSddcDatastoreArrayOutput) ToGetSddcDatastoreArrayOutput() GetSddcData
 
 func (o GetSddcDatastoreArrayOutput) ToGetSddcDatastoreArrayOutputWithContext(ctx context.Context) GetSddcDatastoreArrayOutput {
 	return o
-}
-
-func (o GetSddcDatastoreArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcDatastore] {
-	return pulumix.Output[[]GetSddcDatastore]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSddcDatastoreArrayOutput) Index(i pulumi.IntInput) GetSddcDatastoreOutput {
@@ -1253,12 +1084,6 @@ func (i GetSddcHcxOnPremLicenseArgs) ToGetSddcHcxOnPremLicenseOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcHcxOnPremLicenseOutput)
 }
 
-func (i GetSddcHcxOnPremLicenseArgs) ToOutput(ctx context.Context) pulumix.Output[GetSddcHcxOnPremLicense] {
-	return pulumix.Output[GetSddcHcxOnPremLicense]{
-		OutputState: i.ToGetSddcHcxOnPremLicenseOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSddcHcxOnPremLicenseArrayInput is an input type that accepts GetSddcHcxOnPremLicenseArray and GetSddcHcxOnPremLicenseArrayOutput values.
 // You can construct a concrete instance of `GetSddcHcxOnPremLicenseArrayInput` via:
 //
@@ -1284,12 +1109,6 @@ func (i GetSddcHcxOnPremLicenseArray) ToGetSddcHcxOnPremLicenseArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcHcxOnPremLicenseArrayOutput)
 }
 
-func (i GetSddcHcxOnPremLicenseArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcHcxOnPremLicense] {
-	return pulumix.Output[[]GetSddcHcxOnPremLicense]{
-		OutputState: i.ToGetSddcHcxOnPremLicenseArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSddcHcxOnPremLicenseOutput struct{ *pulumi.OutputState }
 
 func (GetSddcHcxOnPremLicenseOutput) ElementType() reflect.Type {
@@ -1302,12 +1121,6 @@ func (o GetSddcHcxOnPremLicenseOutput) ToGetSddcHcxOnPremLicenseOutput() GetSddc
 
 func (o GetSddcHcxOnPremLicenseOutput) ToGetSddcHcxOnPremLicenseOutputWithContext(ctx context.Context) GetSddcHcxOnPremLicenseOutput {
 	return o
-}
-
-func (o GetSddcHcxOnPremLicenseOutput) ToOutput(ctx context.Context) pulumix.Output[GetSddcHcxOnPremLicense] {
-	return pulumix.Output[GetSddcHcxOnPremLicense]{
-		OutputState: o.OutputState,
-	}
 }
 
 // HCX on-premise license key value.
@@ -1337,12 +1150,6 @@ func (o GetSddcHcxOnPremLicenseArrayOutput) ToGetSddcHcxOnPremLicenseArrayOutput
 
 func (o GetSddcHcxOnPremLicenseArrayOutput) ToGetSddcHcxOnPremLicenseArrayOutputWithContext(ctx context.Context) GetSddcHcxOnPremLicenseArrayOutput {
 	return o
-}
-
-func (o GetSddcHcxOnPremLicenseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcHcxOnPremLicense] {
-	return pulumix.Output[[]GetSddcHcxOnPremLicense]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSddcHcxOnPremLicenseArrayOutput) Index(i pulumi.IntInput) GetSddcHcxOnPremLicenseOutput {
@@ -1388,12 +1195,6 @@ func (i GetSddcUpgradeLicenseArgs) ToGetSddcUpgradeLicenseOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcUpgradeLicenseOutput)
 }
 
-func (i GetSddcUpgradeLicenseArgs) ToOutput(ctx context.Context) pulumix.Output[GetSddcUpgradeLicense] {
-	return pulumix.Output[GetSddcUpgradeLicense]{
-		OutputState: i.ToGetSddcUpgradeLicenseOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSddcUpgradeLicenseArrayInput is an input type that accepts GetSddcUpgradeLicenseArray and GetSddcUpgradeLicenseArrayOutput values.
 // You can construct a concrete instance of `GetSddcUpgradeLicenseArrayInput` via:
 //
@@ -1419,12 +1220,6 @@ func (i GetSddcUpgradeLicenseArray) ToGetSddcUpgradeLicenseArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcUpgradeLicenseArrayOutput)
 }
 
-func (i GetSddcUpgradeLicenseArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcUpgradeLicense] {
-	return pulumix.Output[[]GetSddcUpgradeLicense]{
-		OutputState: i.ToGetSddcUpgradeLicenseArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSddcUpgradeLicenseOutput struct{ *pulumi.OutputState }
 
 func (GetSddcUpgradeLicenseOutput) ElementType() reflect.Type {
@@ -1437,12 +1232,6 @@ func (o GetSddcUpgradeLicenseOutput) ToGetSddcUpgradeLicenseOutput() GetSddcUpgr
 
 func (o GetSddcUpgradeLicenseOutput) ToGetSddcUpgradeLicenseOutputWithContext(ctx context.Context) GetSddcUpgradeLicenseOutput {
 	return o
-}
-
-func (o GetSddcUpgradeLicenseOutput) ToOutput(ctx context.Context) pulumix.Output[GetSddcUpgradeLicense] {
-	return pulumix.Output[GetSddcUpgradeLicense]{
-		OutputState: o.OutputState,
-	}
 }
 
 // vSphere license key value.
@@ -1467,12 +1256,6 @@ func (o GetSddcUpgradeLicenseArrayOutput) ToGetSddcUpgradeLicenseArrayOutput() G
 
 func (o GetSddcUpgradeLicenseArrayOutput) ToGetSddcUpgradeLicenseArrayOutputWithContext(ctx context.Context) GetSddcUpgradeLicenseArrayOutput {
 	return o
-}
-
-func (o GetSddcUpgradeLicenseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcUpgradeLicense] {
-	return pulumix.Output[[]GetSddcUpgradeLicense]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSddcUpgradeLicenseArrayOutput) Index(i pulumi.IntInput) GetSddcUpgradeLicenseOutput {
@@ -1518,12 +1301,6 @@ func (i GetSddcVsphereUpgradeObjectArgs) ToGetSddcVsphereUpgradeObjectOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcVsphereUpgradeObjectOutput)
 }
 
-func (i GetSddcVsphereUpgradeObjectArgs) ToOutput(ctx context.Context) pulumix.Output[GetSddcVsphereUpgradeObject] {
-	return pulumix.Output[GetSddcVsphereUpgradeObject]{
-		OutputState: i.ToGetSddcVsphereUpgradeObjectOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSddcVsphereUpgradeObjectArrayInput is an input type that accepts GetSddcVsphereUpgradeObjectArray and GetSddcVsphereUpgradeObjectArrayOutput values.
 // You can construct a concrete instance of `GetSddcVsphereUpgradeObjectArrayInput` via:
 //
@@ -1549,12 +1326,6 @@ func (i GetSddcVsphereUpgradeObjectArray) ToGetSddcVsphereUpgradeObjectArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcVsphereUpgradeObjectArrayOutput)
 }
 
-func (i GetSddcVsphereUpgradeObjectArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcVsphereUpgradeObject] {
-	return pulumix.Output[[]GetSddcVsphereUpgradeObject]{
-		OutputState: i.ToGetSddcVsphereUpgradeObjectArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSddcVsphereUpgradeObjectOutput struct{ *pulumi.OutputState }
 
 func (GetSddcVsphereUpgradeObjectOutput) ElementType() reflect.Type {
@@ -1567,12 +1338,6 @@ func (o GetSddcVsphereUpgradeObjectOutput) ToGetSddcVsphereUpgradeObjectOutput()
 
 func (o GetSddcVsphereUpgradeObjectOutput) ToGetSddcVsphereUpgradeObjectOutputWithContext(ctx context.Context) GetSddcVsphereUpgradeObjectOutput {
 	return o
-}
-
-func (o GetSddcVsphereUpgradeObjectOutput) ToOutput(ctx context.Context) pulumix.Output[GetSddcVsphereUpgradeObject] {
-	return pulumix.Output[GetSddcVsphereUpgradeObject]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Binary object download link.
@@ -1597,12 +1362,6 @@ func (o GetSddcVsphereUpgradeObjectArrayOutput) ToGetSddcVsphereUpgradeObjectArr
 
 func (o GetSddcVsphereUpgradeObjectArrayOutput) ToGetSddcVsphereUpgradeObjectArrayOutputWithContext(ctx context.Context) GetSddcVsphereUpgradeObjectArrayOutput {
 	return o
-}
-
-func (o GetSddcVsphereUpgradeObjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcVsphereUpgradeObject] {
-	return pulumix.Output[[]GetSddcVsphereUpgradeObject]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSddcVsphereUpgradeObjectArrayOutput) Index(i pulumi.IntInput) GetSddcVsphereUpgradeObjectOutput {
@@ -1646,12 +1405,6 @@ func (i GetSddcsFilterArgs) ToGetSddcsFilterOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsFilterOutput)
 }
 
-func (i GetSddcsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSddcsFilter] {
-	return pulumix.Output[GetSddcsFilter]{
-		OutputState: i.ToGetSddcsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSddcsFilterArrayInput is an input type that accepts GetSddcsFilterArray and GetSddcsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSddcsFilterArrayInput` via:
 //
@@ -1677,12 +1430,6 @@ func (i GetSddcsFilterArray) ToGetSddcsFilterArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsFilterArrayOutput)
 }
 
-func (i GetSddcsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcsFilter] {
-	return pulumix.Output[[]GetSddcsFilter]{
-		OutputState: i.ToGetSddcsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSddcsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSddcsFilterOutput) ElementType() reflect.Type {
@@ -1695,12 +1442,6 @@ func (o GetSddcsFilterOutput) ToGetSddcsFilterOutput() GetSddcsFilterOutput {
 
 func (o GetSddcsFilterOutput) ToGetSddcsFilterOutputWithContext(ctx context.Context) GetSddcsFilterOutput {
 	return o
-}
-
-func (o GetSddcsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSddcsFilter] {
-	return pulumix.Output[GetSddcsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSddcsFilterOutput) Name() pulumi.StringOutput {
@@ -1727,12 +1468,6 @@ func (o GetSddcsFilterArrayOutput) ToGetSddcsFilterArrayOutput() GetSddcsFilterA
 
 func (o GetSddcsFilterArrayOutput) ToGetSddcsFilterArrayOutputWithContext(ctx context.Context) GetSddcsFilterArrayOutput {
 	return o
-}
-
-func (o GetSddcsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcsFilter] {
-	return pulumix.Output[[]GetSddcsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSddcsFilterArrayOutput) Index(i pulumi.IntInput) GetSddcsFilterOutput {
@@ -2128,12 +1863,6 @@ func (i GetSddcsSddcCollectionArgs) ToGetSddcsSddcCollectionOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionOutput)
 }
 
-func (i GetSddcsSddcCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSddcsSddcCollection] {
-	return pulumix.Output[GetSddcsSddcCollection]{
-		OutputState: i.ToGetSddcsSddcCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSddcsSddcCollectionArrayInput is an input type that accepts GetSddcsSddcCollectionArray and GetSddcsSddcCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSddcsSddcCollectionArrayInput` via:
 //
@@ -2159,12 +1888,6 @@ func (i GetSddcsSddcCollectionArray) ToGetSddcsSddcCollectionArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionArrayOutput)
 }
 
-func (i GetSddcsSddcCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcsSddcCollection] {
-	return pulumix.Output[[]GetSddcsSddcCollection]{
-		OutputState: i.ToGetSddcsSddcCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSddcsSddcCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetSddcsSddcCollectionOutput) ElementType() reflect.Type {
@@ -2177,12 +1900,6 @@ func (o GetSddcsSddcCollectionOutput) ToGetSddcsSddcCollectionOutput() GetSddcsS
 
 func (o GetSddcsSddcCollectionOutput) ToGetSddcsSddcCollectionOutputWithContext(ctx context.Context) GetSddcsSddcCollectionOutput {
 	return o
-}
-
-func (o GetSddcsSddcCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSddcsSddcCollection] {
-	return pulumix.Output[GetSddcsSddcCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
@@ -2557,12 +2274,6 @@ func (o GetSddcsSddcCollectionArrayOutput) ToGetSddcsSddcCollectionArrayOutputWi
 	return o
 }
 
-func (o GetSddcsSddcCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcsSddcCollection] {
-	return pulumix.Output[[]GetSddcsSddcCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSddcsSddcCollectionArrayOutput) Index(i pulumi.IntInput) GetSddcsSddcCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcsSddcCollection {
 		return vs[0].([]GetSddcsSddcCollection)[vs[1].(int)]
@@ -2610,12 +2321,6 @@ func (i GetSddcsSddcCollectionDatastoreArgs) ToGetSddcsSddcCollectionDatastoreOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionDatastoreOutput)
 }
 
-func (i GetSddcsSddcCollectionDatastoreArgs) ToOutput(ctx context.Context) pulumix.Output[GetSddcsSddcCollectionDatastore] {
-	return pulumix.Output[GetSddcsSddcCollectionDatastore]{
-		OutputState: i.ToGetSddcsSddcCollectionDatastoreOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSddcsSddcCollectionDatastoreArrayInput is an input type that accepts GetSddcsSddcCollectionDatastoreArray and GetSddcsSddcCollectionDatastoreArrayOutput values.
 // You can construct a concrete instance of `GetSddcsSddcCollectionDatastoreArrayInput` via:
 //
@@ -2641,12 +2346,6 @@ func (i GetSddcsSddcCollectionDatastoreArray) ToGetSddcsSddcCollectionDatastoreA
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionDatastoreArrayOutput)
 }
 
-func (i GetSddcsSddcCollectionDatastoreArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcsSddcCollectionDatastore] {
-	return pulumix.Output[[]GetSddcsSddcCollectionDatastore]{
-		OutputState: i.ToGetSddcsSddcCollectionDatastoreArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSddcsSddcCollectionDatastoreOutput struct{ *pulumi.OutputState }
 
 func (GetSddcsSddcCollectionDatastoreOutput) ElementType() reflect.Type {
@@ -2659,12 +2358,6 @@ func (o GetSddcsSddcCollectionDatastoreOutput) ToGetSddcsSddcCollectionDatastore
 
 func (o GetSddcsSddcCollectionDatastoreOutput) ToGetSddcsSddcCollectionDatastoreOutputWithContext(ctx context.Context) GetSddcsSddcCollectionDatastoreOutput {
 	return o
-}
-
-func (o GetSddcsSddcCollectionDatastoreOutput) ToOutput(ctx context.Context) pulumix.Output[GetSddcsSddcCollectionDatastore] {
-	return pulumix.Output[GetSddcsSddcCollectionDatastore]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
@@ -2694,12 +2387,6 @@ func (o GetSddcsSddcCollectionDatastoreArrayOutput) ToGetSddcsSddcCollectionData
 
 func (o GetSddcsSddcCollectionDatastoreArrayOutput) ToGetSddcsSddcCollectionDatastoreArrayOutputWithContext(ctx context.Context) GetSddcsSddcCollectionDatastoreArrayOutput {
 	return o
-}
-
-func (o GetSddcsSddcCollectionDatastoreArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcsSddcCollectionDatastore] {
-	return pulumix.Output[[]GetSddcsSddcCollectionDatastore]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSddcsSddcCollectionDatastoreArrayOutput) Index(i pulumi.IntInput) GetSddcsSddcCollectionDatastoreOutput {
@@ -2749,12 +2436,6 @@ func (i GetSddcsSddcCollectionHcxOnPremLicenseArgs) ToGetSddcsSddcCollectionHcxO
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionHcxOnPremLicenseOutput)
 }
 
-func (i GetSddcsSddcCollectionHcxOnPremLicenseArgs) ToOutput(ctx context.Context) pulumix.Output[GetSddcsSddcCollectionHcxOnPremLicense] {
-	return pulumix.Output[GetSddcsSddcCollectionHcxOnPremLicense]{
-		OutputState: i.ToGetSddcsSddcCollectionHcxOnPremLicenseOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSddcsSddcCollectionHcxOnPremLicenseArrayInput is an input type that accepts GetSddcsSddcCollectionHcxOnPremLicenseArray and GetSddcsSddcCollectionHcxOnPremLicenseArrayOutput values.
 // You can construct a concrete instance of `GetSddcsSddcCollectionHcxOnPremLicenseArrayInput` via:
 //
@@ -2780,12 +2461,6 @@ func (i GetSddcsSddcCollectionHcxOnPremLicenseArray) ToGetSddcsSddcCollectionHcx
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionHcxOnPremLicenseArrayOutput)
 }
 
-func (i GetSddcsSddcCollectionHcxOnPremLicenseArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcsSddcCollectionHcxOnPremLicense] {
-	return pulumix.Output[[]GetSddcsSddcCollectionHcxOnPremLicense]{
-		OutputState: i.ToGetSddcsSddcCollectionHcxOnPremLicenseArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSddcsSddcCollectionHcxOnPremLicenseOutput struct{ *pulumi.OutputState }
 
 func (GetSddcsSddcCollectionHcxOnPremLicenseOutput) ElementType() reflect.Type {
@@ -2798,12 +2473,6 @@ func (o GetSddcsSddcCollectionHcxOnPremLicenseOutput) ToGetSddcsSddcCollectionHc
 
 func (o GetSddcsSddcCollectionHcxOnPremLicenseOutput) ToGetSddcsSddcCollectionHcxOnPremLicenseOutputWithContext(ctx context.Context) GetSddcsSddcCollectionHcxOnPremLicenseOutput {
 	return o
-}
-
-func (o GetSddcsSddcCollectionHcxOnPremLicenseOutput) ToOutput(ctx context.Context) pulumix.Output[GetSddcsSddcCollectionHcxOnPremLicense] {
-	return pulumix.Output[GetSddcsSddcCollectionHcxOnPremLicense]{
-		OutputState: o.OutputState,
-	}
 }
 
 // HCX on-premise license key value.
@@ -2833,12 +2502,6 @@ func (o GetSddcsSddcCollectionHcxOnPremLicenseArrayOutput) ToGetSddcsSddcCollect
 
 func (o GetSddcsSddcCollectionHcxOnPremLicenseArrayOutput) ToGetSddcsSddcCollectionHcxOnPremLicenseArrayOutputWithContext(ctx context.Context) GetSddcsSddcCollectionHcxOnPremLicenseArrayOutput {
 	return o
-}
-
-func (o GetSddcsSddcCollectionHcxOnPremLicenseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcsSddcCollectionHcxOnPremLicense] {
-	return pulumix.Output[[]GetSddcsSddcCollectionHcxOnPremLicense]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSddcsSddcCollectionHcxOnPremLicenseArrayOutput) Index(i pulumi.IntInput) GetSddcsSddcCollectionHcxOnPremLicenseOutput {
@@ -2884,12 +2547,6 @@ func (i GetSddcsSddcCollectionUpgradeLicenseArgs) ToGetSddcsSddcCollectionUpgrad
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionUpgradeLicenseOutput)
 }
 
-func (i GetSddcsSddcCollectionUpgradeLicenseArgs) ToOutput(ctx context.Context) pulumix.Output[GetSddcsSddcCollectionUpgradeLicense] {
-	return pulumix.Output[GetSddcsSddcCollectionUpgradeLicense]{
-		OutputState: i.ToGetSddcsSddcCollectionUpgradeLicenseOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSddcsSddcCollectionUpgradeLicenseArrayInput is an input type that accepts GetSddcsSddcCollectionUpgradeLicenseArray and GetSddcsSddcCollectionUpgradeLicenseArrayOutput values.
 // You can construct a concrete instance of `GetSddcsSddcCollectionUpgradeLicenseArrayInput` via:
 //
@@ -2915,12 +2572,6 @@ func (i GetSddcsSddcCollectionUpgradeLicenseArray) ToGetSddcsSddcCollectionUpgra
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionUpgradeLicenseArrayOutput)
 }
 
-func (i GetSddcsSddcCollectionUpgradeLicenseArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcsSddcCollectionUpgradeLicense] {
-	return pulumix.Output[[]GetSddcsSddcCollectionUpgradeLicense]{
-		OutputState: i.ToGetSddcsSddcCollectionUpgradeLicenseArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSddcsSddcCollectionUpgradeLicenseOutput struct{ *pulumi.OutputState }
 
 func (GetSddcsSddcCollectionUpgradeLicenseOutput) ElementType() reflect.Type {
@@ -2933,12 +2584,6 @@ func (o GetSddcsSddcCollectionUpgradeLicenseOutput) ToGetSddcsSddcCollectionUpgr
 
 func (o GetSddcsSddcCollectionUpgradeLicenseOutput) ToGetSddcsSddcCollectionUpgradeLicenseOutputWithContext(ctx context.Context) GetSddcsSddcCollectionUpgradeLicenseOutput {
 	return o
-}
-
-func (o GetSddcsSddcCollectionUpgradeLicenseOutput) ToOutput(ctx context.Context) pulumix.Output[GetSddcsSddcCollectionUpgradeLicense] {
-	return pulumix.Output[GetSddcsSddcCollectionUpgradeLicense]{
-		OutputState: o.OutputState,
-	}
 }
 
 // vSphere license key value.
@@ -2963,12 +2608,6 @@ func (o GetSddcsSddcCollectionUpgradeLicenseArrayOutput) ToGetSddcsSddcCollectio
 
 func (o GetSddcsSddcCollectionUpgradeLicenseArrayOutput) ToGetSddcsSddcCollectionUpgradeLicenseArrayOutputWithContext(ctx context.Context) GetSddcsSddcCollectionUpgradeLicenseArrayOutput {
 	return o
-}
-
-func (o GetSddcsSddcCollectionUpgradeLicenseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcsSddcCollectionUpgradeLicense] {
-	return pulumix.Output[[]GetSddcsSddcCollectionUpgradeLicense]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSddcsSddcCollectionUpgradeLicenseArrayOutput) Index(i pulumi.IntInput) GetSddcsSddcCollectionUpgradeLicenseOutput {
@@ -3014,12 +2653,6 @@ func (i GetSddcsSddcCollectionVsphereUpgradeObjectArgs) ToGetSddcsSddcCollection
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionVsphereUpgradeObjectOutput)
 }
 
-func (i GetSddcsSddcCollectionVsphereUpgradeObjectArgs) ToOutput(ctx context.Context) pulumix.Output[GetSddcsSddcCollectionVsphereUpgradeObject] {
-	return pulumix.Output[GetSddcsSddcCollectionVsphereUpgradeObject]{
-		OutputState: i.ToGetSddcsSddcCollectionVsphereUpgradeObjectOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSddcsSddcCollectionVsphereUpgradeObjectArrayInput is an input type that accepts GetSddcsSddcCollectionVsphereUpgradeObjectArray and GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput values.
 // You can construct a concrete instance of `GetSddcsSddcCollectionVsphereUpgradeObjectArrayInput` via:
 //
@@ -3045,12 +2678,6 @@ func (i GetSddcsSddcCollectionVsphereUpgradeObjectArray) ToGetSddcsSddcCollectio
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput)
 }
 
-func (i GetSddcsSddcCollectionVsphereUpgradeObjectArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcsSddcCollectionVsphereUpgradeObject] {
-	return pulumix.Output[[]GetSddcsSddcCollectionVsphereUpgradeObject]{
-		OutputState: i.ToGetSddcsSddcCollectionVsphereUpgradeObjectArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSddcsSddcCollectionVsphereUpgradeObjectOutput struct{ *pulumi.OutputState }
 
 func (GetSddcsSddcCollectionVsphereUpgradeObjectOutput) ElementType() reflect.Type {
@@ -3063,12 +2690,6 @@ func (o GetSddcsSddcCollectionVsphereUpgradeObjectOutput) ToGetSddcsSddcCollecti
 
 func (o GetSddcsSddcCollectionVsphereUpgradeObjectOutput) ToGetSddcsSddcCollectionVsphereUpgradeObjectOutputWithContext(ctx context.Context) GetSddcsSddcCollectionVsphereUpgradeObjectOutput {
 	return o
-}
-
-func (o GetSddcsSddcCollectionVsphereUpgradeObjectOutput) ToOutput(ctx context.Context) pulumix.Output[GetSddcsSddcCollectionVsphereUpgradeObject] {
-	return pulumix.Output[GetSddcsSddcCollectionVsphereUpgradeObject]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Binary object download link.
@@ -3093,12 +2714,6 @@ func (o GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput) ToGetSddcsSddcCol
 
 func (o GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput) ToGetSddcsSddcCollectionVsphereUpgradeObjectArrayOutputWithContext(ctx context.Context) GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput {
 	return o
-}
-
-func (o GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcsSddcCollectionVsphereUpgradeObject] {
-	return pulumix.Output[[]GetSddcsSddcCollectionVsphereUpgradeObject]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput) Index(i pulumi.IntInput) GetSddcsSddcCollectionVsphereUpgradeObjectOutput {
@@ -3144,12 +2759,6 @@ func (i GetSupportedHostShapesFilterArgs) ToGetSupportedHostShapesFilterOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedHostShapesFilterOutput)
 }
 
-func (i GetSupportedHostShapesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSupportedHostShapesFilter] {
-	return pulumix.Output[GetSupportedHostShapesFilter]{
-		OutputState: i.ToGetSupportedHostShapesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSupportedHostShapesFilterArrayInput is an input type that accepts GetSupportedHostShapesFilterArray and GetSupportedHostShapesFilterArrayOutput values.
 // You can construct a concrete instance of `GetSupportedHostShapesFilterArrayInput` via:
 //
@@ -3175,12 +2784,6 @@ func (i GetSupportedHostShapesFilterArray) ToGetSupportedHostShapesFilterArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedHostShapesFilterArrayOutput)
 }
 
-func (i GetSupportedHostShapesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSupportedHostShapesFilter] {
-	return pulumix.Output[[]GetSupportedHostShapesFilter]{
-		OutputState: i.ToGetSupportedHostShapesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSupportedHostShapesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSupportedHostShapesFilterOutput) ElementType() reflect.Type {
@@ -3193,12 +2796,6 @@ func (o GetSupportedHostShapesFilterOutput) ToGetSupportedHostShapesFilterOutput
 
 func (o GetSupportedHostShapesFilterOutput) ToGetSupportedHostShapesFilterOutputWithContext(ctx context.Context) GetSupportedHostShapesFilterOutput {
 	return o
-}
-
-func (o GetSupportedHostShapesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSupportedHostShapesFilter] {
-	return pulumix.Output[GetSupportedHostShapesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the given name exactly.
@@ -3226,12 +2823,6 @@ func (o GetSupportedHostShapesFilterArrayOutput) ToGetSupportedHostShapesFilterA
 
 func (o GetSupportedHostShapesFilterArrayOutput) ToGetSupportedHostShapesFilterArrayOutputWithContext(ctx context.Context) GetSupportedHostShapesFilterArrayOutput {
 	return o
-}
-
-func (o GetSupportedHostShapesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSupportedHostShapesFilter] {
-	return pulumix.Output[[]GetSupportedHostShapesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSupportedHostShapesFilterArrayOutput) Index(i pulumi.IntInput) GetSupportedHostShapesFilterOutput {
@@ -3313,12 +2904,6 @@ func (i GetSupportedHostShapesItemArgs) ToGetSupportedHostShapesItemOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedHostShapesItemOutput)
 }
 
-func (i GetSupportedHostShapesItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSupportedHostShapesItem] {
-	return pulumix.Output[GetSupportedHostShapesItem]{
-		OutputState: i.ToGetSupportedHostShapesItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSupportedHostShapesItemArrayInput is an input type that accepts GetSupportedHostShapesItemArray and GetSupportedHostShapesItemArrayOutput values.
 // You can construct a concrete instance of `GetSupportedHostShapesItemArrayInput` via:
 //
@@ -3344,12 +2929,6 @@ func (i GetSupportedHostShapesItemArray) ToGetSupportedHostShapesItemArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedHostShapesItemArrayOutput)
 }
 
-func (i GetSupportedHostShapesItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSupportedHostShapesItem] {
-	return pulumix.Output[[]GetSupportedHostShapesItem]{
-		OutputState: i.ToGetSupportedHostShapesItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSupportedHostShapesItemOutput struct{ *pulumi.OutputState }
 
 func (GetSupportedHostShapesItemOutput) ElementType() reflect.Type {
@@ -3362,12 +2941,6 @@ func (o GetSupportedHostShapesItemOutput) ToGetSupportedHostShapesItemOutput() G
 
 func (o GetSupportedHostShapesItemOutput) ToGetSupportedHostShapesItemOutputWithContext(ctx context.Context) GetSupportedHostShapesItemOutput {
 	return o
-}
-
-func (o GetSupportedHostShapesItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSupportedHostShapesItem] {
-	return pulumix.Output[GetSupportedHostShapesItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The default OCPU count of the shape.
@@ -3436,12 +3009,6 @@ func (o GetSupportedHostShapesItemArrayOutput) ToGetSupportedHostShapesItemArray
 	return o
 }
 
-func (o GetSupportedHostShapesItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSupportedHostShapesItem] {
-	return pulumix.Output[[]GetSupportedHostShapesItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSupportedHostShapesItemArrayOutput) Index(i pulumi.IntInput) GetSupportedHostShapesItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSupportedHostShapesItem {
 		return vs[0].([]GetSupportedHostShapesItem)[vs[1].(int)]
@@ -3485,12 +3052,6 @@ func (i GetSupportedSkusFilterArgs) ToGetSupportedSkusFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedSkusFilterOutput)
 }
 
-func (i GetSupportedSkusFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSupportedSkusFilter] {
-	return pulumix.Output[GetSupportedSkusFilter]{
-		OutputState: i.ToGetSupportedSkusFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSupportedSkusFilterArrayInput is an input type that accepts GetSupportedSkusFilterArray and GetSupportedSkusFilterArrayOutput values.
 // You can construct a concrete instance of `GetSupportedSkusFilterArrayInput` via:
 //
@@ -3516,12 +3077,6 @@ func (i GetSupportedSkusFilterArray) ToGetSupportedSkusFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedSkusFilterArrayOutput)
 }
 
-func (i GetSupportedSkusFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSupportedSkusFilter] {
-	return pulumix.Output[[]GetSupportedSkusFilter]{
-		OutputState: i.ToGetSupportedSkusFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSupportedSkusFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSupportedSkusFilterOutput) ElementType() reflect.Type {
@@ -3534,12 +3089,6 @@ func (o GetSupportedSkusFilterOutput) ToGetSupportedSkusFilterOutput() GetSuppor
 
 func (o GetSupportedSkusFilterOutput) ToGetSupportedSkusFilterOutputWithContext(ctx context.Context) GetSupportedSkusFilterOutput {
 	return o
-}
-
-func (o GetSupportedSkusFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSupportedSkusFilter] {
-	return pulumix.Output[GetSupportedSkusFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // name of SKU
@@ -3567,12 +3116,6 @@ func (o GetSupportedSkusFilterArrayOutput) ToGetSupportedSkusFilterArrayOutput()
 
 func (o GetSupportedSkusFilterArrayOutput) ToGetSupportedSkusFilterArrayOutputWithContext(ctx context.Context) GetSupportedSkusFilterArrayOutput {
 	return o
-}
-
-func (o GetSupportedSkusFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSupportedSkusFilter] {
-	return pulumix.Output[[]GetSupportedSkusFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSupportedSkusFilterArrayOutput) Index(i pulumi.IntInput) GetSupportedSkusFilterOutput {
@@ -3614,12 +3157,6 @@ func (i GetSupportedSkusItemArgs) ToGetSupportedSkusItemOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedSkusItemOutput)
 }
 
-func (i GetSupportedSkusItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSupportedSkusItem] {
-	return pulumix.Output[GetSupportedSkusItem]{
-		OutputState: i.ToGetSupportedSkusItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSupportedSkusItemArrayInput is an input type that accepts GetSupportedSkusItemArray and GetSupportedSkusItemArrayOutput values.
 // You can construct a concrete instance of `GetSupportedSkusItemArrayInput` via:
 //
@@ -3645,12 +3182,6 @@ func (i GetSupportedSkusItemArray) ToGetSupportedSkusItemArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedSkusItemArrayOutput)
 }
 
-func (i GetSupportedSkusItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSupportedSkusItem] {
-	return pulumix.Output[[]GetSupportedSkusItem]{
-		OutputState: i.ToGetSupportedSkusItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSupportedSkusItemOutput struct{ *pulumi.OutputState }
 
 func (GetSupportedSkusItemOutput) ElementType() reflect.Type {
@@ -3663,12 +3194,6 @@ func (o GetSupportedSkusItemOutput) ToGetSupportedSkusItemOutput() GetSupportedS
 
 func (o GetSupportedSkusItemOutput) ToGetSupportedSkusItemOutputWithContext(ctx context.Context) GetSupportedSkusItemOutput {
 	return o
-}
-
-func (o GetSupportedSkusItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSupportedSkusItem] {
-	return pulumix.Output[GetSupportedSkusItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // name of SKU
@@ -3688,12 +3213,6 @@ func (o GetSupportedSkusItemArrayOutput) ToGetSupportedSkusItemArrayOutput() Get
 
 func (o GetSupportedSkusItemArrayOutput) ToGetSupportedSkusItemArrayOutputWithContext(ctx context.Context) GetSupportedSkusItemArrayOutput {
 	return o
-}
-
-func (o GetSupportedSkusItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSupportedSkusItem] {
-	return pulumix.Output[[]GetSupportedSkusItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSupportedSkusItemArrayOutput) Index(i pulumi.IntInput) GetSupportedSkusItemOutput {
@@ -3737,12 +3256,6 @@ func (i GetSupportedVmwareSoftwareVersionsFilterArgs) ToGetSupportedVmwareSoftwa
 	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedVmwareSoftwareVersionsFilterOutput)
 }
 
-func (i GetSupportedVmwareSoftwareVersionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSupportedVmwareSoftwareVersionsFilter] {
-	return pulumix.Output[GetSupportedVmwareSoftwareVersionsFilter]{
-		OutputState: i.ToGetSupportedVmwareSoftwareVersionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSupportedVmwareSoftwareVersionsFilterArrayInput is an input type that accepts GetSupportedVmwareSoftwareVersionsFilterArray and GetSupportedVmwareSoftwareVersionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSupportedVmwareSoftwareVersionsFilterArrayInput` via:
 //
@@ -3768,12 +3281,6 @@ func (i GetSupportedVmwareSoftwareVersionsFilterArray) ToGetSupportedVmwareSoftw
 	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedVmwareSoftwareVersionsFilterArrayOutput)
 }
 
-func (i GetSupportedVmwareSoftwareVersionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSupportedVmwareSoftwareVersionsFilter] {
-	return pulumix.Output[[]GetSupportedVmwareSoftwareVersionsFilter]{
-		OutputState: i.ToGetSupportedVmwareSoftwareVersionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSupportedVmwareSoftwareVersionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSupportedVmwareSoftwareVersionsFilterOutput) ElementType() reflect.Type {
@@ -3786,12 +3293,6 @@ func (o GetSupportedVmwareSoftwareVersionsFilterOutput) ToGetSupportedVmwareSoft
 
 func (o GetSupportedVmwareSoftwareVersionsFilterOutput) ToGetSupportedVmwareSoftwareVersionsFilterOutputWithContext(ctx context.Context) GetSupportedVmwareSoftwareVersionsFilterOutput {
 	return o
-}
-
-func (o GetSupportedVmwareSoftwareVersionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSupportedVmwareSoftwareVersionsFilter] {
-	return pulumix.Output[GetSupportedVmwareSoftwareVersionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSupportedVmwareSoftwareVersionsFilterOutput) Name() pulumi.StringOutput {
@@ -3818,12 +3319,6 @@ func (o GetSupportedVmwareSoftwareVersionsFilterArrayOutput) ToGetSupportedVmwar
 
 func (o GetSupportedVmwareSoftwareVersionsFilterArrayOutput) ToGetSupportedVmwareSoftwareVersionsFilterArrayOutputWithContext(ctx context.Context) GetSupportedVmwareSoftwareVersionsFilterArrayOutput {
 	return o
-}
-
-func (o GetSupportedVmwareSoftwareVersionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSupportedVmwareSoftwareVersionsFilter] {
-	return pulumix.Output[[]GetSupportedVmwareSoftwareVersionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSupportedVmwareSoftwareVersionsFilterArrayOutput) Index(i pulumi.IntInput) GetSupportedVmwareSoftwareVersionsFilterOutput {
@@ -3869,12 +3364,6 @@ func (i GetSupportedVmwareSoftwareVersionsItemArgs) ToGetSupportedVmwareSoftware
 	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedVmwareSoftwareVersionsItemOutput)
 }
 
-func (i GetSupportedVmwareSoftwareVersionsItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSupportedVmwareSoftwareVersionsItem] {
-	return pulumix.Output[GetSupportedVmwareSoftwareVersionsItem]{
-		OutputState: i.ToGetSupportedVmwareSoftwareVersionsItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSupportedVmwareSoftwareVersionsItemArrayInput is an input type that accepts GetSupportedVmwareSoftwareVersionsItemArray and GetSupportedVmwareSoftwareVersionsItemArrayOutput values.
 // You can construct a concrete instance of `GetSupportedVmwareSoftwareVersionsItemArrayInput` via:
 //
@@ -3900,12 +3389,6 @@ func (i GetSupportedVmwareSoftwareVersionsItemArray) ToGetSupportedVmwareSoftwar
 	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedVmwareSoftwareVersionsItemArrayOutput)
 }
 
-func (i GetSupportedVmwareSoftwareVersionsItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSupportedVmwareSoftwareVersionsItem] {
-	return pulumix.Output[[]GetSupportedVmwareSoftwareVersionsItem]{
-		OutputState: i.ToGetSupportedVmwareSoftwareVersionsItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSupportedVmwareSoftwareVersionsItemOutput struct{ *pulumi.OutputState }
 
 func (GetSupportedVmwareSoftwareVersionsItemOutput) ElementType() reflect.Type {
@@ -3918,12 +3401,6 @@ func (o GetSupportedVmwareSoftwareVersionsItemOutput) ToGetSupportedVmwareSoftwa
 
 func (o GetSupportedVmwareSoftwareVersionsItemOutput) ToGetSupportedVmwareSoftwareVersionsItemOutputWithContext(ctx context.Context) GetSupportedVmwareSoftwareVersionsItemOutput {
 	return o
-}
-
-func (o GetSupportedVmwareSoftwareVersionsItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSupportedVmwareSoftwareVersionsItem] {
-	return pulumix.Output[GetSupportedVmwareSoftwareVersionsItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A description of the software in the bundle.
@@ -3948,12 +3425,6 @@ func (o GetSupportedVmwareSoftwareVersionsItemArrayOutput) ToGetSupportedVmwareS
 
 func (o GetSupportedVmwareSoftwareVersionsItemArrayOutput) ToGetSupportedVmwareSoftwareVersionsItemArrayOutputWithContext(ctx context.Context) GetSupportedVmwareSoftwareVersionsItemArrayOutput {
 	return o
-}
-
-func (o GetSupportedVmwareSoftwareVersionsItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSupportedVmwareSoftwareVersionsItem] {
-	return pulumix.Output[[]GetSupportedVmwareSoftwareVersionsItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSupportedVmwareSoftwareVersionsItemArrayOutput) Index(i pulumi.IntInput) GetSupportedVmwareSoftwareVersionsItemOutput {

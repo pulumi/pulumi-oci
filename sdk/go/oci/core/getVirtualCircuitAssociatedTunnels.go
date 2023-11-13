@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Virtual Circuit Associated Tunnels in Oracle Cloud Infrastructure Core service.
@@ -105,12 +104,6 @@ func (o GetVirtualCircuitAssociatedTunnelsResultOutput) ToGetVirtualCircuitAssoc
 
 func (o GetVirtualCircuitAssociatedTunnelsResultOutput) ToGetVirtualCircuitAssociatedTunnelsResultOutputWithContext(ctx context.Context) GetVirtualCircuitAssociatedTunnelsResultOutput {
 	return o
-}
-
-func (o GetVirtualCircuitAssociatedTunnelsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualCircuitAssociatedTunnelsResult] {
-	return pulumix.Output[GetVirtualCircuitAssociatedTunnelsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVirtualCircuitAssociatedTunnelsResultOutput) Filters() GetVirtualCircuitAssociatedTunnelsFilterArrayOutput {

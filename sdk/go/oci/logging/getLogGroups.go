@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Log Groups in Oracle Cloud Infrastructure Logging service.
@@ -119,12 +118,6 @@ func (o GetLogGroupsResultOutput) ToGetLogGroupsResultOutput() GetLogGroupsResul
 
 func (o GetLogGroupsResultOutput) ToGetLogGroupsResultOutputWithContext(ctx context.Context) GetLogGroupsResultOutput {
 	return o
-}
-
-func (o GetLogGroupsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogGroupsResult] {
-	return pulumix.Output[GetLogGroupsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment that the resource belongs to.

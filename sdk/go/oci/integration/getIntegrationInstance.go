@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Integration Instance resource in Oracle Cloud Infrastructure Integration service.
@@ -145,12 +144,6 @@ func (o LookupIntegrationInstanceResultOutput) ToLookupIntegrationInstanceResult
 
 func (o LookupIntegrationInstanceResultOutput) ToLookupIntegrationInstanceResultOutputWithContext(ctx context.Context) LookupIntegrationInstanceResultOutput {
 	return o
-}
-
-func (o LookupIntegrationInstanceResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupIntegrationInstanceResult] {
-	return pulumix.Output[LookupIntegrationInstanceResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of alternate custom endpoints used for the integration instance URL.

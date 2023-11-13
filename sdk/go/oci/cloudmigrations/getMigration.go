@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Migration resource in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -122,12 +121,6 @@ func (o LookupMigrationResultOutput) ToLookupMigrationResultOutput() LookupMigra
 
 func (o LookupMigrationResultOutput) ToLookupMigrationResultOutputWithContext(ctx context.Context) LookupMigrationResultOutput {
 	return o
-}
-
-func (o LookupMigrationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupMigrationResult] {
-	return pulumix.Output[LookupMigrationResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier

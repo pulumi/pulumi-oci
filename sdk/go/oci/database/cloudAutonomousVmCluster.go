@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Cloud Autonomous Vm Cluster resource in Oracle Cloud Infrastructure Database service.
@@ -610,12 +609,6 @@ func (i *CloudAutonomousVmCluster) ToCloudAutonomousVmClusterOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(CloudAutonomousVmClusterOutput)
 }
 
-func (i *CloudAutonomousVmCluster) ToOutput(ctx context.Context) pulumix.Output[*CloudAutonomousVmCluster] {
-	return pulumix.Output[*CloudAutonomousVmCluster]{
-		OutputState: i.ToCloudAutonomousVmClusterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CloudAutonomousVmClusterArrayInput is an input type that accepts CloudAutonomousVmClusterArray and CloudAutonomousVmClusterArrayOutput values.
 // You can construct a concrete instance of `CloudAutonomousVmClusterArrayInput` via:
 //
@@ -639,12 +632,6 @@ func (i CloudAutonomousVmClusterArray) ToCloudAutonomousVmClusterArrayOutput() C
 
 func (i CloudAutonomousVmClusterArray) ToCloudAutonomousVmClusterArrayOutputWithContext(ctx context.Context) CloudAutonomousVmClusterArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudAutonomousVmClusterArrayOutput)
-}
-
-func (i CloudAutonomousVmClusterArray) ToOutput(ctx context.Context) pulumix.Output[[]*CloudAutonomousVmCluster] {
-	return pulumix.Output[[]*CloudAutonomousVmCluster]{
-		OutputState: i.ToCloudAutonomousVmClusterArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CloudAutonomousVmClusterMapInput is an input type that accepts CloudAutonomousVmClusterMap and CloudAutonomousVmClusterMapOutput values.
@@ -672,12 +659,6 @@ func (i CloudAutonomousVmClusterMap) ToCloudAutonomousVmClusterMapOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(CloudAutonomousVmClusterMapOutput)
 }
 
-func (i CloudAutonomousVmClusterMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudAutonomousVmCluster] {
-	return pulumix.Output[map[string]*CloudAutonomousVmCluster]{
-		OutputState: i.ToCloudAutonomousVmClusterMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CloudAutonomousVmClusterOutput struct{ *pulumi.OutputState }
 
 func (CloudAutonomousVmClusterOutput) ElementType() reflect.Type {
@@ -690,12 +671,6 @@ func (o CloudAutonomousVmClusterOutput) ToCloudAutonomousVmClusterOutput() Cloud
 
 func (o CloudAutonomousVmClusterOutput) ToCloudAutonomousVmClusterOutputWithContext(ctx context.Context) CloudAutonomousVmClusterOutput {
 	return o
-}
-
-func (o CloudAutonomousVmClusterOutput) ToOutput(ctx context.Context) pulumix.Output[*CloudAutonomousVmCluster] {
-	return pulumix.Output[*CloudAutonomousVmCluster]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
@@ -988,12 +963,6 @@ func (o CloudAutonomousVmClusterArrayOutput) ToCloudAutonomousVmClusterArrayOutp
 	return o
 }
 
-func (o CloudAutonomousVmClusterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CloudAutonomousVmCluster] {
-	return pulumix.Output[[]*CloudAutonomousVmCluster]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o CloudAutonomousVmClusterArrayOutput) Index(i pulumi.IntInput) CloudAutonomousVmClusterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CloudAutonomousVmCluster {
 		return vs[0].([]*CloudAutonomousVmCluster)[vs[1].(int)]
@@ -1012,12 +981,6 @@ func (o CloudAutonomousVmClusterMapOutput) ToCloudAutonomousVmClusterMapOutput()
 
 func (o CloudAutonomousVmClusterMapOutput) ToCloudAutonomousVmClusterMapOutputWithContext(ctx context.Context) CloudAutonomousVmClusterMapOutput {
 	return o
-}
-
-func (o CloudAutonomousVmClusterMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudAutonomousVmCluster] {
-	return pulumix.Output[map[string]*CloudAutonomousVmCluster]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CloudAutonomousVmClusterMapOutput) MapIndex(k pulumi.StringInput) CloudAutonomousVmClusterOutput {

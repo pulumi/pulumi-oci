@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Drg Attachment resource in Oracle Cloud Infrastructure Core service.
@@ -292,12 +291,6 @@ func (i *DrgAttachment) ToDrgAttachmentOutputWithContext(ctx context.Context) Dr
 	return pulumi.ToOutputWithContext(ctx, i).(DrgAttachmentOutput)
 }
 
-func (i *DrgAttachment) ToOutput(ctx context.Context) pulumix.Output[*DrgAttachment] {
-	return pulumix.Output[*DrgAttachment]{
-		OutputState: i.ToDrgAttachmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrgAttachmentArrayInput is an input type that accepts DrgAttachmentArray and DrgAttachmentArrayOutput values.
 // You can construct a concrete instance of `DrgAttachmentArrayInput` via:
 //
@@ -321,12 +314,6 @@ func (i DrgAttachmentArray) ToDrgAttachmentArrayOutput() DrgAttachmentArrayOutpu
 
 func (i DrgAttachmentArray) ToDrgAttachmentArrayOutputWithContext(ctx context.Context) DrgAttachmentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DrgAttachmentArrayOutput)
-}
-
-func (i DrgAttachmentArray) ToOutput(ctx context.Context) pulumix.Output[[]*DrgAttachment] {
-	return pulumix.Output[[]*DrgAttachment]{
-		OutputState: i.ToDrgAttachmentArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DrgAttachmentMapInput is an input type that accepts DrgAttachmentMap and DrgAttachmentMapOutput values.
@@ -354,12 +341,6 @@ func (i DrgAttachmentMap) ToDrgAttachmentMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(DrgAttachmentMapOutput)
 }
 
-func (i DrgAttachmentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DrgAttachment] {
-	return pulumix.Output[map[string]*DrgAttachment]{
-		OutputState: i.ToDrgAttachmentMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrgAttachmentOutput struct{ *pulumi.OutputState }
 
 func (DrgAttachmentOutput) ElementType() reflect.Type {
@@ -372,12 +353,6 @@ func (o DrgAttachmentOutput) ToDrgAttachmentOutput() DrgAttachmentOutput {
 
 func (o DrgAttachmentOutput) ToDrgAttachmentOutputWithContext(ctx context.Context) DrgAttachmentOutput {
 	return o
-}
-
-func (o DrgAttachmentOutput) ToOutput(ctx context.Context) pulumix.Output[*DrgAttachment] {
-	return pulumix.Output[*DrgAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the DRG attachment.
@@ -475,12 +450,6 @@ func (o DrgAttachmentArrayOutput) ToDrgAttachmentArrayOutputWithContext(ctx cont
 	return o
 }
 
-func (o DrgAttachmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DrgAttachment] {
-	return pulumix.Output[[]*DrgAttachment]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DrgAttachmentArrayOutput) Index(i pulumi.IntInput) DrgAttachmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DrgAttachment {
 		return vs[0].([]*DrgAttachment)[vs[1].(int)]
@@ -499,12 +468,6 @@ func (o DrgAttachmentMapOutput) ToDrgAttachmentMapOutput() DrgAttachmentMapOutpu
 
 func (o DrgAttachmentMapOutput) ToDrgAttachmentMapOutputWithContext(ctx context.Context) DrgAttachmentMapOutput {
 	return o
-}
-
-func (o DrgAttachmentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DrgAttachment] {
-	return pulumix.Output[map[string]*DrgAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrgAttachmentMapOutput) MapIndex(k pulumi.StringInput) DrgAttachmentOutput {

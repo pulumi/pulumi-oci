@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Iam Work Request Logs in Oracle Cloud Infrastructure Identity service.
@@ -109,12 +108,6 @@ func (o GetIamWorkRequestLogsResultOutput) ToGetIamWorkRequestLogsResultOutput()
 
 func (o GetIamWorkRequestLogsResultOutput) ToGetIamWorkRequestLogsResultOutputWithContext(ctx context.Context) GetIamWorkRequestLogsResultOutput {
 	return o
-}
-
-func (o GetIamWorkRequestLogsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIamWorkRequestLogsResult] {
-	return pulumix.Output[GetIamWorkRequestLogsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetIamWorkRequestLogsResultOutput) Filters() GetIamWorkRequestLogsFilterArrayOutput {

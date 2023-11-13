@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Deploy Artifact resource in Oracle Cloud Infrastructure Devops service.
@@ -295,12 +294,6 @@ func (i *DeployArtifact) ToDeployArtifactOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(DeployArtifactOutput)
 }
 
-func (i *DeployArtifact) ToOutput(ctx context.Context) pulumix.Output[*DeployArtifact] {
-	return pulumix.Output[*DeployArtifact]{
-		OutputState: i.ToDeployArtifactOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DeployArtifactArrayInput is an input type that accepts DeployArtifactArray and DeployArtifactArrayOutput values.
 // You can construct a concrete instance of `DeployArtifactArrayInput` via:
 //
@@ -324,12 +317,6 @@ func (i DeployArtifactArray) ToDeployArtifactArrayOutput() DeployArtifactArrayOu
 
 func (i DeployArtifactArray) ToDeployArtifactArrayOutputWithContext(ctx context.Context) DeployArtifactArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DeployArtifactArrayOutput)
-}
-
-func (i DeployArtifactArray) ToOutput(ctx context.Context) pulumix.Output[[]*DeployArtifact] {
-	return pulumix.Output[[]*DeployArtifact]{
-		OutputState: i.ToDeployArtifactArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DeployArtifactMapInput is an input type that accepts DeployArtifactMap and DeployArtifactMapOutput values.
@@ -357,12 +344,6 @@ func (i DeployArtifactMap) ToDeployArtifactMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(DeployArtifactMapOutput)
 }
 
-func (i DeployArtifactMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DeployArtifact] {
-	return pulumix.Output[map[string]*DeployArtifact]{
-		OutputState: i.ToDeployArtifactMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DeployArtifactOutput struct{ *pulumi.OutputState }
 
 func (DeployArtifactOutput) ElementType() reflect.Type {
@@ -375,12 +356,6 @@ func (o DeployArtifactOutput) ToDeployArtifactOutput() DeployArtifactOutput {
 
 func (o DeployArtifactOutput) ToDeployArtifactOutputWithContext(ctx context.Context) DeployArtifactOutput {
 	return o
-}
-
-func (o DeployArtifactOutput) ToOutput(ctx context.Context) pulumix.Output[*DeployArtifact] {
-	return pulumix.Output[*DeployArtifact]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
@@ -470,12 +445,6 @@ func (o DeployArtifactArrayOutput) ToDeployArtifactArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o DeployArtifactArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DeployArtifact] {
-	return pulumix.Output[[]*DeployArtifact]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DeployArtifactArrayOutput) Index(i pulumi.IntInput) DeployArtifactOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DeployArtifact {
 		return vs[0].([]*DeployArtifact)[vs[1].(int)]
@@ -494,12 +463,6 @@ func (o DeployArtifactMapOutput) ToDeployArtifactMapOutput() DeployArtifactMapOu
 
 func (o DeployArtifactMapOutput) ToDeployArtifactMapOutputWithContext(ctx context.Context) DeployArtifactMapOutput {
 	return o
-}
-
-func (o DeployArtifactMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DeployArtifact] {
-	return pulumix.Output[map[string]*DeployArtifact]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DeployArtifactMapOutput) MapIndex(k pulumi.StringInput) DeployArtifactOutput {

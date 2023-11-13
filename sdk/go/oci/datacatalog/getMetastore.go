@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Metastore resource in Oracle Cloud Infrastructure Data Catalog service.
@@ -120,12 +119,6 @@ func (o LookupMetastoreResultOutput) ToLookupMetastoreResultOutput() LookupMetas
 
 func (o LookupMetastoreResultOutput) ToLookupMetastoreResultOutputWithContext(ctx context.Context) LookupMetastoreResultOutput {
 	return o
-}
-
-func (o LookupMetastoreResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupMetastoreResult] {
-	return pulumix.Output[LookupMetastoreResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // OCID of the compartment which holds the metastore.

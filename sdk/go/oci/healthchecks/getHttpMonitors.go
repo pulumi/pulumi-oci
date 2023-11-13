@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Http Monitors in Oracle Cloud Infrastructure Health Checks service.
@@ -120,12 +119,6 @@ func (o GetHttpMonitorsResultOutput) ToGetHttpMonitorsResultOutput() GetHttpMoni
 
 func (o GetHttpMonitorsResultOutput) ToGetHttpMonitorsResultOutputWithContext(ctx context.Context) GetHttpMonitorsResultOutput {
 	return o
-}
-
-func (o GetHttpMonitorsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetHttpMonitorsResult] {
-	return pulumix.Output[GetHttpMonitorsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment.

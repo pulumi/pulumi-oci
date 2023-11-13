@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Management Agent Install Key resource in Oracle Cloud Infrastructure Management Agent service.
@@ -243,12 +242,6 @@ func (i *ManagementAgentInstallKey) ToManagementAgentInstallKeyOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(ManagementAgentInstallKeyOutput)
 }
 
-func (i *ManagementAgentInstallKey) ToOutput(ctx context.Context) pulumix.Output[*ManagementAgentInstallKey] {
-	return pulumix.Output[*ManagementAgentInstallKey]{
-		OutputState: i.ToManagementAgentInstallKeyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ManagementAgentInstallKeyArrayInput is an input type that accepts ManagementAgentInstallKeyArray and ManagementAgentInstallKeyArrayOutput values.
 // You can construct a concrete instance of `ManagementAgentInstallKeyArrayInput` via:
 //
@@ -272,12 +265,6 @@ func (i ManagementAgentInstallKeyArray) ToManagementAgentInstallKeyArrayOutput()
 
 func (i ManagementAgentInstallKeyArray) ToManagementAgentInstallKeyArrayOutputWithContext(ctx context.Context) ManagementAgentInstallKeyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ManagementAgentInstallKeyArrayOutput)
-}
-
-func (i ManagementAgentInstallKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]*ManagementAgentInstallKey] {
-	return pulumix.Output[[]*ManagementAgentInstallKey]{
-		OutputState: i.ToManagementAgentInstallKeyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ManagementAgentInstallKeyMapInput is an input type that accepts ManagementAgentInstallKeyMap and ManagementAgentInstallKeyMapOutput values.
@@ -305,12 +292,6 @@ func (i ManagementAgentInstallKeyMap) ToManagementAgentInstallKeyMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(ManagementAgentInstallKeyMapOutput)
 }
 
-func (i ManagementAgentInstallKeyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagementAgentInstallKey] {
-	return pulumix.Output[map[string]*ManagementAgentInstallKey]{
-		OutputState: i.ToManagementAgentInstallKeyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ManagementAgentInstallKeyOutput struct{ *pulumi.OutputState }
 
 func (ManagementAgentInstallKeyOutput) ElementType() reflect.Type {
@@ -323,12 +304,6 @@ func (o ManagementAgentInstallKeyOutput) ToManagementAgentInstallKeyOutput() Man
 
 func (o ManagementAgentInstallKeyOutput) ToManagementAgentInstallKeyOutputWithContext(ctx context.Context) ManagementAgentInstallKeyOutput {
 	return o
-}
-
-func (o ManagementAgentInstallKeyOutput) ToOutput(ctx context.Context) pulumix.Output[*ManagementAgentInstallKey] {
-	return pulumix.Output[*ManagementAgentInstallKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Total number of install for this keys
@@ -408,12 +383,6 @@ func (o ManagementAgentInstallKeyArrayOutput) ToManagementAgentInstallKeyArrayOu
 	return o
 }
 
-func (o ManagementAgentInstallKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ManagementAgentInstallKey] {
-	return pulumix.Output[[]*ManagementAgentInstallKey]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ManagementAgentInstallKeyArrayOutput) Index(i pulumi.IntInput) ManagementAgentInstallKeyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ManagementAgentInstallKey {
 		return vs[0].([]*ManagementAgentInstallKey)[vs[1].(int)]
@@ -432,12 +401,6 @@ func (o ManagementAgentInstallKeyMapOutput) ToManagementAgentInstallKeyMapOutput
 
 func (o ManagementAgentInstallKeyMapOutput) ToManagementAgentInstallKeyMapOutputWithContext(ctx context.Context) ManagementAgentInstallKeyMapOutput {
 	return o
-}
-
-func (o ManagementAgentInstallKeyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagementAgentInstallKey] {
-	return pulumix.Output[map[string]*ManagementAgentInstallKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagementAgentInstallKeyMapOutput) MapIndex(k pulumi.StringInput) ManagementAgentInstallKeyOutput {

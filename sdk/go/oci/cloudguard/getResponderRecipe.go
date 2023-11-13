@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -128,12 +127,6 @@ func (o LookupResponderRecipeResultOutput) ToLookupResponderRecipeResultOutput()
 
 func (o LookupResponderRecipeResultOutput) ToLookupResponderRecipeResultOutputWithContext(ctx context.Context) LookupResponderRecipeResultOutput {
 	return o
-}
-
-func (o LookupResponderRecipeResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupResponderRecipeResult] {
-	return pulumix.Output[LookupResponderRecipeResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier

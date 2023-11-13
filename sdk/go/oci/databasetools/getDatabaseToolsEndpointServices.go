@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Database Tools Endpoint Services in Oracle Cloud Infrastructure Database Tools service.
@@ -127,12 +126,6 @@ func (o GetDatabaseToolsEndpointServicesResultOutput) ToGetDatabaseToolsEndpoint
 
 func (o GetDatabaseToolsEndpointServicesResultOutput) ToGetDatabaseToolsEndpointServicesResultOutputWithContext(ctx context.Context) GetDatabaseToolsEndpointServicesResultOutput {
 	return o
-}
-
-func (o GetDatabaseToolsEndpointServicesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsEndpointServicesResult] {
-	return pulumix.Output[GetDatabaseToolsEndpointServicesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools Endpoint Service.

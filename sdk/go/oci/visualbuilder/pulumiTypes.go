@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -55,12 +54,6 @@ func (i VbInstanceAlternateCustomEndpointArgs) ToVbInstanceAlternateCustomEndpoi
 	return pulumi.ToOutputWithContext(ctx, i).(VbInstanceAlternateCustomEndpointOutput)
 }
 
-func (i VbInstanceAlternateCustomEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[VbInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[VbInstanceAlternateCustomEndpoint]{
-		OutputState: i.ToVbInstanceAlternateCustomEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VbInstanceAlternateCustomEndpointArrayInput is an input type that accepts VbInstanceAlternateCustomEndpointArray and VbInstanceAlternateCustomEndpointArrayOutput values.
 // You can construct a concrete instance of `VbInstanceAlternateCustomEndpointArrayInput` via:
 //
@@ -86,12 +79,6 @@ func (i VbInstanceAlternateCustomEndpointArray) ToVbInstanceAlternateCustomEndpo
 	return pulumi.ToOutputWithContext(ctx, i).(VbInstanceAlternateCustomEndpointArrayOutput)
 }
 
-func (i VbInstanceAlternateCustomEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]VbInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[[]VbInstanceAlternateCustomEndpoint]{
-		OutputState: i.ToVbInstanceAlternateCustomEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VbInstanceAlternateCustomEndpointOutput struct{ *pulumi.OutputState }
 
 func (VbInstanceAlternateCustomEndpointOutput) ElementType() reflect.Type {
@@ -104,12 +91,6 @@ func (o VbInstanceAlternateCustomEndpointOutput) ToVbInstanceAlternateCustomEndp
 
 func (o VbInstanceAlternateCustomEndpointOutput) ToVbInstanceAlternateCustomEndpointOutputWithContext(ctx context.Context) VbInstanceAlternateCustomEndpointOutput {
 	return o
-}
-
-func (o VbInstanceAlternateCustomEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[VbInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[VbInstanceAlternateCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
@@ -139,12 +120,6 @@ func (o VbInstanceAlternateCustomEndpointArrayOutput) ToVbInstanceAlternateCusto
 
 func (o VbInstanceAlternateCustomEndpointArrayOutput) ToVbInstanceAlternateCustomEndpointArrayOutputWithContext(ctx context.Context) VbInstanceAlternateCustomEndpointArrayOutput {
 	return o
-}
-
-func (o VbInstanceAlternateCustomEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]VbInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[[]VbInstanceAlternateCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VbInstanceAlternateCustomEndpointArrayOutput) Index(i pulumi.IntInput) VbInstanceAlternateCustomEndpointOutput {
@@ -204,12 +179,6 @@ func (i VbInstanceAttachmentArgs) ToVbInstanceAttachmentOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(VbInstanceAttachmentOutput)
 }
 
-func (i VbInstanceAttachmentArgs) ToOutput(ctx context.Context) pulumix.Output[VbInstanceAttachment] {
-	return pulumix.Output[VbInstanceAttachment]{
-		OutputState: i.ToVbInstanceAttachmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VbInstanceAttachmentArrayInput is an input type that accepts VbInstanceAttachmentArray and VbInstanceAttachmentArrayOutput values.
 // You can construct a concrete instance of `VbInstanceAttachmentArrayInput` via:
 //
@@ -235,12 +204,6 @@ func (i VbInstanceAttachmentArray) ToVbInstanceAttachmentArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(VbInstanceAttachmentArrayOutput)
 }
 
-func (i VbInstanceAttachmentArray) ToOutput(ctx context.Context) pulumix.Output[[]VbInstanceAttachment] {
-	return pulumix.Output[[]VbInstanceAttachment]{
-		OutputState: i.ToVbInstanceAttachmentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VbInstanceAttachmentOutput struct{ *pulumi.OutputState }
 
 func (VbInstanceAttachmentOutput) ElementType() reflect.Type {
@@ -253,12 +216,6 @@ func (o VbInstanceAttachmentOutput) ToVbInstanceAttachmentOutput() VbInstanceAtt
 
 func (o VbInstanceAttachmentOutput) ToVbInstanceAttachmentOutputWithContext(ctx context.Context) VbInstanceAttachmentOutput {
 	return o
-}
-
-func (o VbInstanceAttachmentOutput) ToOutput(ctx context.Context) pulumix.Output[VbInstanceAttachment] {
-	return pulumix.Output[VbInstanceAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 // * If role == `PARENT`, the attached instance was created by this service instance
@@ -299,12 +256,6 @@ func (o VbInstanceAttachmentArrayOutput) ToVbInstanceAttachmentArrayOutput() VbI
 
 func (o VbInstanceAttachmentArrayOutput) ToVbInstanceAttachmentArrayOutputWithContext(ctx context.Context) VbInstanceAttachmentArrayOutput {
 	return o
-}
-
-func (o VbInstanceAttachmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]VbInstanceAttachment] {
-	return pulumix.Output[[]VbInstanceAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VbInstanceAttachmentArrayOutput) Index(i pulumi.IntInput) VbInstanceAttachmentOutput {
@@ -354,12 +305,6 @@ func (i VbInstanceCustomEndpointArgs) ToVbInstanceCustomEndpointOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(VbInstanceCustomEndpointOutput)
 }
 
-func (i VbInstanceCustomEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[VbInstanceCustomEndpoint] {
-	return pulumix.Output[VbInstanceCustomEndpoint]{
-		OutputState: i.ToVbInstanceCustomEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i VbInstanceCustomEndpointArgs) ToVbInstanceCustomEndpointPtrOutput() VbInstanceCustomEndpointPtrOutput {
 	return i.ToVbInstanceCustomEndpointPtrOutputWithContext(context.Background())
 }
@@ -401,12 +346,6 @@ func (i *vbInstanceCustomEndpointPtrType) ToVbInstanceCustomEndpointPtrOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(VbInstanceCustomEndpointPtrOutput)
 }
 
-func (i *vbInstanceCustomEndpointPtrType) ToOutput(ctx context.Context) pulumix.Output[*VbInstanceCustomEndpoint] {
-	return pulumix.Output[*VbInstanceCustomEndpoint]{
-		OutputState: i.ToVbInstanceCustomEndpointPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VbInstanceCustomEndpointOutput struct{ *pulumi.OutputState }
 
 func (VbInstanceCustomEndpointOutput) ElementType() reflect.Type {
@@ -429,12 +368,6 @@ func (o VbInstanceCustomEndpointOutput) ToVbInstanceCustomEndpointPtrOutputWithC
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v VbInstanceCustomEndpoint) *VbInstanceCustomEndpoint {
 		return &v
 	}).(VbInstanceCustomEndpointPtrOutput)
-}
-
-func (o VbInstanceCustomEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[VbInstanceCustomEndpoint] {
-	return pulumix.Output[VbInstanceCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
@@ -464,12 +397,6 @@ func (o VbInstanceCustomEndpointPtrOutput) ToVbInstanceCustomEndpointPtrOutput()
 
 func (o VbInstanceCustomEndpointPtrOutput) ToVbInstanceCustomEndpointPtrOutputWithContext(ctx context.Context) VbInstanceCustomEndpointPtrOutput {
 	return o
-}
-
-func (o VbInstanceCustomEndpointPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*VbInstanceCustomEndpoint] {
-	return pulumix.Output[*VbInstanceCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VbInstanceCustomEndpointPtrOutput) Elem() VbInstanceCustomEndpointOutput {
@@ -561,12 +488,6 @@ func (i VbInstanceIdcsInfoArgs) ToVbInstanceIdcsInfoOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(VbInstanceIdcsInfoOutput)
 }
 
-func (i VbInstanceIdcsInfoArgs) ToOutput(ctx context.Context) pulumix.Output[VbInstanceIdcsInfo] {
-	return pulumix.Output[VbInstanceIdcsInfo]{
-		OutputState: i.ToVbInstanceIdcsInfoOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VbInstanceIdcsInfoArrayInput is an input type that accepts VbInstanceIdcsInfoArray and VbInstanceIdcsInfoArrayOutput values.
 // You can construct a concrete instance of `VbInstanceIdcsInfoArrayInput` via:
 //
@@ -592,12 +513,6 @@ func (i VbInstanceIdcsInfoArray) ToVbInstanceIdcsInfoArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(VbInstanceIdcsInfoArrayOutput)
 }
 
-func (i VbInstanceIdcsInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]VbInstanceIdcsInfo] {
-	return pulumix.Output[[]VbInstanceIdcsInfo]{
-		OutputState: i.ToVbInstanceIdcsInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VbInstanceIdcsInfoOutput struct{ *pulumi.OutputState }
 
 func (VbInstanceIdcsInfoOutput) ElementType() reflect.Type {
@@ -610,12 +525,6 @@ func (o VbInstanceIdcsInfoOutput) ToVbInstanceIdcsInfoOutput() VbInstanceIdcsInf
 
 func (o VbInstanceIdcsInfoOutput) ToVbInstanceIdcsInfoOutputWithContext(ctx context.Context) VbInstanceIdcsInfoOutput {
 	return o
-}
-
-func (o VbInstanceIdcsInfoOutput) ToOutput(ctx context.Context) pulumix.Output[VbInstanceIdcsInfo] {
-	return pulumix.Output[VbInstanceIdcsInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The IDCS application display name associated with the instance
@@ -655,12 +564,6 @@ func (o VbInstanceIdcsInfoArrayOutput) ToVbInstanceIdcsInfoArrayOutput() VbInsta
 
 func (o VbInstanceIdcsInfoArrayOutput) ToVbInstanceIdcsInfoArrayOutputWithContext(ctx context.Context) VbInstanceIdcsInfoArrayOutput {
 	return o
-}
-
-func (o VbInstanceIdcsInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]VbInstanceIdcsInfo] {
-	return pulumix.Output[[]VbInstanceIdcsInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VbInstanceIdcsInfoArrayOutput) Index(i pulumi.IntInput) VbInstanceIdcsInfoOutput {
@@ -710,12 +613,6 @@ func (i GetVbInstanceAlternateCustomEndpointArgs) ToGetVbInstanceAlternateCustom
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceAlternateCustomEndpointOutput)
 }
 
-func (i GetVbInstanceAlternateCustomEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetVbInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[GetVbInstanceAlternateCustomEndpoint]{
-		OutputState: i.ToGetVbInstanceAlternateCustomEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVbInstanceAlternateCustomEndpointArrayInput is an input type that accepts GetVbInstanceAlternateCustomEndpointArray and GetVbInstanceAlternateCustomEndpointArrayOutput values.
 // You can construct a concrete instance of `GetVbInstanceAlternateCustomEndpointArrayInput` via:
 //
@@ -741,12 +638,6 @@ func (i GetVbInstanceAlternateCustomEndpointArray) ToGetVbInstanceAlternateCusto
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceAlternateCustomEndpointArrayOutput)
 }
 
-func (i GetVbInstanceAlternateCustomEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[[]GetVbInstanceAlternateCustomEndpoint]{
-		OutputState: i.ToGetVbInstanceAlternateCustomEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVbInstanceAlternateCustomEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetVbInstanceAlternateCustomEndpointOutput) ElementType() reflect.Type {
@@ -759,12 +650,6 @@ func (o GetVbInstanceAlternateCustomEndpointOutput) ToGetVbInstanceAlternateCust
 
 func (o GetVbInstanceAlternateCustomEndpointOutput) ToGetVbInstanceAlternateCustomEndpointOutputWithContext(ctx context.Context) GetVbInstanceAlternateCustomEndpointOutput {
 	return o
-}
-
-func (o GetVbInstanceAlternateCustomEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetVbInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[GetVbInstanceAlternateCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
@@ -794,12 +679,6 @@ func (o GetVbInstanceAlternateCustomEndpointArrayOutput) ToGetVbInstanceAlternat
 
 func (o GetVbInstanceAlternateCustomEndpointArrayOutput) ToGetVbInstanceAlternateCustomEndpointArrayOutputWithContext(ctx context.Context) GetVbInstanceAlternateCustomEndpointArrayOutput {
 	return o
-}
-
-func (o GetVbInstanceAlternateCustomEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[[]GetVbInstanceAlternateCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVbInstanceAlternateCustomEndpointArrayOutput) Index(i pulumi.IntInput) GetVbInstanceAlternateCustomEndpointOutput {
@@ -839,12 +718,6 @@ func (i GetVbInstanceApplicationsApplicationSummaryCollectionArgs) ToGetVbInstan
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceApplicationsApplicationSummaryCollectionOutput)
 }
 
-func (i GetVbInstanceApplicationsApplicationSummaryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetVbInstanceApplicationsApplicationSummaryCollection] {
-	return pulumix.Output[GetVbInstanceApplicationsApplicationSummaryCollection]{
-		OutputState: i.ToGetVbInstanceApplicationsApplicationSummaryCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVbInstanceApplicationsApplicationSummaryCollectionArrayInput is an input type that accepts GetVbInstanceApplicationsApplicationSummaryCollectionArray and GetVbInstanceApplicationsApplicationSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetVbInstanceApplicationsApplicationSummaryCollectionArrayInput` via:
 //
@@ -870,12 +743,6 @@ func (i GetVbInstanceApplicationsApplicationSummaryCollectionArray) ToGetVbInsta
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceApplicationsApplicationSummaryCollectionArrayOutput)
 }
 
-func (i GetVbInstanceApplicationsApplicationSummaryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstanceApplicationsApplicationSummaryCollection] {
-	return pulumix.Output[[]GetVbInstanceApplicationsApplicationSummaryCollection]{
-		OutputState: i.ToGetVbInstanceApplicationsApplicationSummaryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVbInstanceApplicationsApplicationSummaryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetVbInstanceApplicationsApplicationSummaryCollectionOutput) ElementType() reflect.Type {
@@ -888,12 +755,6 @@ func (o GetVbInstanceApplicationsApplicationSummaryCollectionOutput) ToGetVbInst
 
 func (o GetVbInstanceApplicationsApplicationSummaryCollectionOutput) ToGetVbInstanceApplicationsApplicationSummaryCollectionOutputWithContext(ctx context.Context) GetVbInstanceApplicationsApplicationSummaryCollectionOutput {
 	return o
-}
-
-func (o GetVbInstanceApplicationsApplicationSummaryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetVbInstanceApplicationsApplicationSummaryCollection] {
-	return pulumix.Output[GetVbInstanceApplicationsApplicationSummaryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVbInstanceApplicationsApplicationSummaryCollectionOutput) Items() GetVbInstanceApplicationsApplicationSummaryCollectionItemArrayOutput {
@@ -914,12 +775,6 @@ func (o GetVbInstanceApplicationsApplicationSummaryCollectionArrayOutput) ToGetV
 
 func (o GetVbInstanceApplicationsApplicationSummaryCollectionArrayOutput) ToGetVbInstanceApplicationsApplicationSummaryCollectionArrayOutputWithContext(ctx context.Context) GetVbInstanceApplicationsApplicationSummaryCollectionArrayOutput {
 	return o
-}
-
-func (o GetVbInstanceApplicationsApplicationSummaryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstanceApplicationsApplicationSummaryCollection] {
-	return pulumix.Output[[]GetVbInstanceApplicationsApplicationSummaryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVbInstanceApplicationsApplicationSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetVbInstanceApplicationsApplicationSummaryCollectionOutput {
@@ -973,12 +828,6 @@ func (i GetVbInstanceApplicationsApplicationSummaryCollectionItemArgs) ToGetVbIn
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceApplicationsApplicationSummaryCollectionItemOutput)
 }
 
-func (i GetVbInstanceApplicationsApplicationSummaryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetVbInstanceApplicationsApplicationSummaryCollectionItem] {
-	return pulumix.Output[GetVbInstanceApplicationsApplicationSummaryCollectionItem]{
-		OutputState: i.ToGetVbInstanceApplicationsApplicationSummaryCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVbInstanceApplicationsApplicationSummaryCollectionItemArrayInput is an input type that accepts GetVbInstanceApplicationsApplicationSummaryCollectionItemArray and GetVbInstanceApplicationsApplicationSummaryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetVbInstanceApplicationsApplicationSummaryCollectionItemArrayInput` via:
 //
@@ -1004,12 +853,6 @@ func (i GetVbInstanceApplicationsApplicationSummaryCollectionItemArray) ToGetVbI
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceApplicationsApplicationSummaryCollectionItemArrayOutput)
 }
 
-func (i GetVbInstanceApplicationsApplicationSummaryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstanceApplicationsApplicationSummaryCollectionItem] {
-	return pulumix.Output[[]GetVbInstanceApplicationsApplicationSummaryCollectionItem]{
-		OutputState: i.ToGetVbInstanceApplicationsApplicationSummaryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVbInstanceApplicationsApplicationSummaryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetVbInstanceApplicationsApplicationSummaryCollectionItemOutput) ElementType() reflect.Type {
@@ -1022,12 +865,6 @@ func (o GetVbInstanceApplicationsApplicationSummaryCollectionItemOutput) ToGetVb
 
 func (o GetVbInstanceApplicationsApplicationSummaryCollectionItemOutput) ToGetVbInstanceApplicationsApplicationSummaryCollectionItemOutputWithContext(ctx context.Context) GetVbInstanceApplicationsApplicationSummaryCollectionItemOutput {
 	return o
-}
-
-func (o GetVbInstanceApplicationsApplicationSummaryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetVbInstanceApplicationsApplicationSummaryCollectionItem] {
-	return pulumix.Output[GetVbInstanceApplicationsApplicationSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The Visual Builder application identifier.
@@ -1062,12 +899,6 @@ func (o GetVbInstanceApplicationsApplicationSummaryCollectionItemArrayOutput) To
 
 func (o GetVbInstanceApplicationsApplicationSummaryCollectionItemArrayOutput) ToGetVbInstanceApplicationsApplicationSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetVbInstanceApplicationsApplicationSummaryCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetVbInstanceApplicationsApplicationSummaryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstanceApplicationsApplicationSummaryCollectionItem] {
-	return pulumix.Output[[]GetVbInstanceApplicationsApplicationSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVbInstanceApplicationsApplicationSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetVbInstanceApplicationsApplicationSummaryCollectionItemOutput {
@@ -1127,12 +958,6 @@ func (i GetVbInstanceAttachmentArgs) ToGetVbInstanceAttachmentOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceAttachmentOutput)
 }
 
-func (i GetVbInstanceAttachmentArgs) ToOutput(ctx context.Context) pulumix.Output[GetVbInstanceAttachment] {
-	return pulumix.Output[GetVbInstanceAttachment]{
-		OutputState: i.ToGetVbInstanceAttachmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVbInstanceAttachmentArrayInput is an input type that accepts GetVbInstanceAttachmentArray and GetVbInstanceAttachmentArrayOutput values.
 // You can construct a concrete instance of `GetVbInstanceAttachmentArrayInput` via:
 //
@@ -1158,12 +983,6 @@ func (i GetVbInstanceAttachmentArray) ToGetVbInstanceAttachmentArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceAttachmentArrayOutput)
 }
 
-func (i GetVbInstanceAttachmentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstanceAttachment] {
-	return pulumix.Output[[]GetVbInstanceAttachment]{
-		OutputState: i.ToGetVbInstanceAttachmentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVbInstanceAttachmentOutput struct{ *pulumi.OutputState }
 
 func (GetVbInstanceAttachmentOutput) ElementType() reflect.Type {
@@ -1176,12 +995,6 @@ func (o GetVbInstanceAttachmentOutput) ToGetVbInstanceAttachmentOutput() GetVbIn
 
 func (o GetVbInstanceAttachmentOutput) ToGetVbInstanceAttachmentOutputWithContext(ctx context.Context) GetVbInstanceAttachmentOutput {
 	return o
-}
-
-func (o GetVbInstanceAttachmentOutput) ToOutput(ctx context.Context) pulumix.Output[GetVbInstanceAttachment] {
-	return pulumix.Output[GetVbInstanceAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 // * If role == `PARENT`, the attached instance was created by this service instance
@@ -1222,12 +1035,6 @@ func (o GetVbInstanceAttachmentArrayOutput) ToGetVbInstanceAttachmentArrayOutput
 
 func (o GetVbInstanceAttachmentArrayOutput) ToGetVbInstanceAttachmentArrayOutputWithContext(ctx context.Context) GetVbInstanceAttachmentArrayOutput {
 	return o
-}
-
-func (o GetVbInstanceAttachmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstanceAttachment] {
-	return pulumix.Output[[]GetVbInstanceAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVbInstanceAttachmentArrayOutput) Index(i pulumi.IntInput) GetVbInstanceAttachmentOutput {
@@ -1277,12 +1084,6 @@ func (i GetVbInstanceCustomEndpointArgs) ToGetVbInstanceCustomEndpointOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceCustomEndpointOutput)
 }
 
-func (i GetVbInstanceCustomEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetVbInstanceCustomEndpoint] {
-	return pulumix.Output[GetVbInstanceCustomEndpoint]{
-		OutputState: i.ToGetVbInstanceCustomEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVbInstanceCustomEndpointArrayInput is an input type that accepts GetVbInstanceCustomEndpointArray and GetVbInstanceCustomEndpointArrayOutput values.
 // You can construct a concrete instance of `GetVbInstanceCustomEndpointArrayInput` via:
 //
@@ -1308,12 +1109,6 @@ func (i GetVbInstanceCustomEndpointArray) ToGetVbInstanceCustomEndpointArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceCustomEndpointArrayOutput)
 }
 
-func (i GetVbInstanceCustomEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstanceCustomEndpoint] {
-	return pulumix.Output[[]GetVbInstanceCustomEndpoint]{
-		OutputState: i.ToGetVbInstanceCustomEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVbInstanceCustomEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetVbInstanceCustomEndpointOutput) ElementType() reflect.Type {
@@ -1326,12 +1121,6 @@ func (o GetVbInstanceCustomEndpointOutput) ToGetVbInstanceCustomEndpointOutput()
 
 func (o GetVbInstanceCustomEndpointOutput) ToGetVbInstanceCustomEndpointOutputWithContext(ctx context.Context) GetVbInstanceCustomEndpointOutput {
 	return o
-}
-
-func (o GetVbInstanceCustomEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetVbInstanceCustomEndpoint] {
-	return pulumix.Output[GetVbInstanceCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
@@ -1361,12 +1150,6 @@ func (o GetVbInstanceCustomEndpointArrayOutput) ToGetVbInstanceCustomEndpointArr
 
 func (o GetVbInstanceCustomEndpointArrayOutput) ToGetVbInstanceCustomEndpointArrayOutputWithContext(ctx context.Context) GetVbInstanceCustomEndpointArrayOutput {
 	return o
-}
-
-func (o GetVbInstanceCustomEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstanceCustomEndpoint] {
-	return pulumix.Output[[]GetVbInstanceCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVbInstanceCustomEndpointArrayOutput) Index(i pulumi.IntInput) GetVbInstanceCustomEndpointOutput {
@@ -1424,12 +1207,6 @@ func (i GetVbInstanceIdcsInfoArgs) ToGetVbInstanceIdcsInfoOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceIdcsInfoOutput)
 }
 
-func (i GetVbInstanceIdcsInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetVbInstanceIdcsInfo] {
-	return pulumix.Output[GetVbInstanceIdcsInfo]{
-		OutputState: i.ToGetVbInstanceIdcsInfoOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVbInstanceIdcsInfoArrayInput is an input type that accepts GetVbInstanceIdcsInfoArray and GetVbInstanceIdcsInfoArrayOutput values.
 // You can construct a concrete instance of `GetVbInstanceIdcsInfoArrayInput` via:
 //
@@ -1455,12 +1232,6 @@ func (i GetVbInstanceIdcsInfoArray) ToGetVbInstanceIdcsInfoArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceIdcsInfoArrayOutput)
 }
 
-func (i GetVbInstanceIdcsInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstanceIdcsInfo] {
-	return pulumix.Output[[]GetVbInstanceIdcsInfo]{
-		OutputState: i.ToGetVbInstanceIdcsInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVbInstanceIdcsInfoOutput struct{ *pulumi.OutputState }
 
 func (GetVbInstanceIdcsInfoOutput) ElementType() reflect.Type {
@@ -1473,12 +1244,6 @@ func (o GetVbInstanceIdcsInfoOutput) ToGetVbInstanceIdcsInfoOutput() GetVbInstan
 
 func (o GetVbInstanceIdcsInfoOutput) ToGetVbInstanceIdcsInfoOutputWithContext(ctx context.Context) GetVbInstanceIdcsInfoOutput {
 	return o
-}
-
-func (o GetVbInstanceIdcsInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetVbInstanceIdcsInfo] {
-	return pulumix.Output[GetVbInstanceIdcsInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The IDCS application display name associated with the instance
@@ -1518,12 +1283,6 @@ func (o GetVbInstanceIdcsInfoArrayOutput) ToGetVbInstanceIdcsInfoArrayOutput() G
 
 func (o GetVbInstanceIdcsInfoArrayOutput) ToGetVbInstanceIdcsInfoArrayOutputWithContext(ctx context.Context) GetVbInstanceIdcsInfoArrayOutput {
 	return o
-}
-
-func (o GetVbInstanceIdcsInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstanceIdcsInfo] {
-	return pulumix.Output[[]GetVbInstanceIdcsInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVbInstanceIdcsInfoArrayOutput) Index(i pulumi.IntInput) GetVbInstanceIdcsInfoOutput {
@@ -1567,12 +1326,6 @@ func (i GetVbInstancesFilterArgs) ToGetVbInstancesFilterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesFilterOutput)
 }
 
-func (i GetVbInstancesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVbInstancesFilter] {
-	return pulumix.Output[GetVbInstancesFilter]{
-		OutputState: i.ToGetVbInstancesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVbInstancesFilterArrayInput is an input type that accepts GetVbInstancesFilterArray and GetVbInstancesFilterArrayOutput values.
 // You can construct a concrete instance of `GetVbInstancesFilterArrayInput` via:
 //
@@ -1598,12 +1351,6 @@ func (i GetVbInstancesFilterArray) ToGetVbInstancesFilterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesFilterArrayOutput)
 }
 
-func (i GetVbInstancesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstancesFilter] {
-	return pulumix.Output[[]GetVbInstancesFilter]{
-		OutputState: i.ToGetVbInstancesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVbInstancesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVbInstancesFilterOutput) ElementType() reflect.Type {
@@ -1616,12 +1363,6 @@ func (o GetVbInstancesFilterOutput) ToGetVbInstancesFilterOutput() GetVbInstance
 
 func (o GetVbInstancesFilterOutput) ToGetVbInstancesFilterOutputWithContext(ctx context.Context) GetVbInstancesFilterOutput {
 	return o
-}
-
-func (o GetVbInstancesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVbInstancesFilter] {
-	return pulumix.Output[GetVbInstancesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVbInstancesFilterOutput) Name() pulumi.StringOutput {
@@ -1648,12 +1389,6 @@ func (o GetVbInstancesFilterArrayOutput) ToGetVbInstancesFilterArrayOutput() Get
 
 func (o GetVbInstancesFilterArrayOutput) ToGetVbInstancesFilterArrayOutputWithContext(ctx context.Context) GetVbInstancesFilterArrayOutput {
 	return o
-}
-
-func (o GetVbInstancesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstancesFilter] {
-	return pulumix.Output[[]GetVbInstancesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVbInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetVbInstancesFilterOutput {
@@ -1693,12 +1428,6 @@ func (i GetVbInstancesVbInstanceSummaryCollectionArgs) ToGetVbInstancesVbInstanc
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionOutput)
 }
 
-func (i GetVbInstancesVbInstanceSummaryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetVbInstancesVbInstanceSummaryCollection] {
-	return pulumix.Output[GetVbInstancesVbInstanceSummaryCollection]{
-		OutputState: i.ToGetVbInstancesVbInstanceSummaryCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVbInstancesVbInstanceSummaryCollectionArrayInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionArray and GetVbInstancesVbInstanceSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetVbInstancesVbInstanceSummaryCollectionArrayInput` via:
 //
@@ -1724,12 +1453,6 @@ func (i GetVbInstancesVbInstanceSummaryCollectionArray) ToGetVbInstancesVbInstan
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionArrayOutput)
 }
 
-func (i GetVbInstancesVbInstanceSummaryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollection] {
-	return pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollection]{
-		OutputState: i.ToGetVbInstancesVbInstanceSummaryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVbInstancesVbInstanceSummaryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetVbInstancesVbInstanceSummaryCollectionOutput) ElementType() reflect.Type {
@@ -1742,12 +1465,6 @@ func (o GetVbInstancesVbInstanceSummaryCollectionOutput) ToGetVbInstancesVbInsta
 
 func (o GetVbInstancesVbInstanceSummaryCollectionOutput) ToGetVbInstancesVbInstanceSummaryCollectionOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionOutput {
 	return o
-}
-
-func (o GetVbInstancesVbInstanceSummaryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetVbInstancesVbInstanceSummaryCollection] {
-	return pulumix.Output[GetVbInstancesVbInstanceSummaryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVbInstancesVbInstanceSummaryCollectionOutput) Items() GetVbInstancesVbInstanceSummaryCollectionItemArrayOutput {
@@ -1768,12 +1485,6 @@ func (o GetVbInstancesVbInstanceSummaryCollectionArrayOutput) ToGetVbInstancesVb
 
 func (o GetVbInstancesVbInstanceSummaryCollectionArrayOutput) ToGetVbInstancesVbInstanceSummaryCollectionArrayOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionArrayOutput {
 	return o
-}
-
-func (o GetVbInstancesVbInstanceSummaryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollection] {
-	return pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVbInstancesVbInstanceSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetVbInstancesVbInstanceSummaryCollectionOutput {
@@ -1901,12 +1612,6 @@ func (i GetVbInstancesVbInstanceSummaryCollectionItemArgs) ToGetVbInstancesVbIns
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionItemOutput)
 }
 
-func (i GetVbInstancesVbInstanceSummaryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItem] {
-	return pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItem]{
-		OutputState: i.ToGetVbInstancesVbInstanceSummaryCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVbInstancesVbInstanceSummaryCollectionItemArrayInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemArray and GetVbInstancesVbInstanceSummaryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetVbInstancesVbInstanceSummaryCollectionItemArrayInput` via:
 //
@@ -1932,12 +1637,6 @@ func (i GetVbInstancesVbInstanceSummaryCollectionItemArray) ToGetVbInstancesVbIn
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionItemArrayOutput)
 }
 
-func (i GetVbInstancesVbInstanceSummaryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItem] {
-	return pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItem]{
-		OutputState: i.ToGetVbInstancesVbInstanceSummaryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVbInstancesVbInstanceSummaryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetVbInstancesVbInstanceSummaryCollectionItemOutput) ElementType() reflect.Type {
@@ -1950,12 +1649,6 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) ToGetVbInstancesVbI
 
 func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemOutput {
 	return o
-}
-
-func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItem] {
-	return pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of alternate custom endpoints used for the vb instance URL.
@@ -2094,12 +1787,6 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemArrayOutput) ToGetVbInstanc
 	return o
 }
 
-func (o GetVbInstancesVbInstanceSummaryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItem] {
-	return pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVbInstancesVbInstanceSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetVbInstancesVbInstanceSummaryCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVbInstancesVbInstanceSummaryCollectionItem {
 		return vs[0].([]GetVbInstancesVbInstanceSummaryCollectionItem)[vs[1].(int)]
@@ -2147,12 +1834,6 @@ func (i GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArgs
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointOutput)
 }
 
-func (i GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint] {
-	return pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint]{
-		OutputState: i.ToGetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArrayInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArray and GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArrayOutput values.
 // You can construct a concrete instance of `GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArrayInput` via:
 //
@@ -2178,12 +1859,6 @@ func (i GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArrayOutput)
 }
 
-func (i GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint] {
-	return pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint]{
-		OutputState: i.ToGetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointOutput) ElementType() reflect.Type {
@@ -2196,12 +1871,6 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointOutp
 
 func (o GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointOutput {
 	return o
-}
-
-func (o GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint] {
-	return pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
@@ -2235,12 +1904,6 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArra
 
 func (o GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArrayOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArrayOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArrayOutput {
 	return o
-}
-
-func (o GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint] {
-	return pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArrayOutput) Index(i pulumi.IntInput) GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointOutput {
@@ -2300,12 +1963,6 @@ func (i GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArgs) ToGetVbInst
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput)
 }
 
-func (i GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArgs) ToOutput(ctx context.Context) pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItemAttachment] {
-	return pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItemAttachment]{
-		OutputState: i.ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArray and GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput values.
 // You can construct a concrete instance of `GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayInput` via:
 //
@@ -2331,12 +1988,6 @@ func (i GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArray) ToGetVbIns
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput)
 }
 
-func (i GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItemAttachment] {
-	return pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItemAttachment]{
-		OutputState: i.ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput struct{ *pulumi.OutputState }
 
 func (GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) ElementType() reflect.Type {
@@ -2349,12 +2000,6 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) ToGetVbIn
 
 func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput {
 	return o
-}
-
-func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) ToOutput(ctx context.Context) pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItemAttachment] {
-	return pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItemAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 // * If role == `PARENT`, the attached instance was created by this service instance
@@ -2395,12 +2040,6 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput) ToGe
 
 func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput {
 	return o
-}
-
-func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItemAttachment] {
-	return pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItemAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput) Index(i pulumi.IntInput) GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput {
@@ -2450,12 +2089,6 @@ func (i GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArgs) ToGetVb
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointOutput)
 }
 
-func (i GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint] {
-	return pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint]{
-		OutputState: i.ToGetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArray and GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayOutput values.
 // You can construct a concrete instance of `GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayInput` via:
 //
@@ -2481,12 +2114,6 @@ func (i GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArray) ToGetV
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayOutput)
 }
 
-func (i GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint] {
-	return pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint]{
-		OutputState: i.ToGetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointOutput) ElementType() reflect.Type {
@@ -2499,12 +2126,6 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointOutput) ToGet
 
 func (o GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointOutput {
 	return o
-}
-
-func (o GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint] {
-	return pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
@@ -2538,12 +2159,6 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayOutput) 
 
 func (o GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayOutput {
 	return o
-}
-
-func (o GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint] {
-	return pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayOutput) Index(i pulumi.IntInput) GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointOutput {
@@ -2601,12 +2216,6 @@ func (i GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArgs) ToGetVbInstan
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput)
 }
 
-func (i GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo] {
-	return pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo]{
-		OutputState: i.ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArray and GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput values.
 // You can construct a concrete instance of `GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayInput` via:
 //
@@ -2632,12 +2241,6 @@ func (i GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArray) ToGetVbInsta
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput)
 }
 
-func (i GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo] {
-	return pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo]{
-		OutputState: i.ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput struct{ *pulumi.OutputState }
 
 func (GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) ElementType() reflect.Type {
@@ -2650,12 +2253,6 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) ToGetVbInst
 
 func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput {
 	return o
-}
-
-func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo] {
-	return pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The IDCS application display name associated with the instance
@@ -2697,12 +2294,6 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput) ToGetV
 
 func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput {
 	return o
-}
-
-func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo] {
-	return pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput) Index(i pulumi.IntInput) GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Compatible Formats For Data Type resource in Oracle Cloud Infrastructure Data Safe service.
@@ -87,12 +86,6 @@ func (o GetCompatibleFormatsForDataTypeResultOutput) ToGetCompatibleFormatsForDa
 
 func (o GetCompatibleFormatsForDataTypeResultOutput) ToGetCompatibleFormatsForDataTypeResultOutputWithContext(ctx context.Context) GetCompatibleFormatsForDataTypeResultOutput {
 	return o
-}
-
-func (o GetCompatibleFormatsForDataTypeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCompatibleFormatsForDataTypeResult] {
-	return pulumix.Output[GetCompatibleFormatsForDataTypeResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An array of lists of basic masking formats compatible with the supported data types.

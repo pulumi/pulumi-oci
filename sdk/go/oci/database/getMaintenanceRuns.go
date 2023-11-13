@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Maintenance Runs in Oracle Cloud Infrastructure Database service.
@@ -147,12 +146,6 @@ func (o GetMaintenanceRunsResultOutput) ToGetMaintenanceRunsResultOutput() GetMa
 
 func (o GetMaintenanceRunsResultOutput) ToGetMaintenanceRunsResultOutputWithContext(ctx context.Context) GetMaintenanceRunsResultOutput {
 	return o
-}
-
-func (o GetMaintenanceRunsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaintenanceRunsResult] {
-	return pulumix.Output[GetMaintenanceRunsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMaintenanceRunsResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {

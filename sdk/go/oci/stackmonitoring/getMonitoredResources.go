@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Monitored Resources in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -119,12 +118,6 @@ func (o GetMonitoredResourcesResultOutput) ToGetMonitoredResourcesResultOutput()
 
 func (o GetMonitoredResourcesResultOutput) ToGetMonitoredResourcesResultOutputWithContext(ctx context.Context) GetMonitoredResourcesResultOutput {
 	return o
-}
-
-func (o GetMonitoredResourcesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesResult] {
-	return pulumix.Output[GetMonitoredResourcesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

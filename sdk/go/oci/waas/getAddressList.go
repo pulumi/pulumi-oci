@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Address List resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -116,12 +115,6 @@ func (o LookupAddressListResultOutput) ToLookupAddressListResultOutput() LookupA
 
 func (o LookupAddressListResultOutput) ToLookupAddressListResultOutputWithContext(ctx context.Context) LookupAddressListResultOutput {
 	return o
-}
-
-func (o LookupAddressListResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAddressListResult] {
-	return pulumix.Output[LookupAddressListResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The total number of unique IP addresses in the address list.

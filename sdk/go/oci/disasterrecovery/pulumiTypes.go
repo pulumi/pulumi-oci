@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -55,12 +54,6 @@ func (i DrPlanExecutionExecutionOptionsArgs) ToDrPlanExecutionExecutionOptionsOu
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionExecutionOptionsOutput)
 }
 
-func (i DrPlanExecutionExecutionOptionsArgs) ToOutput(ctx context.Context) pulumix.Output[DrPlanExecutionExecutionOptions] {
-	return pulumix.Output[DrPlanExecutionExecutionOptions]{
-		OutputState: i.ToDrPlanExecutionExecutionOptionsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DrPlanExecutionExecutionOptionsArgs) ToDrPlanExecutionExecutionOptionsPtrOutput() DrPlanExecutionExecutionOptionsPtrOutput {
 	return i.ToDrPlanExecutionExecutionOptionsPtrOutputWithContext(context.Background())
 }
@@ -102,12 +95,6 @@ func (i *drPlanExecutionExecutionOptionsPtrType) ToDrPlanExecutionExecutionOptio
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionExecutionOptionsPtrOutput)
 }
 
-func (i *drPlanExecutionExecutionOptionsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DrPlanExecutionExecutionOptions] {
-	return pulumix.Output[*DrPlanExecutionExecutionOptions]{
-		OutputState: i.ToDrPlanExecutionExecutionOptionsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrPlanExecutionExecutionOptionsOutput struct{ *pulumi.OutputState }
 
 func (DrPlanExecutionExecutionOptionsOutput) ElementType() reflect.Type {
@@ -130,12 +117,6 @@ func (o DrPlanExecutionExecutionOptionsOutput) ToDrPlanExecutionExecutionOptions
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v DrPlanExecutionExecutionOptions) *DrPlanExecutionExecutionOptions {
 		return &v
 	}).(DrPlanExecutionExecutionOptionsPtrOutput)
-}
-
-func (o DrPlanExecutionExecutionOptionsOutput) ToOutput(ctx context.Context) pulumix.Output[DrPlanExecutionExecutionOptions] {
-	return pulumix.Output[DrPlanExecutionExecutionOptions]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
@@ -165,12 +146,6 @@ func (o DrPlanExecutionExecutionOptionsPtrOutput) ToDrPlanExecutionExecutionOpti
 
 func (o DrPlanExecutionExecutionOptionsPtrOutput) ToDrPlanExecutionExecutionOptionsPtrOutputWithContext(ctx context.Context) DrPlanExecutionExecutionOptionsPtrOutput {
 	return o
-}
-
-func (o DrPlanExecutionExecutionOptionsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DrPlanExecutionExecutionOptions] {
-	return pulumix.Output[*DrPlanExecutionExecutionOptions]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrPlanExecutionExecutionOptionsPtrOutput) Elem() DrPlanExecutionExecutionOptionsOutput {
@@ -278,12 +253,6 @@ func (i DrPlanExecutionGroupExecutionArgs) ToDrPlanExecutionGroupExecutionOutput
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionGroupExecutionOutput)
 }
 
-func (i DrPlanExecutionGroupExecutionArgs) ToOutput(ctx context.Context) pulumix.Output[DrPlanExecutionGroupExecution] {
-	return pulumix.Output[DrPlanExecutionGroupExecution]{
-		OutputState: i.ToDrPlanExecutionGroupExecutionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrPlanExecutionGroupExecutionArrayInput is an input type that accepts DrPlanExecutionGroupExecutionArray and DrPlanExecutionGroupExecutionArrayOutput values.
 // You can construct a concrete instance of `DrPlanExecutionGroupExecutionArrayInput` via:
 //
@@ -309,12 +278,6 @@ func (i DrPlanExecutionGroupExecutionArray) ToDrPlanExecutionGroupExecutionArray
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionGroupExecutionArrayOutput)
 }
 
-func (i DrPlanExecutionGroupExecutionArray) ToOutput(ctx context.Context) pulumix.Output[[]DrPlanExecutionGroupExecution] {
-	return pulumix.Output[[]DrPlanExecutionGroupExecution]{
-		OutputState: i.ToDrPlanExecutionGroupExecutionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrPlanExecutionGroupExecutionOutput struct{ *pulumi.OutputState }
 
 func (DrPlanExecutionGroupExecutionOutput) ElementType() reflect.Type {
@@ -327,12 +290,6 @@ func (o DrPlanExecutionGroupExecutionOutput) ToDrPlanExecutionGroupExecutionOutp
 
 func (o DrPlanExecutionGroupExecutionOutput) ToDrPlanExecutionGroupExecutionOutputWithContext(ctx context.Context) DrPlanExecutionGroupExecutionOutput {
 	return o
-}
-
-func (o DrPlanExecutionGroupExecutionOutput) ToOutput(ctx context.Context) pulumix.Output[DrPlanExecutionGroupExecution] {
-	return pulumix.Output[DrPlanExecutionGroupExecution]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
@@ -394,12 +351,6 @@ func (o DrPlanExecutionGroupExecutionArrayOutput) ToDrPlanExecutionGroupExecutio
 
 func (o DrPlanExecutionGroupExecutionArrayOutput) ToDrPlanExecutionGroupExecutionArrayOutputWithContext(ctx context.Context) DrPlanExecutionGroupExecutionArrayOutput {
 	return o
-}
-
-func (o DrPlanExecutionGroupExecutionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DrPlanExecutionGroupExecution] {
-	return pulumix.Output[[]DrPlanExecutionGroupExecution]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrPlanExecutionGroupExecutionArrayOutput) Index(i pulumi.IntInput) DrPlanExecutionGroupExecutionOutput {
@@ -477,12 +428,6 @@ func (i DrPlanExecutionGroupExecutionStepExecutionArgs) ToDrPlanExecutionGroupEx
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionGroupExecutionStepExecutionOutput)
 }
 
-func (i DrPlanExecutionGroupExecutionStepExecutionArgs) ToOutput(ctx context.Context) pulumix.Output[DrPlanExecutionGroupExecutionStepExecution] {
-	return pulumix.Output[DrPlanExecutionGroupExecutionStepExecution]{
-		OutputState: i.ToDrPlanExecutionGroupExecutionStepExecutionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrPlanExecutionGroupExecutionStepExecutionArrayInput is an input type that accepts DrPlanExecutionGroupExecutionStepExecutionArray and DrPlanExecutionGroupExecutionStepExecutionArrayOutput values.
 // You can construct a concrete instance of `DrPlanExecutionGroupExecutionStepExecutionArrayInput` via:
 //
@@ -508,12 +453,6 @@ func (i DrPlanExecutionGroupExecutionStepExecutionArray) ToDrPlanExecutionGroupE
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionGroupExecutionStepExecutionArrayOutput)
 }
 
-func (i DrPlanExecutionGroupExecutionStepExecutionArray) ToOutput(ctx context.Context) pulumix.Output[[]DrPlanExecutionGroupExecutionStepExecution] {
-	return pulumix.Output[[]DrPlanExecutionGroupExecutionStepExecution]{
-		OutputState: i.ToDrPlanExecutionGroupExecutionStepExecutionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrPlanExecutionGroupExecutionStepExecutionOutput struct{ *pulumi.OutputState }
 
 func (DrPlanExecutionGroupExecutionStepExecutionOutput) ElementType() reflect.Type {
@@ -526,12 +465,6 @@ func (o DrPlanExecutionGroupExecutionStepExecutionOutput) ToDrPlanExecutionGroup
 
 func (o DrPlanExecutionGroupExecutionStepExecutionOutput) ToDrPlanExecutionGroupExecutionStepExecutionOutputWithContext(ctx context.Context) DrPlanExecutionGroupExecutionStepExecutionOutput {
 	return o
-}
-
-func (o DrPlanExecutionGroupExecutionStepExecutionOutput) ToOutput(ctx context.Context) pulumix.Output[DrPlanExecutionGroupExecutionStepExecution] {
-	return pulumix.Output[DrPlanExecutionGroupExecutionStepExecution]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
@@ -600,12 +533,6 @@ func (o DrPlanExecutionGroupExecutionStepExecutionArrayOutput) ToDrPlanExecution
 	return o
 }
 
-func (o DrPlanExecutionGroupExecutionStepExecutionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DrPlanExecutionGroupExecutionStepExecution] {
-	return pulumix.Output[[]DrPlanExecutionGroupExecutionStepExecution]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DrPlanExecutionGroupExecutionStepExecutionArrayOutput) Index(i pulumi.IntInput) DrPlanExecutionGroupExecutionStepExecutionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DrPlanExecutionGroupExecutionStepExecution {
 		return vs[0].([]DrPlanExecutionGroupExecutionStepExecution)[vs[1].(int)]
@@ -653,12 +580,6 @@ func (i DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs) ToDrPlanExecu
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionGroupExecutionStepExecutionLogLocationOutput)
 }
 
-func (i DrPlanExecutionGroupExecutionStepExecutionLogLocationArgs) ToOutput(ctx context.Context) pulumix.Output[DrPlanExecutionGroupExecutionStepExecutionLogLocation] {
-	return pulumix.Output[DrPlanExecutionGroupExecutionStepExecutionLogLocation]{
-		OutputState: i.ToDrPlanExecutionGroupExecutionStepExecutionLogLocationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrPlanExecutionGroupExecutionStepExecutionLogLocationArrayInput is an input type that accepts DrPlanExecutionGroupExecutionStepExecutionLogLocationArray and DrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput values.
 // You can construct a concrete instance of `DrPlanExecutionGroupExecutionStepExecutionLogLocationArrayInput` via:
 //
@@ -684,12 +605,6 @@ func (i DrPlanExecutionGroupExecutionStepExecutionLogLocationArray) ToDrPlanExec
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput)
 }
 
-func (i DrPlanExecutionGroupExecutionStepExecutionLogLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]DrPlanExecutionGroupExecutionStepExecutionLogLocation] {
-	return pulumix.Output[[]DrPlanExecutionGroupExecutionStepExecutionLogLocation]{
-		OutputState: i.ToDrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrPlanExecutionGroupExecutionStepExecutionLogLocationOutput struct{ *pulumi.OutputState }
 
 func (DrPlanExecutionGroupExecutionStepExecutionLogLocationOutput) ElementType() reflect.Type {
@@ -702,12 +617,6 @@ func (o DrPlanExecutionGroupExecutionStepExecutionLogLocationOutput) ToDrPlanExe
 
 func (o DrPlanExecutionGroupExecutionStepExecutionLogLocationOutput) ToDrPlanExecutionGroupExecutionStepExecutionLogLocationOutputWithContext(ctx context.Context) DrPlanExecutionGroupExecutionStepExecutionLogLocationOutput {
 	return o
-}
-
-func (o DrPlanExecutionGroupExecutionStepExecutionLogLocationOutput) ToOutput(ctx context.Context) pulumix.Output[DrPlanExecutionGroupExecutionStepExecutionLogLocation] {
-	return pulumix.Output[DrPlanExecutionGroupExecutionStepExecutionLogLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The bucket name inside the object storage namespace.  Example: `operationLogs`
@@ -737,12 +646,6 @@ func (o DrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput) ToDrPl
 
 func (o DrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput) ToDrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutputWithContext(ctx context.Context) DrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput {
 	return o
-}
-
-func (o DrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DrPlanExecutionGroupExecutionStepExecutionLogLocation] {
-	return pulumix.Output[[]DrPlanExecutionGroupExecutionStepExecutionLogLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput) Index(i pulumi.IntInput) DrPlanExecutionGroupExecutionStepExecutionLogLocationOutput {
@@ -792,12 +695,6 @@ func (i DrPlanExecutionLogLocationArgs) ToDrPlanExecutionLogLocationOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionLogLocationOutput)
 }
 
-func (i DrPlanExecutionLogLocationArgs) ToOutput(ctx context.Context) pulumix.Output[DrPlanExecutionLogLocation] {
-	return pulumix.Output[DrPlanExecutionLogLocation]{
-		OutputState: i.ToDrPlanExecutionLogLocationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrPlanExecutionLogLocationArrayInput is an input type that accepts DrPlanExecutionLogLocationArray and DrPlanExecutionLogLocationArrayOutput values.
 // You can construct a concrete instance of `DrPlanExecutionLogLocationArrayInput` via:
 //
@@ -823,12 +720,6 @@ func (i DrPlanExecutionLogLocationArray) ToDrPlanExecutionLogLocationArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionLogLocationArrayOutput)
 }
 
-func (i DrPlanExecutionLogLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]DrPlanExecutionLogLocation] {
-	return pulumix.Output[[]DrPlanExecutionLogLocation]{
-		OutputState: i.ToDrPlanExecutionLogLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrPlanExecutionLogLocationOutput struct{ *pulumi.OutputState }
 
 func (DrPlanExecutionLogLocationOutput) ElementType() reflect.Type {
@@ -841,12 +732,6 @@ func (o DrPlanExecutionLogLocationOutput) ToDrPlanExecutionLogLocationOutput() D
 
 func (o DrPlanExecutionLogLocationOutput) ToDrPlanExecutionLogLocationOutputWithContext(ctx context.Context) DrPlanExecutionLogLocationOutput {
 	return o
-}
-
-func (o DrPlanExecutionLogLocationOutput) ToOutput(ctx context.Context) pulumix.Output[DrPlanExecutionLogLocation] {
-	return pulumix.Output[DrPlanExecutionLogLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The bucket name inside the object storage namespace.  Example: `operationLogs`
@@ -876,12 +761,6 @@ func (o DrPlanExecutionLogLocationArrayOutput) ToDrPlanExecutionLogLocationArray
 
 func (o DrPlanExecutionLogLocationArrayOutput) ToDrPlanExecutionLogLocationArrayOutputWithContext(ctx context.Context) DrPlanExecutionLogLocationArrayOutput {
 	return o
-}
-
-func (o DrPlanExecutionLogLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DrPlanExecutionLogLocation] {
-	return pulumix.Output[[]DrPlanExecutionLogLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrPlanExecutionLogLocationArrayOutput) Index(i pulumi.IntInput) DrPlanExecutionLogLocationOutput {
@@ -941,12 +820,6 @@ func (i DrPlanPlanGroupArgs) ToDrPlanPlanGroupOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanPlanGroupOutput)
 }
 
-func (i DrPlanPlanGroupArgs) ToOutput(ctx context.Context) pulumix.Output[DrPlanPlanGroup] {
-	return pulumix.Output[DrPlanPlanGroup]{
-		OutputState: i.ToDrPlanPlanGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrPlanPlanGroupArrayInput is an input type that accepts DrPlanPlanGroupArray and DrPlanPlanGroupArrayOutput values.
 // You can construct a concrete instance of `DrPlanPlanGroupArrayInput` via:
 //
@@ -972,12 +845,6 @@ func (i DrPlanPlanGroupArray) ToDrPlanPlanGroupArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanPlanGroupArrayOutput)
 }
 
-func (i DrPlanPlanGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]DrPlanPlanGroup] {
-	return pulumix.Output[[]DrPlanPlanGroup]{
-		OutputState: i.ToDrPlanPlanGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrPlanPlanGroupOutput struct{ *pulumi.OutputState }
 
 func (DrPlanPlanGroupOutput) ElementType() reflect.Type {
@@ -990,12 +857,6 @@ func (o DrPlanPlanGroupOutput) ToDrPlanPlanGroupOutput() DrPlanPlanGroupOutput {
 
 func (o DrPlanPlanGroupOutput) ToDrPlanPlanGroupOutputWithContext(ctx context.Context) DrPlanPlanGroupOutput {
 	return o
-}
-
-func (o DrPlanPlanGroupOutput) ToOutput(ctx context.Context) pulumix.Output[DrPlanPlanGroup] {
-	return pulumix.Output[DrPlanPlanGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
@@ -1033,12 +894,6 @@ func (o DrPlanPlanGroupArrayOutput) ToDrPlanPlanGroupArrayOutput() DrPlanPlanGro
 
 func (o DrPlanPlanGroupArrayOutput) ToDrPlanPlanGroupArrayOutputWithContext(ctx context.Context) DrPlanPlanGroupArrayOutput {
 	return o
-}
-
-func (o DrPlanPlanGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DrPlanPlanGroup] {
-	return pulumix.Output[[]DrPlanPlanGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrPlanPlanGroupArrayOutput) Index(i pulumi.IntInput) DrPlanPlanGroupOutput {
@@ -1118,12 +973,6 @@ func (i DrPlanPlanGroupStepArgs) ToDrPlanPlanGroupStepOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanPlanGroupStepOutput)
 }
 
-func (i DrPlanPlanGroupStepArgs) ToOutput(ctx context.Context) pulumix.Output[DrPlanPlanGroupStep] {
-	return pulumix.Output[DrPlanPlanGroupStep]{
-		OutputState: i.ToDrPlanPlanGroupStepOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrPlanPlanGroupStepArrayInput is an input type that accepts DrPlanPlanGroupStepArray and DrPlanPlanGroupStepArrayOutput values.
 // You can construct a concrete instance of `DrPlanPlanGroupStepArrayInput` via:
 //
@@ -1149,12 +998,6 @@ func (i DrPlanPlanGroupStepArray) ToDrPlanPlanGroupStepArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanPlanGroupStepArrayOutput)
 }
 
-func (i DrPlanPlanGroupStepArray) ToOutput(ctx context.Context) pulumix.Output[[]DrPlanPlanGroupStep] {
-	return pulumix.Output[[]DrPlanPlanGroupStep]{
-		OutputState: i.ToDrPlanPlanGroupStepArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrPlanPlanGroupStepOutput struct{ *pulumi.OutputState }
 
 func (DrPlanPlanGroupStepOutput) ElementType() reflect.Type {
@@ -1167,12 +1010,6 @@ func (o DrPlanPlanGroupStepOutput) ToDrPlanPlanGroupStepOutput() DrPlanPlanGroup
 
 func (o DrPlanPlanGroupStepOutput) ToDrPlanPlanGroupStepOutputWithContext(ctx context.Context) DrPlanPlanGroupStepOutput {
 	return o
-}
-
-func (o DrPlanPlanGroupStepOutput) ToOutput(ctx context.Context) pulumix.Output[DrPlanPlanGroupStep] {
-	return pulumix.Output[DrPlanPlanGroupStep]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
@@ -1235,12 +1072,6 @@ func (o DrPlanPlanGroupStepArrayOutput) ToDrPlanPlanGroupStepArrayOutput() DrPla
 
 func (o DrPlanPlanGroupStepArrayOutput) ToDrPlanPlanGroupStepArrayOutputWithContext(ctx context.Context) DrPlanPlanGroupStepArrayOutput {
 	return o
-}
-
-func (o DrPlanPlanGroupStepArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DrPlanPlanGroupStep] {
-	return pulumix.Output[[]DrPlanPlanGroupStep]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrPlanPlanGroupStepArrayOutput) Index(i pulumi.IntInput) DrPlanPlanGroupStepOutput {
@@ -1314,12 +1145,6 @@ func (i DrPlanPlanGroupStepUserDefinedStepArgs) ToDrPlanPlanGroupStepUserDefined
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanPlanGroupStepUserDefinedStepOutput)
 }
 
-func (i DrPlanPlanGroupStepUserDefinedStepArgs) ToOutput(ctx context.Context) pulumix.Output[DrPlanPlanGroupStepUserDefinedStep] {
-	return pulumix.Output[DrPlanPlanGroupStepUserDefinedStep]{
-		OutputState: i.ToDrPlanPlanGroupStepUserDefinedStepOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrPlanPlanGroupStepUserDefinedStepArrayInput is an input type that accepts DrPlanPlanGroupStepUserDefinedStepArray and DrPlanPlanGroupStepUserDefinedStepArrayOutput values.
 // You can construct a concrete instance of `DrPlanPlanGroupStepUserDefinedStepArrayInput` via:
 //
@@ -1345,12 +1170,6 @@ func (i DrPlanPlanGroupStepUserDefinedStepArray) ToDrPlanPlanGroupStepUserDefine
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanPlanGroupStepUserDefinedStepArrayOutput)
 }
 
-func (i DrPlanPlanGroupStepUserDefinedStepArray) ToOutput(ctx context.Context) pulumix.Output[[]DrPlanPlanGroupStepUserDefinedStep] {
-	return pulumix.Output[[]DrPlanPlanGroupStepUserDefinedStep]{
-		OutputState: i.ToDrPlanPlanGroupStepUserDefinedStepArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrPlanPlanGroupStepUserDefinedStepOutput struct{ *pulumi.OutputState }
 
 func (DrPlanPlanGroupStepUserDefinedStepOutput) ElementType() reflect.Type {
@@ -1363,12 +1182,6 @@ func (o DrPlanPlanGroupStepUserDefinedStepOutput) ToDrPlanPlanGroupStepUserDefin
 
 func (o DrPlanPlanGroupStepUserDefinedStepOutput) ToDrPlanPlanGroupStepUserDefinedStepOutputWithContext(ctx context.Context) DrPlanPlanGroupStepUserDefinedStepOutput {
 	return o
-}
-
-func (o DrPlanPlanGroupStepUserDefinedStepOutput) ToOutput(ctx context.Context) pulumix.Output[DrPlanPlanGroupStepUserDefinedStep] {
-	return pulumix.Output[DrPlanPlanGroupStepUserDefinedStep]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
@@ -1432,12 +1245,6 @@ func (o DrPlanPlanGroupStepUserDefinedStepArrayOutput) ToDrPlanPlanGroupStepUser
 	return o
 }
 
-func (o DrPlanPlanGroupStepUserDefinedStepArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DrPlanPlanGroupStepUserDefinedStep] {
-	return pulumix.Output[[]DrPlanPlanGroupStepUserDefinedStep]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DrPlanPlanGroupStepUserDefinedStepArrayOutput) Index(i pulumi.IntInput) DrPlanPlanGroupStepUserDefinedStepOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DrPlanPlanGroupStepUserDefinedStep {
 		return vs[0].([]DrPlanPlanGroupStepUserDefinedStep)[vs[1].(int)]
@@ -1485,12 +1292,6 @@ func (i DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs) ToDrP
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput)
 }
 
-func (i DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs) ToOutput(ctx context.Context) pulumix.Output[DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation] {
-	return pulumix.Output[DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation]{
-		OutputState: i.ToDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayInput is an input type that accepts DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArray and DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput values.
 // You can construct a concrete instance of `DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayInput` via:
 //
@@ -1516,12 +1317,6 @@ func (i DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArray) ToDr
 	return pulumi.ToOutputWithContext(ctx, i).(DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput)
 }
 
-func (i DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation] {
-	return pulumix.Output[[]DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation]{
-		OutputState: i.ToDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput struct{ *pulumi.OutputState }
 
 func (DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) ElementType() reflect.Type {
@@ -1534,12 +1329,6 @@ func (o DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) ToD
 
 func (o DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) ToDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutputWithContext(ctx context.Context) DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput {
 	return o
-}
-
-func (o DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) ToOutput(ctx context.Context) pulumix.Output[DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation] {
-	return pulumix.Output[DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The bucket name inside the object storage namespace.  Example: `customDrScripts`
@@ -1569,12 +1358,6 @@ func (o DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput
 
 func (o DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput) ToDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutputWithContext(ctx context.Context) DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput {
 	return o
-}
-
-func (o DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation] {
-	return pulumix.Output[[]DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput) Index(i pulumi.IntInput) DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput {
@@ -1624,12 +1407,6 @@ func (i DrProtectionGroupAssociationArgs) ToDrProtectionGroupAssociationOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupAssociationOutput)
 }
 
-func (i DrProtectionGroupAssociationArgs) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupAssociation] {
-	return pulumix.Output[DrProtectionGroupAssociation]{
-		OutputState: i.ToDrProtectionGroupAssociationOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DrProtectionGroupAssociationArgs) ToDrProtectionGroupAssociationPtrOutput() DrProtectionGroupAssociationPtrOutput {
 	return i.ToDrProtectionGroupAssociationPtrOutputWithContext(context.Background())
 }
@@ -1671,12 +1448,6 @@ func (i *drProtectionGroupAssociationPtrType) ToDrProtectionGroupAssociationPtrO
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupAssociationPtrOutput)
 }
 
-func (i *drProtectionGroupAssociationPtrType) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroupAssociation] {
-	return pulumix.Output[*DrProtectionGroupAssociation]{
-		OutputState: i.ToDrProtectionGroupAssociationPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrProtectionGroupAssociationOutput struct{ *pulumi.OutputState }
 
 func (DrProtectionGroupAssociationOutput) ElementType() reflect.Type {
@@ -1699,12 +1470,6 @@ func (o DrProtectionGroupAssociationOutput) ToDrProtectionGroupAssociationPtrOut
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v DrProtectionGroupAssociation) *DrProtectionGroupAssociation {
 		return &v
 	}).(DrProtectionGroupAssociationPtrOutput)
-}
-
-func (o DrProtectionGroupAssociationOutput) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupAssociation] {
-	return pulumix.Output[DrProtectionGroupAssociation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
@@ -1734,12 +1499,6 @@ func (o DrProtectionGroupAssociationPtrOutput) ToDrProtectionGroupAssociationPtr
 
 func (o DrProtectionGroupAssociationPtrOutput) ToDrProtectionGroupAssociationPtrOutputWithContext(ctx context.Context) DrProtectionGroupAssociationPtrOutput {
 	return o
-}
-
-func (o DrProtectionGroupAssociationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroupAssociation] {
-	return pulumix.Output[*DrProtectionGroupAssociation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrProtectionGroupAssociationPtrOutput) Elem() DrProtectionGroupAssociationOutput {
@@ -1823,12 +1582,6 @@ func (i DrProtectionGroupLogLocationArgs) ToDrProtectionGroupLogLocationOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupLogLocationOutput)
 }
 
-func (i DrProtectionGroupLogLocationArgs) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupLogLocation] {
-	return pulumix.Output[DrProtectionGroupLogLocation]{
-		OutputState: i.ToDrProtectionGroupLogLocationOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DrProtectionGroupLogLocationArgs) ToDrProtectionGroupLogLocationPtrOutput() DrProtectionGroupLogLocationPtrOutput {
 	return i.ToDrProtectionGroupLogLocationPtrOutputWithContext(context.Background())
 }
@@ -1870,12 +1623,6 @@ func (i *drProtectionGroupLogLocationPtrType) ToDrProtectionGroupLogLocationPtrO
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupLogLocationPtrOutput)
 }
 
-func (i *drProtectionGroupLogLocationPtrType) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroupLogLocation] {
-	return pulumix.Output[*DrProtectionGroupLogLocation]{
-		OutputState: i.ToDrProtectionGroupLogLocationPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrProtectionGroupLogLocationOutput struct{ *pulumi.OutputState }
 
 func (DrProtectionGroupLogLocationOutput) ElementType() reflect.Type {
@@ -1898,12 +1645,6 @@ func (o DrProtectionGroupLogLocationOutput) ToDrProtectionGroupLogLocationPtrOut
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v DrProtectionGroupLogLocation) *DrProtectionGroupLogLocation {
 		return &v
 	}).(DrProtectionGroupLogLocationPtrOutput)
-}
-
-func (o DrProtectionGroupLogLocationOutput) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupLogLocation] {
-	return pulumix.Output[DrProtectionGroupLogLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The bucket name inside the object storage namespace.  Example: `operationLogs`
@@ -1933,12 +1674,6 @@ func (o DrProtectionGroupLogLocationPtrOutput) ToDrProtectionGroupLogLocationPtr
 
 func (o DrProtectionGroupLogLocationPtrOutput) ToDrProtectionGroupLogLocationPtrOutputWithContext(ctx context.Context) DrProtectionGroupLogLocationPtrOutput {
 	return o
-}
-
-func (o DrProtectionGroupLogLocationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroupLogLocation] {
-	return pulumix.Output[*DrProtectionGroupLogLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrProtectionGroupLogLocationPtrOutput) Elem() DrProtectionGroupLogLocationOutput {
@@ -2082,12 +1817,6 @@ func (i DrProtectionGroupMemberArgs) ToDrProtectionGroupMemberOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberOutput)
 }
 
-func (i DrProtectionGroupMemberArgs) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMember] {
-	return pulumix.Output[DrProtectionGroupMember]{
-		OutputState: i.ToDrProtectionGroupMemberOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrProtectionGroupMemberArrayInput is an input type that accepts DrProtectionGroupMemberArray and DrProtectionGroupMemberArrayOutput values.
 // You can construct a concrete instance of `DrProtectionGroupMemberArrayInput` via:
 //
@@ -2113,12 +1842,6 @@ func (i DrProtectionGroupMemberArray) ToDrProtectionGroupMemberArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberArrayOutput)
 }
 
-func (i DrProtectionGroupMemberArray) ToOutput(ctx context.Context) pulumix.Output[[]DrProtectionGroupMember] {
-	return pulumix.Output[[]DrProtectionGroupMember]{
-		OutputState: i.ToDrProtectionGroupMemberArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrProtectionGroupMemberOutput struct{ *pulumi.OutputState }
 
 func (DrProtectionGroupMemberOutput) ElementType() reflect.Type {
@@ -2131,12 +1854,6 @@ func (o DrProtectionGroupMemberOutput) ToDrProtectionGroupMemberOutput() DrProte
 
 func (o DrProtectionGroupMemberOutput) ToDrProtectionGroupMemberOutputWithContext(ctx context.Context) DrProtectionGroupMemberOutput {
 	return o
-}
-
-func (o DrProtectionGroupMemberOutput) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMember] {
-	return pulumix.Output[DrProtectionGroupMember]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A list of backend set mappings that are used to transfer or update backends during DR.
@@ -2249,12 +1966,6 @@ func (o DrProtectionGroupMemberArrayOutput) ToDrProtectionGroupMemberArrayOutput
 	return o
 }
 
-func (o DrProtectionGroupMemberArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DrProtectionGroupMember] {
-	return pulumix.Output[[]DrProtectionGroupMember]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DrProtectionGroupMemberArrayOutput) Index(i pulumi.IntInput) DrProtectionGroupMemberOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DrProtectionGroupMember {
 		return vs[0].([]DrProtectionGroupMember)[vs[1].(int)]
@@ -2302,12 +2013,6 @@ func (i DrProtectionGroupMemberBackendSetMappingArgs) ToDrProtectionGroupMemberB
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBackendSetMappingOutput)
 }
 
-func (i DrProtectionGroupMemberBackendSetMappingArgs) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberBackendSetMapping] {
-	return pulumix.Output[DrProtectionGroupMemberBackendSetMapping]{
-		OutputState: i.ToDrProtectionGroupMemberBackendSetMappingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrProtectionGroupMemberBackendSetMappingArrayInput is an input type that accepts DrProtectionGroupMemberBackendSetMappingArray and DrProtectionGroupMemberBackendSetMappingArrayOutput values.
 // You can construct a concrete instance of `DrProtectionGroupMemberBackendSetMappingArrayInput` via:
 //
@@ -2333,12 +2038,6 @@ func (i DrProtectionGroupMemberBackendSetMappingArray) ToDrProtectionGroupMember
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBackendSetMappingArrayOutput)
 }
 
-func (i DrProtectionGroupMemberBackendSetMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]DrProtectionGroupMemberBackendSetMapping] {
-	return pulumix.Output[[]DrProtectionGroupMemberBackendSetMapping]{
-		OutputState: i.ToDrProtectionGroupMemberBackendSetMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrProtectionGroupMemberBackendSetMappingOutput struct{ *pulumi.OutputState }
 
 func (DrProtectionGroupMemberBackendSetMappingOutput) ElementType() reflect.Type {
@@ -2351,12 +2050,6 @@ func (o DrProtectionGroupMemberBackendSetMappingOutput) ToDrProtectionGroupMembe
 
 func (o DrProtectionGroupMemberBackendSetMappingOutput) ToDrProtectionGroupMemberBackendSetMappingOutputWithContext(ctx context.Context) DrProtectionGroupMemberBackendSetMappingOutput {
 	return o
-}
-
-func (o DrProtectionGroupMemberBackendSetMappingOutput) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberBackendSetMapping] {
-	return pulumix.Output[DrProtectionGroupMemberBackendSetMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The name of the destination backend set.  Example: `Destination-BackendSet-1`
@@ -2386,12 +2079,6 @@ func (o DrProtectionGroupMemberBackendSetMappingArrayOutput) ToDrProtectionGroup
 
 func (o DrProtectionGroupMemberBackendSetMappingArrayOutput) ToDrProtectionGroupMemberBackendSetMappingArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberBackendSetMappingArrayOutput {
 	return o
-}
-
-func (o DrProtectionGroupMemberBackendSetMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DrProtectionGroupMemberBackendSetMapping] {
-	return pulumix.Output[[]DrProtectionGroupMemberBackendSetMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrProtectionGroupMemberBackendSetMappingArrayOutput) Index(i pulumi.IntInput) DrProtectionGroupMemberBackendSetMappingOutput {
@@ -2441,12 +2128,6 @@ func (i DrProtectionGroupMemberBlockVolumeOperationArgs) ToDrProtectionGroupMemb
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBlockVolumeOperationOutput)
 }
 
-func (i DrProtectionGroupMemberBlockVolumeOperationArgs) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberBlockVolumeOperation] {
-	return pulumix.Output[DrProtectionGroupMemberBlockVolumeOperation]{
-		OutputState: i.ToDrProtectionGroupMemberBlockVolumeOperationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrProtectionGroupMemberBlockVolumeOperationArrayInput is an input type that accepts DrProtectionGroupMemberBlockVolumeOperationArray and DrProtectionGroupMemberBlockVolumeOperationArrayOutput values.
 // You can construct a concrete instance of `DrProtectionGroupMemberBlockVolumeOperationArrayInput` via:
 //
@@ -2472,12 +2153,6 @@ func (i DrProtectionGroupMemberBlockVolumeOperationArray) ToDrProtectionGroupMem
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBlockVolumeOperationArrayOutput)
 }
 
-func (i DrProtectionGroupMemberBlockVolumeOperationArray) ToOutput(ctx context.Context) pulumix.Output[[]DrProtectionGroupMemberBlockVolumeOperation] {
-	return pulumix.Output[[]DrProtectionGroupMemberBlockVolumeOperation]{
-		OutputState: i.ToDrProtectionGroupMemberBlockVolumeOperationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrProtectionGroupMemberBlockVolumeOperationOutput struct{ *pulumi.OutputState }
 
 func (DrProtectionGroupMemberBlockVolumeOperationOutput) ElementType() reflect.Type {
@@ -2490,12 +2165,6 @@ func (o DrProtectionGroupMemberBlockVolumeOperationOutput) ToDrProtectionGroupMe
 
 func (o DrProtectionGroupMemberBlockVolumeOperationOutput) ToDrProtectionGroupMemberBlockVolumeOperationOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeOperationOutput {
 	return o
-}
-
-func (o DrProtectionGroupMemberBlockVolumeOperationOutput) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberBlockVolumeOperation] {
-	return pulumix.Output[DrProtectionGroupMemberBlockVolumeOperation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The details for creating a block volume attachment.
@@ -2529,12 +2198,6 @@ func (o DrProtectionGroupMemberBlockVolumeOperationArrayOutput) ToDrProtectionGr
 
 func (o DrProtectionGroupMemberBlockVolumeOperationArrayOutput) ToDrProtectionGroupMemberBlockVolumeOperationArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeOperationArrayOutput {
 	return o
-}
-
-func (o DrProtectionGroupMemberBlockVolumeOperationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DrProtectionGroupMemberBlockVolumeOperation] {
-	return pulumix.Output[[]DrProtectionGroupMemberBlockVolumeOperation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrProtectionGroupMemberBlockVolumeOperationArrayOutput) Index(i pulumi.IntInput) DrProtectionGroupMemberBlockVolumeOperationOutput {
@@ -2574,12 +2237,6 @@ func (i DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs) ToDrPr
 
 func (i DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs) ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput)
-}
-
-func (i DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails] {
-	return pulumix.Output[DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails]{
-		OutputState: i.ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutputWithContext(ctx).OutputState,
-	}
 }
 
 func (i DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs) ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput() DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput {
@@ -2623,12 +2280,6 @@ func (i *drProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrType) To
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput)
 }
 
-func (i *drProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails] {
-	return pulumix.Output[*DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails]{
-		OutputState: i.ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput struct{ *pulumi.OutputState }
 
 func (DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput) ElementType() reflect.Type {
@@ -2653,12 +2304,6 @@ func (o DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput) ToDr
 	}).(DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput)
 }
 
-func (o DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails] {
-	return pulumix.Output[DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
 func (o DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput) VolumeAttachmentReferenceInstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails) *string {
@@ -2678,12 +2323,6 @@ func (o DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput) T
 
 func (o DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput) ToDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput {
 	return o
-}
-
-func (o DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails] {
-	return pulumix.Output[*DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput) Elem() DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsOutput {
@@ -2739,12 +2378,6 @@ func (i DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs) ToDrProtect
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput)
 }
 
-func (i DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberBlockVolumeOperationMountDetails] {
-	return pulumix.Output[DrProtectionGroupMemberBlockVolumeOperationMountDetails]{
-		OutputState: i.ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs) ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput() DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput {
 	return i.ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutputWithContext(context.Background())
 }
@@ -2786,12 +2419,6 @@ func (i *drProtectionGroupMemberBlockVolumeOperationMountDetailsPtrType) ToDrPro
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput)
 }
 
-func (i *drProtectionGroupMemberBlockVolumeOperationMountDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroupMemberBlockVolumeOperationMountDetails] {
-	return pulumix.Output[*DrProtectionGroupMemberBlockVolumeOperationMountDetails]{
-		OutputState: i.ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput struct{ *pulumi.OutputState }
 
 func (DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput) ElementType() reflect.Type {
@@ -2816,12 +2443,6 @@ func (o DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput) ToDrProte
 	}).(DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput)
 }
 
-func (o DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberBlockVolumeOperationMountDetails] {
-	return pulumix.Output[DrProtectionGroupMemberBlockVolumeOperationMountDetails]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
 func (o DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput) MountPoint() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMemberBlockVolumeOperationMountDetails) *string { return v.MountPoint }).(pulumi.StringPtrOutput)
@@ -2839,12 +2460,6 @@ func (o DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput) ToDrPr
 
 func (o DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput) ToDrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput {
 	return o
-}
-
-func (o DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroupMemberBlockVolumeOperationMountDetails] {
-	return pulumix.Output[*DrProtectionGroupMemberBlockVolumeOperationMountDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput) Elem() DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput {
@@ -2904,12 +2519,6 @@ func (i DrProtectionGroupMemberExportMappingArgs) ToDrProtectionGroupMemberExpor
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberExportMappingOutput)
 }
 
-func (i DrProtectionGroupMemberExportMappingArgs) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberExportMapping] {
-	return pulumix.Output[DrProtectionGroupMemberExportMapping]{
-		OutputState: i.ToDrProtectionGroupMemberExportMappingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrProtectionGroupMemberExportMappingArrayInput is an input type that accepts DrProtectionGroupMemberExportMappingArray and DrProtectionGroupMemberExportMappingArrayOutput values.
 // You can construct a concrete instance of `DrProtectionGroupMemberExportMappingArrayInput` via:
 //
@@ -2935,12 +2544,6 @@ func (i DrProtectionGroupMemberExportMappingArray) ToDrProtectionGroupMemberExpo
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberExportMappingArrayOutput)
 }
 
-func (i DrProtectionGroupMemberExportMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]DrProtectionGroupMemberExportMapping] {
-	return pulumix.Output[[]DrProtectionGroupMemberExportMapping]{
-		OutputState: i.ToDrProtectionGroupMemberExportMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrProtectionGroupMemberExportMappingOutput struct{ *pulumi.OutputState }
 
 func (DrProtectionGroupMemberExportMappingOutput) ElementType() reflect.Type {
@@ -2953,12 +2556,6 @@ func (o DrProtectionGroupMemberExportMappingOutput) ToDrProtectionGroupMemberExp
 
 func (o DrProtectionGroupMemberExportMappingOutput) ToDrProtectionGroupMemberExportMappingOutputWithContext(ctx context.Context) DrProtectionGroupMemberExportMappingOutput {
 	return o
-}
-
-func (o DrProtectionGroupMemberExportMappingOutput) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberExportMapping] {
-	return pulumix.Output[DrProtectionGroupMemberExportMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of the destination mount target in the destination region which is used to export the file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
@@ -2983,12 +2580,6 @@ func (o DrProtectionGroupMemberExportMappingArrayOutput) ToDrProtectionGroupMemb
 
 func (o DrProtectionGroupMemberExportMappingArrayOutput) ToDrProtectionGroupMemberExportMappingArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberExportMappingArrayOutput {
 	return o
-}
-
-func (o DrProtectionGroupMemberExportMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DrProtectionGroupMemberExportMapping] {
-	return pulumix.Output[[]DrProtectionGroupMemberExportMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrProtectionGroupMemberExportMappingArrayOutput) Index(i pulumi.IntInput) DrProtectionGroupMemberExportMappingOutput {
@@ -3046,12 +2637,6 @@ func (i DrProtectionGroupMemberFileSystemOperationArgs) ToDrProtectionGroupMembe
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberFileSystemOperationOutput)
 }
 
-func (i DrProtectionGroupMemberFileSystemOperationArgs) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberFileSystemOperation] {
-	return pulumix.Output[DrProtectionGroupMemberFileSystemOperation]{
-		OutputState: i.ToDrProtectionGroupMemberFileSystemOperationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrProtectionGroupMemberFileSystemOperationArrayInput is an input type that accepts DrProtectionGroupMemberFileSystemOperationArray and DrProtectionGroupMemberFileSystemOperationArrayOutput values.
 // You can construct a concrete instance of `DrProtectionGroupMemberFileSystemOperationArrayInput` via:
 //
@@ -3077,12 +2662,6 @@ func (i DrProtectionGroupMemberFileSystemOperationArray) ToDrProtectionGroupMemb
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberFileSystemOperationArrayOutput)
 }
 
-func (i DrProtectionGroupMemberFileSystemOperationArray) ToOutput(ctx context.Context) pulumix.Output[[]DrProtectionGroupMemberFileSystemOperation] {
-	return pulumix.Output[[]DrProtectionGroupMemberFileSystemOperation]{
-		OutputState: i.ToDrProtectionGroupMemberFileSystemOperationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrProtectionGroupMemberFileSystemOperationOutput struct{ *pulumi.OutputState }
 
 func (DrProtectionGroupMemberFileSystemOperationOutput) ElementType() reflect.Type {
@@ -3095,12 +2674,6 @@ func (o DrProtectionGroupMemberFileSystemOperationOutput) ToDrProtectionGroupMem
 
 func (o DrProtectionGroupMemberFileSystemOperationOutput) ToDrProtectionGroupMemberFileSystemOperationOutputWithContext(ctx context.Context) DrProtectionGroupMemberFileSystemOperationOutput {
 	return o
-}
-
-func (o DrProtectionGroupMemberFileSystemOperationOutput) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberFileSystemOperation] {
-	return pulumix.Output[DrProtectionGroupMemberFileSystemOperation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The export path of the file system.  Example: `/fs-export-path`
@@ -3146,12 +2719,6 @@ func (o DrProtectionGroupMemberFileSystemOperationArrayOutput) ToDrProtectionGro
 	return o
 }
 
-func (o DrProtectionGroupMemberFileSystemOperationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DrProtectionGroupMemberFileSystemOperation] {
-	return pulumix.Output[[]DrProtectionGroupMemberFileSystemOperation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DrProtectionGroupMemberFileSystemOperationArrayOutput) Index(i pulumi.IntInput) DrProtectionGroupMemberFileSystemOperationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DrProtectionGroupMemberFileSystemOperation {
 		return vs[0].([]DrProtectionGroupMemberFileSystemOperation)[vs[1].(int)]
@@ -3189,12 +2756,6 @@ func (i DrProtectionGroupMemberFileSystemOperationMountDetailsArgs) ToDrProtecti
 
 func (i DrProtectionGroupMemberFileSystemOperationMountDetailsArgs) ToDrProtectionGroupMemberFileSystemOperationMountDetailsOutputWithContext(ctx context.Context) DrProtectionGroupMemberFileSystemOperationMountDetailsOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberFileSystemOperationMountDetailsOutput)
-}
-
-func (i DrProtectionGroupMemberFileSystemOperationMountDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberFileSystemOperationMountDetails] {
-	return pulumix.Output[DrProtectionGroupMemberFileSystemOperationMountDetails]{
-		OutputState: i.ToDrProtectionGroupMemberFileSystemOperationMountDetailsOutputWithContext(ctx).OutputState,
-	}
 }
 
 func (i DrProtectionGroupMemberFileSystemOperationMountDetailsArgs) ToDrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput() DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput {
@@ -3238,12 +2799,6 @@ func (i *drProtectionGroupMemberFileSystemOperationMountDetailsPtrType) ToDrProt
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput)
 }
 
-func (i *drProtectionGroupMemberFileSystemOperationMountDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroupMemberFileSystemOperationMountDetails] {
-	return pulumix.Output[*DrProtectionGroupMemberFileSystemOperationMountDetails]{
-		OutputState: i.ToDrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrProtectionGroupMemberFileSystemOperationMountDetailsOutput struct{ *pulumi.OutputState }
 
 func (DrProtectionGroupMemberFileSystemOperationMountDetailsOutput) ElementType() reflect.Type {
@@ -3268,12 +2823,6 @@ func (o DrProtectionGroupMemberFileSystemOperationMountDetailsOutput) ToDrProtec
 	}).(DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput)
 }
 
-func (o DrProtectionGroupMemberFileSystemOperationMountDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberFileSystemOperationMountDetails] {
-	return pulumix.Output[DrProtectionGroupMemberFileSystemOperationMountDetails]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
 func (o DrProtectionGroupMemberFileSystemOperationMountDetailsOutput) MountTargetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMemberFileSystemOperationMountDetails) *string { return v.MountTargetId }).(pulumi.StringPtrOutput)
@@ -3291,12 +2840,6 @@ func (o DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput) ToDrPro
 
 func (o DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput) ToDrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput {
 	return o
-}
-
-func (o DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroupMemberFileSystemOperationMountDetails] {
-	return pulumix.Output[*DrProtectionGroupMemberFileSystemOperationMountDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput) Elem() DrProtectionGroupMemberFileSystemOperationMountDetailsOutput {
@@ -3352,12 +2895,6 @@ func (i DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs) ToDrProtec
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput)
 }
 
-func (i DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberFileSystemOperationUnmountDetails] {
-	return pulumix.Output[DrProtectionGroupMemberFileSystemOperationUnmountDetails]{
-		OutputState: i.ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs) ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput() DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput {
 	return i.ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutputWithContext(context.Background())
 }
@@ -3399,12 +2936,6 @@ func (i *drProtectionGroupMemberFileSystemOperationUnmountDetailsPtrType) ToDrPr
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput)
 }
 
-func (i *drProtectionGroupMemberFileSystemOperationUnmountDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroupMemberFileSystemOperationUnmountDetails] {
-	return pulumix.Output[*DrProtectionGroupMemberFileSystemOperationUnmountDetails]{
-		OutputState: i.ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput struct{ *pulumi.OutputState }
 
 func (DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput) ElementType() reflect.Type {
@@ -3429,12 +2960,6 @@ func (o DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput) ToDrProt
 	}).(DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput)
 }
 
-func (o DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberFileSystemOperationUnmountDetails] {
-	return pulumix.Output[DrProtectionGroupMemberFileSystemOperationUnmountDetails]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
 func (o DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput) MountTargetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMemberFileSystemOperationUnmountDetails) *string { return v.MountTargetId }).(pulumi.StringPtrOutput)
@@ -3452,12 +2977,6 @@ func (o DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput) ToDrP
 
 func (o DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput) ToDrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput {
 	return o
-}
-
-func (o DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DrProtectionGroupMemberFileSystemOperationUnmountDetails] {
-	return pulumix.Output[*DrProtectionGroupMemberFileSystemOperationUnmountDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrProtectionGroupMemberFileSystemOperationUnmountDetailsPtrOutput) Elem() DrProtectionGroupMemberFileSystemOperationUnmountDetailsOutput {
@@ -3529,12 +3048,6 @@ func (i DrProtectionGroupMemberVnicMappingArgs) ToDrProtectionGroupMemberVnicMap
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberVnicMappingOutput)
 }
 
-func (i DrProtectionGroupMemberVnicMappingArgs) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberVnicMapping] {
-	return pulumix.Output[DrProtectionGroupMemberVnicMapping]{
-		OutputState: i.ToDrProtectionGroupMemberVnicMappingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrProtectionGroupMemberVnicMappingArrayInput is an input type that accepts DrProtectionGroupMemberVnicMappingArray and DrProtectionGroupMemberVnicMappingArrayOutput values.
 // You can construct a concrete instance of `DrProtectionGroupMemberVnicMappingArrayInput` via:
 //
@@ -3560,12 +3073,6 @@ func (i DrProtectionGroupMemberVnicMappingArray) ToDrProtectionGroupMemberVnicMa
 	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberVnicMappingArrayOutput)
 }
 
-func (i DrProtectionGroupMemberVnicMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]DrProtectionGroupMemberVnicMapping] {
-	return pulumix.Output[[]DrProtectionGroupMemberVnicMapping]{
-		OutputState: i.ToDrProtectionGroupMemberVnicMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrProtectionGroupMemberVnicMappingOutput struct{ *pulumi.OutputState }
 
 func (DrProtectionGroupMemberVnicMappingOutput) ElementType() reflect.Type {
@@ -3578,12 +3085,6 @@ func (o DrProtectionGroupMemberVnicMappingOutput) ToDrProtectionGroupMemberVnicM
 
 func (o DrProtectionGroupMemberVnicMappingOutput) ToDrProtectionGroupMemberVnicMappingOutputWithContext(ctx context.Context) DrProtectionGroupMemberVnicMappingOutput {
 	return o
-}
-
-func (o DrProtectionGroupMemberVnicMappingOutput) ToOutput(ctx context.Context) pulumix.Output[DrProtectionGroupMemberVnicMapping] {
-	return pulumix.Output[DrProtectionGroupMemberVnicMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
@@ -3623,12 +3124,6 @@ func (o DrProtectionGroupMemberVnicMappingArrayOutput) ToDrProtectionGroupMember
 
 func (o DrProtectionGroupMemberVnicMappingArrayOutput) ToDrProtectionGroupMemberVnicMappingArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberVnicMappingArrayOutput {
 	return o
-}
-
-func (o DrProtectionGroupMemberVnicMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DrProtectionGroupMemberVnicMapping] {
-	return pulumix.Output[[]DrProtectionGroupMemberVnicMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrProtectionGroupMemberVnicMappingArrayOutput) Index(i pulumi.IntInput) DrProtectionGroupMemberVnicMappingOutput {
@@ -3678,12 +3173,6 @@ func (i GetDrPlanExecutionExecutionOptionArgs) ToGetDrPlanExecutionExecutionOpti
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionExecutionOptionOutput)
 }
 
-func (i GetDrPlanExecutionExecutionOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionExecutionOption] {
-	return pulumix.Output[GetDrPlanExecutionExecutionOption]{
-		OutputState: i.ToGetDrPlanExecutionExecutionOptionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrPlanExecutionExecutionOptionArrayInput is an input type that accepts GetDrPlanExecutionExecutionOptionArray and GetDrPlanExecutionExecutionOptionArrayOutput values.
 // You can construct a concrete instance of `GetDrPlanExecutionExecutionOptionArrayInput` via:
 //
@@ -3709,12 +3198,6 @@ func (i GetDrPlanExecutionExecutionOptionArray) ToGetDrPlanExecutionExecutionOpt
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionExecutionOptionArrayOutput)
 }
 
-func (i GetDrPlanExecutionExecutionOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionExecutionOption] {
-	return pulumix.Output[[]GetDrPlanExecutionExecutionOption]{
-		OutputState: i.ToGetDrPlanExecutionExecutionOptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanExecutionExecutionOptionOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanExecutionExecutionOptionOutput) ElementType() reflect.Type {
@@ -3727,12 +3210,6 @@ func (o GetDrPlanExecutionExecutionOptionOutput) ToGetDrPlanExecutionExecutionOp
 
 func (o GetDrPlanExecutionExecutionOptionOutput) ToGetDrPlanExecutionExecutionOptionOutputWithContext(ctx context.Context) GetDrPlanExecutionExecutionOptionOutput {
 	return o
-}
-
-func (o GetDrPlanExecutionExecutionOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionExecutionOption] {
-	return pulumix.Output[GetDrPlanExecutionExecutionOption]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A flag indicating whether a precheck should be executed before the plan execution.  Example: `true`
@@ -3762,12 +3239,6 @@ func (o GetDrPlanExecutionExecutionOptionArrayOutput) ToGetDrPlanExecutionExecut
 
 func (o GetDrPlanExecutionExecutionOptionArrayOutput) ToGetDrPlanExecutionExecutionOptionArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionExecutionOptionArrayOutput {
 	return o
-}
-
-func (o GetDrPlanExecutionExecutionOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionExecutionOption] {
-	return pulumix.Output[[]GetDrPlanExecutionExecutionOption]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrPlanExecutionExecutionOptionArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionExecutionOptionOutput {
@@ -3841,12 +3312,6 @@ func (i GetDrPlanExecutionGroupExecutionArgs) ToGetDrPlanExecutionGroupExecution
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionGroupExecutionOutput)
 }
 
-func (i GetDrPlanExecutionGroupExecutionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionGroupExecution] {
-	return pulumix.Output[GetDrPlanExecutionGroupExecution]{
-		OutputState: i.ToGetDrPlanExecutionGroupExecutionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrPlanExecutionGroupExecutionArrayInput is an input type that accepts GetDrPlanExecutionGroupExecutionArray and GetDrPlanExecutionGroupExecutionArrayOutput values.
 // You can construct a concrete instance of `GetDrPlanExecutionGroupExecutionArrayInput` via:
 //
@@ -3872,12 +3337,6 @@ func (i GetDrPlanExecutionGroupExecutionArray) ToGetDrPlanExecutionGroupExecutio
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionGroupExecutionArrayOutput)
 }
 
-func (i GetDrPlanExecutionGroupExecutionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionGroupExecution] {
-	return pulumix.Output[[]GetDrPlanExecutionGroupExecution]{
-		OutputState: i.ToGetDrPlanExecutionGroupExecutionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanExecutionGroupExecutionOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanExecutionGroupExecutionOutput) ElementType() reflect.Type {
@@ -3890,12 +3349,6 @@ func (o GetDrPlanExecutionGroupExecutionOutput) ToGetDrPlanExecutionGroupExecuti
 
 func (o GetDrPlanExecutionGroupExecutionOutput) ToGetDrPlanExecutionGroupExecutionOutputWithContext(ctx context.Context) GetDrPlanExecutionGroupExecutionOutput {
 	return o
-}
-
-func (o GetDrPlanExecutionGroupExecutionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionGroupExecution] {
-	return pulumix.Output[GetDrPlanExecutionGroupExecution]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
@@ -3957,12 +3410,6 @@ func (o GetDrPlanExecutionGroupExecutionArrayOutput) ToGetDrPlanExecutionGroupEx
 
 func (o GetDrPlanExecutionGroupExecutionArrayOutput) ToGetDrPlanExecutionGroupExecutionArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionGroupExecutionArrayOutput {
 	return o
-}
-
-func (o GetDrPlanExecutionGroupExecutionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionGroupExecution] {
-	return pulumix.Output[[]GetDrPlanExecutionGroupExecution]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrPlanExecutionGroupExecutionArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionGroupExecutionOutput {
@@ -4040,12 +3487,6 @@ func (i GetDrPlanExecutionGroupExecutionStepExecutionArgs) ToGetDrPlanExecutionG
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionGroupExecutionStepExecutionOutput)
 }
 
-func (i GetDrPlanExecutionGroupExecutionStepExecutionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionGroupExecutionStepExecution] {
-	return pulumix.Output[GetDrPlanExecutionGroupExecutionStepExecution]{
-		OutputState: i.ToGetDrPlanExecutionGroupExecutionStepExecutionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrPlanExecutionGroupExecutionStepExecutionArrayInput is an input type that accepts GetDrPlanExecutionGroupExecutionStepExecutionArray and GetDrPlanExecutionGroupExecutionStepExecutionArrayOutput values.
 // You can construct a concrete instance of `GetDrPlanExecutionGroupExecutionStepExecutionArrayInput` via:
 //
@@ -4071,12 +3512,6 @@ func (i GetDrPlanExecutionGroupExecutionStepExecutionArray) ToGetDrPlanExecution
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionGroupExecutionStepExecutionArrayOutput)
 }
 
-func (i GetDrPlanExecutionGroupExecutionStepExecutionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionGroupExecutionStepExecution] {
-	return pulumix.Output[[]GetDrPlanExecutionGroupExecutionStepExecution]{
-		OutputState: i.ToGetDrPlanExecutionGroupExecutionStepExecutionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanExecutionGroupExecutionStepExecutionOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanExecutionGroupExecutionStepExecutionOutput) ElementType() reflect.Type {
@@ -4089,12 +3524,6 @@ func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) ToGetDrPlanExecutio
 
 func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) ToGetDrPlanExecutionGroupExecutionStepExecutionOutputWithContext(ctx context.Context) GetDrPlanExecutionGroupExecutionStepExecutionOutput {
 	return o
-}
-
-func (o GetDrPlanExecutionGroupExecutionStepExecutionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionGroupExecutionStepExecution] {
-	return pulumix.Output[GetDrPlanExecutionGroupExecutionStepExecution]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
@@ -4163,12 +3592,6 @@ func (o GetDrPlanExecutionGroupExecutionStepExecutionArrayOutput) ToGetDrPlanExe
 	return o
 }
 
-func (o GetDrPlanExecutionGroupExecutionStepExecutionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionGroupExecutionStepExecution] {
-	return pulumix.Output[[]GetDrPlanExecutionGroupExecutionStepExecution]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrPlanExecutionGroupExecutionStepExecutionArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionGroupExecutionStepExecutionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanExecutionGroupExecutionStepExecution {
 		return vs[0].([]GetDrPlanExecutionGroupExecutionStepExecution)[vs[1].(int)]
@@ -4216,12 +3639,6 @@ func (i GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArgs) ToGetDrPla
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionGroupExecutionStepExecutionLogLocationOutput)
 }
 
-func (i GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionGroupExecutionStepExecutionLogLocation] {
-	return pulumix.Output[GetDrPlanExecutionGroupExecutionStepExecutionLogLocation]{
-		OutputState: i.ToGetDrPlanExecutionGroupExecutionStepExecutionLogLocationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArrayInput is an input type that accepts GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArray and GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput values.
 // You can construct a concrete instance of `GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArrayInput` via:
 //
@@ -4247,12 +3664,6 @@ func (i GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArray) ToGetDrPl
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput)
 }
 
-func (i GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionGroupExecutionStepExecutionLogLocation] {
-	return pulumix.Output[[]GetDrPlanExecutionGroupExecutionStepExecutionLogLocation]{
-		OutputState: i.ToGetDrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanExecutionGroupExecutionStepExecutionLogLocationOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanExecutionGroupExecutionStepExecutionLogLocationOutput) ElementType() reflect.Type {
@@ -4265,12 +3676,6 @@ func (o GetDrPlanExecutionGroupExecutionStepExecutionLogLocationOutput) ToGetDrP
 
 func (o GetDrPlanExecutionGroupExecutionStepExecutionLogLocationOutput) ToGetDrPlanExecutionGroupExecutionStepExecutionLogLocationOutputWithContext(ctx context.Context) GetDrPlanExecutionGroupExecutionStepExecutionLogLocationOutput {
 	return o
-}
-
-func (o GetDrPlanExecutionGroupExecutionStepExecutionLogLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionGroupExecutionStepExecutionLogLocation] {
-	return pulumix.Output[GetDrPlanExecutionGroupExecutionStepExecutionLogLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The bucket name inside the object storage namespace.  Example: `operationLogs`
@@ -4300,12 +3705,6 @@ func (o GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput) ToG
 
 func (o GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput) ToGetDrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput {
 	return o
-}
-
-func (o GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionGroupExecutionStepExecutionLogLocation] {
-	return pulumix.Output[[]GetDrPlanExecutionGroupExecutionStepExecutionLogLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionGroupExecutionStepExecutionLogLocationOutput {
@@ -4355,12 +3754,6 @@ func (i GetDrPlanExecutionLogLocationArgs) ToGetDrPlanExecutionLogLocationOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionLogLocationOutput)
 }
 
-func (i GetDrPlanExecutionLogLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionLogLocation] {
-	return pulumix.Output[GetDrPlanExecutionLogLocation]{
-		OutputState: i.ToGetDrPlanExecutionLogLocationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrPlanExecutionLogLocationArrayInput is an input type that accepts GetDrPlanExecutionLogLocationArray and GetDrPlanExecutionLogLocationArrayOutput values.
 // You can construct a concrete instance of `GetDrPlanExecutionLogLocationArrayInput` via:
 //
@@ -4386,12 +3779,6 @@ func (i GetDrPlanExecutionLogLocationArray) ToGetDrPlanExecutionLogLocationArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionLogLocationArrayOutput)
 }
 
-func (i GetDrPlanExecutionLogLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionLogLocation] {
-	return pulumix.Output[[]GetDrPlanExecutionLogLocation]{
-		OutputState: i.ToGetDrPlanExecutionLogLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanExecutionLogLocationOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanExecutionLogLocationOutput) ElementType() reflect.Type {
@@ -4404,12 +3791,6 @@ func (o GetDrPlanExecutionLogLocationOutput) ToGetDrPlanExecutionLogLocationOutp
 
 func (o GetDrPlanExecutionLogLocationOutput) ToGetDrPlanExecutionLogLocationOutputWithContext(ctx context.Context) GetDrPlanExecutionLogLocationOutput {
 	return o
-}
-
-func (o GetDrPlanExecutionLogLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionLogLocation] {
-	return pulumix.Output[GetDrPlanExecutionLogLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The bucket name inside the object storage namespace.  Example: `operationLogs`
@@ -4439,12 +3820,6 @@ func (o GetDrPlanExecutionLogLocationArrayOutput) ToGetDrPlanExecutionLogLocatio
 
 func (o GetDrPlanExecutionLogLocationArrayOutput) ToGetDrPlanExecutionLogLocationArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionLogLocationArrayOutput {
 	return o
-}
-
-func (o GetDrPlanExecutionLogLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionLogLocation] {
-	return pulumix.Output[[]GetDrPlanExecutionLogLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrPlanExecutionLogLocationArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionLogLocationOutput {
@@ -4484,12 +3859,6 @@ func (i GetDrPlanExecutionsDrPlanExecutionCollectionArgs) ToGetDrPlanExecutionsD
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionOutput)
 }
 
-func (i GetDrPlanExecutionsDrPlanExecutionCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollection] {
-	return pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollection]{
-		OutputState: i.ToGetDrPlanExecutionsDrPlanExecutionCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrPlanExecutionsDrPlanExecutionCollectionArrayInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionArray and GetDrPlanExecutionsDrPlanExecutionCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDrPlanExecutionsDrPlanExecutionCollectionArrayInput` via:
 //
@@ -4515,12 +3884,6 @@ func (i GetDrPlanExecutionsDrPlanExecutionCollectionArray) ToGetDrPlanExecutions
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionArrayOutput)
 }
 
-func (i GetDrPlanExecutionsDrPlanExecutionCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollection] {
-	return pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollection]{
-		OutputState: i.ToGetDrPlanExecutionsDrPlanExecutionCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanExecutionsDrPlanExecutionCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanExecutionsDrPlanExecutionCollectionOutput) ElementType() reflect.Type {
@@ -4533,12 +3896,6 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionOutput) ToGetDrPlanExecution
 
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionOutput {
 	return o
-}
-
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollection] {
-	return pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionOutput) Items() GetDrPlanExecutionsDrPlanExecutionCollectionItemArrayOutput {
@@ -4559,12 +3916,6 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionArrayOutput) ToGetDrPlanExec
 
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionArrayOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionArrayOutput {
 	return o
-}
-
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollection] {
-	return pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionsDrPlanExecutionCollectionOutput {
@@ -4686,12 +4037,6 @@ func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemArgs) ToGetDrPlanExecuti
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput)
 }
 
-func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItem] {
-	return pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItem]{
-		OutputState: i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrPlanExecutionsDrPlanExecutionCollectionItemArrayInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemArray and GetDrPlanExecutionsDrPlanExecutionCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDrPlanExecutionsDrPlanExecutionCollectionItemArrayInput` via:
 //
@@ -4717,12 +4062,6 @@ func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemArray) ToGetDrPlanExecut
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemArrayOutput)
 }
 
-func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItem] {
-	return pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItem]{
-		OutputState: i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) ElementType() reflect.Type {
@@ -4735,12 +4074,6 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) ToGetDrPlanExecu
 
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput {
 	return o
-}
-
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItem] {
-	return pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
@@ -4868,12 +4201,6 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemArrayOutput) ToGetDrPlan
 	return o
 }
 
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItem] {
-	return pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanExecutionsDrPlanExecutionCollectionItem {
 		return vs[0].([]GetDrPlanExecutionsDrPlanExecutionCollectionItem)[vs[1].(int)]
@@ -4921,12 +4248,6 @@ func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArgs) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutput)
 }
 
-func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption] {
-	return pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption]{
-		OutputState: i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArrayInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArray and GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArrayOutput values.
 // You can construct a concrete instance of `GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArrayInput` via:
 //
@@ -4952,12 +4273,6 @@ func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArrayOutput)
 }
 
-func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption] {
-	return pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption]{
-		OutputState: i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutput) ElementType() reflect.Type {
@@ -4970,12 +4285,6 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutput) T
 
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutput {
 	return o
-}
-
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption] {
-	return pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A flag indicating whether a precheck should be executed before the plan execution.  Example: `true`
@@ -5011,12 +4320,6 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArrayOutp
 
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArrayOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArrayOutput {
 	return o
-}
-
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption] {
-	return pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionOutput {
@@ -5090,12 +4393,6 @@ func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArgs) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput)
 }
 
-func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution] {
-	return pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution]{
-		OutputState: i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArrayInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArray and GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArrayOutput values.
 // You can construct a concrete instance of `GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArrayInput` via:
 //
@@ -5121,12 +4418,6 @@ func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArrayOutput)
 }
 
-func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution] {
-	return pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution]{
-		OutputState: i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) ElementType() reflect.Type {
@@ -5139,12 +4430,6 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) To
 
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput {
 	return o
-}
-
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution] {
-	return pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
@@ -5208,12 +4493,6 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArrayOutpu
 
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArrayOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArrayOutput {
 	return o
-}
-
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution] {
-	return pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionOutput {
@@ -5291,12 +4570,6 @@ func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecut
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput)
 }
 
-func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution] {
-	return pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution]{
-		OutputState: i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionArrayInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionArray and GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionArrayOutput values.
 // You can construct a concrete instance of `GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionArrayInput` via:
 //
@@ -5322,12 +4595,6 @@ func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecut
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionArrayOutput)
 }
 
-func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution] {
-	return pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution]{
-		OutputState: i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) ElementType() reflect.Type {
@@ -5340,12 +4607,6 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecut
 
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput {
 	return o
-}
-
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution] {
-	return pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
@@ -5432,12 +4693,6 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecut
 	return o
 }
 
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution] {
-	return pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution {
 		return vs[0].([]GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecution)[vs[1].(int)]
@@ -5485,12 +4740,6 @@ func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecut
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationOutput)
 }
 
-func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation] {
-	return pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation]{
-		OutputState: i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArrayInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArray and GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArrayOutput values.
 // You can construct a concrete instance of `GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArrayInput` via:
 //
@@ -5516,12 +4765,6 @@ func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecut
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArrayOutput)
 }
 
-func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation] {
-	return pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation]{
-		OutputState: i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationOutput) ElementType() reflect.Type {
@@ -5534,12 +4777,6 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecut
 
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationOutput {
 	return o
-}
-
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation] {
-	return pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The bucket name inside the object storage namespace.  Example: `operationLogs`
@@ -5575,12 +4812,6 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecut
 
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArrayOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArrayOutput {
 	return o
-}
-
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation] {
-	return pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationOutput {
@@ -5630,12 +4861,6 @@ func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArgs) ToGetDr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationOutput)
 }
 
-func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation] {
-	return pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation]{
-		OutputState: i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArrayInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArray and GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArrayOutput values.
 // You can construct a concrete instance of `GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArrayInput` via:
 //
@@ -5661,12 +4886,6 @@ func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArray) ToGetD
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArrayOutput)
 }
 
-func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation] {
-	return pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation]{
-		OutputState: i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationOutput) ElementType() reflect.Type {
@@ -5679,12 +4898,6 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationOutput) ToGet
 
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationOutput {
 	return o
-}
-
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation] {
-	return pulumix.Output[GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The bucket name inside the object storage namespace.  Example: `operationLogs`
@@ -5714,12 +4927,6 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArrayOutput) 
 
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArrayOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArrayOutput {
 	return o
-}
-
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation] {
-	return pulumix.Output[[]GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationOutput {
@@ -5763,12 +4970,6 @@ func (i GetDrPlanExecutionsFilterArgs) ToGetDrPlanExecutionsFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsFilterOutput)
 }
 
-func (i GetDrPlanExecutionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsFilter] {
-	return pulumix.Output[GetDrPlanExecutionsFilter]{
-		OutputState: i.ToGetDrPlanExecutionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrPlanExecutionsFilterArrayInput is an input type that accepts GetDrPlanExecutionsFilterArray and GetDrPlanExecutionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDrPlanExecutionsFilterArrayInput` via:
 //
@@ -5794,12 +4995,6 @@ func (i GetDrPlanExecutionsFilterArray) ToGetDrPlanExecutionsFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsFilterArrayOutput)
 }
 
-func (i GetDrPlanExecutionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionsFilter] {
-	return pulumix.Output[[]GetDrPlanExecutionsFilter]{
-		OutputState: i.ToGetDrPlanExecutionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanExecutionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanExecutionsFilterOutput) ElementType() reflect.Type {
@@ -5812,12 +5007,6 @@ func (o GetDrPlanExecutionsFilterOutput) ToGetDrPlanExecutionsFilterOutput() Get
 
 func (o GetDrPlanExecutionsFilterOutput) ToGetDrPlanExecutionsFilterOutputWithContext(ctx context.Context) GetDrPlanExecutionsFilterOutput {
 	return o
-}
-
-func (o GetDrPlanExecutionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsFilter] {
-	return pulumix.Output[GetDrPlanExecutionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrPlanExecutionsFilterOutput) Name() pulumi.StringOutput {
@@ -5844,12 +5033,6 @@ func (o GetDrPlanExecutionsFilterArrayOutput) ToGetDrPlanExecutionsFilterArrayOu
 
 func (o GetDrPlanExecutionsFilterArrayOutput) ToGetDrPlanExecutionsFilterArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionsFilterArrayOutput {
 	return o
-}
-
-func (o GetDrPlanExecutionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanExecutionsFilter] {
-	return pulumix.Output[[]GetDrPlanExecutionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrPlanExecutionsFilterArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionsFilterOutput {
@@ -5903,12 +5086,6 @@ func (i GetDrPlanPlanGroupArgs) ToGetDrPlanPlanGroupOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanPlanGroupOutput)
 }
 
-func (i GetDrPlanPlanGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanPlanGroup] {
-	return pulumix.Output[GetDrPlanPlanGroup]{
-		OutputState: i.ToGetDrPlanPlanGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrPlanPlanGroupArrayInput is an input type that accepts GetDrPlanPlanGroupArray and GetDrPlanPlanGroupArrayOutput values.
 // You can construct a concrete instance of `GetDrPlanPlanGroupArrayInput` via:
 //
@@ -5934,12 +5111,6 @@ func (i GetDrPlanPlanGroupArray) ToGetDrPlanPlanGroupArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanPlanGroupArrayOutput)
 }
 
-func (i GetDrPlanPlanGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanPlanGroup] {
-	return pulumix.Output[[]GetDrPlanPlanGroup]{
-		OutputState: i.ToGetDrPlanPlanGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanPlanGroupOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanPlanGroupOutput) ElementType() reflect.Type {
@@ -5952,12 +5123,6 @@ func (o GetDrPlanPlanGroupOutput) ToGetDrPlanPlanGroupOutput() GetDrPlanPlanGrou
 
 func (o GetDrPlanPlanGroupOutput) ToGetDrPlanPlanGroupOutputWithContext(ctx context.Context) GetDrPlanPlanGroupOutput {
 	return o
-}
-
-func (o GetDrPlanPlanGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanPlanGroup] {
-	return pulumix.Output[GetDrPlanPlanGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The display name of the group.  Example: `DATABASE_SWITCHOVER`
@@ -5992,12 +5157,6 @@ func (o GetDrPlanPlanGroupArrayOutput) ToGetDrPlanPlanGroupArrayOutput() GetDrPl
 
 func (o GetDrPlanPlanGroupArrayOutput) ToGetDrPlanPlanGroupArrayOutputWithContext(ctx context.Context) GetDrPlanPlanGroupArrayOutput {
 	return o
-}
-
-func (o GetDrPlanPlanGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanPlanGroup] {
-	return pulumix.Output[[]GetDrPlanPlanGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrPlanPlanGroupArrayOutput) Index(i pulumi.IntInput) GetDrPlanPlanGroupOutput {
@@ -6071,12 +5230,6 @@ func (i GetDrPlanPlanGroupStepArgs) ToGetDrPlanPlanGroupStepOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanPlanGroupStepOutput)
 }
 
-func (i GetDrPlanPlanGroupStepArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanPlanGroupStep] {
-	return pulumix.Output[GetDrPlanPlanGroupStep]{
-		OutputState: i.ToGetDrPlanPlanGroupStepOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrPlanPlanGroupStepArrayInput is an input type that accepts GetDrPlanPlanGroupStepArray and GetDrPlanPlanGroupStepArrayOutput values.
 // You can construct a concrete instance of `GetDrPlanPlanGroupStepArrayInput` via:
 //
@@ -6102,12 +5255,6 @@ func (i GetDrPlanPlanGroupStepArray) ToGetDrPlanPlanGroupStepArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanPlanGroupStepArrayOutput)
 }
 
-func (i GetDrPlanPlanGroupStepArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanPlanGroupStep] {
-	return pulumix.Output[[]GetDrPlanPlanGroupStep]{
-		OutputState: i.ToGetDrPlanPlanGroupStepArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanPlanGroupStepOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanPlanGroupStepOutput) ElementType() reflect.Type {
@@ -6120,12 +5267,6 @@ func (o GetDrPlanPlanGroupStepOutput) ToGetDrPlanPlanGroupStepOutput() GetDrPlan
 
 func (o GetDrPlanPlanGroupStepOutput) ToGetDrPlanPlanGroupStepOutputWithContext(ctx context.Context) GetDrPlanPlanGroupStepOutput {
 	return o
-}
-
-func (o GetDrPlanPlanGroupStepOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanPlanGroupStep] {
-	return pulumix.Output[GetDrPlanPlanGroupStep]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The display name of the group.  Example: `DATABASE_SWITCHOVER`
@@ -6185,12 +5326,6 @@ func (o GetDrPlanPlanGroupStepArrayOutput) ToGetDrPlanPlanGroupStepArrayOutput()
 
 func (o GetDrPlanPlanGroupStepArrayOutput) ToGetDrPlanPlanGroupStepArrayOutputWithContext(ctx context.Context) GetDrPlanPlanGroupStepArrayOutput {
 	return o
-}
-
-func (o GetDrPlanPlanGroupStepArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanPlanGroupStep] {
-	return pulumix.Output[[]GetDrPlanPlanGroupStep]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrPlanPlanGroupStepArrayOutput) Index(i pulumi.IntInput) GetDrPlanPlanGroupStepOutput {
@@ -6264,12 +5399,6 @@ func (i GetDrPlanPlanGroupStepUserDefinedStepArgs) ToGetDrPlanPlanGroupStepUserD
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanPlanGroupStepUserDefinedStepOutput)
 }
 
-func (i GetDrPlanPlanGroupStepUserDefinedStepArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanPlanGroupStepUserDefinedStep] {
-	return pulumix.Output[GetDrPlanPlanGroupStepUserDefinedStep]{
-		OutputState: i.ToGetDrPlanPlanGroupStepUserDefinedStepOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrPlanPlanGroupStepUserDefinedStepArrayInput is an input type that accepts GetDrPlanPlanGroupStepUserDefinedStepArray and GetDrPlanPlanGroupStepUserDefinedStepArrayOutput values.
 // You can construct a concrete instance of `GetDrPlanPlanGroupStepUserDefinedStepArrayInput` via:
 //
@@ -6295,12 +5424,6 @@ func (i GetDrPlanPlanGroupStepUserDefinedStepArray) ToGetDrPlanPlanGroupStepUser
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanPlanGroupStepUserDefinedStepArrayOutput)
 }
 
-func (i GetDrPlanPlanGroupStepUserDefinedStepArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanPlanGroupStepUserDefinedStep] {
-	return pulumix.Output[[]GetDrPlanPlanGroupStepUserDefinedStep]{
-		OutputState: i.ToGetDrPlanPlanGroupStepUserDefinedStepArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanPlanGroupStepUserDefinedStepOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanPlanGroupStepUserDefinedStepOutput) ElementType() reflect.Type {
@@ -6313,12 +5436,6 @@ func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) ToGetDrPlanPlanGroupStepUse
 
 func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) ToGetDrPlanPlanGroupStepUserDefinedStepOutputWithContext(ctx context.Context) GetDrPlanPlanGroupStepUserDefinedStepOutput {
 	return o
-}
-
-func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanPlanGroupStepUserDefinedStep] {
-	return pulumix.Output[GetDrPlanPlanGroupStepUserDefinedStep]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
@@ -6382,12 +5499,6 @@ func (o GetDrPlanPlanGroupStepUserDefinedStepArrayOutput) ToGetDrPlanPlanGroupSt
 	return o
 }
 
-func (o GetDrPlanPlanGroupStepUserDefinedStepArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanPlanGroupStepUserDefinedStep] {
-	return pulumix.Output[[]GetDrPlanPlanGroupStepUserDefinedStep]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrPlanPlanGroupStepUserDefinedStepArrayOutput) Index(i pulumi.IntInput) GetDrPlanPlanGroupStepUserDefinedStepOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanPlanGroupStepUserDefinedStep {
 		return vs[0].([]GetDrPlanPlanGroupStepUserDefinedStep)[vs[1].(int)]
@@ -6435,12 +5546,6 @@ func (i GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput)
 }
 
-func (i GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation] {
-	return pulumix.Output[GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation]{
-		OutputState: i.ToGetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayInput is an input type that accepts GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArray and GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput values.
 // You can construct a concrete instance of `GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayInput` via:
 //
@@ -6466,12 +5571,6 @@ func (i GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput)
 }
 
-func (i GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation] {
-	return pulumix.Output[[]GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation]{
-		OutputState: i.ToGetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) ElementType() reflect.Type {
@@ -6484,12 +5583,6 @@ func (o GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) 
 
 func (o GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) ToGetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutputWithContext(ctx context.Context) GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput {
 	return o
-}
-
-func (o GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation] {
-	return pulumix.Output[GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The bucket name inside the object storage namespace.  Example: `customDrScripts`
@@ -6519,12 +5612,6 @@ func (o GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOut
 
 func (o GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput) ToGetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutputWithContext(ctx context.Context) GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput {
 	return o
-}
-
-func (o GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation] {
-	return pulumix.Output[[]GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput) Index(i pulumi.IntInput) GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput {
@@ -6564,12 +5651,6 @@ func (i GetDrPlansDrPlanCollectionArgs) ToGetDrPlansDrPlanCollectionOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlansDrPlanCollectionOutput)
 }
 
-func (i GetDrPlansDrPlanCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlansDrPlanCollection] {
-	return pulumix.Output[GetDrPlansDrPlanCollection]{
-		OutputState: i.ToGetDrPlansDrPlanCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrPlansDrPlanCollectionArrayInput is an input type that accepts GetDrPlansDrPlanCollectionArray and GetDrPlansDrPlanCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDrPlansDrPlanCollectionArrayInput` via:
 //
@@ -6595,12 +5676,6 @@ func (i GetDrPlansDrPlanCollectionArray) ToGetDrPlansDrPlanCollectionArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlansDrPlanCollectionArrayOutput)
 }
 
-func (i GetDrPlansDrPlanCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlansDrPlanCollection] {
-	return pulumix.Output[[]GetDrPlansDrPlanCollection]{
-		OutputState: i.ToGetDrPlansDrPlanCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlansDrPlanCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlansDrPlanCollectionOutput) ElementType() reflect.Type {
@@ -6613,12 +5688,6 @@ func (o GetDrPlansDrPlanCollectionOutput) ToGetDrPlansDrPlanCollectionOutput() G
 
 func (o GetDrPlansDrPlanCollectionOutput) ToGetDrPlansDrPlanCollectionOutputWithContext(ctx context.Context) GetDrPlansDrPlanCollectionOutput {
 	return o
-}
-
-func (o GetDrPlansDrPlanCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlansDrPlanCollection] {
-	return pulumix.Output[GetDrPlansDrPlanCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrPlansDrPlanCollectionOutput) Items() GetDrPlansDrPlanCollectionItemArrayOutput {
@@ -6637,12 +5706,6 @@ func (o GetDrPlansDrPlanCollectionArrayOutput) ToGetDrPlansDrPlanCollectionArray
 
 func (o GetDrPlansDrPlanCollectionArrayOutput) ToGetDrPlansDrPlanCollectionArrayOutputWithContext(ctx context.Context) GetDrPlansDrPlanCollectionArrayOutput {
 	return o
-}
-
-func (o GetDrPlansDrPlanCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlansDrPlanCollection] {
-	return pulumix.Output[[]GetDrPlansDrPlanCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrPlansDrPlanCollectionArrayOutput) Index(i pulumi.IntInput) GetDrPlansDrPlanCollectionOutput {
@@ -6740,12 +5803,6 @@ func (i GetDrPlansDrPlanCollectionItemArgs) ToGetDrPlansDrPlanCollectionItemOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlansDrPlanCollectionItemOutput)
 }
 
-func (i GetDrPlansDrPlanCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlansDrPlanCollectionItem] {
-	return pulumix.Output[GetDrPlansDrPlanCollectionItem]{
-		OutputState: i.ToGetDrPlansDrPlanCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrPlansDrPlanCollectionItemArrayInput is an input type that accepts GetDrPlansDrPlanCollectionItemArray and GetDrPlansDrPlanCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDrPlansDrPlanCollectionItemArrayInput` via:
 //
@@ -6771,12 +5828,6 @@ func (i GetDrPlansDrPlanCollectionItemArray) ToGetDrPlansDrPlanCollectionItemArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlansDrPlanCollectionItemArrayOutput)
 }
 
-func (i GetDrPlansDrPlanCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlansDrPlanCollectionItem] {
-	return pulumix.Output[[]GetDrPlansDrPlanCollectionItem]{
-		OutputState: i.ToGetDrPlansDrPlanCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlansDrPlanCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlansDrPlanCollectionItemOutput) ElementType() reflect.Type {
@@ -6789,12 +5840,6 @@ func (o GetDrPlansDrPlanCollectionItemOutput) ToGetDrPlansDrPlanCollectionItemOu
 
 func (o GetDrPlansDrPlanCollectionItemOutput) ToGetDrPlansDrPlanCollectionItemOutputWithContext(ctx context.Context) GetDrPlansDrPlanCollectionItemOutput {
 	return o
-}
-
-func (o GetDrPlansDrPlanCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlansDrPlanCollectionItem] {
-	return pulumix.Output[GetDrPlansDrPlanCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
@@ -6886,12 +5931,6 @@ func (o GetDrPlansDrPlanCollectionItemArrayOutput) ToGetDrPlansDrPlanCollectionI
 	return o
 }
 
-func (o GetDrPlansDrPlanCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlansDrPlanCollectionItem] {
-	return pulumix.Output[[]GetDrPlansDrPlanCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrPlansDrPlanCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDrPlansDrPlanCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlansDrPlanCollectionItem {
 		return vs[0].([]GetDrPlansDrPlanCollectionItem)[vs[1].(int)]
@@ -6943,12 +5982,6 @@ func (i GetDrPlansDrPlanCollectionItemPlanGroupArgs) ToGetDrPlansDrPlanCollectio
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlansDrPlanCollectionItemPlanGroupOutput)
 }
 
-func (i GetDrPlansDrPlanCollectionItemPlanGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlansDrPlanCollectionItemPlanGroup] {
-	return pulumix.Output[GetDrPlansDrPlanCollectionItemPlanGroup]{
-		OutputState: i.ToGetDrPlansDrPlanCollectionItemPlanGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrPlansDrPlanCollectionItemPlanGroupArrayInput is an input type that accepts GetDrPlansDrPlanCollectionItemPlanGroupArray and GetDrPlansDrPlanCollectionItemPlanGroupArrayOutput values.
 // You can construct a concrete instance of `GetDrPlansDrPlanCollectionItemPlanGroupArrayInput` via:
 //
@@ -6974,12 +6007,6 @@ func (i GetDrPlansDrPlanCollectionItemPlanGroupArray) ToGetDrPlansDrPlanCollecti
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlansDrPlanCollectionItemPlanGroupArrayOutput)
 }
 
-func (i GetDrPlansDrPlanCollectionItemPlanGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlansDrPlanCollectionItemPlanGroup] {
-	return pulumix.Output[[]GetDrPlansDrPlanCollectionItemPlanGroup]{
-		OutputState: i.ToGetDrPlansDrPlanCollectionItemPlanGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlansDrPlanCollectionItemPlanGroupOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlansDrPlanCollectionItemPlanGroupOutput) ElementType() reflect.Type {
@@ -6992,12 +6019,6 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupOutput) ToGetDrPlansDrPlanCollect
 
 func (o GetDrPlansDrPlanCollectionItemPlanGroupOutput) ToGetDrPlansDrPlanCollectionItemPlanGroupOutputWithContext(ctx context.Context) GetDrPlansDrPlanCollectionItemPlanGroupOutput {
 	return o
-}
-
-func (o GetDrPlansDrPlanCollectionItemPlanGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlansDrPlanCollectionItemPlanGroup] {
-	return pulumix.Output[GetDrPlansDrPlanCollectionItemPlanGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
@@ -7034,12 +6055,6 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupArrayOutput) ToGetDrPlansDrPlanCo
 
 func (o GetDrPlansDrPlanCollectionItemPlanGroupArrayOutput) ToGetDrPlansDrPlanCollectionItemPlanGroupArrayOutputWithContext(ctx context.Context) GetDrPlansDrPlanCollectionItemPlanGroupArrayOutput {
 	return o
-}
-
-func (o GetDrPlansDrPlanCollectionItemPlanGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlansDrPlanCollectionItemPlanGroup] {
-	return pulumix.Output[[]GetDrPlansDrPlanCollectionItemPlanGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrPlansDrPlanCollectionItemPlanGroupArrayOutput) Index(i pulumi.IntInput) GetDrPlansDrPlanCollectionItemPlanGroupOutput {
@@ -7113,12 +6128,6 @@ func (i GetDrPlansDrPlanCollectionItemPlanGroupStepArgs) ToGetDrPlansDrPlanColle
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlansDrPlanCollectionItemPlanGroupStepOutput)
 }
 
-func (i GetDrPlansDrPlanCollectionItemPlanGroupStepArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlansDrPlanCollectionItemPlanGroupStep] {
-	return pulumix.Output[GetDrPlansDrPlanCollectionItemPlanGroupStep]{
-		OutputState: i.ToGetDrPlansDrPlanCollectionItemPlanGroupStepOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrPlansDrPlanCollectionItemPlanGroupStepArrayInput is an input type that accepts GetDrPlansDrPlanCollectionItemPlanGroupStepArray and GetDrPlansDrPlanCollectionItemPlanGroupStepArrayOutput values.
 // You can construct a concrete instance of `GetDrPlansDrPlanCollectionItemPlanGroupStepArrayInput` via:
 //
@@ -7144,12 +6153,6 @@ func (i GetDrPlansDrPlanCollectionItemPlanGroupStepArray) ToGetDrPlansDrPlanColl
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlansDrPlanCollectionItemPlanGroupStepArrayOutput)
 }
 
-func (i GetDrPlansDrPlanCollectionItemPlanGroupStepArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlansDrPlanCollectionItemPlanGroupStep] {
-	return pulumix.Output[[]GetDrPlansDrPlanCollectionItemPlanGroupStep]{
-		OutputState: i.ToGetDrPlansDrPlanCollectionItemPlanGroupStepArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlansDrPlanCollectionItemPlanGroupStepOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) ElementType() reflect.Type {
@@ -7162,12 +6165,6 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) ToGetDrPlansDrPlanCol
 
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) ToGetDrPlansDrPlanCollectionItemPlanGroupStepOutputWithContext(ctx context.Context) GetDrPlansDrPlanCollectionItemPlanGroupStepOutput {
 	return o
-}
-
-func (o GetDrPlansDrPlanCollectionItemPlanGroupStepOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlansDrPlanCollectionItemPlanGroupStep] {
-	return pulumix.Output[GetDrPlansDrPlanCollectionItemPlanGroupStep]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
@@ -7229,12 +6226,6 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepArrayOutput) ToGetDrPlansDrPl
 
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepArrayOutput) ToGetDrPlansDrPlanCollectionItemPlanGroupStepArrayOutputWithContext(ctx context.Context) GetDrPlansDrPlanCollectionItemPlanGroupStepArrayOutput {
 	return o
-}
-
-func (o GetDrPlansDrPlanCollectionItemPlanGroupStepArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlansDrPlanCollectionItemPlanGroupStep] {
-	return pulumix.Output[[]GetDrPlansDrPlanCollectionItemPlanGroupStep]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepArrayOutput) Index(i pulumi.IntInput) GetDrPlansDrPlanCollectionItemPlanGroupStepOutput {
@@ -7308,12 +6299,6 @@ func (i GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArgs) ToGetDrP
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput)
 }
 
-func (i GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep] {
-	return pulumix.Output[GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep]{
-		OutputState: i.ToGetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArrayInput is an input type that accepts GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArray and GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArrayOutput values.
 // You can construct a concrete instance of `GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArrayInput` via:
 //
@@ -7339,12 +6324,6 @@ func (i GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArray) ToGetDr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArrayOutput)
 }
 
-func (i GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep] {
-	return pulumix.Output[[]GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep]{
-		OutputState: i.ToGetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) ElementType() reflect.Type {
@@ -7357,12 +6336,6 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) ToGetD
 
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) ToGetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutputWithContext(ctx context.Context) GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput {
 	return o
-}
-
-func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep] {
-	return pulumix.Output[GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
@@ -7428,12 +6401,6 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArrayOutput) T
 	return o
 }
 
-func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep] {
-	return pulumix.Output[[]GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArrayOutput) Index(i pulumi.IntInput) GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep {
 		return vs[0].([]GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep)[vs[1].(int)]
@@ -7481,12 +6448,6 @@ func (i GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageS
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput)
 }
 
-func (i GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation] {
-	return pulumix.Output[GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation]{
-		OutputState: i.ToGetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayInput is an input type that accepts GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArray and GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput values.
 // You can construct a concrete instance of `GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayInput` via:
 //
@@ -7512,12 +6473,6 @@ func (i GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageS
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput)
 }
 
-func (i GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation] {
-	return pulumix.Output[[]GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation]{
-		OutputState: i.ToGetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) ElementType() reflect.Type {
@@ -7530,12 +6485,6 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageS
 
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) ToGetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutputWithContext(ctx context.Context) GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput {
 	return o
-}
-
-func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation] {
-	return pulumix.Output[GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The bucket name inside the object storage namespace.  Example: `customDrScripts`
@@ -7571,12 +6520,6 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageS
 
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput) ToGetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutputWithContext(ctx context.Context) GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput {
 	return o
-}
-
-func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation] {
-	return pulumix.Output[[]GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayOutput) Index(i pulumi.IntInput) GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationOutput {
@@ -7620,12 +6563,6 @@ func (i GetDrPlansFilterArgs) ToGetDrPlansFilterOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlansFilterOutput)
 }
 
-func (i GetDrPlansFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrPlansFilter] {
-	return pulumix.Output[GetDrPlansFilter]{
-		OutputState: i.ToGetDrPlansFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrPlansFilterArrayInput is an input type that accepts GetDrPlansFilterArray and GetDrPlansFilterArrayOutput values.
 // You can construct a concrete instance of `GetDrPlansFilterArrayInput` via:
 //
@@ -7651,12 +6588,6 @@ func (i GetDrPlansFilterArray) ToGetDrPlansFilterArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlansFilterArrayOutput)
 }
 
-func (i GetDrPlansFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlansFilter] {
-	return pulumix.Output[[]GetDrPlansFilter]{
-		OutputState: i.ToGetDrPlansFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrPlansFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDrPlansFilterOutput) ElementType() reflect.Type {
@@ -7669,12 +6600,6 @@ func (o GetDrPlansFilterOutput) ToGetDrPlansFilterOutput() GetDrPlansFilterOutpu
 
 func (o GetDrPlansFilterOutput) ToGetDrPlansFilterOutputWithContext(ctx context.Context) GetDrPlansFilterOutput {
 	return o
-}
-
-func (o GetDrPlansFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlansFilter] {
-	return pulumix.Output[GetDrPlansFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrPlansFilterOutput) Name() pulumi.StringOutput {
@@ -7701,12 +6626,6 @@ func (o GetDrPlansFilterArrayOutput) ToGetDrPlansFilterArrayOutput() GetDrPlansF
 
 func (o GetDrPlansFilterArrayOutput) ToGetDrPlansFilterArrayOutputWithContext(ctx context.Context) GetDrPlansFilterArrayOutput {
 	return o
-}
-
-func (o GetDrPlansFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrPlansFilter] {
-	return pulumix.Output[[]GetDrPlansFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrPlansFilterArrayOutput) Index(i pulumi.IntInput) GetDrPlansFilterOutput {
@@ -7756,12 +6675,6 @@ func (i GetDrProtectionGroupAssociationArgs) ToGetDrProtectionGroupAssociationOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupAssociationOutput)
 }
 
-func (i GetDrProtectionGroupAssociationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupAssociation] {
-	return pulumix.Output[GetDrProtectionGroupAssociation]{
-		OutputState: i.ToGetDrProtectionGroupAssociationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrProtectionGroupAssociationArrayInput is an input type that accepts GetDrProtectionGroupAssociationArray and GetDrProtectionGroupAssociationArrayOutput values.
 // You can construct a concrete instance of `GetDrProtectionGroupAssociationArrayInput` via:
 //
@@ -7787,12 +6700,6 @@ func (i GetDrProtectionGroupAssociationArray) ToGetDrProtectionGroupAssociationA
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupAssociationArrayOutput)
 }
 
-func (i GetDrProtectionGroupAssociationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupAssociation] {
-	return pulumix.Output[[]GetDrProtectionGroupAssociation]{
-		OutputState: i.ToGetDrProtectionGroupAssociationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupAssociationOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupAssociationOutput) ElementType() reflect.Type {
@@ -7805,12 +6712,6 @@ func (o GetDrProtectionGroupAssociationOutput) ToGetDrProtectionGroupAssociation
 
 func (o GetDrProtectionGroupAssociationOutput) ToGetDrProtectionGroupAssociationOutputWithContext(ctx context.Context) GetDrProtectionGroupAssociationOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupAssociationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupAssociation] {
-	return pulumix.Output[GetDrProtectionGroupAssociation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
@@ -7840,12 +6741,6 @@ func (o GetDrProtectionGroupAssociationArrayOutput) ToGetDrProtectionGroupAssoci
 
 func (o GetDrProtectionGroupAssociationArrayOutput) ToGetDrProtectionGroupAssociationArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupAssociationArrayOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupAssociationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupAssociation] {
-	return pulumix.Output[[]GetDrProtectionGroupAssociation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrProtectionGroupAssociationArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupAssociationOutput {
@@ -7895,12 +6790,6 @@ func (i GetDrProtectionGroupLogLocationArgs) ToGetDrProtectionGroupLogLocationOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupLogLocationOutput)
 }
 
-func (i GetDrProtectionGroupLogLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupLogLocation] {
-	return pulumix.Output[GetDrProtectionGroupLogLocation]{
-		OutputState: i.ToGetDrProtectionGroupLogLocationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrProtectionGroupLogLocationArrayInput is an input type that accepts GetDrProtectionGroupLogLocationArray and GetDrProtectionGroupLogLocationArrayOutput values.
 // You can construct a concrete instance of `GetDrProtectionGroupLogLocationArrayInput` via:
 //
@@ -7926,12 +6815,6 @@ func (i GetDrProtectionGroupLogLocationArray) ToGetDrProtectionGroupLogLocationA
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupLogLocationArrayOutput)
 }
 
-func (i GetDrProtectionGroupLogLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupLogLocation] {
-	return pulumix.Output[[]GetDrProtectionGroupLogLocation]{
-		OutputState: i.ToGetDrProtectionGroupLogLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupLogLocationOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupLogLocationOutput) ElementType() reflect.Type {
@@ -7944,12 +6827,6 @@ func (o GetDrProtectionGroupLogLocationOutput) ToGetDrProtectionGroupLogLocation
 
 func (o GetDrProtectionGroupLogLocationOutput) ToGetDrProtectionGroupLogLocationOutputWithContext(ctx context.Context) GetDrProtectionGroupLogLocationOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupLogLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupLogLocation] {
-	return pulumix.Output[GetDrProtectionGroupLogLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The bucket name inside the object storage namespace.  Example: `operationLogs`
@@ -7979,12 +6856,6 @@ func (o GetDrProtectionGroupLogLocationArrayOutput) ToGetDrProtectionGroupLogLoc
 
 func (o GetDrProtectionGroupLogLocationArrayOutput) ToGetDrProtectionGroupLogLocationArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupLogLocationArrayOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupLogLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupLogLocation] {
-	return pulumix.Output[[]GetDrProtectionGroupLogLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrProtectionGroupLogLocationArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupLogLocationOutput {
@@ -8094,12 +6965,6 @@ func (i GetDrProtectionGroupMemberArgs) ToGetDrProtectionGroupMemberOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberOutput)
 }
 
-func (i GetDrProtectionGroupMemberArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMember] {
-	return pulumix.Output[GetDrProtectionGroupMember]{
-		OutputState: i.ToGetDrProtectionGroupMemberOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrProtectionGroupMemberArrayInput is an input type that accepts GetDrProtectionGroupMemberArray and GetDrProtectionGroupMemberArrayOutput values.
 // You can construct a concrete instance of `GetDrProtectionGroupMemberArrayInput` via:
 //
@@ -8125,12 +6990,6 @@ func (i GetDrProtectionGroupMemberArray) ToGetDrProtectionGroupMemberArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberArrayOutput)
 }
 
-func (i GetDrProtectionGroupMemberArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMember] {
-	return pulumix.Output[[]GetDrProtectionGroupMember]{
-		OutputState: i.ToGetDrProtectionGroupMemberArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupMemberOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupMemberOutput) ElementType() reflect.Type {
@@ -8143,12 +7002,6 @@ func (o GetDrProtectionGroupMemberOutput) ToGetDrProtectionGroupMemberOutput() G
 
 func (o GetDrProtectionGroupMemberOutput) ToGetDrProtectionGroupMemberOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupMemberOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMember] {
-	return pulumix.Output[GetDrProtectionGroupMember]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of backend set mappings that are used to transfer or update backends during DR.
@@ -8261,12 +7114,6 @@ func (o GetDrProtectionGroupMemberArrayOutput) ToGetDrProtectionGroupMemberArray
 	return o
 }
 
-func (o GetDrProtectionGroupMemberArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMember] {
-	return pulumix.Output[[]GetDrProtectionGroupMember]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrProtectionGroupMemberArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMember {
 		return vs[0].([]GetDrProtectionGroupMember)[vs[1].(int)]
@@ -8314,12 +7161,6 @@ func (i GetDrProtectionGroupMemberBackendSetMappingArgs) ToGetDrProtectionGroupM
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBackendSetMappingOutput)
 }
 
-func (i GetDrProtectionGroupMemberBackendSetMappingArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberBackendSetMapping] {
-	return pulumix.Output[GetDrProtectionGroupMemberBackendSetMapping]{
-		OutputState: i.ToGetDrProtectionGroupMemberBackendSetMappingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrProtectionGroupMemberBackendSetMappingArrayInput is an input type that accepts GetDrProtectionGroupMemberBackendSetMappingArray and GetDrProtectionGroupMemberBackendSetMappingArrayOutput values.
 // You can construct a concrete instance of `GetDrProtectionGroupMemberBackendSetMappingArrayInput` via:
 //
@@ -8345,12 +7186,6 @@ func (i GetDrProtectionGroupMemberBackendSetMappingArray) ToGetDrProtectionGroup
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBackendSetMappingArrayOutput)
 }
 
-func (i GetDrProtectionGroupMemberBackendSetMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberBackendSetMapping] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberBackendSetMapping]{
-		OutputState: i.ToGetDrProtectionGroupMemberBackendSetMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupMemberBackendSetMappingOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupMemberBackendSetMappingOutput) ElementType() reflect.Type {
@@ -8363,12 +7198,6 @@ func (o GetDrProtectionGroupMemberBackendSetMappingOutput) ToGetDrProtectionGrou
 
 func (o GetDrProtectionGroupMemberBackendSetMappingOutput) ToGetDrProtectionGroupMemberBackendSetMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBackendSetMappingOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupMemberBackendSetMappingOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberBackendSetMapping] {
-	return pulumix.Output[GetDrProtectionGroupMemberBackendSetMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the destination backend set.  Example: `My_Destination_Backend_Set`
@@ -8398,12 +7227,6 @@ func (o GetDrProtectionGroupMemberBackendSetMappingArrayOutput) ToGetDrProtectio
 
 func (o GetDrProtectionGroupMemberBackendSetMappingArrayOutput) ToGetDrProtectionGroupMemberBackendSetMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBackendSetMappingArrayOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupMemberBackendSetMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberBackendSetMapping] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberBackendSetMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrProtectionGroupMemberBackendSetMappingArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberBackendSetMappingOutput {
@@ -8453,12 +7276,6 @@ func (i GetDrProtectionGroupMemberBlockVolumeOperationArgs) ToGetDrProtectionGro
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBlockVolumeOperationOutput)
 }
 
-func (i GetDrProtectionGroupMemberBlockVolumeOperationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperation] {
-	return pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperation]{
-		OutputState: i.ToGetDrProtectionGroupMemberBlockVolumeOperationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrProtectionGroupMemberBlockVolumeOperationArrayInput is an input type that accepts GetDrProtectionGroupMemberBlockVolumeOperationArray and GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput values.
 // You can construct a concrete instance of `GetDrProtectionGroupMemberBlockVolumeOperationArrayInput` via:
 //
@@ -8484,12 +7301,6 @@ func (i GetDrProtectionGroupMemberBlockVolumeOperationArray) ToGetDrProtectionGr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput)
 }
 
-func (i GetDrProtectionGroupMemberBlockVolumeOperationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperation] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperation]{
-		OutputState: i.ToGetDrProtectionGroupMemberBlockVolumeOperationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupMemberBlockVolumeOperationOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupMemberBlockVolumeOperationOutput) ElementType() reflect.Type {
@@ -8502,12 +7313,6 @@ func (o GetDrProtectionGroupMemberBlockVolumeOperationOutput) ToGetDrProtectionG
 
 func (o GetDrProtectionGroupMemberBlockVolumeOperationOutput) ToGetDrProtectionGroupMemberBlockVolumeOperationOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeOperationOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupMemberBlockVolumeOperationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperation] {
-	return pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The details for attaching or detaching a block volume.
@@ -8541,12 +7346,6 @@ func (o GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput) ToGetDrProtec
 
 func (o GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput) ToGetDrProtectionGroupMemberBlockVolumeOperationArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperation] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrProtectionGroupMemberBlockVolumeOperationArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberBlockVolumeOperationOutput {
@@ -8588,12 +7387,6 @@ func (i GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArgs) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput)
 }
 
-func (i GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail] {
-	return pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail]{
-		OutputState: i.ToGetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayInput is an input type that accepts GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArray and GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput values.
 // You can construct a concrete instance of `GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayInput` via:
 //
@@ -8619,12 +7412,6 @@ func (i GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput)
 }
 
-func (i GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail]{
-		OutputState: i.ToGetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput) ElementType() reflect.Type {
@@ -8637,12 +7424,6 @@ func (o GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput) To
 
 func (o GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput) ToGetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail] {
-	return pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
@@ -8664,12 +7445,6 @@ func (o GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutpu
 
 func (o GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput) ToGetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailOutput {
@@ -8711,12 +7486,6 @@ func (i GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArgs) ToGetDrPr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput)
 }
 
-func (i GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperationMountDetail] {
-	return pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperationMountDetail]{
-		OutputState: i.ToGetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayInput is an input type that accepts GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArray and GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput values.
 // You can construct a concrete instance of `GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayInput` via:
 //
@@ -8742,12 +7511,6 @@ func (i GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArray) ToGetDrP
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput)
 }
 
-func (i GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperationMountDetail] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperationMountDetail]{
-		OutputState: i.ToGetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput) ElementType() reflect.Type {
@@ -8760,12 +7523,6 @@ func (o GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput) ToGetDr
 
 func (o GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput) ToGetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperationMountDetail] {
-	return pulumix.Output[GetDrProtectionGroupMemberBlockVolumeOperationMountDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
@@ -8785,12 +7542,6 @@ func (o GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput) To
 
 func (o GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput) ToGetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperationMountDetail] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberBlockVolumeOperationMountDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberBlockVolumeOperationMountDetailOutput {
@@ -8836,12 +7587,6 @@ func (i GetDrProtectionGroupMemberExportMappingArgs) ToGetDrProtectionGroupMembe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberExportMappingOutput)
 }
 
-func (i GetDrProtectionGroupMemberExportMappingArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberExportMapping] {
-	return pulumix.Output[GetDrProtectionGroupMemberExportMapping]{
-		OutputState: i.ToGetDrProtectionGroupMemberExportMappingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrProtectionGroupMemberExportMappingArrayInput is an input type that accepts GetDrProtectionGroupMemberExportMappingArray and GetDrProtectionGroupMemberExportMappingArrayOutput values.
 // You can construct a concrete instance of `GetDrProtectionGroupMemberExportMappingArrayInput` via:
 //
@@ -8867,12 +7612,6 @@ func (i GetDrProtectionGroupMemberExportMappingArray) ToGetDrProtectionGroupMemb
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberExportMappingArrayOutput)
 }
 
-func (i GetDrProtectionGroupMemberExportMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberExportMapping] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberExportMapping]{
-		OutputState: i.ToGetDrProtectionGroupMemberExportMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupMemberExportMappingOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupMemberExportMappingOutput) ElementType() reflect.Type {
@@ -8885,12 +7624,6 @@ func (o GetDrProtectionGroupMemberExportMappingOutput) ToGetDrProtectionGroupMem
 
 func (o GetDrProtectionGroupMemberExportMappingOutput) ToGetDrProtectionGroupMemberExportMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberExportMappingOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupMemberExportMappingOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberExportMapping] {
-	return pulumix.Output[GetDrProtectionGroupMemberExportMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the destination mount target on which this file system export should be created.  Example: `ocid1.mounttarget.oc1..uniqueID`
@@ -8915,12 +7648,6 @@ func (o GetDrProtectionGroupMemberExportMappingArrayOutput) ToGetDrProtectionGro
 
 func (o GetDrProtectionGroupMemberExportMappingArrayOutput) ToGetDrProtectionGroupMemberExportMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberExportMappingArrayOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupMemberExportMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberExportMapping] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberExportMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrProtectionGroupMemberExportMappingArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberExportMappingOutput {
@@ -8978,12 +7705,6 @@ func (i GetDrProtectionGroupMemberFileSystemOperationArgs) ToGetDrProtectionGrou
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberFileSystemOperationOutput)
 }
 
-func (i GetDrProtectionGroupMemberFileSystemOperationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberFileSystemOperation] {
-	return pulumix.Output[GetDrProtectionGroupMemberFileSystemOperation]{
-		OutputState: i.ToGetDrProtectionGroupMemberFileSystemOperationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrProtectionGroupMemberFileSystemOperationArrayInput is an input type that accepts GetDrProtectionGroupMemberFileSystemOperationArray and GetDrProtectionGroupMemberFileSystemOperationArrayOutput values.
 // You can construct a concrete instance of `GetDrProtectionGroupMemberFileSystemOperationArrayInput` via:
 //
@@ -9009,12 +7730,6 @@ func (i GetDrProtectionGroupMemberFileSystemOperationArray) ToGetDrProtectionGro
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberFileSystemOperationArrayOutput)
 }
 
-func (i GetDrProtectionGroupMemberFileSystemOperationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperation] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperation]{
-		OutputState: i.ToGetDrProtectionGroupMemberFileSystemOperationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupMemberFileSystemOperationOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupMemberFileSystemOperationOutput) ElementType() reflect.Type {
@@ -9027,12 +7742,6 @@ func (o GetDrProtectionGroupMemberFileSystemOperationOutput) ToGetDrProtectionGr
 
 func (o GetDrProtectionGroupMemberFileSystemOperationOutput) ToGetDrProtectionGroupMemberFileSystemOperationOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberFileSystemOperationOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupMemberFileSystemOperationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberFileSystemOperation] {
-	return pulumix.Output[GetDrProtectionGroupMemberFileSystemOperation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The export path of the file system.  Example: `/fs-export-path`
@@ -9078,12 +7787,6 @@ func (o GetDrProtectionGroupMemberFileSystemOperationArrayOutput) ToGetDrProtect
 	return o
 }
 
-func (o GetDrProtectionGroupMemberFileSystemOperationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperation] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrProtectionGroupMemberFileSystemOperationArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberFileSystemOperationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberFileSystemOperation {
 		return vs[0].([]GetDrProtectionGroupMemberFileSystemOperation)[vs[1].(int)]
@@ -9123,12 +7826,6 @@ func (i GetDrProtectionGroupMemberFileSystemOperationMountDetailArgs) ToGetDrPro
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput)
 }
 
-func (i GetDrProtectionGroupMemberFileSystemOperationMountDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberFileSystemOperationMountDetail] {
-	return pulumix.Output[GetDrProtectionGroupMemberFileSystemOperationMountDetail]{
-		OutputState: i.ToGetDrProtectionGroupMemberFileSystemOperationMountDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayInput is an input type that accepts GetDrProtectionGroupMemberFileSystemOperationMountDetailArray and GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput values.
 // You can construct a concrete instance of `GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayInput` via:
 //
@@ -9154,12 +7851,6 @@ func (i GetDrProtectionGroupMemberFileSystemOperationMountDetailArray) ToGetDrPr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput)
 }
 
-func (i GetDrProtectionGroupMemberFileSystemOperationMountDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperationMountDetail] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperationMountDetail]{
-		OutputState: i.ToGetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput) ElementType() reflect.Type {
@@ -9172,12 +7863,6 @@ func (o GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput) ToGetDrP
 
 func (o GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput) ToGetDrProtectionGroupMemberFileSystemOperationMountDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberFileSystemOperationMountDetail] {
-	return pulumix.Output[GetDrProtectionGroupMemberFileSystemOperationMountDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
@@ -9197,12 +7882,6 @@ func (o GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput) ToG
 
 func (o GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput) ToGetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperationMountDetail] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperationMountDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrProtectionGroupMemberFileSystemOperationMountDetailArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberFileSystemOperationMountDetailOutput {
@@ -9244,12 +7923,6 @@ func (i GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArgs) ToGetDrP
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput)
 }
 
-func (i GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberFileSystemOperationUnmountDetail] {
-	return pulumix.Output[GetDrProtectionGroupMemberFileSystemOperationUnmountDetail]{
-		OutputState: i.ToGetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayInput is an input type that accepts GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArray and GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput values.
 // You can construct a concrete instance of `GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayInput` via:
 //
@@ -9275,12 +7948,6 @@ func (i GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArray) ToGetDr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput)
 }
 
-func (i GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperationUnmountDetail] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperationUnmountDetail]{
-		OutputState: i.ToGetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput) ElementType() reflect.Type {
@@ -9293,12 +7960,6 @@ func (o GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput) ToGetD
 
 func (o GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput) ToGetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberFileSystemOperationUnmountDetail] {
-	return pulumix.Output[GetDrProtectionGroupMemberFileSystemOperationUnmountDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
@@ -9318,12 +7979,6 @@ func (o GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput) T
 
 func (o GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput) ToGetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperationUnmountDetail] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberFileSystemOperationUnmountDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrProtectionGroupMemberFileSystemOperationUnmountDetailArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberFileSystemOperationUnmountDetailOutput {
@@ -9381,12 +8036,6 @@ func (i GetDrProtectionGroupMemberVnicMappingArgs) ToGetDrProtectionGroupMemberV
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberVnicMappingOutput)
 }
 
-func (i GetDrProtectionGroupMemberVnicMappingArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberVnicMapping] {
-	return pulumix.Output[GetDrProtectionGroupMemberVnicMapping]{
-		OutputState: i.ToGetDrProtectionGroupMemberVnicMappingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrProtectionGroupMemberVnicMappingArrayInput is an input type that accepts GetDrProtectionGroupMemberVnicMappingArray and GetDrProtectionGroupMemberVnicMappingArrayOutput values.
 // You can construct a concrete instance of `GetDrProtectionGroupMemberVnicMappingArrayInput` via:
 //
@@ -9412,12 +8061,6 @@ func (i GetDrProtectionGroupMemberVnicMappingArray) ToGetDrProtectionGroupMember
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberVnicMappingArrayOutput)
 }
 
-func (i GetDrProtectionGroupMemberVnicMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberVnicMapping] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberVnicMapping]{
-		OutputState: i.ToGetDrProtectionGroupMemberVnicMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupMemberVnicMappingOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupMemberVnicMappingOutput) ElementType() reflect.Type {
@@ -9430,12 +8073,6 @@ func (o GetDrProtectionGroupMemberVnicMappingOutput) ToGetDrProtectionGroupMembe
 
 func (o GetDrProtectionGroupMemberVnicMappingOutput) ToGetDrProtectionGroupMemberVnicMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberVnicMappingOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupMemberVnicMappingOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupMemberVnicMapping] {
-	return pulumix.Output[GetDrProtectionGroupMemberVnicMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
@@ -9479,12 +8116,6 @@ func (o GetDrProtectionGroupMemberVnicMappingArrayOutput) ToGetDrProtectionGroup
 	return o
 }
 
-func (o GetDrProtectionGroupMemberVnicMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupMemberVnicMapping] {
-	return pulumix.Output[[]GetDrProtectionGroupMemberVnicMapping]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrProtectionGroupMemberVnicMappingArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberVnicMappingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberVnicMapping {
 		return vs[0].([]GetDrProtectionGroupMemberVnicMapping)[vs[1].(int)]
@@ -9522,12 +8153,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionArgs) ToGetDrProtectionG
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollection] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollection]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrProtectionGroupsDrProtectionGroupCollectionArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionArray and GetDrProtectionGroupsDrProtectionGroupCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionArrayInput` via:
 //
@@ -9553,12 +8178,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionArray) ToGetDrProtection
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionArrayOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollection] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollection]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupsDrProtectionGroupCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionOutput) ElementType() reflect.Type {
@@ -9571,12 +8190,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionOutput) ToGetDrProtectio
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollection] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionOutput) Items() GetDrProtectionGroupsDrProtectionGroupCollectionItemArrayOutput {
@@ -9597,12 +8210,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionArrayOutput) ToGetDrProt
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionArrayOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollection] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionOutput {
@@ -9708,12 +8315,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemArgs) ToGetDrProtect
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItem] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItem]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemArrayInput` via:
 //
@@ -9739,12 +8340,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemArray) ToGetDrProtec
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemArrayOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItem] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItem]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) ElementType() reflect.Type {
@@ -9757,12 +8352,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) ToGetDrProte
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItem] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) Associations() GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArrayOutput {
@@ -9879,12 +8468,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemArrayOutput) ToGetDr
 	return o
 }
 
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItem] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItem {
 		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItem)[vs[1].(int)]
@@ -9932,12 +8515,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArgs) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArrayOutput values.
 // You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArrayInput` via:
 //
@@ -9963,12 +8540,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArrayOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutput) ElementType() reflect.Type {
@@ -9981,12 +8552,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutput) T
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
@@ -10016,12 +8581,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArrayOutp
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArrayOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationOutput {
@@ -10071,12 +8630,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArgs) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArrayOutput values.
 // You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArrayInput` via:
 //
@@ -10102,12 +8655,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArrayOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput) ElementType() reflect.Type {
@@ -10120,12 +8667,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput) T
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The bucket name inside the object storage namespace.  Example: `operationLogs`
@@ -10155,12 +8696,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArrayOutp
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArrayOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput {
@@ -10270,12 +8805,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArgs) ToGetDrP
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMember] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMember]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArrayOutput values.
 // You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArrayInput` via:
 //
@@ -10301,12 +8830,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArray) ToGetDr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArrayOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMember] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMember]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) ElementType() reflect.Type {
@@ -10319,12 +8842,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) ToGetD
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMember] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMember]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of backend set mappings that are used to transfer or update backends during DR.
@@ -10457,12 +8974,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArrayOutput) T
 	return o
 }
 
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMember] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMember]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMember {
 		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMember)[vs[1].(int)]
@@ -10510,12 +9021,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapp
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput values.
 // You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayInput` via:
 //
@@ -10541,12 +9046,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapp
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput) ElementType() reflect.Type {
@@ -10559,12 +9058,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapp
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the destination backend set.  Example: `My_Destination_Backend_Set`
@@ -10600,12 +9093,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapp
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappingOutput {
@@ -10655,12 +9142,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput values.
 // You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayInput` via:
 //
@@ -10686,12 +9167,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput) ElementType() reflect.Type {
@@ -10704,12 +9179,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpe
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The details for attaching or detaching a block volume.
@@ -10745,12 +9214,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpe
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationOutput {
@@ -10792,12 +9255,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput values.
 // You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayInput` via:
 //
@@ -10823,12 +9280,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput) ElementType() reflect.Type {
@@ -10841,12 +9292,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpe
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
@@ -10868,12 +9313,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpe
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailOutput {
@@ -10915,12 +9354,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput values.
 // You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayInput` via:
 //
@@ -10946,12 +9379,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput) ElementType() reflect.Type {
@@ -10964,12 +9391,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpe
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
@@ -10991,12 +9412,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOpe
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailOutput {
@@ -11042,12 +9457,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingA
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput values.
 // You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayInput` via:
 //
@@ -11073,12 +9482,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingA
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput) ElementType() reflect.Type {
@@ -11091,12 +9494,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingO
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the destination mount target on which this file system export should be created.  Example: `ocid1.mounttarget.oc1..uniqueID`
@@ -11125,12 +9522,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingA
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput {
@@ -11188,12 +9579,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOper
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutput values.
 // You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayInput` via:
 //
@@ -11219,12 +9604,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOper
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput) ElementType() reflect.Type {
@@ -11237,12 +9616,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOper
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The export path of the file system.  Example: `/fs-export-path`
@@ -11294,12 +9667,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOper
 	return o
 }
 
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation {
 		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation)[vs[1].(int)]
@@ -11339,12 +9706,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOper
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutput values.
 // You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayInput` via:
 //
@@ -11370,12 +9731,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOper
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput) ElementType() reflect.Type {
@@ -11388,12 +9743,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOper
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
@@ -11415,12 +9764,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOper
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailOutput {
@@ -11462,12 +9805,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOper
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutput values.
 // You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayInput` via:
 //
@@ -11493,12 +9830,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOper
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput) ElementType() reflect.Type {
@@ -11511,12 +9842,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOper
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
@@ -11538,12 +9863,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOper
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailOutput {
@@ -11601,12 +9920,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArg
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArrayOutput values.
 // You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArrayInput` via:
 //
@@ -11632,12 +9945,6 @@ func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArrayOutput)
 }
 
-func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping]{
-		OutputState: i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput) ElementType() reflect.Type {
@@ -11650,12 +9957,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOut
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping] {
-	return pulumix.Output[GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
@@ -11707,12 +10008,6 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArr
 	return o
 }
 
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping] {
-	return pulumix.Output[[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping {
 		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping)[vs[1].(int)]
@@ -11754,12 +10049,6 @@ func (i GetDrProtectionGroupsFilterArgs) ToGetDrProtectionGroupsFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsFilterOutput)
 }
 
-func (i GetDrProtectionGroupsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsFilter] {
-	return pulumix.Output[GetDrProtectionGroupsFilter]{
-		OutputState: i.ToGetDrProtectionGroupsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDrProtectionGroupsFilterArrayInput is an input type that accepts GetDrProtectionGroupsFilterArray and GetDrProtectionGroupsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDrProtectionGroupsFilterArrayInput` via:
 //
@@ -11785,12 +10074,6 @@ func (i GetDrProtectionGroupsFilterArray) ToGetDrProtectionGroupsFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsFilterArrayOutput)
 }
 
-func (i GetDrProtectionGroupsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsFilter] {
-	return pulumix.Output[[]GetDrProtectionGroupsFilter]{
-		OutputState: i.ToGetDrProtectionGroupsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDrProtectionGroupsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDrProtectionGroupsFilterOutput) ElementType() reflect.Type {
@@ -11803,12 +10086,6 @@ func (o GetDrProtectionGroupsFilterOutput) ToGetDrProtectionGroupsFilterOutput()
 
 func (o GetDrProtectionGroupsFilterOutput) ToGetDrProtectionGroupsFilterOutputWithContext(ctx context.Context) GetDrProtectionGroupsFilterOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsFilter] {
-	return pulumix.Output[GetDrProtectionGroupsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrProtectionGroupsFilterOutput) Name() pulumi.StringOutput {
@@ -11835,12 +10112,6 @@ func (o GetDrProtectionGroupsFilterArrayOutput) ToGetDrProtectionGroupsFilterArr
 
 func (o GetDrProtectionGroupsFilterArrayOutput) ToGetDrProtectionGroupsFilterArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsFilterArrayOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDrProtectionGroupsFilter] {
-	return pulumix.Output[[]GetDrProtectionGroupsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDrProtectionGroupsFilterArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsFilterOutput {

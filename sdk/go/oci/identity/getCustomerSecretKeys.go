@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Customer Secret Keys in Oracle Cloud Infrastructure Identity service.
@@ -107,12 +106,6 @@ func (o GetCustomerSecretKeysResultOutput) ToGetCustomerSecretKeysResultOutput()
 
 func (o GetCustomerSecretKeysResultOutput) ToGetCustomerSecretKeysResultOutputWithContext(ctx context.Context) GetCustomerSecretKeysResultOutput {
 	return o
-}
-
-func (o GetCustomerSecretKeysResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCustomerSecretKeysResult] {
-	return pulumix.Output[GetCustomerSecretKeysResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of customer_secret_keys.

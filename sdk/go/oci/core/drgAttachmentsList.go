@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Drg Attachments List resource in Oracle Cloud Infrastructure Core service.
@@ -176,12 +175,6 @@ func (i *DrgAttachmentsList) ToDrgAttachmentsListOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(DrgAttachmentsListOutput)
 }
 
-func (i *DrgAttachmentsList) ToOutput(ctx context.Context) pulumix.Output[*DrgAttachmentsList] {
-	return pulumix.Output[*DrgAttachmentsList]{
-		OutputState: i.ToDrgAttachmentsListOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrgAttachmentsListArrayInput is an input type that accepts DrgAttachmentsListArray and DrgAttachmentsListArrayOutput values.
 // You can construct a concrete instance of `DrgAttachmentsListArrayInput` via:
 //
@@ -205,12 +198,6 @@ func (i DrgAttachmentsListArray) ToDrgAttachmentsListArrayOutput() DrgAttachment
 
 func (i DrgAttachmentsListArray) ToDrgAttachmentsListArrayOutputWithContext(ctx context.Context) DrgAttachmentsListArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DrgAttachmentsListArrayOutput)
-}
-
-func (i DrgAttachmentsListArray) ToOutput(ctx context.Context) pulumix.Output[[]*DrgAttachmentsList] {
-	return pulumix.Output[[]*DrgAttachmentsList]{
-		OutputState: i.ToDrgAttachmentsListArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DrgAttachmentsListMapInput is an input type that accepts DrgAttachmentsListMap and DrgAttachmentsListMapOutput values.
@@ -238,12 +225,6 @@ func (i DrgAttachmentsListMap) ToDrgAttachmentsListMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(DrgAttachmentsListMapOutput)
 }
 
-func (i DrgAttachmentsListMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DrgAttachmentsList] {
-	return pulumix.Output[map[string]*DrgAttachmentsList]{
-		OutputState: i.ToDrgAttachmentsListMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrgAttachmentsListOutput struct{ *pulumi.OutputState }
 
 func (DrgAttachmentsListOutput) ElementType() reflect.Type {
@@ -256,12 +237,6 @@ func (o DrgAttachmentsListOutput) ToDrgAttachmentsListOutput() DrgAttachmentsLis
 
 func (o DrgAttachmentsListOutput) ToDrgAttachmentsListOutputWithContext(ctx context.Context) DrgAttachmentsListOutput {
 	return o
-}
-
-func (o DrgAttachmentsListOutput) ToOutput(ctx context.Context) pulumix.Output[*DrgAttachmentsList] {
-	return pulumix.Output[*DrgAttachmentsList]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The type for the network resource attached to the DRG.
@@ -301,12 +276,6 @@ func (o DrgAttachmentsListArrayOutput) ToDrgAttachmentsListArrayOutputWithContex
 	return o
 }
 
-func (o DrgAttachmentsListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DrgAttachmentsList] {
-	return pulumix.Output[[]*DrgAttachmentsList]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DrgAttachmentsListArrayOutput) Index(i pulumi.IntInput) DrgAttachmentsListOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DrgAttachmentsList {
 		return vs[0].([]*DrgAttachmentsList)[vs[1].(int)]
@@ -325,12 +294,6 @@ func (o DrgAttachmentsListMapOutput) ToDrgAttachmentsListMapOutput() DrgAttachme
 
 func (o DrgAttachmentsListMapOutput) ToDrgAttachmentsListMapOutputWithContext(ctx context.Context) DrgAttachmentsListMapOutput {
 	return o
-}
-
-func (o DrgAttachmentsListMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DrgAttachmentsList] {
-	return pulumix.Output[map[string]*DrgAttachmentsList]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrgAttachmentsListMapOutput) MapIndex(k pulumi.StringInput) DrgAttachmentsListOutput {

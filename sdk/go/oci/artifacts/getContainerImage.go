@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Container Image resource in Oracle Cloud Infrastructure Artifacts service.
@@ -136,12 +135,6 @@ func (o GetContainerImageResultOutput) ToGetContainerImageResultOutput() GetCont
 
 func (o GetContainerImageResultOutput) ToGetContainerImageResultOutputWithContext(ctx context.Context) GetContainerImageResultOutput {
 	return o
-}
-
-func (o GetContainerImageResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerImageResult] {
-	return pulumix.Output[GetContainerImageResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The compartment OCID to which the container image belongs. Inferred from the container repository.

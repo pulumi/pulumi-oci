@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Sql Collection resource in Oracle Cloud Infrastructure Data Safe service.
@@ -344,12 +343,6 @@ func (i *SqlCollection) ToSqlCollectionOutputWithContext(ctx context.Context) Sq
 	return pulumi.ToOutputWithContext(ctx, i).(SqlCollectionOutput)
 }
 
-func (i *SqlCollection) ToOutput(ctx context.Context) pulumix.Output[*SqlCollection] {
-	return pulumix.Output[*SqlCollection]{
-		OutputState: i.ToSqlCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SqlCollectionArrayInput is an input type that accepts SqlCollectionArray and SqlCollectionArrayOutput values.
 // You can construct a concrete instance of `SqlCollectionArrayInput` via:
 //
@@ -373,12 +366,6 @@ func (i SqlCollectionArray) ToSqlCollectionArrayOutput() SqlCollectionArrayOutpu
 
 func (i SqlCollectionArray) ToSqlCollectionArrayOutputWithContext(ctx context.Context) SqlCollectionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SqlCollectionArrayOutput)
-}
-
-func (i SqlCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]*SqlCollection] {
-	return pulumix.Output[[]*SqlCollection]{
-		OutputState: i.ToSqlCollectionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SqlCollectionMapInput is an input type that accepts SqlCollectionMap and SqlCollectionMapOutput values.
@@ -406,12 +393,6 @@ func (i SqlCollectionMap) ToSqlCollectionMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(SqlCollectionMapOutput)
 }
 
-func (i SqlCollectionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SqlCollection] {
-	return pulumix.Output[map[string]*SqlCollection]{
-		OutputState: i.ToSqlCollectionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SqlCollectionOutput struct{ *pulumi.OutputState }
 
 func (SqlCollectionOutput) ElementType() reflect.Type {
@@ -424,12 +405,6 @@ func (o SqlCollectionOutput) ToSqlCollectionOutput() SqlCollectionOutput {
 
 func (o SqlCollectionOutput) ToSqlCollectionOutputWithContext(ctx context.Context) SqlCollectionOutput {
 	return o
-}
-
-func (o SqlCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[*SqlCollection] {
-	return pulumix.Output[*SqlCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of the compartment containing the SQL collection.
@@ -554,12 +529,6 @@ func (o SqlCollectionArrayOutput) ToSqlCollectionArrayOutputWithContext(ctx cont
 	return o
 }
 
-func (o SqlCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SqlCollection] {
-	return pulumix.Output[[]*SqlCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o SqlCollectionArrayOutput) Index(i pulumi.IntInput) SqlCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *SqlCollection {
 		return vs[0].([]*SqlCollection)[vs[1].(int)]
@@ -578,12 +547,6 @@ func (o SqlCollectionMapOutput) ToSqlCollectionMapOutput() SqlCollectionMapOutpu
 
 func (o SqlCollectionMapOutput) ToSqlCollectionMapOutputWithContext(ctx context.Context) SqlCollectionMapOutput {
 	return o
-}
-
-func (o SqlCollectionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SqlCollection] {
-	return pulumix.Output[map[string]*SqlCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SqlCollectionMapOutput) MapIndex(k pulumi.StringInput) SqlCollectionOutput {

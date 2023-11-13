@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -79,12 +78,6 @@ func (i AgentPluginListArgs) ToAgentPluginListOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(AgentPluginListOutput)
 }
 
-func (i AgentPluginListArgs) ToOutput(ctx context.Context) pulumix.Output[AgentPluginList] {
-	return pulumix.Output[AgentPluginList]{
-		OutputState: i.ToAgentPluginListOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AgentPluginListArrayInput is an input type that accepts AgentPluginListArray and AgentPluginListArrayOutput values.
 // You can construct a concrete instance of `AgentPluginListArrayInput` via:
 //
@@ -110,12 +103,6 @@ func (i AgentPluginListArray) ToAgentPluginListArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(AgentPluginListArrayOutput)
 }
 
-func (i AgentPluginListArray) ToOutput(ctx context.Context) pulumix.Output[[]AgentPluginList] {
-	return pulumix.Output[[]AgentPluginList]{
-		OutputState: i.ToAgentPluginListArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AgentPluginListOutput struct{ *pulumi.OutputState }
 
 func (AgentPluginListOutput) ElementType() reflect.Type {
@@ -128,12 +115,6 @@ func (o AgentPluginListOutput) ToAgentPluginListOutput() AgentPluginListOutput {
 
 func (o AgentPluginListOutput) ToAgentPluginListOutputWithContext(ctx context.Context) AgentPluginListOutput {
 	return o
-}
-
-func (o AgentPluginListOutput) ToOutput(ctx context.Context) pulumix.Output[AgentPluginList] {
-	return pulumix.Output[AgentPluginList]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Agent identifier.
@@ -193,12 +174,6 @@ func (o AgentPluginListArrayOutput) ToAgentPluginListArrayOutput() AgentPluginLi
 
 func (o AgentPluginListArrayOutput) ToAgentPluginListArrayOutputWithContext(ctx context.Context) AgentPluginListArrayOutput {
 	return o
-}
-
-func (o AgentPluginListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AgentPluginList] {
-	return pulumix.Output[[]AgentPluginList]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AgentPluginListArrayOutput) Index(i pulumi.IntInput) AgentPluginListOutput {
@@ -352,12 +327,6 @@ func (i AssetComputeArgs) ToAssetComputeOutputWithContext(ctx context.Context) A
 	return pulumi.ToOutputWithContext(ctx, i).(AssetComputeOutput)
 }
 
-func (i AssetComputeArgs) ToOutput(ctx context.Context) pulumix.Output[AssetCompute] {
-	return pulumix.Output[AssetCompute]{
-		OutputState: i.ToAssetComputeOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AssetComputeArgs) ToAssetComputePtrOutput() AssetComputePtrOutput {
 	return i.ToAssetComputePtrOutputWithContext(context.Background())
 }
@@ -399,12 +368,6 @@ func (i *assetComputePtrType) ToAssetComputePtrOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(AssetComputePtrOutput)
 }
 
-func (i *assetComputePtrType) ToOutput(ctx context.Context) pulumix.Output[*AssetCompute] {
-	return pulumix.Output[*AssetCompute]{
-		OutputState: i.ToAssetComputePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AssetComputeOutput struct{ *pulumi.OutputState }
 
 func (AssetComputeOutput) ElementType() reflect.Type {
@@ -427,12 +390,6 @@ func (o AssetComputeOutput) ToAssetComputePtrOutputWithContext(ctx context.Conte
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AssetCompute) *AssetCompute {
 		return &v
 	}).(AssetComputePtrOutput)
-}
-
-func (o AssetComputeOutput) ToOutput(ctx context.Context) pulumix.Output[AssetCompute] {
-	return pulumix.Output[AssetCompute]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Number of connected networks.
@@ -592,12 +549,6 @@ func (o AssetComputePtrOutput) ToAssetComputePtrOutput() AssetComputePtrOutput {
 
 func (o AssetComputePtrOutput) ToAssetComputePtrOutputWithContext(ctx context.Context) AssetComputePtrOutput {
 	return o
-}
-
-func (o AssetComputePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AssetCompute] {
-	return pulumix.Output[*AssetCompute]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AssetComputePtrOutput) Elem() AssetComputeOutput {
@@ -957,12 +908,6 @@ func (i AssetComputeDiskArgs) ToAssetComputeDiskOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(AssetComputeDiskOutput)
 }
 
-func (i AssetComputeDiskArgs) ToOutput(ctx context.Context) pulumix.Output[AssetComputeDisk] {
-	return pulumix.Output[AssetComputeDisk]{
-		OutputState: i.ToAssetComputeDiskOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AssetComputeDiskArrayInput is an input type that accepts AssetComputeDiskArray and AssetComputeDiskArrayOutput values.
 // You can construct a concrete instance of `AssetComputeDiskArrayInput` via:
 //
@@ -988,12 +933,6 @@ func (i AssetComputeDiskArray) ToAssetComputeDiskArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(AssetComputeDiskArrayOutput)
 }
 
-func (i AssetComputeDiskArray) ToOutput(ctx context.Context) pulumix.Output[[]AssetComputeDisk] {
-	return pulumix.Output[[]AssetComputeDisk]{
-		OutputState: i.ToAssetComputeDiskArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AssetComputeDiskOutput struct{ *pulumi.OutputState }
 
 func (AssetComputeDiskOutput) ElementType() reflect.Type {
@@ -1006,12 +945,6 @@ func (o AssetComputeDiskOutput) ToAssetComputeDiskOutput() AssetComputeDiskOutpu
 
 func (o AssetComputeDiskOutput) ToAssetComputeDiskOutputWithContext(ctx context.Context) AssetComputeDiskOutput {
 	return o
-}
-
-func (o AssetComputeDiskOutput) ToOutput(ctx context.Context) pulumix.Output[AssetComputeDisk] {
-	return pulumix.Output[AssetComputeDisk]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Order of boot volumes.
@@ -1061,12 +994,6 @@ func (o AssetComputeDiskArrayOutput) ToAssetComputeDiskArrayOutput() AssetComput
 
 func (o AssetComputeDiskArrayOutput) ToAssetComputeDiskArrayOutputWithContext(ctx context.Context) AssetComputeDiskArrayOutput {
 	return o
-}
-
-func (o AssetComputeDiskArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AssetComputeDisk] {
-	return pulumix.Output[[]AssetComputeDisk]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AssetComputeDiskArrayOutput) Index(i pulumi.IntInput) AssetComputeDiskOutput {
@@ -1124,12 +1051,6 @@ func (i AssetComputeGpuDeviceArgs) ToAssetComputeGpuDeviceOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(AssetComputeGpuDeviceOutput)
 }
 
-func (i AssetComputeGpuDeviceArgs) ToOutput(ctx context.Context) pulumix.Output[AssetComputeGpuDevice] {
-	return pulumix.Output[AssetComputeGpuDevice]{
-		OutputState: i.ToAssetComputeGpuDeviceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AssetComputeGpuDeviceArrayInput is an input type that accepts AssetComputeGpuDeviceArray and AssetComputeGpuDeviceArrayOutput values.
 // You can construct a concrete instance of `AssetComputeGpuDeviceArrayInput` via:
 //
@@ -1155,12 +1076,6 @@ func (i AssetComputeGpuDeviceArray) ToAssetComputeGpuDeviceArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(AssetComputeGpuDeviceArrayOutput)
 }
 
-func (i AssetComputeGpuDeviceArray) ToOutput(ctx context.Context) pulumix.Output[[]AssetComputeGpuDevice] {
-	return pulumix.Output[[]AssetComputeGpuDevice]{
-		OutputState: i.ToAssetComputeGpuDeviceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AssetComputeGpuDeviceOutput struct{ *pulumi.OutputState }
 
 func (AssetComputeGpuDeviceOutput) ElementType() reflect.Type {
@@ -1173,12 +1088,6 @@ func (o AssetComputeGpuDeviceOutput) ToAssetComputeGpuDeviceOutput() AssetComput
 
 func (o AssetComputeGpuDeviceOutput) ToAssetComputeGpuDeviceOutputWithContext(ctx context.Context) AssetComputeGpuDeviceOutput {
 	return o
-}
-
-func (o AssetComputeGpuDeviceOutput) ToOutput(ctx context.Context) pulumix.Output[AssetComputeGpuDevice] {
-	return pulumix.Output[AssetComputeGpuDevice]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Number of GPU cores.
@@ -1218,12 +1127,6 @@ func (o AssetComputeGpuDeviceArrayOutput) ToAssetComputeGpuDeviceArrayOutput() A
 
 func (o AssetComputeGpuDeviceArrayOutput) ToAssetComputeGpuDeviceArrayOutputWithContext(ctx context.Context) AssetComputeGpuDeviceArrayOutput {
 	return o
-}
-
-func (o AssetComputeGpuDeviceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AssetComputeGpuDevice] {
-	return pulumix.Output[[]AssetComputeGpuDevice]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AssetComputeGpuDeviceArrayOutput) Index(i pulumi.IntInput) AssetComputeGpuDeviceOutput {
@@ -1285,12 +1188,6 @@ func (i AssetComputeNicArgs) ToAssetComputeNicOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(AssetComputeNicOutput)
 }
 
-func (i AssetComputeNicArgs) ToOutput(ctx context.Context) pulumix.Output[AssetComputeNic] {
-	return pulumix.Output[AssetComputeNic]{
-		OutputState: i.ToAssetComputeNicOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AssetComputeNicArrayInput is an input type that accepts AssetComputeNicArray and AssetComputeNicArrayOutput values.
 // You can construct a concrete instance of `AssetComputeNicArrayInput` via:
 //
@@ -1316,12 +1213,6 @@ func (i AssetComputeNicArray) ToAssetComputeNicArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(AssetComputeNicArrayOutput)
 }
 
-func (i AssetComputeNicArray) ToOutput(ctx context.Context) pulumix.Output[[]AssetComputeNic] {
-	return pulumix.Output[[]AssetComputeNic]{
-		OutputState: i.ToAssetComputeNicArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AssetComputeNicOutput struct{ *pulumi.OutputState }
 
 func (AssetComputeNicOutput) ElementType() reflect.Type {
@@ -1334,12 +1225,6 @@ func (o AssetComputeNicOutput) ToAssetComputeNicOutput() AssetComputeNicOutput {
 
 func (o AssetComputeNicOutput) ToAssetComputeNicOutputWithContext(ctx context.Context) AssetComputeNicOutput {
 	return o
-}
-
-func (o AssetComputeNicOutput) ToOutput(ctx context.Context) pulumix.Output[AssetComputeNic] {
-	return pulumix.Output[AssetComputeNic]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) List of IP addresses.
@@ -1384,12 +1269,6 @@ func (o AssetComputeNicArrayOutput) ToAssetComputeNicArrayOutput() AssetComputeN
 
 func (o AssetComputeNicArrayOutput) ToAssetComputeNicArrayOutputWithContext(ctx context.Context) AssetComputeNicArrayOutput {
 	return o
-}
-
-func (o AssetComputeNicArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AssetComputeNic] {
-	return pulumix.Output[[]AssetComputeNic]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AssetComputeNicArrayOutput) Index(i pulumi.IntInput) AssetComputeNicOutput {
@@ -1439,12 +1318,6 @@ func (i AssetComputeNvdimmArgs) ToAssetComputeNvdimmOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(AssetComputeNvdimmOutput)
 }
 
-func (i AssetComputeNvdimmArgs) ToOutput(ctx context.Context) pulumix.Output[AssetComputeNvdimm] {
-	return pulumix.Output[AssetComputeNvdimm]{
-		OutputState: i.ToAssetComputeNvdimmOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AssetComputeNvdimmArrayInput is an input type that accepts AssetComputeNvdimmArray and AssetComputeNvdimmArrayOutput values.
 // You can construct a concrete instance of `AssetComputeNvdimmArrayInput` via:
 //
@@ -1470,12 +1343,6 @@ func (i AssetComputeNvdimmArray) ToAssetComputeNvdimmArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(AssetComputeNvdimmArrayOutput)
 }
 
-func (i AssetComputeNvdimmArray) ToOutput(ctx context.Context) pulumix.Output[[]AssetComputeNvdimm] {
-	return pulumix.Output[[]AssetComputeNvdimm]{
-		OutputState: i.ToAssetComputeNvdimmArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AssetComputeNvdimmOutput struct{ *pulumi.OutputState }
 
 func (AssetComputeNvdimmOutput) ElementType() reflect.Type {
@@ -1488,12 +1355,6 @@ func (o AssetComputeNvdimmOutput) ToAssetComputeNvdimmOutput() AssetComputeNvdim
 
 func (o AssetComputeNvdimmOutput) ToAssetComputeNvdimmOutputWithContext(ctx context.Context) AssetComputeNvdimmOutput {
 	return o
-}
-
-func (o AssetComputeNvdimmOutput) ToOutput(ctx context.Context) pulumix.Output[AssetComputeNvdimm] {
-	return pulumix.Output[AssetComputeNvdimm]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Controller key.
@@ -1523,12 +1384,6 @@ func (o AssetComputeNvdimmArrayOutput) ToAssetComputeNvdimmArrayOutput() AssetCo
 
 func (o AssetComputeNvdimmArrayOutput) ToAssetComputeNvdimmArrayOutputWithContext(ctx context.Context) AssetComputeNvdimmArrayOutput {
 	return o
-}
-
-func (o AssetComputeNvdimmArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AssetComputeNvdimm] {
-	return pulumix.Output[[]AssetComputeNvdimm]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AssetComputeNvdimmArrayOutput) Index(i pulumi.IntInput) AssetComputeNvdimmOutput {
@@ -1574,12 +1429,6 @@ func (i AssetComputeNvdimmControllerArgs) ToAssetComputeNvdimmControllerOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(AssetComputeNvdimmControllerOutput)
 }
 
-func (i AssetComputeNvdimmControllerArgs) ToOutput(ctx context.Context) pulumix.Output[AssetComputeNvdimmController] {
-	return pulumix.Output[AssetComputeNvdimmController]{
-		OutputState: i.ToAssetComputeNvdimmControllerOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AssetComputeNvdimmControllerArgs) ToAssetComputeNvdimmControllerPtrOutput() AssetComputeNvdimmControllerPtrOutput {
 	return i.ToAssetComputeNvdimmControllerPtrOutputWithContext(context.Background())
 }
@@ -1621,12 +1470,6 @@ func (i *assetComputeNvdimmControllerPtrType) ToAssetComputeNvdimmControllerPtrO
 	return pulumi.ToOutputWithContext(ctx, i).(AssetComputeNvdimmControllerPtrOutput)
 }
 
-func (i *assetComputeNvdimmControllerPtrType) ToOutput(ctx context.Context) pulumix.Output[*AssetComputeNvdimmController] {
-	return pulumix.Output[*AssetComputeNvdimmController]{
-		OutputState: i.ToAssetComputeNvdimmControllerPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AssetComputeNvdimmControllerOutput struct{ *pulumi.OutputState }
 
 func (AssetComputeNvdimmControllerOutput) ElementType() reflect.Type {
@@ -1651,12 +1494,6 @@ func (o AssetComputeNvdimmControllerOutput) ToAssetComputeNvdimmControllerPtrOut
 	}).(AssetComputeNvdimmControllerPtrOutput)
 }
 
-func (o AssetComputeNvdimmControllerOutput) ToOutput(ctx context.Context) pulumix.Output[AssetComputeNvdimmController] {
-	return pulumix.Output[AssetComputeNvdimmController]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Bus number.
 func (o AssetComputeNvdimmControllerOutput) BusNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v AssetComputeNvdimmController) *int { return v.BusNumber }).(pulumi.IntPtrOutput)
@@ -1679,12 +1516,6 @@ func (o AssetComputeNvdimmControllerPtrOutput) ToAssetComputeNvdimmControllerPtr
 
 func (o AssetComputeNvdimmControllerPtrOutput) ToAssetComputeNvdimmControllerPtrOutputWithContext(ctx context.Context) AssetComputeNvdimmControllerPtrOutput {
 	return o
-}
-
-func (o AssetComputeNvdimmControllerPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AssetComputeNvdimmController] {
-	return pulumix.Output[*AssetComputeNvdimmController]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AssetComputeNvdimmControllerPtrOutput) Elem() AssetComputeNvdimmControllerOutput {
@@ -1758,12 +1589,6 @@ func (i AssetComputeScsiControllerArgs) ToAssetComputeScsiControllerOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(AssetComputeScsiControllerOutput)
 }
 
-func (i AssetComputeScsiControllerArgs) ToOutput(ctx context.Context) pulumix.Output[AssetComputeScsiController] {
-	return pulumix.Output[AssetComputeScsiController]{
-		OutputState: i.ToAssetComputeScsiControllerOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AssetComputeScsiControllerArgs) ToAssetComputeScsiControllerPtrOutput() AssetComputeScsiControllerPtrOutput {
 	return i.ToAssetComputeScsiControllerPtrOutputWithContext(context.Background())
 }
@@ -1805,12 +1630,6 @@ func (i *assetComputeScsiControllerPtrType) ToAssetComputeScsiControllerPtrOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(AssetComputeScsiControllerPtrOutput)
 }
 
-func (i *assetComputeScsiControllerPtrType) ToOutput(ctx context.Context) pulumix.Output[*AssetComputeScsiController] {
-	return pulumix.Output[*AssetComputeScsiController]{
-		OutputState: i.ToAssetComputeScsiControllerPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AssetComputeScsiControllerOutput struct{ *pulumi.OutputState }
 
 func (AssetComputeScsiControllerOutput) ElementType() reflect.Type {
@@ -1833,12 +1652,6 @@ func (o AssetComputeScsiControllerOutput) ToAssetComputeScsiControllerPtrOutputW
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AssetComputeScsiController) *AssetComputeScsiController {
 		return &v
 	}).(AssetComputeScsiControllerPtrOutput)
-}
-
-func (o AssetComputeScsiControllerOutput) ToOutput(ctx context.Context) pulumix.Output[AssetComputeScsiController] {
-	return pulumix.Output[AssetComputeScsiController]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Provides a label and summary information for the device.
@@ -1868,12 +1681,6 @@ func (o AssetComputeScsiControllerPtrOutput) ToAssetComputeScsiControllerPtrOutp
 
 func (o AssetComputeScsiControllerPtrOutput) ToAssetComputeScsiControllerPtrOutputWithContext(ctx context.Context) AssetComputeScsiControllerPtrOutput {
 	return o
-}
-
-func (o AssetComputeScsiControllerPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AssetComputeScsiController] {
-	return pulumix.Output[*AssetComputeScsiController]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AssetComputeScsiControllerPtrOutput) Elem() AssetComputeScsiControllerOutput {
@@ -1953,12 +1760,6 @@ func (i AssetSourceDiscoveryCredentialsArgs) ToAssetSourceDiscoveryCredentialsOu
 	return pulumi.ToOutputWithContext(ctx, i).(AssetSourceDiscoveryCredentialsOutput)
 }
 
-func (i AssetSourceDiscoveryCredentialsArgs) ToOutput(ctx context.Context) pulumix.Output[AssetSourceDiscoveryCredentials] {
-	return pulumix.Output[AssetSourceDiscoveryCredentials]{
-		OutputState: i.ToAssetSourceDiscoveryCredentialsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AssetSourceDiscoveryCredentialsArgs) ToAssetSourceDiscoveryCredentialsPtrOutput() AssetSourceDiscoveryCredentialsPtrOutput {
 	return i.ToAssetSourceDiscoveryCredentialsPtrOutputWithContext(context.Background())
 }
@@ -2000,12 +1801,6 @@ func (i *assetSourceDiscoveryCredentialsPtrType) ToAssetSourceDiscoveryCredentia
 	return pulumi.ToOutputWithContext(ctx, i).(AssetSourceDiscoveryCredentialsPtrOutput)
 }
 
-func (i *assetSourceDiscoveryCredentialsPtrType) ToOutput(ctx context.Context) pulumix.Output[*AssetSourceDiscoveryCredentials] {
-	return pulumix.Output[*AssetSourceDiscoveryCredentials]{
-		OutputState: i.ToAssetSourceDiscoveryCredentialsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AssetSourceDiscoveryCredentialsOutput struct{ *pulumi.OutputState }
 
 func (AssetSourceDiscoveryCredentialsOutput) ElementType() reflect.Type {
@@ -2030,12 +1825,6 @@ func (o AssetSourceDiscoveryCredentialsOutput) ToAssetSourceDiscoveryCredentials
 	}).(AssetSourceDiscoveryCredentialsPtrOutput)
 }
 
-func (o AssetSourceDiscoveryCredentialsOutput) ToOutput(ctx context.Context) pulumix.Output[AssetSourceDiscoveryCredentials] {
-	return pulumix.Output[AssetSourceDiscoveryCredentials]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
 func (o AssetSourceDiscoveryCredentialsOutput) SecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v AssetSourceDiscoveryCredentials) string { return v.SecretId }).(pulumi.StringOutput)
@@ -2058,12 +1847,6 @@ func (o AssetSourceDiscoveryCredentialsPtrOutput) ToAssetSourceDiscoveryCredenti
 
 func (o AssetSourceDiscoveryCredentialsPtrOutput) ToAssetSourceDiscoveryCredentialsPtrOutputWithContext(ctx context.Context) AssetSourceDiscoveryCredentialsPtrOutput {
 	return o
-}
-
-func (o AssetSourceDiscoveryCredentialsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AssetSourceDiscoveryCredentials] {
-	return pulumix.Output[*AssetSourceDiscoveryCredentials]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AssetSourceDiscoveryCredentialsPtrOutput) Elem() AssetSourceDiscoveryCredentialsOutput {
@@ -2133,12 +1916,6 @@ func (i AssetSourceReplicationCredentialsArgs) ToAssetSourceReplicationCredentia
 	return pulumi.ToOutputWithContext(ctx, i).(AssetSourceReplicationCredentialsOutput)
 }
 
-func (i AssetSourceReplicationCredentialsArgs) ToOutput(ctx context.Context) pulumix.Output[AssetSourceReplicationCredentials] {
-	return pulumix.Output[AssetSourceReplicationCredentials]{
-		OutputState: i.ToAssetSourceReplicationCredentialsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AssetSourceReplicationCredentialsArgs) ToAssetSourceReplicationCredentialsPtrOutput() AssetSourceReplicationCredentialsPtrOutput {
 	return i.ToAssetSourceReplicationCredentialsPtrOutputWithContext(context.Background())
 }
@@ -2180,12 +1957,6 @@ func (i *assetSourceReplicationCredentialsPtrType) ToAssetSourceReplicationCrede
 	return pulumi.ToOutputWithContext(ctx, i).(AssetSourceReplicationCredentialsPtrOutput)
 }
 
-func (i *assetSourceReplicationCredentialsPtrType) ToOutput(ctx context.Context) pulumix.Output[*AssetSourceReplicationCredentials] {
-	return pulumix.Output[*AssetSourceReplicationCredentials]{
-		OutputState: i.ToAssetSourceReplicationCredentialsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AssetSourceReplicationCredentialsOutput struct{ *pulumi.OutputState }
 
 func (AssetSourceReplicationCredentialsOutput) ElementType() reflect.Type {
@@ -2210,12 +1981,6 @@ func (o AssetSourceReplicationCredentialsOutput) ToAssetSourceReplicationCredent
 	}).(AssetSourceReplicationCredentialsPtrOutput)
 }
 
-func (o AssetSourceReplicationCredentialsOutput) ToOutput(ctx context.Context) pulumix.Output[AssetSourceReplicationCredentials] {
-	return pulumix.Output[AssetSourceReplicationCredentials]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
 func (o AssetSourceReplicationCredentialsOutput) SecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v AssetSourceReplicationCredentials) string { return v.SecretId }).(pulumi.StringOutput)
@@ -2238,12 +2003,6 @@ func (o AssetSourceReplicationCredentialsPtrOutput) ToAssetSourceReplicationCred
 
 func (o AssetSourceReplicationCredentialsPtrOutput) ToAssetSourceReplicationCredentialsPtrOutputWithContext(ctx context.Context) AssetSourceReplicationCredentialsPtrOutput {
 	return o
-}
-
-func (o AssetSourceReplicationCredentialsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AssetSourceReplicationCredentials] {
-	return pulumix.Output[*AssetSourceReplicationCredentials]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AssetSourceReplicationCredentialsPtrOutput) Elem() AssetSourceReplicationCredentialsOutput {
@@ -2317,12 +2076,6 @@ func (i AssetVmArgs) ToAssetVmOutputWithContext(ctx context.Context) AssetVmOutp
 	return pulumi.ToOutputWithContext(ctx, i).(AssetVmOutput)
 }
 
-func (i AssetVmArgs) ToOutput(ctx context.Context) pulumix.Output[AssetVm] {
-	return pulumix.Output[AssetVm]{
-		OutputState: i.ToAssetVmOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AssetVmArgs) ToAssetVmPtrOutput() AssetVmPtrOutput {
 	return i.ToAssetVmPtrOutputWithContext(context.Background())
 }
@@ -2364,12 +2117,6 @@ func (i *assetVmPtrType) ToAssetVmPtrOutputWithContext(ctx context.Context) Asse
 	return pulumi.ToOutputWithContext(ctx, i).(AssetVmPtrOutput)
 }
 
-func (i *assetVmPtrType) ToOutput(ctx context.Context) pulumix.Output[*AssetVm] {
-	return pulumix.Output[*AssetVm]{
-		OutputState: i.ToAssetVmPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AssetVmOutput struct{ *pulumi.OutputState }
 
 func (AssetVmOutput) ElementType() reflect.Type {
@@ -2392,12 +2139,6 @@ func (o AssetVmOutput) ToAssetVmPtrOutputWithContext(ctx context.Context) AssetV
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AssetVm) *AssetVm {
 		return &v
 	}).(AssetVmPtrOutput)
-}
-
-func (o AssetVmOutput) ToOutput(ctx context.Context) pulumix.Output[AssetVm] {
-	return pulumix.Output[AssetVm]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Host name/IP address of VM on which the host is running.
@@ -2427,12 +2168,6 @@ func (o AssetVmPtrOutput) ToAssetVmPtrOutput() AssetVmPtrOutput {
 
 func (o AssetVmPtrOutput) ToAssetVmPtrOutputWithContext(ctx context.Context) AssetVmPtrOutput {
 	return o
-}
-
-func (o AssetVmPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AssetVm] {
-	return pulumix.Output[*AssetVm]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AssetVmPtrOutput) Elem() AssetVmOutput {
@@ -2516,12 +2251,6 @@ func (i AssetVmwareVcenterArgs) ToAssetVmwareVcenterOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(AssetVmwareVcenterOutput)
 }
 
-func (i AssetVmwareVcenterArgs) ToOutput(ctx context.Context) pulumix.Output[AssetVmwareVcenter] {
-	return pulumix.Output[AssetVmwareVcenter]{
-		OutputState: i.ToAssetVmwareVcenterOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AssetVmwareVcenterArgs) ToAssetVmwareVcenterPtrOutput() AssetVmwareVcenterPtrOutput {
 	return i.ToAssetVmwareVcenterPtrOutputWithContext(context.Background())
 }
@@ -2563,12 +2292,6 @@ func (i *assetVmwareVcenterPtrType) ToAssetVmwareVcenterPtrOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(AssetVmwareVcenterPtrOutput)
 }
 
-func (i *assetVmwareVcenterPtrType) ToOutput(ctx context.Context) pulumix.Output[*AssetVmwareVcenter] {
-	return pulumix.Output[*AssetVmwareVcenter]{
-		OutputState: i.ToAssetVmwareVcenterPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AssetVmwareVcenterOutput struct{ *pulumi.OutputState }
 
 func (AssetVmwareVcenterOutput) ElementType() reflect.Type {
@@ -2591,12 +2314,6 @@ func (o AssetVmwareVcenterOutput) ToAssetVmwareVcenterPtrOutputWithContext(ctx c
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AssetVmwareVcenter) *AssetVmwareVcenter {
 		return &v
 	}).(AssetVmwareVcenterPtrOutput)
-}
-
-func (o AssetVmwareVcenterOutput) ToOutput(ctx context.Context) pulumix.Output[AssetVmwareVcenter] {
-	return pulumix.Output[AssetVmwareVcenter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Data center name.
@@ -2626,12 +2343,6 @@ func (o AssetVmwareVcenterPtrOutput) ToAssetVmwareVcenterPtrOutput() AssetVmware
 
 func (o AssetVmwareVcenterPtrOutput) ToAssetVmwareVcenterPtrOutputWithContext(ctx context.Context) AssetVmwareVcenterPtrOutput {
 	return o
-}
-
-func (o AssetVmwareVcenterPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AssetVmwareVcenter] {
-	return pulumix.Output[*AssetVmwareVcenter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AssetVmwareVcenterPtrOutput) Elem() AssetVmwareVcenterOutput {
@@ -2753,12 +2464,6 @@ func (i AssetVmwareVmArgs) ToAssetVmwareVmOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(AssetVmwareVmOutput)
 }
 
-func (i AssetVmwareVmArgs) ToOutput(ctx context.Context) pulumix.Output[AssetVmwareVm] {
-	return pulumix.Output[AssetVmwareVm]{
-		OutputState: i.ToAssetVmwareVmOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AssetVmwareVmArgs) ToAssetVmwareVmPtrOutput() AssetVmwareVmPtrOutput {
 	return i.ToAssetVmwareVmPtrOutputWithContext(context.Background())
 }
@@ -2800,12 +2505,6 @@ func (i *assetVmwareVmPtrType) ToAssetVmwareVmPtrOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(AssetVmwareVmPtrOutput)
 }
 
-func (i *assetVmwareVmPtrType) ToOutput(ctx context.Context) pulumix.Output[*AssetVmwareVm] {
-	return pulumix.Output[*AssetVmwareVm]{
-		OutputState: i.ToAssetVmwareVmPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AssetVmwareVmOutput struct{ *pulumi.OutputState }
 
 func (AssetVmwareVmOutput) ElementType() reflect.Type {
@@ -2828,12 +2527,6 @@ func (o AssetVmwareVmOutput) ToAssetVmwareVmPtrOutputWithContext(ctx context.Con
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AssetVmwareVm) *AssetVmwareVm {
 		return &v
 	}).(AssetVmwareVmPtrOutput)
-}
-
-func (o AssetVmwareVmOutput) ToOutput(ctx context.Context) pulumix.Output[AssetVmwareVm] {
-	return pulumix.Output[AssetVmwareVm]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Cluster name.
@@ -2906,12 +2599,6 @@ func (o AssetVmwareVmPtrOutput) ToAssetVmwareVmPtrOutput() AssetVmwareVmPtrOutpu
 
 func (o AssetVmwareVmPtrOutput) ToAssetVmwareVmPtrOutputWithContext(ctx context.Context) AssetVmwareVmPtrOutput {
 	return o
-}
-
-func (o AssetVmwareVmPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AssetVmwareVm] {
-	return pulumix.Output[*AssetVmwareVm]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AssetVmwareVmPtrOutput) Elem() AssetVmwareVmOutput {
@@ -3074,12 +2761,6 @@ func (i AssetVmwareVmCustomerTagArgs) ToAssetVmwareVmCustomerTagOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(AssetVmwareVmCustomerTagOutput)
 }
 
-func (i AssetVmwareVmCustomerTagArgs) ToOutput(ctx context.Context) pulumix.Output[AssetVmwareVmCustomerTag] {
-	return pulumix.Output[AssetVmwareVmCustomerTag]{
-		OutputState: i.ToAssetVmwareVmCustomerTagOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AssetVmwareVmCustomerTagArrayInput is an input type that accepts AssetVmwareVmCustomerTagArray and AssetVmwareVmCustomerTagArrayOutput values.
 // You can construct a concrete instance of `AssetVmwareVmCustomerTagArrayInput` via:
 //
@@ -3105,12 +2786,6 @@ func (i AssetVmwareVmCustomerTagArray) ToAssetVmwareVmCustomerTagArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(AssetVmwareVmCustomerTagArrayOutput)
 }
 
-func (i AssetVmwareVmCustomerTagArray) ToOutput(ctx context.Context) pulumix.Output[[]AssetVmwareVmCustomerTag] {
-	return pulumix.Output[[]AssetVmwareVmCustomerTag]{
-		OutputState: i.ToAssetVmwareVmCustomerTagArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AssetVmwareVmCustomerTagOutput struct{ *pulumi.OutputState }
 
 func (AssetVmwareVmCustomerTagOutput) ElementType() reflect.Type {
@@ -3123,12 +2798,6 @@ func (o AssetVmwareVmCustomerTagOutput) ToAssetVmwareVmCustomerTagOutput() Asset
 
 func (o AssetVmwareVmCustomerTagOutput) ToAssetVmwareVmCustomerTagOutputWithContext(ctx context.Context) AssetVmwareVmCustomerTagOutput {
 	return o
-}
-
-func (o AssetVmwareVmCustomerTagOutput) ToOutput(ctx context.Context) pulumix.Output[AssetVmwareVmCustomerTag] {
-	return pulumix.Output[AssetVmwareVmCustomerTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The tag description.
@@ -3153,12 +2822,6 @@ func (o AssetVmwareVmCustomerTagArrayOutput) ToAssetVmwareVmCustomerTagArrayOutp
 
 func (o AssetVmwareVmCustomerTagArrayOutput) ToAssetVmwareVmCustomerTagArrayOutputWithContext(ctx context.Context) AssetVmwareVmCustomerTagArrayOutput {
 	return o
-}
-
-func (o AssetVmwareVmCustomerTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AssetVmwareVmCustomerTag] {
-	return pulumix.Output[[]AssetVmwareVmCustomerTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AssetVmwareVmCustomerTagArrayOutput) Index(i pulumi.IntInput) AssetVmwareVmCustomerTagOutput {
@@ -3198,12 +2861,6 @@ func (i GetAgentDependenciesAgentDependencyCollectionArgs) ToGetAgentDependencie
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDependenciesAgentDependencyCollectionOutput)
 }
 
-func (i GetAgentDependenciesAgentDependencyCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAgentDependenciesAgentDependencyCollection] {
-	return pulumix.Output[GetAgentDependenciesAgentDependencyCollection]{
-		OutputState: i.ToGetAgentDependenciesAgentDependencyCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAgentDependenciesAgentDependencyCollectionArrayInput is an input type that accepts GetAgentDependenciesAgentDependencyCollectionArray and GetAgentDependenciesAgentDependencyCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAgentDependenciesAgentDependencyCollectionArrayInput` via:
 //
@@ -3229,12 +2886,6 @@ func (i GetAgentDependenciesAgentDependencyCollectionArray) ToGetAgentDependenci
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDependenciesAgentDependencyCollectionArrayOutput)
 }
 
-func (i GetAgentDependenciesAgentDependencyCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentDependenciesAgentDependencyCollection] {
-	return pulumix.Output[[]GetAgentDependenciesAgentDependencyCollection]{
-		OutputState: i.ToGetAgentDependenciesAgentDependencyCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAgentDependenciesAgentDependencyCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAgentDependenciesAgentDependencyCollectionOutput) ElementType() reflect.Type {
@@ -3247,12 +2898,6 @@ func (o GetAgentDependenciesAgentDependencyCollectionOutput) ToGetAgentDependenc
 
 func (o GetAgentDependenciesAgentDependencyCollectionOutput) ToGetAgentDependenciesAgentDependencyCollectionOutputWithContext(ctx context.Context) GetAgentDependenciesAgentDependencyCollectionOutput {
 	return o
-}
-
-func (o GetAgentDependenciesAgentDependencyCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAgentDependenciesAgentDependencyCollection] {
-	return pulumix.Output[GetAgentDependenciesAgentDependencyCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAgentDependenciesAgentDependencyCollectionOutput) Items() GetAgentDependenciesAgentDependencyCollectionItemArrayOutput {
@@ -3273,12 +2918,6 @@ func (o GetAgentDependenciesAgentDependencyCollectionArrayOutput) ToGetAgentDepe
 
 func (o GetAgentDependenciesAgentDependencyCollectionArrayOutput) ToGetAgentDependenciesAgentDependencyCollectionArrayOutputWithContext(ctx context.Context) GetAgentDependenciesAgentDependencyCollectionArrayOutput {
 	return o
-}
-
-func (o GetAgentDependenciesAgentDependencyCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentDependenciesAgentDependencyCollection] {
-	return pulumix.Output[[]GetAgentDependenciesAgentDependencyCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAgentDependenciesAgentDependencyCollectionArrayOutput) Index(i pulumi.IntInput) GetAgentDependenciesAgentDependencyCollectionOutput {
@@ -3384,12 +3023,6 @@ func (i GetAgentDependenciesAgentDependencyCollectionItemArgs) ToGetAgentDepende
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDependenciesAgentDependencyCollectionItemOutput)
 }
 
-func (i GetAgentDependenciesAgentDependencyCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAgentDependenciesAgentDependencyCollectionItem] {
-	return pulumix.Output[GetAgentDependenciesAgentDependencyCollectionItem]{
-		OutputState: i.ToGetAgentDependenciesAgentDependencyCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAgentDependenciesAgentDependencyCollectionItemArrayInput is an input type that accepts GetAgentDependenciesAgentDependencyCollectionItemArray and GetAgentDependenciesAgentDependencyCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAgentDependenciesAgentDependencyCollectionItemArrayInput` via:
 //
@@ -3415,12 +3048,6 @@ func (i GetAgentDependenciesAgentDependencyCollectionItemArray) ToGetAgentDepend
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDependenciesAgentDependencyCollectionItemArrayOutput)
 }
 
-func (i GetAgentDependenciesAgentDependencyCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentDependenciesAgentDependencyCollectionItem] {
-	return pulumix.Output[[]GetAgentDependenciesAgentDependencyCollectionItem]{
-		OutputState: i.ToGetAgentDependenciesAgentDependencyCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAgentDependenciesAgentDependencyCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAgentDependenciesAgentDependencyCollectionItemOutput) ElementType() reflect.Type {
@@ -3433,12 +3060,6 @@ func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) ToGetAgentDepen
 
 func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) ToGetAgentDependenciesAgentDependencyCollectionItemOutputWithContext(ctx context.Context) GetAgentDependenciesAgentDependencyCollectionItemOutput {
 	return o
-}
-
-func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAgentDependenciesAgentDependencyCollectionItem] {
-	return pulumix.Output[GetAgentDependenciesAgentDependencyCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Object storage bucket where the Agent dependency is uploaded.
@@ -3542,12 +3163,6 @@ func (o GetAgentDependenciesAgentDependencyCollectionItemArrayOutput) ToGetAgent
 	return o
 }
 
-func (o GetAgentDependenciesAgentDependencyCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentDependenciesAgentDependencyCollectionItem] {
-	return pulumix.Output[[]GetAgentDependenciesAgentDependencyCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAgentDependenciesAgentDependencyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAgentDependenciesAgentDependencyCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentDependenciesAgentDependencyCollectionItem {
 		return vs[0].([]GetAgentDependenciesAgentDependencyCollectionItem)[vs[1].(int)]
@@ -3589,12 +3204,6 @@ func (i GetAgentDependenciesFilterArgs) ToGetAgentDependenciesFilterOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDependenciesFilterOutput)
 }
 
-func (i GetAgentDependenciesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAgentDependenciesFilter] {
-	return pulumix.Output[GetAgentDependenciesFilter]{
-		OutputState: i.ToGetAgentDependenciesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAgentDependenciesFilterArrayInput is an input type that accepts GetAgentDependenciesFilterArray and GetAgentDependenciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAgentDependenciesFilterArrayInput` via:
 //
@@ -3620,12 +3229,6 @@ func (i GetAgentDependenciesFilterArray) ToGetAgentDependenciesFilterArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDependenciesFilterArrayOutput)
 }
 
-func (i GetAgentDependenciesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentDependenciesFilter] {
-	return pulumix.Output[[]GetAgentDependenciesFilter]{
-		OutputState: i.ToGetAgentDependenciesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAgentDependenciesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAgentDependenciesFilterOutput) ElementType() reflect.Type {
@@ -3638,12 +3241,6 @@ func (o GetAgentDependenciesFilterOutput) ToGetAgentDependenciesFilterOutput() G
 
 func (o GetAgentDependenciesFilterOutput) ToGetAgentDependenciesFilterOutputWithContext(ctx context.Context) GetAgentDependenciesFilterOutput {
 	return o
-}
-
-func (o GetAgentDependenciesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAgentDependenciesFilter] {
-	return pulumix.Output[GetAgentDependenciesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAgentDependenciesFilterOutput) Name() pulumi.StringOutput {
@@ -3670,12 +3267,6 @@ func (o GetAgentDependenciesFilterArrayOutput) ToGetAgentDependenciesFilterArray
 
 func (o GetAgentDependenciesFilterArrayOutput) ToGetAgentDependenciesFilterArrayOutputWithContext(ctx context.Context) GetAgentDependenciesFilterArrayOutput {
 	return o
-}
-
-func (o GetAgentDependenciesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentDependenciesFilter] {
-	return pulumix.Output[[]GetAgentDependenciesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAgentDependenciesFilterArrayOutput) Index(i pulumi.IntInput) GetAgentDependenciesFilterOutput {
@@ -3749,12 +3340,6 @@ func (i GetAgentPluginListArgs) ToGetAgentPluginListOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentPluginListOutput)
 }
 
-func (i GetAgentPluginListArgs) ToOutput(ctx context.Context) pulumix.Output[GetAgentPluginList] {
-	return pulumix.Output[GetAgentPluginList]{
-		OutputState: i.ToGetAgentPluginListOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAgentPluginListArrayInput is an input type that accepts GetAgentPluginListArray and GetAgentPluginListArrayOutput values.
 // You can construct a concrete instance of `GetAgentPluginListArrayInput` via:
 //
@@ -3780,12 +3365,6 @@ func (i GetAgentPluginListArray) ToGetAgentPluginListArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentPluginListArrayOutput)
 }
 
-func (i GetAgentPluginListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentPluginList] {
-	return pulumix.Output[[]GetAgentPluginList]{
-		OutputState: i.ToGetAgentPluginListArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAgentPluginListOutput struct{ *pulumi.OutputState }
 
 func (GetAgentPluginListOutput) ElementType() reflect.Type {
@@ -3798,12 +3377,6 @@ func (o GetAgentPluginListOutput) ToGetAgentPluginListOutput() GetAgentPluginLis
 
 func (o GetAgentPluginListOutput) ToGetAgentPluginListOutputWithContext(ctx context.Context) GetAgentPluginListOutput {
 	return o
-}
-
-func (o GetAgentPluginListOutput) ToOutput(ctx context.Context) pulumix.Output[GetAgentPluginList] {
-	return pulumix.Output[GetAgentPluginList]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique Agent identifier path parameter.
@@ -3865,12 +3438,6 @@ func (o GetAgentPluginListArrayOutput) ToGetAgentPluginListArrayOutputWithContex
 	return o
 }
 
-func (o GetAgentPluginListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentPluginList] {
-	return pulumix.Output[[]GetAgentPluginList]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAgentPluginListArrayOutput) Index(i pulumi.IntInput) GetAgentPluginListOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentPluginList {
 		return vs[0].([]GetAgentPluginList)[vs[1].(int)]
@@ -3908,12 +3475,6 @@ func (i GetAgentsAgentCollectionArgs) ToGetAgentsAgentCollectionOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentsAgentCollectionOutput)
 }
 
-func (i GetAgentsAgentCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAgentsAgentCollection] {
-	return pulumix.Output[GetAgentsAgentCollection]{
-		OutputState: i.ToGetAgentsAgentCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAgentsAgentCollectionArrayInput is an input type that accepts GetAgentsAgentCollectionArray and GetAgentsAgentCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAgentsAgentCollectionArrayInput` via:
 //
@@ -3939,12 +3500,6 @@ func (i GetAgentsAgentCollectionArray) ToGetAgentsAgentCollectionArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentsAgentCollectionArrayOutput)
 }
 
-func (i GetAgentsAgentCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentsAgentCollection] {
-	return pulumix.Output[[]GetAgentsAgentCollection]{
-		OutputState: i.ToGetAgentsAgentCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAgentsAgentCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAgentsAgentCollectionOutput) ElementType() reflect.Type {
@@ -3957,12 +3512,6 @@ func (o GetAgentsAgentCollectionOutput) ToGetAgentsAgentCollectionOutput() GetAg
 
 func (o GetAgentsAgentCollectionOutput) ToGetAgentsAgentCollectionOutputWithContext(ctx context.Context) GetAgentsAgentCollectionOutput {
 	return o
-}
-
-func (o GetAgentsAgentCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAgentsAgentCollection] {
-	return pulumix.Output[GetAgentsAgentCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAgentsAgentCollectionOutput) Items() GetAgentsAgentCollectionItemArrayOutput {
@@ -3981,12 +3530,6 @@ func (o GetAgentsAgentCollectionArrayOutput) ToGetAgentsAgentCollectionArrayOutp
 
 func (o GetAgentsAgentCollectionArrayOutput) ToGetAgentsAgentCollectionArrayOutputWithContext(ctx context.Context) GetAgentsAgentCollectionArrayOutput {
 	return o
-}
-
-func (o GetAgentsAgentCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentsAgentCollection] {
-	return pulumix.Output[[]GetAgentsAgentCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAgentsAgentCollectionArrayOutput) Index(i pulumi.IntInput) GetAgentsAgentCollectionOutput {
@@ -4100,12 +3643,6 @@ func (i GetAgentsAgentCollectionItemArgs) ToGetAgentsAgentCollectionItemOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentsAgentCollectionItemOutput)
 }
 
-func (i GetAgentsAgentCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAgentsAgentCollectionItem] {
-	return pulumix.Output[GetAgentsAgentCollectionItem]{
-		OutputState: i.ToGetAgentsAgentCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAgentsAgentCollectionItemArrayInput is an input type that accepts GetAgentsAgentCollectionItemArray and GetAgentsAgentCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAgentsAgentCollectionItemArrayInput` via:
 //
@@ -4131,12 +3668,6 @@ func (i GetAgentsAgentCollectionItemArray) ToGetAgentsAgentCollectionItemArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentsAgentCollectionItemArrayOutput)
 }
 
-func (i GetAgentsAgentCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentsAgentCollectionItem] {
-	return pulumix.Output[[]GetAgentsAgentCollectionItem]{
-		OutputState: i.ToGetAgentsAgentCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAgentsAgentCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAgentsAgentCollectionItemOutput) ElementType() reflect.Type {
@@ -4149,12 +3680,6 @@ func (o GetAgentsAgentCollectionItemOutput) ToGetAgentsAgentCollectionItemOutput
 
 func (o GetAgentsAgentCollectionItemOutput) ToGetAgentsAgentCollectionItemOutputWithContext(ctx context.Context) GetAgentsAgentCollectionItemOutput {
 	return o
-}
-
-func (o GetAgentsAgentCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAgentsAgentCollectionItem] {
-	return pulumix.Output[GetAgentsAgentCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Resource principal public key.
@@ -4266,12 +3791,6 @@ func (o GetAgentsAgentCollectionItemArrayOutput) ToGetAgentsAgentCollectionItemA
 	return o
 }
 
-func (o GetAgentsAgentCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentsAgentCollectionItem] {
-	return pulumix.Output[[]GetAgentsAgentCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAgentsAgentCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAgentsAgentCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentsAgentCollectionItem {
 		return vs[0].([]GetAgentsAgentCollectionItem)[vs[1].(int)]
@@ -4343,12 +3862,6 @@ func (i GetAgentsAgentCollectionItemPluginListArgs) ToGetAgentsAgentCollectionIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentsAgentCollectionItemPluginListOutput)
 }
 
-func (i GetAgentsAgentCollectionItemPluginListArgs) ToOutput(ctx context.Context) pulumix.Output[GetAgentsAgentCollectionItemPluginList] {
-	return pulumix.Output[GetAgentsAgentCollectionItemPluginList]{
-		OutputState: i.ToGetAgentsAgentCollectionItemPluginListOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAgentsAgentCollectionItemPluginListArrayInput is an input type that accepts GetAgentsAgentCollectionItemPluginListArray and GetAgentsAgentCollectionItemPluginListArrayOutput values.
 // You can construct a concrete instance of `GetAgentsAgentCollectionItemPluginListArrayInput` via:
 //
@@ -4374,12 +3887,6 @@ func (i GetAgentsAgentCollectionItemPluginListArray) ToGetAgentsAgentCollectionI
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentsAgentCollectionItemPluginListArrayOutput)
 }
 
-func (i GetAgentsAgentCollectionItemPluginListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentsAgentCollectionItemPluginList] {
-	return pulumix.Output[[]GetAgentsAgentCollectionItemPluginList]{
-		OutputState: i.ToGetAgentsAgentCollectionItemPluginListArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAgentsAgentCollectionItemPluginListOutput struct{ *pulumi.OutputState }
 
 func (GetAgentsAgentCollectionItemPluginListOutput) ElementType() reflect.Type {
@@ -4392,12 +3899,6 @@ func (o GetAgentsAgentCollectionItemPluginListOutput) ToGetAgentsAgentCollection
 
 func (o GetAgentsAgentCollectionItemPluginListOutput) ToGetAgentsAgentCollectionItemPluginListOutputWithContext(ctx context.Context) GetAgentsAgentCollectionItemPluginListOutput {
 	return o
-}
-
-func (o GetAgentsAgentCollectionItemPluginListOutput) ToOutput(ctx context.Context) pulumix.Output[GetAgentsAgentCollectionItemPluginList] {
-	return pulumix.Output[GetAgentsAgentCollectionItemPluginList]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the given Agent ID.
@@ -4459,12 +3960,6 @@ func (o GetAgentsAgentCollectionItemPluginListArrayOutput) ToGetAgentsAgentColle
 	return o
 }
 
-func (o GetAgentsAgentCollectionItemPluginListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentsAgentCollectionItemPluginList] {
-	return pulumix.Output[[]GetAgentsAgentCollectionItemPluginList]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAgentsAgentCollectionItemPluginListArrayOutput) Index(i pulumi.IntInput) GetAgentsAgentCollectionItemPluginListOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentsAgentCollectionItemPluginList {
 		return vs[0].([]GetAgentsAgentCollectionItemPluginList)[vs[1].(int)]
@@ -4508,12 +4003,6 @@ func (i GetAgentsFilterArgs) ToGetAgentsFilterOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentsFilterOutput)
 }
 
-func (i GetAgentsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAgentsFilter] {
-	return pulumix.Output[GetAgentsFilter]{
-		OutputState: i.ToGetAgentsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAgentsFilterArrayInput is an input type that accepts GetAgentsFilterArray and GetAgentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAgentsFilterArrayInput` via:
 //
@@ -4539,12 +4028,6 @@ func (i GetAgentsFilterArray) ToGetAgentsFilterArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentsFilterArrayOutput)
 }
 
-func (i GetAgentsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentsFilter] {
-	return pulumix.Output[[]GetAgentsFilter]{
-		OutputState: i.ToGetAgentsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAgentsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAgentsFilterOutput) ElementType() reflect.Type {
@@ -4557,12 +4040,6 @@ func (o GetAgentsFilterOutput) ToGetAgentsFilterOutput() GetAgentsFilterOutput {
 
 func (o GetAgentsFilterOutput) ToGetAgentsFilterOutputWithContext(ctx context.Context) GetAgentsFilterOutput {
 	return o
-}
-
-func (o GetAgentsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAgentsFilter] {
-	return pulumix.Output[GetAgentsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Plugin identifier, which can be renamed.
@@ -4590,12 +4067,6 @@ func (o GetAgentsFilterArrayOutput) ToGetAgentsFilterArrayOutput() GetAgentsFilt
 
 func (o GetAgentsFilterArrayOutput) ToGetAgentsFilterArrayOutputWithContext(ctx context.Context) GetAgentsFilterArrayOutput {
 	return o
-}
-
-func (o GetAgentsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentsFilter] {
-	return pulumix.Output[[]GetAgentsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAgentsFilterArrayOutput) Index(i pulumi.IntInput) GetAgentsFilterOutput {
@@ -4689,12 +4160,6 @@ func (i GetApplianceImageItemArgs) ToGetApplianceImageItemOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplianceImageItemOutput)
 }
 
-func (i GetApplianceImageItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetApplianceImageItem] {
-	return pulumix.Output[GetApplianceImageItem]{
-		OutputState: i.ToGetApplianceImageItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetApplianceImageItemArrayInput is an input type that accepts GetApplianceImageItemArray and GetApplianceImageItemArrayOutput values.
 // You can construct a concrete instance of `GetApplianceImageItemArrayInput` via:
 //
@@ -4720,12 +4185,6 @@ func (i GetApplianceImageItemArray) ToGetApplianceImageItemArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplianceImageItemArrayOutput)
 }
 
-func (i GetApplianceImageItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetApplianceImageItem] {
-	return pulumix.Output[[]GetApplianceImageItem]{
-		OutputState: i.ToGetApplianceImageItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetApplianceImageItemOutput struct{ *pulumi.OutputState }
 
 func (GetApplianceImageItemOutput) ElementType() reflect.Type {
@@ -4738,12 +4197,6 @@ func (o GetApplianceImageItemOutput) ToGetApplianceImageItemOutput() GetApplianc
 
 func (o GetApplianceImageItemOutput) ToGetApplianceImageItemOutputWithContext(ctx context.Context) GetApplianceImageItemOutput {
 	return o
-}
-
-func (o GetApplianceImageItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetApplianceImageItem] {
-	return pulumix.Output[GetApplianceImageItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The checksum of the image file.
@@ -4830,12 +4283,6 @@ func (o GetApplianceImageItemArrayOutput) ToGetApplianceImageItemArrayOutputWith
 	return o
 }
 
-func (o GetApplianceImageItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetApplianceImageItem] {
-	return pulumix.Output[[]GetApplianceImageItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetApplianceImageItemArrayOutput) Index(i pulumi.IntInput) GetApplianceImageItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplianceImageItem {
 		return vs[0].([]GetApplianceImageItem)[vs[1].(int)]
@@ -4875,12 +4322,6 @@ func (i GetApplianceImagesApplianceImageCollectionArgs) ToGetApplianceImagesAppl
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplianceImagesApplianceImageCollectionOutput)
 }
 
-func (i GetApplianceImagesApplianceImageCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetApplianceImagesApplianceImageCollection] {
-	return pulumix.Output[GetApplianceImagesApplianceImageCollection]{
-		OutputState: i.ToGetApplianceImagesApplianceImageCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetApplianceImagesApplianceImageCollectionArrayInput is an input type that accepts GetApplianceImagesApplianceImageCollectionArray and GetApplianceImagesApplianceImageCollectionArrayOutput values.
 // You can construct a concrete instance of `GetApplianceImagesApplianceImageCollectionArrayInput` via:
 //
@@ -4906,12 +4347,6 @@ func (i GetApplianceImagesApplianceImageCollectionArray) ToGetApplianceImagesApp
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplianceImagesApplianceImageCollectionArrayOutput)
 }
 
-func (i GetApplianceImagesApplianceImageCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetApplianceImagesApplianceImageCollection] {
-	return pulumix.Output[[]GetApplianceImagesApplianceImageCollection]{
-		OutputState: i.ToGetApplianceImagesApplianceImageCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetApplianceImagesApplianceImageCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetApplianceImagesApplianceImageCollectionOutput) ElementType() reflect.Type {
@@ -4924,12 +4359,6 @@ func (o GetApplianceImagesApplianceImageCollectionOutput) ToGetApplianceImagesAp
 
 func (o GetApplianceImagesApplianceImageCollectionOutput) ToGetApplianceImagesApplianceImageCollectionOutputWithContext(ctx context.Context) GetApplianceImagesApplianceImageCollectionOutput {
 	return o
-}
-
-func (o GetApplianceImagesApplianceImageCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetApplianceImagesApplianceImageCollection] {
-	return pulumix.Output[GetApplianceImagesApplianceImageCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of appliance images.
@@ -4951,12 +4380,6 @@ func (o GetApplianceImagesApplianceImageCollectionArrayOutput) ToGetApplianceIma
 
 func (o GetApplianceImagesApplianceImageCollectionArrayOutput) ToGetApplianceImagesApplianceImageCollectionArrayOutputWithContext(ctx context.Context) GetApplianceImagesApplianceImageCollectionArrayOutput {
 	return o
-}
-
-func (o GetApplianceImagesApplianceImageCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetApplianceImagesApplianceImageCollection] {
-	return pulumix.Output[[]GetApplianceImagesApplianceImageCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetApplianceImagesApplianceImageCollectionArrayOutput) Index(i pulumi.IntInput) GetApplianceImagesApplianceImageCollectionOutput {
@@ -5050,12 +4473,6 @@ func (i GetApplianceImagesApplianceImageCollectionItemArgs) ToGetApplianceImages
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplianceImagesApplianceImageCollectionItemOutput)
 }
 
-func (i GetApplianceImagesApplianceImageCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetApplianceImagesApplianceImageCollectionItem] {
-	return pulumix.Output[GetApplianceImagesApplianceImageCollectionItem]{
-		OutputState: i.ToGetApplianceImagesApplianceImageCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetApplianceImagesApplianceImageCollectionItemArrayInput is an input type that accepts GetApplianceImagesApplianceImageCollectionItemArray and GetApplianceImagesApplianceImageCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetApplianceImagesApplianceImageCollectionItemArrayInput` via:
 //
@@ -5081,12 +4498,6 @@ func (i GetApplianceImagesApplianceImageCollectionItemArray) ToGetApplianceImage
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplianceImagesApplianceImageCollectionItemArrayOutput)
 }
 
-func (i GetApplianceImagesApplianceImageCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetApplianceImagesApplianceImageCollectionItem] {
-	return pulumix.Output[[]GetApplianceImagesApplianceImageCollectionItem]{
-		OutputState: i.ToGetApplianceImagesApplianceImageCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetApplianceImagesApplianceImageCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetApplianceImagesApplianceImageCollectionItemOutput) ElementType() reflect.Type {
@@ -5099,12 +4510,6 @@ func (o GetApplianceImagesApplianceImageCollectionItemOutput) ToGetApplianceImag
 
 func (o GetApplianceImagesApplianceImageCollectionItemOutput) ToGetApplianceImagesApplianceImageCollectionItemOutputWithContext(ctx context.Context) GetApplianceImagesApplianceImageCollectionItemOutput {
 	return o
-}
-
-func (o GetApplianceImagesApplianceImageCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetApplianceImagesApplianceImageCollectionItem] {
-	return pulumix.Output[GetApplianceImagesApplianceImageCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The checksum of the image file.
@@ -5191,12 +4596,6 @@ func (o GetApplianceImagesApplianceImageCollectionItemArrayOutput) ToGetApplianc
 	return o
 }
 
-func (o GetApplianceImagesApplianceImageCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetApplianceImagesApplianceImageCollectionItem] {
-	return pulumix.Output[[]GetApplianceImagesApplianceImageCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetApplianceImagesApplianceImageCollectionItemArrayOutput) Index(i pulumi.IntInput) GetApplianceImagesApplianceImageCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplianceImagesApplianceImageCollectionItem {
 		return vs[0].([]GetApplianceImagesApplianceImageCollectionItem)[vs[1].(int)]
@@ -5238,12 +4637,6 @@ func (i GetApplianceImagesFilterArgs) ToGetApplianceImagesFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplianceImagesFilterOutput)
 }
 
-func (i GetApplianceImagesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetApplianceImagesFilter] {
-	return pulumix.Output[GetApplianceImagesFilter]{
-		OutputState: i.ToGetApplianceImagesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetApplianceImagesFilterArrayInput is an input type that accepts GetApplianceImagesFilterArray and GetApplianceImagesFilterArrayOutput values.
 // You can construct a concrete instance of `GetApplianceImagesFilterArrayInput` via:
 //
@@ -5269,12 +4662,6 @@ func (i GetApplianceImagesFilterArray) ToGetApplianceImagesFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplianceImagesFilterArrayOutput)
 }
 
-func (i GetApplianceImagesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetApplianceImagesFilter] {
-	return pulumix.Output[[]GetApplianceImagesFilter]{
-		OutputState: i.ToGetApplianceImagesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetApplianceImagesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetApplianceImagesFilterOutput) ElementType() reflect.Type {
@@ -5287,12 +4674,6 @@ func (o GetApplianceImagesFilterOutput) ToGetApplianceImagesFilterOutput() GetAp
 
 func (o GetApplianceImagesFilterOutput) ToGetApplianceImagesFilterOutputWithContext(ctx context.Context) GetApplianceImagesFilterOutput {
 	return o
-}
-
-func (o GetApplianceImagesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetApplianceImagesFilter] {
-	return pulumix.Output[GetApplianceImagesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetApplianceImagesFilterOutput) Name() pulumi.StringOutput {
@@ -5319,12 +4700,6 @@ func (o GetApplianceImagesFilterArrayOutput) ToGetApplianceImagesFilterArrayOutp
 
 func (o GetApplianceImagesFilterArrayOutput) ToGetApplianceImagesFilterArrayOutputWithContext(ctx context.Context) GetApplianceImagesFilterArrayOutput {
 	return o
-}
-
-func (o GetApplianceImagesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetApplianceImagesFilter] {
-	return pulumix.Output[[]GetApplianceImagesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetApplianceImagesFilterArrayOutput) Index(i pulumi.IntInput) GetApplianceImagesFilterOutput {
@@ -5478,12 +4853,6 @@ func (i GetAssetComputeArgs) ToGetAssetComputeOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetComputeOutput)
 }
 
-func (i GetAssetComputeArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetCompute] {
-	return pulumix.Output[GetAssetCompute]{
-		OutputState: i.ToGetAssetComputeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetComputeArrayInput is an input type that accepts GetAssetComputeArray and GetAssetComputeArrayOutput values.
 // You can construct a concrete instance of `GetAssetComputeArrayInput` via:
 //
@@ -5509,12 +4878,6 @@ func (i GetAssetComputeArray) ToGetAssetComputeArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetComputeArrayOutput)
 }
 
-func (i GetAssetComputeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetCompute] {
-	return pulumix.Output[[]GetAssetCompute]{
-		OutputState: i.ToGetAssetComputeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetComputeOutput struct{ *pulumi.OutputState }
 
 func (GetAssetComputeOutput) ElementType() reflect.Type {
@@ -5527,12 +4890,6 @@ func (o GetAssetComputeOutput) ToGetAssetComputeOutput() GetAssetComputeOutput {
 
 func (o GetAssetComputeOutput) ToGetAssetComputeOutputWithContext(ctx context.Context) GetAssetComputeOutput {
 	return o
-}
-
-func (o GetAssetComputeOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetCompute] {
-	return pulumix.Output[GetAssetCompute]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Number of connected networks.
@@ -5694,12 +5051,6 @@ func (o GetAssetComputeArrayOutput) ToGetAssetComputeArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o GetAssetComputeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetCompute] {
-	return pulumix.Output[[]GetAssetCompute]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssetComputeArrayOutput) Index(i pulumi.IntInput) GetAssetComputeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetCompute {
 		return vs[0].([]GetAssetCompute)[vs[1].(int)]
@@ -5763,12 +5114,6 @@ func (i GetAssetComputeDiskArgs) ToGetAssetComputeDiskOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetComputeDiskOutput)
 }
 
-func (i GetAssetComputeDiskArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetComputeDisk] {
-	return pulumix.Output[GetAssetComputeDisk]{
-		OutputState: i.ToGetAssetComputeDiskOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetComputeDiskArrayInput is an input type that accepts GetAssetComputeDiskArray and GetAssetComputeDiskArrayOutput values.
 // You can construct a concrete instance of `GetAssetComputeDiskArrayInput` via:
 //
@@ -5794,12 +5139,6 @@ func (i GetAssetComputeDiskArray) ToGetAssetComputeDiskArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetComputeDiskArrayOutput)
 }
 
-func (i GetAssetComputeDiskArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetComputeDisk] {
-	return pulumix.Output[[]GetAssetComputeDisk]{
-		OutputState: i.ToGetAssetComputeDiskArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetComputeDiskOutput struct{ *pulumi.OutputState }
 
 func (GetAssetComputeDiskOutput) ElementType() reflect.Type {
@@ -5812,12 +5151,6 @@ func (o GetAssetComputeDiskOutput) ToGetAssetComputeDiskOutput() GetAssetCompute
 
 func (o GetAssetComputeDiskOutput) ToGetAssetComputeDiskOutputWithContext(ctx context.Context) GetAssetComputeDiskOutput {
 	return o
-}
-
-func (o GetAssetComputeDiskOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetComputeDisk] {
-	return pulumix.Output[GetAssetComputeDisk]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Order of boot volumes.
@@ -5867,12 +5200,6 @@ func (o GetAssetComputeDiskArrayOutput) ToGetAssetComputeDiskArrayOutput() GetAs
 
 func (o GetAssetComputeDiskArrayOutput) ToGetAssetComputeDiskArrayOutputWithContext(ctx context.Context) GetAssetComputeDiskArrayOutput {
 	return o
-}
-
-func (o GetAssetComputeDiskArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetComputeDisk] {
-	return pulumix.Output[[]GetAssetComputeDisk]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetComputeDiskArrayOutput) Index(i pulumi.IntInput) GetAssetComputeDiskOutput {
@@ -5930,12 +5257,6 @@ func (i GetAssetComputeGpuDeviceArgs) ToGetAssetComputeGpuDeviceOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetComputeGpuDeviceOutput)
 }
 
-func (i GetAssetComputeGpuDeviceArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetComputeGpuDevice] {
-	return pulumix.Output[GetAssetComputeGpuDevice]{
-		OutputState: i.ToGetAssetComputeGpuDeviceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetComputeGpuDeviceArrayInput is an input type that accepts GetAssetComputeGpuDeviceArray and GetAssetComputeGpuDeviceArrayOutput values.
 // You can construct a concrete instance of `GetAssetComputeGpuDeviceArrayInput` via:
 //
@@ -5961,12 +5282,6 @@ func (i GetAssetComputeGpuDeviceArray) ToGetAssetComputeGpuDeviceArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetComputeGpuDeviceArrayOutput)
 }
 
-func (i GetAssetComputeGpuDeviceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetComputeGpuDevice] {
-	return pulumix.Output[[]GetAssetComputeGpuDevice]{
-		OutputState: i.ToGetAssetComputeGpuDeviceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetComputeGpuDeviceOutput struct{ *pulumi.OutputState }
 
 func (GetAssetComputeGpuDeviceOutput) ElementType() reflect.Type {
@@ -5979,12 +5294,6 @@ func (o GetAssetComputeGpuDeviceOutput) ToGetAssetComputeGpuDeviceOutput() GetAs
 
 func (o GetAssetComputeGpuDeviceOutput) ToGetAssetComputeGpuDeviceOutputWithContext(ctx context.Context) GetAssetComputeGpuDeviceOutput {
 	return o
-}
-
-func (o GetAssetComputeGpuDeviceOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetComputeGpuDevice] {
-	return pulumix.Output[GetAssetComputeGpuDevice]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Number of GPU cores.
@@ -6024,12 +5333,6 @@ func (o GetAssetComputeGpuDeviceArrayOutput) ToGetAssetComputeGpuDeviceArrayOutp
 
 func (o GetAssetComputeGpuDeviceArrayOutput) ToGetAssetComputeGpuDeviceArrayOutputWithContext(ctx context.Context) GetAssetComputeGpuDeviceArrayOutput {
 	return o
-}
-
-func (o GetAssetComputeGpuDeviceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetComputeGpuDevice] {
-	return pulumix.Output[[]GetAssetComputeGpuDevice]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetComputeGpuDeviceArrayOutput) Index(i pulumi.IntInput) GetAssetComputeGpuDeviceOutput {
@@ -6091,12 +5394,6 @@ func (i GetAssetComputeNicArgs) ToGetAssetComputeNicOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetComputeNicOutput)
 }
 
-func (i GetAssetComputeNicArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetComputeNic] {
-	return pulumix.Output[GetAssetComputeNic]{
-		OutputState: i.ToGetAssetComputeNicOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetComputeNicArrayInput is an input type that accepts GetAssetComputeNicArray and GetAssetComputeNicArrayOutput values.
 // You can construct a concrete instance of `GetAssetComputeNicArrayInput` via:
 //
@@ -6122,12 +5419,6 @@ func (i GetAssetComputeNicArray) ToGetAssetComputeNicArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetComputeNicArrayOutput)
 }
 
-func (i GetAssetComputeNicArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetComputeNic] {
-	return pulumix.Output[[]GetAssetComputeNic]{
-		OutputState: i.ToGetAssetComputeNicArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetComputeNicOutput struct{ *pulumi.OutputState }
 
 func (GetAssetComputeNicOutput) ElementType() reflect.Type {
@@ -6140,12 +5431,6 @@ func (o GetAssetComputeNicOutput) ToGetAssetComputeNicOutput() GetAssetComputeNi
 
 func (o GetAssetComputeNicOutput) ToGetAssetComputeNicOutputWithContext(ctx context.Context) GetAssetComputeNicOutput {
 	return o
-}
-
-func (o GetAssetComputeNicOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetComputeNic] {
-	return pulumix.Output[GetAssetComputeNic]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of IP addresses.
@@ -6190,12 +5475,6 @@ func (o GetAssetComputeNicArrayOutput) ToGetAssetComputeNicArrayOutput() GetAsse
 
 func (o GetAssetComputeNicArrayOutput) ToGetAssetComputeNicArrayOutputWithContext(ctx context.Context) GetAssetComputeNicArrayOutput {
 	return o
-}
-
-func (o GetAssetComputeNicArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetComputeNic] {
-	return pulumix.Output[[]GetAssetComputeNic]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetComputeNicArrayOutput) Index(i pulumi.IntInput) GetAssetComputeNicOutput {
@@ -6245,12 +5524,6 @@ func (i GetAssetComputeNvdimmArgs) ToGetAssetComputeNvdimmOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetComputeNvdimmOutput)
 }
 
-func (i GetAssetComputeNvdimmArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetComputeNvdimm] {
-	return pulumix.Output[GetAssetComputeNvdimm]{
-		OutputState: i.ToGetAssetComputeNvdimmOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetComputeNvdimmArrayInput is an input type that accepts GetAssetComputeNvdimmArray and GetAssetComputeNvdimmArrayOutput values.
 // You can construct a concrete instance of `GetAssetComputeNvdimmArrayInput` via:
 //
@@ -6276,12 +5549,6 @@ func (i GetAssetComputeNvdimmArray) ToGetAssetComputeNvdimmArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetComputeNvdimmArrayOutput)
 }
 
-func (i GetAssetComputeNvdimmArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetComputeNvdimm] {
-	return pulumix.Output[[]GetAssetComputeNvdimm]{
-		OutputState: i.ToGetAssetComputeNvdimmArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetComputeNvdimmOutput struct{ *pulumi.OutputState }
 
 func (GetAssetComputeNvdimmOutput) ElementType() reflect.Type {
@@ -6294,12 +5561,6 @@ func (o GetAssetComputeNvdimmOutput) ToGetAssetComputeNvdimmOutput() GetAssetCom
 
 func (o GetAssetComputeNvdimmOutput) ToGetAssetComputeNvdimmOutputWithContext(ctx context.Context) GetAssetComputeNvdimmOutput {
 	return o
-}
-
-func (o GetAssetComputeNvdimmOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetComputeNvdimm] {
-	return pulumix.Output[GetAssetComputeNvdimm]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Controller key.
@@ -6329,12 +5590,6 @@ func (o GetAssetComputeNvdimmArrayOutput) ToGetAssetComputeNvdimmArrayOutput() G
 
 func (o GetAssetComputeNvdimmArrayOutput) ToGetAssetComputeNvdimmArrayOutputWithContext(ctx context.Context) GetAssetComputeNvdimmArrayOutput {
 	return o
-}
-
-func (o GetAssetComputeNvdimmArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetComputeNvdimm] {
-	return pulumix.Output[[]GetAssetComputeNvdimm]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetComputeNvdimmArrayOutput) Index(i pulumi.IntInput) GetAssetComputeNvdimmOutput {
@@ -6380,12 +5635,6 @@ func (i GetAssetComputeNvdimmControllerArgs) ToGetAssetComputeNvdimmControllerOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetComputeNvdimmControllerOutput)
 }
 
-func (i GetAssetComputeNvdimmControllerArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetComputeNvdimmController] {
-	return pulumix.Output[GetAssetComputeNvdimmController]{
-		OutputState: i.ToGetAssetComputeNvdimmControllerOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetComputeNvdimmControllerArrayInput is an input type that accepts GetAssetComputeNvdimmControllerArray and GetAssetComputeNvdimmControllerArrayOutput values.
 // You can construct a concrete instance of `GetAssetComputeNvdimmControllerArrayInput` via:
 //
@@ -6411,12 +5660,6 @@ func (i GetAssetComputeNvdimmControllerArray) ToGetAssetComputeNvdimmControllerA
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetComputeNvdimmControllerArrayOutput)
 }
 
-func (i GetAssetComputeNvdimmControllerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetComputeNvdimmController] {
-	return pulumix.Output[[]GetAssetComputeNvdimmController]{
-		OutputState: i.ToGetAssetComputeNvdimmControllerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetComputeNvdimmControllerOutput struct{ *pulumi.OutputState }
 
 func (GetAssetComputeNvdimmControllerOutput) ElementType() reflect.Type {
@@ -6429,12 +5672,6 @@ func (o GetAssetComputeNvdimmControllerOutput) ToGetAssetComputeNvdimmController
 
 func (o GetAssetComputeNvdimmControllerOutput) ToGetAssetComputeNvdimmControllerOutputWithContext(ctx context.Context) GetAssetComputeNvdimmControllerOutput {
 	return o
-}
-
-func (o GetAssetComputeNvdimmControllerOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetComputeNvdimmController] {
-	return pulumix.Output[GetAssetComputeNvdimmController]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Bus number.
@@ -6459,12 +5696,6 @@ func (o GetAssetComputeNvdimmControllerArrayOutput) ToGetAssetComputeNvdimmContr
 
 func (o GetAssetComputeNvdimmControllerArrayOutput) ToGetAssetComputeNvdimmControllerArrayOutputWithContext(ctx context.Context) GetAssetComputeNvdimmControllerArrayOutput {
 	return o
-}
-
-func (o GetAssetComputeNvdimmControllerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetComputeNvdimmController] {
-	return pulumix.Output[[]GetAssetComputeNvdimmController]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetComputeNvdimmControllerArrayOutput) Index(i pulumi.IntInput) GetAssetComputeNvdimmControllerOutput {
@@ -6514,12 +5745,6 @@ func (i GetAssetComputeScsiControllerArgs) ToGetAssetComputeScsiControllerOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetComputeScsiControllerOutput)
 }
 
-func (i GetAssetComputeScsiControllerArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetComputeScsiController] {
-	return pulumix.Output[GetAssetComputeScsiController]{
-		OutputState: i.ToGetAssetComputeScsiControllerOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetComputeScsiControllerArrayInput is an input type that accepts GetAssetComputeScsiControllerArray and GetAssetComputeScsiControllerArrayOutput values.
 // You can construct a concrete instance of `GetAssetComputeScsiControllerArrayInput` via:
 //
@@ -6545,12 +5770,6 @@ func (i GetAssetComputeScsiControllerArray) ToGetAssetComputeScsiControllerArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetComputeScsiControllerArrayOutput)
 }
 
-func (i GetAssetComputeScsiControllerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetComputeScsiController] {
-	return pulumix.Output[[]GetAssetComputeScsiController]{
-		OutputState: i.ToGetAssetComputeScsiControllerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetComputeScsiControllerOutput struct{ *pulumi.OutputState }
 
 func (GetAssetComputeScsiControllerOutput) ElementType() reflect.Type {
@@ -6563,12 +5782,6 @@ func (o GetAssetComputeScsiControllerOutput) ToGetAssetComputeScsiControllerOutp
 
 func (o GetAssetComputeScsiControllerOutput) ToGetAssetComputeScsiControllerOutputWithContext(ctx context.Context) GetAssetComputeScsiControllerOutput {
 	return o
-}
-
-func (o GetAssetComputeScsiControllerOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetComputeScsiController] {
-	return pulumix.Output[GetAssetComputeScsiController]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Provides a label and summary information for the device.
@@ -6598,12 +5811,6 @@ func (o GetAssetComputeScsiControllerArrayOutput) ToGetAssetComputeScsiControlle
 
 func (o GetAssetComputeScsiControllerArrayOutput) ToGetAssetComputeScsiControllerArrayOutputWithContext(ctx context.Context) GetAssetComputeScsiControllerArrayOutput {
 	return o
-}
-
-func (o GetAssetComputeScsiControllerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetComputeScsiController] {
-	return pulumix.Output[[]GetAssetComputeScsiController]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetComputeScsiControllerArrayOutput) Index(i pulumi.IntInput) GetAssetComputeScsiControllerOutput {
@@ -6649,12 +5856,6 @@ func (i GetAssetSourceDiscoveryCredentialArgs) ToGetAssetSourceDiscoveryCredenti
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetSourceDiscoveryCredentialOutput)
 }
 
-func (i GetAssetSourceDiscoveryCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetSourceDiscoveryCredential] {
-	return pulumix.Output[GetAssetSourceDiscoveryCredential]{
-		OutputState: i.ToGetAssetSourceDiscoveryCredentialOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetSourceDiscoveryCredentialArrayInput is an input type that accepts GetAssetSourceDiscoveryCredentialArray and GetAssetSourceDiscoveryCredentialArrayOutput values.
 // You can construct a concrete instance of `GetAssetSourceDiscoveryCredentialArrayInput` via:
 //
@@ -6680,12 +5881,6 @@ func (i GetAssetSourceDiscoveryCredentialArray) ToGetAssetSourceDiscoveryCredent
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetSourceDiscoveryCredentialArrayOutput)
 }
 
-func (i GetAssetSourceDiscoveryCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetSourceDiscoveryCredential] {
-	return pulumix.Output[[]GetAssetSourceDiscoveryCredential]{
-		OutputState: i.ToGetAssetSourceDiscoveryCredentialArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetSourceDiscoveryCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetAssetSourceDiscoveryCredentialOutput) ElementType() reflect.Type {
@@ -6698,12 +5893,6 @@ func (o GetAssetSourceDiscoveryCredentialOutput) ToGetAssetSourceDiscoveryCreden
 
 func (o GetAssetSourceDiscoveryCredentialOutput) ToGetAssetSourceDiscoveryCredentialOutputWithContext(ctx context.Context) GetAssetSourceDiscoveryCredentialOutput {
 	return o
-}
-
-func (o GetAssetSourceDiscoveryCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetSourceDiscoveryCredential] {
-	return pulumix.Output[GetAssetSourceDiscoveryCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
@@ -6728,12 +5917,6 @@ func (o GetAssetSourceDiscoveryCredentialArrayOutput) ToGetAssetSourceDiscoveryC
 
 func (o GetAssetSourceDiscoveryCredentialArrayOutput) ToGetAssetSourceDiscoveryCredentialArrayOutputWithContext(ctx context.Context) GetAssetSourceDiscoveryCredentialArrayOutput {
 	return o
-}
-
-func (o GetAssetSourceDiscoveryCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetSourceDiscoveryCredential] {
-	return pulumix.Output[[]GetAssetSourceDiscoveryCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetSourceDiscoveryCredentialArrayOutput) Index(i pulumi.IntInput) GetAssetSourceDiscoveryCredentialOutput {
@@ -6779,12 +5962,6 @@ func (i GetAssetSourceReplicationCredentialArgs) ToGetAssetSourceReplicationCred
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetSourceReplicationCredentialOutput)
 }
 
-func (i GetAssetSourceReplicationCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetSourceReplicationCredential] {
-	return pulumix.Output[GetAssetSourceReplicationCredential]{
-		OutputState: i.ToGetAssetSourceReplicationCredentialOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetSourceReplicationCredentialArrayInput is an input type that accepts GetAssetSourceReplicationCredentialArray and GetAssetSourceReplicationCredentialArrayOutput values.
 // You can construct a concrete instance of `GetAssetSourceReplicationCredentialArrayInput` via:
 //
@@ -6810,12 +5987,6 @@ func (i GetAssetSourceReplicationCredentialArray) ToGetAssetSourceReplicationCre
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetSourceReplicationCredentialArrayOutput)
 }
 
-func (i GetAssetSourceReplicationCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetSourceReplicationCredential] {
-	return pulumix.Output[[]GetAssetSourceReplicationCredential]{
-		OutputState: i.ToGetAssetSourceReplicationCredentialArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetSourceReplicationCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetAssetSourceReplicationCredentialOutput) ElementType() reflect.Type {
@@ -6828,12 +5999,6 @@ func (o GetAssetSourceReplicationCredentialOutput) ToGetAssetSourceReplicationCr
 
 func (o GetAssetSourceReplicationCredentialOutput) ToGetAssetSourceReplicationCredentialOutputWithContext(ctx context.Context) GetAssetSourceReplicationCredentialOutput {
 	return o
-}
-
-func (o GetAssetSourceReplicationCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetSourceReplicationCredential] {
-	return pulumix.Output[GetAssetSourceReplicationCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
@@ -6858,12 +6023,6 @@ func (o GetAssetSourceReplicationCredentialArrayOutput) ToGetAssetSourceReplicat
 
 func (o GetAssetSourceReplicationCredentialArrayOutput) ToGetAssetSourceReplicationCredentialArrayOutputWithContext(ctx context.Context) GetAssetSourceReplicationCredentialArrayOutput {
 	return o
-}
-
-func (o GetAssetSourceReplicationCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetSourceReplicationCredential] {
-	return pulumix.Output[[]GetAssetSourceReplicationCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetSourceReplicationCredentialArrayOutput) Index(i pulumi.IntInput) GetAssetSourceReplicationCredentialOutput {
@@ -6903,12 +6062,6 @@ func (i GetAssetSourcesAssetSourceCollectionArgs) ToGetAssetSourcesAssetSourceCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetSourcesAssetSourceCollectionOutput)
 }
 
-func (i GetAssetSourcesAssetSourceCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetSourcesAssetSourceCollection] {
-	return pulumix.Output[GetAssetSourcesAssetSourceCollection]{
-		OutputState: i.ToGetAssetSourcesAssetSourceCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetSourcesAssetSourceCollectionArrayInput is an input type that accepts GetAssetSourcesAssetSourceCollectionArray and GetAssetSourcesAssetSourceCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAssetSourcesAssetSourceCollectionArrayInput` via:
 //
@@ -6934,12 +6087,6 @@ func (i GetAssetSourcesAssetSourceCollectionArray) ToGetAssetSourcesAssetSourceC
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetSourcesAssetSourceCollectionArrayOutput)
 }
 
-func (i GetAssetSourcesAssetSourceCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetSourcesAssetSourceCollection] {
-	return pulumix.Output[[]GetAssetSourcesAssetSourceCollection]{
-		OutputState: i.ToGetAssetSourcesAssetSourceCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetSourcesAssetSourceCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAssetSourcesAssetSourceCollectionOutput) ElementType() reflect.Type {
@@ -6952,12 +6099,6 @@ func (o GetAssetSourcesAssetSourceCollectionOutput) ToGetAssetSourcesAssetSource
 
 func (o GetAssetSourcesAssetSourceCollectionOutput) ToGetAssetSourcesAssetSourceCollectionOutputWithContext(ctx context.Context) GetAssetSourcesAssetSourceCollectionOutput {
 	return o
-}
-
-func (o GetAssetSourcesAssetSourceCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetSourcesAssetSourceCollection] {
-	return pulumix.Output[GetAssetSourcesAssetSourceCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetSourcesAssetSourceCollectionOutput) Items() GetAssetSourcesAssetSourceCollectionItemArrayOutput {
@@ -6978,12 +6119,6 @@ func (o GetAssetSourcesAssetSourceCollectionArrayOutput) ToGetAssetSourcesAssetS
 
 func (o GetAssetSourcesAssetSourceCollectionArrayOutput) ToGetAssetSourcesAssetSourceCollectionArrayOutputWithContext(ctx context.Context) GetAssetSourcesAssetSourceCollectionArrayOutput {
 	return o
-}
-
-func (o GetAssetSourcesAssetSourceCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetSourcesAssetSourceCollection] {
-	return pulumix.Output[[]GetAssetSourcesAssetSourceCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetSourcesAssetSourceCollectionArrayOutput) Index(i pulumi.IntInput) GetAssetSourcesAssetSourceCollectionOutput {
@@ -7101,12 +6236,6 @@ func (i GetAssetSourcesAssetSourceCollectionItemArgs) ToGetAssetSourcesAssetSour
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetSourcesAssetSourceCollectionItemOutput)
 }
 
-func (i GetAssetSourcesAssetSourceCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetSourcesAssetSourceCollectionItem] {
-	return pulumix.Output[GetAssetSourcesAssetSourceCollectionItem]{
-		OutputState: i.ToGetAssetSourcesAssetSourceCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetSourcesAssetSourceCollectionItemArrayInput is an input type that accepts GetAssetSourcesAssetSourceCollectionItemArray and GetAssetSourcesAssetSourceCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAssetSourcesAssetSourceCollectionItemArrayInput` via:
 //
@@ -7132,12 +6261,6 @@ func (i GetAssetSourcesAssetSourceCollectionItemArray) ToGetAssetSourcesAssetSou
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetSourcesAssetSourceCollectionItemArrayOutput)
 }
 
-func (i GetAssetSourcesAssetSourceCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetSourcesAssetSourceCollectionItem] {
-	return pulumix.Output[[]GetAssetSourcesAssetSourceCollectionItem]{
-		OutputState: i.ToGetAssetSourcesAssetSourceCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetSourcesAssetSourceCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAssetSourcesAssetSourceCollectionItemOutput) ElementType() reflect.Type {
@@ -7150,12 +6273,6 @@ func (o GetAssetSourcesAssetSourceCollectionItemOutput) ToGetAssetSourcesAssetSo
 
 func (o GetAssetSourcesAssetSourceCollectionItemOutput) ToGetAssetSourcesAssetSourceCollectionItemOutputWithContext(ctx context.Context) GetAssetSourcesAssetSourceCollectionItemOutput {
 	return o
-}
-
-func (o GetAssetSourcesAssetSourceCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetSourcesAssetSourceCollectionItem] {
-	return pulumix.Output[GetAssetSourcesAssetSourceCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Flag indicating whether historical metrics are collected for assets, originating from this asset source.
@@ -7276,12 +6393,6 @@ func (o GetAssetSourcesAssetSourceCollectionItemArrayOutput) ToGetAssetSourcesAs
 	return o
 }
 
-func (o GetAssetSourcesAssetSourceCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetSourcesAssetSourceCollectionItem] {
-	return pulumix.Output[[]GetAssetSourcesAssetSourceCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssetSourcesAssetSourceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAssetSourcesAssetSourceCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetSourcesAssetSourceCollectionItem {
 		return vs[0].([]GetAssetSourcesAssetSourceCollectionItem)[vs[1].(int)]
@@ -7325,12 +6436,6 @@ func (i GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArgs) ToGetAs
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialOutput)
 }
 
-func (i GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetSourcesAssetSourceCollectionItemDiscoveryCredential] {
-	return pulumix.Output[GetAssetSourcesAssetSourceCollectionItemDiscoveryCredential]{
-		OutputState: i.ToGetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArrayInput is an input type that accepts GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArray and GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArrayOutput values.
 // You can construct a concrete instance of `GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArrayInput` via:
 //
@@ -7356,12 +6461,6 @@ func (i GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArray) ToGetA
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArrayOutput)
 }
 
-func (i GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetSourcesAssetSourceCollectionItemDiscoveryCredential] {
-	return pulumix.Output[[]GetAssetSourcesAssetSourceCollectionItemDiscoveryCredential]{
-		OutputState: i.ToGetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialOutput) ElementType() reflect.Type {
@@ -7374,12 +6473,6 @@ func (o GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialOutput) ToGet
 
 func (o GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialOutput) ToGetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialOutputWithContext(ctx context.Context) GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialOutput {
 	return o
-}
-
-func (o GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetSourcesAssetSourceCollectionItemDiscoveryCredential] {
-	return pulumix.Output[GetAssetSourcesAssetSourceCollectionItemDiscoveryCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
@@ -7404,12 +6497,6 @@ func (o GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArrayOutput) 
 
 func (o GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArrayOutput) ToGetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArrayOutputWithContext(ctx context.Context) GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArrayOutput {
 	return o
-}
-
-func (o GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetSourcesAssetSourceCollectionItemDiscoveryCredential] {
-	return pulumix.Output[[]GetAssetSourcesAssetSourceCollectionItemDiscoveryCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArrayOutput) Index(i pulumi.IntInput) GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialOutput {
@@ -7455,12 +6542,6 @@ func (i GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetSourcesAssetSourceCollectionItemReplicationCredentialOutput)
 }
 
-func (i GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetSourcesAssetSourceCollectionItemReplicationCredential] {
-	return pulumix.Output[GetAssetSourcesAssetSourceCollectionItemReplicationCredential]{
-		OutputState: i.ToGetAssetSourcesAssetSourceCollectionItemReplicationCredentialOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArrayInput is an input type that accepts GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArray and GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArrayOutput values.
 // You can construct a concrete instance of `GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArrayInput` via:
 //
@@ -7486,12 +6567,6 @@ func (i GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArrayOutput)
 }
 
-func (i GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetSourcesAssetSourceCollectionItemReplicationCredential] {
-	return pulumix.Output[[]GetAssetSourcesAssetSourceCollectionItemReplicationCredential]{
-		OutputState: i.ToGetAssetSourcesAssetSourceCollectionItemReplicationCredentialArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetSourcesAssetSourceCollectionItemReplicationCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetAssetSourcesAssetSourceCollectionItemReplicationCredentialOutput) ElementType() reflect.Type {
@@ -7504,12 +6579,6 @@ func (o GetAssetSourcesAssetSourceCollectionItemReplicationCredentialOutput) ToG
 
 func (o GetAssetSourcesAssetSourceCollectionItemReplicationCredentialOutput) ToGetAssetSourcesAssetSourceCollectionItemReplicationCredentialOutputWithContext(ctx context.Context) GetAssetSourcesAssetSourceCollectionItemReplicationCredentialOutput {
 	return o
-}
-
-func (o GetAssetSourcesAssetSourceCollectionItemReplicationCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetSourcesAssetSourceCollectionItemReplicationCredential] {
-	return pulumix.Output[GetAssetSourcesAssetSourceCollectionItemReplicationCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
@@ -7534,12 +6603,6 @@ func (o GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArrayOutput
 
 func (o GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArrayOutput) ToGetAssetSourcesAssetSourceCollectionItemReplicationCredentialArrayOutputWithContext(ctx context.Context) GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArrayOutput {
 	return o
-}
-
-func (o GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetSourcesAssetSourceCollectionItemReplicationCredential] {
-	return pulumix.Output[[]GetAssetSourcesAssetSourceCollectionItemReplicationCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArrayOutput) Index(i pulumi.IntInput) GetAssetSourcesAssetSourceCollectionItemReplicationCredentialOutput {
@@ -7583,12 +6646,6 @@ func (i GetAssetSourcesFilterArgs) ToGetAssetSourcesFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetSourcesFilterOutput)
 }
 
-func (i GetAssetSourcesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetSourcesFilter] {
-	return pulumix.Output[GetAssetSourcesFilter]{
-		OutputState: i.ToGetAssetSourcesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetSourcesFilterArrayInput is an input type that accepts GetAssetSourcesFilterArray and GetAssetSourcesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAssetSourcesFilterArrayInput` via:
 //
@@ -7614,12 +6671,6 @@ func (i GetAssetSourcesFilterArray) ToGetAssetSourcesFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetSourcesFilterArrayOutput)
 }
 
-func (i GetAssetSourcesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetSourcesFilter] {
-	return pulumix.Output[[]GetAssetSourcesFilter]{
-		OutputState: i.ToGetAssetSourcesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetSourcesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAssetSourcesFilterOutput) ElementType() reflect.Type {
@@ -7632,12 +6683,6 @@ func (o GetAssetSourcesFilterOutput) ToGetAssetSourcesFilterOutput() GetAssetSou
 
 func (o GetAssetSourcesFilterOutput) ToGetAssetSourcesFilterOutputWithContext(ctx context.Context) GetAssetSourcesFilterOutput {
 	return o
-}
-
-func (o GetAssetSourcesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetSourcesFilter] {
-	return pulumix.Output[GetAssetSourcesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetSourcesFilterOutput) Name() pulumi.StringOutput {
@@ -7664,12 +6709,6 @@ func (o GetAssetSourcesFilterArrayOutput) ToGetAssetSourcesFilterArrayOutput() G
 
 func (o GetAssetSourcesFilterArrayOutput) ToGetAssetSourcesFilterArrayOutputWithContext(ctx context.Context) GetAssetSourcesFilterArrayOutput {
 	return o
-}
-
-func (o GetAssetSourcesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetSourcesFilter] {
-	return pulumix.Output[[]GetAssetSourcesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetSourcesFilterArrayOutput) Index(i pulumi.IntInput) GetAssetSourcesFilterOutput {
@@ -7719,12 +6758,6 @@ func (i GetAssetVmArgs) ToGetAssetVmOutputWithContext(ctx context.Context) GetAs
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetVmOutput)
 }
 
-func (i GetAssetVmArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetVm] {
-	return pulumix.Output[GetAssetVm]{
-		OutputState: i.ToGetAssetVmOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetVmArrayInput is an input type that accepts GetAssetVmArray and GetAssetVmArrayOutput values.
 // You can construct a concrete instance of `GetAssetVmArrayInput` via:
 //
@@ -7750,12 +6783,6 @@ func (i GetAssetVmArray) ToGetAssetVmArrayOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetVmArrayOutput)
 }
 
-func (i GetAssetVmArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetVm] {
-	return pulumix.Output[[]GetAssetVm]{
-		OutputState: i.ToGetAssetVmArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetVmOutput struct{ *pulumi.OutputState }
 
 func (GetAssetVmOutput) ElementType() reflect.Type {
@@ -7768,12 +6795,6 @@ func (o GetAssetVmOutput) ToGetAssetVmOutput() GetAssetVmOutput {
 
 func (o GetAssetVmOutput) ToGetAssetVmOutputWithContext(ctx context.Context) GetAssetVmOutput {
 	return o
-}
-
-func (o GetAssetVmOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetVm] {
-	return pulumix.Output[GetAssetVm]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Host name/IP address of VM on which the host is running.
@@ -7803,12 +6824,6 @@ func (o GetAssetVmArrayOutput) ToGetAssetVmArrayOutput() GetAssetVmArrayOutput {
 
 func (o GetAssetVmArrayOutput) ToGetAssetVmArrayOutputWithContext(ctx context.Context) GetAssetVmArrayOutput {
 	return o
-}
-
-func (o GetAssetVmArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetVm] {
-	return pulumix.Output[[]GetAssetVm]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetVmArrayOutput) Index(i pulumi.IntInput) GetAssetVmOutput {
@@ -7858,12 +6873,6 @@ func (i GetAssetVmwareVcenterArgs) ToGetAssetVmwareVcenterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetVmwareVcenterOutput)
 }
 
-func (i GetAssetVmwareVcenterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetVmwareVcenter] {
-	return pulumix.Output[GetAssetVmwareVcenter]{
-		OutputState: i.ToGetAssetVmwareVcenterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetVmwareVcenterArrayInput is an input type that accepts GetAssetVmwareVcenterArray and GetAssetVmwareVcenterArrayOutput values.
 // You can construct a concrete instance of `GetAssetVmwareVcenterArrayInput` via:
 //
@@ -7889,12 +6898,6 @@ func (i GetAssetVmwareVcenterArray) ToGetAssetVmwareVcenterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetVmwareVcenterArrayOutput)
 }
 
-func (i GetAssetVmwareVcenterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetVmwareVcenter] {
-	return pulumix.Output[[]GetAssetVmwareVcenter]{
-		OutputState: i.ToGetAssetVmwareVcenterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetVmwareVcenterOutput struct{ *pulumi.OutputState }
 
 func (GetAssetVmwareVcenterOutput) ElementType() reflect.Type {
@@ -7907,12 +6910,6 @@ func (o GetAssetVmwareVcenterOutput) ToGetAssetVmwareVcenterOutput() GetAssetVmw
 
 func (o GetAssetVmwareVcenterOutput) ToGetAssetVmwareVcenterOutputWithContext(ctx context.Context) GetAssetVmwareVcenterOutput {
 	return o
-}
-
-func (o GetAssetVmwareVcenterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetVmwareVcenter] {
-	return pulumix.Output[GetAssetVmwareVcenter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Data center name.
@@ -7942,12 +6939,6 @@ func (o GetAssetVmwareVcenterArrayOutput) ToGetAssetVmwareVcenterArrayOutput() G
 
 func (o GetAssetVmwareVcenterArrayOutput) ToGetAssetVmwareVcenterArrayOutputWithContext(ctx context.Context) GetAssetVmwareVcenterArrayOutput {
 	return o
-}
-
-func (o GetAssetVmwareVcenterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetVmwareVcenter] {
-	return pulumix.Output[[]GetAssetVmwareVcenter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetVmwareVcenterArrayOutput) Index(i pulumi.IntInput) GetAssetVmwareVcenterOutput {
@@ -8029,12 +7020,6 @@ func (i GetAssetVmwareVmArgs) ToGetAssetVmwareVmOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetVmwareVmOutput)
 }
 
-func (i GetAssetVmwareVmArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetVmwareVm] {
-	return pulumix.Output[GetAssetVmwareVm]{
-		OutputState: i.ToGetAssetVmwareVmOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetVmwareVmArrayInput is an input type that accepts GetAssetVmwareVmArray and GetAssetVmwareVmArrayOutput values.
 // You can construct a concrete instance of `GetAssetVmwareVmArrayInput` via:
 //
@@ -8060,12 +7045,6 @@ func (i GetAssetVmwareVmArray) ToGetAssetVmwareVmArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetVmwareVmArrayOutput)
 }
 
-func (i GetAssetVmwareVmArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetVmwareVm] {
-	return pulumix.Output[[]GetAssetVmwareVm]{
-		OutputState: i.ToGetAssetVmwareVmArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetVmwareVmOutput struct{ *pulumi.OutputState }
 
 func (GetAssetVmwareVmOutput) ElementType() reflect.Type {
@@ -8078,12 +7057,6 @@ func (o GetAssetVmwareVmOutput) ToGetAssetVmwareVmOutput() GetAssetVmwareVmOutpu
 
 func (o GetAssetVmwareVmOutput) ToGetAssetVmwareVmOutputWithContext(ctx context.Context) GetAssetVmwareVmOutput {
 	return o
-}
-
-func (o GetAssetVmwareVmOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetVmwareVm] {
-	return pulumix.Output[GetAssetVmwareVm]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Cluster name.
@@ -8155,12 +7128,6 @@ func (o GetAssetVmwareVmArrayOutput) ToGetAssetVmwareVmArrayOutputWithContext(ct
 	return o
 }
 
-func (o GetAssetVmwareVmArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetVmwareVm] {
-	return pulumix.Output[[]GetAssetVmwareVm]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssetVmwareVmArrayOutput) Index(i pulumi.IntInput) GetAssetVmwareVmOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetVmwareVm {
 		return vs[0].([]GetAssetVmwareVm)[vs[1].(int)]
@@ -8204,12 +7171,6 @@ func (i GetAssetVmwareVmCustomerTagArgs) ToGetAssetVmwareVmCustomerTagOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetVmwareVmCustomerTagOutput)
 }
 
-func (i GetAssetVmwareVmCustomerTagArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetVmwareVmCustomerTag] {
-	return pulumix.Output[GetAssetVmwareVmCustomerTag]{
-		OutputState: i.ToGetAssetVmwareVmCustomerTagOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetVmwareVmCustomerTagArrayInput is an input type that accepts GetAssetVmwareVmCustomerTagArray and GetAssetVmwareVmCustomerTagArrayOutput values.
 // You can construct a concrete instance of `GetAssetVmwareVmCustomerTagArrayInput` via:
 //
@@ -8235,12 +7196,6 @@ func (i GetAssetVmwareVmCustomerTagArray) ToGetAssetVmwareVmCustomerTagArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetVmwareVmCustomerTagArrayOutput)
 }
 
-func (i GetAssetVmwareVmCustomerTagArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetVmwareVmCustomerTag] {
-	return pulumix.Output[[]GetAssetVmwareVmCustomerTag]{
-		OutputState: i.ToGetAssetVmwareVmCustomerTagArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetVmwareVmCustomerTagOutput struct{ *pulumi.OutputState }
 
 func (GetAssetVmwareVmCustomerTagOutput) ElementType() reflect.Type {
@@ -8253,12 +7208,6 @@ func (o GetAssetVmwareVmCustomerTagOutput) ToGetAssetVmwareVmCustomerTagOutput()
 
 func (o GetAssetVmwareVmCustomerTagOutput) ToGetAssetVmwareVmCustomerTagOutputWithContext(ctx context.Context) GetAssetVmwareVmCustomerTagOutput {
 	return o
-}
-
-func (o GetAssetVmwareVmCustomerTagOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetVmwareVmCustomerTag] {
-	return pulumix.Output[GetAssetVmwareVmCustomerTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The tag description.
@@ -8283,12 +7232,6 @@ func (o GetAssetVmwareVmCustomerTagArrayOutput) ToGetAssetVmwareVmCustomerTagArr
 
 func (o GetAssetVmwareVmCustomerTagArrayOutput) ToGetAssetVmwareVmCustomerTagArrayOutputWithContext(ctx context.Context) GetAssetVmwareVmCustomerTagArrayOutput {
 	return o
-}
-
-func (o GetAssetVmwareVmCustomerTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetVmwareVmCustomerTag] {
-	return pulumix.Output[[]GetAssetVmwareVmCustomerTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetVmwareVmCustomerTagArrayOutput) Index(i pulumi.IntInput) GetAssetVmwareVmCustomerTagOutput {
@@ -8328,12 +7271,6 @@ func (i GetAssetsAssetCollectionArgs) ToGetAssetsAssetCollectionOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionOutput)
 }
 
-func (i GetAssetsAssetCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollection] {
-	return pulumix.Output[GetAssetsAssetCollection]{
-		OutputState: i.ToGetAssetsAssetCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetsAssetCollectionArrayInput is an input type that accepts GetAssetsAssetCollectionArray and GetAssetsAssetCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAssetsAssetCollectionArrayInput` via:
 //
@@ -8359,12 +7296,6 @@ func (i GetAssetsAssetCollectionArray) ToGetAssetsAssetCollectionArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionArrayOutput)
 }
 
-func (i GetAssetsAssetCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollection] {
-	return pulumix.Output[[]GetAssetsAssetCollection]{
-		OutputState: i.ToGetAssetsAssetCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetsAssetCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAssetsAssetCollectionOutput) ElementType() reflect.Type {
@@ -8377,12 +7308,6 @@ func (o GetAssetsAssetCollectionOutput) ToGetAssetsAssetCollectionOutput() GetAs
 
 func (o GetAssetsAssetCollectionOutput) ToGetAssetsAssetCollectionOutputWithContext(ctx context.Context) GetAssetsAssetCollectionOutput {
 	return o
-}
-
-func (o GetAssetsAssetCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollection] {
-	return pulumix.Output[GetAssetsAssetCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetsAssetCollectionOutput) Items() GetAssetsAssetCollectionItemArrayOutput {
@@ -8401,12 +7326,6 @@ func (o GetAssetsAssetCollectionArrayOutput) ToGetAssetsAssetCollectionArrayOutp
 
 func (o GetAssetsAssetCollectionArrayOutput) ToGetAssetsAssetCollectionArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionArrayOutput {
 	return o
-}
-
-func (o GetAssetsAssetCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollection] {
-	return pulumix.Output[[]GetAssetsAssetCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetsAssetCollectionArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionOutput {
@@ -8516,12 +7435,6 @@ func (i GetAssetsAssetCollectionItemArgs) ToGetAssetsAssetCollectionItemOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemOutput)
 }
 
-func (i GetAssetsAssetCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItem] {
-	return pulumix.Output[GetAssetsAssetCollectionItem]{
-		OutputState: i.ToGetAssetsAssetCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetsAssetCollectionItemArrayInput is an input type that accepts GetAssetsAssetCollectionItemArray and GetAssetsAssetCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAssetsAssetCollectionItemArrayInput` via:
 //
@@ -8547,12 +7460,6 @@ func (i GetAssetsAssetCollectionItemArray) ToGetAssetsAssetCollectionItemArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemArrayOutput)
 }
 
-func (i GetAssetsAssetCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItem] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItem]{
-		OutputState: i.ToGetAssetsAssetCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetsAssetCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAssetsAssetCollectionItemOutput) ElementType() reflect.Type {
@@ -8565,12 +7472,6 @@ func (o GetAssetsAssetCollectionItemOutput) ToGetAssetsAssetCollectionItemOutput
 
 func (o GetAssetsAssetCollectionItemOutput) ToGetAssetsAssetCollectionItemOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemOutput {
 	return o
-}
-
-func (o GetAssetsAssetCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItem] {
-	return pulumix.Output[GetAssetsAssetCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of asset source OCID.
@@ -8677,12 +7578,6 @@ func (o GetAssetsAssetCollectionItemArrayOutput) ToGetAssetsAssetCollectionItemA
 
 func (o GetAssetsAssetCollectionItemArrayOutput) ToGetAssetsAssetCollectionItemArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetAssetsAssetCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItem] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetsAssetCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemOutput {
@@ -8836,12 +7731,6 @@ func (i GetAssetsAssetCollectionItemComputeArgs) ToGetAssetsAssetCollectionItemC
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemComputeOutput)
 }
 
-func (i GetAssetsAssetCollectionItemComputeArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemCompute] {
-	return pulumix.Output[GetAssetsAssetCollectionItemCompute]{
-		OutputState: i.ToGetAssetsAssetCollectionItemComputeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetsAssetCollectionItemComputeArrayInput is an input type that accepts GetAssetsAssetCollectionItemComputeArray and GetAssetsAssetCollectionItemComputeArrayOutput values.
 // You can construct a concrete instance of `GetAssetsAssetCollectionItemComputeArrayInput` via:
 //
@@ -8867,12 +7756,6 @@ func (i GetAssetsAssetCollectionItemComputeArray) ToGetAssetsAssetCollectionItem
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemComputeArrayOutput)
 }
 
-func (i GetAssetsAssetCollectionItemComputeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemCompute] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemCompute]{
-		OutputState: i.ToGetAssetsAssetCollectionItemComputeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetsAssetCollectionItemComputeOutput struct{ *pulumi.OutputState }
 
 func (GetAssetsAssetCollectionItemComputeOutput) ElementType() reflect.Type {
@@ -8885,12 +7768,6 @@ func (o GetAssetsAssetCollectionItemComputeOutput) ToGetAssetsAssetCollectionIte
 
 func (o GetAssetsAssetCollectionItemComputeOutput) ToGetAssetsAssetCollectionItemComputeOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemComputeOutput {
 	return o
-}
-
-func (o GetAssetsAssetCollectionItemComputeOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemCompute] {
-	return pulumix.Output[GetAssetsAssetCollectionItemCompute]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Number of connected networks.
@@ -9060,12 +7937,6 @@ func (o GetAssetsAssetCollectionItemComputeArrayOutput) ToGetAssetsAssetCollecti
 	return o
 }
 
-func (o GetAssetsAssetCollectionItemComputeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemCompute] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemCompute]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssetsAssetCollectionItemComputeArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemComputeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetsAssetCollectionItemCompute {
 		return vs[0].([]GetAssetsAssetCollectionItemCompute)[vs[1].(int)]
@@ -9129,12 +8000,6 @@ func (i GetAssetsAssetCollectionItemComputeDiskArgs) ToGetAssetsAssetCollectionI
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemComputeDiskOutput)
 }
 
-func (i GetAssetsAssetCollectionItemComputeDiskArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemComputeDisk] {
-	return pulumix.Output[GetAssetsAssetCollectionItemComputeDisk]{
-		OutputState: i.ToGetAssetsAssetCollectionItemComputeDiskOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetsAssetCollectionItemComputeDiskArrayInput is an input type that accepts GetAssetsAssetCollectionItemComputeDiskArray and GetAssetsAssetCollectionItemComputeDiskArrayOutput values.
 // You can construct a concrete instance of `GetAssetsAssetCollectionItemComputeDiskArrayInput` via:
 //
@@ -9160,12 +8025,6 @@ func (i GetAssetsAssetCollectionItemComputeDiskArray) ToGetAssetsAssetCollection
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemComputeDiskArrayOutput)
 }
 
-func (i GetAssetsAssetCollectionItemComputeDiskArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemComputeDisk] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemComputeDisk]{
-		OutputState: i.ToGetAssetsAssetCollectionItemComputeDiskArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetsAssetCollectionItemComputeDiskOutput struct{ *pulumi.OutputState }
 
 func (GetAssetsAssetCollectionItemComputeDiskOutput) ElementType() reflect.Type {
@@ -9178,12 +8037,6 @@ func (o GetAssetsAssetCollectionItemComputeDiskOutput) ToGetAssetsAssetCollectio
 
 func (o GetAssetsAssetCollectionItemComputeDiskOutput) ToGetAssetsAssetCollectionItemComputeDiskOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemComputeDiskOutput {
 	return o
-}
-
-func (o GetAssetsAssetCollectionItemComputeDiskOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemComputeDisk] {
-	return pulumix.Output[GetAssetsAssetCollectionItemComputeDisk]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Order of boot volumes.
@@ -9233,12 +8086,6 @@ func (o GetAssetsAssetCollectionItemComputeDiskArrayOutput) ToGetAssetsAssetColl
 
 func (o GetAssetsAssetCollectionItemComputeDiskArrayOutput) ToGetAssetsAssetCollectionItemComputeDiskArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemComputeDiskArrayOutput {
 	return o
-}
-
-func (o GetAssetsAssetCollectionItemComputeDiskArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemComputeDisk] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemComputeDisk]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetsAssetCollectionItemComputeDiskArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemComputeDiskOutput {
@@ -9296,12 +8143,6 @@ func (i GetAssetsAssetCollectionItemComputeGpuDeviceArgs) ToGetAssetsAssetCollec
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemComputeGpuDeviceOutput)
 }
 
-func (i GetAssetsAssetCollectionItemComputeGpuDeviceArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemComputeGpuDevice] {
-	return pulumix.Output[GetAssetsAssetCollectionItemComputeGpuDevice]{
-		OutputState: i.ToGetAssetsAssetCollectionItemComputeGpuDeviceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetsAssetCollectionItemComputeGpuDeviceArrayInput is an input type that accepts GetAssetsAssetCollectionItemComputeGpuDeviceArray and GetAssetsAssetCollectionItemComputeGpuDeviceArrayOutput values.
 // You can construct a concrete instance of `GetAssetsAssetCollectionItemComputeGpuDeviceArrayInput` via:
 //
@@ -9327,12 +8168,6 @@ func (i GetAssetsAssetCollectionItemComputeGpuDeviceArray) ToGetAssetsAssetColle
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemComputeGpuDeviceArrayOutput)
 }
 
-func (i GetAssetsAssetCollectionItemComputeGpuDeviceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemComputeGpuDevice] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemComputeGpuDevice]{
-		OutputState: i.ToGetAssetsAssetCollectionItemComputeGpuDeviceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetsAssetCollectionItemComputeGpuDeviceOutput struct{ *pulumi.OutputState }
 
 func (GetAssetsAssetCollectionItemComputeGpuDeviceOutput) ElementType() reflect.Type {
@@ -9345,12 +8180,6 @@ func (o GetAssetsAssetCollectionItemComputeGpuDeviceOutput) ToGetAssetsAssetColl
 
 func (o GetAssetsAssetCollectionItemComputeGpuDeviceOutput) ToGetAssetsAssetCollectionItemComputeGpuDeviceOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemComputeGpuDeviceOutput {
 	return o
-}
-
-func (o GetAssetsAssetCollectionItemComputeGpuDeviceOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemComputeGpuDevice] {
-	return pulumix.Output[GetAssetsAssetCollectionItemComputeGpuDevice]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Number of GPU cores.
@@ -9390,12 +8219,6 @@ func (o GetAssetsAssetCollectionItemComputeGpuDeviceArrayOutput) ToGetAssetsAsse
 
 func (o GetAssetsAssetCollectionItemComputeGpuDeviceArrayOutput) ToGetAssetsAssetCollectionItemComputeGpuDeviceArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemComputeGpuDeviceArrayOutput {
 	return o
-}
-
-func (o GetAssetsAssetCollectionItemComputeGpuDeviceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemComputeGpuDevice] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemComputeGpuDevice]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetsAssetCollectionItemComputeGpuDeviceArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemComputeGpuDeviceOutput {
@@ -9457,12 +8280,6 @@ func (i GetAssetsAssetCollectionItemComputeNicArgs) ToGetAssetsAssetCollectionIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemComputeNicOutput)
 }
 
-func (i GetAssetsAssetCollectionItemComputeNicArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemComputeNic] {
-	return pulumix.Output[GetAssetsAssetCollectionItemComputeNic]{
-		OutputState: i.ToGetAssetsAssetCollectionItemComputeNicOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetsAssetCollectionItemComputeNicArrayInput is an input type that accepts GetAssetsAssetCollectionItemComputeNicArray and GetAssetsAssetCollectionItemComputeNicArrayOutput values.
 // You can construct a concrete instance of `GetAssetsAssetCollectionItemComputeNicArrayInput` via:
 //
@@ -9488,12 +8305,6 @@ func (i GetAssetsAssetCollectionItemComputeNicArray) ToGetAssetsAssetCollectionI
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemComputeNicArrayOutput)
 }
 
-func (i GetAssetsAssetCollectionItemComputeNicArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemComputeNic] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemComputeNic]{
-		OutputState: i.ToGetAssetsAssetCollectionItemComputeNicArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetsAssetCollectionItemComputeNicOutput struct{ *pulumi.OutputState }
 
 func (GetAssetsAssetCollectionItemComputeNicOutput) ElementType() reflect.Type {
@@ -9506,12 +8317,6 @@ func (o GetAssetsAssetCollectionItemComputeNicOutput) ToGetAssetsAssetCollection
 
 func (o GetAssetsAssetCollectionItemComputeNicOutput) ToGetAssetsAssetCollectionItemComputeNicOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemComputeNicOutput {
 	return o
-}
-
-func (o GetAssetsAssetCollectionItemComputeNicOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemComputeNic] {
-	return pulumix.Output[GetAssetsAssetCollectionItemComputeNic]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of IP addresses.
@@ -9556,12 +8361,6 @@ func (o GetAssetsAssetCollectionItemComputeNicArrayOutput) ToGetAssetsAssetColle
 
 func (o GetAssetsAssetCollectionItemComputeNicArrayOutput) ToGetAssetsAssetCollectionItemComputeNicArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemComputeNicArrayOutput {
 	return o
-}
-
-func (o GetAssetsAssetCollectionItemComputeNicArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemComputeNic] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemComputeNic]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetsAssetCollectionItemComputeNicArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemComputeNicOutput {
@@ -9611,12 +8410,6 @@ func (i GetAssetsAssetCollectionItemComputeNvdimmArgs) ToGetAssetsAssetCollectio
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemComputeNvdimmOutput)
 }
 
-func (i GetAssetsAssetCollectionItemComputeNvdimmArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemComputeNvdimm] {
-	return pulumix.Output[GetAssetsAssetCollectionItemComputeNvdimm]{
-		OutputState: i.ToGetAssetsAssetCollectionItemComputeNvdimmOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetsAssetCollectionItemComputeNvdimmArrayInput is an input type that accepts GetAssetsAssetCollectionItemComputeNvdimmArray and GetAssetsAssetCollectionItemComputeNvdimmArrayOutput values.
 // You can construct a concrete instance of `GetAssetsAssetCollectionItemComputeNvdimmArrayInput` via:
 //
@@ -9642,12 +8435,6 @@ func (i GetAssetsAssetCollectionItemComputeNvdimmArray) ToGetAssetsAssetCollecti
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemComputeNvdimmArrayOutput)
 }
 
-func (i GetAssetsAssetCollectionItemComputeNvdimmArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemComputeNvdimm] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemComputeNvdimm]{
-		OutputState: i.ToGetAssetsAssetCollectionItemComputeNvdimmArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetsAssetCollectionItemComputeNvdimmOutput struct{ *pulumi.OutputState }
 
 func (GetAssetsAssetCollectionItemComputeNvdimmOutput) ElementType() reflect.Type {
@@ -9660,12 +8447,6 @@ func (o GetAssetsAssetCollectionItemComputeNvdimmOutput) ToGetAssetsAssetCollect
 
 func (o GetAssetsAssetCollectionItemComputeNvdimmOutput) ToGetAssetsAssetCollectionItemComputeNvdimmOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemComputeNvdimmOutput {
 	return o
-}
-
-func (o GetAssetsAssetCollectionItemComputeNvdimmOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemComputeNvdimm] {
-	return pulumix.Output[GetAssetsAssetCollectionItemComputeNvdimm]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Controller key.
@@ -9695,12 +8476,6 @@ func (o GetAssetsAssetCollectionItemComputeNvdimmArrayOutput) ToGetAssetsAssetCo
 
 func (o GetAssetsAssetCollectionItemComputeNvdimmArrayOutput) ToGetAssetsAssetCollectionItemComputeNvdimmArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemComputeNvdimmArrayOutput {
 	return o
-}
-
-func (o GetAssetsAssetCollectionItemComputeNvdimmArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemComputeNvdimm] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemComputeNvdimm]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetsAssetCollectionItemComputeNvdimmArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemComputeNvdimmOutput {
@@ -9746,12 +8521,6 @@ func (i GetAssetsAssetCollectionItemComputeNvdimmControllerArgs) ToGetAssetsAsse
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemComputeNvdimmControllerOutput)
 }
 
-func (i GetAssetsAssetCollectionItemComputeNvdimmControllerArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemComputeNvdimmController] {
-	return pulumix.Output[GetAssetsAssetCollectionItemComputeNvdimmController]{
-		OutputState: i.ToGetAssetsAssetCollectionItemComputeNvdimmControllerOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetsAssetCollectionItemComputeNvdimmControllerArrayInput is an input type that accepts GetAssetsAssetCollectionItemComputeNvdimmControllerArray and GetAssetsAssetCollectionItemComputeNvdimmControllerArrayOutput values.
 // You can construct a concrete instance of `GetAssetsAssetCollectionItemComputeNvdimmControllerArrayInput` via:
 //
@@ -9777,12 +8546,6 @@ func (i GetAssetsAssetCollectionItemComputeNvdimmControllerArray) ToGetAssetsAss
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemComputeNvdimmControllerArrayOutput)
 }
 
-func (i GetAssetsAssetCollectionItemComputeNvdimmControllerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemComputeNvdimmController] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemComputeNvdimmController]{
-		OutputState: i.ToGetAssetsAssetCollectionItemComputeNvdimmControllerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetsAssetCollectionItemComputeNvdimmControllerOutput struct{ *pulumi.OutputState }
 
 func (GetAssetsAssetCollectionItemComputeNvdimmControllerOutput) ElementType() reflect.Type {
@@ -9795,12 +8558,6 @@ func (o GetAssetsAssetCollectionItemComputeNvdimmControllerOutput) ToGetAssetsAs
 
 func (o GetAssetsAssetCollectionItemComputeNvdimmControllerOutput) ToGetAssetsAssetCollectionItemComputeNvdimmControllerOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemComputeNvdimmControllerOutput {
 	return o
-}
-
-func (o GetAssetsAssetCollectionItemComputeNvdimmControllerOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemComputeNvdimmController] {
-	return pulumix.Output[GetAssetsAssetCollectionItemComputeNvdimmController]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Bus number.
@@ -9825,12 +8582,6 @@ func (o GetAssetsAssetCollectionItemComputeNvdimmControllerArrayOutput) ToGetAss
 
 func (o GetAssetsAssetCollectionItemComputeNvdimmControllerArrayOutput) ToGetAssetsAssetCollectionItemComputeNvdimmControllerArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemComputeNvdimmControllerArrayOutput {
 	return o
-}
-
-func (o GetAssetsAssetCollectionItemComputeNvdimmControllerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemComputeNvdimmController] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemComputeNvdimmController]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetsAssetCollectionItemComputeNvdimmControllerArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemComputeNvdimmControllerOutput {
@@ -9880,12 +8631,6 @@ func (i GetAssetsAssetCollectionItemComputeScsiControllerArgs) ToGetAssetsAssetC
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemComputeScsiControllerOutput)
 }
 
-func (i GetAssetsAssetCollectionItemComputeScsiControllerArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemComputeScsiController] {
-	return pulumix.Output[GetAssetsAssetCollectionItemComputeScsiController]{
-		OutputState: i.ToGetAssetsAssetCollectionItemComputeScsiControllerOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetsAssetCollectionItemComputeScsiControllerArrayInput is an input type that accepts GetAssetsAssetCollectionItemComputeScsiControllerArray and GetAssetsAssetCollectionItemComputeScsiControllerArrayOutput values.
 // You can construct a concrete instance of `GetAssetsAssetCollectionItemComputeScsiControllerArrayInput` via:
 //
@@ -9911,12 +8656,6 @@ func (i GetAssetsAssetCollectionItemComputeScsiControllerArray) ToGetAssetsAsset
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemComputeScsiControllerArrayOutput)
 }
 
-func (i GetAssetsAssetCollectionItemComputeScsiControllerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemComputeScsiController] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemComputeScsiController]{
-		OutputState: i.ToGetAssetsAssetCollectionItemComputeScsiControllerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetsAssetCollectionItemComputeScsiControllerOutput struct{ *pulumi.OutputState }
 
 func (GetAssetsAssetCollectionItemComputeScsiControllerOutput) ElementType() reflect.Type {
@@ -9929,12 +8668,6 @@ func (o GetAssetsAssetCollectionItemComputeScsiControllerOutput) ToGetAssetsAsse
 
 func (o GetAssetsAssetCollectionItemComputeScsiControllerOutput) ToGetAssetsAssetCollectionItemComputeScsiControllerOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemComputeScsiControllerOutput {
 	return o
-}
-
-func (o GetAssetsAssetCollectionItemComputeScsiControllerOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemComputeScsiController] {
-	return pulumix.Output[GetAssetsAssetCollectionItemComputeScsiController]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Provides a label and summary information for the device.
@@ -9964,12 +8697,6 @@ func (o GetAssetsAssetCollectionItemComputeScsiControllerArrayOutput) ToGetAsset
 
 func (o GetAssetsAssetCollectionItemComputeScsiControllerArrayOutput) ToGetAssetsAssetCollectionItemComputeScsiControllerArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemComputeScsiControllerArrayOutput {
 	return o
-}
-
-func (o GetAssetsAssetCollectionItemComputeScsiControllerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemComputeScsiController] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemComputeScsiController]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetsAssetCollectionItemComputeScsiControllerArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemComputeScsiControllerOutput {
@@ -10019,12 +8746,6 @@ func (i GetAssetsAssetCollectionItemVmArgs) ToGetAssetsAssetCollectionItemVmOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemVmOutput)
 }
 
-func (i GetAssetsAssetCollectionItemVmArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemVm] {
-	return pulumix.Output[GetAssetsAssetCollectionItemVm]{
-		OutputState: i.ToGetAssetsAssetCollectionItemVmOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetsAssetCollectionItemVmArrayInput is an input type that accepts GetAssetsAssetCollectionItemVmArray and GetAssetsAssetCollectionItemVmArrayOutput values.
 // You can construct a concrete instance of `GetAssetsAssetCollectionItemVmArrayInput` via:
 //
@@ -10050,12 +8771,6 @@ func (i GetAssetsAssetCollectionItemVmArray) ToGetAssetsAssetCollectionItemVmArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemVmArrayOutput)
 }
 
-func (i GetAssetsAssetCollectionItemVmArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemVm] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemVm]{
-		OutputState: i.ToGetAssetsAssetCollectionItemVmArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetsAssetCollectionItemVmOutput struct{ *pulumi.OutputState }
 
 func (GetAssetsAssetCollectionItemVmOutput) ElementType() reflect.Type {
@@ -10068,12 +8783,6 @@ func (o GetAssetsAssetCollectionItemVmOutput) ToGetAssetsAssetCollectionItemVmOu
 
 func (o GetAssetsAssetCollectionItemVmOutput) ToGetAssetsAssetCollectionItemVmOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemVmOutput {
 	return o
-}
-
-func (o GetAssetsAssetCollectionItemVmOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemVm] {
-	return pulumix.Output[GetAssetsAssetCollectionItemVm]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Host name/IP address of VM on which the host is running.
@@ -10103,12 +8812,6 @@ func (o GetAssetsAssetCollectionItemVmArrayOutput) ToGetAssetsAssetCollectionIte
 
 func (o GetAssetsAssetCollectionItemVmArrayOutput) ToGetAssetsAssetCollectionItemVmArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemVmArrayOutput {
 	return o
-}
-
-func (o GetAssetsAssetCollectionItemVmArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemVm] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemVm]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetsAssetCollectionItemVmArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemVmOutput {
@@ -10158,12 +8861,6 @@ func (i GetAssetsAssetCollectionItemVmwareVcenterArgs) ToGetAssetsAssetCollectio
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemVmwareVcenterOutput)
 }
 
-func (i GetAssetsAssetCollectionItemVmwareVcenterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemVmwareVcenter] {
-	return pulumix.Output[GetAssetsAssetCollectionItemVmwareVcenter]{
-		OutputState: i.ToGetAssetsAssetCollectionItemVmwareVcenterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetsAssetCollectionItemVmwareVcenterArrayInput is an input type that accepts GetAssetsAssetCollectionItemVmwareVcenterArray and GetAssetsAssetCollectionItemVmwareVcenterArrayOutput values.
 // You can construct a concrete instance of `GetAssetsAssetCollectionItemVmwareVcenterArrayInput` via:
 //
@@ -10189,12 +8886,6 @@ func (i GetAssetsAssetCollectionItemVmwareVcenterArray) ToGetAssetsAssetCollecti
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemVmwareVcenterArrayOutput)
 }
 
-func (i GetAssetsAssetCollectionItemVmwareVcenterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemVmwareVcenter] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemVmwareVcenter]{
-		OutputState: i.ToGetAssetsAssetCollectionItemVmwareVcenterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetsAssetCollectionItemVmwareVcenterOutput struct{ *pulumi.OutputState }
 
 func (GetAssetsAssetCollectionItemVmwareVcenterOutput) ElementType() reflect.Type {
@@ -10207,12 +8898,6 @@ func (o GetAssetsAssetCollectionItemVmwareVcenterOutput) ToGetAssetsAssetCollect
 
 func (o GetAssetsAssetCollectionItemVmwareVcenterOutput) ToGetAssetsAssetCollectionItemVmwareVcenterOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemVmwareVcenterOutput {
 	return o
-}
-
-func (o GetAssetsAssetCollectionItemVmwareVcenterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemVmwareVcenter] {
-	return pulumix.Output[GetAssetsAssetCollectionItemVmwareVcenter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Data center name.
@@ -10242,12 +8927,6 @@ func (o GetAssetsAssetCollectionItemVmwareVcenterArrayOutput) ToGetAssetsAssetCo
 
 func (o GetAssetsAssetCollectionItemVmwareVcenterArrayOutput) ToGetAssetsAssetCollectionItemVmwareVcenterArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemVmwareVcenterArrayOutput {
 	return o
-}
-
-func (o GetAssetsAssetCollectionItemVmwareVcenterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemVmwareVcenter] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemVmwareVcenter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetsAssetCollectionItemVmwareVcenterArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemVmwareVcenterOutput {
@@ -10329,12 +9008,6 @@ func (i GetAssetsAssetCollectionItemVmwareVmArgs) ToGetAssetsAssetCollectionItem
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemVmwareVmOutput)
 }
 
-func (i GetAssetsAssetCollectionItemVmwareVmArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemVmwareVm] {
-	return pulumix.Output[GetAssetsAssetCollectionItemVmwareVm]{
-		OutputState: i.ToGetAssetsAssetCollectionItemVmwareVmOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetsAssetCollectionItemVmwareVmArrayInput is an input type that accepts GetAssetsAssetCollectionItemVmwareVmArray and GetAssetsAssetCollectionItemVmwareVmArrayOutput values.
 // You can construct a concrete instance of `GetAssetsAssetCollectionItemVmwareVmArrayInput` via:
 //
@@ -10360,12 +9033,6 @@ func (i GetAssetsAssetCollectionItemVmwareVmArray) ToGetAssetsAssetCollectionIte
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemVmwareVmArrayOutput)
 }
 
-func (i GetAssetsAssetCollectionItemVmwareVmArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemVmwareVm] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemVmwareVm]{
-		OutputState: i.ToGetAssetsAssetCollectionItemVmwareVmArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetsAssetCollectionItemVmwareVmOutput struct{ *pulumi.OutputState }
 
 func (GetAssetsAssetCollectionItemVmwareVmOutput) ElementType() reflect.Type {
@@ -10378,12 +9045,6 @@ func (o GetAssetsAssetCollectionItemVmwareVmOutput) ToGetAssetsAssetCollectionIt
 
 func (o GetAssetsAssetCollectionItemVmwareVmOutput) ToGetAssetsAssetCollectionItemVmwareVmOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemVmwareVmOutput {
 	return o
-}
-
-func (o GetAssetsAssetCollectionItemVmwareVmOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemVmwareVm] {
-	return pulumix.Output[GetAssetsAssetCollectionItemVmwareVm]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Cluster name.
@@ -10457,12 +9118,6 @@ func (o GetAssetsAssetCollectionItemVmwareVmArrayOutput) ToGetAssetsAssetCollect
 	return o
 }
 
-func (o GetAssetsAssetCollectionItemVmwareVmArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemVmwareVm] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemVmwareVm]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssetsAssetCollectionItemVmwareVmArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemVmwareVmOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetsAssetCollectionItemVmwareVm {
 		return vs[0].([]GetAssetsAssetCollectionItemVmwareVm)[vs[1].(int)]
@@ -10506,12 +9161,6 @@ func (i GetAssetsAssetCollectionItemVmwareVmCustomerTagArgs) ToGetAssetsAssetCol
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemVmwareVmCustomerTagOutput)
 }
 
-func (i GetAssetsAssetCollectionItemVmwareVmCustomerTagArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemVmwareVmCustomerTag] {
-	return pulumix.Output[GetAssetsAssetCollectionItemVmwareVmCustomerTag]{
-		OutputState: i.ToGetAssetsAssetCollectionItemVmwareVmCustomerTagOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetsAssetCollectionItemVmwareVmCustomerTagArrayInput is an input type that accepts GetAssetsAssetCollectionItemVmwareVmCustomerTagArray and GetAssetsAssetCollectionItemVmwareVmCustomerTagArrayOutput values.
 // You can construct a concrete instance of `GetAssetsAssetCollectionItemVmwareVmCustomerTagArrayInput` via:
 //
@@ -10537,12 +9186,6 @@ func (i GetAssetsAssetCollectionItemVmwareVmCustomerTagArray) ToGetAssetsAssetCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemVmwareVmCustomerTagArrayOutput)
 }
 
-func (i GetAssetsAssetCollectionItemVmwareVmCustomerTagArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemVmwareVmCustomerTag] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemVmwareVmCustomerTag]{
-		OutputState: i.ToGetAssetsAssetCollectionItemVmwareVmCustomerTagArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetsAssetCollectionItemVmwareVmCustomerTagOutput struct{ *pulumi.OutputState }
 
 func (GetAssetsAssetCollectionItemVmwareVmCustomerTagOutput) ElementType() reflect.Type {
@@ -10555,12 +9198,6 @@ func (o GetAssetsAssetCollectionItemVmwareVmCustomerTagOutput) ToGetAssetsAssetC
 
 func (o GetAssetsAssetCollectionItemVmwareVmCustomerTagOutput) ToGetAssetsAssetCollectionItemVmwareVmCustomerTagOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemVmwareVmCustomerTagOutput {
 	return o
-}
-
-func (o GetAssetsAssetCollectionItemVmwareVmCustomerTagOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemVmwareVmCustomerTag] {
-	return pulumix.Output[GetAssetsAssetCollectionItemVmwareVmCustomerTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The tag description.
@@ -10585,12 +9222,6 @@ func (o GetAssetsAssetCollectionItemVmwareVmCustomerTagArrayOutput) ToGetAssetsA
 
 func (o GetAssetsAssetCollectionItemVmwareVmCustomerTagArrayOutput) ToGetAssetsAssetCollectionItemVmwareVmCustomerTagArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemVmwareVmCustomerTagArrayOutput {
 	return o
-}
-
-func (o GetAssetsAssetCollectionItemVmwareVmCustomerTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemVmwareVmCustomerTag] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemVmwareVmCustomerTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetsAssetCollectionItemVmwareVmCustomerTagArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemVmwareVmCustomerTagOutput {
@@ -10636,12 +9267,6 @@ func (i GetAssetsFilterArgs) ToGetAssetsFilterOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsFilterOutput)
 }
 
-func (i GetAssetsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetsFilter] {
-	return pulumix.Output[GetAssetsFilter]{
-		OutputState: i.ToGetAssetsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetsFilterArrayInput is an input type that accepts GetAssetsFilterArray and GetAssetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAssetsFilterArrayInput` via:
 //
@@ -10667,12 +9292,6 @@ func (i GetAssetsFilterArray) ToGetAssetsFilterArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsFilterArrayOutput)
 }
 
-func (i GetAssetsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsFilter] {
-	return pulumix.Output[[]GetAssetsFilter]{
-		OutputState: i.ToGetAssetsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAssetsFilterOutput) ElementType() reflect.Type {
@@ -10685,12 +9304,6 @@ func (o GetAssetsFilterOutput) ToGetAssetsFilterOutput() GetAssetsFilterOutput {
 
 func (o GetAssetsFilterOutput) ToGetAssetsFilterOutputWithContext(ctx context.Context) GetAssetsFilterOutput {
 	return o
-}
-
-func (o GetAssetsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetsFilter] {
-	return pulumix.Output[GetAssetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The tag name.
@@ -10718,12 +9331,6 @@ func (o GetAssetsFilterArrayOutput) ToGetAssetsFilterArrayOutput() GetAssetsFilt
 
 func (o GetAssetsFilterArrayOutput) ToGetAssetsFilterArrayOutputWithContext(ctx context.Context) GetAssetsFilterArrayOutput {
 	return o
-}
-
-func (o GetAssetsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsFilter] {
-	return pulumix.Output[[]GetAssetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetsFilterArrayOutput) Index(i pulumi.IntInput) GetAssetsFilterOutput {
@@ -10763,12 +9370,6 @@ func (i GetDiscoverySchedulesDiscoveryScheduleCollectionArgs) ToGetDiscoverySche
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoverySchedulesDiscoveryScheduleCollectionOutput)
 }
 
-func (i GetDiscoverySchedulesDiscoveryScheduleCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoverySchedulesDiscoveryScheduleCollection] {
-	return pulumix.Output[GetDiscoverySchedulesDiscoveryScheduleCollection]{
-		OutputState: i.ToGetDiscoverySchedulesDiscoveryScheduleCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDiscoverySchedulesDiscoveryScheduleCollectionArrayInput is an input type that accepts GetDiscoverySchedulesDiscoveryScheduleCollectionArray and GetDiscoverySchedulesDiscoveryScheduleCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDiscoverySchedulesDiscoveryScheduleCollectionArrayInput` via:
 //
@@ -10794,12 +9395,6 @@ func (i GetDiscoverySchedulesDiscoveryScheduleCollectionArray) ToGetDiscoverySch
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoverySchedulesDiscoveryScheduleCollectionArrayOutput)
 }
 
-func (i GetDiscoverySchedulesDiscoveryScheduleCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoverySchedulesDiscoveryScheduleCollection] {
-	return pulumix.Output[[]GetDiscoverySchedulesDiscoveryScheduleCollection]{
-		OutputState: i.ToGetDiscoverySchedulesDiscoveryScheduleCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDiscoverySchedulesDiscoveryScheduleCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoverySchedulesDiscoveryScheduleCollectionOutput) ElementType() reflect.Type {
@@ -10812,12 +9407,6 @@ func (o GetDiscoverySchedulesDiscoveryScheduleCollectionOutput) ToGetDiscoverySc
 
 func (o GetDiscoverySchedulesDiscoveryScheduleCollectionOutput) ToGetDiscoverySchedulesDiscoveryScheduleCollectionOutputWithContext(ctx context.Context) GetDiscoverySchedulesDiscoveryScheduleCollectionOutput {
 	return o
-}
-
-func (o GetDiscoverySchedulesDiscoveryScheduleCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoverySchedulesDiscoveryScheduleCollection] {
-	return pulumix.Output[GetDiscoverySchedulesDiscoveryScheduleCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDiscoverySchedulesDiscoveryScheduleCollectionOutput) Items() GetDiscoverySchedulesDiscoveryScheduleCollectionItemArrayOutput {
@@ -10838,12 +9427,6 @@ func (o GetDiscoverySchedulesDiscoveryScheduleCollectionArrayOutput) ToGetDiscov
 
 func (o GetDiscoverySchedulesDiscoveryScheduleCollectionArrayOutput) ToGetDiscoverySchedulesDiscoveryScheduleCollectionArrayOutputWithContext(ctx context.Context) GetDiscoverySchedulesDiscoveryScheduleCollectionArrayOutput {
 	return o
-}
-
-func (o GetDiscoverySchedulesDiscoveryScheduleCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoverySchedulesDiscoveryScheduleCollection] {
-	return pulumix.Output[[]GetDiscoverySchedulesDiscoveryScheduleCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDiscoverySchedulesDiscoveryScheduleCollectionArrayOutput) Index(i pulumi.IntInput) GetDiscoverySchedulesDiscoveryScheduleCollectionOutput {
@@ -10925,12 +9508,6 @@ func (i GetDiscoverySchedulesDiscoveryScheduleCollectionItemArgs) ToGetDiscovery
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput)
 }
 
-func (i GetDiscoverySchedulesDiscoveryScheduleCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoverySchedulesDiscoveryScheduleCollectionItem] {
-	return pulumix.Output[GetDiscoverySchedulesDiscoveryScheduleCollectionItem]{
-		OutputState: i.ToGetDiscoverySchedulesDiscoveryScheduleCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDiscoverySchedulesDiscoveryScheduleCollectionItemArrayInput is an input type that accepts GetDiscoverySchedulesDiscoveryScheduleCollectionItemArray and GetDiscoverySchedulesDiscoveryScheduleCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDiscoverySchedulesDiscoveryScheduleCollectionItemArrayInput` via:
 //
@@ -10956,12 +9533,6 @@ func (i GetDiscoverySchedulesDiscoveryScheduleCollectionItemArray) ToGetDiscover
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoverySchedulesDiscoveryScheduleCollectionItemArrayOutput)
 }
 
-func (i GetDiscoverySchedulesDiscoveryScheduleCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoverySchedulesDiscoveryScheduleCollectionItem] {
-	return pulumix.Output[[]GetDiscoverySchedulesDiscoveryScheduleCollectionItem]{
-		OutputState: i.ToGetDiscoverySchedulesDiscoveryScheduleCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput) ElementType() reflect.Type {
@@ -10974,12 +9545,6 @@ func (o GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput) ToGetDiscove
 
 func (o GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput) ToGetDiscoverySchedulesDiscoveryScheduleCollectionItemOutputWithContext(ctx context.Context) GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput {
 	return o
-}
-
-func (o GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoverySchedulesDiscoveryScheduleCollectionItem] {
-	return pulumix.Output[GetDiscoverySchedulesDiscoveryScheduleCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -11057,12 +9622,6 @@ func (o GetDiscoverySchedulesDiscoveryScheduleCollectionItemArrayOutput) ToGetDi
 	return o
 }
 
-func (o GetDiscoverySchedulesDiscoveryScheduleCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoverySchedulesDiscoveryScheduleCollectionItem] {
-	return pulumix.Output[[]GetDiscoverySchedulesDiscoveryScheduleCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDiscoverySchedulesDiscoveryScheduleCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDiscoverySchedulesDiscoveryScheduleCollectionItem {
 		return vs[0].([]GetDiscoverySchedulesDiscoveryScheduleCollectionItem)[vs[1].(int)]
@@ -11104,12 +9663,6 @@ func (i GetDiscoverySchedulesFilterArgs) ToGetDiscoverySchedulesFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoverySchedulesFilterOutput)
 }
 
-func (i GetDiscoverySchedulesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoverySchedulesFilter] {
-	return pulumix.Output[GetDiscoverySchedulesFilter]{
-		OutputState: i.ToGetDiscoverySchedulesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDiscoverySchedulesFilterArrayInput is an input type that accepts GetDiscoverySchedulesFilterArray and GetDiscoverySchedulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetDiscoverySchedulesFilterArrayInput` via:
 //
@@ -11135,12 +9688,6 @@ func (i GetDiscoverySchedulesFilterArray) ToGetDiscoverySchedulesFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoverySchedulesFilterArrayOutput)
 }
 
-func (i GetDiscoverySchedulesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoverySchedulesFilter] {
-	return pulumix.Output[[]GetDiscoverySchedulesFilter]{
-		OutputState: i.ToGetDiscoverySchedulesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDiscoverySchedulesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoverySchedulesFilterOutput) ElementType() reflect.Type {
@@ -11153,12 +9700,6 @@ func (o GetDiscoverySchedulesFilterOutput) ToGetDiscoverySchedulesFilterOutput()
 
 func (o GetDiscoverySchedulesFilterOutput) ToGetDiscoverySchedulesFilterOutputWithContext(ctx context.Context) GetDiscoverySchedulesFilterOutput {
 	return o
-}
-
-func (o GetDiscoverySchedulesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoverySchedulesFilter] {
-	return pulumix.Output[GetDiscoverySchedulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDiscoverySchedulesFilterOutput) Name() pulumi.StringOutput {
@@ -11185,12 +9726,6 @@ func (o GetDiscoverySchedulesFilterArrayOutput) ToGetDiscoverySchedulesFilterArr
 
 func (o GetDiscoverySchedulesFilterArrayOutput) ToGetDiscoverySchedulesFilterArrayOutputWithContext(ctx context.Context) GetDiscoverySchedulesFilterArrayOutput {
 	return o
-}
-
-func (o GetDiscoverySchedulesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoverySchedulesFilter] {
-	return pulumix.Output[[]GetDiscoverySchedulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDiscoverySchedulesFilterArrayOutput) Index(i pulumi.IntInput) GetDiscoverySchedulesFilterOutput {
@@ -11230,12 +9765,6 @@ func (i GetEnvironmentsEnvironmentCollectionArgs) ToGetEnvironmentsEnvironmentCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetEnvironmentsEnvironmentCollectionOutput)
 }
 
-func (i GetEnvironmentsEnvironmentCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetEnvironmentsEnvironmentCollection] {
-	return pulumix.Output[GetEnvironmentsEnvironmentCollection]{
-		OutputState: i.ToGetEnvironmentsEnvironmentCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEnvironmentsEnvironmentCollectionArrayInput is an input type that accepts GetEnvironmentsEnvironmentCollectionArray and GetEnvironmentsEnvironmentCollectionArrayOutput values.
 // You can construct a concrete instance of `GetEnvironmentsEnvironmentCollectionArrayInput` via:
 //
@@ -11261,12 +9790,6 @@ func (i GetEnvironmentsEnvironmentCollectionArray) ToGetEnvironmentsEnvironmentC
 	return pulumi.ToOutputWithContext(ctx, i).(GetEnvironmentsEnvironmentCollectionArrayOutput)
 }
 
-func (i GetEnvironmentsEnvironmentCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEnvironmentsEnvironmentCollection] {
-	return pulumix.Output[[]GetEnvironmentsEnvironmentCollection]{
-		OutputState: i.ToGetEnvironmentsEnvironmentCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEnvironmentsEnvironmentCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetEnvironmentsEnvironmentCollectionOutput) ElementType() reflect.Type {
@@ -11279,12 +9802,6 @@ func (o GetEnvironmentsEnvironmentCollectionOutput) ToGetEnvironmentsEnvironment
 
 func (o GetEnvironmentsEnvironmentCollectionOutput) ToGetEnvironmentsEnvironmentCollectionOutputWithContext(ctx context.Context) GetEnvironmentsEnvironmentCollectionOutput {
 	return o
-}
-
-func (o GetEnvironmentsEnvironmentCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetEnvironmentsEnvironmentCollection] {
-	return pulumix.Output[GetEnvironmentsEnvironmentCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEnvironmentsEnvironmentCollectionOutput) Items() GetEnvironmentsEnvironmentCollectionItemArrayOutput {
@@ -11305,12 +9822,6 @@ func (o GetEnvironmentsEnvironmentCollectionArrayOutput) ToGetEnvironmentsEnviro
 
 func (o GetEnvironmentsEnvironmentCollectionArrayOutput) ToGetEnvironmentsEnvironmentCollectionArrayOutputWithContext(ctx context.Context) GetEnvironmentsEnvironmentCollectionArrayOutput {
 	return o
-}
-
-func (o GetEnvironmentsEnvironmentCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEnvironmentsEnvironmentCollection] {
-	return pulumix.Output[[]GetEnvironmentsEnvironmentCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEnvironmentsEnvironmentCollectionArrayOutput) Index(i pulumi.IntInput) GetEnvironmentsEnvironmentCollectionOutput {
@@ -11388,12 +9899,6 @@ func (i GetEnvironmentsEnvironmentCollectionItemArgs) ToGetEnvironmentsEnvironme
 	return pulumi.ToOutputWithContext(ctx, i).(GetEnvironmentsEnvironmentCollectionItemOutput)
 }
 
-func (i GetEnvironmentsEnvironmentCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetEnvironmentsEnvironmentCollectionItem] {
-	return pulumix.Output[GetEnvironmentsEnvironmentCollectionItem]{
-		OutputState: i.ToGetEnvironmentsEnvironmentCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEnvironmentsEnvironmentCollectionItemArrayInput is an input type that accepts GetEnvironmentsEnvironmentCollectionItemArray and GetEnvironmentsEnvironmentCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetEnvironmentsEnvironmentCollectionItemArrayInput` via:
 //
@@ -11419,12 +9924,6 @@ func (i GetEnvironmentsEnvironmentCollectionItemArray) ToGetEnvironmentsEnvironm
 	return pulumi.ToOutputWithContext(ctx, i).(GetEnvironmentsEnvironmentCollectionItemArrayOutput)
 }
 
-func (i GetEnvironmentsEnvironmentCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEnvironmentsEnvironmentCollectionItem] {
-	return pulumix.Output[[]GetEnvironmentsEnvironmentCollectionItem]{
-		OutputState: i.ToGetEnvironmentsEnvironmentCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEnvironmentsEnvironmentCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetEnvironmentsEnvironmentCollectionItemOutput) ElementType() reflect.Type {
@@ -11437,12 +9936,6 @@ func (o GetEnvironmentsEnvironmentCollectionItemOutput) ToGetEnvironmentsEnviron
 
 func (o GetEnvironmentsEnvironmentCollectionItemOutput) ToGetEnvironmentsEnvironmentCollectionItemOutputWithContext(ctx context.Context) GetEnvironmentsEnvironmentCollectionItemOutput {
 	return o
-}
-
-func (o GetEnvironmentsEnvironmentCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetEnvironmentsEnvironmentCollectionItem] {
-	return pulumix.Output[GetEnvironmentsEnvironmentCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -11509,12 +10002,6 @@ func (o GetEnvironmentsEnvironmentCollectionItemArrayOutput) ToGetEnvironmentsEn
 	return o
 }
 
-func (o GetEnvironmentsEnvironmentCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEnvironmentsEnvironmentCollectionItem] {
-	return pulumix.Output[[]GetEnvironmentsEnvironmentCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetEnvironmentsEnvironmentCollectionItemArrayOutput) Index(i pulumi.IntInput) GetEnvironmentsEnvironmentCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEnvironmentsEnvironmentCollectionItem {
 		return vs[0].([]GetEnvironmentsEnvironmentCollectionItem)[vs[1].(int)]
@@ -11556,12 +10043,6 @@ func (i GetEnvironmentsFilterArgs) ToGetEnvironmentsFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetEnvironmentsFilterOutput)
 }
 
-func (i GetEnvironmentsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetEnvironmentsFilter] {
-	return pulumix.Output[GetEnvironmentsFilter]{
-		OutputState: i.ToGetEnvironmentsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEnvironmentsFilterArrayInput is an input type that accepts GetEnvironmentsFilterArray and GetEnvironmentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetEnvironmentsFilterArrayInput` via:
 //
@@ -11587,12 +10068,6 @@ func (i GetEnvironmentsFilterArray) ToGetEnvironmentsFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetEnvironmentsFilterArrayOutput)
 }
 
-func (i GetEnvironmentsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEnvironmentsFilter] {
-	return pulumix.Output[[]GetEnvironmentsFilter]{
-		OutputState: i.ToGetEnvironmentsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEnvironmentsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetEnvironmentsFilterOutput) ElementType() reflect.Type {
@@ -11605,12 +10080,6 @@ func (o GetEnvironmentsFilterOutput) ToGetEnvironmentsFilterOutput() GetEnvironm
 
 func (o GetEnvironmentsFilterOutput) ToGetEnvironmentsFilterOutputWithContext(ctx context.Context) GetEnvironmentsFilterOutput {
 	return o
-}
-
-func (o GetEnvironmentsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetEnvironmentsFilter] {
-	return pulumix.Output[GetEnvironmentsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEnvironmentsFilterOutput) Name() pulumi.StringOutput {
@@ -11637,12 +10106,6 @@ func (o GetEnvironmentsFilterArrayOutput) ToGetEnvironmentsFilterArrayOutput() G
 
 func (o GetEnvironmentsFilterArrayOutput) ToGetEnvironmentsFilterArrayOutputWithContext(ctx context.Context) GetEnvironmentsFilterArrayOutput {
 	return o
-}
-
-func (o GetEnvironmentsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEnvironmentsFilter] {
-	return pulumix.Output[[]GetEnvironmentsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEnvironmentsFilterArrayOutput) Index(i pulumi.IntInput) GetEnvironmentsFilterOutput {
@@ -11686,12 +10149,6 @@ func (i GetInventoriesFilterArgs) ToGetInventoriesFilterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetInventoriesFilterOutput)
 }
 
-func (i GetInventoriesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetInventoriesFilter] {
-	return pulumix.Output[GetInventoriesFilter]{
-		OutputState: i.ToGetInventoriesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetInventoriesFilterArrayInput is an input type that accepts GetInventoriesFilterArray and GetInventoriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetInventoriesFilterArrayInput` via:
 //
@@ -11717,12 +10174,6 @@ func (i GetInventoriesFilterArray) ToGetInventoriesFilterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetInventoriesFilterArrayOutput)
 }
 
-func (i GetInventoriesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInventoriesFilter] {
-	return pulumix.Output[[]GetInventoriesFilter]{
-		OutputState: i.ToGetInventoriesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInventoriesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetInventoriesFilterOutput) ElementType() reflect.Type {
@@ -11735,12 +10186,6 @@ func (o GetInventoriesFilterOutput) ToGetInventoriesFilterOutput() GetInventorie
 
 func (o GetInventoriesFilterOutput) ToGetInventoriesFilterOutputWithContext(ctx context.Context) GetInventoriesFilterOutput {
 	return o
-}
-
-func (o GetInventoriesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetInventoriesFilter] {
-	return pulumix.Output[GetInventoriesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInventoriesFilterOutput) Name() pulumi.StringOutput {
@@ -11767,12 +10212,6 @@ func (o GetInventoriesFilterArrayOutput) ToGetInventoriesFilterArrayOutput() Get
 
 func (o GetInventoriesFilterArrayOutput) ToGetInventoriesFilterArrayOutputWithContext(ctx context.Context) GetInventoriesFilterArrayOutput {
 	return o
-}
-
-func (o GetInventoriesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInventoriesFilter] {
-	return pulumix.Output[[]GetInventoriesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInventoriesFilterArrayOutput) Index(i pulumi.IntInput) GetInventoriesFilterOutput {
@@ -11812,12 +10251,6 @@ func (i GetInventoriesInventoryCollectionArgs) ToGetInventoriesInventoryCollecti
 	return pulumi.ToOutputWithContext(ctx, i).(GetInventoriesInventoryCollectionOutput)
 }
 
-func (i GetInventoriesInventoryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetInventoriesInventoryCollection] {
-	return pulumix.Output[GetInventoriesInventoryCollection]{
-		OutputState: i.ToGetInventoriesInventoryCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetInventoriesInventoryCollectionArrayInput is an input type that accepts GetInventoriesInventoryCollectionArray and GetInventoriesInventoryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetInventoriesInventoryCollectionArrayInput` via:
 //
@@ -11843,12 +10276,6 @@ func (i GetInventoriesInventoryCollectionArray) ToGetInventoriesInventoryCollect
 	return pulumi.ToOutputWithContext(ctx, i).(GetInventoriesInventoryCollectionArrayOutput)
 }
 
-func (i GetInventoriesInventoryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInventoriesInventoryCollection] {
-	return pulumix.Output[[]GetInventoriesInventoryCollection]{
-		OutputState: i.ToGetInventoriesInventoryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInventoriesInventoryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetInventoriesInventoryCollectionOutput) ElementType() reflect.Type {
@@ -11861,12 +10288,6 @@ func (o GetInventoriesInventoryCollectionOutput) ToGetInventoriesInventoryCollec
 
 func (o GetInventoriesInventoryCollectionOutput) ToGetInventoriesInventoryCollectionOutputWithContext(ctx context.Context) GetInventoriesInventoryCollectionOutput {
 	return o
-}
-
-func (o GetInventoriesInventoryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetInventoriesInventoryCollection] {
-	return pulumix.Output[GetInventoriesInventoryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInventoriesInventoryCollectionOutput) Items() GetInventoriesInventoryCollectionItemArrayOutput {
@@ -11885,12 +10306,6 @@ func (o GetInventoriesInventoryCollectionArrayOutput) ToGetInventoriesInventoryC
 
 func (o GetInventoriesInventoryCollectionArrayOutput) ToGetInventoriesInventoryCollectionArrayOutputWithContext(ctx context.Context) GetInventoriesInventoryCollectionArrayOutput {
 	return o
-}
-
-func (o GetInventoriesInventoryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInventoriesInventoryCollection] {
-	return pulumix.Output[[]GetInventoriesInventoryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInventoriesInventoryCollectionArrayOutput) Index(i pulumi.IntInput) GetInventoriesInventoryCollectionOutput {
@@ -11968,12 +10383,6 @@ func (i GetInventoriesInventoryCollectionItemArgs) ToGetInventoriesInventoryColl
 	return pulumi.ToOutputWithContext(ctx, i).(GetInventoriesInventoryCollectionItemOutput)
 }
 
-func (i GetInventoriesInventoryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetInventoriesInventoryCollectionItem] {
-	return pulumix.Output[GetInventoriesInventoryCollectionItem]{
-		OutputState: i.ToGetInventoriesInventoryCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetInventoriesInventoryCollectionItemArrayInput is an input type that accepts GetInventoriesInventoryCollectionItemArray and GetInventoriesInventoryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetInventoriesInventoryCollectionItemArrayInput` via:
 //
@@ -11999,12 +10408,6 @@ func (i GetInventoriesInventoryCollectionItemArray) ToGetInventoriesInventoryCol
 	return pulumi.ToOutputWithContext(ctx, i).(GetInventoriesInventoryCollectionItemArrayOutput)
 }
 
-func (i GetInventoriesInventoryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInventoriesInventoryCollectionItem] {
-	return pulumix.Output[[]GetInventoriesInventoryCollectionItem]{
-		OutputState: i.ToGetInventoriesInventoryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInventoriesInventoryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetInventoriesInventoryCollectionItemOutput) ElementType() reflect.Type {
@@ -12017,12 +10420,6 @@ func (o GetInventoriesInventoryCollectionItemOutput) ToGetInventoriesInventoryCo
 
 func (o GetInventoriesInventoryCollectionItemOutput) ToGetInventoriesInventoryCollectionItemOutputWithContext(ctx context.Context) GetInventoriesInventoryCollectionItemOutput {
 	return o
-}
-
-func (o GetInventoriesInventoryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetInventoriesInventoryCollectionItem] {
-	return pulumix.Output[GetInventoriesInventoryCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -12087,12 +10484,6 @@ func (o GetInventoriesInventoryCollectionItemArrayOutput) ToGetInventoriesInvent
 
 func (o GetInventoriesInventoryCollectionItemArrayOutput) ToGetInventoriesInventoryCollectionItemArrayOutputWithContext(ctx context.Context) GetInventoriesInventoryCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetInventoriesInventoryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInventoriesInventoryCollectionItem] {
-	return pulumix.Output[[]GetInventoriesInventoryCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInventoriesInventoryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetInventoriesInventoryCollectionItemOutput {

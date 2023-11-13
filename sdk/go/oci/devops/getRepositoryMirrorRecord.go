@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Repository Mirror Record resource in Oracle Cloud Infrastructure Devops service.
@@ -116,12 +115,6 @@ func (o GetRepositoryMirrorRecordResultOutput) ToGetRepositoryMirrorRecordResult
 
 func (o GetRepositoryMirrorRecordResultOutput) ToGetRepositoryMirrorRecordResultOutputWithContext(ctx context.Context) GetRepositoryMirrorRecordResultOutput {
 	return o
-}
-
-func (o GetRepositoryMirrorRecordResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRepositoryMirrorRecordResult] {
-	return pulumix.Output[GetRepositoryMirrorRecordResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The provider-assigned unique ID for this managed resource.

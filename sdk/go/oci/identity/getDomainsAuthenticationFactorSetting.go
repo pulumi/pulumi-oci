@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Authentication Factor Setting resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -204,12 +203,6 @@ func (o LookupDomainsAuthenticationFactorSettingResultOutput) ToLookupDomainsAut
 
 func (o LookupDomainsAuthenticationFactorSettingResultOutput) ToLookupDomainsAuthenticationFactorSettingResultOutputWithContext(ctx context.Context) LookupDomainsAuthenticationFactorSettingResultOutput {
 	return o
-}
-
-func (o LookupDomainsAuthenticationFactorSettingResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainsAuthenticationFactorSettingResult] {
-	return pulumix.Output[LookupDomainsAuthenticationFactorSettingResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupDomainsAuthenticationFactorSettingResultOutput) AttributeSets() pulumi.StringArrayOutput {

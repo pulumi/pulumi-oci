@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Web App Firewall resource in Oracle Cloud Infrastructure Waf service.
@@ -124,12 +123,6 @@ func (o GetWebAppFirewallResultOutput) ToGetWebAppFirewallResultOutput() GetWebA
 
 func (o GetWebAppFirewallResultOutput) ToGetWebAppFirewallResultOutputWithContext(ctx context.Context) GetWebAppFirewallResultOutput {
 	return o
-}
-
-func (o GetWebAppFirewallResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallResult] {
-	return pulumix.Output[GetWebAppFirewallResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Type of the WebAppFirewall, as example LOAD_BALANCER.

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Fusion Environment resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -392,12 +391,6 @@ func (i *FusionEnvironment) ToFusionEnvironmentOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentOutput)
 }
 
-func (i *FusionEnvironment) ToOutput(ctx context.Context) pulumix.Output[*FusionEnvironment] {
-	return pulumix.Output[*FusionEnvironment]{
-		OutputState: i.ToFusionEnvironmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // FusionEnvironmentArrayInput is an input type that accepts FusionEnvironmentArray and FusionEnvironmentArrayOutput values.
 // You can construct a concrete instance of `FusionEnvironmentArrayInput` via:
 //
@@ -421,12 +414,6 @@ func (i FusionEnvironmentArray) ToFusionEnvironmentArrayOutput() FusionEnvironme
 
 func (i FusionEnvironmentArray) ToFusionEnvironmentArrayOutputWithContext(ctx context.Context) FusionEnvironmentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentArrayOutput)
-}
-
-func (i FusionEnvironmentArray) ToOutput(ctx context.Context) pulumix.Output[[]*FusionEnvironment] {
-	return pulumix.Output[[]*FusionEnvironment]{
-		OutputState: i.ToFusionEnvironmentArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // FusionEnvironmentMapInput is an input type that accepts FusionEnvironmentMap and FusionEnvironmentMapOutput values.
@@ -454,12 +441,6 @@ func (i FusionEnvironmentMap) ToFusionEnvironmentMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentMapOutput)
 }
 
-func (i FusionEnvironmentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*FusionEnvironment] {
-	return pulumix.Output[map[string]*FusionEnvironment]{
-		OutputState: i.ToFusionEnvironmentMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FusionEnvironmentOutput struct{ *pulumi.OutputState }
 
 func (FusionEnvironmentOutput) ElementType() reflect.Type {
@@ -472,12 +453,6 @@ func (o FusionEnvironmentOutput) ToFusionEnvironmentOutput() FusionEnvironmentOu
 
 func (o FusionEnvironmentOutput) ToFusionEnvironmentOutputWithContext(ctx context.Context) FusionEnvironmentOutput {
 	return o
-}
-
-func (o FusionEnvironmentOutput) ToOutput(ctx context.Context) pulumix.Output[*FusionEnvironment] {
-	return pulumix.Output[*FusionEnvironment]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Language packs.
@@ -636,12 +611,6 @@ func (o FusionEnvironmentArrayOutput) ToFusionEnvironmentArrayOutputWithContext(
 	return o
 }
 
-func (o FusionEnvironmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*FusionEnvironment] {
-	return pulumix.Output[[]*FusionEnvironment]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o FusionEnvironmentArrayOutput) Index(i pulumi.IntInput) FusionEnvironmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *FusionEnvironment {
 		return vs[0].([]*FusionEnvironment)[vs[1].(int)]
@@ -660,12 +629,6 @@ func (o FusionEnvironmentMapOutput) ToFusionEnvironmentMapOutput() FusionEnviron
 
 func (o FusionEnvironmentMapOutput) ToFusionEnvironmentMapOutputWithContext(ctx context.Context) FusionEnvironmentMapOutput {
 	return o
-}
-
-func (o FusionEnvironmentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*FusionEnvironment] {
-	return pulumix.Output[map[string]*FusionEnvironment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FusionEnvironmentMapOutput) MapIndex(k pulumi.StringInput) FusionEnvironmentOutput {

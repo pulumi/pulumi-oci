@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Keys in Oracle Cloud Infrastructure Kms service.
@@ -148,12 +147,6 @@ func (o GetKeysResultOutput) ToGetKeysResultOutput() GetKeysResultOutput {
 
 func (o GetKeysResultOutput) ToGetKeysResultOutputWithContext(ctx context.Context) GetKeysResultOutput {
 	return o
-}
-
-func (o GetKeysResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeysResult] {
-	return pulumix.Output[GetKeysResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.

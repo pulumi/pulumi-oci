@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Osn resource in Oracle Cloud Infrastructure Blockchain service.
@@ -113,12 +112,6 @@ func (o LookupOsnResultOutput) ToLookupOsnResultOutput() LookupOsnResultOutput {
 
 func (o LookupOsnResultOutput) ToLookupOsnResultOutputWithContext(ctx context.Context) LookupOsnResultOutput {
 	return o
-}
-
-func (o LookupOsnResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupOsnResult] {
-	return pulumix.Output[LookupOsnResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Availability Domain of OSN

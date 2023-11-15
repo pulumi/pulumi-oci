@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Oda Private Endpoint resource in Oracle Cloud Infrastructure Digital Assistant service.
@@ -248,12 +247,6 @@ func (i *OdaPrivateEndpoint) ToOdaPrivateEndpointOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(OdaPrivateEndpointOutput)
 }
 
-func (i *OdaPrivateEndpoint) ToOutput(ctx context.Context) pulumix.Output[*OdaPrivateEndpoint] {
-	return pulumix.Output[*OdaPrivateEndpoint]{
-		OutputState: i.ToOdaPrivateEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // OdaPrivateEndpointArrayInput is an input type that accepts OdaPrivateEndpointArray and OdaPrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `OdaPrivateEndpointArrayInput` via:
 //
@@ -277,12 +270,6 @@ func (i OdaPrivateEndpointArray) ToOdaPrivateEndpointArrayOutput() OdaPrivateEnd
 
 func (i OdaPrivateEndpointArray) ToOdaPrivateEndpointArrayOutputWithContext(ctx context.Context) OdaPrivateEndpointArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OdaPrivateEndpointArrayOutput)
-}
-
-func (i OdaPrivateEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]*OdaPrivateEndpoint] {
-	return pulumix.Output[[]*OdaPrivateEndpoint]{
-		OutputState: i.ToOdaPrivateEndpointArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // OdaPrivateEndpointMapInput is an input type that accepts OdaPrivateEndpointMap and OdaPrivateEndpointMapOutput values.
@@ -310,12 +297,6 @@ func (i OdaPrivateEndpointMap) ToOdaPrivateEndpointMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(OdaPrivateEndpointMapOutput)
 }
 
-func (i OdaPrivateEndpointMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*OdaPrivateEndpoint] {
-	return pulumix.Output[map[string]*OdaPrivateEndpoint]{
-		OutputState: i.ToOdaPrivateEndpointMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type OdaPrivateEndpointOutput struct{ *pulumi.OutputState }
 
 func (OdaPrivateEndpointOutput) ElementType() reflect.Type {
@@ -328,12 +309,6 @@ func (o OdaPrivateEndpointOutput) ToOdaPrivateEndpointOutput() OdaPrivateEndpoin
 
 func (o OdaPrivateEndpointOutput) ToOdaPrivateEndpointOutputWithContext(ctx context.Context) OdaPrivateEndpointOutput {
 	return o
-}
-
-func (o OdaPrivateEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[*OdaPrivateEndpoint] {
-	return pulumix.Output[*OdaPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that the ODA private endpoint belongs to.
@@ -403,12 +378,6 @@ func (o OdaPrivateEndpointArrayOutput) ToOdaPrivateEndpointArrayOutputWithContex
 	return o
 }
 
-func (o OdaPrivateEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*OdaPrivateEndpoint] {
-	return pulumix.Output[[]*OdaPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o OdaPrivateEndpointArrayOutput) Index(i pulumi.IntInput) OdaPrivateEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *OdaPrivateEndpoint {
 		return vs[0].([]*OdaPrivateEndpoint)[vs[1].(int)]
@@ -427,12 +396,6 @@ func (o OdaPrivateEndpointMapOutput) ToOdaPrivateEndpointMapOutput() OdaPrivateE
 
 func (o OdaPrivateEndpointMapOutput) ToOdaPrivateEndpointMapOutputWithContext(ctx context.Context) OdaPrivateEndpointMapOutput {
 	return o
-}
-
-func (o OdaPrivateEndpointMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*OdaPrivateEndpoint] {
-	return pulumix.Output[map[string]*OdaPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OdaPrivateEndpointMapOutput) MapIndex(k pulumi.StringInput) OdaPrivateEndpointOutput {

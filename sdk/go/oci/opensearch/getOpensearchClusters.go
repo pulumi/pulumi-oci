@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Opensearch Clusters in Oracle Cloud Infrastructure Opensearch service.
@@ -150,12 +149,6 @@ func (o GetOpensearchClustersResultOutput) ToGetOpensearchClustersResultOutput()
 
 func (o GetOpensearchClustersResultOutput) ToGetOpensearchClustersResultOutputWithContext(ctx context.Context) GetOpensearchClustersResultOutput {
 	return o
-}
-
-func (o GetOpensearchClustersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchClustersResult] {
-	return pulumix.Output[GetOpensearchClustersResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment where the cluster is located.

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Cluster Complete Credential Rotation Management resource in Oracle Cloud Infrastructure Container Engine service.
@@ -150,12 +149,6 @@ func (i *ClusterCompleteCredentialRotationManagement) ToClusterCompleteCredentia
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterCompleteCredentialRotationManagementOutput)
 }
 
-func (i *ClusterCompleteCredentialRotationManagement) ToOutput(ctx context.Context) pulumix.Output[*ClusterCompleteCredentialRotationManagement] {
-	return pulumix.Output[*ClusterCompleteCredentialRotationManagement]{
-		OutputState: i.ToClusterCompleteCredentialRotationManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ClusterCompleteCredentialRotationManagementArrayInput is an input type that accepts ClusterCompleteCredentialRotationManagementArray and ClusterCompleteCredentialRotationManagementArrayOutput values.
 // You can construct a concrete instance of `ClusterCompleteCredentialRotationManagementArrayInput` via:
 //
@@ -179,12 +172,6 @@ func (i ClusterCompleteCredentialRotationManagementArray) ToClusterCompleteCrede
 
 func (i ClusterCompleteCredentialRotationManagementArray) ToClusterCompleteCredentialRotationManagementArrayOutputWithContext(ctx context.Context) ClusterCompleteCredentialRotationManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterCompleteCredentialRotationManagementArrayOutput)
-}
-
-func (i ClusterCompleteCredentialRotationManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*ClusterCompleteCredentialRotationManagement] {
-	return pulumix.Output[[]*ClusterCompleteCredentialRotationManagement]{
-		OutputState: i.ToClusterCompleteCredentialRotationManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ClusterCompleteCredentialRotationManagementMapInput is an input type that accepts ClusterCompleteCredentialRotationManagementMap and ClusterCompleteCredentialRotationManagementMapOutput values.
@@ -212,12 +199,6 @@ func (i ClusterCompleteCredentialRotationManagementMap) ToClusterCompleteCredent
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterCompleteCredentialRotationManagementMapOutput)
 }
 
-func (i ClusterCompleteCredentialRotationManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ClusterCompleteCredentialRotationManagement] {
-	return pulumix.Output[map[string]*ClusterCompleteCredentialRotationManagement]{
-		OutputState: i.ToClusterCompleteCredentialRotationManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ClusterCompleteCredentialRotationManagementOutput struct{ *pulumi.OutputState }
 
 func (ClusterCompleteCredentialRotationManagementOutput) ElementType() reflect.Type {
@@ -230,12 +211,6 @@ func (o ClusterCompleteCredentialRotationManagementOutput) ToClusterCompleteCred
 
 func (o ClusterCompleteCredentialRotationManagementOutput) ToClusterCompleteCredentialRotationManagementOutputWithContext(ctx context.Context) ClusterCompleteCredentialRotationManagementOutput {
 	return o
-}
-
-func (o ClusterCompleteCredentialRotationManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*ClusterCompleteCredentialRotationManagement] {
-	return pulumix.Output[*ClusterCompleteCredentialRotationManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the cluster.
@@ -260,12 +235,6 @@ func (o ClusterCompleteCredentialRotationManagementArrayOutput) ToClusterComplet
 	return o
 }
 
-func (o ClusterCompleteCredentialRotationManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ClusterCompleteCredentialRotationManagement] {
-	return pulumix.Output[[]*ClusterCompleteCredentialRotationManagement]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ClusterCompleteCredentialRotationManagementArrayOutput) Index(i pulumi.IntInput) ClusterCompleteCredentialRotationManagementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ClusterCompleteCredentialRotationManagement {
 		return vs[0].([]*ClusterCompleteCredentialRotationManagement)[vs[1].(int)]
@@ -284,12 +253,6 @@ func (o ClusterCompleteCredentialRotationManagementMapOutput) ToClusterCompleteC
 
 func (o ClusterCompleteCredentialRotationManagementMapOutput) ToClusterCompleteCredentialRotationManagementMapOutputWithContext(ctx context.Context) ClusterCompleteCredentialRotationManagementMapOutput {
 	return o
-}
-
-func (o ClusterCompleteCredentialRotationManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ClusterCompleteCredentialRotationManagement] {
-	return pulumix.Output[map[string]*ClusterCompleteCredentialRotationManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ClusterCompleteCredentialRotationManagementMapOutput) MapIndex(k pulumi.StringInput) ClusterCompleteCredentialRotationManagementOutput {

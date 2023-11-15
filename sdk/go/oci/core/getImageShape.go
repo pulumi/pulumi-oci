@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Image Shape resource in Oracle Cloud Infrastructure Core service.
@@ -113,12 +112,6 @@ func (o GetImageShapeResultOutput) ToGetImageShapeResultOutput() GetImageShapeRe
 
 func (o GetImageShapeResultOutput) ToGetImageShapeResultOutputWithContext(ctx context.Context) GetImageShapeResultOutput {
 	return o
-}
-
-func (o GetImageShapeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetImageShapeResult] {
-	return pulumix.Output[GetImageShapeResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The provider-assigned unique ID for this managed resource.

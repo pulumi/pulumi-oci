@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Esxi Host resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -164,12 +163,6 @@ func (o GetExsiHostResultOutput) ToGetExsiHostResultOutput() GetExsiHostResultOu
 
 func (o GetExsiHostResultOutput) ToGetExsiHostResultOutputWithContext(ctx context.Context) GetExsiHostResultOutput {
 	return o
-}
-
-func (o GetExsiHostResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExsiHostResult] {
-	return pulumix.Output[GetExsiHostResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`

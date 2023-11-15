@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Security Policy Deployment resource in Oracle Cloud Infrastructure Data Safe service.
@@ -124,12 +123,6 @@ func (o LookupSecurityPolicyDeploymentResultOutput) ToLookupSecurityPolicyDeploy
 
 func (o LookupSecurityPolicyDeploymentResultOutput) ToLookupSecurityPolicyDeploymentResultOutputWithContext(ctx context.Context) LookupSecurityPolicyDeploymentResultOutput {
 	return o
-}
-
-func (o LookupSecurityPolicyDeploymentResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSecurityPolicyDeploymentResult] {
-	return pulumix.Output[LookupSecurityPolicyDeploymentResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment containing the security policy deployment.

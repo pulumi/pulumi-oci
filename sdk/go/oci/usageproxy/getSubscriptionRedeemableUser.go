@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Subscription Redeemable User resource in Oracle Cloud Infrastructure Usage Proxy service.
@@ -108,12 +107,6 @@ func (o LookupSubscriptionRedeemableUserResultOutput) ToLookupSubscriptionRedeem
 
 func (o LookupSubscriptionRedeemableUserResultOutput) ToLookupSubscriptionRedeemableUserResultOutputWithContext(ctx context.Context) LookupSubscriptionRedeemableUserResultOutput {
 	return o
-}
-
-func (o LookupSubscriptionRedeemableUserResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSubscriptionRedeemableUserResult] {
-	return pulumix.Output[LookupSubscriptionRedeemableUserResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupSubscriptionRedeemableUserResultOutput) Id() pulumi.StringOutput {

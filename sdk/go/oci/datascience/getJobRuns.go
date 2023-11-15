@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Job Runs in Oracle Cloud Infrastructure Data Science service.
@@ -139,12 +138,6 @@ func (o GetJobRunsResultOutput) ToGetJobRunsResultOutput() GetJobRunsResultOutpu
 
 func (o GetJobRunsResultOutput) ToGetJobRunsResultOutputWithContext(ctx context.Context) GetJobRunsResultOutput {
 	return o
-}
-
-func (o GetJobRunsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetJobRunsResult] {
-	return pulumix.Output[GetJobRunsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.

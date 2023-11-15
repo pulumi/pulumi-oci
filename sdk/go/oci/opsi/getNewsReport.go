@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific News Report resource in Oracle Cloud Infrastructure Opsi service.
@@ -130,12 +129,6 @@ func (o LookupNewsReportResultOutput) ToLookupNewsReportResultOutput() LookupNew
 
 func (o LookupNewsReportResultOutput) ToLookupNewsReportResultOutputWithContext(ctx context.Context) LookupNewsReportResultOutput {
 	return o
-}
-
-func (o LookupNewsReportResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNewsReportResult] {
-	return pulumix.Output[LookupNewsReportResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

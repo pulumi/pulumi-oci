@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Operations Insights Warehouse User resource in Oracle Cloud Infrastructure Opsi service.
@@ -292,12 +291,6 @@ func (i *OperationsInsightsWarehouseUser) ToOperationsInsightsWarehouseUserOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(OperationsInsightsWarehouseUserOutput)
 }
 
-func (i *OperationsInsightsWarehouseUser) ToOutput(ctx context.Context) pulumix.Output[*OperationsInsightsWarehouseUser] {
-	return pulumix.Output[*OperationsInsightsWarehouseUser]{
-		OutputState: i.ToOperationsInsightsWarehouseUserOutputWithContext(ctx).OutputState,
-	}
-}
-
 // OperationsInsightsWarehouseUserArrayInput is an input type that accepts OperationsInsightsWarehouseUserArray and OperationsInsightsWarehouseUserArrayOutput values.
 // You can construct a concrete instance of `OperationsInsightsWarehouseUserArrayInput` via:
 //
@@ -321,12 +314,6 @@ func (i OperationsInsightsWarehouseUserArray) ToOperationsInsightsWarehouseUserA
 
 func (i OperationsInsightsWarehouseUserArray) ToOperationsInsightsWarehouseUserArrayOutputWithContext(ctx context.Context) OperationsInsightsWarehouseUserArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OperationsInsightsWarehouseUserArrayOutput)
-}
-
-func (i OperationsInsightsWarehouseUserArray) ToOutput(ctx context.Context) pulumix.Output[[]*OperationsInsightsWarehouseUser] {
-	return pulumix.Output[[]*OperationsInsightsWarehouseUser]{
-		OutputState: i.ToOperationsInsightsWarehouseUserArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // OperationsInsightsWarehouseUserMapInput is an input type that accepts OperationsInsightsWarehouseUserMap and OperationsInsightsWarehouseUserMapOutput values.
@@ -354,12 +341,6 @@ func (i OperationsInsightsWarehouseUserMap) ToOperationsInsightsWarehouseUserMap
 	return pulumi.ToOutputWithContext(ctx, i).(OperationsInsightsWarehouseUserMapOutput)
 }
 
-func (i OperationsInsightsWarehouseUserMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*OperationsInsightsWarehouseUser] {
-	return pulumix.Output[map[string]*OperationsInsightsWarehouseUser]{
-		OutputState: i.ToOperationsInsightsWarehouseUserMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type OperationsInsightsWarehouseUserOutput struct{ *pulumi.OutputState }
 
 func (OperationsInsightsWarehouseUserOutput) ElementType() reflect.Type {
@@ -372,12 +353,6 @@ func (o OperationsInsightsWarehouseUserOutput) ToOperationsInsightsWarehouseUser
 
 func (o OperationsInsightsWarehouseUserOutput) ToOperationsInsightsWarehouseUserOutputWithContext(ctx context.Context) OperationsInsightsWarehouseUserOutput {
 	return o
-}
-
-func (o OperationsInsightsWarehouseUserOutput) ToOutput(ctx context.Context) pulumix.Output[*OperationsInsightsWarehouseUser] {
-	return pulumix.Output[*OperationsInsightsWarehouseUser]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -467,12 +442,6 @@ func (o OperationsInsightsWarehouseUserArrayOutput) ToOperationsInsightsWarehous
 	return o
 }
 
-func (o OperationsInsightsWarehouseUserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*OperationsInsightsWarehouseUser] {
-	return pulumix.Output[[]*OperationsInsightsWarehouseUser]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o OperationsInsightsWarehouseUserArrayOutput) Index(i pulumi.IntInput) OperationsInsightsWarehouseUserOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *OperationsInsightsWarehouseUser {
 		return vs[0].([]*OperationsInsightsWarehouseUser)[vs[1].(int)]
@@ -491,12 +460,6 @@ func (o OperationsInsightsWarehouseUserMapOutput) ToOperationsInsightsWarehouseU
 
 func (o OperationsInsightsWarehouseUserMapOutput) ToOperationsInsightsWarehouseUserMapOutputWithContext(ctx context.Context) OperationsInsightsWarehouseUserMapOutput {
 	return o
-}
-
-func (o OperationsInsightsWarehouseUserMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*OperationsInsightsWarehouseUser] {
-	return pulumix.Output[map[string]*OperationsInsightsWarehouseUser]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OperationsInsightsWarehouseUserMapOutput) MapIndex(k pulumi.StringInput) OperationsInsightsWarehouseUserOutput {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1098,12 +1097,6 @@ func (i *DomainsOauth2clientCredential) ToDomainsOauth2clientCredentialOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsOauth2clientCredentialOutput)
 }
 
-func (i *DomainsOauth2clientCredential) ToOutput(ctx context.Context) pulumix.Output[*DomainsOauth2clientCredential] {
-	return pulumix.Output[*DomainsOauth2clientCredential]{
-		OutputState: i.ToDomainsOauth2clientCredentialOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsOauth2clientCredentialArrayInput is an input type that accepts DomainsOauth2clientCredentialArray and DomainsOauth2clientCredentialArrayOutput values.
 // You can construct a concrete instance of `DomainsOauth2clientCredentialArrayInput` via:
 //
@@ -1127,12 +1120,6 @@ func (i DomainsOauth2clientCredentialArray) ToDomainsOauth2clientCredentialArray
 
 func (i DomainsOauth2clientCredentialArray) ToDomainsOauth2clientCredentialArrayOutputWithContext(ctx context.Context) DomainsOauth2clientCredentialArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsOauth2clientCredentialArrayOutput)
-}
-
-func (i DomainsOauth2clientCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsOauth2clientCredential] {
-	return pulumix.Output[[]*DomainsOauth2clientCredential]{
-		OutputState: i.ToDomainsOauth2clientCredentialArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsOauth2clientCredentialMapInput is an input type that accepts DomainsOauth2clientCredentialMap and DomainsOauth2clientCredentialMapOutput values.
@@ -1160,12 +1147,6 @@ func (i DomainsOauth2clientCredentialMap) ToDomainsOauth2clientCredentialMapOutp
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsOauth2clientCredentialMapOutput)
 }
 
-func (i DomainsOauth2clientCredentialMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsOauth2clientCredential] {
-	return pulumix.Output[map[string]*DomainsOauth2clientCredential]{
-		OutputState: i.ToDomainsOauth2clientCredentialMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsOauth2clientCredentialOutput struct{ *pulumi.OutputState }
 
 func (DomainsOauth2clientCredentialOutput) ElementType() reflect.Type {
@@ -1178,12 +1159,6 @@ func (o DomainsOauth2clientCredentialOutput) ToDomainsOauth2clientCredentialOutp
 
 func (o DomainsOauth2clientCredentialOutput) ToDomainsOauth2clientCredentialOutputWithContext(ctx context.Context) DomainsOauth2clientCredentialOutput {
 	return o
-}
-
-func (o DomainsOauth2clientCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsOauth2clientCredential] {
-	return pulumix.Output[*DomainsOauth2clientCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -1520,12 +1495,6 @@ func (o DomainsOauth2clientCredentialArrayOutput) ToDomainsOauth2clientCredentia
 	return o
 }
 
-func (o DomainsOauth2clientCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsOauth2clientCredential] {
-	return pulumix.Output[[]*DomainsOauth2clientCredential]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DomainsOauth2clientCredentialArrayOutput) Index(i pulumi.IntInput) DomainsOauth2clientCredentialOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DomainsOauth2clientCredential {
 		return vs[0].([]*DomainsOauth2clientCredential)[vs[1].(int)]
@@ -1544,12 +1513,6 @@ func (o DomainsOauth2clientCredentialMapOutput) ToDomainsOauth2clientCredentialM
 
 func (o DomainsOauth2clientCredentialMapOutput) ToDomainsOauth2clientCredentialMapOutputWithContext(ctx context.Context) DomainsOauth2clientCredentialMapOutput {
 	return o
-}
-
-func (o DomainsOauth2clientCredentialMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsOauth2clientCredential] {
-	return pulumix.Output[map[string]*DomainsOauth2clientCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsOauth2clientCredentialMapOutput) MapIndex(k pulumi.StringInput) DomainsOauth2clientCredentialOutput {

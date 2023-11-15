@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Mysql Db System resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -170,12 +169,6 @@ func (o LookupMysqlDbSystemResultOutput) ToLookupMysqlDbSystemResultOutput() Loo
 
 func (o LookupMysqlDbSystemResultOutput) ToLookupMysqlDbSystemResultOutputWithContext(ctx context.Context) LookupMysqlDbSystemResultOutput {
 	return o
-}
-
-func (o LookupMysqlDbSystemResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupMysqlDbSystemResult] {
-	return pulumix.Output[LookupMysqlDbSystemResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupMysqlDbSystemResultOutput) AdminPassword() pulumi.StringOutput {

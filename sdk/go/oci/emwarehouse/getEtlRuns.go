@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Em Warehouse Etl Runs in Oracle Cloud Infrastructure Em Warehouse service.
@@ -119,12 +118,6 @@ func (o GetEtlRunsResultOutput) ToGetEtlRunsResultOutput() GetEtlRunsResultOutpu
 
 func (o GetEtlRunsResultOutput) ToGetEtlRunsResultOutputWithContext(ctx context.Context) GetEtlRunsResultOutput {
 	return o
-}
-
-func (o GetEtlRunsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetEtlRunsResult] {
-	return pulumix.Output[GetEtlRunsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier

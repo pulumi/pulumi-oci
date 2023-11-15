@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Database Registration resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -149,12 +148,6 @@ func (o LookupDatabaseRegistrationResultOutput) ToLookupDatabaseRegistrationResu
 
 func (o LookupDatabaseRegistrationResultOutput) ToLookupDatabaseRegistrationResultOutputWithContext(ctx context.Context) LookupDatabaseRegistrationResultOutput {
 	return o
-}
-
-func (o LookupDatabaseRegistrationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDatabaseRegistrationResult] {
-	return pulumix.Output[LookupDatabaseRegistrationResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Credential store alias.

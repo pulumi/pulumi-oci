@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Dr Protection Group resource in Oracle Cloud Infrastructure Disaster Recovery service.
@@ -132,12 +131,6 @@ func (o LookupDrProtectionGroupResultOutput) ToLookupDrProtectionGroupResultOutp
 
 func (o LookupDrProtectionGroupResultOutput) ToLookupDrProtectionGroupResultOutputWithContext(ctx context.Context) LookupDrProtectionGroupResultOutput {
 	return o
-}
-
-func (o LookupDrProtectionGroupResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDrProtectionGroupResult] {
-	return pulumix.Output[LookupDrProtectionGroupResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupDrProtectionGroupResultOutput) Associations() GetDrProtectionGroupAssociationArrayOutput {

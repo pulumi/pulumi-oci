@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Oce Instance resource in Oracle Cloud Infrastructure Content and Experience service.
@@ -151,12 +150,6 @@ func (o GetOceInstanceResultOutput) ToGetOceInstanceResultOutput() GetOceInstanc
 
 func (o GetOceInstanceResultOutput) ToGetOceInstanceResultOutputWithContext(ctx context.Context) GetOceInstanceResultOutput {
 	return o
-}
-
-func (o GetOceInstanceResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetOceInstanceResult] {
-	return pulumix.Output[GetOceInstanceResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // a list of add-on features for the ocm instance

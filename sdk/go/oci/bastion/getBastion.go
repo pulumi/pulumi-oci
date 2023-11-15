@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Bastion resource in Oracle Cloud Infrastructure Bastion service.
@@ -138,12 +137,6 @@ func (o LookupBastionResultOutput) ToLookupBastionResultOutput() LookupBastionRe
 
 func (o LookupBastionResultOutput) ToLookupBastionResultOutputWithContext(ctx context.Context) LookupBastionResultOutput {
 	return o
-}
-
-func (o LookupBastionResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupBastionResult] {
-	return pulumix.Output[LookupBastionResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupBastionResultOutput) BastionId() pulumi.StringOutput {

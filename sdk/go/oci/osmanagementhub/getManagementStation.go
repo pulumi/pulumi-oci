@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -136,12 +135,6 @@ func (o LookupManagementStationResultOutput) ToLookupManagementStationResultOutp
 
 func (o LookupManagementStationResultOutput) ToLookupManagementStationResultOutputWithContext(ctx context.Context) LookupManagementStationResultOutput {
 	return o
-}
-
-func (o LookupManagementStationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupManagementStationResult] {
-	return pulumix.Output[LookupManagementStationResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the tenancy containing the Management Station.

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the External Db System Discovery resource in Oracle Cloud Infrastructure Database Management service.
@@ -193,12 +192,6 @@ func (i *ExternalDbSystemDiscovery) ToExternalDbSystemDiscoveryOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbSystemDiscoveryOutput)
 }
 
-func (i *ExternalDbSystemDiscovery) ToOutput(ctx context.Context) pulumix.Output[*ExternalDbSystemDiscovery] {
-	return pulumix.Output[*ExternalDbSystemDiscovery]{
-		OutputState: i.ToExternalDbSystemDiscoveryOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExternalDbSystemDiscoveryArrayInput is an input type that accepts ExternalDbSystemDiscoveryArray and ExternalDbSystemDiscoveryArrayOutput values.
 // You can construct a concrete instance of `ExternalDbSystemDiscoveryArrayInput` via:
 //
@@ -222,12 +215,6 @@ func (i ExternalDbSystemDiscoveryArray) ToExternalDbSystemDiscoveryArrayOutput()
 
 func (i ExternalDbSystemDiscoveryArray) ToExternalDbSystemDiscoveryArrayOutputWithContext(ctx context.Context) ExternalDbSystemDiscoveryArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbSystemDiscoveryArrayOutput)
-}
-
-func (i ExternalDbSystemDiscoveryArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalDbSystemDiscovery] {
-	return pulumix.Output[[]*ExternalDbSystemDiscovery]{
-		OutputState: i.ToExternalDbSystemDiscoveryArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ExternalDbSystemDiscoveryMapInput is an input type that accepts ExternalDbSystemDiscoveryMap and ExternalDbSystemDiscoveryMapOutput values.
@@ -255,12 +242,6 @@ func (i ExternalDbSystemDiscoveryMap) ToExternalDbSystemDiscoveryMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbSystemDiscoveryMapOutput)
 }
 
-func (i ExternalDbSystemDiscoveryMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalDbSystemDiscovery] {
-	return pulumix.Output[map[string]*ExternalDbSystemDiscovery]{
-		OutputState: i.ToExternalDbSystemDiscoveryMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExternalDbSystemDiscoveryOutput struct{ *pulumi.OutputState }
 
 func (ExternalDbSystemDiscoveryOutput) ElementType() reflect.Type {
@@ -273,12 +254,6 @@ func (o ExternalDbSystemDiscoveryOutput) ToExternalDbSystemDiscoveryOutput() Ext
 
 func (o ExternalDbSystemDiscoveryOutput) ToExternalDbSystemDiscoveryOutputWithContext(ctx context.Context) ExternalDbSystemDiscoveryOutput {
 	return o
-}
-
-func (o ExternalDbSystemDiscoveryOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalDbSystemDiscovery] {
-	return pulumix.Output[*ExternalDbSystemDiscovery]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
@@ -358,12 +333,6 @@ func (o ExternalDbSystemDiscoveryArrayOutput) ToExternalDbSystemDiscoveryArrayOu
 	return o
 }
 
-func (o ExternalDbSystemDiscoveryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalDbSystemDiscovery] {
-	return pulumix.Output[[]*ExternalDbSystemDiscovery]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ExternalDbSystemDiscoveryArrayOutput) Index(i pulumi.IntInput) ExternalDbSystemDiscoveryOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ExternalDbSystemDiscovery {
 		return vs[0].([]*ExternalDbSystemDiscovery)[vs[1].(int)]
@@ -382,12 +351,6 @@ func (o ExternalDbSystemDiscoveryMapOutput) ToExternalDbSystemDiscoveryMapOutput
 
 func (o ExternalDbSystemDiscoveryMapOutput) ToExternalDbSystemDiscoveryMapOutputWithContext(ctx context.Context) ExternalDbSystemDiscoveryMapOutput {
 	return o
-}
-
-func (o ExternalDbSystemDiscoveryMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalDbSystemDiscovery] {
-	return pulumix.Output[map[string]*ExternalDbSystemDiscovery]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalDbSystemDiscoveryMapOutput) MapIndex(k pulumi.StringInput) ExternalDbSystemDiscoveryOutput {

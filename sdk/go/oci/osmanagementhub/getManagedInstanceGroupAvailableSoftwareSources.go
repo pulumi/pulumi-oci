@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Instance Group Available Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
@@ -126,12 +125,6 @@ func (o GetManagedInstanceGroupAvailableSoftwareSourcesResultOutput) ToGetManage
 
 func (o GetManagedInstanceGroupAvailableSoftwareSourcesResultOutput) ToGetManagedInstanceGroupAvailableSoftwareSourcesResultOutputWithContext(ctx context.Context) GetManagedInstanceGroupAvailableSoftwareSourcesResultOutput {
 	return o
-}
-
-func (o GetManagedInstanceGroupAvailableSoftwareSourcesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupAvailableSoftwareSourcesResult] {
-	return pulumix.Output[GetManagedInstanceGroupAvailableSoftwareSourcesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of available_software_source_collection.

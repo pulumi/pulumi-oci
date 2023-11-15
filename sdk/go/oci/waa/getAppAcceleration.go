@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Web App Acceleration resource in Oracle Cloud Infrastructure Waa service.
@@ -124,12 +123,6 @@ func (o LookupAppAccelerationResultOutput) ToLookupAppAccelerationResultOutput()
 
 func (o LookupAppAccelerationResultOutput) ToLookupAppAccelerationResultOutputWithContext(ctx context.Context) LookupAppAccelerationResultOutput {
 	return o
-}
-
-func (o LookupAppAccelerationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAppAccelerationResult] {
-	return pulumix.Output[LookupAppAccelerationResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Type of the WebAppFirewall, as example LOAD_BALANCER.

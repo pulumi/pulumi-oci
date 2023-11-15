@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Fleet Java Migration Analysis Result resource in Oracle Cloud Infrastructure Jms service.
@@ -135,12 +134,6 @@ func (o GetFleetJavaMigrationAnalysisResultResultOutput) ToGetFleetJavaMigration
 
 func (o GetFleetJavaMigrationAnalysisResultResultOutput) ToGetFleetJavaMigrationAnalysisResultResultOutputWithContext(ctx context.Context) GetFleetJavaMigrationAnalysisResultResultOutput {
 	return o
-}
-
-func (o GetFleetJavaMigrationAnalysisResultResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetJavaMigrationAnalysisResultResult] {
-	return pulumix.Output[GetFleetJavaMigrationAnalysisResultResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Execution type of the application for an application type, such as WAR and EAR, that is deployed or installed.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Monitored Instances in Oracle Cloud Infrastructure Appmgmt Control service.
@@ -113,12 +112,6 @@ func (o GetMonitoredInstancesResultOutput) ToGetMonitoredInstancesResultOutput()
 
 func (o GetMonitoredInstancesResultOutput) ToGetMonitoredInstancesResultOutputWithContext(ctx context.Context) GetMonitoredInstancesResultOutput {
 	return o
-}
-
-func (o GetMonitoredInstancesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredInstancesResult] {
-	return pulumix.Output[GetMonitoredInstancesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)

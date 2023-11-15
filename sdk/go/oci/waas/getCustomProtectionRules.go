@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Custom Protection Rules in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -136,12 +135,6 @@ func (o GetCustomProtectionRulesResultOutput) ToGetCustomProtectionRulesResultOu
 
 func (o GetCustomProtectionRulesResultOutput) ToGetCustomProtectionRulesResultOutputWithContext(ctx context.Context) GetCustomProtectionRulesResultOutput {
 	return o
-}
-
-func (o GetCustomProtectionRulesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCustomProtectionRulesResult] {
-	return pulumix.Output[GetCustomProtectionRulesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule's compartment.

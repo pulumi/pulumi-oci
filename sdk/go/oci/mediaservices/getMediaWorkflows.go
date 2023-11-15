@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Media Workflows in Oracle Cloud Infrastructure Media Services service.
@@ -125,12 +124,6 @@ func (o GetMediaWorkflowsResultOutput) ToGetMediaWorkflowsResultOutput() GetMedi
 
 func (o GetMediaWorkflowsResultOutput) ToGetMediaWorkflowsResultOutputWithContext(ctx context.Context) GetMediaWorkflowsResultOutput {
 	return o
-}
-
-func (o GetMediaWorkflowsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowsResult] {
-	return pulumix.Output[GetMediaWorkflowsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier.

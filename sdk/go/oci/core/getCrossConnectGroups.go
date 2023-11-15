@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Cross Connect Groups in Oracle Cloud Infrastructure Core service.
@@ -120,12 +119,6 @@ func (o GetCrossConnectGroupsResultOutput) ToGetCrossConnectGroupsResultOutput()
 
 func (o GetCrossConnectGroupsResultOutput) ToGetCrossConnectGroupsResultOutputWithContext(ctx context.Context) GetCrossConnectGroupsResultOutput {
 	return o
-}
-
-func (o GetCrossConnectGroupsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCrossConnectGroupsResult] {
-	return pulumix.Output[GetCrossConnectGroupsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cross-connect group.

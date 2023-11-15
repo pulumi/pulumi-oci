@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides the Artifact By Path resource in Oracle Cloud Infrastructure Generic Artifacts Content service. This resource supports upload/download the content of a generic artifact by specifying the repository id, artifact path, and artifact version
@@ -247,12 +246,6 @@ func (i *ArtifactByPath) ToArtifactByPathOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(ArtifactByPathOutput)
 }
 
-func (i *ArtifactByPath) ToOutput(ctx context.Context) pulumix.Output[*ArtifactByPath] {
-	return pulumix.Output[*ArtifactByPath]{
-		OutputState: i.ToArtifactByPathOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ArtifactByPathArrayInput is an input type that accepts ArtifactByPathArray and ArtifactByPathArrayOutput values.
 // You can construct a concrete instance of `ArtifactByPathArrayInput` via:
 //
@@ -276,12 +269,6 @@ func (i ArtifactByPathArray) ToArtifactByPathArrayOutput() ArtifactByPathArrayOu
 
 func (i ArtifactByPathArray) ToArtifactByPathArrayOutputWithContext(ctx context.Context) ArtifactByPathArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ArtifactByPathArrayOutput)
-}
-
-func (i ArtifactByPathArray) ToOutput(ctx context.Context) pulumix.Output[[]*ArtifactByPath] {
-	return pulumix.Output[[]*ArtifactByPath]{
-		OutputState: i.ToArtifactByPathArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ArtifactByPathMapInput is an input type that accepts ArtifactByPathMap and ArtifactByPathMapOutput values.
@@ -309,12 +296,6 @@ func (i ArtifactByPathMap) ToArtifactByPathMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ArtifactByPathMapOutput)
 }
 
-func (i ArtifactByPathMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ArtifactByPath] {
-	return pulumix.Output[map[string]*ArtifactByPath]{
-		OutputState: i.ToArtifactByPathMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ArtifactByPathOutput struct{ *pulumi.OutputState }
 
 func (ArtifactByPathOutput) ElementType() reflect.Type {
@@ -327,12 +308,6 @@ func (o ArtifactByPathOutput) ToArtifactByPathOutput() ArtifactByPathOutput {
 
 func (o ArtifactByPathOutput) ToArtifactByPathOutputWithContext(ctx context.Context) ArtifactByPathOutput {
 	return o
-}
-
-func (o ArtifactByPathOutput) ToOutput(ctx context.Context) pulumix.Output[*ArtifactByPath] {
-	return pulumix.Output[*ArtifactByPath]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ArtifactByPathOutput) ArtifactId() pulumi.StringOutput {
@@ -421,12 +396,6 @@ func (o ArtifactByPathArrayOutput) ToArtifactByPathArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o ArtifactByPathArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ArtifactByPath] {
-	return pulumix.Output[[]*ArtifactByPath]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ArtifactByPathArrayOutput) Index(i pulumi.IntInput) ArtifactByPathOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ArtifactByPath {
 		return vs[0].([]*ArtifactByPath)[vs[1].(int)]
@@ -445,12 +414,6 @@ func (o ArtifactByPathMapOutput) ToArtifactByPathMapOutput() ArtifactByPathMapOu
 
 func (o ArtifactByPathMapOutput) ToArtifactByPathMapOutputWithContext(ctx context.Context) ArtifactByPathMapOutput {
 	return o
-}
-
-func (o ArtifactByPathMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ArtifactByPath] {
-	return pulumix.Output[map[string]*ArtifactByPath]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ArtifactByPathMapOutput) MapIndex(k pulumi.StringInput) ArtifactByPathOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Metric Extensions in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -140,12 +139,6 @@ func (o GetMetricExtensionsResultOutput) ToGetMetricExtensionsResultOutput() Get
 
 func (o GetMetricExtensionsResultOutput) ToGetMetricExtensionsResultOutputWithContext(ctx context.Context) GetMetricExtensionsResultOutput {
 	return o
-}
-
-func (o GetMetricExtensionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsResult] {
-	return pulumix.Output[GetMetricExtensionsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)

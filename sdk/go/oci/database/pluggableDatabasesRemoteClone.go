@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Pluggable Databases Remote Clone resource in Oracle Cloud Infrastructure Database service.
@@ -324,12 +323,6 @@ func (i *PluggableDatabasesRemoteClone) ToPluggableDatabasesRemoteCloneOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(PluggableDatabasesRemoteCloneOutput)
 }
 
-func (i *PluggableDatabasesRemoteClone) ToOutput(ctx context.Context) pulumix.Output[*PluggableDatabasesRemoteClone] {
-	return pulumix.Output[*PluggableDatabasesRemoteClone]{
-		OutputState: i.ToPluggableDatabasesRemoteCloneOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PluggableDatabasesRemoteCloneArrayInput is an input type that accepts PluggableDatabasesRemoteCloneArray and PluggableDatabasesRemoteCloneArrayOutput values.
 // You can construct a concrete instance of `PluggableDatabasesRemoteCloneArrayInput` via:
 //
@@ -353,12 +346,6 @@ func (i PluggableDatabasesRemoteCloneArray) ToPluggableDatabasesRemoteCloneArray
 
 func (i PluggableDatabasesRemoteCloneArray) ToPluggableDatabasesRemoteCloneArrayOutputWithContext(ctx context.Context) PluggableDatabasesRemoteCloneArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PluggableDatabasesRemoteCloneArrayOutput)
-}
-
-func (i PluggableDatabasesRemoteCloneArray) ToOutput(ctx context.Context) pulumix.Output[[]*PluggableDatabasesRemoteClone] {
-	return pulumix.Output[[]*PluggableDatabasesRemoteClone]{
-		OutputState: i.ToPluggableDatabasesRemoteCloneArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // PluggableDatabasesRemoteCloneMapInput is an input type that accepts PluggableDatabasesRemoteCloneMap and PluggableDatabasesRemoteCloneMapOutput values.
@@ -386,12 +373,6 @@ func (i PluggableDatabasesRemoteCloneMap) ToPluggableDatabasesRemoteCloneMapOutp
 	return pulumi.ToOutputWithContext(ctx, i).(PluggableDatabasesRemoteCloneMapOutput)
 }
 
-func (i PluggableDatabasesRemoteCloneMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*PluggableDatabasesRemoteClone] {
-	return pulumix.Output[map[string]*PluggableDatabasesRemoteClone]{
-		OutputState: i.ToPluggableDatabasesRemoteCloneMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PluggableDatabasesRemoteCloneOutput struct{ *pulumi.OutputState }
 
 func (PluggableDatabasesRemoteCloneOutput) ElementType() reflect.Type {
@@ -404,12 +385,6 @@ func (o PluggableDatabasesRemoteCloneOutput) ToPluggableDatabasesRemoteCloneOutp
 
 func (o PluggableDatabasesRemoteCloneOutput) ToPluggableDatabasesRemoteCloneOutputWithContext(ctx context.Context) PluggableDatabasesRemoteCloneOutput {
 	return o
-}
-
-func (o PluggableDatabasesRemoteCloneOutput) ToOutput(ctx context.Context) pulumix.Output[*PluggableDatabasesRemoteClone] {
-	return pulumix.Output[*PluggableDatabasesRemoteClone]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
@@ -542,12 +517,6 @@ func (o PluggableDatabasesRemoteCloneArrayOutput) ToPluggableDatabasesRemoteClon
 	return o
 }
 
-func (o PluggableDatabasesRemoteCloneArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*PluggableDatabasesRemoteClone] {
-	return pulumix.Output[[]*PluggableDatabasesRemoteClone]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o PluggableDatabasesRemoteCloneArrayOutput) Index(i pulumi.IntInput) PluggableDatabasesRemoteCloneOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *PluggableDatabasesRemoteClone {
 		return vs[0].([]*PluggableDatabasesRemoteClone)[vs[1].(int)]
@@ -566,12 +535,6 @@ func (o PluggableDatabasesRemoteCloneMapOutput) ToPluggableDatabasesRemoteCloneM
 
 func (o PluggableDatabasesRemoteCloneMapOutput) ToPluggableDatabasesRemoteCloneMapOutputWithContext(ctx context.Context) PluggableDatabasesRemoteCloneMapOutput {
 	return o
-}
-
-func (o PluggableDatabasesRemoteCloneMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*PluggableDatabasesRemoteClone] {
-	return pulumix.Output[map[string]*PluggableDatabasesRemoteClone]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PluggableDatabasesRemoteCloneMapOutput) MapIndex(k pulumi.StringInput) PluggableDatabasesRemoteCloneOutput {

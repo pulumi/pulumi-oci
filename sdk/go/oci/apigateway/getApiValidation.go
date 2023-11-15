@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Api Validation resource in Oracle Cloud Infrastructure API Gateway service.
@@ -102,12 +101,6 @@ func (o LookupApiValidationResultOutput) ToLookupApiValidationResultOutput() Loo
 
 func (o LookupApiValidationResultOutput) ToLookupApiValidationResultOutputWithContext(ctx context.Context) LookupApiValidationResultOutput {
 	return o
-}
-
-func (o LookupApiValidationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupApiValidationResult] {
-	return pulumix.Output[LookupApiValidationResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupApiValidationResultOutput) ApiId() pulumi.StringOutput {

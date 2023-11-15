@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Pipeline Run resource in Oracle Cloud Infrastructure Data Science service.
@@ -141,12 +140,6 @@ func (o LookupPipelineRunResultOutput) ToLookupPipelineRunResultOutput() LookupP
 
 func (o LookupPipelineRunResultOutput) ToLookupPipelineRunResultOutputWithContext(ctx context.Context) LookupPipelineRunResultOutput {
 	return o
-}
-
-func (o LookupPipelineRunResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupPipelineRunResult] {
-	return pulumix.Output[LookupPipelineRunResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline run.

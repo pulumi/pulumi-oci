@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Encrypted Data resource in Oracle Cloud Infrastructure Kms service.
@@ -227,12 +226,6 @@ func (i *EncryptedData) ToEncryptedDataOutputWithContext(ctx context.Context) En
 	return pulumi.ToOutputWithContext(ctx, i).(EncryptedDataOutput)
 }
 
-func (i *EncryptedData) ToOutput(ctx context.Context) pulumix.Output[*EncryptedData] {
-	return pulumix.Output[*EncryptedData]{
-		OutputState: i.ToEncryptedDataOutputWithContext(ctx).OutputState,
-	}
-}
-
 // EncryptedDataArrayInput is an input type that accepts EncryptedDataArray and EncryptedDataArrayOutput values.
 // You can construct a concrete instance of `EncryptedDataArrayInput` via:
 //
@@ -256,12 +249,6 @@ func (i EncryptedDataArray) ToEncryptedDataArrayOutput() EncryptedDataArrayOutpu
 
 func (i EncryptedDataArray) ToEncryptedDataArrayOutputWithContext(ctx context.Context) EncryptedDataArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(EncryptedDataArrayOutput)
-}
-
-func (i EncryptedDataArray) ToOutput(ctx context.Context) pulumix.Output[[]*EncryptedData] {
-	return pulumix.Output[[]*EncryptedData]{
-		OutputState: i.ToEncryptedDataArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // EncryptedDataMapInput is an input type that accepts EncryptedDataMap and EncryptedDataMapOutput values.
@@ -289,12 +276,6 @@ func (i EncryptedDataMap) ToEncryptedDataMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(EncryptedDataMapOutput)
 }
 
-func (i EncryptedDataMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*EncryptedData] {
-	return pulumix.Output[map[string]*EncryptedData]{
-		OutputState: i.ToEncryptedDataMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type EncryptedDataOutput struct{ *pulumi.OutputState }
 
 func (EncryptedDataOutput) ElementType() reflect.Type {
@@ -307,12 +288,6 @@ func (o EncryptedDataOutput) ToEncryptedDataOutput() EncryptedDataOutput {
 
 func (o EncryptedDataOutput) ToEncryptedDataOutputWithContext(ctx context.Context) EncryptedDataOutput {
 	return o
-}
-
-func (o EncryptedDataOutput) ToOutput(ctx context.Context) pulumix.Output[*EncryptedData] {
-	return pulumix.Output[*EncryptedData]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
@@ -372,12 +347,6 @@ func (o EncryptedDataArrayOutput) ToEncryptedDataArrayOutputWithContext(ctx cont
 	return o
 }
 
-func (o EncryptedDataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*EncryptedData] {
-	return pulumix.Output[[]*EncryptedData]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o EncryptedDataArrayOutput) Index(i pulumi.IntInput) EncryptedDataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *EncryptedData {
 		return vs[0].([]*EncryptedData)[vs[1].(int)]
@@ -396,12 +365,6 @@ func (o EncryptedDataMapOutput) ToEncryptedDataMapOutput() EncryptedDataMapOutpu
 
 func (o EncryptedDataMapOutput) ToEncryptedDataMapOutputWithContext(ctx context.Context) EncryptedDataMapOutput {
 	return o
-}
-
-func (o EncryptedDataMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*EncryptedData] {
-	return pulumix.Output[map[string]*EncryptedData]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o EncryptedDataMapOutput) MapIndex(k pulumi.StringInput) EncryptedDataOutput {

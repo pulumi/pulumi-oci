@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Monitored Resource Types in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -153,12 +152,6 @@ func (o GetMonitoredResourceTypesResultOutput) ToGetMonitoredResourceTypesResult
 
 func (o GetMonitoredResourceTypesResultOutput) ToGetMonitoredResourceTypesResultOutputWithContext(ctx context.Context) GetMonitoredResourceTypesResultOutput {
 	return o
-}
-
-func (o GetMonitoredResourceTypesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTypesResult] {
-	return pulumix.Output[GetMonitoredResourceTypesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.

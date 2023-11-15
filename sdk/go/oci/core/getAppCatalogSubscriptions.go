@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of App Catalog Subscriptions in Oracle Cloud Infrastructure Core service.
@@ -113,12 +112,6 @@ func (o GetAppCatalogSubscriptionsResultOutput) ToGetAppCatalogSubscriptionsResu
 
 func (o GetAppCatalogSubscriptionsResultOutput) ToGetAppCatalogSubscriptionsResultOutputWithContext(ctx context.Context) GetAppCatalogSubscriptionsResultOutput {
 	return o
-}
-
-func (o GetAppCatalogSubscriptionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppCatalogSubscriptionsResult] {
-	return pulumix.Output[GetAppCatalogSubscriptionsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of app_catalog_subscriptions.

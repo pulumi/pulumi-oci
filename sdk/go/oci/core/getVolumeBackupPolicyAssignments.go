@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Volume Backup Policy Assignments in Oracle Cloud Infrastructure Core service.
@@ -108,12 +107,6 @@ func (o GetVolumeBackupPolicyAssignmentsResultOutput) ToGetVolumeBackupPolicyAss
 
 func (o GetVolumeBackupPolicyAssignmentsResultOutput) ToGetVolumeBackupPolicyAssignmentsResultOutputWithContext(ctx context.Context) GetVolumeBackupPolicyAssignmentsResultOutput {
 	return o
-}
-
-func (o GetVolumeBackupPolicyAssignmentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumeBackupPolicyAssignmentsResult] {
-	return pulumix.Output[GetVolumeBackupPolicyAssignmentsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the volume the policy has been assigned to.

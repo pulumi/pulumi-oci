@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Repository Commit resource in Oracle Cloud Infrastructure Devops service.
@@ -123,12 +122,6 @@ func (o GetRepositoryCommitResultOutput) ToGetRepositoryCommitResultOutput() Get
 
 func (o GetRepositoryCommitResultOutput) ToGetRepositoryCommitResultOutputWithContext(ctx context.Context) GetRepositoryCommitResultOutput {
 	return o
-}
-
-func (o GetRepositoryCommitResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRepositoryCommitResult] {
-	return pulumix.Output[GetRepositoryCommitResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Email of the author of the repository.

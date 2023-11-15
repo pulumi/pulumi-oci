@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Database User Roles in Oracle Cloud Infrastructure Database Management service.
@@ -118,12 +117,6 @@ func (o GetManagedDatabaseUserRolesResultOutput) ToGetManagedDatabaseUserRolesRe
 
 func (o GetManagedDatabaseUserRolesResultOutput) ToGetManagedDatabaseUserRolesResultOutputWithContext(ctx context.Context) GetManagedDatabaseUserRolesResultOutput {
 	return o
-}
-
-func (o GetManagedDatabaseUserRolesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseUserRolesResult] {
-	return pulumix.Output[GetManagedDatabaseUserRolesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagedDatabaseUserRolesResultOutput) Filters() GetManagedDatabaseUserRolesFilterArrayOutput {

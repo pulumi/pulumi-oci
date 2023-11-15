@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Data Science Private Endpoint resource in Oracle Cloud Infrastructure Data Science service.
@@ -129,12 +128,6 @@ func (o LookupPrivateEndpointResultOutput) ToLookupPrivateEndpointResultOutput()
 
 func (o LookupPrivateEndpointResultOutput) ToLookupPrivateEndpointResultOutputWithContext(ctx context.Context) LookupPrivateEndpointResultOutput {
 	return o
-}
-
-func (o LookupPrivateEndpointResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupPrivateEndpointResult] {
-	return pulumix.Output[LookupPrivateEndpointResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create private endpoint.

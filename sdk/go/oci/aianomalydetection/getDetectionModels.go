@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Models in Oracle Cloud Infrastructure Ai Anomaly Detection service.
@@ -127,12 +126,6 @@ func (o GetDetectionModelsResultOutput) ToGetDetectionModelsResultOutput() GetDe
 
 func (o GetDetectionModelsResultOutput) ToGetDetectionModelsResultOutputWithContext(ctx context.Context) GetDetectionModelsResultOutput {
 	return o
-}
-
-func (o GetDetectionModelsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelsResult] {
-	return pulumix.Output[GetDetectionModelsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID for the model's compartment.

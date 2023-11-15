@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type MaskData struct {
@@ -103,12 +102,6 @@ func (i *MaskData) ToMaskDataOutputWithContext(ctx context.Context) MaskDataOutp
 	return pulumi.ToOutputWithContext(ctx, i).(MaskDataOutput)
 }
 
-func (i *MaskData) ToOutput(ctx context.Context) pulumix.Output[*MaskData] {
-	return pulumix.Output[*MaskData]{
-		OutputState: i.ToMaskDataOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MaskDataArrayInput is an input type that accepts MaskDataArray and MaskDataArrayOutput values.
 // You can construct a concrete instance of `MaskDataArrayInput` via:
 //
@@ -132,12 +125,6 @@ func (i MaskDataArray) ToMaskDataArrayOutput() MaskDataArrayOutput {
 
 func (i MaskDataArray) ToMaskDataArrayOutputWithContext(ctx context.Context) MaskDataArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MaskDataArrayOutput)
-}
-
-func (i MaskDataArray) ToOutput(ctx context.Context) pulumix.Output[[]*MaskData] {
-	return pulumix.Output[[]*MaskData]{
-		OutputState: i.ToMaskDataArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MaskDataMapInput is an input type that accepts MaskDataMap and MaskDataMapOutput values.
@@ -165,12 +152,6 @@ func (i MaskDataMap) ToMaskDataMapOutputWithContext(ctx context.Context) MaskDat
 	return pulumi.ToOutputWithContext(ctx, i).(MaskDataMapOutput)
 }
 
-func (i MaskDataMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MaskData] {
-	return pulumix.Output[map[string]*MaskData]{
-		OutputState: i.ToMaskDataMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MaskDataOutput struct{ *pulumi.OutputState }
 
 func (MaskDataOutput) ElementType() reflect.Type {
@@ -183,12 +164,6 @@ func (o MaskDataOutput) ToMaskDataOutput() MaskDataOutput {
 
 func (o MaskDataOutput) ToMaskDataOutputWithContext(ctx context.Context) MaskDataOutput {
 	return o
-}
-
-func (o MaskDataOutput) ToOutput(ctx context.Context) pulumix.Output[*MaskData] {
-	return pulumix.Output[*MaskData]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MaskDataOutput) MaskingPolicyId() pulumi.StringOutput {
@@ -213,12 +188,6 @@ func (o MaskDataArrayOutput) ToMaskDataArrayOutputWithContext(ctx context.Contex
 	return o
 }
 
-func (o MaskDataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MaskData] {
-	return pulumix.Output[[]*MaskData]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o MaskDataArrayOutput) Index(i pulumi.IntInput) MaskDataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *MaskData {
 		return vs[0].([]*MaskData)[vs[1].(int)]
@@ -237,12 +206,6 @@ func (o MaskDataMapOutput) ToMaskDataMapOutput() MaskDataMapOutput {
 
 func (o MaskDataMapOutput) ToMaskDataMapOutputWithContext(ctx context.Context) MaskDataMapOutput {
 	return o
-}
-
-func (o MaskDataMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MaskData] {
-	return pulumix.Output[map[string]*MaskData]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MaskDataMapOutput) MapIndex(k pulumi.StringInput) MaskDataOutput {

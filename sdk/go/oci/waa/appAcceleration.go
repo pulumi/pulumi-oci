@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Web App Acceleration resource in Oracle Cloud Infrastructure Waa service.
@@ -268,12 +267,6 @@ func (i *AppAcceleration) ToAppAccelerationOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(AppAccelerationOutput)
 }
 
-func (i *AppAcceleration) ToOutput(ctx context.Context) pulumix.Output[*AppAcceleration] {
-	return pulumix.Output[*AppAcceleration]{
-		OutputState: i.ToAppAccelerationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AppAccelerationArrayInput is an input type that accepts AppAccelerationArray and AppAccelerationArrayOutput values.
 // You can construct a concrete instance of `AppAccelerationArrayInput` via:
 //
@@ -297,12 +290,6 @@ func (i AppAccelerationArray) ToAppAccelerationArrayOutput() AppAccelerationArra
 
 func (i AppAccelerationArray) ToAppAccelerationArrayOutputWithContext(ctx context.Context) AppAccelerationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppAccelerationArrayOutput)
-}
-
-func (i AppAccelerationArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppAcceleration] {
-	return pulumix.Output[[]*AppAcceleration]{
-		OutputState: i.ToAppAccelerationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AppAccelerationMapInput is an input type that accepts AppAccelerationMap and AppAccelerationMapOutput values.
@@ -330,12 +317,6 @@ func (i AppAccelerationMap) ToAppAccelerationMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(AppAccelerationMapOutput)
 }
 
-func (i AppAccelerationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppAcceleration] {
-	return pulumix.Output[map[string]*AppAcceleration]{
-		OutputState: i.ToAppAccelerationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AppAccelerationOutput struct{ *pulumi.OutputState }
 
 func (AppAccelerationOutput) ElementType() reflect.Type {
@@ -348,12 +329,6 @@ func (o AppAccelerationOutput) ToAppAccelerationOutput() AppAccelerationOutput {
 
 func (o AppAccelerationOutput) ToAppAccelerationOutputWithContext(ctx context.Context) AppAccelerationOutput {
 	return o
-}
-
-func (o AppAccelerationOutput) ToOutput(ctx context.Context) pulumix.Output[*AppAcceleration] {
-	return pulumix.Output[*AppAcceleration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Type of the WebAppFirewall, as example LOAD_BALANCER.
@@ -433,12 +408,6 @@ func (o AppAccelerationArrayOutput) ToAppAccelerationArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o AppAccelerationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppAcceleration] {
-	return pulumix.Output[[]*AppAcceleration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AppAccelerationArrayOutput) Index(i pulumi.IntInput) AppAccelerationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppAcceleration {
 		return vs[0].([]*AppAcceleration)[vs[1].(int)]
@@ -457,12 +426,6 @@ func (o AppAccelerationMapOutput) ToAppAccelerationMapOutput() AppAccelerationMa
 
 func (o AppAccelerationMapOutput) ToAppAccelerationMapOutputWithContext(ctx context.Context) AppAccelerationMapOutput {
 	return o
-}
-
-func (o AppAccelerationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppAcceleration] {
-	return pulumix.Output[map[string]*AppAcceleration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AppAccelerationMapOutput) MapIndex(k pulumi.StringInput) AppAccelerationOutput {

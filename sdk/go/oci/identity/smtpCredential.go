@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Smtp Credential resource in Oracle Cloud Infrastructure Identity service.
@@ -207,12 +206,6 @@ func (i *SmtpCredential) ToSmtpCredentialOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(SmtpCredentialOutput)
 }
 
-func (i *SmtpCredential) ToOutput(ctx context.Context) pulumix.Output[*SmtpCredential] {
-	return pulumix.Output[*SmtpCredential]{
-		OutputState: i.ToSmtpCredentialOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SmtpCredentialArrayInput is an input type that accepts SmtpCredentialArray and SmtpCredentialArrayOutput values.
 // You can construct a concrete instance of `SmtpCredentialArrayInput` via:
 //
@@ -236,12 +229,6 @@ func (i SmtpCredentialArray) ToSmtpCredentialArrayOutput() SmtpCredentialArrayOu
 
 func (i SmtpCredentialArray) ToSmtpCredentialArrayOutputWithContext(ctx context.Context) SmtpCredentialArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SmtpCredentialArrayOutput)
-}
-
-func (i SmtpCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]*SmtpCredential] {
-	return pulumix.Output[[]*SmtpCredential]{
-		OutputState: i.ToSmtpCredentialArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SmtpCredentialMapInput is an input type that accepts SmtpCredentialMap and SmtpCredentialMapOutput values.
@@ -269,12 +256,6 @@ func (i SmtpCredentialMap) ToSmtpCredentialMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(SmtpCredentialMapOutput)
 }
 
-func (i SmtpCredentialMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SmtpCredential] {
-	return pulumix.Output[map[string]*SmtpCredential]{
-		OutputState: i.ToSmtpCredentialMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SmtpCredentialOutput struct{ *pulumi.OutputState }
 
 func (SmtpCredentialOutput) ElementType() reflect.Type {
@@ -287,12 +268,6 @@ func (o SmtpCredentialOutput) ToSmtpCredentialOutput() SmtpCredentialOutput {
 
 func (o SmtpCredentialOutput) ToSmtpCredentialOutputWithContext(ctx context.Context) SmtpCredentialOutput {
 	return o
-}
-
-func (o SmtpCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[*SmtpCredential] {
-	return pulumix.Output[*SmtpCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The description you assign to the SMTP credentials during creation. Does not have to be unique, and it's changeable.
@@ -352,12 +327,6 @@ func (o SmtpCredentialArrayOutput) ToSmtpCredentialArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o SmtpCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SmtpCredential] {
-	return pulumix.Output[[]*SmtpCredential]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o SmtpCredentialArrayOutput) Index(i pulumi.IntInput) SmtpCredentialOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *SmtpCredential {
 		return vs[0].([]*SmtpCredential)[vs[1].(int)]
@@ -376,12 +345,6 @@ func (o SmtpCredentialMapOutput) ToSmtpCredentialMapOutput() SmtpCredentialMapOu
 
 func (o SmtpCredentialMapOutput) ToSmtpCredentialMapOutputWithContext(ctx context.Context) SmtpCredentialMapOutput {
 	return o
-}
-
-func (o SmtpCredentialMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SmtpCredential] {
-	return pulumix.Output[map[string]*SmtpCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SmtpCredentialMapOutput) MapIndex(k pulumi.StringInput) SmtpCredentialOutput {

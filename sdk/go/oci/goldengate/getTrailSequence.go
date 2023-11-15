@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Trail Sequence resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -123,12 +122,6 @@ func (o GetTrailSequenceResultOutput) ToGetTrailSequenceResultOutput() GetTrailS
 
 func (o GetTrailSequenceResultOutput) ToGetTrailSequenceResultOutputWithContext(ctx context.Context) GetTrailSequenceResultOutput {
 	return o
-}
-
-func (o GetTrailSequenceResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTrailSequenceResult] {
-	return pulumix.Output[GetTrailSequenceResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetTrailSequenceResultOutput) DeploymentId() pulumi.StringOutput {

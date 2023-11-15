@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the My Auth Token resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -880,12 +879,6 @@ func (i *DomainsMyAuthToken) ToDomainsMyAuthTokenOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsMyAuthTokenOutput)
 }
 
-func (i *DomainsMyAuthToken) ToOutput(ctx context.Context) pulumix.Output[*DomainsMyAuthToken] {
-	return pulumix.Output[*DomainsMyAuthToken]{
-		OutputState: i.ToDomainsMyAuthTokenOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsMyAuthTokenArrayInput is an input type that accepts DomainsMyAuthTokenArray and DomainsMyAuthTokenArrayOutput values.
 // You can construct a concrete instance of `DomainsMyAuthTokenArrayInput` via:
 //
@@ -909,12 +902,6 @@ func (i DomainsMyAuthTokenArray) ToDomainsMyAuthTokenArrayOutput() DomainsMyAuth
 
 func (i DomainsMyAuthTokenArray) ToDomainsMyAuthTokenArrayOutputWithContext(ctx context.Context) DomainsMyAuthTokenArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsMyAuthTokenArrayOutput)
-}
-
-func (i DomainsMyAuthTokenArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsMyAuthToken] {
-	return pulumix.Output[[]*DomainsMyAuthToken]{
-		OutputState: i.ToDomainsMyAuthTokenArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsMyAuthTokenMapInput is an input type that accepts DomainsMyAuthTokenMap and DomainsMyAuthTokenMapOutput values.
@@ -942,12 +929,6 @@ func (i DomainsMyAuthTokenMap) ToDomainsMyAuthTokenMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsMyAuthTokenMapOutput)
 }
 
-func (i DomainsMyAuthTokenMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsMyAuthToken] {
-	return pulumix.Output[map[string]*DomainsMyAuthToken]{
-		OutputState: i.ToDomainsMyAuthTokenMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsMyAuthTokenOutput struct{ *pulumi.OutputState }
 
 func (DomainsMyAuthTokenOutput) ElementType() reflect.Type {
@@ -960,12 +941,6 @@ func (o DomainsMyAuthTokenOutput) ToDomainsMyAuthTokenOutput() DomainsMyAuthToke
 
 func (o DomainsMyAuthTokenOutput) ToDomainsMyAuthTokenOutputWithContext(ctx context.Context) DomainsMyAuthTokenOutput {
 	return o
-}
-
-func (o DomainsMyAuthTokenOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsMyAuthToken] {
-	return pulumix.Output[*DomainsMyAuthToken]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
@@ -1237,12 +1212,6 @@ func (o DomainsMyAuthTokenArrayOutput) ToDomainsMyAuthTokenArrayOutputWithContex
 	return o
 }
 
-func (o DomainsMyAuthTokenArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsMyAuthToken] {
-	return pulumix.Output[[]*DomainsMyAuthToken]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DomainsMyAuthTokenArrayOutput) Index(i pulumi.IntInput) DomainsMyAuthTokenOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DomainsMyAuthToken {
 		return vs[0].([]*DomainsMyAuthToken)[vs[1].(int)]
@@ -1261,12 +1230,6 @@ func (o DomainsMyAuthTokenMapOutput) ToDomainsMyAuthTokenMapOutput() DomainsMyAu
 
 func (o DomainsMyAuthTokenMapOutput) ToDomainsMyAuthTokenMapOutputWithContext(ctx context.Context) DomainsMyAuthTokenMapOutput {
 	return o
-}
-
-func (o DomainsMyAuthTokenMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsMyAuthToken] {
-	return pulumix.Output[map[string]*DomainsMyAuthToken]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsMyAuthTokenMapOutput) MapIndex(k pulumi.StringInput) DomainsMyAuthTokenOutput {

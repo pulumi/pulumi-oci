@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific User Db Credential resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -178,12 +177,6 @@ func (o LookupDomainsUserDbCredentialResultOutput) ToLookupDomainsUserDbCredenti
 
 func (o LookupDomainsUserDbCredentialResultOutput) ToLookupDomainsUserDbCredentialResultOutputWithContext(ctx context.Context) LookupDomainsUserDbCredentialResultOutput {
 	return o
-}
-
-func (o LookupDomainsUserDbCredentialResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainsUserDbCredentialResult] {
-	return pulumix.Output[LookupDomainsUserDbCredentialResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupDomainsUserDbCredentialResultOutput) AttributeSets() pulumi.StringArrayOutput {

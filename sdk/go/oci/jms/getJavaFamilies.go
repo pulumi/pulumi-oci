@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Java Families in Oracle Cloud Infrastructure Jms service.
@@ -114,12 +113,6 @@ func (o GetJavaFamiliesResultOutput) ToGetJavaFamiliesResultOutput() GetJavaFami
 
 func (o GetJavaFamiliesResultOutput) ToGetJavaFamiliesResultOutputWithContext(ctx context.Context) GetJavaFamiliesResultOutput {
 	return o
-}
-
-func (o GetJavaFamiliesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetJavaFamiliesResult] {
-	return pulumix.Output[GetJavaFamiliesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The display name of the release family.

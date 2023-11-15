@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Language service.
@@ -105,12 +104,6 @@ func (o LookupModelResultOutput) ToLookupModelResultOutput() LookupModelResultOu
 
 func (o LookupModelResultOutput) ToLookupModelResultOutputWithContext(ctx context.Context) LookupModelResultOutput {
 	return o
-}
-
-func (o LookupModelResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupModelResult] {
-	return pulumix.Output[LookupModelResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  for the model's compartment.

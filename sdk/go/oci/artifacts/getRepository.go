@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Repository resource in Oracle Cloud Infrastructure Artifacts service.
@@ -118,12 +117,6 @@ func (o LookupRepositoryResultOutput) ToLookupRepositoryResultOutput() LookupRep
 
 func (o LookupRepositoryResultOutput) ToLookupRepositoryResultOutputWithContext(ctx context.Context) LookupRepositoryResultOutput {
 	return o
-}
-
-func (o LookupRepositoryResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupRepositoryResult] {
-	return pulumix.Output[LookupRepositoryResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the repository's compartment.

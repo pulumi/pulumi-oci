@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of My Customer Secret Keys in Oracle Cloud Infrastructure Identity Domains service.
@@ -145,12 +144,6 @@ func (o GetDomainsMyCustomerSecretKeysResultOutput) ToGetDomainsMyCustomerSecret
 
 func (o GetDomainsMyCustomerSecretKeysResultOutput) ToGetDomainsMyCustomerSecretKeysResultOutputWithContext(ctx context.Context) GetDomainsMyCustomerSecretKeysResultOutput {
 	return o
-}
-
-func (o GetDomainsMyCustomerSecretKeysResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsMyCustomerSecretKeysResult] {
-	return pulumix.Output[GetDomainsMyCustomerSecretKeysResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDomainsMyCustomerSecretKeysResultOutput) Authorization() pulumi.StringPtrOutput {

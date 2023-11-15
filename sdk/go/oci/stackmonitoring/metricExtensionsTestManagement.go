@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Metric Extensions Test Management resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -186,12 +185,6 @@ func (i *MetricExtensionsTestManagement) ToMetricExtensionsTestManagementOutputW
 	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionsTestManagementOutput)
 }
 
-func (i *MetricExtensionsTestManagement) ToOutput(ctx context.Context) pulumix.Output[*MetricExtensionsTestManagement] {
-	return pulumix.Output[*MetricExtensionsTestManagement]{
-		OutputState: i.ToMetricExtensionsTestManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MetricExtensionsTestManagementArrayInput is an input type that accepts MetricExtensionsTestManagementArray and MetricExtensionsTestManagementArrayOutput values.
 // You can construct a concrete instance of `MetricExtensionsTestManagementArrayInput` via:
 //
@@ -215,12 +208,6 @@ func (i MetricExtensionsTestManagementArray) ToMetricExtensionsTestManagementArr
 
 func (i MetricExtensionsTestManagementArray) ToMetricExtensionsTestManagementArrayOutputWithContext(ctx context.Context) MetricExtensionsTestManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionsTestManagementArrayOutput)
-}
-
-func (i MetricExtensionsTestManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*MetricExtensionsTestManagement] {
-	return pulumix.Output[[]*MetricExtensionsTestManagement]{
-		OutputState: i.ToMetricExtensionsTestManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MetricExtensionsTestManagementMapInput is an input type that accepts MetricExtensionsTestManagementMap and MetricExtensionsTestManagementMapOutput values.
@@ -248,12 +235,6 @@ func (i MetricExtensionsTestManagementMap) ToMetricExtensionsTestManagementMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionsTestManagementMapOutput)
 }
 
-func (i MetricExtensionsTestManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MetricExtensionsTestManagement] {
-	return pulumix.Output[map[string]*MetricExtensionsTestManagement]{
-		OutputState: i.ToMetricExtensionsTestManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MetricExtensionsTestManagementOutput struct{ *pulumi.OutputState }
 
 func (MetricExtensionsTestManagementOutput) ElementType() reflect.Type {
@@ -266,12 +247,6 @@ func (o MetricExtensionsTestManagementOutput) ToMetricExtensionsTestManagementOu
 
 func (o MetricExtensionsTestManagementOutput) ToMetricExtensionsTestManagementOutputWithContext(ctx context.Context) MetricExtensionsTestManagementOutput {
 	return o
-}
-
-func (o MetricExtensionsTestManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*MetricExtensionsTestManagement] {
-	return pulumix.Output[*MetricExtensionsTestManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
@@ -321,12 +296,6 @@ func (o MetricExtensionsTestManagementArrayOutput) ToMetricExtensionsTestManagem
 	return o
 }
 
-func (o MetricExtensionsTestManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MetricExtensionsTestManagement] {
-	return pulumix.Output[[]*MetricExtensionsTestManagement]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o MetricExtensionsTestManagementArrayOutput) Index(i pulumi.IntInput) MetricExtensionsTestManagementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *MetricExtensionsTestManagement {
 		return vs[0].([]*MetricExtensionsTestManagement)[vs[1].(int)]
@@ -345,12 +314,6 @@ func (o MetricExtensionsTestManagementMapOutput) ToMetricExtensionsTestManagemen
 
 func (o MetricExtensionsTestManagementMapOutput) ToMetricExtensionsTestManagementMapOutputWithContext(ctx context.Context) MetricExtensionsTestManagementMapOutput {
 	return o
-}
-
-func (o MetricExtensionsTestManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MetricExtensionsTestManagement] {
-	return pulumix.Output[map[string]*MetricExtensionsTestManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MetricExtensionsTestManagementMapOutput) MapIndex(k pulumi.StringInput) MetricExtensionsTestManagementOutput {

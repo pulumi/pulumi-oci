@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -122,12 +121,6 @@ func (o LookupSecurityRecipeResultOutput) ToLookupSecurityRecipeResultOutput() L
 
 func (o LookupSecurityRecipeResultOutput) ToLookupSecurityRecipeResultOutputWithContext(ctx context.Context) LookupSecurityRecipeResultOutput {
 	return o
-}
-
-func (o LookupSecurityRecipeResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSecurityRecipeResult] {
-	return pulumix.Output[LookupSecurityRecipeResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The id of the compartment that contains the recipe

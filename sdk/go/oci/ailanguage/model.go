@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Model resource in Oracle Cloud Infrastructure Ai Language service.
@@ -321,12 +320,6 @@ func (i *Model) ToModelOutputWithContext(ctx context.Context) ModelOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ModelOutput)
 }
 
-func (i *Model) ToOutput(ctx context.Context) pulumix.Output[*Model] {
-	return pulumix.Output[*Model]{
-		OutputState: i.ToModelOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ModelArrayInput is an input type that accepts ModelArray and ModelArrayOutput values.
 // You can construct a concrete instance of `ModelArrayInput` via:
 //
@@ -350,12 +343,6 @@ func (i ModelArray) ToModelArrayOutput() ModelArrayOutput {
 
 func (i ModelArray) ToModelArrayOutputWithContext(ctx context.Context) ModelArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ModelArrayOutput)
-}
-
-func (i ModelArray) ToOutput(ctx context.Context) pulumix.Output[[]*Model] {
-	return pulumix.Output[[]*Model]{
-		OutputState: i.ToModelArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ModelMapInput is an input type that accepts ModelMap and ModelMapOutput values.
@@ -383,12 +370,6 @@ func (i ModelMap) ToModelMapOutputWithContext(ctx context.Context) ModelMapOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(ModelMapOutput)
 }
 
-func (i ModelMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Model] {
-	return pulumix.Output[map[string]*Model]{
-		OutputState: i.ToModelMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ModelOutput struct{ *pulumi.OutputState }
 
 func (ModelOutput) ElementType() reflect.Type {
@@ -401,12 +382,6 @@ func (o ModelOutput) ToModelOutput() ModelOutput {
 
 func (o ModelOutput) ToModelOutputWithContext(ctx context.Context) ModelOutput {
 	return o
-}
-
-func (o ModelOutput) ToOutput(ctx context.Context) pulumix.Output[*Model] {
-	return pulumix.Output[*Model]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  for the models compartment.
@@ -503,12 +478,6 @@ func (o ModelArrayOutput) ToModelArrayOutputWithContext(ctx context.Context) Mod
 	return o
 }
 
-func (o ModelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Model] {
-	return pulumix.Output[[]*Model]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ModelArrayOutput) Index(i pulumi.IntInput) ModelOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Model {
 		return vs[0].([]*Model)[vs[1].(int)]
@@ -527,12 +496,6 @@ func (o ModelMapOutput) ToModelMapOutput() ModelMapOutput {
 
 func (o ModelMapOutput) ToModelMapOutputWithContext(ctx context.Context) ModelMapOutput {
 	return o
-}
-
-func (o ModelMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Model] {
-	return pulumix.Output[map[string]*Model]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ModelMapOutput) MapIndex(k pulumi.StringInput) ModelOutput {

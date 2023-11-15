@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Metric Extension resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -362,12 +361,6 @@ func (i *MetricExtension) ToMetricExtensionOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionOutput)
 }
 
-func (i *MetricExtension) ToOutput(ctx context.Context) pulumix.Output[*MetricExtension] {
-	return pulumix.Output[*MetricExtension]{
-		OutputState: i.ToMetricExtensionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MetricExtensionArrayInput is an input type that accepts MetricExtensionArray and MetricExtensionArrayOutput values.
 // You can construct a concrete instance of `MetricExtensionArrayInput` via:
 //
@@ -391,12 +384,6 @@ func (i MetricExtensionArray) ToMetricExtensionArrayOutput() MetricExtensionArra
 
 func (i MetricExtensionArray) ToMetricExtensionArrayOutputWithContext(ctx context.Context) MetricExtensionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionArrayOutput)
-}
-
-func (i MetricExtensionArray) ToOutput(ctx context.Context) pulumix.Output[[]*MetricExtension] {
-	return pulumix.Output[[]*MetricExtension]{
-		OutputState: i.ToMetricExtensionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MetricExtensionMapInput is an input type that accepts MetricExtensionMap and MetricExtensionMapOutput values.
@@ -424,12 +411,6 @@ func (i MetricExtensionMap) ToMetricExtensionMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionMapOutput)
 }
 
-func (i MetricExtensionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MetricExtension] {
-	return pulumix.Output[map[string]*MetricExtension]{
-		OutputState: i.ToMetricExtensionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MetricExtensionOutput struct{ *pulumi.OutputState }
 
 func (MetricExtensionOutput) ElementType() reflect.Type {
@@ -442,12 +423,6 @@ func (o MetricExtensionOutput) ToMetricExtensionOutput() MetricExtensionOutput {
 
 func (o MetricExtensionOutput) ToMetricExtensionOutputWithContext(ctx context.Context) MetricExtensionOutput {
 	return o
-}
-
-func (o MetricExtensionOutput) ToOutput(ctx context.Context) pulumix.Output[*MetricExtension] {
-	return pulumix.Output[*MetricExtension]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Type of possible collection methods.
@@ -567,12 +542,6 @@ func (o MetricExtensionArrayOutput) ToMetricExtensionArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o MetricExtensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MetricExtension] {
-	return pulumix.Output[[]*MetricExtension]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o MetricExtensionArrayOutput) Index(i pulumi.IntInput) MetricExtensionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *MetricExtension {
 		return vs[0].([]*MetricExtension)[vs[1].(int)]
@@ -591,12 +560,6 @@ func (o MetricExtensionMapOutput) ToMetricExtensionMapOutput() MetricExtensionMa
 
 func (o MetricExtensionMapOutput) ToMetricExtensionMapOutputWithContext(ctx context.Context) MetricExtensionMapOutput {
 	return o
-}
-
-func (o MetricExtensionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MetricExtension] {
-	return pulumix.Output[map[string]*MetricExtension]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MetricExtensionMapOutput) MapIndex(k pulumi.StringInput) MetricExtensionOutput {

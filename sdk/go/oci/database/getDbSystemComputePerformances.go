@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Db System Compute Performances in Oracle Cloud Infrastructure Database service.
@@ -105,12 +104,6 @@ func (o GetDbSystemComputePerformancesResultOutput) ToGetDbSystemComputePerforma
 
 func (o GetDbSystemComputePerformancesResultOutput) ToGetDbSystemComputePerformancesResultOutputWithContext(ctx context.Context) GetDbSystemComputePerformancesResultOutput {
 	return o
-}
-
-func (o GetDbSystemComputePerformancesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDbSystemComputePerformancesResult] {
-	return pulumix.Output[GetDbSystemComputePerformancesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of db_system_compute_performances.

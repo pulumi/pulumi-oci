@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Connections in Oracle Cloud Infrastructure Golden Gate service.
@@ -152,12 +151,6 @@ func (o GetConnectionsResultOutput) ToGetConnectionsResultOutput() GetConnection
 
 func (o GetConnectionsResultOutput) ToGetConnectionsResultOutputWithContext(ctx context.Context) GetConnectionsResultOutput {
 	return o
-}
-
-func (o GetConnectionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetConnectionsResult] {
-	return pulumix.Output[GetConnectionsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetConnectionsResultOutput) AssignableDeploymentId() pulumi.StringPtrOutput {

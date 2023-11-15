@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Vm Cluster Remove Virtual Machine resource in Oracle Cloud Infrastructure Database service.
@@ -316,12 +315,6 @@ func (i *VmClusterRemoveVirtualMachine) ToVmClusterRemoveVirtualMachineOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(VmClusterRemoveVirtualMachineOutput)
 }
 
-func (i *VmClusterRemoveVirtualMachine) ToOutput(ctx context.Context) pulumix.Output[*VmClusterRemoveVirtualMachine] {
-	return pulumix.Output[*VmClusterRemoveVirtualMachine]{
-		OutputState: i.ToVmClusterRemoveVirtualMachineOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VmClusterRemoveVirtualMachineArrayInput is an input type that accepts VmClusterRemoveVirtualMachineArray and VmClusterRemoveVirtualMachineArrayOutput values.
 // You can construct a concrete instance of `VmClusterRemoveVirtualMachineArrayInput` via:
 //
@@ -345,12 +338,6 @@ func (i VmClusterRemoveVirtualMachineArray) ToVmClusterRemoveVirtualMachineArray
 
 func (i VmClusterRemoveVirtualMachineArray) ToVmClusterRemoveVirtualMachineArrayOutputWithContext(ctx context.Context) VmClusterRemoveVirtualMachineArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VmClusterRemoveVirtualMachineArrayOutput)
-}
-
-func (i VmClusterRemoveVirtualMachineArray) ToOutput(ctx context.Context) pulumix.Output[[]*VmClusterRemoveVirtualMachine] {
-	return pulumix.Output[[]*VmClusterRemoveVirtualMachine]{
-		OutputState: i.ToVmClusterRemoveVirtualMachineArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // VmClusterRemoveVirtualMachineMapInput is an input type that accepts VmClusterRemoveVirtualMachineMap and VmClusterRemoveVirtualMachineMapOutput values.
@@ -378,12 +365,6 @@ func (i VmClusterRemoveVirtualMachineMap) ToVmClusterRemoveVirtualMachineMapOutp
 	return pulumi.ToOutputWithContext(ctx, i).(VmClusterRemoveVirtualMachineMapOutput)
 }
 
-func (i VmClusterRemoveVirtualMachineMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*VmClusterRemoveVirtualMachine] {
-	return pulumix.Output[map[string]*VmClusterRemoveVirtualMachine]{
-		OutputState: i.ToVmClusterRemoveVirtualMachineMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VmClusterRemoveVirtualMachineOutput struct{ *pulumi.OutputState }
 
 func (VmClusterRemoveVirtualMachineOutput) ElementType() reflect.Type {
@@ -396,12 +377,6 @@ func (o VmClusterRemoveVirtualMachineOutput) ToVmClusterRemoveVirtualMachineOutp
 
 func (o VmClusterRemoveVirtualMachineOutput) ToVmClusterRemoveVirtualMachineOutputWithContext(ctx context.Context) VmClusterRemoveVirtualMachineOutput {
 	return o
-}
-
-func (o VmClusterRemoveVirtualMachineOutput) ToOutput(ctx context.Context) pulumix.Output[*VmClusterRemoveVirtualMachine] {
-	return pulumix.Output[*VmClusterRemoveVirtualMachine]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the availability domain that the VM cluster is located in.
@@ -555,12 +530,6 @@ func (o VmClusterRemoveVirtualMachineArrayOutput) ToVmClusterRemoveVirtualMachin
 	return o
 }
 
-func (o VmClusterRemoveVirtualMachineArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*VmClusterRemoveVirtualMachine] {
-	return pulumix.Output[[]*VmClusterRemoveVirtualMachine]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o VmClusterRemoveVirtualMachineArrayOutput) Index(i pulumi.IntInput) VmClusterRemoveVirtualMachineOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *VmClusterRemoveVirtualMachine {
 		return vs[0].([]*VmClusterRemoveVirtualMachine)[vs[1].(int)]
@@ -579,12 +548,6 @@ func (o VmClusterRemoveVirtualMachineMapOutput) ToVmClusterRemoveVirtualMachineM
 
 func (o VmClusterRemoveVirtualMachineMapOutput) ToVmClusterRemoveVirtualMachineMapOutputWithContext(ctx context.Context) VmClusterRemoveVirtualMachineMapOutput {
 	return o
-}
-
-func (o VmClusterRemoveVirtualMachineMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*VmClusterRemoveVirtualMachine] {
-	return pulumix.Output[map[string]*VmClusterRemoveVirtualMachine]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VmClusterRemoveVirtualMachineMapOutput) MapIndex(k pulumi.StringInput) VmClusterRemoveVirtualMachineOutput {

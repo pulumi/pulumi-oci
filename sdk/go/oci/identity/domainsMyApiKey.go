@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the My Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -839,12 +838,6 @@ func (i *DomainsMyApiKey) ToDomainsMyApiKeyOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsMyApiKeyOutput)
 }
 
-func (i *DomainsMyApiKey) ToOutput(ctx context.Context) pulumix.Output[*DomainsMyApiKey] {
-	return pulumix.Output[*DomainsMyApiKey]{
-		OutputState: i.ToDomainsMyApiKeyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsMyApiKeyArrayInput is an input type that accepts DomainsMyApiKeyArray and DomainsMyApiKeyArrayOutput values.
 // You can construct a concrete instance of `DomainsMyApiKeyArrayInput` via:
 //
@@ -868,12 +861,6 @@ func (i DomainsMyApiKeyArray) ToDomainsMyApiKeyArrayOutput() DomainsMyApiKeyArra
 
 func (i DomainsMyApiKeyArray) ToDomainsMyApiKeyArrayOutputWithContext(ctx context.Context) DomainsMyApiKeyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsMyApiKeyArrayOutput)
-}
-
-func (i DomainsMyApiKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsMyApiKey] {
-	return pulumix.Output[[]*DomainsMyApiKey]{
-		OutputState: i.ToDomainsMyApiKeyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsMyApiKeyMapInput is an input type that accepts DomainsMyApiKeyMap and DomainsMyApiKeyMapOutput values.
@@ -901,12 +888,6 @@ func (i DomainsMyApiKeyMap) ToDomainsMyApiKeyMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsMyApiKeyMapOutput)
 }
 
-func (i DomainsMyApiKeyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsMyApiKey] {
-	return pulumix.Output[map[string]*DomainsMyApiKey]{
-		OutputState: i.ToDomainsMyApiKeyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsMyApiKeyOutput struct{ *pulumi.OutputState }
 
 func (DomainsMyApiKeyOutput) ElementType() reflect.Type {
@@ -919,12 +900,6 @@ func (o DomainsMyApiKeyOutput) ToDomainsMyApiKeyOutput() DomainsMyApiKeyOutput {
 
 func (o DomainsMyApiKeyOutput) ToDomainsMyApiKeyOutputWithContext(ctx context.Context) DomainsMyApiKeyOutput {
 	return o
-}
-
-func (o DomainsMyApiKeyOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsMyApiKey] {
-	return pulumix.Output[*DomainsMyApiKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
@@ -1190,12 +1165,6 @@ func (o DomainsMyApiKeyArrayOutput) ToDomainsMyApiKeyArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o DomainsMyApiKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsMyApiKey] {
-	return pulumix.Output[[]*DomainsMyApiKey]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DomainsMyApiKeyArrayOutput) Index(i pulumi.IntInput) DomainsMyApiKeyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DomainsMyApiKey {
 		return vs[0].([]*DomainsMyApiKey)[vs[1].(int)]
@@ -1214,12 +1183,6 @@ func (o DomainsMyApiKeyMapOutput) ToDomainsMyApiKeyMapOutput() DomainsMyApiKeyMa
 
 func (o DomainsMyApiKeyMapOutput) ToDomainsMyApiKeyMapOutputWithContext(ctx context.Context) DomainsMyApiKeyMapOutput {
 	return o
-}
-
-func (o DomainsMyApiKeyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsMyApiKey] {
-	return pulumix.Output[map[string]*DomainsMyApiKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsMyApiKeyMapOutput) MapIndex(k pulumi.StringInput) DomainsMyApiKeyOutput {

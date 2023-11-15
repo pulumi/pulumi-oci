@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Oda Private Endpoint Scan Proxy resource in Oracle Cloud Infrastructure Digital Assistant service.
@@ -116,12 +115,6 @@ func (o LookupOdaPrivateEndpointScanProxyResultOutput) ToLookupOdaPrivateEndpoin
 
 func (o LookupOdaPrivateEndpointScanProxyResultOutput) ToLookupOdaPrivateEndpointScanProxyResultOutputWithContext(ctx context.Context) LookupOdaPrivateEndpointScanProxyResultOutput {
 	return o
-}
-
-func (o LookupOdaPrivateEndpointScanProxyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupOdaPrivateEndpointScanProxyResult] {
-	return pulumix.Output[LookupOdaPrivateEndpointScanProxyResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint Scan Proxy.

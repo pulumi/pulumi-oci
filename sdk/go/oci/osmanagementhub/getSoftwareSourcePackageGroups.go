@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Software Source Package Groups in Oracle Cloud Infrastructure Os Management Hub service.
@@ -132,12 +131,6 @@ func (o GetSoftwareSourcePackageGroupsResultOutput) ToGetSoftwareSourcePackageGr
 
 func (o GetSoftwareSourcePackageGroupsResultOutput) ToGetSoftwareSourcePackageGroupsResultOutputWithContext(ctx context.Context) GetSoftwareSourcePackageGroupsResultOutput {
 	return o
-}
-
-func (o GetSoftwareSourcePackageGroupsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcePackageGroupsResult] {
-	return pulumix.Output[GetSoftwareSourcePackageGroupsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSoftwareSourcePackageGroupsResultOutput) CompartmentId() pulumi.StringPtrOutput {

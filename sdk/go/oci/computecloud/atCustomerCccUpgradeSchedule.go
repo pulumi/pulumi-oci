@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Ccc Upgrade Schedule resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
@@ -262,12 +261,6 @@ func (i *AtCustomerCccUpgradeSchedule) ToAtCustomerCccUpgradeScheduleOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccUpgradeScheduleOutput)
 }
 
-func (i *AtCustomerCccUpgradeSchedule) ToOutput(ctx context.Context) pulumix.Output[*AtCustomerCccUpgradeSchedule] {
-	return pulumix.Output[*AtCustomerCccUpgradeSchedule]{
-		OutputState: i.ToAtCustomerCccUpgradeScheduleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AtCustomerCccUpgradeScheduleArrayInput is an input type that accepts AtCustomerCccUpgradeScheduleArray and AtCustomerCccUpgradeScheduleArrayOutput values.
 // You can construct a concrete instance of `AtCustomerCccUpgradeScheduleArrayInput` via:
 //
@@ -291,12 +284,6 @@ func (i AtCustomerCccUpgradeScheduleArray) ToAtCustomerCccUpgradeScheduleArrayOu
 
 func (i AtCustomerCccUpgradeScheduleArray) ToAtCustomerCccUpgradeScheduleArrayOutputWithContext(ctx context.Context) AtCustomerCccUpgradeScheduleArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccUpgradeScheduleArrayOutput)
-}
-
-func (i AtCustomerCccUpgradeScheduleArray) ToOutput(ctx context.Context) pulumix.Output[[]*AtCustomerCccUpgradeSchedule] {
-	return pulumix.Output[[]*AtCustomerCccUpgradeSchedule]{
-		OutputState: i.ToAtCustomerCccUpgradeScheduleArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AtCustomerCccUpgradeScheduleMapInput is an input type that accepts AtCustomerCccUpgradeScheduleMap and AtCustomerCccUpgradeScheduleMapOutput values.
@@ -324,12 +311,6 @@ func (i AtCustomerCccUpgradeScheduleMap) ToAtCustomerCccUpgradeScheduleMapOutput
 	return pulumi.ToOutputWithContext(ctx, i).(AtCustomerCccUpgradeScheduleMapOutput)
 }
 
-func (i AtCustomerCccUpgradeScheduleMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AtCustomerCccUpgradeSchedule] {
-	return pulumix.Output[map[string]*AtCustomerCccUpgradeSchedule]{
-		OutputState: i.ToAtCustomerCccUpgradeScheduleMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AtCustomerCccUpgradeScheduleOutput struct{ *pulumi.OutputState }
 
 func (AtCustomerCccUpgradeScheduleOutput) ElementType() reflect.Type {
@@ -342,12 +323,6 @@ func (o AtCustomerCccUpgradeScheduleOutput) ToAtCustomerCccUpgradeScheduleOutput
 
 func (o AtCustomerCccUpgradeScheduleOutput) ToAtCustomerCccUpgradeScheduleOutputWithContext(ctx context.Context) AtCustomerCccUpgradeScheduleOutput {
 	return o
-}
-
-func (o AtCustomerCccUpgradeScheduleOutput) ToOutput(ctx context.Context) pulumix.Output[*AtCustomerCccUpgradeSchedule] {
-	return pulumix.Output[*AtCustomerCccUpgradeSchedule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer Upgrade Schedule.
@@ -427,12 +402,6 @@ func (o AtCustomerCccUpgradeScheduleArrayOutput) ToAtCustomerCccUpgradeScheduleA
 	return o
 }
 
-func (o AtCustomerCccUpgradeScheduleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AtCustomerCccUpgradeSchedule] {
-	return pulumix.Output[[]*AtCustomerCccUpgradeSchedule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AtCustomerCccUpgradeScheduleArrayOutput) Index(i pulumi.IntInput) AtCustomerCccUpgradeScheduleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AtCustomerCccUpgradeSchedule {
 		return vs[0].([]*AtCustomerCccUpgradeSchedule)[vs[1].(int)]
@@ -451,12 +420,6 @@ func (o AtCustomerCccUpgradeScheduleMapOutput) ToAtCustomerCccUpgradeScheduleMap
 
 func (o AtCustomerCccUpgradeScheduleMapOutput) ToAtCustomerCccUpgradeScheduleMapOutputWithContext(ctx context.Context) AtCustomerCccUpgradeScheduleMapOutput {
 	return o
-}
-
-func (o AtCustomerCccUpgradeScheduleMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AtCustomerCccUpgradeSchedule] {
-	return pulumix.Output[map[string]*AtCustomerCccUpgradeSchedule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AtCustomerCccUpgradeScheduleMapOutput) MapIndex(k pulumi.StringInput) AtCustomerCccUpgradeScheduleOutput {

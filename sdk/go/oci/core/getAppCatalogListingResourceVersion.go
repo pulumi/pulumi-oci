@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific App Catalog Listing Resource Version resource in Oracle Cloud Infrastructure Core service.
@@ -121,12 +120,6 @@ func (o GetAppCatalogListingResourceVersionResultOutput) ToGetAppCatalogListingR
 
 func (o GetAppCatalogListingResourceVersionResultOutput) ToGetAppCatalogListingResourceVersionResultOutputWithContext(ctx context.Context) GetAppCatalogListingResourceVersionResultOutput {
 	return o
-}
-
-func (o GetAppCatalogListingResourceVersionResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppCatalogListingResourceVersionResult] {
-	return pulumix.Output[GetAppCatalogListingResourceVersionResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of accessible ports for instances launched with this listing resource version.

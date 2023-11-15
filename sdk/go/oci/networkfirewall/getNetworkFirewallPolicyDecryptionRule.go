@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Network Firewall Policy Decryption Rule resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -94,12 +93,6 @@ func (o LookupNetworkFirewallPolicyDecryptionRuleResultOutput) ToLookupNetworkFi
 
 func (o LookupNetworkFirewallPolicyDecryptionRuleResultOutput) ToLookupNetworkFirewallPolicyDecryptionRuleResultOutputWithContext(ctx context.Context) LookupNetworkFirewallPolicyDecryptionRuleResultOutput {
 	return o
-}
-
-func (o LookupNetworkFirewallPolicyDecryptionRuleResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNetworkFirewallPolicyDecryptionRuleResult] {
-	return pulumix.Output[LookupNetworkFirewallPolicyDecryptionRuleResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Action:

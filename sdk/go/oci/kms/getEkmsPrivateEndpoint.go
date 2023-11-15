@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Ekms Private Endpoint resource in Oracle Cloud Infrastructure Kms service.
@@ -126,12 +125,6 @@ func (o LookupEkmsPrivateEndpointResultOutput) ToLookupEkmsPrivateEndpointResult
 
 func (o LookupEkmsPrivateEndpointResultOutput) ToLookupEkmsPrivateEndpointResultOutputWithContext(ctx context.Context) LookupEkmsPrivateEndpointResultOutput {
 	return o
-}
-
-func (o LookupEkmsPrivateEndpointResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupEkmsPrivateEndpointResult] {
-	return pulumix.Output[LookupEkmsPrivateEndpointResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // CABundle to validate TLS certificate of the external key manager system in PEM format

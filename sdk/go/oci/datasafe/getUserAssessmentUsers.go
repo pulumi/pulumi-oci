@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of User Assessment Users in Oracle Cloud Infrastructure Data Safe service.
@@ -238,12 +237,6 @@ func (o GetUserAssessmentUsersResultOutput) ToGetUserAssessmentUsersResultOutput
 
 func (o GetUserAssessmentUsersResultOutput) ToGetUserAssessmentUsersResultOutputWithContext(ctx context.Context) GetUserAssessmentUsersResultOutput {
 	return o
-}
-
-func (o GetUserAssessmentUsersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentUsersResult] {
-	return pulumix.Output[GetUserAssessmentUsersResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetUserAssessmentUsersResultOutput) AccessLevel() pulumi.StringPtrOutput {

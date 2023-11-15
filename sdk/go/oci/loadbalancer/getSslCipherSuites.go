@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Ssl Cipher Suites in Oracle Cloud Infrastructure Load Balancer service.
@@ -105,12 +104,6 @@ func (o GetSslCipherSuitesResultOutput) ToGetSslCipherSuitesResultOutput() GetSs
 
 func (o GetSslCipherSuitesResultOutput) ToGetSslCipherSuitesResultOutputWithContext(ctx context.Context) GetSslCipherSuitesResultOutput {
 	return o
-}
-
-func (o GetSslCipherSuitesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSslCipherSuitesResult] {
-	return pulumix.Output[GetSslCipherSuitesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSslCipherSuitesResultOutput) Filters() GetSslCipherSuitesFilterArrayOutput {

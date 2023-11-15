@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Triggers in Oracle Cloud Infrastructure Devops service.
@@ -135,12 +134,6 @@ func (o GetTriggersResultOutput) ToGetTriggersResultOutput() GetTriggersResultOu
 
 func (o GetTriggersResultOutput) ToGetTriggersResultOutputWithContext(ctx context.Context) GetTriggersResultOutput {
 	return o
-}
-
-func (o GetTriggersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTriggersResult] {
-	return pulumix.Output[GetTriggersResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment that contains the trigger.

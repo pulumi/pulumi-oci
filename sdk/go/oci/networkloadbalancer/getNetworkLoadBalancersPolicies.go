@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Network Load Balancers Policies in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -98,12 +97,6 @@ func (o GetNetworkLoadBalancersPoliciesResultOutput) ToGetNetworkLoadBalancersPo
 
 func (o GetNetworkLoadBalancersPoliciesResultOutput) ToGetNetworkLoadBalancersPoliciesResultOutputWithContext(ctx context.Context) GetNetworkLoadBalancersPoliciesResultOutput {
 	return o
-}
-
-func (o GetNetworkLoadBalancersPoliciesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkLoadBalancersPoliciesResult] {
-	return pulumix.Output[GetNetworkLoadBalancersPoliciesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNetworkLoadBalancersPoliciesResultOutput) Filters() GetNetworkLoadBalancersPoliciesFilterArrayOutput {

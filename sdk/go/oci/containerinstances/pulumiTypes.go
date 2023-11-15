@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -119,12 +118,6 @@ func (i GetContainerInstanceContainerArgs) ToGetContainerInstanceContainerOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceContainerOutput)
 }
 
-func (i GetContainerInstanceContainerArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceContainer] {
-	return pulumix.Output[GetContainerInstanceContainer]{
-		OutputState: i.ToGetContainerInstanceContainerOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstanceContainerArrayInput is an input type that accepts GetContainerInstanceContainerArray and GetContainerInstanceContainerArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstanceContainerArrayInput` via:
 //
@@ -150,12 +143,6 @@ func (i GetContainerInstanceContainerArray) ToGetContainerInstanceContainerArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceContainerArrayOutput)
 }
 
-func (i GetContainerInstanceContainerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceContainer] {
-	return pulumix.Output[[]GetContainerInstanceContainer]{
-		OutputState: i.ToGetContainerInstanceContainerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstanceContainerOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstanceContainerOutput) ElementType() reflect.Type {
@@ -168,12 +155,6 @@ func (o GetContainerInstanceContainerOutput) ToGetContainerInstanceContainerOutp
 
 func (o GetContainerInstanceContainerOutput) ToGetContainerInstanceContainerOutputWithContext(ctx context.Context) GetContainerInstanceContainerOutput {
 	return o
-}
-
-func (o GetContainerInstanceContainerOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceContainer] {
-	return pulumix.Output[GetContainerInstanceContainer]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstanceContainerOutput) Arguments() pulumi.StringArrayOutput {
@@ -311,12 +292,6 @@ func (o GetContainerInstanceContainerArrayOutput) ToGetContainerInstanceContaine
 	return o
 }
 
-func (o GetContainerInstanceContainerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceContainer] {
-	return pulumix.Output[[]GetContainerInstanceContainer]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetContainerInstanceContainerArrayOutput) Index(i pulumi.IntInput) GetContainerInstanceContainerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerInstanceContainer {
 		return vs[0].([]GetContainerInstanceContainer)[vs[1].(int)]
@@ -384,12 +359,6 @@ func (i GetContainerInstanceContainerHealthCheckArgs) ToGetContainerInstanceCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceContainerHealthCheckOutput)
 }
 
-func (i GetContainerInstanceContainerHealthCheckArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceContainerHealthCheck] {
-	return pulumix.Output[GetContainerInstanceContainerHealthCheck]{
-		OutputState: i.ToGetContainerInstanceContainerHealthCheckOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstanceContainerHealthCheckArrayInput is an input type that accepts GetContainerInstanceContainerHealthCheckArray and GetContainerInstanceContainerHealthCheckArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstanceContainerHealthCheckArrayInput` via:
 //
@@ -415,12 +384,6 @@ func (i GetContainerInstanceContainerHealthCheckArray) ToGetContainerInstanceCon
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceContainerHealthCheckArrayOutput)
 }
 
-func (i GetContainerInstanceContainerHealthCheckArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceContainerHealthCheck] {
-	return pulumix.Output[[]GetContainerInstanceContainerHealthCheck]{
-		OutputState: i.ToGetContainerInstanceContainerHealthCheckArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstanceContainerHealthCheckOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstanceContainerHealthCheckOutput) ElementType() reflect.Type {
@@ -433,12 +396,6 @@ func (o GetContainerInstanceContainerHealthCheckOutput) ToGetContainerInstanceCo
 
 func (o GetContainerInstanceContainerHealthCheckOutput) ToGetContainerInstanceContainerHealthCheckOutputWithContext(ctx context.Context) GetContainerInstanceContainerHealthCheckOutput {
 	return o
-}
-
-func (o GetContainerInstanceContainerHealthCheckOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceContainerHealthCheck] {
-	return pulumix.Output[GetContainerInstanceContainerHealthCheck]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstanceContainerHealthCheckOutput) Commands() pulumi.StringArrayOutput {
@@ -515,12 +472,6 @@ func (o GetContainerInstanceContainerHealthCheckArrayOutput) ToGetContainerInsta
 	return o
 }
 
-func (o GetContainerInstanceContainerHealthCheckArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceContainerHealthCheck] {
-	return pulumix.Output[[]GetContainerInstanceContainerHealthCheck]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetContainerInstanceContainerHealthCheckArrayOutput) Index(i pulumi.IntInput) GetContainerInstanceContainerHealthCheckOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerInstanceContainerHealthCheck {
 		return vs[0].([]GetContainerInstanceContainerHealthCheck)[vs[1].(int)]
@@ -562,12 +513,6 @@ func (i GetContainerInstanceContainerHealthCheckHeaderArgs) ToGetContainerInstan
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceContainerHealthCheckHeaderOutput)
 }
 
-func (i GetContainerInstanceContainerHealthCheckHeaderArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceContainerHealthCheckHeader] {
-	return pulumix.Output[GetContainerInstanceContainerHealthCheckHeader]{
-		OutputState: i.ToGetContainerInstanceContainerHealthCheckHeaderOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstanceContainerHealthCheckHeaderArrayInput is an input type that accepts GetContainerInstanceContainerHealthCheckHeaderArray and GetContainerInstanceContainerHealthCheckHeaderArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstanceContainerHealthCheckHeaderArrayInput` via:
 //
@@ -593,12 +538,6 @@ func (i GetContainerInstanceContainerHealthCheckHeaderArray) ToGetContainerInsta
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceContainerHealthCheckHeaderArrayOutput)
 }
 
-func (i GetContainerInstanceContainerHealthCheckHeaderArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceContainerHealthCheckHeader] {
-	return pulumix.Output[[]GetContainerInstanceContainerHealthCheckHeader]{
-		OutputState: i.ToGetContainerInstanceContainerHealthCheckHeaderArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstanceContainerHealthCheckHeaderOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstanceContainerHealthCheckHeaderOutput) ElementType() reflect.Type {
@@ -611,12 +550,6 @@ func (o GetContainerInstanceContainerHealthCheckHeaderOutput) ToGetContainerInst
 
 func (o GetContainerInstanceContainerHealthCheckHeaderOutput) ToGetContainerInstanceContainerHealthCheckHeaderOutputWithContext(ctx context.Context) GetContainerInstanceContainerHealthCheckHeaderOutput {
 	return o
-}
-
-func (o GetContainerInstanceContainerHealthCheckHeaderOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceContainerHealthCheckHeader] {
-	return pulumix.Output[GetContainerInstanceContainerHealthCheckHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the volume. This must be unique within a single container instance.
@@ -640,12 +573,6 @@ func (o GetContainerInstanceContainerHealthCheckHeaderArrayOutput) ToGetContaine
 
 func (o GetContainerInstanceContainerHealthCheckHeaderArrayOutput) ToGetContainerInstanceContainerHealthCheckHeaderArrayOutputWithContext(ctx context.Context) GetContainerInstanceContainerHealthCheckHeaderArrayOutput {
 	return o
-}
-
-func (o GetContainerInstanceContainerHealthCheckHeaderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceContainerHealthCheckHeader] {
-	return pulumix.Output[[]GetContainerInstanceContainerHealthCheckHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstanceContainerHealthCheckHeaderArrayOutput) Index(i pulumi.IntInput) GetContainerInstanceContainerHealthCheckHeaderOutput {
@@ -687,12 +614,6 @@ func (i GetContainerInstanceContainerResourceConfigArgs) ToGetContainerInstanceC
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceContainerResourceConfigOutput)
 }
 
-func (i GetContainerInstanceContainerResourceConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceContainerResourceConfig] {
-	return pulumix.Output[GetContainerInstanceContainerResourceConfig]{
-		OutputState: i.ToGetContainerInstanceContainerResourceConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstanceContainerResourceConfigArrayInput is an input type that accepts GetContainerInstanceContainerResourceConfigArray and GetContainerInstanceContainerResourceConfigArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstanceContainerResourceConfigArrayInput` via:
 //
@@ -718,12 +639,6 @@ func (i GetContainerInstanceContainerResourceConfigArray) ToGetContainerInstance
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceContainerResourceConfigArrayOutput)
 }
 
-func (i GetContainerInstanceContainerResourceConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceContainerResourceConfig] {
-	return pulumix.Output[[]GetContainerInstanceContainerResourceConfig]{
-		OutputState: i.ToGetContainerInstanceContainerResourceConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstanceContainerResourceConfigOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstanceContainerResourceConfigOutput) ElementType() reflect.Type {
@@ -736,12 +651,6 @@ func (o GetContainerInstanceContainerResourceConfigOutput) ToGetContainerInstanc
 
 func (o GetContainerInstanceContainerResourceConfigOutput) ToGetContainerInstanceContainerResourceConfigOutputWithContext(ctx context.Context) GetContainerInstanceContainerResourceConfigOutput {
 	return o
-}
-
-func (o GetContainerInstanceContainerResourceConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceContainerResourceConfig] {
-	return pulumix.Output[GetContainerInstanceContainerResourceConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstanceContainerResourceConfigOutput) MemoryLimitInGbs() pulumi.Float64Output {
@@ -764,12 +673,6 @@ func (o GetContainerInstanceContainerResourceConfigArrayOutput) ToGetContainerIn
 
 func (o GetContainerInstanceContainerResourceConfigArrayOutput) ToGetContainerInstanceContainerResourceConfigArrayOutputWithContext(ctx context.Context) GetContainerInstanceContainerResourceConfigArrayOutput {
 	return o
-}
-
-func (o GetContainerInstanceContainerResourceConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceContainerResourceConfig] {
-	return pulumix.Output[[]GetContainerInstanceContainerResourceConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstanceContainerResourceConfigArrayOutput) Index(i pulumi.IntInput) GetContainerInstanceContainerResourceConfigOutput {
@@ -817,12 +720,6 @@ func (i GetContainerInstanceContainerSecurityContextArgs) ToGetContainerInstance
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceContainerSecurityContextOutput)
 }
 
-func (i GetContainerInstanceContainerSecurityContextArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceContainerSecurityContext] {
-	return pulumix.Output[GetContainerInstanceContainerSecurityContext]{
-		OutputState: i.ToGetContainerInstanceContainerSecurityContextOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstanceContainerSecurityContextArrayInput is an input type that accepts GetContainerInstanceContainerSecurityContextArray and GetContainerInstanceContainerSecurityContextArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstanceContainerSecurityContextArrayInput` via:
 //
@@ -848,12 +745,6 @@ func (i GetContainerInstanceContainerSecurityContextArray) ToGetContainerInstanc
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceContainerSecurityContextArrayOutput)
 }
 
-func (i GetContainerInstanceContainerSecurityContextArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceContainerSecurityContext] {
-	return pulumix.Output[[]GetContainerInstanceContainerSecurityContext]{
-		OutputState: i.ToGetContainerInstanceContainerSecurityContextArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstanceContainerSecurityContextOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstanceContainerSecurityContextOutput) ElementType() reflect.Type {
@@ -866,12 +757,6 @@ func (o GetContainerInstanceContainerSecurityContextOutput) ToGetContainerInstan
 
 func (o GetContainerInstanceContainerSecurityContextOutput) ToGetContainerInstanceContainerSecurityContextOutputWithContext(ctx context.Context) GetContainerInstanceContainerSecurityContextOutput {
 	return o
-}
-
-func (o GetContainerInstanceContainerSecurityContextOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceContainerSecurityContext] {
-	return pulumix.Output[GetContainerInstanceContainerSecurityContext]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstanceContainerSecurityContextOutput) IsNonRootUserCheckEnabled() pulumi.BoolOutput {
@@ -906,12 +791,6 @@ func (o GetContainerInstanceContainerSecurityContextArrayOutput) ToGetContainerI
 
 func (o GetContainerInstanceContainerSecurityContextArrayOutput) ToGetContainerInstanceContainerSecurityContextArrayOutputWithContext(ctx context.Context) GetContainerInstanceContainerSecurityContextArrayOutput {
 	return o
-}
-
-func (o GetContainerInstanceContainerSecurityContextArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceContainerSecurityContext] {
-	return pulumix.Output[[]GetContainerInstanceContainerSecurityContext]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstanceContainerSecurityContextArrayOutput) Index(i pulumi.IntInput) GetContainerInstanceContainerSecurityContextOutput {
@@ -959,12 +838,6 @@ func (i GetContainerInstanceContainerVolumeMountArgs) ToGetContainerInstanceCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceContainerVolumeMountOutput)
 }
 
-func (i GetContainerInstanceContainerVolumeMountArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceContainerVolumeMount] {
-	return pulumix.Output[GetContainerInstanceContainerVolumeMount]{
-		OutputState: i.ToGetContainerInstanceContainerVolumeMountOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstanceContainerVolumeMountArrayInput is an input type that accepts GetContainerInstanceContainerVolumeMountArray and GetContainerInstanceContainerVolumeMountArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstanceContainerVolumeMountArrayInput` via:
 //
@@ -990,12 +863,6 @@ func (i GetContainerInstanceContainerVolumeMountArray) ToGetContainerInstanceCon
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceContainerVolumeMountArrayOutput)
 }
 
-func (i GetContainerInstanceContainerVolumeMountArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceContainerVolumeMount] {
-	return pulumix.Output[[]GetContainerInstanceContainerVolumeMount]{
-		OutputState: i.ToGetContainerInstanceContainerVolumeMountArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstanceContainerVolumeMountOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstanceContainerVolumeMountOutput) ElementType() reflect.Type {
@@ -1008,12 +875,6 @@ func (o GetContainerInstanceContainerVolumeMountOutput) ToGetContainerInstanceCo
 
 func (o GetContainerInstanceContainerVolumeMountOutput) ToGetContainerInstanceContainerVolumeMountOutputWithContext(ctx context.Context) GetContainerInstanceContainerVolumeMountOutput {
 	return o
-}
-
-func (o GetContainerInstanceContainerVolumeMountOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceContainerVolumeMount] {
-	return pulumix.Output[GetContainerInstanceContainerVolumeMount]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstanceContainerVolumeMountOutput) IsReadOnly() pulumi.BoolOutput {
@@ -1048,12 +909,6 @@ func (o GetContainerInstanceContainerVolumeMountArrayOutput) ToGetContainerInsta
 
 func (o GetContainerInstanceContainerVolumeMountArrayOutput) ToGetContainerInstanceContainerVolumeMountArrayOutputWithContext(ctx context.Context) GetContainerInstanceContainerVolumeMountArrayOutput {
 	return o
-}
-
-func (o GetContainerInstanceContainerVolumeMountArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceContainerVolumeMount] {
-	return pulumix.Output[[]GetContainerInstanceContainerVolumeMount]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstanceContainerVolumeMountArrayOutput) Index(i pulumi.IntInput) GetContainerInstanceContainerVolumeMountOutput {
@@ -1103,12 +958,6 @@ func (i GetContainerInstanceDnsConfigArgs) ToGetContainerInstanceDnsConfigOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceDnsConfigOutput)
 }
 
-func (i GetContainerInstanceDnsConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceDnsConfig] {
-	return pulumix.Output[GetContainerInstanceDnsConfig]{
-		OutputState: i.ToGetContainerInstanceDnsConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstanceDnsConfigArrayInput is an input type that accepts GetContainerInstanceDnsConfigArray and GetContainerInstanceDnsConfigArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstanceDnsConfigArrayInput` via:
 //
@@ -1134,12 +983,6 @@ func (i GetContainerInstanceDnsConfigArray) ToGetContainerInstanceDnsConfigArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceDnsConfigArrayOutput)
 }
 
-func (i GetContainerInstanceDnsConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceDnsConfig] {
-	return pulumix.Output[[]GetContainerInstanceDnsConfig]{
-		OutputState: i.ToGetContainerInstanceDnsConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstanceDnsConfigOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstanceDnsConfigOutput) ElementType() reflect.Type {
@@ -1152,12 +995,6 @@ func (o GetContainerInstanceDnsConfigOutput) ToGetContainerInstanceDnsConfigOutp
 
 func (o GetContainerInstanceDnsConfigOutput) ToGetContainerInstanceDnsConfigOutputWithContext(ctx context.Context) GetContainerInstanceDnsConfigOutput {
 	return o
-}
-
-func (o GetContainerInstanceDnsConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceDnsConfig] {
-	return pulumix.Output[GetContainerInstanceDnsConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // IP address of the name server..
@@ -1187,12 +1024,6 @@ func (o GetContainerInstanceDnsConfigArrayOutput) ToGetContainerInstanceDnsConfi
 
 func (o GetContainerInstanceDnsConfigArrayOutput) ToGetContainerInstanceDnsConfigArrayOutputWithContext(ctx context.Context) GetContainerInstanceDnsConfigArrayOutput {
 	return o
-}
-
-func (o GetContainerInstanceDnsConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceDnsConfig] {
-	return pulumix.Output[[]GetContainerInstanceDnsConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstanceDnsConfigArrayOutput) Index(i pulumi.IntInput) GetContainerInstanceDnsConfigOutput {
@@ -1246,12 +1077,6 @@ func (i GetContainerInstanceImagePullSecretArgs) ToGetContainerInstanceImagePull
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceImagePullSecretOutput)
 }
 
-func (i GetContainerInstanceImagePullSecretArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceImagePullSecret] {
-	return pulumix.Output[GetContainerInstanceImagePullSecret]{
-		OutputState: i.ToGetContainerInstanceImagePullSecretOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstanceImagePullSecretArrayInput is an input type that accepts GetContainerInstanceImagePullSecretArray and GetContainerInstanceImagePullSecretArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstanceImagePullSecretArrayInput` via:
 //
@@ -1277,12 +1102,6 @@ func (i GetContainerInstanceImagePullSecretArray) ToGetContainerInstanceImagePul
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceImagePullSecretArrayOutput)
 }
 
-func (i GetContainerInstanceImagePullSecretArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceImagePullSecret] {
-	return pulumix.Output[[]GetContainerInstanceImagePullSecret]{
-		OutputState: i.ToGetContainerInstanceImagePullSecretArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstanceImagePullSecretOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstanceImagePullSecretOutput) ElementType() reflect.Type {
@@ -1295,12 +1114,6 @@ func (o GetContainerInstanceImagePullSecretOutput) ToGetContainerInstanceImagePu
 
 func (o GetContainerInstanceImagePullSecretOutput) ToGetContainerInstanceImagePullSecretOutputWithContext(ctx context.Context) GetContainerInstanceImagePullSecretOutput {
 	return o
-}
-
-func (o GetContainerInstanceImagePullSecretOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceImagePullSecret] {
-	return pulumix.Output[GetContainerInstanceImagePullSecret]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstanceImagePullSecretOutput) Password() pulumi.StringOutput {
@@ -1338,12 +1151,6 @@ func (o GetContainerInstanceImagePullSecretArrayOutput) ToGetContainerInstanceIm
 
 func (o GetContainerInstanceImagePullSecretArrayOutput) ToGetContainerInstanceImagePullSecretArrayOutputWithContext(ctx context.Context) GetContainerInstanceImagePullSecretArrayOutput {
 	return o
-}
-
-func (o GetContainerInstanceImagePullSecretArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceImagePullSecret] {
-	return pulumix.Output[[]GetContainerInstanceImagePullSecret]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstanceImagePullSecretArrayOutput) Index(i pulumi.IntInput) GetContainerInstanceImagePullSecretOutput {
@@ -1397,12 +1204,6 @@ func (i GetContainerInstanceShapeConfigArgs) ToGetContainerInstanceShapeConfigOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceShapeConfigOutput)
 }
 
-func (i GetContainerInstanceShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceShapeConfig] {
-	return pulumix.Output[GetContainerInstanceShapeConfig]{
-		OutputState: i.ToGetContainerInstanceShapeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstanceShapeConfigArrayInput is an input type that accepts GetContainerInstanceShapeConfigArray and GetContainerInstanceShapeConfigArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstanceShapeConfigArrayInput` via:
 //
@@ -1428,12 +1229,6 @@ func (i GetContainerInstanceShapeConfigArray) ToGetContainerInstanceShapeConfigA
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceShapeConfigArrayOutput)
 }
 
-func (i GetContainerInstanceShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceShapeConfig] {
-	return pulumix.Output[[]GetContainerInstanceShapeConfig]{
-		OutputState: i.ToGetContainerInstanceShapeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstanceShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstanceShapeConfigOutput) ElementType() reflect.Type {
@@ -1446,12 +1241,6 @@ func (o GetContainerInstanceShapeConfigOutput) ToGetContainerInstanceShapeConfig
 
 func (o GetContainerInstanceShapeConfigOutput) ToGetContainerInstanceShapeConfigOutputWithContext(ctx context.Context) GetContainerInstanceShapeConfigOutput {
 	return o
-}
-
-func (o GetContainerInstanceShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceShapeConfig] {
-	return pulumix.Output[GetContainerInstanceShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The total amount of memory available to the container instance, in gigabytes.
@@ -1486,12 +1275,6 @@ func (o GetContainerInstanceShapeConfigArrayOutput) ToGetContainerInstanceShapeC
 
 func (o GetContainerInstanceShapeConfigArrayOutput) ToGetContainerInstanceShapeConfigArrayOutputWithContext(ctx context.Context) GetContainerInstanceShapeConfigArrayOutput {
 	return o
-}
-
-func (o GetContainerInstanceShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceShapeConfig] {
-	return pulumix.Output[[]GetContainerInstanceShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstanceShapeConfigArrayOutput) Index(i pulumi.IntInput) GetContainerInstanceShapeConfigOutput {
@@ -1549,12 +1332,6 @@ func (i GetContainerInstanceShapeItemArgs) ToGetContainerInstanceShapeItemOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceShapeItemOutput)
 }
 
-func (i GetContainerInstanceShapeItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceShapeItem] {
-	return pulumix.Output[GetContainerInstanceShapeItem]{
-		OutputState: i.ToGetContainerInstanceShapeItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstanceShapeItemArrayInput is an input type that accepts GetContainerInstanceShapeItemArray and GetContainerInstanceShapeItemArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstanceShapeItemArrayInput` via:
 //
@@ -1580,12 +1357,6 @@ func (i GetContainerInstanceShapeItemArray) ToGetContainerInstanceShapeItemArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceShapeItemArrayOutput)
 }
 
-func (i GetContainerInstanceShapeItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceShapeItem] {
-	return pulumix.Output[[]GetContainerInstanceShapeItem]{
-		OutputState: i.ToGetContainerInstanceShapeItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstanceShapeItemOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstanceShapeItemOutput) ElementType() reflect.Type {
@@ -1598,12 +1369,6 @@ func (o GetContainerInstanceShapeItemOutput) ToGetContainerInstanceShapeItemOutp
 
 func (o GetContainerInstanceShapeItemOutput) ToGetContainerInstanceShapeItemOutputWithContext(ctx context.Context) GetContainerInstanceShapeItemOutput {
 	return o
-}
-
-func (o GetContainerInstanceShapeItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceShapeItem] {
-	return pulumix.Output[GetContainerInstanceShapeItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // For a flexible shape, the amount of memory available for instances that use this shape.
@@ -1647,12 +1412,6 @@ func (o GetContainerInstanceShapeItemArrayOutput) ToGetContainerInstanceShapeIte
 
 func (o GetContainerInstanceShapeItemArrayOutput) ToGetContainerInstanceShapeItemArrayOutputWithContext(ctx context.Context) GetContainerInstanceShapeItemArrayOutput {
 	return o
-}
-
-func (o GetContainerInstanceShapeItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceShapeItem] {
-	return pulumix.Output[[]GetContainerInstanceShapeItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstanceShapeItemArrayOutput) Index(i pulumi.IntInput) GetContainerInstanceShapeItemOutput {
@@ -1710,12 +1469,6 @@ func (i GetContainerInstanceShapeItemMemoryOptionArgs) ToGetContainerInstanceSha
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceShapeItemMemoryOptionOutput)
 }
 
-func (i GetContainerInstanceShapeItemMemoryOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceShapeItemMemoryOption] {
-	return pulumix.Output[GetContainerInstanceShapeItemMemoryOption]{
-		OutputState: i.ToGetContainerInstanceShapeItemMemoryOptionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstanceShapeItemMemoryOptionArrayInput is an input type that accepts GetContainerInstanceShapeItemMemoryOptionArray and GetContainerInstanceShapeItemMemoryOptionArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstanceShapeItemMemoryOptionArrayInput` via:
 //
@@ -1741,12 +1494,6 @@ func (i GetContainerInstanceShapeItemMemoryOptionArray) ToGetContainerInstanceSh
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceShapeItemMemoryOptionArrayOutput)
 }
 
-func (i GetContainerInstanceShapeItemMemoryOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceShapeItemMemoryOption] {
-	return pulumix.Output[[]GetContainerInstanceShapeItemMemoryOption]{
-		OutputState: i.ToGetContainerInstanceShapeItemMemoryOptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstanceShapeItemMemoryOptionOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstanceShapeItemMemoryOptionOutput) ElementType() reflect.Type {
@@ -1759,12 +1506,6 @@ func (o GetContainerInstanceShapeItemMemoryOptionOutput) ToGetContainerInstanceS
 
 func (o GetContainerInstanceShapeItemMemoryOptionOutput) ToGetContainerInstanceShapeItemMemoryOptionOutputWithContext(ctx context.Context) GetContainerInstanceShapeItemMemoryOptionOutput {
 	return o
-}
-
-func (o GetContainerInstanceShapeItemMemoryOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceShapeItemMemoryOption] {
-	return pulumix.Output[GetContainerInstanceShapeItemMemoryOption]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The default amount of memory per OCPU available for this shape, in gigabytes.
@@ -1804,12 +1545,6 @@ func (o GetContainerInstanceShapeItemMemoryOptionArrayOutput) ToGetContainerInst
 
 func (o GetContainerInstanceShapeItemMemoryOptionArrayOutput) ToGetContainerInstanceShapeItemMemoryOptionArrayOutputWithContext(ctx context.Context) GetContainerInstanceShapeItemMemoryOptionArrayOutput {
 	return o
-}
-
-func (o GetContainerInstanceShapeItemMemoryOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceShapeItemMemoryOption] {
-	return pulumix.Output[[]GetContainerInstanceShapeItemMemoryOption]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstanceShapeItemMemoryOptionArrayOutput) Index(i pulumi.IntInput) GetContainerInstanceShapeItemMemoryOptionOutput {
@@ -1859,12 +1594,6 @@ func (i GetContainerInstanceShapeItemNetworkingBandwidthOptionArgs) ToGetContain
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceShapeItemNetworkingBandwidthOptionOutput)
 }
 
-func (i GetContainerInstanceShapeItemNetworkingBandwidthOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceShapeItemNetworkingBandwidthOption] {
-	return pulumix.Output[GetContainerInstanceShapeItemNetworkingBandwidthOption]{
-		OutputState: i.ToGetContainerInstanceShapeItemNetworkingBandwidthOptionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstanceShapeItemNetworkingBandwidthOptionArrayInput is an input type that accepts GetContainerInstanceShapeItemNetworkingBandwidthOptionArray and GetContainerInstanceShapeItemNetworkingBandwidthOptionArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstanceShapeItemNetworkingBandwidthOptionArrayInput` via:
 //
@@ -1890,12 +1619,6 @@ func (i GetContainerInstanceShapeItemNetworkingBandwidthOptionArray) ToGetContai
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceShapeItemNetworkingBandwidthOptionArrayOutput)
 }
 
-func (i GetContainerInstanceShapeItemNetworkingBandwidthOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceShapeItemNetworkingBandwidthOption] {
-	return pulumix.Output[[]GetContainerInstanceShapeItemNetworkingBandwidthOption]{
-		OutputState: i.ToGetContainerInstanceShapeItemNetworkingBandwidthOptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstanceShapeItemNetworkingBandwidthOptionOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstanceShapeItemNetworkingBandwidthOptionOutput) ElementType() reflect.Type {
@@ -1908,12 +1631,6 @@ func (o GetContainerInstanceShapeItemNetworkingBandwidthOptionOutput) ToGetConta
 
 func (o GetContainerInstanceShapeItemNetworkingBandwidthOptionOutput) ToGetContainerInstanceShapeItemNetworkingBandwidthOptionOutputWithContext(ctx context.Context) GetContainerInstanceShapeItemNetworkingBandwidthOptionOutput {
 	return o
-}
-
-func (o GetContainerInstanceShapeItemNetworkingBandwidthOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceShapeItemNetworkingBandwidthOption] {
-	return pulumix.Output[GetContainerInstanceShapeItemNetworkingBandwidthOption]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The default amount of networking bandwidth per OCPU, in gigabits per second.
@@ -1943,12 +1660,6 @@ func (o GetContainerInstanceShapeItemNetworkingBandwidthOptionArrayOutput) ToGet
 
 func (o GetContainerInstanceShapeItemNetworkingBandwidthOptionArrayOutput) ToGetContainerInstanceShapeItemNetworkingBandwidthOptionArrayOutputWithContext(ctx context.Context) GetContainerInstanceShapeItemNetworkingBandwidthOptionArrayOutput {
 	return o
-}
-
-func (o GetContainerInstanceShapeItemNetworkingBandwidthOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceShapeItemNetworkingBandwidthOption] {
-	return pulumix.Output[[]GetContainerInstanceShapeItemNetworkingBandwidthOption]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstanceShapeItemNetworkingBandwidthOptionArrayOutput) Index(i pulumi.IntInput) GetContainerInstanceShapeItemNetworkingBandwidthOptionOutput {
@@ -1994,12 +1705,6 @@ func (i GetContainerInstanceShapeItemOcpuOptionArgs) ToGetContainerInstanceShape
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceShapeItemOcpuOptionOutput)
 }
 
-func (i GetContainerInstanceShapeItemOcpuOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceShapeItemOcpuOption] {
-	return pulumix.Output[GetContainerInstanceShapeItemOcpuOption]{
-		OutputState: i.ToGetContainerInstanceShapeItemOcpuOptionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstanceShapeItemOcpuOptionArrayInput is an input type that accepts GetContainerInstanceShapeItemOcpuOptionArray and GetContainerInstanceShapeItemOcpuOptionArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstanceShapeItemOcpuOptionArrayInput` via:
 //
@@ -2025,12 +1730,6 @@ func (i GetContainerInstanceShapeItemOcpuOptionArray) ToGetContainerInstanceShap
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceShapeItemOcpuOptionArrayOutput)
 }
 
-func (i GetContainerInstanceShapeItemOcpuOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceShapeItemOcpuOption] {
-	return pulumix.Output[[]GetContainerInstanceShapeItemOcpuOption]{
-		OutputState: i.ToGetContainerInstanceShapeItemOcpuOptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstanceShapeItemOcpuOptionOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstanceShapeItemOcpuOptionOutput) ElementType() reflect.Type {
@@ -2043,12 +1742,6 @@ func (o GetContainerInstanceShapeItemOcpuOptionOutput) ToGetContainerInstanceSha
 
 func (o GetContainerInstanceShapeItemOcpuOptionOutput) ToGetContainerInstanceShapeItemOcpuOptionOutputWithContext(ctx context.Context) GetContainerInstanceShapeItemOcpuOptionOutput {
 	return o
-}
-
-func (o GetContainerInstanceShapeItemOcpuOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceShapeItemOcpuOption] {
-	return pulumix.Output[GetContainerInstanceShapeItemOcpuOption]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The maximum number of OCPUs.
@@ -2073,12 +1766,6 @@ func (o GetContainerInstanceShapeItemOcpuOptionArrayOutput) ToGetContainerInstan
 
 func (o GetContainerInstanceShapeItemOcpuOptionArrayOutput) ToGetContainerInstanceShapeItemOcpuOptionArrayOutputWithContext(ctx context.Context) GetContainerInstanceShapeItemOcpuOptionArrayOutput {
 	return o
-}
-
-func (o GetContainerInstanceShapeItemOcpuOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceShapeItemOcpuOption] {
-	return pulumix.Output[[]GetContainerInstanceShapeItemOcpuOption]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstanceShapeItemOcpuOptionArrayOutput) Index(i pulumi.IntInput) GetContainerInstanceShapeItemOcpuOptionOutput {
@@ -2120,12 +1807,6 @@ func (i GetContainerInstanceShapesContainerInstanceShapeCollectionArgs) ToGetCon
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceShapesContainerInstanceShapeCollectionOutput)
 }
 
-func (i GetContainerInstanceShapesContainerInstanceShapeCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceShapesContainerInstanceShapeCollection] {
-	return pulumix.Output[GetContainerInstanceShapesContainerInstanceShapeCollection]{
-		OutputState: i.ToGetContainerInstanceShapesContainerInstanceShapeCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstanceShapesContainerInstanceShapeCollectionArrayInput is an input type that accepts GetContainerInstanceShapesContainerInstanceShapeCollectionArray and GetContainerInstanceShapesContainerInstanceShapeCollectionArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstanceShapesContainerInstanceShapeCollectionArrayInput` via:
 //
@@ -2151,12 +1832,6 @@ func (i GetContainerInstanceShapesContainerInstanceShapeCollectionArray) ToGetCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceShapesContainerInstanceShapeCollectionArrayOutput)
 }
 
-func (i GetContainerInstanceShapesContainerInstanceShapeCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceShapesContainerInstanceShapeCollection] {
-	return pulumix.Output[[]GetContainerInstanceShapesContainerInstanceShapeCollection]{
-		OutputState: i.ToGetContainerInstanceShapesContainerInstanceShapeCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstanceShapesContainerInstanceShapeCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstanceShapesContainerInstanceShapeCollectionOutput) ElementType() reflect.Type {
@@ -2169,12 +1844,6 @@ func (o GetContainerInstanceShapesContainerInstanceShapeCollectionOutput) ToGetC
 
 func (o GetContainerInstanceShapesContainerInstanceShapeCollectionOutput) ToGetContainerInstanceShapesContainerInstanceShapeCollectionOutputWithContext(ctx context.Context) GetContainerInstanceShapesContainerInstanceShapeCollectionOutput {
 	return o
-}
-
-func (o GetContainerInstanceShapesContainerInstanceShapeCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceShapesContainerInstanceShapeCollection] {
-	return pulumix.Output[GetContainerInstanceShapesContainerInstanceShapeCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of shapes.
@@ -2196,12 +1865,6 @@ func (o GetContainerInstanceShapesContainerInstanceShapeCollectionArrayOutput) T
 
 func (o GetContainerInstanceShapesContainerInstanceShapeCollectionArrayOutput) ToGetContainerInstanceShapesContainerInstanceShapeCollectionArrayOutputWithContext(ctx context.Context) GetContainerInstanceShapesContainerInstanceShapeCollectionArrayOutput {
 	return o
-}
-
-func (o GetContainerInstanceShapesContainerInstanceShapeCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceShapesContainerInstanceShapeCollection] {
-	return pulumix.Output[[]GetContainerInstanceShapesContainerInstanceShapeCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstanceShapesContainerInstanceShapeCollectionArrayOutput) Index(i pulumi.IntInput) GetContainerInstanceShapesContainerInstanceShapeCollectionOutput {
@@ -2259,12 +1922,6 @@ func (i GetContainerInstanceShapesContainerInstanceShapeCollectionItemArgs) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceShapesContainerInstanceShapeCollectionItemOutput)
 }
 
-func (i GetContainerInstanceShapesContainerInstanceShapeCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceShapesContainerInstanceShapeCollectionItem] {
-	return pulumix.Output[GetContainerInstanceShapesContainerInstanceShapeCollectionItem]{
-		OutputState: i.ToGetContainerInstanceShapesContainerInstanceShapeCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstanceShapesContainerInstanceShapeCollectionItemArrayInput is an input type that accepts GetContainerInstanceShapesContainerInstanceShapeCollectionItemArray and GetContainerInstanceShapesContainerInstanceShapeCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstanceShapesContainerInstanceShapeCollectionItemArrayInput` via:
 //
@@ -2290,12 +1947,6 @@ func (i GetContainerInstanceShapesContainerInstanceShapeCollectionItemArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceShapesContainerInstanceShapeCollectionItemArrayOutput)
 }
 
-func (i GetContainerInstanceShapesContainerInstanceShapeCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceShapesContainerInstanceShapeCollectionItem] {
-	return pulumix.Output[[]GetContainerInstanceShapesContainerInstanceShapeCollectionItem]{
-		OutputState: i.ToGetContainerInstanceShapesContainerInstanceShapeCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstanceShapesContainerInstanceShapeCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstanceShapesContainerInstanceShapeCollectionItemOutput) ElementType() reflect.Type {
@@ -2308,12 +1959,6 @@ func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemOutput) To
 
 func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemOutput) ToGetContainerInstanceShapesContainerInstanceShapeCollectionItemOutputWithContext(ctx context.Context) GetContainerInstanceShapesContainerInstanceShapeCollectionItemOutput {
 	return o
-}
-
-func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceShapesContainerInstanceShapeCollectionItem] {
-	return pulumix.Output[GetContainerInstanceShapesContainerInstanceShapeCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // For a flexible shape, the amount of memory available for container instances that use this shape.
@@ -2361,12 +2006,6 @@ func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemArrayOutpu
 
 func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemArrayOutput) ToGetContainerInstanceShapesContainerInstanceShapeCollectionItemArrayOutputWithContext(ctx context.Context) GetContainerInstanceShapesContainerInstanceShapeCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceShapesContainerInstanceShapeCollectionItem] {
-	return pulumix.Output[[]GetContainerInstanceShapesContainerInstanceShapeCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemArrayOutput) Index(i pulumi.IntInput) GetContainerInstanceShapesContainerInstanceShapeCollectionItemOutput {
@@ -2424,12 +2063,6 @@ func (i GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOpti
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionOutput)
 }
 
-func (i GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption] {
-	return pulumix.Output[GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption]{
-		OutputState: i.ToGetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionArrayInput is an input type that accepts GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionArray and GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionArrayInput` via:
 //
@@ -2455,12 +2088,6 @@ func (i GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOpti
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionArrayOutput)
 }
 
-func (i GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption] {
-	return pulumix.Output[[]GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption]{
-		OutputState: i.ToGetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionOutput) ElementType() reflect.Type {
@@ -2473,12 +2100,6 @@ func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOpti
 
 func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionOutput) ToGetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionOutputWithContext(ctx context.Context) GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionOutput {
 	return o
-}
-
-func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption] {
-	return pulumix.Output[GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The default amount of memory per OCPU available for this shape (GB).
@@ -2530,12 +2151,6 @@ func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOpti
 	return o
 }
 
-func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption] {
-	return pulumix.Output[[]GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionArrayOutput) Index(i pulumi.IntInput) GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption {
 		return vs[0].([]GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption)[vs[1].(int)]
@@ -2583,12 +2198,6 @@ func (i GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworking
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionOutput)
 }
 
-func (i GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOption] {
-	return pulumix.Output[GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOption]{
-		OutputState: i.ToGetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionArrayInput is an input type that accepts GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionArray and GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionArrayInput` via:
 //
@@ -2614,12 +2223,6 @@ func (i GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworking
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionArrayOutput)
 }
 
-func (i GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOption] {
-	return pulumix.Output[[]GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOption]{
-		OutputState: i.ToGetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionOutput) ElementType() reflect.Type {
@@ -2632,12 +2235,6 @@ func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworking
 
 func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionOutput) ToGetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionOutputWithContext(ctx context.Context) GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionOutput {
 	return o
-}
-
-func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOption] {
-	return pulumix.Output[GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOption]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The default amount of networking bandwidth per OCPU, in gigabits per second.
@@ -2673,12 +2270,6 @@ func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworking
 
 func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionArrayOutput) ToGetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionArrayOutputWithContext(ctx context.Context) GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionArrayOutput {
 	return o
-}
-
-func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOption] {
-	return pulumix.Output[[]GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOption]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionArrayOutput) Index(i pulumi.IntInput) GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionOutput {
@@ -2724,12 +2315,6 @@ func (i GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOption
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionOutput)
 }
 
-func (i GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOption] {
-	return pulumix.Output[GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOption]{
-		OutputState: i.ToGetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionArrayInput is an input type that accepts GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionArray and GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionArrayInput` via:
 //
@@ -2755,12 +2340,6 @@ func (i GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOption
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionArrayOutput)
 }
 
-func (i GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOption] {
-	return pulumix.Output[[]GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOption]{
-		OutputState: i.ToGetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionOutput) ElementType() reflect.Type {
@@ -2773,12 +2352,6 @@ func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOption
 
 func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionOutput) ToGetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionOutputWithContext(ctx context.Context) GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionOutput {
 	return o
-}
-
-func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOption] {
-	return pulumix.Output[GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOption]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The maximum number of OCPUs.
@@ -2803,12 +2376,6 @@ func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOption
 
 func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionArrayOutput) ToGetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionArrayOutputWithContext(ctx context.Context) GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionArrayOutput {
 	return o
-}
-
-func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOption] {
-	return pulumix.Output[[]GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOption]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionArrayOutput) Index(i pulumi.IntInput) GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionOutput {
@@ -2854,12 +2421,6 @@ func (i GetContainerInstanceShapesFilterArgs) ToGetContainerInstanceShapesFilter
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceShapesFilterOutput)
 }
 
-func (i GetContainerInstanceShapesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceShapesFilter] {
-	return pulumix.Output[GetContainerInstanceShapesFilter]{
-		OutputState: i.ToGetContainerInstanceShapesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstanceShapesFilterArrayInput is an input type that accepts GetContainerInstanceShapesFilterArray and GetContainerInstanceShapesFilterArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstanceShapesFilterArrayInput` via:
 //
@@ -2885,12 +2446,6 @@ func (i GetContainerInstanceShapesFilterArray) ToGetContainerInstanceShapesFilte
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceShapesFilterArrayOutput)
 }
 
-func (i GetContainerInstanceShapesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceShapesFilter] {
-	return pulumix.Output[[]GetContainerInstanceShapesFilter]{
-		OutputState: i.ToGetContainerInstanceShapesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstanceShapesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstanceShapesFilterOutput) ElementType() reflect.Type {
@@ -2903,12 +2458,6 @@ func (o GetContainerInstanceShapesFilterOutput) ToGetContainerInstanceShapesFilt
 
 func (o GetContainerInstanceShapesFilterOutput) ToGetContainerInstanceShapesFilterOutputWithContext(ctx context.Context) GetContainerInstanceShapesFilterOutput {
 	return o
-}
-
-func (o GetContainerInstanceShapesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceShapesFilter] {
-	return pulumix.Output[GetContainerInstanceShapesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name identifying the shape.
@@ -2936,12 +2485,6 @@ func (o GetContainerInstanceShapesFilterArrayOutput) ToGetContainerInstanceShape
 
 func (o GetContainerInstanceShapesFilterArrayOutput) ToGetContainerInstanceShapesFilterArrayOutputWithContext(ctx context.Context) GetContainerInstanceShapesFilterArrayOutput {
 	return o
-}
-
-func (o GetContainerInstanceShapesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceShapesFilter] {
-	return pulumix.Output[[]GetContainerInstanceShapesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstanceShapesFilterArrayOutput) Index(i pulumi.IntInput) GetContainerInstanceShapesFilterOutput {
@@ -3007,12 +2550,6 @@ func (i GetContainerInstanceVnicArgs) ToGetContainerInstanceVnicOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceVnicOutput)
 }
 
-func (i GetContainerInstanceVnicArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceVnic] {
-	return pulumix.Output[GetContainerInstanceVnic]{
-		OutputState: i.ToGetContainerInstanceVnicOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstanceVnicArrayInput is an input type that accepts GetContainerInstanceVnicArray and GetContainerInstanceVnicArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstanceVnicArrayInput` via:
 //
@@ -3038,12 +2575,6 @@ func (i GetContainerInstanceVnicArray) ToGetContainerInstanceVnicArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceVnicArrayOutput)
 }
 
-func (i GetContainerInstanceVnicArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceVnic] {
-	return pulumix.Output[[]GetContainerInstanceVnic]{
-		OutputState: i.ToGetContainerInstanceVnicArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstanceVnicOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstanceVnicOutput) ElementType() reflect.Type {
@@ -3056,12 +2587,6 @@ func (o GetContainerInstanceVnicOutput) ToGetContainerInstanceVnicOutput() GetCo
 
 func (o GetContainerInstanceVnicOutput) ToGetContainerInstanceVnicOutputWithContext(ctx context.Context) GetContainerInstanceVnicOutput {
 	return o
-}
-
-func (o GetContainerInstanceVnicOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceVnic] {
-	return pulumix.Output[GetContainerInstanceVnic]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
@@ -3122,12 +2647,6 @@ func (o GetContainerInstanceVnicArrayOutput) ToGetContainerInstanceVnicArrayOutp
 	return o
 }
 
-func (o GetContainerInstanceVnicArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceVnic] {
-	return pulumix.Output[[]GetContainerInstanceVnic]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetContainerInstanceVnicArrayOutput) Index(i pulumi.IntInput) GetContainerInstanceVnicOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerInstanceVnic {
 		return vs[0].([]GetContainerInstanceVnic)[vs[1].(int)]
@@ -3179,12 +2698,6 @@ func (i GetContainerInstanceVolumeArgs) ToGetContainerInstanceVolumeOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceVolumeOutput)
 }
 
-func (i GetContainerInstanceVolumeArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceVolume] {
-	return pulumix.Output[GetContainerInstanceVolume]{
-		OutputState: i.ToGetContainerInstanceVolumeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstanceVolumeArrayInput is an input type that accepts GetContainerInstanceVolumeArray and GetContainerInstanceVolumeArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstanceVolumeArrayInput` via:
 //
@@ -3210,12 +2723,6 @@ func (i GetContainerInstanceVolumeArray) ToGetContainerInstanceVolumeArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceVolumeArrayOutput)
 }
 
-func (i GetContainerInstanceVolumeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceVolume] {
-	return pulumix.Output[[]GetContainerInstanceVolume]{
-		OutputState: i.ToGetContainerInstanceVolumeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstanceVolumeOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstanceVolumeOutput) ElementType() reflect.Type {
@@ -3228,12 +2735,6 @@ func (o GetContainerInstanceVolumeOutput) ToGetContainerInstanceVolumeOutput() G
 
 func (o GetContainerInstanceVolumeOutput) ToGetContainerInstanceVolumeOutputWithContext(ctx context.Context) GetContainerInstanceVolumeOutput {
 	return o
-}
-
-func (o GetContainerInstanceVolumeOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceVolume] {
-	return pulumix.Output[GetContainerInstanceVolume]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The volume type of the empty directory, can be either File Storage or Memory.
@@ -3268,12 +2769,6 @@ func (o GetContainerInstanceVolumeArrayOutput) ToGetContainerInstanceVolumeArray
 
 func (o GetContainerInstanceVolumeArrayOutput) ToGetContainerInstanceVolumeArrayOutputWithContext(ctx context.Context) GetContainerInstanceVolumeArrayOutput {
 	return o
-}
-
-func (o GetContainerInstanceVolumeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceVolume] {
-	return pulumix.Output[[]GetContainerInstanceVolume]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstanceVolumeArrayOutput) Index(i pulumi.IntInput) GetContainerInstanceVolumeOutput {
@@ -3323,12 +2818,6 @@ func (i GetContainerInstanceVolumeConfigArgs) ToGetContainerInstanceVolumeConfig
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceVolumeConfigOutput)
 }
 
-func (i GetContainerInstanceVolumeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceVolumeConfig] {
-	return pulumix.Output[GetContainerInstanceVolumeConfig]{
-		OutputState: i.ToGetContainerInstanceVolumeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstanceVolumeConfigArrayInput is an input type that accepts GetContainerInstanceVolumeConfigArray and GetContainerInstanceVolumeConfigArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstanceVolumeConfigArrayInput` via:
 //
@@ -3354,12 +2843,6 @@ func (i GetContainerInstanceVolumeConfigArray) ToGetContainerInstanceVolumeConfi
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstanceVolumeConfigArrayOutput)
 }
 
-func (i GetContainerInstanceVolumeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceVolumeConfig] {
-	return pulumix.Output[[]GetContainerInstanceVolumeConfig]{
-		OutputState: i.ToGetContainerInstanceVolumeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstanceVolumeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstanceVolumeConfigOutput) ElementType() reflect.Type {
@@ -3372,12 +2855,6 @@ func (o GetContainerInstanceVolumeConfigOutput) ToGetContainerInstanceVolumeConf
 
 func (o GetContainerInstanceVolumeConfigOutput) ToGetContainerInstanceVolumeConfigOutputWithContext(ctx context.Context) GetContainerInstanceVolumeConfigOutput {
 	return o
-}
-
-func (o GetContainerInstanceVolumeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceVolumeConfig] {
-	return pulumix.Output[GetContainerInstanceVolumeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The base64 encoded contents of the file. The contents are decoded to plain text before mounted as a file to a container inside container instance.
@@ -3407,12 +2884,6 @@ func (o GetContainerInstanceVolumeConfigArrayOutput) ToGetContainerInstanceVolum
 
 func (o GetContainerInstanceVolumeConfigArrayOutput) ToGetContainerInstanceVolumeConfigArrayOutputWithContext(ctx context.Context) GetContainerInstanceVolumeConfigArrayOutput {
 	return o
-}
-
-func (o GetContainerInstanceVolumeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstanceVolumeConfig] {
-	return pulumix.Output[[]GetContainerInstanceVolumeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstanceVolumeConfigArrayOutput) Index(i pulumi.IntInput) GetContainerInstanceVolumeConfigOutput {
@@ -3452,12 +2923,6 @@ func (i GetContainerInstancesContainerInstanceCollectionArgs) ToGetContainerInst
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstancesContainerInstanceCollectionOutput)
 }
 
-func (i GetContainerInstancesContainerInstanceCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstancesContainerInstanceCollection] {
-	return pulumix.Output[GetContainerInstancesContainerInstanceCollection]{
-		OutputState: i.ToGetContainerInstancesContainerInstanceCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstancesContainerInstanceCollectionArrayInput is an input type that accepts GetContainerInstancesContainerInstanceCollectionArray and GetContainerInstancesContainerInstanceCollectionArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstancesContainerInstanceCollectionArrayInput` via:
 //
@@ -3483,12 +2948,6 @@ func (i GetContainerInstancesContainerInstanceCollectionArray) ToGetContainerIns
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstancesContainerInstanceCollectionArrayOutput)
 }
 
-func (i GetContainerInstancesContainerInstanceCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstancesContainerInstanceCollection] {
-	return pulumix.Output[[]GetContainerInstancesContainerInstanceCollection]{
-		OutputState: i.ToGetContainerInstancesContainerInstanceCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstancesContainerInstanceCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstancesContainerInstanceCollectionOutput) ElementType() reflect.Type {
@@ -3501,12 +2960,6 @@ func (o GetContainerInstancesContainerInstanceCollectionOutput) ToGetContainerIn
 
 func (o GetContainerInstancesContainerInstanceCollectionOutput) ToGetContainerInstancesContainerInstanceCollectionOutputWithContext(ctx context.Context) GetContainerInstancesContainerInstanceCollectionOutput {
 	return o
-}
-
-func (o GetContainerInstancesContainerInstanceCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstancesContainerInstanceCollection] {
-	return pulumix.Output[GetContainerInstancesContainerInstanceCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstancesContainerInstanceCollectionOutput) Items() GetContainerInstancesContainerInstanceCollectionItemArrayOutput {
@@ -3527,12 +2980,6 @@ func (o GetContainerInstancesContainerInstanceCollectionArrayOutput) ToGetContai
 
 func (o GetContainerInstancesContainerInstanceCollectionArrayOutput) ToGetContainerInstancesContainerInstanceCollectionArrayOutputWithContext(ctx context.Context) GetContainerInstancesContainerInstanceCollectionArrayOutput {
 	return o
-}
-
-func (o GetContainerInstancesContainerInstanceCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstancesContainerInstanceCollection] {
-	return pulumix.Output[[]GetContainerInstancesContainerInstanceCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstancesContainerInstanceCollectionArrayOutput) Index(i pulumi.IntInput) GetContainerInstancesContainerInstanceCollectionOutput {
@@ -3662,12 +3109,6 @@ func (i GetContainerInstancesContainerInstanceCollectionItemArgs) ToGetContainer
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstancesContainerInstanceCollectionItemOutput)
 }
 
-func (i GetContainerInstancesContainerInstanceCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstancesContainerInstanceCollectionItem] {
-	return pulumix.Output[GetContainerInstancesContainerInstanceCollectionItem]{
-		OutputState: i.ToGetContainerInstancesContainerInstanceCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstancesContainerInstanceCollectionItemArrayInput is an input type that accepts GetContainerInstancesContainerInstanceCollectionItemArray and GetContainerInstancesContainerInstanceCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstancesContainerInstanceCollectionItemArrayInput` via:
 //
@@ -3693,12 +3134,6 @@ func (i GetContainerInstancesContainerInstanceCollectionItemArray) ToGetContaine
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstancesContainerInstanceCollectionItemArrayOutput)
 }
 
-func (i GetContainerInstancesContainerInstanceCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItem] {
-	return pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItem]{
-		OutputState: i.ToGetContainerInstancesContainerInstanceCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstancesContainerInstanceCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstancesContainerInstanceCollectionItemOutput) ElementType() reflect.Type {
@@ -3711,12 +3146,6 @@ func (o GetContainerInstancesContainerInstanceCollectionItemOutput) ToGetContain
 
 func (o GetContainerInstancesContainerInstanceCollectionItemOutput) ToGetContainerInstancesContainerInstanceCollectionItemOutputWithContext(ctx context.Context) GetContainerInstancesContainerInstanceCollectionItemOutput {
 	return o
-}
-
-func (o GetContainerInstancesContainerInstanceCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstancesContainerInstanceCollectionItem] {
-	return pulumix.Output[GetContainerInstancesContainerInstanceCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -3868,12 +3297,6 @@ func (o GetContainerInstancesContainerInstanceCollectionItemArrayOutput) ToGetCo
 	return o
 }
 
-func (o GetContainerInstancesContainerInstanceCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItem] {
-	return pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetContainerInstancesContainerInstanceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetContainerInstancesContainerInstanceCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerInstancesContainerInstanceCollectionItem {
 		return vs[0].([]GetContainerInstancesContainerInstanceCollectionItem)[vs[1].(int)]
@@ -3983,12 +3406,6 @@ func (i GetContainerInstancesContainerInstanceCollectionItemContainerArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstancesContainerInstanceCollectionItemContainerOutput)
 }
 
-func (i GetContainerInstancesContainerInstanceCollectionItemContainerArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemContainer] {
-	return pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemContainer]{
-		OutputState: i.ToGetContainerInstancesContainerInstanceCollectionItemContainerOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstancesContainerInstanceCollectionItemContainerArrayInput is an input type that accepts GetContainerInstancesContainerInstanceCollectionItemContainerArray and GetContainerInstancesContainerInstanceCollectionItemContainerArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstancesContainerInstanceCollectionItemContainerArrayInput` via:
 //
@@ -4014,12 +3431,6 @@ func (i GetContainerInstancesContainerInstanceCollectionItemContainerArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstancesContainerInstanceCollectionItemContainerArrayOutput)
 }
 
-func (i GetContainerInstancesContainerInstanceCollectionItemContainerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemContainer] {
-	return pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemContainer]{
-		OutputState: i.ToGetContainerInstancesContainerInstanceCollectionItemContainerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstancesContainerInstanceCollectionItemContainerOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstancesContainerInstanceCollectionItemContainerOutput) ElementType() reflect.Type {
@@ -4032,12 +3443,6 @@ func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) ToG
 
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) ToGetContainerInstancesContainerInstanceCollectionItemContainerOutputWithContext(ctx context.Context) GetContainerInstancesContainerInstanceCollectionItemContainerOutput {
 	return o
-}
-
-func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemContainer] {
-	return pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemContainer]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) Arguments() pulumi.StringArrayOutput {
@@ -4192,12 +3597,6 @@ func (o GetContainerInstancesContainerInstanceCollectionItemContainerArrayOutput
 	return o
 }
 
-func (o GetContainerInstancesContainerInstanceCollectionItemContainerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemContainer] {
-	return pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemContainer]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerArrayOutput) Index(i pulumi.IntInput) GetContainerInstancesContainerInstanceCollectionItemContainerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerInstancesContainerInstanceCollectionItemContainer {
 		return vs[0].([]GetContainerInstancesContainerInstanceCollectionItemContainer)[vs[1].(int)]
@@ -4265,12 +3664,6 @@ func (i GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckOutput)
 }
 
-func (i GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck] {
-	return pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck]{
-		OutputState: i.ToGetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckArrayInput is an input type that accepts GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckArray and GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckArrayInput` via:
 //
@@ -4296,12 +3689,6 @@ func (i GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckArrayOutput)
 }
 
-func (i GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck] {
-	return pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck]{
-		OutputState: i.ToGetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckOutput) ElementType() reflect.Type {
@@ -4314,12 +3701,6 @@ func (o GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck
 
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckOutput) ToGetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckOutputWithContext(ctx context.Context) GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckOutput {
 	return o
-}
-
-func (o GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck] {
-	return pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckOutput) Commands() pulumi.StringArrayOutput {
@@ -4416,12 +3797,6 @@ func (o GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck
 	return o
 }
 
-func (o GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck] {
-	return pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckArrayOutput) Index(i pulumi.IntInput) GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck {
 		return vs[0].([]GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck)[vs[1].(int)]
@@ -4463,12 +3838,6 @@ func (i GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderOutput)
 }
 
-func (i GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeader] {
-	return pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeader]{
-		OutputState: i.ToGetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderArrayInput is an input type that accepts GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderArray and GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderArrayInput` via:
 //
@@ -4494,12 +3863,6 @@ func (i GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderArrayOutput)
 }
 
-func (i GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeader] {
-	return pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeader]{
-		OutputState: i.ToGetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderOutput) ElementType() reflect.Type {
@@ -4512,12 +3875,6 @@ func (o GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck
 
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderOutput) ToGetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderOutputWithContext(ctx context.Context) GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderOutput {
 	return o
-}
-
-func (o GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeader] {
-	return pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the volume. This must be unique within a single container instance.
@@ -4545,12 +3902,6 @@ func (o GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck
 
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderArrayOutput) ToGetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderArrayOutputWithContext(ctx context.Context) GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderArrayOutput {
 	return o
-}
-
-func (o GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeader] {
-	return pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderArrayOutput) Index(i pulumi.IntInput) GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderOutput {
@@ -4592,12 +3943,6 @@ func (i GetContainerInstancesContainerInstanceCollectionItemContainerResourceCon
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigOutput)
 }
 
-func (i GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig] {
-	return pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig]{
-		OutputState: i.ToGetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigArrayInput is an input type that accepts GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigArray and GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigArrayInput` via:
 //
@@ -4623,12 +3968,6 @@ func (i GetContainerInstancesContainerInstanceCollectionItemContainerResourceCon
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigArrayOutput)
 }
 
-func (i GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig] {
-	return pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig]{
-		OutputState: i.ToGetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigOutput) ElementType() reflect.Type {
@@ -4641,12 +3980,6 @@ func (o GetContainerInstancesContainerInstanceCollectionItemContainerResourceCon
 
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigOutput) ToGetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigOutputWithContext(ctx context.Context) GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigOutput {
 	return o
-}
-
-func (o GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig] {
-	return pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigOutput) MemoryLimitInGbs() pulumi.Float64Output {
@@ -4673,12 +4006,6 @@ func (o GetContainerInstancesContainerInstanceCollectionItemContainerResourceCon
 
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigArrayOutput) ToGetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigArrayOutputWithContext(ctx context.Context) GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigArrayOutput {
 	return o
-}
-
-func (o GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig] {
-	return pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigArrayOutput) Index(i pulumi.IntInput) GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigOutput {
@@ -4726,12 +4053,6 @@ func (i GetContainerInstancesContainerInstanceCollectionItemContainerSecurityCon
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutput)
 }
 
-func (i GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext] {
-	return pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext]{
-		OutputState: i.ToGetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayInput is an input type that accepts GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArray and GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayInput` via:
 //
@@ -4757,12 +4078,6 @@ func (i GetContainerInstancesContainerInstanceCollectionItemContainerSecurityCon
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayOutput)
 }
 
-func (i GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext] {
-	return pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext]{
-		OutputState: i.ToGetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutput) ElementType() reflect.Type {
@@ -4775,12 +4090,6 @@ func (o GetContainerInstancesContainerInstanceCollectionItemContainerSecurityCon
 
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutput) ToGetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutputWithContext(ctx context.Context) GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutput {
 	return o
-}
-
-func (o GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext] {
-	return pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutput) IsNonRootUserCheckEnabled() pulumi.BoolOutput {
@@ -4825,12 +4134,6 @@ func (o GetContainerInstancesContainerInstanceCollectionItemContainerSecurityCon
 
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayOutput) ToGetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayOutputWithContext(ctx context.Context) GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayOutput {
 	return o
-}
-
-func (o GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext] {
-	return pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArrayOutput) Index(i pulumi.IntInput) GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextOutput {
@@ -4878,12 +4181,6 @@ func (i GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountOutput)
 }
 
-func (i GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount] {
-	return pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount]{
-		OutputState: i.ToGetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountArrayInput is an input type that accepts GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountArray and GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountArrayInput` via:
 //
@@ -4909,12 +4206,6 @@ func (i GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountArrayOutput)
 }
 
-func (i GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount] {
-	return pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount]{
-		OutputState: i.ToGetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountOutput) ElementType() reflect.Type {
@@ -4927,12 +4218,6 @@ func (o GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount
 
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountOutput) ToGetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountOutputWithContext(ctx context.Context) GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountOutput {
 	return o
-}
-
-func (o GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount] {
-	return pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountOutput) IsReadOnly() pulumi.BoolOutput {
@@ -4977,12 +4262,6 @@ func (o GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount
 
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountArrayOutput) ToGetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountArrayOutputWithContext(ctx context.Context) GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountArrayOutput {
 	return o
-}
-
-func (o GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount] {
-	return pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountArrayOutput) Index(i pulumi.IntInput) GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountOutput {
@@ -5032,12 +4311,6 @@ func (i GetContainerInstancesContainerInstanceCollectionItemDnsConfigArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstancesContainerInstanceCollectionItemDnsConfigOutput)
 }
 
-func (i GetContainerInstancesContainerInstanceCollectionItemDnsConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemDnsConfig] {
-	return pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemDnsConfig]{
-		OutputState: i.ToGetContainerInstancesContainerInstanceCollectionItemDnsConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstancesContainerInstanceCollectionItemDnsConfigArrayInput is an input type that accepts GetContainerInstancesContainerInstanceCollectionItemDnsConfigArray and GetContainerInstancesContainerInstanceCollectionItemDnsConfigArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstancesContainerInstanceCollectionItemDnsConfigArrayInput` via:
 //
@@ -5063,12 +4336,6 @@ func (i GetContainerInstancesContainerInstanceCollectionItemDnsConfigArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstancesContainerInstanceCollectionItemDnsConfigArrayOutput)
 }
 
-func (i GetContainerInstancesContainerInstanceCollectionItemDnsConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemDnsConfig] {
-	return pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemDnsConfig]{
-		OutputState: i.ToGetContainerInstancesContainerInstanceCollectionItemDnsConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstancesContainerInstanceCollectionItemDnsConfigOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstancesContainerInstanceCollectionItemDnsConfigOutput) ElementType() reflect.Type {
@@ -5081,12 +4348,6 @@ func (o GetContainerInstancesContainerInstanceCollectionItemDnsConfigOutput) ToG
 
 func (o GetContainerInstancesContainerInstanceCollectionItemDnsConfigOutput) ToGetContainerInstancesContainerInstanceCollectionItemDnsConfigOutputWithContext(ctx context.Context) GetContainerInstancesContainerInstanceCollectionItemDnsConfigOutput {
 	return o
-}
-
-func (o GetContainerInstancesContainerInstanceCollectionItemDnsConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemDnsConfig] {
-	return pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemDnsConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // IP address of the name server..
@@ -5116,12 +4377,6 @@ func (o GetContainerInstancesContainerInstanceCollectionItemDnsConfigArrayOutput
 
 func (o GetContainerInstancesContainerInstanceCollectionItemDnsConfigArrayOutput) ToGetContainerInstancesContainerInstanceCollectionItemDnsConfigArrayOutputWithContext(ctx context.Context) GetContainerInstancesContainerInstanceCollectionItemDnsConfigArrayOutput {
 	return o
-}
-
-func (o GetContainerInstancesContainerInstanceCollectionItemDnsConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemDnsConfig] {
-	return pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemDnsConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstancesContainerInstanceCollectionItemDnsConfigArrayOutput) Index(i pulumi.IntInput) GetContainerInstancesContainerInstanceCollectionItemDnsConfigOutput {
@@ -5175,12 +4430,6 @@ func (i GetContainerInstancesContainerInstanceCollectionItemImagePullSecretArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstancesContainerInstanceCollectionItemImagePullSecretOutput)
 }
 
-func (i GetContainerInstancesContainerInstanceCollectionItemImagePullSecretArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemImagePullSecret] {
-	return pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemImagePullSecret]{
-		OutputState: i.ToGetContainerInstancesContainerInstanceCollectionItemImagePullSecretOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstancesContainerInstanceCollectionItemImagePullSecretArrayInput is an input type that accepts GetContainerInstancesContainerInstanceCollectionItemImagePullSecretArray and GetContainerInstancesContainerInstanceCollectionItemImagePullSecretArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstancesContainerInstanceCollectionItemImagePullSecretArrayInput` via:
 //
@@ -5206,12 +4455,6 @@ func (i GetContainerInstancesContainerInstanceCollectionItemImagePullSecretArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstancesContainerInstanceCollectionItemImagePullSecretArrayOutput)
 }
 
-func (i GetContainerInstancesContainerInstanceCollectionItemImagePullSecretArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemImagePullSecret] {
-	return pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemImagePullSecret]{
-		OutputState: i.ToGetContainerInstancesContainerInstanceCollectionItemImagePullSecretArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstancesContainerInstanceCollectionItemImagePullSecretOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstancesContainerInstanceCollectionItemImagePullSecretOutput) ElementType() reflect.Type {
@@ -5224,12 +4467,6 @@ func (o GetContainerInstancesContainerInstanceCollectionItemImagePullSecretOutpu
 
 func (o GetContainerInstancesContainerInstanceCollectionItemImagePullSecretOutput) ToGetContainerInstancesContainerInstanceCollectionItemImagePullSecretOutputWithContext(ctx context.Context) GetContainerInstancesContainerInstanceCollectionItemImagePullSecretOutput {
 	return o
-}
-
-func (o GetContainerInstancesContainerInstanceCollectionItemImagePullSecretOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemImagePullSecret] {
-	return pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemImagePullSecret]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstancesContainerInstanceCollectionItemImagePullSecretOutput) Password() pulumi.StringOutput {
@@ -5271,12 +4508,6 @@ func (o GetContainerInstancesContainerInstanceCollectionItemImagePullSecretArray
 
 func (o GetContainerInstancesContainerInstanceCollectionItemImagePullSecretArrayOutput) ToGetContainerInstancesContainerInstanceCollectionItemImagePullSecretArrayOutputWithContext(ctx context.Context) GetContainerInstancesContainerInstanceCollectionItemImagePullSecretArrayOutput {
 	return o
-}
-
-func (o GetContainerInstancesContainerInstanceCollectionItemImagePullSecretArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemImagePullSecret] {
-	return pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemImagePullSecret]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstancesContainerInstanceCollectionItemImagePullSecretArrayOutput) Index(i pulumi.IntInput) GetContainerInstancesContainerInstanceCollectionItemImagePullSecretOutput {
@@ -5330,12 +4561,6 @@ func (i GetContainerInstancesContainerInstanceCollectionItemShapeConfigArgs) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstancesContainerInstanceCollectionItemShapeConfigOutput)
 }
 
-func (i GetContainerInstancesContainerInstanceCollectionItemShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemShapeConfig] {
-	return pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemShapeConfig]{
-		OutputState: i.ToGetContainerInstancesContainerInstanceCollectionItemShapeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstancesContainerInstanceCollectionItemShapeConfigArrayInput is an input type that accepts GetContainerInstancesContainerInstanceCollectionItemShapeConfigArray and GetContainerInstancesContainerInstanceCollectionItemShapeConfigArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstancesContainerInstanceCollectionItemShapeConfigArrayInput` via:
 //
@@ -5361,12 +4586,6 @@ func (i GetContainerInstancesContainerInstanceCollectionItemShapeConfigArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstancesContainerInstanceCollectionItemShapeConfigArrayOutput)
 }
 
-func (i GetContainerInstancesContainerInstanceCollectionItemShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemShapeConfig] {
-	return pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemShapeConfig]{
-		OutputState: i.ToGetContainerInstancesContainerInstanceCollectionItemShapeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstancesContainerInstanceCollectionItemShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstancesContainerInstanceCollectionItemShapeConfigOutput) ElementType() reflect.Type {
@@ -5379,12 +4598,6 @@ func (o GetContainerInstancesContainerInstanceCollectionItemShapeConfigOutput) T
 
 func (o GetContainerInstancesContainerInstanceCollectionItemShapeConfigOutput) ToGetContainerInstancesContainerInstanceCollectionItemShapeConfigOutputWithContext(ctx context.Context) GetContainerInstancesContainerInstanceCollectionItemShapeConfigOutput {
 	return o
-}
-
-func (o GetContainerInstancesContainerInstanceCollectionItemShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemShapeConfig] {
-	return pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The total amount of memory available to the container instance, in gigabytes.
@@ -5423,12 +4636,6 @@ func (o GetContainerInstancesContainerInstanceCollectionItemShapeConfigArrayOutp
 
 func (o GetContainerInstancesContainerInstanceCollectionItemShapeConfigArrayOutput) ToGetContainerInstancesContainerInstanceCollectionItemShapeConfigArrayOutputWithContext(ctx context.Context) GetContainerInstancesContainerInstanceCollectionItemShapeConfigArrayOutput {
 	return o
-}
-
-func (o GetContainerInstancesContainerInstanceCollectionItemShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemShapeConfig] {
-	return pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstancesContainerInstanceCollectionItemShapeConfigArrayOutput) Index(i pulumi.IntInput) GetContainerInstancesContainerInstanceCollectionItemShapeConfigOutput {
@@ -5494,12 +4701,6 @@ func (i GetContainerInstancesContainerInstanceCollectionItemVnicArgs) ToGetConta
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstancesContainerInstanceCollectionItemVnicOutput)
 }
 
-func (i GetContainerInstancesContainerInstanceCollectionItemVnicArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemVnic] {
-	return pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemVnic]{
-		OutputState: i.ToGetContainerInstancesContainerInstanceCollectionItemVnicOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstancesContainerInstanceCollectionItemVnicArrayInput is an input type that accepts GetContainerInstancesContainerInstanceCollectionItemVnicArray and GetContainerInstancesContainerInstanceCollectionItemVnicArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstancesContainerInstanceCollectionItemVnicArrayInput` via:
 //
@@ -5525,12 +4726,6 @@ func (i GetContainerInstancesContainerInstanceCollectionItemVnicArray) ToGetCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstancesContainerInstanceCollectionItemVnicArrayOutput)
 }
 
-func (i GetContainerInstancesContainerInstanceCollectionItemVnicArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemVnic] {
-	return pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemVnic]{
-		OutputState: i.ToGetContainerInstancesContainerInstanceCollectionItemVnicArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstancesContainerInstanceCollectionItemVnicOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstancesContainerInstanceCollectionItemVnicOutput) ElementType() reflect.Type {
@@ -5543,12 +4738,6 @@ func (o GetContainerInstancesContainerInstanceCollectionItemVnicOutput) ToGetCon
 
 func (o GetContainerInstancesContainerInstanceCollectionItemVnicOutput) ToGetContainerInstancesContainerInstanceCollectionItemVnicOutputWithContext(ctx context.Context) GetContainerInstancesContainerInstanceCollectionItemVnicOutput {
 	return o
-}
-
-func (o GetContainerInstancesContainerInstanceCollectionItemVnicOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemVnic] {
-	return pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemVnic]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
@@ -5613,12 +4802,6 @@ func (o GetContainerInstancesContainerInstanceCollectionItemVnicArrayOutput) ToG
 	return o
 }
 
-func (o GetContainerInstancesContainerInstanceCollectionItemVnicArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemVnic] {
-	return pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemVnic]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetContainerInstancesContainerInstanceCollectionItemVnicArrayOutput) Index(i pulumi.IntInput) GetContainerInstancesContainerInstanceCollectionItemVnicOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerInstancesContainerInstanceCollectionItemVnic {
 		return vs[0].([]GetContainerInstancesContainerInstanceCollectionItemVnic)[vs[1].(int)]
@@ -5670,12 +4853,6 @@ func (i GetContainerInstancesContainerInstanceCollectionItemVolumeArgs) ToGetCon
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstancesContainerInstanceCollectionItemVolumeOutput)
 }
 
-func (i GetContainerInstancesContainerInstanceCollectionItemVolumeArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemVolume] {
-	return pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemVolume]{
-		OutputState: i.ToGetContainerInstancesContainerInstanceCollectionItemVolumeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstancesContainerInstanceCollectionItemVolumeArrayInput is an input type that accepts GetContainerInstancesContainerInstanceCollectionItemVolumeArray and GetContainerInstancesContainerInstanceCollectionItemVolumeArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstancesContainerInstanceCollectionItemVolumeArrayInput` via:
 //
@@ -5701,12 +4878,6 @@ func (i GetContainerInstancesContainerInstanceCollectionItemVolumeArray) ToGetCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstancesContainerInstanceCollectionItemVolumeArrayOutput)
 }
 
-func (i GetContainerInstancesContainerInstanceCollectionItemVolumeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemVolume] {
-	return pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemVolume]{
-		OutputState: i.ToGetContainerInstancesContainerInstanceCollectionItemVolumeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstancesContainerInstanceCollectionItemVolumeOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstancesContainerInstanceCollectionItemVolumeOutput) ElementType() reflect.Type {
@@ -5719,12 +4890,6 @@ func (o GetContainerInstancesContainerInstanceCollectionItemVolumeOutput) ToGetC
 
 func (o GetContainerInstancesContainerInstanceCollectionItemVolumeOutput) ToGetContainerInstancesContainerInstanceCollectionItemVolumeOutputWithContext(ctx context.Context) GetContainerInstancesContainerInstanceCollectionItemVolumeOutput {
 	return o
-}
-
-func (o GetContainerInstancesContainerInstanceCollectionItemVolumeOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemVolume] {
-	return pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemVolume]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The volume type of the empty directory, can be either File Storage or Memory.
@@ -5761,12 +4926,6 @@ func (o GetContainerInstancesContainerInstanceCollectionItemVolumeArrayOutput) T
 
 func (o GetContainerInstancesContainerInstanceCollectionItemVolumeArrayOutput) ToGetContainerInstancesContainerInstanceCollectionItemVolumeArrayOutputWithContext(ctx context.Context) GetContainerInstancesContainerInstanceCollectionItemVolumeArrayOutput {
 	return o
-}
-
-func (o GetContainerInstancesContainerInstanceCollectionItemVolumeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemVolume] {
-	return pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemVolume]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstancesContainerInstanceCollectionItemVolumeArrayOutput) Index(i pulumi.IntInput) GetContainerInstancesContainerInstanceCollectionItemVolumeOutput {
@@ -5816,12 +4975,6 @@ func (i GetContainerInstancesContainerInstanceCollectionItemVolumeConfigArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstancesContainerInstanceCollectionItemVolumeConfigOutput)
 }
 
-func (i GetContainerInstancesContainerInstanceCollectionItemVolumeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemVolumeConfig] {
-	return pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemVolumeConfig]{
-		OutputState: i.ToGetContainerInstancesContainerInstanceCollectionItemVolumeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstancesContainerInstanceCollectionItemVolumeConfigArrayInput is an input type that accepts GetContainerInstancesContainerInstanceCollectionItemVolumeConfigArray and GetContainerInstancesContainerInstanceCollectionItemVolumeConfigArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstancesContainerInstanceCollectionItemVolumeConfigArrayInput` via:
 //
@@ -5847,12 +5000,6 @@ func (i GetContainerInstancesContainerInstanceCollectionItemVolumeConfigArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstancesContainerInstanceCollectionItemVolumeConfigArrayOutput)
 }
 
-func (i GetContainerInstancesContainerInstanceCollectionItemVolumeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemVolumeConfig] {
-	return pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemVolumeConfig]{
-		OutputState: i.ToGetContainerInstancesContainerInstanceCollectionItemVolumeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstancesContainerInstanceCollectionItemVolumeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstancesContainerInstanceCollectionItemVolumeConfigOutput) ElementType() reflect.Type {
@@ -5865,12 +5012,6 @@ func (o GetContainerInstancesContainerInstanceCollectionItemVolumeConfigOutput) 
 
 func (o GetContainerInstancesContainerInstanceCollectionItemVolumeConfigOutput) ToGetContainerInstancesContainerInstanceCollectionItemVolumeConfigOutputWithContext(ctx context.Context) GetContainerInstancesContainerInstanceCollectionItemVolumeConfigOutput {
 	return o
-}
-
-func (o GetContainerInstancesContainerInstanceCollectionItemVolumeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemVolumeConfig] {
-	return pulumix.Output[GetContainerInstancesContainerInstanceCollectionItemVolumeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The base64 encoded contents of the file. The contents are decoded to plain text before mounted as a file to a container inside container instance.
@@ -5900,12 +5041,6 @@ func (o GetContainerInstancesContainerInstanceCollectionItemVolumeConfigArrayOut
 
 func (o GetContainerInstancesContainerInstanceCollectionItemVolumeConfigArrayOutput) ToGetContainerInstancesContainerInstanceCollectionItemVolumeConfigArrayOutputWithContext(ctx context.Context) GetContainerInstancesContainerInstanceCollectionItemVolumeConfigArrayOutput {
 	return o
-}
-
-func (o GetContainerInstancesContainerInstanceCollectionItemVolumeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemVolumeConfig] {
-	return pulumix.Output[[]GetContainerInstancesContainerInstanceCollectionItemVolumeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstancesContainerInstanceCollectionItemVolumeConfigArrayOutput) Index(i pulumi.IntInput) GetContainerInstancesContainerInstanceCollectionItemVolumeConfigOutput {
@@ -5951,12 +5086,6 @@ func (i GetContainerInstancesFilterArgs) ToGetContainerInstancesFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstancesFilterOutput)
 }
 
-func (i GetContainerInstancesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstancesFilter] {
-	return pulumix.Output[GetContainerInstancesFilter]{
-		OutputState: i.ToGetContainerInstancesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerInstancesFilterArrayInput is an input type that accepts GetContainerInstancesFilterArray and GetContainerInstancesFilterArrayOutput values.
 // You can construct a concrete instance of `GetContainerInstancesFilterArrayInput` via:
 //
@@ -5982,12 +5111,6 @@ func (i GetContainerInstancesFilterArray) ToGetContainerInstancesFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerInstancesFilterArrayOutput)
 }
 
-func (i GetContainerInstancesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstancesFilter] {
-	return pulumix.Output[[]GetContainerInstancesFilter]{
-		OutputState: i.ToGetContainerInstancesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerInstancesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetContainerInstancesFilterOutput) ElementType() reflect.Type {
@@ -6000,12 +5123,6 @@ func (o GetContainerInstancesFilterOutput) ToGetContainerInstancesFilterOutput()
 
 func (o GetContainerInstancesFilterOutput) ToGetContainerInstancesFilterOutputWithContext(ctx context.Context) GetContainerInstancesFilterOutput {
 	return o
-}
-
-func (o GetContainerInstancesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstancesFilter] {
-	return pulumix.Output[GetContainerInstancesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the volume. This must be unique within a single container instance.
@@ -6033,12 +5150,6 @@ func (o GetContainerInstancesFilterArrayOutput) ToGetContainerInstancesFilterArr
 
 func (o GetContainerInstancesFilterArrayOutput) ToGetContainerInstancesFilterArrayOutputWithContext(ctx context.Context) GetContainerInstancesFilterArrayOutput {
 	return o
-}
-
-func (o GetContainerInstancesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerInstancesFilter] {
-	return pulumix.Output[[]GetContainerInstancesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetContainerInstancesFilterOutput {

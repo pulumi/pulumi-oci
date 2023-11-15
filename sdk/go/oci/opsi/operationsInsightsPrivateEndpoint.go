@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Operations Insights Private Endpoint resource in Oracle Cloud Infrastructure Opsi service.
@@ -299,12 +298,6 @@ func (i *OperationsInsightsPrivateEndpoint) ToOperationsInsightsPrivateEndpointO
 	return pulumi.ToOutputWithContext(ctx, i).(OperationsInsightsPrivateEndpointOutput)
 }
 
-func (i *OperationsInsightsPrivateEndpoint) ToOutput(ctx context.Context) pulumix.Output[*OperationsInsightsPrivateEndpoint] {
-	return pulumix.Output[*OperationsInsightsPrivateEndpoint]{
-		OutputState: i.ToOperationsInsightsPrivateEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // OperationsInsightsPrivateEndpointArrayInput is an input type that accepts OperationsInsightsPrivateEndpointArray and OperationsInsightsPrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `OperationsInsightsPrivateEndpointArrayInput` via:
 //
@@ -328,12 +321,6 @@ func (i OperationsInsightsPrivateEndpointArray) ToOperationsInsightsPrivateEndpo
 
 func (i OperationsInsightsPrivateEndpointArray) ToOperationsInsightsPrivateEndpointArrayOutputWithContext(ctx context.Context) OperationsInsightsPrivateEndpointArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OperationsInsightsPrivateEndpointArrayOutput)
-}
-
-func (i OperationsInsightsPrivateEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]*OperationsInsightsPrivateEndpoint] {
-	return pulumix.Output[[]*OperationsInsightsPrivateEndpoint]{
-		OutputState: i.ToOperationsInsightsPrivateEndpointArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // OperationsInsightsPrivateEndpointMapInput is an input type that accepts OperationsInsightsPrivateEndpointMap and OperationsInsightsPrivateEndpointMapOutput values.
@@ -361,12 +348,6 @@ func (i OperationsInsightsPrivateEndpointMap) ToOperationsInsightsPrivateEndpoin
 	return pulumi.ToOutputWithContext(ctx, i).(OperationsInsightsPrivateEndpointMapOutput)
 }
 
-func (i OperationsInsightsPrivateEndpointMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*OperationsInsightsPrivateEndpoint] {
-	return pulumix.Output[map[string]*OperationsInsightsPrivateEndpoint]{
-		OutputState: i.ToOperationsInsightsPrivateEndpointMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type OperationsInsightsPrivateEndpointOutput struct{ *pulumi.OutputState }
 
 func (OperationsInsightsPrivateEndpointOutput) ElementType() reflect.Type {
@@ -379,12 +360,6 @@ func (o OperationsInsightsPrivateEndpointOutput) ToOperationsInsightsPrivateEndp
 
 func (o OperationsInsightsPrivateEndpointOutput) ToOperationsInsightsPrivateEndpointOutputWithContext(ctx context.Context) OperationsInsightsPrivateEndpointOutput {
 	return o
-}
-
-func (o OperationsInsightsPrivateEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[*OperationsInsightsPrivateEndpoint] {
-	return pulumix.Output[*OperationsInsightsPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
@@ -479,12 +454,6 @@ func (o OperationsInsightsPrivateEndpointArrayOutput) ToOperationsInsightsPrivat
 	return o
 }
 
-func (o OperationsInsightsPrivateEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*OperationsInsightsPrivateEndpoint] {
-	return pulumix.Output[[]*OperationsInsightsPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o OperationsInsightsPrivateEndpointArrayOutput) Index(i pulumi.IntInput) OperationsInsightsPrivateEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *OperationsInsightsPrivateEndpoint {
 		return vs[0].([]*OperationsInsightsPrivateEndpoint)[vs[1].(int)]
@@ -503,12 +472,6 @@ func (o OperationsInsightsPrivateEndpointMapOutput) ToOperationsInsightsPrivateE
 
 func (o OperationsInsightsPrivateEndpointMapOutput) ToOperationsInsightsPrivateEndpointMapOutputWithContext(ctx context.Context) OperationsInsightsPrivateEndpointMapOutput {
 	return o
-}
-
-func (o OperationsInsightsPrivateEndpointMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*OperationsInsightsPrivateEndpoint] {
-	return pulumix.Output[map[string]*OperationsInsightsPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OperationsInsightsPrivateEndpointMapOutput) MapIndex(k pulumi.StringInput) OperationsInsightsPrivateEndpointOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Agents in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -134,12 +133,6 @@ func (o GetAgentsResultOutput) ToGetAgentsResultOutput() GetAgentsResultOutput {
 
 func (o GetAgentsResultOutput) ToGetAgentsResultOutputWithContext(ctx context.Context) GetAgentsResultOutput {
 	return o
-}
-
-func (o GetAgentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAgentsResult] {
-	return pulumix.Output[GetAgentsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of agent_collection.

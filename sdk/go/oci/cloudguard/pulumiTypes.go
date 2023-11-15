@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -83,12 +82,6 @@ func (i CloudGuardDataSourceDataSourceDetailsArgs) ToCloudGuardDataSourceDataSou
 	return pulumi.ToOutputWithContext(ctx, i).(CloudGuardDataSourceDataSourceDetailsOutput)
 }
 
-func (i CloudGuardDataSourceDataSourceDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[CloudGuardDataSourceDataSourceDetails] {
-	return pulumix.Output[CloudGuardDataSourceDataSourceDetails]{
-		OutputState: i.ToCloudGuardDataSourceDataSourceDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i CloudGuardDataSourceDataSourceDetailsArgs) ToCloudGuardDataSourceDataSourceDetailsPtrOutput() CloudGuardDataSourceDataSourceDetailsPtrOutput {
 	return i.ToCloudGuardDataSourceDataSourceDetailsPtrOutputWithContext(context.Background())
 }
@@ -130,12 +123,6 @@ func (i *cloudGuardDataSourceDataSourceDetailsPtrType) ToCloudGuardDataSourceDat
 	return pulumi.ToOutputWithContext(ctx, i).(CloudGuardDataSourceDataSourceDetailsPtrOutput)
 }
 
-func (i *cloudGuardDataSourceDataSourceDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*CloudGuardDataSourceDataSourceDetails] {
-	return pulumix.Output[*CloudGuardDataSourceDataSourceDetails]{
-		OutputState: i.ToCloudGuardDataSourceDataSourceDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CloudGuardDataSourceDataSourceDetailsOutput struct{ *pulumi.OutputState }
 
 func (CloudGuardDataSourceDataSourceDetailsOutput) ElementType() reflect.Type {
@@ -158,12 +145,6 @@ func (o CloudGuardDataSourceDataSourceDetailsOutput) ToCloudGuardDataSourceDataS
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v CloudGuardDataSourceDataSourceDetails) *CloudGuardDataSourceDataSourceDetails {
 		return &v
 	}).(CloudGuardDataSourceDataSourceDetailsPtrOutput)
-}
-
-func (o CloudGuardDataSourceDataSourceDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[CloudGuardDataSourceDataSourceDetails] {
-	return pulumix.Output[CloudGuardDataSourceDataSourceDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The additional entities count used for data source query.
@@ -232,12 +213,6 @@ func (o CloudGuardDataSourceDataSourceDetailsPtrOutput) ToCloudGuardDataSourceDa
 
 func (o CloudGuardDataSourceDataSourceDetailsPtrOutput) ToCloudGuardDataSourceDataSourceDetailsPtrOutputWithContext(ctx context.Context) CloudGuardDataSourceDataSourceDetailsPtrOutput {
 	return o
-}
-
-func (o CloudGuardDataSourceDataSourceDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*CloudGuardDataSourceDataSourceDetails] {
-	return pulumix.Output[*CloudGuardDataSourceDataSourceDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CloudGuardDataSourceDataSourceDetailsPtrOutput) Elem() CloudGuardDataSourceDataSourceDetailsOutput {
@@ -387,12 +362,6 @@ func (i CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs) ToCloudGua
 	return pulumi.ToOutputWithContext(ctx, i).(CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutput)
 }
 
-func (i CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails] {
-	return pulumix.Output[CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails]{
-		OutputState: i.ToCloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs) ToCloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput() CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput {
 	return i.ToCloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutputWithContext(context.Background())
 }
@@ -434,12 +403,6 @@ func (i *cloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrType) ToClou
 	return pulumi.ToOutputWithContext(ctx, i).(CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput)
 }
 
-func (i *cloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails] {
-	return pulumix.Output[*CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails]{
-		OutputState: i.ToCloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutput struct{ *pulumi.OutputState }
 
 func (CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutput) ElementType() reflect.Type {
@@ -464,12 +427,6 @@ func (o CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutput) ToCloudG
 	}).(CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput)
 }
 
-func (o CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails] {
-	return pulumix.Output[CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The key entities count used for data source query
 func (o CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutput) KeyEntitiesCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails) *int { return v.KeyEntitiesCount }).(pulumi.IntPtrOutput)
@@ -492,12 +449,6 @@ func (o CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput) ToClo
 
 func (o CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput) ToCloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutputWithContext(ctx context.Context) CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput {
 	return o
-}
-
-func (o CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails] {
-	return pulumix.Output[*CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput) Elem() CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutput {
@@ -567,12 +518,6 @@ func (i CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs) ToCloudGuardDat
 	return pulumi.ToOutputWithContext(ctx, i).(CloudGuardDataSourceDataSourceDetailsQueryStartTimeOutput)
 }
 
-func (i CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs) ToOutput(ctx context.Context) pulumix.Output[CloudGuardDataSourceDataSourceDetailsQueryStartTime] {
-	return pulumix.Output[CloudGuardDataSourceDataSourceDetailsQueryStartTime]{
-		OutputState: i.ToCloudGuardDataSourceDataSourceDetailsQueryStartTimeOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs) ToCloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput() CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput {
 	return i.ToCloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutputWithContext(context.Background())
 }
@@ -614,12 +559,6 @@ func (i *cloudGuardDataSourceDataSourceDetailsQueryStartTimePtrType) ToCloudGuar
 	return pulumi.ToOutputWithContext(ctx, i).(CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput)
 }
 
-func (i *cloudGuardDataSourceDataSourceDetailsQueryStartTimePtrType) ToOutput(ctx context.Context) pulumix.Output[*CloudGuardDataSourceDataSourceDetailsQueryStartTime] {
-	return pulumix.Output[*CloudGuardDataSourceDataSourceDetailsQueryStartTime]{
-		OutputState: i.ToCloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CloudGuardDataSourceDataSourceDetailsQueryStartTimeOutput struct{ *pulumi.OutputState }
 
 func (CloudGuardDataSourceDataSourceDetailsQueryStartTimeOutput) ElementType() reflect.Type {
@@ -644,12 +583,6 @@ func (o CloudGuardDataSourceDataSourceDetailsQueryStartTimeOutput) ToCloudGuardD
 	}).(CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput)
 }
 
-func (o CloudGuardDataSourceDataSourceDetailsQueryStartTimeOutput) ToOutput(ctx context.Context) pulumix.Output[CloudGuardDataSourceDataSourceDetailsQueryStartTime] {
-	return pulumix.Output[CloudGuardDataSourceDataSourceDetailsQueryStartTime]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Time when the query can start, if not specified it can start immediately.
 func (o CloudGuardDataSourceDataSourceDetailsQueryStartTimeOutput) QueryStartTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CloudGuardDataSourceDataSourceDetailsQueryStartTime) *string { return v.QueryStartTime }).(pulumi.StringPtrOutput)
@@ -672,12 +605,6 @@ func (o CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput) ToCloudGua
 
 func (o CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput) ToCloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutputWithContext(ctx context.Context) CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput {
 	return o
-}
-
-func (o CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*CloudGuardDataSourceDataSourceDetailsQueryStartTime] {
-	return pulumix.Output[*CloudGuardDataSourceDataSourceDetailsQueryStartTime]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput) Elem() CloudGuardDataSourceDataSourceDetailsQueryStartTimeOutput {
@@ -747,12 +674,6 @@ func (i CloudGuardDataSourceDataSourceDetectorMappingInfoArgs) ToCloudGuardDataS
 	return pulumi.ToOutputWithContext(ctx, i).(CloudGuardDataSourceDataSourceDetectorMappingInfoOutput)
 }
 
-func (i CloudGuardDataSourceDataSourceDetectorMappingInfoArgs) ToOutput(ctx context.Context) pulumix.Output[CloudGuardDataSourceDataSourceDetectorMappingInfo] {
-	return pulumix.Output[CloudGuardDataSourceDataSourceDetectorMappingInfo]{
-		OutputState: i.ToCloudGuardDataSourceDataSourceDetectorMappingInfoOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CloudGuardDataSourceDataSourceDetectorMappingInfoArrayInput is an input type that accepts CloudGuardDataSourceDataSourceDetectorMappingInfoArray and CloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutput values.
 // You can construct a concrete instance of `CloudGuardDataSourceDataSourceDetectorMappingInfoArrayInput` via:
 //
@@ -778,12 +699,6 @@ func (i CloudGuardDataSourceDataSourceDetectorMappingInfoArray) ToCloudGuardData
 	return pulumi.ToOutputWithContext(ctx, i).(CloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutput)
 }
 
-func (i CloudGuardDataSourceDataSourceDetectorMappingInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]CloudGuardDataSourceDataSourceDetectorMappingInfo] {
-	return pulumix.Output[[]CloudGuardDataSourceDataSourceDetectorMappingInfo]{
-		OutputState: i.ToCloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CloudGuardDataSourceDataSourceDetectorMappingInfoOutput struct{ *pulumi.OutputState }
 
 func (CloudGuardDataSourceDataSourceDetectorMappingInfoOutput) ElementType() reflect.Type {
@@ -796,12 +711,6 @@ func (o CloudGuardDataSourceDataSourceDetectorMappingInfoOutput) ToCloudGuardDat
 
 func (o CloudGuardDataSourceDataSourceDetectorMappingInfoOutput) ToCloudGuardDataSourceDataSourceDetectorMappingInfoOutputWithContext(ctx context.Context) CloudGuardDataSourceDataSourceDetectorMappingInfoOutput {
 	return o
-}
-
-func (o CloudGuardDataSourceDataSourceDetectorMappingInfoOutput) ToOutput(ctx context.Context) pulumix.Output[CloudGuardDataSourceDataSourceDetectorMappingInfo] {
-	return pulumix.Output[CloudGuardDataSourceDataSourceDetectorMappingInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Id of the attached detectorRecipeId to the Data Source.
@@ -826,12 +735,6 @@ func (o CloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutput) ToCloudGua
 
 func (o CloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutput) ToCloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutputWithContext(ctx context.Context) CloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutput {
 	return o
-}
-
-func (o CloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]CloudGuardDataSourceDataSourceDetectorMappingInfo] {
-	return pulumix.Output[[]CloudGuardDataSourceDataSourceDetectorMappingInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutput) Index(i pulumi.IntInput) CloudGuardDataSourceDataSourceDetectorMappingInfoOutput {
@@ -877,12 +780,6 @@ func (i CloudGuardDataSourceRegionStatusDetailArgs) ToCloudGuardDataSourceRegion
 	return pulumi.ToOutputWithContext(ctx, i).(CloudGuardDataSourceRegionStatusDetailOutput)
 }
 
-func (i CloudGuardDataSourceRegionStatusDetailArgs) ToOutput(ctx context.Context) pulumix.Output[CloudGuardDataSourceRegionStatusDetail] {
-	return pulumix.Output[CloudGuardDataSourceRegionStatusDetail]{
-		OutputState: i.ToCloudGuardDataSourceRegionStatusDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CloudGuardDataSourceRegionStatusDetailArrayInput is an input type that accepts CloudGuardDataSourceRegionStatusDetailArray and CloudGuardDataSourceRegionStatusDetailArrayOutput values.
 // You can construct a concrete instance of `CloudGuardDataSourceRegionStatusDetailArrayInput` via:
 //
@@ -908,12 +805,6 @@ func (i CloudGuardDataSourceRegionStatusDetailArray) ToCloudGuardDataSourceRegio
 	return pulumi.ToOutputWithContext(ctx, i).(CloudGuardDataSourceRegionStatusDetailArrayOutput)
 }
 
-func (i CloudGuardDataSourceRegionStatusDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]CloudGuardDataSourceRegionStatusDetail] {
-	return pulumix.Output[[]CloudGuardDataSourceRegionStatusDetail]{
-		OutputState: i.ToCloudGuardDataSourceRegionStatusDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CloudGuardDataSourceRegionStatusDetailOutput struct{ *pulumi.OutputState }
 
 func (CloudGuardDataSourceRegionStatusDetailOutput) ElementType() reflect.Type {
@@ -926,12 +817,6 @@ func (o CloudGuardDataSourceRegionStatusDetailOutput) ToCloudGuardDataSourceRegi
 
 func (o CloudGuardDataSourceRegionStatusDetailOutput) ToCloudGuardDataSourceRegionStatusDetailOutputWithContext(ctx context.Context) CloudGuardDataSourceRegionStatusDetailOutput {
 	return o
-}
-
-func (o CloudGuardDataSourceRegionStatusDetailOutput) ToOutput(ctx context.Context) pulumix.Output[CloudGuardDataSourceRegionStatusDetail] {
-	return pulumix.Output[CloudGuardDataSourceRegionStatusDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Data Source replication region.
@@ -956,12 +841,6 @@ func (o CloudGuardDataSourceRegionStatusDetailArrayOutput) ToCloudGuardDataSourc
 
 func (o CloudGuardDataSourceRegionStatusDetailArrayOutput) ToCloudGuardDataSourceRegionStatusDetailArrayOutputWithContext(ctx context.Context) CloudGuardDataSourceRegionStatusDetailArrayOutput {
 	return o
-}
-
-func (o CloudGuardDataSourceRegionStatusDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]CloudGuardDataSourceRegionStatusDetail] {
-	return pulumix.Output[[]CloudGuardDataSourceRegionStatusDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CloudGuardDataSourceRegionStatusDetailArrayOutput) Index(i pulumi.IntInput) CloudGuardDataSourceRegionStatusDetailOutput {
@@ -1013,12 +892,6 @@ func (i DataMaskRuleTargetSelectedArgs) ToDataMaskRuleTargetSelectedOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(DataMaskRuleTargetSelectedOutput)
 }
 
-func (i DataMaskRuleTargetSelectedArgs) ToOutput(ctx context.Context) pulumix.Output[DataMaskRuleTargetSelected] {
-	return pulumix.Output[DataMaskRuleTargetSelected]{
-		OutputState: i.ToDataMaskRuleTargetSelectedOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DataMaskRuleTargetSelectedArgs) ToDataMaskRuleTargetSelectedPtrOutput() DataMaskRuleTargetSelectedPtrOutput {
 	return i.ToDataMaskRuleTargetSelectedPtrOutputWithContext(context.Background())
 }
@@ -1060,12 +933,6 @@ func (i *dataMaskRuleTargetSelectedPtrType) ToDataMaskRuleTargetSelectedPtrOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(DataMaskRuleTargetSelectedPtrOutput)
 }
 
-func (i *dataMaskRuleTargetSelectedPtrType) ToOutput(ctx context.Context) pulumix.Output[*DataMaskRuleTargetSelected] {
-	return pulumix.Output[*DataMaskRuleTargetSelected]{
-		OutputState: i.ToDataMaskRuleTargetSelectedPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DataMaskRuleTargetSelectedOutput struct{ *pulumi.OutputState }
 
 func (DataMaskRuleTargetSelectedOutput) ElementType() reflect.Type {
@@ -1088,12 +955,6 @@ func (o DataMaskRuleTargetSelectedOutput) ToDataMaskRuleTargetSelectedPtrOutputW
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v DataMaskRuleTargetSelected) *DataMaskRuleTargetSelected {
 		return &v
 	}).(DataMaskRuleTargetSelectedPtrOutput)
-}
-
-func (o DataMaskRuleTargetSelectedOutput) ToOutput(ctx context.Context) pulumix.Output[DataMaskRuleTargetSelected] {
-	return pulumix.Output[DataMaskRuleTargetSelected]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Target selection.
@@ -1121,12 +982,6 @@ func (o DataMaskRuleTargetSelectedPtrOutput) ToDataMaskRuleTargetSelectedPtrOutp
 
 func (o DataMaskRuleTargetSelectedPtrOutput) ToDataMaskRuleTargetSelectedPtrOutputWithContext(ctx context.Context) DataMaskRuleTargetSelectedPtrOutput {
 	return o
-}
-
-func (o DataMaskRuleTargetSelectedPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DataMaskRuleTargetSelected] {
-	return pulumix.Output[*DataMaskRuleTargetSelected]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DataMaskRuleTargetSelectedPtrOutput) Elem() DataMaskRuleTargetSelectedOutput {
@@ -1259,12 +1114,6 @@ func (i DetectorRecipeDetectorRuleArgs) ToDetectorRecipeDetectorRuleOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeDetectorRuleOutput)
 }
 
-func (i DetectorRecipeDetectorRuleArgs) ToOutput(ctx context.Context) pulumix.Output[DetectorRecipeDetectorRule] {
-	return pulumix.Output[DetectorRecipeDetectorRule]{
-		OutputState: i.ToDetectorRecipeDetectorRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DetectorRecipeDetectorRuleArrayInput is an input type that accepts DetectorRecipeDetectorRuleArray and DetectorRecipeDetectorRuleArrayOutput values.
 // You can construct a concrete instance of `DetectorRecipeDetectorRuleArrayInput` via:
 //
@@ -1290,12 +1139,6 @@ func (i DetectorRecipeDetectorRuleArray) ToDetectorRecipeDetectorRuleArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeDetectorRuleArrayOutput)
 }
 
-func (i DetectorRecipeDetectorRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]DetectorRecipeDetectorRule] {
-	return pulumix.Output[[]DetectorRecipeDetectorRule]{
-		OutputState: i.ToDetectorRecipeDetectorRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DetectorRecipeDetectorRuleOutput struct{ *pulumi.OutputState }
 
 func (DetectorRecipeDetectorRuleOutput) ElementType() reflect.Type {
@@ -1308,12 +1151,6 @@ func (o DetectorRecipeDetectorRuleOutput) ToDetectorRecipeDetectorRuleOutput() D
 
 func (o DetectorRecipeDetectorRuleOutput) ToDetectorRecipeDetectorRuleOutputWithContext(ctx context.Context) DetectorRecipeDetectorRuleOutput {
 	return o
-}
-
-func (o DetectorRecipeDetectorRuleOutput) ToOutput(ctx context.Context) pulumix.Output[DetectorRecipeDetectorRule] {
-	return pulumix.Output[DetectorRecipeDetectorRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of CandidateResponderRule related to this rule
@@ -1416,12 +1253,6 @@ func (o DetectorRecipeDetectorRuleArrayOutput) ToDetectorRecipeDetectorRuleArray
 	return o
 }
 
-func (o DetectorRecipeDetectorRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DetectorRecipeDetectorRule] {
-	return pulumix.Output[[]DetectorRecipeDetectorRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DetectorRecipeDetectorRuleArrayOutput) Index(i pulumi.IntInput) DetectorRecipeDetectorRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DetectorRecipeDetectorRule {
 		return vs[0].([]DetectorRecipeDetectorRule)[vs[1].(int)]
@@ -1473,12 +1304,6 @@ func (i DetectorRecipeDetectorRuleCandidateResponderRuleArgs) ToDetectorRecipeDe
 	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeDetectorRuleCandidateResponderRuleOutput)
 }
 
-func (i DetectorRecipeDetectorRuleCandidateResponderRuleArgs) ToOutput(ctx context.Context) pulumix.Output[DetectorRecipeDetectorRuleCandidateResponderRule] {
-	return pulumix.Output[DetectorRecipeDetectorRuleCandidateResponderRule]{
-		OutputState: i.ToDetectorRecipeDetectorRuleCandidateResponderRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DetectorRecipeDetectorRuleCandidateResponderRuleArrayInput is an input type that accepts DetectorRecipeDetectorRuleCandidateResponderRuleArray and DetectorRecipeDetectorRuleCandidateResponderRuleArrayOutput values.
 // You can construct a concrete instance of `DetectorRecipeDetectorRuleCandidateResponderRuleArrayInput` via:
 //
@@ -1504,12 +1329,6 @@ func (i DetectorRecipeDetectorRuleCandidateResponderRuleArray) ToDetectorRecipeD
 	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeDetectorRuleCandidateResponderRuleArrayOutput)
 }
 
-func (i DetectorRecipeDetectorRuleCandidateResponderRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]DetectorRecipeDetectorRuleCandidateResponderRule] {
-	return pulumix.Output[[]DetectorRecipeDetectorRuleCandidateResponderRule]{
-		OutputState: i.ToDetectorRecipeDetectorRuleCandidateResponderRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DetectorRecipeDetectorRuleCandidateResponderRuleOutput struct{ *pulumi.OutputState }
 
 func (DetectorRecipeDetectorRuleCandidateResponderRuleOutput) ElementType() reflect.Type {
@@ -1522,12 +1341,6 @@ func (o DetectorRecipeDetectorRuleCandidateResponderRuleOutput) ToDetectorRecipe
 
 func (o DetectorRecipeDetectorRuleCandidateResponderRuleOutput) ToDetectorRecipeDetectorRuleCandidateResponderRuleOutputWithContext(ctx context.Context) DetectorRecipeDetectorRuleCandidateResponderRuleOutput {
 	return o
-}
-
-func (o DetectorRecipeDetectorRuleCandidateResponderRuleOutput) ToOutput(ctx context.Context) pulumix.Output[DetectorRecipeDetectorRuleCandidateResponderRule] {
-	return pulumix.Output[DetectorRecipeDetectorRuleCandidateResponderRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Detector recipe display name.
@@ -1559,12 +1372,6 @@ func (o DetectorRecipeDetectorRuleCandidateResponderRuleArrayOutput) ToDetectorR
 
 func (o DetectorRecipeDetectorRuleCandidateResponderRuleArrayOutput) ToDetectorRecipeDetectorRuleCandidateResponderRuleArrayOutputWithContext(ctx context.Context) DetectorRecipeDetectorRuleCandidateResponderRuleArrayOutput {
 	return o
-}
-
-func (o DetectorRecipeDetectorRuleCandidateResponderRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DetectorRecipeDetectorRuleCandidateResponderRule] {
-	return pulumix.Output[[]DetectorRecipeDetectorRuleCandidateResponderRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DetectorRecipeDetectorRuleCandidateResponderRuleArrayOutput) Index(i pulumi.IntInput) DetectorRecipeDetectorRuleCandidateResponderRuleOutput {
@@ -1642,12 +1449,6 @@ func (i DetectorRecipeDetectorRuleDetailsArgs) ToDetectorRecipeDetectorRuleDetai
 	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeDetectorRuleDetailsOutput)
 }
 
-func (i DetectorRecipeDetectorRuleDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[DetectorRecipeDetectorRuleDetails] {
-	return pulumix.Output[DetectorRecipeDetectorRuleDetails]{
-		OutputState: i.ToDetectorRecipeDetectorRuleDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DetectorRecipeDetectorRuleDetailsOutput struct{ *pulumi.OutputState }
 
 func (DetectorRecipeDetectorRuleDetailsOutput) ElementType() reflect.Type {
@@ -1660,12 +1461,6 @@ func (o DetectorRecipeDetectorRuleDetailsOutput) ToDetectorRecipeDetectorRuleDet
 
 func (o DetectorRecipeDetectorRuleDetailsOutput) ToDetectorRecipeDetectorRuleDetailsOutputWithContext(ctx context.Context) DetectorRecipeDetectorRuleDetailsOutput {
 	return o
-}
-
-func (o DetectorRecipeDetectorRuleDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[DetectorRecipeDetectorRuleDetails] {
-	return pulumix.Output[DetectorRecipeDetectorRuleDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Base condition object
@@ -1771,12 +1566,6 @@ func (i DetectorRecipeDetectorRuleDetailsConfigurationArgs) ToDetectorRecipeDete
 	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeDetectorRuleDetailsConfigurationOutput)
 }
 
-func (i DetectorRecipeDetectorRuleDetailsConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[DetectorRecipeDetectorRuleDetailsConfiguration] {
-	return pulumix.Output[DetectorRecipeDetectorRuleDetailsConfiguration]{
-		OutputState: i.ToDetectorRecipeDetectorRuleDetailsConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DetectorRecipeDetectorRuleDetailsConfigurationArrayInput is an input type that accepts DetectorRecipeDetectorRuleDetailsConfigurationArray and DetectorRecipeDetectorRuleDetailsConfigurationArrayOutput values.
 // You can construct a concrete instance of `DetectorRecipeDetectorRuleDetailsConfigurationArrayInput` via:
 //
@@ -1802,12 +1591,6 @@ func (i DetectorRecipeDetectorRuleDetailsConfigurationArray) ToDetectorRecipeDet
 	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeDetectorRuleDetailsConfigurationArrayOutput)
 }
 
-func (i DetectorRecipeDetectorRuleDetailsConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]DetectorRecipeDetectorRuleDetailsConfiguration] {
-	return pulumix.Output[[]DetectorRecipeDetectorRuleDetailsConfiguration]{
-		OutputState: i.ToDetectorRecipeDetectorRuleDetailsConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DetectorRecipeDetectorRuleDetailsConfigurationOutput struct{ *pulumi.OutputState }
 
 func (DetectorRecipeDetectorRuleDetailsConfigurationOutput) ElementType() reflect.Type {
@@ -1820,12 +1603,6 @@ func (o DetectorRecipeDetectorRuleDetailsConfigurationOutput) ToDetectorRecipeDe
 
 func (o DetectorRecipeDetectorRuleDetailsConfigurationOutput) ToDetectorRecipeDetectorRuleDetailsConfigurationOutputWithContext(ctx context.Context) DetectorRecipeDetectorRuleDetailsConfigurationOutput {
 	return o
-}
-
-func (o DetectorRecipeDetectorRuleDetailsConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[DetectorRecipeDetectorRuleDetailsConfiguration] {
-	return pulumix.Output[DetectorRecipeDetectorRuleDetailsConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Unique name of the configuration
@@ -1867,12 +1644,6 @@ func (o DetectorRecipeDetectorRuleDetailsConfigurationArrayOutput) ToDetectorRec
 
 func (o DetectorRecipeDetectorRuleDetailsConfigurationArrayOutput) ToDetectorRecipeDetectorRuleDetailsConfigurationArrayOutputWithContext(ctx context.Context) DetectorRecipeDetectorRuleDetailsConfigurationArrayOutput {
 	return o
-}
-
-func (o DetectorRecipeDetectorRuleDetailsConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DetectorRecipeDetectorRuleDetailsConfiguration] {
-	return pulumix.Output[[]DetectorRecipeDetectorRuleDetailsConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DetectorRecipeDetectorRuleDetailsConfigurationArrayOutput) Index(i pulumi.IntInput) DetectorRecipeDetectorRuleDetailsConfigurationOutput {
@@ -1922,12 +1693,6 @@ func (i DetectorRecipeDetectorRuleDetailsConfigurationValueArgs) ToDetectorRecip
 	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeDetectorRuleDetailsConfigurationValueOutput)
 }
 
-func (i DetectorRecipeDetectorRuleDetailsConfigurationValueArgs) ToOutput(ctx context.Context) pulumix.Output[DetectorRecipeDetectorRuleDetailsConfigurationValue] {
-	return pulumix.Output[DetectorRecipeDetectorRuleDetailsConfigurationValue]{
-		OutputState: i.ToDetectorRecipeDetectorRuleDetailsConfigurationValueOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DetectorRecipeDetectorRuleDetailsConfigurationValueArrayInput is an input type that accepts DetectorRecipeDetectorRuleDetailsConfigurationValueArray and DetectorRecipeDetectorRuleDetailsConfigurationValueArrayOutput values.
 // You can construct a concrete instance of `DetectorRecipeDetectorRuleDetailsConfigurationValueArrayInput` via:
 //
@@ -1953,12 +1718,6 @@ func (i DetectorRecipeDetectorRuleDetailsConfigurationValueArray) ToDetectorReci
 	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeDetectorRuleDetailsConfigurationValueArrayOutput)
 }
 
-func (i DetectorRecipeDetectorRuleDetailsConfigurationValueArray) ToOutput(ctx context.Context) pulumix.Output[[]DetectorRecipeDetectorRuleDetailsConfigurationValue] {
-	return pulumix.Output[[]DetectorRecipeDetectorRuleDetailsConfigurationValue]{
-		OutputState: i.ToDetectorRecipeDetectorRuleDetailsConfigurationValueArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DetectorRecipeDetectorRuleDetailsConfigurationValueOutput struct{ *pulumi.OutputState }
 
 func (DetectorRecipeDetectorRuleDetailsConfigurationValueOutput) ElementType() reflect.Type {
@@ -1971,12 +1730,6 @@ func (o DetectorRecipeDetectorRuleDetailsConfigurationValueOutput) ToDetectorRec
 
 func (o DetectorRecipeDetectorRuleDetailsConfigurationValueOutput) ToDetectorRecipeDetectorRuleDetailsConfigurationValueOutputWithContext(ctx context.Context) DetectorRecipeDetectorRuleDetailsConfigurationValueOutput {
 	return o
-}
-
-func (o DetectorRecipeDetectorRuleDetailsConfigurationValueOutput) ToOutput(ctx context.Context) pulumix.Output[DetectorRecipeDetectorRuleDetailsConfigurationValue] {
-	return pulumix.Output[DetectorRecipeDetectorRuleDetailsConfigurationValue]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) configuration list item type, either CUSTOM or MANAGED
@@ -2006,12 +1759,6 @@ func (o DetectorRecipeDetectorRuleDetailsConfigurationValueArrayOutput) ToDetect
 
 func (o DetectorRecipeDetectorRuleDetailsConfigurationValueArrayOutput) ToDetectorRecipeDetectorRuleDetailsConfigurationValueArrayOutputWithContext(ctx context.Context) DetectorRecipeDetectorRuleDetailsConfigurationValueArrayOutput {
 	return o
-}
-
-func (o DetectorRecipeDetectorRuleDetailsConfigurationValueArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DetectorRecipeDetectorRuleDetailsConfigurationValue] {
-	return pulumix.Output[[]DetectorRecipeDetectorRuleDetailsConfigurationValue]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DetectorRecipeDetectorRuleDetailsConfigurationValueArrayOutput) Index(i pulumi.IntInput) DetectorRecipeDetectorRuleDetailsConfigurationValueOutput {
@@ -2065,12 +1812,6 @@ func (i DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs) ToDetectorRecipeDe
 	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeDetectorRuleDetailsEntitiesMappingOutput)
 }
 
-func (i DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs) ToOutput(ctx context.Context) pulumix.Output[DetectorRecipeDetectorRuleDetailsEntitiesMapping] {
-	return pulumix.Output[DetectorRecipeDetectorRuleDetailsEntitiesMapping]{
-		OutputState: i.ToDetectorRecipeDetectorRuleDetailsEntitiesMappingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayInput is an input type that accepts DetectorRecipeDetectorRuleDetailsEntitiesMappingArray and DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutput values.
 // You can construct a concrete instance of `DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayInput` via:
 //
@@ -2096,12 +1837,6 @@ func (i DetectorRecipeDetectorRuleDetailsEntitiesMappingArray) ToDetectorRecipeD
 	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutput)
 }
 
-func (i DetectorRecipeDetectorRuleDetailsEntitiesMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]DetectorRecipeDetectorRuleDetailsEntitiesMapping] {
-	return pulumix.Output[[]DetectorRecipeDetectorRuleDetailsEntitiesMapping]{
-		OutputState: i.ToDetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DetectorRecipeDetectorRuleDetailsEntitiesMappingOutput struct{ *pulumi.OutputState }
 
 func (DetectorRecipeDetectorRuleDetailsEntitiesMappingOutput) ElementType() reflect.Type {
@@ -2114,12 +1849,6 @@ func (o DetectorRecipeDetectorRuleDetailsEntitiesMappingOutput) ToDetectorRecipe
 
 func (o DetectorRecipeDetectorRuleDetailsEntitiesMappingOutput) ToDetectorRecipeDetectorRuleDetailsEntitiesMappingOutputWithContext(ctx context.Context) DetectorRecipeDetectorRuleDetailsEntitiesMappingOutput {
 	return o
-}
-
-func (o DetectorRecipeDetectorRuleDetailsEntitiesMappingOutput) ToOutput(ctx context.Context) pulumix.Output[DetectorRecipeDetectorRuleDetailsEntitiesMapping] {
-	return pulumix.Output[DetectorRecipeDetectorRuleDetailsEntitiesMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Detector recipe display name.
@@ -2151,12 +1880,6 @@ func (o DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutput) ToDetectorR
 
 func (o DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutput) ToDetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutputWithContext(ctx context.Context) DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutput {
 	return o
-}
-
-func (o DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DetectorRecipeDetectorRuleDetailsEntitiesMapping] {
-	return pulumix.Output[[]DetectorRecipeDetectorRuleDetailsEntitiesMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutput) Index(i pulumi.IntInput) DetectorRecipeDetectorRuleDetailsEntitiesMappingOutput {
@@ -2210,12 +1933,6 @@ func (i DetectorRecipeDetectorRuleEntitiesMappingArgs) ToDetectorRecipeDetectorR
 	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeDetectorRuleEntitiesMappingOutput)
 }
 
-func (i DetectorRecipeDetectorRuleEntitiesMappingArgs) ToOutput(ctx context.Context) pulumix.Output[DetectorRecipeDetectorRuleEntitiesMapping] {
-	return pulumix.Output[DetectorRecipeDetectorRuleEntitiesMapping]{
-		OutputState: i.ToDetectorRecipeDetectorRuleEntitiesMappingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DetectorRecipeDetectorRuleEntitiesMappingArrayInput is an input type that accepts DetectorRecipeDetectorRuleEntitiesMappingArray and DetectorRecipeDetectorRuleEntitiesMappingArrayOutput values.
 // You can construct a concrete instance of `DetectorRecipeDetectorRuleEntitiesMappingArrayInput` via:
 //
@@ -2241,12 +1958,6 @@ func (i DetectorRecipeDetectorRuleEntitiesMappingArray) ToDetectorRecipeDetector
 	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeDetectorRuleEntitiesMappingArrayOutput)
 }
 
-func (i DetectorRecipeDetectorRuleEntitiesMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]DetectorRecipeDetectorRuleEntitiesMapping] {
-	return pulumix.Output[[]DetectorRecipeDetectorRuleEntitiesMapping]{
-		OutputState: i.ToDetectorRecipeDetectorRuleEntitiesMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DetectorRecipeDetectorRuleEntitiesMappingOutput struct{ *pulumi.OutputState }
 
 func (DetectorRecipeDetectorRuleEntitiesMappingOutput) ElementType() reflect.Type {
@@ -2259,12 +1970,6 @@ func (o DetectorRecipeDetectorRuleEntitiesMappingOutput) ToDetectorRecipeDetecto
 
 func (o DetectorRecipeDetectorRuleEntitiesMappingOutput) ToDetectorRecipeDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) DetectorRecipeDetectorRuleEntitiesMappingOutput {
 	return o
-}
-
-func (o DetectorRecipeDetectorRuleEntitiesMappingOutput) ToOutput(ctx context.Context) pulumix.Output[DetectorRecipeDetectorRuleEntitiesMapping] {
-	return pulumix.Output[DetectorRecipeDetectorRuleEntitiesMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Detector recipe display name.
@@ -2296,12 +2001,6 @@ func (o DetectorRecipeDetectorRuleEntitiesMappingArrayOutput) ToDetectorRecipeDe
 
 func (o DetectorRecipeDetectorRuleEntitiesMappingArrayOutput) ToDetectorRecipeDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) DetectorRecipeDetectorRuleEntitiesMappingArrayOutput {
 	return o
-}
-
-func (o DetectorRecipeDetectorRuleEntitiesMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DetectorRecipeDetectorRuleEntitiesMapping] {
-	return pulumix.Output[[]DetectorRecipeDetectorRuleEntitiesMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DetectorRecipeDetectorRuleEntitiesMappingArrayOutput) Index(i pulumi.IntInput) DetectorRecipeDetectorRuleEntitiesMappingOutput {
@@ -2407,12 +2106,6 @@ func (i DetectorRecipeEffectiveDetectorRuleArgs) ToDetectorRecipeEffectiveDetect
 	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeEffectiveDetectorRuleOutput)
 }
 
-func (i DetectorRecipeEffectiveDetectorRuleArgs) ToOutput(ctx context.Context) pulumix.Output[DetectorRecipeEffectiveDetectorRule] {
-	return pulumix.Output[DetectorRecipeEffectiveDetectorRule]{
-		OutputState: i.ToDetectorRecipeEffectiveDetectorRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DetectorRecipeEffectiveDetectorRuleArrayInput is an input type that accepts DetectorRecipeEffectiveDetectorRuleArray and DetectorRecipeEffectiveDetectorRuleArrayOutput values.
 // You can construct a concrete instance of `DetectorRecipeEffectiveDetectorRuleArrayInput` via:
 //
@@ -2438,12 +2131,6 @@ func (i DetectorRecipeEffectiveDetectorRuleArray) ToDetectorRecipeEffectiveDetec
 	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeEffectiveDetectorRuleArrayOutput)
 }
 
-func (i DetectorRecipeEffectiveDetectorRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]DetectorRecipeEffectiveDetectorRule] {
-	return pulumix.Output[[]DetectorRecipeEffectiveDetectorRule]{
-		OutputState: i.ToDetectorRecipeEffectiveDetectorRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DetectorRecipeEffectiveDetectorRuleOutput struct{ *pulumi.OutputState }
 
 func (DetectorRecipeEffectiveDetectorRuleOutput) ElementType() reflect.Type {
@@ -2456,12 +2143,6 @@ func (o DetectorRecipeEffectiveDetectorRuleOutput) ToDetectorRecipeEffectiveDete
 
 func (o DetectorRecipeEffectiveDetectorRuleOutput) ToDetectorRecipeEffectiveDetectorRuleOutputWithContext(ctx context.Context) DetectorRecipeEffectiveDetectorRuleOutput {
 	return o
-}
-
-func (o DetectorRecipeEffectiveDetectorRuleOutput) ToOutput(ctx context.Context) pulumix.Output[DetectorRecipeEffectiveDetectorRule] {
-	return pulumix.Output[DetectorRecipeEffectiveDetectorRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of CandidateResponderRule related to this rule
@@ -2566,12 +2247,6 @@ func (o DetectorRecipeEffectiveDetectorRuleArrayOutput) ToDetectorRecipeEffectiv
 	return o
 }
 
-func (o DetectorRecipeEffectiveDetectorRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DetectorRecipeEffectiveDetectorRule] {
-	return pulumix.Output[[]DetectorRecipeEffectiveDetectorRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DetectorRecipeEffectiveDetectorRuleArrayOutput) Index(i pulumi.IntInput) DetectorRecipeEffectiveDetectorRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DetectorRecipeEffectiveDetectorRule {
 		return vs[0].([]DetectorRecipeEffectiveDetectorRule)[vs[1].(int)]
@@ -2623,12 +2298,6 @@ func (i DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs) ToDetecto
 	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutput)
 }
 
-func (i DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs) ToOutput(ctx context.Context) pulumix.Output[DetectorRecipeEffectiveDetectorRuleCandidateResponderRule] {
-	return pulumix.Output[DetectorRecipeEffectiveDetectorRuleCandidateResponderRule]{
-		OutputState: i.ToDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayInput is an input type that accepts DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArray and DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayOutput values.
 // You can construct a concrete instance of `DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayInput` via:
 //
@@ -2654,12 +2323,6 @@ func (i DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArray) ToDetect
 	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayOutput)
 }
 
-func (i DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]DetectorRecipeEffectiveDetectorRuleCandidateResponderRule] {
-	return pulumix.Output[[]DetectorRecipeEffectiveDetectorRuleCandidateResponderRule]{
-		OutputState: i.ToDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutput struct{ *pulumi.OutputState }
 
 func (DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutput) ElementType() reflect.Type {
@@ -2672,12 +2335,6 @@ func (o DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutput) ToDetec
 
 func (o DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutput) ToDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutputWithContext(ctx context.Context) DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutput {
 	return o
-}
-
-func (o DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutput) ToOutput(ctx context.Context) pulumix.Output[DetectorRecipeEffectiveDetectorRuleCandidateResponderRule] {
-	return pulumix.Output[DetectorRecipeEffectiveDetectorRuleCandidateResponderRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Detector recipe display name.
@@ -2709,12 +2366,6 @@ func (o DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayOutput) To
 
 func (o DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayOutput) ToDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayOutputWithContext(ctx context.Context) DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayOutput {
 	return o
-}
-
-func (o DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DetectorRecipeEffectiveDetectorRuleCandidateResponderRule] {
-	return pulumix.Output[[]DetectorRecipeEffectiveDetectorRuleCandidateResponderRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayOutput) Index(i pulumi.IntInput) DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutput {
@@ -2776,12 +2427,6 @@ func (i DetectorRecipeEffectiveDetectorRuleDetailArgs) ToDetectorRecipeEffective
 	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeEffectiveDetectorRuleDetailOutput)
 }
 
-func (i DetectorRecipeEffectiveDetectorRuleDetailArgs) ToOutput(ctx context.Context) pulumix.Output[DetectorRecipeEffectiveDetectorRuleDetail] {
-	return pulumix.Output[DetectorRecipeEffectiveDetectorRuleDetail]{
-		OutputState: i.ToDetectorRecipeEffectiveDetectorRuleDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DetectorRecipeEffectiveDetectorRuleDetailArrayInput is an input type that accepts DetectorRecipeEffectiveDetectorRuleDetailArray and DetectorRecipeEffectiveDetectorRuleDetailArrayOutput values.
 // You can construct a concrete instance of `DetectorRecipeEffectiveDetectorRuleDetailArrayInput` via:
 //
@@ -2807,12 +2452,6 @@ func (i DetectorRecipeEffectiveDetectorRuleDetailArray) ToDetectorRecipeEffectiv
 	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeEffectiveDetectorRuleDetailArrayOutput)
 }
 
-func (i DetectorRecipeEffectiveDetectorRuleDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]DetectorRecipeEffectiveDetectorRuleDetail] {
-	return pulumix.Output[[]DetectorRecipeEffectiveDetectorRuleDetail]{
-		OutputState: i.ToDetectorRecipeEffectiveDetectorRuleDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DetectorRecipeEffectiveDetectorRuleDetailOutput struct{ *pulumi.OutputState }
 
 func (DetectorRecipeEffectiveDetectorRuleDetailOutput) ElementType() reflect.Type {
@@ -2825,12 +2464,6 @@ func (o DetectorRecipeEffectiveDetectorRuleDetailOutput) ToDetectorRecipeEffecti
 
 func (o DetectorRecipeEffectiveDetectorRuleDetailOutput) ToDetectorRecipeEffectiveDetectorRuleDetailOutputWithContext(ctx context.Context) DetectorRecipeEffectiveDetectorRuleDetailOutput {
 	return o
-}
-
-func (o DetectorRecipeEffectiveDetectorRuleDetailOutput) ToOutput(ctx context.Context) pulumix.Output[DetectorRecipeEffectiveDetectorRuleDetail] {
-	return pulumix.Output[DetectorRecipeEffectiveDetectorRuleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Base condition object
@@ -2877,12 +2510,6 @@ func (o DetectorRecipeEffectiveDetectorRuleDetailArrayOutput) ToDetectorRecipeEf
 
 func (o DetectorRecipeEffectiveDetectorRuleDetailArrayOutput) ToDetectorRecipeEffectiveDetectorRuleDetailArrayOutputWithContext(ctx context.Context) DetectorRecipeEffectiveDetectorRuleDetailArrayOutput {
 	return o
-}
-
-func (o DetectorRecipeEffectiveDetectorRuleDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DetectorRecipeEffectiveDetectorRuleDetail] {
-	return pulumix.Output[[]DetectorRecipeEffectiveDetectorRuleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DetectorRecipeEffectiveDetectorRuleDetailArrayOutput) Index(i pulumi.IntInput) DetectorRecipeEffectiveDetectorRuleDetailOutput {
@@ -2940,12 +2567,6 @@ func (i DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs) ToDetectorRe
 	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput)
 }
 
-func (i DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[DetectorRecipeEffectiveDetectorRuleDetailConfiguration] {
-	return pulumix.Output[DetectorRecipeEffectiveDetectorRuleDetailConfiguration]{
-		OutputState: i.ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput is an input type that accepts DetectorRecipeEffectiveDetectorRuleDetailConfigurationArray and DetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `DetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput` via:
 //
@@ -2971,12 +2592,6 @@ func (i DetectorRecipeEffectiveDetectorRuleDetailConfigurationArray) ToDetectorR
 	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput)
 }
 
-func (i DetectorRecipeEffectiveDetectorRuleDetailConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]DetectorRecipeEffectiveDetectorRuleDetailConfiguration] {
-	return pulumix.Output[[]DetectorRecipeEffectiveDetectorRuleDetailConfiguration]{
-		OutputState: i.ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput struct{ *pulumi.OutputState }
 
 func (DetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) ElementType() reflect.Type {
@@ -2989,12 +2604,6 @@ func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) ToDetector
 
 func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutputWithContext(ctx context.Context) DetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput {
 	return o
-}
-
-func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[DetectorRecipeEffectiveDetectorRuleDetailConfiguration] {
-	return pulumix.Output[DetectorRecipeEffectiveDetectorRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Unique name of the configuration
@@ -3036,12 +2645,6 @@ func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput) ToDet
 
 func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput) ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutputWithContext(ctx context.Context) DetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput {
 	return o
-}
-
-func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DetectorRecipeEffectiveDetectorRuleDetailConfiguration] {
-	return pulumix.Output[[]DetectorRecipeEffectiveDetectorRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput) Index(i pulumi.IntInput) DetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput {
@@ -3091,12 +2694,6 @@ func (i DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs) ToDetec
 	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput)
 }
 
-func (i DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs) ToOutput(ctx context.Context) pulumix.Output[DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue]{
-		OutputState: i.ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput is an input type that accepts DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray and DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput values.
 // You can construct a concrete instance of `DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput` via:
 //
@@ -3122,12 +2719,6 @@ func (i DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray) ToDete
 	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput)
 }
 
-func (i DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray) ToOutput(ctx context.Context) pulumix.Output[[]DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[[]DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue]{
-		OutputState: i.ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput struct{ *pulumi.OutputState }
 
 func (DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput) ElementType() reflect.Type {
@@ -3140,12 +2731,6 @@ func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput) ToDet
 
 func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput) ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutputWithContext(ctx context.Context) DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput {
 	return o
-}
-
-func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput) ToOutput(ctx context.Context) pulumix.Output[DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) configuration list item type, either CUSTOM or MANAGED
@@ -3175,12 +2760,6 @@ func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput) 
 
 func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput) ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutputWithContext(ctx context.Context) DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput {
 	return o
-}
-
-func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[[]DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput) Index(i pulumi.IntInput) DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput {
@@ -3234,12 +2813,6 @@ func (i DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs) ToDetectorRecipe
 	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput)
 }
 
-func (i DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs) ToOutput(ctx context.Context) pulumix.Output[DetectorRecipeEffectiveDetectorRuleEntitiesMapping] {
-	return pulumix.Output[DetectorRecipeEffectiveDetectorRuleEntitiesMapping]{
-		OutputState: i.ToDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput is an input type that accepts DetectorRecipeEffectiveDetectorRuleEntitiesMappingArray and DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput values.
 // You can construct a concrete instance of `DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput` via:
 //
@@ -3265,12 +2838,6 @@ func (i DetectorRecipeEffectiveDetectorRuleEntitiesMappingArray) ToDetectorRecip
 	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput)
 }
 
-func (i DetectorRecipeEffectiveDetectorRuleEntitiesMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]DetectorRecipeEffectiveDetectorRuleEntitiesMapping] {
-	return pulumix.Output[[]DetectorRecipeEffectiveDetectorRuleEntitiesMapping]{
-		OutputState: i.ToDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput struct{ *pulumi.OutputState }
 
 func (DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ElementType() reflect.Type {
@@ -3283,12 +2850,6 @@ func (o DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ToDetectorReci
 
 func (o DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ToDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
 	return o
-}
-
-func (o DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ToOutput(ctx context.Context) pulumix.Output[DetectorRecipeEffectiveDetectorRuleEntitiesMapping] {
-	return pulumix.Output[DetectorRecipeEffectiveDetectorRuleEntitiesMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Detector recipe display name.
@@ -3320,12 +2881,6 @@ func (o DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) ToDetecto
 
 func (o DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) ToDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput {
 	return o
-}
-
-func (o DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DetectorRecipeEffectiveDetectorRuleEntitiesMapping] {
-	return pulumix.Output[[]DetectorRecipeEffectiveDetectorRuleEntitiesMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) Index(i pulumi.IntInput) DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
@@ -3419,12 +2974,6 @@ func (i ResponderRecipeEffectiveResponderRuleArgs) ToResponderRecipeEffectiveRes
 	return pulumi.ToOutputWithContext(ctx, i).(ResponderRecipeEffectiveResponderRuleOutput)
 }
 
-func (i ResponderRecipeEffectiveResponderRuleArgs) ToOutput(ctx context.Context) pulumix.Output[ResponderRecipeEffectiveResponderRule] {
-	return pulumix.Output[ResponderRecipeEffectiveResponderRule]{
-		OutputState: i.ToResponderRecipeEffectiveResponderRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ResponderRecipeEffectiveResponderRuleArrayInput is an input type that accepts ResponderRecipeEffectiveResponderRuleArray and ResponderRecipeEffectiveResponderRuleArrayOutput values.
 // You can construct a concrete instance of `ResponderRecipeEffectiveResponderRuleArrayInput` via:
 //
@@ -3450,12 +2999,6 @@ func (i ResponderRecipeEffectiveResponderRuleArray) ToResponderRecipeEffectiveRe
 	return pulumi.ToOutputWithContext(ctx, i).(ResponderRecipeEffectiveResponderRuleArrayOutput)
 }
 
-func (i ResponderRecipeEffectiveResponderRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]ResponderRecipeEffectiveResponderRule] {
-	return pulumix.Output[[]ResponderRecipeEffectiveResponderRule]{
-		OutputState: i.ToResponderRecipeEffectiveResponderRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ResponderRecipeEffectiveResponderRuleOutput struct{ *pulumi.OutputState }
 
 func (ResponderRecipeEffectiveResponderRuleOutput) ElementType() reflect.Type {
@@ -3468,12 +3011,6 @@ func (o ResponderRecipeEffectiveResponderRuleOutput) ToResponderRecipeEffectiveR
 
 func (o ResponderRecipeEffectiveResponderRuleOutput) ToResponderRecipeEffectiveResponderRuleOutputWithContext(ctx context.Context) ResponderRecipeEffectiveResponderRuleOutput {
 	return o
-}
-
-func (o ResponderRecipeEffectiveResponderRuleOutput) ToOutput(ctx context.Context) pulumix.Output[ResponderRecipeEffectiveResponderRule] {
-	return pulumix.Output[ResponderRecipeEffectiveResponderRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Compartment Identifier
@@ -3556,12 +3093,6 @@ func (o ResponderRecipeEffectiveResponderRuleArrayOutput) ToResponderRecipeEffec
 	return o
 }
 
-func (o ResponderRecipeEffectiveResponderRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ResponderRecipeEffectiveResponderRule] {
-	return pulumix.Output[[]ResponderRecipeEffectiveResponderRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ResponderRecipeEffectiveResponderRuleArrayOutput) Index(i pulumi.IntInput) ResponderRecipeEffectiveResponderRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ResponderRecipeEffectiveResponderRule {
 		return vs[0].([]ResponderRecipeEffectiveResponderRule)[vs[1].(int)]
@@ -3613,12 +3144,6 @@ func (i ResponderRecipeEffectiveResponderRuleDetailArgs) ToResponderRecipeEffect
 	return pulumi.ToOutputWithContext(ctx, i).(ResponderRecipeEffectiveResponderRuleDetailOutput)
 }
 
-func (i ResponderRecipeEffectiveResponderRuleDetailArgs) ToOutput(ctx context.Context) pulumix.Output[ResponderRecipeEffectiveResponderRuleDetail] {
-	return pulumix.Output[ResponderRecipeEffectiveResponderRuleDetail]{
-		OutputState: i.ToResponderRecipeEffectiveResponderRuleDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ResponderRecipeEffectiveResponderRuleDetailArrayInput is an input type that accepts ResponderRecipeEffectiveResponderRuleDetailArray and ResponderRecipeEffectiveResponderRuleDetailArrayOutput values.
 // You can construct a concrete instance of `ResponderRecipeEffectiveResponderRuleDetailArrayInput` via:
 //
@@ -3644,12 +3169,6 @@ func (i ResponderRecipeEffectiveResponderRuleDetailArray) ToResponderRecipeEffec
 	return pulumi.ToOutputWithContext(ctx, i).(ResponderRecipeEffectiveResponderRuleDetailArrayOutput)
 }
 
-func (i ResponderRecipeEffectiveResponderRuleDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]ResponderRecipeEffectiveResponderRuleDetail] {
-	return pulumix.Output[[]ResponderRecipeEffectiveResponderRuleDetail]{
-		OutputState: i.ToResponderRecipeEffectiveResponderRuleDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ResponderRecipeEffectiveResponderRuleDetailOutput struct{ *pulumi.OutputState }
 
 func (ResponderRecipeEffectiveResponderRuleDetailOutput) ElementType() reflect.Type {
@@ -3662,12 +3181,6 @@ func (o ResponderRecipeEffectiveResponderRuleDetailOutput) ToResponderRecipeEffe
 
 func (o ResponderRecipeEffectiveResponderRuleDetailOutput) ToResponderRecipeEffectiveResponderRuleDetailOutputWithContext(ctx context.Context) ResponderRecipeEffectiveResponderRuleDetailOutput {
 	return o
-}
-
-func (o ResponderRecipeEffectiveResponderRuleDetailOutput) ToOutput(ctx context.Context) pulumix.Output[ResponderRecipeEffectiveResponderRuleDetail] {
-	return pulumix.Output[ResponderRecipeEffectiveResponderRuleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Base condition object
@@ -3704,12 +3217,6 @@ func (o ResponderRecipeEffectiveResponderRuleDetailArrayOutput) ToResponderRecip
 
 func (o ResponderRecipeEffectiveResponderRuleDetailArrayOutput) ToResponderRecipeEffectiveResponderRuleDetailArrayOutputWithContext(ctx context.Context) ResponderRecipeEffectiveResponderRuleDetailArrayOutput {
 	return o
-}
-
-func (o ResponderRecipeEffectiveResponderRuleDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ResponderRecipeEffectiveResponderRuleDetail] {
-	return pulumix.Output[[]ResponderRecipeEffectiveResponderRuleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ResponderRecipeEffectiveResponderRuleDetailArrayOutput) Index(i pulumi.IntInput) ResponderRecipeEffectiveResponderRuleDetailOutput {
@@ -3759,12 +3266,6 @@ func (i ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs) ToResponde
 	return pulumi.ToOutputWithContext(ctx, i).(ResponderRecipeEffectiveResponderRuleDetailConfigurationOutput)
 }
 
-func (i ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[ResponderRecipeEffectiveResponderRuleDetailConfiguration] {
-	return pulumix.Output[ResponderRecipeEffectiveResponderRuleDetailConfiguration]{
-		OutputState: i.ToResponderRecipeEffectiveResponderRuleDetailConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ResponderRecipeEffectiveResponderRuleDetailConfigurationArrayInput is an input type that accepts ResponderRecipeEffectiveResponderRuleDetailConfigurationArray and ResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `ResponderRecipeEffectiveResponderRuleDetailConfigurationArrayInput` via:
 //
@@ -3790,12 +3291,6 @@ func (i ResponderRecipeEffectiveResponderRuleDetailConfigurationArray) ToRespond
 	return pulumi.ToOutputWithContext(ctx, i).(ResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput)
 }
 
-func (i ResponderRecipeEffectiveResponderRuleDetailConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]ResponderRecipeEffectiveResponderRuleDetailConfiguration] {
-	return pulumix.Output[[]ResponderRecipeEffectiveResponderRuleDetailConfiguration]{
-		OutputState: i.ToResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ResponderRecipeEffectiveResponderRuleDetailConfigurationOutput struct{ *pulumi.OutputState }
 
 func (ResponderRecipeEffectiveResponderRuleDetailConfigurationOutput) ElementType() reflect.Type {
@@ -3808,12 +3303,6 @@ func (o ResponderRecipeEffectiveResponderRuleDetailConfigurationOutput) ToRespon
 
 func (o ResponderRecipeEffectiveResponderRuleDetailConfigurationOutput) ToResponderRecipeEffectiveResponderRuleDetailConfigurationOutputWithContext(ctx context.Context) ResponderRecipeEffectiveResponderRuleDetailConfigurationOutput {
 	return o
-}
-
-func (o ResponderRecipeEffectiveResponderRuleDetailConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[ResponderRecipeEffectiveResponderRuleDetailConfiguration] {
-	return pulumix.Output[ResponderRecipeEffectiveResponderRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique name of the configuration
@@ -3843,12 +3332,6 @@ func (o ResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput) ToR
 
 func (o ResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput) ToResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutputWithContext(ctx context.Context) ResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput {
 	return o
-}
-
-func (o ResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ResponderRecipeEffectiveResponderRuleDetailConfiguration] {
-	return pulumix.Output[[]ResponderRecipeEffectiveResponderRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput) Index(i pulumi.IntInput) ResponderRecipeEffectiveResponderRuleDetailConfigurationOutput {
@@ -3942,12 +3425,6 @@ func (i ResponderRecipeResponderRuleArgs) ToResponderRecipeResponderRuleOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(ResponderRecipeResponderRuleOutput)
 }
 
-func (i ResponderRecipeResponderRuleArgs) ToOutput(ctx context.Context) pulumix.Output[ResponderRecipeResponderRule] {
-	return pulumix.Output[ResponderRecipeResponderRule]{
-		OutputState: i.ToResponderRecipeResponderRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ResponderRecipeResponderRuleArrayInput is an input type that accepts ResponderRecipeResponderRuleArray and ResponderRecipeResponderRuleArrayOutput values.
 // You can construct a concrete instance of `ResponderRecipeResponderRuleArrayInput` via:
 //
@@ -3973,12 +3450,6 @@ func (i ResponderRecipeResponderRuleArray) ToResponderRecipeResponderRuleArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(ResponderRecipeResponderRuleArrayOutput)
 }
 
-func (i ResponderRecipeResponderRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]ResponderRecipeResponderRule] {
-	return pulumix.Output[[]ResponderRecipeResponderRule]{
-		OutputState: i.ToResponderRecipeResponderRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ResponderRecipeResponderRuleOutput struct{ *pulumi.OutputState }
 
 func (ResponderRecipeResponderRuleOutput) ElementType() reflect.Type {
@@ -3991,12 +3462,6 @@ func (o ResponderRecipeResponderRuleOutput) ToResponderRecipeResponderRuleOutput
 
 func (o ResponderRecipeResponderRuleOutput) ToResponderRecipeResponderRuleOutputWithContext(ctx context.Context) ResponderRecipeResponderRuleOutput {
 	return o
-}
-
-func (o ResponderRecipeResponderRuleOutput) ToOutput(ctx context.Context) pulumix.Output[ResponderRecipeResponderRule] {
-	return pulumix.Output[ResponderRecipeResponderRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Compartment Identifier
@@ -4077,12 +3542,6 @@ func (o ResponderRecipeResponderRuleArrayOutput) ToResponderRecipeResponderRuleA
 	return o
 }
 
-func (o ResponderRecipeResponderRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ResponderRecipeResponderRule] {
-	return pulumix.Output[[]ResponderRecipeResponderRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ResponderRecipeResponderRuleArrayOutput) Index(i pulumi.IntInput) ResponderRecipeResponderRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ResponderRecipeResponderRule {
 		return vs[0].([]ResponderRecipeResponderRule)[vs[1].(int)]
@@ -4134,12 +3593,6 @@ func (i ResponderRecipeResponderRuleDetailsArgs) ToResponderRecipeResponderRuleD
 	return pulumi.ToOutputWithContext(ctx, i).(ResponderRecipeResponderRuleDetailsOutput)
 }
 
-func (i ResponderRecipeResponderRuleDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[ResponderRecipeResponderRuleDetails] {
-	return pulumix.Output[ResponderRecipeResponderRuleDetails]{
-		OutputState: i.ToResponderRecipeResponderRuleDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ResponderRecipeResponderRuleDetailsOutput struct{ *pulumi.OutputState }
 
 func (ResponderRecipeResponderRuleDetailsOutput) ElementType() reflect.Type {
@@ -4152,12 +3605,6 @@ func (o ResponderRecipeResponderRuleDetailsOutput) ToResponderRecipeResponderRul
 
 func (o ResponderRecipeResponderRuleDetailsOutput) ToResponderRecipeResponderRuleDetailsOutputWithContext(ctx context.Context) ResponderRecipeResponderRuleDetailsOutput {
 	return o
-}
-
-func (o ResponderRecipeResponderRuleDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[ResponderRecipeResponderRuleDetails] {
-	return pulumix.Output[ResponderRecipeResponderRuleDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Base condition object
@@ -4223,12 +3670,6 @@ func (i ResponderRecipeResponderRuleDetailsConfigurationArgs) ToResponderRecipeR
 	return pulumi.ToOutputWithContext(ctx, i).(ResponderRecipeResponderRuleDetailsConfigurationOutput)
 }
 
-func (i ResponderRecipeResponderRuleDetailsConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[ResponderRecipeResponderRuleDetailsConfiguration] {
-	return pulumix.Output[ResponderRecipeResponderRuleDetailsConfiguration]{
-		OutputState: i.ToResponderRecipeResponderRuleDetailsConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ResponderRecipeResponderRuleDetailsConfigurationArrayInput is an input type that accepts ResponderRecipeResponderRuleDetailsConfigurationArray and ResponderRecipeResponderRuleDetailsConfigurationArrayOutput values.
 // You can construct a concrete instance of `ResponderRecipeResponderRuleDetailsConfigurationArrayInput` via:
 //
@@ -4254,12 +3695,6 @@ func (i ResponderRecipeResponderRuleDetailsConfigurationArray) ToResponderRecipe
 	return pulumi.ToOutputWithContext(ctx, i).(ResponderRecipeResponderRuleDetailsConfigurationArrayOutput)
 }
 
-func (i ResponderRecipeResponderRuleDetailsConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]ResponderRecipeResponderRuleDetailsConfiguration] {
-	return pulumix.Output[[]ResponderRecipeResponderRuleDetailsConfiguration]{
-		OutputState: i.ToResponderRecipeResponderRuleDetailsConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ResponderRecipeResponderRuleDetailsConfigurationOutput struct{ *pulumi.OutputState }
 
 func (ResponderRecipeResponderRuleDetailsConfigurationOutput) ElementType() reflect.Type {
@@ -4272,12 +3707,6 @@ func (o ResponderRecipeResponderRuleDetailsConfigurationOutput) ToResponderRecip
 
 func (o ResponderRecipeResponderRuleDetailsConfigurationOutput) ToResponderRecipeResponderRuleDetailsConfigurationOutputWithContext(ctx context.Context) ResponderRecipeResponderRuleDetailsConfigurationOutput {
 	return o
-}
-
-func (o ResponderRecipeResponderRuleDetailsConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[ResponderRecipeResponderRuleDetailsConfiguration] {
-	return pulumix.Output[ResponderRecipeResponderRuleDetailsConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique name of the configuration
@@ -4307,12 +3736,6 @@ func (o ResponderRecipeResponderRuleDetailsConfigurationArrayOutput) ToResponder
 
 func (o ResponderRecipeResponderRuleDetailsConfigurationArrayOutput) ToResponderRecipeResponderRuleDetailsConfigurationArrayOutputWithContext(ctx context.Context) ResponderRecipeResponderRuleDetailsConfigurationArrayOutput {
 	return o
-}
-
-func (o ResponderRecipeResponderRuleDetailsConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ResponderRecipeResponderRuleDetailsConfiguration] {
-	return pulumix.Output[[]ResponderRecipeResponderRuleDetailsConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ResponderRecipeResponderRuleDetailsConfigurationArrayOutput) Index(i pulumi.IntInput) ResponderRecipeResponderRuleDetailsConfigurationOutput {
@@ -4366,12 +3789,6 @@ func (i TargetTargetDetailArgs) ToTargetTargetDetailOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetailOutput)
 }
 
-func (i TargetTargetDetailArgs) ToOutput(ctx context.Context) pulumix.Output[TargetTargetDetail] {
-	return pulumix.Output[TargetTargetDetail]{
-		OutputState: i.ToTargetTargetDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // TargetTargetDetailArrayInput is an input type that accepts TargetTargetDetailArray and TargetTargetDetailArrayOutput values.
 // You can construct a concrete instance of `TargetTargetDetailArrayInput` via:
 //
@@ -4397,12 +3814,6 @@ func (i TargetTargetDetailArray) ToTargetTargetDetailArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetailArrayOutput)
 }
 
-func (i TargetTargetDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetDetail] {
-	return pulumix.Output[[]TargetTargetDetail]{
-		OutputState: i.ToTargetTargetDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type TargetTargetDetailOutput struct{ *pulumi.OutputState }
 
 func (TargetTargetDetailOutput) ElementType() reflect.Type {
@@ -4415,12 +3826,6 @@ func (o TargetTargetDetailOutput) ToTargetTargetDetailOutput() TargetTargetDetai
 
 func (o TargetTargetDetailOutput) ToTargetTargetDetailOutputWithContext(ctx context.Context) TargetTargetDetailOutput {
 	return o
-}
-
-func (o TargetTargetDetailOutput) ToOutput(ctx context.Context) pulumix.Output[TargetTargetDetail] {
-	return pulumix.Output[TargetTargetDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the security zone to associate this compartment with.
@@ -4457,12 +3862,6 @@ func (o TargetTargetDetailArrayOutput) ToTargetTargetDetailArrayOutput() TargetT
 
 func (o TargetTargetDetailArrayOutput) ToTargetTargetDetailArrayOutputWithContext(ctx context.Context) TargetTargetDetailArrayOutput {
 	return o
-}
-
-func (o TargetTargetDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetDetail] {
-	return pulumix.Output[[]TargetTargetDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o TargetTargetDetailArrayOutput) Index(i pulumi.IntInput) TargetTargetDetailOutput {
@@ -4564,12 +3963,6 @@ func (i TargetTargetDetailTargetSecurityZoneRecipeArgs) ToTargetTargetDetailTarg
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetailTargetSecurityZoneRecipeOutput)
 }
 
-func (i TargetTargetDetailTargetSecurityZoneRecipeArgs) ToOutput(ctx context.Context) pulumix.Output[TargetTargetDetailTargetSecurityZoneRecipe] {
-	return pulumix.Output[TargetTargetDetailTargetSecurityZoneRecipe]{
-		OutputState: i.ToTargetTargetDetailTargetSecurityZoneRecipeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // TargetTargetDetailTargetSecurityZoneRecipeArrayInput is an input type that accepts TargetTargetDetailTargetSecurityZoneRecipeArray and TargetTargetDetailTargetSecurityZoneRecipeArrayOutput values.
 // You can construct a concrete instance of `TargetTargetDetailTargetSecurityZoneRecipeArrayInput` via:
 //
@@ -4595,12 +3988,6 @@ func (i TargetTargetDetailTargetSecurityZoneRecipeArray) ToTargetTargetDetailTar
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetailTargetSecurityZoneRecipeArrayOutput)
 }
 
-func (i TargetTargetDetailTargetSecurityZoneRecipeArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetDetailTargetSecurityZoneRecipe] {
-	return pulumix.Output[[]TargetTargetDetailTargetSecurityZoneRecipe]{
-		OutputState: i.ToTargetTargetDetailTargetSecurityZoneRecipeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type TargetTargetDetailTargetSecurityZoneRecipeOutput struct{ *pulumi.OutputState }
 
 func (TargetTargetDetailTargetSecurityZoneRecipeOutput) ElementType() reflect.Type {
@@ -4613,12 +4000,6 @@ func (o TargetTargetDetailTargetSecurityZoneRecipeOutput) ToTargetTargetDetailTa
 
 func (o TargetTargetDetailTargetSecurityZoneRecipeOutput) ToTargetTargetDetailTargetSecurityZoneRecipeOutputWithContext(ctx context.Context) TargetTargetDetailTargetSecurityZoneRecipeOutput {
 	return o
-}
-
-func (o TargetTargetDetailTargetSecurityZoneRecipeOutput) ToOutput(ctx context.Context) pulumix.Output[TargetTargetDetailTargetSecurityZoneRecipe] {
-	return pulumix.Output[TargetTargetDetailTargetSecurityZoneRecipe]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) compartment associated with condition
@@ -4704,12 +4085,6 @@ func (o TargetTargetDetailTargetSecurityZoneRecipeArrayOutput) ToTargetTargetDet
 
 func (o TargetTargetDetailTargetSecurityZoneRecipeArrayOutput) ToTargetTargetDetailTargetSecurityZoneRecipeArrayOutputWithContext(ctx context.Context) TargetTargetDetailTargetSecurityZoneRecipeArrayOutput {
 	return o
-}
-
-func (o TargetTargetDetailTargetSecurityZoneRecipeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetDetailTargetSecurityZoneRecipe] {
-	return pulumix.Output[[]TargetTargetDetailTargetSecurityZoneRecipe]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o TargetTargetDetailTargetSecurityZoneRecipeArrayOutput) Index(i pulumi.IntInput) TargetTargetDetailTargetSecurityZoneRecipeOutput {
@@ -4803,12 +4178,6 @@ func (i TargetTargetDetectorRecipeArgs) ToTargetTargetDetectorRecipeOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeOutput)
 }
 
-func (i TargetTargetDetectorRecipeArgs) ToOutput(ctx context.Context) pulumix.Output[TargetTargetDetectorRecipe] {
-	return pulumix.Output[TargetTargetDetectorRecipe]{
-		OutputState: i.ToTargetTargetDetectorRecipeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // TargetTargetDetectorRecipeArrayInput is an input type that accepts TargetTargetDetectorRecipeArray and TargetTargetDetectorRecipeArrayOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeArrayInput` via:
 //
@@ -4834,12 +4203,6 @@ func (i TargetTargetDetectorRecipeArray) ToTargetTargetDetectorRecipeArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeArrayOutput)
 }
 
-func (i TargetTargetDetectorRecipeArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetDetectorRecipe] {
-	return pulumix.Output[[]TargetTargetDetectorRecipe]{
-		OutputState: i.ToTargetTargetDetectorRecipeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type TargetTargetDetectorRecipeOutput struct{ *pulumi.OutputState }
 
 func (TargetTargetDetectorRecipeOutput) ElementType() reflect.Type {
@@ -4852,12 +4215,6 @@ func (o TargetTargetDetectorRecipeOutput) ToTargetTargetDetectorRecipeOutput() T
 
 func (o TargetTargetDetectorRecipeOutput) ToTargetTargetDetectorRecipeOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeOutput {
 	return o
-}
-
-func (o TargetTargetDetectorRecipeOutput) ToOutput(ctx context.Context) pulumix.Output[TargetTargetDetectorRecipe] {
-	return pulumix.Output[TargetTargetDetectorRecipe]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) compartment associated with condition
@@ -4938,12 +4295,6 @@ func (o TargetTargetDetectorRecipeArrayOutput) ToTargetTargetDetectorRecipeArray
 
 func (o TargetTargetDetectorRecipeArrayOutput) ToTargetTargetDetectorRecipeArrayOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeArrayOutput {
 	return o
-}
-
-func (o TargetTargetDetectorRecipeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetDetectorRecipe] {
-	return pulumix.Output[[]TargetTargetDetectorRecipe]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o TargetTargetDetectorRecipeArrayOutput) Index(i pulumi.IntInput) TargetTargetDetectorRecipeOutput {
@@ -5049,12 +4400,6 @@ func (i TargetTargetDetectorRecipeDetectorRuleArgs) ToTargetTargetDetectorRecipe
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeDetectorRuleOutput)
 }
 
-func (i TargetTargetDetectorRecipeDetectorRuleArgs) ToOutput(ctx context.Context) pulumix.Output[TargetTargetDetectorRecipeDetectorRule] {
-	return pulumix.Output[TargetTargetDetectorRecipeDetectorRule]{
-		OutputState: i.ToTargetTargetDetectorRecipeDetectorRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // TargetTargetDetectorRecipeDetectorRuleArrayInput is an input type that accepts TargetTargetDetectorRecipeDetectorRuleArray and TargetTargetDetectorRecipeDetectorRuleArrayOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeDetectorRuleArrayInput` via:
 //
@@ -5080,12 +4425,6 @@ func (i TargetTargetDetectorRecipeDetectorRuleArray) ToTargetTargetDetectorRecip
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeDetectorRuleArrayOutput)
 }
 
-func (i TargetTargetDetectorRecipeDetectorRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetDetectorRecipeDetectorRule] {
-	return pulumix.Output[[]TargetTargetDetectorRecipeDetectorRule]{
-		OutputState: i.ToTargetTargetDetectorRecipeDetectorRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type TargetTargetDetectorRecipeDetectorRuleOutput struct{ *pulumi.OutputState }
 
 func (TargetTargetDetectorRecipeDetectorRuleOutput) ElementType() reflect.Type {
@@ -5098,12 +4437,6 @@ func (o TargetTargetDetectorRecipeDetectorRuleOutput) ToTargetTargetDetectorReci
 
 func (o TargetTargetDetectorRecipeDetectorRuleOutput) ToTargetTargetDetectorRecipeDetectorRuleOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeDetectorRuleOutput {
 	return o
-}
-
-func (o TargetTargetDetectorRecipeDetectorRuleOutput) ToOutput(ctx context.Context) pulumix.Output[TargetTargetDetectorRecipeDetectorRule] {
-	return pulumix.Output[TargetTargetDetectorRecipeDetectorRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The id of the attached DataSource.
@@ -5203,12 +4536,6 @@ func (o TargetTargetDetectorRecipeDetectorRuleArrayOutput) ToTargetTargetDetecto
 	return o
 }
 
-func (o TargetTargetDetectorRecipeDetectorRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetDetectorRecipeDetectorRule] {
-	return pulumix.Output[[]TargetTargetDetectorRecipeDetectorRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o TargetTargetDetectorRecipeDetectorRuleArrayOutput) Index(i pulumi.IntInput) TargetTargetDetectorRecipeDetectorRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TargetTargetDetectorRecipeDetectorRule {
 		return vs[0].([]TargetTargetDetectorRecipeDetectorRule)[vs[1].(int)]
@@ -5268,12 +4595,6 @@ func (i TargetTargetDetectorRecipeDetectorRuleDetailsArgs) ToTargetTargetDetecto
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeDetectorRuleDetailsOutput)
 }
 
-func (i TargetTargetDetectorRecipeDetectorRuleDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[TargetTargetDetectorRecipeDetectorRuleDetails] {
-	return pulumix.Output[TargetTargetDetectorRecipeDetectorRuleDetails]{
-		OutputState: i.ToTargetTargetDetectorRecipeDetectorRuleDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 type TargetTargetDetectorRecipeDetectorRuleDetailsOutput struct{ *pulumi.OutputState }
 
 func (TargetTargetDetectorRecipeDetectorRuleDetailsOutput) ElementType() reflect.Type {
@@ -5286,12 +4607,6 @@ func (o TargetTargetDetectorRecipeDetectorRuleDetailsOutput) ToTargetTargetDetec
 
 func (o TargetTargetDetectorRecipeDetectorRuleDetailsOutput) ToTargetTargetDetectorRecipeDetectorRuleDetailsOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeDetectorRuleDetailsOutput {
 	return o
-}
-
-func (o TargetTargetDetectorRecipeDetectorRuleDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[TargetTargetDetectorRecipeDetectorRuleDetails] {
-	return pulumix.Output[TargetTargetDetectorRecipeDetectorRuleDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Condition group corresponding to each compartment
@@ -5365,12 +4680,6 @@ func (i TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs) ToTarge
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupOutput)
 }
 
-func (i TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs) ToOutput(ctx context.Context) pulumix.Output[TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup] {
-	return pulumix.Output[TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup]{
-		OutputState: i.ToTargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArrayInput is an input type that accepts TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArray and TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArrayOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArrayInput` via:
 //
@@ -5396,12 +4705,6 @@ func (i TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArray) ToTarg
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArrayOutput)
 }
 
-func (i TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup] {
-	return pulumix.Output[[]TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup]{
-		OutputState: i.ToTargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupOutput struct{ *pulumi.OutputState }
 
 func (TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupOutput) ElementType() reflect.Type {
@@ -5414,12 +4717,6 @@ func (o TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupOutput) ToTar
 
 func (o TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupOutput) ToTargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupOutput {
 	return o
-}
-
-func (o TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupOutput) ToOutput(ctx context.Context) pulumix.Output[TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup] {
-	return pulumix.Output[TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) compartment associated with condition
@@ -5444,12 +4741,6 @@ func (o TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArrayOutput) 
 
 func (o TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArrayOutput) ToTargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArrayOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArrayOutput {
 	return o
-}
-
-func (o TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup] {
-	return pulumix.Output[[]TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArrayOutput) Index(i pulumi.IntInput) TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupOutput {
@@ -5507,12 +4798,6 @@ func (i TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgs) ToTarget
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationOutput)
 }
 
-func (i TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration] {
-	return pulumix.Output[TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration]{
-		OutputState: i.ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArrayInput is an input type that accepts TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArray and TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArrayOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArrayInput` via:
 //
@@ -5538,12 +4823,6 @@ func (i TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArray) ToTarge
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArrayOutput)
 }
 
-func (i TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration] {
-	return pulumix.Output[[]TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration]{
-		OutputState: i.ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationOutput struct{ *pulumi.OutputState }
 
 func (TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationOutput) ElementType() reflect.Type {
@@ -5556,12 +4835,6 @@ func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationOutput) ToTarg
 
 func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationOutput) ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationOutput {
 	return o
-}
-
-func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration] {
-	return pulumix.Output[TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Unique name of the configuration
@@ -5603,12 +4876,6 @@ func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArrayOutput) T
 
 func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArrayOutput) ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArrayOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArrayOutput {
 	return o
-}
-
-func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration] {
-	return pulumix.Output[[]TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArrayOutput) Index(i pulumi.IntInput) TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationOutput {
@@ -5658,12 +4925,6 @@ func (i TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs) ToT
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueOutput)
 }
 
-func (i TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs) ToOutput(ctx context.Context) pulumix.Output[TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue] {
-	return pulumix.Output[TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue]{
-		OutputState: i.ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueOutputWithContext(ctx).OutputState,
-	}
-}
-
 // TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArrayInput is an input type that accepts TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArray and TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArrayOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArrayInput` via:
 //
@@ -5689,12 +4950,6 @@ func (i TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArrayOutput)
 }
 
-func (i TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue] {
-	return pulumix.Output[[]TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue]{
-		OutputState: i.ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueOutput struct{ *pulumi.OutputState }
 
 func (TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueOutput) ElementType() reflect.Type {
@@ -5707,12 +4962,6 @@ func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueOutput) T
 
 func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueOutput) ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueOutput {
 	return o
-}
-
-func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueOutput) ToOutput(ctx context.Context) pulumix.Output[TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue] {
-	return pulumix.Output[TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue]{
-		OutputState: o.OutputState,
-	}
 }
 
 // configuration list item type, either CUSTOM or MANAGED
@@ -5744,12 +4993,6 @@ func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArrayOutp
 
 func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArrayOutput) ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArrayOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArrayOutput {
 	return o
-}
-
-func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue] {
-	return pulumix.Output[[]TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArrayOutput) Index(i pulumi.IntInput) TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueOutput {
@@ -5803,12 +5046,6 @@ func (i TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs) ToTargetTarge
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput)
 }
 
-func (i TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs) ToOutput(ctx context.Context) pulumix.Output[TargetTargetDetectorRecipeDetectorRuleEntitiesMapping] {
-	return pulumix.Output[TargetTargetDetectorRecipeDetectorRuleEntitiesMapping]{
-		OutputState: i.ToTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayInput is an input type that accepts TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArray and TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayInput` via:
 //
@@ -5834,12 +5071,6 @@ func (i TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArray) ToTargetTarg
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput)
 }
 
-func (i TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetDetectorRecipeDetectorRuleEntitiesMapping] {
-	return pulumix.Output[[]TargetTargetDetectorRecipeDetectorRuleEntitiesMapping]{
-		OutputState: i.ToTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type TargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput struct{ *pulumi.OutputState }
 
 func (TargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput) ElementType() reflect.Type {
@@ -5852,12 +5083,6 @@ func (o TargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput) ToTargetTar
 
 func (o TargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput) ToTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput {
 	return o
-}
-
-func (o TargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput) ToOutput(ctx context.Context) pulumix.Output[TargetTargetDetectorRecipeDetectorRuleEntitiesMapping] {
-	return pulumix.Output[TargetTargetDetectorRecipeDetectorRuleEntitiesMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) DetectorTemplate identifier.
@@ -5889,12 +5114,6 @@ func (o TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput) ToTarg
 
 func (o TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput) ToTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput {
 	return o
-}
-
-func (o TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetDetectorRecipeDetectorRuleEntitiesMapping] {
-	return pulumix.Output[[]TargetTargetDetectorRecipeDetectorRuleEntitiesMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput) Index(i pulumi.IntInput) TargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput {
@@ -6000,12 +5219,6 @@ func (i TargetTargetDetectorRecipeEffectiveDetectorRuleArgs) ToTargetTargetDetec
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeEffectiveDetectorRuleOutput)
 }
 
-func (i TargetTargetDetectorRecipeEffectiveDetectorRuleArgs) ToOutput(ctx context.Context) pulumix.Output[TargetTargetDetectorRecipeEffectiveDetectorRule] {
-	return pulumix.Output[TargetTargetDetectorRecipeEffectiveDetectorRule]{
-		OutputState: i.ToTargetTargetDetectorRecipeEffectiveDetectorRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // TargetTargetDetectorRecipeEffectiveDetectorRuleArrayInput is an input type that accepts TargetTargetDetectorRecipeEffectiveDetectorRuleArray and TargetTargetDetectorRecipeEffectiveDetectorRuleArrayOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeEffectiveDetectorRuleArrayInput` via:
 //
@@ -6031,12 +5244,6 @@ func (i TargetTargetDetectorRecipeEffectiveDetectorRuleArray) ToTargetTargetDete
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeEffectiveDetectorRuleArrayOutput)
 }
 
-func (i TargetTargetDetectorRecipeEffectiveDetectorRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetDetectorRecipeEffectiveDetectorRule] {
-	return pulumix.Output[[]TargetTargetDetectorRecipeEffectiveDetectorRule]{
-		OutputState: i.ToTargetTargetDetectorRecipeEffectiveDetectorRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type TargetTargetDetectorRecipeEffectiveDetectorRuleOutput struct{ *pulumi.OutputState }
 
 func (TargetTargetDetectorRecipeEffectiveDetectorRuleOutput) ElementType() reflect.Type {
@@ -6049,12 +5256,6 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleOutput) ToTargetTargetDet
 
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleOutput) ToTargetTargetDetectorRecipeEffectiveDetectorRuleOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleOutput {
 	return o
-}
-
-func (o TargetTargetDetectorRecipeEffectiveDetectorRuleOutput) ToOutput(ctx context.Context) pulumix.Output[TargetTargetDetectorRecipeEffectiveDetectorRule] {
-	return pulumix.Output[TargetTargetDetectorRecipeEffectiveDetectorRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The id of the attached DataSource.
@@ -6154,12 +5355,6 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleArrayOutput) ToTargetTarg
 	return o
 }
 
-func (o TargetTargetDetectorRecipeEffectiveDetectorRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetDetectorRecipeEffectiveDetectorRule] {
-	return pulumix.Output[[]TargetTargetDetectorRecipeEffectiveDetectorRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleArrayOutput) Index(i pulumi.IntInput) TargetTargetDetectorRecipeEffectiveDetectorRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TargetTargetDetectorRecipeEffectiveDetectorRule {
 		return vs[0].([]TargetTargetDetectorRecipeEffectiveDetectorRule)[vs[1].(int)]
@@ -6219,12 +5414,6 @@ func (i TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs) ToTargetTarge
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailOutput)
 }
 
-func (i TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs) ToOutput(ctx context.Context) pulumix.Output[TargetTargetDetectorRecipeEffectiveDetectorRuleDetail] {
-	return pulumix.Output[TargetTargetDetectorRecipeEffectiveDetectorRuleDetail]{
-		OutputState: i.ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArrayInput is an input type that accepts TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArray and TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArrayOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArrayInput` via:
 //
@@ -6250,12 +5439,6 @@ func (i TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArray) ToTargetTarg
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArrayOutput)
 }
 
-func (i TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetDetectorRecipeEffectiveDetectorRuleDetail] {
-	return pulumix.Output[[]TargetTargetDetectorRecipeEffectiveDetectorRuleDetail]{
-		OutputState: i.ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailOutput struct{ *pulumi.OutputState }
 
 func (TargetTargetDetectorRecipeEffectiveDetectorRuleDetailOutput) ElementType() reflect.Type {
@@ -6268,12 +5451,6 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailOutput) ToTargetTar
 
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailOutput) ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleDetailOutput {
 	return o
-}
-
-func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailOutput) ToOutput(ctx context.Context) pulumix.Output[TargetTargetDetectorRecipeEffectiveDetectorRuleDetail] {
-	return pulumix.Output[TargetTargetDetectorRecipeEffectiveDetectorRuleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Condition group corresponding to each compartment
@@ -6324,12 +5501,6 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArrayOutput) ToTarg
 	return o
 }
 
-func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetDetectorRecipeEffectiveDetectorRuleDetail] {
-	return pulumix.Output[[]TargetTargetDetectorRecipeEffectiveDetectorRuleDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArrayOutput) Index(i pulumi.IntInput) TargetTargetDetectorRecipeEffectiveDetectorRuleDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TargetTargetDetectorRecipeEffectiveDetectorRuleDetail {
 		return vs[0].([]TargetTargetDetectorRecipeEffectiveDetectorRuleDetail)[vs[1].(int)]
@@ -6373,12 +5544,6 @@ func (i TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutput)
 }
 
-func (i TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs) ToOutput(ctx context.Context) pulumix.Output[TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup] {
-	return pulumix.Output[TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup]{
-		OutputState: i.ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayInput is an input type that accepts TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArray and TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayInput` via:
 //
@@ -6404,12 +5569,6 @@ func (i TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArray
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayOutput)
 }
 
-func (i TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup] {
-	return pulumix.Output[[]TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup]{
-		OutputState: i.ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutput struct{ *pulumi.OutputState }
 
 func (TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutput) ElementType() reflect.Type {
@@ -6422,12 +5581,6 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutpu
 
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutput) ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutput {
 	return o
-}
-
-func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutput) ToOutput(ctx context.Context) pulumix.Output[TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup] {
-	return pulumix.Output[TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) compartment associated with condition
@@ -6456,12 +5609,6 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArray
 
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayOutput) ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayOutput {
 	return o
-}
-
-func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup] {
-	return pulumix.Output[[]TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayOutput) Index(i pulumi.IntInput) TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutput {
@@ -6519,12 +5666,6 @@ func (i TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs) 
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput)
 }
 
-func (i TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration] {
-	return pulumix.Output[TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration]{
-		OutputState: i.ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput is an input type that accepts TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArray and TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput` via:
 //
@@ -6550,12 +5691,6 @@ func (i TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArray)
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput)
 }
 
-func (i TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration] {
-	return pulumix.Output[[]TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration]{
-		OutputState: i.ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput struct{ *pulumi.OutputState }
 
 func (TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) ElementType() reflect.Type {
@@ -6568,12 +5703,6 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput
 
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput {
 	return o
-}
-
-func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration] {
-	return pulumix.Output[TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Unique name of the configuration
@@ -6615,12 +5744,6 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayO
 
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput) ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput {
 	return o
-}
-
-func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration] {
-	return pulumix.Output[[]TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput) Index(i pulumi.IntInput) TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput {
@@ -6670,12 +5793,6 @@ func (i TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueA
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput)
 }
 
-func (i TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs) ToOutput(ctx context.Context) pulumix.Output[TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue]{
-		OutputState: i.ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutputWithContext(ctx).OutputState,
-	}
-}
-
 // TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput is an input type that accepts TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray and TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput` via:
 //
@@ -6701,12 +5818,6 @@ func (i TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueA
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput)
 }
 
-func (i TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[[]TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue]{
-		OutputState: i.ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput struct{ *pulumi.OutputState }
 
 func (TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput) ElementType() reflect.Type {
@@ -6719,12 +5830,6 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueO
 
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput) ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput {
 	return o
-}
-
-func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput) ToOutput(ctx context.Context) pulumix.Output[TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue]{
-		OutputState: o.OutputState,
-	}
 }
 
 // configuration list item type, either CUSTOM or MANAGED
@@ -6760,12 +5865,6 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueA
 
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput) ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput {
 	return o
-}
-
-func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[[]TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput) Index(i pulumi.IntInput) TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput {
@@ -6819,12 +5918,6 @@ func (i TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs) ToTa
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput)
 }
 
-func (i TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs) ToOutput(ctx context.Context) pulumix.Output[TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping] {
-	return pulumix.Output[TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping]{
-		OutputState: i.ToTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput is an input type that accepts TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray and TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput values.
 // You can construct a concrete instance of `TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput` via:
 //
@@ -6850,12 +5943,6 @@ func (i TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray) ToT
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput)
 }
 
-func (i TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping] {
-	return pulumix.Output[[]TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping]{
-		OutputState: i.ToTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput struct{ *pulumi.OutputState }
 
 func (TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ElementType() reflect.Type {
@@ -6868,12 +5955,6 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) To
 
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ToTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
 	return o
-}
-
-func (o TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ToOutput(ctx context.Context) pulumix.Output[TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping] {
-	return pulumix.Output[TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) DetectorTemplate identifier.
@@ -6905,12 +5986,6 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutpu
 
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) ToTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput {
 	return o
-}
-
-func (o TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping] {
-	return pulumix.Output[[]TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) Index(i pulumi.IntInput) TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
@@ -6996,12 +6071,6 @@ func (i TargetTargetResponderRecipeArgs) ToTargetTargetResponderRecipeOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetResponderRecipeOutput)
 }
 
-func (i TargetTargetResponderRecipeArgs) ToOutput(ctx context.Context) pulumix.Output[TargetTargetResponderRecipe] {
-	return pulumix.Output[TargetTargetResponderRecipe]{
-		OutputState: i.ToTargetTargetResponderRecipeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // TargetTargetResponderRecipeArrayInput is an input type that accepts TargetTargetResponderRecipeArray and TargetTargetResponderRecipeArrayOutput values.
 // You can construct a concrete instance of `TargetTargetResponderRecipeArrayInput` via:
 //
@@ -7027,12 +6096,6 @@ func (i TargetTargetResponderRecipeArray) ToTargetTargetResponderRecipeArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetResponderRecipeArrayOutput)
 }
 
-func (i TargetTargetResponderRecipeArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetResponderRecipe] {
-	return pulumix.Output[[]TargetTargetResponderRecipe]{
-		OutputState: i.ToTargetTargetResponderRecipeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type TargetTargetResponderRecipeOutput struct{ *pulumi.OutputState }
 
 func (TargetTargetResponderRecipeOutput) ElementType() reflect.Type {
@@ -7045,12 +6108,6 @@ func (o TargetTargetResponderRecipeOutput) ToTargetTargetResponderRecipeOutput()
 
 func (o TargetTargetResponderRecipeOutput) ToTargetTargetResponderRecipeOutputWithContext(ctx context.Context) TargetTargetResponderRecipeOutput {
 	return o
-}
-
-func (o TargetTargetResponderRecipeOutput) ToOutput(ctx context.Context) pulumix.Output[TargetTargetResponderRecipe] {
-	return pulumix.Output[TargetTargetResponderRecipe]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) compartment associated with condition
@@ -7123,12 +6180,6 @@ func (o TargetTargetResponderRecipeArrayOutput) ToTargetTargetResponderRecipeArr
 
 func (o TargetTargetResponderRecipeArrayOutput) ToTargetTargetResponderRecipeArrayOutputWithContext(ctx context.Context) TargetTargetResponderRecipeArrayOutput {
 	return o
-}
-
-func (o TargetTargetResponderRecipeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetResponderRecipe] {
-	return pulumix.Output[[]TargetTargetResponderRecipe]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o TargetTargetResponderRecipeArrayOutput) Index(i pulumi.IntInput) TargetTargetResponderRecipeOutput {
@@ -7228,12 +6279,6 @@ func (i TargetTargetResponderRecipeEffectiveResponderRuleArgs) ToTargetTargetRes
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetResponderRecipeEffectiveResponderRuleOutput)
 }
 
-func (i TargetTargetResponderRecipeEffectiveResponderRuleArgs) ToOutput(ctx context.Context) pulumix.Output[TargetTargetResponderRecipeEffectiveResponderRule] {
-	return pulumix.Output[TargetTargetResponderRecipeEffectiveResponderRule]{
-		OutputState: i.ToTargetTargetResponderRecipeEffectiveResponderRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // TargetTargetResponderRecipeEffectiveResponderRuleArrayInput is an input type that accepts TargetTargetResponderRecipeEffectiveResponderRuleArray and TargetTargetResponderRecipeEffectiveResponderRuleArrayOutput values.
 // You can construct a concrete instance of `TargetTargetResponderRecipeEffectiveResponderRuleArrayInput` via:
 //
@@ -7259,12 +6304,6 @@ func (i TargetTargetResponderRecipeEffectiveResponderRuleArray) ToTargetTargetRe
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetResponderRecipeEffectiveResponderRuleArrayOutput)
 }
 
-func (i TargetTargetResponderRecipeEffectiveResponderRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetResponderRecipeEffectiveResponderRule] {
-	return pulumix.Output[[]TargetTargetResponderRecipeEffectiveResponderRule]{
-		OutputState: i.ToTargetTargetResponderRecipeEffectiveResponderRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type TargetTargetResponderRecipeEffectiveResponderRuleOutput struct{ *pulumi.OutputState }
 
 func (TargetTargetResponderRecipeEffectiveResponderRuleOutput) ElementType() reflect.Type {
@@ -7277,12 +6316,6 @@ func (o TargetTargetResponderRecipeEffectiveResponderRuleOutput) ToTargetTargetR
 
 func (o TargetTargetResponderRecipeEffectiveResponderRuleOutput) ToTargetTargetResponderRecipeEffectiveResponderRuleOutputWithContext(ctx context.Context) TargetTargetResponderRecipeEffectiveResponderRuleOutput {
 	return o
-}
-
-func (o TargetTargetResponderRecipeEffectiveResponderRuleOutput) ToOutput(ctx context.Context) pulumix.Output[TargetTargetResponderRecipeEffectiveResponderRule] {
-	return pulumix.Output[TargetTargetResponderRecipeEffectiveResponderRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) compartment associated with condition
@@ -7368,12 +6401,6 @@ func (o TargetTargetResponderRecipeEffectiveResponderRuleArrayOutput) ToTargetTa
 	return o
 }
 
-func (o TargetTargetResponderRecipeEffectiveResponderRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetResponderRecipeEffectiveResponderRule] {
-	return pulumix.Output[[]TargetTargetResponderRecipeEffectiveResponderRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o TargetTargetResponderRecipeEffectiveResponderRuleArrayOutput) Index(i pulumi.IntInput) TargetTargetResponderRecipeEffectiveResponderRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TargetTargetResponderRecipeEffectiveResponderRule {
 		return vs[0].([]TargetTargetResponderRecipeEffectiveResponderRule)[vs[1].(int)]
@@ -7425,12 +6452,6 @@ func (i TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs) ToTargetTar
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetResponderRecipeEffectiveResponderRuleDetailOutput)
 }
 
-func (i TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs) ToOutput(ctx context.Context) pulumix.Output[TargetTargetResponderRecipeEffectiveResponderRuleDetail] {
-	return pulumix.Output[TargetTargetResponderRecipeEffectiveResponderRuleDetail]{
-		OutputState: i.ToTargetTargetResponderRecipeEffectiveResponderRuleDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // TargetTargetResponderRecipeEffectiveResponderRuleDetailArrayInput is an input type that accepts TargetTargetResponderRecipeEffectiveResponderRuleDetailArray and TargetTargetResponderRecipeEffectiveResponderRuleDetailArrayOutput values.
 // You can construct a concrete instance of `TargetTargetResponderRecipeEffectiveResponderRuleDetailArrayInput` via:
 //
@@ -7456,12 +6477,6 @@ func (i TargetTargetResponderRecipeEffectiveResponderRuleDetailArray) ToTargetTa
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetResponderRecipeEffectiveResponderRuleDetailArrayOutput)
 }
 
-func (i TargetTargetResponderRecipeEffectiveResponderRuleDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetResponderRecipeEffectiveResponderRuleDetail] {
-	return pulumix.Output[[]TargetTargetResponderRecipeEffectiveResponderRuleDetail]{
-		OutputState: i.ToTargetTargetResponderRecipeEffectiveResponderRuleDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type TargetTargetResponderRecipeEffectiveResponderRuleDetailOutput struct{ *pulumi.OutputState }
 
 func (TargetTargetResponderRecipeEffectiveResponderRuleDetailOutput) ElementType() reflect.Type {
@@ -7474,12 +6489,6 @@ func (o TargetTargetResponderRecipeEffectiveResponderRuleDetailOutput) ToTargetT
 
 func (o TargetTargetResponderRecipeEffectiveResponderRuleDetailOutput) ToTargetTargetResponderRecipeEffectiveResponderRuleDetailOutputWithContext(ctx context.Context) TargetTargetResponderRecipeEffectiveResponderRuleDetailOutput {
 	return o
-}
-
-func (o TargetTargetResponderRecipeEffectiveResponderRuleDetailOutput) ToOutput(ctx context.Context) pulumix.Output[TargetTargetResponderRecipeEffectiveResponderRuleDetail] {
-	return pulumix.Output[TargetTargetResponderRecipeEffectiveResponderRuleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Base condition object
@@ -7516,12 +6525,6 @@ func (o TargetTargetResponderRecipeEffectiveResponderRuleDetailArrayOutput) ToTa
 
 func (o TargetTargetResponderRecipeEffectiveResponderRuleDetailArrayOutput) ToTargetTargetResponderRecipeEffectiveResponderRuleDetailArrayOutputWithContext(ctx context.Context) TargetTargetResponderRecipeEffectiveResponderRuleDetailArrayOutput {
 	return o
-}
-
-func (o TargetTargetResponderRecipeEffectiveResponderRuleDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetResponderRecipeEffectiveResponderRuleDetail] {
-	return pulumix.Output[[]TargetTargetResponderRecipeEffectiveResponderRuleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o TargetTargetResponderRecipeEffectiveResponderRuleDetailArrayOutput) Index(i pulumi.IntInput) TargetTargetResponderRecipeEffectiveResponderRuleDetailOutput {
@@ -7571,12 +6574,6 @@ func (i TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput)
 }
 
-func (i TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration] {
-	return pulumix.Output[TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration]{
-		OutputState: i.ToTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayInput is an input type that accepts TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArray and TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayInput` via:
 //
@@ -7602,12 +6599,6 @@ func (i TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArra
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput)
 }
 
-func (i TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration] {
-	return pulumix.Output[[]TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration]{
-		OutputState: i.ToTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput struct{ *pulumi.OutputState }
 
 func (TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput) ElementType() reflect.Type {
@@ -7620,12 +6611,6 @@ func (o TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutp
 
 func (o TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput) ToTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutputWithContext(ctx context.Context) TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput {
 	return o
-}
-
-func (o TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration] {
-	return pulumix.Output[TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Unique name of the configuration
@@ -7657,12 +6642,6 @@ func (o TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArra
 
 func (o TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput) ToTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutputWithContext(ctx context.Context) TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput {
 	return o
-}
-
-func (o TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration] {
-	return pulumix.Output[[]TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput) Index(i pulumi.IntInput) TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput {
@@ -7762,12 +6741,6 @@ func (i TargetTargetResponderRecipeResponderRuleArgs) ToTargetTargetResponderRec
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetResponderRecipeResponderRuleOutput)
 }
 
-func (i TargetTargetResponderRecipeResponderRuleArgs) ToOutput(ctx context.Context) pulumix.Output[TargetTargetResponderRecipeResponderRule] {
-	return pulumix.Output[TargetTargetResponderRecipeResponderRule]{
-		OutputState: i.ToTargetTargetResponderRecipeResponderRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // TargetTargetResponderRecipeResponderRuleArrayInput is an input type that accepts TargetTargetResponderRecipeResponderRuleArray and TargetTargetResponderRecipeResponderRuleArrayOutput values.
 // You can construct a concrete instance of `TargetTargetResponderRecipeResponderRuleArrayInput` via:
 //
@@ -7793,12 +6766,6 @@ func (i TargetTargetResponderRecipeResponderRuleArray) ToTargetTargetResponderRe
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetResponderRecipeResponderRuleArrayOutput)
 }
 
-func (i TargetTargetResponderRecipeResponderRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetResponderRecipeResponderRule] {
-	return pulumix.Output[[]TargetTargetResponderRecipeResponderRule]{
-		OutputState: i.ToTargetTargetResponderRecipeResponderRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type TargetTargetResponderRecipeResponderRuleOutput struct{ *pulumi.OutputState }
 
 func (TargetTargetResponderRecipeResponderRuleOutput) ElementType() reflect.Type {
@@ -7811,12 +6778,6 @@ func (o TargetTargetResponderRecipeResponderRuleOutput) ToTargetTargetResponderR
 
 func (o TargetTargetResponderRecipeResponderRuleOutput) ToTargetTargetResponderRecipeResponderRuleOutputWithContext(ctx context.Context) TargetTargetResponderRecipeResponderRuleOutput {
 	return o
-}
-
-func (o TargetTargetResponderRecipeResponderRuleOutput) ToOutput(ctx context.Context) pulumix.Output[TargetTargetResponderRecipeResponderRule] {
-	return pulumix.Output[TargetTargetResponderRecipeResponderRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) compartment associated with condition
@@ -7902,12 +6863,6 @@ func (o TargetTargetResponderRecipeResponderRuleArrayOutput) ToTargetTargetRespo
 	return o
 }
 
-func (o TargetTargetResponderRecipeResponderRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetResponderRecipeResponderRule] {
-	return pulumix.Output[[]TargetTargetResponderRecipeResponderRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o TargetTargetResponderRecipeResponderRuleArrayOutput) Index(i pulumi.IntInput) TargetTargetResponderRecipeResponderRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TargetTargetResponderRecipeResponderRule {
 		return vs[0].([]TargetTargetResponderRecipeResponderRule)[vs[1].(int)]
@@ -7959,12 +6914,6 @@ func (i TargetTargetResponderRecipeResponderRuleDetailsArgs) ToTargetTargetRespo
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetResponderRecipeResponderRuleDetailsOutput)
 }
 
-func (i TargetTargetResponderRecipeResponderRuleDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[TargetTargetResponderRecipeResponderRuleDetails] {
-	return pulumix.Output[TargetTargetResponderRecipeResponderRuleDetails]{
-		OutputState: i.ToTargetTargetResponderRecipeResponderRuleDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 type TargetTargetResponderRecipeResponderRuleDetailsOutput struct{ *pulumi.OutputState }
 
 func (TargetTargetResponderRecipeResponderRuleDetailsOutput) ElementType() reflect.Type {
@@ -7977,12 +6926,6 @@ func (o TargetTargetResponderRecipeResponderRuleDetailsOutput) ToTargetTargetRes
 
 func (o TargetTargetResponderRecipeResponderRuleDetailsOutput) ToTargetTargetResponderRecipeResponderRuleDetailsOutputWithContext(ctx context.Context) TargetTargetResponderRecipeResponderRuleDetailsOutput {
 	return o
-}
-
-func (o TargetTargetResponderRecipeResponderRuleDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[TargetTargetResponderRecipeResponderRuleDetails] {
-	return pulumix.Output[TargetTargetResponderRecipeResponderRuleDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Base condition object
@@ -8048,12 +6991,6 @@ func (i TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs) ToTarg
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetResponderRecipeResponderRuleDetailsConfigurationOutput)
 }
 
-func (i TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[TargetTargetResponderRecipeResponderRuleDetailsConfiguration] {
-	return pulumix.Output[TargetTargetResponderRecipeResponderRuleDetailsConfiguration]{
-		OutputState: i.ToTargetTargetResponderRecipeResponderRuleDetailsConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // TargetTargetResponderRecipeResponderRuleDetailsConfigurationArrayInput is an input type that accepts TargetTargetResponderRecipeResponderRuleDetailsConfigurationArray and TargetTargetResponderRecipeResponderRuleDetailsConfigurationArrayOutput values.
 // You can construct a concrete instance of `TargetTargetResponderRecipeResponderRuleDetailsConfigurationArrayInput` via:
 //
@@ -8079,12 +7016,6 @@ func (i TargetTargetResponderRecipeResponderRuleDetailsConfigurationArray) ToTar
 	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetResponderRecipeResponderRuleDetailsConfigurationArrayOutput)
 }
 
-func (i TargetTargetResponderRecipeResponderRuleDetailsConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetResponderRecipeResponderRuleDetailsConfiguration] {
-	return pulumix.Output[[]TargetTargetResponderRecipeResponderRuleDetailsConfiguration]{
-		OutputState: i.ToTargetTargetResponderRecipeResponderRuleDetailsConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type TargetTargetResponderRecipeResponderRuleDetailsConfigurationOutput struct{ *pulumi.OutputState }
 
 func (TargetTargetResponderRecipeResponderRuleDetailsConfigurationOutput) ElementType() reflect.Type {
@@ -8097,12 +7028,6 @@ func (o TargetTargetResponderRecipeResponderRuleDetailsConfigurationOutput) ToTa
 
 func (o TargetTargetResponderRecipeResponderRuleDetailsConfigurationOutput) ToTargetTargetResponderRecipeResponderRuleDetailsConfigurationOutputWithContext(ctx context.Context) TargetTargetResponderRecipeResponderRuleDetailsConfigurationOutput {
 	return o
-}
-
-func (o TargetTargetResponderRecipeResponderRuleDetailsConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[TargetTargetResponderRecipeResponderRuleDetailsConfiguration] {
-	return pulumix.Output[TargetTargetResponderRecipeResponderRuleDetailsConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Unique name of the configuration
@@ -8132,12 +7057,6 @@ func (o TargetTargetResponderRecipeResponderRuleDetailsConfigurationArrayOutput)
 
 func (o TargetTargetResponderRecipeResponderRuleDetailsConfigurationArrayOutput) ToTargetTargetResponderRecipeResponderRuleDetailsConfigurationArrayOutputWithContext(ctx context.Context) TargetTargetResponderRecipeResponderRuleDetailsConfigurationArrayOutput {
 	return o
-}
-
-func (o TargetTargetResponderRecipeResponderRuleDetailsConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]TargetTargetResponderRecipeResponderRuleDetailsConfiguration] {
-	return pulumix.Output[[]TargetTargetResponderRecipeResponderRuleDetailsConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o TargetTargetResponderRecipeResponderRuleDetailsConfigurationArrayOutput) Index(i pulumi.IntInput) TargetTargetResponderRecipeResponderRuleDetailsConfigurationOutput {
@@ -8183,12 +7102,6 @@ func (i GetDataMaskRuleTargetSelectedArgs) ToGetDataMaskRuleTargetSelectedOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataMaskRuleTargetSelectedOutput)
 }
 
-func (i GetDataMaskRuleTargetSelectedArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataMaskRuleTargetSelected] {
-	return pulumix.Output[GetDataMaskRuleTargetSelected]{
-		OutputState: i.ToGetDataMaskRuleTargetSelectedOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDataMaskRuleTargetSelectedArrayInput is an input type that accepts GetDataMaskRuleTargetSelectedArray and GetDataMaskRuleTargetSelectedArrayOutput values.
 // You can construct a concrete instance of `GetDataMaskRuleTargetSelectedArrayInput` via:
 //
@@ -8214,12 +7127,6 @@ func (i GetDataMaskRuleTargetSelectedArray) ToGetDataMaskRuleTargetSelectedArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataMaskRuleTargetSelectedArrayOutput)
 }
 
-func (i GetDataMaskRuleTargetSelectedArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataMaskRuleTargetSelected] {
-	return pulumix.Output[[]GetDataMaskRuleTargetSelected]{
-		OutputState: i.ToGetDataMaskRuleTargetSelectedArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDataMaskRuleTargetSelectedOutput struct{ *pulumi.OutputState }
 
 func (GetDataMaskRuleTargetSelectedOutput) ElementType() reflect.Type {
@@ -8232,12 +7139,6 @@ func (o GetDataMaskRuleTargetSelectedOutput) ToGetDataMaskRuleTargetSelectedOutp
 
 func (o GetDataMaskRuleTargetSelectedOutput) ToGetDataMaskRuleTargetSelectedOutputWithContext(ctx context.Context) GetDataMaskRuleTargetSelectedOutput {
 	return o
-}
-
-func (o GetDataMaskRuleTargetSelectedOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataMaskRuleTargetSelected] {
-	return pulumix.Output[GetDataMaskRuleTargetSelected]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Target selection.
@@ -8262,12 +7163,6 @@ func (o GetDataMaskRuleTargetSelectedArrayOutput) ToGetDataMaskRuleTargetSelecte
 
 func (o GetDataMaskRuleTargetSelectedArrayOutput) ToGetDataMaskRuleTargetSelectedArrayOutputWithContext(ctx context.Context) GetDataMaskRuleTargetSelectedArrayOutput {
 	return o
-}
-
-func (o GetDataMaskRuleTargetSelectedArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataMaskRuleTargetSelected] {
-	return pulumix.Output[[]GetDataMaskRuleTargetSelected]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDataMaskRuleTargetSelectedArrayOutput) Index(i pulumi.IntInput) GetDataMaskRuleTargetSelectedOutput {
@@ -8307,12 +7202,6 @@ func (i GetDataMaskRulesDataMaskRuleCollectionArgs) ToGetDataMaskRulesDataMaskRu
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataMaskRulesDataMaskRuleCollectionOutput)
 }
 
-func (i GetDataMaskRulesDataMaskRuleCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataMaskRulesDataMaskRuleCollection] {
-	return pulumix.Output[GetDataMaskRulesDataMaskRuleCollection]{
-		OutputState: i.ToGetDataMaskRulesDataMaskRuleCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDataMaskRulesDataMaskRuleCollectionArrayInput is an input type that accepts GetDataMaskRulesDataMaskRuleCollectionArray and GetDataMaskRulesDataMaskRuleCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDataMaskRulesDataMaskRuleCollectionArrayInput` via:
 //
@@ -8338,12 +7227,6 @@ func (i GetDataMaskRulesDataMaskRuleCollectionArray) ToGetDataMaskRulesDataMaskR
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataMaskRulesDataMaskRuleCollectionArrayOutput)
 }
 
-func (i GetDataMaskRulesDataMaskRuleCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataMaskRulesDataMaskRuleCollection] {
-	return pulumix.Output[[]GetDataMaskRulesDataMaskRuleCollection]{
-		OutputState: i.ToGetDataMaskRulesDataMaskRuleCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDataMaskRulesDataMaskRuleCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDataMaskRulesDataMaskRuleCollectionOutput) ElementType() reflect.Type {
@@ -8356,12 +7239,6 @@ func (o GetDataMaskRulesDataMaskRuleCollectionOutput) ToGetDataMaskRulesDataMask
 
 func (o GetDataMaskRulesDataMaskRuleCollectionOutput) ToGetDataMaskRulesDataMaskRuleCollectionOutputWithContext(ctx context.Context) GetDataMaskRulesDataMaskRuleCollectionOutput {
 	return o
-}
-
-func (o GetDataMaskRulesDataMaskRuleCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataMaskRulesDataMaskRuleCollection] {
-	return pulumix.Output[GetDataMaskRulesDataMaskRuleCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDataMaskRulesDataMaskRuleCollectionOutput) Items() GetDataMaskRulesDataMaskRuleCollectionItemArrayOutput {
@@ -8382,12 +7259,6 @@ func (o GetDataMaskRulesDataMaskRuleCollectionArrayOutput) ToGetDataMaskRulesDat
 
 func (o GetDataMaskRulesDataMaskRuleCollectionArrayOutput) ToGetDataMaskRulesDataMaskRuleCollectionArrayOutputWithContext(ctx context.Context) GetDataMaskRulesDataMaskRuleCollectionArrayOutput {
 	return o
-}
-
-func (o GetDataMaskRulesDataMaskRuleCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataMaskRulesDataMaskRuleCollection] {
-	return pulumix.Output[[]GetDataMaskRulesDataMaskRuleCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDataMaskRulesDataMaskRuleCollectionArrayOutput) Index(i pulumi.IntInput) GetDataMaskRulesDataMaskRuleCollectionOutput {
@@ -8485,12 +7356,6 @@ func (i GetDataMaskRulesDataMaskRuleCollectionItemArgs) ToGetDataMaskRulesDataMa
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataMaskRulesDataMaskRuleCollectionItemOutput)
 }
 
-func (i GetDataMaskRulesDataMaskRuleCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataMaskRulesDataMaskRuleCollectionItem] {
-	return pulumix.Output[GetDataMaskRulesDataMaskRuleCollectionItem]{
-		OutputState: i.ToGetDataMaskRulesDataMaskRuleCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDataMaskRulesDataMaskRuleCollectionItemArrayInput is an input type that accepts GetDataMaskRulesDataMaskRuleCollectionItemArray and GetDataMaskRulesDataMaskRuleCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDataMaskRulesDataMaskRuleCollectionItemArrayInput` via:
 //
@@ -8516,12 +7381,6 @@ func (i GetDataMaskRulesDataMaskRuleCollectionItemArray) ToGetDataMaskRulesDataM
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataMaskRulesDataMaskRuleCollectionItemArrayOutput)
 }
 
-func (i GetDataMaskRulesDataMaskRuleCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataMaskRulesDataMaskRuleCollectionItem] {
-	return pulumix.Output[[]GetDataMaskRulesDataMaskRuleCollectionItem]{
-		OutputState: i.ToGetDataMaskRulesDataMaskRuleCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDataMaskRulesDataMaskRuleCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDataMaskRulesDataMaskRuleCollectionItemOutput) ElementType() reflect.Type {
@@ -8534,12 +7393,6 @@ func (o GetDataMaskRulesDataMaskRuleCollectionItemOutput) ToGetDataMaskRulesData
 
 func (o GetDataMaskRulesDataMaskRuleCollectionItemOutput) ToGetDataMaskRulesDataMaskRuleCollectionItemOutputWithContext(ctx context.Context) GetDataMaskRulesDataMaskRuleCollectionItemOutput {
 	return o
-}
-
-func (o GetDataMaskRulesDataMaskRuleCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataMaskRulesDataMaskRuleCollectionItem] {
-	return pulumix.Output[GetDataMaskRulesDataMaskRuleCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -8633,12 +7486,6 @@ func (o GetDataMaskRulesDataMaskRuleCollectionItemArrayOutput) ToGetDataMaskRule
 	return o
 }
 
-func (o GetDataMaskRulesDataMaskRuleCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataMaskRulesDataMaskRuleCollectionItem] {
-	return pulumix.Output[[]GetDataMaskRulesDataMaskRuleCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDataMaskRulesDataMaskRuleCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDataMaskRulesDataMaskRuleCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataMaskRulesDataMaskRuleCollectionItem {
 		return vs[0].([]GetDataMaskRulesDataMaskRuleCollectionItem)[vs[1].(int)]
@@ -8682,12 +7529,6 @@ func (i GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedArgs) ToGetDataM
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedOutput)
 }
 
-func (i GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataMaskRulesDataMaskRuleCollectionItemTargetSelected] {
-	return pulumix.Output[GetDataMaskRulesDataMaskRuleCollectionItemTargetSelected]{
-		OutputState: i.ToGetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedArrayInput is an input type that accepts GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedArray and GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedArrayOutput values.
 // You can construct a concrete instance of `GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedArrayInput` via:
 //
@@ -8713,12 +7554,6 @@ func (i GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedArray) ToGetData
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedArrayOutput)
 }
 
-func (i GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataMaskRulesDataMaskRuleCollectionItemTargetSelected] {
-	return pulumix.Output[[]GetDataMaskRulesDataMaskRuleCollectionItemTargetSelected]{
-		OutputState: i.ToGetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedOutput struct{ *pulumi.OutputState }
 
 func (GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedOutput) ElementType() reflect.Type {
@@ -8731,12 +7566,6 @@ func (o GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedOutput) ToGetDat
 
 func (o GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedOutput) ToGetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedOutputWithContext(ctx context.Context) GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedOutput {
 	return o
-}
-
-func (o GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataMaskRulesDataMaskRuleCollectionItemTargetSelected] {
-	return pulumix.Output[GetDataMaskRulesDataMaskRuleCollectionItemTargetSelected]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Target selection.
@@ -8761,12 +7590,6 @@ func (o GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedArrayOutput) ToG
 
 func (o GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedArrayOutput) ToGetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedArrayOutputWithContext(ctx context.Context) GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedArrayOutput {
 	return o
-}
-
-func (o GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataMaskRulesDataMaskRuleCollectionItemTargetSelected] {
-	return pulumix.Output[[]GetDataMaskRulesDataMaskRuleCollectionItemTargetSelected]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedArrayOutput) Index(i pulumi.IntInput) GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedOutput {
@@ -8812,12 +7635,6 @@ func (i GetDataMaskRulesFilterArgs) ToGetDataMaskRulesFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataMaskRulesFilterOutput)
 }
 
-func (i GetDataMaskRulesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataMaskRulesFilter] {
-	return pulumix.Output[GetDataMaskRulesFilter]{
-		OutputState: i.ToGetDataMaskRulesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDataMaskRulesFilterArrayInput is an input type that accepts GetDataMaskRulesFilterArray and GetDataMaskRulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetDataMaskRulesFilterArrayInput` via:
 //
@@ -8843,12 +7660,6 @@ func (i GetDataMaskRulesFilterArray) ToGetDataMaskRulesFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataMaskRulesFilterArrayOutput)
 }
 
-func (i GetDataMaskRulesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataMaskRulesFilter] {
-	return pulumix.Output[[]GetDataMaskRulesFilter]{
-		OutputState: i.ToGetDataMaskRulesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDataMaskRulesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDataMaskRulesFilterOutput) ElementType() reflect.Type {
@@ -8861,12 +7672,6 @@ func (o GetDataMaskRulesFilterOutput) ToGetDataMaskRulesFilterOutput() GetDataMa
 
 func (o GetDataMaskRulesFilterOutput) ToGetDataMaskRulesFilterOutputWithContext(ctx context.Context) GetDataMaskRulesFilterOutput {
 	return o
-}
-
-func (o GetDataMaskRulesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataMaskRulesFilter] {
-	return pulumix.Output[GetDataMaskRulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDataMaskRulesFilterOutput) Name() pulumi.StringOutput {
@@ -8894,12 +7699,6 @@ func (o GetDataMaskRulesFilterArrayOutput) ToGetDataMaskRulesFilterArrayOutput()
 
 func (o GetDataMaskRulesFilterArrayOutput) ToGetDataMaskRulesFilterArrayOutputWithContext(ctx context.Context) GetDataMaskRulesFilterArrayOutput {
 	return o
-}
-
-func (o GetDataMaskRulesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataMaskRulesFilter] {
-	return pulumix.Output[[]GetDataMaskRulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDataMaskRulesFilterArrayOutput) Index(i pulumi.IntInput) GetDataMaskRulesFilterOutput {
@@ -8977,12 +7776,6 @@ func (i GetDataSourceDataSourceDetailArgs) ToGetDataSourceDataSourceDetailOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceDataSourceDetailOutput)
 }
 
-func (i GetDataSourceDataSourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataSourceDataSourceDetail] {
-	return pulumix.Output[GetDataSourceDataSourceDetail]{
-		OutputState: i.ToGetDataSourceDataSourceDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDataSourceDataSourceDetailArrayInput is an input type that accepts GetDataSourceDataSourceDetailArray and GetDataSourceDataSourceDetailArrayOutput values.
 // You can construct a concrete instance of `GetDataSourceDataSourceDetailArrayInput` via:
 //
@@ -9008,12 +7801,6 @@ func (i GetDataSourceDataSourceDetailArray) ToGetDataSourceDataSourceDetailArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceDataSourceDetailArrayOutput)
 }
 
-func (i GetDataSourceDataSourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourceDataSourceDetail] {
-	return pulumix.Output[[]GetDataSourceDataSourceDetail]{
-		OutputState: i.ToGetDataSourceDataSourceDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDataSourceDataSourceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDataSourceDataSourceDetailOutput) ElementType() reflect.Type {
@@ -9026,12 +7813,6 @@ func (o GetDataSourceDataSourceDetailOutput) ToGetDataSourceDataSourceDetailOutp
 
 func (o GetDataSourceDataSourceDetailOutput) ToGetDataSourceDataSourceDetailOutputWithContext(ctx context.Context) GetDataSourceDataSourceDetailOutput {
 	return o
-}
-
-func (o GetDataSourceDataSourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataSourceDataSourceDetail] {
-	return pulumix.Output[GetDataSourceDataSourceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The additional entities count used for data source query.
@@ -9102,12 +7883,6 @@ func (o GetDataSourceDataSourceDetailArrayOutput) ToGetDataSourceDataSourceDetai
 	return o
 }
 
-func (o GetDataSourceDataSourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourceDataSourceDetail] {
-	return pulumix.Output[[]GetDataSourceDataSourceDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDataSourceDataSourceDetailArrayOutput) Index(i pulumi.IntInput) GetDataSourceDataSourceDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataSourceDataSourceDetail {
 		return vs[0].([]GetDataSourceDataSourceDetail)[vs[1].(int)]
@@ -9151,12 +7926,6 @@ func (i GetDataSourceDataSourceDetailLoggingQueryDetailArgs) ToGetDataSourceData
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceDataSourceDetailLoggingQueryDetailOutput)
 }
 
-func (i GetDataSourceDataSourceDetailLoggingQueryDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataSourceDataSourceDetailLoggingQueryDetail] {
-	return pulumix.Output[GetDataSourceDataSourceDetailLoggingQueryDetail]{
-		OutputState: i.ToGetDataSourceDataSourceDetailLoggingQueryDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDataSourceDataSourceDetailLoggingQueryDetailArrayInput is an input type that accepts GetDataSourceDataSourceDetailLoggingQueryDetailArray and GetDataSourceDataSourceDetailLoggingQueryDetailArrayOutput values.
 // You can construct a concrete instance of `GetDataSourceDataSourceDetailLoggingQueryDetailArrayInput` via:
 //
@@ -9182,12 +7951,6 @@ func (i GetDataSourceDataSourceDetailLoggingQueryDetailArray) ToGetDataSourceDat
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceDataSourceDetailLoggingQueryDetailArrayOutput)
 }
 
-func (i GetDataSourceDataSourceDetailLoggingQueryDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourceDataSourceDetailLoggingQueryDetail] {
-	return pulumix.Output[[]GetDataSourceDataSourceDetailLoggingQueryDetail]{
-		OutputState: i.ToGetDataSourceDataSourceDetailLoggingQueryDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDataSourceDataSourceDetailLoggingQueryDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDataSourceDataSourceDetailLoggingQueryDetailOutput) ElementType() reflect.Type {
@@ -9200,12 +7963,6 @@ func (o GetDataSourceDataSourceDetailLoggingQueryDetailOutput) ToGetDataSourceDa
 
 func (o GetDataSourceDataSourceDetailLoggingQueryDetailOutput) ToGetDataSourceDataSourceDetailLoggingQueryDetailOutputWithContext(ctx context.Context) GetDataSourceDataSourceDetailLoggingQueryDetailOutput {
 	return o
-}
-
-func (o GetDataSourceDataSourceDetailLoggingQueryDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataSourceDataSourceDetailLoggingQueryDetail] {
-	return pulumix.Output[GetDataSourceDataSourceDetailLoggingQueryDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The key entities count used for data source query
@@ -9230,12 +7987,6 @@ func (o GetDataSourceDataSourceDetailLoggingQueryDetailArrayOutput) ToGetDataSou
 
 func (o GetDataSourceDataSourceDetailLoggingQueryDetailArrayOutput) ToGetDataSourceDataSourceDetailLoggingQueryDetailArrayOutputWithContext(ctx context.Context) GetDataSourceDataSourceDetailLoggingQueryDetailArrayOutput {
 	return o
-}
-
-func (o GetDataSourceDataSourceDetailLoggingQueryDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourceDataSourceDetailLoggingQueryDetail] {
-	return pulumix.Output[[]GetDataSourceDataSourceDetailLoggingQueryDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDataSourceDataSourceDetailLoggingQueryDetailArrayOutput) Index(i pulumi.IntInput) GetDataSourceDataSourceDetailLoggingQueryDetailOutput {
@@ -9281,12 +8032,6 @@ func (i GetDataSourceDataSourceDetailQueryStartTimeArgs) ToGetDataSourceDataSour
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceDataSourceDetailQueryStartTimeOutput)
 }
 
-func (i GetDataSourceDataSourceDetailQueryStartTimeArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataSourceDataSourceDetailQueryStartTime] {
-	return pulumix.Output[GetDataSourceDataSourceDetailQueryStartTime]{
-		OutputState: i.ToGetDataSourceDataSourceDetailQueryStartTimeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDataSourceDataSourceDetailQueryStartTimeArrayInput is an input type that accepts GetDataSourceDataSourceDetailQueryStartTimeArray and GetDataSourceDataSourceDetailQueryStartTimeArrayOutput values.
 // You can construct a concrete instance of `GetDataSourceDataSourceDetailQueryStartTimeArrayInput` via:
 //
@@ -9312,12 +8057,6 @@ func (i GetDataSourceDataSourceDetailQueryStartTimeArray) ToGetDataSourceDataSou
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceDataSourceDetailQueryStartTimeArrayOutput)
 }
 
-func (i GetDataSourceDataSourceDetailQueryStartTimeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourceDataSourceDetailQueryStartTime] {
-	return pulumix.Output[[]GetDataSourceDataSourceDetailQueryStartTime]{
-		OutputState: i.ToGetDataSourceDataSourceDetailQueryStartTimeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDataSourceDataSourceDetailQueryStartTimeOutput struct{ *pulumi.OutputState }
 
 func (GetDataSourceDataSourceDetailQueryStartTimeOutput) ElementType() reflect.Type {
@@ -9330,12 +8069,6 @@ func (o GetDataSourceDataSourceDetailQueryStartTimeOutput) ToGetDataSourceDataSo
 
 func (o GetDataSourceDataSourceDetailQueryStartTimeOutput) ToGetDataSourceDataSourceDetailQueryStartTimeOutputWithContext(ctx context.Context) GetDataSourceDataSourceDetailQueryStartTimeOutput {
 	return o
-}
-
-func (o GetDataSourceDataSourceDetailQueryStartTimeOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataSourceDataSourceDetailQueryStartTime] {
-	return pulumix.Output[GetDataSourceDataSourceDetailQueryStartTime]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Time when the query can start, if not specified it can start immediately.
@@ -9360,12 +8093,6 @@ func (o GetDataSourceDataSourceDetailQueryStartTimeArrayOutput) ToGetDataSourceD
 
 func (o GetDataSourceDataSourceDetailQueryStartTimeArrayOutput) ToGetDataSourceDataSourceDetailQueryStartTimeArrayOutputWithContext(ctx context.Context) GetDataSourceDataSourceDetailQueryStartTimeArrayOutput {
 	return o
-}
-
-func (o GetDataSourceDataSourceDetailQueryStartTimeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourceDataSourceDetailQueryStartTime] {
-	return pulumix.Output[[]GetDataSourceDataSourceDetailQueryStartTime]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDataSourceDataSourceDetailQueryStartTimeArrayOutput) Index(i pulumi.IntInput) GetDataSourceDataSourceDetailQueryStartTimeOutput {
@@ -9411,12 +8138,6 @@ func (i GetDataSourceDataSourceDetectorMappingInfoArgs) ToGetDataSourceDataSourc
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceDataSourceDetectorMappingInfoOutput)
 }
 
-func (i GetDataSourceDataSourceDetectorMappingInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataSourceDataSourceDetectorMappingInfo] {
-	return pulumix.Output[GetDataSourceDataSourceDetectorMappingInfo]{
-		OutputState: i.ToGetDataSourceDataSourceDetectorMappingInfoOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDataSourceDataSourceDetectorMappingInfoArrayInput is an input type that accepts GetDataSourceDataSourceDetectorMappingInfoArray and GetDataSourceDataSourceDetectorMappingInfoArrayOutput values.
 // You can construct a concrete instance of `GetDataSourceDataSourceDetectorMappingInfoArrayInput` via:
 //
@@ -9442,12 +8163,6 @@ func (i GetDataSourceDataSourceDetectorMappingInfoArray) ToGetDataSourceDataSour
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceDataSourceDetectorMappingInfoArrayOutput)
 }
 
-func (i GetDataSourceDataSourceDetectorMappingInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourceDataSourceDetectorMappingInfo] {
-	return pulumix.Output[[]GetDataSourceDataSourceDetectorMappingInfo]{
-		OutputState: i.ToGetDataSourceDataSourceDetectorMappingInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDataSourceDataSourceDetectorMappingInfoOutput struct{ *pulumi.OutputState }
 
 func (GetDataSourceDataSourceDetectorMappingInfoOutput) ElementType() reflect.Type {
@@ -9460,12 +8175,6 @@ func (o GetDataSourceDataSourceDetectorMappingInfoOutput) ToGetDataSourceDataSou
 
 func (o GetDataSourceDataSourceDetectorMappingInfoOutput) ToGetDataSourceDataSourceDetectorMappingInfoOutputWithContext(ctx context.Context) GetDataSourceDataSourceDetectorMappingInfoOutput {
 	return o
-}
-
-func (o GetDataSourceDataSourceDetectorMappingInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataSourceDataSourceDetectorMappingInfo] {
-	return pulumix.Output[GetDataSourceDataSourceDetectorMappingInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Id of the attached detectorRecipeId to the Data Source.
@@ -9490,12 +8199,6 @@ func (o GetDataSourceDataSourceDetectorMappingInfoArrayOutput) ToGetDataSourceDa
 
 func (o GetDataSourceDataSourceDetectorMappingInfoArrayOutput) ToGetDataSourceDataSourceDetectorMappingInfoArrayOutputWithContext(ctx context.Context) GetDataSourceDataSourceDetectorMappingInfoArrayOutput {
 	return o
-}
-
-func (o GetDataSourceDataSourceDetectorMappingInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourceDataSourceDetectorMappingInfo] {
-	return pulumix.Output[[]GetDataSourceDataSourceDetectorMappingInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDataSourceDataSourceDetectorMappingInfoArrayOutput) Index(i pulumi.IntInput) GetDataSourceDataSourceDetectorMappingInfoOutput {
@@ -9561,12 +8264,6 @@ func (i GetDataSourceEventItemArgs) ToGetDataSourceEventItemOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceEventItemOutput)
 }
 
-func (i GetDataSourceEventItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataSourceEventItem] {
-	return pulumix.Output[GetDataSourceEventItem]{
-		OutputState: i.ToGetDataSourceEventItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDataSourceEventItemArrayInput is an input type that accepts GetDataSourceEventItemArray and GetDataSourceEventItemArrayOutput values.
 // You can construct a concrete instance of `GetDataSourceEventItemArrayInput` via:
 //
@@ -9592,12 +8289,6 @@ func (i GetDataSourceEventItemArray) ToGetDataSourceEventItemArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceEventItemArrayOutput)
 }
 
-func (i GetDataSourceEventItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourceEventItem] {
-	return pulumix.Output[[]GetDataSourceEventItem]{
-		OutputState: i.ToGetDataSourceEventItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDataSourceEventItemOutput struct{ *pulumi.OutputState }
 
 func (GetDataSourceEventItemOutput) ElementType() reflect.Type {
@@ -9610,12 +8301,6 @@ func (o GetDataSourceEventItemOutput) ToGetDataSourceEventItemOutput() GetDataSo
 
 func (o GetDataSourceEventItemOutput) ToGetDataSourceEventItemOutputWithContext(ctx context.Context) GetDataSourceEventItemOutput {
 	return o
-}
-
-func (o GetDataSourceEventItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataSourceEventItem] {
-	return pulumix.Output[GetDataSourceEventItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Data source event comments
@@ -9667,12 +8352,6 @@ func (o GetDataSourceEventItemArrayOutput) ToGetDataSourceEventItemArrayOutputWi
 	return o
 }
 
-func (o GetDataSourceEventItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourceEventItem] {
-	return pulumix.Output[[]GetDataSourceEventItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDataSourceEventItemArrayOutput) Index(i pulumi.IntInput) GetDataSourceEventItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataSourceEventItem {
 		return vs[0].([]GetDataSourceEventItem)[vs[1].(int)]
@@ -9720,12 +8399,6 @@ func (i GetDataSourceEventItemEventInfoArgs) ToGetDataSourceEventItemEventInfoOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceEventItemEventInfoOutput)
 }
 
-func (i GetDataSourceEventItemEventInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataSourceEventItemEventInfo] {
-	return pulumix.Output[GetDataSourceEventItemEventInfo]{
-		OutputState: i.ToGetDataSourceEventItemEventInfoOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDataSourceEventItemEventInfoArrayInput is an input type that accepts GetDataSourceEventItemEventInfoArray and GetDataSourceEventItemEventInfoArrayOutput values.
 // You can construct a concrete instance of `GetDataSourceEventItemEventInfoArrayInput` via:
 //
@@ -9751,12 +8424,6 @@ func (i GetDataSourceEventItemEventInfoArray) ToGetDataSourceEventItemEventInfoA
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceEventItemEventInfoArrayOutput)
 }
 
-func (i GetDataSourceEventItemEventInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourceEventItemEventInfo] {
-	return pulumix.Output[[]GetDataSourceEventItemEventInfo]{
-		OutputState: i.ToGetDataSourceEventItemEventInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDataSourceEventItemEventInfoOutput struct{ *pulumi.OutputState }
 
 func (GetDataSourceEventItemEventInfoOutput) ElementType() reflect.Type {
@@ -9769,12 +8436,6 @@ func (o GetDataSourceEventItemEventInfoOutput) ToGetDataSourceEventItemEventInfo
 
 func (o GetDataSourceEventItemEventInfoOutput) ToGetDataSourceEventItemEventInfoOutputWithContext(ctx context.Context) GetDataSourceEventItemEventInfoOutput {
 	return o
-}
-
-func (o GetDataSourceEventItemEventInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataSourceEventItemEventInfo] {
-	return pulumix.Output[GetDataSourceEventItemEventInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Possible type of dataSourceFeed Provider(LoggingQuery)
@@ -9810,12 +8471,6 @@ func (o GetDataSourceEventItemEventInfoArrayOutput) ToGetDataSourceEventItemEven
 
 func (o GetDataSourceEventItemEventInfoArrayOutput) ToGetDataSourceEventItemEventInfoArrayOutputWithContext(ctx context.Context) GetDataSourceEventItemEventInfoArrayOutput {
 	return o
-}
-
-func (o GetDataSourceEventItemEventInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourceEventItemEventInfo] {
-	return pulumix.Output[[]GetDataSourceEventItemEventInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDataSourceEventItemEventInfoArrayOutput) Index(i pulumi.IntInput) GetDataSourceEventItemEventInfoOutput {
@@ -9857,12 +8512,6 @@ func (i GetDataSourceEventsDataSourceEventCollectionArgs) ToGetDataSourceEventsD
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceEventsDataSourceEventCollectionOutput)
 }
 
-func (i GetDataSourceEventsDataSourceEventCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataSourceEventsDataSourceEventCollection] {
-	return pulumix.Output[GetDataSourceEventsDataSourceEventCollection]{
-		OutputState: i.ToGetDataSourceEventsDataSourceEventCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDataSourceEventsDataSourceEventCollectionArrayInput is an input type that accepts GetDataSourceEventsDataSourceEventCollectionArray and GetDataSourceEventsDataSourceEventCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDataSourceEventsDataSourceEventCollectionArrayInput` via:
 //
@@ -9888,12 +8537,6 @@ func (i GetDataSourceEventsDataSourceEventCollectionArray) ToGetDataSourceEvents
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceEventsDataSourceEventCollectionArrayOutput)
 }
 
-func (i GetDataSourceEventsDataSourceEventCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourceEventsDataSourceEventCollection] {
-	return pulumix.Output[[]GetDataSourceEventsDataSourceEventCollection]{
-		OutputState: i.ToGetDataSourceEventsDataSourceEventCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDataSourceEventsDataSourceEventCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDataSourceEventsDataSourceEventCollectionOutput) ElementType() reflect.Type {
@@ -9906,12 +8549,6 @@ func (o GetDataSourceEventsDataSourceEventCollectionOutput) ToGetDataSourceEvent
 
 func (o GetDataSourceEventsDataSourceEventCollectionOutput) ToGetDataSourceEventsDataSourceEventCollectionOutputWithContext(ctx context.Context) GetDataSourceEventsDataSourceEventCollectionOutput {
 	return o
-}
-
-func (o GetDataSourceEventsDataSourceEventCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataSourceEventsDataSourceEventCollection] {
-	return pulumix.Output[GetDataSourceEventsDataSourceEventCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of event related to a DataSource
@@ -9933,12 +8570,6 @@ func (o GetDataSourceEventsDataSourceEventCollectionArrayOutput) ToGetDataSource
 
 func (o GetDataSourceEventsDataSourceEventCollectionArrayOutput) ToGetDataSourceEventsDataSourceEventCollectionArrayOutputWithContext(ctx context.Context) GetDataSourceEventsDataSourceEventCollectionArrayOutput {
 	return o
-}
-
-func (o GetDataSourceEventsDataSourceEventCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourceEventsDataSourceEventCollection] {
-	return pulumix.Output[[]GetDataSourceEventsDataSourceEventCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDataSourceEventsDataSourceEventCollectionArrayOutput) Index(i pulumi.IntInput) GetDataSourceEventsDataSourceEventCollectionOutput {
@@ -10004,12 +8635,6 @@ func (i GetDataSourceEventsDataSourceEventCollectionItemArgs) ToGetDataSourceEve
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceEventsDataSourceEventCollectionItemOutput)
 }
 
-func (i GetDataSourceEventsDataSourceEventCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataSourceEventsDataSourceEventCollectionItem] {
-	return pulumix.Output[GetDataSourceEventsDataSourceEventCollectionItem]{
-		OutputState: i.ToGetDataSourceEventsDataSourceEventCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDataSourceEventsDataSourceEventCollectionItemArrayInput is an input type that accepts GetDataSourceEventsDataSourceEventCollectionItemArray and GetDataSourceEventsDataSourceEventCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDataSourceEventsDataSourceEventCollectionItemArrayInput` via:
 //
@@ -10035,12 +8660,6 @@ func (i GetDataSourceEventsDataSourceEventCollectionItemArray) ToGetDataSourceEv
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceEventsDataSourceEventCollectionItemArrayOutput)
 }
 
-func (i GetDataSourceEventsDataSourceEventCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourceEventsDataSourceEventCollectionItem] {
-	return pulumix.Output[[]GetDataSourceEventsDataSourceEventCollectionItem]{
-		OutputState: i.ToGetDataSourceEventsDataSourceEventCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDataSourceEventsDataSourceEventCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDataSourceEventsDataSourceEventCollectionItemOutput) ElementType() reflect.Type {
@@ -10053,12 +8672,6 @@ func (o GetDataSourceEventsDataSourceEventCollectionItemOutput) ToGetDataSourceE
 
 func (o GetDataSourceEventsDataSourceEventCollectionItemOutput) ToGetDataSourceEventsDataSourceEventCollectionItemOutputWithContext(ctx context.Context) GetDataSourceEventsDataSourceEventCollectionItemOutput {
 	return o
-}
-
-func (o GetDataSourceEventsDataSourceEventCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataSourceEventsDataSourceEventCollectionItem] {
-	return pulumix.Output[GetDataSourceEventsDataSourceEventCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Data source event comments
@@ -10112,12 +8725,6 @@ func (o GetDataSourceEventsDataSourceEventCollectionItemArrayOutput) ToGetDataSo
 	return o
 }
 
-func (o GetDataSourceEventsDataSourceEventCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourceEventsDataSourceEventCollectionItem] {
-	return pulumix.Output[[]GetDataSourceEventsDataSourceEventCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDataSourceEventsDataSourceEventCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDataSourceEventsDataSourceEventCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataSourceEventsDataSourceEventCollectionItem {
 		return vs[0].([]GetDataSourceEventsDataSourceEventCollectionItem)[vs[1].(int)]
@@ -10165,12 +8772,6 @@ func (i GetDataSourceEventsDataSourceEventCollectionItemEventInfoArgs) ToGetData
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceEventsDataSourceEventCollectionItemEventInfoOutput)
 }
 
-func (i GetDataSourceEventsDataSourceEventCollectionItemEventInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataSourceEventsDataSourceEventCollectionItemEventInfo] {
-	return pulumix.Output[GetDataSourceEventsDataSourceEventCollectionItemEventInfo]{
-		OutputState: i.ToGetDataSourceEventsDataSourceEventCollectionItemEventInfoOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayInput is an input type that accepts GetDataSourceEventsDataSourceEventCollectionItemEventInfoArray and GetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayOutput values.
 // You can construct a concrete instance of `GetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayInput` via:
 //
@@ -10196,12 +8797,6 @@ func (i GetDataSourceEventsDataSourceEventCollectionItemEventInfoArray) ToGetDat
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayOutput)
 }
 
-func (i GetDataSourceEventsDataSourceEventCollectionItemEventInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourceEventsDataSourceEventCollectionItemEventInfo] {
-	return pulumix.Output[[]GetDataSourceEventsDataSourceEventCollectionItemEventInfo]{
-		OutputState: i.ToGetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDataSourceEventsDataSourceEventCollectionItemEventInfoOutput struct{ *pulumi.OutputState }
 
 func (GetDataSourceEventsDataSourceEventCollectionItemEventInfoOutput) ElementType() reflect.Type {
@@ -10214,12 +8809,6 @@ func (o GetDataSourceEventsDataSourceEventCollectionItemEventInfoOutput) ToGetDa
 
 func (o GetDataSourceEventsDataSourceEventCollectionItemEventInfoOutput) ToGetDataSourceEventsDataSourceEventCollectionItemEventInfoOutputWithContext(ctx context.Context) GetDataSourceEventsDataSourceEventCollectionItemEventInfoOutput {
 	return o
-}
-
-func (o GetDataSourceEventsDataSourceEventCollectionItemEventInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataSourceEventsDataSourceEventCollectionItemEventInfo] {
-	return pulumix.Output[GetDataSourceEventsDataSourceEventCollectionItemEventInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Possible type of dataSourceFeed Provider(LoggingQuery)
@@ -10257,12 +8846,6 @@ func (o GetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayOutput) To
 
 func (o GetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayOutput) ToGetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayOutputWithContext(ctx context.Context) GetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayOutput {
 	return o
-}
-
-func (o GetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourceEventsDataSourceEventCollectionItemEventInfo] {
-	return pulumix.Output[[]GetDataSourceEventsDataSourceEventCollectionItemEventInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayOutput) Index(i pulumi.IntInput) GetDataSourceEventsDataSourceEventCollectionItemEventInfoOutput {
@@ -10306,12 +8889,6 @@ func (i GetDataSourceEventsFilterArgs) ToGetDataSourceEventsFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceEventsFilterOutput)
 }
 
-func (i GetDataSourceEventsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataSourceEventsFilter] {
-	return pulumix.Output[GetDataSourceEventsFilter]{
-		OutputState: i.ToGetDataSourceEventsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDataSourceEventsFilterArrayInput is an input type that accepts GetDataSourceEventsFilterArray and GetDataSourceEventsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDataSourceEventsFilterArrayInput` via:
 //
@@ -10337,12 +8914,6 @@ func (i GetDataSourceEventsFilterArray) ToGetDataSourceEventsFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceEventsFilterArrayOutput)
 }
 
-func (i GetDataSourceEventsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourceEventsFilter] {
-	return pulumix.Output[[]GetDataSourceEventsFilter]{
-		OutputState: i.ToGetDataSourceEventsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDataSourceEventsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDataSourceEventsFilterOutput) ElementType() reflect.Type {
@@ -10355,12 +8926,6 @@ func (o GetDataSourceEventsFilterOutput) ToGetDataSourceEventsFilterOutput() Get
 
 func (o GetDataSourceEventsFilterOutput) ToGetDataSourceEventsFilterOutputWithContext(ctx context.Context) GetDataSourceEventsFilterOutput {
 	return o
-}
-
-func (o GetDataSourceEventsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataSourceEventsFilter] {
-	return pulumix.Output[GetDataSourceEventsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDataSourceEventsFilterOutput) Name() pulumi.StringOutput {
@@ -10387,12 +8952,6 @@ func (o GetDataSourceEventsFilterArrayOutput) ToGetDataSourceEventsFilterArrayOu
 
 func (o GetDataSourceEventsFilterArrayOutput) ToGetDataSourceEventsFilterArrayOutputWithContext(ctx context.Context) GetDataSourceEventsFilterArrayOutput {
 	return o
-}
-
-func (o GetDataSourceEventsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourceEventsFilter] {
-	return pulumix.Output[[]GetDataSourceEventsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDataSourceEventsFilterArrayOutput) Index(i pulumi.IntInput) GetDataSourceEventsFilterOutput {
@@ -10438,12 +8997,6 @@ func (i GetDataSourceRegionStatusDetailArgs) ToGetDataSourceRegionStatusDetailOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceRegionStatusDetailOutput)
 }
 
-func (i GetDataSourceRegionStatusDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataSourceRegionStatusDetail] {
-	return pulumix.Output[GetDataSourceRegionStatusDetail]{
-		OutputState: i.ToGetDataSourceRegionStatusDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDataSourceRegionStatusDetailArrayInput is an input type that accepts GetDataSourceRegionStatusDetailArray and GetDataSourceRegionStatusDetailArrayOutput values.
 // You can construct a concrete instance of `GetDataSourceRegionStatusDetailArrayInput` via:
 //
@@ -10469,12 +9022,6 @@ func (i GetDataSourceRegionStatusDetailArray) ToGetDataSourceRegionStatusDetailA
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceRegionStatusDetailArrayOutput)
 }
 
-func (i GetDataSourceRegionStatusDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourceRegionStatusDetail] {
-	return pulumix.Output[[]GetDataSourceRegionStatusDetail]{
-		OutputState: i.ToGetDataSourceRegionStatusDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDataSourceRegionStatusDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDataSourceRegionStatusDetailOutput) ElementType() reflect.Type {
@@ -10487,12 +9034,6 @@ func (o GetDataSourceRegionStatusDetailOutput) ToGetDataSourceRegionStatusDetail
 
 func (o GetDataSourceRegionStatusDetailOutput) ToGetDataSourceRegionStatusDetailOutputWithContext(ctx context.Context) GetDataSourceRegionStatusDetailOutput {
 	return o
-}
-
-func (o GetDataSourceRegionStatusDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataSourceRegionStatusDetail] {
-	return pulumix.Output[GetDataSourceRegionStatusDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Data Source replication region.
@@ -10517,12 +9058,6 @@ func (o GetDataSourceRegionStatusDetailArrayOutput) ToGetDataSourceRegionStatusD
 
 func (o GetDataSourceRegionStatusDetailArrayOutput) ToGetDataSourceRegionStatusDetailArrayOutputWithContext(ctx context.Context) GetDataSourceRegionStatusDetailArrayOutput {
 	return o
-}
-
-func (o GetDataSourceRegionStatusDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourceRegionStatusDetail] {
-	return pulumix.Output[[]GetDataSourceRegionStatusDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDataSourceRegionStatusDetailArrayOutput) Index(i pulumi.IntInput) GetDataSourceRegionStatusDetailOutput {
@@ -10562,12 +9097,6 @@ func (i GetDataSourcesDataSourceCollectionArgs) ToGetDataSourcesDataSourceCollec
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourcesDataSourceCollectionOutput)
 }
 
-func (i GetDataSourcesDataSourceCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataSourcesDataSourceCollection] {
-	return pulumix.Output[GetDataSourcesDataSourceCollection]{
-		OutputState: i.ToGetDataSourcesDataSourceCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDataSourcesDataSourceCollectionArrayInput is an input type that accepts GetDataSourcesDataSourceCollectionArray and GetDataSourcesDataSourceCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDataSourcesDataSourceCollectionArrayInput` via:
 //
@@ -10593,12 +9122,6 @@ func (i GetDataSourcesDataSourceCollectionArray) ToGetDataSourcesDataSourceColle
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourcesDataSourceCollectionArrayOutput)
 }
 
-func (i GetDataSourcesDataSourceCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourcesDataSourceCollection] {
-	return pulumix.Output[[]GetDataSourcesDataSourceCollection]{
-		OutputState: i.ToGetDataSourcesDataSourceCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDataSourcesDataSourceCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDataSourcesDataSourceCollectionOutput) ElementType() reflect.Type {
@@ -10611,12 +9134,6 @@ func (o GetDataSourcesDataSourceCollectionOutput) ToGetDataSourcesDataSourceColl
 
 func (o GetDataSourcesDataSourceCollectionOutput) ToGetDataSourcesDataSourceCollectionOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionOutput {
 	return o
-}
-
-func (o GetDataSourcesDataSourceCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataSourcesDataSourceCollection] {
-	return pulumix.Output[GetDataSourcesDataSourceCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDataSourcesDataSourceCollectionOutput) Items() GetDataSourcesDataSourceCollectionItemArrayOutput {
@@ -10635,12 +9152,6 @@ func (o GetDataSourcesDataSourceCollectionArrayOutput) ToGetDataSourcesDataSourc
 
 func (o GetDataSourcesDataSourceCollectionArrayOutput) ToGetDataSourcesDataSourceCollectionArrayOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionArrayOutput {
 	return o
-}
-
-func (o GetDataSourcesDataSourceCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourcesDataSourceCollection] {
-	return pulumix.Output[[]GetDataSourcesDataSourceCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDataSourcesDataSourceCollectionArrayOutput) Index(i pulumi.IntInput) GetDataSourcesDataSourceCollectionOutput {
@@ -10734,12 +9245,6 @@ func (i GetDataSourcesDataSourceCollectionItemArgs) ToGetDataSourcesDataSourceCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourcesDataSourceCollectionItemOutput)
 }
 
-func (i GetDataSourcesDataSourceCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataSourcesDataSourceCollectionItem] {
-	return pulumix.Output[GetDataSourcesDataSourceCollectionItem]{
-		OutputState: i.ToGetDataSourcesDataSourceCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDataSourcesDataSourceCollectionItemArrayInput is an input type that accepts GetDataSourcesDataSourceCollectionItemArray and GetDataSourcesDataSourceCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDataSourcesDataSourceCollectionItemArrayInput` via:
 //
@@ -10765,12 +9270,6 @@ func (i GetDataSourcesDataSourceCollectionItemArray) ToGetDataSourcesDataSourceC
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourcesDataSourceCollectionItemArrayOutput)
 }
 
-func (i GetDataSourcesDataSourceCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourcesDataSourceCollectionItem] {
-	return pulumix.Output[[]GetDataSourcesDataSourceCollectionItem]{
-		OutputState: i.ToGetDataSourcesDataSourceCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDataSourcesDataSourceCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDataSourcesDataSourceCollectionItemOutput) ElementType() reflect.Type {
@@ -10783,12 +9282,6 @@ func (o GetDataSourcesDataSourceCollectionItemOutput) ToGetDataSourcesDataSource
 
 func (o GetDataSourcesDataSourceCollectionItemOutput) ToGetDataSourcesDataSourceCollectionItemOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemOutput {
 	return o
-}
-
-func (o GetDataSourcesDataSourceCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataSourcesDataSourceCollectionItem] {
-	return pulumix.Output[GetDataSourcesDataSourceCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -10881,12 +9374,6 @@ func (o GetDataSourcesDataSourceCollectionItemArrayOutput) ToGetDataSourcesDataS
 	return o
 }
 
-func (o GetDataSourcesDataSourceCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourcesDataSourceCollectionItem] {
-	return pulumix.Output[[]GetDataSourcesDataSourceCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDataSourcesDataSourceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDataSourcesDataSourceCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataSourcesDataSourceCollectionItem {
 		return vs[0].([]GetDataSourcesDataSourceCollectionItem)[vs[1].(int)]
@@ -10962,12 +9449,6 @@ func (i GetDataSourcesDataSourceCollectionItemDataSourceDetailArgs) ToGetDataSou
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput)
 }
 
-func (i GetDataSourcesDataSourceCollectionItemDataSourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataSourcesDataSourceCollectionItemDataSourceDetail] {
-	return pulumix.Output[GetDataSourcesDataSourceCollectionItemDataSourceDetail]{
-		OutputState: i.ToGetDataSourcesDataSourceCollectionItemDataSourceDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDataSourcesDataSourceCollectionItemDataSourceDetailArrayInput is an input type that accepts GetDataSourcesDataSourceCollectionItemDataSourceDetailArray and GetDataSourcesDataSourceCollectionItemDataSourceDetailArrayOutput values.
 // You can construct a concrete instance of `GetDataSourcesDataSourceCollectionItemDataSourceDetailArrayInput` via:
 //
@@ -10993,12 +9474,6 @@ func (i GetDataSourcesDataSourceCollectionItemDataSourceDetailArray) ToGetDataSo
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourcesDataSourceCollectionItemDataSourceDetailArrayOutput)
 }
 
-func (i GetDataSourcesDataSourceCollectionItemDataSourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourcesDataSourceCollectionItemDataSourceDetail] {
-	return pulumix.Output[[]GetDataSourcesDataSourceCollectionItemDataSourceDetail]{
-		OutputState: i.ToGetDataSourcesDataSourceCollectionItemDataSourceDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput) ElementType() reflect.Type {
@@ -11011,12 +9486,6 @@ func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput) ToGetDataS
 
 func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput) ToGetDataSourcesDataSourceCollectionItemDataSourceDetailOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput {
 	return o
-}
-
-func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataSourcesDataSourceCollectionItemDataSourceDetail] {
-	return pulumix.Output[GetDataSourcesDataSourceCollectionItemDataSourceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The additional entities count used for data source query.
@@ -11087,12 +9556,6 @@ func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailArrayOutput) ToGet
 	return o
 }
 
-func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourcesDataSourceCollectionItemDataSourceDetail] {
-	return pulumix.Output[[]GetDataSourcesDataSourceCollectionItemDataSourceDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailArrayOutput) Index(i pulumi.IntInput) GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataSourcesDataSourceCollectionItemDataSourceDetail {
 		return vs[0].([]GetDataSourcesDataSourceCollectionItemDataSourceDetail)[vs[1].(int)]
@@ -11136,12 +9599,6 @@ func (i GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutput)
 }
 
-func (i GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail] {
-	return pulumix.Output[GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail]{
-		OutputState: i.ToGetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayInput is an input type that accepts GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArray and GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayOutput values.
 // You can construct a concrete instance of `GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayInput` via:
 //
@@ -11167,12 +9624,6 @@ func (i GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayOutput)
 }
 
-func (i GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail] {
-	return pulumix.Output[[]GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail]{
-		OutputState: i.ToGetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutput) ElementType() reflect.Type {
@@ -11185,12 +9636,6 @@ func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail
 
 func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutput) ToGetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutput {
 	return o
-}
-
-func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail] {
-	return pulumix.Output[GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The key entities count used for data source query
@@ -11219,12 +9664,6 @@ func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail
 
 func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayOutput) ToGetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayOutput {
 	return o
-}
-
-func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail] {
-	return pulumix.Output[[]GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayOutput) Index(i pulumi.IntInput) GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutput {
@@ -11270,12 +9709,6 @@ func (i GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArgs
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutput)
 }
 
-func (i GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime] {
-	return pulumix.Output[GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime]{
-		OutputState: i.ToGetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayInput is an input type that accepts GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArray and GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayOutput values.
 // You can construct a concrete instance of `GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayInput` via:
 //
@@ -11301,12 +9734,6 @@ func (i GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayOutput)
 }
 
-func (i GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime] {
-	return pulumix.Output[[]GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime]{
-		OutputState: i.ToGetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutput struct{ *pulumi.OutputState }
 
 func (GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutput) ElementType() reflect.Type {
@@ -11319,12 +9746,6 @@ func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutp
 
 func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutput) ToGetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutput {
 	return o
-}
-
-func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime] {
-	return pulumix.Output[GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Time when the query can start, if not specified it can start immediately.
@@ -11353,12 +9774,6 @@ func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArra
 
 func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayOutput) ToGetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayOutput {
 	return o
-}
-
-func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime] {
-	return pulumix.Output[[]GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayOutput) Index(i pulumi.IntInput) GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutput {
@@ -11404,12 +9819,6 @@ func (i GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutput)
 }
 
-func (i GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo] {
-	return pulumix.Output[GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo]{
-		OutputState: i.ToGetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayInput is an input type that accepts GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArray and GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayOutput values.
 // You can construct a concrete instance of `GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayInput` via:
 //
@@ -11435,12 +9844,6 @@ func (i GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayOutput)
 }
 
-func (i GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo] {
-	return pulumix.Output[[]GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo]{
-		OutputState: i.ToGetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutput struct{ *pulumi.OutputState }
 
 func (GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutput) ElementType() reflect.Type {
@@ -11453,12 +9856,6 @@ func (o GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutpu
 
 func (o GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutput) ToGetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutput {
 	return o
-}
-
-func (o GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo] {
-	return pulumix.Output[GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Id of the attached detectorRecipeId to the Data Source.
@@ -11487,12 +9884,6 @@ func (o GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArray
 
 func (o GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayOutput) ToGetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayOutput {
 	return o
-}
-
-func (o GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo] {
-	return pulumix.Output[[]GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayOutput) Index(i pulumi.IntInput) GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutput {
@@ -11538,12 +9929,6 @@ func (i GetDataSourcesDataSourceCollectionItemRegionStatusDetailArgs) ToGetDataS
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourcesDataSourceCollectionItemRegionStatusDetailOutput)
 }
 
-func (i GetDataSourcesDataSourceCollectionItemRegionStatusDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataSourcesDataSourceCollectionItemRegionStatusDetail] {
-	return pulumix.Output[GetDataSourcesDataSourceCollectionItemRegionStatusDetail]{
-		OutputState: i.ToGetDataSourcesDataSourceCollectionItemRegionStatusDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayInput is an input type that accepts GetDataSourcesDataSourceCollectionItemRegionStatusDetailArray and GetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayOutput values.
 // You can construct a concrete instance of `GetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayInput` via:
 //
@@ -11569,12 +9954,6 @@ func (i GetDataSourcesDataSourceCollectionItemRegionStatusDetailArray) ToGetData
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayOutput)
 }
 
-func (i GetDataSourcesDataSourceCollectionItemRegionStatusDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourcesDataSourceCollectionItemRegionStatusDetail] {
-	return pulumix.Output[[]GetDataSourcesDataSourceCollectionItemRegionStatusDetail]{
-		OutputState: i.ToGetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDataSourcesDataSourceCollectionItemRegionStatusDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDataSourcesDataSourceCollectionItemRegionStatusDetailOutput) ElementType() reflect.Type {
@@ -11587,12 +9966,6 @@ func (o GetDataSourcesDataSourceCollectionItemRegionStatusDetailOutput) ToGetDat
 
 func (o GetDataSourcesDataSourceCollectionItemRegionStatusDetailOutput) ToGetDataSourcesDataSourceCollectionItemRegionStatusDetailOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemRegionStatusDetailOutput {
 	return o
-}
-
-func (o GetDataSourcesDataSourceCollectionItemRegionStatusDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataSourcesDataSourceCollectionItemRegionStatusDetail] {
-	return pulumix.Output[GetDataSourcesDataSourceCollectionItemRegionStatusDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Data Source replication region.
@@ -11617,12 +9990,6 @@ func (o GetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayOutput) ToG
 
 func (o GetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayOutput) ToGetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayOutput {
 	return o
-}
-
-func (o GetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourcesDataSourceCollectionItemRegionStatusDetail] {
-	return pulumix.Output[[]GetDataSourcesDataSourceCollectionItemRegionStatusDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayOutput) Index(i pulumi.IntInput) GetDataSourcesDataSourceCollectionItemRegionStatusDetailOutput {
@@ -11666,12 +10033,6 @@ func (i GetDataSourcesFilterArgs) ToGetDataSourcesFilterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourcesFilterOutput)
 }
 
-func (i GetDataSourcesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataSourcesFilter] {
-	return pulumix.Output[GetDataSourcesFilter]{
-		OutputState: i.ToGetDataSourcesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDataSourcesFilterArrayInput is an input type that accepts GetDataSourcesFilterArray and GetDataSourcesFilterArrayOutput values.
 // You can construct a concrete instance of `GetDataSourcesFilterArrayInput` via:
 //
@@ -11697,12 +10058,6 @@ func (i GetDataSourcesFilterArray) ToGetDataSourcesFilterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourcesFilterArrayOutput)
 }
 
-func (i GetDataSourcesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourcesFilter] {
-	return pulumix.Output[[]GetDataSourcesFilter]{
-		OutputState: i.ToGetDataSourcesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDataSourcesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDataSourcesFilterOutput) ElementType() reflect.Type {
@@ -11715,12 +10070,6 @@ func (o GetDataSourcesFilterOutput) ToGetDataSourcesFilterOutput() GetDataSource
 
 func (o GetDataSourcesFilterOutput) ToGetDataSourcesFilterOutputWithContext(ctx context.Context) GetDataSourcesFilterOutput {
 	return o
-}
-
-func (o GetDataSourcesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataSourcesFilter] {
-	return pulumix.Output[GetDataSourcesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDataSourcesFilterOutput) Name() pulumi.StringOutput {
@@ -11747,12 +10096,6 @@ func (o GetDataSourcesFilterArrayOutput) ToGetDataSourcesFilterArrayOutput() Get
 
 func (o GetDataSourcesFilterArrayOutput) ToGetDataSourcesFilterArrayOutputWithContext(ctx context.Context) GetDataSourcesFilterArrayOutput {
 	return o
-}
-
-func (o GetDataSourcesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataSourcesFilter] {
-	return pulumix.Output[[]GetDataSourcesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDataSourcesFilterArrayOutput) Index(i pulumi.IntInput) GetDataSourcesFilterOutput {
@@ -11854,12 +10197,6 @@ func (i GetDetectorRecipeDetectorRuleArgs) ToGetDetectorRecipeDetectorRuleOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeDetectorRuleOutput)
 }
 
-func (i GetDetectorRecipeDetectorRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipeDetectorRule] {
-	return pulumix.Output[GetDetectorRecipeDetectorRule]{
-		OutputState: i.ToGetDetectorRecipeDetectorRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectorRecipeDetectorRuleArrayInput is an input type that accepts GetDetectorRecipeDetectorRuleArray and GetDetectorRecipeDetectorRuleArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeDetectorRuleArrayInput` via:
 //
@@ -11885,12 +10222,6 @@ func (i GetDetectorRecipeDetectorRuleArray) ToGetDetectorRecipeDetectorRuleArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeDetectorRuleArrayOutput)
 }
 
-func (i GetDetectorRecipeDetectorRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipeDetectorRule] {
-	return pulumix.Output[[]GetDetectorRecipeDetectorRule]{
-		OutputState: i.ToGetDetectorRecipeDetectorRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectorRecipeDetectorRuleOutput struct{ *pulumi.OutputState }
 
 func (GetDetectorRecipeDetectorRuleOutput) ElementType() reflect.Type {
@@ -11903,12 +10234,6 @@ func (o GetDetectorRecipeDetectorRuleOutput) ToGetDetectorRecipeDetectorRuleOutp
 
 func (o GetDetectorRecipeDetectorRuleOutput) ToGetDetectorRecipeDetectorRuleOutputWithContext(ctx context.Context) GetDetectorRecipeDetectorRuleOutput {
 	return o
-}
-
-func (o GetDetectorRecipeDetectorRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipeDetectorRule] {
-	return pulumix.Output[GetDetectorRecipeDetectorRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of CandidateResponderRule related to this rule
@@ -12009,12 +10334,6 @@ func (o GetDetectorRecipeDetectorRuleArrayOutput) ToGetDetectorRecipeDetectorRul
 	return o
 }
 
-func (o GetDetectorRecipeDetectorRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipeDetectorRule] {
-	return pulumix.Output[[]GetDetectorRecipeDetectorRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectorRecipeDetectorRuleArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipeDetectorRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectorRecipeDetectorRule {
 		return vs[0].([]GetDetectorRecipeDetectorRule)[vs[1].(int)]
@@ -12062,12 +10381,6 @@ func (i GetDetectorRecipeDetectorRuleCandidateResponderRuleArgs) ToGetDetectorRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeDetectorRuleCandidateResponderRuleOutput)
 }
 
-func (i GetDetectorRecipeDetectorRuleCandidateResponderRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipeDetectorRuleCandidateResponderRule] {
-	return pulumix.Output[GetDetectorRecipeDetectorRuleCandidateResponderRule]{
-		OutputState: i.ToGetDetectorRecipeDetectorRuleCandidateResponderRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectorRecipeDetectorRuleCandidateResponderRuleArrayInput is an input type that accepts GetDetectorRecipeDetectorRuleCandidateResponderRuleArray and GetDetectorRecipeDetectorRuleCandidateResponderRuleArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeDetectorRuleCandidateResponderRuleArrayInput` via:
 //
@@ -12093,12 +10406,6 @@ func (i GetDetectorRecipeDetectorRuleCandidateResponderRuleArray) ToGetDetectorR
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeDetectorRuleCandidateResponderRuleArrayOutput)
 }
 
-func (i GetDetectorRecipeDetectorRuleCandidateResponderRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipeDetectorRuleCandidateResponderRule] {
-	return pulumix.Output[[]GetDetectorRecipeDetectorRuleCandidateResponderRule]{
-		OutputState: i.ToGetDetectorRecipeDetectorRuleCandidateResponderRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectorRecipeDetectorRuleCandidateResponderRuleOutput struct{ *pulumi.OutputState }
 
 func (GetDetectorRecipeDetectorRuleCandidateResponderRuleOutput) ElementType() reflect.Type {
@@ -12111,12 +10418,6 @@ func (o GetDetectorRecipeDetectorRuleCandidateResponderRuleOutput) ToGetDetector
 
 func (o GetDetectorRecipeDetectorRuleCandidateResponderRuleOutput) ToGetDetectorRecipeDetectorRuleCandidateResponderRuleOutputWithContext(ctx context.Context) GetDetectorRecipeDetectorRuleCandidateResponderRuleOutput {
 	return o
-}
-
-func (o GetDetectorRecipeDetectorRuleCandidateResponderRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipeDetectorRuleCandidateResponderRule] {
-	return pulumix.Output[GetDetectorRecipeDetectorRuleCandidateResponderRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The display name of entity
@@ -12146,12 +10447,6 @@ func (o GetDetectorRecipeDetectorRuleCandidateResponderRuleArrayOutput) ToGetDet
 
 func (o GetDetectorRecipeDetectorRuleCandidateResponderRuleArrayOutput) ToGetDetectorRecipeDetectorRuleCandidateResponderRuleArrayOutputWithContext(ctx context.Context) GetDetectorRecipeDetectorRuleCandidateResponderRuleArrayOutput {
 	return o
-}
-
-func (o GetDetectorRecipeDetectorRuleCandidateResponderRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipeDetectorRuleCandidateResponderRule] {
-	return pulumix.Output[[]GetDetectorRecipeDetectorRuleCandidateResponderRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectorRecipeDetectorRuleCandidateResponderRuleArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipeDetectorRuleCandidateResponderRuleOutput {
@@ -12229,12 +10524,6 @@ func (i GetDetectorRecipeDetectorRuleDetailArgs) ToGetDetectorRecipeDetectorRule
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeDetectorRuleDetailOutput)
 }
 
-func (i GetDetectorRecipeDetectorRuleDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipeDetectorRuleDetail] {
-	return pulumix.Output[GetDetectorRecipeDetectorRuleDetail]{
-		OutputState: i.ToGetDetectorRecipeDetectorRuleDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectorRecipeDetectorRuleDetailArrayInput is an input type that accepts GetDetectorRecipeDetectorRuleDetailArray and GetDetectorRecipeDetectorRuleDetailArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeDetectorRuleDetailArrayInput` via:
 //
@@ -12260,12 +10549,6 @@ func (i GetDetectorRecipeDetectorRuleDetailArray) ToGetDetectorRecipeDetectorRul
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeDetectorRuleDetailArrayOutput)
 }
 
-func (i GetDetectorRecipeDetectorRuleDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipeDetectorRuleDetail] {
-	return pulumix.Output[[]GetDetectorRecipeDetectorRuleDetail]{
-		OutputState: i.ToGetDetectorRecipeDetectorRuleDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectorRecipeDetectorRuleDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDetectorRecipeDetectorRuleDetailOutput) ElementType() reflect.Type {
@@ -12278,12 +10561,6 @@ func (o GetDetectorRecipeDetectorRuleDetailOutput) ToGetDetectorRecipeDetectorRu
 
 func (o GetDetectorRecipeDetectorRuleDetailOutput) ToGetDetectorRecipeDetectorRuleDetailOutputWithContext(ctx context.Context) GetDetectorRecipeDetectorRuleDetailOutput {
 	return o
-}
-
-func (o GetDetectorRecipeDetectorRuleDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipeDetectorRuleDetail] {
-	return pulumix.Output[GetDetectorRecipeDetectorRuleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Base condition object
@@ -12354,12 +10631,6 @@ func (o GetDetectorRecipeDetectorRuleDetailArrayOutput) ToGetDetectorRecipeDetec
 	return o
 }
 
-func (o GetDetectorRecipeDetectorRuleDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipeDetectorRuleDetail] {
-	return pulumix.Output[[]GetDetectorRecipeDetectorRuleDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectorRecipeDetectorRuleDetailArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipeDetectorRuleDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectorRecipeDetectorRuleDetail {
 		return vs[0].([]GetDetectorRecipeDetectorRuleDetail)[vs[1].(int)]
@@ -12415,12 +10686,6 @@ func (i GetDetectorRecipeDetectorRuleDetailConfigurationArgs) ToGetDetectorRecip
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeDetectorRuleDetailConfigurationOutput)
 }
 
-func (i GetDetectorRecipeDetectorRuleDetailConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipeDetectorRuleDetailConfiguration] {
-	return pulumix.Output[GetDetectorRecipeDetectorRuleDetailConfiguration]{
-		OutputState: i.ToGetDetectorRecipeDetectorRuleDetailConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectorRecipeDetectorRuleDetailConfigurationArrayInput is an input type that accepts GetDetectorRecipeDetectorRuleDetailConfigurationArray and GetDetectorRecipeDetectorRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeDetectorRuleDetailConfigurationArrayInput` via:
 //
@@ -12446,12 +10711,6 @@ func (i GetDetectorRecipeDetectorRuleDetailConfigurationArray) ToGetDetectorReci
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeDetectorRuleDetailConfigurationArrayOutput)
 }
 
-func (i GetDetectorRecipeDetectorRuleDetailConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipeDetectorRuleDetailConfiguration] {
-	return pulumix.Output[[]GetDetectorRecipeDetectorRuleDetailConfiguration]{
-		OutputState: i.ToGetDetectorRecipeDetectorRuleDetailConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectorRecipeDetectorRuleDetailConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetDetectorRecipeDetectorRuleDetailConfigurationOutput) ElementType() reflect.Type {
@@ -12464,12 +10723,6 @@ func (o GetDetectorRecipeDetectorRuleDetailConfigurationOutput) ToGetDetectorRec
 
 func (o GetDetectorRecipeDetectorRuleDetailConfigurationOutput) ToGetDetectorRecipeDetectorRuleDetailConfigurationOutputWithContext(ctx context.Context) GetDetectorRecipeDetectorRuleDetailConfigurationOutput {
 	return o
-}
-
-func (o GetDetectorRecipeDetectorRuleDetailConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipeDetectorRuleDetailConfiguration] {
-	return pulumix.Output[GetDetectorRecipeDetectorRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique name of the configuration
@@ -12511,12 +10764,6 @@ func (o GetDetectorRecipeDetectorRuleDetailConfigurationArrayOutput) ToGetDetect
 
 func (o GetDetectorRecipeDetectorRuleDetailConfigurationArrayOutput) ToGetDetectorRecipeDetectorRuleDetailConfigurationArrayOutputWithContext(ctx context.Context) GetDetectorRecipeDetectorRuleDetailConfigurationArrayOutput {
 	return o
-}
-
-func (o GetDetectorRecipeDetectorRuleDetailConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipeDetectorRuleDetailConfiguration] {
-	return pulumix.Output[[]GetDetectorRecipeDetectorRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectorRecipeDetectorRuleDetailConfigurationArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipeDetectorRuleDetailConfigurationOutput {
@@ -12566,12 +10813,6 @@ func (i GetDetectorRecipeDetectorRuleDetailConfigurationValueArgs) ToGetDetector
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeDetectorRuleDetailConfigurationValueOutput)
 }
 
-func (i GetDetectorRecipeDetectorRuleDetailConfigurationValueArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipeDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[GetDetectorRecipeDetectorRuleDetailConfigurationValue]{
-		OutputState: i.ToGetDetectorRecipeDetectorRuleDetailConfigurationValueOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectorRecipeDetectorRuleDetailConfigurationValueArrayInput is an input type that accepts GetDetectorRecipeDetectorRuleDetailConfigurationValueArray and GetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeDetectorRuleDetailConfigurationValueArrayInput` via:
 //
@@ -12597,12 +10838,6 @@ func (i GetDetectorRecipeDetectorRuleDetailConfigurationValueArray) ToGetDetecto
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutput)
 }
 
-func (i GetDetectorRecipeDetectorRuleDetailConfigurationValueArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipeDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[[]GetDetectorRecipeDetectorRuleDetailConfigurationValue]{
-		OutputState: i.ToGetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectorRecipeDetectorRuleDetailConfigurationValueOutput struct{ *pulumi.OutputState }
 
 func (GetDetectorRecipeDetectorRuleDetailConfigurationValueOutput) ElementType() reflect.Type {
@@ -12615,12 +10850,6 @@ func (o GetDetectorRecipeDetectorRuleDetailConfigurationValueOutput) ToGetDetect
 
 func (o GetDetectorRecipeDetectorRuleDetailConfigurationValueOutput) ToGetDetectorRecipeDetectorRuleDetailConfigurationValueOutputWithContext(ctx context.Context) GetDetectorRecipeDetectorRuleDetailConfigurationValueOutput {
 	return o
-}
-
-func (o GetDetectorRecipeDetectorRuleDetailConfigurationValueOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipeDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[GetDetectorRecipeDetectorRuleDetailConfigurationValue]{
-		OutputState: o.OutputState,
-	}
 }
 
 // configuration list item type, either CUSTOM or MANAGED
@@ -12650,12 +10879,6 @@ func (o GetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutput) ToGetD
 
 func (o GetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutput) ToGetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutputWithContext(ctx context.Context) GetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutput {
 	return o
-}
-
-func (o GetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipeDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[[]GetDetectorRecipeDetectorRuleDetailConfigurationValue]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipeDetectorRuleDetailConfigurationValueOutput {
@@ -12705,12 +10928,6 @@ func (i GetDetectorRecipeDetectorRuleDetailEntitiesMappingArgs) ToGetDetectorRec
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeDetectorRuleDetailEntitiesMappingOutput)
 }
 
-func (i GetDetectorRecipeDetectorRuleDetailEntitiesMappingArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipeDetectorRuleDetailEntitiesMapping] {
-	return pulumix.Output[GetDetectorRecipeDetectorRuleDetailEntitiesMapping]{
-		OutputState: i.ToGetDetectorRecipeDetectorRuleDetailEntitiesMappingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayInput is an input type that accepts GetDetectorRecipeDetectorRuleDetailEntitiesMappingArray and GetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayInput` via:
 //
@@ -12736,12 +10953,6 @@ func (i GetDetectorRecipeDetectorRuleDetailEntitiesMappingArray) ToGetDetectorRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutput)
 }
 
-func (i GetDetectorRecipeDetectorRuleDetailEntitiesMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipeDetectorRuleDetailEntitiesMapping] {
-	return pulumix.Output[[]GetDetectorRecipeDetectorRuleDetailEntitiesMapping]{
-		OutputState: i.ToGetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectorRecipeDetectorRuleDetailEntitiesMappingOutput struct{ *pulumi.OutputState }
 
 func (GetDetectorRecipeDetectorRuleDetailEntitiesMappingOutput) ElementType() reflect.Type {
@@ -12754,12 +10965,6 @@ func (o GetDetectorRecipeDetectorRuleDetailEntitiesMappingOutput) ToGetDetectorR
 
 func (o GetDetectorRecipeDetectorRuleDetailEntitiesMappingOutput) ToGetDetectorRecipeDetectorRuleDetailEntitiesMappingOutputWithContext(ctx context.Context) GetDetectorRecipeDetectorRuleDetailEntitiesMappingOutput {
 	return o
-}
-
-func (o GetDetectorRecipeDetectorRuleDetailEntitiesMappingOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipeDetectorRuleDetailEntitiesMapping] {
-	return pulumix.Output[GetDetectorRecipeDetectorRuleDetailEntitiesMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The display name of entity
@@ -12789,12 +10994,6 @@ func (o GetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutput) ToGetDete
 
 func (o GetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutput) ToGetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutputWithContext(ctx context.Context) GetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutput {
 	return o
-}
-
-func (o GetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipeDetectorRuleDetailEntitiesMapping] {
-	return pulumix.Output[[]GetDetectorRecipeDetectorRuleDetailEntitiesMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipeDetectorRuleDetailEntitiesMappingOutput {
@@ -12844,12 +11043,6 @@ func (i GetDetectorRecipeDetectorRuleEntitiesMappingArgs) ToGetDetectorRecipeDet
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeDetectorRuleEntitiesMappingOutput)
 }
 
-func (i GetDetectorRecipeDetectorRuleEntitiesMappingArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipeDetectorRuleEntitiesMapping] {
-	return pulumix.Output[GetDetectorRecipeDetectorRuleEntitiesMapping]{
-		OutputState: i.ToGetDetectorRecipeDetectorRuleEntitiesMappingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectorRecipeDetectorRuleEntitiesMappingArrayInput is an input type that accepts GetDetectorRecipeDetectorRuleEntitiesMappingArray and GetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeDetectorRuleEntitiesMappingArrayInput` via:
 //
@@ -12875,12 +11068,6 @@ func (i GetDetectorRecipeDetectorRuleEntitiesMappingArray) ToGetDetectorRecipeDe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput)
 }
 
-func (i GetDetectorRecipeDetectorRuleEntitiesMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipeDetectorRuleEntitiesMapping] {
-	return pulumix.Output[[]GetDetectorRecipeDetectorRuleEntitiesMapping]{
-		OutputState: i.ToGetDetectorRecipeDetectorRuleEntitiesMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectorRecipeDetectorRuleEntitiesMappingOutput struct{ *pulumi.OutputState }
 
 func (GetDetectorRecipeDetectorRuleEntitiesMappingOutput) ElementType() reflect.Type {
@@ -12893,12 +11080,6 @@ func (o GetDetectorRecipeDetectorRuleEntitiesMappingOutput) ToGetDetectorRecipeD
 
 func (o GetDetectorRecipeDetectorRuleEntitiesMappingOutput) ToGetDetectorRecipeDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) GetDetectorRecipeDetectorRuleEntitiesMappingOutput {
 	return o
-}
-
-func (o GetDetectorRecipeDetectorRuleEntitiesMappingOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipeDetectorRuleEntitiesMapping] {
-	return pulumix.Output[GetDetectorRecipeDetectorRuleEntitiesMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The display name of entity
@@ -12928,12 +11109,6 @@ func (o GetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput) ToGetDetectorRe
 
 func (o GetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput) ToGetDetectorRecipeDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) GetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput {
 	return o
-}
-
-func (o GetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipeDetectorRuleEntitiesMapping] {
-	return pulumix.Output[[]GetDetectorRecipeDetectorRuleEntitiesMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipeDetectorRuleEntitiesMappingOutput {
@@ -13035,12 +11210,6 @@ func (i GetDetectorRecipeEffectiveDetectorRuleArgs) ToGetDetectorRecipeEffective
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeEffectiveDetectorRuleOutput)
 }
 
-func (i GetDetectorRecipeEffectiveDetectorRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipeEffectiveDetectorRule] {
-	return pulumix.Output[GetDetectorRecipeEffectiveDetectorRule]{
-		OutputState: i.ToGetDetectorRecipeEffectiveDetectorRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectorRecipeEffectiveDetectorRuleArrayInput is an input type that accepts GetDetectorRecipeEffectiveDetectorRuleArray and GetDetectorRecipeEffectiveDetectorRuleArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeEffectiveDetectorRuleArrayInput` via:
 //
@@ -13066,12 +11235,6 @@ func (i GetDetectorRecipeEffectiveDetectorRuleArray) ToGetDetectorRecipeEffectiv
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeEffectiveDetectorRuleArrayOutput)
 }
 
-func (i GetDetectorRecipeEffectiveDetectorRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipeEffectiveDetectorRule] {
-	return pulumix.Output[[]GetDetectorRecipeEffectiveDetectorRule]{
-		OutputState: i.ToGetDetectorRecipeEffectiveDetectorRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectorRecipeEffectiveDetectorRuleOutput struct{ *pulumi.OutputState }
 
 func (GetDetectorRecipeEffectiveDetectorRuleOutput) ElementType() reflect.Type {
@@ -13084,12 +11247,6 @@ func (o GetDetectorRecipeEffectiveDetectorRuleOutput) ToGetDetectorRecipeEffecti
 
 func (o GetDetectorRecipeEffectiveDetectorRuleOutput) ToGetDetectorRecipeEffectiveDetectorRuleOutputWithContext(ctx context.Context) GetDetectorRecipeEffectiveDetectorRuleOutput {
 	return o
-}
-
-func (o GetDetectorRecipeEffectiveDetectorRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipeEffectiveDetectorRule] {
-	return pulumix.Output[GetDetectorRecipeEffectiveDetectorRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of CandidateResponderRule related to this rule
@@ -13192,12 +11349,6 @@ func (o GetDetectorRecipeEffectiveDetectorRuleArrayOutput) ToGetDetectorRecipeEf
 	return o
 }
 
-func (o GetDetectorRecipeEffectiveDetectorRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipeEffectiveDetectorRule] {
-	return pulumix.Output[[]GetDetectorRecipeEffectiveDetectorRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectorRecipeEffectiveDetectorRuleArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipeEffectiveDetectorRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectorRecipeEffectiveDetectorRule {
 		return vs[0].([]GetDetectorRecipeEffectiveDetectorRule)[vs[1].(int)]
@@ -13245,12 +11396,6 @@ func (i GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs) ToGetD
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutput)
 }
 
-func (i GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRule] {
-	return pulumix.Output[GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRule]{
-		OutputState: i.ToGetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayInput is an input type that accepts GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArray and GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayInput` via:
 //
@@ -13276,12 +11421,6 @@ func (i GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayOutput)
 }
 
-func (i GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRule] {
-	return pulumix.Output[[]GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRule]{
-		OutputState: i.ToGetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutput struct{ *pulumi.OutputState }
 
 func (GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutput) ElementType() reflect.Type {
@@ -13294,12 +11433,6 @@ func (o GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutput) ToGe
 
 func (o GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutput) ToGetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutputWithContext(ctx context.Context) GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutput {
 	return o
-}
-
-func (o GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRule] {
-	return pulumix.Output[GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The display name of entity
@@ -13329,12 +11462,6 @@ func (o GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayOutput)
 
 func (o GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayOutput) ToGetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayOutputWithContext(ctx context.Context) GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayOutput {
 	return o
-}
-
-func (o GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRule] {
-	return pulumix.Output[[]GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutput {
@@ -13396,12 +11523,6 @@ func (i GetDetectorRecipeEffectiveDetectorRuleDetailArgs) ToGetDetectorRecipeEff
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeEffectiveDetectorRuleDetailOutput)
 }
 
-func (i GetDetectorRecipeEffectiveDetectorRuleDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipeEffectiveDetectorRuleDetail] {
-	return pulumix.Output[GetDetectorRecipeEffectiveDetectorRuleDetail]{
-		OutputState: i.ToGetDetectorRecipeEffectiveDetectorRuleDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectorRecipeEffectiveDetectorRuleDetailArrayInput is an input type that accepts GetDetectorRecipeEffectiveDetectorRuleDetailArray and GetDetectorRecipeEffectiveDetectorRuleDetailArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeEffectiveDetectorRuleDetailArrayInput` via:
 //
@@ -13427,12 +11548,6 @@ func (i GetDetectorRecipeEffectiveDetectorRuleDetailArray) ToGetDetectorRecipeEf
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeEffectiveDetectorRuleDetailArrayOutput)
 }
 
-func (i GetDetectorRecipeEffectiveDetectorRuleDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipeEffectiveDetectorRuleDetail] {
-	return pulumix.Output[[]GetDetectorRecipeEffectiveDetectorRuleDetail]{
-		OutputState: i.ToGetDetectorRecipeEffectiveDetectorRuleDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectorRecipeEffectiveDetectorRuleDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDetectorRecipeEffectiveDetectorRuleDetailOutput) ElementType() reflect.Type {
@@ -13445,12 +11560,6 @@ func (o GetDetectorRecipeEffectiveDetectorRuleDetailOutput) ToGetDetectorRecipeE
 
 func (o GetDetectorRecipeEffectiveDetectorRuleDetailOutput) ToGetDetectorRecipeEffectiveDetectorRuleDetailOutputWithContext(ctx context.Context) GetDetectorRecipeEffectiveDetectorRuleDetailOutput {
 	return o
-}
-
-func (o GetDetectorRecipeEffectiveDetectorRuleDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipeEffectiveDetectorRuleDetail] {
-	return pulumix.Output[GetDetectorRecipeEffectiveDetectorRuleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Base condition object
@@ -13497,12 +11606,6 @@ func (o GetDetectorRecipeEffectiveDetectorRuleDetailArrayOutput) ToGetDetectorRe
 
 func (o GetDetectorRecipeEffectiveDetectorRuleDetailArrayOutput) ToGetDetectorRecipeEffectiveDetectorRuleDetailArrayOutputWithContext(ctx context.Context) GetDetectorRecipeEffectiveDetectorRuleDetailArrayOutput {
 	return o
-}
-
-func (o GetDetectorRecipeEffectiveDetectorRuleDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipeEffectiveDetectorRuleDetail] {
-	return pulumix.Output[[]GetDetectorRecipeEffectiveDetectorRuleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectorRecipeEffectiveDetectorRuleDetailArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipeEffectiveDetectorRuleDetailOutput {
@@ -13560,12 +11663,6 @@ func (i GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs) ToGetDete
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput)
 }
 
-func (i GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipeEffectiveDetectorRuleDetailConfiguration] {
-	return pulumix.Output[GetDetectorRecipeEffectiveDetectorRuleDetailConfiguration]{
-		OutputState: i.ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput is an input type that accepts GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArray and GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput` via:
 //
@@ -13591,12 +11688,6 @@ func (i GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArray) ToGetDet
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput)
 }
 
-func (i GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipeEffectiveDetectorRuleDetailConfiguration] {
-	return pulumix.Output[[]GetDetectorRecipeEffectiveDetectorRuleDetailConfiguration]{
-		OutputState: i.ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) ElementType() reflect.Type {
@@ -13609,12 +11700,6 @@ func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) ToGetDe
 
 func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutputWithContext(ctx context.Context) GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput {
 	return o
-}
-
-func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipeEffectiveDetectorRuleDetailConfiguration] {
-	return pulumix.Output[GetDetectorRecipeEffectiveDetectorRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique name of the configuration
@@ -13656,12 +11741,6 @@ func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput) To
 
 func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput) ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutputWithContext(ctx context.Context) GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput {
 	return o
-}
-
-func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipeEffectiveDetectorRuleDetailConfiguration] {
-	return pulumix.Output[[]GetDetectorRecipeEffectiveDetectorRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput {
@@ -13711,12 +11790,6 @@ func (i GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput)
 }
 
-func (i GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue]{
-		OutputState: i.ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput is an input type that accepts GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray and GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput` via:
 //
@@ -13742,12 +11815,6 @@ func (i GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput)
 }
 
-func (i GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[[]GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue]{
-		OutputState: i.ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput struct{ *pulumi.OutputState }
 
 func (GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput) ElementType() reflect.Type {
@@ -13760,12 +11827,6 @@ func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput) To
 
 func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput) ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutputWithContext(ctx context.Context) GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput {
 	return o
-}
-
-func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue]{
-		OutputState: o.OutputState,
-	}
 }
 
 // configuration list item type, either CUSTOM or MANAGED
@@ -13797,12 +11858,6 @@ func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutpu
 
 func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput) ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutputWithContext(ctx context.Context) GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput {
 	return o
-}
-
-func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[[]GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput {
@@ -13852,12 +11907,6 @@ func (i GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs) ToGetDetector
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput)
 }
 
-func (i GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping] {
-	return pulumix.Output[GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping]{
-		OutputState: i.ToGetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput is an input type that accepts GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray and GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput` via:
 //
@@ -13883,12 +11932,6 @@ func (i GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray) ToGetDetecto
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput)
 }
 
-func (i GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping] {
-	return pulumix.Output[[]GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping]{
-		OutputState: i.ToGetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput struct{ *pulumi.OutputState }
 
 func (GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ElementType() reflect.Type {
@@ -13901,12 +11944,6 @@ func (o GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ToGetDetect
 
 func (o GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ToGetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
 	return o
-}
-
-func (o GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping] {
-	return pulumix.Output[GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The display name of entity
@@ -13936,12 +11973,6 @@ func (o GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) ToGetD
 
 func (o GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) ToGetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput {
 	return o
-}
-
-func (o GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping] {
-	return pulumix.Output[[]GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
@@ -13981,12 +12012,6 @@ func (i GetDetectorRecipesDetectorRecipeCollectionArgs) ToGetDetectorRecipesDete
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionOutput)
 }
 
-func (i GetDetectorRecipesDetectorRecipeCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesDetectorRecipeCollection] {
-	return pulumix.Output[GetDetectorRecipesDetectorRecipeCollection]{
-		OutputState: i.ToGetDetectorRecipesDetectorRecipeCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectorRecipesDetectorRecipeCollectionArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionArray and GetDetectorRecipesDetectorRecipeCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionArrayInput` via:
 //
@@ -14012,12 +12037,6 @@ func (i GetDetectorRecipesDetectorRecipeCollectionArray) ToGetDetectorRecipesDet
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionArrayOutput)
 }
 
-func (i GetDetectorRecipesDetectorRecipeCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollection] {
-	return pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollection]{
-		OutputState: i.ToGetDetectorRecipesDetectorRecipeCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectorRecipesDetectorRecipeCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDetectorRecipesDetectorRecipeCollectionOutput) ElementType() reflect.Type {
@@ -14030,12 +12049,6 @@ func (o GetDetectorRecipesDetectorRecipeCollectionOutput) ToGetDetectorRecipesDe
 
 func (o GetDetectorRecipesDetectorRecipeCollectionOutput) ToGetDetectorRecipesDetectorRecipeCollectionOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionOutput {
 	return o
-}
-
-func (o GetDetectorRecipesDetectorRecipeCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesDetectorRecipeCollection] {
-	return pulumix.Output[GetDetectorRecipesDetectorRecipeCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectorRecipesDetectorRecipeCollectionOutput) Items() GetDetectorRecipesDetectorRecipeCollectionItemArrayOutput {
@@ -14056,12 +12069,6 @@ func (o GetDetectorRecipesDetectorRecipeCollectionArrayOutput) ToGetDetectorReci
 
 func (o GetDetectorRecipesDetectorRecipeCollectionArrayOutput) ToGetDetectorRecipesDetectorRecipeCollectionArrayOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionArrayOutput {
 	return o
-}
-
-func (o GetDetectorRecipesDetectorRecipeCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollection] {
-	return pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectorRecipesDetectorRecipeCollectionArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipesDetectorRecipeCollectionOutput {
@@ -14163,12 +12170,6 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemArgs) ToGetDetectorRecipes
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemOutput)
 }
 
-func (i GetDetectorRecipesDetectorRecipeCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItem] {
-	return pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItem]{
-		OutputState: i.ToGetDetectorRecipesDetectorRecipeCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectorRecipesDetectorRecipeCollectionItemArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemArray and GetDetectorRecipesDetectorRecipeCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemArrayInput` via:
 //
@@ -14194,12 +12195,6 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemArray) ToGetDetectorRecipe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemArrayOutput)
 }
 
-func (i GetDetectorRecipesDetectorRecipeCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItem] {
-	return pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItem]{
-		OutputState: i.ToGetDetectorRecipesDetectorRecipeCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectorRecipesDetectorRecipeCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDetectorRecipesDetectorRecipeCollectionItemOutput) ElementType() reflect.Type {
@@ -14212,12 +12207,6 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemOutput) ToGetDetectorRecip
 
 func (o GetDetectorRecipesDetectorRecipeCollectionItemOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemOutput {
 	return o
-}
-
-func (o GetDetectorRecipesDetectorRecipeCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItem] {
-	return pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -14316,12 +12305,6 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemArrayOutput) ToGetDetector
 
 func (o GetDetectorRecipesDetectorRecipeCollectionItemArrayOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemArrayOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetDetectorRecipesDetectorRecipeCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItem] {
-	return pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectorRecipesDetectorRecipeCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipesDetectorRecipeCollectionItemOutput {
@@ -14423,12 +12406,6 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleArgs) ToGetDet
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleOutput)
 }
 
-func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule] {
-	return pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule]{
-		OutputState: i.ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleArray and GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleArrayInput` via:
 //
@@ -14454,12 +12431,6 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleArray) ToGetDe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleArrayOutput)
 }
 
-func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule] {
-	return pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule]{
-		OutputState: i.ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleOutput struct{ *pulumi.OutputState }
 
 func (GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleOutput) ElementType() reflect.Type {
@@ -14472,12 +12443,6 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleOutput) ToGetD
 
 func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleOutput {
 	return o
-}
-
-func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule] {
-	return pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of CandidateResponderRule related to this rule
@@ -14580,12 +12545,6 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleArrayOutput) T
 	return o
 }
 
-func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule] {
-	return pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule {
 		return vs[0].([]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule)[vs[1].(int)]
@@ -14633,12 +12592,6 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateRespo
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleOutput)
 }
 
-func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRule] {
-	return pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRule]{
-		OutputState: i.ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleArray and GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleArrayInput` via:
 //
@@ -14664,12 +12617,6 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateRespo
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleArrayOutput)
 }
 
-func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRule] {
-	return pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRule]{
-		OutputState: i.ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleOutput struct{ *pulumi.OutputState }
 
 func (GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleOutput) ElementType() reflect.Type {
@@ -14682,12 +12629,6 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateRespo
 
 func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleOutput {
 	return o
-}
-
-func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRule] {
-	return pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -14723,12 +12664,6 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateRespo
 
 func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleArrayOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleArrayOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleArrayOutput {
 	return o
-}
-
-func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRule] {
-	return pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleOutput {
@@ -14806,12 +12741,6 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailOutput)
 }
 
-func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetail] {
-	return pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetail]{
-		OutputState: i.ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArray and GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArrayInput` via:
 //
@@ -14837,12 +12766,6 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArrayOutput)
 }
 
-func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetail] {
-	return pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetail]{
-		OutputState: i.ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailOutput) ElementType() reflect.Type {
@@ -14855,12 +12778,6 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailOutput) 
 
 func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailOutput {
 	return o
-}
-
-func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetail] {
-	return pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Base condition object
@@ -14935,12 +12852,6 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArrayOut
 	return o
 }
 
-func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetail] {
-	return pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetail {
 		return vs[0].([]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetail)[vs[1].(int)]
@@ -14996,12 +12907,6 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigur
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationOutput)
 }
 
-func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration] {
-	return pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration]{
-		OutputState: i.ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArray and GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArrayInput` via:
 //
@@ -15027,12 +12932,6 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigur
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArrayOutput)
 }
 
-func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration] {
-	return pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration]{
-		OutputState: i.ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationOutput) ElementType() reflect.Type {
@@ -15045,12 +12944,6 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigur
 
 func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationOutput {
 	return o
-}
-
-func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration] {
-	return pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique name of the configuration
@@ -15102,12 +12995,6 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigur
 	return o
 }
 
-func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration] {
-	return pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration {
 		return vs[0].([]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration)[vs[1].(int)]
@@ -15155,12 +13042,6 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigur
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueOutput)
 }
 
-func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValue]{
-		OutputState: i.ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArray and GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArrayInput` via:
 //
@@ -15186,12 +13067,6 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigur
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArrayOutput)
 }
 
-func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValue]{
-		OutputState: i.ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueOutput struct{ *pulumi.OutputState }
 
 func (GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueOutput) ElementType() reflect.Type {
@@ -15204,12 +13079,6 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigur
 
 func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueOutput {
 	return o
-}
-
-func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValue]{
-		OutputState: o.OutputState,
-	}
 }
 
 // configuration list item type, either CUSTOM or MANAGED
@@ -15245,12 +13114,6 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigur
 
 func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArrayOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArrayOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArrayOutput {
 	return o
-}
-
-func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValue]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueOutput {
@@ -15300,12 +13163,6 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntities
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutput)
 }
 
-func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMapping] {
-	return pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMapping]{
-		OutputState: i.ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArray and GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayInput` via:
 //
@@ -15331,12 +13188,6 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntities
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayOutput)
 }
 
-func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMapping] {
-	return pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMapping]{
-		OutputState: i.ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutput struct{ *pulumi.OutputState }
 
 func (GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutput) ElementType() reflect.Type {
@@ -15349,12 +13200,6 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntities
 
 func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutput {
 	return o
-}
-
-func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMapping] {
-	return pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -15390,12 +13235,6 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntities
 
 func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayOutput {
 	return o
-}
-
-func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMapping] {
-	return pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutput {
@@ -15445,12 +13284,6 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappin
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutput)
 }
 
-func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMapping] {
-	return pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMapping]{
-		OutputState: i.ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArray and GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayInput` via:
 //
@@ -15476,12 +13309,6 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappin
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutput)
 }
 
-func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMapping] {
-	return pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMapping]{
-		OutputState: i.ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutput struct{ *pulumi.OutputState }
 
 func (GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutput) ElementType() reflect.Type {
@@ -15494,12 +13321,6 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappin
 
 func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutput {
 	return o
-}
-
-func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMapping] {
-	return pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -15535,12 +13356,6 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappin
 
 func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutput {
 	return o
-}
-
-func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMapping] {
-	return pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutput {
@@ -15642,12 +13457,6 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleOutput)
 }
 
-func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRule] {
-	return pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRule]{
-		OutputState: i.ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArray and GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArrayInput` via:
 //
@@ -15673,12 +13482,6 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArrayOutput)
 }
 
-func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRule] {
-	return pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRule]{
-		OutputState: i.ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleOutput struct{ *pulumi.OutputState }
 
 func (GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleOutput) ElementType() reflect.Type {
@@ -15691,12 +13494,6 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleOutpu
 
 func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleOutput {
 	return o
-}
-
-func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRule] {
-	return pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of CandidateResponderRule related to this rule
@@ -15821,12 +13618,6 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArray
 	return o
 }
 
-func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRule] {
-	return pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRule {
 		return vs[0].([]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRule)[vs[1].(int)]
@@ -15874,12 +13665,6 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandi
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleOutput)
 }
 
-func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRule] {
-	return pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRule]{
-		OutputState: i.ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleArray and GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleArrayInput` via:
 //
@@ -15905,12 +13690,6 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandi
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleArrayOutput)
 }
 
-func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRule] {
-	return pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRule]{
-		OutputState: i.ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleOutput struct{ *pulumi.OutputState }
 
 func (GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleOutput) ElementType() reflect.Type {
@@ -15923,12 +13702,6 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandi
 
 func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleOutput {
 	return o
-}
-
-func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRule] {
-	return pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -15964,12 +13737,6 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandi
 
 func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleArrayOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleArrayOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleArrayOutput {
 	return o
-}
-
-func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRule] {
-	return pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleOutput {
@@ -16031,12 +13798,6 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetai
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailOutput)
 }
 
-func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetail] {
-	return pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetail]{
-		OutputState: i.ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailArray and GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailArrayInput` via:
 //
@@ -16062,12 +13823,6 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetai
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailArrayOutput)
 }
 
-func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetail] {
-	return pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetail]{
-		OutputState: i.ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailOutput) ElementType() reflect.Type {
@@ -16080,12 +13835,6 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetai
 
 func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailOutput {
 	return o
-}
-
-func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetail] {
-	return pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Base condition object
@@ -16144,12 +13893,6 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetai
 	return o
 }
 
-func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetail] {
-	return pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetail {
 		return vs[0].([]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetail)[vs[1].(int)]
@@ -16205,12 +13948,6 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetai
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationOutput)
 }
 
-func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfiguration] {
-	return pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfiguration]{
-		OutputState: i.ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationArray and GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationArrayInput` via:
 //
@@ -16236,12 +13973,6 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetai
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationArrayOutput)
 }
 
-func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfiguration] {
-	return pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfiguration]{
-		OutputState: i.ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationOutput) ElementType() reflect.Type {
@@ -16254,12 +13985,6 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetai
 
 func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationOutput {
 	return o
-}
-
-func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfiguration] {
-	return pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique name of the configuration
@@ -16311,12 +14036,6 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetai
 	return o
 }
 
-func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfiguration] {
-	return pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfiguration {
 		return vs[0].([]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfiguration)[vs[1].(int)]
@@ -16364,12 +14083,6 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetai
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueOutput)
 }
 
-func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValue]{
-		OutputState: i.ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArray and GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArrayInput` via:
 //
@@ -16395,12 +14108,6 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetai
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArrayOutput)
 }
 
-func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValue]{
-		OutputState: i.ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueOutput struct{ *pulumi.OutputState }
 
 func (GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueOutput) ElementType() reflect.Type {
@@ -16413,12 +14120,6 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetai
 
 func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueOutput {
 	return o
-}
-
-func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValue]{
-		OutputState: o.OutputState,
-	}
 }
 
 // configuration list item type, either CUSTOM or MANAGED
@@ -16454,12 +14155,6 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetai
 
 func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArrayOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArrayOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArrayOutput {
 	return o
-}
-
-func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValue]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueOutput {
@@ -16509,12 +14204,6 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntit
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutput)
 }
 
-func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMapping] {
-	return pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMapping]{
-		OutputState: i.ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArray and GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayInput` via:
 //
@@ -16540,12 +14229,6 @@ func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntit
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutput)
 }
 
-func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMapping] {
-	return pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMapping]{
-		OutputState: i.ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutput struct{ *pulumi.OutputState }
 
 func (GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutput) ElementType() reflect.Type {
@@ -16558,12 +14241,6 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntit
 
 func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutput {
 	return o
-}
-
-func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMapping] {
-	return pulumix.Output[GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -16599,12 +14276,6 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntit
 
 func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutput {
 	return o
-}
-
-func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMapping] {
-	return pulumix.Output[[]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutput {
@@ -16652,12 +14323,6 @@ func (i GetDetectorRecipesFilterArgs) ToGetDetectorRecipesFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesFilterOutput)
 }
 
-func (i GetDetectorRecipesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesFilter] {
-	return pulumix.Output[GetDetectorRecipesFilter]{
-		OutputState: i.ToGetDetectorRecipesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectorRecipesFilterArrayInput is an input type that accepts GetDetectorRecipesFilterArray and GetDetectorRecipesFilterArrayOutput values.
 // You can construct a concrete instance of `GetDetectorRecipesFilterArrayInput` via:
 //
@@ -16683,12 +14348,6 @@ func (i GetDetectorRecipesFilterArray) ToGetDetectorRecipesFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesFilterArrayOutput)
 }
 
-func (i GetDetectorRecipesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipesFilter] {
-	return pulumix.Output[[]GetDetectorRecipesFilter]{
-		OutputState: i.ToGetDetectorRecipesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectorRecipesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDetectorRecipesFilterOutput) ElementType() reflect.Type {
@@ -16701,12 +14360,6 @@ func (o GetDetectorRecipesFilterOutput) ToGetDetectorRecipesFilterOutput() GetDe
 
 func (o GetDetectorRecipesFilterOutput) ToGetDetectorRecipesFilterOutputWithContext(ctx context.Context) GetDetectorRecipesFilterOutput {
 	return o
-}
-
-func (o GetDetectorRecipesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesFilter] {
-	return pulumix.Output[GetDetectorRecipesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // configuration name
@@ -16735,12 +14388,6 @@ func (o GetDetectorRecipesFilterArrayOutput) ToGetDetectorRecipesFilterArrayOutp
 
 func (o GetDetectorRecipesFilterArrayOutput) ToGetDetectorRecipesFilterArrayOutputWithContext(ctx context.Context) GetDetectorRecipesFilterArrayOutput {
 	return o
-}
-
-func (o GetDetectorRecipesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectorRecipesFilter] {
-	return pulumix.Output[[]GetDetectorRecipesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectorRecipesFilterArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipesFilterOutput {
@@ -16794,12 +14441,6 @@ func (i GetGuardTargetTargetDetailArgs) ToGetGuardTargetTargetDetailOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetailOutput)
 }
 
-func (i GetGuardTargetTargetDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetDetail] {
-	return pulumix.Output[GetGuardTargetTargetDetail]{
-		OutputState: i.ToGetGuardTargetTargetDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetTargetDetailArrayInput is an input type that accepts GetGuardTargetTargetDetailArray and GetGuardTargetTargetDetailArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetailArrayInput` via:
 //
@@ -16825,12 +14466,6 @@ func (i GetGuardTargetTargetDetailArray) ToGetGuardTargetTargetDetailArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetailArrayOutput)
 }
 
-func (i GetGuardTargetTargetDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetDetail] {
-	return pulumix.Output[[]GetGuardTargetTargetDetail]{
-		OutputState: i.ToGetGuardTargetTargetDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetTargetDetailOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetTargetDetailOutput) ElementType() reflect.Type {
@@ -16843,12 +14478,6 @@ func (o GetGuardTargetTargetDetailOutput) ToGetGuardTargetTargetDetailOutput() G
 
 func (o GetGuardTargetTargetDetailOutput) ToGetGuardTargetTargetDetailOutputWithContext(ctx context.Context) GetGuardTargetTargetDetailOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetDetail] {
-	return pulumix.Output[GetGuardTargetTargetDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the security zone to associate this compartment with.
@@ -16885,12 +14514,6 @@ func (o GetGuardTargetTargetDetailArrayOutput) ToGetGuardTargetTargetDetailArray
 
 func (o GetGuardTargetTargetDetailArrayOutput) ToGetGuardTargetTargetDetailArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetDetailArrayOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetDetail] {
-	return pulumix.Output[[]GetGuardTargetTargetDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGuardTargetTargetDetailArrayOutput) Index(i pulumi.IntInput) GetGuardTargetTargetDetailOutput {
@@ -16980,12 +14603,6 @@ func (i GetGuardTargetTargetDetailTargetSecurityZoneRecipeArgs) ToGetGuardTarget
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput)
 }
 
-func (i GetGuardTargetTargetDetailTargetSecurityZoneRecipeArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetDetailTargetSecurityZoneRecipe] {
-	return pulumix.Output[GetGuardTargetTargetDetailTargetSecurityZoneRecipe]{
-		OutputState: i.ToGetGuardTargetTargetDetailTargetSecurityZoneRecipeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayInput is an input type that accepts GetGuardTargetTargetDetailTargetSecurityZoneRecipeArray and GetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayInput` via:
 //
@@ -17011,12 +14628,6 @@ func (i GetGuardTargetTargetDetailTargetSecurityZoneRecipeArray) ToGetGuardTarge
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayOutput)
 }
 
-func (i GetGuardTargetTargetDetailTargetSecurityZoneRecipeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetDetailTargetSecurityZoneRecipe] {
-	return pulumix.Output[[]GetGuardTargetTargetDetailTargetSecurityZoneRecipe]{
-		OutputState: i.ToGetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput) ElementType() reflect.Type {
@@ -17029,12 +14640,6 @@ func (o GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput) ToGetGuardTarg
 
 func (o GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput) ToGetGuardTargetTargetDetailTargetSecurityZoneRecipeOutputWithContext(ctx context.Context) GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetDetailTargetSecurityZoneRecipe] {
-	return pulumix.Output[GetGuardTargetTargetDetailTargetSecurityZoneRecipe]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier
@@ -17120,12 +14725,6 @@ func (o GetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayOutput) ToGetGuar
 	return o
 }
 
-func (o GetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetDetailTargetSecurityZoneRecipe] {
-	return pulumix.Output[[]GetGuardTargetTargetDetailTargetSecurityZoneRecipe]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetGuardTargetTargetDetailTargetSecurityZoneRecipeArrayOutput) Index(i pulumi.IntInput) GetGuardTargetTargetDetailTargetSecurityZoneRecipeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetTargetDetailTargetSecurityZoneRecipe {
 		return vs[0].([]GetGuardTargetTargetDetailTargetSecurityZoneRecipe)[vs[1].(int)]
@@ -17209,12 +14808,6 @@ func (i GetGuardTargetTargetDetectorRecipeArgs) ToGetGuardTargetTargetDetectorRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeOutput)
 }
 
-func (i GetGuardTargetTargetDetectorRecipeArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetDetectorRecipe] {
-	return pulumix.Output[GetGuardTargetTargetDetectorRecipe]{
-		OutputState: i.ToGetGuardTargetTargetDetectorRecipeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetTargetDetectorRecipeArrayInput is an input type that accepts GetGuardTargetTargetDetectorRecipeArray and GetGuardTargetTargetDetectorRecipeArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeArrayInput` via:
 //
@@ -17240,12 +14833,6 @@ func (i GetGuardTargetTargetDetectorRecipeArray) ToGetGuardTargetTargetDetectorR
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeArrayOutput)
 }
 
-func (i GetGuardTargetTargetDetectorRecipeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetDetectorRecipe] {
-	return pulumix.Output[[]GetGuardTargetTargetDetectorRecipe]{
-		OutputState: i.ToGetGuardTargetTargetDetectorRecipeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetTargetDetectorRecipeOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetTargetDetectorRecipeOutput) ElementType() reflect.Type {
@@ -17258,12 +14845,6 @@ func (o GetGuardTargetTargetDetectorRecipeOutput) ToGetGuardTargetTargetDetector
 
 func (o GetGuardTargetTargetDetectorRecipeOutput) ToGetGuardTargetTargetDetectorRecipeOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetDetectorRecipeOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetDetectorRecipe] {
-	return pulumix.Output[GetGuardTargetTargetDetectorRecipe]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier
@@ -17342,12 +14923,6 @@ func (o GetGuardTargetTargetDetectorRecipeArrayOutput) ToGetGuardTargetTargetDet
 
 func (o GetGuardTargetTargetDetectorRecipeArrayOutput) ToGetGuardTargetTargetDetectorRecipeArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeArrayOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetDetectorRecipeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetDetectorRecipe] {
-	return pulumix.Output[[]GetGuardTargetTargetDetectorRecipe]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGuardTargetTargetDetectorRecipeArrayOutput) Index(i pulumi.IntInput) GetGuardTargetTargetDetectorRecipeOutput {
@@ -17445,12 +15020,6 @@ func (i GetGuardTargetTargetDetectorRecipeDetectorRuleArgs) ToGetGuardTargetTarg
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeDetectorRuleOutput)
 }
 
-func (i GetGuardTargetTargetDetectorRecipeDetectorRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetDetectorRecipeDetectorRule] {
-	return pulumix.Output[GetGuardTargetTargetDetectorRecipeDetectorRule]{
-		OutputState: i.ToGetGuardTargetTargetDetectorRecipeDetectorRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetTargetDetectorRecipeDetectorRuleArrayInput is an input type that accepts GetGuardTargetTargetDetectorRecipeDetectorRuleArray and GetGuardTargetTargetDetectorRecipeDetectorRuleArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeDetectorRuleArrayInput` via:
 //
@@ -17476,12 +15045,6 @@ func (i GetGuardTargetTargetDetectorRecipeDetectorRuleArray) ToGetGuardTargetTar
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeDetectorRuleArrayOutput)
 }
 
-func (i GetGuardTargetTargetDetectorRecipeDetectorRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetDetectorRecipeDetectorRule] {
-	return pulumix.Output[[]GetGuardTargetTargetDetectorRecipeDetectorRule]{
-		OutputState: i.ToGetGuardTargetTargetDetectorRecipeDetectorRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetTargetDetectorRecipeDetectorRuleOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetTargetDetectorRecipeDetectorRuleOutput) ElementType() reflect.Type {
@@ -17494,12 +15057,6 @@ func (o GetGuardTargetTargetDetectorRecipeDetectorRuleOutput) ToGetGuardTargetTa
 
 func (o GetGuardTargetTargetDetectorRecipeDetectorRuleOutput) ToGetGuardTargetTargetDetectorRecipeDetectorRuleOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetDetectorRecipeDetectorRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetDetectorRecipeDetectorRule] {
-	return pulumix.Output[GetGuardTargetTargetDetectorRecipeDetectorRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The id of the attached DataSource.
@@ -17595,12 +15152,6 @@ func (o GetGuardTargetTargetDetectorRecipeDetectorRuleArrayOutput) ToGetGuardTar
 	return o
 }
 
-func (o GetGuardTargetTargetDetectorRecipeDetectorRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetDetectorRecipeDetectorRule] {
-	return pulumix.Output[[]GetGuardTargetTargetDetectorRecipeDetectorRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetGuardTargetTargetDetectorRecipeDetectorRuleArrayOutput) Index(i pulumi.IntInput) GetGuardTargetTargetDetectorRecipeDetectorRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetTargetDetectorRecipeDetectorRule {
 		return vs[0].([]GetGuardTargetTargetDetectorRecipeDetectorRule)[vs[1].(int)]
@@ -17660,12 +15211,6 @@ func (i GetGuardTargetTargetDetectorRecipeDetectorRuleDetailArgs) ToGetGuardTarg
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailOutput)
 }
 
-func (i GetGuardTargetTargetDetectorRecipeDetectorRuleDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetDetectorRecipeDetectorRuleDetail] {
-	return pulumix.Output[GetGuardTargetTargetDetectorRecipeDetectorRuleDetail]{
-		OutputState: i.ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetTargetDetectorRecipeDetectorRuleDetailArrayInput is an input type that accepts GetGuardTargetTargetDetectorRecipeDetectorRuleDetailArray and GetGuardTargetTargetDetectorRecipeDetectorRuleDetailArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeDetectorRuleDetailArrayInput` via:
 //
@@ -17691,12 +15236,6 @@ func (i GetGuardTargetTargetDetectorRecipeDetectorRuleDetailArray) ToGetGuardTar
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailArrayOutput)
 }
 
-func (i GetGuardTargetTargetDetectorRecipeDetectorRuleDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetDetectorRecipeDetectorRuleDetail] {
-	return pulumix.Output[[]GetGuardTargetTargetDetectorRecipeDetectorRuleDetail]{
-		OutputState: i.ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetTargetDetectorRecipeDetectorRuleDetailOutput) ElementType() reflect.Type {
@@ -17709,12 +15248,6 @@ func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailOutput) ToGetGuardTa
 
 func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailOutput) ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleDetailOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetDetectorRecipeDetectorRuleDetail] {
-	return pulumix.Output[GetGuardTargetTargetDetectorRecipeDetectorRuleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Condition group corresponding to each compartment
@@ -17765,12 +15298,6 @@ func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailArrayOutput) ToGetGu
 	return o
 }
 
-func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetDetectorRecipeDetectorRuleDetail] {
-	return pulumix.Output[[]GetGuardTargetTargetDetectorRecipeDetectorRuleDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailArrayOutput) Index(i pulumi.IntInput) GetGuardTargetTargetDetectorRecipeDetectorRuleDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetTargetDetectorRecipeDetectorRuleDetail {
 		return vs[0].([]GetGuardTargetTargetDetectorRecipeDetectorRuleDetail)[vs[1].(int)]
@@ -17814,12 +15341,6 @@ func (i GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArgs) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupOutput)
 }
 
-func (i GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroup] {
-	return pulumix.Output[GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroup]{
-		OutputState: i.ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayInput is an input type that accepts GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArray and GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayInput` via:
 //
@@ -17845,12 +15366,6 @@ func (i GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArray)
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayOutput)
 }
 
-func (i GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroup] {
-	return pulumix.Output[[]GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroup]{
-		OutputState: i.ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupOutput) ElementType() reflect.Type {
@@ -17863,12 +15378,6 @@ func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupOutput
 
 func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupOutput) ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroup] {
-	return pulumix.Output[GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier
@@ -17895,12 +15404,6 @@ func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayO
 
 func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayOutput) ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroup] {
-	return pulumix.Output[[]GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayOutput) Index(i pulumi.IntInput) GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupOutput {
@@ -17958,12 +15461,6 @@ func (i GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArgs) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationOutput)
 }
 
-func (i GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration] {
-	return pulumix.Output[GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration]{
-		OutputState: i.ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArrayInput is an input type that accepts GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArray and GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArrayInput` via:
 //
@@ -17989,12 +15486,6 @@ func (i GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArrayOutput)
 }
 
-func (i GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration] {
-	return pulumix.Output[[]GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration]{
-		OutputState: i.ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationOutput) ElementType() reflect.Type {
@@ -18007,12 +15498,6 @@ func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationOutput)
 
 func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationOutput) ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration] {
-	return pulumix.Output[GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique name of the configuration
@@ -18054,12 +15539,6 @@ func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArrayOu
 
 func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArrayOutput) ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArrayOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration] {
-	return pulumix.Output[[]GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArrayOutput) Index(i pulumi.IntInput) GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationOutput {
@@ -18109,12 +15588,6 @@ func (i GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueOutput)
 }
 
-func (i GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValue]{
-		OutputState: i.ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayInput is an input type that accepts GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArray and GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayInput` via:
 //
@@ -18140,12 +15613,6 @@ func (i GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutput)
 }
 
-func (i GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[[]GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValue]{
-		OutputState: i.ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueOutput) ElementType() reflect.Type {
@@ -18158,12 +15625,6 @@ func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueOu
 
 func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueOutput) ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValue]{
-		OutputState: o.OutputState,
-	}
 }
 
 // configuration list item type, either CUSTOM or MANAGED
@@ -18197,12 +15658,6 @@ func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueAr
 
 func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutput) ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[[]GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValue]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutput) Index(i pulumi.IntInput) GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueOutput {
@@ -18252,12 +15707,6 @@ func (i GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput)
 }
 
-func (i GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMapping] {
-	return pulumix.Output[GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMapping]{
-		OutputState: i.ToGetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayInput is an input type that accepts GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArray and GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayInput` via:
 //
@@ -18283,12 +15732,6 @@ func (i GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput)
 }
 
-func (i GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMapping] {
-	return pulumix.Output[[]GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMapping]{
-		OutputState: i.ToGetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput) ElementType() reflect.Type {
@@ -18301,12 +15744,6 @@ func (o GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput) ToG
 
 func (o GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput) ToGetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMapping] {
-	return pulumix.Output[GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 // ResponderRule display name.
@@ -18336,12 +15773,6 @@ func (o GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput
 
 func (o GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput) ToGetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMapping] {
-	return pulumix.Output[[]GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput) Index(i pulumi.IntInput) GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput {
@@ -18439,12 +15870,6 @@ func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArgs) ToGetGuardT
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleOutput)
 }
 
-func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule] {
-	return pulumix.Output[GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule]{
-		OutputState: i.ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArrayInput is an input type that accepts GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArray and GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArrayInput` via:
 //
@@ -18470,12 +15895,6 @@ func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArray) ToGetGuard
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArrayOutput)
 }
 
-func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule] {
-	return pulumix.Output[[]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule]{
-		OutputState: i.ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleOutput) ElementType() reflect.Type {
@@ -18488,12 +15907,6 @@ func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleOutput) ToGetGuar
 
 func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleOutput) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule] {
-	return pulumix.Output[GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The id of the attached DataSource.
@@ -18589,12 +16002,6 @@ func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArrayOutput) ToGe
 	return o
 }
 
-func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule] {
-	return pulumix.Output[[]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArrayOutput) Index(i pulumi.IntInput) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule {
 		return vs[0].([]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule)[vs[1].(int)]
@@ -18654,12 +16061,6 @@ func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailOutput)
 }
 
-func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetail] {
-	return pulumix.Output[GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetail]{
-		OutputState: i.ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailArrayInput is an input type that accepts GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailArray and GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailArrayInput` via:
 //
@@ -18685,12 +16086,6 @@ func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailArrayOutput)
 }
 
-func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetail] {
-	return pulumix.Output[[]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetail]{
-		OutputState: i.ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailOutput) ElementType() reflect.Type {
@@ -18703,12 +16098,6 @@ func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailOutput) ToG
 
 func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailOutput) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetail] {
-	return pulumix.Output[GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Condition group corresponding to each compartment
@@ -18761,12 +16150,6 @@ func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailArrayOutput
 	return o
 }
 
-func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetail] {
-	return pulumix.Output[[]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailArrayOutput) Index(i pulumi.IntInput) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetail {
 		return vs[0].([]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetail)[vs[1].(int)]
@@ -18810,12 +16193,6 @@ func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGr
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutput)
 }
 
-func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup] {
-	return pulumix.Output[GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup]{
-		OutputState: i.ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayInput is an input type that accepts GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArray and GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayInput` via:
 //
@@ -18841,12 +16218,6 @@ func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGr
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayOutput)
 }
 
-func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup] {
-	return pulumix.Output[[]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup]{
-		OutputState: i.ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutput) ElementType() reflect.Type {
@@ -18859,12 +16230,6 @@ func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGr
 
 func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutput) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup] {
-	return pulumix.Output[GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier
@@ -18893,12 +16258,6 @@ func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGr
 
 func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayOutput) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup] {
-	return pulumix.Output[[]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayOutput) Index(i pulumi.IntInput) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutput {
@@ -18956,12 +16315,6 @@ func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurati
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput)
 }
 
-func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration] {
-	return pulumix.Output[GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration]{
-		OutputState: i.ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput is an input type that accepts GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArray and GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput` via:
 //
@@ -18987,12 +16340,6 @@ func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurati
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput)
 }
 
-func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration] {
-	return pulumix.Output[[]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration]{
-		OutputState: i.ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) ElementType() reflect.Type {
@@ -19005,12 +16352,6 @@ func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurati
 
 func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration] {
-	return pulumix.Output[GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique name of the configuration
@@ -19062,12 +16403,6 @@ func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurati
 	return o
 }
 
-func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration] {
-	return pulumix.Output[[]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput) Index(i pulumi.IntInput) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration {
 		return vs[0].([]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration)[vs[1].(int)]
@@ -19115,12 +16450,6 @@ func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurati
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput)
 }
 
-func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue]{
-		OutputState: i.ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput is an input type that accepts GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray and GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput` via:
 //
@@ -19146,12 +16475,6 @@ func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurati
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput)
 }
 
-func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[[]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue]{
-		OutputState: i.ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput) ElementType() reflect.Type {
@@ -19164,12 +16487,6 @@ func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurati
 
 func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue]{
-		OutputState: o.OutputState,
-	}
 }
 
 // configuration list item type, either CUSTOM or MANAGED
@@ -19205,12 +16522,6 @@ func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurati
 
 func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[[]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput) Index(i pulumi.IntInput) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput {
@@ -19260,12 +16571,6 @@ func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput)
 }
 
-func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping] {
-	return pulumix.Output[GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping]{
-		OutputState: i.ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput is an input type that accepts GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray and GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput` via:
 //
@@ -19291,12 +16596,6 @@ func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput)
 }
 
-func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping] {
-	return pulumix.Output[[]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping]{
-		OutputState: i.ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ElementType() reflect.Type {
@@ -19309,12 +16608,6 @@ func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOu
 
 func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping] {
-	return pulumix.Output[GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 // ResponderRule display name.
@@ -19350,12 +16643,6 @@ func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingAr
 
 func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping] {
-	return pulumix.Output[[]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) Index(i pulumi.IntInput) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
@@ -19433,12 +16720,6 @@ func (i GetGuardTargetTargetResponderRecipeArgs) ToGetGuardTargetTargetResponder
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetResponderRecipeOutput)
 }
 
-func (i GetGuardTargetTargetResponderRecipeArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetResponderRecipe] {
-	return pulumix.Output[GetGuardTargetTargetResponderRecipe]{
-		OutputState: i.ToGetGuardTargetTargetResponderRecipeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetTargetResponderRecipeArrayInput is an input type that accepts GetGuardTargetTargetResponderRecipeArray and GetGuardTargetTargetResponderRecipeArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetResponderRecipeArrayInput` via:
 //
@@ -19464,12 +16745,6 @@ func (i GetGuardTargetTargetResponderRecipeArray) ToGetGuardTargetTargetResponde
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetResponderRecipeArrayOutput)
 }
 
-func (i GetGuardTargetTargetResponderRecipeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetResponderRecipe] {
-	return pulumix.Output[[]GetGuardTargetTargetResponderRecipe]{
-		OutputState: i.ToGetGuardTargetTargetResponderRecipeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetTargetResponderRecipeOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetTargetResponderRecipeOutput) ElementType() reflect.Type {
@@ -19482,12 +16757,6 @@ func (o GetGuardTargetTargetResponderRecipeOutput) ToGetGuardTargetTargetRespond
 
 func (o GetGuardTargetTargetResponderRecipeOutput) ToGetGuardTargetTargetResponderRecipeOutputWithContext(ctx context.Context) GetGuardTargetTargetResponderRecipeOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetResponderRecipeOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetResponderRecipe] {
-	return pulumix.Output[GetGuardTargetTargetResponderRecipe]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier
@@ -19556,12 +16825,6 @@ func (o GetGuardTargetTargetResponderRecipeArrayOutput) ToGetGuardTargetTargetRe
 
 func (o GetGuardTargetTargetResponderRecipeArrayOutput) ToGetGuardTargetTargetResponderRecipeArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetResponderRecipeArrayOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetResponderRecipeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetResponderRecipe] {
-	return pulumix.Output[[]GetGuardTargetTargetResponderRecipe]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGuardTargetTargetResponderRecipeArrayOutput) Index(i pulumi.IntInput) GetGuardTargetTargetResponderRecipeOutput {
@@ -19647,12 +16910,6 @@ func (i GetGuardTargetTargetResponderRecipeEffectiveResponderRuleArgs) ToGetGuar
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetResponderRecipeEffectiveResponderRuleOutput)
 }
 
-func (i GetGuardTargetTargetResponderRecipeEffectiveResponderRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetResponderRecipeEffectiveResponderRule] {
-	return pulumix.Output[GetGuardTargetTargetResponderRecipeEffectiveResponderRule]{
-		OutputState: i.ToGetGuardTargetTargetResponderRecipeEffectiveResponderRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetTargetResponderRecipeEffectiveResponderRuleArrayInput is an input type that accepts GetGuardTargetTargetResponderRecipeEffectiveResponderRuleArray and GetGuardTargetTargetResponderRecipeEffectiveResponderRuleArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetResponderRecipeEffectiveResponderRuleArrayInput` via:
 //
@@ -19678,12 +16935,6 @@ func (i GetGuardTargetTargetResponderRecipeEffectiveResponderRuleArray) ToGetGua
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetResponderRecipeEffectiveResponderRuleArrayOutput)
 }
 
-func (i GetGuardTargetTargetResponderRecipeEffectiveResponderRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetResponderRecipeEffectiveResponderRule] {
-	return pulumix.Output[[]GetGuardTargetTargetResponderRecipeEffectiveResponderRule]{
-		OutputState: i.ToGetGuardTargetTargetResponderRecipeEffectiveResponderRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetTargetResponderRecipeEffectiveResponderRuleOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetTargetResponderRecipeEffectiveResponderRuleOutput) ElementType() reflect.Type {
@@ -19696,12 +16947,6 @@ func (o GetGuardTargetTargetResponderRecipeEffectiveResponderRuleOutput) ToGetGu
 
 func (o GetGuardTargetTargetResponderRecipeEffectiveResponderRuleOutput) ToGetGuardTargetTargetResponderRecipeEffectiveResponderRuleOutputWithContext(ctx context.Context) GetGuardTargetTargetResponderRecipeEffectiveResponderRuleOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetResponderRecipeEffectiveResponderRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetResponderRecipeEffectiveResponderRule] {
-	return pulumix.Output[GetGuardTargetTargetResponderRecipeEffectiveResponderRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier
@@ -19780,12 +17025,6 @@ func (o GetGuardTargetTargetResponderRecipeEffectiveResponderRuleArrayOutput) To
 	return o
 }
 
-func (o GetGuardTargetTargetResponderRecipeEffectiveResponderRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetResponderRecipeEffectiveResponderRule] {
-	return pulumix.Output[[]GetGuardTargetTargetResponderRecipeEffectiveResponderRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetGuardTargetTargetResponderRecipeEffectiveResponderRuleArrayOutput) Index(i pulumi.IntInput) GetGuardTargetTargetResponderRecipeEffectiveResponderRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetTargetResponderRecipeEffectiveResponderRule {
 		return vs[0].([]GetGuardTargetTargetResponderRecipeEffectiveResponderRule)[vs[1].(int)]
@@ -19837,12 +17076,6 @@ func (i GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailArgs) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailOutput)
 }
 
-func (i GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetail] {
-	return pulumix.Output[GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetail]{
-		OutputState: i.ToGetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailArrayInput is an input type that accepts GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailArray and GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailArrayInput` via:
 //
@@ -19868,12 +17101,6 @@ func (i GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailArrayOutput)
 }
 
-func (i GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetail] {
-	return pulumix.Output[[]GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetail]{
-		OutputState: i.ToGetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailOutput) ElementType() reflect.Type {
@@ -19886,12 +17113,6 @@ func (o GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailOutput) T
 
 func (o GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailOutput) ToGetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailOutputWithContext(ctx context.Context) GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetail] {
-	return pulumix.Output[GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Base condition object
@@ -19928,12 +17149,6 @@ func (o GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailArrayOutp
 
 func (o GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailArrayOutput) ToGetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailArrayOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetail] {
-	return pulumix.Output[[]GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailArrayOutput) Index(i pulumi.IntInput) GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailOutput {
@@ -19983,12 +17198,6 @@ func (i GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigura
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput)
 }
 
-func (i GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration] {
-	return pulumix.Output[GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration]{
-		OutputState: i.ToGetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayInput is an input type that accepts GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArray and GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayInput` via:
 //
@@ -20014,12 +17223,6 @@ func (i GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigura
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput)
 }
 
-func (i GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration] {
-	return pulumix.Output[[]GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration]{
-		OutputState: i.ToGetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput) ElementType() reflect.Type {
@@ -20032,12 +17235,6 @@ func (o GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigura
 
 func (o GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput) ToGetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutputWithContext(ctx context.Context) GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration] {
-	return pulumix.Output[GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique name of the configuration
@@ -20073,12 +17270,6 @@ func (o GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigura
 
 func (o GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput) ToGetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration] {
-	return pulumix.Output[[]GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput) Index(i pulumi.IntInput) GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput {
@@ -20164,12 +17355,6 @@ func (i GetGuardTargetTargetResponderRecipeResponderRuleArgs) ToGetGuardTargetTa
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetResponderRecipeResponderRuleOutput)
 }
 
-func (i GetGuardTargetTargetResponderRecipeResponderRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetResponderRecipeResponderRule] {
-	return pulumix.Output[GetGuardTargetTargetResponderRecipeResponderRule]{
-		OutputState: i.ToGetGuardTargetTargetResponderRecipeResponderRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetTargetResponderRecipeResponderRuleArrayInput is an input type that accepts GetGuardTargetTargetResponderRecipeResponderRuleArray and GetGuardTargetTargetResponderRecipeResponderRuleArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetResponderRecipeResponderRuleArrayInput` via:
 //
@@ -20195,12 +17380,6 @@ func (i GetGuardTargetTargetResponderRecipeResponderRuleArray) ToGetGuardTargetT
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetResponderRecipeResponderRuleArrayOutput)
 }
 
-func (i GetGuardTargetTargetResponderRecipeResponderRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetResponderRecipeResponderRule] {
-	return pulumix.Output[[]GetGuardTargetTargetResponderRecipeResponderRule]{
-		OutputState: i.ToGetGuardTargetTargetResponderRecipeResponderRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetTargetResponderRecipeResponderRuleOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetTargetResponderRecipeResponderRuleOutput) ElementType() reflect.Type {
@@ -20213,12 +17392,6 @@ func (o GetGuardTargetTargetResponderRecipeResponderRuleOutput) ToGetGuardTarget
 
 func (o GetGuardTargetTargetResponderRecipeResponderRuleOutput) ToGetGuardTargetTargetResponderRecipeResponderRuleOutputWithContext(ctx context.Context) GetGuardTargetTargetResponderRecipeResponderRuleOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetResponderRecipeResponderRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetResponderRecipeResponderRule] {
-	return pulumix.Output[GetGuardTargetTargetResponderRecipeResponderRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier
@@ -20297,12 +17470,6 @@ func (o GetGuardTargetTargetResponderRecipeResponderRuleArrayOutput) ToGetGuardT
 	return o
 }
 
-func (o GetGuardTargetTargetResponderRecipeResponderRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetResponderRecipeResponderRule] {
-	return pulumix.Output[[]GetGuardTargetTargetResponderRecipeResponderRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetGuardTargetTargetResponderRecipeResponderRuleArrayOutput) Index(i pulumi.IntInput) GetGuardTargetTargetResponderRecipeResponderRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetTargetResponderRecipeResponderRule {
 		return vs[0].([]GetGuardTargetTargetResponderRecipeResponderRule)[vs[1].(int)]
@@ -20354,12 +17521,6 @@ func (i GetGuardTargetTargetResponderRecipeResponderRuleDetailArgs) ToGetGuardTa
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetResponderRecipeResponderRuleDetailOutput)
 }
 
-func (i GetGuardTargetTargetResponderRecipeResponderRuleDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetResponderRecipeResponderRuleDetail] {
-	return pulumix.Output[GetGuardTargetTargetResponderRecipeResponderRuleDetail]{
-		OutputState: i.ToGetGuardTargetTargetResponderRecipeResponderRuleDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetTargetResponderRecipeResponderRuleDetailArrayInput is an input type that accepts GetGuardTargetTargetResponderRecipeResponderRuleDetailArray and GetGuardTargetTargetResponderRecipeResponderRuleDetailArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetResponderRecipeResponderRuleDetailArrayInput` via:
 //
@@ -20385,12 +17546,6 @@ func (i GetGuardTargetTargetResponderRecipeResponderRuleDetailArray) ToGetGuardT
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetResponderRecipeResponderRuleDetailArrayOutput)
 }
 
-func (i GetGuardTargetTargetResponderRecipeResponderRuleDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetResponderRecipeResponderRuleDetail] {
-	return pulumix.Output[[]GetGuardTargetTargetResponderRecipeResponderRuleDetail]{
-		OutputState: i.ToGetGuardTargetTargetResponderRecipeResponderRuleDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetTargetResponderRecipeResponderRuleDetailOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetTargetResponderRecipeResponderRuleDetailOutput) ElementType() reflect.Type {
@@ -20403,12 +17558,6 @@ func (o GetGuardTargetTargetResponderRecipeResponderRuleDetailOutput) ToGetGuard
 
 func (o GetGuardTargetTargetResponderRecipeResponderRuleDetailOutput) ToGetGuardTargetTargetResponderRecipeResponderRuleDetailOutputWithContext(ctx context.Context) GetGuardTargetTargetResponderRecipeResponderRuleDetailOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetResponderRecipeResponderRuleDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetResponderRecipeResponderRuleDetail] {
-	return pulumix.Output[GetGuardTargetTargetResponderRecipeResponderRuleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Base condition object
@@ -20445,12 +17594,6 @@ func (o GetGuardTargetTargetResponderRecipeResponderRuleDetailArrayOutput) ToGet
 
 func (o GetGuardTargetTargetResponderRecipeResponderRuleDetailArrayOutput) ToGetGuardTargetTargetResponderRecipeResponderRuleDetailArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetResponderRecipeResponderRuleDetailArrayOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetResponderRecipeResponderRuleDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetResponderRecipeResponderRuleDetail] {
-	return pulumix.Output[[]GetGuardTargetTargetResponderRecipeResponderRuleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGuardTargetTargetResponderRecipeResponderRuleDetailArrayOutput) Index(i pulumi.IntInput) GetGuardTargetTargetResponderRecipeResponderRuleDetailOutput {
@@ -20500,12 +17643,6 @@ func (i GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationOutput)
 }
 
-func (i GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetResponderRecipeResponderRuleDetailConfiguration] {
-	return pulumix.Output[GetGuardTargetTargetResponderRecipeResponderRuleDetailConfiguration]{
-		OutputState: i.ToGetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationArrayInput is an input type that accepts GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationArray and GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationArrayInput` via:
 //
@@ -20531,12 +17668,6 @@ func (i GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationArrayOutput)
 }
 
-func (i GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetResponderRecipeResponderRuleDetailConfiguration] {
-	return pulumix.Output[[]GetGuardTargetTargetResponderRecipeResponderRuleDetailConfiguration]{
-		OutputState: i.ToGetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationOutput) ElementType() reflect.Type {
@@ -20549,12 +17680,6 @@ func (o GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationOutpu
 
 func (o GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationOutput) ToGetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationOutputWithContext(ctx context.Context) GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetTargetResponderRecipeResponderRuleDetailConfiguration] {
-	return pulumix.Output[GetGuardTargetTargetResponderRecipeResponderRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique name of the configuration
@@ -20584,12 +17709,6 @@ func (o GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationArray
 
 func (o GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationArrayOutput) ToGetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationArrayOutput {
 	return o
-}
-
-func (o GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetTargetResponderRecipeResponderRuleDetailConfiguration] {
-	return pulumix.Output[[]GetGuardTargetTargetResponderRecipeResponderRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationArrayOutput) Index(i pulumi.IntInput) GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationOutput {
@@ -20637,12 +17756,6 @@ func (i GetGuardTargetsFilterArgs) ToGetGuardTargetsFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsFilterOutput)
 }
 
-func (i GetGuardTargetsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsFilter] {
-	return pulumix.Output[GetGuardTargetsFilter]{
-		OutputState: i.ToGetGuardTargetsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetsFilterArrayInput is an input type that accepts GetGuardTargetsFilterArray and GetGuardTargetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsFilterArrayInput` via:
 //
@@ -20668,12 +17781,6 @@ func (i GetGuardTargetsFilterArray) ToGetGuardTargetsFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsFilterArrayOutput)
 }
 
-func (i GetGuardTargetsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsFilter] {
-	return pulumix.Output[[]GetGuardTargetsFilter]{
-		OutputState: i.ToGetGuardTargetsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetsFilterOutput) ElementType() reflect.Type {
@@ -20686,12 +17793,6 @@ func (o GetGuardTargetsFilterOutput) ToGetGuardTargetsFilterOutput() GetGuardTar
 
 func (o GetGuardTargetsFilterOutput) ToGetGuardTargetsFilterOutputWithContext(ctx context.Context) GetGuardTargetsFilterOutput {
 	return o
-}
-
-func (o GetGuardTargetsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsFilter] {
-	return pulumix.Output[GetGuardTargetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // configuration name
@@ -20720,12 +17821,6 @@ func (o GetGuardTargetsFilterArrayOutput) ToGetGuardTargetsFilterArrayOutput() G
 
 func (o GetGuardTargetsFilterArrayOutput) ToGetGuardTargetsFilterArrayOutputWithContext(ctx context.Context) GetGuardTargetsFilterArrayOutput {
 	return o
-}
-
-func (o GetGuardTargetsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsFilter] {
-	return pulumix.Output[[]GetGuardTargetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGuardTargetsFilterArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsFilterOutput {
@@ -20765,12 +17860,6 @@ func (i GetGuardTargetsTargetCollectionArgs) ToGetGuardTargetsTargetCollectionOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollection] {
-	return pulumix.Output[GetGuardTargetsTargetCollection]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetsTargetCollectionArrayInput is an input type that accepts GetGuardTargetsTargetCollectionArray and GetGuardTargetsTargetCollectionArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionArrayInput` via:
 //
@@ -20796,12 +17885,6 @@ func (i GetGuardTargetsTargetCollectionArray) ToGetGuardTargetsTargetCollectionA
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionArrayOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollection] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollection]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetsTargetCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetsTargetCollectionOutput) ElementType() reflect.Type {
@@ -20814,12 +17897,6 @@ func (o GetGuardTargetsTargetCollectionOutput) ToGetGuardTargetsTargetCollection
 
 func (o GetGuardTargetsTargetCollectionOutput) ToGetGuardTargetsTargetCollectionOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollection] {
-	return pulumix.Output[GetGuardTargetsTargetCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGuardTargetsTargetCollectionOutput) Items() GetGuardTargetsTargetCollectionItemArrayOutput {
@@ -20838,12 +17915,6 @@ func (o GetGuardTargetsTargetCollectionArrayOutput) ToGetGuardTargetsTargetColle
 
 func (o GetGuardTargetsTargetCollectionArrayOutput) ToGetGuardTargetsTargetCollectionArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionArrayOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollection] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGuardTargetsTargetCollectionArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionOutput {
@@ -20953,12 +18024,6 @@ func (i GetGuardTargetsTargetCollectionItemArgs) ToGetGuardTargetsTargetCollecti
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItem] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItem]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetsTargetCollectionItemArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemArray and GetGuardTargetsTargetCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemArrayInput` via:
 //
@@ -20984,12 +18049,6 @@ func (i GetGuardTargetsTargetCollectionItemArray) ToGetGuardTargetsTargetCollect
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemArrayOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItem] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItem]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetsTargetCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetsTargetCollectionItemOutput) ElementType() reflect.Type {
@@ -21002,12 +18061,6 @@ func (o GetGuardTargetsTargetCollectionItemOutput) ToGetGuardTargetsTargetCollec
 
 func (o GetGuardTargetsTargetCollectionItemOutput) ToGetGuardTargetsTargetCollectionItemOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItem] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -21120,12 +18173,6 @@ func (o GetGuardTargetsTargetCollectionItemArrayOutput) ToGetGuardTargetsTargetC
 	return o
 }
 
-func (o GetGuardTargetsTargetCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItem] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetGuardTargetsTargetCollectionItemArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetsTargetCollectionItem {
 		return vs[0].([]GetGuardTargetsTargetCollectionItem)[vs[1].(int)]
@@ -21177,12 +18224,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetailArgs) ToGetGuardTargetsTa
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetailOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetail] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetail]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetsTargetCollectionItemTargetDetailArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetailArray and GetGuardTargetsTargetCollectionItemTargetDetailArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetailArrayInput` via:
 //
@@ -21208,12 +18249,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetailArray) ToGetGuardTargetsT
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetailArrayOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetail] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetail]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetsTargetCollectionItemTargetDetailOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetsTargetCollectionItemTargetDetailOutput) ElementType() reflect.Type {
@@ -21226,12 +18261,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetailOutput) ToGetGuardTargets
 
 func (o GetGuardTargetsTargetCollectionItemTargetDetailOutput) ToGetGuardTargetsTargetCollectionItemTargetDetailOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetailOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetail] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the security zone to associate this compartment with.
@@ -21268,12 +18297,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetailArrayOutput) ToGetGuardTa
 
 func (o GetGuardTargetsTargetCollectionItemTargetDetailArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetDetailArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetailArrayOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetail] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGuardTargetsTargetCollectionItemTargetDetailArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemTargetDetailOutput {
@@ -21363,12 +18386,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeA
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArray and GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayInput` via:
 //
@@ -21394,12 +18411,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeA
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput) ElementType() reflect.Type {
@@ -21412,12 +18423,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeO
 
 func (o GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput) ToGetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -21519,12 +18524,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeA
 	return o
 }
 
-func (o GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe {
 		return vs[0].([]GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe)[vs[1].(int)]
@@ -21608,12 +18607,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArgs) ToGetGuardT
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipe] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipe]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArray and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArrayInput` via:
 //
@@ -21639,12 +18632,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArray) ToGetGuard
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArrayOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipe] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipe]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeOutput) ElementType() reflect.Type {
@@ -21657,12 +18644,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeOutput) ToGetGuar
 
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipe] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipe]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -21741,12 +18722,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArrayOutput) ToGe
 
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArrayOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipe] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipe]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeOutput {
@@ -21844,12 +18819,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleArray and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleArrayInput` via:
 //
@@ -21875,12 +18844,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleArrayOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleOutput) ElementType() reflect.Type {
@@ -21893,12 +18856,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleOutpu
 
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The id of the attached DataSource.
@@ -22016,12 +18973,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleArray
 	return o
 }
 
-func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule {
 		return vs[0].([]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule)[vs[1].(int)]
@@ -22081,12 +19032,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetai
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetail] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetail]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailArray and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailArrayInput` via:
 //
@@ -22112,12 +19057,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetai
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailArrayOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetail] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetail]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailOutput) ElementType() reflect.Type {
@@ -22130,12 +19069,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetai
 
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetail] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Condition group corresponding to each compartment
@@ -22194,12 +19127,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetai
 	return o
 }
 
-func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetail] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetail {
 		return vs[0].([]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetail)[vs[1].(int)]
@@ -22243,12 +19170,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetai
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroup] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroup]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupArray and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayInput` via:
 //
@@ -22274,12 +19195,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetai
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroup] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroup]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupOutput) ElementType() reflect.Type {
@@ -22292,12 +19207,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetai
 
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroup] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -22326,12 +19235,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetai
 
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroup] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupOutput {
@@ -22389,12 +19292,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetai
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationArray and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationArrayInput` via:
 //
@@ -22420,12 +19317,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetai
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationArrayOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationOutput) ElementType() reflect.Type {
@@ -22438,12 +19329,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetai
 
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique name of the configuration
@@ -22495,12 +19380,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetai
 	return o
 }
 
-func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration {
 		return vs[0].([]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration)[vs[1].(int)]
@@ -22548,12 +19427,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetai
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValue]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArray and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayInput` via:
 //
@@ -22579,12 +19452,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetai
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValue]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueOutput) ElementType() reflect.Type {
@@ -22597,12 +19464,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetai
 
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValue]{
-		OutputState: o.OutputState,
-	}
 }
 
 // configuration list item type, either CUSTOM or MANAGED
@@ -22638,12 +19499,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetai
 
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValue]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueOutput {
@@ -22693,12 +19548,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntit
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMapping] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMapping]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArray and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayInput` via:
 //
@@ -22724,12 +19573,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntit
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMapping] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMapping]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutput) ElementType() reflect.Type {
@@ -22742,12 +19585,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntit
 
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMapping] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -22783,12 +19620,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntit
 
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMapping] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutput {
@@ -22886,12 +19717,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArray and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArrayInput` via:
 //
@@ -22917,12 +19742,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArrayOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleOutput) ElementType() reflect.Type {
@@ -22935,12 +19754,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The id of the attached DataSource.
@@ -23062,12 +19875,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 	return o
 }
 
-func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule {
 		return vs[0].([]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule)[vs[1].(int)]
@@ -23127,12 +19934,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetail] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetail]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailArray and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailArrayInput` via:
 //
@@ -23158,12 +19959,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailArrayOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetail] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetail]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailOutput) ElementType() reflect.Type {
@@ -23176,12 +19971,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetail] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Condition group corresponding to each compartment
@@ -23240,12 +20029,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 	return o
 }
 
-func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetail] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetail {
 		return vs[0].([]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetail)[vs[1].(int)]
@@ -23289,12 +20072,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArray and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayInput` via:
 //
@@ -23320,12 +20097,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutput) ElementType() reflect.Type {
@@ -23338,12 +20109,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -23372,12 +20137,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutput {
@@ -23435,12 +20194,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArray and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput` via:
 //
@@ -23466,12 +20219,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) ElementType() reflect.Type {
@@ -23484,12 +20231,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique name of the configuration
@@ -23541,12 +20282,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 	return o
 }
 
-func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration {
 		return vs[0].([]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration)[vs[1].(int)]
@@ -23594,12 +20329,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput` via:
 //
@@ -23625,12 +20354,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput) ElementType() reflect.Type {
@@ -23643,12 +20366,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue]{
-		OutputState: o.OutputState,
-	}
 }
 
 // configuration list item type, either CUSTOM or MANAGED
@@ -23684,12 +20401,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput {
@@ -23739,12 +20450,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput` via:
 //
@@ -23770,12 +20475,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ElementType() reflect.Type {
@@ -23788,12 +20487,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -23829,12 +20522,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
@@ -23912,12 +20599,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeArgs) ToGetGuard
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetResponderRecipeOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetResponderRecipe] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetResponderRecipe]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetResponderRecipeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetsTargetCollectionItemTargetResponderRecipeArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetResponderRecipeArray and GetGuardTargetsTargetCollectionItemTargetResponderRecipeArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetResponderRecipeArrayInput` via:
 //
@@ -23943,12 +20624,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeArray) ToGetGuar
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetResponderRecipeArrayOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetResponderRecipe] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetResponderRecipe]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetResponderRecipeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipeOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetsTargetCollectionItemTargetResponderRecipeOutput) ElementType() reflect.Type {
@@ -23961,12 +20636,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeOutput) ToGetGua
 
 func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeOutput) ToGetGuardTargetsTargetCollectionItemTargetResponderRecipeOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetResponderRecipeOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetResponderRecipe] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetResponderRecipe]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -24035,12 +20704,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeArrayOutput) ToG
 
 func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetResponderRecipeArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetResponderRecipeArrayOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetResponderRecipe] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetResponderRecipe]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemTargetResponderRecipeOutput {
@@ -24126,12 +20789,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveRespond
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRule] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRule]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleArray and GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleArrayInput` via:
 //
@@ -24157,12 +20814,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveRespond
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleArrayOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRule] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRule]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleOutput) ElementType() reflect.Type {
@@ -24175,12 +20826,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveRespond
 
 func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleOutput) ToGetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRule] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -24281,12 +20926,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveRespond
 	return o
 }
 
-func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRule] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRule {
 		return vs[0].([]GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRule)[vs[1].(int)]
@@ -24338,12 +20977,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveRespond
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetail] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetail]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailArray and GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailArrayInput` via:
 //
@@ -24369,12 +21002,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveRespond
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailArrayOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetail] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetail]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailOutput) ElementType() reflect.Type {
@@ -24387,12 +21014,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveRespond
 
 func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailOutput) ToGetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetail] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Base condition object
@@ -24435,12 +21056,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveRespond
 
 func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailArrayOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetail] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailOutput {
@@ -24490,12 +21105,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveRespond
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfiguration] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfiguration]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArray and GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayInput` via:
 //
@@ -24521,12 +21130,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveRespond
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfiguration] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfiguration]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput) ElementType() reflect.Type {
@@ -24539,12 +21142,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveRespond
 
 func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput) ToGetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfiguration] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique name of the configuration
@@ -24580,12 +21177,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveRespond
 
 func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfiguration] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput {
@@ -24671,12 +21262,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleArg
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRule] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRule]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleArray and GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleArrayInput` via:
 //
@@ -24702,12 +21287,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleArrayOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRule] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRule]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleOutput) ElementType() reflect.Type {
@@ -24720,12 +21299,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleOut
 
 func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleOutput) ToGetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRule] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -24822,12 +21395,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleArr
 	return o
 }
 
-func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRule] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRule {
 		return vs[0].([]GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRule)[vs[1].(int)]
@@ -24879,12 +21446,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDet
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetail] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetail]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailArray and GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailArrayInput` via:
 //
@@ -24910,12 +21471,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDet
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailArrayOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetail] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetail]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailOutput) ElementType() reflect.Type {
@@ -24928,12 +21483,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDet
 
 func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailOutput) ToGetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetail] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Base condition object
@@ -24976,12 +21525,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDet
 
 func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailArrayOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetail] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailOutput {
@@ -25031,12 +21574,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDet
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfiguration] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfiguration]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationArray and GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationArrayInput` via:
 //
@@ -25062,12 +21599,6 @@ func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDet
 	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationArrayOutput)
 }
 
-func (i GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfiguration] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfiguration]{
-		OutputState: i.ToGetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationOutput) ElementType() reflect.Type {
@@ -25080,12 +21611,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDet
 
 func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationOutput) ToGetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfiguration] {
-	return pulumix.Output[GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique name of the configuration
@@ -25121,12 +21646,6 @@ func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDet
 
 func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationArrayOutput {
 	return o
-}
-
-func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfiguration] {
-	return pulumix.Output[[]GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationOutput {
@@ -25170,12 +21689,6 @@ func (i GetManagedListsFilterArgs) ToGetManagedListsFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedListsFilterOutput)
 }
 
-func (i GetManagedListsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedListsFilter] {
-	return pulumix.Output[GetManagedListsFilter]{
-		OutputState: i.ToGetManagedListsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagedListsFilterArrayInput is an input type that accepts GetManagedListsFilterArray and GetManagedListsFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedListsFilterArrayInput` via:
 //
@@ -25201,12 +21714,6 @@ func (i GetManagedListsFilterArray) ToGetManagedListsFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedListsFilterArrayOutput)
 }
 
-func (i GetManagedListsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedListsFilter] {
-	return pulumix.Output[[]GetManagedListsFilter]{
-		OutputState: i.ToGetManagedListsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedListsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetManagedListsFilterOutput) ElementType() reflect.Type {
@@ -25219,12 +21726,6 @@ func (o GetManagedListsFilterOutput) ToGetManagedListsFilterOutput() GetManagedL
 
 func (o GetManagedListsFilterOutput) ToGetManagedListsFilterOutputWithContext(ctx context.Context) GetManagedListsFilterOutput {
 	return o
-}
-
-func (o GetManagedListsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedListsFilter] {
-	return pulumix.Output[GetManagedListsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagedListsFilterOutput) Name() pulumi.StringOutput {
@@ -25251,12 +21752,6 @@ func (o GetManagedListsFilterArrayOutput) ToGetManagedListsFilterArrayOutput() G
 
 func (o GetManagedListsFilterArrayOutput) ToGetManagedListsFilterArrayOutputWithContext(ctx context.Context) GetManagedListsFilterArrayOutput {
 	return o
-}
-
-func (o GetManagedListsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedListsFilter] {
-	return pulumix.Output[[]GetManagedListsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagedListsFilterArrayOutput) Index(i pulumi.IntInput) GetManagedListsFilterOutput {
@@ -25296,12 +21791,6 @@ func (i GetManagedListsManagedListCollectionArgs) ToGetManagedListsManagedListCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedListsManagedListCollectionOutput)
 }
 
-func (i GetManagedListsManagedListCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedListsManagedListCollection] {
-	return pulumix.Output[GetManagedListsManagedListCollection]{
-		OutputState: i.ToGetManagedListsManagedListCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagedListsManagedListCollectionArrayInput is an input type that accepts GetManagedListsManagedListCollectionArray and GetManagedListsManagedListCollectionArrayOutput values.
 // You can construct a concrete instance of `GetManagedListsManagedListCollectionArrayInput` via:
 //
@@ -25327,12 +21816,6 @@ func (i GetManagedListsManagedListCollectionArray) ToGetManagedListsManagedListC
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedListsManagedListCollectionArrayOutput)
 }
 
-func (i GetManagedListsManagedListCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedListsManagedListCollection] {
-	return pulumix.Output[[]GetManagedListsManagedListCollection]{
-		OutputState: i.ToGetManagedListsManagedListCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedListsManagedListCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetManagedListsManagedListCollectionOutput) ElementType() reflect.Type {
@@ -25345,12 +21828,6 @@ func (o GetManagedListsManagedListCollectionOutput) ToGetManagedListsManagedList
 
 func (o GetManagedListsManagedListCollectionOutput) ToGetManagedListsManagedListCollectionOutputWithContext(ctx context.Context) GetManagedListsManagedListCollectionOutput {
 	return o
-}
-
-func (o GetManagedListsManagedListCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedListsManagedListCollection] {
-	return pulumix.Output[GetManagedListsManagedListCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagedListsManagedListCollectionOutput) Items() GetManagedListsManagedListCollectionItemArrayOutput {
@@ -25371,12 +21848,6 @@ func (o GetManagedListsManagedListCollectionArrayOutput) ToGetManagedListsManage
 
 func (o GetManagedListsManagedListCollectionArrayOutput) ToGetManagedListsManagedListCollectionArrayOutputWithContext(ctx context.Context) GetManagedListsManagedListCollectionArrayOutput {
 	return o
-}
-
-func (o GetManagedListsManagedListCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedListsManagedListCollection] {
-	return pulumix.Output[[]GetManagedListsManagedListCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagedListsManagedListCollectionArrayOutput) Index(i pulumi.IntInput) GetManagedListsManagedListCollectionOutput {
@@ -25478,12 +21949,6 @@ func (i GetManagedListsManagedListCollectionItemArgs) ToGetManagedListsManagedLi
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedListsManagedListCollectionItemOutput)
 }
 
-func (i GetManagedListsManagedListCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedListsManagedListCollectionItem] {
-	return pulumix.Output[GetManagedListsManagedListCollectionItem]{
-		OutputState: i.ToGetManagedListsManagedListCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagedListsManagedListCollectionItemArrayInput is an input type that accepts GetManagedListsManagedListCollectionItemArray and GetManagedListsManagedListCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetManagedListsManagedListCollectionItemArrayInput` via:
 //
@@ -25509,12 +21974,6 @@ func (i GetManagedListsManagedListCollectionItemArray) ToGetManagedListsManagedL
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedListsManagedListCollectionItemArrayOutput)
 }
 
-func (i GetManagedListsManagedListCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedListsManagedListCollectionItem] {
-	return pulumix.Output[[]GetManagedListsManagedListCollectionItem]{
-		OutputState: i.ToGetManagedListsManagedListCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedListsManagedListCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetManagedListsManagedListCollectionItemOutput) ElementType() reflect.Type {
@@ -25527,12 +21986,6 @@ func (o GetManagedListsManagedListCollectionItemOutput) ToGetManagedListsManaged
 
 func (o GetManagedListsManagedListCollectionItemOutput) ToGetManagedListsManagedListCollectionItemOutputWithContext(ctx context.Context) GetManagedListsManagedListCollectionItemOutput {
 	return o
-}
-
-func (o GetManagedListsManagedListCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedListsManagedListCollectionItem] {
-	return pulumix.Output[GetManagedListsManagedListCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -25629,12 +22082,6 @@ func (o GetManagedListsManagedListCollectionItemArrayOutput) ToGetManagedListsMa
 	return o
 }
 
-func (o GetManagedListsManagedListCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedListsManagedListCollectionItem] {
-	return pulumix.Output[[]GetManagedListsManagedListCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedListsManagedListCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagedListsManagedListCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedListsManagedListCollectionItem {
 		return vs[0].([]GetManagedListsManagedListCollectionItem)[vs[1].(int)]
@@ -25676,12 +22123,6 @@ func (i GetProblemEntitiesFilterArgs) ToGetProblemEntitiesFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetProblemEntitiesFilterOutput)
 }
 
-func (i GetProblemEntitiesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetProblemEntitiesFilter] {
-	return pulumix.Output[GetProblemEntitiesFilter]{
-		OutputState: i.ToGetProblemEntitiesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProblemEntitiesFilterArrayInput is an input type that accepts GetProblemEntitiesFilterArray and GetProblemEntitiesFilterArrayOutput values.
 // You can construct a concrete instance of `GetProblemEntitiesFilterArrayInput` via:
 //
@@ -25707,12 +22148,6 @@ func (i GetProblemEntitiesFilterArray) ToGetProblemEntitiesFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetProblemEntitiesFilterArrayOutput)
 }
 
-func (i GetProblemEntitiesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProblemEntitiesFilter] {
-	return pulumix.Output[[]GetProblemEntitiesFilter]{
-		OutputState: i.ToGetProblemEntitiesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProblemEntitiesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetProblemEntitiesFilterOutput) ElementType() reflect.Type {
@@ -25725,12 +22160,6 @@ func (o GetProblemEntitiesFilterOutput) ToGetProblemEntitiesFilterOutput() GetPr
 
 func (o GetProblemEntitiesFilterOutput) ToGetProblemEntitiesFilterOutputWithContext(ctx context.Context) GetProblemEntitiesFilterOutput {
 	return o
-}
-
-func (o GetProblemEntitiesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetProblemEntitiesFilter] {
-	return pulumix.Output[GetProblemEntitiesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProblemEntitiesFilterOutput) Name() pulumi.StringOutput {
@@ -25757,12 +22186,6 @@ func (o GetProblemEntitiesFilterArrayOutput) ToGetProblemEntitiesFilterArrayOutp
 
 func (o GetProblemEntitiesFilterArrayOutput) ToGetProblemEntitiesFilterArrayOutputWithContext(ctx context.Context) GetProblemEntitiesFilterArrayOutput {
 	return o
-}
-
-func (o GetProblemEntitiesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProblemEntitiesFilter] {
-	return pulumix.Output[[]GetProblemEntitiesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProblemEntitiesFilterArrayOutput) Index(i pulumi.IntInput) GetProblemEntitiesFilterOutput {
@@ -25804,12 +22227,6 @@ func (i GetProblemEntitiesProblemEntityCollectionArgs) ToGetProblemEntitiesProbl
 	return pulumi.ToOutputWithContext(ctx, i).(GetProblemEntitiesProblemEntityCollectionOutput)
 }
 
-func (i GetProblemEntitiesProblemEntityCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetProblemEntitiesProblemEntityCollection] {
-	return pulumix.Output[GetProblemEntitiesProblemEntityCollection]{
-		OutputState: i.ToGetProblemEntitiesProblemEntityCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProblemEntitiesProblemEntityCollectionArrayInput is an input type that accepts GetProblemEntitiesProblemEntityCollectionArray and GetProblemEntitiesProblemEntityCollectionArrayOutput values.
 // You can construct a concrete instance of `GetProblemEntitiesProblemEntityCollectionArrayInput` via:
 //
@@ -25835,12 +22252,6 @@ func (i GetProblemEntitiesProblemEntityCollectionArray) ToGetProblemEntitiesProb
 	return pulumi.ToOutputWithContext(ctx, i).(GetProblemEntitiesProblemEntityCollectionArrayOutput)
 }
 
-func (i GetProblemEntitiesProblemEntityCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProblemEntitiesProblemEntityCollection] {
-	return pulumix.Output[[]GetProblemEntitiesProblemEntityCollection]{
-		OutputState: i.ToGetProblemEntitiesProblemEntityCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProblemEntitiesProblemEntityCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetProblemEntitiesProblemEntityCollectionOutput) ElementType() reflect.Type {
@@ -25853,12 +22264,6 @@ func (o GetProblemEntitiesProblemEntityCollectionOutput) ToGetProblemEntitiesPro
 
 func (o GetProblemEntitiesProblemEntityCollectionOutput) ToGetProblemEntitiesProblemEntityCollectionOutputWithContext(ctx context.Context) GetProblemEntitiesProblemEntityCollectionOutput {
 	return o
-}
-
-func (o GetProblemEntitiesProblemEntityCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetProblemEntitiesProblemEntityCollection] {
-	return pulumix.Output[GetProblemEntitiesProblemEntityCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of problem entities summaries related to a data source.
@@ -25880,12 +22285,6 @@ func (o GetProblemEntitiesProblemEntityCollectionArrayOutput) ToGetProblemEntiti
 
 func (o GetProblemEntitiesProblemEntityCollectionArrayOutput) ToGetProblemEntitiesProblemEntityCollectionArrayOutputWithContext(ctx context.Context) GetProblemEntitiesProblemEntityCollectionArrayOutput {
 	return o
-}
-
-func (o GetProblemEntitiesProblemEntityCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProblemEntitiesProblemEntityCollection] {
-	return pulumix.Output[[]GetProblemEntitiesProblemEntityCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProblemEntitiesProblemEntityCollectionArrayOutput) Index(i pulumi.IntInput) GetProblemEntitiesProblemEntityCollectionOutput {
@@ -25947,12 +22346,6 @@ func (i GetProblemEntitiesProblemEntityCollectionItemArgs) ToGetProblemEntitiesP
 	return pulumi.ToOutputWithContext(ctx, i).(GetProblemEntitiesProblemEntityCollectionItemOutput)
 }
 
-func (i GetProblemEntitiesProblemEntityCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetProblemEntitiesProblemEntityCollectionItem] {
-	return pulumix.Output[GetProblemEntitiesProblemEntityCollectionItem]{
-		OutputState: i.ToGetProblemEntitiesProblemEntityCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProblemEntitiesProblemEntityCollectionItemArrayInput is an input type that accepts GetProblemEntitiesProblemEntityCollectionItemArray and GetProblemEntitiesProblemEntityCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetProblemEntitiesProblemEntityCollectionItemArrayInput` via:
 //
@@ -25978,12 +22371,6 @@ func (i GetProblemEntitiesProblemEntityCollectionItemArray) ToGetProblemEntities
 	return pulumi.ToOutputWithContext(ctx, i).(GetProblemEntitiesProblemEntityCollectionItemArrayOutput)
 }
 
-func (i GetProblemEntitiesProblemEntityCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProblemEntitiesProblemEntityCollectionItem] {
-	return pulumix.Output[[]GetProblemEntitiesProblemEntityCollectionItem]{
-		OutputState: i.ToGetProblemEntitiesProblemEntityCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProblemEntitiesProblemEntityCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetProblemEntitiesProblemEntityCollectionItemOutput) ElementType() reflect.Type {
@@ -25996,12 +22383,6 @@ func (o GetProblemEntitiesProblemEntityCollectionItemOutput) ToGetProblemEntitie
 
 func (o GetProblemEntitiesProblemEntityCollectionItemOutput) ToGetProblemEntitiesProblemEntityCollectionItemOutputWithContext(ctx context.Context) GetProblemEntitiesProblemEntityCollectionItemOutput {
 	return o
-}
-
-func (o GetProblemEntitiesProblemEntityCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetProblemEntitiesProblemEntityCollectionItem] {
-	return pulumix.Output[GetProblemEntitiesProblemEntityCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of event related to a DataSource
@@ -26048,12 +22429,6 @@ func (o GetProblemEntitiesProblemEntityCollectionItemArrayOutput) ToGetProblemEn
 
 func (o GetProblemEntitiesProblemEntityCollectionItemArrayOutput) ToGetProblemEntitiesProblemEntityCollectionItemArrayOutputWithContext(ctx context.Context) GetProblemEntitiesProblemEntityCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetProblemEntitiesProblemEntityCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProblemEntitiesProblemEntityCollectionItem] {
-	return pulumix.Output[[]GetProblemEntitiesProblemEntityCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProblemEntitiesProblemEntityCollectionItemArrayOutput) Index(i pulumi.IntInput) GetProblemEntitiesProblemEntityCollectionItemOutput {
@@ -26103,12 +22478,6 @@ func (i GetProblemEntitiesProblemEntityCollectionItemEntityDetailArgs) ToGetProb
 	return pulumi.ToOutputWithContext(ctx, i).(GetProblemEntitiesProblemEntityCollectionItemEntityDetailOutput)
 }
 
-func (i GetProblemEntitiesProblemEntityCollectionItemEntityDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetProblemEntitiesProblemEntityCollectionItemEntityDetail] {
-	return pulumix.Output[GetProblemEntitiesProblemEntityCollectionItemEntityDetail]{
-		OutputState: i.ToGetProblemEntitiesProblemEntityCollectionItemEntityDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayInput is an input type that accepts GetProblemEntitiesProblemEntityCollectionItemEntityDetailArray and GetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayOutput values.
 // You can construct a concrete instance of `GetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayInput` via:
 //
@@ -26134,12 +22503,6 @@ func (i GetProblemEntitiesProblemEntityCollectionItemEntityDetailArray) ToGetPro
 	return pulumi.ToOutputWithContext(ctx, i).(GetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayOutput)
 }
 
-func (i GetProblemEntitiesProblemEntityCollectionItemEntityDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProblemEntitiesProblemEntityCollectionItemEntityDetail] {
-	return pulumix.Output[[]GetProblemEntitiesProblemEntityCollectionItemEntityDetail]{
-		OutputState: i.ToGetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProblemEntitiesProblemEntityCollectionItemEntityDetailOutput struct{ *pulumi.OutputState }
 
 func (GetProblemEntitiesProblemEntityCollectionItemEntityDetailOutput) ElementType() reflect.Type {
@@ -26152,12 +22515,6 @@ func (o GetProblemEntitiesProblemEntityCollectionItemEntityDetailOutput) ToGetPr
 
 func (o GetProblemEntitiesProblemEntityCollectionItemEntityDetailOutput) ToGetProblemEntitiesProblemEntityCollectionItemEntityDetailOutputWithContext(ctx context.Context) GetProblemEntitiesProblemEntityCollectionItemEntityDetailOutput {
 	return o
-}
-
-func (o GetProblemEntitiesProblemEntityCollectionItemEntityDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetProblemEntitiesProblemEntityCollectionItemEntityDetail] {
-	return pulumix.Output[GetProblemEntitiesProblemEntityCollectionItemEntityDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The display name of entity
@@ -26187,12 +22544,6 @@ func (o GetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayOutput) To
 
 func (o GetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayOutput) ToGetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayOutputWithContext(ctx context.Context) GetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayOutput {
 	return o
-}
-
-func (o GetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProblemEntitiesProblemEntityCollectionItemEntityDetail] {
-	return pulumix.Output[[]GetProblemEntitiesProblemEntityCollectionItemEntityDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayOutput) Index(i pulumi.IntInput) GetProblemEntitiesProblemEntityCollectionItemEntityDetailOutput {
@@ -26254,12 +22605,6 @@ func (i GetProblemEntityItemArgs) ToGetProblemEntityItemOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetProblemEntityItemOutput)
 }
 
-func (i GetProblemEntityItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetProblemEntityItem] {
-	return pulumix.Output[GetProblemEntityItem]{
-		OutputState: i.ToGetProblemEntityItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProblemEntityItemArrayInput is an input type that accepts GetProblemEntityItemArray and GetProblemEntityItemArrayOutput values.
 // You can construct a concrete instance of `GetProblemEntityItemArrayInput` via:
 //
@@ -26285,12 +22630,6 @@ func (i GetProblemEntityItemArray) ToGetProblemEntityItemArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetProblemEntityItemArrayOutput)
 }
 
-func (i GetProblemEntityItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProblemEntityItem] {
-	return pulumix.Output[[]GetProblemEntityItem]{
-		OutputState: i.ToGetProblemEntityItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProblemEntityItemOutput struct{ *pulumi.OutputState }
 
 func (GetProblemEntityItemOutput) ElementType() reflect.Type {
@@ -26303,12 +22642,6 @@ func (o GetProblemEntityItemOutput) ToGetProblemEntityItemOutput() GetProblemEnt
 
 func (o GetProblemEntityItemOutput) ToGetProblemEntityItemOutputWithContext(ctx context.Context) GetProblemEntityItemOutput {
 	return o
-}
-
-func (o GetProblemEntityItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetProblemEntityItem] {
-	return pulumix.Output[GetProblemEntityItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of event related to a DataSource
@@ -26353,12 +22686,6 @@ func (o GetProblemEntityItemArrayOutput) ToGetProblemEntityItemArrayOutput() Get
 
 func (o GetProblemEntityItemArrayOutput) ToGetProblemEntityItemArrayOutputWithContext(ctx context.Context) GetProblemEntityItemArrayOutput {
 	return o
-}
-
-func (o GetProblemEntityItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProblemEntityItem] {
-	return pulumix.Output[[]GetProblemEntityItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProblemEntityItemArrayOutput) Index(i pulumi.IntInput) GetProblemEntityItemOutput {
@@ -26408,12 +22735,6 @@ func (i GetProblemEntityItemEntityDetailArgs) ToGetProblemEntityItemEntityDetail
 	return pulumi.ToOutputWithContext(ctx, i).(GetProblemEntityItemEntityDetailOutput)
 }
 
-func (i GetProblemEntityItemEntityDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetProblemEntityItemEntityDetail] {
-	return pulumix.Output[GetProblemEntityItemEntityDetail]{
-		OutputState: i.ToGetProblemEntityItemEntityDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProblemEntityItemEntityDetailArrayInput is an input type that accepts GetProblemEntityItemEntityDetailArray and GetProblemEntityItemEntityDetailArrayOutput values.
 // You can construct a concrete instance of `GetProblemEntityItemEntityDetailArrayInput` via:
 //
@@ -26439,12 +22760,6 @@ func (i GetProblemEntityItemEntityDetailArray) ToGetProblemEntityItemEntityDetai
 	return pulumi.ToOutputWithContext(ctx, i).(GetProblemEntityItemEntityDetailArrayOutput)
 }
 
-func (i GetProblemEntityItemEntityDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProblemEntityItemEntityDetail] {
-	return pulumix.Output[[]GetProblemEntityItemEntityDetail]{
-		OutputState: i.ToGetProblemEntityItemEntityDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProblemEntityItemEntityDetailOutput struct{ *pulumi.OutputState }
 
 func (GetProblemEntityItemEntityDetailOutput) ElementType() reflect.Type {
@@ -26457,12 +22772,6 @@ func (o GetProblemEntityItemEntityDetailOutput) ToGetProblemEntityItemEntityDeta
 
 func (o GetProblemEntityItemEntityDetailOutput) ToGetProblemEntityItemEntityDetailOutputWithContext(ctx context.Context) GetProblemEntityItemEntityDetailOutput {
 	return o
-}
-
-func (o GetProblemEntityItemEntityDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetProblemEntityItemEntityDetail] {
-	return pulumix.Output[GetProblemEntityItemEntityDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The display name of entity
@@ -26492,12 +22801,6 @@ func (o GetProblemEntityItemEntityDetailArrayOutput) ToGetProblemEntityItemEntit
 
 func (o GetProblemEntityItemEntityDetailArrayOutput) ToGetProblemEntityItemEntityDetailArrayOutputWithContext(ctx context.Context) GetProblemEntityItemEntityDetailArrayOutput {
 	return o
-}
-
-func (o GetProblemEntityItemEntityDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProblemEntityItemEntityDetail] {
-	return pulumix.Output[[]GetProblemEntityItemEntityDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProblemEntityItemEntityDetailArrayOutput) Index(i pulumi.IntInput) GetProblemEntityItemEntityDetailOutput {
@@ -26583,12 +22886,6 @@ func (i GetResponderRecipeEffectiveResponderRuleArgs) ToGetResponderRecipeEffect
 	return pulumi.ToOutputWithContext(ctx, i).(GetResponderRecipeEffectiveResponderRuleOutput)
 }
 
-func (i GetResponderRecipeEffectiveResponderRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetResponderRecipeEffectiveResponderRule] {
-	return pulumix.Output[GetResponderRecipeEffectiveResponderRule]{
-		OutputState: i.ToGetResponderRecipeEffectiveResponderRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetResponderRecipeEffectiveResponderRuleArrayInput is an input type that accepts GetResponderRecipeEffectiveResponderRuleArray and GetResponderRecipeEffectiveResponderRuleArrayOutput values.
 // You can construct a concrete instance of `GetResponderRecipeEffectiveResponderRuleArrayInput` via:
 //
@@ -26614,12 +22911,6 @@ func (i GetResponderRecipeEffectiveResponderRuleArray) ToGetResponderRecipeEffec
 	return pulumi.ToOutputWithContext(ctx, i).(GetResponderRecipeEffectiveResponderRuleArrayOutput)
 }
 
-func (i GetResponderRecipeEffectiveResponderRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResponderRecipeEffectiveResponderRule] {
-	return pulumix.Output[[]GetResponderRecipeEffectiveResponderRule]{
-		OutputState: i.ToGetResponderRecipeEffectiveResponderRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResponderRecipeEffectiveResponderRuleOutput struct{ *pulumi.OutputState }
 
 func (GetResponderRecipeEffectiveResponderRuleOutput) ElementType() reflect.Type {
@@ -26632,12 +22923,6 @@ func (o GetResponderRecipeEffectiveResponderRuleOutput) ToGetResponderRecipeEffe
 
 func (o GetResponderRecipeEffectiveResponderRuleOutput) ToGetResponderRecipeEffectiveResponderRuleOutputWithContext(ctx context.Context) GetResponderRecipeEffectiveResponderRuleOutput {
 	return o
-}
-
-func (o GetResponderRecipeEffectiveResponderRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetResponderRecipeEffectiveResponderRule] {
-	return pulumix.Output[GetResponderRecipeEffectiveResponderRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier
@@ -26716,12 +23001,6 @@ func (o GetResponderRecipeEffectiveResponderRuleArrayOutput) ToGetResponderRecip
 	return o
 }
 
-func (o GetResponderRecipeEffectiveResponderRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResponderRecipeEffectiveResponderRule] {
-	return pulumix.Output[[]GetResponderRecipeEffectiveResponderRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetResponderRecipeEffectiveResponderRuleArrayOutput) Index(i pulumi.IntInput) GetResponderRecipeEffectiveResponderRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResponderRecipeEffectiveResponderRule {
 		return vs[0].([]GetResponderRecipeEffectiveResponderRule)[vs[1].(int)]
@@ -26773,12 +23052,6 @@ func (i GetResponderRecipeEffectiveResponderRuleDetailArgs) ToGetResponderRecipe
 	return pulumi.ToOutputWithContext(ctx, i).(GetResponderRecipeEffectiveResponderRuleDetailOutput)
 }
 
-func (i GetResponderRecipeEffectiveResponderRuleDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetResponderRecipeEffectiveResponderRuleDetail] {
-	return pulumix.Output[GetResponderRecipeEffectiveResponderRuleDetail]{
-		OutputState: i.ToGetResponderRecipeEffectiveResponderRuleDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetResponderRecipeEffectiveResponderRuleDetailArrayInput is an input type that accepts GetResponderRecipeEffectiveResponderRuleDetailArray and GetResponderRecipeEffectiveResponderRuleDetailArrayOutput values.
 // You can construct a concrete instance of `GetResponderRecipeEffectiveResponderRuleDetailArrayInput` via:
 //
@@ -26804,12 +23077,6 @@ func (i GetResponderRecipeEffectiveResponderRuleDetailArray) ToGetResponderRecip
 	return pulumi.ToOutputWithContext(ctx, i).(GetResponderRecipeEffectiveResponderRuleDetailArrayOutput)
 }
 
-func (i GetResponderRecipeEffectiveResponderRuleDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResponderRecipeEffectiveResponderRuleDetail] {
-	return pulumix.Output[[]GetResponderRecipeEffectiveResponderRuleDetail]{
-		OutputState: i.ToGetResponderRecipeEffectiveResponderRuleDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResponderRecipeEffectiveResponderRuleDetailOutput struct{ *pulumi.OutputState }
 
 func (GetResponderRecipeEffectiveResponderRuleDetailOutput) ElementType() reflect.Type {
@@ -26822,12 +23089,6 @@ func (o GetResponderRecipeEffectiveResponderRuleDetailOutput) ToGetResponderReci
 
 func (o GetResponderRecipeEffectiveResponderRuleDetailOutput) ToGetResponderRecipeEffectiveResponderRuleDetailOutputWithContext(ctx context.Context) GetResponderRecipeEffectiveResponderRuleDetailOutput {
 	return o
-}
-
-func (o GetResponderRecipeEffectiveResponderRuleDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetResponderRecipeEffectiveResponderRuleDetail] {
-	return pulumix.Output[GetResponderRecipeEffectiveResponderRuleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Base condition object
@@ -26864,12 +23125,6 @@ func (o GetResponderRecipeEffectiveResponderRuleDetailArrayOutput) ToGetResponde
 
 func (o GetResponderRecipeEffectiveResponderRuleDetailArrayOutput) ToGetResponderRecipeEffectiveResponderRuleDetailArrayOutputWithContext(ctx context.Context) GetResponderRecipeEffectiveResponderRuleDetailArrayOutput {
 	return o
-}
-
-func (o GetResponderRecipeEffectiveResponderRuleDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResponderRecipeEffectiveResponderRuleDetail] {
-	return pulumix.Output[[]GetResponderRecipeEffectiveResponderRuleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetResponderRecipeEffectiveResponderRuleDetailArrayOutput) Index(i pulumi.IntInput) GetResponderRecipeEffectiveResponderRuleDetailOutput {
@@ -26919,12 +23174,6 @@ func (i GetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs) ToGetRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput)
 }
 
-func (i GetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetResponderRecipeEffectiveResponderRuleDetailConfiguration] {
-	return pulumix.Output[GetResponderRecipeEffectiveResponderRuleDetailConfiguration]{
-		OutputState: i.ToGetResponderRecipeEffectiveResponderRuleDetailConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayInput is an input type that accepts GetResponderRecipeEffectiveResponderRuleDetailConfigurationArray and GetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayInput` via:
 //
@@ -26950,12 +23199,6 @@ func (i GetResponderRecipeEffectiveResponderRuleDetailConfigurationArray) ToGetR
 	return pulumi.ToOutputWithContext(ctx, i).(GetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput)
 }
 
-func (i GetResponderRecipeEffectiveResponderRuleDetailConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResponderRecipeEffectiveResponderRuleDetailConfiguration] {
-	return pulumix.Output[[]GetResponderRecipeEffectiveResponderRuleDetailConfiguration]{
-		OutputState: i.ToGetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput) ElementType() reflect.Type {
@@ -26968,12 +23211,6 @@ func (o GetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput) ToGet
 
 func (o GetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput) ToGetResponderRecipeEffectiveResponderRuleDetailConfigurationOutputWithContext(ctx context.Context) GetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput {
 	return o
-}
-
-func (o GetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetResponderRecipeEffectiveResponderRuleDetailConfiguration] {
-	return pulumix.Output[GetResponderRecipeEffectiveResponderRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique name of the configuration
@@ -27003,12 +23240,6 @@ func (o GetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput) 
 
 func (o GetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput) ToGetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutputWithContext(ctx context.Context) GetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput {
 	return o
-}
-
-func (o GetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResponderRecipeEffectiveResponderRuleDetailConfiguration] {
-	return pulumix.Output[[]GetResponderRecipeEffectiveResponderRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput) Index(i pulumi.IntInput) GetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput {
@@ -27094,12 +23325,6 @@ func (i GetResponderRecipeResponderRuleArgs) ToGetResponderRecipeResponderRuleOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetResponderRecipeResponderRuleOutput)
 }
 
-func (i GetResponderRecipeResponderRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetResponderRecipeResponderRule] {
-	return pulumix.Output[GetResponderRecipeResponderRule]{
-		OutputState: i.ToGetResponderRecipeResponderRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetResponderRecipeResponderRuleArrayInput is an input type that accepts GetResponderRecipeResponderRuleArray and GetResponderRecipeResponderRuleArrayOutput values.
 // You can construct a concrete instance of `GetResponderRecipeResponderRuleArrayInput` via:
 //
@@ -27125,12 +23350,6 @@ func (i GetResponderRecipeResponderRuleArray) ToGetResponderRecipeResponderRuleA
 	return pulumi.ToOutputWithContext(ctx, i).(GetResponderRecipeResponderRuleArrayOutput)
 }
 
-func (i GetResponderRecipeResponderRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResponderRecipeResponderRule] {
-	return pulumix.Output[[]GetResponderRecipeResponderRule]{
-		OutputState: i.ToGetResponderRecipeResponderRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResponderRecipeResponderRuleOutput struct{ *pulumi.OutputState }
 
 func (GetResponderRecipeResponderRuleOutput) ElementType() reflect.Type {
@@ -27143,12 +23362,6 @@ func (o GetResponderRecipeResponderRuleOutput) ToGetResponderRecipeResponderRule
 
 func (o GetResponderRecipeResponderRuleOutput) ToGetResponderRecipeResponderRuleOutputWithContext(ctx context.Context) GetResponderRecipeResponderRuleOutput {
 	return o
-}
-
-func (o GetResponderRecipeResponderRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetResponderRecipeResponderRule] {
-	return pulumix.Output[GetResponderRecipeResponderRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier
@@ -27225,12 +23438,6 @@ func (o GetResponderRecipeResponderRuleArrayOutput) ToGetResponderRecipeResponde
 	return o
 }
 
-func (o GetResponderRecipeResponderRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResponderRecipeResponderRule] {
-	return pulumix.Output[[]GetResponderRecipeResponderRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetResponderRecipeResponderRuleArrayOutput) Index(i pulumi.IntInput) GetResponderRecipeResponderRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResponderRecipeResponderRule {
 		return vs[0].([]GetResponderRecipeResponderRule)[vs[1].(int)]
@@ -27282,12 +23489,6 @@ func (i GetResponderRecipeResponderRuleDetailArgs) ToGetResponderRecipeResponder
 	return pulumi.ToOutputWithContext(ctx, i).(GetResponderRecipeResponderRuleDetailOutput)
 }
 
-func (i GetResponderRecipeResponderRuleDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetResponderRecipeResponderRuleDetail] {
-	return pulumix.Output[GetResponderRecipeResponderRuleDetail]{
-		OutputState: i.ToGetResponderRecipeResponderRuleDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetResponderRecipeResponderRuleDetailArrayInput is an input type that accepts GetResponderRecipeResponderRuleDetailArray and GetResponderRecipeResponderRuleDetailArrayOutput values.
 // You can construct a concrete instance of `GetResponderRecipeResponderRuleDetailArrayInput` via:
 //
@@ -27313,12 +23514,6 @@ func (i GetResponderRecipeResponderRuleDetailArray) ToGetResponderRecipeResponde
 	return pulumi.ToOutputWithContext(ctx, i).(GetResponderRecipeResponderRuleDetailArrayOutput)
 }
 
-func (i GetResponderRecipeResponderRuleDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResponderRecipeResponderRuleDetail] {
-	return pulumix.Output[[]GetResponderRecipeResponderRuleDetail]{
-		OutputState: i.ToGetResponderRecipeResponderRuleDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResponderRecipeResponderRuleDetailOutput struct{ *pulumi.OutputState }
 
 func (GetResponderRecipeResponderRuleDetailOutput) ElementType() reflect.Type {
@@ -27331,12 +23526,6 @@ func (o GetResponderRecipeResponderRuleDetailOutput) ToGetResponderRecipeRespond
 
 func (o GetResponderRecipeResponderRuleDetailOutput) ToGetResponderRecipeResponderRuleDetailOutputWithContext(ctx context.Context) GetResponderRecipeResponderRuleDetailOutput {
 	return o
-}
-
-func (o GetResponderRecipeResponderRuleDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetResponderRecipeResponderRuleDetail] {
-	return pulumix.Output[GetResponderRecipeResponderRuleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Base condition object
@@ -27373,12 +23562,6 @@ func (o GetResponderRecipeResponderRuleDetailArrayOutput) ToGetResponderRecipeRe
 
 func (o GetResponderRecipeResponderRuleDetailArrayOutput) ToGetResponderRecipeResponderRuleDetailArrayOutputWithContext(ctx context.Context) GetResponderRecipeResponderRuleDetailArrayOutput {
 	return o
-}
-
-func (o GetResponderRecipeResponderRuleDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResponderRecipeResponderRuleDetail] {
-	return pulumix.Output[[]GetResponderRecipeResponderRuleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetResponderRecipeResponderRuleDetailArrayOutput) Index(i pulumi.IntInput) GetResponderRecipeResponderRuleDetailOutput {
@@ -27428,12 +23611,6 @@ func (i GetResponderRecipeResponderRuleDetailConfigurationArgs) ToGetResponderRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetResponderRecipeResponderRuleDetailConfigurationOutput)
 }
 
-func (i GetResponderRecipeResponderRuleDetailConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetResponderRecipeResponderRuleDetailConfiguration] {
-	return pulumix.Output[GetResponderRecipeResponderRuleDetailConfiguration]{
-		OutputState: i.ToGetResponderRecipeResponderRuleDetailConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetResponderRecipeResponderRuleDetailConfigurationArrayInput is an input type that accepts GetResponderRecipeResponderRuleDetailConfigurationArray and GetResponderRecipeResponderRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetResponderRecipeResponderRuleDetailConfigurationArrayInput` via:
 //
@@ -27459,12 +23636,6 @@ func (i GetResponderRecipeResponderRuleDetailConfigurationArray) ToGetResponderR
 	return pulumi.ToOutputWithContext(ctx, i).(GetResponderRecipeResponderRuleDetailConfigurationArrayOutput)
 }
 
-func (i GetResponderRecipeResponderRuleDetailConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResponderRecipeResponderRuleDetailConfiguration] {
-	return pulumix.Output[[]GetResponderRecipeResponderRuleDetailConfiguration]{
-		OutputState: i.ToGetResponderRecipeResponderRuleDetailConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResponderRecipeResponderRuleDetailConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetResponderRecipeResponderRuleDetailConfigurationOutput) ElementType() reflect.Type {
@@ -27477,12 +23648,6 @@ func (o GetResponderRecipeResponderRuleDetailConfigurationOutput) ToGetResponder
 
 func (o GetResponderRecipeResponderRuleDetailConfigurationOutput) ToGetResponderRecipeResponderRuleDetailConfigurationOutputWithContext(ctx context.Context) GetResponderRecipeResponderRuleDetailConfigurationOutput {
 	return o
-}
-
-func (o GetResponderRecipeResponderRuleDetailConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetResponderRecipeResponderRuleDetailConfiguration] {
-	return pulumix.Output[GetResponderRecipeResponderRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique name of the configuration
@@ -27512,12 +23677,6 @@ func (o GetResponderRecipeResponderRuleDetailConfigurationArrayOutput) ToGetResp
 
 func (o GetResponderRecipeResponderRuleDetailConfigurationArrayOutput) ToGetResponderRecipeResponderRuleDetailConfigurationArrayOutputWithContext(ctx context.Context) GetResponderRecipeResponderRuleDetailConfigurationArrayOutput {
 	return o
-}
-
-func (o GetResponderRecipeResponderRuleDetailConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResponderRecipeResponderRuleDetailConfiguration] {
-	return pulumix.Output[[]GetResponderRecipeResponderRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetResponderRecipeResponderRuleDetailConfigurationArrayOutput) Index(i pulumi.IntInput) GetResponderRecipeResponderRuleDetailConfigurationOutput {
@@ -27563,12 +23722,6 @@ func (i GetResponderRecipesFilterArgs) ToGetResponderRecipesFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetResponderRecipesFilterOutput)
 }
 
-func (i GetResponderRecipesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetResponderRecipesFilter] {
-	return pulumix.Output[GetResponderRecipesFilter]{
-		OutputState: i.ToGetResponderRecipesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetResponderRecipesFilterArrayInput is an input type that accepts GetResponderRecipesFilterArray and GetResponderRecipesFilterArrayOutput values.
 // You can construct a concrete instance of `GetResponderRecipesFilterArrayInput` via:
 //
@@ -27594,12 +23747,6 @@ func (i GetResponderRecipesFilterArray) ToGetResponderRecipesFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetResponderRecipesFilterArrayOutput)
 }
 
-func (i GetResponderRecipesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResponderRecipesFilter] {
-	return pulumix.Output[[]GetResponderRecipesFilter]{
-		OutputState: i.ToGetResponderRecipesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResponderRecipesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetResponderRecipesFilterOutput) ElementType() reflect.Type {
@@ -27612,12 +23759,6 @@ func (o GetResponderRecipesFilterOutput) ToGetResponderRecipesFilterOutput() Get
 
 func (o GetResponderRecipesFilterOutput) ToGetResponderRecipesFilterOutputWithContext(ctx context.Context) GetResponderRecipesFilterOutput {
 	return o
-}
-
-func (o GetResponderRecipesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetResponderRecipesFilter] {
-	return pulumix.Output[GetResponderRecipesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // configuration name
@@ -27645,12 +23786,6 @@ func (o GetResponderRecipesFilterArrayOutput) ToGetResponderRecipesFilterArrayOu
 
 func (o GetResponderRecipesFilterArrayOutput) ToGetResponderRecipesFilterArrayOutputWithContext(ctx context.Context) GetResponderRecipesFilterArrayOutput {
 	return o
-}
-
-func (o GetResponderRecipesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResponderRecipesFilter] {
-	return pulumix.Output[[]GetResponderRecipesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetResponderRecipesFilterArrayOutput) Index(i pulumi.IntInput) GetResponderRecipesFilterOutput {
@@ -27690,12 +23825,6 @@ func (i GetResponderRecipesResponderRecipeCollectionArgs) ToGetResponderRecipesR
 	return pulumi.ToOutputWithContext(ctx, i).(GetResponderRecipesResponderRecipeCollectionOutput)
 }
 
-func (i GetResponderRecipesResponderRecipeCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetResponderRecipesResponderRecipeCollection] {
-	return pulumix.Output[GetResponderRecipesResponderRecipeCollection]{
-		OutputState: i.ToGetResponderRecipesResponderRecipeCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetResponderRecipesResponderRecipeCollectionArrayInput is an input type that accepts GetResponderRecipesResponderRecipeCollectionArray and GetResponderRecipesResponderRecipeCollectionArrayOutput values.
 // You can construct a concrete instance of `GetResponderRecipesResponderRecipeCollectionArrayInput` via:
 //
@@ -27721,12 +23850,6 @@ func (i GetResponderRecipesResponderRecipeCollectionArray) ToGetResponderRecipes
 	return pulumi.ToOutputWithContext(ctx, i).(GetResponderRecipesResponderRecipeCollectionArrayOutput)
 }
 
-func (i GetResponderRecipesResponderRecipeCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResponderRecipesResponderRecipeCollection] {
-	return pulumix.Output[[]GetResponderRecipesResponderRecipeCollection]{
-		OutputState: i.ToGetResponderRecipesResponderRecipeCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResponderRecipesResponderRecipeCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetResponderRecipesResponderRecipeCollectionOutput) ElementType() reflect.Type {
@@ -27739,12 +23862,6 @@ func (o GetResponderRecipesResponderRecipeCollectionOutput) ToGetResponderRecipe
 
 func (o GetResponderRecipesResponderRecipeCollectionOutput) ToGetResponderRecipesResponderRecipeCollectionOutputWithContext(ctx context.Context) GetResponderRecipesResponderRecipeCollectionOutput {
 	return o
-}
-
-func (o GetResponderRecipesResponderRecipeCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetResponderRecipesResponderRecipeCollection] {
-	return pulumix.Output[GetResponderRecipesResponderRecipeCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetResponderRecipesResponderRecipeCollectionOutput) Items() GetResponderRecipesResponderRecipeCollectionItemArrayOutput {
@@ -27765,12 +23882,6 @@ func (o GetResponderRecipesResponderRecipeCollectionArrayOutput) ToGetResponderR
 
 func (o GetResponderRecipesResponderRecipeCollectionArrayOutput) ToGetResponderRecipesResponderRecipeCollectionArrayOutputWithContext(ctx context.Context) GetResponderRecipesResponderRecipeCollectionArrayOutput {
 	return o
-}
-
-func (o GetResponderRecipesResponderRecipeCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResponderRecipesResponderRecipeCollection] {
-	return pulumix.Output[[]GetResponderRecipesResponderRecipeCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetResponderRecipesResponderRecipeCollectionArrayOutput) Index(i pulumi.IntInput) GetResponderRecipesResponderRecipeCollectionOutput {
@@ -27868,12 +23979,6 @@ func (i GetResponderRecipesResponderRecipeCollectionItemArgs) ToGetResponderReci
 	return pulumi.ToOutputWithContext(ctx, i).(GetResponderRecipesResponderRecipeCollectionItemOutput)
 }
 
-func (i GetResponderRecipesResponderRecipeCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetResponderRecipesResponderRecipeCollectionItem] {
-	return pulumix.Output[GetResponderRecipesResponderRecipeCollectionItem]{
-		OutputState: i.ToGetResponderRecipesResponderRecipeCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetResponderRecipesResponderRecipeCollectionItemArrayInput is an input type that accepts GetResponderRecipesResponderRecipeCollectionItemArray and GetResponderRecipesResponderRecipeCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetResponderRecipesResponderRecipeCollectionItemArrayInput` via:
 //
@@ -27899,12 +24004,6 @@ func (i GetResponderRecipesResponderRecipeCollectionItemArray) ToGetResponderRec
 	return pulumi.ToOutputWithContext(ctx, i).(GetResponderRecipesResponderRecipeCollectionItemArrayOutput)
 }
 
-func (i GetResponderRecipesResponderRecipeCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResponderRecipesResponderRecipeCollectionItem] {
-	return pulumix.Output[[]GetResponderRecipesResponderRecipeCollectionItem]{
-		OutputState: i.ToGetResponderRecipesResponderRecipeCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResponderRecipesResponderRecipeCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetResponderRecipesResponderRecipeCollectionItemOutput) ElementType() reflect.Type {
@@ -27917,12 +24016,6 @@ func (o GetResponderRecipesResponderRecipeCollectionItemOutput) ToGetResponderRe
 
 func (o GetResponderRecipesResponderRecipeCollectionItemOutput) ToGetResponderRecipesResponderRecipeCollectionItemOutputWithContext(ctx context.Context) GetResponderRecipesResponderRecipeCollectionItemOutput {
 	return o
-}
-
-func (o GetResponderRecipesResponderRecipeCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetResponderRecipesResponderRecipeCollectionItem] {
-	return pulumix.Output[GetResponderRecipesResponderRecipeCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -28018,12 +24111,6 @@ func (o GetResponderRecipesResponderRecipeCollectionItemArrayOutput) ToGetRespon
 	return o
 }
 
-func (o GetResponderRecipesResponderRecipeCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResponderRecipesResponderRecipeCollectionItem] {
-	return pulumix.Output[[]GetResponderRecipesResponderRecipeCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetResponderRecipesResponderRecipeCollectionItemArrayOutput) Index(i pulumi.IntInput) GetResponderRecipesResponderRecipeCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResponderRecipesResponderRecipeCollectionItem {
 		return vs[0].([]GetResponderRecipesResponderRecipeCollectionItem)[vs[1].(int)]
@@ -28107,12 +24194,6 @@ func (i GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleOutput)
 }
 
-func (i GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRule] {
-	return pulumix.Output[GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRule]{
-		OutputState: i.ToGetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleArrayInput is an input type that accepts GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleArray and GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleArrayOutput values.
 // You can construct a concrete instance of `GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleArrayInput` via:
 //
@@ -28138,12 +24219,6 @@ func (i GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleArrayOutput)
 }
 
-func (i GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRule] {
-	return pulumix.Output[[]GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRule]{
-		OutputState: i.ToGetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleOutput struct{ *pulumi.OutputState }
 
 func (GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleOutput) ElementType() reflect.Type {
@@ -28156,12 +24231,6 @@ func (o GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleOu
 
 func (o GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleOutput) ToGetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleOutputWithContext(ctx context.Context) GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleOutput {
 	return o
-}
-
-func (o GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRule] {
-	return pulumix.Output[GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -28258,12 +24327,6 @@ func (o GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleAr
 	return o
 }
 
-func (o GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRule] {
-	return pulumix.Output[[]GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleArrayOutput) Index(i pulumi.IntInput) GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRule {
 		return vs[0].([]GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRule)[vs[1].(int)]
@@ -28315,12 +24378,6 @@ func (i GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDe
 	return pulumi.ToOutputWithContext(ctx, i).(GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailOutput)
 }
 
-func (i GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetail] {
-	return pulumix.Output[GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetail]{
-		OutputState: i.ToGetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailArrayInput is an input type that accepts GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailArray and GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailArrayOutput values.
 // You can construct a concrete instance of `GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailArrayInput` via:
 //
@@ -28346,12 +24403,6 @@ func (i GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDe
 	return pulumi.ToOutputWithContext(ctx, i).(GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailArrayOutput)
 }
 
-func (i GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetail] {
-	return pulumix.Output[[]GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetail]{
-		OutputState: i.ToGetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailOutput struct{ *pulumi.OutputState }
 
 func (GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailOutput) ElementType() reflect.Type {
@@ -28364,12 +24415,6 @@ func (o GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDe
 
 func (o GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailOutput) ToGetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailOutputWithContext(ctx context.Context) GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailOutput {
 	return o
-}
-
-func (o GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetail] {
-	return pulumix.Output[GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Base condition object
@@ -28412,12 +24457,6 @@ func (o GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDe
 
 func (o GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailArrayOutput) ToGetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailArrayOutputWithContext(ctx context.Context) GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailArrayOutput {
 	return o
-}
-
-func (o GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetail] {
-	return pulumix.Output[[]GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailArrayOutput) Index(i pulumi.IntInput) GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailOutput {
@@ -28467,12 +24506,6 @@ func (i GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDe
 	return pulumi.ToOutputWithContext(ctx, i).(GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationOutput)
 }
 
-func (i GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfiguration] {
-	return pulumix.Output[GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfiguration]{
-		OutputState: i.ToGetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationArrayInput is an input type that accepts GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationArray and GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationArrayInput` via:
 //
@@ -28498,12 +24531,6 @@ func (i GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDe
 	return pulumi.ToOutputWithContext(ctx, i).(GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationArrayOutput)
 }
 
-func (i GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfiguration] {
-	return pulumix.Output[[]GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfiguration]{
-		OutputState: i.ToGetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationOutput) ElementType() reflect.Type {
@@ -28516,12 +24543,6 @@ func (o GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDe
 
 func (o GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationOutput) ToGetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationOutputWithContext(ctx context.Context) GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationOutput {
 	return o
-}
-
-func (o GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfiguration] {
-	return pulumix.Output[GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique name of the configuration
@@ -28557,12 +24578,6 @@ func (o GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDe
 
 func (o GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationArrayOutput) ToGetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationArrayOutputWithContext(ctx context.Context) GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationArrayOutput {
 	return o
-}
-
-func (o GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfiguration] {
-	return pulumix.Output[[]GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationArrayOutput) Index(i pulumi.IntInput) GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationOutput {
@@ -28648,12 +24663,6 @@ func (i GetResponderRecipesResponderRecipeCollectionItemResponderRuleArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetResponderRecipesResponderRecipeCollectionItemResponderRuleOutput)
 }
 
-func (i GetResponderRecipesResponderRecipeCollectionItemResponderRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetResponderRecipesResponderRecipeCollectionItemResponderRule] {
-	return pulumix.Output[GetResponderRecipesResponderRecipeCollectionItemResponderRule]{
-		OutputState: i.ToGetResponderRecipesResponderRecipeCollectionItemResponderRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetResponderRecipesResponderRecipeCollectionItemResponderRuleArrayInput is an input type that accepts GetResponderRecipesResponderRecipeCollectionItemResponderRuleArray and GetResponderRecipesResponderRecipeCollectionItemResponderRuleArrayOutput values.
 // You can construct a concrete instance of `GetResponderRecipesResponderRecipeCollectionItemResponderRuleArrayInput` via:
 //
@@ -28679,12 +24688,6 @@ func (i GetResponderRecipesResponderRecipeCollectionItemResponderRuleArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetResponderRecipesResponderRecipeCollectionItemResponderRuleArrayOutput)
 }
 
-func (i GetResponderRecipesResponderRecipeCollectionItemResponderRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResponderRecipesResponderRecipeCollectionItemResponderRule] {
-	return pulumix.Output[[]GetResponderRecipesResponderRecipeCollectionItemResponderRule]{
-		OutputState: i.ToGetResponderRecipesResponderRecipeCollectionItemResponderRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResponderRecipesResponderRecipeCollectionItemResponderRuleOutput struct{ *pulumi.OutputState }
 
 func (GetResponderRecipesResponderRecipeCollectionItemResponderRuleOutput) ElementType() reflect.Type {
@@ -28697,12 +24700,6 @@ func (o GetResponderRecipesResponderRecipeCollectionItemResponderRuleOutput) ToG
 
 func (o GetResponderRecipesResponderRecipeCollectionItemResponderRuleOutput) ToGetResponderRecipesResponderRecipeCollectionItemResponderRuleOutputWithContext(ctx context.Context) GetResponderRecipesResponderRecipeCollectionItemResponderRuleOutput {
 	return o
-}
-
-func (o GetResponderRecipesResponderRecipeCollectionItemResponderRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetResponderRecipesResponderRecipeCollectionItemResponderRule] {
-	return pulumix.Output[GetResponderRecipesResponderRecipeCollectionItemResponderRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -28785,12 +24782,6 @@ func (o GetResponderRecipesResponderRecipeCollectionItemResponderRuleArrayOutput
 	return o
 }
 
-func (o GetResponderRecipesResponderRecipeCollectionItemResponderRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResponderRecipesResponderRecipeCollectionItemResponderRule] {
-	return pulumix.Output[[]GetResponderRecipesResponderRecipeCollectionItemResponderRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetResponderRecipesResponderRecipeCollectionItemResponderRuleArrayOutput) Index(i pulumi.IntInput) GetResponderRecipesResponderRecipeCollectionItemResponderRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResponderRecipesResponderRecipeCollectionItemResponderRule {
 		return vs[0].([]GetResponderRecipesResponderRecipeCollectionItemResponderRule)[vs[1].(int)]
@@ -28842,12 +24833,6 @@ func (i GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailOutput)
 }
 
-func (i GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetail] {
-	return pulumix.Output[GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetail]{
-		OutputState: i.ToGetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArrayInput is an input type that accepts GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArray and GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArrayOutput values.
 // You can construct a concrete instance of `GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArrayInput` via:
 //
@@ -28873,12 +24858,6 @@ func (i GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArrayOutput)
 }
 
-func (i GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetail] {
-	return pulumix.Output[[]GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetail]{
-		OutputState: i.ToGetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailOutput struct{ *pulumi.OutputState }
 
 func (GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailOutput) ElementType() reflect.Type {
@@ -28891,12 +24870,6 @@ func (o GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailOutpu
 
 func (o GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailOutput) ToGetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailOutputWithContext(ctx context.Context) GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailOutput {
 	return o
-}
-
-func (o GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetail] {
-	return pulumix.Output[GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Base condition object
@@ -28933,12 +24906,6 @@ func (o GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArray
 
 func (o GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArrayOutput) ToGetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArrayOutputWithContext(ctx context.Context) GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArrayOutput {
 	return o
-}
-
-func (o GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetail] {
-	return pulumix.Output[[]GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailArrayOutput) Index(i pulumi.IntInput) GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailOutput {
@@ -28988,12 +24955,6 @@ func (i GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfi
 	return pulumi.ToOutputWithContext(ctx, i).(GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationOutput)
 }
 
-func (i GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfiguration] {
-	return pulumix.Output[GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfiguration]{
-		OutputState: i.ToGetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationArrayInput is an input type that accepts GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationArray and GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationArrayInput` via:
 //
@@ -29019,12 +24980,6 @@ func (i GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfi
 	return pulumi.ToOutputWithContext(ctx, i).(GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationArrayOutput)
 }
 
-func (i GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfiguration] {
-	return pulumix.Output[[]GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfiguration]{
-		OutputState: i.ToGetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationOutput) ElementType() reflect.Type {
@@ -29037,12 +24992,6 @@ func (o GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfi
 
 func (o GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationOutput) ToGetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationOutputWithContext(ctx context.Context) GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationOutput {
 	return o
-}
-
-func (o GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfiguration] {
-	return pulumix.Output[GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique name of the configuration
@@ -29078,12 +25027,6 @@ func (o GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfi
 
 func (o GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationArrayOutput) ToGetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationArrayOutputWithContext(ctx context.Context) GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationArrayOutput {
 	return o
-}
-
-func (o GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfiguration] {
-	return pulumix.Output[[]GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationArrayOutput) Index(i pulumi.IntInput) GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationOutput {
@@ -29127,12 +25070,6 @@ func (i GetSecurityPoliciesFilterArgs) ToGetSecurityPoliciesFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPoliciesFilterOutput)
 }
 
-func (i GetSecurityPoliciesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPoliciesFilter] {
-	return pulumix.Output[GetSecurityPoliciesFilter]{
-		OutputState: i.ToGetSecurityPoliciesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSecurityPoliciesFilterArrayInput is an input type that accepts GetSecurityPoliciesFilterArray and GetSecurityPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetSecurityPoliciesFilterArrayInput` via:
 //
@@ -29158,12 +25095,6 @@ func (i GetSecurityPoliciesFilterArray) ToGetSecurityPoliciesFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPoliciesFilterArrayOutput)
 }
 
-func (i GetSecurityPoliciesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityPoliciesFilter] {
-	return pulumix.Output[[]GetSecurityPoliciesFilter]{
-		OutputState: i.ToGetSecurityPoliciesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSecurityPoliciesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityPoliciesFilterOutput) ElementType() reflect.Type {
@@ -29176,12 +25107,6 @@ func (o GetSecurityPoliciesFilterOutput) ToGetSecurityPoliciesFilterOutput() Get
 
 func (o GetSecurityPoliciesFilterOutput) ToGetSecurityPoliciesFilterOutputWithContext(ctx context.Context) GetSecurityPoliciesFilterOutput {
 	return o
-}
-
-func (o GetSecurityPoliciesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPoliciesFilter] {
-	return pulumix.Output[GetSecurityPoliciesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSecurityPoliciesFilterOutput) Name() pulumi.StringOutput {
@@ -29208,12 +25133,6 @@ func (o GetSecurityPoliciesFilterArrayOutput) ToGetSecurityPoliciesFilterArrayOu
 
 func (o GetSecurityPoliciesFilterArrayOutput) ToGetSecurityPoliciesFilterArrayOutputWithContext(ctx context.Context) GetSecurityPoliciesFilterArrayOutput {
 	return o
-}
-
-func (o GetSecurityPoliciesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityPoliciesFilter] {
-	return pulumix.Output[[]GetSecurityPoliciesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSecurityPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetSecurityPoliciesFilterOutput {
@@ -29253,12 +25172,6 @@ func (i GetSecurityPoliciesSecurityPolicyCollectionArgs) ToGetSecurityPoliciesSe
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPoliciesSecurityPolicyCollectionOutput)
 }
 
-func (i GetSecurityPoliciesSecurityPolicyCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPoliciesSecurityPolicyCollection] {
-	return pulumix.Output[GetSecurityPoliciesSecurityPolicyCollection]{
-		OutputState: i.ToGetSecurityPoliciesSecurityPolicyCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSecurityPoliciesSecurityPolicyCollectionArrayInput is an input type that accepts GetSecurityPoliciesSecurityPolicyCollectionArray and GetSecurityPoliciesSecurityPolicyCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSecurityPoliciesSecurityPolicyCollectionArrayInput` via:
 //
@@ -29284,12 +25197,6 @@ func (i GetSecurityPoliciesSecurityPolicyCollectionArray) ToGetSecurityPoliciesS
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPoliciesSecurityPolicyCollectionArrayOutput)
 }
 
-func (i GetSecurityPoliciesSecurityPolicyCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityPoliciesSecurityPolicyCollection] {
-	return pulumix.Output[[]GetSecurityPoliciesSecurityPolicyCollection]{
-		OutputState: i.ToGetSecurityPoliciesSecurityPolicyCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSecurityPoliciesSecurityPolicyCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityPoliciesSecurityPolicyCollectionOutput) ElementType() reflect.Type {
@@ -29302,12 +25209,6 @@ func (o GetSecurityPoliciesSecurityPolicyCollectionOutput) ToGetSecurityPolicies
 
 func (o GetSecurityPoliciesSecurityPolicyCollectionOutput) ToGetSecurityPoliciesSecurityPolicyCollectionOutputWithContext(ctx context.Context) GetSecurityPoliciesSecurityPolicyCollectionOutput {
 	return o
-}
-
-func (o GetSecurityPoliciesSecurityPolicyCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPoliciesSecurityPolicyCollection] {
-	return pulumix.Output[GetSecurityPoliciesSecurityPolicyCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSecurityPoliciesSecurityPolicyCollectionOutput) Items() GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput {
@@ -29328,12 +25229,6 @@ func (o GetSecurityPoliciesSecurityPolicyCollectionArrayOutput) ToGetSecurityPol
 
 func (o GetSecurityPoliciesSecurityPolicyCollectionArrayOutput) ToGetSecurityPoliciesSecurityPolicyCollectionArrayOutputWithContext(ctx context.Context) GetSecurityPoliciesSecurityPolicyCollectionArrayOutput {
 	return o
-}
-
-func (o GetSecurityPoliciesSecurityPolicyCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityPoliciesSecurityPolicyCollection] {
-	return pulumix.Output[[]GetSecurityPoliciesSecurityPolicyCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSecurityPoliciesSecurityPolicyCollectionArrayOutput) Index(i pulumi.IntInput) GetSecurityPoliciesSecurityPolicyCollectionOutput {
@@ -29427,12 +25322,6 @@ func (i GetSecurityPoliciesSecurityPolicyCollectionItemArgs) ToGetSecurityPolici
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPoliciesSecurityPolicyCollectionItemOutput)
 }
 
-func (i GetSecurityPoliciesSecurityPolicyCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPoliciesSecurityPolicyCollectionItem] {
-	return pulumix.Output[GetSecurityPoliciesSecurityPolicyCollectionItem]{
-		OutputState: i.ToGetSecurityPoliciesSecurityPolicyCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSecurityPoliciesSecurityPolicyCollectionItemArrayInput is an input type that accepts GetSecurityPoliciesSecurityPolicyCollectionItemArray and GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetSecurityPoliciesSecurityPolicyCollectionItemArrayInput` via:
 //
@@ -29458,12 +25347,6 @@ func (i GetSecurityPoliciesSecurityPolicyCollectionItemArray) ToGetSecurityPolic
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput)
 }
 
-func (i GetSecurityPoliciesSecurityPolicyCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityPoliciesSecurityPolicyCollectionItem] {
-	return pulumix.Output[[]GetSecurityPoliciesSecurityPolicyCollectionItem]{
-		OutputState: i.ToGetSecurityPoliciesSecurityPolicyCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSecurityPoliciesSecurityPolicyCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityPoliciesSecurityPolicyCollectionItemOutput) ElementType() reflect.Type {
@@ -29476,12 +25359,6 @@ func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) ToGetSecurityPoli
 
 func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) ToGetSecurityPoliciesSecurityPolicyCollectionItemOutputWithContext(ctx context.Context) GetSecurityPoliciesSecurityPolicyCollectionItemOutput {
 	return o
-}
-
-func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPoliciesSecurityPolicyCollectionItem] {
-	return pulumix.Output[GetSecurityPoliciesSecurityPolicyCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The category of security policy
@@ -29568,12 +25445,6 @@ func (o GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput) ToGetSecurit
 	return o
 }
 
-func (o GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityPoliciesSecurityPolicyCollectionItem] {
-	return pulumix.Output[[]GetSecurityPoliciesSecurityPolicyCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSecurityPoliciesSecurityPolicyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSecurityPoliciesSecurityPolicyCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityPoliciesSecurityPolicyCollectionItem {
 		return vs[0].([]GetSecurityPoliciesSecurityPolicyCollectionItem)[vs[1].(int)]
@@ -29615,12 +25486,6 @@ func (i GetSecurityRecipesFilterArgs) ToGetSecurityRecipesFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityRecipesFilterOutput)
 }
 
-func (i GetSecurityRecipesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityRecipesFilter] {
-	return pulumix.Output[GetSecurityRecipesFilter]{
-		OutputState: i.ToGetSecurityRecipesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSecurityRecipesFilterArrayInput is an input type that accepts GetSecurityRecipesFilterArray and GetSecurityRecipesFilterArrayOutput values.
 // You can construct a concrete instance of `GetSecurityRecipesFilterArrayInput` via:
 //
@@ -29646,12 +25511,6 @@ func (i GetSecurityRecipesFilterArray) ToGetSecurityRecipesFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityRecipesFilterArrayOutput)
 }
 
-func (i GetSecurityRecipesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityRecipesFilter] {
-	return pulumix.Output[[]GetSecurityRecipesFilter]{
-		OutputState: i.ToGetSecurityRecipesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSecurityRecipesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityRecipesFilterOutput) ElementType() reflect.Type {
@@ -29664,12 +25523,6 @@ func (o GetSecurityRecipesFilterOutput) ToGetSecurityRecipesFilterOutput() GetSe
 
 func (o GetSecurityRecipesFilterOutput) ToGetSecurityRecipesFilterOutputWithContext(ctx context.Context) GetSecurityRecipesFilterOutput {
 	return o
-}
-
-func (o GetSecurityRecipesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityRecipesFilter] {
-	return pulumix.Output[GetSecurityRecipesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSecurityRecipesFilterOutput) Name() pulumi.StringOutput {
@@ -29696,12 +25549,6 @@ func (o GetSecurityRecipesFilterArrayOutput) ToGetSecurityRecipesFilterArrayOutp
 
 func (o GetSecurityRecipesFilterArrayOutput) ToGetSecurityRecipesFilterArrayOutputWithContext(ctx context.Context) GetSecurityRecipesFilterArrayOutput {
 	return o
-}
-
-func (o GetSecurityRecipesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityRecipesFilter] {
-	return pulumix.Output[[]GetSecurityRecipesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSecurityRecipesFilterArrayOutput) Index(i pulumi.IntInput) GetSecurityRecipesFilterOutput {
@@ -29741,12 +25588,6 @@ func (i GetSecurityRecipesSecurityRecipeCollectionArgs) ToGetSecurityRecipesSecu
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityRecipesSecurityRecipeCollectionOutput)
 }
 
-func (i GetSecurityRecipesSecurityRecipeCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityRecipesSecurityRecipeCollection] {
-	return pulumix.Output[GetSecurityRecipesSecurityRecipeCollection]{
-		OutputState: i.ToGetSecurityRecipesSecurityRecipeCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSecurityRecipesSecurityRecipeCollectionArrayInput is an input type that accepts GetSecurityRecipesSecurityRecipeCollectionArray and GetSecurityRecipesSecurityRecipeCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSecurityRecipesSecurityRecipeCollectionArrayInput` via:
 //
@@ -29772,12 +25613,6 @@ func (i GetSecurityRecipesSecurityRecipeCollectionArray) ToGetSecurityRecipesSec
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityRecipesSecurityRecipeCollectionArrayOutput)
 }
 
-func (i GetSecurityRecipesSecurityRecipeCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityRecipesSecurityRecipeCollection] {
-	return pulumix.Output[[]GetSecurityRecipesSecurityRecipeCollection]{
-		OutputState: i.ToGetSecurityRecipesSecurityRecipeCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSecurityRecipesSecurityRecipeCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityRecipesSecurityRecipeCollectionOutput) ElementType() reflect.Type {
@@ -29790,12 +25625,6 @@ func (o GetSecurityRecipesSecurityRecipeCollectionOutput) ToGetSecurityRecipesSe
 
 func (o GetSecurityRecipesSecurityRecipeCollectionOutput) ToGetSecurityRecipesSecurityRecipeCollectionOutputWithContext(ctx context.Context) GetSecurityRecipesSecurityRecipeCollectionOutput {
 	return o
-}
-
-func (o GetSecurityRecipesSecurityRecipeCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityRecipesSecurityRecipeCollection] {
-	return pulumix.Output[GetSecurityRecipesSecurityRecipeCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSecurityRecipesSecurityRecipeCollectionOutput) Items() GetSecurityRecipesSecurityRecipeCollectionItemArrayOutput {
@@ -29816,12 +25645,6 @@ func (o GetSecurityRecipesSecurityRecipeCollectionArrayOutput) ToGetSecurityReci
 
 func (o GetSecurityRecipesSecurityRecipeCollectionArrayOutput) ToGetSecurityRecipesSecurityRecipeCollectionArrayOutputWithContext(ctx context.Context) GetSecurityRecipesSecurityRecipeCollectionArrayOutput {
 	return o
-}
-
-func (o GetSecurityRecipesSecurityRecipeCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityRecipesSecurityRecipeCollection] {
-	return pulumix.Output[[]GetSecurityRecipesSecurityRecipeCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSecurityRecipesSecurityRecipeCollectionArrayOutput) Index(i pulumi.IntInput) GetSecurityRecipesSecurityRecipeCollectionOutput {
@@ -29907,12 +25730,6 @@ func (i GetSecurityRecipesSecurityRecipeCollectionItemArgs) ToGetSecurityRecipes
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityRecipesSecurityRecipeCollectionItemOutput)
 }
 
-func (i GetSecurityRecipesSecurityRecipeCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityRecipesSecurityRecipeCollectionItem] {
-	return pulumix.Output[GetSecurityRecipesSecurityRecipeCollectionItem]{
-		OutputState: i.ToGetSecurityRecipesSecurityRecipeCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSecurityRecipesSecurityRecipeCollectionItemArrayInput is an input type that accepts GetSecurityRecipesSecurityRecipeCollectionItemArray and GetSecurityRecipesSecurityRecipeCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetSecurityRecipesSecurityRecipeCollectionItemArrayInput` via:
 //
@@ -29938,12 +25755,6 @@ func (i GetSecurityRecipesSecurityRecipeCollectionItemArray) ToGetSecurityRecipe
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityRecipesSecurityRecipeCollectionItemArrayOutput)
 }
 
-func (i GetSecurityRecipesSecurityRecipeCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityRecipesSecurityRecipeCollectionItem] {
-	return pulumix.Output[[]GetSecurityRecipesSecurityRecipeCollectionItem]{
-		OutputState: i.ToGetSecurityRecipesSecurityRecipeCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSecurityRecipesSecurityRecipeCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityRecipesSecurityRecipeCollectionItemOutput) ElementType() reflect.Type {
@@ -29956,12 +25767,6 @@ func (o GetSecurityRecipesSecurityRecipeCollectionItemOutput) ToGetSecurityRecip
 
 func (o GetSecurityRecipesSecurityRecipeCollectionItemOutput) ToGetSecurityRecipesSecurityRecipeCollectionItemOutputWithContext(ctx context.Context) GetSecurityRecipesSecurityRecipeCollectionItemOutput {
 	return o
-}
-
-func (o GetSecurityRecipesSecurityRecipeCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityRecipesSecurityRecipeCollectionItem] {
-	return pulumix.Output[GetSecurityRecipesSecurityRecipeCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -30038,12 +25843,6 @@ func (o GetSecurityRecipesSecurityRecipeCollectionItemArrayOutput) ToGetSecurity
 	return o
 }
 
-func (o GetSecurityRecipesSecurityRecipeCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityRecipesSecurityRecipeCollectionItem] {
-	return pulumix.Output[[]GetSecurityRecipesSecurityRecipeCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSecurityRecipesSecurityRecipeCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSecurityRecipesSecurityRecipeCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecurityRecipesSecurityRecipeCollectionItem {
 		return vs[0].([]GetSecurityRecipesSecurityRecipeCollectionItem)[vs[1].(int)]
@@ -30085,12 +25884,6 @@ func (i GetSecurityZonesFilterArgs) ToGetSecurityZonesFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityZonesFilterOutput)
 }
 
-func (i GetSecurityZonesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityZonesFilter] {
-	return pulumix.Output[GetSecurityZonesFilter]{
-		OutputState: i.ToGetSecurityZonesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSecurityZonesFilterArrayInput is an input type that accepts GetSecurityZonesFilterArray and GetSecurityZonesFilterArrayOutput values.
 // You can construct a concrete instance of `GetSecurityZonesFilterArrayInput` via:
 //
@@ -30116,12 +25909,6 @@ func (i GetSecurityZonesFilterArray) ToGetSecurityZonesFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityZonesFilterArrayOutput)
 }
 
-func (i GetSecurityZonesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityZonesFilter] {
-	return pulumix.Output[[]GetSecurityZonesFilter]{
-		OutputState: i.ToGetSecurityZonesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSecurityZonesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityZonesFilterOutput) ElementType() reflect.Type {
@@ -30134,12 +25921,6 @@ func (o GetSecurityZonesFilterOutput) ToGetSecurityZonesFilterOutput() GetSecuri
 
 func (o GetSecurityZonesFilterOutput) ToGetSecurityZonesFilterOutputWithContext(ctx context.Context) GetSecurityZonesFilterOutput {
 	return o
-}
-
-func (o GetSecurityZonesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityZonesFilter] {
-	return pulumix.Output[GetSecurityZonesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSecurityZonesFilterOutput) Name() pulumi.StringOutput {
@@ -30166,12 +25947,6 @@ func (o GetSecurityZonesFilterArrayOutput) ToGetSecurityZonesFilterArrayOutput()
 
 func (o GetSecurityZonesFilterArrayOutput) ToGetSecurityZonesFilterArrayOutputWithContext(ctx context.Context) GetSecurityZonesFilterArrayOutput {
 	return o
-}
-
-func (o GetSecurityZonesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityZonesFilter] {
-	return pulumix.Output[[]GetSecurityZonesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSecurityZonesFilterArrayOutput) Index(i pulumi.IntInput) GetSecurityZonesFilterOutput {
@@ -30211,12 +25986,6 @@ func (i GetSecurityZonesSecurityZoneCollectionArgs) ToGetSecurityZonesSecurityZo
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityZonesSecurityZoneCollectionOutput)
 }
 
-func (i GetSecurityZonesSecurityZoneCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityZonesSecurityZoneCollection] {
-	return pulumix.Output[GetSecurityZonesSecurityZoneCollection]{
-		OutputState: i.ToGetSecurityZonesSecurityZoneCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSecurityZonesSecurityZoneCollectionArrayInput is an input type that accepts GetSecurityZonesSecurityZoneCollectionArray and GetSecurityZonesSecurityZoneCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSecurityZonesSecurityZoneCollectionArrayInput` via:
 //
@@ -30242,12 +26011,6 @@ func (i GetSecurityZonesSecurityZoneCollectionArray) ToGetSecurityZonesSecurityZ
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityZonesSecurityZoneCollectionArrayOutput)
 }
 
-func (i GetSecurityZonesSecurityZoneCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityZonesSecurityZoneCollection] {
-	return pulumix.Output[[]GetSecurityZonesSecurityZoneCollection]{
-		OutputState: i.ToGetSecurityZonesSecurityZoneCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSecurityZonesSecurityZoneCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityZonesSecurityZoneCollectionOutput) ElementType() reflect.Type {
@@ -30260,12 +26023,6 @@ func (o GetSecurityZonesSecurityZoneCollectionOutput) ToGetSecurityZonesSecurity
 
 func (o GetSecurityZonesSecurityZoneCollectionOutput) ToGetSecurityZonesSecurityZoneCollectionOutputWithContext(ctx context.Context) GetSecurityZonesSecurityZoneCollectionOutput {
 	return o
-}
-
-func (o GetSecurityZonesSecurityZoneCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityZonesSecurityZoneCollection] {
-	return pulumix.Output[GetSecurityZonesSecurityZoneCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSecurityZonesSecurityZoneCollectionOutput) Items() GetSecurityZonesSecurityZoneCollectionItemArrayOutput {
@@ -30286,12 +26043,6 @@ func (o GetSecurityZonesSecurityZoneCollectionArrayOutput) ToGetSecurityZonesSec
 
 func (o GetSecurityZonesSecurityZoneCollectionArrayOutput) ToGetSecurityZonesSecurityZoneCollectionArrayOutputWithContext(ctx context.Context) GetSecurityZonesSecurityZoneCollectionArrayOutput {
 	return o
-}
-
-func (o GetSecurityZonesSecurityZoneCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityZonesSecurityZoneCollection] {
-	return pulumix.Output[[]GetSecurityZonesSecurityZoneCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSecurityZonesSecurityZoneCollectionArrayOutput) Index(i pulumi.IntInput) GetSecurityZonesSecurityZoneCollectionOutput {
@@ -30381,12 +26132,6 @@ func (i GetSecurityZonesSecurityZoneCollectionItemArgs) ToGetSecurityZonesSecuri
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityZonesSecurityZoneCollectionItemOutput)
 }
 
-func (i GetSecurityZonesSecurityZoneCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSecurityZonesSecurityZoneCollectionItem] {
-	return pulumix.Output[GetSecurityZonesSecurityZoneCollectionItem]{
-		OutputState: i.ToGetSecurityZonesSecurityZoneCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSecurityZonesSecurityZoneCollectionItemArrayInput is an input type that accepts GetSecurityZonesSecurityZoneCollectionItemArray and GetSecurityZonesSecurityZoneCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetSecurityZonesSecurityZoneCollectionItemArrayInput` via:
 //
@@ -30412,12 +26157,6 @@ func (i GetSecurityZonesSecurityZoneCollectionItemArray) ToGetSecurityZonesSecur
 	return pulumi.ToOutputWithContext(ctx, i).(GetSecurityZonesSecurityZoneCollectionItemArrayOutput)
 }
 
-func (i GetSecurityZonesSecurityZoneCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityZonesSecurityZoneCollectionItem] {
-	return pulumix.Output[[]GetSecurityZonesSecurityZoneCollectionItem]{
-		OutputState: i.ToGetSecurityZonesSecurityZoneCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSecurityZonesSecurityZoneCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetSecurityZonesSecurityZoneCollectionItemOutput) ElementType() reflect.Type {
@@ -30430,12 +26169,6 @@ func (o GetSecurityZonesSecurityZoneCollectionItemOutput) ToGetSecurityZonesSecu
 
 func (o GetSecurityZonesSecurityZoneCollectionItemOutput) ToGetSecurityZonesSecurityZoneCollectionItemOutputWithContext(ctx context.Context) GetSecurityZonesSecurityZoneCollectionItemOutput {
 	return o
-}
-
-func (o GetSecurityZonesSecurityZoneCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityZonesSecurityZoneCollectionItem] {
-	return pulumix.Output[GetSecurityZonesSecurityZoneCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -30515,12 +26248,6 @@ func (o GetSecurityZonesSecurityZoneCollectionItemArrayOutput) ToGetSecurityZone
 
 func (o GetSecurityZonesSecurityZoneCollectionItemArrayOutput) ToGetSecurityZonesSecurityZoneCollectionItemArrayOutputWithContext(ctx context.Context) GetSecurityZonesSecurityZoneCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetSecurityZonesSecurityZoneCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSecurityZonesSecurityZoneCollectionItem] {
-	return pulumix.Output[[]GetSecurityZonesSecurityZoneCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSecurityZonesSecurityZoneCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSecurityZonesSecurityZoneCollectionItemOutput {

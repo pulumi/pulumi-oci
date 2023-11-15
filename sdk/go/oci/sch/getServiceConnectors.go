@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Service Connectors in Oracle Cloud Infrastructure Service Connector Hub service.
@@ -120,12 +119,6 @@ func (o GetServiceConnectorsResultOutput) ToGetServiceConnectorsResultOutput() G
 
 func (o GetServiceConnectorsResultOutput) ToGetServiceConnectorsResultOutputWithContext(ctx context.Context) GetServiceConnectorsResultOutput {
 	return o
-}
-
-func (o GetServiceConnectorsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorsResult] {
-	return pulumix.Output[GetServiceConnectorsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.

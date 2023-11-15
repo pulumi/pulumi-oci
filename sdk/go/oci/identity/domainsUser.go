@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the User resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -2372,12 +2371,6 @@ func (i *DomainsUser) ToDomainsUserOutputWithContext(ctx context.Context) Domain
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsUserOutput)
 }
 
-func (i *DomainsUser) ToOutput(ctx context.Context) pulumix.Output[*DomainsUser] {
-	return pulumix.Output[*DomainsUser]{
-		OutputState: i.ToDomainsUserOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsUserArrayInput is an input type that accepts DomainsUserArray and DomainsUserArrayOutput values.
 // You can construct a concrete instance of `DomainsUserArrayInput` via:
 //
@@ -2401,12 +2394,6 @@ func (i DomainsUserArray) ToDomainsUserArrayOutput() DomainsUserArrayOutput {
 
 func (i DomainsUserArray) ToDomainsUserArrayOutputWithContext(ctx context.Context) DomainsUserArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsUserArrayOutput)
-}
-
-func (i DomainsUserArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsUser] {
-	return pulumix.Output[[]*DomainsUser]{
-		OutputState: i.ToDomainsUserArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsUserMapInput is an input type that accepts DomainsUserMap and DomainsUserMapOutput values.
@@ -2434,12 +2421,6 @@ func (i DomainsUserMap) ToDomainsUserMapOutputWithContext(ctx context.Context) D
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsUserMapOutput)
 }
 
-func (i DomainsUserMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsUser] {
-	return pulumix.Output[map[string]*DomainsUser]{
-		OutputState: i.ToDomainsUserMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsUserOutput struct{ *pulumi.OutputState }
 
 func (DomainsUserOutput) ElementType() reflect.Type {
@@ -2452,12 +2433,6 @@ func (o DomainsUserOutput) ToDomainsUserOutput() DomainsUserOutput {
 
 func (o DomainsUserOutput) ToDomainsUserOutputWithContext(ctx context.Context) DomainsUserOutput {
 	return o
-}
-
-func (o DomainsUserOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsUser] {
-	return pulumix.Output[*DomainsUser]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Status of the account
@@ -3193,12 +3168,6 @@ func (o DomainsUserArrayOutput) ToDomainsUserArrayOutputWithContext(ctx context.
 	return o
 }
 
-func (o DomainsUserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsUser] {
-	return pulumix.Output[[]*DomainsUser]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DomainsUserArrayOutput) Index(i pulumi.IntInput) DomainsUserOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DomainsUser {
 		return vs[0].([]*DomainsUser)[vs[1].(int)]
@@ -3217,12 +3186,6 @@ func (o DomainsUserMapOutput) ToDomainsUserMapOutput() DomainsUserMapOutput {
 
 func (o DomainsUserMapOutput) ToDomainsUserMapOutputWithContext(ctx context.Context) DomainsUserMapOutput {
 	return o
-}
-
-func (o DomainsUserMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsUser] {
-	return pulumix.Output[map[string]*DomainsUser]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsUserMapOutput) MapIndex(k pulumi.StringInput) DomainsUserOutput {

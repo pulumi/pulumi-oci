@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -49,12 +48,6 @@ func (i GetOpensearchClustersFilterArgs) ToGetOpensearchClustersFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersFilterOutput)
 }
 
-func (i GetOpensearchClustersFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchClustersFilter] {
-	return pulumix.Output[GetOpensearchClustersFilter]{
-		OutputState: i.ToGetOpensearchClustersFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOpensearchClustersFilterArrayInput is an input type that accepts GetOpensearchClustersFilterArray and GetOpensearchClustersFilterArrayOutput values.
 // You can construct a concrete instance of `GetOpensearchClustersFilterArrayInput` via:
 //
@@ -80,12 +73,6 @@ func (i GetOpensearchClustersFilterArray) ToGetOpensearchClustersFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersFilterArrayOutput)
 }
 
-func (i GetOpensearchClustersFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpensearchClustersFilter] {
-	return pulumix.Output[[]GetOpensearchClustersFilter]{
-		OutputState: i.ToGetOpensearchClustersFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpensearchClustersFilterOutput struct{ *pulumi.OutputState }
 
 func (GetOpensearchClustersFilterOutput) ElementType() reflect.Type {
@@ -98,12 +85,6 @@ func (o GetOpensearchClustersFilterOutput) ToGetOpensearchClustersFilterOutput()
 
 func (o GetOpensearchClustersFilterOutput) ToGetOpensearchClustersFilterOutputWithContext(ctx context.Context) GetOpensearchClustersFilterOutput {
 	return o
-}
-
-func (o GetOpensearchClustersFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchClustersFilter] {
-	return pulumix.Output[GetOpensearchClustersFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOpensearchClustersFilterOutput) Name() pulumi.StringOutput {
@@ -130,12 +111,6 @@ func (o GetOpensearchClustersFilterArrayOutput) ToGetOpensearchClustersFilterArr
 
 func (o GetOpensearchClustersFilterArrayOutput) ToGetOpensearchClustersFilterArrayOutputWithContext(ctx context.Context) GetOpensearchClustersFilterArrayOutput {
 	return o
-}
-
-func (o GetOpensearchClustersFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpensearchClustersFilter] {
-	return pulumix.Output[[]GetOpensearchClustersFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOpensearchClustersFilterArrayOutput) Index(i pulumi.IntInput) GetOpensearchClustersFilterOutput {
@@ -175,12 +150,6 @@ func (i GetOpensearchClustersOpensearchClusterCollectionArgs) ToGetOpensearchClu
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersOpensearchClusterCollectionOutput)
 }
 
-func (i GetOpensearchClustersOpensearchClusterCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchClustersOpensearchClusterCollection] {
-	return pulumix.Output[GetOpensearchClustersOpensearchClusterCollection]{
-		OutputState: i.ToGetOpensearchClustersOpensearchClusterCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOpensearchClustersOpensearchClusterCollectionArrayInput is an input type that accepts GetOpensearchClustersOpensearchClusterCollectionArray and GetOpensearchClustersOpensearchClusterCollectionArrayOutput values.
 // You can construct a concrete instance of `GetOpensearchClustersOpensearchClusterCollectionArrayInput` via:
 //
@@ -206,12 +175,6 @@ func (i GetOpensearchClustersOpensearchClusterCollectionArray) ToGetOpensearchCl
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersOpensearchClusterCollectionArrayOutput)
 }
 
-func (i GetOpensearchClustersOpensearchClusterCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpensearchClustersOpensearchClusterCollection] {
-	return pulumix.Output[[]GetOpensearchClustersOpensearchClusterCollection]{
-		OutputState: i.ToGetOpensearchClustersOpensearchClusterCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpensearchClustersOpensearchClusterCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetOpensearchClustersOpensearchClusterCollectionOutput) ElementType() reflect.Type {
@@ -224,12 +187,6 @@ func (o GetOpensearchClustersOpensearchClusterCollectionOutput) ToGetOpensearchC
 
 func (o GetOpensearchClustersOpensearchClusterCollectionOutput) ToGetOpensearchClustersOpensearchClusterCollectionOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionOutput {
 	return o
-}
-
-func (o GetOpensearchClustersOpensearchClusterCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchClustersOpensearchClusterCollection] {
-	return pulumix.Output[GetOpensearchClustersOpensearchClusterCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOpensearchClustersOpensearchClusterCollectionOutput) Items() GetOpensearchClustersOpensearchClusterCollectionItemArrayOutput {
@@ -250,12 +207,6 @@ func (o GetOpensearchClustersOpensearchClusterCollectionArrayOutput) ToGetOpense
 
 func (o GetOpensearchClustersOpensearchClusterCollectionArrayOutput) ToGetOpensearchClustersOpensearchClusterCollectionArrayOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionArrayOutput {
 	return o
-}
-
-func (o GetOpensearchClustersOpensearchClusterCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpensearchClustersOpensearchClusterCollection] {
-	return pulumix.Output[[]GetOpensearchClustersOpensearchClusterCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOpensearchClustersOpensearchClusterCollectionArrayOutput) Index(i pulumi.IntInput) GetOpensearchClustersOpensearchClusterCollectionOutput {
@@ -453,12 +404,6 @@ func (i GetOpensearchClustersOpensearchClusterCollectionItemArgs) ToGetOpensearc
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersOpensearchClusterCollectionItemOutput)
 }
 
-func (i GetOpensearchClustersOpensearchClusterCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchClustersOpensearchClusterCollectionItem] {
-	return pulumix.Output[GetOpensearchClustersOpensearchClusterCollectionItem]{
-		OutputState: i.ToGetOpensearchClustersOpensearchClusterCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOpensearchClustersOpensearchClusterCollectionItemArrayInput is an input type that accepts GetOpensearchClustersOpensearchClusterCollectionItemArray and GetOpensearchClustersOpensearchClusterCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetOpensearchClustersOpensearchClusterCollectionItemArrayInput` via:
 //
@@ -484,12 +429,6 @@ func (i GetOpensearchClustersOpensearchClusterCollectionItemArray) ToGetOpensear
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersOpensearchClusterCollectionItemArrayOutput)
 }
 
-func (i GetOpensearchClustersOpensearchClusterCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpensearchClustersOpensearchClusterCollectionItem] {
-	return pulumix.Output[[]GetOpensearchClustersOpensearchClusterCollectionItem]{
-		OutputState: i.ToGetOpensearchClustersOpensearchClusterCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpensearchClustersOpensearchClusterCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetOpensearchClustersOpensearchClusterCollectionItemOutput) ElementType() reflect.Type {
@@ -502,12 +441,6 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) ToGetOpensea
 
 func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemOutput {
 	return o
-}
-
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchClustersOpensearchClusterCollectionItem] {
-	return pulumix.Output[GetOpensearchClustersOpensearchClusterCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The availability domains to distribute the cluser nodes across.
@@ -740,12 +673,6 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemArrayOutput) ToGetOp
 	return o
 }
 
-func (o GetOpensearchClustersOpensearchClusterCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpensearchClustersOpensearchClusterCollectionItem] {
-	return pulumix.Output[[]GetOpensearchClustersOpensearchClusterCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOpensearchClustersOpensearchClusterCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOpensearchClustersOpensearchClusterCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClustersOpensearchClusterCollectionItem {
 		return vs[0].([]GetOpensearchClustersOpensearchClusterCollectionItem)[vs[1].(int)]
@@ -785,12 +712,6 @@ func (i GetOpensearchVersionItemArgs) ToGetOpensearchVersionItemOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchVersionItemOutput)
 }
 
-func (i GetOpensearchVersionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchVersionItem] {
-	return pulumix.Output[GetOpensearchVersionItem]{
-		OutputState: i.ToGetOpensearchVersionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOpensearchVersionItemArrayInput is an input type that accepts GetOpensearchVersionItemArray and GetOpensearchVersionItemArrayOutput values.
 // You can construct a concrete instance of `GetOpensearchVersionItemArrayInput` via:
 //
@@ -816,12 +737,6 @@ func (i GetOpensearchVersionItemArray) ToGetOpensearchVersionItemArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchVersionItemArrayOutput)
 }
 
-func (i GetOpensearchVersionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpensearchVersionItem] {
-	return pulumix.Output[[]GetOpensearchVersionItem]{
-		OutputState: i.ToGetOpensearchVersionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpensearchVersionItemOutput struct{ *pulumi.OutputState }
 
 func (GetOpensearchVersionItemOutput) ElementType() reflect.Type {
@@ -834,12 +749,6 @@ func (o GetOpensearchVersionItemOutput) ToGetOpensearchVersionItemOutput() GetOp
 
 func (o GetOpensearchVersionItemOutput) ToGetOpensearchVersionItemOutputWithContext(ctx context.Context) GetOpensearchVersionItemOutput {
 	return o
-}
-
-func (o GetOpensearchVersionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchVersionItem] {
-	return pulumix.Output[GetOpensearchVersionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The version of OpenSearch.
@@ -859,12 +768,6 @@ func (o GetOpensearchVersionItemArrayOutput) ToGetOpensearchVersionItemArrayOutp
 
 func (o GetOpensearchVersionItemArrayOutput) ToGetOpensearchVersionItemArrayOutputWithContext(ctx context.Context) GetOpensearchVersionItemArrayOutput {
 	return o
-}
-
-func (o GetOpensearchVersionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpensearchVersionItem] {
-	return pulumix.Output[[]GetOpensearchVersionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOpensearchVersionItemArrayOutput) Index(i pulumi.IntInput) GetOpensearchVersionItemOutput {
@@ -908,12 +811,6 @@ func (i GetOpensearchVersionsFilterArgs) ToGetOpensearchVersionsFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchVersionsFilterOutput)
 }
 
-func (i GetOpensearchVersionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchVersionsFilter] {
-	return pulumix.Output[GetOpensearchVersionsFilter]{
-		OutputState: i.ToGetOpensearchVersionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOpensearchVersionsFilterArrayInput is an input type that accepts GetOpensearchVersionsFilterArray and GetOpensearchVersionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetOpensearchVersionsFilterArrayInput` via:
 //
@@ -939,12 +836,6 @@ func (i GetOpensearchVersionsFilterArray) ToGetOpensearchVersionsFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchVersionsFilterArrayOutput)
 }
 
-func (i GetOpensearchVersionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpensearchVersionsFilter] {
-	return pulumix.Output[[]GetOpensearchVersionsFilter]{
-		OutputState: i.ToGetOpensearchVersionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpensearchVersionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetOpensearchVersionsFilterOutput) ElementType() reflect.Type {
@@ -957,12 +848,6 @@ func (o GetOpensearchVersionsFilterOutput) ToGetOpensearchVersionsFilterOutput()
 
 func (o GetOpensearchVersionsFilterOutput) ToGetOpensearchVersionsFilterOutputWithContext(ctx context.Context) GetOpensearchVersionsFilterOutput {
 	return o
-}
-
-func (o GetOpensearchVersionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchVersionsFilter] {
-	return pulumix.Output[GetOpensearchVersionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOpensearchVersionsFilterOutput) Name() pulumi.StringOutput {
@@ -989,12 +874,6 @@ func (o GetOpensearchVersionsFilterArrayOutput) ToGetOpensearchVersionsFilterArr
 
 func (o GetOpensearchVersionsFilterArrayOutput) ToGetOpensearchVersionsFilterArrayOutputWithContext(ctx context.Context) GetOpensearchVersionsFilterArrayOutput {
 	return o
-}
-
-func (o GetOpensearchVersionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpensearchVersionsFilter] {
-	return pulumix.Output[[]GetOpensearchVersionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOpensearchVersionsFilterArrayOutput) Index(i pulumi.IntInput) GetOpensearchVersionsFilterOutput {
@@ -1036,12 +915,6 @@ func (i GetOpensearchVersionsOpensearchVersionsCollectionArgs) ToGetOpensearchVe
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchVersionsOpensearchVersionsCollectionOutput)
 }
 
-func (i GetOpensearchVersionsOpensearchVersionsCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchVersionsOpensearchVersionsCollection] {
-	return pulumix.Output[GetOpensearchVersionsOpensearchVersionsCollection]{
-		OutputState: i.ToGetOpensearchVersionsOpensearchVersionsCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOpensearchVersionsOpensearchVersionsCollectionArrayInput is an input type that accepts GetOpensearchVersionsOpensearchVersionsCollectionArray and GetOpensearchVersionsOpensearchVersionsCollectionArrayOutput values.
 // You can construct a concrete instance of `GetOpensearchVersionsOpensearchVersionsCollectionArrayInput` via:
 //
@@ -1067,12 +940,6 @@ func (i GetOpensearchVersionsOpensearchVersionsCollectionArray) ToGetOpensearchV
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchVersionsOpensearchVersionsCollectionArrayOutput)
 }
 
-func (i GetOpensearchVersionsOpensearchVersionsCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpensearchVersionsOpensearchVersionsCollection] {
-	return pulumix.Output[[]GetOpensearchVersionsOpensearchVersionsCollection]{
-		OutputState: i.ToGetOpensearchVersionsOpensearchVersionsCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpensearchVersionsOpensearchVersionsCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetOpensearchVersionsOpensearchVersionsCollectionOutput) ElementType() reflect.Type {
@@ -1085,12 +952,6 @@ func (o GetOpensearchVersionsOpensearchVersionsCollectionOutput) ToGetOpensearch
 
 func (o GetOpensearchVersionsOpensearchVersionsCollectionOutput) ToGetOpensearchVersionsOpensearchVersionsCollectionOutputWithContext(ctx context.Context) GetOpensearchVersionsOpensearchVersionsCollectionOutput {
 	return o
-}
-
-func (o GetOpensearchVersionsOpensearchVersionsCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchVersionsOpensearchVersionsCollection] {
-	return pulumix.Output[GetOpensearchVersionsOpensearchVersionsCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of OpenSearch versions.
@@ -1112,12 +973,6 @@ func (o GetOpensearchVersionsOpensearchVersionsCollectionArrayOutput) ToGetOpens
 
 func (o GetOpensearchVersionsOpensearchVersionsCollectionArrayOutput) ToGetOpensearchVersionsOpensearchVersionsCollectionArrayOutputWithContext(ctx context.Context) GetOpensearchVersionsOpensearchVersionsCollectionArrayOutput {
 	return o
-}
-
-func (o GetOpensearchVersionsOpensearchVersionsCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpensearchVersionsOpensearchVersionsCollection] {
-	return pulumix.Output[[]GetOpensearchVersionsOpensearchVersionsCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOpensearchVersionsOpensearchVersionsCollectionArrayOutput) Index(i pulumi.IntInput) GetOpensearchVersionsOpensearchVersionsCollectionOutput {
@@ -1159,12 +1014,6 @@ func (i GetOpensearchVersionsOpensearchVersionsCollectionItemArgs) ToGetOpensear
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchVersionsOpensearchVersionsCollectionItemOutput)
 }
 
-func (i GetOpensearchVersionsOpensearchVersionsCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchVersionsOpensearchVersionsCollectionItem] {
-	return pulumix.Output[GetOpensearchVersionsOpensearchVersionsCollectionItem]{
-		OutputState: i.ToGetOpensearchVersionsOpensearchVersionsCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOpensearchVersionsOpensearchVersionsCollectionItemArrayInput is an input type that accepts GetOpensearchVersionsOpensearchVersionsCollectionItemArray and GetOpensearchVersionsOpensearchVersionsCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetOpensearchVersionsOpensearchVersionsCollectionItemArrayInput` via:
 //
@@ -1190,12 +1039,6 @@ func (i GetOpensearchVersionsOpensearchVersionsCollectionItemArray) ToGetOpensea
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchVersionsOpensearchVersionsCollectionItemArrayOutput)
 }
 
-func (i GetOpensearchVersionsOpensearchVersionsCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpensearchVersionsOpensearchVersionsCollectionItem] {
-	return pulumix.Output[[]GetOpensearchVersionsOpensearchVersionsCollectionItem]{
-		OutputState: i.ToGetOpensearchVersionsOpensearchVersionsCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpensearchVersionsOpensearchVersionsCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetOpensearchVersionsOpensearchVersionsCollectionItemOutput) ElementType() reflect.Type {
@@ -1208,12 +1051,6 @@ func (o GetOpensearchVersionsOpensearchVersionsCollectionItemOutput) ToGetOpense
 
 func (o GetOpensearchVersionsOpensearchVersionsCollectionItemOutput) ToGetOpensearchVersionsOpensearchVersionsCollectionItemOutputWithContext(ctx context.Context) GetOpensearchVersionsOpensearchVersionsCollectionItemOutput {
 	return o
-}
-
-func (o GetOpensearchVersionsOpensearchVersionsCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchVersionsOpensearchVersionsCollectionItem] {
-	return pulumix.Output[GetOpensearchVersionsOpensearchVersionsCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The version of OpenSearch.
@@ -1233,12 +1070,6 @@ func (o GetOpensearchVersionsOpensearchVersionsCollectionItemArrayOutput) ToGetO
 
 func (o GetOpensearchVersionsOpensearchVersionsCollectionItemArrayOutput) ToGetOpensearchVersionsOpensearchVersionsCollectionItemArrayOutputWithContext(ctx context.Context) GetOpensearchVersionsOpensearchVersionsCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetOpensearchVersionsOpensearchVersionsCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpensearchVersionsOpensearchVersionsCollectionItem] {
-	return pulumix.Output[[]GetOpensearchVersionsOpensearchVersionsCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOpensearchVersionsOpensearchVersionsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOpensearchVersionsOpensearchVersionsCollectionItemOutput {

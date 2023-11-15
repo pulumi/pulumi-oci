@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Importable Compute Entities in Oracle Cloud Infrastructure Opsi service.
@@ -109,12 +108,6 @@ func (o GetImportableComputeEntitiesResultOutput) ToGetImportableComputeEntities
 
 func (o GetImportableComputeEntitiesResultOutput) ToGetImportableComputeEntitiesResultOutputWithContext(ctx context.Context) GetImportableComputeEntitiesResultOutput {
 	return o
-}
-
-func (o GetImportableComputeEntitiesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetImportableComputeEntitiesResult] {
-	return pulumix.Output[GetImportableComputeEntitiesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

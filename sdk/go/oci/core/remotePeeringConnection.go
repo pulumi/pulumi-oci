@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Remote Peering Connection resource in Oracle Cloud Infrastructure Core service.
@@ -257,12 +256,6 @@ func (i *RemotePeeringConnection) ToRemotePeeringConnectionOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(RemotePeeringConnectionOutput)
 }
 
-func (i *RemotePeeringConnection) ToOutput(ctx context.Context) pulumix.Output[*RemotePeeringConnection] {
-	return pulumix.Output[*RemotePeeringConnection]{
-		OutputState: i.ToRemotePeeringConnectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RemotePeeringConnectionArrayInput is an input type that accepts RemotePeeringConnectionArray and RemotePeeringConnectionArrayOutput values.
 // You can construct a concrete instance of `RemotePeeringConnectionArrayInput` via:
 //
@@ -286,12 +279,6 @@ func (i RemotePeeringConnectionArray) ToRemotePeeringConnectionArrayOutput() Rem
 
 func (i RemotePeeringConnectionArray) ToRemotePeeringConnectionArrayOutputWithContext(ctx context.Context) RemotePeeringConnectionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RemotePeeringConnectionArrayOutput)
-}
-
-func (i RemotePeeringConnectionArray) ToOutput(ctx context.Context) pulumix.Output[[]*RemotePeeringConnection] {
-	return pulumix.Output[[]*RemotePeeringConnection]{
-		OutputState: i.ToRemotePeeringConnectionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // RemotePeeringConnectionMapInput is an input type that accepts RemotePeeringConnectionMap and RemotePeeringConnectionMapOutput values.
@@ -319,12 +306,6 @@ func (i RemotePeeringConnectionMap) ToRemotePeeringConnectionMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(RemotePeeringConnectionMapOutput)
 }
 
-func (i RemotePeeringConnectionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*RemotePeeringConnection] {
-	return pulumix.Output[map[string]*RemotePeeringConnection]{
-		OutputState: i.ToRemotePeeringConnectionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RemotePeeringConnectionOutput struct{ *pulumi.OutputState }
 
 func (RemotePeeringConnectionOutput) ElementType() reflect.Type {
@@ -337,12 +318,6 @@ func (o RemotePeeringConnectionOutput) ToRemotePeeringConnectionOutput() RemoteP
 
 func (o RemotePeeringConnectionOutput) ToRemotePeeringConnectionOutputWithContext(ctx context.Context) RemotePeeringConnectionOutput {
 	return o
-}
-
-func (o RemotePeeringConnectionOutput) ToOutput(ctx context.Context) pulumix.Output[*RemotePeeringConnection] {
-	return pulumix.Output[*RemotePeeringConnection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the RPC.
@@ -422,12 +397,6 @@ func (o RemotePeeringConnectionArrayOutput) ToRemotePeeringConnectionArrayOutput
 	return o
 }
 
-func (o RemotePeeringConnectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*RemotePeeringConnection] {
-	return pulumix.Output[[]*RemotePeeringConnection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o RemotePeeringConnectionArrayOutput) Index(i pulumi.IntInput) RemotePeeringConnectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *RemotePeeringConnection {
 		return vs[0].([]*RemotePeeringConnection)[vs[1].(int)]
@@ -446,12 +415,6 @@ func (o RemotePeeringConnectionMapOutput) ToRemotePeeringConnectionMapOutput() R
 
 func (o RemotePeeringConnectionMapOutput) ToRemotePeeringConnectionMapOutputWithContext(ctx context.Context) RemotePeeringConnectionMapOutput {
 	return o
-}
-
-func (o RemotePeeringConnectionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*RemotePeeringConnection] {
-	return pulumix.Output[map[string]*RemotePeeringConnection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RemotePeeringConnectionMapOutput) MapIndex(k pulumi.StringInput) RemotePeeringConnectionOutput {

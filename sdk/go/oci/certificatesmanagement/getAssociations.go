@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Associations in Oracle Cloud Infrastructure Certificates Management service.
@@ -141,12 +140,6 @@ func (o GetAssociationsResultOutput) ToGetAssociationsResultOutput() GetAssociat
 
 func (o GetAssociationsResultOutput) ToGetAssociationsResultOutputWithContext(ctx context.Context) GetAssociationsResultOutput {
 	return o
-}
-
-func (o GetAssociationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssociationsResult] {
-	return pulumix.Output[GetAssociationsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the associated resource.

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type ExadataInfrastructureStorage struct {
@@ -273,12 +272,6 @@ func (i *ExadataInfrastructureStorage) ToExadataInfrastructureStorageOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(ExadataInfrastructureStorageOutput)
 }
 
-func (i *ExadataInfrastructureStorage) ToOutput(ctx context.Context) pulumix.Output[*ExadataInfrastructureStorage] {
-	return pulumix.Output[*ExadataInfrastructureStorage]{
-		OutputState: i.ToExadataInfrastructureStorageOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExadataInfrastructureStorageArrayInput is an input type that accepts ExadataInfrastructureStorageArray and ExadataInfrastructureStorageArrayOutput values.
 // You can construct a concrete instance of `ExadataInfrastructureStorageArrayInput` via:
 //
@@ -302,12 +295,6 @@ func (i ExadataInfrastructureStorageArray) ToExadataInfrastructureStorageArrayOu
 
 func (i ExadataInfrastructureStorageArray) ToExadataInfrastructureStorageArrayOutputWithContext(ctx context.Context) ExadataInfrastructureStorageArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExadataInfrastructureStorageArrayOutput)
-}
-
-func (i ExadataInfrastructureStorageArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExadataInfrastructureStorage] {
-	return pulumix.Output[[]*ExadataInfrastructureStorage]{
-		OutputState: i.ToExadataInfrastructureStorageArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ExadataInfrastructureStorageMapInput is an input type that accepts ExadataInfrastructureStorageMap and ExadataInfrastructureStorageMapOutput values.
@@ -335,12 +322,6 @@ func (i ExadataInfrastructureStorageMap) ToExadataInfrastructureStorageMapOutput
 	return pulumi.ToOutputWithContext(ctx, i).(ExadataInfrastructureStorageMapOutput)
 }
 
-func (i ExadataInfrastructureStorageMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExadataInfrastructureStorage] {
-	return pulumix.Output[map[string]*ExadataInfrastructureStorage]{
-		OutputState: i.ToExadataInfrastructureStorageMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExadataInfrastructureStorageOutput struct{ *pulumi.OutputState }
 
 func (ExadataInfrastructureStorageOutput) ElementType() reflect.Type {
@@ -353,12 +334,6 @@ func (o ExadataInfrastructureStorageOutput) ToExadataInfrastructureStorageOutput
 
 func (o ExadataInfrastructureStorageOutput) ToExadataInfrastructureStorageOutputWithContext(ctx context.Context) ExadataInfrastructureStorageOutput {
 	return o
-}
-
-func (o ExadataInfrastructureStorageOutput) ToOutput(ctx context.Context) pulumix.Output[*ExadataInfrastructureStorage] {
-	return pulumix.Output[*ExadataInfrastructureStorage]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExadataInfrastructureStorageOutput) ActivatedStorageCount() pulumi.IntOutput {
@@ -523,12 +498,6 @@ func (o ExadataInfrastructureStorageArrayOutput) ToExadataInfrastructureStorageA
 	return o
 }
 
-func (o ExadataInfrastructureStorageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExadataInfrastructureStorage] {
-	return pulumix.Output[[]*ExadataInfrastructureStorage]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ExadataInfrastructureStorageArrayOutput) Index(i pulumi.IntInput) ExadataInfrastructureStorageOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ExadataInfrastructureStorage {
 		return vs[0].([]*ExadataInfrastructureStorage)[vs[1].(int)]
@@ -547,12 +516,6 @@ func (o ExadataInfrastructureStorageMapOutput) ToExadataInfrastructureStorageMap
 
 func (o ExadataInfrastructureStorageMapOutput) ToExadataInfrastructureStorageMapOutputWithContext(ctx context.Context) ExadataInfrastructureStorageMapOutput {
 	return o
-}
-
-func (o ExadataInfrastructureStorageMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExadataInfrastructureStorage] {
-	return pulumix.Output[map[string]*ExadataInfrastructureStorage]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExadataInfrastructureStorageMapOutput) MapIndex(k pulumi.StringInput) ExadataInfrastructureStorageOutput {

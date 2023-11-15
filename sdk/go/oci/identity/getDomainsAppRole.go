@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific App Role resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -182,12 +181,6 @@ func (o LookupDomainsAppRoleResultOutput) ToLookupDomainsAppRoleResultOutput() L
 
 func (o LookupDomainsAppRoleResultOutput) ToLookupDomainsAppRoleResultOutputWithContext(ctx context.Context) LookupDomainsAppRoleResultOutput {
 	return o
-}
-
-func (o LookupDomainsAppRoleResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainsAppRoleResult] {
-	return pulumix.Output[LookupDomainsAppRoleResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // If true, the role provides administrative access privileges.

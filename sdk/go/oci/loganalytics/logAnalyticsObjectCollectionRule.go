@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Log Analytics Object Collection Rule resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -427,12 +426,6 @@ func (i *LogAnalyticsObjectCollectionRule) ToLogAnalyticsObjectCollectionRuleOut
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsObjectCollectionRuleOutput)
 }
 
-func (i *LogAnalyticsObjectCollectionRule) ToOutput(ctx context.Context) pulumix.Output[*LogAnalyticsObjectCollectionRule] {
-	return pulumix.Output[*LogAnalyticsObjectCollectionRule]{
-		OutputState: i.ToLogAnalyticsObjectCollectionRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LogAnalyticsObjectCollectionRuleArrayInput is an input type that accepts LogAnalyticsObjectCollectionRuleArray and LogAnalyticsObjectCollectionRuleArrayOutput values.
 // You can construct a concrete instance of `LogAnalyticsObjectCollectionRuleArrayInput` via:
 //
@@ -456,12 +449,6 @@ func (i LogAnalyticsObjectCollectionRuleArray) ToLogAnalyticsObjectCollectionRul
 
 func (i LogAnalyticsObjectCollectionRuleArray) ToLogAnalyticsObjectCollectionRuleArrayOutputWithContext(ctx context.Context) LogAnalyticsObjectCollectionRuleArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsObjectCollectionRuleArrayOutput)
-}
-
-func (i LogAnalyticsObjectCollectionRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]*LogAnalyticsObjectCollectionRule] {
-	return pulumix.Output[[]*LogAnalyticsObjectCollectionRule]{
-		OutputState: i.ToLogAnalyticsObjectCollectionRuleArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // LogAnalyticsObjectCollectionRuleMapInput is an input type that accepts LogAnalyticsObjectCollectionRuleMap and LogAnalyticsObjectCollectionRuleMapOutput values.
@@ -489,12 +476,6 @@ func (i LogAnalyticsObjectCollectionRuleMap) ToLogAnalyticsObjectCollectionRuleM
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsObjectCollectionRuleMapOutput)
 }
 
-func (i LogAnalyticsObjectCollectionRuleMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*LogAnalyticsObjectCollectionRule] {
-	return pulumix.Output[map[string]*LogAnalyticsObjectCollectionRule]{
-		OutputState: i.ToLogAnalyticsObjectCollectionRuleMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LogAnalyticsObjectCollectionRuleOutput struct{ *pulumi.OutputState }
 
 func (LogAnalyticsObjectCollectionRuleOutput) ElementType() reflect.Type {
@@ -507,12 +488,6 @@ func (o LogAnalyticsObjectCollectionRuleOutput) ToLogAnalyticsObjectCollectionRu
 
 func (o LogAnalyticsObjectCollectionRuleOutput) ToLogAnalyticsObjectCollectionRuleOutputWithContext(ctx context.Context) LogAnalyticsObjectCollectionRuleOutput {
 	return o
-}
-
-func (o LogAnalyticsObjectCollectionRuleOutput) ToOutput(ctx context.Context) pulumix.Output[*LogAnalyticsObjectCollectionRule] {
-	return pulumix.Output[*LogAnalyticsObjectCollectionRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.
@@ -664,12 +639,6 @@ func (o LogAnalyticsObjectCollectionRuleArrayOutput) ToLogAnalyticsObjectCollect
 	return o
 }
 
-func (o LogAnalyticsObjectCollectionRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*LogAnalyticsObjectCollectionRule] {
-	return pulumix.Output[[]*LogAnalyticsObjectCollectionRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LogAnalyticsObjectCollectionRuleArrayOutput) Index(i pulumi.IntInput) LogAnalyticsObjectCollectionRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *LogAnalyticsObjectCollectionRule {
 		return vs[0].([]*LogAnalyticsObjectCollectionRule)[vs[1].(int)]
@@ -688,12 +657,6 @@ func (o LogAnalyticsObjectCollectionRuleMapOutput) ToLogAnalyticsObjectCollectio
 
 func (o LogAnalyticsObjectCollectionRuleMapOutput) ToLogAnalyticsObjectCollectionRuleMapOutputWithContext(ctx context.Context) LogAnalyticsObjectCollectionRuleMapOutput {
 	return o
-}
-
-func (o LogAnalyticsObjectCollectionRuleMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*LogAnalyticsObjectCollectionRule] {
-	return pulumix.Output[map[string]*LogAnalyticsObjectCollectionRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LogAnalyticsObjectCollectionRuleMapOutput) MapIndex(k pulumi.StringInput) LogAnalyticsObjectCollectionRuleOutput {

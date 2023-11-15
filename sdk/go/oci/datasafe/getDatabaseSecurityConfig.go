@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Database Security Config resource in Oracle Cloud Infrastructure Data Safe service.
@@ -127,12 +126,6 @@ func (o LookupDatabaseSecurityConfigResultOutput) ToLookupDatabaseSecurityConfig
 
 func (o LookupDatabaseSecurityConfigResultOutput) ToLookupDatabaseSecurityConfigResultOutputWithContext(ctx context.Context) LookupDatabaseSecurityConfigResultOutput {
 	return o
-}
-
-func (o LookupDatabaseSecurityConfigResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDatabaseSecurityConfigResult] {
-	return pulumix.Output[LookupDatabaseSecurityConfigResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment containing the database security config.

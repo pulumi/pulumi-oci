@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific My Trusted User Agent resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -172,12 +171,6 @@ func (o GetDomainsMyTrustedUserAgentResultOutput) ToGetDomainsMyTrustedUserAgent
 
 func (o GetDomainsMyTrustedUserAgentResultOutput) ToGetDomainsMyTrustedUserAgentResultOutputWithContext(ctx context.Context) GetDomainsMyTrustedUserAgentResultOutput {
 	return o
-}
-
-func (o GetDomainsMyTrustedUserAgentResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsMyTrustedUserAgentResult] {
-	return pulumix.Output[GetDomainsMyTrustedUserAgentResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDomainsMyTrustedUserAgentResultOutput) AttributeSets() pulumi.StringArrayOutput {

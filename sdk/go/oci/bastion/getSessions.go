@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Sessions in Oracle Cloud Infrastructure Bastion service.
@@ -125,12 +124,6 @@ func (o GetSessionsResultOutput) ToGetSessionsResultOutput() GetSessionsResultOu
 
 func (o GetSessionsResultOutput) ToGetSessionsResultOutputWithContext(ctx context.Context) GetSessionsResultOutput {
 	return o
-}
-
-func (o GetSessionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSessionsResult] {
-	return pulumix.Output[GetSessionsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The unique identifier (OCID) of the bastion that is hosting this session.

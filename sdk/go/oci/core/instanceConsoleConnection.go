@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Instance Console Connection resource in Oracle Cloud Infrastructure Core service.
@@ -234,12 +233,6 @@ func (i *InstanceConsoleConnection) ToInstanceConsoleConnectionOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(InstanceConsoleConnectionOutput)
 }
 
-func (i *InstanceConsoleConnection) ToOutput(ctx context.Context) pulumix.Output[*InstanceConsoleConnection] {
-	return pulumix.Output[*InstanceConsoleConnection]{
-		OutputState: i.ToInstanceConsoleConnectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // InstanceConsoleConnectionArrayInput is an input type that accepts InstanceConsoleConnectionArray and InstanceConsoleConnectionArrayOutput values.
 // You can construct a concrete instance of `InstanceConsoleConnectionArrayInput` via:
 //
@@ -263,12 +256,6 @@ func (i InstanceConsoleConnectionArray) ToInstanceConsoleConnectionArrayOutput()
 
 func (i InstanceConsoleConnectionArray) ToInstanceConsoleConnectionArrayOutputWithContext(ctx context.Context) InstanceConsoleConnectionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InstanceConsoleConnectionArrayOutput)
-}
-
-func (i InstanceConsoleConnectionArray) ToOutput(ctx context.Context) pulumix.Output[[]*InstanceConsoleConnection] {
-	return pulumix.Output[[]*InstanceConsoleConnection]{
-		OutputState: i.ToInstanceConsoleConnectionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // InstanceConsoleConnectionMapInput is an input type that accepts InstanceConsoleConnectionMap and InstanceConsoleConnectionMapOutput values.
@@ -296,12 +283,6 @@ func (i InstanceConsoleConnectionMap) ToInstanceConsoleConnectionMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(InstanceConsoleConnectionMapOutput)
 }
 
-func (i InstanceConsoleConnectionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*InstanceConsoleConnection] {
-	return pulumix.Output[map[string]*InstanceConsoleConnection]{
-		OutputState: i.ToInstanceConsoleConnectionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type InstanceConsoleConnectionOutput struct{ *pulumi.OutputState }
 
 func (InstanceConsoleConnectionOutput) ElementType() reflect.Type {
@@ -314,12 +295,6 @@ func (o InstanceConsoleConnectionOutput) ToInstanceConsoleConnectionOutput() Ins
 
 func (o InstanceConsoleConnectionOutput) ToInstanceConsoleConnectionOutputWithContext(ctx context.Context) InstanceConsoleConnectionOutput {
 	return o
-}
-
-func (o InstanceConsoleConnectionOutput) ToOutput(ctx context.Context) pulumix.Output[*InstanceConsoleConnection] {
-	return pulumix.Output[*InstanceConsoleConnection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment to contain the console connection.
@@ -389,12 +364,6 @@ func (o InstanceConsoleConnectionArrayOutput) ToInstanceConsoleConnectionArrayOu
 	return o
 }
 
-func (o InstanceConsoleConnectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*InstanceConsoleConnection] {
-	return pulumix.Output[[]*InstanceConsoleConnection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o InstanceConsoleConnectionArrayOutput) Index(i pulumi.IntInput) InstanceConsoleConnectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *InstanceConsoleConnection {
 		return vs[0].([]*InstanceConsoleConnection)[vs[1].(int)]
@@ -413,12 +382,6 @@ func (o InstanceConsoleConnectionMapOutput) ToInstanceConsoleConnectionMapOutput
 
 func (o InstanceConsoleConnectionMapOutput) ToInstanceConsoleConnectionMapOutputWithContext(ctx context.Context) InstanceConsoleConnectionMapOutput {
 	return o
-}
-
-func (o InstanceConsoleConnectionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*InstanceConsoleConnection] {
-	return pulumix.Output[map[string]*InstanceConsoleConnection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o InstanceConsoleConnectionMapOutput) MapIndex(k pulumi.StringInput) InstanceConsoleConnectionOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Ccc Upgrade Schedules in Oracle Cloud Infrastructure Compute Cloud At Customer service.
@@ -144,12 +143,6 @@ func (o GetAtCustomerCccUpgradeSchedulesResultOutput) ToGetAtCustomerCccUpgradeS
 
 func (o GetAtCustomerCccUpgradeSchedulesResultOutput) ToGetAtCustomerCccUpgradeSchedulesResultOutputWithContext(ctx context.Context) GetAtCustomerCccUpgradeSchedulesResultOutput {
 	return o
-}
-
-func (o GetAtCustomerCccUpgradeSchedulesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAtCustomerCccUpgradeSchedulesResult] {
-	return pulumix.Output[GetAtCustomerCccUpgradeSchedulesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAtCustomerCccUpgradeSchedulesResultOutput) AccessLevel() pulumi.StringPtrOutput {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Load Balancer resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -457,12 +456,6 @@ func (i *LoadBalancer) ToLoadBalancerOutputWithContext(ctx context.Context) Load
 	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerOutput)
 }
 
-func (i *LoadBalancer) ToOutput(ctx context.Context) pulumix.Output[*LoadBalancer] {
-	return pulumix.Output[*LoadBalancer]{
-		OutputState: i.ToLoadBalancerOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LoadBalancerArrayInput is an input type that accepts LoadBalancerArray and LoadBalancerArrayOutput values.
 // You can construct a concrete instance of `LoadBalancerArrayInput` via:
 //
@@ -486,12 +479,6 @@ func (i LoadBalancerArray) ToLoadBalancerArrayOutput() LoadBalancerArrayOutput {
 
 func (i LoadBalancerArray) ToLoadBalancerArrayOutputWithContext(ctx context.Context) LoadBalancerArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerArrayOutput)
-}
-
-func (i LoadBalancerArray) ToOutput(ctx context.Context) pulumix.Output[[]*LoadBalancer] {
-	return pulumix.Output[[]*LoadBalancer]{
-		OutputState: i.ToLoadBalancerArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // LoadBalancerMapInput is an input type that accepts LoadBalancerMap and LoadBalancerMapOutput values.
@@ -519,12 +506,6 @@ func (i LoadBalancerMap) ToLoadBalancerMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerMapOutput)
 }
 
-func (i LoadBalancerMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*LoadBalancer] {
-	return pulumix.Output[map[string]*LoadBalancer]{
-		OutputState: i.ToLoadBalancerMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LoadBalancerOutput struct{ *pulumi.OutputState }
 
 func (LoadBalancerOutput) ElementType() reflect.Type {
@@ -537,12 +518,6 @@ func (o LoadBalancerOutput) ToLoadBalancerOutput() LoadBalancerOutput {
 
 func (o LoadBalancerOutput) ToLoadBalancerOutputWithContext(ctx context.Context) LoadBalancerOutput {
 	return o
-}
-
-func (o LoadBalancerOutput) ToOutput(ctx context.Context) pulumix.Output[*LoadBalancer] {
-	return pulumix.Output[*LoadBalancer]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer.
@@ -666,12 +641,6 @@ func (o LoadBalancerArrayOutput) ToLoadBalancerArrayOutputWithContext(ctx contex
 	return o
 }
 
-func (o LoadBalancerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*LoadBalancer] {
-	return pulumix.Output[[]*LoadBalancer]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LoadBalancerArrayOutput) Index(i pulumi.IntInput) LoadBalancerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *LoadBalancer {
 		return vs[0].([]*LoadBalancer)[vs[1].(int)]
@@ -690,12 +659,6 @@ func (o LoadBalancerMapOutput) ToLoadBalancerMapOutput() LoadBalancerMapOutput {
 
 func (o LoadBalancerMapOutput) ToLoadBalancerMapOutputWithContext(ctx context.Context) LoadBalancerMapOutput {
 	return o
-}
-
-func (o LoadBalancerMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*LoadBalancer] {
-	return pulumix.Output[map[string]*LoadBalancer]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LoadBalancerMapOutput) MapIndex(k pulumi.StringInput) LoadBalancerOutput {

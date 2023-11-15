@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Log Analytics Log Group resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -120,12 +119,6 @@ func (o LookupLogAnalyticsLogGroupResultOutput) ToLookupLogAnalyticsLogGroupResu
 
 func (o LookupLogAnalyticsLogGroupResultOutput) ToLookupLogAnalyticsLogGroupResultOutputWithContext(ctx context.Context) LookupLogAnalyticsLogGroupResultOutput {
 	return o
-}
-
-func (o LookupLogAnalyticsLogGroupResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupLogAnalyticsLogGroupResult] {
-	return pulumix.Output[LookupLogAnalyticsLogGroupResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

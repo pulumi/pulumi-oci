@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Network Firewall Policy Mapped Secrets in Oracle Cloud Infrastructure Network Firewall service.
@@ -108,12 +107,6 @@ func (o GetNetworkFirewallPolicyMappedSecretsResultOutput) ToGetNetworkFirewallP
 
 func (o GetNetworkFirewallPolicyMappedSecretsResultOutput) ToGetNetworkFirewallPolicyMappedSecretsResultOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyMappedSecretsResultOutput {
 	return o
-}
-
-func (o GetNetworkFirewallPolicyMappedSecretsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPolicyMappedSecretsResult] {
-	return pulumix.Output[GetNetworkFirewallPolicyMappedSecretsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNetworkFirewallPolicyMappedSecretsResultOutput) DisplayName() pulumi.StringPtrOutput {

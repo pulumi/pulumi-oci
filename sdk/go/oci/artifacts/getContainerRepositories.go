@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Container Repositories in Oracle Cloud Infrastructure Artifacts service.
@@ -139,12 +138,6 @@ func (o GetContainerRepositoriesResultOutput) ToGetContainerRepositoriesResultOu
 
 func (o GetContainerRepositoriesResultOutput) ToGetContainerRepositoriesResultOutputWithContext(ctx context.Context) GetContainerRepositoriesResultOutput {
 	return o
-}
-
-func (o GetContainerRepositoriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerRepositoriesResult] {
-	return pulumix.Output[GetContainerRepositoriesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment in which the container repository exists.

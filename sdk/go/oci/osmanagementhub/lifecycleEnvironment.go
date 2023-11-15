@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Lifecycle Environment resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -302,12 +301,6 @@ func (i *LifecycleEnvironment) ToLifecycleEnvironmentOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(LifecycleEnvironmentOutput)
 }
 
-func (i *LifecycleEnvironment) ToOutput(ctx context.Context) pulumix.Output[*LifecycleEnvironment] {
-	return pulumix.Output[*LifecycleEnvironment]{
-		OutputState: i.ToLifecycleEnvironmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LifecycleEnvironmentArrayInput is an input type that accepts LifecycleEnvironmentArray and LifecycleEnvironmentArrayOutput values.
 // You can construct a concrete instance of `LifecycleEnvironmentArrayInput` via:
 //
@@ -331,12 +324,6 @@ func (i LifecycleEnvironmentArray) ToLifecycleEnvironmentArrayOutput() Lifecycle
 
 func (i LifecycleEnvironmentArray) ToLifecycleEnvironmentArrayOutputWithContext(ctx context.Context) LifecycleEnvironmentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(LifecycleEnvironmentArrayOutput)
-}
-
-func (i LifecycleEnvironmentArray) ToOutput(ctx context.Context) pulumix.Output[[]*LifecycleEnvironment] {
-	return pulumix.Output[[]*LifecycleEnvironment]{
-		OutputState: i.ToLifecycleEnvironmentArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // LifecycleEnvironmentMapInput is an input type that accepts LifecycleEnvironmentMap and LifecycleEnvironmentMapOutput values.
@@ -364,12 +351,6 @@ func (i LifecycleEnvironmentMap) ToLifecycleEnvironmentMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(LifecycleEnvironmentMapOutput)
 }
 
-func (i LifecycleEnvironmentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*LifecycleEnvironment] {
-	return pulumix.Output[map[string]*LifecycleEnvironment]{
-		OutputState: i.ToLifecycleEnvironmentMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LifecycleEnvironmentOutput struct{ *pulumi.OutputState }
 
 func (LifecycleEnvironmentOutput) ElementType() reflect.Type {
@@ -382,12 +363,6 @@ func (o LifecycleEnvironmentOutput) ToLifecycleEnvironmentOutput() LifecycleEnvi
 
 func (o LifecycleEnvironmentOutput) ToLifecycleEnvironmentOutputWithContext(ctx context.Context) LifecycleEnvironmentOutput {
 	return o
-}
-
-func (o LifecycleEnvironmentOutput) ToOutput(ctx context.Context) pulumix.Output[*LifecycleEnvironment] {
-	return pulumix.Output[*LifecycleEnvironment]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The CPU architecture of the managed instance(s) in the lifecycle environment.
@@ -479,12 +454,6 @@ func (o LifecycleEnvironmentArrayOutput) ToLifecycleEnvironmentArrayOutputWithCo
 	return o
 }
 
-func (o LifecycleEnvironmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*LifecycleEnvironment] {
-	return pulumix.Output[[]*LifecycleEnvironment]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LifecycleEnvironmentArrayOutput) Index(i pulumi.IntInput) LifecycleEnvironmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *LifecycleEnvironment {
 		return vs[0].([]*LifecycleEnvironment)[vs[1].(int)]
@@ -503,12 +472,6 @@ func (o LifecycleEnvironmentMapOutput) ToLifecycleEnvironmentMapOutput() Lifecyc
 
 func (o LifecycleEnvironmentMapOutput) ToLifecycleEnvironmentMapOutputWithContext(ctx context.Context) LifecycleEnvironmentMapOutput {
 	return o
-}
-
-func (o LifecycleEnvironmentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*LifecycleEnvironment] {
-	return pulumix.Output[map[string]*LifecycleEnvironment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LifecycleEnvironmentMapOutput) MapIndex(k pulumi.StringInput) LifecycleEnvironmentOutput {

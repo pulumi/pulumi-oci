@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of External Listener Services in Oracle Cloud Infrastructure Database Management service.
@@ -113,12 +112,6 @@ func (o GetExternalListenerServicesResultOutput) ToGetExternalListenerServicesRe
 
 func (o GetExternalListenerServicesResultOutput) ToGetExternalListenerServicesResultOutputWithContext(ctx context.Context) GetExternalListenerServicesResultOutput {
 	return o
-}
-
-func (o GetExternalListenerServicesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalListenerServicesResult] {
-	return pulumix.Output[GetExternalListenerServicesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetExternalListenerServicesResultOutput) ExternalListenerId() pulumi.StringOutput {

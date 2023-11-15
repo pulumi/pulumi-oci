@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Bds Instance resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -424,12 +423,6 @@ func (i *BdsInstance) ToBdsInstanceOutputWithContext(ctx context.Context) BdsIns
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceOutput)
 }
 
-func (i *BdsInstance) ToOutput(ctx context.Context) pulumix.Output[*BdsInstance] {
-	return pulumix.Output[*BdsInstance]{
-		OutputState: i.ToBdsInstanceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BdsInstanceArrayInput is an input type that accepts BdsInstanceArray and BdsInstanceArrayOutput values.
 // You can construct a concrete instance of `BdsInstanceArrayInput` via:
 //
@@ -453,12 +446,6 @@ func (i BdsInstanceArray) ToBdsInstanceArrayOutput() BdsInstanceArrayOutput {
 
 func (i BdsInstanceArray) ToBdsInstanceArrayOutputWithContext(ctx context.Context) BdsInstanceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceArrayOutput)
-}
-
-func (i BdsInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]*BdsInstance] {
-	return pulumix.Output[[]*BdsInstance]{
-		OutputState: i.ToBdsInstanceArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BdsInstanceMapInput is an input type that accepts BdsInstanceMap and BdsInstanceMapOutput values.
@@ -486,12 +473,6 @@ func (i BdsInstanceMap) ToBdsInstanceMapOutputWithContext(ctx context.Context) B
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceMapOutput)
 }
 
-func (i BdsInstanceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BdsInstance] {
-	return pulumix.Output[map[string]*BdsInstance]{
-		OutputState: i.ToBdsInstanceMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BdsInstanceOutput struct{ *pulumi.OutputState }
 
 func (BdsInstanceOutput) ElementType() reflect.Type {
@@ -504,12 +485,6 @@ func (o BdsInstanceOutput) ToBdsInstanceOutput() BdsInstanceOutput {
 
 func (o BdsInstanceOutput) ToBdsInstanceOutputWithContext(ctx context.Context) BdsInstanceOutput {
 	return o
-}
-
-func (o BdsInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[*BdsInstance] {
-	return pulumix.Output[*BdsInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
@@ -688,12 +663,6 @@ func (o BdsInstanceArrayOutput) ToBdsInstanceArrayOutputWithContext(ctx context.
 	return o
 }
 
-func (o BdsInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BdsInstance] {
-	return pulumix.Output[[]*BdsInstance]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o BdsInstanceArrayOutput) Index(i pulumi.IntInput) BdsInstanceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BdsInstance {
 		return vs[0].([]*BdsInstance)[vs[1].(int)]
@@ -712,12 +681,6 @@ func (o BdsInstanceMapOutput) ToBdsInstanceMapOutput() BdsInstanceMapOutput {
 
 func (o BdsInstanceMapOutput) ToBdsInstanceMapOutputWithContext(ctx context.Context) BdsInstanceMapOutput {
 	return o
-}
-
-func (o BdsInstanceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BdsInstance] {
-	return pulumix.Output[map[string]*BdsInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BdsInstanceMapOutput) MapIndex(k pulumi.StringInput) BdsInstanceOutput {

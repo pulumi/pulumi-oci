@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Detect Anomaly Jobs in Oracle Cloud Infrastructure Ai Anomaly Detection service.
@@ -140,12 +139,6 @@ func (o GetDetectAnomalyJobsResultOutput) ToGetDetectAnomalyJobsResultOutput() G
 
 func (o GetDetectAnomalyJobsResultOutput) ToGetDetectAnomalyJobsResultOutputWithContext(ctx context.Context) GetDetectAnomalyJobsResultOutput {
 	return o
-}
-
-func (o GetDetectAnomalyJobsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobsResult] {
-	return pulumix.Output[GetDetectAnomalyJobsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment that starts the job.

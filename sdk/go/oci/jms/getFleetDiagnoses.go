@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Fleet Diagnoses in Oracle Cloud Infrastructure Jms service.
@@ -105,12 +104,6 @@ func (o GetFleetDiagnosesResultOutput) ToGetFleetDiagnosesResultOutput() GetFlee
 
 func (o GetFleetDiagnosesResultOutput) ToGetFleetDiagnosesResultOutputWithContext(ctx context.Context) GetFleetDiagnosesResultOutput {
 	return o
-}
-
-func (o GetFleetDiagnosesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetDiagnosesResult] {
-	return pulumix.Output[GetFleetDiagnosesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetDiagnosesResultOutput) Filters() GetFleetDiagnosesFilterArrayOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -49,12 +48,6 @@ func (i AutoScalingConfigurationPolicyArgs) ToAutoScalingConfigurationPolicyOutp
 
 func (i AutoScalingConfigurationPolicyArgs) ToAutoScalingConfigurationPolicyOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyOutput)
-}
-
-func (i AutoScalingConfigurationPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicy] {
-	return pulumix.Output[AutoScalingConfigurationPolicy]{
-		OutputState: i.ToAutoScalingConfigurationPolicyOutputWithContext(ctx).OutputState,
-	}
 }
 
 func (i AutoScalingConfigurationPolicyArgs) ToAutoScalingConfigurationPolicyPtrOutput() AutoScalingConfigurationPolicyPtrOutput {
@@ -98,12 +91,6 @@ func (i *autoScalingConfigurationPolicyPtrType) ToAutoScalingConfigurationPolicy
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyPtrOutput)
 }
 
-func (i *autoScalingConfigurationPolicyPtrType) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfigurationPolicy] {
-	return pulumix.Output[*AutoScalingConfigurationPolicy]{
-		OutputState: i.ToAutoScalingConfigurationPolicyPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AutoScalingConfigurationPolicyOutput struct{ *pulumi.OutputState }
 
 func (AutoScalingConfigurationPolicyOutput) ElementType() reflect.Type {
@@ -128,12 +115,6 @@ func (o AutoScalingConfigurationPolicyOutput) ToAutoScalingConfigurationPolicyPt
 	}).(AutoScalingConfigurationPolicyPtrOutput)
 }
 
-func (o AutoScalingConfigurationPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicy] {
-	return pulumix.Output[AutoScalingConfigurationPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Type of autoscaling policy.
 func (o AutoScalingConfigurationPolicyOutput) PolicyType() pulumi.StringOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicy) string { return v.PolicyType }).(pulumi.StringOutput)
@@ -156,12 +137,6 @@ func (o AutoScalingConfigurationPolicyPtrOutput) ToAutoScalingConfigurationPolic
 
 func (o AutoScalingConfigurationPolicyPtrOutput) ToAutoScalingConfigurationPolicyPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyPtrOutput {
 	return o
-}
-
-func (o AutoScalingConfigurationPolicyPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfigurationPolicy] {
-	return pulumix.Output[*AutoScalingConfigurationPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AutoScalingConfigurationPolicyPtrOutput) Elem() AutoScalingConfigurationPolicyOutput {
@@ -265,12 +240,6 @@ func (i AutoScalingConfigurationPolicyDetailsArgs) ToAutoScalingConfigurationPol
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsOutput)
 }
 
-func (i AutoScalingConfigurationPolicyDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyDetails] {
-	return pulumix.Output[AutoScalingConfigurationPolicyDetails]{
-		OutputState: i.ToAutoScalingConfigurationPolicyDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AutoScalingConfigurationPolicyDetailsArgs) ToAutoScalingConfigurationPolicyDetailsPtrOutput() AutoScalingConfigurationPolicyDetailsPtrOutput {
 	return i.ToAutoScalingConfigurationPolicyDetailsPtrOutputWithContext(context.Background())
 }
@@ -312,12 +281,6 @@ func (i *autoScalingConfigurationPolicyDetailsPtrType) ToAutoScalingConfiguratio
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsPtrOutput)
 }
 
-func (i *autoScalingConfigurationPolicyDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfigurationPolicyDetails] {
-	return pulumix.Output[*AutoScalingConfigurationPolicyDetails]{
-		OutputState: i.ToAutoScalingConfigurationPolicyDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AutoScalingConfigurationPolicyDetailsOutput struct{ *pulumi.OutputState }
 
 func (AutoScalingConfigurationPolicyDetailsOutput) ElementType() reflect.Type {
@@ -340,12 +303,6 @@ func (o AutoScalingConfigurationPolicyDetailsOutput) ToAutoScalingConfigurationP
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AutoScalingConfigurationPolicyDetails) *AutoScalingConfigurationPolicyDetails {
 		return &v
 	}).(AutoScalingConfigurationPolicyDetailsPtrOutput)
-}
-
-func (o AutoScalingConfigurationPolicyDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyDetails] {
-	return pulumix.Output[AutoScalingConfigurationPolicyDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The type of autoscaling action to take.
@@ -418,12 +375,6 @@ func (o AutoScalingConfigurationPolicyDetailsPtrOutput) ToAutoScalingConfigurati
 
 func (o AutoScalingConfigurationPolicyDetailsPtrOutput) ToAutoScalingConfigurationPolicyDetailsPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsPtrOutput {
 	return o
-}
-
-func (o AutoScalingConfigurationPolicyDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfigurationPolicyDetails] {
-	return pulumix.Output[*AutoScalingConfigurationPolicyDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AutoScalingConfigurationPolicyDetailsPtrOutput) Elem() AutoScalingConfigurationPolicyDetailsOutput {
@@ -578,12 +529,6 @@ func (i AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs) ToAutoScalingC
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput)
 }
 
-func (i AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleDownConfig] {
-	return pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleDownConfig]{
-		OutputState: i.ToAutoScalingConfigurationPolicyDetailsScaleDownConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput() AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput {
 	return i.ToAutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutputWithContext(context.Background())
 }
@@ -625,12 +570,6 @@ func (i *autoScalingConfigurationPolicyDetailsScaleDownConfigPtrType) ToAutoScal
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput)
 }
 
-func (i *autoScalingConfigurationPolicyDetailsScaleDownConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleDownConfig] {
-	return pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleDownConfig]{
-		OutputState: i.ToAutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput struct{ *pulumi.OutputState }
 
 func (AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput) ElementType() reflect.Type {
@@ -653,12 +592,6 @@ func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput) ToAutoScalin
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AutoScalingConfigurationPolicyDetailsScaleDownConfig) *AutoScalingConfigurationPolicyDetailsScaleDownConfig {
 		return &v
 	}).(AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput)
-}
-
-func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleDownConfig] {
-	return pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleDownConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
@@ -700,12 +633,6 @@ func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput) ToAutoSca
 
 func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput {
 	return o
-}
-
-func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleDownConfig] {
-	return pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleDownConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput) Elem() AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput {
@@ -805,12 +732,6 @@ func (i AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs) ToAutoSc
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutput)
 }
 
-func (i AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric] {
-	return pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric]{
-		OutputState: i.ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput() AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput {
 	return i.ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutputWithContext(context.Background())
 }
@@ -852,12 +773,6 @@ func (i *autoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrType) ToAu
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput)
 }
 
-func (i *autoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrType) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric] {
-	return pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric]{
-		OutputState: i.ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutput struct{ *pulumi.OutputState }
 
 func (AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutput) ElementType() reflect.Type {
@@ -880,12 +795,6 @@ func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutput) ToAuto
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric) *AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric {
 		return &v
 	}).(AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput)
-}
-
-func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutput) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric] {
-	return pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Allowed value is CPU_UTILIZATION.
@@ -912,12 +821,6 @@ func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput) ToA
 
 func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput {
 	return o
-}
-
-func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric] {
-	return pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrOutput) Elem() AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricOutput {
@@ -991,12 +894,6 @@ func (i AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutput)
 }
 
-func (i AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThreshold] {
-	return pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThreshold]{
-		OutputState: i.ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput() AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput {
 	return i.ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutputWithContext(context.Background())
 }
@@ -1038,12 +935,6 @@ func (i *autoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrT
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput)
 }
 
-func (i *autoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrType) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThreshold] {
-	return pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThreshold]{
-		OutputState: i.ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutput struct{ *pulumi.OutputState }
 
 func (AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutput) ElementType() reflect.Type {
@@ -1066,12 +957,6 @@ func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutpu
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThreshold) *AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThreshold {
 		return &v
 	}).(AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput)
-}
-
-func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutput) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThreshold] {
-	return pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThreshold]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
@@ -1103,12 +988,6 @@ func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOu
 
 func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput {
 	return o
-}
-
-func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThreshold] {
-	return pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThreshold]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdPtrOutput) Elem() AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOutput {
@@ -1192,12 +1071,6 @@ func (i AutoScalingConfigurationPolicyDetailsScaleInConfigArgs) ToAutoScalingCon
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleInConfigOutput)
 }
 
-func (i AutoScalingConfigurationPolicyDetailsScaleInConfigArgs) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleInConfig] {
-	return pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleInConfig]{
-		OutputState: i.ToAutoScalingConfigurationPolicyDetailsScaleInConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AutoScalingConfigurationPolicyDetailsScaleInConfigArgs) ToAutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput() AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput {
 	return i.ToAutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutputWithContext(context.Background())
 }
@@ -1239,12 +1112,6 @@ func (i *autoScalingConfigurationPolicyDetailsScaleInConfigPtrType) ToAutoScalin
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput)
 }
 
-func (i *autoScalingConfigurationPolicyDetailsScaleInConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleInConfig] {
-	return pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleInConfig]{
-		OutputState: i.ToAutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AutoScalingConfigurationPolicyDetailsScaleInConfigOutput struct{ *pulumi.OutputState }
 
 func (AutoScalingConfigurationPolicyDetailsScaleInConfigOutput) ElementType() reflect.Type {
@@ -1267,12 +1134,6 @@ func (o AutoScalingConfigurationPolicyDetailsScaleInConfigOutput) ToAutoScalingC
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AutoScalingConfigurationPolicyDetailsScaleInConfig) *AutoScalingConfigurationPolicyDetailsScaleInConfig {
 		return &v
 	}).(AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput)
-}
-
-func (o AutoScalingConfigurationPolicyDetailsScaleInConfigOutput) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleInConfig] {
-	return pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleInConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Metric and threshold details for triggering an autoscale action.
@@ -1304,12 +1165,6 @@ func (o AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput) ToAutoScali
 
 func (o AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput {
 	return o
-}
-
-func (o AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleInConfig] {
-	return pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleInConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput) Elem() AutoScalingConfigurationPolicyDetailsScaleInConfigOutput {
@@ -1389,12 +1244,6 @@ func (i AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs) ToAutoScal
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutput)
 }
 
-func (i AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleInConfigMetric] {
-	return pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleInConfigMetric]{
-		OutputState: i.ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs) ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput() AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput {
 	return i.ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutputWithContext(context.Background())
 }
@@ -1436,12 +1285,6 @@ func (i *autoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrType) ToAuto
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput)
 }
 
-func (i *autoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrType) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleInConfigMetric] {
-	return pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleInConfigMetric]{
-		OutputState: i.ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutput struct{ *pulumi.OutputState }
 
 func (AutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutput) ElementType() reflect.Type {
@@ -1464,12 +1307,6 @@ func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutput) ToAutoSc
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AutoScalingConfigurationPolicyDetailsScaleInConfigMetric) *AutoScalingConfigurationPolicyDetailsScaleInConfigMetric {
 		return &v
 	}).(AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput)
-}
-
-func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutput) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleInConfigMetric] {
-	return pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleInConfigMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Allowed value is CPU_UTILIZATION.
@@ -1496,12 +1333,6 @@ func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput) ToAut
 
 func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput {
 	return o
-}
-
-func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleInConfigMetric] {
-	return pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleInConfigMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrOutput) Elem() AutoScalingConfigurationPolicyDetailsScaleInConfigMetricOutput {
@@ -1575,12 +1406,6 @@ func (i AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgs) T
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutput)
 }
 
-func (i AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgs) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThreshold] {
-	return pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThreshold]{
-		OutputState: i.ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgs) ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput() AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput {
 	return i.ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutputWithContext(context.Background())
 }
@@ -1622,12 +1447,6 @@ func (i *autoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrTyp
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput)
 }
 
-func (i *autoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrType) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThreshold] {
-	return pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThreshold]{
-		OutputState: i.ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutput struct{ *pulumi.OutputState }
 
 func (AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutput) ElementType() reflect.Type {
@@ -1650,12 +1469,6 @@ func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutput)
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThreshold) *AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThreshold {
 		return &v
 	}).(AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput)
-}
-
-func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutput) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThreshold] {
-	return pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThreshold]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
@@ -1687,12 +1500,6 @@ func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutp
 
 func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput {
 	return o
-}
-
-func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThreshold] {
-	return pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThreshold]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdPtrOutput) Elem() AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdOutput {
@@ -1776,12 +1583,6 @@ func (i AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs) ToAutoScalingCo
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleOutConfigOutput)
 }
 
-func (i AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleOutConfig] {
-	return pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleOutConfig]{
-		OutputState: i.ToAutoScalingConfigurationPolicyDetailsScaleOutConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput() AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput {
 	return i.ToAutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutputWithContext(context.Background())
 }
@@ -1823,12 +1624,6 @@ func (i *autoScalingConfigurationPolicyDetailsScaleOutConfigPtrType) ToAutoScali
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput)
 }
 
-func (i *autoScalingConfigurationPolicyDetailsScaleOutConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleOutConfig] {
-	return pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleOutConfig]{
-		OutputState: i.ToAutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AutoScalingConfigurationPolicyDetailsScaleOutConfigOutput struct{ *pulumi.OutputState }
 
 func (AutoScalingConfigurationPolicyDetailsScaleOutConfigOutput) ElementType() reflect.Type {
@@ -1851,12 +1646,6 @@ func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigOutput) ToAutoScaling
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AutoScalingConfigurationPolicyDetailsScaleOutConfig) *AutoScalingConfigurationPolicyDetailsScaleOutConfig {
 		return &v
 	}).(AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput)
-}
-
-func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigOutput) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleOutConfig] {
-	return pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleOutConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) This value is the maximum number of nodes the cluster can be scaled-out to.
@@ -1888,12 +1677,6 @@ func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput) ToAutoScal
 
 func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput {
 	return o
-}
-
-func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleOutConfig] {
-	return pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleOutConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigPtrOutput) Elem() AutoScalingConfigurationPolicyDetailsScaleOutConfigOutput {
@@ -1973,12 +1756,6 @@ func (i AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgs) ToAutoSca
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutput)
 }
 
-func (i AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgs) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric] {
-	return pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric]{
-		OutputState: i.ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgs) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput() AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput {
 	return i.ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutputWithContext(context.Background())
 }
@@ -2020,12 +1797,6 @@ func (i *autoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrType) ToAut
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput)
 }
 
-func (i *autoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrType) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric] {
-	return pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric]{
-		OutputState: i.ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutput struct{ *pulumi.OutputState }
 
 func (AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutput) ElementType() reflect.Type {
@@ -2048,12 +1819,6 @@ func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutput) ToAutoS
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric) *AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric {
 		return &v
 	}).(AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput)
-}
-
-func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutput) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric] {
-	return pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Allowed value is CPU_UTILIZATION.
@@ -2080,12 +1845,6 @@ func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput) ToAu
 
 func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput {
 	return o
-}
-
-func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric] {
-	return pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleOutConfigMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricPtrOutput) Elem() AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricOutput {
@@ -2159,12 +1918,6 @@ func (i AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgs) 
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutput)
 }
 
-func (i AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgs) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold] {
-	return pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold]{
-		OutputState: i.ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgs) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput() AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput {
 	return i.ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutputWithContext(context.Background())
 }
@@ -2206,12 +1959,6 @@ func (i *autoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrTy
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput)
 }
 
-func (i *autoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrType) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold] {
-	return pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold]{
-		OutputState: i.ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutput struct{ *pulumi.OutputState }
 
 func (AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutput) ElementType() reflect.Type {
@@ -2234,12 +1981,6 @@ func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutput
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold) *AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold {
 		return &v
 	}).(AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput)
-}
-
-func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutput) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold] {
-	return pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
@@ -2271,12 +2012,6 @@ func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOut
 
 func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput {
 	return o
-}
-
-func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold] {
-	return pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdPtrOutput) Elem() AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdOutput {
@@ -2368,12 +2103,6 @@ func (i AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs) ToAutoScalingCon
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleUpConfigOutput)
 }
 
-func (i AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleUpConfig] {
-	return pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleUpConfig]{
-		OutputState: i.ToAutoScalingConfigurationPolicyDetailsScaleUpConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput() AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput {
 	return i.ToAutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutputWithContext(context.Background())
 }
@@ -2415,12 +2144,6 @@ func (i *autoScalingConfigurationPolicyDetailsScaleUpConfigPtrType) ToAutoScalin
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput)
 }
 
-func (i *autoScalingConfigurationPolicyDetailsScaleUpConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleUpConfig] {
-	return pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleUpConfig]{
-		OutputState: i.ToAutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AutoScalingConfigurationPolicyDetailsScaleUpConfigOutput struct{ *pulumi.OutputState }
 
 func (AutoScalingConfigurationPolicyDetailsScaleUpConfigOutput) ElementType() reflect.Type {
@@ -2443,12 +2166,6 @@ func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigOutput) ToAutoScalingC
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AutoScalingConfigurationPolicyDetailsScaleUpConfig) *AutoScalingConfigurationPolicyDetailsScaleUpConfig {
 		return &v
 	}).(AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput)
-}
-
-func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigOutput) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleUpConfig] {
-	return pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleUpConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum memory in GBs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
@@ -2490,12 +2207,6 @@ func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput) ToAutoScali
 
 func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput {
 	return o
-}
-
-func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleUpConfig] {
-	return pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleUpConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigPtrOutput) Elem() AutoScalingConfigurationPolicyDetailsScaleUpConfigOutput {
@@ -2595,12 +2306,6 @@ func (i AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs) ToAutoScal
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutput)
 }
 
-func (i AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric] {
-	return pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric]{
-		OutputState: i.ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput() AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput {
 	return i.ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutputWithContext(context.Background())
 }
@@ -2642,12 +2347,6 @@ func (i *autoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrType) ToAuto
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput)
 }
 
-func (i *autoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrType) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric] {
-	return pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric]{
-		OutputState: i.ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutput struct{ *pulumi.OutputState }
 
 func (AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutput) ElementType() reflect.Type {
@@ -2670,12 +2369,6 @@ func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutput) ToAutoSc
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric) *AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric {
 		return &v
 	}).(AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput)
-}
-
-func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutput) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric] {
-	return pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Allowed value is CPU_UTILIZATION.
@@ -2702,12 +2395,6 @@ func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput) ToAut
 
 func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput {
 	return o
-}
-
-func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric] {
-	return pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricPtrOutput) Elem() AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricOutput {
@@ -2781,12 +2468,6 @@ func (i AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs) T
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutput)
 }
 
-func (i AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold] {
-	return pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold]{
-		OutputState: i.ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput() AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput {
 	return i.ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutputWithContext(context.Background())
 }
@@ -2828,12 +2509,6 @@ func (i *autoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrTyp
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput)
 }
 
-func (i *autoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrType) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold] {
-	return pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold]{
-		OutputState: i.ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutput struct{ *pulumi.OutputState }
 
 func (AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutput) ElementType() reflect.Type {
@@ -2856,12 +2531,6 @@ func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutput)
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold) *AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold {
 		return &v
 	}).(AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput)
-}
-
-func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutput) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold] {
-	return pulumix.Output[AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
@@ -2893,12 +2562,6 @@ func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutp
 
 func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput) ToAutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput {
 	return o
-}
-
-func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold] {
-	return pulumix.Output[*AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdPtrOutput) Elem() AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOutput {
@@ -2982,12 +2645,6 @@ func (i AutoScalingConfigurationPolicyDetailsScheduleDetailArgs) ToAutoScalingCo
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScheduleDetailOutput)
 }
 
-func (i AutoScalingConfigurationPolicyDetailsScheduleDetailArgs) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyDetailsScheduleDetail] {
-	return pulumix.Output[AutoScalingConfigurationPolicyDetailsScheduleDetail]{
-		OutputState: i.ToAutoScalingConfigurationPolicyDetailsScheduleDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AutoScalingConfigurationPolicyDetailsScheduleDetailArrayInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScheduleDetailArray and AutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutput values.
 // You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScheduleDetailArrayInput` via:
 //
@@ -3013,12 +2670,6 @@ func (i AutoScalingConfigurationPolicyDetailsScheduleDetailArray) ToAutoScalingC
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutput)
 }
 
-func (i AutoScalingConfigurationPolicyDetailsScheduleDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]AutoScalingConfigurationPolicyDetailsScheduleDetail] {
-	return pulumix.Output[[]AutoScalingConfigurationPolicyDetailsScheduleDetail]{
-		OutputState: i.ToAutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AutoScalingConfigurationPolicyDetailsScheduleDetailOutput struct{ *pulumi.OutputState }
 
 func (AutoScalingConfigurationPolicyDetailsScheduleDetailOutput) ElementType() reflect.Type {
@@ -3031,12 +2682,6 @@ func (o AutoScalingConfigurationPolicyDetailsScheduleDetailOutput) ToAutoScaling
 
 func (o AutoScalingConfigurationPolicyDetailsScheduleDetailOutput) ToAutoScalingConfigurationPolicyDetailsScheduleDetailOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScheduleDetailOutput {
 	return o
-}
-
-func (o AutoScalingConfigurationPolicyDetailsScheduleDetailOutput) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyDetailsScheduleDetail] {
-	return pulumix.Output[AutoScalingConfigurationPolicyDetailsScheduleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The type of schedule.
@@ -3070,12 +2715,6 @@ func (o AutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutput) ToAutoSc
 
 func (o AutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutput) ToAutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutput {
 	return o
-}
-
-func (o AutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AutoScalingConfigurationPolicyDetailsScheduleDetail] {
-	return pulumix.Output[[]AutoScalingConfigurationPolicyDetailsScheduleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AutoScalingConfigurationPolicyDetailsScheduleDetailArrayOutput) Index(i pulumi.IntInput) AutoScalingConfigurationPolicyDetailsScheduleDetailOutput {
@@ -3121,12 +2760,6 @@ func (i AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScal
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutput)
 }
 
-func (i AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArgs) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig] {
-	return pulumix.Output[AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig]{
-		OutputState: i.ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArray and AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutput values.
 // You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayInput` via:
 //
@@ -3152,12 +2785,6 @@ func (i AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScal
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutput)
 }
 
-func (i AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig] {
-	return pulumix.Output[[]AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig]{
-		OutputState: i.ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutput struct{ *pulumi.OutputState }
 
 func (AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutput) ElementType() reflect.Type {
@@ -3170,12 +2797,6 @@ func (o AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScal
 
 func (o AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutput) ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutput {
 	return o
-}
-
-func (o AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutput) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig] {
-	return pulumix.Output[AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) This value is the desired number of nodes in the cluster.
@@ -3204,12 +2825,6 @@ func (o AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScal
 
 func (o AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutput) ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutput {
 	return o
-}
-
-func (o AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig] {
-	return pulumix.Output[[]AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArrayOutput) Index(i pulumi.IntInput) AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigOutput {
@@ -3263,12 +2878,6 @@ func (i AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalin
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutput)
 }
 
-func (i AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArgs) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfig] {
-	return pulumix.Output[AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfig]{
-		OutputState: i.ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayInput is an input type that accepts AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArray and AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayOutput values.
 // You can construct a concrete instance of `AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayInput` via:
 //
@@ -3294,12 +2903,6 @@ func (i AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalin
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayOutput)
 }
 
-func (i AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfig] {
-	return pulumix.Output[[]AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfig]{
-		OutputState: i.ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutput struct{ *pulumi.OutputState }
 
 func (AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutput) ElementType() reflect.Type {
@@ -3312,12 +2915,6 @@ func (o AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalin
 
 func (o AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutput) ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutput {
 	return o
-}
-
-func (o AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutput) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfig] {
-	return pulumix.Output[AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired memory in GBs on each node. This value is not used for nodes with fixed compute shapes.
@@ -3360,12 +2957,6 @@ func (o AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalin
 
 func (o AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayOutput) ToAutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayOutput {
 	return o
-}
-
-func (o AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfig] {
-	return pulumix.Output[[]AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArrayOutput) Index(i pulumi.IntInput) AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigOutput {
@@ -3411,12 +3002,6 @@ func (i AutoScalingConfigurationPolicyRuleArgs) ToAutoScalingConfigurationPolicy
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyRuleOutput)
 }
 
-func (i AutoScalingConfigurationPolicyRuleArgs) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyRule] {
-	return pulumix.Output[AutoScalingConfigurationPolicyRule]{
-		OutputState: i.ToAutoScalingConfigurationPolicyRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AutoScalingConfigurationPolicyRuleArrayInput is an input type that accepts AutoScalingConfigurationPolicyRuleArray and AutoScalingConfigurationPolicyRuleArrayOutput values.
 // You can construct a concrete instance of `AutoScalingConfigurationPolicyRuleArrayInput` via:
 //
@@ -3442,12 +3027,6 @@ func (i AutoScalingConfigurationPolicyRuleArray) ToAutoScalingConfigurationPolic
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyRuleArrayOutput)
 }
 
-func (i AutoScalingConfigurationPolicyRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]AutoScalingConfigurationPolicyRule] {
-	return pulumix.Output[[]AutoScalingConfigurationPolicyRule]{
-		OutputState: i.ToAutoScalingConfigurationPolicyRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AutoScalingConfigurationPolicyRuleOutput struct{ *pulumi.OutputState }
 
 func (AutoScalingConfigurationPolicyRuleOutput) ElementType() reflect.Type {
@@ -3460,12 +3039,6 @@ func (o AutoScalingConfigurationPolicyRuleOutput) ToAutoScalingConfigurationPoli
 
 func (o AutoScalingConfigurationPolicyRuleOutput) ToAutoScalingConfigurationPolicyRuleOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyRuleOutput {
 	return o
-}
-
-func (o AutoScalingConfigurationPolicyRuleOutput) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyRule] {
-	return pulumix.Output[AutoScalingConfigurationPolicyRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The valid value are CHANGE_SHAPE_SCALE_UP or CHANGE_SHAPE_SCALE_DOWN.
@@ -3490,12 +3063,6 @@ func (o AutoScalingConfigurationPolicyRuleArrayOutput) ToAutoScalingConfiguratio
 
 func (o AutoScalingConfigurationPolicyRuleArrayOutput) ToAutoScalingConfigurationPolicyRuleArrayOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyRuleArrayOutput {
 	return o
-}
-
-func (o AutoScalingConfigurationPolicyRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AutoScalingConfigurationPolicyRule] {
-	return pulumix.Output[[]AutoScalingConfigurationPolicyRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AutoScalingConfigurationPolicyRuleArrayOutput) Index(i pulumi.IntInput) AutoScalingConfigurationPolicyRuleOutput {
@@ -3541,12 +3108,6 @@ func (i AutoScalingConfigurationPolicyRuleMetricArgs) ToAutoScalingConfiguration
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyRuleMetricOutput)
 }
 
-func (i AutoScalingConfigurationPolicyRuleMetricArgs) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyRuleMetric] {
-	return pulumix.Output[AutoScalingConfigurationPolicyRuleMetric]{
-		OutputState: i.ToAutoScalingConfigurationPolicyRuleMetricOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AutoScalingConfigurationPolicyRuleMetricOutput struct{ *pulumi.OutputState }
 
 func (AutoScalingConfigurationPolicyRuleMetricOutput) ElementType() reflect.Type {
@@ -3559,12 +3120,6 @@ func (o AutoScalingConfigurationPolicyRuleMetricOutput) ToAutoScalingConfigurati
 
 func (o AutoScalingConfigurationPolicyRuleMetricOutput) ToAutoScalingConfigurationPolicyRuleMetricOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyRuleMetricOutput {
 	return o
-}
-
-func (o AutoScalingConfigurationPolicyRuleMetricOutput) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyRuleMetric] {
-	return pulumix.Output[AutoScalingConfigurationPolicyRuleMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Allowed value is CPU_UTILIZATION.
@@ -3620,12 +3175,6 @@ func (i AutoScalingConfigurationPolicyRuleMetricThresholdArgs) ToAutoScalingConf
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationPolicyRuleMetricThresholdOutput)
 }
 
-func (i AutoScalingConfigurationPolicyRuleMetricThresholdArgs) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyRuleMetricThreshold] {
-	return pulumix.Output[AutoScalingConfigurationPolicyRuleMetricThreshold]{
-		OutputState: i.ToAutoScalingConfigurationPolicyRuleMetricThresholdOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AutoScalingConfigurationPolicyRuleMetricThresholdOutput struct{ *pulumi.OutputState }
 
 func (AutoScalingConfigurationPolicyRuleMetricThresholdOutput) ElementType() reflect.Type {
@@ -3638,12 +3187,6 @@ func (o AutoScalingConfigurationPolicyRuleMetricThresholdOutput) ToAutoScalingCo
 
 func (o AutoScalingConfigurationPolicyRuleMetricThresholdOutput) ToAutoScalingConfigurationPolicyRuleMetricThresholdOutputWithContext(ctx context.Context) AutoScalingConfigurationPolicyRuleMetricThresholdOutput {
 	return o
-}
-
-func (o AutoScalingConfigurationPolicyRuleMetricThresholdOutput) ToOutput(ctx context.Context) pulumix.Output[AutoScalingConfigurationPolicyRuleMetricThreshold] {
-	return pulumix.Output[AutoScalingConfigurationPolicyRuleMetricThreshold]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
@@ -3726,12 +3269,6 @@ func (i BdsInstanceCloudSqlDetailArgs) ToBdsInstanceCloudSqlDetailOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceCloudSqlDetailOutput)
 }
 
-func (i BdsInstanceCloudSqlDetailArgs) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceCloudSqlDetail] {
-	return pulumix.Output[BdsInstanceCloudSqlDetail]{
-		OutputState: i.ToBdsInstanceCloudSqlDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BdsInstanceCloudSqlDetailArrayInput is an input type that accepts BdsInstanceCloudSqlDetailArray and BdsInstanceCloudSqlDetailArrayOutput values.
 // You can construct a concrete instance of `BdsInstanceCloudSqlDetailArrayInput` via:
 //
@@ -3757,12 +3294,6 @@ func (i BdsInstanceCloudSqlDetailArray) ToBdsInstanceCloudSqlDetailArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceCloudSqlDetailArrayOutput)
 }
 
-func (i BdsInstanceCloudSqlDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]BdsInstanceCloudSqlDetail] {
-	return pulumix.Output[[]BdsInstanceCloudSqlDetail]{
-		OutputState: i.ToBdsInstanceCloudSqlDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BdsInstanceCloudSqlDetailOutput struct{ *pulumi.OutputState }
 
 func (BdsInstanceCloudSqlDetailOutput) ElementType() reflect.Type {
@@ -3775,12 +3306,6 @@ func (o BdsInstanceCloudSqlDetailOutput) ToBdsInstanceCloudSqlDetailOutput() Bds
 
 func (o BdsInstanceCloudSqlDetailOutput) ToBdsInstanceCloudSqlDetailOutputWithContext(ctx context.Context) BdsInstanceCloudSqlDetailOutput {
 	return o
-}
-
-func (o BdsInstanceCloudSqlDetailOutput) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceCloudSqlDetail] {
-	return pulumix.Output[BdsInstanceCloudSqlDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
@@ -3839,12 +3364,6 @@ func (o BdsInstanceCloudSqlDetailArrayOutput) ToBdsInstanceCloudSqlDetailArrayOu
 	return o
 }
 
-func (o BdsInstanceCloudSqlDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]BdsInstanceCloudSqlDetail] {
-	return pulumix.Output[[]BdsInstanceCloudSqlDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o BdsInstanceCloudSqlDetailArrayOutput) Index(i pulumi.IntInput) BdsInstanceCloudSqlDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BdsInstanceCloudSqlDetail {
 		return vs[0].([]BdsInstanceCloudSqlDetail)[vs[1].(int)]
@@ -3888,12 +3407,6 @@ func (i BdsInstanceCloudSqlDetailKerberosDetailArgs) ToBdsInstanceCloudSqlDetail
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceCloudSqlDetailKerberosDetailOutput)
 }
 
-func (i BdsInstanceCloudSqlDetailKerberosDetailArgs) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceCloudSqlDetailKerberosDetail] {
-	return pulumix.Output[BdsInstanceCloudSqlDetailKerberosDetail]{
-		OutputState: i.ToBdsInstanceCloudSqlDetailKerberosDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BdsInstanceCloudSqlDetailKerberosDetailArrayInput is an input type that accepts BdsInstanceCloudSqlDetailKerberosDetailArray and BdsInstanceCloudSqlDetailKerberosDetailArrayOutput values.
 // You can construct a concrete instance of `BdsInstanceCloudSqlDetailKerberosDetailArrayInput` via:
 //
@@ -3919,12 +3432,6 @@ func (i BdsInstanceCloudSqlDetailKerberosDetailArray) ToBdsInstanceCloudSqlDetai
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceCloudSqlDetailKerberosDetailArrayOutput)
 }
 
-func (i BdsInstanceCloudSqlDetailKerberosDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]BdsInstanceCloudSqlDetailKerberosDetail] {
-	return pulumix.Output[[]BdsInstanceCloudSqlDetailKerberosDetail]{
-		OutputState: i.ToBdsInstanceCloudSqlDetailKerberosDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BdsInstanceCloudSqlDetailKerberosDetailOutput struct{ *pulumi.OutputState }
 
 func (BdsInstanceCloudSqlDetailKerberosDetailOutput) ElementType() reflect.Type {
@@ -3937,12 +3444,6 @@ func (o BdsInstanceCloudSqlDetailKerberosDetailOutput) ToBdsInstanceCloudSqlDeta
 
 func (o BdsInstanceCloudSqlDetailKerberosDetailOutput) ToBdsInstanceCloudSqlDetailKerberosDetailOutputWithContext(ctx context.Context) BdsInstanceCloudSqlDetailKerberosDetailOutput {
 	return o
-}
-
-func (o BdsInstanceCloudSqlDetailKerberosDetailOutput) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceCloudSqlDetailKerberosDetail] {
-	return pulumix.Output[BdsInstanceCloudSqlDetailKerberosDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Location of the keytab file
@@ -3967,12 +3468,6 @@ func (o BdsInstanceCloudSqlDetailKerberosDetailArrayOutput) ToBdsInstanceCloudSq
 
 func (o BdsInstanceCloudSqlDetailKerberosDetailArrayOutput) ToBdsInstanceCloudSqlDetailKerberosDetailArrayOutputWithContext(ctx context.Context) BdsInstanceCloudSqlDetailKerberosDetailArrayOutput {
 	return o
-}
-
-func (o BdsInstanceCloudSqlDetailKerberosDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]BdsInstanceCloudSqlDetailKerberosDetail] {
-	return pulumix.Output[[]BdsInstanceCloudSqlDetailKerberosDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BdsInstanceCloudSqlDetailKerberosDetailArrayOutput) Index(i pulumi.IntInput) BdsInstanceCloudSqlDetailKerberosDetailOutput {
@@ -4070,12 +3565,6 @@ func (i BdsInstanceClusterDetailArgs) ToBdsInstanceClusterDetailOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceClusterDetailOutput)
 }
 
-func (i BdsInstanceClusterDetailArgs) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceClusterDetail] {
-	return pulumix.Output[BdsInstanceClusterDetail]{
-		OutputState: i.ToBdsInstanceClusterDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BdsInstanceClusterDetailArrayInput is an input type that accepts BdsInstanceClusterDetailArray and BdsInstanceClusterDetailArrayOutput values.
 // You can construct a concrete instance of `BdsInstanceClusterDetailArrayInput` via:
 //
@@ -4101,12 +3590,6 @@ func (i BdsInstanceClusterDetailArray) ToBdsInstanceClusterDetailArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceClusterDetailArrayOutput)
 }
 
-func (i BdsInstanceClusterDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]BdsInstanceClusterDetail] {
-	return pulumix.Output[[]BdsInstanceClusterDetail]{
-		OutputState: i.ToBdsInstanceClusterDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BdsInstanceClusterDetailOutput struct{ *pulumi.OutputState }
 
 func (BdsInstanceClusterDetailOutput) ElementType() reflect.Type {
@@ -4119,12 +3602,6 @@ func (o BdsInstanceClusterDetailOutput) ToBdsInstanceClusterDetailOutput() BdsIn
 
 func (o BdsInstanceClusterDetailOutput) ToBdsInstanceClusterDetailOutputWithContext(ctx context.Context) BdsInstanceClusterDetailOutput {
 	return o
-}
-
-func (o BdsInstanceClusterDetailOutput) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceClusterDetail] {
-	return pulumix.Output[BdsInstanceClusterDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The URL of Ambari
@@ -4216,12 +3693,6 @@ func (o BdsInstanceClusterDetailArrayOutput) ToBdsInstanceClusterDetailArrayOutp
 	return o
 }
 
-func (o BdsInstanceClusterDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]BdsInstanceClusterDetail] {
-	return pulumix.Output[[]BdsInstanceClusterDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o BdsInstanceClusterDetailArrayOutput) Index(i pulumi.IntInput) BdsInstanceClusterDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BdsInstanceClusterDetail {
 		return vs[0].([]BdsInstanceClusterDetail)[vs[1].(int)]
@@ -4277,12 +3748,6 @@ func (i BdsInstanceComputeOnlyWorkerNodeArgs) ToBdsInstanceComputeOnlyWorkerNode
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceComputeOnlyWorkerNodeOutput)
 }
 
-func (i BdsInstanceComputeOnlyWorkerNodeArgs) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceComputeOnlyWorkerNode] {
-	return pulumix.Output[BdsInstanceComputeOnlyWorkerNode]{
-		OutputState: i.ToBdsInstanceComputeOnlyWorkerNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i BdsInstanceComputeOnlyWorkerNodeArgs) ToBdsInstanceComputeOnlyWorkerNodePtrOutput() BdsInstanceComputeOnlyWorkerNodePtrOutput {
 	return i.ToBdsInstanceComputeOnlyWorkerNodePtrOutputWithContext(context.Background())
 }
@@ -4324,12 +3789,6 @@ func (i *bdsInstanceComputeOnlyWorkerNodePtrType) ToBdsInstanceComputeOnlyWorker
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceComputeOnlyWorkerNodePtrOutput)
 }
 
-func (i *bdsInstanceComputeOnlyWorkerNodePtrType) ToOutput(ctx context.Context) pulumix.Output[*BdsInstanceComputeOnlyWorkerNode] {
-	return pulumix.Output[*BdsInstanceComputeOnlyWorkerNode]{
-		OutputState: i.ToBdsInstanceComputeOnlyWorkerNodePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BdsInstanceComputeOnlyWorkerNodeOutput struct{ *pulumi.OutputState }
 
 func (BdsInstanceComputeOnlyWorkerNodeOutput) ElementType() reflect.Type {
@@ -4352,12 +3811,6 @@ func (o BdsInstanceComputeOnlyWorkerNodeOutput) ToBdsInstanceComputeOnlyWorkerNo
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v BdsInstanceComputeOnlyWorkerNode) *BdsInstanceComputeOnlyWorkerNode {
 		return &v
 	}).(BdsInstanceComputeOnlyWorkerNodePtrOutput)
-}
-
-func (o BdsInstanceComputeOnlyWorkerNodeOutput) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceComputeOnlyWorkerNode] {
-	return pulumix.Output[BdsInstanceComputeOnlyWorkerNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
@@ -4399,12 +3852,6 @@ func (o BdsInstanceComputeOnlyWorkerNodePtrOutput) ToBdsInstanceComputeOnlyWorke
 
 func (o BdsInstanceComputeOnlyWorkerNodePtrOutput) ToBdsInstanceComputeOnlyWorkerNodePtrOutputWithContext(ctx context.Context) BdsInstanceComputeOnlyWorkerNodePtrOutput {
 	return o
-}
-
-func (o BdsInstanceComputeOnlyWorkerNodePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*BdsInstanceComputeOnlyWorkerNode] {
-	return pulumix.Output[*BdsInstanceComputeOnlyWorkerNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BdsInstanceComputeOnlyWorkerNodePtrOutput) Elem() BdsInstanceComputeOnlyWorkerNodeOutput {
@@ -4512,12 +3959,6 @@ func (i BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs) ToBdsInstanceComputeOnl
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput)
 }
 
-func (i BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceComputeOnlyWorkerNodeShapeConfig] {
-	return pulumix.Output[BdsInstanceComputeOnlyWorkerNodeShapeConfig]{
-		OutputState: i.ToBdsInstanceComputeOnlyWorkerNodeShapeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs) ToBdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput() BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput {
 	return i.ToBdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutputWithContext(context.Background())
 }
@@ -4559,12 +4000,6 @@ func (i *bdsInstanceComputeOnlyWorkerNodeShapeConfigPtrType) ToBdsInstanceComput
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput)
 }
 
-func (i *bdsInstanceComputeOnlyWorkerNodeShapeConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*BdsInstanceComputeOnlyWorkerNodeShapeConfig] {
-	return pulumix.Output[*BdsInstanceComputeOnlyWorkerNodeShapeConfig]{
-		OutputState: i.ToBdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) ElementType() reflect.Type {
@@ -4587,12 +4022,6 @@ func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) ToBdsInstanceComputeO
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v BdsInstanceComputeOnlyWorkerNodeShapeConfig) *BdsInstanceComputeOnlyWorkerNodeShapeConfig {
 		return &v
 	}).(BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput)
-}
-
-func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceComputeOnlyWorkerNodeShapeConfig] {
-	return pulumix.Output[BdsInstanceComputeOnlyWorkerNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The total amount of memory available to the node, in gigabytes
@@ -4624,12 +4053,6 @@ func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput) ToBdsInstanceCompu
 
 func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput) ToBdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutputWithContext(ctx context.Context) BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput {
 	return o
-}
-
-func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*BdsInstanceComputeOnlyWorkerNodeShapeConfig] {
-	return pulumix.Output[*BdsInstanceComputeOnlyWorkerNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput) Elem() BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput {
@@ -4723,12 +4146,6 @@ func (i BdsInstanceEdgeNodeArgs) ToBdsInstanceEdgeNodeOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceEdgeNodeOutput)
 }
 
-func (i BdsInstanceEdgeNodeArgs) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceEdgeNode] {
-	return pulumix.Output[BdsInstanceEdgeNode]{
-		OutputState: i.ToBdsInstanceEdgeNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i BdsInstanceEdgeNodeArgs) ToBdsInstanceEdgeNodePtrOutput() BdsInstanceEdgeNodePtrOutput {
 	return i.ToBdsInstanceEdgeNodePtrOutputWithContext(context.Background())
 }
@@ -4770,12 +4187,6 @@ func (i *bdsInstanceEdgeNodePtrType) ToBdsInstanceEdgeNodePtrOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceEdgeNodePtrOutput)
 }
 
-func (i *bdsInstanceEdgeNodePtrType) ToOutput(ctx context.Context) pulumix.Output[*BdsInstanceEdgeNode] {
-	return pulumix.Output[*BdsInstanceEdgeNode]{
-		OutputState: i.ToBdsInstanceEdgeNodePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BdsInstanceEdgeNodeOutput struct{ *pulumi.OutputState }
 
 func (BdsInstanceEdgeNodeOutput) ElementType() reflect.Type {
@@ -4798,12 +4209,6 @@ func (o BdsInstanceEdgeNodeOutput) ToBdsInstanceEdgeNodePtrOutputWithContext(ctx
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v BdsInstanceEdgeNode) *BdsInstanceEdgeNode {
 		return &v
 	}).(BdsInstanceEdgeNodePtrOutput)
-}
-
-func (o BdsInstanceEdgeNodeOutput) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceEdgeNode] {
-	return pulumix.Output[BdsInstanceEdgeNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
@@ -4843,12 +4248,6 @@ func (o BdsInstanceEdgeNodePtrOutput) ToBdsInstanceEdgeNodePtrOutput() BdsInstan
 
 func (o BdsInstanceEdgeNodePtrOutput) ToBdsInstanceEdgeNodePtrOutputWithContext(ctx context.Context) BdsInstanceEdgeNodePtrOutput {
 	return o
-}
-
-func (o BdsInstanceEdgeNodePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*BdsInstanceEdgeNode] {
-	return pulumix.Output[*BdsInstanceEdgeNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BdsInstanceEdgeNodePtrOutput) Elem() BdsInstanceEdgeNodeOutput {
@@ -4956,12 +4355,6 @@ func (i BdsInstanceEdgeNodeShapeConfigArgs) ToBdsInstanceEdgeNodeShapeConfigOutp
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceEdgeNodeShapeConfigOutput)
 }
 
-func (i BdsInstanceEdgeNodeShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceEdgeNodeShapeConfig] {
-	return pulumix.Output[BdsInstanceEdgeNodeShapeConfig]{
-		OutputState: i.ToBdsInstanceEdgeNodeShapeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i BdsInstanceEdgeNodeShapeConfigArgs) ToBdsInstanceEdgeNodeShapeConfigPtrOutput() BdsInstanceEdgeNodeShapeConfigPtrOutput {
 	return i.ToBdsInstanceEdgeNodeShapeConfigPtrOutputWithContext(context.Background())
 }
@@ -5003,12 +4396,6 @@ func (i *bdsInstanceEdgeNodeShapeConfigPtrType) ToBdsInstanceEdgeNodeShapeConfig
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceEdgeNodeShapeConfigPtrOutput)
 }
 
-func (i *bdsInstanceEdgeNodeShapeConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*BdsInstanceEdgeNodeShapeConfig] {
-	return pulumix.Output[*BdsInstanceEdgeNodeShapeConfig]{
-		OutputState: i.ToBdsInstanceEdgeNodeShapeConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BdsInstanceEdgeNodeShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (BdsInstanceEdgeNodeShapeConfigOutput) ElementType() reflect.Type {
@@ -5031,12 +4418,6 @@ func (o BdsInstanceEdgeNodeShapeConfigOutput) ToBdsInstanceEdgeNodeShapeConfigPt
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v BdsInstanceEdgeNodeShapeConfig) *BdsInstanceEdgeNodeShapeConfig {
 		return &v
 	}).(BdsInstanceEdgeNodeShapeConfigPtrOutput)
-}
-
-func (o BdsInstanceEdgeNodeShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceEdgeNodeShapeConfig] {
-	return pulumix.Output[BdsInstanceEdgeNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The total amount of memory available to the node, in gigabytes
@@ -5068,12 +4449,6 @@ func (o BdsInstanceEdgeNodeShapeConfigPtrOutput) ToBdsInstanceEdgeNodeShapeConfi
 
 func (o BdsInstanceEdgeNodeShapeConfigPtrOutput) ToBdsInstanceEdgeNodeShapeConfigPtrOutputWithContext(ctx context.Context) BdsInstanceEdgeNodeShapeConfigPtrOutput {
 	return o
-}
-
-func (o BdsInstanceEdgeNodeShapeConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*BdsInstanceEdgeNodeShapeConfig] {
-	return pulumix.Output[*BdsInstanceEdgeNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BdsInstanceEdgeNodeShapeConfigPtrOutput) Elem() BdsInstanceEdgeNodeShapeConfigOutput {
@@ -5165,12 +4540,6 @@ func (i BdsInstanceKafkaBrokerNodeArgs) ToBdsInstanceKafkaBrokerNodeOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceKafkaBrokerNodeOutput)
 }
 
-func (i BdsInstanceKafkaBrokerNodeArgs) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceKafkaBrokerNode] {
-	return pulumix.Output[BdsInstanceKafkaBrokerNode]{
-		OutputState: i.ToBdsInstanceKafkaBrokerNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i BdsInstanceKafkaBrokerNodeArgs) ToBdsInstanceKafkaBrokerNodePtrOutput() BdsInstanceKafkaBrokerNodePtrOutput {
 	return i.ToBdsInstanceKafkaBrokerNodePtrOutputWithContext(context.Background())
 }
@@ -5212,12 +4581,6 @@ func (i *bdsInstanceKafkaBrokerNodePtrType) ToBdsInstanceKafkaBrokerNodePtrOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceKafkaBrokerNodePtrOutput)
 }
 
-func (i *bdsInstanceKafkaBrokerNodePtrType) ToOutput(ctx context.Context) pulumix.Output[*BdsInstanceKafkaBrokerNode] {
-	return pulumix.Output[*BdsInstanceKafkaBrokerNode]{
-		OutputState: i.ToBdsInstanceKafkaBrokerNodePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BdsInstanceKafkaBrokerNodeOutput struct{ *pulumi.OutputState }
 
 func (BdsInstanceKafkaBrokerNodeOutput) ElementType() reflect.Type {
@@ -5240,12 +4603,6 @@ func (o BdsInstanceKafkaBrokerNodeOutput) ToBdsInstanceKafkaBrokerNodePtrOutputW
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v BdsInstanceKafkaBrokerNode) *BdsInstanceKafkaBrokerNode {
 		return &v
 	}).(BdsInstanceKafkaBrokerNodePtrOutput)
-}
-
-func (o BdsInstanceKafkaBrokerNodeOutput) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceKafkaBrokerNode] {
-	return pulumix.Output[BdsInstanceKafkaBrokerNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
@@ -5284,12 +4641,6 @@ func (o BdsInstanceKafkaBrokerNodePtrOutput) ToBdsInstanceKafkaBrokerNodePtrOutp
 
 func (o BdsInstanceKafkaBrokerNodePtrOutput) ToBdsInstanceKafkaBrokerNodePtrOutputWithContext(ctx context.Context) BdsInstanceKafkaBrokerNodePtrOutput {
 	return o
-}
-
-func (o BdsInstanceKafkaBrokerNodePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*BdsInstanceKafkaBrokerNode] {
-	return pulumix.Output[*BdsInstanceKafkaBrokerNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BdsInstanceKafkaBrokerNodePtrOutput) Elem() BdsInstanceKafkaBrokerNodeOutput {
@@ -5396,12 +4747,6 @@ func (i BdsInstanceKafkaBrokerNodeShapeConfigArgs) ToBdsInstanceKafkaBrokerNodeS
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceKafkaBrokerNodeShapeConfigOutput)
 }
 
-func (i BdsInstanceKafkaBrokerNodeShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceKafkaBrokerNodeShapeConfig] {
-	return pulumix.Output[BdsInstanceKafkaBrokerNodeShapeConfig]{
-		OutputState: i.ToBdsInstanceKafkaBrokerNodeShapeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i BdsInstanceKafkaBrokerNodeShapeConfigArgs) ToBdsInstanceKafkaBrokerNodeShapeConfigPtrOutput() BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput {
 	return i.ToBdsInstanceKafkaBrokerNodeShapeConfigPtrOutputWithContext(context.Background())
 }
@@ -5443,12 +4788,6 @@ func (i *bdsInstanceKafkaBrokerNodeShapeConfigPtrType) ToBdsInstanceKafkaBrokerN
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput)
 }
 
-func (i *bdsInstanceKafkaBrokerNodeShapeConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*BdsInstanceKafkaBrokerNodeShapeConfig] {
-	return pulumix.Output[*BdsInstanceKafkaBrokerNodeShapeConfig]{
-		OutputState: i.ToBdsInstanceKafkaBrokerNodeShapeConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BdsInstanceKafkaBrokerNodeShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (BdsInstanceKafkaBrokerNodeShapeConfigOutput) ElementType() reflect.Type {
@@ -5471,12 +4810,6 @@ func (o BdsInstanceKafkaBrokerNodeShapeConfigOutput) ToBdsInstanceKafkaBrokerNod
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v BdsInstanceKafkaBrokerNodeShapeConfig) *BdsInstanceKafkaBrokerNodeShapeConfig {
 		return &v
 	}).(BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput)
-}
-
-func (o BdsInstanceKafkaBrokerNodeShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceKafkaBrokerNodeShapeConfig] {
-	return pulumix.Output[BdsInstanceKafkaBrokerNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The total amount of memory available to the node, in gigabytes
@@ -5508,12 +4841,6 @@ func (o BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput) ToBdsInstanceKafkaBroker
 
 func (o BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput) ToBdsInstanceKafkaBrokerNodeShapeConfigPtrOutputWithContext(ctx context.Context) BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput {
 	return o
-}
-
-func (o BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*BdsInstanceKafkaBrokerNodeShapeConfig] {
-	return pulumix.Output[*BdsInstanceKafkaBrokerNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput) Elem() BdsInstanceKafkaBrokerNodeShapeConfigOutput {
@@ -5607,12 +4934,6 @@ func (i BdsInstanceMasterNodeArgs) ToBdsInstanceMasterNodeOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceMasterNodeOutput)
 }
 
-func (i BdsInstanceMasterNodeArgs) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceMasterNode] {
-	return pulumix.Output[BdsInstanceMasterNode]{
-		OutputState: i.ToBdsInstanceMasterNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i BdsInstanceMasterNodeArgs) ToBdsInstanceMasterNodePtrOutput() BdsInstanceMasterNodePtrOutput {
 	return i.ToBdsInstanceMasterNodePtrOutputWithContext(context.Background())
 }
@@ -5654,12 +4975,6 @@ func (i *bdsInstanceMasterNodePtrType) ToBdsInstanceMasterNodePtrOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceMasterNodePtrOutput)
 }
 
-func (i *bdsInstanceMasterNodePtrType) ToOutput(ctx context.Context) pulumix.Output[*BdsInstanceMasterNode] {
-	return pulumix.Output[*BdsInstanceMasterNode]{
-		OutputState: i.ToBdsInstanceMasterNodePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BdsInstanceMasterNodeOutput struct{ *pulumi.OutputState }
 
 func (BdsInstanceMasterNodeOutput) ElementType() reflect.Type {
@@ -5682,12 +4997,6 @@ func (o BdsInstanceMasterNodeOutput) ToBdsInstanceMasterNodePtrOutputWithContext
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v BdsInstanceMasterNode) *BdsInstanceMasterNode {
 		return &v
 	}).(BdsInstanceMasterNodePtrOutput)
-}
-
-func (o BdsInstanceMasterNodeOutput) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceMasterNode] {
-	return pulumix.Output[BdsInstanceMasterNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
@@ -5727,12 +5036,6 @@ func (o BdsInstanceMasterNodePtrOutput) ToBdsInstanceMasterNodePtrOutput() BdsIn
 
 func (o BdsInstanceMasterNodePtrOutput) ToBdsInstanceMasterNodePtrOutputWithContext(ctx context.Context) BdsInstanceMasterNodePtrOutput {
 	return o
-}
-
-func (o BdsInstanceMasterNodePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*BdsInstanceMasterNode] {
-	return pulumix.Output[*BdsInstanceMasterNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BdsInstanceMasterNodePtrOutput) Elem() BdsInstanceMasterNodeOutput {
@@ -5840,12 +5143,6 @@ func (i BdsInstanceMasterNodeShapeConfigArgs) ToBdsInstanceMasterNodeShapeConfig
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceMasterNodeShapeConfigOutput)
 }
 
-func (i BdsInstanceMasterNodeShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceMasterNodeShapeConfig] {
-	return pulumix.Output[BdsInstanceMasterNodeShapeConfig]{
-		OutputState: i.ToBdsInstanceMasterNodeShapeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i BdsInstanceMasterNodeShapeConfigArgs) ToBdsInstanceMasterNodeShapeConfigPtrOutput() BdsInstanceMasterNodeShapeConfigPtrOutput {
 	return i.ToBdsInstanceMasterNodeShapeConfigPtrOutputWithContext(context.Background())
 }
@@ -5887,12 +5184,6 @@ func (i *bdsInstanceMasterNodeShapeConfigPtrType) ToBdsInstanceMasterNodeShapeCo
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceMasterNodeShapeConfigPtrOutput)
 }
 
-func (i *bdsInstanceMasterNodeShapeConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*BdsInstanceMasterNodeShapeConfig] {
-	return pulumix.Output[*BdsInstanceMasterNodeShapeConfig]{
-		OutputState: i.ToBdsInstanceMasterNodeShapeConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BdsInstanceMasterNodeShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (BdsInstanceMasterNodeShapeConfigOutput) ElementType() reflect.Type {
@@ -5915,12 +5206,6 @@ func (o BdsInstanceMasterNodeShapeConfigOutput) ToBdsInstanceMasterNodeShapeConf
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v BdsInstanceMasterNodeShapeConfig) *BdsInstanceMasterNodeShapeConfig {
 		return &v
 	}).(BdsInstanceMasterNodeShapeConfigPtrOutput)
-}
-
-func (o BdsInstanceMasterNodeShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceMasterNodeShapeConfig] {
-	return pulumix.Output[BdsInstanceMasterNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The total amount of memory available to the node, in gigabytes
@@ -5952,12 +5237,6 @@ func (o BdsInstanceMasterNodeShapeConfigPtrOutput) ToBdsInstanceMasterNodeShapeC
 
 func (o BdsInstanceMasterNodeShapeConfigPtrOutput) ToBdsInstanceMasterNodeShapeConfigPtrOutputWithContext(ctx context.Context) BdsInstanceMasterNodeShapeConfigPtrOutput {
 	return o
-}
-
-func (o BdsInstanceMasterNodeShapeConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*BdsInstanceMasterNodeShapeConfig] {
-	return pulumix.Output[*BdsInstanceMasterNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BdsInstanceMasterNodeShapeConfigPtrOutput) Elem() BdsInstanceMasterNodeShapeConfigOutput {
@@ -6039,12 +5318,6 @@ func (i BdsInstanceNetworkConfigArgs) ToBdsInstanceNetworkConfigOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceNetworkConfigOutput)
 }
 
-func (i BdsInstanceNetworkConfigArgs) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceNetworkConfig] {
-	return pulumix.Output[BdsInstanceNetworkConfig]{
-		OutputState: i.ToBdsInstanceNetworkConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i BdsInstanceNetworkConfigArgs) ToBdsInstanceNetworkConfigPtrOutput() BdsInstanceNetworkConfigPtrOutput {
 	return i.ToBdsInstanceNetworkConfigPtrOutputWithContext(context.Background())
 }
@@ -6086,12 +5359,6 @@ func (i *bdsInstanceNetworkConfigPtrType) ToBdsInstanceNetworkConfigPtrOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceNetworkConfigPtrOutput)
 }
 
-func (i *bdsInstanceNetworkConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*BdsInstanceNetworkConfig] {
-	return pulumix.Output[*BdsInstanceNetworkConfig]{
-		OutputState: i.ToBdsInstanceNetworkConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BdsInstanceNetworkConfigOutput struct{ *pulumi.OutputState }
 
 func (BdsInstanceNetworkConfigOutput) ElementType() reflect.Type {
@@ -6116,12 +5383,6 @@ func (o BdsInstanceNetworkConfigOutput) ToBdsInstanceNetworkConfigPtrOutputWithC
 	}).(BdsInstanceNetworkConfigPtrOutput)
 }
 
-func (o BdsInstanceNetworkConfigOutput) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceNetworkConfig] {
-	return pulumix.Output[BdsInstanceNetworkConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The CIDR IP address block of the VCN.
 func (o BdsInstanceNetworkConfigOutput) CidrBlock() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNetworkConfig) *string { return v.CidrBlock }).(pulumi.StringPtrOutput)
@@ -6144,12 +5405,6 @@ func (o BdsInstanceNetworkConfigPtrOutput) ToBdsInstanceNetworkConfigPtrOutput()
 
 func (o BdsInstanceNetworkConfigPtrOutput) ToBdsInstanceNetworkConfigPtrOutputWithContext(ctx context.Context) BdsInstanceNetworkConfigPtrOutput {
 	return o
-}
-
-func (o BdsInstanceNetworkConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*BdsInstanceNetworkConfig] {
-	return pulumix.Output[*BdsInstanceNetworkConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BdsInstanceNetworkConfigPtrOutput) Elem() BdsInstanceNetworkConfigOutput {
@@ -6283,12 +5538,6 @@ func (i BdsInstanceNodeArgs) ToBdsInstanceNodeOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceNodeOutput)
 }
 
-func (i BdsInstanceNodeArgs) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceNode] {
-	return pulumix.Output[BdsInstanceNode]{
-		OutputState: i.ToBdsInstanceNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BdsInstanceNodeArrayInput is an input type that accepts BdsInstanceNodeArray and BdsInstanceNodeArrayOutput values.
 // You can construct a concrete instance of `BdsInstanceNodeArrayInput` via:
 //
@@ -6314,12 +5563,6 @@ func (i BdsInstanceNodeArray) ToBdsInstanceNodeArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceNodeArrayOutput)
 }
 
-func (i BdsInstanceNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]BdsInstanceNode] {
-	return pulumix.Output[[]BdsInstanceNode]{
-		OutputState: i.ToBdsInstanceNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BdsInstanceNodeOutput struct{ *pulumi.OutputState }
 
 func (BdsInstanceNodeOutput) ElementType() reflect.Type {
@@ -6332,12 +5575,6 @@ func (o BdsInstanceNodeOutput) ToBdsInstanceNodeOutput() BdsInstanceNodeOutput {
 
 func (o BdsInstanceNodeOutput) ToBdsInstanceNodeOutputWithContext(ctx context.Context) BdsInstanceNodeOutput {
 	return o
-}
-
-func (o BdsInstanceNodeOutput) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceNode] {
-	return pulumix.Output[BdsInstanceNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of block volumes attached to a given node.
@@ -6441,12 +5678,6 @@ func (o BdsInstanceNodeArrayOutput) ToBdsInstanceNodeArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o BdsInstanceNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]BdsInstanceNode] {
-	return pulumix.Output[[]BdsInstanceNode]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o BdsInstanceNodeArrayOutput) Index(i pulumi.IntInput) BdsInstanceNodeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BdsInstanceNode {
 		return vs[0].([]BdsInstanceNode)[vs[1].(int)]
@@ -6490,12 +5721,6 @@ func (i BdsInstanceNodeAttachedBlockVolumeArgs) ToBdsInstanceNodeAttachedBlockVo
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceNodeAttachedBlockVolumeOutput)
 }
 
-func (i BdsInstanceNodeAttachedBlockVolumeArgs) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceNodeAttachedBlockVolume] {
-	return pulumix.Output[BdsInstanceNodeAttachedBlockVolume]{
-		OutputState: i.ToBdsInstanceNodeAttachedBlockVolumeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BdsInstanceNodeAttachedBlockVolumeArrayInput is an input type that accepts BdsInstanceNodeAttachedBlockVolumeArray and BdsInstanceNodeAttachedBlockVolumeArrayOutput values.
 // You can construct a concrete instance of `BdsInstanceNodeAttachedBlockVolumeArrayInput` via:
 //
@@ -6521,12 +5746,6 @@ func (i BdsInstanceNodeAttachedBlockVolumeArray) ToBdsInstanceNodeAttachedBlockV
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceNodeAttachedBlockVolumeArrayOutput)
 }
 
-func (i BdsInstanceNodeAttachedBlockVolumeArray) ToOutput(ctx context.Context) pulumix.Output[[]BdsInstanceNodeAttachedBlockVolume] {
-	return pulumix.Output[[]BdsInstanceNodeAttachedBlockVolume]{
-		OutputState: i.ToBdsInstanceNodeAttachedBlockVolumeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BdsInstanceNodeAttachedBlockVolumeOutput struct{ *pulumi.OutputState }
 
 func (BdsInstanceNodeAttachedBlockVolumeOutput) ElementType() reflect.Type {
@@ -6539,12 +5758,6 @@ func (o BdsInstanceNodeAttachedBlockVolumeOutput) ToBdsInstanceNodeAttachedBlock
 
 func (o BdsInstanceNodeAttachedBlockVolumeOutput) ToBdsInstanceNodeAttachedBlockVolumeOutputWithContext(ctx context.Context) BdsInstanceNodeAttachedBlockVolumeOutput {
 	return o
-}
-
-func (o BdsInstanceNodeAttachedBlockVolumeOutput) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceNodeAttachedBlockVolume] {
-	return pulumix.Output[BdsInstanceNodeAttachedBlockVolume]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the volume attachment.
@@ -6569,12 +5782,6 @@ func (o BdsInstanceNodeAttachedBlockVolumeArrayOutput) ToBdsInstanceNodeAttached
 
 func (o BdsInstanceNodeAttachedBlockVolumeArrayOutput) ToBdsInstanceNodeAttachedBlockVolumeArrayOutputWithContext(ctx context.Context) BdsInstanceNodeAttachedBlockVolumeArrayOutput {
 	return o
-}
-
-func (o BdsInstanceNodeAttachedBlockVolumeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]BdsInstanceNodeAttachedBlockVolume] {
-	return pulumix.Output[[]BdsInstanceNodeAttachedBlockVolume]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BdsInstanceNodeAttachedBlockVolumeArrayOutput) Index(i pulumi.IntInput) BdsInstanceNodeAttachedBlockVolumeOutput {
@@ -6632,12 +5839,6 @@ func (i BdsInstanceUtilNodeArgs) ToBdsInstanceUtilNodeOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceUtilNodeOutput)
 }
 
-func (i BdsInstanceUtilNodeArgs) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceUtilNode] {
-	return pulumix.Output[BdsInstanceUtilNode]{
-		OutputState: i.ToBdsInstanceUtilNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i BdsInstanceUtilNodeArgs) ToBdsInstanceUtilNodePtrOutput() BdsInstanceUtilNodePtrOutput {
 	return i.ToBdsInstanceUtilNodePtrOutputWithContext(context.Background())
 }
@@ -6679,12 +5880,6 @@ func (i *bdsInstanceUtilNodePtrType) ToBdsInstanceUtilNodePtrOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceUtilNodePtrOutput)
 }
 
-func (i *bdsInstanceUtilNodePtrType) ToOutput(ctx context.Context) pulumix.Output[*BdsInstanceUtilNode] {
-	return pulumix.Output[*BdsInstanceUtilNode]{
-		OutputState: i.ToBdsInstanceUtilNodePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BdsInstanceUtilNodeOutput struct{ *pulumi.OutputState }
 
 func (BdsInstanceUtilNodeOutput) ElementType() reflect.Type {
@@ -6707,12 +5902,6 @@ func (o BdsInstanceUtilNodeOutput) ToBdsInstanceUtilNodePtrOutputWithContext(ctx
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v BdsInstanceUtilNode) *BdsInstanceUtilNode {
 		return &v
 	}).(BdsInstanceUtilNodePtrOutput)
-}
-
-func (o BdsInstanceUtilNodeOutput) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceUtilNode] {
-	return pulumix.Output[BdsInstanceUtilNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
@@ -6752,12 +5941,6 @@ func (o BdsInstanceUtilNodePtrOutput) ToBdsInstanceUtilNodePtrOutput() BdsInstan
 
 func (o BdsInstanceUtilNodePtrOutput) ToBdsInstanceUtilNodePtrOutputWithContext(ctx context.Context) BdsInstanceUtilNodePtrOutput {
 	return o
-}
-
-func (o BdsInstanceUtilNodePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*BdsInstanceUtilNode] {
-	return pulumix.Output[*BdsInstanceUtilNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BdsInstanceUtilNodePtrOutput) Elem() BdsInstanceUtilNodeOutput {
@@ -6865,12 +6048,6 @@ func (i BdsInstanceUtilNodeShapeConfigArgs) ToBdsInstanceUtilNodeShapeConfigOutp
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceUtilNodeShapeConfigOutput)
 }
 
-func (i BdsInstanceUtilNodeShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceUtilNodeShapeConfig] {
-	return pulumix.Output[BdsInstanceUtilNodeShapeConfig]{
-		OutputState: i.ToBdsInstanceUtilNodeShapeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i BdsInstanceUtilNodeShapeConfigArgs) ToBdsInstanceUtilNodeShapeConfigPtrOutput() BdsInstanceUtilNodeShapeConfigPtrOutput {
 	return i.ToBdsInstanceUtilNodeShapeConfigPtrOutputWithContext(context.Background())
 }
@@ -6912,12 +6089,6 @@ func (i *bdsInstanceUtilNodeShapeConfigPtrType) ToBdsInstanceUtilNodeShapeConfig
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceUtilNodeShapeConfigPtrOutput)
 }
 
-func (i *bdsInstanceUtilNodeShapeConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*BdsInstanceUtilNodeShapeConfig] {
-	return pulumix.Output[*BdsInstanceUtilNodeShapeConfig]{
-		OutputState: i.ToBdsInstanceUtilNodeShapeConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BdsInstanceUtilNodeShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (BdsInstanceUtilNodeShapeConfigOutput) ElementType() reflect.Type {
@@ -6940,12 +6111,6 @@ func (o BdsInstanceUtilNodeShapeConfigOutput) ToBdsInstanceUtilNodeShapeConfigPt
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v BdsInstanceUtilNodeShapeConfig) *BdsInstanceUtilNodeShapeConfig {
 		return &v
 	}).(BdsInstanceUtilNodeShapeConfigPtrOutput)
-}
-
-func (o BdsInstanceUtilNodeShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceUtilNodeShapeConfig] {
-	return pulumix.Output[BdsInstanceUtilNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The total amount of memory available to the node, in gigabytes
@@ -6977,12 +6142,6 @@ func (o BdsInstanceUtilNodeShapeConfigPtrOutput) ToBdsInstanceUtilNodeShapeConfi
 
 func (o BdsInstanceUtilNodeShapeConfigPtrOutput) ToBdsInstanceUtilNodeShapeConfigPtrOutputWithContext(ctx context.Context) BdsInstanceUtilNodeShapeConfigPtrOutput {
 	return o
-}
-
-func (o BdsInstanceUtilNodeShapeConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*BdsInstanceUtilNodeShapeConfig] {
-	return pulumix.Output[*BdsInstanceUtilNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BdsInstanceUtilNodeShapeConfigPtrOutput) Elem() BdsInstanceUtilNodeShapeConfigOutput {
@@ -7076,12 +6235,6 @@ func (i BdsInstanceWorkerNodeArgs) ToBdsInstanceWorkerNodeOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceWorkerNodeOutput)
 }
 
-func (i BdsInstanceWorkerNodeArgs) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceWorkerNode] {
-	return pulumix.Output[BdsInstanceWorkerNode]{
-		OutputState: i.ToBdsInstanceWorkerNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i BdsInstanceWorkerNodeArgs) ToBdsInstanceWorkerNodePtrOutput() BdsInstanceWorkerNodePtrOutput {
 	return i.ToBdsInstanceWorkerNodePtrOutputWithContext(context.Background())
 }
@@ -7123,12 +6276,6 @@ func (i *bdsInstanceWorkerNodePtrType) ToBdsInstanceWorkerNodePtrOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceWorkerNodePtrOutput)
 }
 
-func (i *bdsInstanceWorkerNodePtrType) ToOutput(ctx context.Context) pulumix.Output[*BdsInstanceWorkerNode] {
-	return pulumix.Output[*BdsInstanceWorkerNode]{
-		OutputState: i.ToBdsInstanceWorkerNodePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BdsInstanceWorkerNodeOutput struct{ *pulumi.OutputState }
 
 func (BdsInstanceWorkerNodeOutput) ElementType() reflect.Type {
@@ -7151,12 +6298,6 @@ func (o BdsInstanceWorkerNodeOutput) ToBdsInstanceWorkerNodePtrOutputWithContext
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v BdsInstanceWorkerNode) *BdsInstanceWorkerNode {
 		return &v
 	}).(BdsInstanceWorkerNodePtrOutput)
-}
-
-func (o BdsInstanceWorkerNodeOutput) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceWorkerNode] {
-	return pulumix.Output[BdsInstanceWorkerNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
@@ -7196,12 +6337,6 @@ func (o BdsInstanceWorkerNodePtrOutput) ToBdsInstanceWorkerNodePtrOutput() BdsIn
 
 func (o BdsInstanceWorkerNodePtrOutput) ToBdsInstanceWorkerNodePtrOutputWithContext(ctx context.Context) BdsInstanceWorkerNodePtrOutput {
 	return o
-}
-
-func (o BdsInstanceWorkerNodePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*BdsInstanceWorkerNode] {
-	return pulumix.Output[*BdsInstanceWorkerNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BdsInstanceWorkerNodePtrOutput) Elem() BdsInstanceWorkerNodeOutput {
@@ -7309,12 +6444,6 @@ func (i BdsInstanceWorkerNodeShapeConfigArgs) ToBdsInstanceWorkerNodeShapeConfig
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceWorkerNodeShapeConfigOutput)
 }
 
-func (i BdsInstanceWorkerNodeShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceWorkerNodeShapeConfig] {
-	return pulumix.Output[BdsInstanceWorkerNodeShapeConfig]{
-		OutputState: i.ToBdsInstanceWorkerNodeShapeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i BdsInstanceWorkerNodeShapeConfigArgs) ToBdsInstanceWorkerNodeShapeConfigPtrOutput() BdsInstanceWorkerNodeShapeConfigPtrOutput {
 	return i.ToBdsInstanceWorkerNodeShapeConfigPtrOutputWithContext(context.Background())
 }
@@ -7356,12 +6485,6 @@ func (i *bdsInstanceWorkerNodeShapeConfigPtrType) ToBdsInstanceWorkerNodeShapeCo
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceWorkerNodeShapeConfigPtrOutput)
 }
 
-func (i *bdsInstanceWorkerNodeShapeConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*BdsInstanceWorkerNodeShapeConfig] {
-	return pulumix.Output[*BdsInstanceWorkerNodeShapeConfig]{
-		OutputState: i.ToBdsInstanceWorkerNodeShapeConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BdsInstanceWorkerNodeShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (BdsInstanceWorkerNodeShapeConfigOutput) ElementType() reflect.Type {
@@ -7384,12 +6507,6 @@ func (o BdsInstanceWorkerNodeShapeConfigOutput) ToBdsInstanceWorkerNodeShapeConf
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v BdsInstanceWorkerNodeShapeConfig) *BdsInstanceWorkerNodeShapeConfig {
 		return &v
 	}).(BdsInstanceWorkerNodeShapeConfigPtrOutput)
-}
-
-func (o BdsInstanceWorkerNodeShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[BdsInstanceWorkerNodeShapeConfig] {
-	return pulumix.Output[BdsInstanceWorkerNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The total amount of memory available to the node, in gigabytes
@@ -7421,12 +6538,6 @@ func (o BdsInstanceWorkerNodeShapeConfigPtrOutput) ToBdsInstanceWorkerNodeShapeC
 
 func (o BdsInstanceWorkerNodeShapeConfigPtrOutput) ToBdsInstanceWorkerNodeShapeConfigPtrOutputWithContext(ctx context.Context) BdsInstanceWorkerNodeShapeConfigPtrOutput {
 	return o
-}
-
-func (o BdsInstanceWorkerNodeShapeConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*BdsInstanceWorkerNodeShapeConfig] {
-	return pulumix.Output[*BdsInstanceWorkerNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BdsInstanceWorkerNodeShapeConfigPtrOutput) Elem() BdsInstanceWorkerNodeShapeConfigOutput {
@@ -7508,12 +6619,6 @@ func (i GetAutoScalingConfigurationPolicyArgs) ToGetAutoScalingConfigurationPoli
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicy] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicy]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationPolicyArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyArray and GetAutoScalingConfigurationPolicyArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyArrayInput` via:
 //
@@ -7539,12 +6644,6 @@ func (i GetAutoScalingConfigurationPolicyArray) ToGetAutoScalingConfigurationPol
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicy] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicy]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationPolicyOutput) ElementType() reflect.Type {
@@ -7557,12 +6656,6 @@ func (o GetAutoScalingConfigurationPolicyOutput) ToGetAutoScalingConfigurationPo
 
 func (o GetAutoScalingConfigurationPolicyOutput) ToGetAutoScalingConfigurationPolicyOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicy] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Type of autoscaling policy.
@@ -7587,12 +6680,6 @@ func (o GetAutoScalingConfigurationPolicyArrayOutput) ToGetAutoScalingConfigurat
 
 func (o GetAutoScalingConfigurationPolicyArrayOutput) ToGetAutoScalingConfigurationPolicyArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicy] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationPolicyArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyOutput {
@@ -7666,12 +6753,6 @@ func (i GetAutoScalingConfigurationPolicyDetailArgs) ToGetAutoScalingConfigurati
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyDetail] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyDetail]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationPolicyDetailArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailArray and GetAutoScalingConfigurationPolicyDetailArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailArrayInput` via:
 //
@@ -7697,12 +6778,6 @@ func (i GetAutoScalingConfigurationPolicyDetailArray) ToGetAutoScalingConfigurat
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyDetail] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyDetail]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationPolicyDetailOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationPolicyDetailOutput) ElementType() reflect.Type {
@@ -7715,12 +6790,6 @@ func (o GetAutoScalingConfigurationPolicyDetailOutput) ToGetAutoScalingConfigura
 
 func (o GetAutoScalingConfigurationPolicyDetailOutput) ToGetAutoScalingConfigurationPolicyDetailOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyDetail] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The type of autoscaling action to take.
@@ -7792,12 +6861,6 @@ func (o GetAutoScalingConfigurationPolicyDetailArrayOutput) ToGetAutoScalingConf
 	return o
 }
 
-func (o GetAutoScalingConfigurationPolicyDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyDetail] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAutoScalingConfigurationPolicyDetailArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationPolicyDetail {
 		return vs[0].([]GetAutoScalingConfigurationPolicyDetail)[vs[1].(int)]
@@ -7853,12 +6916,6 @@ func (i GetAutoScalingConfigurationPolicyDetailScaleDownConfigArgs) ToGetAutoSca
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleDownConfigOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyDetailScaleDownConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleDownConfig] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleDownConfig]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleDownConfigArray and GetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayInput` via:
 //
@@ -7884,12 +6941,6 @@ func (i GetAutoScalingConfigurationPolicyDetailScaleDownConfigArray) ToGetAutoSc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyDetailScaleDownConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleDownConfig] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleDownConfig]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationPolicyDetailScaleDownConfigOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationPolicyDetailScaleDownConfigOutput) ElementType() reflect.Type {
@@ -7902,12 +6953,6 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigOutput) ToGetAutoS
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigOutput) ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleDownConfigOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleDownConfig] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleDownConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
@@ -7949,12 +6994,6 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput) ToGet
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleDownConfig] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleDownConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyDetailScaleDownConfigOutput {
@@ -8000,12 +7039,6 @@ func (i GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArgs) ToGetA
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArray and GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayInput` via:
 //
@@ -8031,12 +7064,6 @@ func (i GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput) ElementType() reflect.Type {
@@ -8049,12 +7076,6 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput) ToGe
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput) ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Allowed value is CPU_UTILIZATION.
@@ -8081,12 +7102,6 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput)
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput {
@@ -8136,12 +7151,6 @@ func (i GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArg
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArray and GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayInput` via:
 //
@@ -8167,12 +7176,6 @@ func (i GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput) ElementType() reflect.Type {
@@ -8185,12 +7188,6 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOut
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput) ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold]{
-		OutputState: o.OutputState,
-	}
 }
 
 // This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
@@ -8224,12 +7221,6 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArr
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput {
@@ -8279,12 +7270,6 @@ func (i GetAutoScalingConfigurationPolicyDetailScaleInConfigArgs) ToGetAutoScali
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleInConfigOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyDetailScaleInConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleInConfig] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleInConfig]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyDetailScaleInConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationPolicyDetailScaleInConfigArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleInConfigArray and GetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleInConfigArrayInput` via:
 //
@@ -8310,12 +7295,6 @@ func (i GetAutoScalingConfigurationPolicyDetailScaleInConfigArray) ToGetAutoScal
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyDetailScaleInConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleInConfig] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleInConfig]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationPolicyDetailScaleInConfigOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationPolicyDetailScaleInConfigOutput) ElementType() reflect.Type {
@@ -8328,12 +7307,6 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigOutput) ToGetAutoSca
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigOutput) ToGetAutoScalingConfigurationPolicyDetailScaleInConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleInConfigOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleInConfig] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleInConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Metric and threshold details for triggering an autoscale action.
@@ -8365,12 +7338,6 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput) ToGetAu
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleInConfig] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleInConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyDetailScaleInConfigOutput {
@@ -8416,12 +7383,6 @@ func (i GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArgs) ToGetAut
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArray and GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayInput` via:
 //
@@ -8447,12 +7408,6 @@ func (i GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArray) ToGetAu
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput) ElementType() reflect.Type {
@@ -8465,12 +7420,6 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput) ToGetA
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput) ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Allowed value is CPU_UTILIZATION.
@@ -8497,12 +7446,6 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput) T
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput {
@@ -8552,12 +7495,6 @@ func (i GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArray and GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayInput` via:
 //
@@ -8583,12 +7520,6 @@ func (i GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput) ElementType() reflect.Type {
@@ -8601,12 +7532,6 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutpu
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput) ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold]{
-		OutputState: o.OutputState,
-	}
 }
 
 // This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
@@ -8638,12 +7563,6 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArray
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput {
@@ -8693,12 +7612,6 @@ func (i GetAutoScalingConfigurationPolicyDetailScaleOutConfigArgs) ToGetAutoScal
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleOutConfigOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyDetailScaleOutConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleOutConfig] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleOutConfig]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleOutConfigArray and GetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayInput` via:
 //
@@ -8724,12 +7637,6 @@ func (i GetAutoScalingConfigurationPolicyDetailScaleOutConfigArray) ToGetAutoSca
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyDetailScaleOutConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleOutConfig] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleOutConfig]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationPolicyDetailScaleOutConfigOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationPolicyDetailScaleOutConfigOutput) ElementType() reflect.Type {
@@ -8742,12 +7649,6 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigOutput) ToGetAutoSc
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigOutput) ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleOutConfigOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleOutConfig] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleOutConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // This value is the maximum number of nodes the cluster can be scaled-out to.
@@ -8779,12 +7680,6 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput) ToGetA
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleOutConfig] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleOutConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyDetailScaleOutConfigOutput {
@@ -8830,12 +7725,6 @@ func (i GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArgs) ToGetAu
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArray and GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayInput` via:
 //
@@ -8861,12 +7750,6 @@ func (i GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArray) ToGetA
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput) ElementType() reflect.Type {
@@ -8879,12 +7762,6 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput) ToGet
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput) ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Allowed value is CPU_UTILIZATION.
@@ -8911,12 +7788,6 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput) 
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput {
@@ -8966,12 +7837,6 @@ func (i GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArgs
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArray and GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayInput` via:
 //
@@ -8997,12 +7862,6 @@ func (i GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput) ElementType() reflect.Type {
@@ -9015,12 +7874,6 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutp
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput) ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold]{
-		OutputState: o.OutputState,
-	}
 }
 
 // This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
@@ -9052,12 +7905,6 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArra
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput {
@@ -9115,12 +7962,6 @@ func (i GetAutoScalingConfigurationPolicyDetailScaleUpConfigArgs) ToGetAutoScali
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleUpConfigOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyDetailScaleUpConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleUpConfig] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleUpConfig]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleUpConfigArray and GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayInput` via:
 //
@@ -9146,12 +7987,6 @@ func (i GetAutoScalingConfigurationPolicyDetailScaleUpConfigArray) ToGetAutoScal
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyDetailScaleUpConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleUpConfig] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleUpConfig]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationPolicyDetailScaleUpConfigOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationPolicyDetailScaleUpConfigOutput) ElementType() reflect.Type {
@@ -9164,12 +7999,6 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigOutput) ToGetAutoSca
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigOutput) ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleUpConfigOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleUpConfig] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleUpConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum memory in GBs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
@@ -9211,12 +8040,6 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput) ToGetAu
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleUpConfig] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleUpConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyDetailScaleUpConfigOutput {
@@ -9262,12 +8085,6 @@ func (i GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArgs) ToGetAut
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArray and GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayInput` via:
 //
@@ -9293,12 +8110,6 @@ func (i GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArray) ToGetAu
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput) ElementType() reflect.Type {
@@ -9311,12 +8122,6 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput) ToGetA
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput) ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Allowed value is CPU_UTILIZATION.
@@ -9343,12 +8148,6 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput) T
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput {
@@ -9398,12 +8197,6 @@ func (i GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArray and GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayInput` via:
 //
@@ -9429,12 +8222,6 @@ func (i GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput) ElementType() reflect.Type {
@@ -9447,12 +8234,6 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutpu
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput) ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold]{
-		OutputState: o.OutputState,
-	}
 }
 
 // This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
@@ -9484,12 +8265,6 @@ func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArray
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput {
@@ -9539,12 +8314,6 @@ func (i GetAutoScalingConfigurationPolicyDetailScheduleDetailArgs) ToGetAutoScal
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScheduleDetailOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyDetailScheduleDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyDetailScheduleDetail] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyDetailScheduleDetail]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyDetailScheduleDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationPolicyDetailScheduleDetailArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScheduleDetailArray and GetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScheduleDetailArrayInput` via:
 //
@@ -9570,12 +8339,6 @@ func (i GetAutoScalingConfigurationPolicyDetailScheduleDetailArray) ToGetAutoSca
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyDetailScheduleDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScheduleDetail] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScheduleDetail]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationPolicyDetailScheduleDetailOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationPolicyDetailScheduleDetailOutput) ElementType() reflect.Type {
@@ -9588,12 +8351,6 @@ func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailOutput) ToGetAutoSc
 
 func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailOutput) ToGetAutoScalingConfigurationPolicyDetailScheduleDetailOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScheduleDetailOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyDetailScheduleDetail] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyDetailScheduleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The type of schedule.
@@ -9627,12 +8384,6 @@ func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput) ToGetA
 
 func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScheduleDetail] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScheduleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyDetailScheduleDetailOutput {
@@ -9678,12 +8429,6 @@ func (i GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalSc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArray and GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayInput` via:
 //
@@ -9709,12 +8454,6 @@ func (i GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalSc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput) ElementType() reflect.Type {
@@ -9727,12 +8466,6 @@ func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalSc
 
 func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput) ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // This value is the desired number of nodes in the cluster.
@@ -9761,12 +8494,6 @@ func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalSc
 
 func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput {
@@ -9820,12 +8547,6 @@ func (i GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScal
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArray and GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayInput` via:
 //
@@ -9851,12 +8572,6 @@ func (i GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScal
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput) ElementType() reflect.Type {
@@ -9869,12 +8584,6 @@ func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScal
 
 func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput) ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired memory in GBs on each node. This value is not used for nodes with fixed compute shapes.
@@ -9917,12 +8626,6 @@ func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScal
 
 func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput) ToGetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput {
@@ -9968,12 +8671,6 @@ func (i GetAutoScalingConfigurationPolicyRuleArgs) ToGetAutoScalingConfiguration
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyRuleOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyRule] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyRule]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationPolicyRuleArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyRuleArray and GetAutoScalingConfigurationPolicyRuleArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyRuleArrayInput` via:
 //
@@ -9999,12 +8696,6 @@ func (i GetAutoScalingConfigurationPolicyRuleArray) ToGetAutoScalingConfiguratio
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyRuleArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyRule] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyRule]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationPolicyRuleOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationPolicyRuleOutput) ElementType() reflect.Type {
@@ -10017,12 +8708,6 @@ func (o GetAutoScalingConfigurationPolicyRuleOutput) ToGetAutoScalingConfigurati
 
 func (o GetAutoScalingConfigurationPolicyRuleOutput) ToGetAutoScalingConfigurationPolicyRuleOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyRuleOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyRule] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The valid value are CHANGE_SHAPE_SCALE_UP or CHANGE_SHAPE_SCALE_DOWN.
@@ -10049,12 +8734,6 @@ func (o GetAutoScalingConfigurationPolicyRuleArrayOutput) ToGetAutoScalingConfig
 
 func (o GetAutoScalingConfigurationPolicyRuleArrayOutput) ToGetAutoScalingConfigurationPolicyRuleArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyRuleArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyRule] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationPolicyRuleArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyRuleOutput {
@@ -10100,12 +8779,6 @@ func (i GetAutoScalingConfigurationPolicyRuleMetricArgs) ToGetAutoScalingConfigu
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyRuleMetricOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyRuleMetricArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyRuleMetric] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyRuleMetric]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyRuleMetricOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationPolicyRuleMetricArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyRuleMetricArray and GetAutoScalingConfigurationPolicyRuleMetricArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyRuleMetricArrayInput` via:
 //
@@ -10131,12 +8804,6 @@ func (i GetAutoScalingConfigurationPolicyRuleMetricArray) ToGetAutoScalingConfig
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyRuleMetricArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyRuleMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyRuleMetric] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyRuleMetric]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyRuleMetricArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationPolicyRuleMetricOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationPolicyRuleMetricOutput) ElementType() reflect.Type {
@@ -10149,12 +8816,6 @@ func (o GetAutoScalingConfigurationPolicyRuleMetricOutput) ToGetAutoScalingConfi
 
 func (o GetAutoScalingConfigurationPolicyRuleMetricOutput) ToGetAutoScalingConfigurationPolicyRuleMetricOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyRuleMetricOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyRuleMetricOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyRuleMetric] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyRuleMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Allowed value is CPU_UTILIZATION.
@@ -10181,12 +8842,6 @@ func (o GetAutoScalingConfigurationPolicyRuleMetricArrayOutput) ToGetAutoScaling
 
 func (o GetAutoScalingConfigurationPolicyRuleMetricArrayOutput) ToGetAutoScalingConfigurationPolicyRuleMetricArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyRuleMetricArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyRuleMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyRuleMetric] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyRuleMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationPolicyRuleMetricArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyRuleMetricOutput {
@@ -10236,12 +8891,6 @@ func (i GetAutoScalingConfigurationPolicyRuleMetricThresholdArgs) ToGetAutoScali
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyRuleMetricThresholdOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyRuleMetricThresholdArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyRuleMetricThreshold] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyRuleMetricThreshold]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyRuleMetricThresholdOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationPolicyRuleMetricThresholdArrayInput is an input type that accepts GetAutoScalingConfigurationPolicyRuleMetricThresholdArray and GetAutoScalingConfigurationPolicyRuleMetricThresholdArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationPolicyRuleMetricThresholdArrayInput` via:
 //
@@ -10267,12 +8916,6 @@ func (i GetAutoScalingConfigurationPolicyRuleMetricThresholdArray) ToGetAutoScal
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationPolicyRuleMetricThresholdArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationPolicyRuleMetricThresholdArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyRuleMetricThreshold] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyRuleMetricThreshold]{
-		OutputState: i.ToGetAutoScalingConfigurationPolicyRuleMetricThresholdArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationPolicyRuleMetricThresholdOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationPolicyRuleMetricThresholdOutput) ElementType() reflect.Type {
@@ -10285,12 +8928,6 @@ func (o GetAutoScalingConfigurationPolicyRuleMetricThresholdOutput) ToGetAutoSca
 
 func (o GetAutoScalingConfigurationPolicyRuleMetricThresholdOutput) ToGetAutoScalingConfigurationPolicyRuleMetricThresholdOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyRuleMetricThresholdOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyRuleMetricThresholdOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationPolicyRuleMetricThreshold] {
-	return pulumix.Output[GetAutoScalingConfigurationPolicyRuleMetricThreshold]{
-		OutputState: o.OutputState,
-	}
 }
 
 // This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
@@ -10320,12 +8957,6 @@ func (o GetAutoScalingConfigurationPolicyRuleMetricThresholdArrayOutput) ToGetAu
 
 func (o GetAutoScalingConfigurationPolicyRuleMetricThresholdArrayOutput) ToGetAutoScalingConfigurationPolicyRuleMetricThresholdArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationPolicyRuleMetricThresholdArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationPolicyRuleMetricThresholdArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationPolicyRuleMetricThreshold] {
-	return pulumix.Output[[]GetAutoScalingConfigurationPolicyRuleMetricThreshold]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationPolicyRuleMetricThresholdArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationPolicyRuleMetricThresholdOutput {
@@ -10385,12 +9016,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationArgs) ToGetAutoScali
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfiguration] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfiguration]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationsAutoScalingConfigurationArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationArray and GetAutoScalingConfigurationsAutoScalingConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationArrayInput` via:
 //
@@ -10416,12 +9041,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationArray) ToGetAutoScal
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfiguration] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfiguration]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationsAutoScalingConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationsAutoScalingConfigurationOutput) ElementType() reflect.Type {
@@ -10434,12 +9053,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationOutput) ToGetAutoSca
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfiguration] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationOutput) BdsInstanceId() pulumi.StringOutput {
@@ -10504,12 +9117,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationArrayOutput) ToGetAu
 	return o
 }
 
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfiguration] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationsAutoScalingConfiguration {
 		return vs[0].([]GetAutoScalingConfigurationsAutoScalingConfiguration)[vs[1].(int)]
@@ -10549,12 +9156,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArgs) ToGetAut
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicy] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicy]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArrayInput` via:
 //
@@ -10580,12 +9181,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArray) ToGetAu
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicy] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicy]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyOutput) ElementType() reflect.Type {
@@ -10598,12 +9193,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyOutput) ToGetA
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicy] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyOutput) PolicyType() pulumi.StringOutput {
@@ -10628,12 +9217,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArrayOutput) T
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicy] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyOutput {
@@ -10689,12 +9272,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayInput` via:
 //
@@ -10720,12 +9297,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput) ElementType() reflect.Type {
@@ -10738,12 +9309,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput) 
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput) ActionType() pulumi.StringOutput {
@@ -10806,12 +9371,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayOut
 	return o
 }
 
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail {
 		return vs[0].([]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail)[vs[1].(int)]
@@ -10857,12 +9416,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDow
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayInput` via:
 //
@@ -10888,12 +9441,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDow
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutput) ElementType() reflect.Type {
@@ -10906,12 +9453,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDow
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutput) MemoryStepSize() pulumi.IntOutput {
@@ -10958,12 +9499,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDow
 	return o
 }
 
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig {
 		return vs[0].([]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig)[vs[1].(int)]
@@ -11003,12 +9538,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDow
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayInput` via:
 //
@@ -11034,12 +9563,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDow
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput) ElementType() reflect.Type {
@@ -11052,12 +9575,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDow
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput) MetricType() pulumi.StringOutput {
@@ -11084,12 +9601,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDow
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricOutput {
@@ -11133,12 +9644,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDow
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayInput` via:
 //
@@ -11164,12 +9669,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDow
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput) ElementType() reflect.Type {
@@ -11182,12 +9681,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDow
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput) DurationInMinutes() pulumi.IntOutput {
@@ -11220,12 +9713,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDow
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThreshold]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetricThresholdOutput {
@@ -11269,12 +9756,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInC
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayInput` via:
 //
@@ -11300,12 +9781,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInC
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutput) ElementType() reflect.Type {
@@ -11318,12 +9793,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInC
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutput) Metrics() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput {
@@ -11356,12 +9825,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInC
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigOutput {
@@ -11403,12 +9866,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInC
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetric] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetric]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayInput` via:
 //
@@ -11434,12 +9891,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInC
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetric] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetric]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput) ElementType() reflect.Type {
@@ -11452,12 +9903,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInC
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetric] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput) MetricType() pulumi.StringOutput {
@@ -11484,12 +9929,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInC
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetric] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricOutput {
@@ -11533,12 +9972,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInC
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayInput` via:
 //
@@ -11564,12 +9997,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInC
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput) ElementType() reflect.Type {
@@ -11582,12 +10009,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInC
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput) DurationInMinutes() pulumi.IntOutput {
@@ -11620,12 +10041,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInC
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThresholdOutput {
@@ -11669,12 +10084,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOut
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayInput` via:
 //
@@ -11700,12 +10109,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOut
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutput) ElementType() reflect.Type {
@@ -11718,12 +10121,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOut
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutput) MaxNodeCount() pulumi.IntOutput {
@@ -11756,12 +10153,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOut
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigOutput {
@@ -11803,12 +10194,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOut
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetric] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetric]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayInput` via:
 //
@@ -11834,12 +10219,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOut
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetric] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetric]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput) ElementType() reflect.Type {
@@ -11852,12 +10231,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOut
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetric] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput) MetricType() pulumi.StringOutput {
@@ -11884,12 +10257,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOut
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetric] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricOutput {
@@ -11933,12 +10300,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOut
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayInput` via:
 //
@@ -11964,12 +10325,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOut
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput) ElementType() reflect.Type {
@@ -11982,12 +10337,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOut
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput) DurationInMinutes() pulumi.IntOutput {
@@ -12020,12 +10369,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOut
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdOutput {
@@ -12073,12 +10416,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpC
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayInput` via:
 //
@@ -12104,12 +10441,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpC
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutput) ElementType() reflect.Type {
@@ -12122,12 +10453,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpC
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutput) MaxMemoryPerNode() pulumi.IntOutput {
@@ -12174,12 +10499,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpC
 	return o
 }
 
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig {
 		return vs[0].([]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig)[vs[1].(int)]
@@ -12219,12 +10538,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpC
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetric] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetric]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayInput` via:
 //
@@ -12250,12 +10563,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpC
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetric] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetric]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput) ElementType() reflect.Type {
@@ -12268,12 +10575,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpC
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetric] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput) MetricType() pulumi.StringOutput {
@@ -12300,12 +10601,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpC
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetric] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricOutput {
@@ -12349,12 +10644,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpC
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayInput` via:
 //
@@ -12380,12 +10669,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpC
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput) ElementType() reflect.Type {
@@ -12398,12 +10681,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpC
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput) DurationInMinutes() pulumi.IntOutput {
@@ -12436,12 +10713,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpC
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdOutput {
@@ -12485,12 +10756,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailSchedule
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayInput` via:
 //
@@ -12516,12 +10781,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailSchedule
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutput) ElementType() reflect.Type {
@@ -12534,12 +10793,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailSchedule
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutput) ScheduleType() pulumi.StringOutput {
@@ -12572,12 +10825,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailSchedule
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailOutput {
@@ -12619,12 +10866,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailSchedule
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayInput` via:
 //
@@ -12650,12 +10891,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailSchedule
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput) ElementType() reflect.Type {
@@ -12668,12 +10903,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailSchedule
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput) TargetNodeCount() pulumi.IntOutput {
@@ -12700,12 +10929,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailSchedule
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigOutput {
@@ -12751,12 +10974,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailSchedule
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayInput` via:
 //
@@ -12782,12 +10999,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailSchedule
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput) ElementType() reflect.Type {
@@ -12800,12 +11011,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailSchedule
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput) TargetMemoryPerNode() pulumi.IntOutput {
@@ -12844,12 +11049,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailSchedule
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigOutput {
@@ -12891,12 +11090,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArgs) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArrayInput` via:
 //
@@ -12922,12 +11115,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleOutput) ElementType() reflect.Type {
@@ -12940,12 +11127,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleOutput) To
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleOutput) Action() pulumi.StringOutput {
@@ -12970,12 +11151,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArrayOutpu
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleOutput {
@@ -13017,12 +11192,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArgs
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArrayInput` via:
 //
@@ -13048,12 +11217,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricOutput) ElementType() reflect.Type {
@@ -13066,12 +11229,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricOutp
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricOutput) MetricType() pulumi.StringOutput {
@@ -13098,12 +11255,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArra
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricOutput {
@@ -13147,12 +11298,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThre
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThreshold] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThreshold]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArrayInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArray and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArrayInput` via:
 //
@@ -13178,12 +11323,6 @@ func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThre
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThreshold] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThreshold]{
-		OutputState: i.ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdOutput) ElementType() reflect.Type {
@@ -13196,12 +11335,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThre
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThreshold] {
-	return pulumix.Output[GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThreshold]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdOutput) DurationInMinutes() pulumi.IntOutput {
@@ -13234,12 +11367,6 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThre
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArrayOutput) ToGetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThreshold] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThreshold]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdOutput {
@@ -13283,12 +11410,6 @@ func (i GetAutoScalingConfigurationsFilterArgs) ToGetAutoScalingConfigurationsFi
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsFilterOutput)
 }
 
-func (i GetAutoScalingConfigurationsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsFilter] {
-	return pulumix.Output[GetAutoScalingConfigurationsFilter]{
-		OutputState: i.ToGetAutoScalingConfigurationsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAutoScalingConfigurationsFilterArrayInput is an input type that accepts GetAutoScalingConfigurationsFilterArray and GetAutoScalingConfigurationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAutoScalingConfigurationsFilterArrayInput` via:
 //
@@ -13314,12 +11435,6 @@ func (i GetAutoScalingConfigurationsFilterArray) ToGetAutoScalingConfigurationsF
 	return pulumi.ToOutputWithContext(ctx, i).(GetAutoScalingConfigurationsFilterArrayOutput)
 }
 
-func (i GetAutoScalingConfigurationsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsFilter] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsFilter]{
-		OutputState: i.ToGetAutoScalingConfigurationsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAutoScalingConfigurationsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAutoScalingConfigurationsFilterOutput) ElementType() reflect.Type {
@@ -13332,12 +11447,6 @@ func (o GetAutoScalingConfigurationsFilterOutput) ToGetAutoScalingConfigurations
 
 func (o GetAutoScalingConfigurationsFilterOutput) ToGetAutoScalingConfigurationsFilterOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsFilterOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsFilter] {
-	return pulumix.Output[GetAutoScalingConfigurationsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsFilterOutput) Name() pulumi.StringOutput {
@@ -13364,12 +11473,6 @@ func (o GetAutoScalingConfigurationsFilterArrayOutput) ToGetAutoScalingConfigura
 
 func (o GetAutoScalingConfigurationsFilterArrayOutput) ToGetAutoScalingConfigurationsFilterArrayOutputWithContext(ctx context.Context) GetAutoScalingConfigurationsFilterArrayOutput {
 	return o
-}
-
-func (o GetAutoScalingConfigurationsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAutoScalingConfigurationsFilter] {
-	return pulumix.Output[[]GetAutoScalingConfigurationsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutoScalingConfigurationsFilterArrayOutput) Index(i pulumi.IntInput) GetAutoScalingConfigurationsFilterOutput {
@@ -13449,12 +11552,6 @@ func (i GetBdsInstanceApiKeysBdsApiKeyArgs) ToGetBdsInstanceApiKeysBdsApiKeyOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceApiKeysBdsApiKeyOutput)
 }
 
-func (i GetBdsInstanceApiKeysBdsApiKeyArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceApiKeysBdsApiKey] {
-	return pulumix.Output[GetBdsInstanceApiKeysBdsApiKey]{
-		OutputState: i.ToGetBdsInstanceApiKeysBdsApiKeyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstanceApiKeysBdsApiKeyArrayInput is an input type that accepts GetBdsInstanceApiKeysBdsApiKeyArray and GetBdsInstanceApiKeysBdsApiKeyArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstanceApiKeysBdsApiKeyArrayInput` via:
 //
@@ -13480,12 +11577,6 @@ func (i GetBdsInstanceApiKeysBdsApiKeyArray) ToGetBdsInstanceApiKeysBdsApiKeyArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceApiKeysBdsApiKeyArrayOutput)
 }
 
-func (i GetBdsInstanceApiKeysBdsApiKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceApiKeysBdsApiKey] {
-	return pulumix.Output[[]GetBdsInstanceApiKeysBdsApiKey]{
-		OutputState: i.ToGetBdsInstanceApiKeysBdsApiKeyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstanceApiKeysBdsApiKeyOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstanceApiKeysBdsApiKeyOutput) ElementType() reflect.Type {
@@ -13498,12 +11589,6 @@ func (o GetBdsInstanceApiKeysBdsApiKeyOutput) ToGetBdsInstanceApiKeysBdsApiKeyOu
 
 func (o GetBdsInstanceApiKeysBdsApiKeyOutput) ToGetBdsInstanceApiKeysBdsApiKeyOutputWithContext(ctx context.Context) GetBdsInstanceApiKeysBdsApiKeyOutput {
 	return o
-}
-
-func (o GetBdsInstanceApiKeysBdsApiKeyOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceApiKeysBdsApiKey] {
-	return pulumix.Output[GetBdsInstanceApiKeysBdsApiKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the cluster.
@@ -13574,12 +11659,6 @@ func (o GetBdsInstanceApiKeysBdsApiKeyArrayOutput) ToGetBdsInstanceApiKeysBdsApi
 	return o
 }
 
-func (o GetBdsInstanceApiKeysBdsApiKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceApiKeysBdsApiKey] {
-	return pulumix.Output[[]GetBdsInstanceApiKeysBdsApiKey]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBdsInstanceApiKeysBdsApiKeyArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceApiKeysBdsApiKeyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceApiKeysBdsApiKey {
 		return vs[0].([]GetBdsInstanceApiKeysBdsApiKey)[vs[1].(int)]
@@ -13621,12 +11700,6 @@ func (i GetBdsInstanceApiKeysFilterArgs) ToGetBdsInstanceApiKeysFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceApiKeysFilterOutput)
 }
 
-func (i GetBdsInstanceApiKeysFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceApiKeysFilter] {
-	return pulumix.Output[GetBdsInstanceApiKeysFilter]{
-		OutputState: i.ToGetBdsInstanceApiKeysFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstanceApiKeysFilterArrayInput is an input type that accepts GetBdsInstanceApiKeysFilterArray and GetBdsInstanceApiKeysFilterArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstanceApiKeysFilterArrayInput` via:
 //
@@ -13652,12 +11725,6 @@ func (i GetBdsInstanceApiKeysFilterArray) ToGetBdsInstanceApiKeysFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceApiKeysFilterArrayOutput)
 }
 
-func (i GetBdsInstanceApiKeysFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceApiKeysFilter] {
-	return pulumix.Output[[]GetBdsInstanceApiKeysFilter]{
-		OutputState: i.ToGetBdsInstanceApiKeysFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstanceApiKeysFilterOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstanceApiKeysFilterOutput) ElementType() reflect.Type {
@@ -13670,12 +11737,6 @@ func (o GetBdsInstanceApiKeysFilterOutput) ToGetBdsInstanceApiKeysFilterOutput()
 
 func (o GetBdsInstanceApiKeysFilterOutput) ToGetBdsInstanceApiKeysFilterOutputWithContext(ctx context.Context) GetBdsInstanceApiKeysFilterOutput {
 	return o
-}
-
-func (o GetBdsInstanceApiKeysFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceApiKeysFilter] {
-	return pulumix.Output[GetBdsInstanceApiKeysFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstanceApiKeysFilterOutput) Name() pulumi.StringOutput {
@@ -13702,12 +11763,6 @@ func (o GetBdsInstanceApiKeysFilterArrayOutput) ToGetBdsInstanceApiKeysFilterArr
 
 func (o GetBdsInstanceApiKeysFilterArrayOutput) ToGetBdsInstanceApiKeysFilterArrayOutputWithContext(ctx context.Context) GetBdsInstanceApiKeysFilterArrayOutput {
 	return o
-}
-
-func (o GetBdsInstanceApiKeysFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceApiKeysFilter] {
-	return pulumix.Output[[]GetBdsInstanceApiKeysFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstanceApiKeysFilterArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceApiKeysFilterOutput {
@@ -13777,12 +11832,6 @@ func (i GetBdsInstanceCloudSqlDetailArgs) ToGetBdsInstanceCloudSqlDetailOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceCloudSqlDetailOutput)
 }
 
-func (i GetBdsInstanceCloudSqlDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceCloudSqlDetail] {
-	return pulumix.Output[GetBdsInstanceCloudSqlDetail]{
-		OutputState: i.ToGetBdsInstanceCloudSqlDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstanceCloudSqlDetailArrayInput is an input type that accepts GetBdsInstanceCloudSqlDetailArray and GetBdsInstanceCloudSqlDetailArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstanceCloudSqlDetailArrayInput` via:
 //
@@ -13808,12 +11857,6 @@ func (i GetBdsInstanceCloudSqlDetailArray) ToGetBdsInstanceCloudSqlDetailArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceCloudSqlDetailArrayOutput)
 }
 
-func (i GetBdsInstanceCloudSqlDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceCloudSqlDetail] {
-	return pulumix.Output[[]GetBdsInstanceCloudSqlDetail]{
-		OutputState: i.ToGetBdsInstanceCloudSqlDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstanceCloudSqlDetailOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstanceCloudSqlDetailOutput) ElementType() reflect.Type {
@@ -13826,12 +11869,6 @@ func (o GetBdsInstanceCloudSqlDetailOutput) ToGetBdsInstanceCloudSqlDetailOutput
 
 func (o GetBdsInstanceCloudSqlDetailOutput) ToGetBdsInstanceCloudSqlDetailOutputWithContext(ctx context.Context) GetBdsInstanceCloudSqlDetailOutput {
 	return o
-}
-
-func (o GetBdsInstanceCloudSqlDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceCloudSqlDetail] {
-	return pulumix.Output[GetBdsInstanceCloudSqlDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
@@ -13890,12 +11927,6 @@ func (o GetBdsInstanceCloudSqlDetailArrayOutput) ToGetBdsInstanceCloudSqlDetailA
 	return o
 }
 
-func (o GetBdsInstanceCloudSqlDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceCloudSqlDetail] {
-	return pulumix.Output[[]GetBdsInstanceCloudSqlDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBdsInstanceCloudSqlDetailArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceCloudSqlDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceCloudSqlDetail {
 		return vs[0].([]GetBdsInstanceCloudSqlDetail)[vs[1].(int)]
@@ -13939,12 +11970,6 @@ func (i GetBdsInstanceCloudSqlDetailKerberosDetailArgs) ToGetBdsInstanceCloudSql
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceCloudSqlDetailKerberosDetailOutput)
 }
 
-func (i GetBdsInstanceCloudSqlDetailKerberosDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceCloudSqlDetailKerberosDetail] {
-	return pulumix.Output[GetBdsInstanceCloudSqlDetailKerberosDetail]{
-		OutputState: i.ToGetBdsInstanceCloudSqlDetailKerberosDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstanceCloudSqlDetailKerberosDetailArrayInput is an input type that accepts GetBdsInstanceCloudSqlDetailKerberosDetailArray and GetBdsInstanceCloudSqlDetailKerberosDetailArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstanceCloudSqlDetailKerberosDetailArrayInput` via:
 //
@@ -13970,12 +11995,6 @@ func (i GetBdsInstanceCloudSqlDetailKerberosDetailArray) ToGetBdsInstanceCloudSq
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceCloudSqlDetailKerberosDetailArrayOutput)
 }
 
-func (i GetBdsInstanceCloudSqlDetailKerberosDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceCloudSqlDetailKerberosDetail] {
-	return pulumix.Output[[]GetBdsInstanceCloudSqlDetailKerberosDetail]{
-		OutputState: i.ToGetBdsInstanceCloudSqlDetailKerberosDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstanceCloudSqlDetailKerberosDetailOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstanceCloudSqlDetailKerberosDetailOutput) ElementType() reflect.Type {
@@ -13988,12 +12007,6 @@ func (o GetBdsInstanceCloudSqlDetailKerberosDetailOutput) ToGetBdsInstanceCloudS
 
 func (o GetBdsInstanceCloudSqlDetailKerberosDetailOutput) ToGetBdsInstanceCloudSqlDetailKerberosDetailOutputWithContext(ctx context.Context) GetBdsInstanceCloudSqlDetailKerberosDetailOutput {
 	return o
-}
-
-func (o GetBdsInstanceCloudSqlDetailKerberosDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceCloudSqlDetailKerberosDetail] {
-	return pulumix.Output[GetBdsInstanceCloudSqlDetailKerberosDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Location of the keytab file
@@ -14018,12 +12031,6 @@ func (o GetBdsInstanceCloudSqlDetailKerberosDetailArrayOutput) ToGetBdsInstanceC
 
 func (o GetBdsInstanceCloudSqlDetailKerberosDetailArrayOutput) ToGetBdsInstanceCloudSqlDetailKerberosDetailArrayOutputWithContext(ctx context.Context) GetBdsInstanceCloudSqlDetailKerberosDetailArrayOutput {
 	return o
-}
-
-func (o GetBdsInstanceCloudSqlDetailKerberosDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceCloudSqlDetailKerberosDetail] {
-	return pulumix.Output[[]GetBdsInstanceCloudSqlDetailKerberosDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstanceCloudSqlDetailKerberosDetailArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceCloudSqlDetailKerberosDetailOutput {
@@ -14121,12 +12128,6 @@ func (i GetBdsInstanceClusterDetailArgs) ToGetBdsInstanceClusterDetailOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceClusterDetailOutput)
 }
 
-func (i GetBdsInstanceClusterDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceClusterDetail] {
-	return pulumix.Output[GetBdsInstanceClusterDetail]{
-		OutputState: i.ToGetBdsInstanceClusterDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstanceClusterDetailArrayInput is an input type that accepts GetBdsInstanceClusterDetailArray and GetBdsInstanceClusterDetailArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstanceClusterDetailArrayInput` via:
 //
@@ -14152,12 +12153,6 @@ func (i GetBdsInstanceClusterDetailArray) ToGetBdsInstanceClusterDetailArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceClusterDetailArrayOutput)
 }
 
-func (i GetBdsInstanceClusterDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceClusterDetail] {
-	return pulumix.Output[[]GetBdsInstanceClusterDetail]{
-		OutputState: i.ToGetBdsInstanceClusterDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstanceClusterDetailOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstanceClusterDetailOutput) ElementType() reflect.Type {
@@ -14170,12 +12165,6 @@ func (o GetBdsInstanceClusterDetailOutput) ToGetBdsInstanceClusterDetailOutput()
 
 func (o GetBdsInstanceClusterDetailOutput) ToGetBdsInstanceClusterDetailOutputWithContext(ctx context.Context) GetBdsInstanceClusterDetailOutput {
 	return o
-}
-
-func (o GetBdsInstanceClusterDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceClusterDetail] {
-	return pulumix.Output[GetBdsInstanceClusterDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The URL of Ambari
@@ -14267,12 +12256,6 @@ func (o GetBdsInstanceClusterDetailArrayOutput) ToGetBdsInstanceClusterDetailArr
 	return o
 }
 
-func (o GetBdsInstanceClusterDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceClusterDetail] {
-	return pulumix.Output[[]GetBdsInstanceClusterDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBdsInstanceClusterDetailArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceClusterDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceClusterDetail {
 		return vs[0].([]GetBdsInstanceClusterDetail)[vs[1].(int)]
@@ -14326,12 +12309,6 @@ func (i GetBdsInstanceComputeOnlyWorkerNodeArgs) ToGetBdsInstanceComputeOnlyWork
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceComputeOnlyWorkerNodeOutput)
 }
 
-func (i GetBdsInstanceComputeOnlyWorkerNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceComputeOnlyWorkerNode] {
-	return pulumix.Output[GetBdsInstanceComputeOnlyWorkerNode]{
-		OutputState: i.ToGetBdsInstanceComputeOnlyWorkerNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstanceComputeOnlyWorkerNodeArrayInput is an input type that accepts GetBdsInstanceComputeOnlyWorkerNodeArray and GetBdsInstanceComputeOnlyWorkerNodeArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstanceComputeOnlyWorkerNodeArrayInput` via:
 //
@@ -14357,12 +12334,6 @@ func (i GetBdsInstanceComputeOnlyWorkerNodeArray) ToGetBdsInstanceComputeOnlyWor
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceComputeOnlyWorkerNodeArrayOutput)
 }
 
-func (i GetBdsInstanceComputeOnlyWorkerNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceComputeOnlyWorkerNode] {
-	return pulumix.Output[[]GetBdsInstanceComputeOnlyWorkerNode]{
-		OutputState: i.ToGetBdsInstanceComputeOnlyWorkerNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstanceComputeOnlyWorkerNodeOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstanceComputeOnlyWorkerNodeOutput) ElementType() reflect.Type {
@@ -14375,12 +12346,6 @@ func (o GetBdsInstanceComputeOnlyWorkerNodeOutput) ToGetBdsInstanceComputeOnlyWo
 
 func (o GetBdsInstanceComputeOnlyWorkerNodeOutput) ToGetBdsInstanceComputeOnlyWorkerNodeOutputWithContext(ctx context.Context) GetBdsInstanceComputeOnlyWorkerNodeOutput {
 	return o
-}
-
-func (o GetBdsInstanceComputeOnlyWorkerNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceComputeOnlyWorkerNode] {
-	return pulumix.Output[GetBdsInstanceComputeOnlyWorkerNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
@@ -14421,12 +12386,6 @@ func (o GetBdsInstanceComputeOnlyWorkerNodeArrayOutput) ToGetBdsInstanceComputeO
 
 func (o GetBdsInstanceComputeOnlyWorkerNodeArrayOutput) ToGetBdsInstanceComputeOnlyWorkerNodeArrayOutputWithContext(ctx context.Context) GetBdsInstanceComputeOnlyWorkerNodeArrayOutput {
 	return o
-}
-
-func (o GetBdsInstanceComputeOnlyWorkerNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceComputeOnlyWorkerNode] {
-	return pulumix.Output[[]GetBdsInstanceComputeOnlyWorkerNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstanceComputeOnlyWorkerNodeArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceComputeOnlyWorkerNodeOutput {
@@ -14476,12 +12435,6 @@ func (i GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArgs) ToGetBdsInstanceComp
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput)
 }
 
-func (i GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceComputeOnlyWorkerNodeShapeConfig] {
-	return pulumix.Output[GetBdsInstanceComputeOnlyWorkerNodeShapeConfig]{
-		OutputState: i.ToGetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayInput is an input type that accepts GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArray and GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayInput` via:
 //
@@ -14507,12 +12460,6 @@ func (i GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArray) ToGetBdsInstanceCom
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput)
 }
 
-func (i GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceComputeOnlyWorkerNodeShapeConfig] {
-	return pulumix.Output[[]GetBdsInstanceComputeOnlyWorkerNodeShapeConfig]{
-		OutputState: i.ToGetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) ElementType() reflect.Type {
@@ -14525,12 +12472,6 @@ func (o GetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) ToGetBdsInstanceCo
 
 func (o GetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) ToGetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput {
 	return o
-}
-
-func (o GetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceComputeOnlyWorkerNodeShapeConfig] {
-	return pulumix.Output[GetBdsInstanceComputeOnlyWorkerNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The total amount of memory available to the node, in gigabytes.
@@ -14560,12 +12501,6 @@ func (o GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput) ToGetBdsInsta
 
 func (o GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput) ToGetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput {
 	return o
-}
-
-func (o GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceComputeOnlyWorkerNodeShapeConfig] {
-	return pulumix.Output[[]GetBdsInstanceComputeOnlyWorkerNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput {
@@ -14621,12 +12556,6 @@ func (i GetBdsInstanceEdgeNodeArgs) ToGetBdsInstanceEdgeNodeOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceEdgeNodeOutput)
 }
 
-func (i GetBdsInstanceEdgeNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceEdgeNode] {
-	return pulumix.Output[GetBdsInstanceEdgeNode]{
-		OutputState: i.ToGetBdsInstanceEdgeNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstanceEdgeNodeArrayInput is an input type that accepts GetBdsInstanceEdgeNodeArray and GetBdsInstanceEdgeNodeArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstanceEdgeNodeArrayInput` via:
 //
@@ -14652,12 +12581,6 @@ func (i GetBdsInstanceEdgeNodeArray) ToGetBdsInstanceEdgeNodeArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceEdgeNodeArrayOutput)
 }
 
-func (i GetBdsInstanceEdgeNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceEdgeNode] {
-	return pulumix.Output[[]GetBdsInstanceEdgeNode]{
-		OutputState: i.ToGetBdsInstanceEdgeNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstanceEdgeNodeOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstanceEdgeNodeOutput) ElementType() reflect.Type {
@@ -14670,12 +12593,6 @@ func (o GetBdsInstanceEdgeNodeOutput) ToGetBdsInstanceEdgeNodeOutput() GetBdsIns
 
 func (o GetBdsInstanceEdgeNodeOutput) ToGetBdsInstanceEdgeNodeOutputWithContext(ctx context.Context) GetBdsInstanceEdgeNodeOutput {
 	return o
-}
-
-func (o GetBdsInstanceEdgeNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceEdgeNode] {
-	return pulumix.Output[GetBdsInstanceEdgeNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
@@ -14714,12 +12631,6 @@ func (o GetBdsInstanceEdgeNodeArrayOutput) ToGetBdsInstanceEdgeNodeArrayOutput()
 
 func (o GetBdsInstanceEdgeNodeArrayOutput) ToGetBdsInstanceEdgeNodeArrayOutputWithContext(ctx context.Context) GetBdsInstanceEdgeNodeArrayOutput {
 	return o
-}
-
-func (o GetBdsInstanceEdgeNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceEdgeNode] {
-	return pulumix.Output[[]GetBdsInstanceEdgeNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstanceEdgeNodeArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceEdgeNodeOutput {
@@ -14769,12 +12680,6 @@ func (i GetBdsInstanceEdgeNodeShapeConfigArgs) ToGetBdsInstanceEdgeNodeShapeConf
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceEdgeNodeShapeConfigOutput)
 }
 
-func (i GetBdsInstanceEdgeNodeShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceEdgeNodeShapeConfig] {
-	return pulumix.Output[GetBdsInstanceEdgeNodeShapeConfig]{
-		OutputState: i.ToGetBdsInstanceEdgeNodeShapeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstanceEdgeNodeShapeConfigArrayInput is an input type that accepts GetBdsInstanceEdgeNodeShapeConfigArray and GetBdsInstanceEdgeNodeShapeConfigArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstanceEdgeNodeShapeConfigArrayInput` via:
 //
@@ -14800,12 +12705,6 @@ func (i GetBdsInstanceEdgeNodeShapeConfigArray) ToGetBdsInstanceEdgeNodeShapeCon
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceEdgeNodeShapeConfigArrayOutput)
 }
 
-func (i GetBdsInstanceEdgeNodeShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceEdgeNodeShapeConfig] {
-	return pulumix.Output[[]GetBdsInstanceEdgeNodeShapeConfig]{
-		OutputState: i.ToGetBdsInstanceEdgeNodeShapeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstanceEdgeNodeShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstanceEdgeNodeShapeConfigOutput) ElementType() reflect.Type {
@@ -14818,12 +12717,6 @@ func (o GetBdsInstanceEdgeNodeShapeConfigOutput) ToGetBdsInstanceEdgeNodeShapeCo
 
 func (o GetBdsInstanceEdgeNodeShapeConfigOutput) ToGetBdsInstanceEdgeNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstanceEdgeNodeShapeConfigOutput {
 	return o
-}
-
-func (o GetBdsInstanceEdgeNodeShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceEdgeNodeShapeConfig] {
-	return pulumix.Output[GetBdsInstanceEdgeNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The total amount of memory available to the node, in gigabytes.
@@ -14853,12 +12746,6 @@ func (o GetBdsInstanceEdgeNodeShapeConfigArrayOutput) ToGetBdsInstanceEdgeNodeSh
 
 func (o GetBdsInstanceEdgeNodeShapeConfigArrayOutput) ToGetBdsInstanceEdgeNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstanceEdgeNodeShapeConfigArrayOutput {
 	return o
-}
-
-func (o GetBdsInstanceEdgeNodeShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceEdgeNodeShapeConfig] {
-	return pulumix.Output[[]GetBdsInstanceEdgeNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstanceEdgeNodeShapeConfigArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceEdgeNodeShapeConfigOutput {
@@ -14902,12 +12789,6 @@ func (i GetBdsInstanceGetOsPatchFilterArgs) ToGetBdsInstanceGetOsPatchFilterOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceGetOsPatchFilterOutput)
 }
 
-func (i GetBdsInstanceGetOsPatchFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceGetOsPatchFilter] {
-	return pulumix.Output[GetBdsInstanceGetOsPatchFilter]{
-		OutputState: i.ToGetBdsInstanceGetOsPatchFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstanceGetOsPatchFilterArrayInput is an input type that accepts GetBdsInstanceGetOsPatchFilterArray and GetBdsInstanceGetOsPatchFilterArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstanceGetOsPatchFilterArrayInput` via:
 //
@@ -14933,12 +12814,6 @@ func (i GetBdsInstanceGetOsPatchFilterArray) ToGetBdsInstanceGetOsPatchFilterArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceGetOsPatchFilterArrayOutput)
 }
 
-func (i GetBdsInstanceGetOsPatchFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceGetOsPatchFilter] {
-	return pulumix.Output[[]GetBdsInstanceGetOsPatchFilter]{
-		OutputState: i.ToGetBdsInstanceGetOsPatchFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstanceGetOsPatchFilterOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstanceGetOsPatchFilterOutput) ElementType() reflect.Type {
@@ -14951,12 +12826,6 @@ func (o GetBdsInstanceGetOsPatchFilterOutput) ToGetBdsInstanceGetOsPatchFilterOu
 
 func (o GetBdsInstanceGetOsPatchFilterOutput) ToGetBdsInstanceGetOsPatchFilterOutputWithContext(ctx context.Context) GetBdsInstanceGetOsPatchFilterOutput {
 	return o
-}
-
-func (o GetBdsInstanceGetOsPatchFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceGetOsPatchFilter] {
-	return pulumix.Output[GetBdsInstanceGetOsPatchFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstanceGetOsPatchFilterOutput) Name() pulumi.StringOutput {
@@ -14983,12 +12852,6 @@ func (o GetBdsInstanceGetOsPatchFilterArrayOutput) ToGetBdsInstanceGetOsPatchFil
 
 func (o GetBdsInstanceGetOsPatchFilterArrayOutput) ToGetBdsInstanceGetOsPatchFilterArrayOutputWithContext(ctx context.Context) GetBdsInstanceGetOsPatchFilterArrayOutput {
 	return o
-}
-
-func (o GetBdsInstanceGetOsPatchFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceGetOsPatchFilter] {
-	return pulumix.Output[[]GetBdsInstanceGetOsPatchFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstanceGetOsPatchFilterArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceGetOsPatchFilterOutput {
@@ -15042,12 +12905,6 @@ func (i GetBdsInstanceGetOsPatchTargetPackageArgs) ToGetBdsInstanceGetOsPatchTar
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceGetOsPatchTargetPackageOutput)
 }
 
-func (i GetBdsInstanceGetOsPatchTargetPackageArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceGetOsPatchTargetPackage] {
-	return pulumix.Output[GetBdsInstanceGetOsPatchTargetPackage]{
-		OutputState: i.ToGetBdsInstanceGetOsPatchTargetPackageOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstanceGetOsPatchTargetPackageArrayInput is an input type that accepts GetBdsInstanceGetOsPatchTargetPackageArray and GetBdsInstanceGetOsPatchTargetPackageArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstanceGetOsPatchTargetPackageArrayInput` via:
 //
@@ -15073,12 +12930,6 @@ func (i GetBdsInstanceGetOsPatchTargetPackageArray) ToGetBdsInstanceGetOsPatchTa
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceGetOsPatchTargetPackageArrayOutput)
 }
 
-func (i GetBdsInstanceGetOsPatchTargetPackageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceGetOsPatchTargetPackage] {
-	return pulumix.Output[[]GetBdsInstanceGetOsPatchTargetPackage]{
-		OutputState: i.ToGetBdsInstanceGetOsPatchTargetPackageArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstanceGetOsPatchTargetPackageOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstanceGetOsPatchTargetPackageOutput) ElementType() reflect.Type {
@@ -15091,12 +12942,6 @@ func (o GetBdsInstanceGetOsPatchTargetPackageOutput) ToGetBdsInstanceGetOsPatchT
 
 func (o GetBdsInstanceGetOsPatchTargetPackageOutput) ToGetBdsInstanceGetOsPatchTargetPackageOutputWithContext(ctx context.Context) GetBdsInstanceGetOsPatchTargetPackageOutput {
 	return o
-}
-
-func (o GetBdsInstanceGetOsPatchTargetPackageOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceGetOsPatchTargetPackage] {
-	return pulumix.Output[GetBdsInstanceGetOsPatchTargetPackage]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The package's name.
@@ -15131,12 +12976,6 @@ func (o GetBdsInstanceGetOsPatchTargetPackageArrayOutput) ToGetBdsInstanceGetOsP
 
 func (o GetBdsInstanceGetOsPatchTargetPackageArrayOutput) ToGetBdsInstanceGetOsPatchTargetPackageArrayOutputWithContext(ctx context.Context) GetBdsInstanceGetOsPatchTargetPackageArrayOutput {
 	return o
-}
-
-func (o GetBdsInstanceGetOsPatchTargetPackageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceGetOsPatchTargetPackage] {
-	return pulumix.Output[[]GetBdsInstanceGetOsPatchTargetPackage]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstanceGetOsPatchTargetPackageArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceGetOsPatchTargetPackageOutput {
@@ -15190,12 +13029,6 @@ func (i GetBdsInstanceKafkaBrokerNodeArgs) ToGetBdsInstanceKafkaBrokerNodeOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceKafkaBrokerNodeOutput)
 }
 
-func (i GetBdsInstanceKafkaBrokerNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceKafkaBrokerNode] {
-	return pulumix.Output[GetBdsInstanceKafkaBrokerNode]{
-		OutputState: i.ToGetBdsInstanceKafkaBrokerNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstanceKafkaBrokerNodeArrayInput is an input type that accepts GetBdsInstanceKafkaBrokerNodeArray and GetBdsInstanceKafkaBrokerNodeArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstanceKafkaBrokerNodeArrayInput` via:
 //
@@ -15221,12 +13054,6 @@ func (i GetBdsInstanceKafkaBrokerNodeArray) ToGetBdsInstanceKafkaBrokerNodeArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceKafkaBrokerNodeArrayOutput)
 }
 
-func (i GetBdsInstanceKafkaBrokerNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceKafkaBrokerNode] {
-	return pulumix.Output[[]GetBdsInstanceKafkaBrokerNode]{
-		OutputState: i.ToGetBdsInstanceKafkaBrokerNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstanceKafkaBrokerNodeOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstanceKafkaBrokerNodeOutput) ElementType() reflect.Type {
@@ -15239,12 +13066,6 @@ func (o GetBdsInstanceKafkaBrokerNodeOutput) ToGetBdsInstanceKafkaBrokerNodeOutp
 
 func (o GetBdsInstanceKafkaBrokerNodeOutput) ToGetBdsInstanceKafkaBrokerNodeOutputWithContext(ctx context.Context) GetBdsInstanceKafkaBrokerNodeOutput {
 	return o
-}
-
-func (o GetBdsInstanceKafkaBrokerNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceKafkaBrokerNode] {
-	return pulumix.Output[GetBdsInstanceKafkaBrokerNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
@@ -15284,12 +13105,6 @@ func (o GetBdsInstanceKafkaBrokerNodeArrayOutput) ToGetBdsInstanceKafkaBrokerNod
 
 func (o GetBdsInstanceKafkaBrokerNodeArrayOutput) ToGetBdsInstanceKafkaBrokerNodeArrayOutputWithContext(ctx context.Context) GetBdsInstanceKafkaBrokerNodeArrayOutput {
 	return o
-}
-
-func (o GetBdsInstanceKafkaBrokerNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceKafkaBrokerNode] {
-	return pulumix.Output[[]GetBdsInstanceKafkaBrokerNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstanceKafkaBrokerNodeArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceKafkaBrokerNodeOutput {
@@ -15339,12 +13154,6 @@ func (i GetBdsInstanceKafkaBrokerNodeShapeConfigArgs) ToGetBdsInstanceKafkaBroke
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceKafkaBrokerNodeShapeConfigOutput)
 }
 
-func (i GetBdsInstanceKafkaBrokerNodeShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceKafkaBrokerNodeShapeConfig] {
-	return pulumix.Output[GetBdsInstanceKafkaBrokerNodeShapeConfig]{
-		OutputState: i.ToGetBdsInstanceKafkaBrokerNodeShapeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstanceKafkaBrokerNodeShapeConfigArrayInput is an input type that accepts GetBdsInstanceKafkaBrokerNodeShapeConfigArray and GetBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstanceKafkaBrokerNodeShapeConfigArrayInput` via:
 //
@@ -15370,12 +13179,6 @@ func (i GetBdsInstanceKafkaBrokerNodeShapeConfigArray) ToGetBdsInstanceKafkaBrok
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput)
 }
 
-func (i GetBdsInstanceKafkaBrokerNodeShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceKafkaBrokerNodeShapeConfig] {
-	return pulumix.Output[[]GetBdsInstanceKafkaBrokerNodeShapeConfig]{
-		OutputState: i.ToGetBdsInstanceKafkaBrokerNodeShapeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstanceKafkaBrokerNodeShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstanceKafkaBrokerNodeShapeConfigOutput) ElementType() reflect.Type {
@@ -15388,12 +13191,6 @@ func (o GetBdsInstanceKafkaBrokerNodeShapeConfigOutput) ToGetBdsInstanceKafkaBro
 
 func (o GetBdsInstanceKafkaBrokerNodeShapeConfigOutput) ToGetBdsInstanceKafkaBrokerNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstanceKafkaBrokerNodeShapeConfigOutput {
 	return o
-}
-
-func (o GetBdsInstanceKafkaBrokerNodeShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceKafkaBrokerNodeShapeConfig] {
-	return pulumix.Output[GetBdsInstanceKafkaBrokerNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The total amount of memory available to the node, in gigabytes.
@@ -15423,12 +13220,6 @@ func (o GetBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput) ToGetBdsInstanceKaf
 
 func (o GetBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput) ToGetBdsInstanceKafkaBrokerNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput {
 	return o
-}
-
-func (o GetBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceKafkaBrokerNodeShapeConfig] {
-	return pulumix.Output[[]GetBdsInstanceKafkaBrokerNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceKafkaBrokerNodeShapeConfigOutput {
@@ -15472,12 +13263,6 @@ func (i GetBdsInstanceListOsPatchesFilterArgs) ToGetBdsInstanceListOsPatchesFilt
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceListOsPatchesFilterOutput)
 }
 
-func (i GetBdsInstanceListOsPatchesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceListOsPatchesFilter] {
-	return pulumix.Output[GetBdsInstanceListOsPatchesFilter]{
-		OutputState: i.ToGetBdsInstanceListOsPatchesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstanceListOsPatchesFilterArrayInput is an input type that accepts GetBdsInstanceListOsPatchesFilterArray and GetBdsInstanceListOsPatchesFilterArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstanceListOsPatchesFilterArrayInput` via:
 //
@@ -15503,12 +13288,6 @@ func (i GetBdsInstanceListOsPatchesFilterArray) ToGetBdsInstanceListOsPatchesFil
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceListOsPatchesFilterArrayOutput)
 }
 
-func (i GetBdsInstanceListOsPatchesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceListOsPatchesFilter] {
-	return pulumix.Output[[]GetBdsInstanceListOsPatchesFilter]{
-		OutputState: i.ToGetBdsInstanceListOsPatchesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstanceListOsPatchesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstanceListOsPatchesFilterOutput) ElementType() reflect.Type {
@@ -15521,12 +13300,6 @@ func (o GetBdsInstanceListOsPatchesFilterOutput) ToGetBdsInstanceListOsPatchesFi
 
 func (o GetBdsInstanceListOsPatchesFilterOutput) ToGetBdsInstanceListOsPatchesFilterOutputWithContext(ctx context.Context) GetBdsInstanceListOsPatchesFilterOutput {
 	return o
-}
-
-func (o GetBdsInstanceListOsPatchesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceListOsPatchesFilter] {
-	return pulumix.Output[GetBdsInstanceListOsPatchesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstanceListOsPatchesFilterOutput) Name() pulumi.StringOutput {
@@ -15553,12 +13326,6 @@ func (o GetBdsInstanceListOsPatchesFilterArrayOutput) ToGetBdsInstanceListOsPatc
 
 func (o GetBdsInstanceListOsPatchesFilterArrayOutput) ToGetBdsInstanceListOsPatchesFilterArrayOutputWithContext(ctx context.Context) GetBdsInstanceListOsPatchesFilterArrayOutput {
 	return o
-}
-
-func (o GetBdsInstanceListOsPatchesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceListOsPatchesFilter] {
-	return pulumix.Output[[]GetBdsInstanceListOsPatchesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstanceListOsPatchesFilterArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceListOsPatchesFilterOutput {
@@ -15608,12 +13375,6 @@ func (i GetBdsInstanceListOsPatchesOsPatchArgs) ToGetBdsInstanceListOsPatchesOsP
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceListOsPatchesOsPatchOutput)
 }
 
-func (i GetBdsInstanceListOsPatchesOsPatchArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceListOsPatchesOsPatch] {
-	return pulumix.Output[GetBdsInstanceListOsPatchesOsPatch]{
-		OutputState: i.ToGetBdsInstanceListOsPatchesOsPatchOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstanceListOsPatchesOsPatchArrayInput is an input type that accepts GetBdsInstanceListOsPatchesOsPatchArray and GetBdsInstanceListOsPatchesOsPatchArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstanceListOsPatchesOsPatchArrayInput` via:
 //
@@ -15639,12 +13400,6 @@ func (i GetBdsInstanceListOsPatchesOsPatchArray) ToGetBdsInstanceListOsPatchesOs
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceListOsPatchesOsPatchArrayOutput)
 }
 
-func (i GetBdsInstanceListOsPatchesOsPatchArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceListOsPatchesOsPatch] {
-	return pulumix.Output[[]GetBdsInstanceListOsPatchesOsPatch]{
-		OutputState: i.ToGetBdsInstanceListOsPatchesOsPatchArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstanceListOsPatchesOsPatchOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstanceListOsPatchesOsPatchOutput) ElementType() reflect.Type {
@@ -15657,12 +13412,6 @@ func (o GetBdsInstanceListOsPatchesOsPatchOutput) ToGetBdsInstanceListOsPatchesO
 
 func (o GetBdsInstanceListOsPatchesOsPatchOutput) ToGetBdsInstanceListOsPatchesOsPatchOutputWithContext(ctx context.Context) GetBdsInstanceListOsPatchesOsPatchOutput {
 	return o
-}
-
-func (o GetBdsInstanceListOsPatchesOsPatchOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceListOsPatchesOsPatch] {
-	return pulumix.Output[GetBdsInstanceListOsPatchesOsPatch]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the cluster.
@@ -15692,12 +13441,6 @@ func (o GetBdsInstanceListOsPatchesOsPatchArrayOutput) ToGetBdsInstanceListOsPat
 
 func (o GetBdsInstanceListOsPatchesOsPatchArrayOutput) ToGetBdsInstanceListOsPatchesOsPatchArrayOutputWithContext(ctx context.Context) GetBdsInstanceListOsPatchesOsPatchArrayOutput {
 	return o
-}
-
-func (o GetBdsInstanceListOsPatchesOsPatchArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceListOsPatchesOsPatch] {
-	return pulumix.Output[[]GetBdsInstanceListOsPatchesOsPatch]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstanceListOsPatchesOsPatchArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceListOsPatchesOsPatchOutput {
@@ -15753,12 +13496,6 @@ func (i GetBdsInstanceMasterNodeArgs) ToGetBdsInstanceMasterNodeOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceMasterNodeOutput)
 }
 
-func (i GetBdsInstanceMasterNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceMasterNode] {
-	return pulumix.Output[GetBdsInstanceMasterNode]{
-		OutputState: i.ToGetBdsInstanceMasterNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstanceMasterNodeArrayInput is an input type that accepts GetBdsInstanceMasterNodeArray and GetBdsInstanceMasterNodeArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstanceMasterNodeArrayInput` via:
 //
@@ -15784,12 +13521,6 @@ func (i GetBdsInstanceMasterNodeArray) ToGetBdsInstanceMasterNodeArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceMasterNodeArrayOutput)
 }
 
-func (i GetBdsInstanceMasterNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceMasterNode] {
-	return pulumix.Output[[]GetBdsInstanceMasterNode]{
-		OutputState: i.ToGetBdsInstanceMasterNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstanceMasterNodeOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstanceMasterNodeOutput) ElementType() reflect.Type {
@@ -15802,12 +13533,6 @@ func (o GetBdsInstanceMasterNodeOutput) ToGetBdsInstanceMasterNodeOutput() GetBd
 
 func (o GetBdsInstanceMasterNodeOutput) ToGetBdsInstanceMasterNodeOutputWithContext(ctx context.Context) GetBdsInstanceMasterNodeOutput {
 	return o
-}
-
-func (o GetBdsInstanceMasterNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceMasterNode] {
-	return pulumix.Output[GetBdsInstanceMasterNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
@@ -15846,12 +13571,6 @@ func (o GetBdsInstanceMasterNodeArrayOutput) ToGetBdsInstanceMasterNodeArrayOutp
 
 func (o GetBdsInstanceMasterNodeArrayOutput) ToGetBdsInstanceMasterNodeArrayOutputWithContext(ctx context.Context) GetBdsInstanceMasterNodeArrayOutput {
 	return o
-}
-
-func (o GetBdsInstanceMasterNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceMasterNode] {
-	return pulumix.Output[[]GetBdsInstanceMasterNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstanceMasterNodeArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceMasterNodeOutput {
@@ -15901,12 +13620,6 @@ func (i GetBdsInstanceMasterNodeShapeConfigArgs) ToGetBdsInstanceMasterNodeShape
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceMasterNodeShapeConfigOutput)
 }
 
-func (i GetBdsInstanceMasterNodeShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceMasterNodeShapeConfig] {
-	return pulumix.Output[GetBdsInstanceMasterNodeShapeConfig]{
-		OutputState: i.ToGetBdsInstanceMasterNodeShapeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstanceMasterNodeShapeConfigArrayInput is an input type that accepts GetBdsInstanceMasterNodeShapeConfigArray and GetBdsInstanceMasterNodeShapeConfigArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstanceMasterNodeShapeConfigArrayInput` via:
 //
@@ -15932,12 +13645,6 @@ func (i GetBdsInstanceMasterNodeShapeConfigArray) ToGetBdsInstanceMasterNodeShap
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceMasterNodeShapeConfigArrayOutput)
 }
 
-func (i GetBdsInstanceMasterNodeShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceMasterNodeShapeConfig] {
-	return pulumix.Output[[]GetBdsInstanceMasterNodeShapeConfig]{
-		OutputState: i.ToGetBdsInstanceMasterNodeShapeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstanceMasterNodeShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstanceMasterNodeShapeConfigOutput) ElementType() reflect.Type {
@@ -15950,12 +13657,6 @@ func (o GetBdsInstanceMasterNodeShapeConfigOutput) ToGetBdsInstanceMasterNodeSha
 
 func (o GetBdsInstanceMasterNodeShapeConfigOutput) ToGetBdsInstanceMasterNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstanceMasterNodeShapeConfigOutput {
 	return o
-}
-
-func (o GetBdsInstanceMasterNodeShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceMasterNodeShapeConfig] {
-	return pulumix.Output[GetBdsInstanceMasterNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The total amount of memory available to the node, in gigabytes.
@@ -15985,12 +13686,6 @@ func (o GetBdsInstanceMasterNodeShapeConfigArrayOutput) ToGetBdsInstanceMasterNo
 
 func (o GetBdsInstanceMasterNodeShapeConfigArrayOutput) ToGetBdsInstanceMasterNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstanceMasterNodeShapeConfigArrayOutput {
 	return o
-}
-
-func (o GetBdsInstanceMasterNodeShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceMasterNodeShapeConfig] {
-	return pulumix.Output[[]GetBdsInstanceMasterNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstanceMasterNodeShapeConfigArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceMasterNodeShapeConfigOutput {
@@ -16070,12 +13765,6 @@ func (i GetBdsInstanceMetastoreConfigsBdsMetastoreConfigurationArgs) ToGetBdsIns
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceMetastoreConfigsBdsMetastoreConfigurationOutput)
 }
 
-func (i GetBdsInstanceMetastoreConfigsBdsMetastoreConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration] {
-	return pulumix.Output[GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration]{
-		OutputState: i.ToGetBdsInstanceMetastoreConfigsBdsMetastoreConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstanceMetastoreConfigsBdsMetastoreConfigurationArrayInput is an input type that accepts GetBdsInstanceMetastoreConfigsBdsMetastoreConfigurationArray and GetBdsInstanceMetastoreConfigsBdsMetastoreConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstanceMetastoreConfigsBdsMetastoreConfigurationArrayInput` via:
 //
@@ -16101,12 +13790,6 @@ func (i GetBdsInstanceMetastoreConfigsBdsMetastoreConfigurationArray) ToGetBdsIn
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceMetastoreConfigsBdsMetastoreConfigurationArrayOutput)
 }
 
-func (i GetBdsInstanceMetastoreConfigsBdsMetastoreConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration] {
-	return pulumix.Output[[]GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration]{
-		OutputState: i.ToGetBdsInstanceMetastoreConfigsBdsMetastoreConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstanceMetastoreConfigsBdsMetastoreConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstanceMetastoreConfigsBdsMetastoreConfigurationOutput) ElementType() reflect.Type {
@@ -16119,12 +13802,6 @@ func (o GetBdsInstanceMetastoreConfigsBdsMetastoreConfigurationOutput) ToGetBdsI
 
 func (o GetBdsInstanceMetastoreConfigsBdsMetastoreConfigurationOutput) ToGetBdsInstanceMetastoreConfigsBdsMetastoreConfigurationOutputWithContext(ctx context.Context) GetBdsInstanceMetastoreConfigsBdsMetastoreConfigurationOutput {
 	return o
-}
-
-func (o GetBdsInstanceMetastoreConfigsBdsMetastoreConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration] {
-	return pulumix.Output[GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstanceMetastoreConfigsBdsMetastoreConfigurationOutput) ActivateTrigger() pulumi.IntOutput {
@@ -16198,12 +13875,6 @@ func (o GetBdsInstanceMetastoreConfigsBdsMetastoreConfigurationArrayOutput) ToGe
 	return o
 }
 
-func (o GetBdsInstanceMetastoreConfigsBdsMetastoreConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration] {
-	return pulumix.Output[[]GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBdsInstanceMetastoreConfigsBdsMetastoreConfigurationArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceMetastoreConfigsBdsMetastoreConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration {
 		return vs[0].([]GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration)[vs[1].(int)]
@@ -16245,12 +13916,6 @@ func (i GetBdsInstanceMetastoreConfigsFilterArgs) ToGetBdsInstanceMetastoreConfi
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceMetastoreConfigsFilterOutput)
 }
 
-func (i GetBdsInstanceMetastoreConfigsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceMetastoreConfigsFilter] {
-	return pulumix.Output[GetBdsInstanceMetastoreConfigsFilter]{
-		OutputState: i.ToGetBdsInstanceMetastoreConfigsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstanceMetastoreConfigsFilterArrayInput is an input type that accepts GetBdsInstanceMetastoreConfigsFilterArray and GetBdsInstanceMetastoreConfigsFilterArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstanceMetastoreConfigsFilterArrayInput` via:
 //
@@ -16276,12 +13941,6 @@ func (i GetBdsInstanceMetastoreConfigsFilterArray) ToGetBdsInstanceMetastoreConf
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceMetastoreConfigsFilterArrayOutput)
 }
 
-func (i GetBdsInstanceMetastoreConfigsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceMetastoreConfigsFilter] {
-	return pulumix.Output[[]GetBdsInstanceMetastoreConfigsFilter]{
-		OutputState: i.ToGetBdsInstanceMetastoreConfigsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstanceMetastoreConfigsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstanceMetastoreConfigsFilterOutput) ElementType() reflect.Type {
@@ -16294,12 +13953,6 @@ func (o GetBdsInstanceMetastoreConfigsFilterOutput) ToGetBdsInstanceMetastoreCon
 
 func (o GetBdsInstanceMetastoreConfigsFilterOutput) ToGetBdsInstanceMetastoreConfigsFilterOutputWithContext(ctx context.Context) GetBdsInstanceMetastoreConfigsFilterOutput {
 	return o
-}
-
-func (o GetBdsInstanceMetastoreConfigsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceMetastoreConfigsFilter] {
-	return pulumix.Output[GetBdsInstanceMetastoreConfigsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstanceMetastoreConfigsFilterOutput) Name() pulumi.StringOutput {
@@ -16326,12 +13979,6 @@ func (o GetBdsInstanceMetastoreConfigsFilterArrayOutput) ToGetBdsInstanceMetasto
 
 func (o GetBdsInstanceMetastoreConfigsFilterArrayOutput) ToGetBdsInstanceMetastoreConfigsFilterArrayOutputWithContext(ctx context.Context) GetBdsInstanceMetastoreConfigsFilterArrayOutput {
 	return o
-}
-
-func (o GetBdsInstanceMetastoreConfigsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceMetastoreConfigsFilter] {
-	return pulumix.Output[[]GetBdsInstanceMetastoreConfigsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstanceMetastoreConfigsFilterArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceMetastoreConfigsFilterOutput {
@@ -16377,12 +14024,6 @@ func (i GetBdsInstanceNetworkConfigArgs) ToGetBdsInstanceNetworkConfigOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceNetworkConfigOutput)
 }
 
-func (i GetBdsInstanceNetworkConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceNetworkConfig] {
-	return pulumix.Output[GetBdsInstanceNetworkConfig]{
-		OutputState: i.ToGetBdsInstanceNetworkConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstanceNetworkConfigArrayInput is an input type that accepts GetBdsInstanceNetworkConfigArray and GetBdsInstanceNetworkConfigArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstanceNetworkConfigArrayInput` via:
 //
@@ -16408,12 +14049,6 @@ func (i GetBdsInstanceNetworkConfigArray) ToGetBdsInstanceNetworkConfigArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceNetworkConfigArrayOutput)
 }
 
-func (i GetBdsInstanceNetworkConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceNetworkConfig] {
-	return pulumix.Output[[]GetBdsInstanceNetworkConfig]{
-		OutputState: i.ToGetBdsInstanceNetworkConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstanceNetworkConfigOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstanceNetworkConfigOutput) ElementType() reflect.Type {
@@ -16426,12 +14061,6 @@ func (o GetBdsInstanceNetworkConfigOutput) ToGetBdsInstanceNetworkConfigOutput()
 
 func (o GetBdsInstanceNetworkConfigOutput) ToGetBdsInstanceNetworkConfigOutputWithContext(ctx context.Context) GetBdsInstanceNetworkConfigOutput {
 	return o
-}
-
-func (o GetBdsInstanceNetworkConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceNetworkConfig] {
-	return pulumix.Output[GetBdsInstanceNetworkConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The CIDR IP address block of the VCN.
@@ -16456,12 +14085,6 @@ func (o GetBdsInstanceNetworkConfigArrayOutput) ToGetBdsInstanceNetworkConfigArr
 
 func (o GetBdsInstanceNetworkConfigArrayOutput) ToGetBdsInstanceNetworkConfigArrayOutputWithContext(ctx context.Context) GetBdsInstanceNetworkConfigArrayOutput {
 	return o
-}
-
-func (o GetBdsInstanceNetworkConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceNetworkConfig] {
-	return pulumix.Output[[]GetBdsInstanceNetworkConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstanceNetworkConfigArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceNetworkConfigOutput {
@@ -16567,12 +14190,6 @@ func (i GetBdsInstanceNodeArgs) ToGetBdsInstanceNodeOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceNodeOutput)
 }
 
-func (i GetBdsInstanceNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceNode] {
-	return pulumix.Output[GetBdsInstanceNode]{
-		OutputState: i.ToGetBdsInstanceNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstanceNodeArrayInput is an input type that accepts GetBdsInstanceNodeArray and GetBdsInstanceNodeArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstanceNodeArrayInput` via:
 //
@@ -16598,12 +14215,6 @@ func (i GetBdsInstanceNodeArray) ToGetBdsInstanceNodeArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceNodeArrayOutput)
 }
 
-func (i GetBdsInstanceNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceNode] {
-	return pulumix.Output[[]GetBdsInstanceNode]{
-		OutputState: i.ToGetBdsInstanceNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstanceNodeOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstanceNodeOutput) ElementType() reflect.Type {
@@ -16616,12 +14227,6 @@ func (o GetBdsInstanceNodeOutput) ToGetBdsInstanceNodeOutput() GetBdsInstanceNod
 
 func (o GetBdsInstanceNodeOutput) ToGetBdsInstanceNodeOutputWithContext(ctx context.Context) GetBdsInstanceNodeOutput {
 	return o
-}
-
-func (o GetBdsInstanceNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceNode] {
-	return pulumix.Output[GetBdsInstanceNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of block volumes attached to a given node.
@@ -16723,12 +14328,6 @@ func (o GetBdsInstanceNodeArrayOutput) ToGetBdsInstanceNodeArrayOutputWithContex
 	return o
 }
 
-func (o GetBdsInstanceNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceNode] {
-	return pulumix.Output[[]GetBdsInstanceNode]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBdsInstanceNodeArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceNodeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceNode {
 		return vs[0].([]GetBdsInstanceNode)[vs[1].(int)]
@@ -16772,12 +14371,6 @@ func (i GetBdsInstanceNodeAttachedBlockVolumeArgs) ToGetBdsInstanceNodeAttachedB
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceNodeAttachedBlockVolumeOutput)
 }
 
-func (i GetBdsInstanceNodeAttachedBlockVolumeArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceNodeAttachedBlockVolume] {
-	return pulumix.Output[GetBdsInstanceNodeAttachedBlockVolume]{
-		OutputState: i.ToGetBdsInstanceNodeAttachedBlockVolumeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstanceNodeAttachedBlockVolumeArrayInput is an input type that accepts GetBdsInstanceNodeAttachedBlockVolumeArray and GetBdsInstanceNodeAttachedBlockVolumeArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstanceNodeAttachedBlockVolumeArrayInput` via:
 //
@@ -16803,12 +14396,6 @@ func (i GetBdsInstanceNodeAttachedBlockVolumeArray) ToGetBdsInstanceNodeAttached
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceNodeAttachedBlockVolumeArrayOutput)
 }
 
-func (i GetBdsInstanceNodeAttachedBlockVolumeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceNodeAttachedBlockVolume] {
-	return pulumix.Output[[]GetBdsInstanceNodeAttachedBlockVolume]{
-		OutputState: i.ToGetBdsInstanceNodeAttachedBlockVolumeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstanceNodeAttachedBlockVolumeOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstanceNodeAttachedBlockVolumeOutput) ElementType() reflect.Type {
@@ -16821,12 +14408,6 @@ func (o GetBdsInstanceNodeAttachedBlockVolumeOutput) ToGetBdsInstanceNodeAttache
 
 func (o GetBdsInstanceNodeAttachedBlockVolumeOutput) ToGetBdsInstanceNodeAttachedBlockVolumeOutputWithContext(ctx context.Context) GetBdsInstanceNodeAttachedBlockVolumeOutput {
 	return o
-}
-
-func (o GetBdsInstanceNodeAttachedBlockVolumeOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceNodeAttachedBlockVolume] {
-	return pulumix.Output[GetBdsInstanceNodeAttachedBlockVolume]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the volume attachment.
@@ -16851,12 +14432,6 @@ func (o GetBdsInstanceNodeAttachedBlockVolumeArrayOutput) ToGetBdsInstanceNodeAt
 
 func (o GetBdsInstanceNodeAttachedBlockVolumeArrayOutput) ToGetBdsInstanceNodeAttachedBlockVolumeArrayOutputWithContext(ctx context.Context) GetBdsInstanceNodeAttachedBlockVolumeArrayOutput {
 	return o
-}
-
-func (o GetBdsInstanceNodeAttachedBlockVolumeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceNodeAttachedBlockVolume] {
-	return pulumix.Output[[]GetBdsInstanceNodeAttachedBlockVolume]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstanceNodeAttachedBlockVolumeArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceNodeAttachedBlockVolumeOutput {
@@ -16900,12 +14475,6 @@ func (i GetBdsInstancePatchHistoriesFilterArgs) ToGetBdsInstancePatchHistoriesFi
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancePatchHistoriesFilterOutput)
 }
 
-func (i GetBdsInstancePatchHistoriesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancePatchHistoriesFilter] {
-	return pulumix.Output[GetBdsInstancePatchHistoriesFilter]{
-		OutputState: i.ToGetBdsInstancePatchHistoriesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstancePatchHistoriesFilterArrayInput is an input type that accepts GetBdsInstancePatchHistoriesFilterArray and GetBdsInstancePatchHistoriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstancePatchHistoriesFilterArrayInput` via:
 //
@@ -16931,12 +14500,6 @@ func (i GetBdsInstancePatchHistoriesFilterArray) ToGetBdsInstancePatchHistoriesF
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancePatchHistoriesFilterArrayOutput)
 }
 
-func (i GetBdsInstancePatchHistoriesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancePatchHistoriesFilter] {
-	return pulumix.Output[[]GetBdsInstancePatchHistoriesFilter]{
-		OutputState: i.ToGetBdsInstancePatchHistoriesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstancePatchHistoriesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstancePatchHistoriesFilterOutput) ElementType() reflect.Type {
@@ -16949,12 +14512,6 @@ func (o GetBdsInstancePatchHistoriesFilterOutput) ToGetBdsInstancePatchHistories
 
 func (o GetBdsInstancePatchHistoriesFilterOutput) ToGetBdsInstancePatchHistoriesFilterOutputWithContext(ctx context.Context) GetBdsInstancePatchHistoriesFilterOutput {
 	return o
-}
-
-func (o GetBdsInstancePatchHistoriesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancePatchHistoriesFilter] {
-	return pulumix.Output[GetBdsInstancePatchHistoriesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstancePatchHistoriesFilterOutput) Name() pulumi.StringOutput {
@@ -16981,12 +14538,6 @@ func (o GetBdsInstancePatchHistoriesFilterArrayOutput) ToGetBdsInstancePatchHist
 
 func (o GetBdsInstancePatchHistoriesFilterArrayOutput) ToGetBdsInstancePatchHistoriesFilterArrayOutputWithContext(ctx context.Context) GetBdsInstancePatchHistoriesFilterArrayOutput {
 	return o
-}
-
-func (o GetBdsInstancePatchHistoriesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancePatchHistoriesFilter] {
-	return pulumix.Output[[]GetBdsInstancePatchHistoriesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstancePatchHistoriesFilterArrayOutput) Index(i pulumi.IntInput) GetBdsInstancePatchHistoriesFilterOutput {
@@ -17040,12 +14591,6 @@ func (i GetBdsInstancePatchHistoriesPatchHistoryArgs) ToGetBdsInstancePatchHisto
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancePatchHistoriesPatchHistoryOutput)
 }
 
-func (i GetBdsInstancePatchHistoriesPatchHistoryArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancePatchHistoriesPatchHistory] {
-	return pulumix.Output[GetBdsInstancePatchHistoriesPatchHistory]{
-		OutputState: i.ToGetBdsInstancePatchHistoriesPatchHistoryOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstancePatchHistoriesPatchHistoryArrayInput is an input type that accepts GetBdsInstancePatchHistoriesPatchHistoryArray and GetBdsInstancePatchHistoriesPatchHistoryArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstancePatchHistoriesPatchHistoryArrayInput` via:
 //
@@ -17071,12 +14616,6 @@ func (i GetBdsInstancePatchHistoriesPatchHistoryArray) ToGetBdsInstancePatchHist
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancePatchHistoriesPatchHistoryArrayOutput)
 }
 
-func (i GetBdsInstancePatchHistoriesPatchHistoryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancePatchHistoriesPatchHistory] {
-	return pulumix.Output[[]GetBdsInstancePatchHistoriesPatchHistory]{
-		OutputState: i.ToGetBdsInstancePatchHistoriesPatchHistoryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstancePatchHistoriesPatchHistoryOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstancePatchHistoriesPatchHistoryOutput) ElementType() reflect.Type {
@@ -17089,12 +14628,6 @@ func (o GetBdsInstancePatchHistoriesPatchHistoryOutput) ToGetBdsInstancePatchHis
 
 func (o GetBdsInstancePatchHistoriesPatchHistoryOutput) ToGetBdsInstancePatchHistoriesPatchHistoryOutputWithContext(ctx context.Context) GetBdsInstancePatchHistoriesPatchHistoryOutput {
 	return o
-}
-
-func (o GetBdsInstancePatchHistoriesPatchHistoryOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancePatchHistoriesPatchHistory] {
-	return pulumix.Output[GetBdsInstancePatchHistoriesPatchHistory]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The type of a BDS patch history entity.
@@ -17129,12 +14662,6 @@ func (o GetBdsInstancePatchHistoriesPatchHistoryArrayOutput) ToGetBdsInstancePat
 
 func (o GetBdsInstancePatchHistoriesPatchHistoryArrayOutput) ToGetBdsInstancePatchHistoriesPatchHistoryArrayOutputWithContext(ctx context.Context) GetBdsInstancePatchHistoriesPatchHistoryArrayOutput {
 	return o
-}
-
-func (o GetBdsInstancePatchHistoriesPatchHistoryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancePatchHistoriesPatchHistory] {
-	return pulumix.Output[[]GetBdsInstancePatchHistoriesPatchHistory]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstancePatchHistoriesPatchHistoryArrayOutput) Index(i pulumi.IntInput) GetBdsInstancePatchHistoriesPatchHistoryOutput {
@@ -17178,12 +14705,6 @@ func (i GetBdsInstancePatchesFilterArgs) ToGetBdsInstancePatchesFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancePatchesFilterOutput)
 }
 
-func (i GetBdsInstancePatchesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancePatchesFilter] {
-	return pulumix.Output[GetBdsInstancePatchesFilter]{
-		OutputState: i.ToGetBdsInstancePatchesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstancePatchesFilterArrayInput is an input type that accepts GetBdsInstancePatchesFilterArray and GetBdsInstancePatchesFilterArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstancePatchesFilterArrayInput` via:
 //
@@ -17209,12 +14730,6 @@ func (i GetBdsInstancePatchesFilterArray) ToGetBdsInstancePatchesFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancePatchesFilterArrayOutput)
 }
 
-func (i GetBdsInstancePatchesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancePatchesFilter] {
-	return pulumix.Output[[]GetBdsInstancePatchesFilter]{
-		OutputState: i.ToGetBdsInstancePatchesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstancePatchesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstancePatchesFilterOutput) ElementType() reflect.Type {
@@ -17227,12 +14742,6 @@ func (o GetBdsInstancePatchesFilterOutput) ToGetBdsInstancePatchesFilterOutput()
 
 func (o GetBdsInstancePatchesFilterOutput) ToGetBdsInstancePatchesFilterOutputWithContext(ctx context.Context) GetBdsInstancePatchesFilterOutput {
 	return o
-}
-
-func (o GetBdsInstancePatchesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancePatchesFilter] {
-	return pulumix.Output[GetBdsInstancePatchesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstancePatchesFilterOutput) Name() pulumi.StringOutput {
@@ -17259,12 +14768,6 @@ func (o GetBdsInstancePatchesFilterArrayOutput) ToGetBdsInstancePatchesFilterArr
 
 func (o GetBdsInstancePatchesFilterArrayOutput) ToGetBdsInstancePatchesFilterArrayOutputWithContext(ctx context.Context) GetBdsInstancePatchesFilterArrayOutput {
 	return o
-}
-
-func (o GetBdsInstancePatchesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancePatchesFilter] {
-	return pulumix.Output[[]GetBdsInstancePatchesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstancePatchesFilterArrayOutput) Index(i pulumi.IntInput) GetBdsInstancePatchesFilterOutput {
@@ -17310,12 +14813,6 @@ func (i GetBdsInstancePatchesPatchArgs) ToGetBdsInstancePatchesPatchOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancePatchesPatchOutput)
 }
 
-func (i GetBdsInstancePatchesPatchArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancePatchesPatch] {
-	return pulumix.Output[GetBdsInstancePatchesPatch]{
-		OutputState: i.ToGetBdsInstancePatchesPatchOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstancePatchesPatchArrayInput is an input type that accepts GetBdsInstancePatchesPatchArray and GetBdsInstancePatchesPatchArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstancePatchesPatchArrayInput` via:
 //
@@ -17341,12 +14838,6 @@ func (i GetBdsInstancePatchesPatchArray) ToGetBdsInstancePatchesPatchArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancePatchesPatchArrayOutput)
 }
 
-func (i GetBdsInstancePatchesPatchArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancePatchesPatch] {
-	return pulumix.Output[[]GetBdsInstancePatchesPatch]{
-		OutputState: i.ToGetBdsInstancePatchesPatchArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstancePatchesPatchOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstancePatchesPatchOutput) ElementType() reflect.Type {
@@ -17359,12 +14850,6 @@ func (o GetBdsInstancePatchesPatchOutput) ToGetBdsInstancePatchesPatchOutput() G
 
 func (o GetBdsInstancePatchesPatchOutput) ToGetBdsInstancePatchesPatchOutputWithContext(ctx context.Context) GetBdsInstancePatchesPatchOutput {
 	return o
-}
-
-func (o GetBdsInstancePatchesPatchOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancePatchesPatch] {
-	return pulumix.Output[GetBdsInstancePatchesPatch]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The time when the patch was released.
@@ -17389,12 +14874,6 @@ func (o GetBdsInstancePatchesPatchArrayOutput) ToGetBdsInstancePatchesPatchArray
 
 func (o GetBdsInstancePatchesPatchArrayOutput) ToGetBdsInstancePatchesPatchArrayOutputWithContext(ctx context.Context) GetBdsInstancePatchesPatchArrayOutput {
 	return o
-}
-
-func (o GetBdsInstancePatchesPatchArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancePatchesPatch] {
-	return pulumix.Output[[]GetBdsInstancePatchesPatch]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstancePatchesPatchArrayOutput) Index(i pulumi.IntInput) GetBdsInstancePatchesPatchOutput {
@@ -17450,12 +14929,6 @@ func (i GetBdsInstanceUtilNodeArgs) ToGetBdsInstanceUtilNodeOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceUtilNodeOutput)
 }
 
-func (i GetBdsInstanceUtilNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceUtilNode] {
-	return pulumix.Output[GetBdsInstanceUtilNode]{
-		OutputState: i.ToGetBdsInstanceUtilNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstanceUtilNodeArrayInput is an input type that accepts GetBdsInstanceUtilNodeArray and GetBdsInstanceUtilNodeArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstanceUtilNodeArrayInput` via:
 //
@@ -17481,12 +14954,6 @@ func (i GetBdsInstanceUtilNodeArray) ToGetBdsInstanceUtilNodeArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceUtilNodeArrayOutput)
 }
 
-func (i GetBdsInstanceUtilNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceUtilNode] {
-	return pulumix.Output[[]GetBdsInstanceUtilNode]{
-		OutputState: i.ToGetBdsInstanceUtilNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstanceUtilNodeOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstanceUtilNodeOutput) ElementType() reflect.Type {
@@ -17499,12 +14966,6 @@ func (o GetBdsInstanceUtilNodeOutput) ToGetBdsInstanceUtilNodeOutput() GetBdsIns
 
 func (o GetBdsInstanceUtilNodeOutput) ToGetBdsInstanceUtilNodeOutputWithContext(ctx context.Context) GetBdsInstanceUtilNodeOutput {
 	return o
-}
-
-func (o GetBdsInstanceUtilNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceUtilNode] {
-	return pulumix.Output[GetBdsInstanceUtilNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
@@ -17543,12 +15004,6 @@ func (o GetBdsInstanceUtilNodeArrayOutput) ToGetBdsInstanceUtilNodeArrayOutput()
 
 func (o GetBdsInstanceUtilNodeArrayOutput) ToGetBdsInstanceUtilNodeArrayOutputWithContext(ctx context.Context) GetBdsInstanceUtilNodeArrayOutput {
 	return o
-}
-
-func (o GetBdsInstanceUtilNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceUtilNode] {
-	return pulumix.Output[[]GetBdsInstanceUtilNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstanceUtilNodeArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceUtilNodeOutput {
@@ -17598,12 +15053,6 @@ func (i GetBdsInstanceUtilNodeShapeConfigArgs) ToGetBdsInstanceUtilNodeShapeConf
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceUtilNodeShapeConfigOutput)
 }
 
-func (i GetBdsInstanceUtilNodeShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceUtilNodeShapeConfig] {
-	return pulumix.Output[GetBdsInstanceUtilNodeShapeConfig]{
-		OutputState: i.ToGetBdsInstanceUtilNodeShapeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstanceUtilNodeShapeConfigArrayInput is an input type that accepts GetBdsInstanceUtilNodeShapeConfigArray and GetBdsInstanceUtilNodeShapeConfigArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstanceUtilNodeShapeConfigArrayInput` via:
 //
@@ -17629,12 +15078,6 @@ func (i GetBdsInstanceUtilNodeShapeConfigArray) ToGetBdsInstanceUtilNodeShapeCon
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceUtilNodeShapeConfigArrayOutput)
 }
 
-func (i GetBdsInstanceUtilNodeShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceUtilNodeShapeConfig] {
-	return pulumix.Output[[]GetBdsInstanceUtilNodeShapeConfig]{
-		OutputState: i.ToGetBdsInstanceUtilNodeShapeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstanceUtilNodeShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstanceUtilNodeShapeConfigOutput) ElementType() reflect.Type {
@@ -17647,12 +15090,6 @@ func (o GetBdsInstanceUtilNodeShapeConfigOutput) ToGetBdsInstanceUtilNodeShapeCo
 
 func (o GetBdsInstanceUtilNodeShapeConfigOutput) ToGetBdsInstanceUtilNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstanceUtilNodeShapeConfigOutput {
 	return o
-}
-
-func (o GetBdsInstanceUtilNodeShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceUtilNodeShapeConfig] {
-	return pulumix.Output[GetBdsInstanceUtilNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The total amount of memory available to the node, in gigabytes.
@@ -17682,12 +15119,6 @@ func (o GetBdsInstanceUtilNodeShapeConfigArrayOutput) ToGetBdsInstanceUtilNodeSh
 
 func (o GetBdsInstanceUtilNodeShapeConfigArrayOutput) ToGetBdsInstanceUtilNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstanceUtilNodeShapeConfigArrayOutput {
 	return o
-}
-
-func (o GetBdsInstanceUtilNodeShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceUtilNodeShapeConfig] {
-	return pulumix.Output[[]GetBdsInstanceUtilNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstanceUtilNodeShapeConfigArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceUtilNodeShapeConfigOutput {
@@ -17743,12 +15174,6 @@ func (i GetBdsInstanceWorkerNodeArgs) ToGetBdsInstanceWorkerNodeOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceWorkerNodeOutput)
 }
 
-func (i GetBdsInstanceWorkerNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceWorkerNode] {
-	return pulumix.Output[GetBdsInstanceWorkerNode]{
-		OutputState: i.ToGetBdsInstanceWorkerNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstanceWorkerNodeArrayInput is an input type that accepts GetBdsInstanceWorkerNodeArray and GetBdsInstanceWorkerNodeArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstanceWorkerNodeArrayInput` via:
 //
@@ -17774,12 +15199,6 @@ func (i GetBdsInstanceWorkerNodeArray) ToGetBdsInstanceWorkerNodeArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceWorkerNodeArrayOutput)
 }
 
-func (i GetBdsInstanceWorkerNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceWorkerNode] {
-	return pulumix.Output[[]GetBdsInstanceWorkerNode]{
-		OutputState: i.ToGetBdsInstanceWorkerNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstanceWorkerNodeOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstanceWorkerNodeOutput) ElementType() reflect.Type {
@@ -17792,12 +15211,6 @@ func (o GetBdsInstanceWorkerNodeOutput) ToGetBdsInstanceWorkerNodeOutput() GetBd
 
 func (o GetBdsInstanceWorkerNodeOutput) ToGetBdsInstanceWorkerNodeOutputWithContext(ctx context.Context) GetBdsInstanceWorkerNodeOutput {
 	return o
-}
-
-func (o GetBdsInstanceWorkerNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceWorkerNode] {
-	return pulumix.Output[GetBdsInstanceWorkerNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
@@ -17836,12 +15249,6 @@ func (o GetBdsInstanceWorkerNodeArrayOutput) ToGetBdsInstanceWorkerNodeArrayOutp
 
 func (o GetBdsInstanceWorkerNodeArrayOutput) ToGetBdsInstanceWorkerNodeArrayOutputWithContext(ctx context.Context) GetBdsInstanceWorkerNodeArrayOutput {
 	return o
-}
-
-func (o GetBdsInstanceWorkerNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceWorkerNode] {
-	return pulumix.Output[[]GetBdsInstanceWorkerNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstanceWorkerNodeArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceWorkerNodeOutput {
@@ -17891,12 +15298,6 @@ func (i GetBdsInstanceWorkerNodeShapeConfigArgs) ToGetBdsInstanceWorkerNodeShape
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceWorkerNodeShapeConfigOutput)
 }
 
-func (i GetBdsInstanceWorkerNodeShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceWorkerNodeShapeConfig] {
-	return pulumix.Output[GetBdsInstanceWorkerNodeShapeConfig]{
-		OutputState: i.ToGetBdsInstanceWorkerNodeShapeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstanceWorkerNodeShapeConfigArrayInput is an input type that accepts GetBdsInstanceWorkerNodeShapeConfigArray and GetBdsInstanceWorkerNodeShapeConfigArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstanceWorkerNodeShapeConfigArrayInput` via:
 //
@@ -17922,12 +15323,6 @@ func (i GetBdsInstanceWorkerNodeShapeConfigArray) ToGetBdsInstanceWorkerNodeShap
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceWorkerNodeShapeConfigArrayOutput)
 }
 
-func (i GetBdsInstanceWorkerNodeShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceWorkerNodeShapeConfig] {
-	return pulumix.Output[[]GetBdsInstanceWorkerNodeShapeConfig]{
-		OutputState: i.ToGetBdsInstanceWorkerNodeShapeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstanceWorkerNodeShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstanceWorkerNodeShapeConfigOutput) ElementType() reflect.Type {
@@ -17940,12 +15335,6 @@ func (o GetBdsInstanceWorkerNodeShapeConfigOutput) ToGetBdsInstanceWorkerNodeSha
 
 func (o GetBdsInstanceWorkerNodeShapeConfigOutput) ToGetBdsInstanceWorkerNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstanceWorkerNodeShapeConfigOutput {
 	return o
-}
-
-func (o GetBdsInstanceWorkerNodeShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceWorkerNodeShapeConfig] {
-	return pulumix.Output[GetBdsInstanceWorkerNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The total amount of memory available to the node, in gigabytes.
@@ -17975,12 +15364,6 @@ func (o GetBdsInstanceWorkerNodeShapeConfigArrayOutput) ToGetBdsInstanceWorkerNo
 
 func (o GetBdsInstanceWorkerNodeShapeConfigArrayOutput) ToGetBdsInstanceWorkerNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstanceWorkerNodeShapeConfigArrayOutput {
 	return o
-}
-
-func (o GetBdsInstanceWorkerNodeShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstanceWorkerNodeShapeConfig] {
-	return pulumix.Output[[]GetBdsInstanceWorkerNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstanceWorkerNodeShapeConfigArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceWorkerNodeShapeConfigOutput {
@@ -18132,12 +15515,6 @@ func (i GetBdsInstancesBdsInstanceArgs) ToGetBdsInstancesBdsInstanceOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstance] {
-	return pulumix.Output[GetBdsInstancesBdsInstance]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstancesBdsInstanceArrayInput is an input type that accepts GetBdsInstancesBdsInstanceArray and GetBdsInstancesBdsInstanceArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstancesBdsInstanceArrayInput` via:
 //
@@ -18163,12 +15540,6 @@ func (i GetBdsInstancesBdsInstanceArray) ToGetBdsInstancesBdsInstanceArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceArrayOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstance] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstance]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstancesBdsInstanceOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstancesBdsInstanceOutput) ElementType() reflect.Type {
@@ -18181,12 +15552,6 @@ func (o GetBdsInstancesBdsInstanceOutput) ToGetBdsInstancesBdsInstanceOutput() G
 
 func (o GetBdsInstancesBdsInstanceOutput) ToGetBdsInstancesBdsInstanceOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstance] {
-	return pulumix.Output[GetBdsInstancesBdsInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 // pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
@@ -18368,12 +15733,6 @@ func (o GetBdsInstancesBdsInstanceArrayOutput) ToGetBdsInstancesBdsInstanceArray
 	return o
 }
 
-func (o GetBdsInstancesBdsInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstance] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstance]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBdsInstancesBdsInstanceArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesBdsInstanceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstancesBdsInstance {
 		return vs[0].([]GetBdsInstancesBdsInstance)[vs[1].(int)]
@@ -18441,12 +15800,6 @@ func (i GetBdsInstancesBdsInstanceCloudSqlDetailArgs) ToGetBdsInstancesBdsInstan
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceCloudSqlDetailOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceCloudSqlDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceCloudSqlDetail] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceCloudSqlDetail]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceCloudSqlDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstancesBdsInstanceCloudSqlDetailArrayInput is an input type that accepts GetBdsInstancesBdsInstanceCloudSqlDetailArray and GetBdsInstancesBdsInstanceCloudSqlDetailArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstancesBdsInstanceCloudSqlDetailArrayInput` via:
 //
@@ -18472,12 +15825,6 @@ func (i GetBdsInstancesBdsInstanceCloudSqlDetailArray) ToGetBdsInstancesBdsInsta
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceCloudSqlDetailArrayOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceCloudSqlDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceCloudSqlDetail] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceCloudSqlDetail]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceCloudSqlDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstancesBdsInstanceCloudSqlDetailOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstancesBdsInstanceCloudSqlDetailOutput) ElementType() reflect.Type {
@@ -18490,12 +15837,6 @@ func (o GetBdsInstancesBdsInstanceCloudSqlDetailOutput) ToGetBdsInstancesBdsInst
 
 func (o GetBdsInstancesBdsInstanceCloudSqlDetailOutput) ToGetBdsInstancesBdsInstanceCloudSqlDetailOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceCloudSqlDetailOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceCloudSqlDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceCloudSqlDetail] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceCloudSqlDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
@@ -18554,12 +15895,6 @@ func (o GetBdsInstancesBdsInstanceCloudSqlDetailArrayOutput) ToGetBdsInstancesBd
 	return o
 }
 
-func (o GetBdsInstancesBdsInstanceCloudSqlDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceCloudSqlDetail] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceCloudSqlDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBdsInstancesBdsInstanceCloudSqlDetailArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesBdsInstanceCloudSqlDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstancesBdsInstanceCloudSqlDetail {
 		return vs[0].([]GetBdsInstancesBdsInstanceCloudSqlDetail)[vs[1].(int)]
@@ -18603,12 +15938,6 @@ func (i GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailArgs) ToGetBdsInst
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetail] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetail]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailArrayInput is an input type that accepts GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailArray and GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailArrayInput` via:
 //
@@ -18634,12 +15963,6 @@ func (i GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailArray) ToGetBdsIns
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailArrayOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetail] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetail]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailOutput) ElementType() reflect.Type {
@@ -18652,12 +15975,6 @@ func (o GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailOutput) ToGetBdsIn
 
 func (o GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailOutput) ToGetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetail] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Location of the keytab file
@@ -18682,12 +15999,6 @@ func (o GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailArrayOutput) ToGet
 
 func (o GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailArrayOutput) ToGetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailArrayOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetail] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailOutput {
@@ -18785,12 +16096,6 @@ func (i GetBdsInstancesBdsInstanceClusterDetailArgs) ToGetBdsInstancesBdsInstanc
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceClusterDetailOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceClusterDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceClusterDetail] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceClusterDetail]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceClusterDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstancesBdsInstanceClusterDetailArrayInput is an input type that accepts GetBdsInstancesBdsInstanceClusterDetailArray and GetBdsInstancesBdsInstanceClusterDetailArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstancesBdsInstanceClusterDetailArrayInput` via:
 //
@@ -18816,12 +16121,6 @@ func (i GetBdsInstancesBdsInstanceClusterDetailArray) ToGetBdsInstancesBdsInstan
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceClusterDetailArrayOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceClusterDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceClusterDetail] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceClusterDetail]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceClusterDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstancesBdsInstanceClusterDetailOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstancesBdsInstanceClusterDetailOutput) ElementType() reflect.Type {
@@ -18834,12 +16133,6 @@ func (o GetBdsInstancesBdsInstanceClusterDetailOutput) ToGetBdsInstancesBdsInsta
 
 func (o GetBdsInstancesBdsInstanceClusterDetailOutput) ToGetBdsInstancesBdsInstanceClusterDetailOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceClusterDetailOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceClusterDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceClusterDetail] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceClusterDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The URL of Ambari
@@ -18931,12 +16224,6 @@ func (o GetBdsInstancesBdsInstanceClusterDetailArrayOutput) ToGetBdsInstancesBds
 	return o
 }
 
-func (o GetBdsInstancesBdsInstanceClusterDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceClusterDetail] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceClusterDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBdsInstancesBdsInstanceClusterDetailArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesBdsInstanceClusterDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstancesBdsInstanceClusterDetail {
 		return vs[0].([]GetBdsInstancesBdsInstanceClusterDetail)[vs[1].(int)]
@@ -18990,12 +16277,6 @@ func (i GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArgs) ToGetBdsInstancesBd
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceComputeOnlyWorkerNode] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceComputeOnlyWorkerNode]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayInput is an input type that accepts GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArray and GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayInput` via:
 //
@@ -19021,12 +16302,6 @@ func (i GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArray) ToGetBdsInstancesB
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceComputeOnlyWorkerNode] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceComputeOnlyWorkerNode]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutput) ElementType() reflect.Type {
@@ -19039,12 +16314,6 @@ func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutput) ToGetBdsInstances
 
 func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutput) ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceComputeOnlyWorkerNode] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceComputeOnlyWorkerNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
@@ -19085,12 +16354,6 @@ func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutput) ToGetBdsInst
 
 func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutput) ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceComputeOnlyWorkerNode] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceComputeOnlyWorkerNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeOutput {
@@ -19140,12 +16403,6 @@ func (i GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArgs) ToGetBds
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfig] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfig]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayInput is an input type that accepts GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArray and GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayInput` via:
 //
@@ -19171,12 +16428,6 @@ func (i GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArray) ToGetBd
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfig] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfig]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) ElementType() reflect.Type {
@@ -19189,12 +16440,6 @@ func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) ToGetB
 
 func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfig] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The total amount of memory available to the node, in gigabytes.
@@ -19224,12 +16469,6 @@ func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput) T
 
 func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput) ToGetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfig] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput {
@@ -19285,12 +16524,6 @@ func (i GetBdsInstancesBdsInstanceEdgeNodeArgs) ToGetBdsInstancesBdsInstanceEdge
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceEdgeNodeOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceEdgeNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceEdgeNode] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceEdgeNode]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceEdgeNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstancesBdsInstanceEdgeNodeArrayInput is an input type that accepts GetBdsInstancesBdsInstanceEdgeNodeArray and GetBdsInstancesBdsInstanceEdgeNodeArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstancesBdsInstanceEdgeNodeArrayInput` via:
 //
@@ -19316,12 +16549,6 @@ func (i GetBdsInstancesBdsInstanceEdgeNodeArray) ToGetBdsInstancesBdsInstanceEdg
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceEdgeNodeArrayOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceEdgeNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceEdgeNode] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceEdgeNode]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceEdgeNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstancesBdsInstanceEdgeNodeOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstancesBdsInstanceEdgeNodeOutput) ElementType() reflect.Type {
@@ -19334,12 +16561,6 @@ func (o GetBdsInstancesBdsInstanceEdgeNodeOutput) ToGetBdsInstancesBdsInstanceEd
 
 func (o GetBdsInstancesBdsInstanceEdgeNodeOutput) ToGetBdsInstancesBdsInstanceEdgeNodeOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceEdgeNodeOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceEdgeNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceEdgeNode] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceEdgeNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
@@ -19380,12 +16601,6 @@ func (o GetBdsInstancesBdsInstanceEdgeNodeArrayOutput) ToGetBdsInstancesBdsInsta
 
 func (o GetBdsInstancesBdsInstanceEdgeNodeArrayOutput) ToGetBdsInstancesBdsInstanceEdgeNodeArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceEdgeNodeArrayOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceEdgeNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceEdgeNode] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceEdgeNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstancesBdsInstanceEdgeNodeArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesBdsInstanceEdgeNodeOutput {
@@ -19435,12 +16650,6 @@ func (i GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArgs) ToGetBdsInstancesBdsI
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceEdgeNodeShapeConfig] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceEdgeNodeShapeConfig]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayInput is an input type that accepts GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArray and GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayInput` via:
 //
@@ -19466,12 +16675,6 @@ func (i GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArray) ToGetBdsInstancesBds
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceEdgeNodeShapeConfig] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceEdgeNodeShapeConfig]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutput) ElementType() reflect.Type {
@@ -19484,12 +16687,6 @@ func (o GetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutput) ToGetBdsInstancesBd
 
 func (o GetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutput) ToGetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceEdgeNodeShapeConfig] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceEdgeNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The total amount of memory available to the node, in gigabytes.
@@ -19519,12 +16716,6 @@ func (o GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutput) ToGetBdsInstan
 
 func (o GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutput) ToGetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceEdgeNodeShapeConfig] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceEdgeNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutput {
@@ -19578,12 +16769,6 @@ func (i GetBdsInstancesBdsInstanceKafkaBrokerNodeArgs) ToGetBdsInstancesBdsInsta
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceKafkaBrokerNodeOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceKafkaBrokerNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceKafkaBrokerNode] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceKafkaBrokerNode]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceKafkaBrokerNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstancesBdsInstanceKafkaBrokerNodeArrayInput is an input type that accepts GetBdsInstancesBdsInstanceKafkaBrokerNodeArray and GetBdsInstancesBdsInstanceKafkaBrokerNodeArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstancesBdsInstanceKafkaBrokerNodeArrayInput` via:
 //
@@ -19609,12 +16794,6 @@ func (i GetBdsInstancesBdsInstanceKafkaBrokerNodeArray) ToGetBdsInstancesBdsInst
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceKafkaBrokerNodeArrayOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceKafkaBrokerNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceKafkaBrokerNode] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceKafkaBrokerNode]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceKafkaBrokerNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstancesBdsInstanceKafkaBrokerNodeOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstancesBdsInstanceKafkaBrokerNodeOutput) ElementType() reflect.Type {
@@ -19627,12 +16806,6 @@ func (o GetBdsInstancesBdsInstanceKafkaBrokerNodeOutput) ToGetBdsInstancesBdsIns
 
 func (o GetBdsInstancesBdsInstanceKafkaBrokerNodeOutput) ToGetBdsInstancesBdsInstanceKafkaBrokerNodeOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceKafkaBrokerNodeOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceKafkaBrokerNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceKafkaBrokerNode] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceKafkaBrokerNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
@@ -19672,12 +16845,6 @@ func (o GetBdsInstancesBdsInstanceKafkaBrokerNodeArrayOutput) ToGetBdsInstancesB
 
 func (o GetBdsInstancesBdsInstanceKafkaBrokerNodeArrayOutput) ToGetBdsInstancesBdsInstanceKafkaBrokerNodeArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceKafkaBrokerNodeArrayOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceKafkaBrokerNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceKafkaBrokerNode] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceKafkaBrokerNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstancesBdsInstanceKafkaBrokerNodeArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesBdsInstanceKafkaBrokerNodeOutput {
@@ -19727,12 +16894,6 @@ func (i GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArgs) ToGetBdsInstan
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayInput is an input type that accepts GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArray and GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayInput` via:
 //
@@ -19758,12 +16919,6 @@ func (i GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArray) ToGetBdsInsta
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutput) ElementType() reflect.Type {
@@ -19776,12 +16931,6 @@ func (o GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutput) ToGetBdsInst
 
 func (o GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutput) ToGetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The total amount of memory available to the node, in gigabytes.
@@ -19811,12 +16960,6 @@ func (o GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput) ToGetBd
 
 func (o GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput) ToGetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfigOutput {
@@ -19872,12 +17015,6 @@ func (i GetBdsInstancesBdsInstanceMasterNodeArgs) ToGetBdsInstancesBdsInstanceMa
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceMasterNodeOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceMasterNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceMasterNode] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceMasterNode]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceMasterNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstancesBdsInstanceMasterNodeArrayInput is an input type that accepts GetBdsInstancesBdsInstanceMasterNodeArray and GetBdsInstancesBdsInstanceMasterNodeArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstancesBdsInstanceMasterNodeArrayInput` via:
 //
@@ -19903,12 +17040,6 @@ func (i GetBdsInstancesBdsInstanceMasterNodeArray) ToGetBdsInstancesBdsInstanceM
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceMasterNodeArrayOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceMasterNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceMasterNode] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceMasterNode]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceMasterNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstancesBdsInstanceMasterNodeOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstancesBdsInstanceMasterNodeOutput) ElementType() reflect.Type {
@@ -19921,12 +17052,6 @@ func (o GetBdsInstancesBdsInstanceMasterNodeOutput) ToGetBdsInstancesBdsInstance
 
 func (o GetBdsInstancesBdsInstanceMasterNodeOutput) ToGetBdsInstancesBdsInstanceMasterNodeOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceMasterNodeOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceMasterNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceMasterNode] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceMasterNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
@@ -19967,12 +17092,6 @@ func (o GetBdsInstancesBdsInstanceMasterNodeArrayOutput) ToGetBdsInstancesBdsIns
 
 func (o GetBdsInstancesBdsInstanceMasterNodeArrayOutput) ToGetBdsInstancesBdsInstanceMasterNodeArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceMasterNodeArrayOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceMasterNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceMasterNode] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceMasterNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstancesBdsInstanceMasterNodeArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesBdsInstanceMasterNodeOutput {
@@ -20022,12 +17141,6 @@ func (i GetBdsInstancesBdsInstanceMasterNodeShapeConfigArgs) ToGetBdsInstancesBd
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceMasterNodeShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceMasterNodeShapeConfig] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceMasterNodeShapeConfig]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceMasterNodeShapeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayInput is an input type that accepts GetBdsInstancesBdsInstanceMasterNodeShapeConfigArray and GetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayInput` via:
 //
@@ -20053,12 +17166,6 @@ func (i GetBdsInstancesBdsInstanceMasterNodeShapeConfigArray) ToGetBdsInstancesB
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceMasterNodeShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceMasterNodeShapeConfig] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceMasterNodeShapeConfig]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput) ElementType() reflect.Type {
@@ -20071,12 +17178,6 @@ func (o GetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput) ToGetBdsInstances
 
 func (o GetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput) ToGetBdsInstancesBdsInstanceMasterNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceMasterNodeShapeConfig] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceMasterNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The total amount of memory available to the node, in gigabytes.
@@ -20106,12 +17207,6 @@ func (o GetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayOutput) ToGetBdsInst
 
 func (o GetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayOutput) ToGetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceMasterNodeShapeConfig] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceMasterNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstancesBdsInstanceMasterNodeShapeConfigArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput {
@@ -20157,12 +17252,6 @@ func (i GetBdsInstancesBdsInstanceNetworkConfigArgs) ToGetBdsInstancesBdsInstanc
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceNetworkConfigOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceNetworkConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceNetworkConfig] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceNetworkConfig]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceNetworkConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstancesBdsInstanceNetworkConfigArrayInput is an input type that accepts GetBdsInstancesBdsInstanceNetworkConfigArray and GetBdsInstancesBdsInstanceNetworkConfigArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstancesBdsInstanceNetworkConfigArrayInput` via:
 //
@@ -20188,12 +17277,6 @@ func (i GetBdsInstancesBdsInstanceNetworkConfigArray) ToGetBdsInstancesBdsInstan
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceNetworkConfigArrayOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceNetworkConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceNetworkConfig] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceNetworkConfig]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceNetworkConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstancesBdsInstanceNetworkConfigOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstancesBdsInstanceNetworkConfigOutput) ElementType() reflect.Type {
@@ -20206,12 +17289,6 @@ func (o GetBdsInstancesBdsInstanceNetworkConfigOutput) ToGetBdsInstancesBdsInsta
 
 func (o GetBdsInstancesBdsInstanceNetworkConfigOutput) ToGetBdsInstancesBdsInstanceNetworkConfigOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceNetworkConfigOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceNetworkConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceNetworkConfig] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceNetworkConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The CIDR IP address block of the VCN.
@@ -20236,12 +17313,6 @@ func (o GetBdsInstancesBdsInstanceNetworkConfigArrayOutput) ToGetBdsInstancesBds
 
 func (o GetBdsInstancesBdsInstanceNetworkConfigArrayOutput) ToGetBdsInstancesBdsInstanceNetworkConfigArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceNetworkConfigArrayOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceNetworkConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceNetworkConfig] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceNetworkConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstancesBdsInstanceNetworkConfigArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesBdsInstanceNetworkConfigOutput {
@@ -20347,12 +17418,6 @@ func (i GetBdsInstancesBdsInstanceNodeArgs) ToGetBdsInstancesBdsInstanceNodeOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceNodeOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceNode] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceNode]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstancesBdsInstanceNodeArrayInput is an input type that accepts GetBdsInstancesBdsInstanceNodeArray and GetBdsInstancesBdsInstanceNodeArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstancesBdsInstanceNodeArrayInput` via:
 //
@@ -20378,12 +17443,6 @@ func (i GetBdsInstancesBdsInstanceNodeArray) ToGetBdsInstancesBdsInstanceNodeArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceNodeArrayOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceNode] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceNode]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstancesBdsInstanceNodeOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstancesBdsInstanceNodeOutput) ElementType() reflect.Type {
@@ -20396,12 +17455,6 @@ func (o GetBdsInstancesBdsInstanceNodeOutput) ToGetBdsInstancesBdsInstanceNodeOu
 
 func (o GetBdsInstancesBdsInstanceNodeOutput) ToGetBdsInstancesBdsInstanceNodeOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceNodeOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceNode] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of block volumes attached to a given node.
@@ -20505,12 +17558,6 @@ func (o GetBdsInstancesBdsInstanceNodeArrayOutput) ToGetBdsInstancesBdsInstanceN
 	return o
 }
 
-func (o GetBdsInstancesBdsInstanceNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceNode] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceNode]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBdsInstancesBdsInstanceNodeArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesBdsInstanceNodeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstancesBdsInstanceNode {
 		return vs[0].([]GetBdsInstancesBdsInstanceNode)[vs[1].(int)]
@@ -20554,12 +17601,6 @@ func (i GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeArgs) ToGetBdsInstances
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceNodeAttachedBlockVolume] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceNodeAttachedBlockVolume]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceNodeAttachedBlockVolumeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeArrayInput is an input type that accepts GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeArray and GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeArrayInput` via:
 //
@@ -20585,12 +17626,6 @@ func (i GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeArray) ToGetBdsInstance
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeArrayOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceNodeAttachedBlockVolume] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceNodeAttachedBlockVolume]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceNodeAttachedBlockVolumeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeOutput) ElementType() reflect.Type {
@@ -20603,12 +17638,6 @@ func (o GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeOutput) ToGetBdsInstanc
 
 func (o GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeOutput) ToGetBdsInstancesBdsInstanceNodeAttachedBlockVolumeOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceNodeAttachedBlockVolume] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceNodeAttachedBlockVolume]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the volume attachment.
@@ -20633,12 +17662,6 @@ func (o GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeArrayOutput) ToGetBdsIn
 
 func (o GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeArrayOutput) ToGetBdsInstancesBdsInstanceNodeAttachedBlockVolumeArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeArrayOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceNodeAttachedBlockVolume] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceNodeAttachedBlockVolume]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesBdsInstanceNodeAttachedBlockVolumeOutput {
@@ -20694,12 +17717,6 @@ func (i GetBdsInstancesBdsInstanceUtilNodeArgs) ToGetBdsInstancesBdsInstanceUtil
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceUtilNodeOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceUtilNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceUtilNode] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceUtilNode]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceUtilNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstancesBdsInstanceUtilNodeArrayInput is an input type that accepts GetBdsInstancesBdsInstanceUtilNodeArray and GetBdsInstancesBdsInstanceUtilNodeArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstancesBdsInstanceUtilNodeArrayInput` via:
 //
@@ -20725,12 +17742,6 @@ func (i GetBdsInstancesBdsInstanceUtilNodeArray) ToGetBdsInstancesBdsInstanceUti
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceUtilNodeArrayOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceUtilNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceUtilNode] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceUtilNode]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceUtilNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstancesBdsInstanceUtilNodeOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstancesBdsInstanceUtilNodeOutput) ElementType() reflect.Type {
@@ -20743,12 +17754,6 @@ func (o GetBdsInstancesBdsInstanceUtilNodeOutput) ToGetBdsInstancesBdsInstanceUt
 
 func (o GetBdsInstancesBdsInstanceUtilNodeOutput) ToGetBdsInstancesBdsInstanceUtilNodeOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceUtilNodeOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceUtilNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceUtilNode] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceUtilNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
@@ -20789,12 +17794,6 @@ func (o GetBdsInstancesBdsInstanceUtilNodeArrayOutput) ToGetBdsInstancesBdsInsta
 
 func (o GetBdsInstancesBdsInstanceUtilNodeArrayOutput) ToGetBdsInstancesBdsInstanceUtilNodeArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceUtilNodeArrayOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceUtilNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceUtilNode] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceUtilNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstancesBdsInstanceUtilNodeArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesBdsInstanceUtilNodeOutput {
@@ -20844,12 +17843,6 @@ func (i GetBdsInstancesBdsInstanceUtilNodeShapeConfigArgs) ToGetBdsInstancesBdsI
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceUtilNodeShapeConfigOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceUtilNodeShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceUtilNodeShapeConfig] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceUtilNodeShapeConfig]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceUtilNodeShapeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayInput is an input type that accepts GetBdsInstancesBdsInstanceUtilNodeShapeConfigArray and GetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayInput` via:
 //
@@ -20875,12 +17868,6 @@ func (i GetBdsInstancesBdsInstanceUtilNodeShapeConfigArray) ToGetBdsInstancesBds
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceUtilNodeShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceUtilNodeShapeConfig] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceUtilNodeShapeConfig]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstancesBdsInstanceUtilNodeShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstancesBdsInstanceUtilNodeShapeConfigOutput) ElementType() reflect.Type {
@@ -20893,12 +17880,6 @@ func (o GetBdsInstancesBdsInstanceUtilNodeShapeConfigOutput) ToGetBdsInstancesBd
 
 func (o GetBdsInstancesBdsInstanceUtilNodeShapeConfigOutput) ToGetBdsInstancesBdsInstanceUtilNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceUtilNodeShapeConfigOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceUtilNodeShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceUtilNodeShapeConfig] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceUtilNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The total amount of memory available to the node, in gigabytes.
@@ -20928,12 +17909,6 @@ func (o GetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayOutput) ToGetBdsInstan
 
 func (o GetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayOutput) ToGetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceUtilNodeShapeConfig] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceUtilNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstancesBdsInstanceUtilNodeShapeConfigArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesBdsInstanceUtilNodeShapeConfigOutput {
@@ -20989,12 +17964,6 @@ func (i GetBdsInstancesBdsInstanceWorkerNodeArgs) ToGetBdsInstancesBdsInstanceWo
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceWorkerNodeOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceWorkerNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceWorkerNode] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceWorkerNode]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceWorkerNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstancesBdsInstanceWorkerNodeArrayInput is an input type that accepts GetBdsInstancesBdsInstanceWorkerNodeArray and GetBdsInstancesBdsInstanceWorkerNodeArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstancesBdsInstanceWorkerNodeArrayInput` via:
 //
@@ -21020,12 +17989,6 @@ func (i GetBdsInstancesBdsInstanceWorkerNodeArray) ToGetBdsInstancesBdsInstanceW
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceWorkerNodeArrayOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceWorkerNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceWorkerNode] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceWorkerNode]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceWorkerNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstancesBdsInstanceWorkerNodeOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstancesBdsInstanceWorkerNodeOutput) ElementType() reflect.Type {
@@ -21038,12 +18001,6 @@ func (o GetBdsInstancesBdsInstanceWorkerNodeOutput) ToGetBdsInstancesBdsInstance
 
 func (o GetBdsInstancesBdsInstanceWorkerNodeOutput) ToGetBdsInstancesBdsInstanceWorkerNodeOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceWorkerNodeOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceWorkerNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceWorkerNode] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceWorkerNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
@@ -21084,12 +18041,6 @@ func (o GetBdsInstancesBdsInstanceWorkerNodeArrayOutput) ToGetBdsInstancesBdsIns
 
 func (o GetBdsInstancesBdsInstanceWorkerNodeArrayOutput) ToGetBdsInstancesBdsInstanceWorkerNodeArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceWorkerNodeArrayOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceWorkerNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceWorkerNode] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceWorkerNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstancesBdsInstanceWorkerNodeArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesBdsInstanceWorkerNodeOutput {
@@ -21139,12 +18090,6 @@ func (i GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArgs) ToGetBdsInstancesBd
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceWorkerNodeShapeConfig] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceWorkerNodeShapeConfig]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayInput is an input type that accepts GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArray and GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayInput` via:
 //
@@ -21170,12 +18115,6 @@ func (i GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArray) ToGetBdsInstancesB
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayOutput)
 }
 
-func (i GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceWorkerNodeShapeConfig] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceWorkerNodeShapeConfig]{
-		OutputState: i.ToGetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutput) ElementType() reflect.Type {
@@ -21188,12 +18127,6 @@ func (o GetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutput) ToGetBdsInstances
 
 func (o GetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutput) ToGetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesBdsInstanceWorkerNodeShapeConfig] {
-	return pulumix.Output[GetBdsInstancesBdsInstanceWorkerNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The total amount of memory available to the node, in gigabytes.
@@ -21223,12 +18156,6 @@ func (o GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayOutput) ToGetBdsInst
 
 func (o GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayOutput) ToGetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayOutput {
 	return o
-}
-
-func (o GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesBdsInstanceWorkerNodeShapeConfig] {
-	return pulumix.Output[[]GetBdsInstancesBdsInstanceWorkerNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutput {
@@ -21272,12 +18199,6 @@ func (i GetBdsInstancesFilterArgs) ToGetBdsInstancesFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesFilterOutput)
 }
 
-func (i GetBdsInstancesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesFilter] {
-	return pulumix.Output[GetBdsInstancesFilter]{
-		OutputState: i.ToGetBdsInstancesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBdsInstancesFilterArrayInput is an input type that accepts GetBdsInstancesFilterArray and GetBdsInstancesFilterArrayOutput values.
 // You can construct a concrete instance of `GetBdsInstancesFilterArrayInput` via:
 //
@@ -21303,12 +18224,6 @@ func (i GetBdsInstancesFilterArray) ToGetBdsInstancesFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesFilterArrayOutput)
 }
 
-func (i GetBdsInstancesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesFilter] {
-	return pulumix.Output[[]GetBdsInstancesFilter]{
-		OutputState: i.ToGetBdsInstancesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBdsInstancesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetBdsInstancesFilterOutput) ElementType() reflect.Type {
@@ -21321,12 +18236,6 @@ func (o GetBdsInstancesFilterOutput) ToGetBdsInstancesFilterOutput() GetBdsInsta
 
 func (o GetBdsInstancesFilterOutput) ToGetBdsInstancesFilterOutputWithContext(ctx context.Context) GetBdsInstancesFilterOutput {
 	return o
-}
-
-func (o GetBdsInstancesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstancesFilter] {
-	return pulumix.Output[GetBdsInstancesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstancesFilterOutput) Name() pulumi.StringOutput {
@@ -21353,12 +18262,6 @@ func (o GetBdsInstancesFilterArrayOutput) ToGetBdsInstancesFilterArrayOutput() G
 
 func (o GetBdsInstancesFilterArrayOutput) ToGetBdsInstancesFilterArrayOutputWithContext(ctx context.Context) GetBdsInstancesFilterArrayOutput {
 	return o
-}
-
-func (o GetBdsInstancesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBdsInstancesFilter] {
-	return pulumix.Output[[]GetBdsInstancesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBdsInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesFilterOutput {

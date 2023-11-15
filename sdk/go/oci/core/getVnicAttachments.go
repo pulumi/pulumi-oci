@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Vnic Attachments in Oracle Cloud Infrastructure Core service.
@@ -129,12 +128,6 @@ func (o GetVnicAttachmentsResultOutput) ToGetVnicAttachmentsResultOutput() GetVn
 
 func (o GetVnicAttachmentsResultOutput) ToGetVnicAttachmentsResultOutputWithContext(ctx context.Context) GetVnicAttachmentsResultOutput {
 	return o
-}
-
-func (o GetVnicAttachmentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVnicAttachmentsResult] {
-	return pulumix.Output[GetVnicAttachmentsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The availability domain of the instance.  Example: `Uocm:PHX-AD-1`

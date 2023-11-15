@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Fleets in Oracle Cloud Infrastructure Jms service.
@@ -132,12 +131,6 @@ func (o GetFleetsResultOutput) ToGetFleetsResultOutput() GetFleetsResultOutput {
 
 func (o GetFleetsResultOutput) ToGetFleetsResultOutputWithContext(ctx context.Context) GetFleetsResultOutput {
 	return o
-}
-
-func (o GetFleetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetsResult] {
-	return pulumix.Output[GetFleetsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.

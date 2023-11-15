@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Discovery Job resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -291,12 +290,6 @@ func (i *DiscoveryJob) ToDiscoveryJobOutputWithContext(ctx context.Context) Disc
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobOutput)
 }
 
-func (i *DiscoveryJob) ToOutput(ctx context.Context) pulumix.Output[*DiscoveryJob] {
-	return pulumix.Output[*DiscoveryJob]{
-		OutputState: i.ToDiscoveryJobOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DiscoveryJobArrayInput is an input type that accepts DiscoveryJobArray and DiscoveryJobArrayOutput values.
 // You can construct a concrete instance of `DiscoveryJobArrayInput` via:
 //
@@ -320,12 +313,6 @@ func (i DiscoveryJobArray) ToDiscoveryJobArrayOutput() DiscoveryJobArrayOutput {
 
 func (i DiscoveryJobArray) ToDiscoveryJobArrayOutputWithContext(ctx context.Context) DiscoveryJobArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobArrayOutput)
-}
-
-func (i DiscoveryJobArray) ToOutput(ctx context.Context) pulumix.Output[[]*DiscoveryJob] {
-	return pulumix.Output[[]*DiscoveryJob]{
-		OutputState: i.ToDiscoveryJobArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DiscoveryJobMapInput is an input type that accepts DiscoveryJobMap and DiscoveryJobMapOutput values.
@@ -353,12 +340,6 @@ func (i DiscoveryJobMap) ToDiscoveryJobMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobMapOutput)
 }
 
-func (i DiscoveryJobMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DiscoveryJob] {
-	return pulumix.Output[map[string]*DiscoveryJob]{
-		OutputState: i.ToDiscoveryJobMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DiscoveryJobOutput struct{ *pulumi.OutputState }
 
 func (DiscoveryJobOutput) ElementType() reflect.Type {
@@ -371,12 +352,6 @@ func (o DiscoveryJobOutput) ToDiscoveryJobOutput() DiscoveryJobOutput {
 
 func (o DiscoveryJobOutput) ToDiscoveryJobOutputWithContext(ctx context.Context) DiscoveryJobOutput {
 	return o
-}
-
-func (o DiscoveryJobOutput) ToOutput(ctx context.Context) pulumix.Output[*DiscoveryJob] {
-	return pulumix.Output[*DiscoveryJob]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of Compartment
@@ -466,12 +441,6 @@ func (o DiscoveryJobArrayOutput) ToDiscoveryJobArrayOutputWithContext(ctx contex
 	return o
 }
 
-func (o DiscoveryJobArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DiscoveryJob] {
-	return pulumix.Output[[]*DiscoveryJob]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DiscoveryJobArrayOutput) Index(i pulumi.IntInput) DiscoveryJobOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DiscoveryJob {
 		return vs[0].([]*DiscoveryJob)[vs[1].(int)]
@@ -490,12 +459,6 @@ func (o DiscoveryJobMapOutput) ToDiscoveryJobMapOutput() DiscoveryJobMapOutput {
 
 func (o DiscoveryJobMapOutput) ToDiscoveryJobMapOutputWithContext(ctx context.Context) DiscoveryJobMapOutput {
 	return o
-}
-
-func (o DiscoveryJobMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DiscoveryJob] {
-	return pulumix.Output[map[string]*DiscoveryJob]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DiscoveryJobMapOutput) MapIndex(k pulumi.StringInput) DiscoveryJobOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -123,12 +122,6 @@ func (i DataAssetDataSourceDetailsArgs) ToDataAssetDataSourceDetailsOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(DataAssetDataSourceDetailsOutput)
 }
 
-func (i DataAssetDataSourceDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[DataAssetDataSourceDetails] {
-	return pulumix.Output[DataAssetDataSourceDetails]{
-		OutputState: i.ToDataAssetDataSourceDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DataAssetDataSourceDetailsArgs) ToDataAssetDataSourceDetailsPtrOutput() DataAssetDataSourceDetailsPtrOutput {
 	return i.ToDataAssetDataSourceDetailsPtrOutputWithContext(context.Background())
 }
@@ -170,12 +163,6 @@ func (i *dataAssetDataSourceDetailsPtrType) ToDataAssetDataSourceDetailsPtrOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(DataAssetDataSourceDetailsPtrOutput)
 }
 
-func (i *dataAssetDataSourceDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DataAssetDataSourceDetails] {
-	return pulumix.Output[*DataAssetDataSourceDetails]{
-		OutputState: i.ToDataAssetDataSourceDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DataAssetDataSourceDetailsOutput struct{ *pulumi.OutputState }
 
 func (DataAssetDataSourceDetailsOutput) ElementType() reflect.Type {
@@ -198,12 +185,6 @@ func (o DataAssetDataSourceDetailsOutput) ToDataAssetDataSourceDetailsPtrOutputW
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v DataAssetDataSourceDetails) *DataAssetDataSourceDetails {
 		return &v
 	}).(DataAssetDataSourceDetailsPtrOutput)
-}
-
-func (o DataAssetDataSourceDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[DataAssetDataSourceDetails] {
-	return pulumix.Output[DataAssetDataSourceDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // atp db password Secret Id
@@ -320,12 +301,6 @@ func (o DataAssetDataSourceDetailsPtrOutput) ToDataAssetDataSourceDetailsPtrOutp
 
 func (o DataAssetDataSourceDetailsPtrOutput) ToDataAssetDataSourceDetailsPtrOutputWithContext(ctx context.Context) DataAssetDataSourceDetailsPtrOutput {
 	return o
-}
-
-func (o DataAssetDataSourceDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DataAssetDataSourceDetails] {
-	return pulumix.Output[*DataAssetDataSourceDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DataAssetDataSourceDetailsPtrOutput) Elem() DataAssetDataSourceDetailsOutput {
@@ -587,12 +562,6 @@ func (i DataAssetDataSourceDetailsVersionSpecificDetailsArgs) ToDataAssetDataSou
 	return pulumi.ToOutputWithContext(ctx, i).(DataAssetDataSourceDetailsVersionSpecificDetailsOutput)
 }
 
-func (i DataAssetDataSourceDetailsVersionSpecificDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[DataAssetDataSourceDetailsVersionSpecificDetails] {
-	return pulumix.Output[DataAssetDataSourceDetailsVersionSpecificDetails]{
-		OutputState: i.ToDataAssetDataSourceDetailsVersionSpecificDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DataAssetDataSourceDetailsVersionSpecificDetailsArgs) ToDataAssetDataSourceDetailsVersionSpecificDetailsPtrOutput() DataAssetDataSourceDetailsVersionSpecificDetailsPtrOutput {
 	return i.ToDataAssetDataSourceDetailsVersionSpecificDetailsPtrOutputWithContext(context.Background())
 }
@@ -634,12 +603,6 @@ func (i *dataAssetDataSourceDetailsVersionSpecificDetailsPtrType) ToDataAssetDat
 	return pulumi.ToOutputWithContext(ctx, i).(DataAssetDataSourceDetailsVersionSpecificDetailsPtrOutput)
 }
 
-func (i *dataAssetDataSourceDetailsVersionSpecificDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DataAssetDataSourceDetailsVersionSpecificDetails] {
-	return pulumix.Output[*DataAssetDataSourceDetailsVersionSpecificDetails]{
-		OutputState: i.ToDataAssetDataSourceDetailsVersionSpecificDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DataAssetDataSourceDetailsVersionSpecificDetailsOutput struct{ *pulumi.OutputState }
 
 func (DataAssetDataSourceDetailsVersionSpecificDetailsOutput) ElementType() reflect.Type {
@@ -662,12 +625,6 @@ func (o DataAssetDataSourceDetailsVersionSpecificDetailsOutput) ToDataAssetDataS
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v DataAssetDataSourceDetailsVersionSpecificDetails) *DataAssetDataSourceDetailsVersionSpecificDetails {
 		return &v
 	}).(DataAssetDataSourceDetailsVersionSpecificDetailsPtrOutput)
-}
-
-func (o DataAssetDataSourceDetailsVersionSpecificDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[DataAssetDataSourceDetailsVersionSpecificDetails] {
-	return pulumix.Output[DataAssetDataSourceDetailsVersionSpecificDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Bucket Name for influx connection
@@ -707,12 +664,6 @@ func (o DataAssetDataSourceDetailsVersionSpecificDetailsPtrOutput) ToDataAssetDa
 
 func (o DataAssetDataSourceDetailsVersionSpecificDetailsPtrOutput) ToDataAssetDataSourceDetailsVersionSpecificDetailsPtrOutputWithContext(ctx context.Context) DataAssetDataSourceDetailsVersionSpecificDetailsPtrOutput {
 	return o
-}
-
-func (o DataAssetDataSourceDetailsVersionSpecificDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DataAssetDataSourceDetailsVersionSpecificDetails] {
-	return pulumix.Output[*DataAssetDataSourceDetailsVersionSpecificDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DataAssetDataSourceDetailsVersionSpecificDetailsPtrOutput) Elem() DataAssetDataSourceDetailsVersionSpecificDetailsOutput {
@@ -828,12 +779,6 @@ func (i DetectAnomalyJobInputDetailsArgs) ToDetectAnomalyJobInputDetailsOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(DetectAnomalyJobInputDetailsOutput)
 }
 
-func (i DetectAnomalyJobInputDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[DetectAnomalyJobInputDetails] {
-	return pulumix.Output[DetectAnomalyJobInputDetails]{
-		OutputState: i.ToDetectAnomalyJobInputDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DetectAnomalyJobInputDetailsArgs) ToDetectAnomalyJobInputDetailsPtrOutput() DetectAnomalyJobInputDetailsPtrOutput {
 	return i.ToDetectAnomalyJobInputDetailsPtrOutputWithContext(context.Background())
 }
@@ -875,12 +820,6 @@ func (i *detectAnomalyJobInputDetailsPtrType) ToDetectAnomalyJobInputDetailsPtrO
 	return pulumi.ToOutputWithContext(ctx, i).(DetectAnomalyJobInputDetailsPtrOutput)
 }
 
-func (i *detectAnomalyJobInputDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DetectAnomalyJobInputDetails] {
-	return pulumix.Output[*DetectAnomalyJobInputDetails]{
-		OutputState: i.ToDetectAnomalyJobInputDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DetectAnomalyJobInputDetailsOutput struct{ *pulumi.OutputState }
 
 func (DetectAnomalyJobInputDetailsOutput) ElementType() reflect.Type {
@@ -903,12 +842,6 @@ func (o DetectAnomalyJobInputDetailsOutput) ToDetectAnomalyJobInputDetailsPtrOut
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v DetectAnomalyJobInputDetails) *DetectAnomalyJobInputDetails {
 		return &v
 	}).(DetectAnomalyJobInputDetailsPtrOutput)
-}
-
-func (o DetectAnomalyJobInputDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[DetectAnomalyJobInputDetails] {
-	return pulumix.Output[DetectAnomalyJobInputDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DetectAnomalyJobInputDetailsOutput) Content() pulumi.StringPtrOutput {
@@ -958,12 +891,6 @@ func (o DetectAnomalyJobInputDetailsPtrOutput) ToDetectAnomalyJobInputDetailsPtr
 
 func (o DetectAnomalyJobInputDetailsPtrOutput) ToDetectAnomalyJobInputDetailsPtrOutputWithContext(ctx context.Context) DetectAnomalyJobInputDetailsPtrOutput {
 	return o
-}
-
-func (o DetectAnomalyJobInputDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DetectAnomalyJobInputDetails] {
-	return pulumix.Output[*DetectAnomalyJobInputDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DetectAnomalyJobInputDetailsPtrOutput) Elem() DetectAnomalyJobInputDetailsOutput {
@@ -1081,12 +1008,6 @@ func (i DetectAnomalyJobInputDetailsDataArgs) ToDetectAnomalyJobInputDetailsData
 	return pulumi.ToOutputWithContext(ctx, i).(DetectAnomalyJobInputDetailsDataOutput)
 }
 
-func (i DetectAnomalyJobInputDetailsDataArgs) ToOutput(ctx context.Context) pulumix.Output[DetectAnomalyJobInputDetailsData] {
-	return pulumix.Output[DetectAnomalyJobInputDetailsData]{
-		OutputState: i.ToDetectAnomalyJobInputDetailsDataOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DetectAnomalyJobInputDetailsDataArrayInput is an input type that accepts DetectAnomalyJobInputDetailsDataArray and DetectAnomalyJobInputDetailsDataArrayOutput values.
 // You can construct a concrete instance of `DetectAnomalyJobInputDetailsDataArrayInput` via:
 //
@@ -1112,12 +1033,6 @@ func (i DetectAnomalyJobInputDetailsDataArray) ToDetectAnomalyJobInputDetailsDat
 	return pulumi.ToOutputWithContext(ctx, i).(DetectAnomalyJobInputDetailsDataArrayOutput)
 }
 
-func (i DetectAnomalyJobInputDetailsDataArray) ToOutput(ctx context.Context) pulumix.Output[[]DetectAnomalyJobInputDetailsData] {
-	return pulumix.Output[[]DetectAnomalyJobInputDetailsData]{
-		OutputState: i.ToDetectAnomalyJobInputDetailsDataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DetectAnomalyJobInputDetailsDataOutput struct{ *pulumi.OutputState }
 
 func (DetectAnomalyJobInputDetailsDataOutput) ElementType() reflect.Type {
@@ -1130,12 +1045,6 @@ func (o DetectAnomalyJobInputDetailsDataOutput) ToDetectAnomalyJobInputDetailsDa
 
 func (o DetectAnomalyJobInputDetailsDataOutput) ToDetectAnomalyJobInputDetailsDataOutputWithContext(ctx context.Context) DetectAnomalyJobInputDetailsDataOutput {
 	return o
-}
-
-func (o DetectAnomalyJobInputDetailsDataOutput) ToOutput(ctx context.Context) pulumix.Output[DetectAnomalyJobInputDetailsData] {
-	return pulumix.Output[DetectAnomalyJobInputDetailsData]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Nullable string representing timestamp.
@@ -1160,12 +1069,6 @@ func (o DetectAnomalyJobInputDetailsDataArrayOutput) ToDetectAnomalyJobInputDeta
 
 func (o DetectAnomalyJobInputDetailsDataArrayOutput) ToDetectAnomalyJobInputDetailsDataArrayOutputWithContext(ctx context.Context) DetectAnomalyJobInputDetailsDataArrayOutput {
 	return o
-}
-
-func (o DetectAnomalyJobInputDetailsDataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DetectAnomalyJobInputDetailsData] {
-	return pulumix.Output[[]DetectAnomalyJobInputDetailsData]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DetectAnomalyJobInputDetailsDataArrayOutput) Index(i pulumi.IntInput) DetectAnomalyJobInputDetailsDataOutput {
@@ -1215,12 +1118,6 @@ func (i DetectAnomalyJobInputDetailsObjectLocationArgs) ToDetectAnomalyJobInputD
 	return pulumi.ToOutputWithContext(ctx, i).(DetectAnomalyJobInputDetailsObjectLocationOutput)
 }
 
-func (i DetectAnomalyJobInputDetailsObjectLocationArgs) ToOutput(ctx context.Context) pulumix.Output[DetectAnomalyJobInputDetailsObjectLocation] {
-	return pulumix.Output[DetectAnomalyJobInputDetailsObjectLocation]{
-		OutputState: i.ToDetectAnomalyJobInputDetailsObjectLocationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DetectAnomalyJobInputDetailsObjectLocationArrayInput is an input type that accepts DetectAnomalyJobInputDetailsObjectLocationArray and DetectAnomalyJobInputDetailsObjectLocationArrayOutput values.
 // You can construct a concrete instance of `DetectAnomalyJobInputDetailsObjectLocationArrayInput` via:
 //
@@ -1246,12 +1143,6 @@ func (i DetectAnomalyJobInputDetailsObjectLocationArray) ToDetectAnomalyJobInput
 	return pulumi.ToOutputWithContext(ctx, i).(DetectAnomalyJobInputDetailsObjectLocationArrayOutput)
 }
 
-func (i DetectAnomalyJobInputDetailsObjectLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]DetectAnomalyJobInputDetailsObjectLocation] {
-	return pulumix.Output[[]DetectAnomalyJobInputDetailsObjectLocation]{
-		OutputState: i.ToDetectAnomalyJobInputDetailsObjectLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DetectAnomalyJobInputDetailsObjectLocationOutput struct{ *pulumi.OutputState }
 
 func (DetectAnomalyJobInputDetailsObjectLocationOutput) ElementType() reflect.Type {
@@ -1264,12 +1155,6 @@ func (o DetectAnomalyJobInputDetailsObjectLocationOutput) ToDetectAnomalyJobInpu
 
 func (o DetectAnomalyJobInputDetailsObjectLocationOutput) ToDetectAnomalyJobInputDetailsObjectLocationOutputWithContext(ctx context.Context) DetectAnomalyJobInputDetailsObjectLocationOutput {
 	return o
-}
-
-func (o DetectAnomalyJobInputDetailsObjectLocationOutput) ToOutput(ctx context.Context) pulumix.Output[DetectAnomalyJobInputDetailsObjectLocation] {
-	return pulumix.Output[DetectAnomalyJobInputDetailsObjectLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Object Storage bucket name.
@@ -1299,12 +1184,6 @@ func (o DetectAnomalyJobInputDetailsObjectLocationArrayOutput) ToDetectAnomalyJo
 
 func (o DetectAnomalyJobInputDetailsObjectLocationArrayOutput) ToDetectAnomalyJobInputDetailsObjectLocationArrayOutputWithContext(ctx context.Context) DetectAnomalyJobInputDetailsObjectLocationArrayOutput {
 	return o
-}
-
-func (o DetectAnomalyJobInputDetailsObjectLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DetectAnomalyJobInputDetailsObjectLocation] {
-	return pulumix.Output[[]DetectAnomalyJobInputDetailsObjectLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DetectAnomalyJobInputDetailsObjectLocationArrayOutput) Index(i pulumi.IntInput) DetectAnomalyJobInputDetailsObjectLocationOutput {
@@ -1358,12 +1237,6 @@ func (i DetectAnomalyJobOutputDetailsArgs) ToDetectAnomalyJobOutputDetailsOutput
 	return pulumi.ToOutputWithContext(ctx, i).(DetectAnomalyJobOutputDetailsOutput)
 }
 
-func (i DetectAnomalyJobOutputDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[DetectAnomalyJobOutputDetails] {
-	return pulumix.Output[DetectAnomalyJobOutputDetails]{
-		OutputState: i.ToDetectAnomalyJobOutputDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DetectAnomalyJobOutputDetailsArgs) ToDetectAnomalyJobOutputDetailsPtrOutput() DetectAnomalyJobOutputDetailsPtrOutput {
 	return i.ToDetectAnomalyJobOutputDetailsPtrOutputWithContext(context.Background())
 }
@@ -1405,12 +1278,6 @@ func (i *detectAnomalyJobOutputDetailsPtrType) ToDetectAnomalyJobOutputDetailsPt
 	return pulumi.ToOutputWithContext(ctx, i).(DetectAnomalyJobOutputDetailsPtrOutput)
 }
 
-func (i *detectAnomalyJobOutputDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DetectAnomalyJobOutputDetails] {
-	return pulumix.Output[*DetectAnomalyJobOutputDetails]{
-		OutputState: i.ToDetectAnomalyJobOutputDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DetectAnomalyJobOutputDetailsOutput struct{ *pulumi.OutputState }
 
 func (DetectAnomalyJobOutputDetailsOutput) ElementType() reflect.Type {
@@ -1433,12 +1300,6 @@ func (o DetectAnomalyJobOutputDetailsOutput) ToDetectAnomalyJobOutputDetailsPtrO
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v DetectAnomalyJobOutputDetails) *DetectAnomalyJobOutputDetails {
 		return &v
 	}).(DetectAnomalyJobOutputDetailsPtrOutput)
-}
-
-func (o DetectAnomalyJobOutputDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[DetectAnomalyJobOutputDetails] {
-	return pulumix.Output[DetectAnomalyJobOutputDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Object Storage bucket name.
@@ -1473,12 +1334,6 @@ func (o DetectAnomalyJobOutputDetailsPtrOutput) ToDetectAnomalyJobOutputDetailsP
 
 func (o DetectAnomalyJobOutputDetailsPtrOutput) ToDetectAnomalyJobOutputDetailsPtrOutputWithContext(ctx context.Context) DetectAnomalyJobOutputDetailsPtrOutput {
 	return o
-}
-
-func (o DetectAnomalyJobOutputDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DetectAnomalyJobOutputDetails] {
-	return pulumix.Output[*DetectAnomalyJobOutputDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DetectAnomalyJobOutputDetailsPtrOutput) Elem() DetectAnomalyJobOutputDetailsOutput {
@@ -1580,12 +1435,6 @@ func (i ModelModelTrainingDetailsArgs) ToModelModelTrainingDetailsOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(ModelModelTrainingDetailsOutput)
 }
 
-func (i ModelModelTrainingDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[ModelModelTrainingDetails] {
-	return pulumix.Output[ModelModelTrainingDetails]{
-		OutputState: i.ToModelModelTrainingDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ModelModelTrainingDetailsArgs) ToModelModelTrainingDetailsPtrOutput() ModelModelTrainingDetailsPtrOutput {
 	return i.ToModelModelTrainingDetailsPtrOutputWithContext(context.Background())
 }
@@ -1627,12 +1476,6 @@ func (i *modelModelTrainingDetailsPtrType) ToModelModelTrainingDetailsPtrOutputW
 	return pulumi.ToOutputWithContext(ctx, i).(ModelModelTrainingDetailsPtrOutput)
 }
 
-func (i *modelModelTrainingDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*ModelModelTrainingDetails] {
-	return pulumix.Output[*ModelModelTrainingDetails]{
-		OutputState: i.ToModelModelTrainingDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ModelModelTrainingDetailsOutput struct{ *pulumi.OutputState }
 
 func (ModelModelTrainingDetailsOutput) ElementType() reflect.Type {
@@ -1655,12 +1498,6 @@ func (o ModelModelTrainingDetailsOutput) ToModelModelTrainingDetailsPtrOutputWit
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ModelModelTrainingDetails) *ModelModelTrainingDetails {
 		return &v
 	}).(ModelModelTrainingDetailsPtrOutput)
-}
-
-func (o ModelModelTrainingDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[ModelModelTrainingDetails] {
-	return pulumix.Output[ModelModelTrainingDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // User can choose specific algorithm for training.
@@ -1700,12 +1537,6 @@ func (o ModelModelTrainingDetailsPtrOutput) ToModelModelTrainingDetailsPtrOutput
 
 func (o ModelModelTrainingDetailsPtrOutput) ToModelModelTrainingDetailsPtrOutputWithContext(ctx context.Context) ModelModelTrainingDetailsPtrOutput {
 	return o
-}
-
-func (o ModelModelTrainingDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ModelModelTrainingDetails] {
-	return pulumix.Output[*ModelModelTrainingDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ModelModelTrainingDetailsPtrOutput) Elem() ModelModelTrainingDetailsOutput {
@@ -1831,12 +1662,6 @@ func (i ModelModelTrainingResultArgs) ToModelModelTrainingResultOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(ModelModelTrainingResultOutput)
 }
 
-func (i ModelModelTrainingResultArgs) ToOutput(ctx context.Context) pulumix.Output[ModelModelTrainingResult] {
-	return pulumix.Output[ModelModelTrainingResult]{
-		OutputState: i.ToModelModelTrainingResultOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ModelModelTrainingResultArrayInput is an input type that accepts ModelModelTrainingResultArray and ModelModelTrainingResultArrayOutput values.
 // You can construct a concrete instance of `ModelModelTrainingResultArrayInput` via:
 //
@@ -1862,12 +1687,6 @@ func (i ModelModelTrainingResultArray) ToModelModelTrainingResultArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(ModelModelTrainingResultArrayOutput)
 }
 
-func (i ModelModelTrainingResultArray) ToOutput(ctx context.Context) pulumix.Output[[]ModelModelTrainingResult] {
-	return pulumix.Output[[]ModelModelTrainingResult]{
-		OutputState: i.ToModelModelTrainingResultArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ModelModelTrainingResultOutput struct{ *pulumi.OutputState }
 
 func (ModelModelTrainingResultOutput) ElementType() reflect.Type {
@@ -1880,12 +1699,6 @@ func (o ModelModelTrainingResultOutput) ToModelModelTrainingResultOutput() Model
 
 func (o ModelModelTrainingResultOutput) ToModelModelTrainingResultOutputWithContext(ctx context.Context) ModelModelTrainingResultOutput {
 	return o
-}
-
-func (o ModelModelTrainingResultOutput) ToOutput(ctx context.Context) pulumix.Output[ModelModelTrainingResult] {
-	return pulumix.Output[ModelModelTrainingResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Accuracy metric for a signal.
@@ -1951,12 +1764,6 @@ func (o ModelModelTrainingResultArrayOutput) ToModelModelTrainingResultArrayOutp
 	return o
 }
 
-func (o ModelModelTrainingResultArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ModelModelTrainingResult] {
-	return pulumix.Output[[]ModelModelTrainingResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ModelModelTrainingResultArrayOutput) Index(i pulumi.IntInput) ModelModelTrainingResultOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ModelModelTrainingResult {
 		return vs[0].([]ModelModelTrainingResult)[vs[1].(int)]
@@ -2008,12 +1815,6 @@ func (i ModelModelTrainingResultRowReductionDetailArgs) ToModelModelTrainingResu
 	return pulumi.ToOutputWithContext(ctx, i).(ModelModelTrainingResultRowReductionDetailOutput)
 }
 
-func (i ModelModelTrainingResultRowReductionDetailArgs) ToOutput(ctx context.Context) pulumix.Output[ModelModelTrainingResultRowReductionDetail] {
-	return pulumix.Output[ModelModelTrainingResultRowReductionDetail]{
-		OutputState: i.ToModelModelTrainingResultRowReductionDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ModelModelTrainingResultRowReductionDetailArrayInput is an input type that accepts ModelModelTrainingResultRowReductionDetailArray and ModelModelTrainingResultRowReductionDetailArrayOutput values.
 // You can construct a concrete instance of `ModelModelTrainingResultRowReductionDetailArrayInput` via:
 //
@@ -2039,12 +1840,6 @@ func (i ModelModelTrainingResultRowReductionDetailArray) ToModelModelTrainingRes
 	return pulumi.ToOutputWithContext(ctx, i).(ModelModelTrainingResultRowReductionDetailArrayOutput)
 }
 
-func (i ModelModelTrainingResultRowReductionDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]ModelModelTrainingResultRowReductionDetail] {
-	return pulumix.Output[[]ModelModelTrainingResultRowReductionDetail]{
-		OutputState: i.ToModelModelTrainingResultRowReductionDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ModelModelTrainingResultRowReductionDetailOutput struct{ *pulumi.OutputState }
 
 func (ModelModelTrainingResultRowReductionDetailOutput) ElementType() reflect.Type {
@@ -2057,12 +1852,6 @@ func (o ModelModelTrainingResultRowReductionDetailOutput) ToModelModelTrainingRe
 
 func (o ModelModelTrainingResultRowReductionDetailOutput) ToModelModelTrainingResultRowReductionDetailOutputWithContext(ctx context.Context) ModelModelTrainingResultRowReductionDetailOutput {
 	return o
-}
-
-func (o ModelModelTrainingResultRowReductionDetailOutput) ToOutput(ctx context.Context) pulumix.Output[ModelModelTrainingResultRowReductionDetail] {
-	return pulumix.Output[ModelModelTrainingResultRowReductionDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A boolean value to indicate if row reduction is applied
@@ -2094,12 +1883,6 @@ func (o ModelModelTrainingResultRowReductionDetailArrayOutput) ToModelModelTrain
 
 func (o ModelModelTrainingResultRowReductionDetailArrayOutput) ToModelModelTrainingResultRowReductionDetailArrayOutputWithContext(ctx context.Context) ModelModelTrainingResultRowReductionDetailArrayOutput {
 	return o
-}
-
-func (o ModelModelTrainingResultRowReductionDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ModelModelTrainingResultRowReductionDetail] {
-	return pulumix.Output[[]ModelModelTrainingResultRowReductionDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ModelModelTrainingResultRowReductionDetailArrayOutput) Index(i pulumi.IntInput) ModelModelTrainingResultRowReductionDetailOutput {
@@ -2179,12 +1962,6 @@ func (i ModelModelTrainingResultSignalDetailArgs) ToModelModelTrainingResultSign
 	return pulumi.ToOutputWithContext(ctx, i).(ModelModelTrainingResultSignalDetailOutput)
 }
 
-func (i ModelModelTrainingResultSignalDetailArgs) ToOutput(ctx context.Context) pulumix.Output[ModelModelTrainingResultSignalDetail] {
-	return pulumix.Output[ModelModelTrainingResultSignalDetail]{
-		OutputState: i.ToModelModelTrainingResultSignalDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ModelModelTrainingResultSignalDetailArrayInput is an input type that accepts ModelModelTrainingResultSignalDetailArray and ModelModelTrainingResultSignalDetailArrayOutput values.
 // You can construct a concrete instance of `ModelModelTrainingResultSignalDetailArrayInput` via:
 //
@@ -2210,12 +1987,6 @@ func (i ModelModelTrainingResultSignalDetailArray) ToModelModelTrainingResultSig
 	return pulumi.ToOutputWithContext(ctx, i).(ModelModelTrainingResultSignalDetailArrayOutput)
 }
 
-func (i ModelModelTrainingResultSignalDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]ModelModelTrainingResultSignalDetail] {
-	return pulumix.Output[[]ModelModelTrainingResultSignalDetail]{
-		OutputState: i.ToModelModelTrainingResultSignalDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ModelModelTrainingResultSignalDetailOutput struct{ *pulumi.OutputState }
 
 func (ModelModelTrainingResultSignalDetailOutput) ElementType() reflect.Type {
@@ -2228,12 +1999,6 @@ func (o ModelModelTrainingResultSignalDetailOutput) ToModelModelTrainingResultSi
 
 func (o ModelModelTrainingResultSignalDetailOutput) ToModelModelTrainingResultSignalDetailOutputWithContext(ctx context.Context) ModelModelTrainingResultSignalDetailOutput {
 	return o
-}
-
-func (o ModelModelTrainingResultSignalDetailOutput) ToOutput(ctx context.Context) pulumix.Output[ModelModelTrainingResultSignalDetail] {
-	return pulumix.Output[ModelModelTrainingResultSignalDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // detailed information for a signal.
@@ -2298,12 +2063,6 @@ func (o ModelModelTrainingResultSignalDetailArrayOutput) ToModelModelTrainingRes
 	return o
 }
 
-func (o ModelModelTrainingResultSignalDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ModelModelTrainingResultSignalDetail] {
-	return pulumix.Output[[]ModelModelTrainingResultSignalDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ModelModelTrainingResultSignalDetailArrayOutput) Index(i pulumi.IntInput) ModelModelTrainingResultSignalDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ModelModelTrainingResultSignalDetail {
 		return vs[0].([]ModelModelTrainingResultSignalDetail)[vs[1].(int)]
@@ -2341,12 +2100,6 @@ func (i GetAiPrivateEndpointsAiPrivateEndpointCollectionArgs) ToGetAiPrivateEndp
 	return pulumi.ToOutputWithContext(ctx, i).(GetAiPrivateEndpointsAiPrivateEndpointCollectionOutput)
 }
 
-func (i GetAiPrivateEndpointsAiPrivateEndpointCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAiPrivateEndpointsAiPrivateEndpointCollection] {
-	return pulumix.Output[GetAiPrivateEndpointsAiPrivateEndpointCollection]{
-		OutputState: i.ToGetAiPrivateEndpointsAiPrivateEndpointCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAiPrivateEndpointsAiPrivateEndpointCollectionArrayInput is an input type that accepts GetAiPrivateEndpointsAiPrivateEndpointCollectionArray and GetAiPrivateEndpointsAiPrivateEndpointCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAiPrivateEndpointsAiPrivateEndpointCollectionArrayInput` via:
 //
@@ -2372,12 +2125,6 @@ func (i GetAiPrivateEndpointsAiPrivateEndpointCollectionArray) ToGetAiPrivateEnd
 	return pulumi.ToOutputWithContext(ctx, i).(GetAiPrivateEndpointsAiPrivateEndpointCollectionArrayOutput)
 }
 
-func (i GetAiPrivateEndpointsAiPrivateEndpointCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAiPrivateEndpointsAiPrivateEndpointCollection] {
-	return pulumix.Output[[]GetAiPrivateEndpointsAiPrivateEndpointCollection]{
-		OutputState: i.ToGetAiPrivateEndpointsAiPrivateEndpointCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAiPrivateEndpointsAiPrivateEndpointCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAiPrivateEndpointsAiPrivateEndpointCollectionOutput) ElementType() reflect.Type {
@@ -2390,12 +2137,6 @@ func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionOutput) ToGetAiPrivateEn
 
 func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionOutput) ToGetAiPrivateEndpointsAiPrivateEndpointCollectionOutputWithContext(ctx context.Context) GetAiPrivateEndpointsAiPrivateEndpointCollectionOutput {
 	return o
-}
-
-func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAiPrivateEndpointsAiPrivateEndpointCollection] {
-	return pulumix.Output[GetAiPrivateEndpointsAiPrivateEndpointCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionOutput) Items() GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArrayOutput {
@@ -2416,12 +2157,6 @@ func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionArrayOutput) ToGetAiPriv
 
 func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionArrayOutput) ToGetAiPrivateEndpointsAiPrivateEndpointCollectionArrayOutputWithContext(ctx context.Context) GetAiPrivateEndpointsAiPrivateEndpointCollectionArrayOutput {
 	return o
-}
-
-func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAiPrivateEndpointsAiPrivateEndpointCollection] {
-	return pulumix.Output[[]GetAiPrivateEndpointsAiPrivateEndpointCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionArrayOutput) Index(i pulumi.IntInput) GetAiPrivateEndpointsAiPrivateEndpointCollectionOutput {
@@ -2511,12 +2246,6 @@ func (i GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArgs) ToGetAiPrivate
 	return pulumi.ToOutputWithContext(ctx, i).(GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput)
 }
 
-func (i GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAiPrivateEndpointsAiPrivateEndpointCollectionItem] {
-	return pulumix.Output[GetAiPrivateEndpointsAiPrivateEndpointCollectionItem]{
-		OutputState: i.ToGetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArrayInput is an input type that accepts GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArray and GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArrayInput` via:
 //
@@ -2542,12 +2271,6 @@ func (i GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArray) ToGetAiPrivat
 	return pulumi.ToOutputWithContext(ctx, i).(GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArrayOutput)
 }
 
-func (i GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAiPrivateEndpointsAiPrivateEndpointCollectionItem] {
-	return pulumix.Output[[]GetAiPrivateEndpointsAiPrivateEndpointCollectionItem]{
-		OutputState: i.ToGetAiPrivateEndpointsAiPrivateEndpointCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput) ElementType() reflect.Type {
@@ -2560,12 +2283,6 @@ func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput) ToGetAiPriva
 
 func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput) ToGetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutputWithContext(ctx context.Context) GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput {
 	return o
-}
-
-func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAiPrivateEndpointsAiPrivateEndpointCollectionItem] {
-	return pulumix.Output[GetAiPrivateEndpointsAiPrivateEndpointCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of dataAssets using the private reverse connection endpoint.
@@ -2653,12 +2370,6 @@ func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArrayOutput) ToGetAi
 	return o
 }
 
-func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAiPrivateEndpointsAiPrivateEndpointCollectionItem] {
-	return pulumix.Output[[]GetAiPrivateEndpointsAiPrivateEndpointCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAiPrivateEndpointsAiPrivateEndpointCollectionItem {
 		return vs[0].([]GetAiPrivateEndpointsAiPrivateEndpointCollectionItem)[vs[1].(int)]
@@ -2700,12 +2411,6 @@ func (i GetAiPrivateEndpointsFilterArgs) ToGetAiPrivateEndpointsFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetAiPrivateEndpointsFilterOutput)
 }
 
-func (i GetAiPrivateEndpointsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAiPrivateEndpointsFilter] {
-	return pulumix.Output[GetAiPrivateEndpointsFilter]{
-		OutputState: i.ToGetAiPrivateEndpointsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAiPrivateEndpointsFilterArrayInput is an input type that accepts GetAiPrivateEndpointsFilterArray and GetAiPrivateEndpointsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAiPrivateEndpointsFilterArrayInput` via:
 //
@@ -2731,12 +2436,6 @@ func (i GetAiPrivateEndpointsFilterArray) ToGetAiPrivateEndpointsFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetAiPrivateEndpointsFilterArrayOutput)
 }
 
-func (i GetAiPrivateEndpointsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAiPrivateEndpointsFilter] {
-	return pulumix.Output[[]GetAiPrivateEndpointsFilter]{
-		OutputState: i.ToGetAiPrivateEndpointsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAiPrivateEndpointsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAiPrivateEndpointsFilterOutput) ElementType() reflect.Type {
@@ -2749,12 +2448,6 @@ func (o GetAiPrivateEndpointsFilterOutput) ToGetAiPrivateEndpointsFilterOutput()
 
 func (o GetAiPrivateEndpointsFilterOutput) ToGetAiPrivateEndpointsFilterOutputWithContext(ctx context.Context) GetAiPrivateEndpointsFilterOutput {
 	return o
-}
-
-func (o GetAiPrivateEndpointsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAiPrivateEndpointsFilter] {
-	return pulumix.Output[GetAiPrivateEndpointsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAiPrivateEndpointsFilterOutput) Name() pulumi.StringOutput {
@@ -2781,12 +2474,6 @@ func (o GetAiPrivateEndpointsFilterArrayOutput) ToGetAiPrivateEndpointsFilterArr
 
 func (o GetAiPrivateEndpointsFilterArrayOutput) ToGetAiPrivateEndpointsFilterArrayOutputWithContext(ctx context.Context) GetAiPrivateEndpointsFilterArrayOutput {
 	return o
-}
-
-func (o GetAiPrivateEndpointsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAiPrivateEndpointsFilter] {
-	return pulumix.Output[[]GetAiPrivateEndpointsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAiPrivateEndpointsFilterArrayOutput) Index(i pulumi.IntInput) GetAiPrivateEndpointsFilterOutput {
@@ -2844,12 +2531,6 @@ func (i GetDetectAnomalyJobInputDetailArgs) ToGetDetectAnomalyJobInputDetailOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobInputDetailOutput)
 }
 
-func (i GetDetectAnomalyJobInputDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobInputDetail] {
-	return pulumix.Output[GetDetectAnomalyJobInputDetail]{
-		OutputState: i.ToGetDetectAnomalyJobInputDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectAnomalyJobInputDetailArrayInput is an input type that accepts GetDetectAnomalyJobInputDetailArray and GetDetectAnomalyJobInputDetailArrayOutput values.
 // You can construct a concrete instance of `GetDetectAnomalyJobInputDetailArrayInput` via:
 //
@@ -2875,12 +2556,6 @@ func (i GetDetectAnomalyJobInputDetailArray) ToGetDetectAnomalyJobInputDetailArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobInputDetailArrayOutput)
 }
 
-func (i GetDetectAnomalyJobInputDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobInputDetail] {
-	return pulumix.Output[[]GetDetectAnomalyJobInputDetail]{
-		OutputState: i.ToGetDetectAnomalyJobInputDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectAnomalyJobInputDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDetectAnomalyJobInputDetailOutput) ElementType() reflect.Type {
@@ -2893,12 +2568,6 @@ func (o GetDetectAnomalyJobInputDetailOutput) ToGetDetectAnomalyJobInputDetailOu
 
 func (o GetDetectAnomalyJobInputDetailOutput) ToGetDetectAnomalyJobInputDetailOutputWithContext(ctx context.Context) GetDetectAnomalyJobInputDetailOutput {
 	return o
-}
-
-func (o GetDetectAnomalyJobInputDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobInputDetail] {
-	return pulumix.Output[GetDetectAnomalyJobInputDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectAnomalyJobInputDetailOutput) Content() pulumi.StringOutput {
@@ -2948,12 +2617,6 @@ func (o GetDetectAnomalyJobInputDetailArrayOutput) ToGetDetectAnomalyJobInputDet
 	return o
 }
 
-func (o GetDetectAnomalyJobInputDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobInputDetail] {
-	return pulumix.Output[[]GetDetectAnomalyJobInputDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectAnomalyJobInputDetailArrayOutput) Index(i pulumi.IntInput) GetDetectAnomalyJobInputDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectAnomalyJobInputDetail {
 		return vs[0].([]GetDetectAnomalyJobInputDetail)[vs[1].(int)]
@@ -2993,12 +2656,6 @@ func (i GetDetectAnomalyJobInputDetailDataArgs) ToGetDetectAnomalyJobInputDetail
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobInputDetailDataOutput)
 }
 
-func (i GetDetectAnomalyJobInputDetailDataArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobInputDetailData] {
-	return pulumix.Output[GetDetectAnomalyJobInputDetailData]{
-		OutputState: i.ToGetDetectAnomalyJobInputDetailDataOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectAnomalyJobInputDetailDataArrayInput is an input type that accepts GetDetectAnomalyJobInputDetailDataArray and GetDetectAnomalyJobInputDetailDataArrayOutput values.
 // You can construct a concrete instance of `GetDetectAnomalyJobInputDetailDataArrayInput` via:
 //
@@ -3024,12 +2681,6 @@ func (i GetDetectAnomalyJobInputDetailDataArray) ToGetDetectAnomalyJobInputDetai
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobInputDetailDataArrayOutput)
 }
 
-func (i GetDetectAnomalyJobInputDetailDataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobInputDetailData] {
-	return pulumix.Output[[]GetDetectAnomalyJobInputDetailData]{
-		OutputState: i.ToGetDetectAnomalyJobInputDetailDataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectAnomalyJobInputDetailDataOutput struct{ *pulumi.OutputState }
 
 func (GetDetectAnomalyJobInputDetailDataOutput) ElementType() reflect.Type {
@@ -3042,12 +2693,6 @@ func (o GetDetectAnomalyJobInputDetailDataOutput) ToGetDetectAnomalyJobInputDeta
 
 func (o GetDetectAnomalyJobInputDetailDataOutput) ToGetDetectAnomalyJobInputDetailDataOutputWithContext(ctx context.Context) GetDetectAnomalyJobInputDetailDataOutput {
 	return o
-}
-
-func (o GetDetectAnomalyJobInputDetailDataOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobInputDetailData] {
-	return pulumix.Output[GetDetectAnomalyJobInputDetailData]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectAnomalyJobInputDetailDataOutput) Timestamp() pulumi.StringOutput {
@@ -3070,12 +2715,6 @@ func (o GetDetectAnomalyJobInputDetailDataArrayOutput) ToGetDetectAnomalyJobInpu
 
 func (o GetDetectAnomalyJobInputDetailDataArrayOutput) ToGetDetectAnomalyJobInputDetailDataArrayOutputWithContext(ctx context.Context) GetDetectAnomalyJobInputDetailDataArrayOutput {
 	return o
-}
-
-func (o GetDetectAnomalyJobInputDetailDataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobInputDetailData] {
-	return pulumix.Output[[]GetDetectAnomalyJobInputDetailData]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectAnomalyJobInputDetailDataArrayOutput) Index(i pulumi.IntInput) GetDetectAnomalyJobInputDetailDataOutput {
@@ -3125,12 +2764,6 @@ func (i GetDetectAnomalyJobInputDetailObjectLocationArgs) ToGetDetectAnomalyJobI
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobInputDetailObjectLocationOutput)
 }
 
-func (i GetDetectAnomalyJobInputDetailObjectLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobInputDetailObjectLocation] {
-	return pulumix.Output[GetDetectAnomalyJobInputDetailObjectLocation]{
-		OutputState: i.ToGetDetectAnomalyJobInputDetailObjectLocationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectAnomalyJobInputDetailObjectLocationArrayInput is an input type that accepts GetDetectAnomalyJobInputDetailObjectLocationArray and GetDetectAnomalyJobInputDetailObjectLocationArrayOutput values.
 // You can construct a concrete instance of `GetDetectAnomalyJobInputDetailObjectLocationArrayInput` via:
 //
@@ -3156,12 +2789,6 @@ func (i GetDetectAnomalyJobInputDetailObjectLocationArray) ToGetDetectAnomalyJob
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobInputDetailObjectLocationArrayOutput)
 }
 
-func (i GetDetectAnomalyJobInputDetailObjectLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobInputDetailObjectLocation] {
-	return pulumix.Output[[]GetDetectAnomalyJobInputDetailObjectLocation]{
-		OutputState: i.ToGetDetectAnomalyJobInputDetailObjectLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectAnomalyJobInputDetailObjectLocationOutput struct{ *pulumi.OutputState }
 
 func (GetDetectAnomalyJobInputDetailObjectLocationOutput) ElementType() reflect.Type {
@@ -3174,12 +2801,6 @@ func (o GetDetectAnomalyJobInputDetailObjectLocationOutput) ToGetDetectAnomalyJo
 
 func (o GetDetectAnomalyJobInputDetailObjectLocationOutput) ToGetDetectAnomalyJobInputDetailObjectLocationOutputWithContext(ctx context.Context) GetDetectAnomalyJobInputDetailObjectLocationOutput {
 	return o
-}
-
-func (o GetDetectAnomalyJobInputDetailObjectLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobInputDetailObjectLocation] {
-	return pulumix.Output[GetDetectAnomalyJobInputDetailObjectLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Object Storage bucket name.
@@ -3209,12 +2830,6 @@ func (o GetDetectAnomalyJobInputDetailObjectLocationArrayOutput) ToGetDetectAnom
 
 func (o GetDetectAnomalyJobInputDetailObjectLocationArrayOutput) ToGetDetectAnomalyJobInputDetailObjectLocationArrayOutputWithContext(ctx context.Context) GetDetectAnomalyJobInputDetailObjectLocationArrayOutput {
 	return o
-}
-
-func (o GetDetectAnomalyJobInputDetailObjectLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobInputDetailObjectLocation] {
-	return pulumix.Output[[]GetDetectAnomalyJobInputDetailObjectLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectAnomalyJobInputDetailObjectLocationArrayOutput) Index(i pulumi.IntInput) GetDetectAnomalyJobInputDetailObjectLocationOutput {
@@ -3268,12 +2883,6 @@ func (i GetDetectAnomalyJobOutputDetailArgs) ToGetDetectAnomalyJobOutputDetailOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobOutputDetailOutput)
 }
 
-func (i GetDetectAnomalyJobOutputDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobOutputDetail] {
-	return pulumix.Output[GetDetectAnomalyJobOutputDetail]{
-		OutputState: i.ToGetDetectAnomalyJobOutputDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectAnomalyJobOutputDetailArrayInput is an input type that accepts GetDetectAnomalyJobOutputDetailArray and GetDetectAnomalyJobOutputDetailArrayOutput values.
 // You can construct a concrete instance of `GetDetectAnomalyJobOutputDetailArrayInput` via:
 //
@@ -3299,12 +2908,6 @@ func (i GetDetectAnomalyJobOutputDetailArray) ToGetDetectAnomalyJobOutputDetailA
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobOutputDetailArrayOutput)
 }
 
-func (i GetDetectAnomalyJobOutputDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobOutputDetail] {
-	return pulumix.Output[[]GetDetectAnomalyJobOutputDetail]{
-		OutputState: i.ToGetDetectAnomalyJobOutputDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectAnomalyJobOutputDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDetectAnomalyJobOutputDetailOutput) ElementType() reflect.Type {
@@ -3317,12 +2920,6 @@ func (o GetDetectAnomalyJobOutputDetailOutput) ToGetDetectAnomalyJobOutputDetail
 
 func (o GetDetectAnomalyJobOutputDetailOutput) ToGetDetectAnomalyJobOutputDetailOutputWithContext(ctx context.Context) GetDetectAnomalyJobOutputDetailOutput {
 	return o
-}
-
-func (o GetDetectAnomalyJobOutputDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobOutputDetail] {
-	return pulumix.Output[GetDetectAnomalyJobOutputDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Object Storage bucket name.
@@ -3357,12 +2954,6 @@ func (o GetDetectAnomalyJobOutputDetailArrayOutput) ToGetDetectAnomalyJobOutputD
 
 func (o GetDetectAnomalyJobOutputDetailArrayOutput) ToGetDetectAnomalyJobOutputDetailArrayOutputWithContext(ctx context.Context) GetDetectAnomalyJobOutputDetailArrayOutput {
 	return o
-}
-
-func (o GetDetectAnomalyJobOutputDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobOutputDetail] {
-	return pulumix.Output[[]GetDetectAnomalyJobOutputDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectAnomalyJobOutputDetailArrayOutput) Index(i pulumi.IntInput) GetDetectAnomalyJobOutputDetailOutput {
@@ -3402,12 +2993,6 @@ func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionArgs) ToGetDetectAnomalyJo
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobsDetectAnomalyJobCollectionOutput)
 }
 
-func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollection] {
-	return pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollection]{
-		OutputState: i.ToGetDetectAnomalyJobsDetectAnomalyJobCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectAnomalyJobsDetectAnomalyJobCollectionArrayInput is an input type that accepts GetDetectAnomalyJobsDetectAnomalyJobCollectionArray and GetDetectAnomalyJobsDetectAnomalyJobCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDetectAnomalyJobsDetectAnomalyJobCollectionArrayInput` via:
 //
@@ -3433,12 +3018,6 @@ func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionArray) ToGetDetectAnomalyJ
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobsDetectAnomalyJobCollectionArrayOutput)
 }
 
-func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollection] {
-	return pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollection]{
-		OutputState: i.ToGetDetectAnomalyJobsDetectAnomalyJobCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectAnomalyJobsDetectAnomalyJobCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDetectAnomalyJobsDetectAnomalyJobCollectionOutput) ElementType() reflect.Type {
@@ -3451,12 +3030,6 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionOutput) ToGetDetectAnomaly
 
 func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionOutput) ToGetDetectAnomalyJobsDetectAnomalyJobCollectionOutputWithContext(ctx context.Context) GetDetectAnomalyJobsDetectAnomalyJobCollectionOutput {
 	return o
-}
-
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollection] {
-	return pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionOutput) Items() GetDetectAnomalyJobsDetectAnomalyJobCollectionItemArrayOutput {
@@ -3477,12 +3050,6 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionArrayOutput) ToGetDetectAn
 
 func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionArrayOutput) ToGetDetectAnomalyJobsDetectAnomalyJobCollectionArrayOutputWithContext(ctx context.Context) GetDetectAnomalyJobsDetectAnomalyJobCollectionArrayOutput {
 	return o
-}
-
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollection] {
-	return pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionArrayOutput) Index(i pulumi.IntInput) GetDetectAnomalyJobsDetectAnomalyJobCollectionOutput {
@@ -3588,12 +3155,6 @@ func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemArgs) ToGetDetectAnoma
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput)
 }
 
-func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItem] {
-	return pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItem]{
-		OutputState: i.ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectAnomalyJobsDetectAnomalyJobCollectionItemArrayInput is an input type that accepts GetDetectAnomalyJobsDetectAnomalyJobCollectionItemArray and GetDetectAnomalyJobsDetectAnomalyJobCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDetectAnomalyJobsDetectAnomalyJobCollectionItemArrayInput` via:
 //
@@ -3619,12 +3180,6 @@ func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemArray) ToGetDetectAnom
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobsDetectAnomalyJobCollectionItemArrayOutput)
 }
 
-func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItem] {
-	return pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItem]{
-		OutputState: i.ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) ElementType() reflect.Type {
@@ -3637,12 +3192,6 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) ToGetDetectAno
 
 func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputWithContext(ctx context.Context) GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput {
 	return o
-}
-
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItem] {
-	return pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -3752,12 +3301,6 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemArrayOutput) ToGetDete
 	return o
 }
 
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItem] {
-	return pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectAnomalyJobsDetectAnomalyJobCollectionItem {
 		return vs[0].([]GetDetectAnomalyJobsDetectAnomalyJobCollectionItem)[vs[1].(int)]
@@ -3813,12 +3356,6 @@ func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailOutput)
 }
 
-func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail] {
-	return pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail]{
-		OutputState: i.ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailArrayInput is an input type that accepts GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailArray and GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailArrayOutput values.
 // You can construct a concrete instance of `GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailArrayInput` via:
 //
@@ -3844,12 +3381,6 @@ func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailArrayOutput)
 }
 
-func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail] {
-	return pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail]{
-		OutputState: i.ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailOutput) ElementType() reflect.Type {
@@ -3862,12 +3393,6 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailOutput) ToG
 
 func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailOutput) ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailOutputWithContext(ctx context.Context) GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailOutput {
 	return o
-}
-
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail] {
-	return pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailOutput) Content() pulumi.StringOutput {
@@ -3919,12 +3444,6 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailArrayOutput
 	return o
 }
 
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail] {
-	return pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailArrayOutput) Index(i pulumi.IntInput) GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail {
 		return vs[0].([]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail)[vs[1].(int)]
@@ -3964,12 +3483,6 @@ func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArgs) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataOutput)
 }
 
-func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailData] {
-	return pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailData]{
-		OutputState: i.ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArrayInput is an input type that accepts GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArray and GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArrayOutput values.
 // You can construct a concrete instance of `GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArrayInput` via:
 //
@@ -3995,12 +3508,6 @@ func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArrayOutput)
 }
 
-func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailData] {
-	return pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailData]{
-		OutputState: i.ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataOutput struct{ *pulumi.OutputState }
 
 func (GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataOutput) ElementType() reflect.Type {
@@ -4013,12 +3520,6 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataOutput)
 
 func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataOutput) ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataOutputWithContext(ctx context.Context) GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataOutput {
 	return o
-}
-
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailData] {
-	return pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailData]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataOutput) Timestamp() pulumi.StringOutput {
@@ -4041,12 +3542,6 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArrayOu
 
 func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArrayOutput) ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArrayOutputWithContext(ctx context.Context) GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArrayOutput {
 	return o
-}
-
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailData] {
-	return pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailData]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArrayOutput) Index(i pulumi.IntInput) GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataOutput {
@@ -4096,12 +3591,6 @@ func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocat
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationOutput)
 }
 
-func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocation] {
-	return pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocation]{
-		OutputState: i.ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationArrayInput is an input type that accepts GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationArray and GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationArrayOutput values.
 // You can construct a concrete instance of `GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationArrayInput` via:
 //
@@ -4127,12 +3616,6 @@ func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocat
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationArrayOutput)
 }
 
-func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocation] {
-	return pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocation]{
-		OutputState: i.ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationOutput struct{ *pulumi.OutputState }
 
 func (GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationOutput) ElementType() reflect.Type {
@@ -4145,12 +3628,6 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocat
 
 func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationOutput) ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationOutputWithContext(ctx context.Context) GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationOutput {
 	return o
-}
-
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocation] {
-	return pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Object Storage bucket name.
@@ -4186,12 +3663,6 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocat
 
 func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationArrayOutput) ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationArrayOutputWithContext(ctx context.Context) GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationArrayOutput {
 	return o
-}
-
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocation] {
-	return pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationArrayOutput) Index(i pulumi.IntInput) GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationOutput {
@@ -4245,12 +3716,6 @@ func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArgs) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailOutput)
 }
 
-func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail] {
-	return pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail]{
-		OutputState: i.ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArrayInput is an input type that accepts GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArray and GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArrayOutput values.
 // You can construct a concrete instance of `GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArrayInput` via:
 //
@@ -4276,12 +3741,6 @@ func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArrayOutput)
 }
 
-func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail] {
-	return pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail]{
-		OutputState: i.ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailOutput) ElementType() reflect.Type {
@@ -4294,12 +3753,6 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailOutput) To
 
 func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailOutput) ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailOutputWithContext(ctx context.Context) GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailOutput {
 	return o
-}
-
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail] {
-	return pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Object Storage bucket name.
@@ -4334,12 +3787,6 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArrayOutpu
 
 func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArrayOutput) ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArrayOutputWithContext(ctx context.Context) GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArrayOutput {
 	return o
-}
-
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail] {
-	return pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArrayOutput) Index(i pulumi.IntInput) GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailOutput {
@@ -4383,12 +3830,6 @@ func (i GetDetectAnomalyJobsFilterArgs) ToGetDetectAnomalyJobsFilterOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobsFilterOutput)
 }
 
-func (i GetDetectAnomalyJobsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobsFilter] {
-	return pulumix.Output[GetDetectAnomalyJobsFilter]{
-		OutputState: i.ToGetDetectAnomalyJobsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectAnomalyJobsFilterArrayInput is an input type that accepts GetDetectAnomalyJobsFilterArray and GetDetectAnomalyJobsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDetectAnomalyJobsFilterArrayInput` via:
 //
@@ -4414,12 +3855,6 @@ func (i GetDetectAnomalyJobsFilterArray) ToGetDetectAnomalyJobsFilterArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobsFilterArrayOutput)
 }
 
-func (i GetDetectAnomalyJobsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobsFilter] {
-	return pulumix.Output[[]GetDetectAnomalyJobsFilter]{
-		OutputState: i.ToGetDetectAnomalyJobsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectAnomalyJobsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDetectAnomalyJobsFilterOutput) ElementType() reflect.Type {
@@ -4432,12 +3867,6 @@ func (o GetDetectAnomalyJobsFilterOutput) ToGetDetectAnomalyJobsFilterOutput() G
 
 func (o GetDetectAnomalyJobsFilterOutput) ToGetDetectAnomalyJobsFilterOutputWithContext(ctx context.Context) GetDetectAnomalyJobsFilterOutput {
 	return o
-}
-
-func (o GetDetectAnomalyJobsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobsFilter] {
-	return pulumix.Output[GetDetectAnomalyJobsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectAnomalyJobsFilterOutput) Name() pulumi.StringOutput {
@@ -4464,12 +3893,6 @@ func (o GetDetectAnomalyJobsFilterArrayOutput) ToGetDetectAnomalyJobsFilterArray
 
 func (o GetDetectAnomalyJobsFilterArrayOutput) ToGetDetectAnomalyJobsFilterArrayOutputWithContext(ctx context.Context) GetDetectAnomalyJobsFilterArrayOutput {
 	return o
-}
-
-func (o GetDetectAnomalyJobsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobsFilter] {
-	return pulumix.Output[[]GetDetectAnomalyJobsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectAnomalyJobsFilterArrayOutput) Index(i pulumi.IntInput) GetDetectAnomalyJobsFilterOutput {
@@ -4587,12 +4010,6 @@ func (i GetDetectionDataAssetDataSourceDetailArgs) ToGetDetectionDataAssetDataSo
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionDataAssetDataSourceDetailOutput)
 }
 
-func (i GetDetectionDataAssetDataSourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionDataAssetDataSourceDetail] {
-	return pulumix.Output[GetDetectionDataAssetDataSourceDetail]{
-		OutputState: i.ToGetDetectionDataAssetDataSourceDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectionDataAssetDataSourceDetailArrayInput is an input type that accepts GetDetectionDataAssetDataSourceDetailArray and GetDetectionDataAssetDataSourceDetailArrayOutput values.
 // You can construct a concrete instance of `GetDetectionDataAssetDataSourceDetailArrayInput` via:
 //
@@ -4618,12 +4035,6 @@ func (i GetDetectionDataAssetDataSourceDetailArray) ToGetDetectionDataAssetDataS
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionDataAssetDataSourceDetailArrayOutput)
 }
 
-func (i GetDetectionDataAssetDataSourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionDataAssetDataSourceDetail] {
-	return pulumix.Output[[]GetDetectionDataAssetDataSourceDetail]{
-		OutputState: i.ToGetDetectionDataAssetDataSourceDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionDataAssetDataSourceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionDataAssetDataSourceDetailOutput) ElementType() reflect.Type {
@@ -4636,12 +4047,6 @@ func (o GetDetectionDataAssetDataSourceDetailOutput) ToGetDetectionDataAssetData
 
 func (o GetDetectionDataAssetDataSourceDetailOutput) ToGetDetectionDataAssetDataSourceDetailOutputWithContext(ctx context.Context) GetDetectionDataAssetDataSourceDetailOutput {
 	return o
-}
-
-func (o GetDetectionDataAssetDataSourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionDataAssetDataSourceDetail] {
-	return pulumix.Output[GetDetectionDataAssetDataSourceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // atp db password Secret Id
@@ -4760,12 +4165,6 @@ func (o GetDetectionDataAssetDataSourceDetailArrayOutput) ToGetDetectionDataAsse
 	return o
 }
 
-func (o GetDetectionDataAssetDataSourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionDataAssetDataSourceDetail] {
-	return pulumix.Output[[]GetDetectionDataAssetDataSourceDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectionDataAssetDataSourceDetailArrayOutput) Index(i pulumi.IntInput) GetDetectionDataAssetDataSourceDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectionDataAssetDataSourceDetail {
 		return vs[0].([]GetDetectionDataAssetDataSourceDetail)[vs[1].(int)]
@@ -4821,12 +4220,6 @@ func (i GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArgs) ToGetDet
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionDataAssetDataSourceDetailVersionSpecificDetailOutput)
 }
 
-func (i GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionDataAssetDataSourceDetailVersionSpecificDetail] {
-	return pulumix.Output[GetDetectionDataAssetDataSourceDetailVersionSpecificDetail]{
-		OutputState: i.ToGetDetectionDataAssetDataSourceDetailVersionSpecificDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArrayInput is an input type that accepts GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArray and GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArrayOutput values.
 // You can construct a concrete instance of `GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArrayInput` via:
 //
@@ -4852,12 +4245,6 @@ func (i GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArray) ToGetDe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArrayOutput)
 }
 
-func (i GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionDataAssetDataSourceDetailVersionSpecificDetail] {
-	return pulumix.Output[[]GetDetectionDataAssetDataSourceDetailVersionSpecificDetail]{
-		OutputState: i.ToGetDetectionDataAssetDataSourceDetailVersionSpecificDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionDataAssetDataSourceDetailVersionSpecificDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionDataAssetDataSourceDetailVersionSpecificDetailOutput) ElementType() reflect.Type {
@@ -4870,12 +4257,6 @@ func (o GetDetectionDataAssetDataSourceDetailVersionSpecificDetailOutput) ToGetD
 
 func (o GetDetectionDataAssetDataSourceDetailVersionSpecificDetailOutput) ToGetDetectionDataAssetDataSourceDetailVersionSpecificDetailOutputWithContext(ctx context.Context) GetDetectionDataAssetDataSourceDetailVersionSpecificDetailOutput {
 	return o
-}
-
-func (o GetDetectionDataAssetDataSourceDetailVersionSpecificDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionDataAssetDataSourceDetailVersionSpecificDetail] {
-	return pulumix.Output[GetDetectionDataAssetDataSourceDetailVersionSpecificDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Bucket Name for influx connection
@@ -4919,12 +4300,6 @@ func (o GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArrayOutput) T
 	return o
 }
 
-func (o GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionDataAssetDataSourceDetailVersionSpecificDetail] {
-	return pulumix.Output[[]GetDetectionDataAssetDataSourceDetailVersionSpecificDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArrayOutput) Index(i pulumi.IntInput) GetDetectionDataAssetDataSourceDetailVersionSpecificDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectionDataAssetDataSourceDetailVersionSpecificDetail {
 		return vs[0].([]GetDetectionDataAssetDataSourceDetailVersionSpecificDetail)[vs[1].(int)]
@@ -4962,12 +4337,6 @@ func (i GetDetectionDataAssetsDataAssetCollectionArgs) ToGetDetectionDataAssetsD
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionDataAssetsDataAssetCollectionOutput)
 }
 
-func (i GetDetectionDataAssetsDataAssetCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionDataAssetsDataAssetCollection] {
-	return pulumix.Output[GetDetectionDataAssetsDataAssetCollection]{
-		OutputState: i.ToGetDetectionDataAssetsDataAssetCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectionDataAssetsDataAssetCollectionArrayInput is an input type that accepts GetDetectionDataAssetsDataAssetCollectionArray and GetDetectionDataAssetsDataAssetCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDetectionDataAssetsDataAssetCollectionArrayInput` via:
 //
@@ -4993,12 +4362,6 @@ func (i GetDetectionDataAssetsDataAssetCollectionArray) ToGetDetectionDataAssets
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionDataAssetsDataAssetCollectionArrayOutput)
 }
 
-func (i GetDetectionDataAssetsDataAssetCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionDataAssetsDataAssetCollection] {
-	return pulumix.Output[[]GetDetectionDataAssetsDataAssetCollection]{
-		OutputState: i.ToGetDetectionDataAssetsDataAssetCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionDataAssetsDataAssetCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionDataAssetsDataAssetCollectionOutput) ElementType() reflect.Type {
@@ -5011,12 +4374,6 @@ func (o GetDetectionDataAssetsDataAssetCollectionOutput) ToGetDetectionDataAsset
 
 func (o GetDetectionDataAssetsDataAssetCollectionOutput) ToGetDetectionDataAssetsDataAssetCollectionOutputWithContext(ctx context.Context) GetDetectionDataAssetsDataAssetCollectionOutput {
 	return o
-}
-
-func (o GetDetectionDataAssetsDataAssetCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionDataAssetsDataAssetCollection] {
-	return pulumix.Output[GetDetectionDataAssetsDataAssetCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectionDataAssetsDataAssetCollectionOutput) Items() GetDetectionDataAssetsDataAssetCollectionItemArrayOutput {
@@ -5037,12 +4394,6 @@ func (o GetDetectionDataAssetsDataAssetCollectionArrayOutput) ToGetDetectionData
 
 func (o GetDetectionDataAssetsDataAssetCollectionArrayOutput) ToGetDetectionDataAssetsDataAssetCollectionArrayOutputWithContext(ctx context.Context) GetDetectionDataAssetsDataAssetCollectionArrayOutput {
 	return o
-}
-
-func (o GetDetectionDataAssetsDataAssetCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionDataAssetsDataAssetCollection] {
-	return pulumix.Output[[]GetDetectionDataAssetsDataAssetCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectionDataAssetsDataAssetCollectionArrayOutput) Index(i pulumi.IntInput) GetDetectionDataAssetsDataAssetCollectionOutput {
@@ -5132,12 +4483,6 @@ func (i GetDetectionDataAssetsDataAssetCollectionItemArgs) ToGetDetectionDataAss
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionDataAssetsDataAssetCollectionItemOutput)
 }
 
-func (i GetDetectionDataAssetsDataAssetCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionDataAssetsDataAssetCollectionItem] {
-	return pulumix.Output[GetDetectionDataAssetsDataAssetCollectionItem]{
-		OutputState: i.ToGetDetectionDataAssetsDataAssetCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectionDataAssetsDataAssetCollectionItemArrayInput is an input type that accepts GetDetectionDataAssetsDataAssetCollectionItemArray and GetDetectionDataAssetsDataAssetCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDetectionDataAssetsDataAssetCollectionItemArrayInput` via:
 //
@@ -5163,12 +4508,6 @@ func (i GetDetectionDataAssetsDataAssetCollectionItemArray) ToGetDetectionDataAs
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionDataAssetsDataAssetCollectionItemArrayOutput)
 }
 
-func (i GetDetectionDataAssetsDataAssetCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionDataAssetsDataAssetCollectionItem] {
-	return pulumix.Output[[]GetDetectionDataAssetsDataAssetCollectionItem]{
-		OutputState: i.ToGetDetectionDataAssetsDataAssetCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionDataAssetsDataAssetCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionDataAssetsDataAssetCollectionItemOutput) ElementType() reflect.Type {
@@ -5181,12 +4520,6 @@ func (o GetDetectionDataAssetsDataAssetCollectionItemOutput) ToGetDetectionDataA
 
 func (o GetDetectionDataAssetsDataAssetCollectionItemOutput) ToGetDetectionDataAssetsDataAssetCollectionItemOutputWithContext(ctx context.Context) GetDetectionDataAssetsDataAssetCollectionItemOutput {
 	return o
-}
-
-func (o GetDetectionDataAssetsDataAssetCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionDataAssetsDataAssetCollectionItem] {
-	return pulumix.Output[GetDetectionDataAssetsDataAssetCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -5268,12 +4601,6 @@ func (o GetDetectionDataAssetsDataAssetCollectionItemArrayOutput) ToGetDetection
 
 func (o GetDetectionDataAssetsDataAssetCollectionItemArrayOutput) ToGetDetectionDataAssetsDataAssetCollectionItemArrayOutputWithContext(ctx context.Context) GetDetectionDataAssetsDataAssetCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetDetectionDataAssetsDataAssetCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionDataAssetsDataAssetCollectionItem] {
-	return pulumix.Output[[]GetDetectionDataAssetsDataAssetCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectionDataAssetsDataAssetCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDetectionDataAssetsDataAssetCollectionItemOutput {
@@ -5391,12 +4718,6 @@ func (i GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput)
 }
 
-func (i GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail] {
-	return pulumix.Output[GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail]{
-		OutputState: i.ToGetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArrayInput is an input type that accepts GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArray and GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArrayOutput values.
 // You can construct a concrete instance of `GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArrayInput` via:
 //
@@ -5422,12 +4743,6 @@ func (i GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArrayOutput)
 }
 
-func (i GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail] {
-	return pulumix.Output[[]GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail]{
-		OutputState: i.ToGetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) ElementType() reflect.Type {
@@ -5440,12 +4755,6 @@ func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) ToG
 
 func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) ToGetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutputWithContext(ctx context.Context) GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput {
 	return o
-}
-
-func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail] {
-	return pulumix.Output[GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // atp db password Secret Id
@@ -5582,12 +4891,6 @@ func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArrayOutput
 	return o
 }
 
-func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail] {
-	return pulumix.Output[[]GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArrayOutput) Index(i pulumi.IntInput) GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail {
 		return vs[0].([]GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail)[vs[1].(int)]
@@ -5643,12 +4946,6 @@ func (i GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpec
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailOutput)
 }
 
-func (i GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail] {
-	return pulumix.Output[GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail]{
-		OutputState: i.ToGetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArrayInput is an input type that accepts GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArray and GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArrayOutput values.
 // You can construct a concrete instance of `GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArrayInput` via:
 //
@@ -5674,12 +4971,6 @@ func (i GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpec
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArrayOutput)
 }
 
-func (i GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail] {
-	return pulumix.Output[[]GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail]{
-		OutputState: i.ToGetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailOutput) ElementType() reflect.Type {
@@ -5692,12 +4983,6 @@ func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpec
 
 func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailOutput) ToGetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailOutputWithContext(ctx context.Context) GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailOutput {
 	return o
-}
-
-func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail] {
-	return pulumix.Output[GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Bucket Name for influx connection
@@ -5749,12 +5034,6 @@ func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpec
 	return o
 }
 
-func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail] {
-	return pulumix.Output[[]GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArrayOutput) Index(i pulumi.IntInput) GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail {
 		return vs[0].([]GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail)[vs[1].(int)]
@@ -5796,12 +5075,6 @@ func (i GetDetectionDataAssetsFilterArgs) ToGetDetectionDataAssetsFilterOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionDataAssetsFilterOutput)
 }
 
-func (i GetDetectionDataAssetsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionDataAssetsFilter] {
-	return pulumix.Output[GetDetectionDataAssetsFilter]{
-		OutputState: i.ToGetDetectionDataAssetsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectionDataAssetsFilterArrayInput is an input type that accepts GetDetectionDataAssetsFilterArray and GetDetectionDataAssetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDetectionDataAssetsFilterArrayInput` via:
 //
@@ -5827,12 +5100,6 @@ func (i GetDetectionDataAssetsFilterArray) ToGetDetectionDataAssetsFilterArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionDataAssetsFilterArrayOutput)
 }
 
-func (i GetDetectionDataAssetsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionDataAssetsFilter] {
-	return pulumix.Output[[]GetDetectionDataAssetsFilter]{
-		OutputState: i.ToGetDetectionDataAssetsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionDataAssetsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionDataAssetsFilterOutput) ElementType() reflect.Type {
@@ -5845,12 +5112,6 @@ func (o GetDetectionDataAssetsFilterOutput) ToGetDetectionDataAssetsFilterOutput
 
 func (o GetDetectionDataAssetsFilterOutput) ToGetDetectionDataAssetsFilterOutputWithContext(ctx context.Context) GetDetectionDataAssetsFilterOutput {
 	return o
-}
-
-func (o GetDetectionDataAssetsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionDataAssetsFilter] {
-	return pulumix.Output[GetDetectionDataAssetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectionDataAssetsFilterOutput) Name() pulumi.StringOutput {
@@ -5877,12 +5138,6 @@ func (o GetDetectionDataAssetsFilterArrayOutput) ToGetDetectionDataAssetsFilterA
 
 func (o GetDetectionDataAssetsFilterArrayOutput) ToGetDetectionDataAssetsFilterArrayOutputWithContext(ctx context.Context) GetDetectionDataAssetsFilterArrayOutput {
 	return o
-}
-
-func (o GetDetectionDataAssetsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionDataAssetsFilter] {
-	return pulumix.Output[[]GetDetectionDataAssetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectionDataAssetsFilterArrayOutput) Index(i pulumi.IntInput) GetDetectionDataAssetsFilterOutput {
@@ -5940,12 +5195,6 @@ func (i GetDetectionModelModelTrainingDetailArgs) ToGetDetectionModelModelTraini
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelModelTrainingDetailOutput)
 }
 
-func (i GetDetectionModelModelTrainingDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelModelTrainingDetail] {
-	return pulumix.Output[GetDetectionModelModelTrainingDetail]{
-		OutputState: i.ToGetDetectionModelModelTrainingDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectionModelModelTrainingDetailArrayInput is an input type that accepts GetDetectionModelModelTrainingDetailArray and GetDetectionModelModelTrainingDetailArrayOutput values.
 // You can construct a concrete instance of `GetDetectionModelModelTrainingDetailArrayInput` via:
 //
@@ -5971,12 +5220,6 @@ func (i GetDetectionModelModelTrainingDetailArray) ToGetDetectionModelModelTrain
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelModelTrainingDetailArrayOutput)
 }
 
-func (i GetDetectionModelModelTrainingDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelModelTrainingDetail] {
-	return pulumix.Output[[]GetDetectionModelModelTrainingDetail]{
-		OutputState: i.ToGetDetectionModelModelTrainingDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionModelModelTrainingDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionModelModelTrainingDetailOutput) ElementType() reflect.Type {
@@ -5989,12 +5232,6 @@ func (o GetDetectionModelModelTrainingDetailOutput) ToGetDetectionModelModelTrai
 
 func (o GetDetectionModelModelTrainingDetailOutput) ToGetDetectionModelModelTrainingDetailOutputWithContext(ctx context.Context) GetDetectionModelModelTrainingDetailOutput {
 	return o
-}
-
-func (o GetDetectionModelModelTrainingDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelModelTrainingDetail] {
-	return pulumix.Output[GetDetectionModelModelTrainingDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // User can choose specific algorithm for training.
@@ -6034,12 +5271,6 @@ func (o GetDetectionModelModelTrainingDetailArrayOutput) ToGetDetectionModelMode
 
 func (o GetDetectionModelModelTrainingDetailArrayOutput) ToGetDetectionModelModelTrainingDetailArrayOutputWithContext(ctx context.Context) GetDetectionModelModelTrainingDetailArrayOutput {
 	return o
-}
-
-func (o GetDetectionModelModelTrainingDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelModelTrainingDetail] {
-	return pulumix.Output[[]GetDetectionModelModelTrainingDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectionModelModelTrainingDetailArrayOutput) Index(i pulumi.IntInput) GetDetectionModelModelTrainingDetailOutput {
@@ -6111,12 +5342,6 @@ func (i GetDetectionModelModelTrainingResultArgs) ToGetDetectionModelModelTraini
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelModelTrainingResultOutput)
 }
 
-func (i GetDetectionModelModelTrainingResultArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelModelTrainingResult] {
-	return pulumix.Output[GetDetectionModelModelTrainingResult]{
-		OutputState: i.ToGetDetectionModelModelTrainingResultOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectionModelModelTrainingResultArrayInput is an input type that accepts GetDetectionModelModelTrainingResultArray and GetDetectionModelModelTrainingResultArrayOutput values.
 // You can construct a concrete instance of `GetDetectionModelModelTrainingResultArrayInput` via:
 //
@@ -6142,12 +5367,6 @@ func (i GetDetectionModelModelTrainingResultArray) ToGetDetectionModelModelTrain
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelModelTrainingResultArrayOutput)
 }
 
-func (i GetDetectionModelModelTrainingResultArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelModelTrainingResult] {
-	return pulumix.Output[[]GetDetectionModelModelTrainingResult]{
-		OutputState: i.ToGetDetectionModelModelTrainingResultArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionModelModelTrainingResultOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionModelModelTrainingResultOutput) ElementType() reflect.Type {
@@ -6160,12 +5379,6 @@ func (o GetDetectionModelModelTrainingResultOutput) ToGetDetectionModelModelTrai
 
 func (o GetDetectionModelModelTrainingResultOutput) ToGetDetectionModelModelTrainingResultOutputWithContext(ctx context.Context) GetDetectionModelModelTrainingResultOutput {
 	return o
-}
-
-func (o GetDetectionModelModelTrainingResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelModelTrainingResult] {
-	return pulumix.Output[GetDetectionModelModelTrainingResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Accuracy metric for a signal.
@@ -6233,12 +5446,6 @@ func (o GetDetectionModelModelTrainingResultArrayOutput) ToGetDetectionModelMode
 	return o
 }
 
-func (o GetDetectionModelModelTrainingResultArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelModelTrainingResult] {
-	return pulumix.Output[[]GetDetectionModelModelTrainingResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectionModelModelTrainingResultArrayOutput) Index(i pulumi.IntInput) GetDetectionModelModelTrainingResultOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectionModelModelTrainingResult {
 		return vs[0].([]GetDetectionModelModelTrainingResult)[vs[1].(int)]
@@ -6290,12 +5497,6 @@ func (i GetDetectionModelModelTrainingResultRowReductionDetailArgs) ToGetDetecti
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelModelTrainingResultRowReductionDetailOutput)
 }
 
-func (i GetDetectionModelModelTrainingResultRowReductionDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelModelTrainingResultRowReductionDetail] {
-	return pulumix.Output[GetDetectionModelModelTrainingResultRowReductionDetail]{
-		OutputState: i.ToGetDetectionModelModelTrainingResultRowReductionDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectionModelModelTrainingResultRowReductionDetailArrayInput is an input type that accepts GetDetectionModelModelTrainingResultRowReductionDetailArray and GetDetectionModelModelTrainingResultRowReductionDetailArrayOutput values.
 // You can construct a concrete instance of `GetDetectionModelModelTrainingResultRowReductionDetailArrayInput` via:
 //
@@ -6321,12 +5522,6 @@ func (i GetDetectionModelModelTrainingResultRowReductionDetailArray) ToGetDetect
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelModelTrainingResultRowReductionDetailArrayOutput)
 }
 
-func (i GetDetectionModelModelTrainingResultRowReductionDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelModelTrainingResultRowReductionDetail] {
-	return pulumix.Output[[]GetDetectionModelModelTrainingResultRowReductionDetail]{
-		OutputState: i.ToGetDetectionModelModelTrainingResultRowReductionDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionModelModelTrainingResultRowReductionDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionModelModelTrainingResultRowReductionDetailOutput) ElementType() reflect.Type {
@@ -6339,12 +5534,6 @@ func (o GetDetectionModelModelTrainingResultRowReductionDetailOutput) ToGetDetec
 
 func (o GetDetectionModelModelTrainingResultRowReductionDetailOutput) ToGetDetectionModelModelTrainingResultRowReductionDetailOutputWithContext(ctx context.Context) GetDetectionModelModelTrainingResultRowReductionDetailOutput {
 	return o
-}
-
-func (o GetDetectionModelModelTrainingResultRowReductionDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelModelTrainingResultRowReductionDetail] {
-	return pulumix.Output[GetDetectionModelModelTrainingResultRowReductionDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A boolean value to indicate if row reduction is applied
@@ -6376,12 +5565,6 @@ func (o GetDetectionModelModelTrainingResultRowReductionDetailArrayOutput) ToGet
 
 func (o GetDetectionModelModelTrainingResultRowReductionDetailArrayOutput) ToGetDetectionModelModelTrainingResultRowReductionDetailArrayOutputWithContext(ctx context.Context) GetDetectionModelModelTrainingResultRowReductionDetailArrayOutput {
 	return o
-}
-
-func (o GetDetectionModelModelTrainingResultRowReductionDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelModelTrainingResultRowReductionDetail] {
-	return pulumix.Output[[]GetDetectionModelModelTrainingResultRowReductionDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectionModelModelTrainingResultRowReductionDetailArrayOutput) Index(i pulumi.IntInput) GetDetectionModelModelTrainingResultRowReductionDetailOutput {
@@ -6461,12 +5644,6 @@ func (i GetDetectionModelModelTrainingResultSignalDetailArgs) ToGetDetectionMode
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelModelTrainingResultSignalDetailOutput)
 }
 
-func (i GetDetectionModelModelTrainingResultSignalDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelModelTrainingResultSignalDetail] {
-	return pulumix.Output[GetDetectionModelModelTrainingResultSignalDetail]{
-		OutputState: i.ToGetDetectionModelModelTrainingResultSignalDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectionModelModelTrainingResultSignalDetailArrayInput is an input type that accepts GetDetectionModelModelTrainingResultSignalDetailArray and GetDetectionModelModelTrainingResultSignalDetailArrayOutput values.
 // You can construct a concrete instance of `GetDetectionModelModelTrainingResultSignalDetailArrayInput` via:
 //
@@ -6492,12 +5669,6 @@ func (i GetDetectionModelModelTrainingResultSignalDetailArray) ToGetDetectionMod
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelModelTrainingResultSignalDetailArrayOutput)
 }
 
-func (i GetDetectionModelModelTrainingResultSignalDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelModelTrainingResultSignalDetail] {
-	return pulumix.Output[[]GetDetectionModelModelTrainingResultSignalDetail]{
-		OutputState: i.ToGetDetectionModelModelTrainingResultSignalDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionModelModelTrainingResultSignalDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionModelModelTrainingResultSignalDetailOutput) ElementType() reflect.Type {
@@ -6510,12 +5681,6 @@ func (o GetDetectionModelModelTrainingResultSignalDetailOutput) ToGetDetectionMo
 
 func (o GetDetectionModelModelTrainingResultSignalDetailOutput) ToGetDetectionModelModelTrainingResultSignalDetailOutputWithContext(ctx context.Context) GetDetectionModelModelTrainingResultSignalDetailOutput {
 	return o
-}
-
-func (o GetDetectionModelModelTrainingResultSignalDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelModelTrainingResultSignalDetail] {
-	return pulumix.Output[GetDetectionModelModelTrainingResultSignalDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // detailed information for a signal.
@@ -6580,12 +5745,6 @@ func (o GetDetectionModelModelTrainingResultSignalDetailArrayOutput) ToGetDetect
 	return o
 }
 
-func (o GetDetectionModelModelTrainingResultSignalDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelModelTrainingResultSignalDetail] {
-	return pulumix.Output[[]GetDetectionModelModelTrainingResultSignalDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectionModelModelTrainingResultSignalDetailArrayOutput) Index(i pulumi.IntInput) GetDetectionModelModelTrainingResultSignalDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectionModelModelTrainingResultSignalDetail {
 		return vs[0].([]GetDetectionModelModelTrainingResultSignalDetail)[vs[1].(int)]
@@ -6627,12 +5786,6 @@ func (i GetDetectionModelsFilterArgs) ToGetDetectionModelsFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelsFilterOutput)
 }
 
-func (i GetDetectionModelsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelsFilter] {
-	return pulumix.Output[GetDetectionModelsFilter]{
-		OutputState: i.ToGetDetectionModelsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectionModelsFilterArrayInput is an input type that accepts GetDetectionModelsFilterArray and GetDetectionModelsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDetectionModelsFilterArrayInput` via:
 //
@@ -6658,12 +5811,6 @@ func (i GetDetectionModelsFilterArray) ToGetDetectionModelsFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelsFilterArrayOutput)
 }
 
-func (i GetDetectionModelsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelsFilter] {
-	return pulumix.Output[[]GetDetectionModelsFilter]{
-		OutputState: i.ToGetDetectionModelsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionModelsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionModelsFilterOutput) ElementType() reflect.Type {
@@ -6676,12 +5823,6 @@ func (o GetDetectionModelsFilterOutput) ToGetDetectionModelsFilterOutput() GetDe
 
 func (o GetDetectionModelsFilterOutput) ToGetDetectionModelsFilterOutputWithContext(ctx context.Context) GetDetectionModelsFilterOutput {
 	return o
-}
-
-func (o GetDetectionModelsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelsFilter] {
-	return pulumix.Output[GetDetectionModelsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectionModelsFilterOutput) Name() pulumi.StringOutput {
@@ -6708,12 +5849,6 @@ func (o GetDetectionModelsFilterArrayOutput) ToGetDetectionModelsFilterArrayOutp
 
 func (o GetDetectionModelsFilterArrayOutput) ToGetDetectionModelsFilterArrayOutputWithContext(ctx context.Context) GetDetectionModelsFilterArrayOutput {
 	return o
-}
-
-func (o GetDetectionModelsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelsFilter] {
-	return pulumix.Output[[]GetDetectionModelsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectionModelsFilterArrayOutput) Index(i pulumi.IntInput) GetDetectionModelsFilterOutput {
@@ -6753,12 +5888,6 @@ func (i GetDetectionModelsModelCollectionArgs) ToGetDetectionModelsModelCollecti
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelsModelCollectionOutput)
 }
 
-func (i GetDetectionModelsModelCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelsModelCollection] {
-	return pulumix.Output[GetDetectionModelsModelCollection]{
-		OutputState: i.ToGetDetectionModelsModelCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectionModelsModelCollectionArrayInput is an input type that accepts GetDetectionModelsModelCollectionArray and GetDetectionModelsModelCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDetectionModelsModelCollectionArrayInput` via:
 //
@@ -6784,12 +5913,6 @@ func (i GetDetectionModelsModelCollectionArray) ToGetDetectionModelsModelCollect
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelsModelCollectionArrayOutput)
 }
 
-func (i GetDetectionModelsModelCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelsModelCollection] {
-	return pulumix.Output[[]GetDetectionModelsModelCollection]{
-		OutputState: i.ToGetDetectionModelsModelCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionModelsModelCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionModelsModelCollectionOutput) ElementType() reflect.Type {
@@ -6802,12 +5925,6 @@ func (o GetDetectionModelsModelCollectionOutput) ToGetDetectionModelsModelCollec
 
 func (o GetDetectionModelsModelCollectionOutput) ToGetDetectionModelsModelCollectionOutputWithContext(ctx context.Context) GetDetectionModelsModelCollectionOutput {
 	return o
-}
-
-func (o GetDetectionModelsModelCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelsModelCollection] {
-	return pulumix.Output[GetDetectionModelsModelCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectionModelsModelCollectionOutput) Items() GetDetectionModelsModelCollectionItemArrayOutput {
@@ -6826,12 +5943,6 @@ func (o GetDetectionModelsModelCollectionArrayOutput) ToGetDetectionModelsModelC
 
 func (o GetDetectionModelsModelCollectionArrayOutput) ToGetDetectionModelsModelCollectionArrayOutputWithContext(ctx context.Context) GetDetectionModelsModelCollectionArrayOutput {
 	return o
-}
-
-func (o GetDetectionModelsModelCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelsModelCollection] {
-	return pulumix.Output[[]GetDetectionModelsModelCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectionModelsModelCollectionArrayOutput) Index(i pulumi.IntInput) GetDetectionModelsModelCollectionOutput {
@@ -6925,12 +6036,6 @@ func (i GetDetectionModelsModelCollectionItemArgs) ToGetDetectionModelsModelColl
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelsModelCollectionItemOutput)
 }
 
-func (i GetDetectionModelsModelCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelsModelCollectionItem] {
-	return pulumix.Output[GetDetectionModelsModelCollectionItem]{
-		OutputState: i.ToGetDetectionModelsModelCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectionModelsModelCollectionItemArrayInput is an input type that accepts GetDetectionModelsModelCollectionItemArray and GetDetectionModelsModelCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDetectionModelsModelCollectionItemArrayInput` via:
 //
@@ -6956,12 +6061,6 @@ func (i GetDetectionModelsModelCollectionItemArray) ToGetDetectionModelsModelCol
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelsModelCollectionItemArrayOutput)
 }
 
-func (i GetDetectionModelsModelCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelsModelCollectionItem] {
-	return pulumix.Output[[]GetDetectionModelsModelCollectionItem]{
-		OutputState: i.ToGetDetectionModelsModelCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionModelsModelCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionModelsModelCollectionItemOutput) ElementType() reflect.Type {
@@ -6974,12 +6073,6 @@ func (o GetDetectionModelsModelCollectionItemOutput) ToGetDetectionModelsModelCo
 
 func (o GetDetectionModelsModelCollectionItemOutput) ToGetDetectionModelsModelCollectionItemOutputWithContext(ctx context.Context) GetDetectionModelsModelCollectionItemOutput {
 	return o
-}
-
-func (o GetDetectionModelsModelCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelsModelCollectionItem] {
-	return pulumix.Output[GetDetectionModelsModelCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -7070,12 +6163,6 @@ func (o GetDetectionModelsModelCollectionItemArrayOutput) ToGetDetectionModelsMo
 	return o
 }
 
-func (o GetDetectionModelsModelCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelsModelCollectionItem] {
-	return pulumix.Output[[]GetDetectionModelsModelCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectionModelsModelCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDetectionModelsModelCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectionModelsModelCollectionItem {
 		return vs[0].([]GetDetectionModelsModelCollectionItem)[vs[1].(int)]
@@ -7131,12 +6218,6 @@ func (i GetDetectionModelsModelCollectionItemModelTrainingDetailArgs) ToGetDetec
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelsModelCollectionItemModelTrainingDetailOutput)
 }
 
-func (i GetDetectionModelsModelCollectionItemModelTrainingDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelsModelCollectionItemModelTrainingDetail] {
-	return pulumix.Output[GetDetectionModelsModelCollectionItemModelTrainingDetail]{
-		OutputState: i.ToGetDetectionModelsModelCollectionItemModelTrainingDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectionModelsModelCollectionItemModelTrainingDetailArrayInput is an input type that accepts GetDetectionModelsModelCollectionItemModelTrainingDetailArray and GetDetectionModelsModelCollectionItemModelTrainingDetailArrayOutput values.
 // You can construct a concrete instance of `GetDetectionModelsModelCollectionItemModelTrainingDetailArrayInput` via:
 //
@@ -7162,12 +6243,6 @@ func (i GetDetectionModelsModelCollectionItemModelTrainingDetailArray) ToGetDete
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelsModelCollectionItemModelTrainingDetailArrayOutput)
 }
 
-func (i GetDetectionModelsModelCollectionItemModelTrainingDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelsModelCollectionItemModelTrainingDetail] {
-	return pulumix.Output[[]GetDetectionModelsModelCollectionItemModelTrainingDetail]{
-		OutputState: i.ToGetDetectionModelsModelCollectionItemModelTrainingDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionModelsModelCollectionItemModelTrainingDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionModelsModelCollectionItemModelTrainingDetailOutput) ElementType() reflect.Type {
@@ -7180,12 +6255,6 @@ func (o GetDetectionModelsModelCollectionItemModelTrainingDetailOutput) ToGetDet
 
 func (o GetDetectionModelsModelCollectionItemModelTrainingDetailOutput) ToGetDetectionModelsModelCollectionItemModelTrainingDetailOutputWithContext(ctx context.Context) GetDetectionModelsModelCollectionItemModelTrainingDetailOutput {
 	return o
-}
-
-func (o GetDetectionModelsModelCollectionItemModelTrainingDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelsModelCollectionItemModelTrainingDetail] {
-	return pulumix.Output[GetDetectionModelsModelCollectionItemModelTrainingDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // User can choose specific algorithm for training.
@@ -7225,12 +6294,6 @@ func (o GetDetectionModelsModelCollectionItemModelTrainingDetailArrayOutput) ToG
 
 func (o GetDetectionModelsModelCollectionItemModelTrainingDetailArrayOutput) ToGetDetectionModelsModelCollectionItemModelTrainingDetailArrayOutputWithContext(ctx context.Context) GetDetectionModelsModelCollectionItemModelTrainingDetailArrayOutput {
 	return o
-}
-
-func (o GetDetectionModelsModelCollectionItemModelTrainingDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelsModelCollectionItemModelTrainingDetail] {
-	return pulumix.Output[[]GetDetectionModelsModelCollectionItemModelTrainingDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectionModelsModelCollectionItemModelTrainingDetailArrayOutput) Index(i pulumi.IntInput) GetDetectionModelsModelCollectionItemModelTrainingDetailOutput {
@@ -7302,12 +6365,6 @@ func (i GetDetectionModelsModelCollectionItemModelTrainingResultArgs) ToGetDetec
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelsModelCollectionItemModelTrainingResultOutput)
 }
 
-func (i GetDetectionModelsModelCollectionItemModelTrainingResultArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelsModelCollectionItemModelTrainingResult] {
-	return pulumix.Output[GetDetectionModelsModelCollectionItemModelTrainingResult]{
-		OutputState: i.ToGetDetectionModelsModelCollectionItemModelTrainingResultOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectionModelsModelCollectionItemModelTrainingResultArrayInput is an input type that accepts GetDetectionModelsModelCollectionItemModelTrainingResultArray and GetDetectionModelsModelCollectionItemModelTrainingResultArrayOutput values.
 // You can construct a concrete instance of `GetDetectionModelsModelCollectionItemModelTrainingResultArrayInput` via:
 //
@@ -7333,12 +6390,6 @@ func (i GetDetectionModelsModelCollectionItemModelTrainingResultArray) ToGetDete
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelsModelCollectionItemModelTrainingResultArrayOutput)
 }
 
-func (i GetDetectionModelsModelCollectionItemModelTrainingResultArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelsModelCollectionItemModelTrainingResult] {
-	return pulumix.Output[[]GetDetectionModelsModelCollectionItemModelTrainingResult]{
-		OutputState: i.ToGetDetectionModelsModelCollectionItemModelTrainingResultArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionModelsModelCollectionItemModelTrainingResultOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionModelsModelCollectionItemModelTrainingResultOutput) ElementType() reflect.Type {
@@ -7351,12 +6402,6 @@ func (o GetDetectionModelsModelCollectionItemModelTrainingResultOutput) ToGetDet
 
 func (o GetDetectionModelsModelCollectionItemModelTrainingResultOutput) ToGetDetectionModelsModelCollectionItemModelTrainingResultOutputWithContext(ctx context.Context) GetDetectionModelsModelCollectionItemModelTrainingResultOutput {
 	return o
-}
-
-func (o GetDetectionModelsModelCollectionItemModelTrainingResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelsModelCollectionItemModelTrainingResult] {
-	return pulumix.Output[GetDetectionModelsModelCollectionItemModelTrainingResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Accuracy metric for a signal.
@@ -7424,12 +6469,6 @@ func (o GetDetectionModelsModelCollectionItemModelTrainingResultArrayOutput) ToG
 	return o
 }
 
-func (o GetDetectionModelsModelCollectionItemModelTrainingResultArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelsModelCollectionItemModelTrainingResult] {
-	return pulumix.Output[[]GetDetectionModelsModelCollectionItemModelTrainingResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectionModelsModelCollectionItemModelTrainingResultArrayOutput) Index(i pulumi.IntInput) GetDetectionModelsModelCollectionItemModelTrainingResultOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectionModelsModelCollectionItemModelTrainingResult {
 		return vs[0].([]GetDetectionModelsModelCollectionItemModelTrainingResult)[vs[1].(int)]
@@ -7481,12 +6520,6 @@ func (i GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDeta
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailOutput)
 }
 
-func (i GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail] {
-	return pulumix.Output[GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail]{
-		OutputState: i.ToGetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArrayInput is an input type that accepts GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArray and GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArrayOutput values.
 // You can construct a concrete instance of `GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArrayInput` via:
 //
@@ -7512,12 +6545,6 @@ func (i GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDeta
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArrayOutput)
 }
 
-func (i GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail] {
-	return pulumix.Output[[]GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail]{
-		OutputState: i.ToGetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailOutput) ElementType() reflect.Type {
@@ -7530,12 +6557,6 @@ func (o GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDeta
 
 func (o GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailOutput) ToGetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailOutputWithContext(ctx context.Context) GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailOutput {
 	return o
-}
-
-func (o GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail] {
-	return pulumix.Output[GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A boolean value to indicate if row reduction is applied
@@ -7573,12 +6594,6 @@ func (o GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDeta
 
 func (o GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArrayOutput) ToGetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArrayOutputWithContext(ctx context.Context) GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArrayOutput {
 	return o
-}
-
-func (o GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail] {
-	return pulumix.Output[[]GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArrayOutput) Index(i pulumi.IntInput) GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailOutput {
@@ -7658,12 +6673,6 @@ func (i GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArgs
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput)
 }
 
-func (i GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail] {
-	return pulumix.Output[GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail]{
-		OutputState: i.ToGetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArrayInput is an input type that accepts GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArray and GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArrayOutput values.
 // You can construct a concrete instance of `GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArrayInput` via:
 //
@@ -7689,12 +6698,6 @@ func (i GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArrayOutput)
 }
 
-func (i GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail] {
-	return pulumix.Output[[]GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail]{
-		OutputState: i.ToGetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput) ElementType() reflect.Type {
@@ -7707,12 +6710,6 @@ func (o GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutp
 
 func (o GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput) ToGetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutputWithContext(ctx context.Context) GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput {
 	return o
-}
-
-func (o GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail] {
-	return pulumix.Output[GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // detailed information for a signal.
@@ -7783,12 +6780,6 @@ func (o GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArra
 	return o
 }
 
-func (o GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail] {
-	return pulumix.Output[[]GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArrayOutput) Index(i pulumi.IntInput) GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail {
 		return vs[0].([]GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail)[vs[1].(int)]
@@ -7830,12 +6821,6 @@ func (i GetDetectionProjectsFilterArgs) ToGetDetectionProjectsFilterOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionProjectsFilterOutput)
 }
 
-func (i GetDetectionProjectsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionProjectsFilter] {
-	return pulumix.Output[GetDetectionProjectsFilter]{
-		OutputState: i.ToGetDetectionProjectsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectionProjectsFilterArrayInput is an input type that accepts GetDetectionProjectsFilterArray and GetDetectionProjectsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDetectionProjectsFilterArrayInput` via:
 //
@@ -7861,12 +6846,6 @@ func (i GetDetectionProjectsFilterArray) ToGetDetectionProjectsFilterArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionProjectsFilterArrayOutput)
 }
 
-func (i GetDetectionProjectsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionProjectsFilter] {
-	return pulumix.Output[[]GetDetectionProjectsFilter]{
-		OutputState: i.ToGetDetectionProjectsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionProjectsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionProjectsFilterOutput) ElementType() reflect.Type {
@@ -7879,12 +6858,6 @@ func (o GetDetectionProjectsFilterOutput) ToGetDetectionProjectsFilterOutput() G
 
 func (o GetDetectionProjectsFilterOutput) ToGetDetectionProjectsFilterOutputWithContext(ctx context.Context) GetDetectionProjectsFilterOutput {
 	return o
-}
-
-func (o GetDetectionProjectsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionProjectsFilter] {
-	return pulumix.Output[GetDetectionProjectsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectionProjectsFilterOutput) Name() pulumi.StringOutput {
@@ -7911,12 +6884,6 @@ func (o GetDetectionProjectsFilterArrayOutput) ToGetDetectionProjectsFilterArray
 
 func (o GetDetectionProjectsFilterArrayOutput) ToGetDetectionProjectsFilterArrayOutputWithContext(ctx context.Context) GetDetectionProjectsFilterArrayOutput {
 	return o
-}
-
-func (o GetDetectionProjectsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionProjectsFilter] {
-	return pulumix.Output[[]GetDetectionProjectsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectionProjectsFilterArrayOutput) Index(i pulumi.IntInput) GetDetectionProjectsFilterOutput {
@@ -7956,12 +6923,6 @@ func (i GetDetectionProjectsProjectCollectionArgs) ToGetDetectionProjectsProject
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionProjectsProjectCollectionOutput)
 }
 
-func (i GetDetectionProjectsProjectCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionProjectsProjectCollection] {
-	return pulumix.Output[GetDetectionProjectsProjectCollection]{
-		OutputState: i.ToGetDetectionProjectsProjectCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectionProjectsProjectCollectionArrayInput is an input type that accepts GetDetectionProjectsProjectCollectionArray and GetDetectionProjectsProjectCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDetectionProjectsProjectCollectionArrayInput` via:
 //
@@ -7987,12 +6948,6 @@ func (i GetDetectionProjectsProjectCollectionArray) ToGetDetectionProjectsProjec
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionProjectsProjectCollectionArrayOutput)
 }
 
-func (i GetDetectionProjectsProjectCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionProjectsProjectCollection] {
-	return pulumix.Output[[]GetDetectionProjectsProjectCollection]{
-		OutputState: i.ToGetDetectionProjectsProjectCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionProjectsProjectCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionProjectsProjectCollectionOutput) ElementType() reflect.Type {
@@ -8005,12 +6960,6 @@ func (o GetDetectionProjectsProjectCollectionOutput) ToGetDetectionProjectsProje
 
 func (o GetDetectionProjectsProjectCollectionOutput) ToGetDetectionProjectsProjectCollectionOutputWithContext(ctx context.Context) GetDetectionProjectsProjectCollectionOutput {
 	return o
-}
-
-func (o GetDetectionProjectsProjectCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionProjectsProjectCollection] {
-	return pulumix.Output[GetDetectionProjectsProjectCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectionProjectsProjectCollectionOutput) Items() GetDetectionProjectsProjectCollectionItemArrayOutput {
@@ -8031,12 +6980,6 @@ func (o GetDetectionProjectsProjectCollectionArrayOutput) ToGetDetectionProjects
 
 func (o GetDetectionProjectsProjectCollectionArrayOutput) ToGetDetectionProjectsProjectCollectionArrayOutputWithContext(ctx context.Context) GetDetectionProjectsProjectCollectionArrayOutput {
 	return o
-}
-
-func (o GetDetectionProjectsProjectCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionProjectsProjectCollection] {
-	return pulumix.Output[[]GetDetectionProjectsProjectCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectionProjectsProjectCollectionArrayOutput) Index(i pulumi.IntInput) GetDetectionProjectsProjectCollectionOutput {
@@ -8114,12 +7057,6 @@ func (i GetDetectionProjectsProjectCollectionItemArgs) ToGetDetectionProjectsPro
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionProjectsProjectCollectionItemOutput)
 }
 
-func (i GetDetectionProjectsProjectCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionProjectsProjectCollectionItem] {
-	return pulumix.Output[GetDetectionProjectsProjectCollectionItem]{
-		OutputState: i.ToGetDetectionProjectsProjectCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectionProjectsProjectCollectionItemArrayInput is an input type that accepts GetDetectionProjectsProjectCollectionItemArray and GetDetectionProjectsProjectCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDetectionProjectsProjectCollectionItemArrayInput` via:
 //
@@ -8145,12 +7082,6 @@ func (i GetDetectionProjectsProjectCollectionItemArray) ToGetDetectionProjectsPr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionProjectsProjectCollectionItemArrayOutput)
 }
 
-func (i GetDetectionProjectsProjectCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionProjectsProjectCollectionItem] {
-	return pulumix.Output[[]GetDetectionProjectsProjectCollectionItem]{
-		OutputState: i.ToGetDetectionProjectsProjectCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionProjectsProjectCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionProjectsProjectCollectionItemOutput) ElementType() reflect.Type {
@@ -8163,12 +7094,6 @@ func (o GetDetectionProjectsProjectCollectionItemOutput) ToGetDetectionProjectsP
 
 func (o GetDetectionProjectsProjectCollectionItemOutput) ToGetDetectionProjectsProjectCollectionItemOutputWithContext(ctx context.Context) GetDetectionProjectsProjectCollectionItemOutput {
 	return o
-}
-
-func (o GetDetectionProjectsProjectCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionProjectsProjectCollectionItem] {
-	return pulumix.Output[GetDetectionProjectsProjectCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -8233,12 +7158,6 @@ func (o GetDetectionProjectsProjectCollectionItemArrayOutput) ToGetDetectionProj
 
 func (o GetDetectionProjectsProjectCollectionItemArrayOutput) ToGetDetectionProjectsProjectCollectionItemArrayOutputWithContext(ctx context.Context) GetDetectionProjectsProjectCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetDetectionProjectsProjectCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionProjectsProjectCollectionItem] {
-	return pulumix.Output[[]GetDetectionProjectsProjectCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectionProjectsProjectCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDetectionProjectsProjectCollectionItemOutput {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Cloud Vm Cluster Iorm Config resource in Oracle Cloud Infrastructure Database service.
@@ -183,12 +182,6 @@ func (i *CloudVmClusterIormConfig) ToCloudVmClusterIormConfigOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(CloudVmClusterIormConfigOutput)
 }
 
-func (i *CloudVmClusterIormConfig) ToOutput(ctx context.Context) pulumix.Output[*CloudVmClusterIormConfig] {
-	return pulumix.Output[*CloudVmClusterIormConfig]{
-		OutputState: i.ToCloudVmClusterIormConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CloudVmClusterIormConfigArrayInput is an input type that accepts CloudVmClusterIormConfigArray and CloudVmClusterIormConfigArrayOutput values.
 // You can construct a concrete instance of `CloudVmClusterIormConfigArrayInput` via:
 //
@@ -212,12 +205,6 @@ func (i CloudVmClusterIormConfigArray) ToCloudVmClusterIormConfigArrayOutput() C
 
 func (i CloudVmClusterIormConfigArray) ToCloudVmClusterIormConfigArrayOutputWithContext(ctx context.Context) CloudVmClusterIormConfigArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudVmClusterIormConfigArrayOutput)
-}
-
-func (i CloudVmClusterIormConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]*CloudVmClusterIormConfig] {
-	return pulumix.Output[[]*CloudVmClusterIormConfig]{
-		OutputState: i.ToCloudVmClusterIormConfigArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CloudVmClusterIormConfigMapInput is an input type that accepts CloudVmClusterIormConfigMap and CloudVmClusterIormConfigMapOutput values.
@@ -245,12 +232,6 @@ func (i CloudVmClusterIormConfigMap) ToCloudVmClusterIormConfigMapOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(CloudVmClusterIormConfigMapOutput)
 }
 
-func (i CloudVmClusterIormConfigMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudVmClusterIormConfig] {
-	return pulumix.Output[map[string]*CloudVmClusterIormConfig]{
-		OutputState: i.ToCloudVmClusterIormConfigMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CloudVmClusterIormConfigOutput struct{ *pulumi.OutputState }
 
 func (CloudVmClusterIormConfigOutput) ElementType() reflect.Type {
@@ -263,12 +244,6 @@ func (o CloudVmClusterIormConfigOutput) ToCloudVmClusterIormConfigOutput() Cloud
 
 func (o CloudVmClusterIormConfigOutput) ToCloudVmClusterIormConfigOutputWithContext(ctx context.Context) CloudVmClusterIormConfigOutput {
 	return o
-}
-
-func (o CloudVmClusterIormConfigOutput) ToOutput(ctx context.Context) pulumix.Output[*CloudVmClusterIormConfig] {
-	return pulumix.Output[*CloudVmClusterIormConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -310,12 +285,6 @@ func (o CloudVmClusterIormConfigArrayOutput) ToCloudVmClusterIormConfigArrayOutp
 	return o
 }
 
-func (o CloudVmClusterIormConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CloudVmClusterIormConfig] {
-	return pulumix.Output[[]*CloudVmClusterIormConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o CloudVmClusterIormConfigArrayOutput) Index(i pulumi.IntInput) CloudVmClusterIormConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CloudVmClusterIormConfig {
 		return vs[0].([]*CloudVmClusterIormConfig)[vs[1].(int)]
@@ -334,12 +303,6 @@ func (o CloudVmClusterIormConfigMapOutput) ToCloudVmClusterIormConfigMapOutput()
 
 func (o CloudVmClusterIormConfigMapOutput) ToCloudVmClusterIormConfigMapOutputWithContext(ctx context.Context) CloudVmClusterIormConfigMapOutput {
 	return o
-}
-
-func (o CloudVmClusterIormConfigMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudVmClusterIormConfig] {
-	return pulumix.Output[map[string]*CloudVmClusterIormConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CloudVmClusterIormConfigMapOutput) MapIndex(k pulumi.StringInput) CloudVmClusterIormConfigOutput {

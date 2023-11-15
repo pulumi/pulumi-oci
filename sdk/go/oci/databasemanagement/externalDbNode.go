@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the External Db Node resource in Oracle Cloud Infrastructure Database Management service.
@@ -216,12 +215,6 @@ func (i *ExternalDbNode) ToExternalDbNodeOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbNodeOutput)
 }
 
-func (i *ExternalDbNode) ToOutput(ctx context.Context) pulumix.Output[*ExternalDbNode] {
-	return pulumix.Output[*ExternalDbNode]{
-		OutputState: i.ToExternalDbNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExternalDbNodeArrayInput is an input type that accepts ExternalDbNodeArray and ExternalDbNodeArrayOutput values.
 // You can construct a concrete instance of `ExternalDbNodeArrayInput` via:
 //
@@ -245,12 +238,6 @@ func (i ExternalDbNodeArray) ToExternalDbNodeArrayOutput() ExternalDbNodeArrayOu
 
 func (i ExternalDbNodeArray) ToExternalDbNodeArrayOutputWithContext(ctx context.Context) ExternalDbNodeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbNodeArrayOutput)
-}
-
-func (i ExternalDbNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalDbNode] {
-	return pulumix.Output[[]*ExternalDbNode]{
-		OutputState: i.ToExternalDbNodeArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ExternalDbNodeMapInput is an input type that accepts ExternalDbNodeMap and ExternalDbNodeMapOutput values.
@@ -278,12 +265,6 @@ func (i ExternalDbNodeMap) ToExternalDbNodeMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbNodeMapOutput)
 }
 
-func (i ExternalDbNodeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalDbNode] {
-	return pulumix.Output[map[string]*ExternalDbNode]{
-		OutputState: i.ToExternalDbNodeMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExternalDbNodeOutput struct{ *pulumi.OutputState }
 
 func (ExternalDbNodeOutput) ElementType() reflect.Type {
@@ -296,12 +277,6 @@ func (o ExternalDbNodeOutput) ToExternalDbNodeOutput() ExternalDbNodeOutput {
 
 func (o ExternalDbNodeOutput) ToExternalDbNodeOutputWithContext(ctx context.Context) ExternalDbNodeOutput {
 	return o
-}
-
-func (o ExternalDbNodeOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalDbNode] {
-	return pulumix.Output[*ExternalDbNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The additional details of the external DB node defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
@@ -396,12 +371,6 @@ func (o ExternalDbNodeArrayOutput) ToExternalDbNodeArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o ExternalDbNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalDbNode] {
-	return pulumix.Output[[]*ExternalDbNode]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ExternalDbNodeArrayOutput) Index(i pulumi.IntInput) ExternalDbNodeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ExternalDbNode {
 		return vs[0].([]*ExternalDbNode)[vs[1].(int)]
@@ -420,12 +389,6 @@ func (o ExternalDbNodeMapOutput) ToExternalDbNodeMapOutput() ExternalDbNodeMapOu
 
 func (o ExternalDbNodeMapOutput) ToExternalDbNodeMapOutputWithContext(ctx context.Context) ExternalDbNodeMapOutput {
 	return o
-}
-
-func (o ExternalDbNodeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalDbNode] {
-	return pulumix.Output[map[string]*ExternalDbNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalDbNodeMapOutput) MapIndex(k pulumi.StringInput) ExternalDbNodeOutput {

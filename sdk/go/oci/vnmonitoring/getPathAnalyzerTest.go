@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Path Analyzer Test resource in Oracle Cloud Infrastructure Vn Monitoring service.
@@ -126,12 +125,6 @@ func (o LookupPathAnalyzerTestResultOutput) ToLookupPathAnalyzerTestResultOutput
 
 func (o LookupPathAnalyzerTestResultOutput) ToLookupPathAnalyzerTestResultOutputWithContext(ctx context.Context) LookupPathAnalyzerTestResultOutput {
 	return o
-}
-
-func (o LookupPathAnalyzerTestResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupPathAnalyzerTestResult] {
-	return pulumix.Output[LookupPathAnalyzerTestResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource's compartment.

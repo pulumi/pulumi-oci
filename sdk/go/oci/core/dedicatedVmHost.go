@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Dedicated Vm Host resource in Oracle Cloud Infrastructure Core service.
@@ -289,12 +288,6 @@ func (i *DedicatedVmHost) ToDedicatedVmHostOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(DedicatedVmHostOutput)
 }
 
-func (i *DedicatedVmHost) ToOutput(ctx context.Context) pulumix.Output[*DedicatedVmHost] {
-	return pulumix.Output[*DedicatedVmHost]{
-		OutputState: i.ToDedicatedVmHostOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DedicatedVmHostArrayInput is an input type that accepts DedicatedVmHostArray and DedicatedVmHostArrayOutput values.
 // You can construct a concrete instance of `DedicatedVmHostArrayInput` via:
 //
@@ -318,12 +311,6 @@ func (i DedicatedVmHostArray) ToDedicatedVmHostArrayOutput() DedicatedVmHostArra
 
 func (i DedicatedVmHostArray) ToDedicatedVmHostArrayOutputWithContext(ctx context.Context) DedicatedVmHostArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DedicatedVmHostArrayOutput)
-}
-
-func (i DedicatedVmHostArray) ToOutput(ctx context.Context) pulumix.Output[[]*DedicatedVmHost] {
-	return pulumix.Output[[]*DedicatedVmHost]{
-		OutputState: i.ToDedicatedVmHostArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DedicatedVmHostMapInput is an input type that accepts DedicatedVmHostMap and DedicatedVmHostMapOutput values.
@@ -351,12 +338,6 @@ func (i DedicatedVmHostMap) ToDedicatedVmHostMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(DedicatedVmHostMapOutput)
 }
 
-func (i DedicatedVmHostMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DedicatedVmHost] {
-	return pulumix.Output[map[string]*DedicatedVmHost]{
-		OutputState: i.ToDedicatedVmHostMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DedicatedVmHostOutput struct{ *pulumi.OutputState }
 
 func (DedicatedVmHostOutput) ElementType() reflect.Type {
@@ -369,12 +350,6 @@ func (o DedicatedVmHostOutput) ToDedicatedVmHostOutput() DedicatedVmHostOutput {
 
 func (o DedicatedVmHostOutput) ToDedicatedVmHostOutputWithContext(ctx context.Context) DedicatedVmHostOutput {
 	return o
-}
-
-func (o DedicatedVmHostOutput) ToOutput(ctx context.Context) pulumix.Output[*DedicatedVmHost] {
-	return pulumix.Output[*DedicatedVmHost]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
@@ -463,12 +438,6 @@ func (o DedicatedVmHostArrayOutput) ToDedicatedVmHostArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o DedicatedVmHostArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DedicatedVmHost] {
-	return pulumix.Output[[]*DedicatedVmHost]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DedicatedVmHostArrayOutput) Index(i pulumi.IntInput) DedicatedVmHostOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DedicatedVmHost {
 		return vs[0].([]*DedicatedVmHost)[vs[1].(int)]
@@ -487,12 +456,6 @@ func (o DedicatedVmHostMapOutput) ToDedicatedVmHostMapOutput() DedicatedVmHostMa
 
 func (o DedicatedVmHostMapOutput) ToDedicatedVmHostMapOutputWithContext(ctx context.Context) DedicatedVmHostMapOutput {
 	return o
-}
-
-func (o DedicatedVmHostMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DedicatedVmHost] {
-	return pulumix.Output[map[string]*DedicatedVmHost]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DedicatedVmHostMapOutput) MapIndex(k pulumi.StringInput) DedicatedVmHostOutput {

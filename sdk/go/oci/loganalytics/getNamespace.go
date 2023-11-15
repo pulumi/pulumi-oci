@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Namespace resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -105,12 +104,6 @@ func (o LookupNamespaceResultOutput) ToLookupNamespaceResultOutput() LookupNames
 
 func (o LookupNamespaceResultOutput) ToLookupNamespaceResultOutputWithContext(ctx context.Context) LookupNamespaceResultOutput {
 	return o
-}
-
-func (o LookupNamespaceResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNamespaceResult] {
-	return pulumix.Output[LookupNamespaceResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The is the tenancy ID

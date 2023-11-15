@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Mysql Db System resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -610,12 +609,6 @@ func (i *MysqlDbSystem) ToMysqlDbSystemOutputWithContext(ctx context.Context) My
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemOutput)
 }
 
-func (i *MysqlDbSystem) ToOutput(ctx context.Context) pulumix.Output[*MysqlDbSystem] {
-	return pulumix.Output[*MysqlDbSystem]{
-		OutputState: i.ToMysqlDbSystemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MysqlDbSystemArrayInput is an input type that accepts MysqlDbSystemArray and MysqlDbSystemArrayOutput values.
 // You can construct a concrete instance of `MysqlDbSystemArrayInput` via:
 //
@@ -639,12 +632,6 @@ func (i MysqlDbSystemArray) ToMysqlDbSystemArrayOutput() MysqlDbSystemArrayOutpu
 
 func (i MysqlDbSystemArray) ToMysqlDbSystemArrayOutputWithContext(ctx context.Context) MysqlDbSystemArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemArrayOutput)
-}
-
-func (i MysqlDbSystemArray) ToOutput(ctx context.Context) pulumix.Output[[]*MysqlDbSystem] {
-	return pulumix.Output[[]*MysqlDbSystem]{
-		OutputState: i.ToMysqlDbSystemArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MysqlDbSystemMapInput is an input type that accepts MysqlDbSystemMap and MysqlDbSystemMapOutput values.
@@ -672,12 +659,6 @@ func (i MysqlDbSystemMap) ToMysqlDbSystemMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemMapOutput)
 }
 
-func (i MysqlDbSystemMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MysqlDbSystem] {
-	return pulumix.Output[map[string]*MysqlDbSystem]{
-		OutputState: i.ToMysqlDbSystemMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MysqlDbSystemOutput struct{ *pulumi.OutputState }
 
 func (MysqlDbSystemOutput) ElementType() reflect.Type {
@@ -690,12 +671,6 @@ func (o MysqlDbSystemOutput) ToMysqlDbSystemOutput() MysqlDbSystemOutput {
 
 func (o MysqlDbSystemOutput) ToMysqlDbSystemOutputWithContext(ctx context.Context) MysqlDbSystemOutput {
 	return o
-}
-
-func (o MysqlDbSystemOutput) ToOutput(ctx context.Context) pulumix.Output[*MysqlDbSystem] {
-	return pulumix.Output[*MysqlDbSystem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
@@ -912,12 +887,6 @@ func (o MysqlDbSystemArrayOutput) ToMysqlDbSystemArrayOutputWithContext(ctx cont
 	return o
 }
 
-func (o MysqlDbSystemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MysqlDbSystem] {
-	return pulumix.Output[[]*MysqlDbSystem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o MysqlDbSystemArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *MysqlDbSystem {
 		return vs[0].([]*MysqlDbSystem)[vs[1].(int)]
@@ -936,12 +905,6 @@ func (o MysqlDbSystemMapOutput) ToMysqlDbSystemMapOutput() MysqlDbSystemMapOutpu
 
 func (o MysqlDbSystemMapOutput) ToMysqlDbSystemMapOutputWithContext(ctx context.Context) MysqlDbSystemMapOutput {
 	return o
-}
-
-func (o MysqlDbSystemMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MysqlDbSystem] {
-	return pulumix.Output[map[string]*MysqlDbSystem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MysqlDbSystemMapOutput) MapIndex(k pulumi.StringInput) MysqlDbSystemOutput {

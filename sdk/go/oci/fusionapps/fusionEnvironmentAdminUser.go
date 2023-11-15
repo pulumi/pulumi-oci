@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Fusion Environment Admin User resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -237,12 +236,6 @@ func (i *FusionEnvironmentAdminUser) ToFusionEnvironmentAdminUserOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentAdminUserOutput)
 }
 
-func (i *FusionEnvironmentAdminUser) ToOutput(ctx context.Context) pulumix.Output[*FusionEnvironmentAdminUser] {
-	return pulumix.Output[*FusionEnvironmentAdminUser]{
-		OutputState: i.ToFusionEnvironmentAdminUserOutputWithContext(ctx).OutputState,
-	}
-}
-
 // FusionEnvironmentAdminUserArrayInput is an input type that accepts FusionEnvironmentAdminUserArray and FusionEnvironmentAdminUserArrayOutput values.
 // You can construct a concrete instance of `FusionEnvironmentAdminUserArrayInput` via:
 //
@@ -266,12 +259,6 @@ func (i FusionEnvironmentAdminUserArray) ToFusionEnvironmentAdminUserArrayOutput
 
 func (i FusionEnvironmentAdminUserArray) ToFusionEnvironmentAdminUserArrayOutputWithContext(ctx context.Context) FusionEnvironmentAdminUserArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentAdminUserArrayOutput)
-}
-
-func (i FusionEnvironmentAdminUserArray) ToOutput(ctx context.Context) pulumix.Output[[]*FusionEnvironmentAdminUser] {
-	return pulumix.Output[[]*FusionEnvironmentAdminUser]{
-		OutputState: i.ToFusionEnvironmentAdminUserArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // FusionEnvironmentAdminUserMapInput is an input type that accepts FusionEnvironmentAdminUserMap and FusionEnvironmentAdminUserMapOutput values.
@@ -299,12 +286,6 @@ func (i FusionEnvironmentAdminUserMap) ToFusionEnvironmentAdminUserMapOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentAdminUserMapOutput)
 }
 
-func (i FusionEnvironmentAdminUserMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*FusionEnvironmentAdminUser] {
-	return pulumix.Output[map[string]*FusionEnvironmentAdminUser]{
-		OutputState: i.ToFusionEnvironmentAdminUserMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FusionEnvironmentAdminUserOutput struct{ *pulumi.OutputState }
 
 func (FusionEnvironmentAdminUserOutput) ElementType() reflect.Type {
@@ -317,12 +298,6 @@ func (o FusionEnvironmentAdminUserOutput) ToFusionEnvironmentAdminUserOutput() F
 
 func (o FusionEnvironmentAdminUserOutput) ToFusionEnvironmentAdminUserOutputWithContext(ctx context.Context) FusionEnvironmentAdminUserOutput {
 	return o
-}
-
-func (o FusionEnvironmentAdminUserOutput) ToOutput(ctx context.Context) pulumix.Output[*FusionEnvironmentAdminUser] {
-	return pulumix.Output[*FusionEnvironmentAdminUser]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The email address for the administrator.
@@ -377,12 +352,6 @@ func (o FusionEnvironmentAdminUserArrayOutput) ToFusionEnvironmentAdminUserArray
 	return o
 }
 
-func (o FusionEnvironmentAdminUserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*FusionEnvironmentAdminUser] {
-	return pulumix.Output[[]*FusionEnvironmentAdminUser]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o FusionEnvironmentAdminUserArrayOutput) Index(i pulumi.IntInput) FusionEnvironmentAdminUserOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *FusionEnvironmentAdminUser {
 		return vs[0].([]*FusionEnvironmentAdminUser)[vs[1].(int)]
@@ -401,12 +370,6 @@ func (o FusionEnvironmentAdminUserMapOutput) ToFusionEnvironmentAdminUserMapOutp
 
 func (o FusionEnvironmentAdminUserMapOutput) ToFusionEnvironmentAdminUserMapOutputWithContext(ctx context.Context) FusionEnvironmentAdminUserMapOutput {
 	return o
-}
-
-func (o FusionEnvironmentAdminUserMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*FusionEnvironmentAdminUser] {
-	return pulumix.Output[map[string]*FusionEnvironmentAdminUser]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FusionEnvironmentAdminUserMapOutput) MapIndex(k pulumi.StringInput) FusionEnvironmentAdminUserOutput {

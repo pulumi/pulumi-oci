@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Availability Domains in Oracle Cloud Infrastructure Identity service.
@@ -110,12 +109,6 @@ func (o GetAvailabilityDomainsResultOutput) ToGetAvailabilityDomainsResultOutput
 
 func (o GetAvailabilityDomainsResultOutput) ToGetAvailabilityDomainsResultOutputWithContext(ctx context.Context) GetAvailabilityDomainsResultOutput {
 	return o
-}
-
-func (o GetAvailabilityDomainsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAvailabilityDomainsResult] {
-	return pulumix.Output[GetAvailabilityDomainsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of availability_domains.

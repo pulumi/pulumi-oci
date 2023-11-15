@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Http Probe Results in Oracle Cloud Infrastructure Health Checks service.
@@ -127,12 +126,6 @@ func (o GetHttpProbeResultsResultOutput) ToGetHttpProbeResultsResultOutput() Get
 
 func (o GetHttpProbeResultsResultOutput) ToGetHttpProbeResultsResultOutputWithContext(ctx context.Context) GetHttpProbeResultsResultOutput {
 	return o
-}
-
-func (o GetHttpProbeResultsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetHttpProbeResultsResult] {
-	return pulumix.Output[GetHttpProbeResultsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetHttpProbeResultsResultOutput) Filters() GetHttpProbeResultsFilterArrayOutput {

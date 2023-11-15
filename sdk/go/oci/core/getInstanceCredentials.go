@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Instance Credential resource in Oracle Cloud Infrastructure Core service.
@@ -105,12 +104,6 @@ func (o GetInstanceCredentialsResultOutput) ToGetInstanceCredentialsResultOutput
 
 func (o GetInstanceCredentialsResultOutput) ToGetInstanceCredentialsResultOutputWithContext(ctx context.Context) GetInstanceCredentialsResultOutput {
 	return o
-}
-
-func (o GetInstanceCredentialsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstanceCredentialsResult] {
-	return pulumix.Output[GetInstanceCredentialsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The provider-assigned unique ID for this managed resource.

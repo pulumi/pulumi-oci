@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Instance Console Connections in Oracle Cloud Infrastructure Core service.
@@ -115,12 +114,6 @@ func (o GetInstanceConsoleConnectionsResultOutput) ToGetInstanceConsoleConnectio
 
 func (o GetInstanceConsoleConnectionsResultOutput) ToGetInstanceConsoleConnectionsResultOutputWithContext(ctx context.Context) GetInstanceConsoleConnectionsResultOutput {
 	return o
-}
-
-func (o GetInstanceConsoleConnectionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstanceConsoleConnectionsResult] {
-	return pulumix.Output[GetInstanceConsoleConnectionsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment to contain the console connection.

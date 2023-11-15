@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -59,12 +58,6 @@ func (i IntegrationInstanceAlternateCustomEndpointArgs) ToIntegrationInstanceAlt
 	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceAlternateCustomEndpointOutput)
 }
 
-func (i IntegrationInstanceAlternateCustomEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[IntegrationInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[IntegrationInstanceAlternateCustomEndpoint]{
-		OutputState: i.ToIntegrationInstanceAlternateCustomEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // IntegrationInstanceAlternateCustomEndpointArrayInput is an input type that accepts IntegrationInstanceAlternateCustomEndpointArray and IntegrationInstanceAlternateCustomEndpointArrayOutput values.
 // You can construct a concrete instance of `IntegrationInstanceAlternateCustomEndpointArrayInput` via:
 //
@@ -90,12 +83,6 @@ func (i IntegrationInstanceAlternateCustomEndpointArray) ToIntegrationInstanceAl
 	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceAlternateCustomEndpointArrayOutput)
 }
 
-func (i IntegrationInstanceAlternateCustomEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]IntegrationInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[[]IntegrationInstanceAlternateCustomEndpoint]{
-		OutputState: i.ToIntegrationInstanceAlternateCustomEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IntegrationInstanceAlternateCustomEndpointOutput struct{ *pulumi.OutputState }
 
 func (IntegrationInstanceAlternateCustomEndpointOutput) ElementType() reflect.Type {
@@ -108,12 +95,6 @@ func (o IntegrationInstanceAlternateCustomEndpointOutput) ToIntegrationInstanceA
 
 func (o IntegrationInstanceAlternateCustomEndpointOutput) ToIntegrationInstanceAlternateCustomEndpointOutputWithContext(ctx context.Context) IntegrationInstanceAlternateCustomEndpointOutput {
 	return o
-}
-
-func (o IntegrationInstanceAlternateCustomEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[IntegrationInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[IntegrationInstanceAlternateCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
@@ -148,12 +129,6 @@ func (o IntegrationInstanceAlternateCustomEndpointArrayOutput) ToIntegrationInst
 
 func (o IntegrationInstanceAlternateCustomEndpointArrayOutput) ToIntegrationInstanceAlternateCustomEndpointArrayOutputWithContext(ctx context.Context) IntegrationInstanceAlternateCustomEndpointArrayOutput {
 	return o
-}
-
-func (o IntegrationInstanceAlternateCustomEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]IntegrationInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[[]IntegrationInstanceAlternateCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IntegrationInstanceAlternateCustomEndpointArrayOutput) Index(i pulumi.IntInput) IntegrationInstanceAlternateCustomEndpointOutput {
@@ -213,12 +188,6 @@ func (i IntegrationInstanceAttachmentArgs) ToIntegrationInstanceAttachmentOutput
 	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceAttachmentOutput)
 }
 
-func (i IntegrationInstanceAttachmentArgs) ToOutput(ctx context.Context) pulumix.Output[IntegrationInstanceAttachment] {
-	return pulumix.Output[IntegrationInstanceAttachment]{
-		OutputState: i.ToIntegrationInstanceAttachmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // IntegrationInstanceAttachmentArrayInput is an input type that accepts IntegrationInstanceAttachmentArray and IntegrationInstanceAttachmentArrayOutput values.
 // You can construct a concrete instance of `IntegrationInstanceAttachmentArrayInput` via:
 //
@@ -244,12 +213,6 @@ func (i IntegrationInstanceAttachmentArray) ToIntegrationInstanceAttachmentArray
 	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceAttachmentArrayOutput)
 }
 
-func (i IntegrationInstanceAttachmentArray) ToOutput(ctx context.Context) pulumix.Output[[]IntegrationInstanceAttachment] {
-	return pulumix.Output[[]IntegrationInstanceAttachment]{
-		OutputState: i.ToIntegrationInstanceAttachmentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IntegrationInstanceAttachmentOutput struct{ *pulumi.OutputState }
 
 func (IntegrationInstanceAttachmentOutput) ElementType() reflect.Type {
@@ -262,12 +225,6 @@ func (o IntegrationInstanceAttachmentOutput) ToIntegrationInstanceAttachmentOutp
 
 func (o IntegrationInstanceAttachmentOutput) ToIntegrationInstanceAttachmentOutputWithContext(ctx context.Context) IntegrationInstanceAttachmentOutput {
 	return o
-}
-
-func (o IntegrationInstanceAttachmentOutput) ToOutput(ctx context.Context) pulumix.Output[IntegrationInstanceAttachment] {
-	return pulumix.Output[IntegrationInstanceAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 // * If role == `PARENT`, the attached instance was created by this service instance
@@ -308,12 +265,6 @@ func (o IntegrationInstanceAttachmentArrayOutput) ToIntegrationInstanceAttachmen
 
 func (o IntegrationInstanceAttachmentArrayOutput) ToIntegrationInstanceAttachmentArrayOutputWithContext(ctx context.Context) IntegrationInstanceAttachmentArrayOutput {
 	return o
-}
-
-func (o IntegrationInstanceAttachmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]IntegrationInstanceAttachment] {
-	return pulumix.Output[[]IntegrationInstanceAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IntegrationInstanceAttachmentArrayOutput) Index(i pulumi.IntInput) IntegrationInstanceAttachmentOutput {
@@ -367,12 +318,6 @@ func (i IntegrationInstanceCustomEndpointArgs) ToIntegrationInstanceCustomEndpoi
 	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceCustomEndpointOutput)
 }
 
-func (i IntegrationInstanceCustomEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[IntegrationInstanceCustomEndpoint] {
-	return pulumix.Output[IntegrationInstanceCustomEndpoint]{
-		OutputState: i.ToIntegrationInstanceCustomEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i IntegrationInstanceCustomEndpointArgs) ToIntegrationInstanceCustomEndpointPtrOutput() IntegrationInstanceCustomEndpointPtrOutput {
 	return i.ToIntegrationInstanceCustomEndpointPtrOutputWithContext(context.Background())
 }
@@ -414,12 +359,6 @@ func (i *integrationInstanceCustomEndpointPtrType) ToIntegrationInstanceCustomEn
 	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceCustomEndpointPtrOutput)
 }
 
-func (i *integrationInstanceCustomEndpointPtrType) ToOutput(ctx context.Context) pulumix.Output[*IntegrationInstanceCustomEndpoint] {
-	return pulumix.Output[*IntegrationInstanceCustomEndpoint]{
-		OutputState: i.ToIntegrationInstanceCustomEndpointPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IntegrationInstanceCustomEndpointOutput struct{ *pulumi.OutputState }
 
 func (IntegrationInstanceCustomEndpointOutput) ElementType() reflect.Type {
@@ -442,12 +381,6 @@ func (o IntegrationInstanceCustomEndpointOutput) ToIntegrationInstanceCustomEndp
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v IntegrationInstanceCustomEndpoint) *IntegrationInstanceCustomEndpoint {
 		return &v
 	}).(IntegrationInstanceCustomEndpointPtrOutput)
-}
-
-func (o IntegrationInstanceCustomEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[IntegrationInstanceCustomEndpoint] {
-	return pulumix.Output[IntegrationInstanceCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
@@ -482,12 +415,6 @@ func (o IntegrationInstanceCustomEndpointPtrOutput) ToIntegrationInstanceCustomE
 
 func (o IntegrationInstanceCustomEndpointPtrOutput) ToIntegrationInstanceCustomEndpointPtrOutputWithContext(ctx context.Context) IntegrationInstanceCustomEndpointPtrOutput {
 	return o
-}
-
-func (o IntegrationInstanceCustomEndpointPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*IntegrationInstanceCustomEndpoint] {
-	return pulumix.Output[*IntegrationInstanceCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IntegrationInstanceCustomEndpointPtrOutput) Elem() IntegrationInstanceCustomEndpointOutput {
@@ -589,12 +516,6 @@ func (i IntegrationInstanceIdcsInfoArgs) ToIntegrationInstanceIdcsInfoOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceIdcsInfoOutput)
 }
 
-func (i IntegrationInstanceIdcsInfoArgs) ToOutput(ctx context.Context) pulumix.Output[IntegrationInstanceIdcsInfo] {
-	return pulumix.Output[IntegrationInstanceIdcsInfo]{
-		OutputState: i.ToIntegrationInstanceIdcsInfoOutputWithContext(ctx).OutputState,
-	}
-}
-
 // IntegrationInstanceIdcsInfoArrayInput is an input type that accepts IntegrationInstanceIdcsInfoArray and IntegrationInstanceIdcsInfoArrayOutput values.
 // You can construct a concrete instance of `IntegrationInstanceIdcsInfoArrayInput` via:
 //
@@ -620,12 +541,6 @@ func (i IntegrationInstanceIdcsInfoArray) ToIntegrationInstanceIdcsInfoArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceIdcsInfoArrayOutput)
 }
 
-func (i IntegrationInstanceIdcsInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]IntegrationInstanceIdcsInfo] {
-	return pulumix.Output[[]IntegrationInstanceIdcsInfo]{
-		OutputState: i.ToIntegrationInstanceIdcsInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IntegrationInstanceIdcsInfoOutput struct{ *pulumi.OutputState }
 
 func (IntegrationInstanceIdcsInfoOutput) ElementType() reflect.Type {
@@ -638,12 +553,6 @@ func (o IntegrationInstanceIdcsInfoOutput) ToIntegrationInstanceIdcsInfoOutput()
 
 func (o IntegrationInstanceIdcsInfoOutput) ToIntegrationInstanceIdcsInfoOutputWithContext(ctx context.Context) IntegrationInstanceIdcsInfoOutput {
 	return o
-}
-
-func (o IntegrationInstanceIdcsInfoOutput) ToOutput(ctx context.Context) pulumix.Output[IntegrationInstanceIdcsInfo] {
-	return pulumix.Output[IntegrationInstanceIdcsInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The IDCS application display name associated with the instance
@@ -683,12 +592,6 @@ func (o IntegrationInstanceIdcsInfoArrayOutput) ToIntegrationInstanceIdcsInfoArr
 
 func (o IntegrationInstanceIdcsInfoArrayOutput) ToIntegrationInstanceIdcsInfoArrayOutputWithContext(ctx context.Context) IntegrationInstanceIdcsInfoArrayOutput {
 	return o
-}
-
-func (o IntegrationInstanceIdcsInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]IntegrationInstanceIdcsInfo] {
-	return pulumix.Output[[]IntegrationInstanceIdcsInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IntegrationInstanceIdcsInfoArrayOutput) Index(i pulumi.IntInput) IntegrationInstanceIdcsInfoOutput {
@@ -742,12 +645,6 @@ func (i IntegrationInstanceNetworkEndpointDetailsArgs) ToIntegrationInstanceNetw
 	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceNetworkEndpointDetailsOutput)
 }
 
-func (i IntegrationInstanceNetworkEndpointDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[IntegrationInstanceNetworkEndpointDetails] {
-	return pulumix.Output[IntegrationInstanceNetworkEndpointDetails]{
-		OutputState: i.ToIntegrationInstanceNetworkEndpointDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i IntegrationInstanceNetworkEndpointDetailsArgs) ToIntegrationInstanceNetworkEndpointDetailsPtrOutput() IntegrationInstanceNetworkEndpointDetailsPtrOutput {
 	return i.ToIntegrationInstanceNetworkEndpointDetailsPtrOutputWithContext(context.Background())
 }
@@ -789,12 +686,6 @@ func (i *integrationInstanceNetworkEndpointDetailsPtrType) ToIntegrationInstance
 	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceNetworkEndpointDetailsPtrOutput)
 }
 
-func (i *integrationInstanceNetworkEndpointDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*IntegrationInstanceNetworkEndpointDetails] {
-	return pulumix.Output[*IntegrationInstanceNetworkEndpointDetails]{
-		OutputState: i.ToIntegrationInstanceNetworkEndpointDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IntegrationInstanceNetworkEndpointDetailsOutput struct{ *pulumi.OutputState }
 
 func (IntegrationInstanceNetworkEndpointDetailsOutput) ElementType() reflect.Type {
@@ -817,12 +708,6 @@ func (o IntegrationInstanceNetworkEndpointDetailsOutput) ToIntegrationInstanceNe
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v IntegrationInstanceNetworkEndpointDetails) *IntegrationInstanceNetworkEndpointDetails {
 		return &v
 	}).(IntegrationInstanceNetworkEndpointDetailsPtrOutput)
-}
-
-func (o IntegrationInstanceNetworkEndpointDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[IntegrationInstanceNetworkEndpointDetails] {
-	return pulumix.Output[IntegrationInstanceNetworkEndpointDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
@@ -859,12 +744,6 @@ func (o IntegrationInstanceNetworkEndpointDetailsPtrOutput) ToIntegrationInstanc
 
 func (o IntegrationInstanceNetworkEndpointDetailsPtrOutput) ToIntegrationInstanceNetworkEndpointDetailsPtrOutputWithContext(ctx context.Context) IntegrationInstanceNetworkEndpointDetailsPtrOutput {
 	return o
-}
-
-func (o IntegrationInstanceNetworkEndpointDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*IntegrationInstanceNetworkEndpointDetails] {
-	return pulumix.Output[*IntegrationInstanceNetworkEndpointDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IntegrationInstanceNetworkEndpointDetailsPtrOutput) Elem() IntegrationInstanceNetworkEndpointDetailsOutput {
@@ -954,12 +833,6 @@ func (i IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs) ToInteg
 	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput)
 }
 
-func (i IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs) ToOutput(ctx context.Context) pulumix.Output[IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn] {
-	return pulumix.Output[IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn]{
-		OutputState: i.ToIntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutputWithContext(ctx).OutputState,
-	}
-}
-
 // IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayInput is an input type that accepts IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArray and IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput values.
 // You can construct a concrete instance of `IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayInput` via:
 //
@@ -985,12 +858,6 @@ func (i IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArray) ToInte
 	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput)
 }
 
-func (i IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArray) ToOutput(ctx context.Context) pulumix.Output[[]IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn] {
-	return pulumix.Output[[]IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn]{
-		OutputState: i.ToIntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput struct{ *pulumi.OutputState }
 
 func (IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput) ElementType() reflect.Type {
@@ -1003,12 +870,6 @@ func (o IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput) ToInt
 
 func (o IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput) ToIntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutputWithContext(ctx context.Context) IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput {
 	return o
-}
-
-func (o IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput) ToOutput(ctx context.Context) pulumix.Output[IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn] {
-	return pulumix.Output[IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
@@ -1033,12 +894,6 @@ func (o IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput) 
 
 func (o IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput) ToIntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutputWithContext(ctx context.Context) IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput {
 	return o
-}
-
-func (o IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn] {
-	return pulumix.Output[[]IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput) Index(i pulumi.IntInput) IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput {
@@ -1092,12 +947,6 @@ func (i GetIntegrationInstanceAlternateCustomEndpointArgs) ToGetIntegrationInsta
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceAlternateCustomEndpointOutput)
 }
 
-func (i GetIntegrationInstanceAlternateCustomEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[GetIntegrationInstanceAlternateCustomEndpoint]{
-		OutputState: i.ToGetIntegrationInstanceAlternateCustomEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetIntegrationInstanceAlternateCustomEndpointArrayInput is an input type that accepts GetIntegrationInstanceAlternateCustomEndpointArray and GetIntegrationInstanceAlternateCustomEndpointArrayOutput values.
 // You can construct a concrete instance of `GetIntegrationInstanceAlternateCustomEndpointArrayInput` via:
 //
@@ -1123,12 +972,6 @@ func (i GetIntegrationInstanceAlternateCustomEndpointArray) ToGetIntegrationInst
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceAlternateCustomEndpointArrayOutput)
 }
 
-func (i GetIntegrationInstanceAlternateCustomEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[[]GetIntegrationInstanceAlternateCustomEndpoint]{
-		OutputState: i.ToGetIntegrationInstanceAlternateCustomEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIntegrationInstanceAlternateCustomEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetIntegrationInstanceAlternateCustomEndpointOutput) ElementType() reflect.Type {
@@ -1141,12 +984,6 @@ func (o GetIntegrationInstanceAlternateCustomEndpointOutput) ToGetIntegrationIns
 
 func (o GetIntegrationInstanceAlternateCustomEndpointOutput) ToGetIntegrationInstanceAlternateCustomEndpointOutputWithContext(ctx context.Context) GetIntegrationInstanceAlternateCustomEndpointOutput {
 	return o
-}
-
-func (o GetIntegrationInstanceAlternateCustomEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[GetIntegrationInstanceAlternateCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
@@ -1181,12 +1018,6 @@ func (o GetIntegrationInstanceAlternateCustomEndpointArrayOutput) ToGetIntegrati
 
 func (o GetIntegrationInstanceAlternateCustomEndpointArrayOutput) ToGetIntegrationInstanceAlternateCustomEndpointArrayOutputWithContext(ctx context.Context) GetIntegrationInstanceAlternateCustomEndpointArrayOutput {
 	return o
-}
-
-func (o GetIntegrationInstanceAlternateCustomEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[[]GetIntegrationInstanceAlternateCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetIntegrationInstanceAlternateCustomEndpointArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstanceAlternateCustomEndpointOutput {
@@ -1246,12 +1077,6 @@ func (i GetIntegrationInstanceAttachmentArgs) ToGetIntegrationInstanceAttachment
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceAttachmentOutput)
 }
 
-func (i GetIntegrationInstanceAttachmentArgs) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstanceAttachment] {
-	return pulumix.Output[GetIntegrationInstanceAttachment]{
-		OutputState: i.ToGetIntegrationInstanceAttachmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetIntegrationInstanceAttachmentArrayInput is an input type that accepts GetIntegrationInstanceAttachmentArray and GetIntegrationInstanceAttachmentArrayOutput values.
 // You can construct a concrete instance of `GetIntegrationInstanceAttachmentArrayInput` via:
 //
@@ -1277,12 +1102,6 @@ func (i GetIntegrationInstanceAttachmentArray) ToGetIntegrationInstanceAttachmen
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceAttachmentArrayOutput)
 }
 
-func (i GetIntegrationInstanceAttachmentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstanceAttachment] {
-	return pulumix.Output[[]GetIntegrationInstanceAttachment]{
-		OutputState: i.ToGetIntegrationInstanceAttachmentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIntegrationInstanceAttachmentOutput struct{ *pulumi.OutputState }
 
 func (GetIntegrationInstanceAttachmentOutput) ElementType() reflect.Type {
@@ -1295,12 +1114,6 @@ func (o GetIntegrationInstanceAttachmentOutput) ToGetIntegrationInstanceAttachme
 
 func (o GetIntegrationInstanceAttachmentOutput) ToGetIntegrationInstanceAttachmentOutputWithContext(ctx context.Context) GetIntegrationInstanceAttachmentOutput {
 	return o
-}
-
-func (o GetIntegrationInstanceAttachmentOutput) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstanceAttachment] {
-	return pulumix.Output[GetIntegrationInstanceAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 // * If role == `PARENT`, the attached instance was created by this service instance
@@ -1341,12 +1154,6 @@ func (o GetIntegrationInstanceAttachmentArrayOutput) ToGetIntegrationInstanceAtt
 
 func (o GetIntegrationInstanceAttachmentArrayOutput) ToGetIntegrationInstanceAttachmentArrayOutputWithContext(ctx context.Context) GetIntegrationInstanceAttachmentArrayOutput {
 	return o
-}
-
-func (o GetIntegrationInstanceAttachmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstanceAttachment] {
-	return pulumix.Output[[]GetIntegrationInstanceAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetIntegrationInstanceAttachmentArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstanceAttachmentOutput {
@@ -1400,12 +1207,6 @@ func (i GetIntegrationInstanceCustomEndpointArgs) ToGetIntegrationInstanceCustom
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceCustomEndpointOutput)
 }
 
-func (i GetIntegrationInstanceCustomEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstanceCustomEndpoint] {
-	return pulumix.Output[GetIntegrationInstanceCustomEndpoint]{
-		OutputState: i.ToGetIntegrationInstanceCustomEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetIntegrationInstanceCustomEndpointArrayInput is an input type that accepts GetIntegrationInstanceCustomEndpointArray and GetIntegrationInstanceCustomEndpointArrayOutput values.
 // You can construct a concrete instance of `GetIntegrationInstanceCustomEndpointArrayInput` via:
 //
@@ -1431,12 +1232,6 @@ func (i GetIntegrationInstanceCustomEndpointArray) ToGetIntegrationInstanceCusto
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceCustomEndpointArrayOutput)
 }
 
-func (i GetIntegrationInstanceCustomEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstanceCustomEndpoint] {
-	return pulumix.Output[[]GetIntegrationInstanceCustomEndpoint]{
-		OutputState: i.ToGetIntegrationInstanceCustomEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIntegrationInstanceCustomEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetIntegrationInstanceCustomEndpointOutput) ElementType() reflect.Type {
@@ -1449,12 +1244,6 @@ func (o GetIntegrationInstanceCustomEndpointOutput) ToGetIntegrationInstanceCust
 
 func (o GetIntegrationInstanceCustomEndpointOutput) ToGetIntegrationInstanceCustomEndpointOutputWithContext(ctx context.Context) GetIntegrationInstanceCustomEndpointOutput {
 	return o
-}
-
-func (o GetIntegrationInstanceCustomEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstanceCustomEndpoint] {
-	return pulumix.Output[GetIntegrationInstanceCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
@@ -1489,12 +1278,6 @@ func (o GetIntegrationInstanceCustomEndpointArrayOutput) ToGetIntegrationInstanc
 
 func (o GetIntegrationInstanceCustomEndpointArrayOutput) ToGetIntegrationInstanceCustomEndpointArrayOutputWithContext(ctx context.Context) GetIntegrationInstanceCustomEndpointArrayOutput {
 	return o
-}
-
-func (o GetIntegrationInstanceCustomEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstanceCustomEndpoint] {
-	return pulumix.Output[[]GetIntegrationInstanceCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetIntegrationInstanceCustomEndpointArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstanceCustomEndpointOutput {
@@ -1552,12 +1335,6 @@ func (i GetIntegrationInstanceIdcsInfoArgs) ToGetIntegrationInstanceIdcsInfoOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceIdcsInfoOutput)
 }
 
-func (i GetIntegrationInstanceIdcsInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstanceIdcsInfo] {
-	return pulumix.Output[GetIntegrationInstanceIdcsInfo]{
-		OutputState: i.ToGetIntegrationInstanceIdcsInfoOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetIntegrationInstanceIdcsInfoArrayInput is an input type that accepts GetIntegrationInstanceIdcsInfoArray and GetIntegrationInstanceIdcsInfoArrayOutput values.
 // You can construct a concrete instance of `GetIntegrationInstanceIdcsInfoArrayInput` via:
 //
@@ -1583,12 +1360,6 @@ func (i GetIntegrationInstanceIdcsInfoArray) ToGetIntegrationInstanceIdcsInfoArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceIdcsInfoArrayOutput)
 }
 
-func (i GetIntegrationInstanceIdcsInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstanceIdcsInfo] {
-	return pulumix.Output[[]GetIntegrationInstanceIdcsInfo]{
-		OutputState: i.ToGetIntegrationInstanceIdcsInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIntegrationInstanceIdcsInfoOutput struct{ *pulumi.OutputState }
 
 func (GetIntegrationInstanceIdcsInfoOutput) ElementType() reflect.Type {
@@ -1601,12 +1372,6 @@ func (o GetIntegrationInstanceIdcsInfoOutput) ToGetIntegrationInstanceIdcsInfoOu
 
 func (o GetIntegrationInstanceIdcsInfoOutput) ToGetIntegrationInstanceIdcsInfoOutputWithContext(ctx context.Context) GetIntegrationInstanceIdcsInfoOutput {
 	return o
-}
-
-func (o GetIntegrationInstanceIdcsInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstanceIdcsInfo] {
-	return pulumix.Output[GetIntegrationInstanceIdcsInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The IDCS application display name associated with the instance
@@ -1646,12 +1411,6 @@ func (o GetIntegrationInstanceIdcsInfoArrayOutput) ToGetIntegrationInstanceIdcsI
 
 func (o GetIntegrationInstanceIdcsInfoArrayOutput) ToGetIntegrationInstanceIdcsInfoArrayOutputWithContext(ctx context.Context) GetIntegrationInstanceIdcsInfoArrayOutput {
 	return o
-}
-
-func (o GetIntegrationInstanceIdcsInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstanceIdcsInfo] {
-	return pulumix.Output[[]GetIntegrationInstanceIdcsInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetIntegrationInstanceIdcsInfoArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstanceIdcsInfoOutput {
@@ -1705,12 +1464,6 @@ func (i GetIntegrationInstanceNetworkEndpointDetailArgs) ToGetIntegrationInstanc
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceNetworkEndpointDetailOutput)
 }
 
-func (i GetIntegrationInstanceNetworkEndpointDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstanceNetworkEndpointDetail] {
-	return pulumix.Output[GetIntegrationInstanceNetworkEndpointDetail]{
-		OutputState: i.ToGetIntegrationInstanceNetworkEndpointDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetIntegrationInstanceNetworkEndpointDetailArrayInput is an input type that accepts GetIntegrationInstanceNetworkEndpointDetailArray and GetIntegrationInstanceNetworkEndpointDetailArrayOutput values.
 // You can construct a concrete instance of `GetIntegrationInstanceNetworkEndpointDetailArrayInput` via:
 //
@@ -1736,12 +1489,6 @@ func (i GetIntegrationInstanceNetworkEndpointDetailArray) ToGetIntegrationInstan
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceNetworkEndpointDetailArrayOutput)
 }
 
-func (i GetIntegrationInstanceNetworkEndpointDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstanceNetworkEndpointDetail] {
-	return pulumix.Output[[]GetIntegrationInstanceNetworkEndpointDetail]{
-		OutputState: i.ToGetIntegrationInstanceNetworkEndpointDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIntegrationInstanceNetworkEndpointDetailOutput struct{ *pulumi.OutputState }
 
 func (GetIntegrationInstanceNetworkEndpointDetailOutput) ElementType() reflect.Type {
@@ -1754,12 +1501,6 @@ func (o GetIntegrationInstanceNetworkEndpointDetailOutput) ToGetIntegrationInsta
 
 func (o GetIntegrationInstanceNetworkEndpointDetailOutput) ToGetIntegrationInstanceNetworkEndpointDetailOutputWithContext(ctx context.Context) GetIntegrationInstanceNetworkEndpointDetailOutput {
 	return o
-}
-
-func (o GetIntegrationInstanceNetworkEndpointDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstanceNetworkEndpointDetail] {
-	return pulumix.Output[GetIntegrationInstanceNetworkEndpointDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
@@ -1796,12 +1537,6 @@ func (o GetIntegrationInstanceNetworkEndpointDetailArrayOutput) ToGetIntegration
 
 func (o GetIntegrationInstanceNetworkEndpointDetailArrayOutput) ToGetIntegrationInstanceNetworkEndpointDetailArrayOutputWithContext(ctx context.Context) GetIntegrationInstanceNetworkEndpointDetailArrayOutput {
 	return o
-}
-
-func (o GetIntegrationInstanceNetworkEndpointDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstanceNetworkEndpointDetail] {
-	return pulumix.Output[[]GetIntegrationInstanceNetworkEndpointDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetIntegrationInstanceNetworkEndpointDetailArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstanceNetworkEndpointDetailOutput {
@@ -1847,12 +1582,6 @@ func (i GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput)
 }
 
-func (i GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArgs) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn] {
-	return pulumix.Output[GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn]{
-		OutputState: i.ToGetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayInput is an input type that accepts GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArray and GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput values.
 // You can construct a concrete instance of `GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayInput` via:
 //
@@ -1878,12 +1607,6 @@ func (i GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput)
 }
 
-func (i GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn] {
-	return pulumix.Output[[]GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn]{
-		OutputState: i.ToGetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput struct{ *pulumi.OutputState }
 
 func (GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput) ElementType() reflect.Type {
@@ -1896,12 +1619,6 @@ func (o GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput) ToG
 
 func (o GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput) ToGetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutputWithContext(ctx context.Context) GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput {
 	return o
-}
-
-func (o GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn] {
-	return pulumix.Output[GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
@@ -1928,12 +1645,6 @@ func (o GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput
 
 func (o GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput) ToGetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutputWithContext(ctx context.Context) GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput {
 	return o
-}
-
-func (o GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn] {
-	return pulumix.Output[[]GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput {
@@ -1977,12 +1688,6 @@ func (i GetIntegrationInstancesFilterArgs) ToGetIntegrationInstancesFilterOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesFilterOutput)
 }
 
-func (i GetIntegrationInstancesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesFilter] {
-	return pulumix.Output[GetIntegrationInstancesFilter]{
-		OutputState: i.ToGetIntegrationInstancesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetIntegrationInstancesFilterArrayInput is an input type that accepts GetIntegrationInstancesFilterArray and GetIntegrationInstancesFilterArrayOutput values.
 // You can construct a concrete instance of `GetIntegrationInstancesFilterArrayInput` via:
 //
@@ -2008,12 +1713,6 @@ func (i GetIntegrationInstancesFilterArray) ToGetIntegrationInstancesFilterArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesFilterArrayOutput)
 }
 
-func (i GetIntegrationInstancesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstancesFilter] {
-	return pulumix.Output[[]GetIntegrationInstancesFilter]{
-		OutputState: i.ToGetIntegrationInstancesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIntegrationInstancesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetIntegrationInstancesFilterOutput) ElementType() reflect.Type {
@@ -2026,12 +1725,6 @@ func (o GetIntegrationInstancesFilterOutput) ToGetIntegrationInstancesFilterOutp
 
 func (o GetIntegrationInstancesFilterOutput) ToGetIntegrationInstancesFilterOutputWithContext(ctx context.Context) GetIntegrationInstancesFilterOutput {
 	return o
-}
-
-func (o GetIntegrationInstancesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesFilter] {
-	return pulumix.Output[GetIntegrationInstancesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetIntegrationInstancesFilterOutput) Name() pulumi.StringOutput {
@@ -2058,12 +1751,6 @@ func (o GetIntegrationInstancesFilterArrayOutput) ToGetIntegrationInstancesFilte
 
 func (o GetIntegrationInstancesFilterArrayOutput) ToGetIntegrationInstancesFilterArrayOutputWithContext(ctx context.Context) GetIntegrationInstancesFilterArrayOutput {
 	return o
-}
-
-func (o GetIntegrationInstancesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstancesFilter] {
-	return pulumix.Output[[]GetIntegrationInstancesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetIntegrationInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstancesFilterOutput {
@@ -2195,12 +1882,6 @@ func (i GetIntegrationInstancesIntegrationInstanceArgs) ToGetIntegrationInstance
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceOutput)
 }
 
-func (i GetIntegrationInstancesIntegrationInstanceArgs) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesIntegrationInstance] {
-	return pulumix.Output[GetIntegrationInstancesIntegrationInstance]{
-		OutputState: i.ToGetIntegrationInstancesIntegrationInstanceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetIntegrationInstancesIntegrationInstanceArrayInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceArray and GetIntegrationInstancesIntegrationInstanceArrayOutput values.
 // You can construct a concrete instance of `GetIntegrationInstancesIntegrationInstanceArrayInput` via:
 //
@@ -2226,12 +1907,6 @@ func (i GetIntegrationInstancesIntegrationInstanceArray) ToGetIntegrationInstanc
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceArrayOutput)
 }
 
-func (i GetIntegrationInstancesIntegrationInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstancesIntegrationInstance] {
-	return pulumix.Output[[]GetIntegrationInstancesIntegrationInstance]{
-		OutputState: i.ToGetIntegrationInstancesIntegrationInstanceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIntegrationInstancesIntegrationInstanceOutput struct{ *pulumi.OutputState }
 
 func (GetIntegrationInstancesIntegrationInstanceOutput) ElementType() reflect.Type {
@@ -2244,12 +1919,6 @@ func (o GetIntegrationInstancesIntegrationInstanceOutput) ToGetIntegrationInstan
 
 func (o GetIntegrationInstancesIntegrationInstanceOutput) ToGetIntegrationInstancesIntegrationInstanceOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceOutput {
 	return o
-}
-
-func (o GetIntegrationInstancesIntegrationInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesIntegrationInstance] {
-	return pulumix.Output[GetIntegrationInstancesIntegrationInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of alternate custom endpoints used for the integration instance URL.
@@ -2398,12 +2067,6 @@ func (o GetIntegrationInstancesIntegrationInstanceArrayOutput) ToGetIntegrationI
 	return o
 }
 
-func (o GetIntegrationInstancesIntegrationInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstancesIntegrationInstance] {
-	return pulumix.Output[[]GetIntegrationInstancesIntegrationInstance]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIntegrationInstancesIntegrationInstanceArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstancesIntegrationInstanceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIntegrationInstancesIntegrationInstance {
 		return vs[0].([]GetIntegrationInstancesIntegrationInstance)[vs[1].(int)]
@@ -2455,12 +2118,6 @@ func (i GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArgs) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutput)
 }
 
-func (i GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint]{
-		OutputState: i.ToGetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArrayInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArray and GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArrayOutput values.
 // You can construct a concrete instance of `GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArrayInput` via:
 //
@@ -2486,12 +2143,6 @@ func (i GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArrayOutput)
 }
 
-func (i GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint]{
-		OutputState: i.ToGetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutput) ElementType() reflect.Type {
@@ -2504,12 +2155,6 @@ func (o GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutput)
 
 func (o GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutput) ToGetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutput {
 	return o
-}
-
-func (o GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
@@ -2548,12 +2193,6 @@ func (o GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArrayOu
 
 func (o GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArrayOutput) ToGetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArrayOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArrayOutput {
 	return o
-}
-
-func (o GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointOutput {
@@ -2613,12 +2252,6 @@ func (i GetIntegrationInstancesIntegrationInstanceAttachmentArgs) ToGetIntegrati
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceAttachmentOutput)
 }
 
-func (i GetIntegrationInstancesIntegrationInstanceAttachmentArgs) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesIntegrationInstanceAttachment] {
-	return pulumix.Output[GetIntegrationInstancesIntegrationInstanceAttachment]{
-		OutputState: i.ToGetIntegrationInstancesIntegrationInstanceAttachmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetIntegrationInstancesIntegrationInstanceAttachmentArrayInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceAttachmentArray and GetIntegrationInstancesIntegrationInstanceAttachmentArrayOutput values.
 // You can construct a concrete instance of `GetIntegrationInstancesIntegrationInstanceAttachmentArrayInput` via:
 //
@@ -2644,12 +2277,6 @@ func (i GetIntegrationInstancesIntegrationInstanceAttachmentArray) ToGetIntegrat
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceAttachmentArrayOutput)
 }
 
-func (i GetIntegrationInstancesIntegrationInstanceAttachmentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceAttachment] {
-	return pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceAttachment]{
-		OutputState: i.ToGetIntegrationInstancesIntegrationInstanceAttachmentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIntegrationInstancesIntegrationInstanceAttachmentOutput struct{ *pulumi.OutputState }
 
 func (GetIntegrationInstancesIntegrationInstanceAttachmentOutput) ElementType() reflect.Type {
@@ -2662,12 +2289,6 @@ func (o GetIntegrationInstancesIntegrationInstanceAttachmentOutput) ToGetIntegra
 
 func (o GetIntegrationInstancesIntegrationInstanceAttachmentOutput) ToGetIntegrationInstancesIntegrationInstanceAttachmentOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceAttachmentOutput {
 	return o
-}
-
-func (o GetIntegrationInstancesIntegrationInstanceAttachmentOutput) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesIntegrationInstanceAttachment] {
-	return pulumix.Output[GetIntegrationInstancesIntegrationInstanceAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 // * If role == `PARENT`, the attached instance was created by this service instance
@@ -2708,12 +2329,6 @@ func (o GetIntegrationInstancesIntegrationInstanceAttachmentArrayOutput) ToGetIn
 
 func (o GetIntegrationInstancesIntegrationInstanceAttachmentArrayOutput) ToGetIntegrationInstancesIntegrationInstanceAttachmentArrayOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceAttachmentArrayOutput {
 	return o
-}
-
-func (o GetIntegrationInstancesIntegrationInstanceAttachmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceAttachment] {
-	return pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetIntegrationInstancesIntegrationInstanceAttachmentArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstancesIntegrationInstanceAttachmentOutput {
@@ -2767,12 +2382,6 @@ func (i GetIntegrationInstancesIntegrationInstanceCustomEndpointArgs) ToGetInteg
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput)
 }
 
-func (i GetIntegrationInstancesIntegrationInstanceCustomEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesIntegrationInstanceCustomEndpoint] {
-	return pulumix.Output[GetIntegrationInstancesIntegrationInstanceCustomEndpoint]{
-		OutputState: i.ToGetIntegrationInstancesIntegrationInstanceCustomEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetIntegrationInstancesIntegrationInstanceCustomEndpointArrayInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceCustomEndpointArray and GetIntegrationInstancesIntegrationInstanceCustomEndpointArrayOutput values.
 // You can construct a concrete instance of `GetIntegrationInstancesIntegrationInstanceCustomEndpointArrayInput` via:
 //
@@ -2798,12 +2407,6 @@ func (i GetIntegrationInstancesIntegrationInstanceCustomEndpointArray) ToGetInte
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceCustomEndpointArrayOutput)
 }
 
-func (i GetIntegrationInstancesIntegrationInstanceCustomEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceCustomEndpoint] {
-	return pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceCustomEndpoint]{
-		OutputState: i.ToGetIntegrationInstancesIntegrationInstanceCustomEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput) ElementType() reflect.Type {
@@ -2816,12 +2419,6 @@ func (o GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput) ToGetInt
 
 func (o GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput) ToGetIntegrationInstancesIntegrationInstanceCustomEndpointOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput {
 	return o
-}
-
-func (o GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesIntegrationInstanceCustomEndpoint] {
-	return pulumix.Output[GetIntegrationInstancesIntegrationInstanceCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
@@ -2858,12 +2455,6 @@ func (o GetIntegrationInstancesIntegrationInstanceCustomEndpointArrayOutput) ToG
 
 func (o GetIntegrationInstancesIntegrationInstanceCustomEndpointArrayOutput) ToGetIntegrationInstancesIntegrationInstanceCustomEndpointArrayOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceCustomEndpointArrayOutput {
 	return o
-}
-
-func (o GetIntegrationInstancesIntegrationInstanceCustomEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceCustomEndpoint] {
-	return pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetIntegrationInstancesIntegrationInstanceCustomEndpointArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstancesIntegrationInstanceCustomEndpointOutput {
@@ -2921,12 +2512,6 @@ func (i GetIntegrationInstancesIntegrationInstanceIdcsInfoArgs) ToGetIntegration
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceIdcsInfoOutput)
 }
 
-func (i GetIntegrationInstancesIntegrationInstanceIdcsInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesIntegrationInstanceIdcsInfo] {
-	return pulumix.Output[GetIntegrationInstancesIntegrationInstanceIdcsInfo]{
-		OutputState: i.ToGetIntegrationInstancesIntegrationInstanceIdcsInfoOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetIntegrationInstancesIntegrationInstanceIdcsInfoArrayInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceIdcsInfoArray and GetIntegrationInstancesIntegrationInstanceIdcsInfoArrayOutput values.
 // You can construct a concrete instance of `GetIntegrationInstancesIntegrationInstanceIdcsInfoArrayInput` via:
 //
@@ -2952,12 +2537,6 @@ func (i GetIntegrationInstancesIntegrationInstanceIdcsInfoArray) ToGetIntegratio
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceIdcsInfoArrayOutput)
 }
 
-func (i GetIntegrationInstancesIntegrationInstanceIdcsInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceIdcsInfo] {
-	return pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceIdcsInfo]{
-		OutputState: i.ToGetIntegrationInstancesIntegrationInstanceIdcsInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIntegrationInstancesIntegrationInstanceIdcsInfoOutput struct{ *pulumi.OutputState }
 
 func (GetIntegrationInstancesIntegrationInstanceIdcsInfoOutput) ElementType() reflect.Type {
@@ -2970,12 +2549,6 @@ func (o GetIntegrationInstancesIntegrationInstanceIdcsInfoOutput) ToGetIntegrati
 
 func (o GetIntegrationInstancesIntegrationInstanceIdcsInfoOutput) ToGetIntegrationInstancesIntegrationInstanceIdcsInfoOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceIdcsInfoOutput {
 	return o
-}
-
-func (o GetIntegrationInstancesIntegrationInstanceIdcsInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesIntegrationInstanceIdcsInfo] {
-	return pulumix.Output[GetIntegrationInstancesIntegrationInstanceIdcsInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The IDCS application display name associated with the instance
@@ -3015,12 +2588,6 @@ func (o GetIntegrationInstancesIntegrationInstanceIdcsInfoArrayOutput) ToGetInte
 
 func (o GetIntegrationInstancesIntegrationInstanceIdcsInfoArrayOutput) ToGetIntegrationInstancesIntegrationInstanceIdcsInfoArrayOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceIdcsInfoArrayOutput {
 	return o
-}
-
-func (o GetIntegrationInstancesIntegrationInstanceIdcsInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceIdcsInfo] {
-	return pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceIdcsInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetIntegrationInstancesIntegrationInstanceIdcsInfoArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstancesIntegrationInstanceIdcsInfoOutput {
@@ -3074,12 +2641,6 @@ func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArgs) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput)
 }
 
-func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail] {
-	return pulumix.Output[GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail]{
-		OutputState: i.ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArrayInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArray and GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArrayOutput values.
 // You can construct a concrete instance of `GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArrayInput` via:
 //
@@ -3105,12 +2666,6 @@ func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArrayOutput)
 }
 
-func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail] {
-	return pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail]{
-		OutputState: i.ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput struct{ *pulumi.OutputState }
 
 func (GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput) ElementType() reflect.Type {
@@ -3123,12 +2678,6 @@ func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput) T
 
 func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput {
 	return o
-}
-
-func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail] {
-	return pulumix.Output[GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
@@ -3171,12 +2720,6 @@ func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArrayOutp
 
 func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArrayOutput) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArrayOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArrayOutput {
 	return o
-}
-
-func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail] {
-	return pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput {
@@ -3222,12 +2765,6 @@ func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlist
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput)
 }
 
-func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArgs) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn] {
-	return pulumix.Output[GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn]{
-		OutputState: i.ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArray and GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput values.
 // You can construct a concrete instance of `GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayInput` via:
 //
@@ -3253,12 +2790,6 @@ func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlist
 	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput)
 }
 
-func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArray) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn] {
-	return pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn]{
-		OutputState: i.ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput struct{ *pulumi.OutputState }
 
 func (GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput) ElementType() reflect.Type {
@@ -3271,12 +2802,6 @@ func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlist
 
 func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput {
 	return o
-}
-
-func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn] {
-	return pulumix.Output[GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
@@ -3305,12 +2830,6 @@ func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlist
 
 func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput {
 	return o
-}
-
-func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn] {
-	return pulumix.Output[[]GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput {

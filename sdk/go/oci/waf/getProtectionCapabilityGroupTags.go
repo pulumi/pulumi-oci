@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Protection Capability Group Tags in Oracle Cloud Infrastructure Waf service.
@@ -118,12 +117,6 @@ func (o GetProtectionCapabilityGroupTagsResultOutput) ToGetProtectionCapabilityG
 
 func (o GetProtectionCapabilityGroupTagsResultOutput) ToGetProtectionCapabilityGroupTagsResultOutputWithContext(ctx context.Context) GetProtectionCapabilityGroupTagsResultOutput {
 	return o
-}
-
-func (o GetProtectionCapabilityGroupTagsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectionCapabilityGroupTagsResult] {
-	return pulumix.Output[GetProtectionCapabilityGroupTagsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProtectionCapabilityGroupTagsResultOutput) CompartmentId() pulumi.StringOutput {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Stream Pool resource in Oracle Cloud Infrastructure Streaming service.
@@ -249,12 +248,6 @@ func (i *StreamPool) ToStreamPoolOutputWithContext(ctx context.Context) StreamPo
 	return pulumi.ToOutputWithContext(ctx, i).(StreamPoolOutput)
 }
 
-func (i *StreamPool) ToOutput(ctx context.Context) pulumix.Output[*StreamPool] {
-	return pulumix.Output[*StreamPool]{
-		OutputState: i.ToStreamPoolOutputWithContext(ctx).OutputState,
-	}
-}
-
 // StreamPoolArrayInput is an input type that accepts StreamPoolArray and StreamPoolArrayOutput values.
 // You can construct a concrete instance of `StreamPoolArrayInput` via:
 //
@@ -278,12 +271,6 @@ func (i StreamPoolArray) ToStreamPoolArrayOutput() StreamPoolArrayOutput {
 
 func (i StreamPoolArray) ToStreamPoolArrayOutputWithContext(ctx context.Context) StreamPoolArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(StreamPoolArrayOutput)
-}
-
-func (i StreamPoolArray) ToOutput(ctx context.Context) pulumix.Output[[]*StreamPool] {
-	return pulumix.Output[[]*StreamPool]{
-		OutputState: i.ToStreamPoolArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // StreamPoolMapInput is an input type that accepts StreamPoolMap and StreamPoolMapOutput values.
@@ -311,12 +298,6 @@ func (i StreamPoolMap) ToStreamPoolMapOutputWithContext(ctx context.Context) Str
 	return pulumi.ToOutputWithContext(ctx, i).(StreamPoolMapOutput)
 }
 
-func (i StreamPoolMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*StreamPool] {
-	return pulumix.Output[map[string]*StreamPool]{
-		OutputState: i.ToStreamPoolMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type StreamPoolOutput struct{ *pulumi.OutputState }
 
 func (StreamPoolOutput) ElementType() reflect.Type {
@@ -329,12 +310,6 @@ func (o StreamPoolOutput) ToStreamPoolOutput() StreamPoolOutput {
 
 func (o StreamPoolOutput) ToStreamPoolOutputWithContext(ctx context.Context) StreamPoolOutput {
 	return o
-}
-
-func (o StreamPoolOutput) ToOutput(ctx context.Context) pulumix.Output[*StreamPool] {
-	return pulumix.Output[*StreamPool]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of the compartment that contains the stream.
@@ -411,12 +386,6 @@ func (o StreamPoolArrayOutput) ToStreamPoolArrayOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o StreamPoolArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*StreamPool] {
-	return pulumix.Output[[]*StreamPool]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o StreamPoolArrayOutput) Index(i pulumi.IntInput) StreamPoolOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *StreamPool {
 		return vs[0].([]*StreamPool)[vs[1].(int)]
@@ -435,12 +404,6 @@ func (o StreamPoolMapOutput) ToStreamPoolMapOutput() StreamPoolMapOutput {
 
 func (o StreamPoolMapOutput) ToStreamPoolMapOutputWithContext(ctx context.Context) StreamPoolMapOutput {
 	return o
-}
-
-func (o StreamPoolMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*StreamPool] {
-	return pulumix.Output[map[string]*StreamPool]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o StreamPoolMapOutput) MapIndex(k pulumi.StringInput) StreamPoolOutput {

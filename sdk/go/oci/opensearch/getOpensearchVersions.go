@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Opensearch Versions in Oracle Cloud Infrastructure Opensearch service.
@@ -130,12 +129,6 @@ func (o GetOpensearchVersionsResultOutput) ToGetOpensearchVersionsResultOutput()
 
 func (o GetOpensearchVersionsResultOutput) ToGetOpensearchVersionsResultOutputWithContext(ctx context.Context) GetOpensearchVersionsResultOutput {
 	return o
-}
-
-func (o GetOpensearchVersionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchVersionsResult] {
-	return pulumix.Output[GetOpensearchVersionsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOpensearchVersionsResultOutput) CompartmentId() pulumi.StringOutput {

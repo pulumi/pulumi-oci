@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Drg Route Table resource in Oracle Cloud Infrastructure Core service.
@@ -242,12 +241,6 @@ func (i *DrgRouteTable) ToDrgRouteTableOutputWithContext(ctx context.Context) Dr
 	return pulumi.ToOutputWithContext(ctx, i).(DrgRouteTableOutput)
 }
 
-func (i *DrgRouteTable) ToOutput(ctx context.Context) pulumix.Output[*DrgRouteTable] {
-	return pulumix.Output[*DrgRouteTable]{
-		OutputState: i.ToDrgRouteTableOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrgRouteTableArrayInput is an input type that accepts DrgRouteTableArray and DrgRouteTableArrayOutput values.
 // You can construct a concrete instance of `DrgRouteTableArrayInput` via:
 //
@@ -271,12 +264,6 @@ func (i DrgRouteTableArray) ToDrgRouteTableArrayOutput() DrgRouteTableArrayOutpu
 
 func (i DrgRouteTableArray) ToDrgRouteTableArrayOutputWithContext(ctx context.Context) DrgRouteTableArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DrgRouteTableArrayOutput)
-}
-
-func (i DrgRouteTableArray) ToOutput(ctx context.Context) pulumix.Output[[]*DrgRouteTable] {
-	return pulumix.Output[[]*DrgRouteTable]{
-		OutputState: i.ToDrgRouteTableArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DrgRouteTableMapInput is an input type that accepts DrgRouteTableMap and DrgRouteTableMapOutput values.
@@ -304,12 +291,6 @@ func (i DrgRouteTableMap) ToDrgRouteTableMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(DrgRouteTableMapOutput)
 }
 
-func (i DrgRouteTableMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DrgRouteTable] {
-	return pulumix.Output[map[string]*DrgRouteTable]{
-		OutputState: i.ToDrgRouteTableMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrgRouteTableOutput struct{ *pulumi.OutputState }
 
 func (DrgRouteTableOutput) ElementType() reflect.Type {
@@ -322,12 +303,6 @@ func (o DrgRouteTableOutput) ToDrgRouteTableOutput() DrgRouteTableOutput {
 
 func (o DrgRouteTableOutput) ToDrgRouteTableOutputWithContext(ctx context.Context) DrgRouteTableOutput {
 	return o
-}
-
-func (o DrgRouteTableOutput) ToOutput(ctx context.Context) pulumix.Output[*DrgRouteTable] {
-	return pulumix.Output[*DrgRouteTable]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DRG is in. The DRG route table is always in the same compartment as the DRG.
@@ -397,12 +372,6 @@ func (o DrgRouteTableArrayOutput) ToDrgRouteTableArrayOutputWithContext(ctx cont
 	return o
 }
 
-func (o DrgRouteTableArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DrgRouteTable] {
-	return pulumix.Output[[]*DrgRouteTable]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DrgRouteTableArrayOutput) Index(i pulumi.IntInput) DrgRouteTableOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DrgRouteTable {
 		return vs[0].([]*DrgRouteTable)[vs[1].(int)]
@@ -421,12 +390,6 @@ func (o DrgRouteTableMapOutput) ToDrgRouteTableMapOutput() DrgRouteTableMapOutpu
 
 func (o DrgRouteTableMapOutput) ToDrgRouteTableMapOutputWithContext(ctx context.Context) DrgRouteTableMapOutput {
 	return o
-}
-
-func (o DrgRouteTableMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DrgRouteTable] {
-	return pulumix.Output[map[string]*DrgRouteTable]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrgRouteTableMapOutput) MapIndex(k pulumi.StringInput) DrgRouteTableOutput {

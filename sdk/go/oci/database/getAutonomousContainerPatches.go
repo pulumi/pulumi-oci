@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Autonomous Container Patches in Oracle Cloud Infrastructure Database service.
@@ -118,12 +117,6 @@ func (o GetAutonomousContainerPatchesResultOutput) ToGetAutonomousContainerPatch
 
 func (o GetAutonomousContainerPatchesResultOutput) ToGetAutonomousContainerPatchesResultOutputWithContext(ctx context.Context) GetAutonomousContainerPatchesResultOutput {
 	return o
-}
-
-func (o GetAutonomousContainerPatchesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutonomousContainerPatchesResult] {
-	return pulumix.Output[GetAutonomousContainerPatchesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAutonomousContainerPatchesResultOutput) AutonomousContainerDatabaseId() pulumi.StringOutput {

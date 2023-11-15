@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Audit Event Analytic resource in Oracle Cloud Infrastructure Data Safe service.
@@ -162,12 +161,6 @@ func (o GetAuditEventAnalyticResultOutput) ToGetAuditEventAnalyticResultOutput()
 
 func (o GetAuditEventAnalyticResultOutput) ToGetAuditEventAnalyticResultOutputWithContext(ctx context.Context) GetAuditEventAnalyticResultOutput {
 	return o
-}
-
-func (o GetAuditEventAnalyticResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditEventAnalyticResult] {
-	return pulumix.Output[GetAuditEventAnalyticResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAuditEventAnalyticResultOutput) AccessLevel() pulumi.StringPtrOutput {

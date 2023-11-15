@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Web App Firewall Policy resource in Oracle Cloud Infrastructure Waf service.
@@ -130,12 +129,6 @@ func (o GetWebAppFirewallPolicyResultOutput) ToGetWebAppFirewallPolicyResultOutp
 
 func (o GetWebAppFirewallPolicyResultOutput) ToGetWebAppFirewallPolicyResultOutputWithContext(ctx context.Context) GetWebAppFirewallPolicyResultOutput {
 	return o
-}
-
-func (o GetWebAppFirewallPolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetWebAppFirewallPolicyResult] {
-	return pulumix.Output[GetWebAppFirewallPolicyResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Predefined actions for use in multiple different rules. Not all actions are supported in every module. Some actions terminate further execution of modules and rules in a module and some do not. Actions names must be unique within this array.

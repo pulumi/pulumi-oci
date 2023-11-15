@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Sql Collections in Oracle Cloud Infrastructure Data Safe service.
@@ -185,12 +184,6 @@ func (o GetSqlCollectionsResultOutput) ToGetSqlCollectionsResultOutput() GetSqlC
 
 func (o GetSqlCollectionsResultOutput) ToGetSqlCollectionsResultOutputWithContext(ctx context.Context) GetSqlCollectionsResultOutput {
 	return o
-}
-
-func (o GetSqlCollectionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlCollectionsResult] {
-	return pulumix.Output[GetSqlCollectionsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSqlCollectionsResultOutput) AccessLevel() pulumi.StringPtrOutput {

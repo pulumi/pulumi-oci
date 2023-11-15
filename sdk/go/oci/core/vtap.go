@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Vtap resource in Oracle Cloud Infrastructure Core service.
@@ -380,12 +379,6 @@ func (i *Vtap) ToVtapOutputWithContext(ctx context.Context) VtapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VtapOutput)
 }
 
-func (i *Vtap) ToOutput(ctx context.Context) pulumix.Output[*Vtap] {
-	return pulumix.Output[*Vtap]{
-		OutputState: i.ToVtapOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VtapArrayInput is an input type that accepts VtapArray and VtapArrayOutput values.
 // You can construct a concrete instance of `VtapArrayInput` via:
 //
@@ -409,12 +402,6 @@ func (i VtapArray) ToVtapArrayOutput() VtapArrayOutput {
 
 func (i VtapArray) ToVtapArrayOutputWithContext(ctx context.Context) VtapArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VtapArrayOutput)
-}
-
-func (i VtapArray) ToOutput(ctx context.Context) pulumix.Output[[]*Vtap] {
-	return pulumix.Output[[]*Vtap]{
-		OutputState: i.ToVtapArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // VtapMapInput is an input type that accepts VtapMap and VtapMapOutput values.
@@ -442,12 +429,6 @@ func (i VtapMap) ToVtapMapOutputWithContext(ctx context.Context) VtapMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VtapMapOutput)
 }
 
-func (i VtapMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Vtap] {
-	return pulumix.Output[map[string]*Vtap]{
-		OutputState: i.ToVtapMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VtapOutput struct{ *pulumi.OutputState }
 
 func (VtapOutput) ElementType() reflect.Type {
@@ -460,12 +441,6 @@ func (o VtapOutput) ToVtapOutput() VtapOutput {
 
 func (o VtapOutput) ToVtapOutputWithContext(ctx context.Context) VtapOutput {
 	return o
-}
-
-func (o VtapOutput) ToOutput(ctx context.Context) pulumix.Output[*Vtap] {
-	return pulumix.Output[*Vtap]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
@@ -590,12 +565,6 @@ func (o VtapArrayOutput) ToVtapArrayOutputWithContext(ctx context.Context) VtapA
 	return o
 }
 
-func (o VtapArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Vtap] {
-	return pulumix.Output[[]*Vtap]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o VtapArrayOutput) Index(i pulumi.IntInput) VtapOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Vtap {
 		return vs[0].([]*Vtap)[vs[1].(int)]
@@ -614,12 +583,6 @@ func (o VtapMapOutput) ToVtapMapOutput() VtapMapOutput {
 
 func (o VtapMapOutput) ToVtapMapOutputWithContext(ctx context.Context) VtapMapOutput {
 	return o
-}
-
-func (o VtapMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Vtap] {
-	return pulumix.Output[map[string]*Vtap]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VtapMapOutput) MapIndex(k pulumi.StringInput) VtapOutput {

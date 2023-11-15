@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
@@ -167,12 +166,6 @@ func (o LookupExadataInfrastructureResultOutput) ToLookupExadataInfrastructureRe
 
 func (o LookupExadataInfrastructureResultOutput) ToLookupExadataInfrastructureResultOutputWithContext(ctx context.Context) LookupExadataInfrastructureResultOutput {
 	return o
-}
-
-func (o LookupExadataInfrastructureResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupExadataInfrastructureResult] {
-	return pulumix.Output[LookupExadataInfrastructureResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The requested number of additional storage servers activated for the Exadata infrastructure.

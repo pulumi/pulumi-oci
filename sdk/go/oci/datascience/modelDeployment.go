@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Model Deployment resource in Oracle Cloud Infrastructure Datascience service.
@@ -311,12 +310,6 @@ func (i *ModelDeployment) ToModelDeploymentOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(ModelDeploymentOutput)
 }
 
-func (i *ModelDeployment) ToOutput(ctx context.Context) pulumix.Output[*ModelDeployment] {
-	return pulumix.Output[*ModelDeployment]{
-		OutputState: i.ToModelDeploymentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ModelDeploymentArrayInput is an input type that accepts ModelDeploymentArray and ModelDeploymentArrayOutput values.
 // You can construct a concrete instance of `ModelDeploymentArrayInput` via:
 //
@@ -340,12 +333,6 @@ func (i ModelDeploymentArray) ToModelDeploymentArrayOutput() ModelDeploymentArra
 
 func (i ModelDeploymentArray) ToModelDeploymentArrayOutputWithContext(ctx context.Context) ModelDeploymentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ModelDeploymentArrayOutput)
-}
-
-func (i ModelDeploymentArray) ToOutput(ctx context.Context) pulumix.Output[[]*ModelDeployment] {
-	return pulumix.Output[[]*ModelDeployment]{
-		OutputState: i.ToModelDeploymentArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ModelDeploymentMapInput is an input type that accepts ModelDeploymentMap and ModelDeploymentMapOutput values.
@@ -373,12 +360,6 @@ func (i ModelDeploymentMap) ToModelDeploymentMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(ModelDeploymentMapOutput)
 }
 
-func (i ModelDeploymentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ModelDeployment] {
-	return pulumix.Output[map[string]*ModelDeployment]{
-		OutputState: i.ToModelDeploymentMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ModelDeploymentOutput struct{ *pulumi.OutputState }
 
 func (ModelDeploymentOutput) ElementType() reflect.Type {
@@ -391,12 +372,6 @@ func (o ModelDeploymentOutput) ToModelDeploymentOutput() ModelDeploymentOutput {
 
 func (o ModelDeploymentOutput) ToModelDeploymentOutputWithContext(ctx context.Context) ModelDeploymentOutput {
 	return o
-}
-
-func (o ModelDeploymentOutput) ToOutput(ctx context.Context) pulumix.Output[*ModelDeployment] {
-	return pulumix.Output[*ModelDeployment]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The log details for each category.
@@ -483,12 +458,6 @@ func (o ModelDeploymentArrayOutput) ToModelDeploymentArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o ModelDeploymentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ModelDeployment] {
-	return pulumix.Output[[]*ModelDeployment]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ModelDeploymentArrayOutput) Index(i pulumi.IntInput) ModelDeploymentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ModelDeployment {
 		return vs[0].([]*ModelDeployment)[vs[1].(int)]
@@ -507,12 +476,6 @@ func (o ModelDeploymentMapOutput) ToModelDeploymentMapOutput() ModelDeploymentMa
 
 func (o ModelDeploymentMapOutput) ToModelDeploymentMapOutputWithContext(ctx context.Context) ModelDeploymentMapOutput {
 	return o
-}
-
-func (o ModelDeploymentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ModelDeployment] {
-	return pulumix.Output[map[string]*ModelDeployment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ModelDeploymentMapOutput) MapIndex(k pulumi.StringInput) ModelDeploymentOutput {

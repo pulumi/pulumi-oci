@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Esxi Hosts in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -154,12 +153,6 @@ func (o GetExsiHostsResultOutput) ToGetExsiHostsResultOutput() GetExsiHostsResul
 
 func (o GetExsiHostsResultOutput) ToGetExsiHostsResultOutputWithContext(ctx context.Context) GetExsiHostsResultOutput {
 	return o
-}
-
-func (o GetExsiHostsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExsiHostsResult] {
-	return pulumix.Output[GetExsiHostsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.

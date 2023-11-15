@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Migration Plan resource in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -237,12 +236,6 @@ func (i *MigrationPlan) ToMigrationPlanOutputWithContext(ctx context.Context) Mi
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationPlanOutput)
 }
 
-func (i *MigrationPlan) ToOutput(ctx context.Context) pulumix.Output[*MigrationPlan] {
-	return pulumix.Output[*MigrationPlan]{
-		OutputState: i.ToMigrationPlanOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MigrationPlanArrayInput is an input type that accepts MigrationPlanArray and MigrationPlanArrayOutput values.
 // You can construct a concrete instance of `MigrationPlanArrayInput` via:
 //
@@ -266,12 +259,6 @@ func (i MigrationPlanArray) ToMigrationPlanArrayOutput() MigrationPlanArrayOutpu
 
 func (i MigrationPlanArray) ToMigrationPlanArrayOutputWithContext(ctx context.Context) MigrationPlanArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationPlanArrayOutput)
-}
-
-func (i MigrationPlanArray) ToOutput(ctx context.Context) pulumix.Output[[]*MigrationPlan] {
-	return pulumix.Output[[]*MigrationPlan]{
-		OutputState: i.ToMigrationPlanArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MigrationPlanMapInput is an input type that accepts MigrationPlanMap and MigrationPlanMapOutput values.
@@ -299,12 +286,6 @@ func (i MigrationPlanMap) ToMigrationPlanMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationPlanMapOutput)
 }
 
-func (i MigrationPlanMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MigrationPlan] {
-	return pulumix.Output[map[string]*MigrationPlan]{
-		OutputState: i.ToMigrationPlanMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MigrationPlanOutput struct{ *pulumi.OutputState }
 
 func (MigrationPlanOutput) ElementType() reflect.Type {
@@ -317,12 +298,6 @@ func (o MigrationPlanOutput) ToMigrationPlanOutput() MigrationPlanOutput {
 
 func (o MigrationPlanOutput) ToMigrationPlanOutputWithContext(ctx context.Context) MigrationPlanOutput {
 	return o
-}
-
-func (o MigrationPlanOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationPlan] {
-	return pulumix.Output[*MigrationPlan]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Limits of the resources that are needed for migration. Example: {"BlockVolume": 2, "VCN": 1}
@@ -419,12 +394,6 @@ func (o MigrationPlanArrayOutput) ToMigrationPlanArrayOutputWithContext(ctx cont
 	return o
 }
 
-func (o MigrationPlanArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MigrationPlan] {
-	return pulumix.Output[[]*MigrationPlan]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o MigrationPlanArrayOutput) Index(i pulumi.IntInput) MigrationPlanOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *MigrationPlan {
 		return vs[0].([]*MigrationPlan)[vs[1].(int)]
@@ -443,12 +412,6 @@ func (o MigrationPlanMapOutput) ToMigrationPlanMapOutput() MigrationPlanMapOutpu
 
 func (o MigrationPlanMapOutput) ToMigrationPlanMapOutputWithContext(ctx context.Context) MigrationPlanMapOutput {
 	return o
-}
-
-func (o MigrationPlanMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MigrationPlan] {
-	return pulumix.Output[map[string]*MigrationPlan]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MigrationPlanMapOutput) MapIndex(k pulumi.StringInput) MigrationPlanOutput {

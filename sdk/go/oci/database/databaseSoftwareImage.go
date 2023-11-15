@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Database Software Image resource in Oracle Cloud Infrastructure Database service.
@@ -305,12 +304,6 @@ func (i *DatabaseSoftwareImage) ToDatabaseSoftwareImageOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseSoftwareImageOutput)
 }
 
-func (i *DatabaseSoftwareImage) ToOutput(ctx context.Context) pulumix.Output[*DatabaseSoftwareImage] {
-	return pulumix.Output[*DatabaseSoftwareImage]{
-		OutputState: i.ToDatabaseSoftwareImageOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DatabaseSoftwareImageArrayInput is an input type that accepts DatabaseSoftwareImageArray and DatabaseSoftwareImageArrayOutput values.
 // You can construct a concrete instance of `DatabaseSoftwareImageArrayInput` via:
 //
@@ -334,12 +327,6 @@ func (i DatabaseSoftwareImageArray) ToDatabaseSoftwareImageArrayOutput() Databas
 
 func (i DatabaseSoftwareImageArray) ToDatabaseSoftwareImageArrayOutputWithContext(ctx context.Context) DatabaseSoftwareImageArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseSoftwareImageArrayOutput)
-}
-
-func (i DatabaseSoftwareImageArray) ToOutput(ctx context.Context) pulumix.Output[[]*DatabaseSoftwareImage] {
-	return pulumix.Output[[]*DatabaseSoftwareImage]{
-		OutputState: i.ToDatabaseSoftwareImageArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DatabaseSoftwareImageMapInput is an input type that accepts DatabaseSoftwareImageMap and DatabaseSoftwareImageMapOutput values.
@@ -367,12 +354,6 @@ func (i DatabaseSoftwareImageMap) ToDatabaseSoftwareImageMapOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseSoftwareImageMapOutput)
 }
 
-func (i DatabaseSoftwareImageMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DatabaseSoftwareImage] {
-	return pulumix.Output[map[string]*DatabaseSoftwareImage]{
-		OutputState: i.ToDatabaseSoftwareImageMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DatabaseSoftwareImageOutput struct{ *pulumi.OutputState }
 
 func (DatabaseSoftwareImageOutput) ElementType() reflect.Type {
@@ -385,12 +366,6 @@ func (o DatabaseSoftwareImageOutput) ToDatabaseSoftwareImageOutput() DatabaseSof
 
 func (o DatabaseSoftwareImageOutput) ToDatabaseSoftwareImageOutputWithContext(ctx context.Context) DatabaseSoftwareImageOutput {
 	return o
-}
-
-func (o DatabaseSoftwareImageOutput) ToOutput(ctx context.Context) pulumix.Output[*DatabaseSoftwareImage] {
-	return pulumix.Output[*DatabaseSoftwareImage]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the database software image  belongs in.
@@ -495,12 +470,6 @@ func (o DatabaseSoftwareImageArrayOutput) ToDatabaseSoftwareImageArrayOutputWith
 	return o
 }
 
-func (o DatabaseSoftwareImageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DatabaseSoftwareImage] {
-	return pulumix.Output[[]*DatabaseSoftwareImage]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DatabaseSoftwareImageArrayOutput) Index(i pulumi.IntInput) DatabaseSoftwareImageOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DatabaseSoftwareImage {
 		return vs[0].([]*DatabaseSoftwareImage)[vs[1].(int)]
@@ -519,12 +488,6 @@ func (o DatabaseSoftwareImageMapOutput) ToDatabaseSoftwareImageMapOutput() Datab
 
 func (o DatabaseSoftwareImageMapOutput) ToDatabaseSoftwareImageMapOutputWithContext(ctx context.Context) DatabaseSoftwareImageMapOutput {
 	return o
-}
-
-func (o DatabaseSoftwareImageMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DatabaseSoftwareImage] {
-	return pulumix.Output[map[string]*DatabaseSoftwareImage]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatabaseSoftwareImageMapOutput) MapIndex(k pulumi.StringInput) DatabaseSoftwareImageOutput {

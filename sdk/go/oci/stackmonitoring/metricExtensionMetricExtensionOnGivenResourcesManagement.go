@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Metric Extension Metric Extension On Given Resources Management resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -172,12 +171,6 @@ func (i *MetricExtensionMetricExtensionOnGivenResourcesManagement) ToMetricExten
 	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionMetricExtensionOnGivenResourcesManagementOutput)
 }
 
-func (i *MetricExtensionMetricExtensionOnGivenResourcesManagement) ToOutput(ctx context.Context) pulumix.Output[*MetricExtensionMetricExtensionOnGivenResourcesManagement] {
-	return pulumix.Output[*MetricExtensionMetricExtensionOnGivenResourcesManagement]{
-		OutputState: i.ToMetricExtensionMetricExtensionOnGivenResourcesManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MetricExtensionMetricExtensionOnGivenResourcesManagementArrayInput is an input type that accepts MetricExtensionMetricExtensionOnGivenResourcesManagementArray and MetricExtensionMetricExtensionOnGivenResourcesManagementArrayOutput values.
 // You can construct a concrete instance of `MetricExtensionMetricExtensionOnGivenResourcesManagementArrayInput` via:
 //
@@ -201,12 +194,6 @@ func (i MetricExtensionMetricExtensionOnGivenResourcesManagementArray) ToMetricE
 
 func (i MetricExtensionMetricExtensionOnGivenResourcesManagementArray) ToMetricExtensionMetricExtensionOnGivenResourcesManagementArrayOutputWithContext(ctx context.Context) MetricExtensionMetricExtensionOnGivenResourcesManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionMetricExtensionOnGivenResourcesManagementArrayOutput)
-}
-
-func (i MetricExtensionMetricExtensionOnGivenResourcesManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*MetricExtensionMetricExtensionOnGivenResourcesManagement] {
-	return pulumix.Output[[]*MetricExtensionMetricExtensionOnGivenResourcesManagement]{
-		OutputState: i.ToMetricExtensionMetricExtensionOnGivenResourcesManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MetricExtensionMetricExtensionOnGivenResourcesManagementMapInput is an input type that accepts MetricExtensionMetricExtensionOnGivenResourcesManagementMap and MetricExtensionMetricExtensionOnGivenResourcesManagementMapOutput values.
@@ -234,12 +221,6 @@ func (i MetricExtensionMetricExtensionOnGivenResourcesManagementMap) ToMetricExt
 	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionMetricExtensionOnGivenResourcesManagementMapOutput)
 }
 
-func (i MetricExtensionMetricExtensionOnGivenResourcesManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MetricExtensionMetricExtensionOnGivenResourcesManagement] {
-	return pulumix.Output[map[string]*MetricExtensionMetricExtensionOnGivenResourcesManagement]{
-		OutputState: i.ToMetricExtensionMetricExtensionOnGivenResourcesManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MetricExtensionMetricExtensionOnGivenResourcesManagementOutput struct{ *pulumi.OutputState }
 
 func (MetricExtensionMetricExtensionOnGivenResourcesManagementOutput) ElementType() reflect.Type {
@@ -252,12 +233,6 @@ func (o MetricExtensionMetricExtensionOnGivenResourcesManagementOutput) ToMetric
 
 func (o MetricExtensionMetricExtensionOnGivenResourcesManagementOutput) ToMetricExtensionMetricExtensionOnGivenResourcesManagementOutputWithContext(ctx context.Context) MetricExtensionMetricExtensionOnGivenResourcesManagementOutput {
 	return o
-}
-
-func (o MetricExtensionMetricExtensionOnGivenResourcesManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*MetricExtensionMetricExtensionOnGivenResourcesManagement] {
-	return pulumix.Output[*MetricExtensionMetricExtensionOnGivenResourcesManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
@@ -298,12 +273,6 @@ func (o MetricExtensionMetricExtensionOnGivenResourcesManagementArrayOutput) ToM
 	return o
 }
 
-func (o MetricExtensionMetricExtensionOnGivenResourcesManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MetricExtensionMetricExtensionOnGivenResourcesManagement] {
-	return pulumix.Output[[]*MetricExtensionMetricExtensionOnGivenResourcesManagement]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o MetricExtensionMetricExtensionOnGivenResourcesManagementArrayOutput) Index(i pulumi.IntInput) MetricExtensionMetricExtensionOnGivenResourcesManagementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *MetricExtensionMetricExtensionOnGivenResourcesManagement {
 		return vs[0].([]*MetricExtensionMetricExtensionOnGivenResourcesManagement)[vs[1].(int)]
@@ -322,12 +291,6 @@ func (o MetricExtensionMetricExtensionOnGivenResourcesManagementMapOutput) ToMet
 
 func (o MetricExtensionMetricExtensionOnGivenResourcesManagementMapOutput) ToMetricExtensionMetricExtensionOnGivenResourcesManagementMapOutputWithContext(ctx context.Context) MetricExtensionMetricExtensionOnGivenResourcesManagementMapOutput {
 	return o
-}
-
-func (o MetricExtensionMetricExtensionOnGivenResourcesManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MetricExtensionMetricExtensionOnGivenResourcesManagement] {
-	return pulumix.Output[map[string]*MetricExtensionMetricExtensionOnGivenResourcesManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MetricExtensionMetricExtensionOnGivenResourcesManagementMapOutput) MapIndex(k pulumi.StringInput) MetricExtensionMetricExtensionOnGivenResourcesManagementOutput {

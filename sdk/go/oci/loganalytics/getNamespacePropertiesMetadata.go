@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Namespace Properties Metadata in Oracle Cloud Infrastructure Log Analytics service.
@@ -131,12 +130,6 @@ func (o GetNamespacePropertiesMetadataResultOutput) ToGetNamespacePropertiesMeta
 
 func (o GetNamespacePropertiesMetadataResultOutput) ToGetNamespacePropertiesMetadataResultOutputWithContext(ctx context.Context) GetNamespacePropertiesMetadataResultOutput {
 	return o
-}
-
-func (o GetNamespacePropertiesMetadataResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespacePropertiesMetadataResult] {
-	return pulumix.Output[GetNamespacePropertiesMetadataResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A string representation of constraints that apply at this level. For example, a property defined at SOURCE level could further be applicable only for SOURCE_TYPE:database_sql.

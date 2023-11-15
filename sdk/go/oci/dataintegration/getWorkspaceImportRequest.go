@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Workspace Import Request resource in Oracle Cloud Infrastructure Data Integration service.
@@ -135,12 +134,6 @@ func (o LookupWorkspaceImportRequestResultOutput) ToLookupWorkspaceImportRequest
 
 func (o LookupWorkspaceImportRequestResultOutput) ToLookupWorkspaceImportRequestResultOutputWithContext(ctx context.Context) LookupWorkspaceImportRequestResultOutput {
 	return o
-}
-
-func (o LookupWorkspaceImportRequestResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupWorkspaceImportRequestResult] {
-	return pulumix.Output[LookupWorkspaceImportRequestResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the Object Storage Bucket where the objects will be imported from

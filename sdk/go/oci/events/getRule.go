@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Rule resource in Oracle Cloud Infrastructure Events service.
@@ -123,12 +122,6 @@ func (o LookupRuleResultOutput) ToLookupRuleResultOutput() LookupRuleResultOutpu
 
 func (o LookupRuleResultOutput) ToLookupRuleResultOutputWithContext(ctx context.Context) LookupRuleResultOutput {
 	return o
-}
-
-func (o LookupRuleResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupRuleResult] {
-	return pulumix.Output[LookupRuleResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of one or more Action objects.

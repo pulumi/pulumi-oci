@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Em Warehouse resource in Oracle Cloud Infrastructure Em Warehouse service.
@@ -130,12 +129,6 @@ func (o LookupEmWarehouseResultOutput) ToLookupEmWarehouseResultOutput() LookupE
 
 func (o LookupEmWarehouseResultOutput) ToLookupEmWarehouseResultOutputWithContext(ctx context.Context) LookupEmWarehouseResultOutput {
 	return o
-}
-
-func (o LookupEmWarehouseResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupEmWarehouseResult] {
-	return pulumix.Output[LookupEmWarehouseResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Grant resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -177,12 +176,6 @@ func (o LookupDomainsGrantResultOutput) ToLookupDomainsGrantResultOutput() Looku
 
 func (o LookupDomainsGrantResultOutput) ToLookupDomainsGrantResultOutputWithContext(ctx context.Context) LookupDomainsGrantResultOutput {
 	return o
-}
-
-func (o LookupDomainsGrantResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainsGrantResult] {
-	return pulumix.Output[LookupDomainsGrantResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Application-Entitlement-Collection that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.

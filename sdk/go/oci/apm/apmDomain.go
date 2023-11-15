@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Apm Domain resource in Oracle Cloud Infrastructure Apm service.
@@ -240,12 +239,6 @@ func (i *ApmDomain) ToApmDomainOutputWithContext(ctx context.Context) ApmDomainO
 	return pulumi.ToOutputWithContext(ctx, i).(ApmDomainOutput)
 }
 
-func (i *ApmDomain) ToOutput(ctx context.Context) pulumix.Output[*ApmDomain] {
-	return pulumix.Output[*ApmDomain]{
-		OutputState: i.ToApmDomainOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ApmDomainArrayInput is an input type that accepts ApmDomainArray and ApmDomainArrayOutput values.
 // You can construct a concrete instance of `ApmDomainArrayInput` via:
 //
@@ -269,12 +262,6 @@ func (i ApmDomainArray) ToApmDomainArrayOutput() ApmDomainArrayOutput {
 
 func (i ApmDomainArray) ToApmDomainArrayOutputWithContext(ctx context.Context) ApmDomainArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ApmDomainArrayOutput)
-}
-
-func (i ApmDomainArray) ToOutput(ctx context.Context) pulumix.Output[[]*ApmDomain] {
-	return pulumix.Output[[]*ApmDomain]{
-		OutputState: i.ToApmDomainArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ApmDomainMapInput is an input type that accepts ApmDomainMap and ApmDomainMapOutput values.
@@ -302,12 +289,6 @@ func (i ApmDomainMap) ToApmDomainMapOutputWithContext(ctx context.Context) ApmDo
 	return pulumi.ToOutputWithContext(ctx, i).(ApmDomainMapOutput)
 }
 
-func (i ApmDomainMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ApmDomain] {
-	return pulumix.Output[map[string]*ApmDomain]{
-		OutputState: i.ToApmDomainMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ApmDomainOutput struct{ *pulumi.OutputState }
 
 func (ApmDomainOutput) ElementType() reflect.Type {
@@ -320,12 +301,6 @@ func (o ApmDomainOutput) ToApmDomainOutput() ApmDomainOutput {
 
 func (o ApmDomainOutput) ToApmDomainOutputWithContext(ctx context.Context) ApmDomainOutput {
 	return o
-}
-
-func (o ApmDomainOutput) ToOutput(ctx context.Context) pulumix.Output[*ApmDomain] {
-	return pulumix.Output[*ApmDomain]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of the compartment corresponding to the APM domain.
@@ -395,12 +370,6 @@ func (o ApmDomainArrayOutput) ToApmDomainArrayOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o ApmDomainArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ApmDomain] {
-	return pulumix.Output[[]*ApmDomain]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ApmDomainArrayOutput) Index(i pulumi.IntInput) ApmDomainOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ApmDomain {
 		return vs[0].([]*ApmDomain)[vs[1].(int)]
@@ -419,12 +388,6 @@ func (o ApmDomainMapOutput) ToApmDomainMapOutput() ApmDomainMapOutput {
 
 func (o ApmDomainMapOutput) ToApmDomainMapOutputWithContext(ctx context.Context) ApmDomainMapOutput {
 	return o
-}
-
-func (o ApmDomainMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ApmDomain] {
-	return pulumix.Output[map[string]*ApmDomain]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ApmDomainMapOutput) MapIndex(k pulumi.StringInput) ApmDomainOutput {

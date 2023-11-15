@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Detector Recipes in Oracle Cloud Infrastructure Cloud Guard service.
@@ -152,12 +151,6 @@ func (o GetDetectorRecipesResultOutput) ToGetDetectorRecipesResultOutput() GetDe
 
 func (o GetDetectorRecipesResultOutput) ToGetDetectorRecipesResultOutputWithContext(ctx context.Context) GetDetectorRecipesResultOutput {
 	return o
-}
-
-func (o GetDetectorRecipesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectorRecipesResult] {
-	return pulumix.Output[GetDetectorRecipesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectorRecipesResultOutput) AccessLevel() pulumi.StringPtrOutput {

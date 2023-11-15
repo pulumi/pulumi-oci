@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Network Firewall Policy Url List resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -180,12 +179,6 @@ func (i *NetworkFirewallPolicyUrlList) ToNetworkFirewallPolicyUrlListOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyUrlListOutput)
 }
 
-func (i *NetworkFirewallPolicyUrlList) ToOutput(ctx context.Context) pulumix.Output[*NetworkFirewallPolicyUrlList] {
-	return pulumix.Output[*NetworkFirewallPolicyUrlList]{
-		OutputState: i.ToNetworkFirewallPolicyUrlListOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NetworkFirewallPolicyUrlListArrayInput is an input type that accepts NetworkFirewallPolicyUrlListArray and NetworkFirewallPolicyUrlListArrayOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicyUrlListArrayInput` via:
 //
@@ -209,12 +202,6 @@ func (i NetworkFirewallPolicyUrlListArray) ToNetworkFirewallPolicyUrlListArrayOu
 
 func (i NetworkFirewallPolicyUrlListArray) ToNetworkFirewallPolicyUrlListArrayOutputWithContext(ctx context.Context) NetworkFirewallPolicyUrlListArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyUrlListArrayOutput)
-}
-
-func (i NetworkFirewallPolicyUrlListArray) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkFirewallPolicyUrlList] {
-	return pulumix.Output[[]*NetworkFirewallPolicyUrlList]{
-		OutputState: i.ToNetworkFirewallPolicyUrlListArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // NetworkFirewallPolicyUrlListMapInput is an input type that accepts NetworkFirewallPolicyUrlListMap and NetworkFirewallPolicyUrlListMapOutput values.
@@ -242,12 +229,6 @@ func (i NetworkFirewallPolicyUrlListMap) ToNetworkFirewallPolicyUrlListMapOutput
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyUrlListMapOutput)
 }
 
-func (i NetworkFirewallPolicyUrlListMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkFirewallPolicyUrlList] {
-	return pulumix.Output[map[string]*NetworkFirewallPolicyUrlList]{
-		OutputState: i.ToNetworkFirewallPolicyUrlListMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NetworkFirewallPolicyUrlListOutput struct{ *pulumi.OutputState }
 
 func (NetworkFirewallPolicyUrlListOutput) ElementType() reflect.Type {
@@ -260,12 +241,6 @@ func (o NetworkFirewallPolicyUrlListOutput) ToNetworkFirewallPolicyUrlListOutput
 
 func (o NetworkFirewallPolicyUrlListOutput) ToNetworkFirewallPolicyUrlListOutputWithContext(ctx context.Context) NetworkFirewallPolicyUrlListOutput {
 	return o
-}
-
-func (o NetworkFirewallPolicyUrlListOutput) ToOutput(ctx context.Context) pulumix.Output[*NetworkFirewallPolicyUrlList] {
-	return pulumix.Output[*NetworkFirewallPolicyUrlList]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique name to identify the group of urls to be used in the policy rules.
@@ -307,12 +282,6 @@ func (o NetworkFirewallPolicyUrlListArrayOutput) ToNetworkFirewallPolicyUrlListA
 	return o
 }
 
-func (o NetworkFirewallPolicyUrlListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkFirewallPolicyUrlList] {
-	return pulumix.Output[[]*NetworkFirewallPolicyUrlList]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o NetworkFirewallPolicyUrlListArrayOutput) Index(i pulumi.IntInput) NetworkFirewallPolicyUrlListOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *NetworkFirewallPolicyUrlList {
 		return vs[0].([]*NetworkFirewallPolicyUrlList)[vs[1].(int)]
@@ -331,12 +300,6 @@ func (o NetworkFirewallPolicyUrlListMapOutput) ToNetworkFirewallPolicyUrlListMap
 
 func (o NetworkFirewallPolicyUrlListMapOutput) ToNetworkFirewallPolicyUrlListMapOutputWithContext(ctx context.Context) NetworkFirewallPolicyUrlListMapOutput {
 	return o
-}
-
-func (o NetworkFirewallPolicyUrlListMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkFirewallPolicyUrlList] {
-	return pulumix.Output[map[string]*NetworkFirewallPolicyUrlList]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NetworkFirewallPolicyUrlListMapOutput) MapIndex(k pulumi.StringInput) NetworkFirewallPolicyUrlListOutput {

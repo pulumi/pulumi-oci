@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Db System Patch History Entries in Oracle Cloud Infrastructure Database service.
@@ -105,12 +104,6 @@ func (o GetDbSystemHistoryEntriesResultOutput) ToGetDbSystemHistoryEntriesResult
 
 func (o GetDbSystemHistoryEntriesResultOutput) ToGetDbSystemHistoryEntriesResultOutputWithContext(ctx context.Context) GetDbSystemHistoryEntriesResultOutput {
 	return o
-}
-
-func (o GetDbSystemHistoryEntriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDbSystemHistoryEntriesResult] {
-	return pulumix.Output[GetDbSystemHistoryEntriesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDbSystemHistoryEntriesResultOutput) DbSystemId() pulumi.StringOutput {

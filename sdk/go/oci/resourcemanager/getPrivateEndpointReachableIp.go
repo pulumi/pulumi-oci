@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Private Endpoint Reachable Ip resource in Oracle Cloud Infrastructure Resource Manager service.
@@ -108,12 +107,6 @@ func (o GetPrivateEndpointReachableIpResultOutput) ToGetPrivateEndpointReachable
 
 func (o GetPrivateEndpointReachableIpResultOutput) ToGetPrivateEndpointReachableIpResultOutputWithContext(ctx context.Context) GetPrivateEndpointReachableIpResultOutput {
 	return o
-}
-
-func (o GetPrivateEndpointReachableIpResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateEndpointReachableIpResult] {
-	return pulumix.Output[GetPrivateEndpointReachableIpResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The provider-assigned unique ID for this managed resource.

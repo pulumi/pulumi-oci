@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetListingResourceVersions(ctx *pulumi.Context, args *GetListingResourceVersionsArgs, opts ...pulumi.InvokeOption) (*GetListingResourceVersionsResult, error) {
@@ -73,12 +72,6 @@ func (o GetListingResourceVersionsResultOutput) ToGetListingResourceVersionsResu
 
 func (o GetListingResourceVersionsResultOutput) ToGetListingResourceVersionsResultOutputWithContext(ctx context.Context) GetListingResourceVersionsResultOutput {
 	return o
-}
-
-func (o GetListingResourceVersionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingResourceVersionsResult] {
-	return pulumix.Output[GetListingResourceVersionsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetListingResourceVersionsResultOutput) AppCatalogListingResourceVersions() GetListingResourceVersionsAppCatalogListingResourceVersionArrayOutput {

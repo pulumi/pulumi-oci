@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Dr Protection Groups in Oracle Cloud Infrastructure Disaster Recovery service.
@@ -140,12 +139,6 @@ func (o GetDrProtectionGroupsResultOutput) ToGetDrProtectionGroupsResultOutput()
 
 func (o GetDrProtectionGroupsResultOutput) ToGetDrProtectionGroupsResultOutputWithContext(ctx context.Context) GetDrProtectionGroupsResultOutput {
 	return o
-}
-
-func (o GetDrProtectionGroupsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrProtectionGroupsResult] {
-	return pulumix.Output[GetDrProtectionGroupsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment containing the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`

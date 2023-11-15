@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Resource Action resource in Oracle Cloud Infrastructure Optimizer service.
@@ -134,12 +133,6 @@ func (o LookupResourceActionResultOutput) ToLookupResourceActionResultOutput() L
 
 func (o LookupResourceActionResultOutput) ToLookupResourceActionResultOutputWithContext(ctx context.Context) LookupResourceActionResultOutput {
 	return o
-}
-
-func (o LookupResourceActionResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupResourceActionResult] {
-	return pulumix.Output[LookupResourceActionResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Details about the recommended action.

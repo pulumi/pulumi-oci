@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Web App Firewall Policy resource in Oracle Cloud Infrastructure Waf service.
@@ -422,12 +421,6 @@ func (i *AppFirewallPolicy) ToAppFirewallPolicyOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyOutput)
 }
 
-func (i *AppFirewallPolicy) ToOutput(ctx context.Context) pulumix.Output[*AppFirewallPolicy] {
-	return pulumix.Output[*AppFirewallPolicy]{
-		OutputState: i.ToAppFirewallPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AppFirewallPolicyArrayInput is an input type that accepts AppFirewallPolicyArray and AppFirewallPolicyArrayOutput values.
 // You can construct a concrete instance of `AppFirewallPolicyArrayInput` via:
 //
@@ -451,12 +444,6 @@ func (i AppFirewallPolicyArray) ToAppFirewallPolicyArrayOutput() AppFirewallPoli
 
 func (i AppFirewallPolicyArray) ToAppFirewallPolicyArrayOutputWithContext(ctx context.Context) AppFirewallPolicyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyArrayOutput)
-}
-
-func (i AppFirewallPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppFirewallPolicy] {
-	return pulumix.Output[[]*AppFirewallPolicy]{
-		OutputState: i.ToAppFirewallPolicyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AppFirewallPolicyMapInput is an input type that accepts AppFirewallPolicyMap and AppFirewallPolicyMapOutput values.
@@ -484,12 +471,6 @@ func (i AppFirewallPolicyMap) ToAppFirewallPolicyMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(AppFirewallPolicyMapOutput)
 }
 
-func (i AppFirewallPolicyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppFirewallPolicy] {
-	return pulumix.Output[map[string]*AppFirewallPolicy]{
-		OutputState: i.ToAppFirewallPolicyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AppFirewallPolicyOutput struct{ *pulumi.OutputState }
 
 func (AppFirewallPolicyOutput) ElementType() reflect.Type {
@@ -502,12 +483,6 @@ func (o AppFirewallPolicyOutput) ToAppFirewallPolicyOutput() AppFirewallPolicyOu
 
 func (o AppFirewallPolicyOutput) ToAppFirewallPolicyOutputWithContext(ctx context.Context) AppFirewallPolicyOutput {
 	return o
-}
-
-func (o AppFirewallPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[*AppFirewallPolicy] {
-	return pulumix.Output[*AppFirewallPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Predefined actions for use in multiple different rules. Not all actions are supported in every module. Some actions terminate further execution of modules and rules in a module and some do not. Actions names must be unique within this array.
@@ -604,12 +579,6 @@ func (o AppFirewallPolicyArrayOutput) ToAppFirewallPolicyArrayOutputWithContext(
 	return o
 }
 
-func (o AppFirewallPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppFirewallPolicy] {
-	return pulumix.Output[[]*AppFirewallPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AppFirewallPolicyArrayOutput) Index(i pulumi.IntInput) AppFirewallPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppFirewallPolicy {
 		return vs[0].([]*AppFirewallPolicy)[vs[1].(int)]
@@ -628,12 +597,6 @@ func (o AppFirewallPolicyMapOutput) ToAppFirewallPolicyMapOutput() AppFirewallPo
 
 func (o AppFirewallPolicyMapOutput) ToAppFirewallPolicyMapOutputWithContext(ctx context.Context) AppFirewallPolicyMapOutput {
 	return o
-}
-
-func (o AppFirewallPolicyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppFirewallPolicy] {
-	return pulumix.Output[map[string]*AppFirewallPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AppFirewallPolicyMapOutput) MapIndex(k pulumi.StringInput) AppFirewallPolicyOutput {

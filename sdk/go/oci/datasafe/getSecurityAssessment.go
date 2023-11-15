@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Security Assessment resource in Oracle Cloud Infrastructure Data Safe service.
@@ -149,12 +148,6 @@ func (o LookupSecurityAssessmentResultOutput) ToLookupSecurityAssessmentResultOu
 
 func (o LookupSecurityAssessmentResultOutput) ToLookupSecurityAssessmentResultOutputWithContext(ctx context.Context) LookupSecurityAssessmentResultOutput {
 	return o
-}
-
-func (o LookupSecurityAssessmentResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSecurityAssessmentResult] {
-	return pulumix.Output[LookupSecurityAssessmentResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment that contains the security assessment.

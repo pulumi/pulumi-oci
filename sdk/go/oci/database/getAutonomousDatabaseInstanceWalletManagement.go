@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Autonomous Database Instance Wallet Management resource in Oracle Cloud Infrastructure Database service.
@@ -107,12 +106,6 @@ func (o LookupAutonomousDatabaseInstanceWalletManagementResultOutput) ToLookupAu
 
 func (o LookupAutonomousDatabaseInstanceWalletManagementResultOutput) ToLookupAutonomousDatabaseInstanceWalletManagementResultOutputWithContext(ctx context.Context) LookupAutonomousDatabaseInstanceWalletManagementResultOutput {
 	return o
-}
-
-func (o LookupAutonomousDatabaseInstanceWalletManagementResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAutonomousDatabaseInstanceWalletManagementResult] {
-	return pulumix.Output[LookupAutonomousDatabaseInstanceWalletManagementResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

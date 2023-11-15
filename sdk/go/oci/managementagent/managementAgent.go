@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Management Agent resource in Oracle Cloud Infrastructure Management Agent service.
@@ -318,12 +317,6 @@ func (i *ManagementAgent) ToManagementAgentOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(ManagementAgentOutput)
 }
 
-func (i *ManagementAgent) ToOutput(ctx context.Context) pulumix.Output[*ManagementAgent] {
-	return pulumix.Output[*ManagementAgent]{
-		OutputState: i.ToManagementAgentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ManagementAgentArrayInput is an input type that accepts ManagementAgentArray and ManagementAgentArrayOutput values.
 // You can construct a concrete instance of `ManagementAgentArrayInput` via:
 //
@@ -347,12 +340,6 @@ func (i ManagementAgentArray) ToManagementAgentArrayOutput() ManagementAgentArra
 
 func (i ManagementAgentArray) ToManagementAgentArrayOutputWithContext(ctx context.Context) ManagementAgentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ManagementAgentArrayOutput)
-}
-
-func (i ManagementAgentArray) ToOutput(ctx context.Context) pulumix.Output[[]*ManagementAgent] {
-	return pulumix.Output[[]*ManagementAgent]{
-		OutputState: i.ToManagementAgentArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ManagementAgentMapInput is an input type that accepts ManagementAgentMap and ManagementAgentMapOutput values.
@@ -380,12 +367,6 @@ func (i ManagementAgentMap) ToManagementAgentMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(ManagementAgentMapOutput)
 }
 
-func (i ManagementAgentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagementAgent] {
-	return pulumix.Output[map[string]*ManagementAgent]{
-		OutputState: i.ToManagementAgentMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ManagementAgentOutput struct{ *pulumi.OutputState }
 
 func (ManagementAgentOutput) ElementType() reflect.Type {
@@ -398,12 +379,6 @@ func (o ManagementAgentOutput) ToManagementAgentOutput() ManagementAgentOutput {
 
 func (o ManagementAgentOutput) ToManagementAgentOutputWithContext(ctx context.Context) ManagementAgentOutput {
 	return o
-}
-
-func (o ManagementAgentOutput) ToOutput(ctx context.Context) pulumix.Output[*ManagementAgent] {
-	return pulumix.Output[*ManagementAgent]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The current availability status of managementAgent
@@ -555,12 +530,6 @@ func (o ManagementAgentArrayOutput) ToManagementAgentArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o ManagementAgentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ManagementAgent] {
-	return pulumix.Output[[]*ManagementAgent]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ManagementAgentArrayOutput) Index(i pulumi.IntInput) ManagementAgentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ManagementAgent {
 		return vs[0].([]*ManagementAgent)[vs[1].(int)]
@@ -579,12 +548,6 @@ func (o ManagementAgentMapOutput) ToManagementAgentMapOutput() ManagementAgentMa
 
 func (o ManagementAgentMapOutput) ToManagementAgentMapOutputWithContext(ctx context.Context) ManagementAgentMapOutput {
 	return o
-}
-
-func (o ManagementAgentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagementAgent] {
-	return pulumix.Output[map[string]*ManagementAgent]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagementAgentMapOutput) MapIndex(k pulumi.StringInput) ManagementAgentOutput {

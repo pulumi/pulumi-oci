@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Drg Route Distribution resource in Oracle Cloud Infrastructure Core service.
@@ -226,12 +225,6 @@ func (i *DrgRouteDistribution) ToDrgRouteDistributionOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(DrgRouteDistributionOutput)
 }
 
-func (i *DrgRouteDistribution) ToOutput(ctx context.Context) pulumix.Output[*DrgRouteDistribution] {
-	return pulumix.Output[*DrgRouteDistribution]{
-		OutputState: i.ToDrgRouteDistributionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrgRouteDistributionArrayInput is an input type that accepts DrgRouteDistributionArray and DrgRouteDistributionArrayOutput values.
 // You can construct a concrete instance of `DrgRouteDistributionArrayInput` via:
 //
@@ -255,12 +248,6 @@ func (i DrgRouteDistributionArray) ToDrgRouteDistributionArrayOutput() DrgRouteD
 
 func (i DrgRouteDistributionArray) ToDrgRouteDistributionArrayOutputWithContext(ctx context.Context) DrgRouteDistributionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DrgRouteDistributionArrayOutput)
-}
-
-func (i DrgRouteDistributionArray) ToOutput(ctx context.Context) pulumix.Output[[]*DrgRouteDistribution] {
-	return pulumix.Output[[]*DrgRouteDistribution]{
-		OutputState: i.ToDrgRouteDistributionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DrgRouteDistributionMapInput is an input type that accepts DrgRouteDistributionMap and DrgRouteDistributionMapOutput values.
@@ -288,12 +275,6 @@ func (i DrgRouteDistributionMap) ToDrgRouteDistributionMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(DrgRouteDistributionMapOutput)
 }
 
-func (i DrgRouteDistributionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DrgRouteDistribution] {
-	return pulumix.Output[map[string]*DrgRouteDistribution]{
-		OutputState: i.ToDrgRouteDistributionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrgRouteDistributionOutput struct{ *pulumi.OutputState }
 
 func (DrgRouteDistributionOutput) ElementType() reflect.Type {
@@ -306,12 +287,6 @@ func (o DrgRouteDistributionOutput) ToDrgRouteDistributionOutput() DrgRouteDistr
 
 func (o DrgRouteDistributionOutput) ToDrgRouteDistributionOutputWithContext(ctx context.Context) DrgRouteDistributionOutput {
 	return o
-}
-
-func (o DrgRouteDistributionOutput) ToOutput(ctx context.Context) pulumix.Output[*DrgRouteDistribution] {
-	return pulumix.Output[*DrgRouteDistribution]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the route distribution.
@@ -371,12 +346,6 @@ func (o DrgRouteDistributionArrayOutput) ToDrgRouteDistributionArrayOutputWithCo
 	return o
 }
 
-func (o DrgRouteDistributionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DrgRouteDistribution] {
-	return pulumix.Output[[]*DrgRouteDistribution]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DrgRouteDistributionArrayOutput) Index(i pulumi.IntInput) DrgRouteDistributionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DrgRouteDistribution {
 		return vs[0].([]*DrgRouteDistribution)[vs[1].(int)]
@@ -395,12 +364,6 @@ func (o DrgRouteDistributionMapOutput) ToDrgRouteDistributionMapOutput() DrgRout
 
 func (o DrgRouteDistributionMapOutput) ToDrgRouteDistributionMapOutputWithContext(ctx context.Context) DrgRouteDistributionMapOutput {
 	return o
-}
-
-func (o DrgRouteDistributionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DrgRouteDistribution] {
-	return pulumix.Output[map[string]*DrgRouteDistribution]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrgRouteDistributionMapOutput) MapIndex(k pulumi.StringInput) DrgRouteDistributionOutput {

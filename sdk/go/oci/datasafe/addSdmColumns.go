@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AddSdmColumns struct {
@@ -95,12 +94,6 @@ func (i *AddSdmColumns) ToAddSdmColumnsOutputWithContext(ctx context.Context) Ad
 	return pulumi.ToOutputWithContext(ctx, i).(AddSdmColumnsOutput)
 }
 
-func (i *AddSdmColumns) ToOutput(ctx context.Context) pulumix.Output[*AddSdmColumns] {
-	return pulumix.Output[*AddSdmColumns]{
-		OutputState: i.ToAddSdmColumnsOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AddSdmColumnsArrayInput is an input type that accepts AddSdmColumnsArray and AddSdmColumnsArrayOutput values.
 // You can construct a concrete instance of `AddSdmColumnsArrayInput` via:
 //
@@ -124,12 +117,6 @@ func (i AddSdmColumnsArray) ToAddSdmColumnsArrayOutput() AddSdmColumnsArrayOutpu
 
 func (i AddSdmColumnsArray) ToAddSdmColumnsArrayOutputWithContext(ctx context.Context) AddSdmColumnsArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AddSdmColumnsArrayOutput)
-}
-
-func (i AddSdmColumnsArray) ToOutput(ctx context.Context) pulumix.Output[[]*AddSdmColumns] {
-	return pulumix.Output[[]*AddSdmColumns]{
-		OutputState: i.ToAddSdmColumnsArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AddSdmColumnsMapInput is an input type that accepts AddSdmColumnsMap and AddSdmColumnsMapOutput values.
@@ -157,12 +144,6 @@ func (i AddSdmColumnsMap) ToAddSdmColumnsMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(AddSdmColumnsMapOutput)
 }
 
-func (i AddSdmColumnsMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AddSdmColumns] {
-	return pulumix.Output[map[string]*AddSdmColumns]{
-		OutputState: i.ToAddSdmColumnsMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AddSdmColumnsOutput struct{ *pulumi.OutputState }
 
 func (AddSdmColumnsOutput) ElementType() reflect.Type {
@@ -175,12 +156,6 @@ func (o AddSdmColumnsOutput) ToAddSdmColumnsOutput() AddSdmColumnsOutput {
 
 func (o AddSdmColumnsOutput) ToAddSdmColumnsOutputWithContext(ctx context.Context) AddSdmColumnsOutput {
 	return o
-}
-
-func (o AddSdmColumnsOutput) ToOutput(ctx context.Context) pulumix.Output[*AddSdmColumns] {
-	return pulumix.Output[*AddSdmColumns]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AddSdmColumnsOutput) MaskingPolicyId() pulumi.StringOutput {
@@ -201,12 +176,6 @@ func (o AddSdmColumnsArrayOutput) ToAddSdmColumnsArrayOutputWithContext(ctx cont
 	return o
 }
 
-func (o AddSdmColumnsArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AddSdmColumns] {
-	return pulumix.Output[[]*AddSdmColumns]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AddSdmColumnsArrayOutput) Index(i pulumi.IntInput) AddSdmColumnsOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AddSdmColumns {
 		return vs[0].([]*AddSdmColumns)[vs[1].(int)]
@@ -225,12 +194,6 @@ func (o AddSdmColumnsMapOutput) ToAddSdmColumnsMapOutput() AddSdmColumnsMapOutpu
 
 func (o AddSdmColumnsMapOutput) ToAddSdmColumnsMapOutputWithContext(ctx context.Context) AddSdmColumnsMapOutput {
 	return o
-}
-
-func (o AddSdmColumnsMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AddSdmColumns] {
-	return pulumix.Output[map[string]*AddSdmColumns]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AddSdmColumnsMapOutput) MapIndex(k pulumi.StringInput) AddSdmColumnsOutput {

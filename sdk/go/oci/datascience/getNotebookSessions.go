@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Notebook Sessions in Oracle Cloud Infrastructure Data Science service.
@@ -139,12 +138,6 @@ func (o GetNotebookSessionsResultOutput) ToGetNotebookSessionsResultOutput() Get
 
 func (o GetNotebookSessionsResultOutput) ToGetNotebookSessionsResultOutputWithContext(ctx context.Context) GetNotebookSessionsResultOutput {
 	return o
-}
-
-func (o GetNotebookSessionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNotebookSessionsResult] {
-	return pulumix.Output[GetNotebookSessionsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the notebook session's compartment.

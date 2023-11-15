@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the External Non Container Database Operations Insights Management resource in Oracle Cloud Infrastructure Database service.
@@ -177,12 +176,6 @@ func (i *ExternalNonContainerDatabaseOperationsInsightsManagement) ToExternalNon
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalNonContainerDatabaseOperationsInsightsManagementOutput)
 }
 
-func (i *ExternalNonContainerDatabaseOperationsInsightsManagement) ToOutput(ctx context.Context) pulumix.Output[*ExternalNonContainerDatabaseOperationsInsightsManagement] {
-	return pulumix.Output[*ExternalNonContainerDatabaseOperationsInsightsManagement]{
-		OutputState: i.ToExternalNonContainerDatabaseOperationsInsightsManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExternalNonContainerDatabaseOperationsInsightsManagementArrayInput is an input type that accepts ExternalNonContainerDatabaseOperationsInsightsManagementArray and ExternalNonContainerDatabaseOperationsInsightsManagementArrayOutput values.
 // You can construct a concrete instance of `ExternalNonContainerDatabaseOperationsInsightsManagementArrayInput` via:
 //
@@ -206,12 +199,6 @@ func (i ExternalNonContainerDatabaseOperationsInsightsManagementArray) ToExterna
 
 func (i ExternalNonContainerDatabaseOperationsInsightsManagementArray) ToExternalNonContainerDatabaseOperationsInsightsManagementArrayOutputWithContext(ctx context.Context) ExternalNonContainerDatabaseOperationsInsightsManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalNonContainerDatabaseOperationsInsightsManagementArrayOutput)
-}
-
-func (i ExternalNonContainerDatabaseOperationsInsightsManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalNonContainerDatabaseOperationsInsightsManagement] {
-	return pulumix.Output[[]*ExternalNonContainerDatabaseOperationsInsightsManagement]{
-		OutputState: i.ToExternalNonContainerDatabaseOperationsInsightsManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ExternalNonContainerDatabaseOperationsInsightsManagementMapInput is an input type that accepts ExternalNonContainerDatabaseOperationsInsightsManagementMap and ExternalNonContainerDatabaseOperationsInsightsManagementMapOutput values.
@@ -239,12 +226,6 @@ func (i ExternalNonContainerDatabaseOperationsInsightsManagementMap) ToExternalN
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalNonContainerDatabaseOperationsInsightsManagementMapOutput)
 }
 
-func (i ExternalNonContainerDatabaseOperationsInsightsManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalNonContainerDatabaseOperationsInsightsManagement] {
-	return pulumix.Output[map[string]*ExternalNonContainerDatabaseOperationsInsightsManagement]{
-		OutputState: i.ToExternalNonContainerDatabaseOperationsInsightsManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExternalNonContainerDatabaseOperationsInsightsManagementOutput struct{ *pulumi.OutputState }
 
 func (ExternalNonContainerDatabaseOperationsInsightsManagementOutput) ElementType() reflect.Type {
@@ -257,12 +238,6 @@ func (o ExternalNonContainerDatabaseOperationsInsightsManagementOutput) ToExtern
 
 func (o ExternalNonContainerDatabaseOperationsInsightsManagementOutput) ToExternalNonContainerDatabaseOperationsInsightsManagementOutputWithContext(ctx context.Context) ExternalNonContainerDatabaseOperationsInsightsManagementOutput {
 	return o
-}
-
-func (o ExternalNonContainerDatabaseOperationsInsightsManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalNonContainerDatabaseOperationsInsightsManagement] {
-	return pulumix.Output[*ExternalNonContainerDatabaseOperationsInsightsManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Enabling OPSI on External non-container Databases . Requires boolean value "true" or "false".
@@ -303,12 +278,6 @@ func (o ExternalNonContainerDatabaseOperationsInsightsManagementArrayOutput) ToE
 	return o
 }
 
-func (o ExternalNonContainerDatabaseOperationsInsightsManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalNonContainerDatabaseOperationsInsightsManagement] {
-	return pulumix.Output[[]*ExternalNonContainerDatabaseOperationsInsightsManagement]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ExternalNonContainerDatabaseOperationsInsightsManagementArrayOutput) Index(i pulumi.IntInput) ExternalNonContainerDatabaseOperationsInsightsManagementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ExternalNonContainerDatabaseOperationsInsightsManagement {
 		return vs[0].([]*ExternalNonContainerDatabaseOperationsInsightsManagement)[vs[1].(int)]
@@ -327,12 +296,6 @@ func (o ExternalNonContainerDatabaseOperationsInsightsManagementMapOutput) ToExt
 
 func (o ExternalNonContainerDatabaseOperationsInsightsManagementMapOutput) ToExternalNonContainerDatabaseOperationsInsightsManagementMapOutputWithContext(ctx context.Context) ExternalNonContainerDatabaseOperationsInsightsManagementMapOutput {
 	return o
-}
-
-func (o ExternalNonContainerDatabaseOperationsInsightsManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalNonContainerDatabaseOperationsInsightsManagement] {
-	return pulumix.Output[map[string]*ExternalNonContainerDatabaseOperationsInsightsManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalNonContainerDatabaseOperationsInsightsManagementMapOutput) MapIndex(k pulumi.StringInput) ExternalNonContainerDatabaseOperationsInsightsManagementOutput {

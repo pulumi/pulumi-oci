@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Network Security Group Security Rule resource in Oracle Cloud Infrastructure Core service.
@@ -379,12 +378,6 @@ func (i *NetworkSecurityGroupSecurityRule) ToNetworkSecurityGroupSecurityRuleOut
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkSecurityGroupSecurityRuleOutput)
 }
 
-func (i *NetworkSecurityGroupSecurityRule) ToOutput(ctx context.Context) pulumix.Output[*NetworkSecurityGroupSecurityRule] {
-	return pulumix.Output[*NetworkSecurityGroupSecurityRule]{
-		OutputState: i.ToNetworkSecurityGroupSecurityRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NetworkSecurityGroupSecurityRuleArrayInput is an input type that accepts NetworkSecurityGroupSecurityRuleArray and NetworkSecurityGroupSecurityRuleArrayOutput values.
 // You can construct a concrete instance of `NetworkSecurityGroupSecurityRuleArrayInput` via:
 //
@@ -408,12 +401,6 @@ func (i NetworkSecurityGroupSecurityRuleArray) ToNetworkSecurityGroupSecurityRul
 
 func (i NetworkSecurityGroupSecurityRuleArray) ToNetworkSecurityGroupSecurityRuleArrayOutputWithContext(ctx context.Context) NetworkSecurityGroupSecurityRuleArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkSecurityGroupSecurityRuleArrayOutput)
-}
-
-func (i NetworkSecurityGroupSecurityRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkSecurityGroupSecurityRule] {
-	return pulumix.Output[[]*NetworkSecurityGroupSecurityRule]{
-		OutputState: i.ToNetworkSecurityGroupSecurityRuleArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // NetworkSecurityGroupSecurityRuleMapInput is an input type that accepts NetworkSecurityGroupSecurityRuleMap and NetworkSecurityGroupSecurityRuleMapOutput values.
@@ -441,12 +428,6 @@ func (i NetworkSecurityGroupSecurityRuleMap) ToNetworkSecurityGroupSecurityRuleM
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkSecurityGroupSecurityRuleMapOutput)
 }
 
-func (i NetworkSecurityGroupSecurityRuleMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkSecurityGroupSecurityRule] {
-	return pulumix.Output[map[string]*NetworkSecurityGroupSecurityRule]{
-		OutputState: i.ToNetworkSecurityGroupSecurityRuleMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NetworkSecurityGroupSecurityRuleOutput struct{ *pulumi.OutputState }
 
 func (NetworkSecurityGroupSecurityRuleOutput) ElementType() reflect.Type {
@@ -459,12 +440,6 @@ func (o NetworkSecurityGroupSecurityRuleOutput) ToNetworkSecurityGroupSecurityRu
 
 func (o NetworkSecurityGroupSecurityRuleOutput) ToNetworkSecurityGroupSecurityRuleOutputWithContext(ctx context.Context) NetworkSecurityGroupSecurityRuleOutput {
 	return o
-}
-
-func (o NetworkSecurityGroupSecurityRuleOutput) ToOutput(ctx context.Context) pulumix.Output[*NetworkSecurityGroupSecurityRule] {
-	return pulumix.Output[*NetworkSecurityGroupSecurityRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An optional description of your choice for the rule. Avoid entering confidential information.
@@ -573,12 +548,6 @@ func (o NetworkSecurityGroupSecurityRuleArrayOutput) ToNetworkSecurityGroupSecur
 	return o
 }
 
-func (o NetworkSecurityGroupSecurityRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkSecurityGroupSecurityRule] {
-	return pulumix.Output[[]*NetworkSecurityGroupSecurityRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o NetworkSecurityGroupSecurityRuleArrayOutput) Index(i pulumi.IntInput) NetworkSecurityGroupSecurityRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *NetworkSecurityGroupSecurityRule {
 		return vs[0].([]*NetworkSecurityGroupSecurityRule)[vs[1].(int)]
@@ -597,12 +566,6 @@ func (o NetworkSecurityGroupSecurityRuleMapOutput) ToNetworkSecurityGroupSecurit
 
 func (o NetworkSecurityGroupSecurityRuleMapOutput) ToNetworkSecurityGroupSecurityRuleMapOutputWithContext(ctx context.Context) NetworkSecurityGroupSecurityRuleMapOutput {
 	return o
-}
-
-func (o NetworkSecurityGroupSecurityRuleMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkSecurityGroupSecurityRule] {
-	return pulumix.Output[map[string]*NetworkSecurityGroupSecurityRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NetworkSecurityGroupSecurityRuleMapOutput) MapIndex(k pulumi.StringInput) NetworkSecurityGroupSecurityRuleOutput {

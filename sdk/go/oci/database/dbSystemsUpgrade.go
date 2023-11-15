@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Db Systems Upgrade resource in Oracle Cloud Infrastructure Database service.
@@ -468,12 +467,6 @@ func (i *DbSystemsUpgrade) ToDbSystemsUpgradeOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(DbSystemsUpgradeOutput)
 }
 
-func (i *DbSystemsUpgrade) ToOutput(ctx context.Context) pulumix.Output[*DbSystemsUpgrade] {
-	return pulumix.Output[*DbSystemsUpgrade]{
-		OutputState: i.ToDbSystemsUpgradeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DbSystemsUpgradeArrayInput is an input type that accepts DbSystemsUpgradeArray and DbSystemsUpgradeArrayOutput values.
 // You can construct a concrete instance of `DbSystemsUpgradeArrayInput` via:
 //
@@ -497,12 +490,6 @@ func (i DbSystemsUpgradeArray) ToDbSystemsUpgradeArrayOutput() DbSystemsUpgradeA
 
 func (i DbSystemsUpgradeArray) ToDbSystemsUpgradeArrayOutputWithContext(ctx context.Context) DbSystemsUpgradeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DbSystemsUpgradeArrayOutput)
-}
-
-func (i DbSystemsUpgradeArray) ToOutput(ctx context.Context) pulumix.Output[[]*DbSystemsUpgrade] {
-	return pulumix.Output[[]*DbSystemsUpgrade]{
-		OutputState: i.ToDbSystemsUpgradeArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DbSystemsUpgradeMapInput is an input type that accepts DbSystemsUpgradeMap and DbSystemsUpgradeMapOutput values.
@@ -530,12 +517,6 @@ func (i DbSystemsUpgradeMap) ToDbSystemsUpgradeMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(DbSystemsUpgradeMapOutput)
 }
 
-func (i DbSystemsUpgradeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DbSystemsUpgrade] {
-	return pulumix.Output[map[string]*DbSystemsUpgrade]{
-		OutputState: i.ToDbSystemsUpgradeMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DbSystemsUpgradeOutput struct{ *pulumi.OutputState }
 
 func (DbSystemsUpgradeOutput) ElementType() reflect.Type {
@@ -548,12 +529,6 @@ func (o DbSystemsUpgradeOutput) ToDbSystemsUpgradeOutput() DbSystemsUpgradeOutpu
 
 func (o DbSystemsUpgradeOutput) ToDbSystemsUpgradeOutputWithContext(ctx context.Context) DbSystemsUpgradeOutput {
 	return o
-}
-
-func (o DbSystemsUpgradeOutput) ToOutput(ctx context.Context) pulumix.Output[*DbSystemsUpgrade] {
-	return pulumix.Output[*DbSystemsUpgrade]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The operating system upgrade action.
@@ -821,12 +796,6 @@ func (o DbSystemsUpgradeArrayOutput) ToDbSystemsUpgradeArrayOutputWithContext(ct
 	return o
 }
 
-func (o DbSystemsUpgradeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DbSystemsUpgrade] {
-	return pulumix.Output[[]*DbSystemsUpgrade]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DbSystemsUpgradeArrayOutput) Index(i pulumi.IntInput) DbSystemsUpgradeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DbSystemsUpgrade {
 		return vs[0].([]*DbSystemsUpgrade)[vs[1].(int)]
@@ -845,12 +814,6 @@ func (o DbSystemsUpgradeMapOutput) ToDbSystemsUpgradeMapOutput() DbSystemsUpgrad
 
 func (o DbSystemsUpgradeMapOutput) ToDbSystemsUpgradeMapOutputWithContext(ctx context.Context) DbSystemsUpgradeMapOutput {
 	return o
-}
-
-func (o DbSystemsUpgradeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DbSystemsUpgrade] {
-	return pulumix.Output[map[string]*DbSystemsUpgrade]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DbSystemsUpgradeMapOutput) MapIndex(k pulumi.StringInput) DbSystemsUpgradeOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Migration Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -138,12 +137,6 @@ func (o LookupMigrationAssetResultOutput) ToLookupMigrationAssetResultOutput() L
 
 func (o LookupMigrationAssetResultOutput) ToLookupMigrationAssetResultOutputWithContext(ctx context.Context) LookupMigrationAssetResultOutput {
 	return o
-}
-
-func (o LookupMigrationAssetResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupMigrationAssetResult] {
-	return pulumix.Output[LookupMigrationAssetResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Availability domain

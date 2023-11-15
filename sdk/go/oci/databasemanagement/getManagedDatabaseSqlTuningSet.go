@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Database Sql Tuning Set resource in Oracle Cloud Infrastructure Database Management service.
@@ -116,12 +115,6 @@ func (o GetManagedDatabaseSqlTuningSetResultOutput) ToGetManagedDatabaseSqlTunin
 
 func (o GetManagedDatabaseSqlTuningSetResultOutput) ToGetManagedDatabaseSqlTuningSetResultOutputWithContext(ctx context.Context) GetManagedDatabaseSqlTuningSetResultOutput {
 	return o
-}
-
-func (o GetManagedDatabaseSqlTuningSetResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseSqlTuningSetResult] {
-	return pulumix.Output[GetManagedDatabaseSqlTuningSetResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The provider-assigned unique ID for this managed resource.

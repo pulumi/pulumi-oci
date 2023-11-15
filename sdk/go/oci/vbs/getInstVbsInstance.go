@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Vbs Instance resource in Oracle Cloud Infrastructure Vbs Inst service.
@@ -127,12 +126,6 @@ func (o LookupInstVbsInstanceResultOutput) ToLookupInstVbsInstanceResultOutput()
 
 func (o LookupInstVbsInstanceResultOutput) ToLookupInstVbsInstanceResultOutputWithContext(ctx context.Context) LookupInstVbsInstanceResultOutput {
 	return o
-}
-
-func (o LookupInstVbsInstanceResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupInstVbsInstanceResult] {
-	return pulumix.Output[LookupInstVbsInstanceResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment of the service instance

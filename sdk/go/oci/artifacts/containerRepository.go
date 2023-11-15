@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Container Repository resource in Oracle Cloud Infrastructure Artifacts service.
@@ -275,12 +274,6 @@ func (i *ContainerRepository) ToContainerRepositoryOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerRepositoryOutput)
 }
 
-func (i *ContainerRepository) ToOutput(ctx context.Context) pulumix.Output[*ContainerRepository] {
-	return pulumix.Output[*ContainerRepository]{
-		OutputState: i.ToContainerRepositoryOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ContainerRepositoryArrayInput is an input type that accepts ContainerRepositoryArray and ContainerRepositoryArrayOutput values.
 // You can construct a concrete instance of `ContainerRepositoryArrayInput` via:
 //
@@ -304,12 +297,6 @@ func (i ContainerRepositoryArray) ToContainerRepositoryArrayOutput() ContainerRe
 
 func (i ContainerRepositoryArray) ToContainerRepositoryArrayOutputWithContext(ctx context.Context) ContainerRepositoryArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerRepositoryArrayOutput)
-}
-
-func (i ContainerRepositoryArray) ToOutput(ctx context.Context) pulumix.Output[[]*ContainerRepository] {
-	return pulumix.Output[[]*ContainerRepository]{
-		OutputState: i.ToContainerRepositoryArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ContainerRepositoryMapInput is an input type that accepts ContainerRepositoryMap and ContainerRepositoryMapOutput values.
@@ -337,12 +324,6 @@ func (i ContainerRepositoryMap) ToContainerRepositoryMapOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerRepositoryMapOutput)
 }
 
-func (i ContainerRepositoryMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ContainerRepository] {
-	return pulumix.Output[map[string]*ContainerRepository]{
-		OutputState: i.ToContainerRepositoryMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ContainerRepositoryOutput struct{ *pulumi.OutputState }
 
 func (ContainerRepositoryOutput) ElementType() reflect.Type {
@@ -355,12 +336,6 @@ func (o ContainerRepositoryOutput) ToContainerRepositoryOutput() ContainerReposi
 
 func (o ContainerRepositoryOutput) ToContainerRepositoryOutputWithContext(ctx context.Context) ContainerRepositoryOutput {
 	return o
-}
-
-func (o ContainerRepositoryOutput) ToOutput(ctx context.Context) pulumix.Output[*ContainerRepository] {
-	return pulumix.Output[*ContainerRepository]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Total storage size in GBs that will be charged.
@@ -462,12 +437,6 @@ func (o ContainerRepositoryArrayOutput) ToContainerRepositoryArrayOutputWithCont
 	return o
 }
 
-func (o ContainerRepositoryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ContainerRepository] {
-	return pulumix.Output[[]*ContainerRepository]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ContainerRepositoryArrayOutput) Index(i pulumi.IntInput) ContainerRepositoryOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ContainerRepository {
 		return vs[0].([]*ContainerRepository)[vs[1].(int)]
@@ -486,12 +455,6 @@ func (o ContainerRepositoryMapOutput) ToContainerRepositoryMapOutput() Container
 
 func (o ContainerRepositoryMapOutput) ToContainerRepositoryMapOutputWithContext(ctx context.Context) ContainerRepositoryMapOutput {
 	return o
-}
-
-func (o ContainerRepositoryMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ContainerRepository] {
-	return pulumix.Output[map[string]*ContainerRepository]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ContainerRepositoryMapOutput) MapIndex(k pulumi.StringInput) ContainerRepositoryOutput {

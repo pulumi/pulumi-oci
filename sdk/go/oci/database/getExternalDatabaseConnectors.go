@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of External Database Connectors in Oracle Cloud Infrastructure Database service.
@@ -127,12 +126,6 @@ func (o GetExternalDatabaseConnectorsResultOutput) ToGetExternalDatabaseConnecto
 
 func (o GetExternalDatabaseConnectorsResultOutput) ToGetExternalDatabaseConnectorsResultOutputWithContext(ctx context.Context) GetExternalDatabaseConnectorsResultOutput {
 	return o
-}
-
-func (o GetExternalDatabaseConnectorsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalDatabaseConnectorsResult] {
-	return pulumix.Output[GetExternalDatabaseConnectorsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

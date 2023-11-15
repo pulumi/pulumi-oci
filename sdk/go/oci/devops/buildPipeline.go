@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Build Pipeline resource in Oracle Cloud Infrastructure Devops service.
@@ -257,12 +256,6 @@ func (i *BuildPipeline) ToBuildPipelineOutputWithContext(ctx context.Context) Bu
 	return pulumi.ToOutputWithContext(ctx, i).(BuildPipelineOutput)
 }
 
-func (i *BuildPipeline) ToOutput(ctx context.Context) pulumix.Output[*BuildPipeline] {
-	return pulumix.Output[*BuildPipeline]{
-		OutputState: i.ToBuildPipelineOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BuildPipelineArrayInput is an input type that accepts BuildPipelineArray and BuildPipelineArrayOutput values.
 // You can construct a concrete instance of `BuildPipelineArrayInput` via:
 //
@@ -286,12 +279,6 @@ func (i BuildPipelineArray) ToBuildPipelineArrayOutput() BuildPipelineArrayOutpu
 
 func (i BuildPipelineArray) ToBuildPipelineArrayOutputWithContext(ctx context.Context) BuildPipelineArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BuildPipelineArrayOutput)
-}
-
-func (i BuildPipelineArray) ToOutput(ctx context.Context) pulumix.Output[[]*BuildPipeline] {
-	return pulumix.Output[[]*BuildPipeline]{
-		OutputState: i.ToBuildPipelineArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BuildPipelineMapInput is an input type that accepts BuildPipelineMap and BuildPipelineMapOutput values.
@@ -319,12 +306,6 @@ func (i BuildPipelineMap) ToBuildPipelineMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(BuildPipelineMapOutput)
 }
 
-func (i BuildPipelineMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BuildPipeline] {
-	return pulumix.Output[map[string]*BuildPipeline]{
-		OutputState: i.ToBuildPipelineMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BuildPipelineOutput struct{ *pulumi.OutputState }
 
 func (BuildPipelineOutput) ElementType() reflect.Type {
@@ -337,12 +318,6 @@ func (o BuildPipelineOutput) ToBuildPipelineOutput() BuildPipelineOutput {
 
 func (o BuildPipelineOutput) ToBuildPipelineOutputWithContext(ctx context.Context) BuildPipelineOutput {
 	return o
-}
-
-func (o BuildPipelineOutput) ToOutput(ctx context.Context) pulumix.Output[*BuildPipeline] {
-	return pulumix.Output[*BuildPipeline]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Specifies list of parameters present in a build pipeline. An UPDATE operation replaces the existing parameters list entirely.
@@ -422,12 +397,6 @@ func (o BuildPipelineArrayOutput) ToBuildPipelineArrayOutputWithContext(ctx cont
 	return o
 }
 
-func (o BuildPipelineArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BuildPipeline] {
-	return pulumix.Output[[]*BuildPipeline]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o BuildPipelineArrayOutput) Index(i pulumi.IntInput) BuildPipelineOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BuildPipeline {
 		return vs[0].([]*BuildPipeline)[vs[1].(int)]
@@ -446,12 +415,6 @@ func (o BuildPipelineMapOutput) ToBuildPipelineMapOutput() BuildPipelineMapOutpu
 
 func (o BuildPipelineMapOutput) ToBuildPipelineMapOutputWithContext(ctx context.Context) BuildPipelineMapOutput {
 	return o
-}
-
-func (o BuildPipelineMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BuildPipeline] {
-	return pulumix.Output[map[string]*BuildPipeline]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BuildPipelineMapOutput) MapIndex(k pulumi.StringInput) BuildPipelineOutput {

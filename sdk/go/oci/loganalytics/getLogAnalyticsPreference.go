@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Log Analytics Preference resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -102,12 +101,6 @@ func (o GetLogAnalyticsPreferenceResultOutput) ToGetLogAnalyticsPreferenceResult
 
 func (o GetLogAnalyticsPreferenceResultOutput) ToGetLogAnalyticsPreferenceResultOutputWithContext(ctx context.Context) GetLogAnalyticsPreferenceResultOutput {
 	return o
-}
-
-func (o GetLogAnalyticsPreferenceResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsPreferenceResult] {
-	return pulumix.Output[GetLogAnalyticsPreferenceResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The provider-assigned unique ID for this managed resource.

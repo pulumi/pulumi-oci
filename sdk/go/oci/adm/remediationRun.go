@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Remediation Run resource in Oracle Cloud Infrastructure Adm service.
@@ -255,12 +254,6 @@ func (i *RemediationRun) ToRemediationRunOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(RemediationRunOutput)
 }
 
-func (i *RemediationRun) ToOutput(ctx context.Context) pulumix.Output[*RemediationRun] {
-	return pulumix.Output[*RemediationRun]{
-		OutputState: i.ToRemediationRunOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RemediationRunArrayInput is an input type that accepts RemediationRunArray and RemediationRunArrayOutput values.
 // You can construct a concrete instance of `RemediationRunArrayInput` via:
 //
@@ -284,12 +277,6 @@ func (i RemediationRunArray) ToRemediationRunArrayOutput() RemediationRunArrayOu
 
 func (i RemediationRunArray) ToRemediationRunArrayOutputWithContext(ctx context.Context) RemediationRunArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RemediationRunArrayOutput)
-}
-
-func (i RemediationRunArray) ToOutput(ctx context.Context) pulumix.Output[[]*RemediationRun] {
-	return pulumix.Output[[]*RemediationRun]{
-		OutputState: i.ToRemediationRunArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // RemediationRunMapInput is an input type that accepts RemediationRunMap and RemediationRunMapOutput values.
@@ -317,12 +304,6 @@ func (i RemediationRunMap) ToRemediationRunMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(RemediationRunMapOutput)
 }
 
-func (i RemediationRunMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*RemediationRun] {
-	return pulumix.Output[map[string]*RemediationRun]{
-		OutputState: i.ToRemediationRunMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RemediationRunOutput struct{ *pulumi.OutputState }
 
 func (RemediationRunOutput) ElementType() reflect.Type {
@@ -335,12 +316,6 @@ func (o RemediationRunOutput) ToRemediationRunOutput() RemediationRunOutput {
 
 func (o RemediationRunOutput) ToRemediationRunOutputWithContext(ctx context.Context) RemediationRunOutput {
 	return o
-}
-
-func (o RemediationRunOutput) ToOutput(ctx context.Context) pulumix.Output[*RemediationRun] {
-	return pulumix.Output[*RemediationRun]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
@@ -430,12 +405,6 @@ func (o RemediationRunArrayOutput) ToRemediationRunArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o RemediationRunArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*RemediationRun] {
-	return pulumix.Output[[]*RemediationRun]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o RemediationRunArrayOutput) Index(i pulumi.IntInput) RemediationRunOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *RemediationRun {
 		return vs[0].([]*RemediationRun)[vs[1].(int)]
@@ -454,12 +423,6 @@ func (o RemediationRunMapOutput) ToRemediationRunMapOutput() RemediationRunMapOu
 
 func (o RemediationRunMapOutput) ToRemediationRunMapOutputWithContext(ctx context.Context) RemediationRunMapOutput {
 	return o
-}
-
-func (o RemediationRunMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*RemediationRun] {
-	return pulumix.Output[map[string]*RemediationRun]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RemediationRunMapOutput) MapIndex(k pulumi.StringInput) RemediationRunOutput {

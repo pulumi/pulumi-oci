@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Vnic resource in Oracle Cloud Infrastructure Core service.
@@ -137,12 +136,6 @@ func (o GetVnicResultOutput) ToGetVnicResultOutput() GetVnicResultOutput {
 
 func (o GetVnicResultOutput) ToGetVnicResultOutputWithContext(ctx context.Context) GetVnicResultOutput {
 	return o
-}
-
-func (o GetVnicResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVnicResult] {
-	return pulumix.Output[GetVnicResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The VNIC's availability domain.  Example: `Uocm:PHX-AD-1`

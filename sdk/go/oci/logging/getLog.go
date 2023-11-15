@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Log resource in Oracle Cloud Infrastructure Logging service.
@@ -131,12 +130,6 @@ func (o LookupLogResultOutput) ToLookupLogResultOutput() LookupLogResultOutput {
 
 func (o LookupLogResultOutput) ToLookupLogResultOutputWithContext(ctx context.Context) LookupLogResultOutput {
 	return o
-}
-
-func (o LookupLogResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupLogResult] {
-	return pulumix.Output[LookupLogResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment that the resource belongs to.

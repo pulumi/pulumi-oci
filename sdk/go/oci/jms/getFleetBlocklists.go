@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Fleet Blocklists in Oracle Cloud Infrastructure Jms service.
@@ -120,12 +119,6 @@ func (o GetFleetBlocklistsResultOutput) ToGetFleetBlocklistsResultOutput() GetFl
 
 func (o GetFleetBlocklistsResultOutput) ToGetFleetBlocklistsResultOutputWithContext(ctx context.Context) GetFleetBlocklistsResultOutput {
 	return o
-}
-
-func (o GetFleetBlocklistsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetBlocklistsResult] {
-	return pulumix.Output[GetFleetBlocklistsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetBlocklistsResultOutput) Filters() GetFleetBlocklistsFilterArrayOutput {

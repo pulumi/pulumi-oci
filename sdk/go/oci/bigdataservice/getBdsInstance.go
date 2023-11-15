@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Bds Instance resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -155,12 +154,6 @@ func (o LookupBdsInstanceResultOutput) ToLookupBdsInstanceResultOutput() LookupB
 
 func (o LookupBdsInstanceResultOutput) ToLookupBdsInstanceResultOutputWithContext(ctx context.Context) LookupBdsInstanceResultOutput {
 	return o
-}
-
-func (o LookupBdsInstanceResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupBdsInstanceResult] {
-	return pulumix.Output[LookupBdsInstanceResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupBdsInstanceResultOutput) BdsInstanceId() pulumi.StringOutput {

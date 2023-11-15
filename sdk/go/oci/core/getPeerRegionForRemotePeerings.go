@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Peer Region For Remote Peerings in Oracle Cloud Infrastructure Core service.
@@ -99,12 +98,6 @@ func (o GetPeerRegionForRemotePeeringsResultOutput) ToGetPeerRegionForRemotePeer
 
 func (o GetPeerRegionForRemotePeeringsResultOutput) ToGetPeerRegionForRemotePeeringsResultOutputWithContext(ctx context.Context) GetPeerRegionForRemotePeeringsResultOutput {
 	return o
-}
-
-func (o GetPeerRegionForRemotePeeringsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPeerRegionForRemotePeeringsResult] {
-	return pulumix.Output[GetPeerRegionForRemotePeeringsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPeerRegionForRemotePeeringsResultOutput) Filters() GetPeerRegionForRemotePeeringsFilterArrayOutput {

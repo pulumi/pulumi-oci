@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Detect Anomaly Job resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
@@ -251,12 +250,6 @@ func (i *DetectAnomalyJob) ToDetectAnomalyJobOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(DetectAnomalyJobOutput)
 }
 
-func (i *DetectAnomalyJob) ToOutput(ctx context.Context) pulumix.Output[*DetectAnomalyJob] {
-	return pulumix.Output[*DetectAnomalyJob]{
-		OutputState: i.ToDetectAnomalyJobOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DetectAnomalyJobArrayInput is an input type that accepts DetectAnomalyJobArray and DetectAnomalyJobArrayOutput values.
 // You can construct a concrete instance of `DetectAnomalyJobArrayInput` via:
 //
@@ -280,12 +273,6 @@ func (i DetectAnomalyJobArray) ToDetectAnomalyJobArrayOutput() DetectAnomalyJobA
 
 func (i DetectAnomalyJobArray) ToDetectAnomalyJobArrayOutputWithContext(ctx context.Context) DetectAnomalyJobArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DetectAnomalyJobArrayOutput)
-}
-
-func (i DetectAnomalyJobArray) ToOutput(ctx context.Context) pulumix.Output[[]*DetectAnomalyJob] {
-	return pulumix.Output[[]*DetectAnomalyJob]{
-		OutputState: i.ToDetectAnomalyJobArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DetectAnomalyJobMapInput is an input type that accepts DetectAnomalyJobMap and DetectAnomalyJobMapOutput values.
@@ -313,12 +300,6 @@ func (i DetectAnomalyJobMap) ToDetectAnomalyJobMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(DetectAnomalyJobMapOutput)
 }
 
-func (i DetectAnomalyJobMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DetectAnomalyJob] {
-	return pulumix.Output[map[string]*DetectAnomalyJob]{
-		OutputState: i.ToDetectAnomalyJobMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DetectAnomalyJobOutput struct{ *pulumi.OutputState }
 
 func (DetectAnomalyJobOutput) ElementType() reflect.Type {
@@ -331,12 +312,6 @@ func (o DetectAnomalyJobOutput) ToDetectAnomalyJobOutput() DetectAnomalyJobOutpu
 
 func (o DetectAnomalyJobOutput) ToDetectAnomalyJobOutputWithContext(ctx context.Context) DetectAnomalyJobOutput {
 	return o
-}
-
-func (o DetectAnomalyJobOutput) ToOutput(ctx context.Context) pulumix.Output[*DetectAnomalyJob] {
-	return pulumix.Output[*DetectAnomalyJob]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of the compartment that starts the job.
@@ -436,12 +411,6 @@ func (o DetectAnomalyJobArrayOutput) ToDetectAnomalyJobArrayOutputWithContext(ct
 	return o
 }
 
-func (o DetectAnomalyJobArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DetectAnomalyJob] {
-	return pulumix.Output[[]*DetectAnomalyJob]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DetectAnomalyJobArrayOutput) Index(i pulumi.IntInput) DetectAnomalyJobOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DetectAnomalyJob {
 		return vs[0].([]*DetectAnomalyJob)[vs[1].(int)]
@@ -460,12 +429,6 @@ func (o DetectAnomalyJobMapOutput) ToDetectAnomalyJobMapOutput() DetectAnomalyJo
 
 func (o DetectAnomalyJobMapOutput) ToDetectAnomalyJobMapOutputWithContext(ctx context.Context) DetectAnomalyJobMapOutput {
 	return o
-}
-
-func (o DetectAnomalyJobMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DetectAnomalyJob] {
-	return pulumix.Output[map[string]*DetectAnomalyJob]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DetectAnomalyJobMapOutput) MapIndex(k pulumi.StringInput) DetectAnomalyJobOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about Categories in Oracle Cloud Infrastructure Log Analytics service.
@@ -121,12 +120,6 @@ func (o GetLogAnalyticsCategoriesListResultOutput) ToGetLogAnalyticsCategoriesLi
 
 func (o GetLogAnalyticsCategoriesListResultOutput) ToGetLogAnalyticsCategoriesListResultOutputWithContext(ctx context.Context) GetLogAnalyticsCategoriesListResultOutput {
 	return o
-}
-
-func (o GetLogAnalyticsCategoriesListResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsCategoriesListResult] {
-	return pulumix.Output[GetLogAnalyticsCategoriesListResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLogAnalyticsCategoriesListResultOutput) CategoryDisplayText() pulumi.StringPtrOutput {

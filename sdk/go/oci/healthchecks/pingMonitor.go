@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Ping Monitor resource in Oracle Cloud Infrastructure Health Checks service.
@@ -300,12 +299,6 @@ func (i *PingMonitor) ToPingMonitorOutputWithContext(ctx context.Context) PingMo
 	return pulumi.ToOutputWithContext(ctx, i).(PingMonitorOutput)
 }
 
-func (i *PingMonitor) ToOutput(ctx context.Context) pulumix.Output[*PingMonitor] {
-	return pulumix.Output[*PingMonitor]{
-		OutputState: i.ToPingMonitorOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PingMonitorArrayInput is an input type that accepts PingMonitorArray and PingMonitorArrayOutput values.
 // You can construct a concrete instance of `PingMonitorArrayInput` via:
 //
@@ -329,12 +322,6 @@ func (i PingMonitorArray) ToPingMonitorArrayOutput() PingMonitorArrayOutput {
 
 func (i PingMonitorArray) ToPingMonitorArrayOutputWithContext(ctx context.Context) PingMonitorArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PingMonitorArrayOutput)
-}
-
-func (i PingMonitorArray) ToOutput(ctx context.Context) pulumix.Output[[]*PingMonitor] {
-	return pulumix.Output[[]*PingMonitor]{
-		OutputState: i.ToPingMonitorArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // PingMonitorMapInput is an input type that accepts PingMonitorMap and PingMonitorMapOutput values.
@@ -362,12 +349,6 @@ func (i PingMonitorMap) ToPingMonitorMapOutputWithContext(ctx context.Context) P
 	return pulumi.ToOutputWithContext(ctx, i).(PingMonitorMapOutput)
 }
 
-func (i PingMonitorMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*PingMonitor] {
-	return pulumix.Output[map[string]*PingMonitor]{
-		OutputState: i.ToPingMonitorMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PingMonitorOutput struct{ *pulumi.OutputState }
 
 func (PingMonitorOutput) ElementType() reflect.Type {
@@ -380,12 +361,6 @@ func (o PingMonitorOutput) ToPingMonitorOutput() PingMonitorOutput {
 
 func (o PingMonitorOutput) ToPingMonitorOutputWithContext(ctx context.Context) PingMonitorOutput {
 	return o
-}
-
-func (o PingMonitorOutput) ToOutput(ctx context.Context) pulumix.Output[*PingMonitor] {
-	return pulumix.Output[*PingMonitor]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of the compartment.
@@ -475,12 +450,6 @@ func (o PingMonitorArrayOutput) ToPingMonitorArrayOutputWithContext(ctx context.
 	return o
 }
 
-func (o PingMonitorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*PingMonitor] {
-	return pulumix.Output[[]*PingMonitor]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o PingMonitorArrayOutput) Index(i pulumi.IntInput) PingMonitorOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *PingMonitor {
 		return vs[0].([]*PingMonitor)[vs[1].(int)]
@@ -499,12 +468,6 @@ func (o PingMonitorMapOutput) ToPingMonitorMapOutput() PingMonitorMapOutput {
 
 func (o PingMonitorMapOutput) ToPingMonitorMapOutputWithContext(ctx context.Context) PingMonitorMapOutput {
 	return o
-}
-
-func (o PingMonitorMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*PingMonitor] {
-	return pulumix.Output[map[string]*PingMonitor]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PingMonitorMapOutput) MapIndex(k pulumi.StringInput) PingMonitorOutput {

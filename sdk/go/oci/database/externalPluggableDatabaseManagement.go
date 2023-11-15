@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the External Pluggable Database Management resource in Oracle Cloud Infrastructure Database service.
@@ -172,12 +171,6 @@ func (i *ExternalPluggableDatabaseManagement) ToExternalPluggableDatabaseManagem
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalPluggableDatabaseManagementOutput)
 }
 
-func (i *ExternalPluggableDatabaseManagement) ToOutput(ctx context.Context) pulumix.Output[*ExternalPluggableDatabaseManagement] {
-	return pulumix.Output[*ExternalPluggableDatabaseManagement]{
-		OutputState: i.ToExternalPluggableDatabaseManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExternalPluggableDatabaseManagementArrayInput is an input type that accepts ExternalPluggableDatabaseManagementArray and ExternalPluggableDatabaseManagementArrayOutput values.
 // You can construct a concrete instance of `ExternalPluggableDatabaseManagementArrayInput` via:
 //
@@ -201,12 +194,6 @@ func (i ExternalPluggableDatabaseManagementArray) ToExternalPluggableDatabaseMan
 
 func (i ExternalPluggableDatabaseManagementArray) ToExternalPluggableDatabaseManagementArrayOutputWithContext(ctx context.Context) ExternalPluggableDatabaseManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalPluggableDatabaseManagementArrayOutput)
-}
-
-func (i ExternalPluggableDatabaseManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalPluggableDatabaseManagement] {
-	return pulumix.Output[[]*ExternalPluggableDatabaseManagement]{
-		OutputState: i.ToExternalPluggableDatabaseManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ExternalPluggableDatabaseManagementMapInput is an input type that accepts ExternalPluggableDatabaseManagementMap and ExternalPluggableDatabaseManagementMapOutput values.
@@ -234,12 +221,6 @@ func (i ExternalPluggableDatabaseManagementMap) ToExternalPluggableDatabaseManag
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalPluggableDatabaseManagementMapOutput)
 }
 
-func (i ExternalPluggableDatabaseManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalPluggableDatabaseManagement] {
-	return pulumix.Output[map[string]*ExternalPluggableDatabaseManagement]{
-		OutputState: i.ToExternalPluggableDatabaseManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExternalPluggableDatabaseManagementOutput struct{ *pulumi.OutputState }
 
 func (ExternalPluggableDatabaseManagementOutput) ElementType() reflect.Type {
@@ -252,12 +233,6 @@ func (o ExternalPluggableDatabaseManagementOutput) ToExternalPluggableDatabaseMa
 
 func (o ExternalPluggableDatabaseManagementOutput) ToExternalPluggableDatabaseManagementOutputWithContext(ctx context.Context) ExternalPluggableDatabaseManagementOutput {
 	return o
-}
-
-func (o ExternalPluggableDatabaseManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalPluggableDatabaseManagement] {
-	return pulumix.Output[*ExternalPluggableDatabaseManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalPluggableDatabaseManagementOutput) EnableManagement() pulumi.BoolOutput {
@@ -291,12 +266,6 @@ func (o ExternalPluggableDatabaseManagementArrayOutput) ToExternalPluggableDatab
 	return o
 }
 
-func (o ExternalPluggableDatabaseManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalPluggableDatabaseManagement] {
-	return pulumix.Output[[]*ExternalPluggableDatabaseManagement]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ExternalPluggableDatabaseManagementArrayOutput) Index(i pulumi.IntInput) ExternalPluggableDatabaseManagementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ExternalPluggableDatabaseManagement {
 		return vs[0].([]*ExternalPluggableDatabaseManagement)[vs[1].(int)]
@@ -315,12 +284,6 @@ func (o ExternalPluggableDatabaseManagementMapOutput) ToExternalPluggableDatabas
 
 func (o ExternalPluggableDatabaseManagementMapOutput) ToExternalPluggableDatabaseManagementMapOutputWithContext(ctx context.Context) ExternalPluggableDatabaseManagementMapOutput {
 	return o
-}
-
-func (o ExternalPluggableDatabaseManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalPluggableDatabaseManagement] {
-	return pulumix.Output[map[string]*ExternalPluggableDatabaseManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalPluggableDatabaseManagementMapOutput) MapIndex(k pulumi.StringInput) ExternalPluggableDatabaseManagementOutput {

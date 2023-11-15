@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Redis Cluster resource in Oracle Cloud Infrastructure Redis service.
@@ -310,12 +309,6 @@ func (i *RedisCluster) ToRedisClusterOutputWithContext(ctx context.Context) Redi
 	return pulumi.ToOutputWithContext(ctx, i).(RedisClusterOutput)
 }
 
-func (i *RedisCluster) ToOutput(ctx context.Context) pulumix.Output[*RedisCluster] {
-	return pulumix.Output[*RedisCluster]{
-		OutputState: i.ToRedisClusterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RedisClusterArrayInput is an input type that accepts RedisClusterArray and RedisClusterArrayOutput values.
 // You can construct a concrete instance of `RedisClusterArrayInput` via:
 //
@@ -339,12 +332,6 @@ func (i RedisClusterArray) ToRedisClusterArrayOutput() RedisClusterArrayOutput {
 
 func (i RedisClusterArray) ToRedisClusterArrayOutputWithContext(ctx context.Context) RedisClusterArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RedisClusterArrayOutput)
-}
-
-func (i RedisClusterArray) ToOutput(ctx context.Context) pulumix.Output[[]*RedisCluster] {
-	return pulumix.Output[[]*RedisCluster]{
-		OutputState: i.ToRedisClusterArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // RedisClusterMapInput is an input type that accepts RedisClusterMap and RedisClusterMapOutput values.
@@ -372,12 +359,6 @@ func (i RedisClusterMap) ToRedisClusterMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(RedisClusterMapOutput)
 }
 
-func (i RedisClusterMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*RedisCluster] {
-	return pulumix.Output[map[string]*RedisCluster]{
-		OutputState: i.ToRedisClusterMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RedisClusterOutput struct{ *pulumi.OutputState }
 
 func (RedisClusterOutput) ElementType() reflect.Type {
@@ -390,12 +371,6 @@ func (o RedisClusterOutput) ToRedisClusterOutput() RedisClusterOutput {
 
 func (o RedisClusterOutput) ToRedisClusterOutputWithContext(ctx context.Context) RedisClusterOutput {
 	return o
-}
-
-func (o RedisClusterOutput) ToOutput(ctx context.Context) pulumix.Output[*RedisCluster] {
-	return pulumix.Output[*RedisCluster]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
@@ -505,12 +480,6 @@ func (o RedisClusterArrayOutput) ToRedisClusterArrayOutputWithContext(ctx contex
 	return o
 }
 
-func (o RedisClusterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*RedisCluster] {
-	return pulumix.Output[[]*RedisCluster]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o RedisClusterArrayOutput) Index(i pulumi.IntInput) RedisClusterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *RedisCluster {
 		return vs[0].([]*RedisCluster)[vs[1].(int)]
@@ -529,12 +498,6 @@ func (o RedisClusterMapOutput) ToRedisClusterMapOutput() RedisClusterMapOutput {
 
 func (o RedisClusterMapOutput) ToRedisClusterMapOutputWithContext(ctx context.Context) RedisClusterMapOutput {
 	return o
-}
-
-func (o RedisClusterMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*RedisCluster] {
-	return pulumix.Output[map[string]*RedisCluster]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RedisClusterMapOutput) MapIndex(k pulumi.StringInput) RedisClusterOutput {
